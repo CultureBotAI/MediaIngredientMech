@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:mediadive1140_amphotericin_stock_10mg_ml
+preferred_term: MediaDive1140 amphotericin stock, 10 mg/mL
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms: []
+notes: The frozen source explicitly describes an amphotericin preparation at 10 mg/mL,
+  added by volume. A source-qualified stock record can preserve this preparation with
+  an unresolved amphotericin constituent. The record must not assert amphotericin
+  B, a vehicle or a deoxycholate/lipid formulation. Raw label Amphotericin is source
+  provenance only; no global alias is added.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive1140_amphotericin_stock_10mg_ml
+  ontology_label: MediaDive1140 amphotericin stock, 10 mg/mL
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/ingredients/1140
+    notes: Source-supported material or preparation identity under MAPPING_SEMANTICS
+      sections 3 and 6. Bounded ontology and catalog searches found no verified exact
+      term for this scope. No component identity is assigned to the whole preparation.
+solution_type: OTHER
+components:
+- component_name: Amphotericin
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: MG_PER_ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/ingredients/1140
+    source_record: MediaDive1140 admitted raw component attribute
+    notes: Only the named, unresolved amphotericin constituent is asserted. Neither
+      the B congener, counterion nor vehicle is inferred.
+  notes: 'One-level material constituents only; no whole-to-part grounding, complete
+    culturing recipe, or speciation assertion. Completeness UNKNOWN: The source concentration
+    label names amphotericin but establishes neither all ingredients nor a concrete
+    omitted constituent. Congener, counterion and carrier remain unknown.'
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The frozen source explicitly describes an amphotericin preparation at 10
+    mg/mL, added by volume. A source-qualified stock record can preserve this preparation
+    with an unresolved amphotericin constituent. The record must not assert amphotericin
+    B, a vehicle or a deoxycholate/lipid formulation. Isolated proposal only; all
+    native holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to LLM_SUGGESTION:
+    The registry stock is an agent proposal from an unresolved source compound and
+    concentration descriptor, not a human identity confirmation. Correct source-relative
+    membership completeness PARTIAL to UNKNOWN. The source concentration label names
+    amphotericin but establishes neither all ingredients nor a concrete omitted constituent.
+    Congener, counterion and carrier remain unknown. Isolated successor proposal only;
+    all inherited source, role and export holds remain. Historical evidence and predecessor
+    files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

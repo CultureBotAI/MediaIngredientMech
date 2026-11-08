@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:pcr_s11_01n_naoh
+preferred_term: PCR-S11 EDTA-preparation 0.1 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:pcr_s11_01n_naoh
+  ontology_label: PCR-S11 EDTA-preparation 0.1 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'The PCR-S11 Na2-EDTA preparation gradually dissolves 1.488 g Na2-EDTA in 40
+  ml 0.1 N NaOH. The NaOH input is a pre-existing liquid reagent; its solvent is not
+  specified. ATCC hemin and SGP7 titration contexts in the same lexical case are not
+  claimed as equivalent preparations. Raw case labels remain only in evidence and
+  case-bound proposal links, not globally resolving synonyms. No occurrence count
+  transfer, source-hold release or receiving-medium dose correction is implied. Issue
+  1227 source-relative completeness: PCR-S11 M2262 adds 1.488 g Na2-EDTA to 40 ml
+  of 0.1 N NaOH. It does not enumerate the NaOH stock carrier. NOS and other occurrences
+  remain conditional comparisons. UNKNOWN denotes unstated source closure; no carrier
+  is invented and no particular omitted ingredient is asserted.'
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '0.1'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262
+    source_record: M2262
+    notes: The PCR-S11 Na2-EDTA preparation gradually dissolves 1.488 g Na2-EDTA in
+      40 ml 0.1 N NaOH. The NaOH input is a pre-existing liquid reagent; its solvent
+      is not specified. ATCC hemin and SGP7 titration contexts in the same lexical
+      case are not claimed as equivalent preparations. PCR-S11 M2262 adds 1.488 g
+      Na2-EDTA to 40 ml of 0.1 N NaOH. It does not enumerate the NaOH stock carrier.
+      NOS and other occurrences remain conditional comparisons. UNKNOWN denotes unstated
+      source closure; no carrier is invented and no particular omitted ingredient
+      is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: The PCR-S11 Na2-EDTA preparation gradually dissolves 1.488 g Na2-EDTA in
+    40 ml 0.1 N NaOH. The NaOH input is a pre-existing liquid reagent; its solvent
+    is not specified. ATCC hemin and SGP7 titration contexts in the same lexical case
+    are not claimed as equivalent preparations.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Set component_assertion.completeness
+    PARTIAL → UNKNOWN. PCR-S11 M2262 adds 1.488 g Na2-EDTA to 40 ml of 0.1 N NaOH.
+    It does not enumerate the NaOH stock carrier. NOS and other occurrences remain
+    conditional comparisons. UNKNOWN denotes unstated source closure; no carrier is
+    invented and no particular omitted ingredient is asserted. All inherited history,
+    scientific/source/role/export holds and original before hash remain preserved.
+    This is a proposal, pending independent whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

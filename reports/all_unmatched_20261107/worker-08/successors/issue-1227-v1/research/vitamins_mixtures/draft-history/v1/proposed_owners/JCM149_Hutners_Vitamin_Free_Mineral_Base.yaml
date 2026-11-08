@@ -1,0 +1,134 @@
+identifier: kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base
+preferred_term: JCM 149 Hutner's vitamin free mineral base
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base
+  ontology_label: JCM 149 Hutner's vitamin free mineral base
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149
+    notes: 'JCM Medium 149: Hutner''s vitamin free mineral base defines this multi-component
+      preparation. Registry identity preserves the recipe-specific stock; no exact
+      molecular ontology mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Metals 44 is an immediate nested component, not silently flattened; KOH amount
+  is approximate as stated in preparation. Raw source labels retained here, with recipe
+  scope: "Hutner''s vitamin free mineral base (see below)". Generic local labels are
+  not published as global synonyms. Occurrence statistics remain zero until source-specific
+  membership integration; frozen observations are fully recorded in the evidence decisions.
+  Quantities use literal source-batch units, not final culture concentrations. Component
+  references identify compatible active entities only after source-form review. Remaining
+  UNMAPPED components retain their precise form or nested-preparation limits. Component
+  names and quantities remain source-specific; no role or export approval is inherited.'
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: MIM_CATALOG
+  concentration_value: '10.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:44557
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    Nitrilotriacetic acid; the inspected active catalog and primary ontology identity
+    CHEBI:44557 match this stated chemical form. Source spelling, amount, unit and
+    preparation boundary are preserved; no role, owner-wide or export approval is
+    transferred.'
+- component_name: MgSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '14.45'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:31795
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    MgSO4·7H2O; the inspected active catalog and primary ontology identity CHEBI:31795
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: CaCl2·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.335'
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:86158
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    CaCl2·2H2O; the inspected active catalog and primary ontology identity CHEBI:86158
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: (NH4)6Mo7O24·4H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:86244
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    (NH4)6Mo7O24·4H2O; the inspected active catalog and primary ontology identity
+    CHEBI:86244 match this stated chemical form. Source spelling, amount, unit and
+    preparation boundary are preserved; no role, owner-wide or export approval is
+    transferred.'
+- component_name: FeSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '99.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:75836
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    FeSO4·7H2O; the inspected active catalog and primary ontology identity CHEBI:75836
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: Metals ''44'' (see below)
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: JCM149 enumerates a nested Metals44 preparation;
+    the MICRO:0000456 owner has no formula bridge, and nested MnSO4·xH2O remains unresolved.
+    Preserve the nested component.'
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '950.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  component_id: CHEBI:15377
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    Distilled water; the inspected active catalog and primary ontology identity CHEBI:15377
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: KOH (neutralizing nitrilotriacetic acid)
+  reference_scope: MIM_CATALOG
+  concentration_value: ca. 7.3
+  concentration_unit: G_PER_SOURCE_BATCH
+  component_id: CHEBI:32035
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    KOH (neutralizing nitrilotriacetic acid); the inspected active catalog and primary
+    ontology identity CHEBI:32035 match this stated chemical form. Source spelling,
+    amount, unit and preparation boundary are preserved; no role, owner-wide or export
+    approval is transferred.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149
+    source_record: 'JCM Medium 149: Hutner''s vitamin free mineral base'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:00.632054+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined JCM 149 Hutner's vitamin free mineral base with complete
+    immediate constituent enumeration and registry identity. Metals 44 is an immediate
+    nested component, not silently flattened; KOH amount is approximate as stated
+    in preparation. Isolated proposal only; independent and coordinator review remain
+    required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:44.695729+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 7 compatible source components to
+    active catalog entities without copying role or export approval. Earlier history
+    and all source, scientific, role, withheld and downstream holds remain. Isolated
+    proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

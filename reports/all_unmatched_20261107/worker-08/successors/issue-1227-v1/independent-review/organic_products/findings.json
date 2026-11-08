@@ -1,0 +1,189 @@
+{
+  "reviewer": "/root/inorganics",
+  "author": "/root/organics",
+  "findings": [
+    {
+      "finding_id": "IF-OP1227-F1",
+      "coordinator_alias": "W08-1227-PEER-OP-001",
+      "severity": "P2",
+      "status": "resolved_in_exact_v3_successor",
+      "title": "R2A definition-derived constituents were mislabeled as source-label enumeration",
+      "proposal_ids": [
+        "op1201-r2a-medium"
+      ],
+      "case_ids": [
+        "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b"
+      ],
+      "reproduction": "The pre-fix six-part list is derived from MICRO0000541 annotation/definition, while the source label is only R2A. Native LABEL_ENUMERATION requires parts enumerated in the label.",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/R2A_medium.yaml",
+        "sha256": "241db90e4850e9e70c94f7af4e0d8f74735a7c25780230d2e688b7f14d6cd3f3"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners_v3/R2A_Medium.yaml",
+        "sha256": "6ef646d38ae19ef2dd3e7dded41ea95d5cedb5acb1b5e6ce33ab07a91d28f57c"
+      },
+      "referral": {
+        "path": "successors/issue-1227-v1/independent-review/organic_products/new-finding-referral-v1.json",
+        "sha256": "c4c607b07728b87f4928ce809b4cb0c9a2b505f3575ca4d948353e7a17d57743"
+      },
+      "coordinator_routing": {
+        "path": "successors/issue-1227-v1/COORDINATOR-NEW-FINDINGS-v2.json",
+        "sha256": "a5b11d928d9870dc154e89e2a9d61d5f735547d626c8126e313bcacd54b5eb40"
+      },
+      "resolution": "Re-read complete v3 payload and exact semantic delta: CURATED_INTERPRETATION with explicit agent rationale under the distinct ComponentEvidenceTypeEnum.MANUAL_CURATION; same six parts, references, quantities and UNKNOWN completeness; append-only LLM-assisted history. Only case/proposal evidence backlinks changed.",
+      "open_blocking": false
+    }
+  ],
+  "inherited_concerns": [
+    {
+      "proposal_id": "op-valeric-alias",
+      "status": "existing_hold_preserved_not_new_finding",
+      "detail": "Whole owner retains n-Pentanoate/Pentanoate exact aliases on neutral acid. Official ChEBI distinguishes conjugate-base CHEBI31011 from acid17418. External reviewer A already preserved this concern. New source-acid spellings do not approve these inherited aliases."
+    },
+    {
+      "proposal_id": "op1201-soy-family-source-boundary",
+      "status": "existing_hold_preserved_not_new_finding",
+      "detail": "Broad hydrolysate identity, active duplicates and the rejected Bacto Soytone tombstone require coordinated source-specific family curation. Notes-only proposal is not full-family approval."
+    }
+  ],
+  "external_finding_lineage": [
+    {
+      "finding_id": "W08-IR-001",
+      "original_severity": "minor",
+      "historical_status": "open_at_frozen_head",
+      "proposal_ids": [
+        "op-ethane-new",
+        "op-glycine-betaine-new",
+        "op-methanethiol-new",
+        "op-nalidixic-new",
+        "op-sodium-nicotinate-new",
+        "op1201-amphotericin-stock",
+        "op1201-bbl-fluid-thioglycollate",
+        "op1201-cereal-leaves",
+        "op1201-dl-asparagine-monohydrate",
+        "op1201-ferric-pyrophosphate-label",
+        "op1201-glycine-naoh-stock",
+        "op1201-homopipes-stock",
+        "op1201-indicator-stock",
+        "op1201-laminarin-scope",
+        "op1201-plain-flour",
+        "op1201-r2a-agar-provenance",
+        "op1201-r2a-medium",
+        "op1201-racemic-sodium-sulfolactate",
+        "op1201-sodium-lactate-alias-boundary",
+        "op1201-sulfide-ore",
+        "op1201-toluene-stock",
+        "op1201-trypticase-soy-broth",
+        "op1201-usb-peptic-pepton"
+      ],
+      "observations": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-004]",
+          "reviewer": "/root/w08_review_a",
+          "original_severity": "P2"
+        },
+        {
+          "path": "b/findings.json",
+          "sha256": "bb2011b15edd9fce21d568f2f45d20edbe5925cb9343227a6b0a9383d02eb505",
+          "selector": "findings[finding_id=W08-B-F01]",
+          "reviewer": null,
+          "original_severity": "P2"
+        },
+        {
+          "path": "c/findings.json",
+          "sha256": "1047762a5ca5b88bc5e51ffd7efbbcec9ac9db38426455bc1beb86bf1ab82a49",
+          "selector": "findings[finding_id=W08-C-F002]",
+          "reviewer": null,
+          "original_severity": "P2"
+        }
+      ],
+      "current_disposition": "Reviewed in final selected organic payloads/source decisions; bounded correction accepted with original holds. No alteration of historical receipt."
+    },
+    {
+      "finding_id": "W08-IR-006",
+      "original_severity": "minor",
+      "historical_status": "open_at_frozen_head",
+      "proposal_ids": [
+        "op1201-amphotericin-stock",
+        "op1201-r2a-medium"
+      ],
+      "observations": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-005]",
+          "reviewer": "/root/w08_review_a",
+          "original_severity": "P3"
+        },
+        {
+          "path": "final/partial-completeness-adjudication.json",
+          "sha256": "6f163949f4825e4ca33faf3c3bbabc16c8d33d63c6989f3c22df067f526b68f0",
+          "selector": "complete independent adjudication",
+          "reviewer": "worker03:/root/w08_assembly_review",
+          "original_severity": "minor"
+        }
+      ],
+      "current_disposition": "Reviewed in final selected organic payloads/source decisions; bounded correction accepted with original holds. No alteration of historical receipt."
+    },
+    {
+      "finding_id": "W08-IR-007",
+      "original_severity": "major",
+      "historical_status": "open_at_frozen_head",
+      "proposal_ids": [
+        "op-nalidixic-new"
+      ],
+      "observations": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-006]",
+          "reviewer": "/root/w08_review_a",
+          "original_severity": "P2"
+        }
+      ],
+      "current_disposition": "Reviewed in final selected organic payloads/source decisions; bounded correction accepted with original holds. No alteration of historical receipt."
+    },
+    {
+      "finding_id": "W08-IR-009",
+      "original_severity": "minor",
+      "historical_status": "open_at_frozen_head",
+      "proposal_ids": [
+        "op1201-trypticase-soy-broth"
+      ],
+      "observations": [
+        {
+          "path": "b/findings.json",
+          "sha256": "bb2011b15edd9fce21d568f2f45d20edbe5925cb9343227a6b0a9383d02eb505",
+          "selector": "findings[finding_id=W08-B-F03]",
+          "reviewer": null,
+          "original_severity": "P2"
+        }
+      ],
+      "current_disposition": "Reviewed in final selected organic payloads/source decisions; bounded correction accepted with original holds. No alteration of historical receipt."
+    },
+    {
+      "finding_id": "W08-IR-012",
+      "original_severity": "major",
+      "historical_status": "open_at_frozen_head",
+      "proposal_ids": [
+        "op-l-asn-hydrate-alias"
+      ],
+      "observations": [
+        {
+          "path": "c/correction-addendum-v1.json",
+          "sha256": "a551aaaebdf833265edbc30413e23268d56363f68af2c7c29b1c5844e14067fd",
+          "selector": "corrections[id=C-ADDENDUM-002]",
+          "reviewer": null,
+          "original_severity": null
+        }
+      ],
+      "current_disposition": "Reviewed in final selected organic payloads/source decisions; bounded correction accepted with original holds. No alteration of historical receipt."
+    }
+  ],
+  "open_blocking_findings": []
+}

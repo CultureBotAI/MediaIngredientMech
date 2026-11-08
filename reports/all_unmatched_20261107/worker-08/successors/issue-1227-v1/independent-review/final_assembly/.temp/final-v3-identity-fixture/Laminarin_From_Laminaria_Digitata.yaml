@@ -1,0 +1,131 @@
+identifier: CHEBI:6364
+preferred_term: Laminarin
+ontology_mapping:
+  ontology_id: CHEBI:6364
+  ontology_label: laminarin
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:6364
+    notes: CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa.
+      The current owner has this generic identity but a Laminaria digitata procurement
+      label. Align its preferred name to Laminarin and preserve the original species
+      detail in supplied_form and a catalog synonym. No evidence supports a distinct
+      chemical substance requiring a second owner.
+synonyms:
+- synonym_text: Laminarin from Laminaria digitata
+  synonym_type: CATALOG_VARIANT
+  source: CultureBotHT compounds_to_cas.csv; preserved original owner preferred label
+- synonym_text: laminarin (brown algae)
+  synonym_type: RAW_TEXT
+  source: TOGO M2313 https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=9008-22-4; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.482152+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.505306+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H22O11(C6H10O5)n
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.704518+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.505208+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 9008-22-4 uniquely resolves
+    by ChEBI xref to CHEBI:6364 'laminarin'. CAS_RN_LOOKUP records the method that
+    established this mapping; a lexical grade would discard that provenance. ontology_id
+    is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under
+    Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa.
+    The current owner has this generic identity but a Laminaria digitata procurement
+    label. Align its preferred name to Laminarin and preserve the original species
+    detail in supplied_form and a catalog synonym. No evidence supports a distinct
+    chemical substance requiring a second owner. Isolated proposal only; all native
+    holds remain preserved in source-case decisions.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[1] from MANUAL_CURATION to LLM_SUGGESTION:
+    This new assertion is an agent naming/supplied-form decision based on ChEBI scope;
+    the inherited database CAS lookup remains unchanged. Isolated successor proposal
+    only; all inherited source, role and export holds remain. Historical evidence
+    and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+chemical_properties:
+  cas_rn: 9008-22-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C12H22O11(C6H10O5)n
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
+supplied_form:
+- name: Laminarin from Laminaria digitata
+  cas_rn: 9008-22-4
+  notes: TOGO M2313 names brown-algal laminarin as an alternative carbon input, without
+    identifying a species. The original CultureBotHT Laminaria digitata detail remains
+    credited to its own source. This applies the naming and supplied-form distinction
+    in MAPPING_SEMANTICS section 3, without claiming that TOGO used that species.
+notes: '
+
+
+  CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa. The current
+  owner has this generic identity but a Laminaria digitata procurement label. Align
+  its preferred name to Laminarin and preserve the original species detail in supplied_form
+  and a catalog synonym. No evidence supports a distinct chemical substance requiring
+  a second owner. TOGO M2313 names brown-algal laminarin as an alternative carbon
+  input, without identifying a species. The original CultureBotHT Laminaria digitata
+  detail remains credited to its own source. This applies the naming and supplied-form
+  distinction in MAPPING_SEMANTICS section 3, without claiming that TOGO used that
+  species.'

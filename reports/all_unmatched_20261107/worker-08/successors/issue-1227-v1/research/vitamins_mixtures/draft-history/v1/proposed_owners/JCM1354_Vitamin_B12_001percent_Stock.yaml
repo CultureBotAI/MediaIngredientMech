@@ -1,0 +1,85 @@
+identifier: kgmicrobe.ingredient:jcm1354_vitamin_b12_001percent_stock
+preferred_term: JCM 1354 vitamin B12 0.01 percent stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1354_vitamin_b12_001percent_stock
+  ontology_label: JCM 1354 vitamin B12 0.01 percent stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1354
+    notes: Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly
+      uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and
+      is retained only as the literal stock label, not converted to mass concentration.
+      Registry identity preserves this documented preparation; no exact molecular
+      mapping.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly
+  uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and is retained
+  only as the literal stock label, not converted to mass concentration. The carrier
+  and any additional stock constituents are unspecified. No water, ethanol, methanol,
+  acid, preservative or molecular vitamin form is inferred. This is a preparation
+  record with UNKNOWN component completeness; complete-formulation equivalence and
+  source hold release are not asserted. The source-defined stock context is sufficient
+  for partial preparation curation; unknown percent basis and carrier limit quantitative
+  decomposition and comparison with other B12 stocks. Quantities, where present, describe
+  the supplied stock, not the finished receiving medium. Raw labels remain source-scoped
+  in evidence; no global synonym, biological role, occurrence count integration or
+  downstream admission is proposed.
+components:
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  source: 'Issue 1227 IR003 retained limit: Generic B12 does not select a vitamer.
+    CHEBI:176843 is a class; CHEBI:17439 selects cyanocobalamin. Preserve source and
+    owner holds.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1354
+    source_record: JCM 1354 vitamin B12 0.01 percent stock
+    notes: Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly
+      uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and
+      is retained only as the literal stock label, not converted to mass concentration.
+      The carrier and any additional stock constituents are unspecified. No water,
+      ethanol, methanol, acid, preservative or molecular vitamin form is inferred.
+      This is a preparation record with UNKNOWN component completeness; complete-formulation
+      equivalence and source hold release are not asserted. The source-defined stock
+      context is sufficient for partial preparation curation; unknown percent basis
+      and carrier limit quantitative decomposition and comparison with other B12 stocks.
+curation_history:
+- timestamp: '2026-11-08T06:03:42.238430+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Resolve independent finding VM1201-F1 by representing known source preparation
+    with partial composition instead of treating unknown carrier as an absolute curation
+    blocker. Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM1354 explicitly
+    uses0.4ml of a0.01% vitamin B12 solution. Percentage basis is unstated and is
+    retained only as the literal stock label, not converted to mass concentration.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.117694+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:44.695729+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR006: set UNKNOWN because the source does not
+    establish retained or full stock membership; no explicitly omitted constituent
+    list is claimed. Earlier history and all source, scientific, role, withheld and
+    downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,92 @@
+identifier: MICRO:0000541
+preferred_term: R2A medium
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+synonyms: []
+notes: 'The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+  outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543
+  separately denotes R2A agar. A generic named-medium record can preserve this source
+  sense without inventing a supplier or formula.
+
+
+  Source context: CultureMech:015693, CultureMech:015694 and CultureMech:015695, imported
+  from CultureBotHT FEBA definitions. Formula and supplier are unspecified. The local
+  label R2A is recorded here rather than added as a global alias that could also resolve
+  an agar product.'
+ontology_mapping:
+  ontology_id: MICRO:0000541
+  ontology_label: R2A medium
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541
+    notes: The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+      outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while
+      MICRO:0000543 separately denotes R2A agar. A generic named-medium record can
+      preserve this source sense without inventing a supplier or formula.
+components:
+- component_name: Yeast extract
+  reference_scope: MIM_CATALOG
+  component_id: FOODON:03315426
+- component_name: Proteose peptone
+  reference_scope: MIM_CATALOG
+  component_id: MICRO:0000180
+- component_name: Casamino acids
+  reference_scope: UNMAPPED
+- component_name: Glucose
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17234
+- component_name: Starch
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:28017
+- component_name: Pyruvate
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15361
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541
+    source_record: MICRO0000541 liquid-medium definition
+    notes: The literal liquid-medium definition names these six constituents without
+      amounts. Its separate agar-formula source annotation is excluded. Pyruvate is
+      linked to the active CHEBI:15361 named anion entity at definition scope; no
+      sodium counterion, purchased salt, amount or stock preparation is inferred.
+      Casamino acids remain named and ungrounded because the catalog generic FOODON
+      owner collapses a broader milk-protein hydrolysate class and the separate vitamin-assay
+      record is a narrower grade.
+  notes: 'One-level material constituents only; no whole-to-part grounding, complete
+    culturing recipe, or speciation assertion. Completeness UNKNOWN: The liquid-medium
+    definition enumerates these six constituents but establishes neither closure nor
+    an omitted constituent. The separate agar annotation is excluded.'
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+    outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543
+    separately denotes R2A agar. A generic named-medium record can preserve this source
+    sense without inventing a supplier or formula. Isolated proposal only; all native
+    holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to DATABASE_MATCH:
+    The official ontology directly provides the generic liquid R2A concept; exact
+    FEBA applicability remains a bounded source comparison. Correct source-relative
+    membership completeness PARTIAL to UNKNOWN. The liquid-medium definition enumerates
+    these six constituents but establishes neither closure nor an omitted constituent.
+    The separate agar annotation is excluded. Resolve OP1227-REF-002 after coordinator
+    routing: ground only the definition-level named pyruvate part to CHEBI:15361,
+    preserving unknown counterion, amounts and formulation closure. Isolated successor
+    proposal only; all inherited source, role and export holds remain. Historical
+    evidence and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

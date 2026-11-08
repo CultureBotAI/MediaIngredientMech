@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-08T08:08:18.848327+00:00",
+  "reviewer": "/root/inorganics",
+  "author": "/root",
+  "scope": "Independent reproduction and bounded native serialization assessment, not a new source/owner finding.",
+  "draft_path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/provenance/native-failed-disposition-v1/native-review.yaml",
+  "draft_sha256": "971acefa0ba16a9143a7defbb6219e526dfb7d1e954fafc546b5530934f93f47",
+  "draft_review_id": "20261108T080711Z-w08-issue1227-complete-successor",
+  "native_validator_sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+  "native_failure": "closed dispositions require an explicit previous finding",
+  "affected_findings": [
+    {
+      "finding_id": "OP1227-REF-001",
+      "severity": "minor",
+      "status": "resolved",
+      "target_ids": [
+        "op-soy-flour-alias"
+      ]
+    },
+    {
+      "finding_id": "OP1227-REF-002",
+      "severity": "minor",
+      "status": "resolved",
+      "target_ids": [
+        "op1201-r2a-medium"
+      ]
+    },
+    {
+      "finding_id": "OP1227-REF-003",
+      "severity": "minor",
+      "status": "resolved",
+      "target_ids": [
+        "op1201-plain-flour"
+      ]
+    },
+    {
+      "finding_id": "IF-OP1227-F1",
+      "severity": "minor",
+      "status": "resolved",
+      "target_ids": [
+        "op1201-r2a-medium"
+      ]
+    },
+    {
+      "finding_id": "VM1227-PEER-001",
+      "severity": "major",
+      "status": "resolved",
+      "target_ids": [
+        "vm-prop-new-29",
+        "vm-prop-new-98"
+      ]
+    },
+    {
+      "finding_id": "W08-1227-ASSEMBLY-001",
+      "severity": "minor",
+      "status": "resolved",
+      "target_ids": [
+        "vm-prop-new-29",
+        "vm-prop-new-98"
+      ]
+    }
+  ],
+  "judgment": "These six prior findings live in actual JSON author/peer/coordinator receipts, not an earlier native review. Encoding them as resolved native findings without a real native predecessor violates the unchanged native contract. Preserve the failed draft and all external lineage; represent the six exact evidence-backed corrections as distinct native assessments linked to new-finding-dispositions. Keep finding IDs, raw/normalized severity, targets and bounded correction scope explicit. The twelve genuine predecessor native findings remain terminal finding rows with previous_occurrences. No native predecessor identifier is to be fabricated, no issue closed and no unresolved admission hold erased.",
+  "required_final_checks": [
+    "Twelve native findings with exact preserved predecessor identifiers and severity.",
+    "Six distinct correction assessments with exact external finding IDs, targets, raw/normalized severity and disposition evidence.",
+    "Eight concern assessments and failed Trypticase admission check retained.",
+    "All301 source/payload target assessments, scientific selections and separate peer hashes unchanged."
+  ],
+  "status": "final_successor_pending",
+  "findings": [],
+  "execution_note": "First reproduction attempt observed FileNotFound while root moved the draft to its preserved directory. No output or scientific input changed; this reproduction uses the archived exact draft."
+}

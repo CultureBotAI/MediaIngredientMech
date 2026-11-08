@@ -1,0 +1,255 @@
+identifier: kgmicrobe.ingredient:linsmaier_skoog_medium_including_vitamins
+preferred_term: Duchefa L0230 Linsmaier and Skoog medium including vitamins
+synonyms:
+- synonym_text: Linsmaier & Skoog Medium including vitamins
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Linsmaier & Skoog Med. incl. vitamins
+  synonym_type: RAW_TEXT
+  source: 'Duchefa L0230; source mediadive.ingredient:2431: https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2431); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:52:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named complete plant tissue culture medium formulation
+    and left unmapped rather than identity-mapping to a single component.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Linsmaier_Skoog_Medium_Including_Vitamins-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **named, chemically
+    defined plant tissue-culture basal-medium formulation**, not a single chemical,
+    salt/hydrate, buffer, extract, or generic ingredient family. Literature treats
+    Linsmaier–Skoog (LS) as one of the standard basal plant-culture media and as a
+    formula containing macroelements, microelements, vitamins, and organic additives.
+    Growth regulators, carbohy No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:19:58.971684+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: The frozen mediadive.ingredient:2431 source explicitly specifies Duchefa
+    L0230. The manufacturer formulation (https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins)
+    and certificate (https://duchefa-biochemie.com/ac/download/number/L0230/id/7087)
+    enumerate mineral macro/microelements, myo-inositol 100 mg/L and thiamine HCl
+    0.4 mg/L, total 4402.49 mg/L. This identifies the existing imported named-medium
+    owner and its abbreviated source label; it does not identify any single vitamin
+    or imply a supplement-only mixture. Retain UNMAPPED_0427 pending a separately
+    scoped registry promotion; this proposal is exact source/product provenance and
+    alias enrichment. Isolated proposal only; independent and coordinator review remain
+    required.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:22:24.974287+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_PROVENANCE_REFINED
+  changes: 'Independent review: replace generic author-only attribution on newly proposed
+    aliases with exact primary recipe/product identifier and URL. Existing aliases
+    and identity/component claims are unchanged. Isolated successor proposal only.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:44.695729+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR004: promote the existing placeholder to the whole-preparation registry
+    identity and complete supported formulation curation; IR003: bind 15 compatible
+    source components to active catalog entities without copying role or export approval.
+    Earlier history and all source, scientific, role, withheld and downstream holds
+    remain. Isolated proposal only.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2431); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complete plant tissue culture
+  medium formulation pending product/formulation curation. The frozen mediadive.ingredient:2431
+  source explicitly specifies Duchefa L0230. The manufacturer formulation (https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins)
+  and certificate (https://duchefa-biochemie.com/ac/download/number/L0230/id/7087)
+  enumerate mineral macro/microelements, myo-inositol 100 mg/L and thiamine HCl 0.4
+  mg/L, total 4402.49 mg/L. This identifies the existing imported named-medium owner
+  and its abbreviated source label; it does not identify any single vitamin or imply
+  a supplement-only mixture. Promote the same UNMAPPED_0427 owner to a product-qualified
+  ingredient registry identity; no second owner is created. The 15 listed components
+  describe the dry basal-medium product at the manufacturer's nominal reconstitution
+  basis (mg per litre), not a complete supplemented culture or a prepared stock. No
+  water, sugar, growth regulator, final volume or historical batch equivalence is
+  inferred. The certificate corroborates the product formulation; its batch is not
+  assigned to the frozen occurrence.
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:linsmaier_skoog_medium_including_vitamins
+  ontology_label: Duchefa L0230 Linsmaier and Skoog medium including vitamins
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins
+    notes: Existing placeholder promotion for the source-defined whole preparation.
+      Bounded catalog and ontology searches found the same imported owner and no exact
+      whole-preparation ontology identity. This registry mapping is not an identity
+      mapping to any constituent.
+components:
+- component_name: CoCl2·6H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.025'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:53503
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    CoCl2·6H2O; the inspected active catalog and primary ontology identity CHEBI:53503
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: CuSO4·5H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.025'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:31440
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    CuSO4·5H2O; the inspected active catalog and primary ontology identity CHEBI:31440
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: FeNaEDTA
+  reference_scope: MIM_CATALOG
+  concentration_value: '36.70'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:78292
+  source: 'Issue 1227 IR003 component-specific adjudication: Duchefa L0230 specifies
+    ferric sodium EDTA/FeNaEDTA, 36.70 mg/L and 100 micromolar, consistent with the
+    named sodium feredetate entity. No hydrate is introduced.'
+- component_name: H3BO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '6.20'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:33118
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    H3BO3; the inspected active catalog and primary ontology identity CHEBI:33118
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: KI
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.83'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:8346
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    KI; the inspected active catalog and primary ontology identity CHEBI:8346 match
+    this stated chemical form. Source spelling, amount, unit and preparation boundary
+    are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: MnSO4·H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '16.90'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:86364
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    MnSO4·H2O; the inspected active catalog and primary ontology identity CHEBI:86364
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: Na2MoO4·2H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.25'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:75213
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    Na2MoO4·2H2O; the inspected active catalog and primary ontology identity CHEBI:75213
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: ZnSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '8.60'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:32312
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    ZnSO4·7H2O; the inspected active catalog and primary ontology identity CHEBI:32312
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: CaCl2
+  reference_scope: MIM_CATALOG
+  concentration_value: '332.02'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:3312
+  source: 'Issue 1227 IR003 component-specific adjudication: Duchefa L0230 explicitly
+    gives CaCl2 332.02 mg/L and 2.99 mM, consistent with the anhydrous formula; do
+    not substitute the dihydrate.'
+- component_name: KH2PO4
+  reference_scope: MIM_CATALOG
+  concentration_value: '170.00'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:63036
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    KH2PO4; the inspected active catalog and primary ontology identity CHEBI:63036
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: KNO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '1900.00'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:63043
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    KNO3; the inspected active catalog and primary ontology identity CHEBI:63043 match
+    this stated chemical form. Source spelling, amount, unit and preparation boundary
+    are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: MgSO4
+  reference_scope: MIM_CATALOG
+  concentration_value: '180.54'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:32599
+  source: 'Issue 1227 IR003 component-specific adjudication: Duchefa L0230 explicitly
+    gives MgSO4 180.54 mg/L and 1.50 mM, consistent with the anhydrous formula; do
+    not substitute the heptahydrate.'
+- component_name: NH4NO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '1650.00'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:63038
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    NH4NO3; the inspected active catalog and primary ontology identity CHEBI:63038
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: myo-Inositol
+  reference_scope: MIM_CATALOG
+  concentration_value: '100.00'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:17268
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    myo-Inositol; the inspected active catalog and primary ontology identity CHEBI:17268
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: Thiamine HCl
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.40'
+  concentration_unit: MG_PER_L
+  component_id: CHEBI:49105
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    Thiamine HCl; the inspected active catalog and primary ontology identity CHEBI:49105
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins
+    source_record: 'L0230 composition table: Micro Elements, Macro Elements, Vitamins'
+    notes: Fifteen dry-product inputs; total 4402.49 mg per litre at nominal reconstitution.
+      This is the complete manufacturer enumeration, not an assertion about every
+      supplement in a finished plant culture. No water is a dry-product component.
+  - evidence_type: RECIPE_SOURCE
+    source: https://duchefa-biochemie.com/ac/download/number/L0230/id/7087
+    source_record: Certificate of Content, L0230, batch P24889, 12 August 2025
+    notes: Corroborates all fifteen formulation inputs and total; does not establish
+      the historical lot used in the frozen source.

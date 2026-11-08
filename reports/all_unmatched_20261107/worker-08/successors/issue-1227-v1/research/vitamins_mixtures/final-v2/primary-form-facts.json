@@ -1,0 +1,90 @@
+{
+  "accessed_at": "2026-11-08T07:52:09.697074+00:00",
+  "mechanism": "Author independently opened complete official TCI product pages through the web tool; bounded extracted factual paraphrases, not raw HTTP captures.",
+  "sources": [
+    {
+      "url": "https://www.tcichemicals.com/US/en/p/L0058",
+      "locator": "Product title/CAS lines175–190; general-information lines218–228",
+      "facts": [
+        "TCI L0058 explicitly names DL-alpha-lipoic acid and DL-thioctic acid; CAS1077-28-7, formulaC8H14O2S2."
+      ],
+      "limit": "Chemical form/registry bridge only; no DSMZ supplier procurement, purity or lot assertion."
+    },
+    {
+      "url": "https://www.tcichemicals.com/US/en/p/M0181",
+      "locator": "Product title/CAS lines175–184; general-information lines216–226",
+      "facts": [
+        "TCI M0181 explicitly names DL-2-methylbutyric acid and CAS116-53-0; formulaC5H10O2."
+      ],
+      "limit": "Chemical form/registry bridge only; no DSMZ supplier procurement, purity or lot assertion."
+    }
+  ],
+  "failed_retrievals": [
+    {
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C61595",
+      "result": "Web open inaccessible/internal error; local primary ontology inspected instead."
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:748116",
+      "result": "Web open inaccessible/internal error."
+    },
+    {
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A748116",
+      "result": "Web open inaccessible/internal error; no current online response claimed."
+    }
+  ],
+  "recipe_sources": [
+    {
+      "evidence_id": "vm-fetch-d4ba6de7b54bd50f",
+      "capture": {
+        "root": "artifact",
+        "path": "research/vitamins_mixtures/captures/d4ba6de7b54bd50f.source",
+        "sha256": "2fe24a83c789ebc28eb97268a788cabd1316ae131baaea269df79019a14f992c"
+      },
+      "original_accessed_at": "2026-11-08T05:10:08.502199+00:00",
+      "url": "https://mediadive.dsmz.de/rest/solution/5980",
+      "locator": "data.recipe[9]",
+      "actual_source_row": {
+        "recipe_order": 10,
+        "compound": "(DL)-alpha-Lipoic acid",
+        "compound_id": 252,
+        "solution": null,
+        "solution_id": null,
+        "condition": null,
+        "attribute": null,
+        "amount": 50,
+        "unit": "mg",
+        "g_l": 0.05,
+        "mmol_l": 0.24233,
+        "optional": 0
+      },
+      "read_scope": "Complete recipe entries, source amounts/units, preparation steps and volume metadata read; source-batch representation retained."
+    },
+    {
+      "evidence_id": "vm-fetch-ca55b8a6996c682b",
+      "capture": {
+        "root": "artifact",
+        "path": "research/vitamins_mixtures/captures/ca55b8a6996c682b.source",
+        "sha256": "c82c2f685260a674c13acb93c21e12eebc4e31b713fc952da3fa85c37d1ebcca"
+      },
+      "original_accessed_at": "2026-11-08T05:10:08.503707+00:00",
+      "url": "https://mediadive.dsmz.de/rest/solution/608",
+      "locator": "data.recipe[5]",
+      "actual_source_row": {
+        "recipe_order": 6,
+        "compound": "DL-2-Methylbutyric acid",
+        "compound_id": 223,
+        "solution": null,
+        "solution_id": null,
+        "condition": null,
+        "attribute": null,
+        "amount": 32.25,
+        "unit": "ml",
+        "g_l": null,
+        "mmol_l": null,
+        "optional": 0
+      },
+      "read_scope": "Complete recipe entries, source amounts/units, preparation steps and volume metadata read; source-batch representation retained."
+    }
+  ]
+}

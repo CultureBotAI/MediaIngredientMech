@@ -1,0 +1,100 @@
+{
+  "at": "2026-11-08T07:40:38.564133+00:00",
+  "recipient": "Campaign coordinator; bounded source correction referral before author writes",
+  "finding_id": "VM1227-PEER-001",
+  "severity": "P2",
+  "issue_route": 1201,
+  "related_issue": 1227,
+  "reviewer": "worker08:/root/organics",
+  "author": "worker08:/root/vitamins",
+  "source_referral": {
+    "path": "independent-review/vitamins_mixtures/findings-provisional-v1.json",
+    "sha256": "2b3a70ddd69a1239defbe2b1f8fdf42bfba896672d0ffc7f06ecc195555c1552"
+  },
+  "finding": {
+    "finding_id": "VM1227-PEER-001",
+    "severity": "P2",
+    "status": "coordinator_referral_before_fix",
+    "title": "Two new explicit-DL component references claim exact form compatibility with broader ChEBI parents",
+    "affected": [
+      {
+        "proposal_id": "vm-prop-new-29",
+        "case_ids": [
+          "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e"
+        ],
+        "capture": {
+          "root": "artifact",
+          "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+          "sha256": "a735d7b6e2693edbd02f3e2e2d68a9e3a3296c1ac9414ad9488abb0aba93998c"
+        },
+        "preserved_failed_bytes": "successors/issue-1227-v1/independent-review/vitamins_mixtures/observed-final-v1/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+        "component_index": 9,
+        "component": {
+          "component_name": "(DL)-alpha-Lipoic acid",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "50",
+          "concentration_unit": "MG_PER_SOURCE_BATCH",
+          "component_id": "CHEBI:16494",
+          "source": "Literal source component: (DL)-alpha-Lipoic acid. Issue 1227 IR003 component-specific adjudication: The cited recipe names (DL)-alpha-Lipoic acid; the inspected active catalog and primary ontology identity CHEBI:16494 match this stated chemical form. Source spelling, amount, unit and preparation boundary are preserved; no role, owner-wide or export approval is transferred."
+        }
+      },
+      {
+        "proposal_id": "vm-prop-new-98",
+        "case_ids": [
+          "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3"
+        ],
+        "capture": {
+          "root": "artifact",
+          "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+          "sha256": "33a9934b4f82da61b4cf5ca917aea74c60044d78dbef0aea705826a936de1441"
+        },
+        "preserved_failed_bytes": "successors/issue-1227-v1/independent-review/vitamins_mixtures/observed-final-v1/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+        "component_index": 5,
+        "component": {
+          "component_name": "DL-2-Methylbutyric acid",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "32.25",
+          "concentration_unit": "ML_PER_SOURCE_BATCH",
+          "component_id": "CHEBI:37070",
+          "source": "Literal source component: DL-2-Methylbutyric acid. Issue 1227 IR003 component-specific adjudication: The cited recipe names DL-2-Methylbutyric acid; the inspected active catalog and primary ontology identity CHEBI:37070 match this stated chemical form. Source spelling, amount, unit and preparation boundary are preserved; no role, owner-wide or export approval is transferred."
+        }
+      }
+    ],
+    "reproduction": "Inspect the newly added component_id and source assertion in the two frozen final-v1 payloads. Compare the literal DL source rows in MediaDive5980 and608 with the exact official ChEBI definitions and R/S subclass relations. Both source strings retain DL, but their new source text says target matches this stated chemical form. The catalog targets inherit generic-versus-DL collapses rather than an independently reviewed specific racemate identity.",
+    "bounded_fix": "Retain source DL names and quantities. Either establish a defensible exact supplied-racemate component identity through the section3 procedure, or keep those two named components UNMAPPED with this specific parent-scope limit. Do not weaken whole-stock identity, alter amounts, replace generic non-DL lipoic-acid parts, or approve target owners.",
+    "evidence": [
+      "stereo-term-check.json",
+      "stereo-primary-web-check.json"
+    ],
+    "source_evidence_ids": [
+      "vm-fetch-d4ba6de7b54bd50f",
+      "vm-fetch-ca55b8a6996c682b"
+    ],
+    "counterevidence_considered": "ChEBI CAS crossreferences and TCI explicit DL CAS116-53-0 are recorded. They establish useful registry correspondence but do not erase that the targets formally include individual R/S forms; exact racemate applicability remains unestablished."
+  },
+  "root_verification": {
+    "method": "Read actual frozen payloads, local ontology receipt, current official ChEBI and TCI primary pages through web open; bounded paraphrases only, not raw HTTP captures.",
+    "sources": [
+      {
+        "url": "https://www.ebi.ac.uk/chebi/CHEBI:16494",
+        "fact": "Both R and S lipoic-acid children are explicitly asserted under this generic parent; no racemate-specific identity is established."
+      },
+      {
+        "url": "https://www.ebi.ac.uk/chebi/CHEBI:37070",
+        "fact": "Both R and S 2-methylbutyric-acid children are explicitly asserted under this generic parent. CAS116-53-0 is crossreferenced but does not make the parent racemate-specific."
+      },
+      {
+        "url": "https://www.tcichemicals.com/US/en/p/L0058",
+        "fact": "Manufacturer explicitly identifies DL-alpha-lipoic acid as CAS1077-28-7."
+      },
+      {
+        "url": "https://www.tcichemicals.com/US/en/p/M0181",
+        "fact": "Manufacturer explicitly identifies DL-2-methylbutyric acid as CAS116-53-0."
+      }
+    ],
+    "limits": "Chemical registry correspondence only; no claim that these stocks used TCI products. No inference that an unspecified SMILES denotes a racemate."
+  },
+  "dedup": "IR003 already routes component identity follow-ups to1201. These two reference assertions are new in1227 successor, so retain this new finding and its exact failed bytes, with related1227 correction lineage; do not open another issue from worker08. Earlier reviewed inherited Thauer and valerate holds are separate and remain unapproved.",
+  "bounded_author_action": "Preserve final-v1. Build immutable final-v2 only after explicit form review. Evaluate supported exact registry EXTERNAL_TERM component references under sections3/6, rather than retaining a broader ontology identity or inventing duplicate owners. Preserve literal DL names, quantities, recipes, all case links and holds. Re-run affected guarded/schema and full overlay partonomy checks; independent reviewer re-reads both whole final payloads and changed case outcomes.",
+  "approval_boundary": "No maintained edit, role, whole-owner, export or cross-shard approval. Coordinator final issue and head review remain."
+}

@@ -1,0 +1,98 @@
+identifier: kgmicrobe.ingredient:jcm_941_solution_c
+preferred_term: JCM 941 Solution C (source Na2S2O4·2H2O)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_941_solution_c
+  ontology_label: JCM 941 Solution C (source Na2S2O4·2H2O)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=941
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O
+  5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal
+  dihydrate chemical identity remains unverified and UNMAPPED. JCM separately autoclaves
+  Solution C under N2. The whole preparation is proposed only as context; none of
+  the three bare compound cases may resolve to this stock identifier. Raw case labels
+  remain only in evidence and case-bound proposal links, not globally resolving synonyms.
+  No occurrence count transfer, source-hold release or receiving-medium dose correction
+  is implied. Issue 1227 source-relative completeness: JCM 941 Solution C enumerates
+  literal Na2S2O4·2H2O, 5 g, and distilled water, 40 ml. Both inputs are retained.
+  Nitrogen autoclaving is processing context, not an additional measured constituent;
+  the unusual hydrate remains chemically unresolved. Completeness describes the literal
+  printed input list only; it does not approve a disputed chemical identity, a final
+  volume or source membership transfer.'
+solution_type: OTHER
+components:
+- component_name: Na2S2O4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_BATCH
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '40'
+  concentration_unit: ML_PER_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=941
+    source_record: '941'
+    notes: JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O
+      5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal
+      dihydrate chemical identity remains unverified and UNMAPPED. JCM separately
+      autoclaves Solution C under N2. The whole preparation is proposed only as context;
+      none of the three bare compound cases may resolve to this stock identifier.
+      JCM 941 Solution C enumerates literal Na2S2O4·2H2O, 5 g, and distilled water,
+      40 ml. Both inputs are retained. Nitrogen autoclaving is processing context,
+      not an additional measured constituent; the unusual hydrate remains chemically
+      unresolved. Completeness describes the literal printed input list only; it does
+      not approve a disputed chemical identity, a final volume or source membership
+      transfer.
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/4957
+    source_record: https://mediadive.dsmz.de/rest/solution/4957
+    notes: JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O
+      5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal
+      dihydrate chemical identity remains unverified and UNMAPPED. JCM separately
+      autoclaves Solution C under N2. The whole preparation is proposed only as context;
+      none of the three bare compound cases may resolve to this stock identifier.
+      JCM 941 Solution C enumerates literal Na2S2O4·2H2O, 5 g, and distilled water,
+      40 ml. Both inputs are retained. Nitrogen autoclaving is processing context,
+      not an additional measured constituent; the unusual hydrate remains chemically
+      unresolved. Completeness describes the literal printed input list only; it does
+      not approve a disputed chemical identity, a final volume or source membership
+      transfer.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O
+    5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal
+    dihydrate chemical identity remains unverified and UNMAPPED. JCM separately autoclaves
+    Solution C under N2. The whole preparation is proposed only as context; none of
+    the three bare compound cases may resolve to this stock identifier.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Set component_assertion.completeness
+    PARTIAL → COMPLETE. JCM 941 Solution C enumerates literal Na2S2O4·2H2O, 5 g, and
+    distilled water, 40 ml. Both inputs are retained. Nitrogen autoclaving is processing
+    context, not an additional measured constituent; the unusual hydrate remains chemically
+    unresolved. Completeness describes the literal printed input list only; it does
+    not approve a disputed chemical identity, a final volume or source membership
+    transfer. All inherited history, scientific/source/role/export holds and original
+    before hash remain preserved. This is a proposal, pending independent whole-payload
+    review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

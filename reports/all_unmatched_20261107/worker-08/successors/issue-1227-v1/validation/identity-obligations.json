@@ -1,0 +1,3701 @@
+{
+  "at": "2026-11-08T08:01:27.852451+00:00",
+  "input_sha256": "61a8b4f873858c12804a769ba29cb11475be4cabc5907726db9c05087e8bf158",
+  "native_rule_sha256": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303",
+  "native_grading_sha256": "20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c",
+  "selected_payload_count": 113,
+  "projected_obligation_rows": 120,
+  "predicate_counts": {
+    "skos:exactMatch": 114,
+    "skos:closeMatch": 2,
+    "skos:broadMatch": 4
+  },
+  "native_failures": {
+    "b1": [],
+    "b2": [],
+    "b3": [],
+    "b5": [],
+    "d": []
+  },
+  "controls": [
+    "positive asymmetric identity retains distinct primary and mandatory registry sibling",
+    "native B1 rejects missing registry sibling even when CAS identity exists",
+    "native B2 rejects duplicate subject/object identity",
+    "native B3 rejects exact and asymmetric mapping to same parent",
+    "specific parent-collapse rejected before projecting obligations",
+    "native D rejects every deliberately degraded own-identifier row against exact selected payload bytes"
+  ],
+  "negative_rule_d_targets": 111,
+  "entries": [
+    {
+      "proposal_id": "if-add-anhydrous-k2hpo4",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/K2hpo4.yaml",
+        "sha256": "de3a38207862f0661a3bce2408d6b1686d1b3c8ebdd13267234f362843602dbe"
+      },
+      "subject_id": "MIM:K2hpo4",
+      "identifier": "CHEBI:131527",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:131527",
+        "ontology_label": "dipotassium hydrogen phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('K2HPO4')",
+            "pmid": "40302155",
+            "supports": "SUPPORT",
+            "snippet": "We designed four different forms of potassium fertilizer treatments: K2SO4, KCl, KH2PO4, and K2HPO4, and used qRT-PCR and HPLC techniques to explore their differences in anthocyanin synthesis, accumulation, quality, and yield in PSP tubers.",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:K2hpo4",
+          "object_id": "CHEBI:131527",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if-reject-monohydrate-on-dihydrate",
+      "payload": {
+        "root": "artifact",
+        "path": "research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml",
+        "sha256": "3dcb2ff6d438659777ce8c37d244a19f21ce89a5332392ae9071efffb9217b55"
+      },
+      "subject_id": "MIM:Nah2po4_X_2_H2o",
+      "identifier": "kgmicrobe.compound:nah2po4_x_2_h2o",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:37585",
+        "ontology_label": "sodium dihydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL — superseded by the #321 re-grade below: this record is a hydrate of CHEBI:37585, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:37585 -> kgmicrobe.compound:nah2po4_x_2_h2o; mapping_quality SYNONYM_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:37585 ('sodium dihydrogenphosphate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'H2O4P.Na' -> 'H2O4P.Na.2H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:37585's ChEBI formula ('H2O4P.Na') — the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:37585 ('sodium dihydrogenphosphate') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Nah2po4_X_2_H2o",
+          "object_id": "kgmicrobe.compound:nah2po4_x_2_h2o",
+          "predicate_id": "skos:exactMatch"
+        },
+        {
+          "subject_id": "MIM:Nah2po4_X_2_H2o",
+          "object_id": "CHEBI:37585",
+          "predicate_id": "skos:closeMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if-add-mono-source-spelling",
+      "payload": {
+        "root": "artifact",
+        "path": "research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml",
+        "sha256": "e79903919876ad08323eaa4faabee6255367345d6e092b329e7006dd0bcaa3a0"
+      },
+      "subject_id": "MIM:Sodium_phosphate_monobasic_monohydrate",
+      "identifier": "CHEBI:114249",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:114249",
+        "ontology_label": "sodium dihydrogenphosphate monohydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CAS_RN_LOOKUP",
+        "evidence": [
+          {
+            "evidence_type": "CAS_RN_CROSS_REFERENCE",
+            "source": "PubChem",
+            "cas_rn": "10049-21-5",
+            "notes": "ChEBI ID CHEBI:114249 found via PubChem CAS-RN cross-reference"
+          },
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#312); chebi.db",
+            "notes": "Absorbed Nah2po4h2o (#312): the raw labels 'NaH2PO4•H2O' and 'NaH2PO4•H2O(MCIB 742)' and their 4 CultureMech occurrences now belong here; the cas: identity was the step-2 fallback for a term that exists."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Sodium_phosphate_monobasic_monohydrate",
+          "object_id": "CHEBI:114249",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if-repair-dithionite-Na2s2o4",
+      "payload": {
+        "root": "artifact",
+        "path": "research/inorganic_forms/proposed_owners/Na2s2o4.yaml",
+        "sha256": "569413243139395d50e225efe22b950bd60f5aa3c23ee70d5cfcd002225d1316"
+      },
+      "subject_id": "MIM:Na2s2o4",
+      "identifier": "CHEBI:66870",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:66870",
+        "ontology_label": "sodium dithionite",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if-repair-dithionite-Sodium_Dithionite",
+      "payload": {
+        "root": "artifact",
+        "path": "research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml",
+        "sha256": "4173e5073b8d267983e242a701cdfb275b952372af57514ae7da7aa42c14797b"
+      },
+      "subject_id": "MIM:Sodium_Dithionite",
+      "identifier": "CHEBI:66870",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:66870",
+        "ontology_label": "sodium dithionite",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Sodium_Dithionite",
+          "object_id": "CHEBI:66870",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if-new-sodium-ammonium-phosphate-tetrahydrate",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml",
+        "sha256": "e370af536e651fd1e580eafc2795fe0f9bf84fd1e8664862b1a872ceb49d859f"
+      },
+      "subject_id": "MIM:Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate",
+      "identifier": "cas:7783-13-3",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:37586",
+        "ontology_label": "sodium phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.thermofisher.com/order/catalog/product/040320.22",
+            "notes": "Supplier CAS7783-13-3/formula H13NNaO8P supports exact mixed-cation tetrahydrate; CHEBI:37586 is an asymmetric class parent only. Local ChEBI255/NCIt26.02d bounded lookup found no exact term; current separate OLS ChEBI/NCIt CAS and mixed-salt-name searches also found no exact term; NCIT C29288 is an unrelated potassium/sodium phosphate preparation. See shared-primary/retrievals-v4.json and v5.json."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate",
+          "object_id": "cas:7783-13-3",
+          "predicate_id": "skos:exactMatch"
+        },
+        {
+          "subject_id": "MIM:Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate",
+          "object_id": "CHEBI:37586",
+          "predicate_id": "skos:broadMatch"
+        },
+        {
+          "subject_id": "MIM:Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate",
+          "object_id": "kgmicrobe.ingredient:sodium_ammonium_hydrogenphosphate_tetrahydrate",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if-add-edta-disodium-dihydrate-spelling",
+      "payload": {
+        "root": "artifact",
+        "path": "research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml",
+        "sha256": "1f981682c97803091dfd5bf91ccf52a8055901df5f132cee2b1effdeb15bb33d"
+      },
+      "subject_id": "MIM:Na2edta2h2o",
+      "identifier": "CHEBI:64758",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:64758",
+        "ontology_label": "EDTA disodium salt dihydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Na2edta2h2o",
+          "object_id": "CHEBI:64758",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-valeric-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "research/organic_products/proposals/Valeric_Acid.yaml",
+        "sha256": "321fc7161a295322c2eb7002583eeefe2f7de49771795235ac68c3e6cea7fc49"
+      },
+      "subject_id": "MIM:Valeric_Acid",
+      "identifier": "CHEBI:17418",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:17418",
+        "ontology_label": "valeric acid",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Valeric_Acid",
+          "object_id": "CHEBI:17418",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-isovaleric-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "research/organic_products/proposals/Isovaleric_Acid.yaml",
+        "sha256": "b5d25061615be15e4055434b7a271e608b78650c37fe992d49a19234090ff6d5"
+      },
+      "subject_id": "MIM:Isovaleric_Acid",
+      "identifier": "CHEBI:28484",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:28484",
+        "ontology_label": "isovaleric acid",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Isovaleric_Acid",
+          "object_id": "CHEBI:28484",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-methane-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "research/organic_products/proposals/Methane.yaml",
+        "sha256": "19e46bb75e6a556511aef6f9467578a5e18c478175c61ee728d4dbf4b956445b"
+      },
+      "subject_id": "MIM:Methane",
+      "identifier": "CHEBI:16183",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:16183",
+        "ontology_label": "methane",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "Imported from CultureBotHT."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Methane",
+          "object_id": "CHEBI:16183",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-soy-flour-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Soy_Flour.yaml",
+        "sha256": "5687f73222f38e2df426700c0012646685c0c6e5458611b92710c57fae29c81b"
+      },
+      "subject_id": "MIM:Soy_Flour",
+      "identifier": "FOODON:03302142",
+      "ontology_mapping": {
+        "ontology_id": "FOODON:03302142",
+        "ontology_label": "soybean flour",
+        "ontology_source": "FOODON",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "OAK/OLS exact audit",
+            "notes": "OLS audit matched the imported surface form Soy flour to FOODON:03302142 soybean flour through exact synonym soy flour."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Soy_Flour",
+          "object_id": "FOODON:03302142",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-l-asn-hydrate-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/L-Asparagine_Monohydrate.yaml",
+        "sha256": "6aca2073ba7271bc33f7e360b5830af08163841a3913405f28f5959b08f8f832"
+      },
+      "subject_id": "MIM:L-Asparagine_Monohydrate",
+      "identifier": "NCIT:C87433",
+      "ontology_mapping": {
+        "ontology_id": "NCIT:C87433",
+        "ontology_label": "Asparagine Monohydrate",
+        "ontology_source": "NCIT",
+        "mapping_quality": "CAS_RN_LOOKUP",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "[HISTORICAL: superseded by the exact NCIT CAS/form adjudication below; retained as import provenance.] Imported from CultureBotHT. CAS-RN 5794-13-8 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "NCIT via OLS (stem-substring)",
+            "notes": "[HISTORICAL: superseded by the exact NCIT CAS/form adjudication below; retained as import provenance.] Parent class identified via stem-substring; matched_via='L-Asparagine monohydrate'"
+          },
+          {
+            "evidence_type": "CAS_RN_CROSS_REFERENCE",
+            "source": "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C87433",
+            "notes": "Explicit CAS lookup: the record CAS5794-13-8 uniquely matches NCIT:C87433 in the read-only local NCIt database. The official term response also records CAS5794-13-8, C4H8N2O3.H2O and exact synonym L-Asparagine Monohydrate. This is the exact L hydrate, not a generic parent or the distinct DL hydrate CAS69833-18-7. Native canonical-label resolution returns Asparagine Monohydrate. The mapping was established by this CAS lookup and is graded CAS_RN_LOOKUP."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:L-Asparagine_Monohydrate",
+          "object_id": "NCIT:C87433",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-ethane-new",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Ethane.yaml",
+        "sha256": "c803a8c73c9191def531ae6b8a53e4cfa0ed35ab2cc31c81544443e6c81fd8a0"
+      },
+      "subject_id": "MIM:Ethane",
+      "identifier": "CHEBI:42266",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:42266",
+        "ontology_label": "ethane",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:42266",
+            "notes": "Primary exact compound page checked against all frozen source contexts; source stocks/headspace and explicit other forms remain distinct. See worker08 organic_products evidence/decisions."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Ethane",
+          "object_id": "CHEBI:42266",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-nalidixic-new",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Nalidixic_Acid.yaml",
+        "sha256": "072861b09dbe72214bd2f3f44a58e5b13d1970db4d2fe1d715dc15ab325461e7"
+      },
+      "subject_id": "MIM:Nalidixic_Acid",
+      "identifier": "CHEBI:100147",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:100147",
+        "ontology_label": "nalidixic acid",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:100147",
+            "notes": "ChEBI:100147 directly identifies nalidixic acid, distinct from its sodium salt. Readable NBRC1301 primary composition names a 30 mg/ml nalidixic-acid solution, separately filtered. NBRC1314 and TOGO M2023 could not be read; the frozen 100 mg/ml occurrence is preserved but its primary-source applicability remains held. This proposal identifies the acid component only, not either whole stock."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Nalidixic_Acid",
+          "object_id": "CHEBI:100147",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-glycine-betaine-new",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Glycine_Betaine.yaml",
+        "sha256": "8e3f8815431fd840bc81c41a65a48a03356d55bad8b058ff2a5dda1fba698886"
+      },
+      "subject_id": "MIM:Glycine_Betaine",
+      "identifier": "CHEBI:17750",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:17750",
+        "ontology_label": "glycine betaine",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:17750",
+            "notes": "Primary exact compound page checked against all frozen source contexts; source stocks/headspace and explicit other forms remain distinct. See worker08 organic_products evidence/decisions."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Glycine_Betaine",
+          "object_id": "CHEBI:17750",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-methanethiol-new",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Methanethiol.yaml",
+        "sha256": "be0b0cc1a81754c64670d6193df99475267e1cd96e659d9c201fdbc936a5696b"
+      },
+      "subject_id": "MIM:Methanethiol",
+      "identifier": "CHEBI:16007",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:16007",
+        "ontology_label": "methanethiol",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:16007",
+            "notes": "Primary exact compound page checked against all frozen source contexts; source stocks/headspace and explicit other forms remain distinct. See worker08 organic_products evidence/decisions."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Methanethiol",
+          "object_id": "CHEBI:16007",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-sodium-nicotinate-new",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Sodium_Nicotinate.yaml",
+        "sha256": "b901b7c43d8ce1a14d51211ef7748823fe5f7e921399af3fa9c8465dc1138d12"
+      },
+      "subject_id": "MIM:Sodium_Nicotinate",
+      "identifier": "cas:54-86-4",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:15940",
+        "ontology_label": "nicotinic acid",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CAS_RN_CROSS_REFERENCE",
+            "source": "https://webbook.nist.gov/cgi/cbook.cgi?ID=54864&Units=SI",
+            "notes": "NIST verifies sodium nicotinate CAS54-86-4; JCM393 explicitly uses the sodium salt. The acid CHEBI15940 is a broader form-of anchor, never exact salt identity. Bounded exact-form search did not verify a salt-specific ontology term; repeat at integration."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Sodium_Nicotinate",
+          "object_id": "cas:54-86-4",
+          "predicate_id": "skos:exactMatch"
+        },
+        {
+          "subject_id": "MIM:Sodium_Nicotinate",
+          "object_id": "CHEBI:15940",
+          "predicate_id": "skos:broadMatch"
+        },
+        {
+          "subject_id": "MIM:Sodium_Nicotinate",
+          "object_id": "kgmicrobe.ingredient:sodium_nicotinate",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op-glycerol-asparagine-source-note",
+      "payload": {
+        "root": "artifact",
+        "path": "research/organic_products/proposals/Glycerol-asparagine_Agar.yaml",
+        "sha256": "7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590"
+      },
+      "subject_id": "MIM:Glycerol-asparagine_Agar",
+      "identifier": "UNMAPPED_0122",
+      "ontology_mapping": null,
+      "projected_identity_obligations": [],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-menadione",
+      "payload": {
+        "root": "artifact",
+        "path": "research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml",
+        "sha256": "d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659"
+      },
+      "subject_id": "MIM:Menadione",
+      "identifier": "CHEBI:28869",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:28869",
+        "ontology_label": "menadione",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Menadione",
+          "object_id": "CHEBI:28869",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-jcm403-vitamin",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/Vitamin_Solution_See_Medium_No_403.yaml",
+        "sha256": "57ec1f3f7540d96d9e90774900146e41eee779f7aaed07b272e8302d8ff54bb9"
+      },
+      "subject_id": "MIM:Vitamin_Solution_See_Medium_No_403",
+      "identifier": "kgmicrobe.ingredient:vitamin_solution_see_medium_no_403",
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0000460",
+        "ontology_label": "vitamin solution",
+        "ontology_source": "MICRO",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "ingredient_mapping_review_2026-05-05",
+            "notes": "Medium-specific vitamin solution is a formulation pointer, not identical to the generic vitamin solution class."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Vitamin_Solution_See_Medium_No_403",
+          "object_id": "kgmicrobe.ingredient:vitamin_solution_see_medium_no_403",
+          "predicate_id": "skos:exactMatch"
+        },
+        {
+          "subject_id": "MIM:Vitamin_Solution_See_Medium_No_403",
+          "object_id": "MICRO:0000460",
+          "predicate_id": "skos:closeMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-jcm403-b12",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+        "sha256": "7182dd568490540f71ac904efd4bbf177f292ceab422e147497f007ce6a9177f"
+      },
+      "subject_id": "MIM:Vitamin_B12_Solution_See_Medium_No_403",
+      "identifier": "kgmicrobe.ingredient:vitamin_b12_solution_see_medium_no_403",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:vitamin_b12_solution_see_medium_no_403",
+        "ontology_label": "JCM 403 vitamin B12 solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403",
+            "notes": "Existing placeholder promotion for the source-defined whole preparation. Bounded catalog and ontology searches found the same imported owner and no exact whole-preparation ontology identity. This registry mapping is not an identity mapping to any constituent."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Vitamin_B12_Solution_See_Medium_No_403",
+          "object_id": "kgmicrobe.ingredient:vitamin_b12_solution_see_medium_no_403",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-linsmaier-skoog",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/Linsmaier_Skoog_Medium_Including_Vitamins.yaml",
+        "sha256": "92ff5a91ef9582e3a859b3f985af572b653942e105b43fbdc1bc0d5857401431"
+      },
+      "subject_id": "MIM:Linsmaier_Skoog_Medium_Including_Vitamins",
+      "identifier": "kgmicrobe.ingredient:linsmaier_skoog_medium_including_vitamins",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:linsmaier_skoog_medium_including_vitamins",
+        "ontology_label": "Duchefa L0230 Linsmaier and Skoog medium including vitamins",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.duchefa-biochemie.com/product/details/number/L0230/name/linsmaier-skoog-medium-including-vitamins",
+            "notes": "Existing placeholder promotion for the source-defined whole preparation. Bounded catalog and ontology searches found the same imported owner and no exact whole-preparation ontology identity. This registry mapping is not an identity mapping to any constituent."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Linsmaier_Skoog_Medium_Including_Vitamins",
+          "object_id": "kgmicrobe.ingredient:linsmaier_skoog_medium_including_vitamins",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-2",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml",
+        "sha256": "964d9c964ae2367d48ce8778f1da302844324db158c0c4974b2b04abb58665dd"
+      },
+      "subject_id": "MIM:JCM296_Vitamins_Mix_Solution",
+      "identifier": "kgmicrobe.ingredient:jcm296_vitamins_mix_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm296_vitamins_mix_solution",
+        "ontology_label": "JCM 296 vitamins mix solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=296",
+            "notes": "JCM Medium 296: Vitamins mix solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM296_Vitamins_Mix_Solution",
+          "object_id": "kgmicrobe.ingredient:jcm296_vitamins_mix_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-11",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM995_Vitamin_Solution_No6.yaml",
+        "sha256": "7bcce562d167c1d129f13682d14de0bcb7583c4295ae64acaa9e17d83d0549be"
+      },
+      "subject_id": "MIM:JCM995_Vitamin_Solution_No6",
+      "identifier": "kgmicrobe.ingredient:jcm995_vitamin_solution_no6",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm995_vitamin_solution_no6",
+        "ontology_label": "JCM 995 vitamin solution No. 6",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995",
+            "notes": "JCM Medium 995: Vitamin solution No. 6 defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM995_Vitamin_Solution_No6",
+          "object_id": "kgmicrobe.ingredient:jcm995_vitamin_solution_no6",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-42",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml",
+        "sha256": "12ae9699971eec2ba601d56707ed5729f437fc2815ceb798bb431945f063e65c"
+      },
+      "subject_id": "MIM:JCM1100_Vitamin_Solution_B_1000x",
+      "identifier": "kgmicrobe.ingredient:jcm1100_vitamin_solution_b_1000x",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1100_vitamin_solution_b_1000x",
+        "ontology_label": "JCM 1100 vitamin solution B (1000x)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1100",
+            "notes": "JCM Medium 1100: Vitamin solution B (1000 x stock) defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1100_Vitamin_Solution_B_1000x",
+          "object_id": "kgmicrobe.ingredient:jcm1100_vitamin_solution_b_1000x",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-58",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml",
+        "sha256": "e00f00a7e43becd7cfd3d1cf2df7ad4434c4d4843aff4721552e32aa9a448ab3"
+      },
+      "subject_id": "MIM:JCM848_Vitamin_Mixture_100x",
+      "identifier": "kgmicrobe.ingredient:jcm848_vitamin_mixture_100x",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm848_vitamin_mixture_100x",
+        "ontology_label": "JCM 848 vitamin mixture (100x)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=848",
+            "notes": "JCM Medium 848: 100 x Vitamin mixture defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM848_Vitamin_Mixture_100x",
+          "object_id": "kgmicrobe.ingredient:jcm848_vitamin_mixture_100x",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-65",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1118_Vitamin_Mixture.yaml",
+        "sha256": "773111c58446c54f436074db53ef16b436c59bd35ce28444b6cbcd56916b497c"
+      },
+      "subject_id": "MIM:JCM1118_Vitamin_Mixture",
+      "identifier": "kgmicrobe.ingredient:jcm1118_vitamin_mixture",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1118_vitamin_mixture",
+        "ontology_label": "JCM 1118 vitamin mixture",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1118",
+            "notes": "JCM Medium 1118: Vitamin mixture defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1118_Vitamin_Mixture",
+          "object_id": "kgmicrobe.ingredient:jcm1118_vitamin_mixture",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-79",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml",
+        "sha256": "85051099d2e34b243d242f37bfa73b8cd3e09527f584f96001b6fadb78e1d182"
+      },
+      "subject_id": "MIM:JCM1363_Vitamin_Mixture_Solution",
+      "identifier": "kgmicrobe.ingredient:jcm1363_vitamin_mixture_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1363_vitamin_mixture_solution",
+        "ontology_label": "JCM 1363 vitamin mixture solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1363",
+            "notes": "JCM Medium 1363: Vitamin mixture solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1363_Vitamin_Mixture_Solution",
+          "object_id": "kgmicrobe.ingredient:jcm1363_vitamin_mixture_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-82",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml",
+        "sha256": "149b7d7e9afc7d349cbcb63d83ce07809f68920441c5ca77764a724e9f11d42a"
+      },
+      "subject_id": "MIM:JCM1097_RST_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:jcm1097_rst_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1097_rst_vitamin_solution",
+        "ontology_label": "JCM 1097 RST vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1097",
+            "notes": "JCM Medium 1097: RST vitamin solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1097_RST_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:jcm1097_rst_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-87",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1130_Vitamin_Solution_I.yaml",
+        "sha256": "fa9e0e76b938925bf42a776511ea8497390f6fcdc7cf4b069df75a31e8e3f391"
+      },
+      "subject_id": "MIM:JCM1130_Vitamin_Solution_I",
+      "identifier": "kgmicrobe.ingredient:jcm1130_vitamin_solution_i",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1130_vitamin_solution_i",
+        "ontology_label": "JCM 1130 vitamin solution I",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+            "notes": "JCM Medium 1130: Vitamin solution I defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1130_Vitamin_Solution_I",
+          "object_id": "kgmicrobe.ingredient:jcm1130_vitamin_solution_i",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-110",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml",
+        "sha256": "0c23a3fa552fdc7f2561b35c6403d928e069f659dd96b26c2b96fb653b4be54e"
+      },
+      "subject_id": "MIM:JCM1100_Vitamin_Solution_A_1000x",
+      "identifier": "kgmicrobe.ingredient:jcm1100_vitamin_solution_a_1000x",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1100_vitamin_solution_a_1000x",
+        "ontology_label": "JCM 1100 vitamin solution A (1000x)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1100",
+            "notes": "JCM Medium 1100: Vitamin solution A (1000 x stock) defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1100_Vitamin_Solution_A_1000x",
+          "object_id": "kgmicrobe.ingredient:jcm1100_vitamin_solution_a_1000x",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-112",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM923_Major_Metals_Stock.yaml",
+        "sha256": "e490b99c640f34a545f83fc339f1abb5ff9418bc596b7ad124c4bca5b3d2e46c"
+      },
+      "subject_id": "MIM:JCM923_Major_Metals_Stock",
+      "identifier": "kgmicrobe.ingredient:jcm923_major_metals_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm923_major_metals_stock",
+        "ontology_label": "JCM 923 major metals stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923",
+            "notes": "JCM Medium 923: Major metals defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM923_Major_Metals_Stock",
+          "object_id": "kgmicrobe.ingredient:jcm923_major_metals_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-119",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM898_Vitamin_Solution.yaml",
+        "sha256": "d2892a1e3151ee9454cfa9c91c9936f6d1c57968394e40fa9be681a9efec2469"
+      },
+      "subject_id": "MIM:JCM898_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:jcm898_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm898_vitamin_solution",
+        "ontology_label": "JCM 898 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=898",
+            "notes": "JCM Medium 898: Vitamin solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM898_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:jcm898_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-120",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM915_Vitamin_Solution.yaml",
+        "sha256": "752eb404de6db0e89ba2a0208149e3dc8a19310e4cae3988764e5c944baddb20"
+      },
+      "subject_id": "MIM:JCM915_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:jcm915_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm915_vitamin_solution",
+        "ontology_label": "JCM 915 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=915",
+            "notes": "JCM Medium 915: Vitamin solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM915_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:jcm915_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-129",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml",
+        "sha256": "3bcc09def3c712626c94115d1f138258828e40014eee300bddf15c21bff2e93e"
+      },
+      "subject_id": "MIM:JCM149_Hutners_Vitamin_Free_Mineral_Base",
+      "identifier": "kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base",
+        "ontology_label": "JCM 149 Hutner's vitamin free mineral base",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149",
+            "notes": "JCM Medium 149: Hutner's vitamin free mineral base defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM149_Hutners_Vitamin_Free_Mineral_Base",
+          "object_id": "kgmicrobe.ingredient:jcm149_hutners_vitamin_free_mineral_base",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-7",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml",
+        "sha256": "1d0233d39cb6d2fdb86be534c625ac39afb3bc47d9be431d15a9eb4ba3227c7e"
+      },
+      "subject_id": "MIM:DSMZ125_Vitamin_K1_Solution",
+      "identifier": "kgmicrobe.ingredient:dsmz125_vitamin_k1_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:dsmz125_vitamin_k1_solution",
+        "ontology_label": "DSMZ solution 125 vitamin K1 solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://mediadive.dsmz.de/rest/solution/125",
+            "notes": "DSMZ MediaDive solution 125: Vitamin K1 solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:DSMZ125_Vitamin_K1_Solution",
+          "object_id": "kgmicrobe.ingredient:dsmz125_vitamin_k1_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-29",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+        "sha256": "34fefc81827cf593b52a70c43c95d0b9b78d46557c5d965e2294a7a53fa35651"
+      },
+      "subject_id": "MIM:DSMZ5980_Wolins_Vitamin_Solution_10x",
+      "identifier": "kgmicrobe.ingredient:dsmz5980_wolins_vitamin_solution_10x",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:dsmz5980_wolins_vitamin_solution_10x",
+        "ontology_label": "DSMZ solution 5980 Wolin's vitamin solution (10x)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://mediadive.dsmz.de/rest/solution/5980",
+            "notes": "DSMZ MediaDive solution 5980: Wolin's vitamin solution (10x) defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:DSMZ5980_Wolins_Vitamin_Solution_10x",
+          "object_id": "kgmicrobe.ingredient:dsmz5980_wolins_vitamin_solution_10x",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-98",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+        "sha256": "068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8"
+      },
+      "subject_id": "MIM:DSMZ608_Volatile_Fatty_Acid_Mixture",
+      "identifier": "kgmicrobe.ingredient:dsmz608_volatile_fatty_acid_mixture",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:dsmz608_volatile_fatty_acid_mixture",
+        "ontology_label": "DSMZ solution 608 volatile fatty acid mixture",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://mediadive.dsmz.de/rest/solution/608",
+            "notes": "DSMZ MediaDive solution 608: Volatile fatty acid mixture defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:DSMZ608_Volatile_Fatty_Acid_Mixture",
+          "object_id": "kgmicrobe.ingredient:dsmz608_volatile_fatty_acid_mixture",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-26",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/ATCC1249_Component_III.yaml",
+        "sha256": "7925a494844f22f5b310d81bc0a7907dc35400c958a136c23cc19b61726e4aad"
+      },
+      "subject_id": "MIM:ATCC1249_Component_III",
+      "identifier": "kgmicrobe.ingredient:atcc1249_component_iii",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:atcc1249_component_iii",
+        "ontology_label": "ATCC 1249 Component III",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx",
+            "notes": "ATCC Medium 1249 Modified Baar medium: Component III defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:ATCC1249_Component_III",
+          "object_id": "kgmicrobe.ingredient:atcc1249_component_iii",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-31",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml",
+        "sha256": "5db9b9053283a9a636625764f3ced0a65b77f6829cc31b4a01842bd08972bbcb"
+      },
+      "subject_id": "MIM:NBRC1321_Vitamin_B12_Solution",
+      "identifier": "kgmicrobe.ingredient:nbrc1321_vitamin_b12_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1321_vitamin_b12_solution",
+        "ontology_label": "NBRC 1321 vitamin B12 solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+            "notes": "NBRC 1321: ******Vitamin B12 solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1321_Vitamin_B12_Solution",
+          "object_id": "kgmicrobe.ingredient:nbrc1321_vitamin_b12_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-111",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1321_Vitamin_Solution.yaml",
+        "sha256": "07ddcc303f994e84d93a93bda8f159f4f72f10b240bf7555caa843a929b03032"
+      },
+      "subject_id": "MIM:NBRC1321_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:nbrc1321_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1321_vitamin_solution",
+        "ontology_label": "NBRC 1321 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+            "notes": "NBRC 1321: ****Vitamine solution defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1321_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:nbrc1321_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-73",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1356_Mineral_Base_2.yaml",
+        "sha256": "d6577043ecc6bc9f5ab48a85754e00309a8d13262c7d8f419cb0bdb319ec7e53"
+      },
+      "subject_id": "MIM:NBRC1356_Mineral_Base_2",
+      "identifier": "kgmicrobe.ingredient:nbrc1356_mineral_base_2",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1356_mineral_base_2",
+        "ontology_label": "NBRC 1356 mineral base 2",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356",
+            "notes": "NBRC 1356: **Mineral base 2 defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1356_Mineral_Base_2",
+          "object_id": "kgmicrobe.ingredient:nbrc1356_mineral_base_2",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-52",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml",
+        "sha256": "1af1b8697fd06e28b4968680aac6acbfec94f8928015c1c44393d0ffa1a763ef"
+      },
+      "subject_id": "MIM:TOGO_M2567_Mineral_Base_D",
+      "identifier": "kgmicrobe.ingredient:togo_m2567_mineral_base_d",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_d",
+        "ontology_label": "TOGO M2567 mineral base D",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2567",
+            "notes": "TOGO M2567 YPS medium: Mineral base D defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:TOGO_M2567_Mineral_Base_D",
+          "object_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_d",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm-prop-new-106",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml",
+        "sha256": "1c4be62bdbab9be2f5aafd2e7f52d7d22e7d4b6d320b69ddd8e168b177e1c53c"
+      },
+      "subject_id": "MIM:TOGO_M2567_Mineral_Base_C",
+      "identifier": "kgmicrobe.ingredient:togo_m2567_mineral_base_c",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_c",
+        "ontology_label": "TOGO M2567 mineral base C",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2567",
+            "notes": "TOGO M2567 YPS medium: Mineral base C defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:TOGO_M2567_Mineral_Base_C",
+          "object_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_c",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-deionized_water",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml",
+        "sha256": "b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc"
+      },
+      "subject_id": "MIM:deionized_water",
+      "identifier": "kgmicrobe.ingredient:deionized_water",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:deionized_water",
+        "ontology_label": "Deionized water",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:deionized_water",
+          "object_id": "kgmicrobe.ingredient:deionized_water",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-dsmz_trace_2n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml",
+        "sha256": "66b0fee953fbb4b234082782c3d9ae51820a99ccabe06214f22a53bc21581b3b"
+      },
+      "subject_id": "MIM:dsmz_trace_2n_naoh",
+      "identifier": "kgmicrobe.ingredient:dsmz_trace_2n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:dsmz_trace_2n_naoh",
+        "ontology_label": "DSMZ trace-preparation 2 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1094.pdf",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:dsmz_trace_2n_naoh",
+          "object_id": "kgmicrobe.ingredient:dsmz_trace_2n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_1130_10n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml",
+        "sha256": "63a38aa9b3a508a195448995ee2e9ab3bc1da116001215366fff07757fff4a29"
+      },
+      "subject_id": "MIM:jcm_1130_10n_naoh",
+      "identifier": "kgmicrobe.ingredient:jcm_1130_10n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_1130_10n_naoh",
+        "ontology_label": "JCM 1130 VFA-preparation 10 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_1130_10n_naoh",
+          "object_id": "kgmicrobe.ingredient:jcm_1130_10n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-atcc_nitrosolobus_6n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml",
+        "sha256": "96100762d0f4662991c3daaa7ec98e52b436bbf6729422ff729661240f1a0287"
+      },
+      "subject_id": "MIM:atcc_nitrosolobus_6n_naoh",
+      "identifier": "kgmicrobe.ingredient:atcc_nitrosolobus_6n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:atcc_nitrosolobus_6n_naoh",
+        "ontology_label": "ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:atcc_nitrosolobus_6n_naoh",
+          "object_id": "kgmicrobe.ingredient:atcc_nitrosolobus_6n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-pcr_s11_01n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml",
+        "sha256": "41a2e339a50e6a84a8283fa8e8e52ed3ce2d70d72d71a8b0cee0ba2539c595f2"
+      },
+      "subject_id": "MIM:pcr_s11_01n_naoh",
+      "identifier": "kgmicrobe.ingredient:pcr_s11_01n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:pcr_s11_01n_naoh",
+        "ontology_label": "PCR-S11 EDTA-preparation 0.1 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:pcr_s11_01n_naoh",
+          "object_id": "kgmicrobe.ingredient:pcr_s11_01n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-dsmz_104_8n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml",
+        "sha256": "3019e7b51af1853f434eef5f7d752724d04c9dbafdcdcf1e84844cdb737aef15"
+      },
+      "subject_id": "MIM:dsmz_104_8n_naoh",
+      "identifier": "kgmicrobe.ingredient:dsmz_104_8n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:dsmz_104_8n_naoh",
+        "ontology_label": "DSMZ 104 pH-adjustment 8 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium104.pdf",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:dsmz_104_8n_naoh",
+          "object_id": "kgmicrobe.ingredient:dsmz_104_8n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_221_02n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml",
+        "sha256": "44e2eaf5271b89b5712b55563f925328504bd17727574ae33985acf417386006"
+      },
+      "subject_id": "MIM:jcm_221_02n_naoh",
+      "identifier": "kgmicrobe.ingredient:jcm_221_02n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_221_02n_naoh",
+        "ontology_label": "JCM 221 reducing-preparation 0.2 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_221_02n_naoh",
+          "object_id": "kgmicrobe.ingredient:jcm_221_02n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-wolin_mineral_05n_naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml",
+        "sha256": "c7b8dcd343021ed9fbc4dc221c9cf44c7e1710834292354083e84f351ecf5a2e"
+      },
+      "subject_id": "MIM:wolin_mineral_05n_naoh",
+      "identifier": "kgmicrobe.ingredient:wolin_mineral_05n_naoh",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:wolin_mineral_05n_naoh",
+        "ontology_label": "Wolin mineral-preparation 0.5 N NaOH reagent",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3152",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:wolin_mineral_05n_naoh",
+          "object_id": "kgmicrobe.ingredient:wolin_mineral_05n_naoh",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-atcc_1340_naoh_4g_100ml",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml",
+        "sha256": "21cbd942e71d76ea7f1d87e57339b5aba23ec032e4c7dc10fb3b96cb650cfd5f"
+      },
+      "subject_id": "MIM:atcc_1340_naoh_4g_100ml",
+      "identifier": "kgmicrobe.ingredient:atcc_1340_naoh_4g_100ml",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:atcc_1340_naoh_4g_100ml",
+        "ontology_label": "ATCC 1340 NaOH reagent (4 g/100 ml)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.atcc.org/~/media/0E4A2A5D877748B9972B492CE502DBCB.ashx",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:atcc_1340_naoh_4g_100ml",
+          "object_id": "kgmicrobe.ingredient:atcc_1340_naoh_4g_100ml",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_574_1m_kh2po4",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml",
+        "sha256": "59a4c22506d8d0244064690e661b74e6c74109e2c3663429414a966d9c2a23ea"
+      },
+      "subject_id": "MIM:jcm_574_1m_kh2po4",
+      "identifier": "kgmicrobe.ingredient:jcm_574_1m_kh2po4",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_574_1m_kh2po4",
+        "ontology_label": "JCM 574 1 M KH2PO4 phosphate-buffer input",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_574_1m_kh2po4",
+          "object_id": "kgmicrobe.ingredient:jcm_574_1m_kh2po4",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_574_1m_k2hpo4",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml",
+        "sha256": "9e123b2c54d77aa95cff33e23e66ec2d745f9d5a50c13db0cf0d6791ad97a390"
+      },
+      "subject_id": "MIM:jcm_574_1m_k2hpo4",
+      "identifier": "kgmicrobe.ingredient:jcm_574_1m_k2hpo4",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_574_1m_k2hpo4",
+        "ontology_label": "JCM 574 1 M K2HPO4 phosphate-buffer input",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_574_1m_k2hpo4",
+          "object_id": "kgmicrobe.ingredient:jcm_574_1m_k2hpo4",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-pbbm_1m_na2hpo4",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml",
+        "sha256": "d9954703385fde2bf8480a9a8de16700702297d0cdfe843ed46270e5c80c68ab"
+      },
+      "subject_id": "MIM:pbbm_1m_na2hpo4",
+      "identifier": "kgmicrobe.ingredient:pbbm_1m_na2hpo4",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:pbbm_1m_na2hpo4",
+        "ontology_label": "PBBM 1 M Na2HPO4 phosphate-buffer input",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2760",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:pbbm_1m_na2hpo4",
+          "object_id": "kgmicrobe.ingredient:pbbm_1m_na2hpo4",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-pcr_s11_50mm_nah2po4",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml",
+        "sha256": "ad99c3ec64193d25a066c7cf58430cef977165a97c6ca4390a8eca107c6b793a"
+      },
+      "subject_id": "MIM:pcr_s11_50mm_nah2po4",
+      "identifier": "kgmicrobe.ingredient:pcr_s11_50mm_nah2po4",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:pcr_s11_50mm_nah2po4",
+        "ontology_label": "PCR-S11 50 mM NaH2PO4 solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:pcr_s11_50mm_nah2po4",
+          "object_id": "kgmicrobe.ingredient:pcr_s11_50mm_nah2po4",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-pcr_s11_50mm_na2hpo4",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml",
+        "sha256": "e487df378fee92c65dd801641ea59fae4712f921210bc6ac8de496e1aa10e75a"
+      },
+      "subject_id": "MIM:pcr_s11_50mm_na2hpo4",
+      "identifier": "kgmicrobe.ingredient:pcr_s11_50mm_na2hpo4",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:pcr_s11_50mm_na2hpo4",
+        "ontology_label": "PCR-S11 50 mM Na2HPO4 solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:pcr_s11_50mm_na2hpo4",
+          "object_id": "kgmicrobe.ingredient:pcr_s11_50mm_na2hpo4",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-pcr_s11_sodium_phosphate_buffer_ph75",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml",
+        "sha256": "ad6c46351434f3a99bcf9871072eae37df4d8db59d479eccd031326b423b2fa6"
+      },
+      "subject_id": "MIM:pcr_s11_sodium_phosphate_buffer_ph75",
+      "identifier": "kgmicrobe.ingredient:pcr_s11_sodium_phosphate_buffer_ph75",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:pcr_s11_sodium_phosphate_buffer_ph75",
+        "ontology_label": "PCR-S11 sodium phosphate buffer pH 7.5",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:pcr_s11_sodium_phosphate_buffer_ph75",
+          "object_id": "kgmicrobe.ingredient:pcr_s11_sodium_phosphate_buffer_ph75",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-allen_m2231_phosphate_stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml",
+        "sha256": "27b8467bab6e05b0116053e52c9b91f214a002046bc441feb367e88fe0ae47e2"
+      },
+      "subject_id": "MIM:allen_m2231_phosphate_stock",
+      "identifier": "kgmicrobe.ingredient:allen_m2231_phosphate_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:allen_m2231_phosphate_stock",
+        "ontology_label": "Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:allen_m2231_phosphate_stock",
+          "object_id": "kgmicrobe.ingredient:allen_m2231_phosphate_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_908_sulfide_10pct_wv",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml",
+        "sha256": "513d34d388831f51061ba7d6b74482bc2e583dfe9fe93819a0a8bc6e8eb1d482"
+      },
+      "subject_id": "MIM:jcm_908_sulfide_10pct_wv",
+      "identifier": "kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv",
+        "ontology_label": "JCM 908 sodium sulfide nonahydrate 10% w/v stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=908",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_908_sulfide_10pct_wv",
+          "object_id": "kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_713_sulfide_24pct",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml",
+        "sha256": "88b1eef07b9c9e8251a5178fd68bc67631dab3c01ca27c1b82173e19c05bfeb6"
+      },
+      "subject_id": "MIM:jcm_713_sulfide_24pct",
+      "identifier": "kgmicrobe.ingredient:jcm_713_sulfide_24pct",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_713_sulfide_24pct",
+        "ontology_label": "JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=713",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_713_sulfide_24pct",
+          "object_id": "kgmicrobe.ingredient:jcm_713_sulfide_24pct",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-atcc_1943_sulfide_25pct",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml",
+        "sha256": "f19078a9574201f29f6ee9336e9676b82b42e96299d9e0f83974f7e6755e198e"
+      },
+      "subject_id": "MIM:atcc_1943_sulfide_25pct",
+      "identifier": "kgmicrobe.ingredient:atcc_1943_sulfide_25pct",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:atcc_1943_sulfide_25pct",
+        "ontology_label": "ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.atcc.org/~/media/0FCD78F660A9430BBD47DAA50E91D276.ashx",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:atcc_1943_sulfide_25pct",
+          "object_id": "kgmicrobe.ingredient:atcc_1943_sulfide_25pct",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-edit-naoh",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml",
+        "sha256": "e8764ed4b0e723390eda05423315f884a30ebeebab4c6196945dbac0944887e8"
+      },
+      "subject_id": "MIM:Naoh",
+      "identifier": "CHEBI:32145",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:32145",
+        "ontology_label": "sodium hydroxide",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('NaOH')",
+            "pmid": "37817899",
+            "supports": "SUPPORT",
+            "snippet": "Key features • Production and extraction of EPS from submerged cultures of mycelial forms of macrofungi. • Modification of the method described by Fariña et al. (2001), extending its application to submerged cultures of mycelial forms of the macrofungi. • Determination of EPS production parameters in submerged cultures of mycelial forms of macrofungi. • EPS solubilization using NaOH (0.1 N).",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Naoh",
+          "object_id": "CHEBI:32145",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-edit-na2moo4_x_2_h2o",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml",
+        "sha256": "a81465916836d3c96601136e45f446324ff92091aeb4b9352386afe0760cee97"
+      },
+      "subject_id": "MIM:Na2moo4_X_2_H2o",
+      "identifier": "CHEBI:75213",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:75213",
+        "ontology_label": "sodium molybdate dihydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Na2moo4_X_2_H2o",
+          "object_id": "CHEBI:75213",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-edit-na2hpo4_x_12_h2o",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml",
+        "sha256": "a85b1bdcfb6e87f41878477d5e2c087671844aaab28c11db236b8072f9abeb97"
+      },
+      "subject_id": "MIM:Na2hpo4_X_12_H2o",
+      "identifier": "CHEBI:91259",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:91259",
+        "ontology_label": "disodium hydrogenphosphate dodecahydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL — superseded by the #321 re-grade below: this record is a hydrate of CHEBI:91259, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "Promoted off the anhydrous term CHEBI:34683, which was absorbing five distinct Na2HPO4 hydrates, to the specific term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate') — MAPPING_SEMANTICS §3 step 1. cas_rn '7782-85-6' -> '10039-32-4', taken from ChEBI's own xref on the specific term; the previous value was shared across the family and did not denote this hydrate (#334)."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:91259 -> kgmicrobe.compound:na2hpo4_x_12_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2Na' -> '12H2O.HO4P.2Na'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because adopted verbatim from the mapped term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'), which is the specific hydrate and already carries the water."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:91259",
+            "notes": "Current local ChEBI release 255 verifies the exact dodecahydrate identity, formula, CAS, InChI and SMILES. Earlier contradictory historical regrade claims are superseded for this exact term; source-specific automatic anhydrous metadata and role evidence are not approved."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Na2hpo4_X_12_H2o",
+          "object_id": "CHEBI:91259",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-atcc_1942_sulfide_5pct",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml",
+        "sha256": "65d136c991e7b68ef8cdcebf3ce4e2596a64d1bdb5037b9179eb61a738e1eb61"
+      },
+      "subject_id": "MIM:atcc_1942_sulfide_5pct",
+      "identifier": "kgmicrobe.ingredient:atcc_1942_sulfide_5pct",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:atcc_1942_sulfide_5pct",
+        "ontology_label": "ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.atcc.org/~/media/C09E6B9C6CF8494CAA69A2CA7DE40AB1.ashx",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:atcc_1942_sulfide_5pct",
+          "object_id": "kgmicrobe.ingredient:atcc_1942_sulfide_5pct",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-mediadive_552_thiosulfate_5g_100ml",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml",
+        "sha256": "51f78e7c87e1f93fa30c05a3f644124b4a5aad7f01ce52e17b67115de7231e97"
+      },
+      "subject_id": "MIM:mediadive_552_thiosulfate_5g_100ml",
+      "identifier": "kgmicrobe.ingredient:mediadive_552_thiosulfate_5g_100ml",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:mediadive_552_thiosulfate_5g_100ml",
+        "ontology_label": "MediaDive 552 source thiosulfate preparation (5 g in 100 ml water)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://mediadive.dsmz.de/rest/ingredient/552",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:mediadive_552_thiosulfate_5g_100ml",
+          "object_id": "kgmicrobe.ingredient:mediadive_552_thiosulfate_5g_100ml",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-new-jcm_941_solution_c",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml",
+        "sha256": "2fcf9bfa07442ede81043a0222bfc3b8031e7f4366449495526c3e8476529bf1"
+      },
+      "subject_id": "MIM:jcm_941_solution_c",
+      "identifier": "kgmicrobe.ingredient:jcm_941_solution_c",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm_941_solution_c",
+        "ontology_label": "JCM 941 Solution C (source Na2S2O4·2H2O)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=941",
+            "notes": "Source-qualified preparation/material identity under MAPPING_SEMANTICS sections 3 and 6; inspected bounded ontology searches found no exact supported term. No exact mapping to a solute or generic water is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm_941_solution_c",
+          "object_id": "kgmicrobe.ingredient:jcm_941_solution_c",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-edit-kh2po4-alias-scope",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/Kh2po4.yaml",
+        "sha256": "c23172acac0bd27abee380404b04cfea3fcd4cc9632207582712e44a32ccbe99"
+      },
+      "subject_id": "MIM:Kh2po4",
+      "identifier": "CHEBI:63036",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:63036",
+        "ontology_label": "potassium dihydrogen phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('KH2PO4')",
+            "pmid": "40302155",
+            "supports": "SUPPORT",
+            "snippet": "We designed four different forms of potassium fertilizer treatments: K2SO4, KCl, KH2PO4, and K2HPO4, and used qRT-PCR and HPLC techniques to explore their differences in anthocyanin synthesis, accumulation, quality, and yield in PSP tubers.",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Kh2po4",
+          "object_id": "CHEBI:63036",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-edit-nonahydrate-stock-aliases",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml",
+        "sha256": "9fa6da94e753adc5df70a2b38831644fe7264ca604c8a6baa9a322c918f50570"
+      },
+      "subject_id": "MIM:Na2s_X_9_H2o",
+      "identifier": "CHEBI:76209",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:76209",
+        "ontology_label": "sodium sulfide nonahydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Na2s_X_9_H2o",
+          "object_id": "CHEBI:76209",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "if1201-edit-tris-alias-scope",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml",
+        "sha256": "da1673baa37eeed978b5ec7bf79f606b9a3d398eb47b69fbdd805a423e1fa3df"
+      },
+      "subject_id": "MIM:Tris_Base",
+      "identifier": "CHEBI:9754",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:9754",
+        "ontology_label": "tris",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Tris_Base",
+          "object_id": "CHEBI:9754",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-glycine-naoh-stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml",
+        "sha256": "3a92641f7b7817c2cb40bb752e53921767df90394232f83762c7452f8b04937f"
+      },
+      "subject_id": "MIM:jcm906_glycine_naoh_buffer_0_5m_ph10",
+      "identifier": "kgmicrobe.ingredient:jcm906_glycine_naoh_buffer_0_5m_ph10",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm906_glycine_naoh_buffer_0_5m_ph10",
+        "ontology_label": "JCM906 glycine-NaOH buffer, 0.5 M, pH 10.0",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=906",
+            "notes": "JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at pH 10.0. This defines a stock preparation even though its solvent and the amount of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L receiving dose is a separate normalization defect."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm906_glycine_naoh_buffer_0_5m_ph10",
+          "object_id": "kgmicrobe.ingredient:jcm906_glycine_naoh_buffer_0_5m_ph10",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-indicator-stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/togo_m2844_bromothymol_blue_koh_stock.yaml",
+        "sha256": "8f87b934890a03ee4df11bcefe34e3b9db899fa5362a00f2547e37ae7308d5c8"
+      },
+      "subject_id": "MIM:togo_m2844_bromothymol_blue_koh_stock",
+      "identifier": "kgmicrobe.ingredient:togo_m2844_bromothymol_blue_koh_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:togo_m2844_bromothymol_blue_koh_stock",
+        "ontology_label": "TOGO M2844 bromothymol blue 0.5% in 0.2 N KOH",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2844",
+            "notes": "The TOGO M2844 comment identifies a 0.5% bromothymol blue solution in 0.2 N KOH, added at 5 mL per litre. A stock owner can preserve this combined preparation. The extracted 0.2NKOH fragment must not denote the whole stock or be added as a global alias."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:togo_m2844_bromothymol_blue_koh_stock",
+          "object_id": "kgmicrobe.ingredient:togo_m2844_bromothymol_blue_koh_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-toluene-stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/jcm600_water_saturated_toluene_stock.yaml",
+        "sha256": "ec3287066d2a66f0a7d30f1fae415d9de93fc92cd13e339deb2b5deb67cc9dba"
+      },
+      "subject_id": "MIM:jcm600_water_saturated_toluene_stock",
+      "identifier": "kgmicrobe.ingredient:jcm600_water_saturated_toluene_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm600_water_saturated_toluene_stock",
+        "ontology_label": "JCM600 water-saturated toluene stock, 5.0 mM",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=600",
+            "notes": "JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock described as 5.0 mM and added at 40 mL per litre. This supports a stock record separate from pure toluene and from the receiving medium."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:jcm600_water_saturated_toluene_stock",
+          "object_id": "kgmicrobe.ingredient:jcm600_water_saturated_toluene_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-usb-peptic-pepton",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/nbrc19_usb_peptic_pepton.yaml",
+        "sha256": "2defa950f7097d1a62a1a64989647b64a5c1e614040481feac0855a545247ec4"
+      },
+      "subject_id": "MIM:nbrc19_usb_peptic_pepton",
+      "identifier": "kgmicrobe.ingredient:nbrc19_usb_peptic_pepton",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc19_usb_peptic_pepton",
+        "ontology_label": "NBRC19 USB Peptic Pepton",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=19",
+            "notes": "NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material can have an opaque product record without an invented substrate, digestion process or catalog number."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:nbrc19_usb_peptic_pepton",
+          "object_id": "kgmicrobe.ingredient:nbrc19_usb_peptic_pepton",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-sulfide-ore",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/sulfide_ore.yaml",
+        "sha256": "24873d27341e8b56e27fd8f231cf55d875729aa300b4885687bf808e3f61f3f3"
+      },
+      "subject_id": "MIM:sulfide_ore",
+      "identifier": "kgmicrobe.ingredient:sulfide_ore",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:sulfide_ore",
+        "ontology_label": "Sulfide ore",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium88.pdf",
+            "notes": "DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348. The source denotes a generic ore material rather than pure FeS2 or a fixed mineral mixture. A registry record preserves that unspecified material without requiring a mineral assay."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:sulfide_ore",
+          "object_id": "kgmicrobe.ingredient:sulfide_ore",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-cereal-leaves",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Cereal_Leaves.yaml",
+        "sha256": "a5b8c39c7cfd5cdc75daffbfacb55e639cf6f97c78fb51e293dd78361d6a8e81"
+      },
+      "subject_id": "MIM:Cereal_Leaves",
+      "identifier": "kgmicrobe.ingredient:cereal_leaves",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:cereal_leaves",
+        "ontology_label": "Cereal leaves",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.ccap.ac.uk/wp-content/uploads/MR_NCL75S.pdf",
+            "notes": "The existing Cereal_Leaves record denotes cereal leaf tissue of unspecified species, matching the material named in the CCAP recipes. Promote this existing material to a registry identity and preserve the supplier and preparation context without asserting a plant species or extract composition."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Cereal_Leaves",
+          "object_id": "kgmicrobe.ingredient:cereal_leaves",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-homopipes-stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/mediadive1938_homopipes_0_5m_ph5_4.yaml",
+        "sha256": "73bba8ade5f8e50dfeb68805baa016fa5b8dd0d1b1d4c772440d1c9e341f0841"
+      },
+      "subject_id": "MIM:mediadive1938_homopipes_0_5m_ph5_4",
+      "identifier": "kgmicrobe.ingredient:mediadive1938_homopipes_0_5m_ph5_4",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:mediadive1938_homopipes_0_5m_ph5_4",
+        "ontology_label": "MediaDive1938 HOMOPIPES stock, 0.5 M, pH 5.4",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://mediadive.dsmz.de/ingredients/1938",
+            "notes": "The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the solute. A separate stock record can assert the named solute and concentration while leaving the vehicle and titrant unspecified."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:mediadive1938_homopipes_0_5m_ph5_4",
+          "object_id": "kgmicrobe.ingredient:mediadive1938_homopipes_0_5m_ph5_4",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-dl-asparagine-monohydrate",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/DL_Asparagine_Monohydrate.yaml",
+        "sha256": "8296d12ef6c92743896cc2fce0010e2ba6723ed451bca9a4d5a6bbe26100235e"
+      },
+      "subject_id": "MIM:DL_Asparagine_Monohydrate",
+      "identifier": "cas:69833-18-7",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:22653",
+        "ontology_label": "asparagine",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CAS_RN_CROSS_REFERENCE",
+            "source": "https://labchem-wako.fujifilm.com/sds/W01W0101-0748JGHEEN.pdf",
+            "notes": "The source explicitly specifies DL-asparagine with one water. Wako identifies DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate product, but that number also appears on generic asparagine records; it is not copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653 asparagine."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:DL_Asparagine_Monohydrate",
+          "object_id": "cas:69833-18-7",
+          "predicate_id": "skos:exactMatch"
+        },
+        {
+          "subject_id": "MIM:DL_Asparagine_Monohydrate",
+          "object_id": "CHEBI:22653",
+          "predicate_id": "skos:broadMatch"
+        },
+        {
+          "subject_id": "MIM:DL_Asparagine_Monohydrate",
+          "object_id": "kgmicrobe.ingredient:dl_asparagine_monohydrate",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-beta-nad-provenance",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml",
+        "sha256": "c3abed5996fc15ad308c159b0370460ccdaf241f1cea2c4b822b7629fc5ab103"
+      },
+      "subject_id": "MIM:Beta-nad",
+      "identifier": "CHEBI:15846",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:15846",
+        "ontology_label": "NAD(+)",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "local kg-microbe CHEBI transform",
+            "notes": "Local CHEBI labels CHEBI:15846 as NAD(+) and lists beta-NAD, NAD, NAD+, and nicotinamide adenine dinucleotide as exact synonyms."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Beta-nad",
+          "object_id": "CHEBI:15846",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-laminarin-scope",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Laminarin_From_Laminaria_Digitata.yaml",
+        "sha256": "5698231ae810fce7fce2a15ff4fb03af8a8525618e06e50d3eb27af4d7c9c06f"
+      },
+      "subject_id": "MIM:Laminarin_From_Laminaria_Digitata",
+      "identifier": "CHEBI:6364",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:6364",
+        "ontology_label": "laminarin",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CAS_RN_LOOKUP",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+          },
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:6364",
+            "notes": "CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa. The current owner has this generic identity but a Laminaria digitata procurement label. Align its preferred name to Laminarin and preserve the original species detail in supplied_form and a catalog synonym. No evidence supports a distinct chemical substance requiring a second owner."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Laminarin_From_Laminaria_Digitata",
+          "object_id": "CHEBI:6364",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-bbl-fluid-thioglycollate",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/bbl_fluid_thioglycollate_bd211260.yaml",
+        "sha256": "9b3b03cb7ff3d6b5d1f1e6c6bba374da426c011cb78af64ff0e83fc8ccce68dd"
+      },
+      "subject_id": "MIM:bbl_fluid_thioglycollate_bd211260",
+      "identifier": "kgmicrobe.ingredient:bbl_fluid_thioglycollate_bd211260",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:bbl_fluid_thioglycollate_bd211260",
+        "ontology_label": "BBL Fluid Thioglycollate Medium, BD211260",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.atcc.org/~/media/0f29052bb3524daebdfc48491950d569.ashx",
+            "notes": "Source-supported material or preparation identity under MAPPING_SEMANTICS sections 3 and 6. Bounded ontology and catalog searches found no verified exact term for this scope. No component identity is assigned to the whole preparation."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:bbl_fluid_thioglycollate_bd211260",
+          "object_id": "kgmicrobe.ingredient:bbl_fluid_thioglycollate_bd211260",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-r2a-medium",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners_v3/R2A_Medium.yaml",
+        "sha256": "6ef646d38ae19ef2dd3e7dded41ea95d5cedb5acb1b5e6ce33ab07a91d28f57c"
+      },
+      "subject_id": "MIM:R2A_medium",
+      "identifier": "MICRO:0000541",
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0000541",
+        "ontology_label": "R2A medium",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541",
+            "notes": "The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:R2A_medium",
+          "object_id": "MICRO:0000541",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-r2a-agar-provenance",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/R2A_agar.yaml",
+        "sha256": "d53585e7ac126e2319ffbd1610201a29181dbcd67d72b27d66563f09ef8b0275"
+      },
+      "subject_id": "MIM:R2A_agar",
+      "identifier": "MICRO:0000543",
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0000543",
+        "ontology_label": "R2A agar",
+        "ontology_source": "MICRO",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#260)",
+            "notes": "Created to cover a CultureMech label MIM could not resolve (#260): Reasoner & Geldreich's low-nutrient agar for heterotrophic plate counts. A named medium, but MICRO has the class, so §3 step 1 grounds it rather than minting — matching `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114). MICRO:0000541 'R2A medium' is the broth; this label says agar. Cross-reference: CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml)."
+          },
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2972",
+            "notes": "The primary TOGO M2972 component is explicitly labelled Difco R2A agar, and the preparation describes plant-stem contact with a medium surface. This supports the agar interpretation of this occurrence and a source-provenance enrichment of the existing R2A-agar owner."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:R2A_agar",
+          "object_id": "MICRO:0000543",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-racemic-sodium-sulfolactate",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/denger2010_racemic_sodium_sulfolactate.yaml",
+        "sha256": "0fa70de5f9efa049f948a80244dea6da40bbbc499bd8592bb38b498df0b9fb9b"
+      },
+      "subject_id": "MIM:denger2010_racemic_sodium_sulfolactate",
+      "identifier": "kgmicrobe.ingredient:denger2010_racemic_sodium_sulfolactate",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:38023",
+        "ontology_label": "3-sulfolactic acid",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "LITERATURE",
+            "source": "https://doi.org/10.1099/mic.0.034736-0",
+            "notes": "The preparation is a racemic sodium-salt form of the generic acid. This is an asymmetric parent anchor, not chemical identity; the source-defined preparation keeps its own registry identity. The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate preparation; sodium stoichiometry, hydration and isolated-product purity remain unspecified."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:denger2010_racemic_sodium_sulfolactate",
+          "object_id": "kgmicrobe.ingredient:denger2010_racemic_sodium_sulfolactate",
+          "predicate_id": "skos:exactMatch"
+        },
+        {
+          "subject_id": "MIM:denger2010_racemic_sodium_sulfolactate",
+          "object_id": "CHEBI:38023",
+          "predicate_id": "skos:broadMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-trypticase-soy-broth",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Trypticase_Soy_Broth.yaml",
+        "sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879"
+      },
+      "subject_id": "MIM:Trypticase_Soy_Broth",
+      "identifier": "MICRO:0000113",
+      "ontology_mapping": {
+        "ontology_id": "MICRO:0000113",
+        "ontology_label": "tryptic soy broth",
+        "ontology_source": "MICRO",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000113",
+            "notes": "MICRO:0000113 explicitly includes Trypticase soy broth and describes the standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining its history and counts. The NBRC source uses 30 g of this base with agar supplied separately."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Trypticase_Soy_Broth",
+          "object_id": "MICRO:0000113",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-sodium-lactate-alias-boundary",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Sodium_Lactate.yaml",
+        "sha256": "9459b16119e016b07918ab50afa397b649b57c4ee8c5a286a5a779c7472c278f"
+      },
+      "subject_id": "MIM:Sodium_Lactate",
+      "identifier": "CHEBI:75228",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:75228",
+        "ontology_label": "sodium lactate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:75228",
+            "notes": "The current owner mixes concentration labels and an L-specific label into the alias channel of sodium lactate. Retype the 1 M stock, 1% stock and L-only label as rejected provenance, retaining their original text and source. The DL salt name and existing identifier remain unchanged; this repairs concrete alias defects without approving the withheld row."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Sodium_Lactate",
+          "object_id": "CHEBI:75228",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-soy-family-source-boundary",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml",
+        "sha256": "4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91"
+      },
+      "subject_id": "MIM:Soy_Peptone",
+      "identifier": "FOODON:03315720",
+      "ontology_mapping": {
+        "ontology_id": "FOODON:03315720",
+        "ontology_label": "vegetable protein, hydrolyzed",
+        "ontology_source": "FOODON",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "cbclaw_foodon_promotion",
+            "notes": "Commercial food mixture - FOODON is correct parent ontology. Soy peptone is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH."
+          },
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#260)",
+            "notes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone — the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Soy_Peptone",
+          "object_id": "FOODON:03315720",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-plain-flour",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Plain_Flour.yaml",
+        "sha256": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83"
+      },
+      "subject_id": "MIM:Plain_Flour",
+      "identifier": "FOODON:00004510",
+      "ontology_mapping": {
+        "ontology_id": "FOODON:00004510",
+        "ontology_label": "flour",
+        "ontology_source": "FOODON",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00004510",
+            "notes": "FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Plain_Flour",
+          "object_id": "FOODON:00004510",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-amphotericin-stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/mediadive1140_amphotericin_stock_10mg_ml.yaml",
+        "sha256": "643063b66c092548c59ff2111021dc43d397eeaa6dbebb034778a2dfed8bf11c"
+      },
+      "subject_id": "MIM:mediadive1140_amphotericin_stock_10mg_ml",
+      "identifier": "kgmicrobe.ingredient:mediadive1140_amphotericin_stock_10mg_ml",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:mediadive1140_amphotericin_stock_10mg_ml",
+        "ontology_label": "MediaDive1140 amphotericin stock, 10 mg/mL",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://mediadive.dsmz.de/ingredients/1140",
+            "notes": "Source-supported material or preparation identity under MAPPING_SEMANTICS sections 3 and 6. Bounded ontology and catalog searches found no verified exact term for this scope. No component identity is assigned to the whole preparation."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:mediadive1140_amphotericin_stock_10mg_ml",
+          "object_id": "kgmicrobe.ingredient:mediadive1140_amphotericin_stock_10mg_ml",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "op1201-ferric-pyrophosphate-label",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Fe4_Po42.yaml",
+        "sha256": "c754fbc05ce108c243968f442e0a7e3ef0f2d9b6bbcd820fac881b0e243f43cc"
+      },
+      "subject_id": "MIM:Fe4_Po42",
+      "identifier": "CHEBI:132767",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:132767",
+        "ontology_label": "ferric pyrophosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://www.ebi.ac.uk/chebi/CHEBI:132767",
+            "notes": "The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3, structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its preferred label. Correct the preferred label and retain the old string as rejected provenance. This repair does not establish what the malformed source occurrence intended."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Fe4_Po42",
+          "object_id": "CHEBI:132767",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm1023-vitamin",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1023_Vitamin_Mixture.yaml",
+        "sha256": "5940e814e39d8223839fa4ef92d62182942fa900d1ff032c9f7e5cefc8c8d0fa"
+      },
+      "subject_id": "MIM:JCM1023_Vitamin_Mixture",
+      "identifier": "kgmicrobe.ingredient:jcm1023_vitamin_mixture",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1023_vitamin_mixture",
+        "ontology_label": "JCM 1023 vitamin mixture",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1023",
+            "notes": "JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1023_Vitamin_Mixture",
+          "object_id": "kgmicrobe.ingredient:jcm1023_vitamin_mixture",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm903-vitamin",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM903_Vitamin_Mixture.yaml",
+        "sha256": "bab8a83499fe4305600a11276137e688fcb90a10815962eeed15705ffd488afa"
+      },
+      "subject_id": "MIM:JCM903_Vitamin_Mixture",
+      "identifier": "kgmicrobe.ingredient:jcm903_vitamin_mixture",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm903_vitamin_mixture",
+        "ontology_label": "JCM 903 vitamin mixture",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=903",
+            "notes": "JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM903_Vitamin_Mixture",
+          "object_id": "kgmicrobe.ingredient:jcm903_vitamin_mixture",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm554-sl10",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM554_SL10_Elements_Solution.yaml",
+        "sha256": "4276ddb38f136cabaf72f5bc4f1a3cbe1fbc88bd695a37770c687283e16f13e9"
+      },
+      "subject_id": "MIM:JCM554_SL10_Elements_Solution",
+      "identifier": "kgmicrobe.ingredient:jcm554_sl10_elements_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm554_sl10_elements_solution",
+        "ontology_label": "JCM 554 SL10 elements solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=554",
+            "notes": "JCM 554 separately enumerated SL10 elements preparation as published. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM554_SL10_Elements_Solution",
+          "object_id": "kgmicrobe.ingredient:jcm554_sl10_elements_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-nbrc1356-mineral-base1",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1356_Mineral_Base1_Supernatant.yaml",
+        "sha256": "120d5f61e7857a3057c40c0eabec1b3feee79d01eaa7cc4deb91debc2ec0c603"
+      },
+      "subject_id": "MIM:NBRC1356_Mineral_Base1_Supernatant",
+      "identifier": "kgmicrobe.ingredient:nbrc1356_mineral_base1_supernatant",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1356_mineral_base1_supernatant",
+        "ontology_label": "NBRC 1356 mineral base 1 supernatant",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356",
+            "notes": "The aqueous supernatant obtained by the NBRC 1356 Mineral base 1 protocol. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1356_Mineral_Base1_Supernatant",
+          "object_id": "kgmicrobe.ingredient:nbrc1356_mineral_base1_supernatant",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-yps-basea",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml",
+        "sha256": "2022ab3faf780ea9998ca9b6819b17587a42049f27ed6fad2e122aea22fa29ec"
+      },
+      "subject_id": "MIM:TOGO_M2567_Mineral_Base_A",
+      "identifier": "kgmicrobe.ingredient:togo_m2567_mineral_base_a",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_a",
+        "ontology_label": "TOGO M2567 mineral base A",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2567",
+            "notes": "TOGO M2567 YPS medium, source-defined Mineral base A. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:TOGO_M2567_Mineral_Base_A",
+          "object_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_a",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-yps-baseb",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/TOGO_M2567_Mineral_Base_B.yaml",
+        "sha256": "36c0137ee590cbd4073da5ebd9d1c6cf9121499d348f5de797fc03ffa3982a7e"
+      },
+      "subject_id": "MIM:TOGO_M2567_Mineral_Base_B",
+      "identifier": "kgmicrobe.ingredient:togo_m2567_mineral_base_b",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_b",
+        "ontology_label": "TOGO M2567 mineral base B",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2567",
+            "notes": "TOGO M2567 YPS medium, source-defined Mineral base B. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:TOGO_M2567_Mineral_Base_B",
+          "object_id": "kgmicrobe.ingredient:togo_m2567_mineral_base_b",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm628-toplayer",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM628_Top_Layer.yaml",
+        "sha256": "13fe1d4d83dc56b5b51be169db7c2e6cdf3beb361d3724b4e3137df6b3e10734"
+      },
+      "subject_id": "MIM:JCM628_Top_Layer",
+      "identifier": "kgmicrobe.ingredient:jcm628_top_layer",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm628_top_layer",
+        "ontology_label": "JCM 628 freshwater top layer",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628",
+            "notes": "Semisolid top-layer preparation of JCM 628, used by CultureMech:010042. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+            "notes": "Semisolid top-layer preparation of JCM 628, used by CultureMech:010042. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM628_Top_Layer",
+          "object_id": "kgmicrobe.ingredient:jcm628_top_layer",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm629-toplayer",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM629_Top_Layer.yaml",
+        "sha256": "96947f16567443e18cfc3d1c03a53dbed95d9d16aa374f9106fdf2a17c2dd7b6"
+      },
+      "subject_id": "MIM:JCM629_Top_Layer",
+      "identifier": "kgmicrobe.ingredient:jcm629_top_layer",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm629_top_layer",
+        "ontology_label": "JCM 629 saltwater top layer",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629",
+            "notes": "Semisolid top-layer preparation of JCM 629, used by CultureMech:010043. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628",
+            "notes": "Semisolid top-layer preparation of JCM 629, used by CultureMech:010043. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+            "notes": "Semisolid top-layer preparation of JCM 629, used by CultureMech:010043. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM629_Top_Layer",
+          "object_id": "kgmicrobe.ingredient:jcm629_top_layer",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-nbrc1020-vitamin",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1020_Vitamin_Solution.yaml",
+        "sha256": "b43abe4cb1f251cdb5e1937355b74292efe21d5c1cb98c1deb25c6ab2dbe449a"
+      },
+      "subject_id": "MIM:NBRC1020_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:nbrc1020_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1020_vitamin_solution",
+        "ontology_label": "NBRC 1020 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+            "notes": "Identical enumerated vitamin preparation in NBRC 1020 and NBRC 824. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824",
+            "notes": "Identical enumerated vitamin preparation in NBRC 1020 and NBRC 824. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1020_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:nbrc1020_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-nbrc1226-vitamin",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1226_Vitamin_Solution.yaml",
+        "sha256": "b4824a5d96a783ad2e927512d20aec0e793536791511339b19ffafcbad7e24bd"
+      },
+      "subject_id": "MIM:NBRC1226_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:nbrc1226_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1226_vitamin_solution",
+        "ontology_label": "NBRC 1226 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1226",
+            "notes": "NBRC 1226 separately prepared vitamin stock. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1226_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:nbrc1226_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-nbrc903-vitamin",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC903_Vitamin_Solution.yaml",
+        "sha256": "e4a7c5d611dd36f449da97ec674100f58679ab5a5871996e79ca9837e73b2802"
+      },
+      "subject_id": "MIM:NBRC903_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:nbrc903_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc903_vitamin_solution",
+        "ontology_label": "NBRC 903 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=903",
+            "notes": "NBRC 903 separately prepared vitamin stock. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+            "notes": "NBRC 903 separately prepared vitamin stock. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC903_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:nbrc903_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-nbrc-common9",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/NBRC1356_Vitamin_Solution.yaml",
+        "sha256": "29a70bc825a9b0ecec7a0205b56bdf07898158b2fc72ffa955e051319f8d772c"
+      },
+      "subject_id": "MIM:NBRC1356_Vitamin_Solution",
+      "identifier": "kgmicrobe.ingredient:nbrc1356_vitamin_solution",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:nbrc1356_vitamin_solution",
+        "ontology_label": "NBRC 1356 vitamin solution",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356",
+            "notes": "NBRC 1356: ***Vitamin solution; matching enumerations checked in NBRC 857 and 936 defines this multi-component preparation. Registry identity preserves the recipe-specific stock; no exact molecular ontology mapping is asserted."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:NBRC1356_Vitamin_Solution",
+          "object_id": "kgmicrobe.ingredient:nbrc1356_vitamin_solution",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-gibco11120-mem100x",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/Gibco11120_MEM_Vitamin_Solution_100X.yaml",
+        "sha256": "0a99f78167b7ce3faaef1f2427e7d0c19abe9dd04e2b3932cee91bb141d73064"
+      },
+      "subject_id": "MIM:Gibco11120_MEM_Vitamin_Solution_100X",
+      "identifier": "kgmicrobe.ingredient:gibco11120_mem_vitamin_solution_100x",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:gibco11120_mem_vitamin_solution_100x",
+        "ontology_label": "Gibco 11120 MEM vitamin solution 100X",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1407",
+            "notes": "Gibco MEM Vitamin Solution(100X), manufacturer product family11120, as requested in NBRC 1407. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.thermofisher.com/de/de/home/technical-resources/media-formulation.163.html",
+            "notes": "Gibco MEM Vitamin Solution(100X), manufacturer product family11120, as requested in NBRC 1407. Registry preparation identity, not a molecular exact match."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.thermofisher.com/order/catalog/product/11120052",
+            "notes": "Gibco MEM Vitamin Solution(100X), manufacturer product family11120, as requested in NBRC 1407. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Gibco11120_MEM_Vitamin_Solution_100X",
+          "object_id": "kgmicrobe.ingredient:gibco11120_mem_vitamin_solution_100x",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm510-methane-air",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM510_Methane_Air_50_50.yaml",
+        "sha256": "e380b6ebbd28fd12c3c0a1d8494201038b1fa16b14dde093083714fa82e4c890"
+      },
+      "subject_id": "MIM:JCM510_Methane_Air_50_50",
+      "identifier": "kgmicrobe.ingredient:jcm510_methane_air_50_50",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm510_methane_air_50_50",
+        "ontology_label": "JCM 510 methane-air 50:50 blend",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=510",
+            "notes": "JCM 510 declared methane-air(50:50) cultivation gas blend. Registry preparation identity, not a molecular exact match."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM510_Methane_Air_50_50",
+          "object_id": "kgmicrobe.ingredient:jcm510_methane_air_50_50",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm515-b12-partial",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM515_Vitamin_B12_20ug_ml_Stock.yaml",
+        "sha256": "4a9f731182073bc7774f061aaeb5c0220966413dbdaa43ca8beadba9bd8e8255"
+      },
+      "subject_id": "MIM:JCM515_Vitamin_B12_20ug_ml_Stock",
+      "identifier": "kgmicrobe.ingredient:jcm515_vitamin_b12_20ug_ml_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm515_vitamin_b12_20ug_ml_stock",
+        "ontology_label": "JCM 515 vitamin B12 20 microgram per ml stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=515",
+            "notes": "Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515 explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving the receiving medium. Registry identity preserves this documented preparation; no exact molecular mapping."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM515_Vitamin_B12_20ug_ml_Stock",
+          "object_id": "kgmicrobe.ingredient:jcm515_vitamin_b12_20ug_ml_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm647-b12-partial",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM647_Vitamin_B12_2mg_ml_Stock.yaml",
+        "sha256": "44f7a4c0665c9bc2cedba0d11dfb72e4977abc1f3ee05ce95636c8d5afdbfb3a"
+      },
+      "subject_id": "MIM:JCM647_Vitamin_B12_2mg_ml_Stock",
+      "identifier": "kgmicrobe.ingredient:jcm647_vitamin_b12_2mg_ml_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm647_vitamin_b12_2mg_ml_stock",
+        "ontology_label": "JCM 647 vitamin B12 2 milligram per ml stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=647",
+            "notes": "Source-qualified JCM 647 vitamin B12 2 milligram per ml stock. JCM 647 explicitly adds 1 ml of 2 mg/ml B12 stock after filter sterilization and after autoclaving the receiving medium; 2 mg/ml is retained literally. Registry identity preserves this documented preparation; no exact molecular mapping."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM647_Vitamin_B12_2mg_ml_Stock",
+          "object_id": "kgmicrobe.ingredient:jcm647_vitamin_b12_2mg_ml_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-jcm1354-b12-partial",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/JCM1354_Vitamin_B12_001percent_Stock.yaml",
+        "sha256": "ce0d4c5a5e41eda069527a44f28bb7b91f9683b6bd18d4244abbf05ba05aa53a"
+      },
+      "subject_id": "MIM:JCM1354_Vitamin_B12_001percent_Stock",
+      "identifier": "kgmicrobe.ingredient:jcm1354_vitamin_b12_001percent_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:jcm1354_vitamin_b12_001percent_stock",
+        "ontology_label": "JCM 1354 vitamin B12 0.01 percent stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1354",
+            "notes": "Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and is retained only as the literal stock label, not converted to mass concentration. Registry identity preserves this documented preparation; no exact molecular mapping."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:JCM1354_Vitamin_B12_001percent_Stock",
+          "object_id": "kgmicrobe.ingredient:jcm1354_vitamin_b12_001percent_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-atcc2883-b12-partial",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml",
+        "sha256": "946583dcb59a4bade45f8797498769d3f109ef5a1d8238b58bd84a0c62e43932"
+      },
+      "subject_id": "MIM:ATCC2883_Vitamin_B12_01mg_ml_Stock",
+      "identifier": "kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock",
+        "ontology_label": "ATCC 2883 vitamin B12 0.1 milligram per ml stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx",
+            "notes": "Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC 2883 specifies the same 1 ml filter-sterilized0.1 mg/ml B12 stock in its separately described broth and agar preparations. Registry identity preserves this documented preparation; no exact molecular mapping."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:ATCC2883_Vitamin_B12_01mg_ml_Stock",
+          "object_id": "kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-togo125-k1-partial",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/TOGO_M125_Vitamin_K1_01percent_Stock.yaml",
+        "sha256": "a1df6d15d30ee64bbb6de0dc30f9fc65ca5adbabcc1e444120e53d93caf82904"
+      },
+      "subject_id": "MIM:TOGO_M125_Vitamin_K1_01percent_Stock",
+      "identifier": "kgmicrobe.ingredient:togo_m125_vitamin_k1_01percent_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:togo_m125_vitamin_k1_01percent_stock",
+        "ontology_label": "TOGO M125 vitamin K1 0.1 percent stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M125",
+            "notes": "Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved primary TOGO M125 record identifies JCM 134 and gives0.2 ml of 0.1%Vitamin K1 solution. Percentage basis is unstated and remains a literal label, without converted amount. Registry identity preserves this documented preparation; no exact molecular mapping."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:TOGO_M125_Vitamin_K1_01percent_Stock",
+          "object_id": "kgmicrobe.ingredient:togo_m125_vitamin_k1_01percent_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-dsm1245-k1-partial",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v1/proposed_owners/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml",
+        "sha256": "26565e8825b7ad252006a282d6b97575aa53c7768f110e1560e8ee4cc5b40f19"
+      },
+      "subject_id": "MIM:DSM1245_OTEB_Vitamin_K1_1percent_Stock",
+      "identifier": "kgmicrobe.ingredient:dsm1245_oteb_vitamin_k1_1percent_stock",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:dsm1245_oteb_vitamin_k1_1percent_stock",
+        "ontology_label": "DSMZ 1245 OTEB vitamin K1 1 percent stock",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf",
+            "notes": "Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution); MediaDive main2474 corroborates that row. Registry identity preserves this documented preparation; no exact molecular mapping."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:DSM1245_OTEB_Vitamin_K1_1percent_Stock",
+          "object_id": "kgmicrobe.ingredient:dsm1245_oteb_vitamin_k1_1percent_stock",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    },
+    {
+      "proposal_id": "vm1201-prop-thauers-source-comparison",
+      "payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml",
+        "sha256": "5884dfe7efb9e9f007d49d04b96a53e0b983260d98881ac84142c72ce71fcf01"
+      },
+      "subject_id": "MIM:Thauers_Vitamin_Mix",
+      "identifier": "kgmicrobe.ingredient:thauers_vitamin_mix",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:thauers_vitamin_mix",
+        "ontology_label": "Thauer's vitamin mix",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#114)",
+            "notes": "Thauer's vitamin mix is a named, recurring multi-component preparation (8 media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym with normalisation: no term denotes it, and none could -- it is a lab preparation rather than a substance. Takes the STOCK_SOLUTION convention used by the existing mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component mix does not narrow to any single compound (#114)."
+          }
+        ]
+      },
+      "projected_identity_obligations": [
+        {
+          "subject_id": "MIM:Thauers_Vitamin_Mix",
+          "object_id": "kgmicrobe.ingredient:thauers_vitamin_mix",
+          "predicate_id": "skos:exactMatch"
+        }
+      ],
+      "applicability": "Unapplied contract obligations only, not emitted/reviewed SSSOM rows or release approval."
+    }
+  ],
+  "scope": "Native B1/B2/B3/B5/D tested on explicit proposed identity obligations and exact private payload fixtures. No maintained SSSOM or downstream export was built or validated; complete source scientific and release reviews remain separate."
+}

@@ -1,0 +1,1145 @@
+{
+  "reviewer": "/root/w08_review_a",
+  "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+  "findings": [
+    {
+      "finding_id": "W08-A-001",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P1",
+      "title": "Source-local JCM403 pointers remain globally resolving",
+      "proposal_ids": [
+        "vm-prop-jcm403-vitamin",
+        "vm-prop-jcm403-b12"
+      ],
+      "case_ids": [
+        "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+        "CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028",
+        "CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f",
+        "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+        "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2"
+      ],
+      "problem": "Both payloads retain three bare numbered-pointer RAW_TEXT aliases and preferred labels without JCM qualification. Actual JCM403 separates vitamin, B12 and thiamine stocks. A providerless number does not identify a global preparation; native is_resolving_synonym returns True for all six aliases. Earlier ivm-01 fixed citation attribution, not this boundary.",
+      "proposed_bounded_fix": "Qualify preferred terms with JCM and preparation identity; preserve exact old pointer strings and all source provenance as REJECTED_LABEL; retain source occurrence routing and append history. Re-review exact successor and all backlinks; do not resolve generic pointers by label alone.",
+      "dedup_context": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1173#issuecomment-6717809724",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "payload_bindings": [
+        {
+          "proposal_id": "vm-prop-jcm403-vitamin",
+          "owner_path": "data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml",
+          "before_sha256": "32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml",
+            "sha256": "a86933326bed8cdf623c0a8dc41622bd6e3bc54243addf1610be4f884dda1db5"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-jcm403-b12",
+          "owner_path": "data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+          "before_sha256": "1a9bcd5868a4a1e1385b3574ee5682c571e8f5dcd78fb86ae8d213d11951a471",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+            "sha256": "94956716b71347bd431921e64a06ddd2593d6e7bc50e748e1be3c3cc78bb73a8"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "path": "a/whole-payload-history-and-alias-check.json",
+          "sha256": "9bc4fb78192b67e7b5455518bc3c5af2b4461bf5fb86a9f8ea94e1f11308e43a"
+        },
+        {
+          "capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/captures/085cbb2e66835d73.source",
+            "sha256": "b28331b54771accff48da1b68077398dd7450ee8746eaf1aec1b4ef7a055bd61"
+          },
+          "accessed_at": "2026-11-08T05:07:20.266995+00:00"
+        },
+        {
+          "path": "input-snapshot/src/mediaingredientmech/synonym_policy.py",
+          "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+          "reproduction": "Load exact module and run is_resolving_synonym on each payload synonym; six pointers=True; changing synonym_type to REJECTED_LABEL=False."
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-002",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P2",
+      "title": "Interpreted mineral-base supernatant composition labeled recipe transcription",
+      "proposal_ids": [
+        "vm1201-prop-nbrc1356-mineral-base1"
+      ],
+      "case_ids": [
+        "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df"
+      ],
+      "problem": "The primary NBRC1356 recipe is a charged-solids preparation followed by precipitation and supernatant use. The payload asserts only retained water, correctly declining retained salt amounts, but labels this inferred component list RECIPE_TRANSCRIPTION. It is not a literal transcription of the source ingredient list.",
+      "proposed_bounded_fix": "Use CURATED_INTERPRETATION for the water-retention inference with explicit rationale and unmeasured retained-salt limits, or omit the derived has-part list until supported. Preserve all charge recipe facts in provenance and do not convert them into retained concentrations. Ground the water component if retained.",
+      "dedup_context": [],
+      "payload_bindings": [
+        {
+          "proposal_id": "vm1201-prop-nbrc1356-mineral-base1",
+          "owner_path": "data/ingredients/mapped/NBRC1356_Mineral_Base1_Supernatant.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml",
+            "sha256": "0aa699c355adee9161a6778c5ee892e07d5f85b2cf90494dea6b31f9072f0256"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/captures/30623db6b794d1cc.source",
+            "sha256": "87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49"
+          },
+          "accessed_at": "2026-11-08T05:07:23.992968+00:00"
+        },
+        {
+          "contract": "ComponentMethodEnum CURATED_INTERPRETATION versus RECIPE_TRANSCRIPTION"
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-003",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P2",
+      "title": "Feasible component references left unmapped alongside genuine form limits",
+      "proposal_ids": [
+        "vm-prop-jcm403-vitamin",
+        "vm-prop-jcm403-b12",
+        "vm-prop-new-2",
+        "vm-prop-new-11",
+        "vm-prop-new-42",
+        "vm-prop-new-58",
+        "vm-prop-new-29",
+        "vm-prop-new-31",
+        "vm1201-prop-jcm1023-vitamin",
+        "vm1201-prop-jcm903-vitamin",
+        "vm1201-prop-jcm554-sl10",
+        "vm1201-prop-nbrc1356-mineral-base1",
+        "vm1201-prop-nbrc-common9"
+      ],
+      "case_ids": [
+        "CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6",
+        "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+        "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+        "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+        "CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216",
+        "CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e",
+        "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e",
+        "CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08",
+        "CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028",
+        "CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380",
+        "CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f",
+        "CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22",
+        "CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51",
+        "CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2",
+        "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+        "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+        "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2"
+      ],
+      "problem": "Multiple complete stock payloads leave every component UNMAPPED, including source-explicit constituents with compatible verified frozen catalog identities. Most direct counterexample: NBRC1321 explicitly names cyanocobalamin and distilled water, while CHEBI17439 and CHEBI15377 baseline owners exist. Nicotinic acid, riboflavin and p-aminobenzoic acid likewise have compatible baseline entities. Unknown generic B12, DL/D pantothenate, salt hydration and nested stock identities are different scientific questions.",
+      "proposed_bounded_fix": "Finish bounded per-component catalog/ontology grounding using exact source form and preserve evidence. Resolve only verified compatible entities, retaining UNMAPPED with a precise missing fact for genuine form ambiguity. Do not infer cyanocobalamin from generic B12 or D-pantothenate from unspecified/DL text; do not merge duplicate physical catalog rows merely to use their entity CURIE.",
+      "dedup_context": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201"
+      ],
+      "payload_bindings": [
+        {
+          "proposal_id": "vm-prop-jcm403-vitamin",
+          "owner_path": "data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml",
+          "before_sha256": "32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml",
+            "sha256": "a86933326bed8cdf623c0a8dc41622bd6e3bc54243addf1610be4f884dda1db5"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-jcm403-b12",
+          "owner_path": "data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+          "before_sha256": "1a9bcd5868a4a1e1385b3574ee5682c571e8f5dcd78fb86ae8d213d11951a471",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+            "sha256": "94956716b71347bd431921e64a06ddd2593d6e7bc50e748e1be3c3cc78bb73a8"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-2",
+          "owner_path": "data/ingredients/mapped/JCM296_Vitamins_Mix_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml",
+            "sha256": "4f5067b1ee47cbe920dfc989e18e495a1ea575219d5151fc8f54ee0a1cd5877f"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-11",
+          "owner_path": "data/ingredients/mapped/JCM995_Vitamin_Solution_No6.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml",
+            "sha256": "70316a108a327f463346cb42f58ce98f083f3b6b354e683a5a230dda22ba008f"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-42",
+          "owner_path": "data/ingredients/mapped/JCM1100_Vitamin_Solution_B_1000x.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml",
+            "sha256": "9a445d95db93999a2861953bcec387c7212fd965a5b8aee70db3d19c15c4f6df"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-58",
+          "owner_path": "data/ingredients/mapped/JCM848_Vitamin_Mixture_100x.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml",
+            "sha256": "63a3e4f42e4dfa13127a253cca16fe4605a265666026bc43b85cedbafc95170a"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-29",
+          "owner_path": "data/ingredients/mapped/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+            "sha256": "fa5869a2f809a679feff7f7c58f074fd32c1efc40e9596dd97a30e591a3edadd"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-31",
+          "owner_path": "data/ingredients/mapped/NBRC1321_Vitamin_B12_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml",
+            "sha256": "808564e03dd9d66dcabd795be5aa2d7609420a38b9aefbecc9d895ffbd2cacbe"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm1023-vitamin",
+          "owner_path": "data/ingredients/mapped/JCM1023_Vitamin_Mixture.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml",
+            "sha256": "b6be1c47bc9a9247bca3dffc2409382ce89d2e55c594724332dcfb8a061e0b09"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm903-vitamin",
+          "owner_path": "data/ingredients/mapped/JCM903_Vitamin_Mixture.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml",
+            "sha256": "098f1e4645ec33bb074296f4585c191ed8802c56f9f21efd3629048513555c8e"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm554-sl10",
+          "owner_path": "data/ingredients/mapped/JCM554_SL10_Elements_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml",
+            "sha256": "2e7d8b8084ef054cb6f7880af5558ba394033a39d0e2614ccad6d9a93e1ec0ee"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-nbrc1356-mineral-base1",
+          "owner_path": "data/ingredients/mapped/NBRC1356_Mineral_Base1_Supernatant.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml",
+            "sha256": "0aa699c355adee9161a6778c5ee892e07d5f85b2cf90494dea6b31f9072f0256"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-nbrc-common9",
+          "owner_path": "data/ingredients/mapped/NBRC1356_Vitamin_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml",
+            "sha256": "649355ae72158b74531da36d9342baa19e230609083e03f6a9d0937b6543e0fe"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "path": "a/component-catalog-candidates.json",
+          "sha256": "d2ca80266c5d99cd498d2d3e10f2c229d642b0d7c8979a2bbd2df6c6152d5265",
+          "examples": {
+            "p-aminobenzoic acid": "CHEBI:30753",
+            "nicotinic acid": "CHEBI:15940",
+            "riboflavin": "CHEBI:17015",
+            "explicit cyanocobalamin": "CHEBI:17439",
+            "distilled water": "CHEBI:15377"
+          }
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-004",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P2",
+      "title": "New agent-authored evidence uses human-review evidence type",
+      "proposal_ids": [
+        "op-ethane-new",
+        "op-nalidixic-new",
+        "op-sodium-nicotinate-new",
+        "vm-prop-new-2",
+        "vm-prop-new-11",
+        "vm-prop-new-42",
+        "vm-prop-new-58",
+        "vm-prop-new-7",
+        "vm-prop-new-29",
+        "vm-prop-new-26",
+        "vm-prop-new-31",
+        "vm-prop-new-52",
+        "if1201-new-dsmz_trace_2n_naoh",
+        "if1201-new-jcm_1130_10n_naoh",
+        "if1201-new-atcc_nitrosolobus_6n_naoh",
+        "if1201-new-pcr_s11_01n_naoh",
+        "if1201-new-atcc_1340_naoh_4g_100ml",
+        "if1201-new-jcm_574_1m_kh2po4",
+        "if1201-new-jcm_574_1m_k2hpo4",
+        "if1201-new-pcr_s11_50mm_na2hpo4",
+        "if1201-new-jcm_908_sulfide_10pct_wv",
+        "if1201-new-atcc_1943_sulfide_25pct",
+        "if1201-new-atcc_1942_sulfide_5pct",
+        "op1201-indicator-stock",
+        "op1201-toluene-stock",
+        "op1201-laminarin-scope",
+        "op1201-bbl-fluid-thioglycollate",
+        "vm1201-prop-jcm1023-vitamin",
+        "vm1201-prop-jcm903-vitamin",
+        "vm1201-prop-jcm554-sl10",
+        "vm1201-prop-nbrc1356-mineral-base1",
+        "vm1201-prop-nbrc-common9",
+        "vm1201-prop-jcm515-b12-partial",
+        "vm1201-prop-jcm647-b12-partial",
+        "vm1201-prop-jcm1354-b12-partial",
+        "vm1201-prop-togo125-k1-partial",
+        "vm1201-prop-dsm1245-k1-partial"
+      ],
+      "case_ids": [
+        "CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6",
+        "CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9",
+        "CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6",
+        "CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd",
+        "CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a",
+        "CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316",
+        "CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499",
+        "CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7",
+        "CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45",
+        "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+        "CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e",
+        "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+        "CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e",
+        "CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733",
+        "CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41",
+        "CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216",
+        "CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e",
+        "CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468",
+        "CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e",
+        "CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb",
+        "CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5",
+        "CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc",
+        "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e",
+        "CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08",
+        "CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a",
+        "CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378",
+        "CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6",
+        "CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380",
+        "CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf",
+        "CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45",
+        "CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda",
+        "CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05",
+        "CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394",
+        "CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9",
+        "CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4",
+        "CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7",
+        "CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22",
+        "CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f",
+        "CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51",
+        "CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297",
+        "CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3",
+        "CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba",
+        "CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5",
+        "CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c",
+        "CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2",
+        "CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c",
+        "CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793",
+        "CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a",
+        "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506"
+      ],
+      "problem": "The new/changed ontology_mapping.evidence entries use MANUAL_CURATION, whose native EvidenceTypeEnum explicitly means evidence supplied by a human reviewer. Histories identify worker08 agent processes and llm_assisted:true; supplied peer reviews are separate in-process agents, not human identity witnesses. Identical inherited evidence is excluded from this finding.",
+      "proposed_bounded_fix": "Retype each newly authored evidence entry to the source/decision type actually supported (for example DATABASE_MATCH or CURATOR_JUDGMENT as applicable), retaining exact sources and honest LLM assistance. Do not silently claim human verification. This is provenance correction, not chemical invalidation.",
+      "dedup_context": [],
+      "payload_bindings": [
+        {
+          "proposal_id": "op-ethane-new",
+          "owner_path": "data/ingredients/mapped/Ethane.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/organic_products/proposals/Ethane.yaml",
+            "sha256": "6514d4c20262b17fb07646ba5ba4521588c4f0849364325fbde9ea1a98192714"
+          }
+        },
+        {
+          "proposal_id": "op-nalidixic-new",
+          "owner_path": "data/ingredients/mapped/Nalidixic_Acid.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/organic_products/proposals/Nalidixic_Acid.yaml",
+            "sha256": "ca0acf4743b49628c9a2086a412abbc2c82840367a40251061e8b43608b50d72"
+          }
+        },
+        {
+          "proposal_id": "op-sodium-nicotinate-new",
+          "owner_path": "data/ingredients/mapped/Sodium_Nicotinate.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/organic_products/proposals/Sodium_Nicotinate.yaml",
+            "sha256": "06447906860830a09cd5b77b4f3366e1533edcfb1041cc8f9f3332ce7c3e8f1d"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-2",
+          "owner_path": "data/ingredients/mapped/JCM296_Vitamins_Mix_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml",
+            "sha256": "4f5067b1ee47cbe920dfc989e18e495a1ea575219d5151fc8f54ee0a1cd5877f"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-11",
+          "owner_path": "data/ingredients/mapped/JCM995_Vitamin_Solution_No6.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml",
+            "sha256": "70316a108a327f463346cb42f58ce98f083f3b6b354e683a5a230dda22ba008f"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-42",
+          "owner_path": "data/ingredients/mapped/JCM1100_Vitamin_Solution_B_1000x.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml",
+            "sha256": "9a445d95db93999a2861953bcec387c7212fd965a5b8aee70db3d19c15c4f6df"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-58",
+          "owner_path": "data/ingredients/mapped/JCM848_Vitamin_Mixture_100x.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml",
+            "sha256": "63a3e4f42e4dfa13127a253cca16fe4605a265666026bc43b85cedbafc95170a"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-7",
+          "owner_path": "data/ingredients/mapped/DSMZ125_Vitamin_K1_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml",
+            "sha256": "21067756427b40510e5af972a580008ffd0b4b23b4f520e16537a3655e0c50db"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-29",
+          "owner_path": "data/ingredients/mapped/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+            "sha256": "fa5869a2f809a679feff7f7c58f074fd32c1efc40e9596dd97a30e591a3edadd"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-26",
+          "owner_path": "data/ingredients/mapped/ATCC1249_Component_III.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml",
+            "sha256": "73f37518ec92f98c7bb32e8d6d15ac0e85946bc7e2c366541160426a0cadd9b3"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-31",
+          "owner_path": "data/ingredients/mapped/NBRC1321_Vitamin_B12_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml",
+            "sha256": "808564e03dd9d66dcabd795be5aa2d7609420a38b9aefbecc9d895ffbd2cacbe"
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-52",
+          "owner_path": "data/ingredients/mapped/TOGO_M2567_Mineral_Base_D.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml",
+            "sha256": "ff88641667a68f53b92085197653096925a27a46450449c795defe2d74f854ed"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-dsmz_trace_2n_naoh",
+          "owner_path": "data/ingredients/mapped/dsmz_trace_2n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml",
+            "sha256": "5cec0aa2b6fd714e79269c13ba4d52f160846eee157a7f21b4fc3e0cbfae41ac"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_1130_10n_naoh",
+          "owner_path": "data/ingredients/mapped/jcm_1130_10n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml",
+            "sha256": "c31473af8f023c6fa0f8b6bc51206cfffa1bd4d4494786b1feaa115a5707ce4c"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_nitrosolobus_6n_naoh",
+          "owner_path": "data/ingredients/mapped/atcc_nitrosolobus_6n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml",
+            "sha256": "22c0816d4a59d84a81ade186dbc28f3e5d007e1a7c8421e5926ce852246e4485"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-pcr_s11_01n_naoh",
+          "owner_path": "data/ingredients/mapped/pcr_s11_01n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml",
+            "sha256": "71fdb715cb6de0fe66c3a566893b7fb18a38ece2eeecd1174f3d95170c967973"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_1340_naoh_4g_100ml",
+          "owner_path": "data/ingredients/mapped/atcc_1340_naoh_4g_100ml.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml",
+            "sha256": "8957268f2bd1f476e353ef63b235c6c17b3790e30b2997b3727932f90806a57d"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_574_1m_kh2po4",
+          "owner_path": "data/ingredients/mapped/jcm_574_1m_kh2po4.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml",
+            "sha256": "48a4b2879ff93e444c27059cb98f94f0d7746d727533e2ca26d031d72bc534b5"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_574_1m_k2hpo4",
+          "owner_path": "data/ingredients/mapped/jcm_574_1m_k2hpo4.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml",
+            "sha256": "6516d1a4e4e1023fd6002fe728ee1aa234bb553a45fa29ed3f19fb7b6164d273"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-pcr_s11_50mm_na2hpo4",
+          "owner_path": "data/ingredients/mapped/pcr_s11_50mm_na2hpo4.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml",
+            "sha256": "64ae342aa82a2711fd9bbc2aefda174a1edd5399c4286bce345b533845da5230"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_908_sulfide_10pct_wv",
+          "owner_path": "data/ingredients/mapped/jcm_908_sulfide_10pct_wv.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml",
+            "sha256": "099914b3171ed03aa7ff129dccb239f4d7c478e852473c03291b856987bd464a"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_1943_sulfide_25pct",
+          "owner_path": "data/ingredients/mapped/atcc_1943_sulfide_25pct.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml",
+            "sha256": "8b0b272de2c91fb75173d0454c01655cd211deabb23fa5fe087d9d256e50c61d"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_1942_sulfide_5pct",
+          "owner_path": "data/ingredients/mapped/atcc_1942_sulfide_5pct.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml",
+            "sha256": "9123215c0a354e22947b3f940ec33f321a5db9b98a6a9b41f36f09f145e1c2ee"
+          }
+        },
+        {
+          "proposal_id": "op1201-indicator-stock",
+          "owner_path": "data/ingredients/mapped/togo_m2844_bromothymol_blue_koh_stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml",
+            "sha256": "aec4adced072ccf3c148a4a10c6f4f33721b5e8084cb419647d326adaa2b9295"
+          }
+        },
+        {
+          "proposal_id": "op1201-toluene-stock",
+          "owner_path": "data/ingredients/mapped/jcm600_water_saturated_toluene_stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml",
+            "sha256": "6937a925973335ef57255154a68a4ae529c0204d4bed064b46066fa0a4aa8f1b"
+          }
+        },
+        {
+          "proposal_id": "op1201-laminarin-scope",
+          "owner_path": "data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml",
+          "before_sha256": "d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml",
+            "sha256": "f85d2e05b36fc977caac110157f4e8e32bf2acf927cc2ff2f8ff5dd034803619"
+          }
+        },
+        {
+          "proposal_id": "op1201-bbl-fluid-thioglycollate",
+          "owner_path": "data/ingredients/mapped/bbl_fluid_thioglycollate_bd211260.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml",
+            "sha256": "81b554525bf72f919ad9bf47f9ca35c94a9490a3684e52e8638eb90b3917c1b8"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm1023-vitamin",
+          "owner_path": "data/ingredients/mapped/JCM1023_Vitamin_Mixture.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml",
+            "sha256": "b6be1c47bc9a9247bca3dffc2409382ce89d2e55c594724332dcfb8a061e0b09"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm903-vitamin",
+          "owner_path": "data/ingredients/mapped/JCM903_Vitamin_Mixture.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml",
+            "sha256": "098f1e4645ec33bb074296f4585c191ed8802c56f9f21efd3629048513555c8e"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm554-sl10",
+          "owner_path": "data/ingredients/mapped/JCM554_SL10_Elements_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml",
+            "sha256": "2e7d8b8084ef054cb6f7880af5558ba394033a39d0e2614ccad6d9a93e1ec0ee"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-nbrc1356-mineral-base1",
+          "owner_path": "data/ingredients/mapped/NBRC1356_Mineral_Base1_Supernatant.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml",
+            "sha256": "0aa699c355adee9161a6778c5ee892e07d5f85b2cf90494dea6b31f9072f0256"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-nbrc-common9",
+          "owner_path": "data/ingredients/mapped/NBRC1356_Vitamin_Solution.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml",
+            "sha256": "649355ae72158b74531da36d9342baa19e230609083e03f6a9d0937b6543e0fe"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm515-b12-partial",
+          "owner_path": "data/ingredients/mapped/JCM515_Vitamin_B12_20ug_ml_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml",
+            "sha256": "b354c025c5af2e0262c2ae5194f2d10a6adf16031e69c171e2111f405141a3cb"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm647-b12-partial",
+          "owner_path": "data/ingredients/mapped/JCM647_Vitamin_B12_2mg_ml_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml",
+            "sha256": "77f56259a0311c636b25750ca0ea3fea236fa857d3f0a2de43a93e2082b7d840"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm1354-b12-partial",
+          "owner_path": "data/ingredients/mapped/JCM1354_Vitamin_B12_001percent_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml",
+            "sha256": "2161526aaf27c96824fd1cb2154f324568b41e5fb5a183487420d8121ccf8426"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-togo125-k1-partial",
+          "owner_path": "data/ingredients/mapped/TOGO_M125_Vitamin_K1_01percent_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml",
+            "sha256": "39a00b197bdfea2b54061a4bf1e7dc6fbe829c4645c9ba327687ecf7f4b1d863"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-dsm1245-k1-partial",
+          "owner_path": "data/ingredients/mapped/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml",
+            "sha256": "4f74332fe3d22bdd2c769503a428930a5a150f9331d61af4f4a4b6ce66a77271"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "contract": "src/mediaingredientmech/schema/mediaingredientmech.yaml EvidenceTypeEnum MANUAL_CURATION lines1459–1463",
+          "distinction": "ComponentEvidenceTypeEnum MANUAL_CURATION has a different definition and is not included."
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-005",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P3",
+      "title": "Component completeness conflates unknown formulation with explicit omission",
+      "proposal_ids": [
+        "if1201-new-dsmz_trace_2n_naoh",
+        "if1201-new-jcm_1130_10n_naoh",
+        "if1201-new-atcc_nitrosolobus_6n_naoh",
+        "if1201-new-pcr_s11_01n_naoh",
+        "if1201-new-atcc_1340_naoh_4g_100ml",
+        "if1201-new-jcm_574_1m_kh2po4",
+        "if1201-new-jcm_574_1m_k2hpo4",
+        "if1201-new-pcr_s11_50mm_na2hpo4",
+        "if1201-new-jcm_908_sulfide_10pct_wv",
+        "if1201-new-atcc_1943_sulfide_25pct",
+        "if1201-new-atcc_1942_sulfide_5pct",
+        "vm1201-prop-nbrc1356-mineral-base1",
+        "vm1201-prop-jcm515-b12-partial",
+        "vm1201-prop-jcm647-b12-partial",
+        "vm1201-prop-jcm1354-b12-partial",
+        "vm1201-prop-togo125-k1-partial",
+        "vm1201-prop-dsm1245-k1-partial"
+      ],
+      "case_ids": [
+        "CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9",
+        "CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd",
+        "CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a",
+        "CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7",
+        "CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45",
+        "CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e",
+        "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+        "CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e",
+        "CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41",
+        "CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc",
+        "CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a",
+        "CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378",
+        "CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6",
+        "CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf",
+        "CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45",
+        "CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda",
+        "CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05",
+        "CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9",
+        "CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7",
+        "CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f",
+        "CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297",
+        "CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3",
+        "CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba",
+        "CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5",
+        "CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c",
+        "CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c",
+        "CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793",
+        "CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a"
+      ],
+      "problem": "PARTIAL is defined by the schema as source-explicit additional constituents omitted; UNKNOWN means the source does not establish list completeness. Several selected stocks say carrier/additional constituents are unspecified, while PCR-S11 Na2HPO4 uses exact-form uncertainty despite listing source salt and water. Those explanations do not by themselves prove explicit omission.",
+      "proposed_bounded_fix": "Audit completeness per cited source. Use UNKNOWN when composition closure is unsettled, COMPLETE only when source closes the list, and PARTIAL only with an explicit omitted-constituent basis. Keep hydrate grounding, missing solvent quantity, and unknown formulation closure as separate facts. No invented constituents are requested.",
+      "dedup_context": [],
+      "payload_bindings": [
+        {
+          "proposal_id": "if1201-new-dsmz_trace_2n_naoh",
+          "owner_path": "data/ingredients/mapped/dsmz_trace_2n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml",
+            "sha256": "5cec0aa2b6fd714e79269c13ba4d52f160846eee157a7f21b4fc3e0cbfae41ac"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_1130_10n_naoh",
+          "owner_path": "data/ingredients/mapped/jcm_1130_10n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml",
+            "sha256": "c31473af8f023c6fa0f8b6bc51206cfffa1bd4d4494786b1feaa115a5707ce4c"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_nitrosolobus_6n_naoh",
+          "owner_path": "data/ingredients/mapped/atcc_nitrosolobus_6n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml",
+            "sha256": "22c0816d4a59d84a81ade186dbc28f3e5d007e1a7c8421e5926ce852246e4485"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-pcr_s11_01n_naoh",
+          "owner_path": "data/ingredients/mapped/pcr_s11_01n_naoh.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml",
+            "sha256": "71fdb715cb6de0fe66c3a566893b7fb18a38ece2eeecd1174f3d95170c967973"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_1340_naoh_4g_100ml",
+          "owner_path": "data/ingredients/mapped/atcc_1340_naoh_4g_100ml.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml",
+            "sha256": "8957268f2bd1f476e353ef63b235c6c17b3790e30b2997b3727932f90806a57d"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_574_1m_kh2po4",
+          "owner_path": "data/ingredients/mapped/jcm_574_1m_kh2po4.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml",
+            "sha256": "48a4b2879ff93e444c27059cb98f94f0d7746d727533e2ca26d031d72bc534b5"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_574_1m_k2hpo4",
+          "owner_path": "data/ingredients/mapped/jcm_574_1m_k2hpo4.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml",
+            "sha256": "6516d1a4e4e1023fd6002fe728ee1aa234bb553a45fa29ed3f19fb7b6164d273"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-pcr_s11_50mm_na2hpo4",
+          "owner_path": "data/ingredients/mapped/pcr_s11_50mm_na2hpo4.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml",
+            "sha256": "64ae342aa82a2711fd9bbc2aefda174a1edd5399c4286bce345b533845da5230"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-jcm_908_sulfide_10pct_wv",
+          "owner_path": "data/ingredients/mapped/jcm_908_sulfide_10pct_wv.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml",
+            "sha256": "099914b3171ed03aa7ff129dccb239f4d7c478e852473c03291b856987bd464a"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_1943_sulfide_25pct",
+          "owner_path": "data/ingredients/mapped/atcc_1943_sulfide_25pct.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml",
+            "sha256": "8b0b272de2c91fb75173d0454c01655cd211deabb23fa5fe087d9d256e50c61d"
+          }
+        },
+        {
+          "proposal_id": "if1201-new-atcc_1942_sulfide_5pct",
+          "owner_path": "data/ingredients/mapped/atcc_1942_sulfide_5pct.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml",
+            "sha256": "9123215c0a354e22947b3f940ec33f321a5db9b98a6a9b41f36f09f145e1c2ee"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-nbrc1356-mineral-base1",
+          "owner_path": "data/ingredients/mapped/NBRC1356_Mineral_Base1_Supernatant.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml",
+            "sha256": "0aa699c355adee9161a6778c5ee892e07d5f85b2cf90494dea6b31f9072f0256"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm515-b12-partial",
+          "owner_path": "data/ingredients/mapped/JCM515_Vitamin_B12_20ug_ml_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml",
+            "sha256": "b354c025c5af2e0262c2ae5194f2d10a6adf16031e69c171e2111f405141a3cb"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm647-b12-partial",
+          "owner_path": "data/ingredients/mapped/JCM647_Vitamin_B12_2mg_ml_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml",
+            "sha256": "77f56259a0311c636b25750ca0ea3fea236fa857d3f0a2de43a93e2082b7d840"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-jcm1354-b12-partial",
+          "owner_path": "data/ingredients/mapped/JCM1354_Vitamin_B12_001percent_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml",
+            "sha256": "2161526aaf27c96824fd1cb2154f324568b41e5fb5a183487420d8121ccf8426"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-togo125-k1-partial",
+          "owner_path": "data/ingredients/mapped/TOGO_M125_Vitamin_K1_01percent_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml",
+            "sha256": "39a00b197bdfea2b54061a4bf1e7dc6fbe829c4645c9ba327687ecf7f4b1d863"
+          }
+        },
+        {
+          "proposal_id": "vm1201-prop-dsm1245-k1-partial",
+          "owner_path": "data/ingredients/mapped/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml",
+            "sha256": "4f74332fe3d22bdd2c769503a428930a5a150f9331d61af4f4a4b6ce66a77271"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "contract": "ComponentCompletenessEnum lines1530–1538; compare each payload component_assertion and notes."
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-006",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P2",
+      "title": "Nalidixic-acid source coverage exceeds readable primary evidence",
+      "proposal_ids": [
+        "op-nalidixic-new"
+      ],
+      "case_ids": [
+        "CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e"
+      ],
+      "problem": "Frozen case includes NBRC1301 and1314 contexts. Author bundle supplies normalized context and ontology evidence, but an ignored-inclusive search did not locate exact readable primary NBRC1301/1314 captures. Independent NBRC1301 retrieval confirms30mg/ml acid stock; NBRC1314 and TOGO M2023 retrieval remain unavailable. Exact acid molecular identity is plausible, but full per-source applicability is not independently verified.",
+      "proposed_bounded_fix": "Bind a readable exact NBRC1314 primary capture or record that occurrence as source-held/unverified while retaining the independently supported acid candidate. Keep the successful1301 capture separate from failed1314/M2023 requests; do not claim an unread source was inspected.",
+      "dedup_context": [],
+      "payload_bindings": [
+        {
+          "proposal_id": "op-nalidixic-new",
+          "owner_path": "data/ingredients/mapped/Nalidixic_Acid.yaml",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/organic_products/proposals/Nalidixic_Acid.yaml",
+            "sha256": "ca0acf4743b49628c9a2086a412abbc2c82840367a40251061e8b43608b50d72"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "path": "a/new-primary/nalidixic-web-response.json",
+          "sha256": "4c19dda13551c92139ec4bb057b5e44cdcd4a50ec6e375479939c5c618c5d761"
+        },
+        {
+          "path": "a/new-primary/receipt.json",
+          "sha256": "e04ca3bbb40107fd4359cb002f4f75762a487a9cc71867167f4def96501fa5bc",
+          "note": "Direct urllib DNS errors, not policy denials."
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-007",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P2",
+      "title": "Inherited malformed dipotassium-phosphate aliases survive full-payload selection",
+      "proposal_ids": [
+        "if-add-anhydrous-k2hpo4"
+      ],
+      "case_ids": [
+        "CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54"
+      ],
+      "problem": "The selected CHEBI131527 whole payload retains KH2HPO4 as EXACT_SYNONYM and K2HPO as RAW_TEXT. Both pass native synonym policy but do not encode K2HPO4; no source-specific universal identity bridge is established. The new NBRC268 anhydrous-base alias itself is supported.",
+      "proposed_bounded_fix": "Preserve literal malformed aliases and original provenance as REJECTED_LABEL unless a precise primary identity assertion justifies each globally. Keep occurrence-specific source corrections separate and append bounded history. Do not normalize a malformed formula into a universal chemical identity.",
+      "dedup_context": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "payload_bindings": [
+        {
+          "proposal_id": "if-add-anhydrous-k2hpo4",
+          "owner_path": "data/ingredients/mapped/K2hpo4.yaml",
+          "before_sha256": "7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/proposed_owners/K2hpo4.yaml",
+            "sha256": "6bd2194c63c815c81750a6e61e6da8d85db6579ebeee15626caf1328bbc645a4"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "path": "a/whole-payload-history-and-alias-check.json",
+          "sha256": "9bc4fb78192b67e7b5455518bc3c5af2b4461bf5fb86a9f8ea94e1f11308e43a",
+          "reproduction": "Inspect if-add-anhydrous-k2hpo4 native_synonym_assessment for KH2HPO4 and K2HPO, both native_resolving true."
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    },
+    {
+      "finding_id": "W08-A-008",
+      "reviewer": "/root/w08_review_a",
+      "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+      "severity": "P2",
+      "title": "JCM403 B12 stock registry curation deferred on molecular-form uncertainty",
+      "proposal_ids": [
+        "vm-prop-jcm403-b12"
+      ],
+      "case_ids": [
+        "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+        "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+        "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2"
+      ],
+      "problem": "The complete payload retains UNMAPPED_0567 and says no exact cyanocobalamin assignment because B12 vitamer is unspecified. Actual JCM403 establishes a separate5mg B12/100ml distilled-water stock and the inherited owner records imported MediaDive1845 provenance. The molecular-form limitation does not prevent source-qualified preparation identity; final successor already creates less-complete B12/K1 stocks with unknown forms and carriers. No additional source-to-owner fact is identified for retaining the placeholder.",
+      "proposed_bounded_fix": "After duplicate/preparation comparison, finish a bounded promotion proposal for the existing JCM403 stock owner to a documented kgmicrobe.ingredient identity and source-qualified preferred term. Preserve original placeholder/source/history and holds through native identity workflow. Keep B12 component molecular form unresolved, ground only supported components, and do not mint a duplicate owner or claim cyanocobalamin.",
+      "dedup_context": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201"
+      ],
+      "payload_bindings": [
+        {
+          "proposal_id": "vm-prop-jcm403-b12",
+          "owner_path": "data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+          "before_sha256": "1a9bcd5868a4a1e1385b3574ee5682c571e8f5dcd78fb86ae8d213d11951a471",
+          "after_capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml",
+            "sha256": "94956716b71347bd431921e64a06ddd2593d6e7bc50e748e1be3c3cc78bb73a8"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "exact_payload_fields": [
+            "identifier=UNMAPPED_0567",
+            "mapping_status=UNMAPPED",
+            "notes imported mediadive.ingredient:1845 and preserve placeholder"
+          ],
+          "primary": "JCM403 separate vitamin B12 stock; native MAPPING_SEMANTICS source-qualified preparation identity"
+        }
+      ],
+      "scope": "Finding concerns exact selected payload/source scope; it grants no whole-owner, role, supported export or cross-shard coalescence approval."
+    }
+  ],
+  "no_GitHub_mutation": true,
+  "coordinator_responsibility": "Deduplicate/file findings and direct author corrections; assess exact successor independently."
+}

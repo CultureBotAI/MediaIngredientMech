@@ -1,0 +1,86 @@
+identifier: kgmicrobe.ingredient:mediadive_552_thiosulfate_5g_100ml
+preferred_term: MediaDive 552 source thiosulfate preparation (5 g in 100 ml water)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_552_thiosulfate_5g_100ml
+  ontology_label: MediaDive 552 source thiosulfate preparation (5 g in 100 ml water)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://mediadive.dsmz.de/rest/ingredient/552
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'The exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100 ml
+  H2O, dosed as 10 ml. This is a preparation recipe, not an anhydrous solid. Conflicting
+  source CAS/formula/ChEBI fields leave the supplied thiosulfate form UNMAPPED. Water
+  grade, final solution volume and any sterilization are unspecified. The original
+  row is the recipe witness; the live ingredient page confirms identifier conflict,
+  not the stock recipe. Raw case labels remain only in evidence and case-bound proposal
+  links, not globally resolving synonyms. No occurrence count transfer, source-hold
+  release or receiving-medium dose correction is implied. Issue 1227 source-relative
+  completeness: Frozen MediaDive ingredient 552 source_record.attribute gives 5.0
+  g in 100 ml H2O; source_record.amount=10 and unit=ml describe receiving dose. Both
+  literal stock inputs are retained. Conflicting automated ingredient metadata does
+  not settle the salt hydration. Completeness describes the literal printed input
+  list only; it does not approve a disputed chemical identity, a final volume or source
+  membership transfer.'
+solution_type: OTHER
+components:
+- component_name: Na2S2O3 (source form unresolved)
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_BATCH
+- component_name: H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '100'
+  concentration_unit: ML_PER_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/ingredient/552
+    source_record: https://mediadive.dsmz.de/rest/ingredient/552
+    notes: The exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100
+      ml H2O, dosed as 10 ml. This is a preparation recipe, not an anhydrous solid.
+      Conflicting source CAS/formula/ChEBI fields leave the supplied thiosulfate form
+      UNMAPPED. Water grade, final solution volume and any sterilization are unspecified.
+      The original row is the recipe witness; the live ingredient page confirms identifier
+      conflict, not the stock recipe. Frozen MediaDive ingredient 552 source_record.attribute
+      gives 5.0 g in 100 ml H2O; source_record.amount=10 and unit=ml describe receiving
+      dose. Both literal stock inputs are retained. Conflicting automated ingredient
+      metadata does not settle the salt hydration. Completeness describes the literal
+      printed input list only; it does not approve a disputed chemical identity, a
+      final volume or source membership transfer.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: The exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100
+    ml H2O, dosed as 10 ml. This is a preparation recipe, not an anhydrous solid.
+    Conflicting source CAS/formula/ChEBI fields leave the supplied thiosulfate form
+    UNMAPPED. Water grade, final solution volume and any sterilization are unspecified.
+    The original row is the recipe witness; the live ingredient page confirms identifier
+    conflict, not the stock recipe.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:55.831519+00:00'
+  curator: worker-08 /root/inorganics issue-1227 author
+  action: CORRECTED_ASSERTION_SCOPE
+  changes: Retype ontology_mapping.evidence[0] from MANUAL_CURATION to CURATOR_JUDGMENT;
+    preserve its exact source and substantive rationale. Set component_assertion.completeness
+    PARTIAL → COMPLETE. Frozen MediaDive ingredient 552 source_record.attribute gives
+    5.0 g in 100 ml H2O; source_record.amount=10 and unit=ml describe receiving dose.
+    Both literal stock inputs are retained. Conflicting automated ingredient metadata
+    does not settle the salt hydration. Completeness describes the literal printed
+    input list only; it does not approve a disputed chemical identity, a final volume
+    or source membership transfer. All inherited history, scientific/source/role/export
+    holds and original before hash remain preserved. This is a proposal, pending independent
+    whole-payload review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

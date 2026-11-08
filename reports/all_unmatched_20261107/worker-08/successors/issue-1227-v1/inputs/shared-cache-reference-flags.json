@@ -1,0 +1,111 @@
+{
+  "already_recorded_thiamine_concern": {
+    "action": "Existing WITHHOLD survives; workers retain source-case supplied-form review and may propose evidence-backed changes later. No correction selected here.",
+    "contrast_18290": {
+      "evidence_id": "OLS:CHEBI:18290",
+      "formula": [
+        "C12H19N4O7P2S.Cl"
+      ],
+      "label": "thiamine(1+) diphosphate chloride"
+    },
+    "native_disposition": {
+      "disposition": "WITHHOLD",
+      "evidence_key": "2792",
+      "object_id": "CHEBI:9532",
+      "owner_record": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+      "owner_record_sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad",
+      "predicate_id": "skos:exactMatch",
+      "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+      "review_reason": "Current other still carries chloride-specific names and CAS inherited from the earlier salt grounding, despite the chloride-free target; the original report explicitly flags this mismatch.",
+      "row_sha256": "8e119b6968d03dd53fe33808c035436f11626ed1ae618d7bde9ed7b9276ff775",
+      "source_position": "2792",
+      "subject_id": "MIM:Thiamine_pyrophosphate"
+    },
+    "owner_chemical_properties": {
+      "cas_rn": "136-09-4",
+      "data_source": "PubChem API",
+      "inchi": "InChI=1S/C12H18N4O7P2S.ClH/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13;/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21);1H",
+      "molecular_formula": "C12H19N4O7P2S.Cl",
+      "retrieval_date": "2026-04-05T19:54:04.079657+00:00",
+      "smiles": "Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1.[Cl-]"
+    },
+    "owner_path": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+    "owner_sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad",
+    "prior_decisions": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/319#issuecomment-5284409978",
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/320#issuecomment-5285670442"
+    ],
+    "recorded_CAS_reference": {
+      "InChI": "InChI=1S/C12H18N4O7P2S/c1-8-11(3-4-22-25(20,21)23-24(17,18)19)26-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7H,3-4,6H2,1-2H3,(H4-,13,14,15,17,18,19,20,21)",
+      "classification": "Do not call CAS136-09-4 chloride. Preserve historical #320 conjugate-base decision.",
+      "evidence_id": "cas:136-09-4:properties",
+      "formula": "C12H18N4O7P2S",
+      "returned_CID": 5431
+    },
+    "reference_9532": {
+      "cas_xrefs": [
+        "cas:136-08-3"
+      ],
+      "evidence_id": "OLS:CHEBI:9532",
+      "formula": [
+        "C12H19N4O7P2S"
+      ]
+    },
+    "separate_stock_scope": "Issue268 stock cleanup concerns 02_Thiamine_Pyrophosphate, a different owner; it does not settle the current pure-compound source cases.",
+    "unsafe_aggregated_synonyms": {
+      "chloride_labelled_synonyms": [
+        "2-(3-((4-amino-2-methyl-pyrimidin-5-yl)methyl)-4-methyl-thiazol-3-ium-5-yl)ethyl phosphono hydrogen phosphate;chloride"
+      ],
+      "evidence_id": "cas:136-09-4:synonyms",
+      "limitation": "These names conflict with the returned chloride-free structural formula and are not proof of a chloride identity."
+    },
+    "worker_slots": [
+      5,
+      9
+    ]
+  },
+  "obsolete_terms_in_captured_records": [],
+  "other_applicability_limits": [
+    {
+      "classification": "reference boundary, not a new adjudicated defect",
+      "evidence_ids": [
+        "OLS:CHEBI:29377"
+      ],
+      "limitation": "The current owner is a STOCK_SOLUTION. CHEBI:29377 is a solute reference and cannot establish whole-stock composition, concentration, preparation or exact identity.",
+      "owner_path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+      "owner_sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+    },
+    {
+      "classification": "reference boundary, not a new adjudicated defect",
+      "evidence_ids": [
+        "OLS:FOODON:03315720"
+      ],
+      "limitation": "FOODON:03315720 is a hydrolyzed vegetable-protein category. It does not establish equivalence among soybean sources, digestion processes, suppliers, grades or named commercial peptones.",
+      "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "owner_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c"
+    },
+    {
+      "classification": "reference boundary, not a new adjudicated defect",
+      "evidence_ids": [
+        "OLS:CHEBI:191055",
+        "PUBCHEM:23667519:properties",
+        "PUBCHEM:23667519:synonyms"
+      ],
+      "limitation": "Keep the owner's CAS identity and NARROW_MATCH parent distinction. CHEBI:191055 describes the acid; the recorded PubChem CID describes the sodium salt. This cache does not approve either relation for a source case.",
+      "owner_path": "data/ingredients/mapped/TAPS_Sodium_Salt.yaml",
+      "owner_sha256": "8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6"
+    },
+    {
+      "classification": "reference boundary, not a new adjudicated defect",
+      "evidence_ids": [
+        "OLS:CHEBI:176843",
+        "cas:68-19-9:properties",
+        "cas:68-19-9:synonyms"
+      ],
+      "limitation": "CHEBI:176843 is a cobalamin-vitamer class. The recorded CAS query returns a particular PubChem structure; neither that lookup nor the generic source name selects a source case's vitamer, salt or formulation.",
+      "owner_path": "data/ingredients/mapped/Vitamin_B12.yaml",
+      "owner_sha256": "9ee0b669c9ef90950273ea3755e02d960efbfdef7252c13edf180bd70b3fad6c"
+    }
+  ],
+  "purpose": "Reference applicability and already-recorded concerns only. No source-case decisions or new issue filing."
+}

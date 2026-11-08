@@ -1,0 +1,770 @@
+{
+  "search_scope": "pathlib.rglob includes ignored files; all data/ingredients/**/*.yaml, candidate identifiers plus phosphate/thiosulfate/dithionite labels",
+  "rows": [
+    {
+      "path": "data/ingredients/mapped/K2hpo4.yaml",
+      "sha256": "7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1",
+      "identifier": "CHEBI:131527",
+      "preferred_term": "K2HPO4",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:131527",
+        "ontology_label": "dipotassium hydrogen phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('K2HPO4')",
+            "pmid": "40302155",
+            "supports": "SUPPORT",
+            "snippet": "We designed four different forms of potassium fertilizer treatments: K2SO4, KCl, KH2PO4, and K2HPO4, and used qRT-PCR and HPLC techniques to explore their differences in anthocyanin synthesis, accumulation, quality, and yield in PSP tubers.",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7758-11-4",
+        "data_source": "CultureBotHT compounds_to_cas.csv",
+        "retrieval_date": "2026-04-05T21:48:45.208971+00:00",
+        "molecular_formula": "HO4P.2K",
+        "inchi": "InChI=1S/2K.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+        "smiles": "O=P([O-])([O-])O.[K+].[K+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Distilled_Water.yaml",
+      "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56",
+      "identifier": "CHEBI:15377",
+      "preferred_term": "Distilled water",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:15377",
+        "ontology_label": "water",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('Distilled water')",
+            "pmid": "36233206",
+            "supports": "SUPPORT",
+            "snippet": "The mice were divided into four groups: negative control (distilled water), positive control (1 mg/kg of finasteride), CP500 (500 mg/kg of CP), and CP1000 (1000 mg/kg of CP).",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7732-18-5",
+        "data_source": "PubChem (via CHEBI:15377)",
+        "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+        "molecular_formula": "H2O",
+        "inchi": "InChI=1S/H2O/h1H2",
+        "smiles": "[H]O[H]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_2_H2o.yaml",
+      "sha256": "bdd9cbd71ef2c05045341ed9611b12b8a1f8c8b82a5cd2b2ddbd46a7c6e3da17",
+      "identifier": "CHEBI:91258",
+      "preferred_term": "Na2HPO4 x 2 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:91258",
+        "ontology_label": "disodium hydrogenphosphate dihydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:91258, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "Promoted off the anhydrous term CHEBI:34683, which was absorbing five distinct Na2HPO4 hydrates, to the specific term CHEBI:91258 ('disodium hydrogenphosphate dihydrate') \u2014 MAPPING_SEMANTICS \u00a73 step 1. cas_rn '7558-79-4' -> '10028-24-7', taken from ChEBI's own xref on the specific term; the previous value was shared across the family and did not denote this hydrate (#334)."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:91258 -> kgmicrobe.compound:na2hpo4_x_2_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:91258 ('disodium hydrogenphosphate dihydrate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2Na' -> '2H2O.HO4P.2Na'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because adopted verbatim from the mapped term CHEBI:91258 ('disodium hydrogenphosphate dihydrate'), which is the specific hydrate and already carries the water."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:91258 ('disodium hydrogenphosphate dihydrate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "10028-24-7",
+        "data_source": "ChEBI:91258 via EBI OLS v4 (archived exact dihydrate term)",
+        "retrieval_date": "2026-11-01T06:26:52.088681+00:00",
+        "molecular_formula": "2H2O.HO4P.2Na",
+        "inchi": "InChI=1S/2Na.H3O4P.2H2O/c;;1-5(2,3)4;;/h;;(H3,1,2,3,4);2*1H2/q2*+1;;;/p-2",
+        "smiles": "O.O.O=P([O-])([O-])O.[Na+].[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_3_H2o.yaml",
+      "sha256": "0f9abe1c97efaf92bf135a76edd1a3e4811ecd63369b13f11d869754894c1f1d",
+      "identifier": "kgmicrobe.compound:na2hpo4_x_3_h2o",
+      "preferred_term": "Na2HPO4 x 3 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:34683",
+        "ontology_label": "disodium hydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:34683, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:34683 -> kgmicrobe.compound:na2hpo4_x_3_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:34683 ('disodium hydrogenphosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2Na' -> 'HO4P.2Na.3H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:34683's ChEBI formula ('HO4P.2Na') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:34683 ('disodium hydrogenphosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "MIM curation (#344)",
+            "notes": "mediadive.compound:525 still carries the source label 'Na2HPO4 x 3 H2O', but no exact ontology term or CAS has been verified for that stated hydration count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest anhydrous parent while the source label keeps its local kgmicrobe.compound identity."
+          }
+        ]
+      },
+      "chemical_properties": {}
+    },
+    {
+      "path": "data/ingredients/mapped/Na2HPO4-KH2PO4_Buffer.yaml",
+      "sha256": "d1581bb3c0ecef10986ae67c5a291b1b36822b18e631f80e3492b6be5f532bc8",
+      "identifier": "kgmicrobe.ingredient:na2hpo4-kh2po4_buffer",
+      "preferred_term": "Na2HPO4-KH2PO4 buffer",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:na2hpo4-kh2po4_buffer",
+        "ontology_label": "Na2HPO4-KH2PO4 buffer",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#288)",
+            "notes": "A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288)."
+          }
+        ]
+      },
+      "chemical_properties": null
+    },
+    {
+      "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+      "sha256": "fb412a63050b2d599ee3cfab9fcafcaf141b3ac4c8a1febe6a57709831bc90d6",
+      "identifier": "kgmicrobe.compound:k2hpo4_x_3_h2o",
+      "preferred_term": "K2HPO4 x 3 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:131527",
+        "ontology_label": "dipotassium hydrogen phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:131527, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:131527 -> kgmicrobe.compound:k2hpo4_x_3_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:131527 ('dipotassium hydrogen phosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2K' -> 'HO4P.2K.3H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 3 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:131527's ChEBI formula ('HO4P.2K') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:131527 ('dipotassium hydrogen phosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "molecular_formula": "HO4P.2K.3H2O"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2s_X_9_H2o.yaml",
+      "sha256": "e849eb5c8d5a8d977c572ee249927b7fb71b40506e23ed6fb4c30d089b5c8219",
+      "identifier": "CHEBI:76209",
+      "preferred_term": "Na2S x 9 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:76209",
+        "ontology_label": "sodium sulfide nonahydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "1313-84-4",
+        "data_source": "CultureBotHT/compounds_to_cas.csv",
+        "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+        "molecular_formula": "9H2O.2Na.S",
+        "inchi": "InChI=1S/2Na.9H2O.S/h;;9*1H2;/q2*+1;;;;;;;;;;-2",
+        "smiles": "O.O.O.O.O.O.O.O.O.[Na+].[Na+].[S-2]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4.yaml",
+      "sha256": "ae7db57bde47a3797858aa3d5b0ca8f64921a2d453645096233dab4012beb9d4",
+      "identifier": "CHEBI:34683",
+      "preferred_term": "Na2HPO4",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:34683",
+        "ontology_label": "disodium hydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('Na2HPO4')",
+            "pmid": "38524547",
+            "supports": "SUPPORT",
+            "snippet": "VSMCs were then cultured in 2.6 mM Na2HPO4 and 50 \u03bcg/mL ascorbic acid for 7 days to obtain a calcification model, and we investigated the effects and mechanisms of Cap on VSMCs calcification by assessing the changes of calcium deposition, calcium content, and subsequent VC biomarkers.",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7558-79-4",
+        "data_source": "CultureBotHT compounds_to_cas.csv",
+        "retrieval_date": "2026-04-05T21:48:45.466006+00:00",
+        "molecular_formula": "HO4P.2Na",
+        "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+        "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Naoh.yaml",
+      "sha256": "b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31",
+      "identifier": "CHEBI:32145",
+      "preferred_term": "NaOH",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:32145",
+        "ontology_label": "sodium hydroxide",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('NaOH')",
+            "pmid": "37817899",
+            "supports": "SUPPORT",
+            "snippet": "Key features \u2022 Production and extraction of EPS from submerged cultures of mycelial forms of macrofungi. \u2022 Modification of the method described by Fari\u00f1a et al. (2001), extending its application to submerged cultures of mycelial forms of the macrofungi. \u2022 Determination of EPS production parameters in submerged cultures of mycelial forms of macrofungi. \u2022 EPS solubilization using NaOH (0.1 N).",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "1310-73-2",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:53:29.270857+00:00",
+        "molecular_formula": "HO.Na",
+        "inchi": "InChI=1S/Na.H2O/h;1H2/q+1;/p-1",
+        "smiles": "[Na+].[OH-]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Thiosulfate_Pentahydrate.yaml",
+      "sha256": "72822db65305f5a9fc03a5f6b4eabc3a02dd4e6e71eece308cee95b191c5852b",
+      "identifier": "CHEBI:32150",
+      "preferred_term": "Sodium Thiosulfate Pentahydrate",
+      "mapping_status": "REJECTED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:32150",
+        "ontology_label": "sodium thiosulfate pentahydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CHEBI via OLS search (resolve_unmapped)",
+            "notes": "Auto-upgraded from UNMAPPED_0042; matched via 'Sodium Thiosulfate Pentahydrate' (name normalization); label-exact"
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "10102-17-7",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:54:49.960933+00:00",
+        "molecular_formula": "5H2O.2Na.O3S2",
+        "inchi": "InChI=1S/2Na.H2O3S2.5H2O/c;;1-5(2,3)4;;;;;/h;;(H2,1,2,3,4);5*1H2/q2*+1;;;;;;/p-2",
+        "smiles": "O=S(=O)([O-])[S-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Na+].[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Dithionite.yaml",
+      "sha256": "223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5",
+      "identifier": "CHEBI:42160",
+      "preferred_term": "Dithionite",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:42160",
+        "ontology_label": "dithionite(2-)",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "14844-07-6",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:51:53.520890+00:00",
+        "molecular_formula": "O4S2",
+        "inchi": "InChI=1S/H2O4S2/c1-5(2)6(3)4/h(H,1,2)(H,3,4)/p-2",
+        "smiles": "O=S([O-])S(=O)[O-]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Kh2po4.yaml",
+      "sha256": "e721979cb20e8dcac144900643442d9d9e1f01e4d69b2073de8266120419f1c4",
+      "identifier": "CHEBI:63036",
+      "preferred_term": "KH2PO4",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:63036",
+        "ontology_label": "potassium dihydrogen phosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "LITERATURE",
+            "source": "PubMed search ('KH2PO4')",
+            "pmid": "40302155",
+            "supports": "SUPPORT",
+            "snippet": "We designed four different forms of potassium fertilizer treatments: K2SO4, KCl, KH2PO4, and K2HPO4, and used qRT-PCR and HPLC techniques to explore their differences in anthocyanin synthesis, accumulation, quality, and yield in PSP tubers.",
+            "explanation": "Auto-proposed; curator should rephrase or remove."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7778-77-0",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:52:32.899560+00:00",
+        "molecular_formula": "H2O4P.K",
+        "inchi": "InChI=1S/K.H3O4P/c;1-5(2,3)4/h;(H3,1,2,3,4)/q+1;/p-1",
+        "smiles": "O=P([O-])(O)O.[K+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Thiosulfate.yaml",
+      "sha256": "2a7055e92068a39ea08e4e758cb7e09f9fa6e6678457b0873c60993f207f4713",
+      "identifier": "CHEBI:26977",
+      "preferred_term": "Thiosulfate",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:26977",
+        "ontology_label": "thiosulfate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "chemical_properties": null
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Phosphate_Dibasic.yaml",
+      "sha256": "b259959a7e715cd65d01e9d5b3d87af1a0028b694d96abb7d020cef96d366925",
+      "identifier": "CHEBI:34683",
+      "preferred_term": "Sodium phosphate dibasic",
+      "mapping_status": "REJECTED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:34683",
+        "ontology_label": "disodium hydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureBotHT",
+            "notes": "Imported from CultureBotHT. Used in 10 CultureBot media; samples: 2x UGA defined nocarbon, 2x_UGA_defined_nocarbon, Hans Basal Media\u2026."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "molecular_formula": "3Na.O4P",
+        "inchi": "InChI=1S/3Na.H3O4P/c;;;1-5(2,3)4/h;;;(H3,1,2,3,4)/q3*+1;/p-3",
+        "smiles": "O=P([O-])([O-])[O-].[Na+].[Na+].[Na+]",
+        "data_source": "CHEBI sqlite (oaklib)"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml",
+      "sha256": "cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05",
+      "identifier": "CHEBI:91259",
+      "preferred_term": "Na2HPO4 x 12 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:91259",
+        "ontology_label": "disodium hydrogenphosphate dodecahydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:91259, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "Promoted off the anhydrous term CHEBI:34683, which was absorbing five distinct Na2HPO4 hydrates, to the specific term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate') \u2014 MAPPING_SEMANTICS \u00a73 step 1. cas_rn '7782-85-6' -> '10039-32-4', taken from ChEBI's own xref on the specific term; the previous value was shared across the family and did not denote this hydrate (#334)."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:91259 -> kgmicrobe.compound:na2hpo4_x_12_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2Na' -> '12H2O.HO4P.2Na'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because adopted verbatim from the mapped term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'), which is the specific hydrate and already carries the water."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "10039-32-4",
+        "data_source": "CultureBotHT/compounds_to_cas.csv",
+        "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+        "molecular_formula": "12H2O.HO4P.2Na",
+        "inchi": "InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2",
+        "smiles": "O=P([O-])([O-])O.[Na+].[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Nah2po4h2o.yaml",
+      "sha256": "ff636e9f09fa3f0767d05ad811a4ee706be655fb9007194505d4419741b2595c",
+      "identifier": "CHEBI:114249",
+      "preferred_term": "NaH2PO4\u2022H2O",
+      "mapping_status": "REJECTED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:114249",
+        "ontology_label": "sodium dihydrogenphosphate monohydrate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "NARROW_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "Edison LITERATURE deep research",
+            "notes": "Edison literature research (research/ingredients/NaH2PO4H2O-edison-literature.md) identifies this as sodium dihydrogen phosphate MONOHYDRATE, CAS 10049-21-5. CHEBI:37585 'sodium dihydrogenphosphate' is the ANHYDROUS form (its own dbxref is CAS 7558-80-7), so the two are distinct substances -- MAPPING_SEMANTICS.md Section 3: the hydrate takes its own cas: identifier with a narrowMatch to the anhydrous parent, rather than being folded onto it."
+          }
+        ]
+      },
+      "chemical_properties": null
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Dithionite.yaml",
+      "sha256": "5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1",
+      "identifier": "CHEBI:66870",
+      "preferred_term": "Sodium dithionite",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:66870",
+        "ontology_label": "sodium dithionite",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7775-14-6",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:53:51.419747+00:00",
+        "molecular_formula": "2Na.O4S2",
+        "inchi": "InChI=1S/2Na.H2O4S2/c;;1-5(2)6(3)4/h;;(H,1,2)(H,3,4)/q2*+1;/p-2",
+        "smiles": "O=S([O-])S(=O)[O-].[Na+].[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_6_H2o.yaml",
+      "sha256": "e4a2756db9e7876f8766f868af533266acc86bd21db5c1d79559048c717acebf",
+      "identifier": "kgmicrobe.compound:na2hpo4_x_6_h2o",
+      "preferred_term": "Na2HPO4 x 6 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:34683",
+        "ontology_label": "disodium hydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:34683, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:34683 -> kgmicrobe.compound:na2hpo4_x_6_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:34683 ('disodium hydrogenphosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2Na' -> 'HO4P.2Na.6H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 6 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:34683's ChEBI formula ('HO4P.2Na') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:34683 ('disodium hydrogenphosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          },
+          {
+            "evidence_type": "CURATOR_JUDGMENT",
+            "source": "MIM curation (#344)",
+            "notes": "mediadive.compound:1580 still carries the source label 'Na2HPO4 x 6 H2O', but no exact ontology term or CAS has been verified for that stated hydration count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest anhydrous parent while the source label keeps its local kgmicrobe.compound identity."
+          }
+        ]
+      },
+      "chemical_properties": {}
+    },
+    {
+      "path": "data/ingredients/mapped/Na2hpo4_X_7_H2o.yaml",
+      "sha256": "b5cb081a8b432e2c952f2d67235ed03b166c8fbdcda7caf1c1b70c849121b5d5",
+      "identifier": "NCIT:C61946",
+      "preferred_term": "Na2HPO4 x 7 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "NCIT:C61946",
+        "ontology_label": "Sodium Phosphate, Dibasic, Heptahydrate",
+        "ontology_source": "NCIT",
+        "mapping_quality": "EXACT_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:34683, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:34683 -> kgmicrobe.compound:na2hpo4_x_7_h2o; mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:34683 ('disodium hydrogenphosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'HO4P.2Na' -> 'HO4P.2Na.7H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:34683's ChEBI formula ('HO4P.2Na') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:34683 ('disodium hydrogenphosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full",
+            "notes": "NCI EVS NCIt 26.10d NCIT:C61946 'Sodium Phosphate, Dibasic, Heptahydrate' is active and explicitly records CAS 7782-85-6, formula 2Na.HO4P.7H2O and FDA UNII 70WT22SF4B. Source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C61946?include=full; accessed 2026-11-01; archived at reports/ncit_heptahydrate_875_20261101/sources/ncit-C61946.json (sha256 a112c3e91dd6aa46feb112621ba5d13673df69f1b20665e042e22b8aa05a1d83). The approved #875 decision uses MAPPING_SEMANTICS section 3 step 1, which precedes the CAS fallback. The anhydrous CHEBI:34683 is not this identity."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7782-85-6",
+        "data_source": "PubChem CID6096963 (CAS7782-85-6, UNII70WT22SF4B and heptahydrate formula cross-checked with NCIT:C61946)",
+        "retrieval_date": "2026-11-02T04:07:45.088215+00:00",
+        "molecular_formula": "HO4P.2Na.7H2O",
+        "inchi": "InChI=1S/2Na.H3O4P.7H2O/c;;1-5(2,3)4;;;;;;;/h;;(H3,1,2,3,4);7*1H2/q2*+1;;;;;;;;/p-2",
+        "smiles": "O.O.O.O.O.O.O.OP(=O)([O-])[O-].[Na+].[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Nah2po4.yaml",
+      "sha256": "2766885d797dd67849b3a8bc503e48d4461c4a6f89eab651baae6ca1fd949de4",
+      "identifier": "CHEBI:37585",
+      "preferred_term": "NaH2PO4",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:37585",
+        "ontology_label": "sodium dihydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7558-80-7",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:53:27.309474+00:00",
+        "molecular_formula": "H2O4P.Na",
+        "inchi": "InChI=1S/Na.H3O4P/c;1-5(2,3)4/h;(H3,1,2,3,4)/q+1;/p-1",
+        "smiles": "O=P([O-])(O)O.[Na+]"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2HPO4-NaH2PO4_Buffer.yaml",
+      "sha256": "8e3276d1696b44d3edaa068b60e296232ba53ecd6d86d523ace40bd1b4c5bc3a",
+      "identifier": "kgmicrobe.ingredient:na2hpo4-nah2po4_buffer",
+      "preferred_term": "Na2HPO4-NaH2PO4 buffer",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:na2hpo4-nah2po4_buffer",
+        "ontology_label": "Na2HPO4-NaH2PO4 buffer",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#288)",
+            "notes": "A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288)."
+          }
+        ]
+      },
+      "chemical_properties": null
+    },
+    {
+      "path": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
+      "sha256": "a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d",
+      "identifier": "kgmicrobe.compound:nah2po4_x_2_h2o",
+      "preferred_term": "NaH2PO4 x 2 H2O",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:37585",
+        "ontology_label": "sodium dihydrogenphosphate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "CLOSE_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "[HISTORICAL \u2014 superseded by the #321 re-grade below: this record is a hydrate of CHEBI:37585, not an exact match to it] Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321/#334)",
+            "notes": "identifier CHEBI:37585 -> kgmicrobe.compound:nah2po4_x_2_h2o; mapping_quality SYNONYM_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:37585 ('sodium dihydrogenphosphate') and was sharing that term's identifier \u2014 the identity collapse MAPPING_SEMANTICS \u00a73 forbids, which made a distinct substance indistinguishable from its anhydrous parent downstream. ChEBI has no term for this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable and step 3 applies."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#321)",
+            "notes": "molecular_formula 'H2O4P.Na' -> 'H2O4P.Na.2H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:37585's ChEBI formula ('H2O4P.Na') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation."
+          },
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MIM curation (#342)",
+            "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:37585 ('sodium dihydrogenphosphate') \u2014 a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "molecular_formula": "H2O4P.Na.2H2O"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Na2s2o3.yaml",
+      "sha256": "8721a533a7671b464ce2c9104f12e273da24ce3f1566d0b33df6b59ba2e44146",
+      "identifier": "CHEBI:132112",
+      "preferred_term": "Na2S2O3",
+      "mapping_status": "MAPPED",
+      "ontology_mapping": {
+        "ontology_id": "CHEBI:132112",
+        "ontology_label": "sodium thiosulfate",
+        "ontology_source": "CHEBI",
+        "mapping_quality": "SYNONYM_MATCH",
+        "evidence": [
+          {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "cbclaw_kg_microbe_sweep",
+            "notes": "Corrected from CHEBI:59168 (nonaethylene glycol monomethyl ether \u2014 unrelated compound) to CHEBI:132112 (sodium thiosulfate). CAS-RN 7772-98-7 confirms sodium thiosulfate."
+          }
+        ]
+      },
+      "chemical_properties": {
+        "cas_rn": "7772-98-7",
+        "data_source": "PubChem API",
+        "retrieval_date": "2026-04-05T19:53:19.078955+00:00",
+        "molecular_formula": "2Na.O3S2",
+        "inchi": "InChI=1S/2Na.H2O3S2/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2",
+        "smiles": "O=S(=O)([O-])[S-].[Na+].[Na+]"
+      }
+    }
+  ]
+}

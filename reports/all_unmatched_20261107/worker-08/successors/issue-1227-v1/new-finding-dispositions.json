@@ -1,0 +1,462 @@
+{
+  "at": "2026-11-08T08:01:27.465842+00:00",
+  "findings": [
+    {
+      "finding_id": "OP1227-REF-001",
+      "original_severity": "minor",
+      "normalized_severity": "minor",
+      "issue": 1227,
+      "title": "Soy-flour lookup grade exceeded the actual synonym method",
+      "proposal_ids": [
+        "op-soy-flour-alias"
+      ],
+      "status": "resolved_in_isolated_exact_successor_after_routing",
+      "route_before_fix": {
+        "path": "successors/issue-1227-v1/COORDINATOR-NEW-FINDINGS-v1.json",
+        "sha256": "02b3e64995536bdef0863b55a52f8669d1c0f1c7dc2ff9c93ef2c323ddb0d423"
+      },
+      "final_payload_bindings": [
+        {
+          "proposal_id": "op-soy-flour-alias",
+          "case_ids": [
+            "CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4",
+            "KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8"
+          ],
+          "description": "Add source-bound raw alias(es) Soya flour to existing same-scope owner; preserve all other fields and retired labels.",
+          "evidence_ids": [
+            "op-case-13",
+            "op-case-157",
+            "op-context-13-0",
+            "op-medium1894",
+            "op-owner-search",
+            "op-soy-flour-term",
+            "op1227-categories",
+            "op1227-corrections",
+            "op1227-referrals"
+          ],
+          "owner_path": "data/ingredients/mapped/Soy_Flour.yaml",
+          "kind": "edit_existing_owner",
+          "before_sha256": "ba96033d326524811bb54040bfca97e7c66140761e4650ca154c8e8621b2dff9",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Soy_Flour.yaml",
+            "sha256": "5687f73222f38e2df426700c0012646685c0c6e5458611b92710c57fae29c81b"
+          },
+          "identity_predicate_alias_consequences": "Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.",
+          "publication_review_obligations": [
+            "Proposal bytes only; not applied or export approved.",
+            "Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.",
+            "Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release."
+          ],
+          "cross_shard_conflict": "Coordinator must reconcile any overlapping owner proposal before integration."
+        }
+      ],
+      "final_peer_receipt": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+        "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a"
+      },
+      "bounded_disposition": "The exact primary and native synonym lookup supports SYNONYM_MATCH, retaining identity, source aliases and historical holds.",
+      "github_mutation": false,
+      "release_approval": false
+    },
+    {
+      "finding_id": "OP1227-REF-002",
+      "original_severity": "minor",
+      "normalized_severity": "minor",
+      "issue": 1201,
+      "title": "Definition-level R2A pyruvate reference was left as pending work",
+      "proposal_ids": [
+        "op1201-r2a-medium"
+      ],
+      "status": "resolved_in_isolated_exact_successor_after_routing",
+      "route_before_fix": {
+        "path": "successors/issue-1227-v1/COORDINATOR-NEW-FINDINGS-v1.json",
+        "sha256": "02b3e64995536bdef0863b55a52f8669d1c0f1c7dc2ff9c93ef2c323ddb0d423"
+      },
+      "final_payload_bindings": [
+        {
+          "proposal_id": "op1201-r2a-medium",
+          "case_ids": [
+            "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b"
+          ],
+          "description": "The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula.",
+          "evidence_ids": [
+            "op-case-71",
+            "op-context-71-0",
+            "op-context-71-1",
+            "op-context-71-2",
+            "op-owner-search",
+            "op-r2a-broth",
+            "op1201-ols-micro-0000541",
+            "op1201-ols-micro-r2a",
+            "op1201-ontology-lookup",
+            "op1201-owner-lookup",
+            "op1201-private-retention",
+            "op1227-categories",
+            "op1227-corrections",
+            "op1227-referrals",
+            "op1227-pyruvate-primary",
+            "op1227-peer-r2a-assertion-v3"
+          ],
+          "owner_path": "data/ingredients/mapped/R2A_medium.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/organic_products/proposed_owners_v3/R2A_Medium.yaml",
+            "sha256": "6ef646d38ae19ef2dd3e7dded41ea95d5cedb5acb1b5e6ce33ab07a91d28f57c"
+          },
+          "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+          "publication_review_obligations": [
+            "Independently review the exact successor bytes.",
+            "Do not transfer earlier whole-payload approvals onto changed owners.",
+            "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized."
+          ],
+          "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+        }
+      ],
+      "final_peer_receipt": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+        "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a"
+      },
+      "bounded_disposition": "The named definition-level anion is linked to active CHEBI:15361. No sodium counterion, supplied salt, amount or closed complete recipe is inferred.",
+      "github_mutation": false,
+      "release_approval": false
+    },
+    {
+      "finding_id": "OP1227-REF-003",
+      "original_severity": "minor",
+      "normalized_severity": "minor",
+      "issue": 1227,
+      "title": "Plain-flour applicability misstated the frozen amount",
+      "proposal_ids": [
+        "op1201-plain-flour"
+      ],
+      "status": "resolved_in_isolated_exact_successor_after_routing",
+      "route_before_fix": {
+        "path": "successors/issue-1227-v1/COORDINATOR-NEW-FINDINGS-v1.json",
+        "sha256": "02b3e64995536bdef0863b55a52f8669d1c0f1c7dc2ff9c93ef2c323ddb0d423"
+      },
+      "final_payload_bindings": [
+        {
+          "proposal_id": "op1201-plain-flour",
+          "case_ids": [
+            "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e"
+          ],
+          "description": "FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference.",
+          "evidence_ids": [
+            "op-case-180",
+            "op-owner-search",
+            "op-plain-flour-primary",
+            "op1201-ols-foodon-00001056",
+            "op1201-ols-foodon-00004510",
+            "op1201-ontology-lookup",
+            "op1201-owner-lookup",
+            "op1201-private-retention",
+            "op1227-categories",
+            "op1227-corrections",
+            "op1227-referrals"
+          ],
+          "owner_path": "data/ingredients/unmapped/Plain_Flour.yaml",
+          "kind": "edit_existing_owner",
+          "before_sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Plain_Flour.yaml",
+            "sha256": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83"
+          },
+          "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+          "publication_review_obligations": [
+            "Independently review the exact successor bytes.",
+            "Do not transfer earlier whole-payload approvals onto changed owners.",
+            "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.",
+            "On approved integration, move this existing owner to data/ingredients/mapped/Plain_Flour.yaml and retire the old unmapped path in the same synchronized change. The proposal owner_path remains the exact frozen preimage; do not create a duplicate owner."
+          ],
+          "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+        }
+      ],
+      "final_peer_receipt": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+        "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a"
+      },
+      "bounded_disposition": "Applicability now states the exact frozen4g and derived g_l4, retaining the original source row and material scope.",
+      "github_mutation": false,
+      "release_approval": false
+    },
+    {
+      "finding_id": "IF-OP1227-F1",
+      "original_severity": "P2",
+      "normalized_severity": "minor",
+      "issue": 1227,
+      "title": "R2A definition-derived parts used a label-enumeration method",
+      "proposal_ids": [
+        "op1201-r2a-medium"
+      ],
+      "status": "resolved_in_isolated_exact_successor_after_routing",
+      "route_before_fix": {
+        "path": "successors/issue-1227-v1/COORDINATOR-NEW-FINDINGS-v2.json",
+        "sha256": "a5b11d928d9870dc154e89e2a9d61d5f735547d626c8126e313bcacd54b5eb40"
+      },
+      "final_payload_bindings": [
+        {
+          "proposal_id": "op1201-r2a-medium",
+          "case_ids": [
+            "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b"
+          ],
+          "description": "The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula.",
+          "evidence_ids": [
+            "op-case-71",
+            "op-context-71-0",
+            "op-context-71-1",
+            "op-context-71-2",
+            "op-owner-search",
+            "op-r2a-broth",
+            "op1201-ols-micro-0000541",
+            "op1201-ols-micro-r2a",
+            "op1201-ontology-lookup",
+            "op1201-owner-lookup",
+            "op1201-private-retention",
+            "op1227-categories",
+            "op1227-corrections",
+            "op1227-referrals",
+            "op1227-pyruvate-primary",
+            "op1227-peer-r2a-assertion-v3"
+          ],
+          "owner_path": "data/ingredients/mapped/R2A_medium.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/organic_products/proposed_owners_v3/R2A_Medium.yaml",
+            "sha256": "6ef646d38ae19ef2dd3e7dded41ea95d5cedb5acb1b5e6ce33ab07a91d28f57c"
+          },
+          "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+          "publication_review_obligations": [
+            "Independently review the exact successor bytes.",
+            "Do not transfer earlier whole-payload approvals onto changed owners.",
+            "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized."
+          ],
+          "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+        }
+      ],
+      "final_peer_receipt": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+        "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a"
+      },
+      "bounded_disposition": "The complete v3 payload was re-reviewed with CURATED_INTERPRETATION and explicit agent rationale. Six components, amounts, identifiers and UNKNOWN closure remain. RawP2 is retained; normalized minor reflects provenance-method mismatch rather than a refuted constituent.",
+      "github_mutation": false,
+      "release_approval": false
+    },
+    {
+      "finding_id": "VM1227-PEER-001",
+      "original_severity": "P2",
+      "normalized_severity": "major",
+      "issue": 1201,
+      "title": "Two explicit-DL component references used broader ontology identities",
+      "proposal_ids": [
+        "vm-prop-new-29",
+        "vm-prop-new-98"
+      ],
+      "status": "resolved_in_isolated_exact_successor_after_routing",
+      "route_before_fix": {
+        "path": "successors/issue-1227-v1/COORDINATOR-NEW-FINDINGS-v3.json",
+        "sha256": "09937b6fd82960907d0b447b73a180bc1d484b35e68fda16a1ccb5c43fdffc03"
+      },
+      "final_payload_bindings": [
+        {
+          "proposal_id": "vm-prop-new-29",
+          "case_ids": [
+            "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e"
+          ],
+          "description": "Create source-defined DSMZ solution 5980 Wolin's vitamin solution (10x) with complete immediate constituent enumeration and registry identity. ",
+          "evidence_ids": [
+            "vm-source-26f96ed0714f6d33",
+            "vm-fetch-5b0fecab0584dd77",
+            "vm-fetch-d4ba6de7b54bd50f",
+            "vm-owner-search",
+            "vm-context-review",
+            "vm1227-component-adjudication",
+            "vm1227-payload-assessment",
+            "vm1227-v2-dl-primary",
+            "vm1227-v2-dl-ontology",
+            "vm1227-v2-external-scope",
+            "vm1227-v2-live-lipoic-ontology"
+          ],
+          "owner_path": "data/ingredients/mapped/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+            "sha256": "34fefc81827cf593b52a70c43c95d0b9b78d46557c5d965e2294a7a53fa35651"
+          },
+          "source_scope": "DSMZ MediaDive solution 5980: Wolin's vitamin solution (10x)",
+          "application_status": "ISOLATED_PROPOSAL_ONLY",
+          "integration_requirements": [
+            "Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.",
+            "Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances."
+          ],
+          "independent_review": {
+            "status": "pending",
+            "evidence_ids": []
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-98",
+          "case_ids": [
+            "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3"
+          ],
+          "description": "Create source-defined DSMZ solution 608 volatile fatty acid mixture with complete immediate constituent enumeration and registry identity. ",
+          "evidence_ids": [
+            "vm-source-20379b58da18d9b2",
+            "vm-source-96983e9c6e3c4f98",
+            "vm-fetch-960070b1d415deaf",
+            "vm-fetch-7df4b58ccb0630ac",
+            "vm-fetch-ca55b8a6996c682b",
+            "vm-owner-search",
+            "vm-context-review",
+            "vm1227-component-adjudication",
+            "vm1227-payload-assessment",
+            "vm1227-v2-dl-primary",
+            "vm1227-v2-dl-ontology",
+            "vm1227-v2-external-scope"
+          ],
+          "owner_path": "data/ingredients/mapped/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+            "sha256": "068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8"
+          },
+          "source_scope": "DSMZ MediaDive solution 608: Volatile fatty acid mixture",
+          "application_status": "ISOLATED_PROPOSAL_ONLY",
+          "integration_requirements": [
+            "Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.",
+            "Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances."
+          ],
+          "independent_review": {
+            "status": "pending",
+            "evidence_ids": []
+          }
+        }
+      ],
+      "final_peer_receipt": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/independent-review/vitamins_mixtures/review-v3.json",
+        "sha256": "8979d074d21b049c3c1a03918767dd77d23ca592fe2531ef961baa549b122fb3"
+      },
+      "bounded_disposition": "Immutable successor replaces the two overly broad component bindings with EXTERNAL_TERM scope: exact racemate CHEBI:748116 takes section3 priority for DL-alpha-lipoic acid, while cas:116-53-0 preserves supported DL-2-methylbutyric acid. Positive ontology racemate classification, literal DL synonyms and primary chemical-name/CAS evidence support these distinct choices; an unspecified structure is not treated as proof of racemate. Source names, quantities and preparation scope remain; no supplier procurement or duplicate owner is invented. Both complete changed payloads and outcomes are independently re-reviewed. RawP2 is retained; normalized major reflects stereochemical identity scope.",
+      "github_mutation": false,
+      "release_approval": false
+    },
+    {
+      "finding_id": "W08-1227-ASSEMBLY-001",
+      "original_severity": "minor",
+      "normalized_severity": "minor",
+      "issue": 1227,
+      "title": "Local ontology-query receipt used a web-evidence category without a URL",
+      "proposal_ids": [
+        "vm-prop-new-29",
+        "vm-prop-new-98"
+      ],
+      "status": "resolved_in_isolated_exact_successor_after_routing",
+      "route_before_fix": {
+        "path": "successors/issue-1227-v1/COORDINATOR-ASSEMBLY-FINDING-v1.json",
+        "sha256": "0a4e836b89eb224e16e398876cd2296672cc23a35193ed2edf26cc8e39da09da"
+      },
+      "final_payload_bindings": [
+        {
+          "proposal_id": "vm-prop-new-29",
+          "case_ids": [
+            "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e"
+          ],
+          "description": "Create source-defined DSMZ solution 5980 Wolin's vitamin solution (10x) with complete immediate constituent enumeration and registry identity. ",
+          "evidence_ids": [
+            "vm-source-26f96ed0714f6d33",
+            "vm-fetch-5b0fecab0584dd77",
+            "vm-fetch-d4ba6de7b54bd50f",
+            "vm-owner-search",
+            "vm-context-review",
+            "vm1227-component-adjudication",
+            "vm1227-payload-assessment",
+            "vm1227-v2-dl-primary",
+            "vm1227-v2-dl-ontology",
+            "vm1227-v2-external-scope",
+            "vm1227-v2-live-lipoic-ontology"
+          ],
+          "owner_path": "data/ingredients/mapped/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml",
+            "sha256": "34fefc81827cf593b52a70c43c95d0b9b78d46557c5d965e2294a7a53fa35651"
+          },
+          "source_scope": "DSMZ MediaDive solution 5980: Wolin's vitamin solution (10x)",
+          "application_status": "ISOLATED_PROPOSAL_ONLY",
+          "integration_requirements": [
+            "Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.",
+            "Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances."
+          ],
+          "independent_review": {
+            "status": "pending",
+            "evidence_ids": []
+          }
+        },
+        {
+          "proposal_id": "vm-prop-new-98",
+          "case_ids": [
+            "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3"
+          ],
+          "description": "Create source-defined DSMZ solution 608 volatile fatty acid mixture with complete immediate constituent enumeration and registry identity. ",
+          "evidence_ids": [
+            "vm-source-20379b58da18d9b2",
+            "vm-source-96983e9c6e3c4f98",
+            "vm-fetch-960070b1d415deaf",
+            "vm-fetch-7df4b58ccb0630ac",
+            "vm-fetch-ca55b8a6996c682b",
+            "vm-owner-search",
+            "vm-context-review",
+            "vm1227-component-adjudication",
+            "vm1227-payload-assessment",
+            "vm1227-v2-dl-primary",
+            "vm1227-v2-dl-ontology",
+            "vm1227-v2-external-scope"
+          ],
+          "owner_path": "data/ingredients/mapped/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+          "kind": "new_owner",
+          "before_sha256": null,
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml",
+            "sha256": "068c09102ce328f455431f2545515f181cd98eab3bf6f41377d708583f4f35c8"
+          },
+          "source_scope": "DSMZ MediaDive solution 608: Volatile fatty acid mixture",
+          "application_status": "ISOLATED_PROPOSAL_ONLY",
+          "integration_requirements": [
+            "Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.",
+            "Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances."
+          ],
+          "independent_review": {
+            "status": "pending",
+            "evidence_ids": []
+          }
+        }
+      ],
+      "final_peer_receipt": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/independent-review/vitamins_mixtures/review-v3.json",
+        "sha256": "8979d074d21b049c3c1a03918767dd77d23ca592fe2531ef961baa549b122fb3"
+      },
+      "bounded_disposition": "Only the local-query evidence entry kind changes from ontology to local_validation; the real null URL, original query time and captured bytes remain exact. Separately inspected official OLS evidence retains its real URL/time. All57 author cases and47 payloads are unchanged, and the metadata successor is independently reviewed. The failed first root assembly and all earlier receipts remain preserved; the auditor is unchanged.",
+      "github_mutation": false,
+      "release_approval": false
+    }
+  ],
+  "deduplication": "Existing1201/1227 routed classes; coordinator retains GitHub issue disposition. IF-OP1227-F1 and W08-1227-PEER-OP-001 are one finding, not two. Earlier Thauer/pentanoate holds are not new findings."
+}

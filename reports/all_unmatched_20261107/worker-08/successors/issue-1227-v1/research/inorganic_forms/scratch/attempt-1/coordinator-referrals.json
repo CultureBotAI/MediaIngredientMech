@@ -1,0 +1,30 @@
+{
+  "referrals": [
+    {
+      "case_id": "CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9",
+      "source_fact": "The source explicitly names Tris hydrochloride. Sigma T3253 establishes CAS1185-53-1, formula tris·HCl and molecular weight157.60, distinct from free tris CHEBI:9754 (121.136) and Htris cation CHEBI:46097 (no chloride). Current Tris_Base active hydrochloride aliases erase this salt boundary and should be rejected as resolving base synonyms.",
+      "source_evidence_ids": [
+        "if-case-140",
+        "if-recipe-745465d9b3fb",
+        "if-web-6322279750cf",
+        "if-web-dc07e461177a",
+        "if-web-c9217d1795e3",
+        "if-owner-Tris_Base"
+      ],
+      "candidate_worker": "worker-05",
+      "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+      "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+      "owner_path": "data/ingredients/mapped/Tris_Hydrochloride_Salt.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_Hydrochloride_Salt.yaml",
+        "sha256": "945bd8da0c00306c5e0d9ad2c3eaead1fb3af33e89cdc2e3440e729ec5763c58"
+      },
+      "candidate_identifier": "cas:1185-53-1",
+      "candidate_grounding": "CHEBI:9754 BROAD_MATCH",
+      "required_action": "Coordinator must reconcile the exact W05 salt candidate and this source-specific W08 hydrochloride occurrence under current native identity rules and existing holds. Preserve independent W05 findings, including evidence-category concerns. This referral neither approves W05 nor imports its payload; no duplicate 36th owner is proposed.",
+      "scientific_vs_integration": "The hydrochloride versus free-base distinction is established by supplier evidence. Candidate selection, exact-term adjudication and duplicate reconciliation are integration dependencies, not an unperformed initial source-identity lookup."
+    }
+  ]
+}

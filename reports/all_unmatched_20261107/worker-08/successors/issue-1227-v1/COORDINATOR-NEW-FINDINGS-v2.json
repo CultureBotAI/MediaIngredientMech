@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-08T07:32:31.256471+00:00",
+  "recipient": "Campaign coordinator; source correction referral before further author writes",
+  "finding_id": "W08-1227-PEER-OP-001",
+  "severity": "minor",
+  "reviewer": "worker08:/root/inorganics",
+  "author": "worker08:/root/organics",
+  "proposal": {
+    "proposal_id": "op1201-r2a-medium",
+    "case_ids": [
+      "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b"
+    ],
+    "description": "The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula.",
+    "evidence_ids": [
+      "op-case-71",
+      "op-context-71-0",
+      "op-context-71-1",
+      "op-context-71-2",
+      "op-owner-search",
+      "op-r2a-broth",
+      "op1201-ols-micro-0000541",
+      "op1201-ols-micro-r2a",
+      "op1201-ontology-lookup",
+      "op1201-owner-lookup",
+      "op1201-private-retention",
+      "op1227-categories",
+      "op1227-corrections",
+      "op1227-referrals",
+      "op1227-pyruvate-primary"
+    ],
+    "owner_path": "data/ingredients/mapped/R2A_medium.yaml",
+    "kind": "new_owner",
+    "before_sha256": null,
+    "after_capture": {
+      "root": "artifact",
+      "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/R2A_medium.yaml",
+      "sha256": "241db90e4850e9e70c94f7af4e0d8f74735a7c25780230d2e688b7f14d6cd3f3"
+    },
+    "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+    "publication_review_obligations": [
+      "Independently review the exact successor bytes.",
+      "Do not transfer earlier whole-payload approvals onto changed owners.",
+      "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized."
+    ],
+    "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+  },
+  "issue_route": 1227,
+  "reproduction": {
+    "field": "/component_assertion/method",
+    "actual": "LABEL_ENUMERATION",
+    "source_label": "R2A medium",
+    "actual_derivation": "Six components selected from MICRO0000541 annotation.definition[0]; the source label does not enumerate them.",
+    "native_contract": "ComponentMethodEnum LABEL_ENUMERATION requires an enumerating source label; CURATED_INTERPRETATION covers a reviewed evidence-derived list that is not literal label enumeration or direct recipe transcription.",
+    "native_schema_sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+    "actual_primary_capture": {
+      "path": "root-primary/ols-micro-0000541.json",
+      "sha256": "ddfa79647ce61e9e8e1daffd728a960c68032ce795d09b8409eee5075ef4a0a6"
+    }
+  },
+  "bounded_fix": "Correct method and corresponding provenance wording to the actual definition-derived interpretation. Assess the component-evidence type against its actual ontology source. Do not alter the six parts, quantities, identity, generic source scope or holds. Preserve v2 payload and indices; obtain independent review of immutable v3 bytes.",
+  "dedup": "Existing1227 IR005 is same assertion-method class on a different exact payload. Add this bounded follow-up through the coordinator; no new separate GitHub mutation by worker.",
+  "approval_boundary": "No maintained changes, role or release approval. Route recorded before fixing; coordinator final issue disposition and final-head review remain."
+}

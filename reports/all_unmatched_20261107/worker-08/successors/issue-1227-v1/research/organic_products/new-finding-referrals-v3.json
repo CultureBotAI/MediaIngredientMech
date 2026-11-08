@@ -1,0 +1,226 @@
+{
+  "referrals": [
+    {
+      "finding_id": "OP1227-REF-001",
+      "severity": "minor",
+      "proposal_id": "op-soy-flour-alias",
+      "proposal_binding": {
+        "proposal_id": "op-soy-flour-alias",
+        "case_ids": [
+          "CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4",
+          "KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8"
+        ],
+        "description": "Add source-bound raw alias(es) Soya flour to existing same-scope owner; preserve all other fields and retired labels.",
+        "evidence_ids": [
+          "op-case-13",
+          "op-case-157",
+          "op-context-13-0",
+          "op-medium1894",
+          "op-owner-search",
+          "op-soy-flour-term"
+        ],
+        "owner_path": "data/ingredients/mapped/Soy_Flour.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "ba96033d326524811bb54040bfca97e7c66140761e4650ca154c8e8621b2dff9",
+        "after_capture": {
+          "root": "artifact",
+          "path": "research/organic_products/proposals/Soy_Flour.yaml",
+          "sha256": "d936af5f0aa4d99913af6bf6ec95ccea6e651064cb61aa1e3f57cba793b6aeb9"
+        },
+        "identity_predicate_alias_consequences": "Identifier and ontology mapping unchanged; raw identity-bearing aliases become candidates for searchable exports only after full owner review. No role evidence is added.",
+        "publication_review_obligations": [
+          "Proposal bytes only; not applied or export approved.",
+          "Existing WITHHOLD, REJECTED, source-material and role holds remain unchanged.",
+          "Any changed owner invalidates inherited whole-payload support; coordinator must review all published tokens, exact scope, identifier and predicate, native schema, synchronized surfaces and final SSSOM before release."
+        ],
+        "cross_shard_conflict": "Coordinator must reconcile any overlapping owner proposal before integration."
+      },
+      "reproduction": "Preferred Soy flour, canonical soybean flour, evidence explicitly reports exact synonym lookup, while mapping_quality is EXACT_MATCH.",
+      "primary_evidence": {
+        "evidence_id": "op-soy-flour-term",
+        "capture": {
+          "root": "artifact",
+          "path": "shared-primary/op-ols-foodon03302142.json",
+          "sha256": "346295317edc9966d498c7e0bdb9add94587abe787dbd150c93bfa0f04b74105"
+        },
+        "kind": "ontology",
+        "url": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03302142",
+        "accessed_at": "2026-11-08T05:11:31.224345+00:00",
+        "locator": "/_embedded/terms/0",
+        "supports_or_contradicts": "FOODON03302142 soybean flour means flour from soybeans and has synonym soy flour; no peptone/digest scope."
+      },
+      "term_fields": {
+        "label": "soybean flour",
+        "synonyms": [
+          "soy flour"
+        ],
+        "obo_synonym": null
+      },
+      "native_resolution": {
+        "term": "FOODON:03302142",
+        "canonical_label": "soybean flour",
+        "accepted_labels": [
+          "soy flour",
+          "soybean flour"
+        ],
+        "exists": true,
+        "db": "/Users/marcin/.data/oaklib/foodon.db",
+        "db_sha256": "ab21a7b1d712117dceb410e6f92cdd78b67f561d3670f58b0266c8b93f8ad8d0"
+      },
+      "bounded_fix": "Change only mapping_quality to SYNONYM_MATCH with history, if coordinator authorizes; exact identity and alias unchanged.",
+      "status": "referred; no payload mutation"
+    },
+    {
+      "finding_id": "OP1227-REF-002",
+      "severity": "minor",
+      "proposal_id": "op1201-r2a-medium",
+      "proposal_binding": {
+        "proposal_id": "op1201-r2a-medium",
+        "case_ids": [
+          "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b"
+        ],
+        "description": "The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula.",
+        "evidence_ids": [
+          "op-case-71",
+          "op-context-71-0",
+          "op-context-71-1",
+          "op-context-71-2",
+          "op-owner-search",
+          "op-r2a-broth",
+          "op1201-ols-micro-0000541",
+          "op1201-ols-micro-r2a",
+          "op1201-ontology-lookup",
+          "op1201-owner-lookup",
+          "op1201-private-retention"
+        ],
+        "owner_path": "data/ingredients/mapped/R2A_medium.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml",
+          "sha256": "a615d98d9e8140d38244a9398d16286bc731af03df5a60e87a8e94c4ee192506"
+        },
+        "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+        "publication_review_obligations": [
+          "Independently review the exact successor bytes.",
+          "Do not transfer earlier whole-payload approvals onto changed owners.",
+          "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized."
+        ],
+        "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+      },
+      "reproduction": "components[5] Pyruvate is UNMAPPED; liquid MICRO0000541 definition names pyruvate and active Pyruvate.yaml identifies CHEBI:15361.",
+      "primary_evidence": {
+        "evidence_id": "op1201-ols-micro-0000541",
+        "capture": {
+          "root": "artifact",
+          "path": "successors/issue-1201-v1/research/organic_products/sources/additional-primary-facts.json",
+          "sha256": "3213ff17ffcd55f1acb34f120a4bf7dee82464d27c5f71d96baf185a93ed739b"
+        },
+        "kind": "primary_source",
+        "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541",
+        "locator": "facts[key=ols-micro-0000541] Active term label, definition annotation and exact synonym annotation",
+        "supports_or_contradicts": "[\"MICRO:0000541 is R2A medium, with R2A broth and Reasoner's 2A as exact synonyms.\", \"The definition explicitly describes a liquid medium containing yeast extract, proteose peptone, casamino acids, glucose, starch and pyruvate.\", \"The separate historical source annotation includes an agar formula. That formula is not used to add agar or quantitative composition to this liquid-medium owner.\"]",
+        "accessed_at": "2026-11-08T05:57:13.917296+00:00"
+      },
+      "primary_literal_definition": [
+        "An organic-rich, liquid microbiological culture medium containing yeast extract, proteose peptone, casamino acids, glucose, starch, and pyruvate.  Used for the growth of heterotrophic bacteria from potable (fresh) water."
+      ],
+      "candidate_path": "data/ingredients/mapped/Pyruvate.yaml",
+      "candidate_sha256": "c1cb5e1036729676abf5b6a7e0b6d2a0bb2f62c2dc8c0e662c082488986322e1",
+      "native_resolution": {
+        "term": "CHEBI:15361",
+        "canonical_label": "pyruvate",
+        "accepted_labels": [
+          "2-oxopropanoate",
+          "pyruvate"
+        ],
+        "exists": true,
+        "db": "/Users/marcin/.data/oaklib/chebi.db",
+        "db_sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f"
+      },
+      "bounded_fix": "Consider CHEBI:15361 MIM_CATALOG as the definition-level named anion constituent; do not infer sodium counterion, supplied salt, carrier or final complete formulation. Requires coordinator form-applicability review.",
+      "status": "referred; no component mutation"
+    },
+    {
+      "finding_id": "OP1227-REF-003",
+      "severity": "minor",
+      "proposal_id": "op1201-plain-flour",
+      "case_id": "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e",
+      "original_case_input_sha256": "53f61b4fabda376b159f5cb6c6085dfcf621f5d9d051d951824882039ba29808",
+      "decision": {
+        "case_id": "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e",
+        "case_input_sha256": "53f61b4fabda376b159f5cb6c6085dfcf621f5d9d051d951824882039ba29808",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1465",
+          "source_label": "Plain flour",
+          "raw_source_label": "Plain flour"
+        },
+        "occurrence_ids": [],
+        "disposition": "existing_identity_or_alias",
+        "reasoning": "FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference.",
+        "applicability": "MediaDive1465 reports Plain flour at 2 g/L and does not identify a grain. FOODON:00001056 denotes a food product made from flour and is not the ingredient itself. The generic flour concept is chosen under MAPPING_SEMANTICS section 3 step 4; species-specific terms are excluded.",
+        "evidence_ids": [
+          "op-case-180",
+          "op-owner-search",
+          "op-plain-flour-primary",
+          "op1201-ols-foodon-00001056",
+          "op1201-ols-foodon-00004510",
+          "op1201-ontology-lookup",
+          "op1201-owner-lookup",
+          "op1201-private-retention"
+        ],
+        "proposal_ids": [
+          "op1201-plain-flour"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [
+          {
+            "path": "data/ingredients/unmapped/Plain_Flour.yaml",
+            "sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e"
+          }
+        ],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-1201-peer-organic_products"
+          ]
+        },
+        "preserved_native_decisions": [],
+        "native_source_only_review_note": "For no-owner source cases the campaign source-case contract applies; no artificial YAML target is created. Parent worker owns applicable native record reviews.",
+        "primary_reviewer": "/root/organics; issue1201 successor primary author, not independent approval",
+        "index_for_human_navigation": 180
+      },
+      "frozen_source_record": {
+        "amount": 4,
+        "compound": "Plain flour",
+        "compound_id": 1465,
+        "g_l": 4,
+        "optional": 0,
+        "recipe_order": 1,
+        "unit": "g"
+      },
+      "primary_evidence": {
+        "evidence_id": "op-plain-flour-primary",
+        "capture": {
+          "root": "artifact",
+          "path": "shared-primary/op-bacmedia-ingredient1465.html",
+          "sha256": "040ee2dc07a077a38caeefa4fe8882b0c5829392a79d6f91a99c56b4022394a8"
+        },
+        "kind": "primary_source",
+        "url": "https://bacmedia.dsmz.de/ingredients/1465",
+        "accessed_at": "2026-11-08T05:16:12.135246+00:00",
+        "locator": "Exact ingredient1465 page and automatic-match disclaimer",
+        "supports_or_contradicts": "Plain flour is marked Complex substance with auto-CAS130498-22-5; no grain/catalognumber is supplied."
+      },
+      "reproduction": "Selected decision applicability states 2 g/L. The exact frozen raw source record gives amount 4 g, g_l 4; ingredient1465 page is an ingredient identity page, not proof of this selected recipe dose.",
+      "bounded_fix": "Correct only exact-case applicability to frozen 4 g source amount and 4 g/L derived field, preserving the distinction and any unverified source normalization. Generic flour identity is unaffected; do not rewrite the frozen source.",
+      "status": "referred; no decision or payload mutation"
+    }
+  ]
+}

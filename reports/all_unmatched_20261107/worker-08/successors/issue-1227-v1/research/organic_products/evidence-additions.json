@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "evidence_id": "op1227-categories",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/category-correction-ledger.json",
+        "sha256": "aa6dd9fcec234573779cb39108db6245b2cc826d03a174de1bd7ef1a84d6b657"
+      },
+      "kind": "local_validation",
+      "locator": "entries by proposal_id and exact json_pointer",
+      "supports_or_contradicts": "Per-assertion provenance correction; preserves inherited human evidence and separate component evidence categories.",
+      "url": null
+    },
+    {
+      "evidence_id": "op1227-corrections",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/correction-ledger.json",
+        "sha256": "f2a238ebedd67cff8600504251b9baa025ca618c8c1742b319e5a42f7bb370c1"
+      },
+      "kind": "local_validation",
+      "locator": "entries by proposal_id",
+      "supports_or_contradicts": "Bounded correction actions and input/final hashes; author assessment only, not scientific approval.",
+      "url": null
+    },
+    {
+      "evidence_id": "op1227-cas-lookup",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/cas-lookup.json",
+        "sha256": "9f5292bbe39468b15be07f93d111fcdf4e9d57aa9bb5bbbe322094ebcbca7cbd"
+      },
+      "kind": "local_validation",
+      "locator": "rows and unique_term",
+      "supports_or_contradicts": "Explicit unique CAS5794-13-8 lookup supports CAS_RN_LOOKUP on exact NCIT:C87433, separate from lexical agreement.",
+      "url": null
+    },
+    {
+      "evidence_id": "op1227-native-ncit",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/ncit-native-resolution.json",
+        "sha256": "27f982f157edd7629286b139ff1da217bfb20fca9fb1839c56bebcdad5175004"
+      },
+      "kind": "local_validation",
+      "locator": "native_function and accepted_normalized_labels",
+      "supports_or_contradicts": "Native canonical/exact-synonym resolver recognizes NCIT:C87433 Asparagine Monohydrate and the L-specific name.",
+      "url": null
+    },
+    {
+      "evidence_id": "op1227-ncit-exact",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/shared-primary/ols-ncit-C87433.json",
+        "sha256": "54c71948e42aaa1995f271abc3cf70e4ccb9c7b6ae304fa1eff8d754a7af4dae"
+      },
+      "kind": "ontology",
+      "locator": "/_embedded/terms/0 annotation.CAS_Registry, Chemical_Formula, exact synonym L-Asparagine Monohydrate",
+      "supports_or_contradicts": "Official exact L-monohydrate evidence: CAS5794-13-8 and C4H8N2O3.H2O. Excludes DL hydrate CAS69833-18-7.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C87433",
+      "accessed_at": "2026-11-08T06:01:27.468466+00:00"
+    },
+    {
+      "evidence_id": "op1227-nbrc1301",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/nalidixic-web-read.json",
+        "sha256": "ceeeb3533f6d8105a6a46dafdf3fbd41ceeddc48d40325f308087171dcdb7156"
+      },
+      "kind": "primary_source",
+      "locator": "Successful NBRC1301 response, composition lines16 and22",
+      "supports_or_contradicts": "NBRC1301 names a 30 mg/ml nalidixic-acid solution and separate filtration; does not validate NBRC1314.",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1301",
+      "accessed_at": "2026-11-08 07:20:20 UTC"
+    },
+    {
+      "evidence_id": "op1227-failed-nbrc1314",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/nalidixic-web-read.json",
+        "sha256": "ceeeb3533f6d8105a6a46dafdf3fbd41ceeddc48d40325f308087171dcdb7156"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "Exact URL response reports inaccessible through web tool",
+      "supports_or_contradicts": "Actual unsuccessful read; no exact primary contents inspected and no chemical rejection inferred.",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1314",
+      "accessed_at": "2026-11-08 07:20:20 UTC"
+    },
+    {
+      "evidence_id": "op1227-failed-togo2023",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/nalidixic-web-read.json",
+        "sha256": "ceeeb3533f6d8105a6a46dafdf3fbd41ceeddc48d40325f308087171dcdb7156"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "Exact URL response reports inaccessible through web tool",
+      "supports_or_contradicts": "Actual unsuccessful read; no exact primary contents inspected and no chemical rejection inferred.",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2023",
+      "accessed_at": "2026-11-08 07:20:20 UTC"
+    },
+    {
+      "evidence_id": "op1227-referrals",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/issue-1227-v1/research/organic_products/new-finding-referrals-v3.json",
+        "sha256": "6b50102c16a79837fd97ad123043471aaed79425e3b843c968ec49ef0d655545"
+      },
+      "kind": "local_validation",
+      "locator": "referrals OP1227-REF-001 through003",
+      "supports_or_contradicts": "Exact before/input/source evidence and native checks for the three findings routed to coordinator before correction.",
+      "url": null
+    }
+  ]
+}

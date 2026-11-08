@@ -1,0 +1,13678 @@
+# Independent full source-case and candidate-payload review of worker08 b90a2fd
+
+- Review: 20261108T065928Z-w08-b90-independent-review
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T06:38:45.975405Z
+- Finished UTC: 2026-11-08T06:59:28.009089Z
+- Reviewer: worker03:/root with /root/w08_review_a, /root/w08_review_b, /root/w08_review_c (independent)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Do not accept the complete b90a2fd candidate set as integration-ready. Unaffected bounded source outcomes and explicitly unblocked exact payloads can inform integration planning with retained holds. Correct or scientifically adjudicate named payload/source findings and independently review successor bytes before relying on affected claims.
+
+## Scope And Provenance
+
+All188frozen source cases and113complete selected candidate payloads, authoritative worker08 successor only.
+
+Selection: Exact immutable assignment, full ordered shard08 and active successor proposal index; no sampling or superseded draft selection.
+Coverage: full; 301 reviewed / 301 in the declared population.
+Source: git_commit at Git base b90a2fd4681d20e2586481b7b9b1114a78281b94.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6] | source | laminarin (brown algae) |
+| CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9] | source | 1 M KH2PO4 |
+| CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6] | source | Vitamins mix solution |
+| CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd] | source | 2N NaOH |
+| CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a] | source | 10 N NaOH |
+| CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316] | source | sodium nicotinate |
+| CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54] | source | K2HPO4 (anhydrous base) |
+| CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499] | source | Vitamin K1 solution |
+| CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275] | source | (NH4)MgPO4 |
+| CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7] | source | Vitamin B12 (0.002% (w/v)) |
+| CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45] | source | Na2S・9H2O (10%, w/v) |
+| CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be] | source | Vitamin solution No. 6 |
+| CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e] | source | 0.01% Vitamin B12 solution |
+| CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4] | source | Soya flour |
+| CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df] | source | Mineral base 1* |
+| CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e] | source | 0.1% Vitamin K1 |
+| CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733] | source | 0.2NKOH |
+| CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41] | source | Vitamin B12 (2 mg/ml) |
+| CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596] | source | Vitamin B12 solution* (see Medium No. 403 ) |
+| CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216] | source | Vitamin mixture (see below) |
+| CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e] | source | KH2PO4 x 7 H2O |
+| CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13] | source | EDTA・Na2 |
+| CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e] | source | SL10 elements (see below) |
+| CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468] | source | Ethane |
+| CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e] | source | Nalidixic acid |
+| CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b] | source | iso -Valeric acid |
+| CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb] | source | Component III |
+| CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5] | source | 5.0 mM Toluene (water--saturated) |
+| CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc] | source | 1 N NaOH |
+| CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e] | source | Wolin's vitamin solution (10x) |
+| CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49] | source | Na2Mo4O4 |
+| CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08] | source | Vitamin B12 solution****** |
+| CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758] | source | Difco 0003 or Difco 0001 |
+| CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd] | source | Na2NPO4 |
+| CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a] | source | 50mM Na2HPO4 |
+| CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378] | source | 6N NaOH |
+| CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439] | source | MnSO .7H O |
+| CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909] | source | EDTA·Na2 |
+| CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028] | source | Vitamin solution* (see Medium No. 403 ) |
+| CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378] | source | Vitamin B12/corrinoid supplement |
+| CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6] | source | 5% Na2S·9H2O |
+| CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb] | source | n--Valeric acid |
+| CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380] | source | Vitamin solution B (1000 x stock) |
+| CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf] | source | Na2S . 9H2O (2.5%) |
+| CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45] | source | 5% Na2S・9H2O |
+| CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda] | source | Vitamin K1 (1% solution) |
+| CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05] | source | 0.1N NaOH |
+| CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0] | source | NaHPO4・12H2O |
+| CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877] | source | KH2PO4・2H2O |
+| CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f] | source | Vitamin solution (see Medium No. 403) |
+| CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394] | source | Fluid thioglycolate (BD-BBL) |
+| CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9] | source | 1 M K2HPO4 |
+| CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4] | source | Mineral base D |
+| CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae] | source | Na2S2O3・5H2O(final conc.) |
+| CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec] | source | iso--Valeric acid |
+| CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab] | source | Na |
+| CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7] | source | 1N NaOH |
+| CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03] | source | KH2PO4 x 2 H2O |
+| CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22] | source | 100 x Vitamin mixture (see below) |
+| CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f] | source | 2 N NaOH |
+| CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51] | source | Vitamin solution*** |
+| CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521] | source | Na2S x 9 H2O 3.00 g |
+| CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757] | source | Tris (hydroxymethyl aminomethane) 3.00 g |
+| CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69] | source | K2HPO4·7H2O |
+| CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca] | source | Vitamin B6 supplement |
+| CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f] | source | Vitamin mixture(see below) |
+| CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d] | source | methane--air (50:50) |
+| CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f] | source | EDTA・2Na・2H2O |
+| CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297] | source | 5% Na2S・9H2O (autoclaved) |
+| CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959] | source | Na-PO4 (pH 7.5) |
+| CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d] | source | SL10 |
+| CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b] | source | R2A |
+| CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f] | source | NaNH4HPO4 . 4H2O |
+| CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072] | source | Mineral base 2** |
+| CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f] | source | R2A (Difco) |
+| CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099] | source | Peptic Pepton (USB) |
+| CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3] | source | 1M KH2PO4 |
+| CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683] | source | sulfide ore |
+| CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6] | source | Mineral base B |
+| CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c] | source | Vitamin mixture solution* (see below) |
+| CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba] | source | 0.1 N NaOH |
+| CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71] | source | dTMP |
+| CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b] | source | RST vitamin solution* (see Medium No. 1097 ) |
+| CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b] | source | Glycine betaine |
+| CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573] | source | 3-Sulfolactate |
+| CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f] | source | Mineral base A |
+| CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5] | source | N NaOH |
+| CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb] | source | Vitamin solution I (see below) |
+| CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8] | source | Na2S2O4 x 2 H2O |
+| CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7] | source | Top layer |
+| CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde] | source | H3BO4 |
+| CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e] | source | CO |
+| CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c] | source | Vitamin B12 (20 μg/ml) (filter--sterilized) |
+| CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6] | source | 8 N NaOH |
+| CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2] | source | Vitamin solution* |
+| CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020] | source | Na2S2O4・2H2O |
+| CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce] | source | 1M Na2HPO4 |
+| CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16] | source | KH2PO4 (dissolve first, adjust pH to 7.0) |
+| CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3] | source | Volatile fatty acid mixture |
+| CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e] | source | 0.2 N NaOH |
+| CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082] | source | CaCl |
+| CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8] | source | H2O (deionized) |
+| CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c] | source | 5% Na2S . 9H2O |
+| CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793] | source | 2.5% Na2S . 9H2O |
+| CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623] | source | K2PO4 |
+| CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a] | source | Vitamin B12 (2 mg/100 ml) |
+| CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533] | source | Mineral base C |
+| CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41] | source | NaNH4HPO4 x 4 H2O |
+| CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604] | source | n -Valeric acid |
+| CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03] | source | Artificial marine water |
+| CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724] | source | Vitamin solution A (1000 x stock) |
+| CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86] | source | Vitamin solution**** |
+| CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f] | source | Major metals (see below) |
+| CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2] | source | Trimethylglycine |
+| CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43] | source | Vitamin supplement (ATCC) |
+| CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20] | source | 100X MEM Vitamins (Gibco) |
+| CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563] | source | K2HPO4·7H2O (6 g/L) |
+| CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506] | source | Vitamin solution** |
+| CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1] | source | Vitamin mixture solution* (see Medium No. 1363 ) |
+| CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118] | source | Vitamin solution (see Medium No. 898 ) |
+| CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b] | source | Vitamin solution* (see Medium No. 915 ) |
+| CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9] | source | Trypticase Soy (BBL) |
+| CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563] | source | Na2S・9H2O (final conc.) |
+| CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc] | source | Na2S・9H2O(final conc.) |
+| CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff] | source | Menadione (Vitamin K3) |
+| CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1] | source | Vitamin B12 solution (see Medium No. 403) |
+| CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7] | source | ZnCI2 |
+| CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc] | source | 0.5 M Glycine--NaOH buffer (pH 10.0) |
+| CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6] | source | Cereal grass leaves |
+| CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd] | source | Hutner's vitamin free mineral base (see below) |
+| CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa] | source | 0.5 N NaOH |
+| CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c] | source | Methane gas |
+| CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe] | source | Vitamin B12 (0.1 mg/ml, filter sterilized) |
+| CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223] | source | Na2S・9H2O (final concentration) |
+| CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083] | source | Pyroroquinoline quinone (PQQ) |
+| CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7] | source | 50mM NaH2PO4 |
+| CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307] | source | L-Asparagine*H2O |
+| CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc] | source | Methanethiol |
+| CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97] | source | Thauers vitamins |
+| CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188] | source | 24% Na2S・9H2O |
+| CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9] | source | Tris (Hydroxymethyl) Aminomethane HCl |
+| CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5] | source | Na2S2O3・5H2O (final conc.) |
+| KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f] | source | Na2HPO4 x H2O |
+| KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3] | source | 6-methylnicotinate |
+| KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39] | source | Na2HPO4 x 6 H2O |
+| KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8] | source | Na-stearate |
+| KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2] | source | Vitamin B12 solution see Medium No. 403 |
+| KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309] | source | NH4MgPO4 |
+| KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5] | source | KH2PO4 x 2 H2O |
+| KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83] | source | NH42HPO4 |
+| KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b] | source | DL-Na-lactate |
+| KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e] | source | Na2S x H2O |
+| KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75] | source | ß-nicotinamide adenine dinucleotide |
+| KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c] | source | H3BO4 |
+| KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee] | source | Soytone |
+| KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c] | source | Glycyl-glycine |
+| KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02] | source | cytovirin |
+| KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8] | source | Soya flour |
+| KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac] | source | Na2HPO4 x 7 H2O |
+| KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67] | source | Bacto Soytone |
+| KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830] | source | Alpha-hydroxyglutarate-gamma-lactone |
+| KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb] | source | Linsmaier &amp; Skoog Med. incl. vitamins |
+| KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db] | source | K2HPO4 x 3 H2O |
+| KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26] | source | Na2S2O4 |
+| KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545] | source | chlororaphin |
+| KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578] | source | NaH2PO4 x 2 H2O |
+| KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997] | source | Glycerol-asparagine agar |
+| KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52] | source | SL10 |
+| KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30] | source | HOMOPIPES |
+| KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e] | source | KH2PO4 x 7 H2O |
+| KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05] | source | NaNH4HPO4 x 4 H2O |
+| KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4] | source | Na2HPO4 x 12 H2O |
+| KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb] | source | KH2PO4 |
+| KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184] | source | Se-acid |
+| KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185] | source | Alpha-hydroxyglutarate-gamma-lactone |
+| KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c] | source | chlororaphin |
+| KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3] | source | primocarcin |
+| KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04] | source | NaH2PO4 x H2O |
+| KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991] | source | Na2S2O3 |
+| KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49] | source | Na2Mo4 x 2 H2O |
+| KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e] | source | Plain flour |
+| KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd] | source | DL-Asparagine x H2O |
+| KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45] | source | Na2S2O4 x 2 H2O |
+| KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0] | source | Amphotericin |
+| KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630] | source | MES Hydrat |
+| KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b] | source | Vitamine B12 |
+| KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b] | source | Fe4PO42 |
+| KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0 | reports/all_unmatched_20261107/worker-08/provenance/shard-08.json # cases[case_id=KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0] | source | D-Trehalose |
+| if-add-anhydrous-k2hpo4 | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/K2hpo4.yaml | source | if-add-anhydrous-k2hpo4 |
+| if-reject-monohydrate-on-dihydrate | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml | source | if-reject-monohydrate-on-dihydrate |
+| if-add-mono-source-spelling | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml | source | if-add-mono-source-spelling |
+| if-repair-dithionite-Na2s2o4 | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2s2o4.yaml | source | if-repair-dithionite-Na2s2o4 |
+| if-repair-dithionite-Sodium_Dithionite | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml | source | if-repair-dithionite-Sodium_Dithionite |
+| if-new-sodium-ammonium-phosphate-tetrahydrate | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml | source | if-new-sodium-ammonium-phosphate-tetrahydrate |
+| if-add-edta-disodium-dihydrate-spelling | reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml | source | if-add-edta-disodium-dihydrate-spelling |
+| op-valeric-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Valeric_Acid.yaml | source | op-valeric-alias |
+| op-isovaleric-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Isovaleric_Acid.yaml | source | op-isovaleric-alias |
+| op-methane-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methane.yaml | source | op-methane-alias |
+| op-soy-flour-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml | source | op-soy-flour-alias |
+| op-l-asn-hydrate-alias | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml | source | op-l-asn-hydrate-alias |
+| op-ethane-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Ethane.yaml | source | op-ethane-new |
+| op-nalidixic-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Nalidixic_Acid.yaml | source | op-nalidixic-new |
+| op-glycine-betaine-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml | source | op-glycine-betaine-new |
+| op-methanethiol-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methanethiol.yaml | source | op-methanethiol-new |
+| op-sodium-nicotinate-new | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Sodium_Nicotinate.yaml | source | op-sodium-nicotinate-new |
+| op-glycerol-asparagine-source-note | reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml | source | op-glycerol-asparagine-source-note |
+| vm-prop-menadione | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml | source | vm-prop-menadione |
+| vm-prop-jcm403-vitamin | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml | source | vm-prop-jcm403-vitamin |
+| vm-prop-jcm403-b12 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml | source | vm-prop-jcm403-b12 |
+| vm-prop-linsmaier-skoog | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Linsmaier_Skoog_Medium_Including_Vitamins.yaml | source | vm-prop-linsmaier-skoog |
+| vm-prop-new-2 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml | source | vm-prop-new-2 |
+| vm-prop-new-11 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml | source | vm-prop-new-11 |
+| vm-prop-new-42 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml | source | vm-prop-new-42 |
+| vm-prop-new-58 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml | source | vm-prop-new-58 |
+| vm-prop-new-65 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1118_Vitamin_Mixture.yaml | source | vm-prop-new-65 |
+| vm-prop-new-79 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml | source | vm-prop-new-79 |
+| vm-prop-new-82 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml | source | vm-prop-new-82 |
+| vm-prop-new-87 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1130_Vitamin_Solution_I.yaml | source | vm-prop-new-87 |
+| vm-prop-new-110 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml | source | vm-prop-new-110 |
+| vm-prop-new-112 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM923_Major_Metals_Stock.yaml | source | vm-prop-new-112 |
+| vm-prop-new-119 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM898_Vitamin_Solution.yaml | source | vm-prop-new-119 |
+| vm-prop-new-120 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM915_Vitamin_Solution.yaml | source | vm-prop-new-120 |
+| vm-prop-new-129 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml | source | vm-prop-new-129 |
+| vm-prop-new-7 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml | source | vm-prop-new-7 |
+| vm-prop-new-29 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml | source | vm-prop-new-29 |
+| vm-prop-new-98 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml | source | vm-prop-new-98 |
+| vm-prop-new-26 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml | source | vm-prop-new-26 |
+| vm-prop-new-31 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml | source | vm-prop-new-31 |
+| vm-prop-new-111 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_Solution.yaml | source | vm-prop-new-111 |
+| vm-prop-new-73 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Mineral_Base_2.yaml | source | vm-prop-new-73 |
+| vm-prop-new-52 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml | source | vm-prop-new-52 |
+| vm-prop-new-106 | reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml | source | vm-prop-new-106 |
+| if1201-new-deionized_water | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml | source | if1201-new-deionized_water |
+| if1201-new-dsmz_trace_2n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml | source | if1201-new-dsmz_trace_2n_naoh |
+| if1201-new-jcm_1130_10n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml | source | if1201-new-jcm_1130_10n_naoh |
+| if1201-new-atcc_nitrosolobus_6n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml | source | if1201-new-atcc_nitrosolobus_6n_naoh |
+| if1201-new-pcr_s11_01n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml | source | if1201-new-pcr_s11_01n_naoh |
+| if1201-new-dsmz_104_8n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml | source | if1201-new-dsmz_104_8n_naoh |
+| if1201-new-jcm_221_02n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml | source | if1201-new-jcm_221_02n_naoh |
+| if1201-new-wolin_mineral_05n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml | source | if1201-new-wolin_mineral_05n_naoh |
+| if1201-new-atcc_1340_naoh_4g_100ml | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml | source | if1201-new-atcc_1340_naoh_4g_100ml |
+| if1201-new-jcm_574_1m_kh2po4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml | source | if1201-new-jcm_574_1m_kh2po4 |
+| if1201-new-jcm_574_1m_k2hpo4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml | source | if1201-new-jcm_574_1m_k2hpo4 |
+| if1201-new-pbbm_1m_na2hpo4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml | source | if1201-new-pbbm_1m_na2hpo4 |
+| if1201-new-pcr_s11_50mm_nah2po4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml | source | if1201-new-pcr_s11_50mm_nah2po4 |
+| if1201-new-pcr_s11_50mm_na2hpo4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml | source | if1201-new-pcr_s11_50mm_na2hpo4 |
+| if1201-new-pcr_s11_sodium_phosphate_buffer_ph75 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml | source | if1201-new-pcr_s11_sodium_phosphate_buffer_ph75 |
+| if1201-new-allen_m2231_phosphate_stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml | source | if1201-new-allen_m2231_phosphate_stock |
+| if1201-new-jcm_908_sulfide_10pct_wv | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml | source | if1201-new-jcm_908_sulfide_10pct_wv |
+| if1201-new-jcm_713_sulfide_24pct | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml | source | if1201-new-jcm_713_sulfide_24pct |
+| if1201-new-atcc_1943_sulfide_25pct | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml | source | if1201-new-atcc_1943_sulfide_25pct |
+| if1201-edit-naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml | source | if1201-edit-naoh |
+| if1201-edit-na2moo4_x_2_h2o | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml | source | if1201-edit-na2moo4_x_2_h2o |
+| if1201-edit-na2hpo4_x_12_h2o | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml | source | if1201-edit-na2hpo4_x_12_h2o |
+| if1201-new-atcc_1942_sulfide_5pct | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml | source | if1201-new-atcc_1942_sulfide_5pct |
+| if1201-new-mediadive_552_thiosulfate_5g_100ml | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml | source | if1201-new-mediadive_552_thiosulfate_5g_100ml |
+| if1201-new-jcm_941_solution_c | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml | source | if1201-new-jcm_941_solution_c |
+| if1201-edit-kh2po4-alias-scope | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Kh2po4.yaml | source | if1201-edit-kh2po4-alias-scope |
+| if1201-edit-nonahydrate-stock-aliases | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml | source | if1201-edit-nonahydrate-stock-aliases |
+| if1201-edit-tris-alias-scope | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml | source | if1201-edit-tris-alias-scope |
+| op1201-glycine-naoh-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml | source | op1201-glycine-naoh-stock |
+| op1201-indicator-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml | source | op1201-indicator-stock |
+| op1201-toluene-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml | source | op1201-toluene-stock |
+| op1201-usb-peptic-pepton | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/nbrc19_usb_peptic_pepton.yaml | source | op1201-usb-peptic-pepton |
+| op1201-sulfide-ore | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/sulfide_ore.yaml | source | op1201-sulfide-ore |
+| op1201-cereal-leaves | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Cereal_Leaves.yaml | source | op1201-cereal-leaves |
+| op1201-homopipes-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1938_homopipes_0_5m_ph5_4.yaml | source | op1201-homopipes-stock |
+| op1201-dl-asparagine-monohydrate | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/DL_Asparagine_Monohydrate.yaml | source | op1201-dl-asparagine-monohydrate |
+| op1201-beta-nad-provenance | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml | source | op1201-beta-nad-provenance |
+| op1201-laminarin-scope | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml | source | op1201-laminarin-scope |
+| op1201-bbl-fluid-thioglycollate | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml | source | op1201-bbl-fluid-thioglycollate |
+| op1201-r2a-medium | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml | source | op1201-r2a-medium |
+| op1201-r2a-agar-provenance | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_agar.yaml | source | op1201-r2a-agar-provenance |
+| op1201-racemic-sodium-sulfolactate | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/denger2010_racemic_sodium_sulfolactate.yaml | source | op1201-racemic-sodium-sulfolactate |
+| op1201-trypticase-soy-broth | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Trypticase_Soy_Broth.yaml | source | op1201-trypticase-soy-broth |
+| op1201-sodium-lactate-alias-boundary | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Sodium_Lactate.yaml | source | op1201-sodium-lactate-alias-boundary |
+| op1201-soy-family-source-boundary | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml | source | op1201-soy-family-source-boundary |
+| op1201-plain-flour | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Plain_Flour.yaml | source | op1201-plain-flour |
+| op1201-amphotericin-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1140_amphotericin_stock_10mg_ml.yaml | source | op1201-amphotericin-stock |
+| op1201-ferric-pyrophosphate-label | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Fe4_Po42.yaml | source | op1201-ferric-pyrophosphate-label |
+| vm1201-prop-jcm1023-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml | source | vm1201-prop-jcm1023-vitamin |
+| vm1201-prop-jcm903-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml | source | vm1201-prop-jcm903-vitamin |
+| vm1201-prop-jcm554-sl10 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml | source | vm1201-prop-jcm554-sl10 |
+| vm1201-prop-nbrc1356-mineral-base1 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml | source | vm1201-prop-nbrc1356-mineral-base1 |
+| vm1201-prop-yps-basea | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml | source | vm1201-prop-yps-basea |
+| vm1201-prop-yps-baseb | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M2567_Mineral_Base_B.yaml | source | vm1201-prop-yps-baseb |
+| vm1201-prop-jcm628-toplayer | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM628_Top_Layer.yaml | source | vm1201-prop-jcm628-toplayer |
+| vm1201-prop-jcm629-toplayer | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM629_Top_Layer.yaml | source | vm1201-prop-jcm629-toplayer |
+| vm1201-prop-nbrc1020-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1020_Vitamin_Solution.yaml | source | vm1201-prop-nbrc1020-vitamin |
+| vm1201-prop-nbrc1226-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1226_Vitamin_Solution.yaml | source | vm1201-prop-nbrc1226-vitamin |
+| vm1201-prop-nbrc903-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC903_Vitamin_Solution.yaml | source | vm1201-prop-nbrc903-vitamin |
+| vm1201-prop-nbrc-common9 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml | source | vm1201-prop-nbrc-common9 |
+| vm1201-prop-gibco11120-mem100x | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Gibco11120_MEM_Vitamin_Solution_100X.yaml | source | vm1201-prop-gibco11120-mem100x |
+| vm1201-prop-jcm510-methane-air | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM510_Methane_Air_50_50.yaml | source | vm1201-prop-jcm510-methane-air |
+| vm1201-prop-jcm515-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml | source | vm1201-prop-jcm515-b12-partial |
+| vm1201-prop-jcm647-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml | source | vm1201-prop-jcm647-b12-partial |
+| vm1201-prop-jcm1354-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml | source | vm1201-prop-jcm1354-b12-partial |
+| vm1201-prop-atcc2883-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml | source | vm1201-prop-atcc2883-b12-partial |
+| vm1201-prop-togo125-k1-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml | source | vm1201-prop-togo125-k1-partial |
+| vm1201-prop-dsm1245-k1-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml | source | vm1201-prop-dsm1245-k1-partial |
+| vm1201-prop-thauers-source-comparison | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml | source | vm1201-prop-thauers-source-comparison |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Historical input, capture and predecessor integrity | passed | True | CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6, CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9, CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6, CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd, CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a, CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316, CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54, CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499, CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275, CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7, CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45, CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be, CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e, CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4, CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df, CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e, CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733, CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41, CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596, CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216, CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e, CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13, CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e, CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468, CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e, CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b, CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb, CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5, CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc, CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e, CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49, CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08, CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758, CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd, CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a, CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378, CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439, CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909, CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028, CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378, CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6, CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb, CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380, CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf, CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45, CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda, CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05, CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0, CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877, CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f, CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394, CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9, CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4, CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae, CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec, CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab, CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7, CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03, CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22, CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f, CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51, CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521, CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757, CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69, CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca, CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f, CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d, CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f, CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297, CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959, CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d, CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b, CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f, CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072, CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f, CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099, CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3, CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683, CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6, CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c, CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba, CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71, CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b, CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b, CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573, CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f, CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5, CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb, CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8, CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7, CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde, CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e, CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c, CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6, CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2, CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020, CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce, CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16, CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3, CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e, CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082, CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8, CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c, CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793, CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623, CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a, CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533, CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41, CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604, CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03, CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724, CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86, CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f, CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2, CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43, CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20, CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563, CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1, CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118, CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b, CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9, CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563, CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc, CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff, CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1, CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7, CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc, CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6, CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd, CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa, CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c, CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe, CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223, CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083, CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7, CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307, CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc, CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97, CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188, CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9, CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5, KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f, KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3, KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39, KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8, KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2, KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309, KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5, KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83, KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b, KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e, KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75, KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c, KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee, KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c, KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02, KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8, KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac, KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67, KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830, KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb, KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db, KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26, KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545, KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578, KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997, KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52, KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30, KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e, KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05, KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4, KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb, KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184, KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185, KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c, KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3, KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04, KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991, KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49, KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e, KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd, KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45, KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0, KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630, KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b, KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b, KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0, if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-52, vm-prop-new-106, if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Historical input, capture and predecessor integrity; limited to declared mechanics, not chemistry or export approval. |
+| Native strict schema for all selected payloads | passed | True | if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-52, vm-prop-new-106, if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Native strict schema for all selected payloads; limited to declared mechanics, not chemistry or export approval. |
+| Native full-catalog partonomy with in-memory proposal overlay | passed | True | if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-52, vm-prop-new-106, if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Native full-catalog partonomy with in-memory proposal overlay; limited to declared mechanics, not chemistry or export approval. |
+| Author native schema, renderer, input hashes and scope | passed | True | CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6, CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9, CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6, CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd, CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a, CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316, CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54, CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499, CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275, CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7, CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45, CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be, CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e, CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4, CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df, CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e, CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733, CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41, CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596, CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216, CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e, CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13, CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e, CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468, CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e, CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b, CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb, CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5, CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc, CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e, CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49, CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08, CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758, CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd, CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a, CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378, CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439, CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909, CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028, CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378, CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6, CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb, CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380, CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf, CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45, CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda, CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05, CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0, CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877, CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f, CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394, CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9, CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4, CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae, CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec, CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab, CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7, CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03, CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22, CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f, CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51, CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521, CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757, CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69, CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca, CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f, CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d, CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f, CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297, CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959, CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d, CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b, CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f, CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072, CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f, CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099, CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3, CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683, CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6, CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c, CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba, CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71, CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b, CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b, CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573, CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f, CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5, CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb, CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8, CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7, CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde, CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e, CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c, CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6, CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2, CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020, CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce, CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16, CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3, CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e, CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082, CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8, CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c, CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793, CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623, CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a, CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533, CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41, CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604, CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03, CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724, CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86, CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f, CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2, CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43, CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20, CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563, CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1, CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118, CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b, CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9, CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563, CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc, CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff, CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1, CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7, CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc, CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6, CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd, CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa, CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c, CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe, CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223, CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083, CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7, CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307, CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc, CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97, CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188, CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9, CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5, KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f, KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3, KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39, KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8, KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2, KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309, KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5, KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83, KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b, KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e, KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75, KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c, KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee, KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c, KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02, KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8, KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac, KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67, KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830, KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb, KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db, KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26, KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545, KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578, KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997, KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52, KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30, KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e, KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05, KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4, KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb, KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184, KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185, KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c, KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3, KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04, KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991, KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49, KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e, KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd, KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45, KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0, KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630, KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b, KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b, KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0, if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-52, vm-prop-new-106, if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Author native schema, renderer, input hashes and scope; limited to declared mechanics, not chemistry or export approval. |
+| Meaningful native authoring controls | passed | True | CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6, CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9, CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6, CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd, CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a, CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316, CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54, CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499, CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275, CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7, CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45, CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be, CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e, CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4, CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df, CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e, CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733, CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41, CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596, CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216, CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e, CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13, CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e, CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468, CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e, CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b, CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb, CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5, CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc, CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e, CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49, CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08, CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758, CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd, CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a, CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378, CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439, CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909, CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028, CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378, CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6, CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb, CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380, CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf, CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45, CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda, CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05, CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0, CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877, CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f, CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394, CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9, CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4, CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae, CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec, CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab, CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7, CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03, CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22, CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f, CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51, CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521, CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757, CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69, CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca, CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f, CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d, CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f, CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297, CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959, CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d, CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b, CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f, CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072, CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f, CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099, CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3, CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683, CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6, CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c, CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba, CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71, CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b, CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b, CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573, CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f, CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5, CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb, CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8, CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7, CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde, CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e, CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c, CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6, CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2, CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020, CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce, CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16, CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3, CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e, CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082, CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8, CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c, CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793, CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623, CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a, CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533, CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41, CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604, CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03, CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724, CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86, CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f, CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2, CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43, CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20, CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563, CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1, CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118, CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b, CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9, CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563, CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc, CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff, CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1, CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7, CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc, CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6, CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd, CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa, CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c, CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe, CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223, CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083, CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7, CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307, CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc, CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97, CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188, CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9, CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5, KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f, KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3, KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39, KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8, KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2, KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309, KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5, KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83, KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b, KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e, KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75, KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c, KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee, KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c, KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02, KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8, KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac, KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67, KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830, KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb, KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db, KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26, KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545, KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578, KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997, KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52, KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30, KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e, KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05, KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4, KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb, KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184, KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185, KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c, KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3, KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04, KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991, KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49, KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e, KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd, KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45, KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0, KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630, KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b, KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b, KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0, if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-52, vm-prop-new-106, if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Meaningful native authoring controls; limited to declared mechanics, not chemistry or export approval. |
+| Maintained synchronization and supported-export admission | not_applicable | False | CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6, CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9, CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6, CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd, CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a, CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316, CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54, CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499, CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275, CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7, CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45, CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be, CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e, CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4, CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df, CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e, CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733, CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41, CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596, CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216, CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e, CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13, CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e, CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468, CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e, CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b, CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb, CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5, CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc, CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e, CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49, CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08, CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758, CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd, CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a, CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378, CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439, CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909, CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028, CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378, CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6, CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb, CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380, CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf, CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45, CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda, CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05, CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0, CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877, CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f, CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394, CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9, CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4, CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae, CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec, CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab, CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7, CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03, CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22, CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f, CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51, CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521, CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757, CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69, CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca, CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f, CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d, CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f, CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297, CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959, CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d, CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b, CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f, CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072, CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f, CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099, CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3, CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683, CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6, CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c, CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba, CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71, CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b, CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b, CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573, CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f, CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5, CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb, CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8, CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7, CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde, CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e, CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c, CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6, CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2, CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020, CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce, CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16, CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3, CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e, CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082, CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8, CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c, CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793, CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623, CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a, CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533, CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41, CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604, CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03, CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724, CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86, CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f, CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2, CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43, CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20, CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563, CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506, CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1, CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118, CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b, CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9, CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563, CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc, CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff, CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1, CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7, CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc, CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6, CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd, CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa, CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c, CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe, CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223, CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083, CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7, CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307, CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc, CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97, CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188, CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9, CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5, KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f, KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3, KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39, KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8, KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2, KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309, KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5, KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83, KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b, KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e, KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75, KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c, KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee, KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c, KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02, KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8, KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac, KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67, KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830, KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb, KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db, KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26, KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545, KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578, KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997, KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52, KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30, KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e, KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05, KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4, KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb, KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184, KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185, KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c, KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3, KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04, KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991, KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49, KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e, KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd, KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45, KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0, KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630, KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b, KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b, KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0, if-add-anhydrous-k2hpo4, if-reject-monohydrate-on-dihydrate, if-add-mono-source-spelling, if-repair-dithionite-Na2s2o4, if-repair-dithionite-Sodium_Dithionite, if-new-sodium-ammonium-phosphate-tetrahydrate, if-add-edta-disodium-dihydrate-spelling, op-valeric-alias, op-isovaleric-alias, op-methane-alias, op-soy-flour-alias, op-l-asn-hydrate-alias, op-ethane-new, op-nalidixic-new, op-glycine-betaine-new, op-methanethiol-new, op-sodium-nicotinate-new, op-glycerol-asparagine-source-note, vm-prop-menadione, vm-prop-jcm403-vitamin, vm-prop-jcm403-b12, vm-prop-linsmaier-skoog, vm-prop-new-2, vm-prop-new-11, vm-prop-new-42, vm-prop-new-58, vm-prop-new-65, vm-prop-new-79, vm-prop-new-82, vm-prop-new-87, vm-prop-new-110, vm-prop-new-112, vm-prop-new-119, vm-prop-new-120, vm-prop-new-129, vm-prop-new-7, vm-prop-new-29, vm-prop-new-98, vm-prop-new-26, vm-prop-new-31, vm-prop-new-111, vm-prop-new-73, vm-prop-new-52, vm-prop-new-106, if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Read-only candidate review; no integration or export generation authorized here. All native release holds retained. |
+
+## Scientific And Domain Assessments
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6.
+
+TOGO M2313 specifies laminarin among alternative carbon sources and only a brown-algae description. Generic laminarin is supported; a universal Laminaria digitata restriction is not. The final owner correctly moves that historical qualifier into supplied-form provenance rather than extending it to this occurrence.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9.
+
+JCM574 explicitly combines 16.6 ml of 1 M KH2PO4 with 83.4 ml of a different 1 M K2HPO4 stock, then dilutes with equal water; JCM1181 imports that preparation. PBBM is a conditional comparison, not an exact assigned source. No stock carrier or supplied solid hydrate follows from receiving-buffer dilution water.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6.
+
+The JCM1037→1036→296 reference chain supports the ten-vitamin stock. Seven 20 mg vitamins, folic acid/B12/biotin 1 mg each and 1 L water agree with the proposed recipe; generic B12 and specified DL calcium pantothenate retain their form limits. Known component references remain feasible curation.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd.
+
+The DSMZ trace protocols explicitly use 2 N NaOH as an input. The hydroxide concentration is supported, while later recipe water and metal constituents are not constituents of that reagent. Source anchors and receiving protocols remain distinct from universal stock identity.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a.
+
+JCM1130 directly gives 26 ml 10 N NaOH in its VFA mixture. This is a concentrated reagent input, not pure NaOH or a VFA owner. JCM870/crotonate and TOGO contexts cannot acquire its complete preparation identity solely from equal strength.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316.
+
+JCM393 identifies sodium nicotinate; NIST confirms CAS54-86-4 and C6H4NNaO2. The acid parent CHEBI15940 is not exact salt identity. CAS primary identity plus NARROW_MATCH preserves the asymmetric parent bridge; claimed human mapping evidence needs correction.
+
+Published remaining requirement: Integration must repeat exact-form ontology lookup and confirm no more-specific term before CAS-primary creation.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54.
+
+NBRC268 expressly says K2HPO4 (anhydrous base), supporting the bounded source alias on the anhydrous dipotassium phosphate owner, rather than the trihydrate. The entire payload retains unrelated malformed resolving formulas KH2HPO4 and K2HPO; their existence is not cured by the new supported alias.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499.
+
+DSMZ solution125 specifies 0.1 ml vitamin K1 dissolved in 20 ml 95% ethanol, filtered and refrigerated in a brown bottle. Twenty ml is solvent input, not a final volume. The stock is distinct from pure phylloquinone and from 0.1% or 1% source labels with unspecified basis.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275.
+
+The ammonium magnesium phosphate literal does not establish hydration; supplier sources distinguish hydrate/hexahydrate conventions. Keeping the source unresolved is justified. A candidate registry or ontology formula cannot establish the original supplied hydrate without a source bridge.
+
+Published remaining requirement: Primary C100 supplier/material evidence establishing the actual hydrate form for CAS 7785-21-9; current source CAS alone is insufficient.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7.
+
+Eight NBRC sources specify 0.002% w/v vitamin B12; all read recipes filter-sterilize it separately. This converts to 20 mg/L. The JCM515 20 µg/ml anchor is related by nominal strength only; neither carrier nor vitamin species identity is proven shared. No transferred water or cyanocobalamin identity is allowed.
+
+Published remaining requirement: Recover an explicit common stock protocol or complete formulation bridge before exact NBRC→JCM 515 membership. Unknown carriers/vitamers remain unasserted; the proposed anchor is a distinct source-defined preparation candidate, not blanket resolution.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45.
+
+JCM908 explicitly calls for a filter-sterilized 10% w/v sodium sulfide nonahydrate solution. Nonahydrate reference and concentration are supported; unspecified carrier is not inferred. The receiving-volume dose remains separate from stock amount and native source unit defects.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be.
+
+JCM995 vitamin solution No.6 is its own nine-vitamin recipe, including nicotinamide and thiamine hydrochloride dihydrate. The exact names and quantities agree; do not replace them with nicotinic acid or unsolvated thiamine salt. Baseline lookup can resolve other unambiguous components.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e.
+
+JCM1354 directly specifies 0.01% B12 solution but does not state the percentage basis, carrier or exact vitamer. The source-qualified stock candidate is feasible; no numeric mass conversion, ethanol or water can be added from inference.
+
+Published remaining requirement: Carrier, additional constituents and percentage basis remain unknown; recover them before complete decomposition or equivalence to a quantitatively defined B12 stock.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4.
+
+MediaDive1894 says soya flour from the supermarket and 20 g/L. A generic soy-flour mixture alias is supported; no supplier, defatting, extraction or fixed molecular composition is justified. Existing broad FoodOn scope is compatible.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df.
+
+NBRC1356 charges four salts and water, autoclaves under N2, waits for precipitate and uses only supernatant at pH10. Treating the resulting material as an undefined preparation is justified; charged masses are not retained supernatant composition. The water-only component assertion is an interpretation and must not be labeled direct recipe transcription.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e.
+
+The exact private TOGO M125 response was rehashed and read: JCM134 context gives 0.2 ml of 0.1% vitamin K1. Carrier and percentage basis are absent. The stock candidate must retain those absences and cannot be equated to DSMZ125 ethanol stock.
+
+Published remaining requirement: Recover carrier, extra constituents and percentage basis for complete formulation; no equivalence to DSMZ 125 or OTEB1%stock is asserted.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733.
+
+TOGO M2844 comments specify one 0.5% bromothymol-blue solution in 0.2 N KOH, dosed 5 ml/L. The separately parsed 0.2 N KOH fragment is not the whole named ingredient. The combined indicator preparation preserves unknown percentage basis and carrier without taking receiving-medium water as stock water.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41.
+
+JCM647 explicitly specifies B12 at 2 mg/ml, filter-sterilized; JCM520/533/650 give the same nominal strength. They are conditional comparisons, not proof of identical carrier/form. The 2000 mg/L conversion is correct; exact B12 species remains unknown.
+
+Published remaining requirement: Recover explicit shared stock provenance or complete formulations before assigning the other three occurrences to the JCM 647 owner. The written2 mg/ml is not silently corrected; carrier and molecular vitamer remain unknown.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596.
+
+JCM403 separately lists B12 5 mg plus distilled water100 ml, distinct from its five-vitamin/phosphate-buffer solution and thiamine solution. The source-bound assignment is supported, but all three bare Medium No.403 resolving aliases and the unqualified preferred label violate the provider boundary.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216.
+
+The frozen generic vitamin-mixture label spans JCM1023 and JCM903. Complete tables differ in B6 naming/form and quantities; splitting their source-qualified recipes is justified. Do not derive their identity from the shared generic label, and finish feasible references for explicitly named constituents.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e.
+
+Literal KH2PO4 heptahydrate is not an established monobasic-phosphate form merely because a nearby magnesium salt has seven waters. No global correction or exact owner is justified without a source correction or product identity; hold remains warranted.
+
+Published remaining requirement: Obtain an MMN source correction or a material specification for KH2PO4·7H2O; establish whether hydration is intentional before a distinct owner or corrected source link.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13.
+
+JCM1171 and1304 explicitly name EDTA·Na2 in their trace mixtures, without water of crystallization. The disodium salt class is clear but exact supplied hydrate is not. An available dihydrate owner is not evidence that these sources supplied dihydrate.
+
+Published remaining requirement: Resolve hydration from each JCM1171/1304/1357 material specification or supplier CAS; do not equate this unqualified source with an anhydrous-only owner by spelling.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e.
+
+JCM554 SL10 explicitly gives seven named metal salts and water and omits the HCl/borate of other commonly named SL10 recipes. The payload appropriately preserves this exact table rather than importing a customary formulation. Source names alone cannot establish equality to other SL10 records.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468.
+
+TOGO M1198 identifies ethane in a gas-phase recipe context. Ethane CHEBI42266 is a defensible component identity, not the whole headspace mixture and not an implied pure gas product grade. No receiving gas proportions belong on the molecular owner.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e.
+
+Nalidixic acid molecular identity is supported by the ontology and an independently obtained NBRC1301 primary table showing a separately filtered 30 mg/ml stock. The archived author package did not expose a readable primary table for every frozen NBRC1301/1314 occurrence. Direct NBRC1314 and TOGO M2023 access failed; source applicability for that occurrence remains unverified, not approved by a nearby recipe.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b.
+
+The source iso-Valeric acid spelling denotes branched isovaleric acid and is distinct from n-valeric acid in the same VFA context. Adding the spelling with exact source provenance is supported; no isomer merge or dosage transfer is justified.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb.
+
+ATCC1249 Component III explicitly comprises 3.5 g sodium lactate,1 g yeast extract,400 ml deionized water, pH7.5 and autoclaving. The named stock is supported; unspecified pH titrant is not an additional quantified ingredient and sodium-lactate stereo/form remains unasserted.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5.
+
+JCM600 literally specifies a separate 5 mM toluene water-saturated solution, anaerobic and autoclaved, added40 ml. The payload preserves that wording and an unspecified water component without inventing saturation temperature, stock water amount or solvent grade; it must not become a generic toluene molecular alias.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc.
+
+ATCC1340 explicitly names NaOH solution4 g/100 ml as the source anchor. Other 1 N receiving contexts are conditional only. New stock identity does not cure or authorize unrelated pure-NaOH aliases. The pure-owner proposal correctly rejects the specified 1 N/2 N labels while preserving provenance.
+
+Published remaining requirement: Exact cross-source assignment requires an actual stock formulation/protocol bridge. Different receiving recipes and omitted carrier/percent metadata alone establish neither equivalence nor distinct material identity.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e.
+
+DSMZ5980 explicitly lists the tenfold Wolin vitamins with 1 mg B12,20 mg biotin/folic acid,100 mg pyridoxineHCl and the remaining named50 mg constituents per1 L. D(+)-calcium pantothenate and DL-alpha-lipoic acid stay as written. Complete formula does not mean exact component grounding has been completed.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49.
+
+NBRC1601 literally retains Na2Mo4O4 and its microgram amount. This malformed formula cannot be silently corrected to sodium molybdate dihydrate. The source unit/extraction defect is separate from substance identity; no payload is justified until a primary correction supplies the missing identity.
+
+Published remaining requirement: Obtain correction of NBRC1601 formula/CAS or supplier material; separately repair the 27.6 μg/L versus G_PER_L source-unit conversion.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08.
+
+NBRC1321 specifically says cyanocobalamin5 mg plus distilled water100 ml, filter-sterilized. This supports a cyanocobalamin stock rather than generic B12 or an unexplained vitamer class. Both explicit constituents have verified baseline catalog references, so leaving both UNMAPPED is feasible curation left unfinished.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758.
+
+DSMZ672 explicitly permits Difco0003 or Difco0001 alternatives. A disjunctive product instruction is not one commercial identity or a mixture of both powders. Preserve the alternatives and selection requirement rather than one globally resolving alias.
+
+Published remaining requirement: Which product was actually selected in this occurrence, or an explicit source representation preserving both alternatives as alternatives.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd.
+
+TOGO M3140 literally uses Na2NPO4 in Medium D. The corrupted formula is not enough to choose a sodium-phosphate stoichiometry or hydrate. Nearby customary recipes or ontology similarity cannot supply an exact source correction; retain hold.
+
+Published remaining requirement: Original Medium D source correction or material specification for literal Na2NPO4; the primary record now retrieved still contains that formula.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a.
+
+PCR-S11 TOGO M2262 explicitly gives3.55 g Na2HPO4 in500 ml distilled water and describes50 mM phosphate stock. Numeric values are preserved without inferring a hydrate from molecular mass. Exact supplied form is unknown; it is separate from component-list completeness and from2019Roscoff/Gaffron related formulations.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378.
+
+ATCC Nitrosolobus recipe explicitly uses1 ml6 N NaOH with phenol red and99 ml deionized water. That receiving indicator's water does not identify the6 N stock carrier. The partial reagent anchor is supported with known NaOH concentration and no borrowed components.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439.
+
+CCAP SP primary recipe clarifies MnSO4·7H2O and a separate0.002 g amount; frozen spaced text is extraction corruption. A scoped upstream repair is justified; globally adding the corrupted full label as a salt synonym is not required or authorized.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909.
+
+JCM1357 trace solution says EDTA·Na2, no hydrate. The same source's malformed Na2MnO4·2H2O remains a separate issue1179 hold and cannot be repaired through the EDTA decision. Preserve exact-form uncertainty rather than assuming the catalog dihydrate.
+
+Published remaining requirement: Resolve hydration from each JCM1171/1304/1357 material specification or supplier CAS; do not equate this unqualified source with an anhydrous-only owner by spelling.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028.
+
+The starred JCM403 vitamin pointer reaches the five-vitamin stock in10 mM sodium phosphate buffer, not the separate B12 stock. Its exact source assignment is supported, but globally resolving bare numbered-pointer aliases are unsafe and need rejection with provenance retained.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378.
+
+The actual archived PMC3146290 HTML hash was independently verified and Methods inspected. Each5 ml culture receives30–50 µg of one of hydroxocobalamin acetate,hydroxocobalaminHCl,methylcobalamin or cyanocobalamin. This is a choice of forms, not a combined formulation or missing mixture ratio. Condition-specific selection remains the actual requirement.
+
+Published remaining requirement: The primary4YACo methods specify one of four corrinoid alternatives, not a premixed preparation. Recover condition-specific selection for the collapsed occurrence before mapping it to one supplied reagent. No four-component stock or mixture ratio can be inferred.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6.
+
+ATCC1942 directly relates10 ml of5% nonahydrate stock to final0.5 g/L and autoclaving underN2, supporting nominal5%w/v. JCM899 and other5% contexts are conditional, not exact shared preparations. Do not transfer the ATCC basis or atmosphere to all labels.
+
+Published remaining requirement: Exact cross-source assignment requires an actual stock formulation/protocol bridge. Different receiving recipes and omitted carrier/percent metadata alone establish neither equivalence nor distinct material identity.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb.
+
+The n--Valeric spelling is an extraction/name variant of straight-chain valeric acid; primary VFA tables distinguish it from iso-valeric. The bounded alias is supported, while inherited pentanoate/acid interpretation is outside a release approval and remains a full-owner caution.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380.
+
+JCM1100 vitamin solutionB1000x is only B12100 mg in100 ml water, separate from vitaminA. The payload preserves this decomposition; it does not import other vitamins or identify an unspecified B12 species as cyano by convention.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf.
+
+TOGO M2760 PBBM gives a2.5% nonahydrate stock25 ml but no basis or carrier. ATCC1943 is a better documented conditional preparation, not proof that PBBM's stock is identical. Preserve source labels and the preparation-equivalence requirement.
+
+Published remaining requirement: Concrete ATCC 1943 partial-stock comparison is supplied. PBBM reuse requires evidence of its carrier/percent basis and preparation treatment; neither equality nor a distinct second formulation follows from 2.5% alone.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45.
+
+The multiple5% sulfide contexts retain their own autoclaving/filter/gas instructions. ATCC1942 is the direct anchor; related JCM stocks cannot inherit itsw/v basis merely because nonahydrate and nominal percent agree. The withdrawn second owner stays withdrawn without assigning the conditional cases automatically.
+
+Published remaining requirement: Exact cross-source assignment requires an actual stock formulation/protocol bridge. Different receiving recipes and omitted carrier/percent metadata alone establish neither equivalence nor distinct material identity.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda.
+
+DSMZ1245 explicitly specifies1% K1 solution but does not identify carrier or percent basis. A source-bound preparation is feasible; no arbitrary ethanol, mass conversion or equivalence to DSMZ125 is justified. The calf-serum alternative in the actual source must not be replaced with FBS from a derived record.
+
+Published remaining requirement: Carrier, percent basis and complete constituent list remain unknown; no full formulation equivalence or molecular identity claim is made.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05.
+
+PCR-S11 directly dissolves1.488 g Na2-EDTA in40 ml0.1 N NaOH. Other ATCC hemin and SGP7 titration uses establish reagent contexts, not full preparation identity. The final anchor/comparison distinction fixes the earlier source-number duplicate error.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0.
+
+JCM820 literally gives NaHPO4·12H2O. Missing sodium stoichiometry is a real source-form defect; it must not be mapped automatically to the known Na2HPO4 dodecahydrate owner, including worker03's own proposal. No worker03 or cross-shard coalescence approval follows.
+
+Published remaining requirement: Obtain JCM820 clarification or an independent original material specification for the intended sodium count and dodecahydrate.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877.
+
+MediaDive1810 retains KH2PO4x2H2O literally while direct JCM566 retrieval was unavailable. The available primary-derived source supports the ambiguous text but not a corrected form. A real source correction is still required; unavailable access is not evidence of chemical absence.
+
+Published remaining requirement: Verify an authoritative formulation/material specification for Ilyobacter/SGP7 source KH2PO4 dihydrate or obtain a source correction; PubChem/depositor formula alone is insufficient for release.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f.
+
+All eleven MediaDive main-solution backlinks identify their JCM-numbered recipe context and separate vitamin,thiamine andB12 pointers to403. Those occurrence contexts support the JCM403 five-vitamin assignment. They do not make an unqualified Medium No.403 label globally unique.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394.
+
+The source label is commercial fluid thioglycollate BD-BBL. ATCC474 explicitly identifies BD211260 at29.5 g/L and separately adds yeast extract and sodium thioglycollate; ATCC177 gives a separate from-scratch alternative. Matching Eubacterium recipe, brand and separate ingredients support the bounded product association by interpretation. This cross-provider bridge is not a direct catalogue-number assertion in JCM157/TOGOM148 and does not establish manufacturer composition.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9.
+
+JCM574 specifies the distinct1 M K2HPO4 input83.4 ml alongside16.6 ml1 M KH2PO4; later dilution water belongs to the combined phosphate buffer. The stock is not the pure solid and exact hydrate/carrier remain unknown.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4.
+
+TOGO M2567 Mineral baseD is5 ml14%w/v NH4Cl solution plus5 ml7%w/v KH2PO4 solution. Keeping these nested stocks avoids replacing them with inaccurate dry masses or inferring water quantities. Unknown stock carriers remain unknown.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae.
+
+The JCM final-concentration sodium thiosulfate pentahydrate label describes an addition to the receiving medium, not a stock preparation. Preserve the hydrate and final-dose context; no new concentration-stock owner or instruction-bearing global alias is justified.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec.
+
+The iso--Valeric occurrence is the branched acid already supported by the exact sourceVFA context. It shares the isovaleric alias payload, not the straight-chain valeric owner; extra hyphen does not change stereochemistry or composition.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab.
+
+All six bare Na occurrences are truncations from sodium-sesquicarbonate-buffer notes in the original recipe. They do not identify elemental sodium. The source extraction/role repair belongs under1172; deleting the context or minting aNaowner would be wrong.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7.
+
+The1NNaOH lexical case spans chopped-meat and hemin inputs; the actual ATCC and DSMZ protocols retain receiving-water additions separately. ATCC1340's4g/100ml anchor is conditional relative to these cases. Equal nominal normality alone does not establish carrier/preparation identity.
+
+Published remaining requirement: Exact cross-source assignment requires an actual stock formulation/protocol bridge. Different receiving recipes and omitted carrier/percent metadata alone establish neither equivalence nor distinct material identity.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03.
+
+Both SGP7 TOGO M3249 and Ilyobacter MediaDive4391 preserve literalKH2PO4·2H2O. SGP7's pH7.0 NaOH adjustment and final ultrapure-water volume do not establish the phosphate hydrate. The source/form hold is justified and is not simply deferred workflow.
+
+Published remaining requirement: Verify an authoritative formulation/material specification for Ilyobacter/SGP7 source KH2PO4 dihydrate or obtain a source correction; PubChem/depositor formula alone is insufficient for release.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22.
+
+JCM848 directly provides100fold vitamin recipe with100mg biotin/B12,300mgpABA,500mg folic/thiamine/riboflavin,1.5gpyridoxineHCl and1Lwater. Source amounts and separate stock identity are sound; ordinary component reference completion is still feasible.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f.
+
+The2NNaOH spelling variant reaches the same scoped DSMZ trace-reagent proposal. It does not gain a globally resolving alias on pureNaOH, and no source-specific carrier or trace-metal recipe can be inferred into the stock from a receiving mixture.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51.
+
+NBRC1356/857/936/1169/1308/1050/1086/1274/925 have the same common-nine-vitamin input table and separately filtered use. Reusing one source-bound formula candidate is supported; different trace-metal tables and receiving media are not part of that identity. All explicit source holds and unresolved vitamin forms remain.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521.
+
+DSMZ901a has a nonahydrate reagent column and separate3.00g amount. The concatenated label is not a new synonym. The final owner correctly rejects the two known concentration-qualified aliases under1215; native policy already filters role-prefix and bare-parenthetical remnants, so those are not a newly demonstrated resolver defect.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757.
+
+DSMZ1669 separates Tris and3.00g. The final payload preserves the four hydrochloride rejections and adds rejection of1Mbuffer and nitrilotriacetate labels. These bounded fixes are present under1157; they do not approve every inherited role or all buffered-Tris ambiguities.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69.
+
+M2231 explicitly prepares phosphate stock from literal K2HPO4·7H2O 6 g in 1 L deionized water and doses 5 ml. The stock proposal is supported; seven-water chemical identity is not independently established. The remaining requirement incorrectly still treats the 6-versus-5 row as unresolved; the primary source already distinguishes stock strength from receiving dose.
+
+Published remaining requirement: Retrieve the original Allen-medium formulation and supplier material to settle seven waters; resolve 6 g/L in label versus 5 G_PER_L in the second frozen row.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca.
+
+The actual retained PMC methods name pyridoxal-HCl AND pyridoxal-phosphate at 120–200 micrograms per 5 ml culture. They do not define one premixed stock or allocate the amount between the reagents. The supplement concerns pathways and expression tables, not formulation. A held premix identity is justified; no unnamed-vitamer or zero/variable-dose assertion is supported.
+
+Published remaining requirement: Primary methods identify both pyridoxal-HCl and pyridoxal-phosphate additions but do not establish that they were one physical premixed stock, rather than separate reagent additions. Recover that preparation/occurrence structure. Missing quantitative allocation alone would not prevent a genuine documented partial mixture; no premix carrier is currently identified.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f.
+
+JCM1118 enumerates B12 1.1 mg, biotin 1 mg and thiamine hydrochloride 200 mg in 1 L distilled water. The four immediate entries and literal batch units are supported. B12 vitamer is unspecified; the source-defined mixture remains distinct from its chemical ingredients.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d.
+
+JCM510 explicitly requires methane-air 50:50 atmosphere. Both immediate gases are supported. Ratio basis, humidity, pressure and detailed air composition are absent; retaining the literal ratio without numerical fractions is appropriate. The proposal denotes this gas blend, not liquid medium.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f.
+
+Source EDTA・2Na・2H2O supports the live CHEBI:64758 dihydrate owner; the old second file is a rejected merge tombstone, not a competing live identity. The new spelling preserves hydration and sodium stoichiometry. The whole inherited payload retains provisional chelator evidence, which this source review does not approve. Native policy already suppresses three annotation strings despite RAW_TEXT typing.
+
+Published remaining requirement: Complete content-bound review of the live owner after alias addition, including annotation-like synonyms and provisional CHELATOR evidence; preserve original retirement and current memberships/counts. No merge is pending for these two files.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297.
+
+JCM1020 explicitly supplies a nitrogen/autoclaved 5% nonahydrate stock. ATCC1942 is an independently defined comparison preparation with a supported w/v ratio; its carrier/protocol cannot be silently transferred to JCM1020. The active conditional link preserves that distinction and avoids a source-number-only duplicate.
+
+Published remaining requirement: Exact cross-source assignment requires an actual stock formulation/protocol bridge. Different receiving recipes and omitted carrier/percent metadata alone establish neither equivalence nor distinct material identity.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959.
+
+PCR-S11/M2262 makes the phosphate buffer from 100 ml each of 50 mM NaH2PO4 and Na2HPO4 inputs, then adjusts pH to 7.5. The unidentified titrant warrants PARTIAL. The nearby 2 L instruction belongs to a separate EDTA/iron preparation, not this buffer.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d.
+
+DSMZ1521 PDF and MediaDive3148 name SL10 at 1 ml without a stock formula or identifier. Existing DSMZ4178 and explicit JCM554 preparations differ in acid/borate/water details. A real formulation bridge remains missing; neither the short label nor a generic name establishes membership.
+
+Published remaining requirement: DSMZ 1521/main3148 lists SL10 as1 ml but does not bind a stock formula or solution identifier. Recover that primary formulation bridge, particularly HCl/borate and water batch, before assigning the existing DSMZ 4178 owner. Additional direct portal/ingredient retrievals did not resolve it.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b.
+
+Frozen FEBA3 context uses R2A in liquid culture. Retained MicroO0000541 explicitly defines liquid R2A with six organic constituents and separately identifies R2A agar. LABEL_ENUMERATION/PARTIAL avoids transferring the HiMedia supplier recipe or generic agar into this material; ingredient identity is supported, component grounding remains bounded.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f.
+
+DSMZ694 source literal and Thermo retained full product record support sodium ammonium hydrogenphosphate tetrahydrate, CAS7783-13-3, H13NNaO8P. CAS-primary plus broader sodium-phosphate parent preserves the exact form. Selected supplier evidence points at a header-only capture; the actual supporting batch7 bytes need an explicit evidence backlink. Ontology absence is only bounded search, not universal proof.
+
+Published remaining requirement: Before integration, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Exact-term search is bounded to inspected local ChEBI/NCIt and current OLS queries.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072.
+
+NBRC1356 mineral base2 separately enumerates NaCl240 g, NH4Cl0.5 g, K2HPO4 2.5 g, KCl5 g and water1 L, autoclaved under nitrogen with stated final pH7.3. Its later 1:1 mixing with base1 is outside this owner. COMPLETE is immediate source enumeration, not proof of exact hydrated salt forms or final dissolved speciation.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f.
+
+M2972 explicitly labels the Difco material R2A agar, and the plant-stem contact procedure supports an agar surface. The narrow provenance addition to the existing agar owner does not create a global resolving bare Difco/R2A alias or approve all historical agar evidence.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099.
+
+NBRC19 specifies Peptic Pepton (USB) at 2 g/L but supplies neither catalogue code nor substrate/digestion formulation. A named opaque USB material can be represented without inventing casein, generic peptone equivalence or chemical components.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3.
+
+PBBM names a 1 M KH2PO4 input but does not establish the same carrier or preparation as JCM574. Conditional comparison is justified; concentration alone supports neither equivalence nor a separate substance. The withdrawn source-number-only owner must stay withdrawn.
+
+Published remaining requirement: An explicit preparation/formulation bridge is needed for exact PBBM membership in the JCM 574 anchor, or actual reagent composition/process evidence is needed to establish a different material. The receiving medium or mixture is not that missing evidence.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683.
+
+DSMZ88 adds sulfide ore and separately sterilizes it at 150°C overnight. Pyrite is an example of suitable ore, not an exact pure FeS2 specification. Opaque natural-material registry identity and absent fixed decomposition are justified.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6.
+
+TOGO M2567 enumerates baseB minerals, water and KOH with pH6.5 then7.0; the proposal preserves these endpoints and unquantified KOH. Literal AIK(SO4)2 0.01 g remains outside chemical assertions pending identity/hydration resolution. PARTIAL supports the preparation without guessing that token or cobalt hydration.
+
+Published remaining requirement: For complete molecular decomposition only, resolve the source token AIK(SO4)2 and its hydration. KOH quantity remains unspecified but its two pH endpoints are known. These limits do not block the partial preparation proposal.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c.
+
+JCM1363 gives eight vitamins and 100 ml 10 mM sodium phosphate buffer pH7.1, including DL-calcium pantothenate1 mg and pyridoxine HCl15 mg. Exact quantities match. This differs from the JCM403 five-vitamin formula; numbered pointers require occurrence-level routing.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba.
+
+NOS VFA uses 0.1 N NaOH, but the PCR-S11 anchor has independent EDTA-preparation provenance. Different receiving recipes do not establish different supplied stocks, nor do matching normalities prove equality. Conditional comparison preserves the actual unknown formulation bridge.
+
+Published remaining requirement: An explicit preparation/formulation bridge is needed for exact NOS VFA membership in the PCR-S11 anchor, or actual reagent composition/process evidence is needed to establish a different material. The receiving medium or mixture is not that missing evidence.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71.
+
+Both frozen dTMP observations lack a supplied reagent form and amount; VARIABLE was withdrawn. ChEBI distinguishes neutral dTMP17013, monoanion46960 and dianion63528; the generic parent15245 is not an exact supplied-form answer. A source-supported protonation/form convention remains genuinely missing; neither zero nor variable dose should be invented.
+
+Published remaining requirement: A reagent form or source-supported pH/protonation convention for the Song-medium dTMP ingredient. Its quantity remains unavailable, not variable or zero.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b.
+
+JCM1097 explicitly enumerates Coenzyme M5 mg and nine vitamins in 1 L distilled water, without B12; JCM1344 explicitly points to1097. The complete immediate recipe and quantities match, with source-qualified identity and form-specific constituent holds retained.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b.
+
+Sigma B2629 and ChEBI17750 support glycine betaine/trimethylglycine zwitterion, CAS107-43-7. This is distinct from hydrochloride and hydrated preparations in the baseline. No acid salt, hydrate, purity or supplier-specific grade is inferred.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573.
+
+Actual Denger2010 methods specify synthesized racemic sulfolactate and10 mM growth substrate; its cited Roy2003 method explicitly produces sodium sulfolactate. The source preparation therefore requires racemic sodium-salt scope. Sodium stoichiometry/hydration/purity remain unstated; NARROW_MATCH to broader sulfolactate parent preserves the bounded relation.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f.
+
+M2567 baseA gives seawater salts and water, with unresolved literal NaII CO3 at0.2 g. The proposal includes ten unambiguous immediate inputs and retains the problematic row in notes, PARTIAL. It does not silently turn the source label into carbonate/bicarbonate.
+
+Published remaining requirement: For complete molecular decomposition only, resolve literal NaII CO3 at 0.2 g. This limit does not block the partial source-qualified preparation proposal.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5.
+
+Only ATCC1340 among the six bare-N occurrences explicitly defines its NaOH reagent as4 g/100 ml. This supports that anchor and30 ml reducing-mixture use, not a universal1 N interpretation of N NaOH. Other occurrences remain conditional/unassigned and receiving water is not stock solvent.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb.
+
+JCM1385 directly imports1130. Vitamin solutionI is biotin5, B125, pABA15, folic acid25 and pyridoxine HCl75 mg in500 ml water. SolutionII is a separate thiamine/riboflavin stock; it is correctly excluded.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8.
+
+JCM941/MediaDive4957 preserve the literal dithionite dihydrate and separately define SolutionC as5 g in40 ml distilled water, under nitrogen/autoclaving. Preparation identity is supported while the unusual supplied hydrate remains unresolved. No anhydrous-dithionite correction or source-hold release follows.
+
+Published remaining requirement: Obtain JCM941 original material/supplier specification confirming dithionite dihydrate or a source correction; retain Solution C as a stock and do not map it exactly to anhydrous dithionite.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7.
+
+JCM628 top layer has100 ml modified Wolfe carrier,1 ml JCM197 minerals,MES0.195 g,NaHCO3 0.042 g,agarose0.15 g and1 ml post-autoclave JCM197 vitamins. JCM629 substitutes artificial saltwater carrier. Both complete source protocols distinguish bottom layer/headspace. Unknown initial titrant and dissolved CO2 uptake justify PARTIAL, not invented amounts.
+
+Published remaining requirement: Initial pH-adjustment reagent and retained dissolved CO2/speciation are unquantified. Both prepared layer identities are supported; these gaps limit component completeness without preventing the source-qualified proposals.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde.
+
+Primary JCM776 family, DSMZ1396/1497 and NBRC sources actually print H3BO4. Their source records differ; automated boric-acid labels cannot establish a universal H3BO3 correction. Preserve family-specific chemical-specification/correction requirements and raw literal formulas.
+
+Published remaining requirement: Obtain primary-source correction or chemical specification for each linked H3BO4 material family, particularly JCM776/DSMZ1396 and NBRC W-medium/flexibacteria formulations; preserve occurrence-specific identity until reconciled.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e.
+
+M3160 identifies100% carbon-monoxide gas in context. The current casefold resolver cannot safely admit CO as a global alias because Co then inherits the carbon-monoxide identity. Source-only identification and issue1178 hold remain justified; the withdrawn alias is not part of this successor.
+
+Published remaining requirement: Case-sensitive or source-occurrence mapping capability to resolve this verified CO gas without making Co resolve to carbon monoxide.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c.
+
+JCM515 explicitly adds1 ml of20 microgram/ml filter-sterilized B12 stock after autoclaving. PARTIAL one-component20 mg/L preparation is supported; carrier and vitamer are genuinely absent. Equal-strength NBRC and M498 comparisons do not establish occurrence membership.
+
+Published remaining requirement: Recover carrier, other constituents and specific vitamer for more complete decomposition; those gaps do not block the bounded JCM 515 stock proposal.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6.
+
+DSMZ104 uses8 N NaOH for pH7.2 adjustment and separately describes1 N NaOH in haemin preparation. The proposal preserves the former reagent concentration, not an inferred solvent or the receiving dose; PARTIAL is appropriate.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2.
+
+NBRC1020 and824 share all ten vitamin masses and1 L water, notably B122.7 mg. Their downstream processing differs:1020 filter-sterilizes vitamins;824 includes them before medium autoclaving. The corrected notes restrict shared identity to input formula. NBRC1169/1308 instead match the common nine-vitamin preparation.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020.
+
+The alternate glyph Na2S2O4・2H2O carries the same JCM941 literal-source uncertainty as case88. SolutionC5 g/40 ml is a contextual preparation proposal, not an exact chemical assignment. Source-form and inherited dithionite alias holds remain.
+
+Published remaining requirement: Obtain JCM941 original material/supplier specification confirming dithionite dihydrate or a source correction; retain Solution C as a stock and do not map it exactly to anhydrous dithionite.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce.
+
+PBBM/M2760 explicitly supplies a1 M Na2HPO4 solution to its buffer. The source does not identify hydrate or solvent. PARTIAL source-qualified reagent preserves nominal strength without selecting anhydrous/dodecahydrate or claiming equivalence with another phosphate input.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16.
+
+JCM554 names KH2PO4 as a receiving recipe component and says dissolve first/adjustpH7.0. Those are procedural annotations, not a new distinct chemical name or stock formulation. No global procedure alias is needed; hydration is not invented.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3.
+
+MediaDive453 and606 explicitly reference solution608. Its seven acid volumes are548.5,193.5,129 and four32.25 ml entries, including DL-2-methylbutyric acid. These sum to1 L without added water; source batch quantities and stereochemical prefix are preserved. Straight-chain valeric acid is distinct from isovaleric acid.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e.
+
+JCM221 uses200 ml0.2 N NaOH before adding separate sulfide nonahydrate and cysteine hydrochloride monohydrate. The proposal denotes only the NaOH input, not the whole reducing mixture; no solvent, cooling-gas solubility or cross-ATCC whole-stock identity is inferred.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082.
+
+CCAPPCrev002 explicitly gives CaCl2 10 g/L stock with1 ml receiving dose. The malformed frozen CaCl drops a subscript; actual source formula correction is already supported. Exact supplied hydration remains absent, so no form-specific identity is claimed.
+
+Published remaining requirement: Only the supplied solid hydration state remains unknown if an exact form-specific chemical mapping is required; the CaCl2 formula and stock amount are already established.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8.
+
+DSMZ533 explicitly distinguishes deionized water, including its trace-stock preparation. Registry identity preserves processing grade separately from distilled-water identity. The source supplies no resistivity, sterility or purity specification; none is inferred.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c.
+
+ATCC1942 specifies10 ml5% nonahydrate stock yielding0.5 g/L and nitrogen autoclaving. This source-linked arithmetic supports5%w/v for this anchor. Unknown carrier remains PARTIAL; independent same-strength JCM cases are not silently attached.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793.
+
+ATCC1943 explicitly prepares2.5% nonahydrate stock under nitrogen/autoclaving and doses10 ml. Unlike1942 it does not establish a percent basis/carrier. The proposal correctly retains literal percentage in notes without unsupported numeric concentration; separate cysteine stock is excluded.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623.
+
+The retained LS4D primary PDF methods explicitly specify2.2 mM K2HPO4. That resolves the malformed frozen K2PO4 formula; the remaining unknown is supplied hydration, not missing original formulation. The proposed no-exact-form disposition is appropriate.
+
+Published remaining requirement: The supplied hydration state is not specified in the primary LS4D formulation. The K2HPO4 formula itself is established and no further formulation retrieval is pending for that correction.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a.
+
+Actual retained TOGO M498 JSON identifies original JCM497 and1 ml B12 stock2 mg/100 ml after autoclaving.20 mg/L agrees nominally with JCM515, but carrier/provenance are not shown identical. Conditional link is justified; unavailable original JCM page is not treated as an inspected primary.
+
+Published remaining requirement: Recover an explicit preparation/formulation bridge for exact M498→JCM 515 identity. Unknown carrier and original JCM page absence remain limits, while receiving dose and stock context are now recovered.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533.
+
+M2567 baseC combines1 ml10 mM Na2WO4 solution and1 ml25 mM FeCl3 solution. These are two immediate liquid reagents, not neat salts. COMPLETE immediate enumeration does not infer their solvents, hydrated solutes or full molecular decomposition.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41.
+
+The alternate NaNH4HPO4 x4H2O source spelling has the same supported tetrahydrate identity and CAS-primary/broader-parent logic as case72. The selected Thermo capture binding still needs repair to the actual full product capture; no general hydrate normalization is authorized.
+
+Published remaining requirement: Before integration, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Exact-term search is bounded to inspected local ChEBI/NCIt and current OLS queries.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604.
+
+JCM1385 imports1130, whose VFA formula separately lists n-valeric and iso-valeric acid. The spacing alias n -Valeric acid preserves the straight-chain acid identity. Existing record structures/CAS identify pentanoic acid. Generic parent roles and legacy annotations are not approved by adding this spelling.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03.
+
+NBRC1076 and1077 name500 ml artificial marine water but give no supplier or formulation. Distinct real saltwater recipes exist; half-volume use does not select one. This is a genuine composition/product bridge requirement, not merely deferred registry curation.
+
+Published remaining requirement: NBRC 1076/1077 and the new targeted official-site search do not identify a marine-salt formulation or product. Recover actual artificial marine water recipe or supplier formulation; 500 ml addition alone cannot distinguish materially different saltwater preparations.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724.
+
+JCM1100 vitaminA has thirteen named vitamins/cofactors plus100 ml10 mM potassium phosphate bufferpH7.2. All quantities match, including10 mg biotin/riboflavin and100 mg for the other named solutes. VitaminB/B12 stock is separate. Generic calcium pantothenate, lipoate stereochemistry and buffer ingredients remain unresolved.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86.
+
+NBRC1321 gives pABA4,biotin1,nicotinic acid10,Ca-pantothenate5,pyridoxine HCl15 mg in100 ml10 mM sodium phosphatepH7.1. JCM403 differs in pyridoxine10 mg and explicit DL-pantothenate. The new source-qualified stock preserves this distinction.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f.
+
+JCM923 major-metals stock contains KCl0.15 g,KH2PO4 1.36 g,NH4Cl2.68 g and water1 L. Source composition is complete at immediate level. Blanket UNMAPPED on KCl,NH4Cl and distilled water defers exact existing baseline candidates without identifying missing science.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2.
+
+Trimethylglycine is an independently supported synonym of glycine betaine, not betaine hydrochloride. The same new CHEBI17750 candidate is appropriate for this spelling; no separate owner should be minted solely for this synonym.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43.
+
+Frozen M3136 calls the material Vitamin supplement (ATCC); current JCM242 points to JCM197 trace vitamins. That current recipe is known, but no archived bridge establishes that the ATCC-labelled frozen material denotes it. Hold the historical/source identity bridge, not an abstract lack of ontology term or catalogue code.
+
+Published remaining requirement: The current JCM 242→JCM 197 formula is known, but no primary statement binds the frozen TOGO M3136 ATCC-labelled supplement to it. Recover the ATCC product/formulation or explicit historical equivalence. Neither a catalogue-code absence by itself nor a missing ontology term is the blocker; the conflicting source identity bridge is.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20.
+
+NBRC1407 names Gibco100X MEM vitamins. Official11120 formula lists nine solutes at manufacturer mg/L and actual product FAQ identifies distilled-water solvent, sterile filtration and identical052/037 product formulation. These facts support the current product-family preparation, without historical lot/package equivalence or100-fold receiving-dose confusion.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563.
+
+M2231 explicitly makes6 g/L literal K2HPO4·7H2O in deionized water and doses5 ml. The source-defined stock is supported despite unresolved unusual hydrate. Water grade and batch quantities are preserved; no single-chemical alias is added.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506.
+
+The six frozen Vitamin solution** occurrences split by actual composition:1050/1086/1274/925 match common9,1226 has B125 mg and lipoic5 mg,903 has B120.1 mg,pABA5 mg,lipoic5 mg. The three active payloads preserve these distinctions; generic starred label is not globally resolving.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1.
+
+JCM1364 explicitly points to JCM1363 vitamin-mixture solution; the actual hyperlink/formula bridge supports occurrence routing. It does not turn a bare numbered pointer into a global identity name or identify generic B12 as cyanocobalamin.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118.
+
+JCM1423 and1424 explicitly point to898; the latter provides B12100,pABA80,biotin20,nicotinic200,DL-calcium pantothenate100,pyridoxine HCl300,thiamine HCl200 mg in1 L water. Complete immediate formula matches; source-qualified identity avoids generic numbered aliases.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b.
+
+JCM1430/1431/1479 point to915. The recipe has thiamine HCl90,myo-inositol40,Ca-pantothenate4,pABA5,B125,pyridoxine HCl4,nicotinic4,biotin0.1,folic2 mg in100 ml water. Matching source pointers support memberships, not generic universal vitamin-stock identity.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9.
+
+NBRC1045 uses30 g Trypticase Soy(BBL), separate100 g NaCl and20 g agar. MicroO0000113 identifies Trypticase soy broth as an exact synonym of tryptic soy broth; FAO and BD text support its standard six-input broth composition. Added agar/salt are outside the ingredient. Mapping quality should be SYNONYM_MATCH rather than primary-label EXACT_MATCH; role/export approval remains withheld.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563.
+
+The final-concentration annotation belongs to the receiving recipe. It does not identify a complete stock. The linked nonahydrate repair correctly rejects existing3%/24% stock labels as chemical synonyms under IF1201-R2/#1215; no dose-bearing alias or occurrence migration follows.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc.
+
+The spacing variant Na2S・9H2O(final conc.) has the same receiving-medium scope as case122. Exact nonahydrate chemical identity is retained independently of stock strength; the bounded rejection of preexisting3%/24% aliases does not release source holds.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff.
+
+ATCC1257 identifies Menadione(VitaminK3)50 mg inside a separately prepared ethanol/water solution. The alias is for the solute, not the stock. Frozen50G_PER_L flattening is not approved. Legacy role/annotation strings are native-filtered; provisional historical role claims remain outside acceptance.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1.
+
+Actual JCM403 gives B125 mg in100 ml water, distinct from its separate five-vitamin/phosphate stock; every inspected MediaDive backlink names the JCM403 pointer. Vitamer remains unspecified. The full inherited/added numbered aliases are nevertheless globally resolving without JCM namespace, so the source composition can be accepted but exact alias-bearing payload needs bounded repair (cross-check of reviewerA finding).
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7.
+
+The frozen root dose is 42 g/L. The exact TOGO M2277 primary record places ZnCI2 at 42 mg in one litre of SL12; independently inspected Sander 2005 methods print ZnCl2 at 42 mg. This supports a source-local Cl/I correction and nested-stock unit repair. The molybdate amounts differ (2 versus 18 mg), so this comparison does not establish whole-formula equivalence. Hydration remains unspecified; the original 1992 chapter was not inspected.
+
+Published remaining requirement: Supplied zinc-chloride hydration is not specified. The 42 mg stock quantity is directly established; the Cl/I correction is supported by an explicitly scoped independent primary SL12 comparison rather than a claimed inspection of the original 1992 table.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc.
+
+JCM906 identifies a separate 0.5 M glycine-NaOH buffer at pH10, added as 100 mL to basal ingredients with 900 mL water. The 900 mL is not the stock carrier. Glycine concentration is supported; NaOH quantity, carrier and final stock volume remain unknown. The partial stock is justified without converting this into pure glycine or a universally resolving concentration alias.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6.
+
+CCAP FCGM+HEPES and NCL75S use cereal leaves as the input for an extract, with respectively 0.625 g/500 mL and 1 g/L. Leaf material is distinct from grain flour, commercial Cerophyll and the finished leaf extract. The existing generic cereal-leaf identity is supported; species and product composition remain unspecified.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd.
+
+JCM149 enumerates eight immediate Hutner-base constituents: NTA10 g, MgSO4·7H2O14.45 g, CaCl2·2H2O3.335 g, ammonium molybdate tetrahydrate9.25 mg, FeSO4·7H2O99 mg, Metals4450 mL, water950 mL and approximately7.3 g KOH. The payload preserves those source-batch quantities and unresolved references instead of flattening Metals44 or silently assigning forms. COMPLETE means the immediate source list, not complete independent grounding.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa.
+
+The M3152/M3153 Wolin preparation dissolves NTA in10 mL0.5 N NaOH, then adds500 mL water/minerals and dilutes to1 L. The 0.5 N preparation can be retained as a partial stock; neither later water addition nor JCM4611 N/JCM113010 N establishes its missing carrier or equivalence. The amount10 mL is an addition to the parent stock, not a concentration in the NaOH stock.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c.
+
+The frozen recipes use Methane as a gaseous ingredient; CHEBI16183 establishes CH4 identity. The alias does not authorize converting gas partial pressure/volume to mass or treating a mixed gas atmosphere as pure methane. The payload retains retired process-only labels and does not add role evidence.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe.
+
+The archived ATCC2883 broth and agar recipes each name1 mL vitamin B12 stock at0.1 mg/mL, separately filter sterilized. This supports100 mg/L in a source-bound partial stock. The3 mL methanol is a separate medium addition, not demonstrated stock solvent. Generic B12 does not select cyanocobalamin.
+
+Published remaining requirement: Carrier, other stock constituents and molecular vitamer remain unspecified; these limit full chemical decomposition but do not block the supported shared ATCC 2883 preparation.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223.
+
+JCM650 adds sterile sulfide-nonahydrate solution to reach final1 mM. This is a final-medium dose, not a stock strength. The exact pure nonahydrate identity is separate from unknown-strength solution, while the proposed inherited3%/24% stock-alias rejection is independently justified. No stock owner can be inferred from final dose alone.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083.
+
+NBRC1394 supplies PQQ1 mg and pH7 context without specifying acid/salt/hydrate. CHEBI18315 neutral-acid evidence and supplier naming contrast do not prove the NBRC supplied form. Withdrawal of the neutral-acid proposal is justified. Hipolypepton from Wako remains distinct from Polypeptone and the separate issue1202 scope is retained.
+
+Published remaining requirement: An NBRC1394 reagent specification, catalog identifier, CAS number, or preparation record identifying the PQQ material actually supplied. The independently verified 1 mg/L dose correction remains applicable without this form identification.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7.
+
+The M2262 PCR-S11 primary comments explicitly define50 mM NaH2PO4 as6 g plus1 L distilled water. The nominal molarity/mass does not prove an anhydrous supplied form. The partial source stock correctly retains unknown solute grounding, per-batch water and mass; it does not claim a final solution volume from a solvent input alone.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307.
+
+Sigma A8381 primary product instructions identify L-asparagine monohydrate, CAS5794-13-8, C4H8N2O3·H2O and the(S) synonym. That supports the literal L-Asn*H2O alias, distinct from DL and anhydrous material. The full inherited payload still has a stereounspecified SMILES and requires whole-owner structural review; alias acceptance does not approve that structure or parent mapping.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc.
+
+The exact ChEBI methanethiol identity is CH4S/CAS74-93-1, and the source gas context supports that chemical. The new compound does not invent a molecular concentration from gaseous addition. Existing role and receiving-medium calculation questions remain outside this source identity conclusion.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97.
+
+TOGO M2809 raw comments specify11 vitamins per litre, DL-pantothenic acid calcium salt, generic B12, pH7 adjustment with1 M KOH and dark4C storage underN2. The original CultureBotHT sheet separately contains11 rows including cyanocobalamin0.1 mg/L and calcium pantothenate5 mg/L. Their exact component-form equivalence is not established. The notes-only comparison appropriately preserves both sources; sheet quantities do not resolve TOGO vitamer, titrant amount or inherited component grounding. PLOS methods were read only for their Thauers reference/use, not as a full formula witness.
+
+Published remaining requirement: The completed primary lookups leave a specific cross-source reagent-form bridge: TOGO does not select the B12 vitamer, and CultureBotHT does not select pantothenate stereochemistry. Exact equivalence and source membership remain unapproved; this does not prevent bounded provenance curation.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188.
+
+JCM713 names24% sodium sulfide nonahydrate solution,1 mL filter sterilized into SolutionC. The source does not define percent basis, carrier or final preparation volume. A partial preparation with exact nonahydrate solute but no invented concentration-unit conversion is supported; pure-solute aliases remain rejected.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9.
+
+Sigma T3253 identifies Tris hydrochloride CAS1185-53-1/C4H11NO3·HCl, distinct from tris base CHEBI9754 and protonated tris without a chloride counterion. The bounded free-base alias repair is justified. A separately scoped exact salt candidate remains feasible, and the ledger should distinguish remaining lookup/owner work from an unknown source salt identity; no isolated family or export approval is given.
+
+Published remaining requirement: Create/select a distinct hydrochloride owner after exact native ontology lookup; the proposed rejection repairs base-owner alias scope but does not approve a new salt mapping.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5.
+
+JCM650 specifies final6 mM thiosulfate pentahydrate added from filter-sterile solution. The hydrate is identified, but stock strength/carrier/preparation is not. Keeping the exact compound identity separate from an undefined solution is correct; no new stock concentration follows from the final6 mM.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f.
+
+MediaDive607 literally names Na2HPO4 x H2O and1 g, while its automatic CAS7558-79-4/CHEBI34683 and141.959 mass describe anhydrous salt. Automatic fields do not establish the monohydrate or permit routing to dodecahydrate. The hydration/source hold remains necessary.
+
+Published remaining requirement: Obtain an original recipe/material specification proving disodium hydrogenphosphate monohydrate or correcting the hydration count; preserve all rejected-label dispositions.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3.
+
+The literal6-methylnicotinate source name does not distinguish acid, salt or ester. The automatic CAS5470-70-2 corresponds in the supplier comparison to methyl6-methylnicotinate and cannot repair the raw name without source-specific support. The5 g/L amount does not settle identity; withholding exact mapping is justified.
+
+Published remaining requirement: The original reagent or formulation must identify methyl ester versus 6-methylnicotinic acid/salt. The present record supplies no independent structure or catalog.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39.
+
+MediaDive1580 names Na2HPO4 hexahydrate2.9 g while automatic chemical fields describe another form. The existing local hexahydrate identity remains under source-form review; no exact anhydrous mapping or new owner is justified by those automatic fields.
+
+Published remaining requirement: Obtain primary characterization or supplier CAS for the claimed disodium phosphate hexahydrate and review its exact parent relation and complete aliases under current semantics.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8.
+
+ChEBI132109 defines equal sodium and stearate ions, formulaC18H35O2.Na/CAS822-16-2. That directly supports sodium stearate rather than free stearic acid. The existing-identity no-change decision is supportable without certifying all inherited owner roles or preparation occurrences.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2.
+
+JCM403 explicitly enumerates a separate vitaminB12 stock5 mg plus100 mL distilled water; genericB12 leaves vitamer unresolved. The source is tied to imported MediaDive1845, supporting these stock components. However the final payload leaves and adds unqualified MediumNo403 pointers as RAW_TEXT, which are globally resolving aliases. Source provenance in a synonym field does not make a provider-local number globally unique. A owns the consolidated pointer finding.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309.
+
+MediaDive2365 NH4MgPO4 and supplier products labelled ammonium magnesium phosphate hydrate use CAS7785-21-9 alongside an anhydrous formula. They do not establish a fixed hydration number for the source ingredient. The raw formula alone cannot justify selecting struvite hexahydrate or anhydrous material; the supplied-form hold is justified.
+
+Published remaining requirement: Primary C100 supplier/material evidence establishing the actual hydrate form for CAS 7785-21-9; current source CAS alone is insufficient.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5.
+
+MediaDive1810 names KH2PO4 dihydrate; PubChem23710200 represents H6KO6P172.12. Database existence is not independent evidence of the actual recipe material. The exact raw source remains recorded while the automatic mapping is not accepted as supplied-form proof.
+
+Published remaining requirement: Verify an authoritative formulation/material specification for Ilyobacter/SGP7 source KH2PO4 dihydrate or obtain a source correction; PubChem/depositor formula alone is insufficient for release.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83.
+
+The source chemical label is(NH4)2HPO4 despite the malformed queue string NH42HPO4. CHEBI63051 defines diammonium hydrogenphosphate with two ammonium ions; the foreign automatic CHEBI62476 flavonoid is not used. Existing identity is supported with the source metadata conflict explicit.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b.
+
+The source specifies DL-sodium lactate and a1.12 g dose, not a1 M or1% stock. CHEBI75228 is stereounspecified sodium lactate; CHEBI232798 is the L-specific salt. Rejection of L-only and concentration-qualified aliases is justified, but it does not make all occurrences racemic or all preparation variants identical.
+
+Published remaining requirement: Source-row release still requires the content-bound native workflow; this proposal does not certify the existing provisional nutritional role or change the inherited hold.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e.
+
+MediaDive1075 Na2S x H2O is supplied40 mg dissolved separately. Its automatic anhydrous identifiers do not determine the literal hydrate number. Preserve unknown form and source scope; it cannot be globally merged with nonahydrate or anhydrous salt.
+
+Published remaining requirement: Obtain the original sulfide reagent specification with hydrate/CAS or source correction; do not infer nonahydrate or anhydrous identity from solubilization instructions.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75.
+
+The source beta-NAD name and ChEBI15846 NAD(+) structure support the oxidized nucleotide identity; formulaC21H28N7O14P2 and charge+1 are read from the primary ontology capture. The proposal corrects provenance classification and does not infer a sodium salt or reduced NADH from2 mg dose.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c.
+
+MediaDive1250 and JCM776 literally print H3BO4. Neither provides a correction witness identifying H3BO3. The20 mg quantity and mineral context cannot determine an intended boron compound; the malformed source must remain unresolved.
+
+Published remaining requirement: Obtain primary-source correction or chemical specification for each linked H3BO4 material family, particularly JCM776/DSMZ1396 and NBRC W-medium/flexibacteria formulations; preserve occurrence-specific identity until reconciled.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee.
+
+The manufacturer describes Bacto Soytone212489 as enzymatic soy digest. That establishes this product category but does not make all Soytone/BactoSoytone/generic soy hydrolysate records identical. Three active family owners and the broad vegetable-hydrolysate FoodOn identity remain a coupled issue; notes-only source comparison preserves the hold.
+
+Published remaining requirement: The existing generic family aggregates multiple source labels and products. Exact product-equivalence or a merge requires the occurrence-level source allocation and the historical product/process specifications; the copied family totals cannot establish those facts.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c.
+
+ChEBI17201 is neutral glycylglycine, a two-glycine dipeptide with formulaC4H8N2O3. The source literal identity matches the existing owner. Neither monomer glycine nor another salt is inferred, and no additional owner or alias change is needed.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02.
+
+The trait source references the existing local Cytovirin record; the blank auxiliary raw source field is not a nameless chemical identity. This supports no-change accounting only. There is no newly inspected external primary structure or formula for Cytovirin and no such claim is made.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8.
+
+DSMZ1894 uses20 g/L supermarket soya flour. FoodOn03302142 is soybean flour, so the source spelling is within the existing mixture category. A source product or species precision beyond soybean flour is not claimed. The complete linked payload preserves generic mixture scope and does not promote it to a defined digest.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac.
+
+MediaDive753 names Na2HPO4 heptahydrate. NCITC61946/CAS7782-85-6 represent that specific hydrate, whereas automatic anhydrous fields conflict. The exact-form candidate is known; coupled family/override/owner review remains necessary. A structural pass alone cannot release those holds.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67.
+
+Bacto Soytone manufacturer evidence supports a branded enzymatic soybean digest; it does not demonstrate universal equivalence to every Soytone-labelled or hydrolyzed-vegetable-protein record. The same family hold as case154 is retained, with no duplicate consolidation or primary-ID endorsement.
+
+Published remaining requirement: The existing generic family aggregates multiple source labels and products. Exact product-equivalence or a merge requires the occurrence-level source allocation and the historical product/process specifications; the copied family totals cannot establish those facts.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830.
+
+The trait label alpha-hydroxyglutarate-gamma-lactone lacks stereochemical specification. CHEBI73673 is an(S) anionic species and does not exactly identify that generic neutral label. The local registry preserves the source label without inventing stereochemistry or a charge state.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb.
+
+Frozen MediaDive2431 explicitly supplies DuchefaL0230 and the existing UNMAPPED0427 history has the same sourceID. Captured manufacturer page/certificate enumerate the mineral/vitamin basal-medium formula, including100 mg/L inositol,0.4 mg/L thiamineHCl and4402.49 mg/L total. The exact product bridge is established. Deferring registry/formulation curation as separately scoped despite missing_requirement=null leaves feasible authorized work incomplete; candidate acceptance needs the bounded correction in C-F001.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db.
+
+MacklinP816398 primary specification gives K2HPO4·3H2O/CAS16788-57-1/mass228.22. The remaining block is two active owners and coupled memberships/overrides under656, not an unknown chemical formula. Preserving this coupled hold is appropriate; no isolated promotion is approved.
+
+Published remaining requirement: Coupled two-owner/source-membership reconciliation under issue 656; chemical trihydrate identity itself is supported, and no third owner is needed.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26.
+
+ChEBI66870 is sodium dithionite/Na2S2O4, not scutellarinCHEBI61278. The live and tombstone payloads reject the unrelated flavonoid aliases while retaining their provenance. The rejected tombstone still carries obsolete flavonoid chemistry, explicitly outside the bounded delta; it is not an approved complete chemical record. Explicit corrected owner attribution: Na2s2o4 is the REJECTED flavonoid-property tombstone; Sodium_Dithionite is the active coherent inorganic owner. See C append-only correction.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545.
+
+The archived Kluyver1956 introductory page identifies chlororaphin as a semiquinone phenazine-carboxamide material. That does not establish a complete unique structure for the trait label. The existing registry no-change decision is supported; the entire paper was not inspected and no exact chemical promotion is asserted.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578.
+
+Monohydrate aliases do not identify the dihydrate owner. The paired rejection/transfer is correct but cannot apply alone because758 requires three-form memberships and six source overrides. Current issue758 already names NCITC66551/CAS13472-35-0 as a dihydrate candidate; the missing-facts ledger should distinguish this known candidate from the still-required exact full family adjudication.
+
+Published remaining requirement: Complete exact-term/CAS and parent-relation review for the dihydrate; reject monohydrate aliases independently of any future parent mapping.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997.
+
+JCM60/ISP5 provides the exact glycerol-asparagine agar recipe and its trace-salt stock. The inherited generic owner arose from Agar extraction and lacks the same source1754 identity bridge. A notes/history proposal accurately records the exact formula without assigning it wholesale to the generic owner or creating an assumed duplicate; this resolves vor-02 within its bounded scope.
+
+Published remaining requirement: Before mapping or decomposing UNMAPPED_0122 as exact JCM60, establish that the original Agar-extracted label denotes this formulation/version, including component ratios, trace-stock hydrate forms and preparation, rather than a generic named-medium family. Its current record carries no primary recipe provenance to establish that bridge. Source1754 itself already has a verified JCM60 formulation; no additional discovery of that recipe is required.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52.
+
+DSMZ1521 literally references SL-10 without enumerating that stock. Another existing SL10 owner has a DSM4178 formula, but the capture does not establish the version bridge for this occurrence. Numerical1387 is a source ingredient key, not a chemical ontology identity. Preserve the source/version hold.
+
+Published remaining requirement: The KG raw row is exactly mediadive.solution:3148#recipe/11, 1 ml SL10, ingredient1387. It supplies no formulation bridge to the existing owner; new portal retrievals remain inaccessible. Recover that stock composition, retaining the separate CHEBI:1387 wrong-ID quarantine.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30.
+
+The source identifies0.5 M HOMOPIPES stock atpH5.4 and0.05 mL addition. The supplier identity CAS202185-84-0 supports the zwitterionic buffer compound, distinct from the preparation. Unknown carrier, titrant and volume prevent a complete solution formula; the partial stock retains these unknowns.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e.
+
+DSMZ1305 and MediaDive1161 literally specify KH2PO4·7H2O0.5 g. Lack of a verified exact hydrate identity cannot be repaired by dropping seven waters. The anomalous formula remains source-specific and held; no anhydrous mapping is approved.
+
+Published remaining requirement: Obtain an MMN source correction or a material specification for KH2PO4·7H2O; establish whether hydration is intentional before a distinct owner or corrected source link.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### requires_source_outcome_or_evidence_correction
+
+identity: concern. Targets: KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05.
+
+DSMZ694 directly prints NaNH4HPO4·4H2O3.5 g. The selected supplier evidence points to primary-batch6 (title/navigation only), but independent reviewerB located the complete committed primary-batch7, which I inspected: Thermo040320.22 lines103–105 and147–154 explicitly give tetrahydrateCAS7783-13-3/H13NNaO8P/209.067 and four waters inSMILES. Exact source identity is supported. Repair the selected evidence backlink/locator and preserve original timestamp; this is not absent supplier support or a refutation of the chemistry. B leads the shared binding finding.
+
+Published remaining requirement: Before integration, validate proposed parent specificity and new-owner identifier collision, then generate CAS identity and required B1 handle/parent rows; no source occurrence quantities or memberships are transferred by this proposal. Exact-term search is bounded to inspected local ChEBI/NCIt and current OLS queries.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4.
+
+ChEBI91259 primary chemistry contains twelve waters in formula/InChI/SMILES and CAS10039-32-4. This supports replacing inherited anhydrous structures and rejecting generic/sibling-form aliases; automatic MediaDive95 anhydrous metadata remains held. This exact owner and primary identity overlap worker03 c-phosphate-dodecahydrate, so I explicitly do not approve worker03 science or final cross-shard coalescence.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb.
+
+MediaDive11 uses pure KH2PO4 but also lists concentration-qualified attributes. CHEBI63036 is potassium dihydrogenphosphate. Three specific stock/dibasic aliases are correctly rejected under1215. The full inherited payload retains broad PotassiumPhosphate and malformed KHPO synonyms, so the bounded fix does not constitute whole-owner approval; the generic phosphate issue811 lineage remains relevant.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184.
+
+The original source renders Se-acid without an oxidation-state definition. MediaDive automatic H2SeO4/CAS7783-08-6 cannot choose selenic over selenous acid. The raw primary preparation was inspected, but it supplies no correcting chemical identity; preserve the source hold.
+
+Published remaining requirement: An original reagent name, formula or supplier specification distinguishing selenious acid from selenic acid.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185.
+
+As in case160, the trait alpha-hydroxyglutarate-gamma-lactone label does not select(S) stereochemistry or an anion. The existing local registry remains an honest source identity; no exact CHEBI73673 substitution is supported.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c.
+
+The second chlororaphin trait occurrence has the same unresolved semiquinone/material boundary. The inspected1956 introductory evidence does not authorize a unique exact chemical mapping, and the no-change local registry preserves that limit.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3.
+
+The primary J-STAGE primocarcin abstract supplies historical antibiotic context and formulaC8H12N2O3, but the full paper and a full exact structure were not inspected. Existing registry no-change is supportable; no unread-paper inspection or new ontology promotion is claimed.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04.
+
+The literal NaH2PO4 x H2O form matches monohydrateCHEBI114249 while automatic source chemistry points to anhydrous material. Adding that spelling to the existing mono owner is chemically justified only as part of the coupled758 operation with sibling alias rejection/overrides; it does not approve isolated application.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991.
+
+The frozen MediaDive552 preparation is5 g thiosulfate plus100 mL H2O, with10 mL added to parent medium. Automatic PEG/pentahydrate metadata are inconsistent and cannot set supplied hydration. The source stock preserves mass and solvent input, unknown solute form and source-batch units rather than assuming final volume or pure-compound equivalence.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49.
+
+MediaDive736 literally prints Na2Mo4·2H2O without CAS/structure. CHEBI75213 is disodium molybdate dihydrate and has MoO4, not the oxygen-deficient literal. Rejection of this and ten related malformed/form-unspecified aliases is supported by exact formula comparison. No corrected identity is inferred for those source occurrences;1216 is the precise bounded lineage.
+
+Published remaining requirement: Retrieve the specific source recipe/supplier underlying MediaDive736 and document Na2MoO4·2H2O correction; retain malformed-formula hold pending that evidence.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e.
+
+The plain Flour source is not wheat-specific. FoodOn00004510 covers finely ground cereal/starchy material and matches that general mixture scope. Promotion of the existing plain-flour owner avoids a duplicate or a forced wheat identity; automatic source CAS is not used as chemical proof.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd.
+
+Original Wako SDS2023-01-26 identifies DL-asparagine monohydrate/CAS69833-18-7/C4H8N2O3·H2O. TCI lists the same hydrate formula with CAS3130-87-8, a conflicting registration handled explicitly. The DL hydrate cannot map exactly to L-specificNCITC87433. GenericCHEBI22653 is a parent only; NARROW_MATCH correctly encodes the broader target. I additionally inspected the retained original Wako PDF SHA9d678de5bd4d7b8df46e3dd24a24447b04f42ae0e46b3e7e2d399eb7a560cdbb, issue15-Oct-2026, sections1/3; it independently confirms the same DL monohydrate/CAS. The archived web rendering was the older2023 version, not this directPDF.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45.
+
+JCM941 SolutionC explicitly mixes source-labelled Na2S2O4·2H2O5 g and distilled water40 mL, separately autoclaved underN2. A source-qualified stock can preserve that preparation with an UNMAPPED solute. None of the bare compound cases may resolve to the whole stock, and the anomalous hydrate identity remains unresolved.
+
+Published remaining requirement: Obtain JCM941 original material/supplier specification confirming dithionite dihydrate or a source correction; retain Solution C as a stock and do not map it exactly to anhydrous dithionite.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0.
+
+MediaDive1140 specifies Amphotericin stock10 mg/mL and the frozen addition is0.02 mL. The source does not select amphotericinA/B or carrier. A partial generic-amphotericin stock is supported; AmphotericinB product information cannot fill those unknowns by analogy.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630.
+
+Sigma69889 product evidence identifies MES monohydrate/CAS145224-94-8/formulaC6H13NO4S·H2O/mass213.25. The exact supplied-form registry identity is separate from the anhydrous/generic parent. Existing export and parent-review holds remain; no hydrate collapse is authorized.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b.
+
+Generic VitaminB12 at20 mg does not select cyanocobalamin merely because automatic metadata give its CAS or derived molarity. CHEBI176843 is a vitaminB12 class. Preserve vitamer ambiguity and WITHHOLD2930; concentration correction and cross-shard source resolution remain distinct from owner approval.
+
+Published remaining requirement: No duplicate alias edit is needed: Vitamine B12 already occurs on the candidate owner. The exact primary source reagent remains unselected among a vitamin class; 20 mg and derived mmol do not supply form evidence. Source row2930 WITHHOLD and conflicting exact-form owner assertions remain for specific adjudication.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### source_assessment_accepted_payload_corrections_pending
+
+identity: concern. Targets: KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b.
+
+Literal Fe4(PO4)2 is not the electroneutral ferric-pyrophosphate formulaFe4(P2O7)3. The exact existing ferric-pyrophosphate identity supports correcting its preferred label and rejecting the malformed inherited string, while the source occurrence itself remains uncorrected/held until a primary correction witness exists.
+
+Published remaining requirement: The original reagent label or recipe must establish the chemical intended by Fe4(PO4)2. The inherited CAS and derived molarity follow the current mapping and are not independent evidence for correcting the source occurrence.; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### accepted_bounded_source_outcome_with_holds
+
+identity: supported. Targets: KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0.
+
+ChEBI27082 trehalose describes the1↔1 glucosyl disaccharide without selecting the source anomer or hydration. The literal D-trehalose label can support the existing generic identity but not an alpha-alpha, beta-beta or dihydrate assertion. The no-change conclusion retains those limits.
+
+Published remaining requirement: None; exact source-specific unknowns, original holds and occurrence scope remain. Case assessment is separate from global source mapping, whole-owner and export approval.
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if-add-anhydrous-k2hpo4.
+
+NBRC268 supports the added anhydrous-base source alias and CHEBI131527 identity; the full record still has malformed exact/resolving formulasKH2HPO4 andK2HPO. The trihydrate rejection is preserved. No inherited roles/export approval.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if-reject-monohydrate-on-dihydrate.
+
+Three one-water aliases are rejected on the two-water owner with exact text/provenance retained. All other fields and old history were inspected. This is a coupled758 fragment, not authority to apply one half or bless inherited structure/parent mapping.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if-add-mono-source-spelling.
+
+The source spelling names the monohydrate and belongs on CHEBI114249, not a two-water owner. The full record remains subject to the same three-form/six-override operation under758; paired alias editing is necessary but not sufficient for release.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if-repair-dithionite-Na2s2o4.
+
+This is the REJECTED Na2s2o4 merge tombstone, identifier CHEBI:66870, zero occurrences. It retains obsolete C21H18O12 flavonoid formula/InChI/SMILES as expressly unapproved historical fields. The proposed six scutellarin/glucuronide alias rejections are justified and preserve the tombstone; this is not an active chemical owner and must not be revived or exported as validated dithionite chemistry.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if-repair-dithionite-Sodium_Dithionite.
+
+This is the active MAPPED Sodium_Dithionite owner, CHEBI:66870/CAS7775-14-6, formula 2Na.O4S2 and dithionite InChI/SMILES. Its six foreign scutellarin/glucuronide aliases are correctly rejected, with text, sources, old history and counts retained. It does not have the obsolete flavonoid chemical_properties attributed to it in the sealed review.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if-new-sodium-ammonium-phosphate-tetrahydrate.
+
+DSMZ694 source literal and Thermo retained full product record support sodium ammonium hydrogenphosphate tetrahydrate, CAS7783-13-3, H13NNaO8P. CAS-primary plus broader sodium-phosphate parent preserves the exact form. Selected supplier evidence points at a header-only capture; the actual supporting batch7 bytes need an explicit evidence backlink. Ontology absence is only bounded search, not universal proof.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: ['W08-IR-010']
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if-add-edta-disodium-dihydrate-spelling.
+
+Source EDTA・2Na・2H2O supports the live CHEBI:64758 dihydrate owner; the old second file is a rejected merge tombstone, not a competing live identity. The new spelling preserves hydration and sodium stoichiometry. The whole inherited payload retains provisional chelator evidence, which this source review does not approve. Native policy already suppresses three annotation strings despite RAW_TEXT typing.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op-valeric-alias.
+
+The added n-/n--valeric aliases carry direct recipe provenance and preserve straight-chain acidCHEBI17418. Earlier vor-03 provenance repair is present. Existing pentanoate synonyms do not independently prove protonation equivalence for all sources.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op-isovaleric-alias.
+
+The added iso-/iso--valeric aliases identify branched3-methylbutanoic acidCHEBI28484, separate from valeric acid. Direct source provenance repair vor-03 is present. No isomer merge or occurrence-count transfer.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op-methane-alias.
+
+Methane alias matches CHEBI16183/CH4 and source gas context. The whole payload retains rejected process labels and exact identity; no atmosphere-mixture, mass-conversion or role claims are added.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op-soy-flour-alias.
+
+Generic soy flourFoodOn03302142 correctly includes source supermarketSoyaFlour without claiming a defined chemical composition, defatted product or branded preparation. Existing history and provenance preserved.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op-l-asn-hydrate-alias.
+
+The complete payload identifies L-asparagine monohydrate by CAS5794-13-8 and stereo-specific InChI, but its SMILES C(C(C(=O)O)N)C(=O)N.O contains no stereo markers. This omission does not itself assert the opposite enantiomer or prove a racemate. The stronger identity-grading concern is its CAS primary plus NARROW_MATCH to NCIT:C87433 despite the archived exact NCIT term having CAS5794-13-8 and exact synonym L-Asparagine Monohydrate. The sealed ACCEPT_BOUNDED_PROPOSAL_FOR_PLANNING_WITH_HOLDS wording must not be read as acceptance of these complete after bytes. Complete payload assessment remains withheld pending this bounded identity/structure adjudication, rather than merely waiting for separate export approval. A chemically justified alias delta may still be used to plan the correction.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op-ethane-new.
+
+EthaneCHEBI42266 is the gas component named by the source; no purity or whole headspace identity is inferred. New mapping evidence must describe agent/database provenance accurately.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op-nalidixic-new.
+
+CHEBI100147 identifies nalidixic acid and excludes sodium-salt equivalence. PrimaryNBRC1301 stock evidence was independently supplemented;NBRC1314 primary applicability remains unverified after failed read-only retrieval. No claim that every source recipe was inspected can be accepted.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: ['W08-IR-007']
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op-glycine-betaine-new.
+
+Sigma B2629 and ChEBI17750 support glycine betaine/trimethylglycine zwitterion, CAS107-43-7. This is distinct from hydrochloride and hydrated preparations in the baseline. No acid salt, hydrate, purity or supplier-specific grade is inferred. Trimethylglycine is an independently supported synonym of glycine betaine, not betaine hydrochloride. The same new CHEBI17750 candidate is appropriate for this spelling; no separate owner should be minted solely for this synonym.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op-methanethiol-new.
+
+New CHEBI16007 compound correctly identifies methanethiol, distinct from gas mixture/stock. Source alias provenance is explicit and history marks LLM assistance. No unsupported structure, quantity or role is inferred.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op-sodium-nicotinate-new.
+
+CAS54-86-4/C6H4NNaO2 identifies sodium nicotinate. NARROW_MATCH toCHEBI15940 nicotinicacid is the correct asymmetric bridge underMAPPING_SEMANTICS, with salt scope preserved. Agent-authored mapping evidence is not human evidence.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op-glycerol-asparagine-source-note.
+
+JCM60/ISP5 formula is established, but the generic Agar-extracted owner does not establish that same version. Notes/history record source facts and explicitly retain this bridge gap; no full formulation or generic-owner identity is silently changed.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: vm-prop-menadione.
+
+ATCC1257 identifies Menadione(VitaminK3)50 mg inside a separately prepared ethanol/water solution. The alias is for the solute, not the stock. Frozen50G_PER_L flattening is not approved. Legacy role/annotation strings are native-filtered; provisional historical role claims remain outside acceptance.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-jcm403-vitamin.
+
+The completeJCM403 table is pABA4mg,biotin1mg,nicotinicacid10mg,DL-calciumpantothenate5mg,pyridoxineHCl10mg and100ml10mMsodiumphosphatebufferpH7.1. Quantities/source scope are supported. Bare numbered-pointer preferredterm/three RAW_TEXTaliases remain globally resolving; knowncomponent references are unfinished. GenericMICROclosematch does not establish exactstock identity.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-jcm403-b12.
+
+JCM403B12 is5mg unspecifiedB12+100ml distilledwater, distinct from its five-vitamin andthiaminestocks. GenericB12 molecularform remains unknown. Three bare numbered-pointeraliases andunqualifiedpreferredterm resolve globally despite source-local applicability. Water grounding is feasible.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: ['W08-IR-004']
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-linsmaier-skoog.
+
+The complete inherited owner is UNMAPPED0427, with exact same MediaDive2431 sourceID. DuchefaL0230 source/product bridge and full formula are known. Merely adding notes/alias while declaring promotion separately scoped leaves feasible authorized curation undone. C-F001 blocks completed-campaign acceptance, while preserving existing holds.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: ['W08-IR-004']
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-2.
+
+JCM296 ten-vitamin table and1Lwater match completely; preserveDL-calciumpantothenate and genericB12. Directsource data justify source-qualifiedrecipe, but allUNMAPPEDreferences need bounded grounding of verifiedcatalog-compatible constituents.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-11.
+
+JCM995 nine-vitamin formula retains nicotinamide andthiamineHCl·2H2O exactly. No nicotinicacid oranhydrous substitution. Complete quantities agree; source-local nameNo.6is not globalidentity. Resolve unambiguous componentrefs separately from exactform uncertainties.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-42.
+
+JCM1100vitaminB1000x contains onlyB12100mg/100mlwater; vitaminA is separate. Wholepayload does not merge them. Genericvitamer remainsunresolved,waterreferenceisfeasible.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-58.
+
+JCM848100fold recipe exactly preserves0.1gbiotin/B12,0.3gpABA,0.5gfolic/thiamine/riboflavin,1.5gpyridoxineHCl and1Lwater. No concentrationdefault is imposed. Knowncomponent grounding remainscuration,notmissing science.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-65.
+
+JCM1118 enumerates B12 1.1 mg, biotin 1 mg and thiamine hydrochloride 200 mg in 1 L distilled water. The four immediate entries and literal batch units are supported. B12 vitamer is unspecified; the source-defined mixture remains distinct from its chemical ingredients.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-79.
+
+JCM1363 gives eight vitamins and 100 ml 10 mM sodium phosphate buffer pH7.1, including DL-calcium pantothenate1 mg and pyridoxine HCl15 mg. Exact quantities match. This differs from the JCM403 five-vitamin formula; numbered pointers require occurrence-level routing. JCM1364 explicitly points to JCM1363 vitamin-mixture solution; the actual hyperlink/formula bridge supports occurrence routing. It does not turn a bare numbered pointer into a global identity name or identify generic B12 as cyanocobalamin.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-82.
+
+JCM1097 explicitly enumerates Coenzyme M5 mg and nine vitamins in 1 L distilled water, without B12; JCM1344 explicitly points to1097. The complete immediate recipe and quantities match, with source-qualified identity and form-specific constituent holds retained.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-87.
+
+JCM1385 directly imports1130. Vitamin solutionI is biotin5, B125, pABA15, folic acid25 and pyridoxine HCl75 mg in500 ml water. SolutionII is a separate thiamine/riboflavin stock; it is correctly excluded.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-110.
+
+JCM1100 vitaminA has thirteen named vitamins/cofactors plus100 ml10 mM potassium phosphate bufferpH7.2. All quantities match, including10 mg biotin/riboflavin and100 mg for the other named solutes. VitaminB/B12 stock is separate. Generic calcium pantothenate, lipoate stereochemistry and buffer ingredients remain unresolved.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-112.
+
+JCM923 major-metals stock contains KCl0.15 g,KH2PO4 1.36 g,NH4Cl2.68 g and water1 L. Source composition is complete at immediate level. Blanket UNMAPPED on KCl,NH4Cl and distilled water defers exact existing baseline candidates without identifying missing science.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-119.
+
+JCM1423 and1424 explicitly point to898; the latter provides B12100,pABA80,biotin20,nicotinic200,DL-calcium pantothenate100,pyridoxine HCl300,thiamine HCl200 mg in1 L water. Complete immediate formula matches; source-qualified identity avoids generic numbered aliases.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-120.
+
+JCM1430/1431/1479 point to915. The recipe has thiamine HCl90,myo-inositol40,Ca-pantothenate4,pABA5,B125,pyridoxine HCl4,nicotinic4,biotin0.1,folic2 mg in100 ml water. Matching source pointers support memberships, not generic universal vitamin-stock identity.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-129.
+
+JCM149 Hutner-base source stock contains all eight immediate source ingredients and their batch quantities, including approximateKOH and nestedMetals44. UNMAPPED references preserve literal hydrates rather than guessing; complete enumeration is source-relative. Resolve component grounding before any downstream whole-owner acceptance. Append-only component review confirms seven source-form-compatible baseline entities; blanket UNMAPPED defers feasible curation, while nested Metals44 retains a genuine formulation bridge hold.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-7.
+
+DSMZ125K1 stock uses0.1mlK1+20ml95%ethanol. Amounts arecharges,not assertedfinalvolume. UnknownK1stereochemicalvitamer detail andethanolaqueousstock identitymustnotbe collapsed to purecompounds. Distinct fromnominal0.1%/1% stocks.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-29.
+
+DSMZ5980Wolin10x tablepreserves allten quantities,D(+)-calciumpantothenate andDL-alpha-lipoicacid. Noautomaticcomponentform inference;knownnicotinicacid/riboflavin/pABA/waterrefsarefeasible.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-98.
+
+MediaDive453 and606 explicitly reference solution608. Its seven acid volumes are548.5,193.5,129 and four32.25 ml entries, including DL-2-methylbutyric acid. These sum to1 L without added water; source batch quantities and stereochemical prefix are preserved. Straight-chain valeric acid is distinct from isovaleric acid.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-26.
+
+ATCC1249ComponentIII is3.5gsodiumlactate+1gyeastextract+400mlDIwater,pH7.5,autoclaved. Components match; unspecifiedtitrant andlactatestereochemistryremainunknown. Deionizedwater mustnotbe silently equated todistilledsuppliedmaterial.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-31.
+
+NBRC1321 explicitly specifiescyanocobalamin5mg+100mldistilledwater,filtersterile. This ismore precise than genericB12. BaselineCHEBI17439 andwaterCHEBI15377 referencesarefeasible; currentlybothUNMAPPED.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-111.
+
+NBRC1321 gives pABA4,biotin1,nicotinic acid10,Ca-pantothenate5,pyridoxine HCl15 mg in100 ml10 mM sodium phosphatepH7.1. JCM403 differs in pyridoxine10 mg and explicit DL-pantothenate. The new source-qualified stock preserves this distinction.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-73.
+
+NBRC1356 mineral base2 separately enumerates NaCl240 g, NH4Cl0.5 g, K2HPO4 2.5 g, KCl5 g and water1 L, autoclaved under nitrogen with stated final pH7.3. Its later 1:1 mixing with base1 is outside this owner. COMPLETE is immediate source enumeration, not proof of exact hydrated salt forms or final dissolved speciation.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-52.
+
+MineralbaseD ismixtureof5ml14%w/vNH4Clstockand5ml7%w/vKH2PO4stock. Nestedcomponentsandquantities correctlyavoidinventingdrycharges orcarrier. Noexactstockownerreference isforced wherepreparationnotestablished.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm-prop-new-106.
+
+M2567 baseC combines1 ml10 mM Na2WO4 solution and1 ml25 mM FeCl3 solution. These are two immediate liquid reagents, not neat salts. COMPLETE immediate enumeration does not infer their solvents, hydrated solutes or full molecular decomposition.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-deionized_water.
+
+DSMZ533 explicitly distinguishes deionized water, including its trace-stock preparation. Registry identity preserves processing grade separately from distilled-water identity. The source supplies no resistivity, sterility or purity specification; none is inferred.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-dsmz_trace_2n_naoh.
+
+DSMZ2NNaOH isknownsolute/normality reagentused acrossscoped traceprotocols. Nootherstockcomponents orwaterareimputed. Sameconcentration/sourcecontext alone cannotgrant cross-shardmaterialequivalence;wholepayload'sPARTIAL completeness andhumanmappingprovenance needadjudication.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_1130_10n_naoh.
+
+JCM1130specifies10NNaOHinput26ml toVFAmixture. Thepayload correctlykeepsVFAacids outside thereagent anddoesnotassignreceivingwater. Unknowncarrierisretained;PARTIAL enumuse andhumanmappingprovenance needcorrection.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-atcc_nitrosolobus_6n_naoh.
+
+ATCCNitrosolobus6NNaOHused1ml inphenolred solution;99mlwaterbelongs receivingstock. PayloadNaOHreferencecorrect; nootheringredientsorgradeinvented. Unknowncarrierisreal;completeness classificationneedscontractalignment.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-pcr_s11_01n_naoh.
+
+PCR-S11uses40ml0.1NNaOHtodissolve1.488gNa2-EDTA. FinalIF1201-R1withdrawsweakerNOSduplicate;sourcecomparisonsremainconditional. Payloadcorrectlycontains onlyNaOHat0.1N,notEDTAorreceivingwater.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-dsmz_104_8n_naoh.
+
+DSMZ104 uses8 N NaOH for pH7.2 adjustment and separately describes1 N NaOH in haemin preparation. The proposal preserves the former reagent concentration, not an inferred solvent or the receiving dose; PARTIAL is appropriate.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_221_02n_naoh.
+
+JCM221 uses200 ml0.2 N NaOH before adding separate sulfide nonahydrate and cysteine hydrochloride monohydrate. The proposal denotes only the NaOH input, not the whole reducing mixture; no solvent, cooling-gas solubility or cross-ATCC whole-stock identity is inferred.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-wolin_mineral_05n_naoh.
+
+Source preparation identity is0.5 N NaOH used in Wolin mineral stock. SoluteCHEBI32145 is distinct from stock; unknown carrier omitted, PARTIAL appropriate. No source numbering alone proves a separate material identity; final dedup/coalescence remains with coordinator.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-atcc_1340_naoh_4g_100ml.
+
+ATCC1340explicitly givesNaOH4g/100ml. Thepayload preserves4%w/v ratherthanassumingall1Nlabelsprovethissamepreparation. Chopped-meat/hemincasesconditional;nosolventgiven. PureNaOHowner isseparaterepair.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_574_1m_kh2po4.
+
+JCM5741MKH2PO4stockis16.6mlinput,followedbyanotherphosphatestock83.4ml andequalwater. Noindividualcarrierorhydrateproven. PBBMduplicatewithdrawal ispresent;no exactassignment bynominalstrength.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_574_1m_k2hpo4.
+
+JCM5741MK2HPO4stockis83.4mlinput with16.6ml1MKH2PO4; thoseareseparateingredients andsubsequentdilution doesnotestablishstocksolvent. Form/stockboundaryholds remain.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-pbbm_1m_na2hpo4.
+
+PBBM/M2760 explicitly supplies a1 M Na2HPO4 solution to its buffer. The source does not identify hydrate or solvent. PARTIAL source-qualified reagent preserves nominal strength without selecting anhydrous/dodecahydrate or claiming equivalence with another phosphate input.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-pcr_s11_50mm_nah2po4.
+
+Source50 mM stock is explicitly6 g plus1 L distilled water. Solute form stays UNMAPPED; no mass/molarity inference supplies hydration. Per-batch units avoid claiming final volume. PARTIAL and explicit source scope are scientifically conservative.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-pcr_s11_50mm_na2hpo4.
+
+PCR-S11Na2HPO4stock has3.55g in500mldistilledwater andnominal50mM. No hydratecanbe inferred frommasscalculation. Componentlistcompleteness mustnotbe downgraded solelybecause hydrate-grounding isunknown;quantities correctlyremaincharges.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-pcr_s11_sodium_phosphate_buffer_ph75.
+
+PCR-S11/M2262 makes the phosphate buffer from 100 ml each of 50 mM NaH2PO4 and Na2HPO4 inputs, then adjusts pH to 7.5. The unidentified titrant warrants PARTIAL. The nearby 2 L instruction belongs to a separate EDTA/iron preparation, not this buffer.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-allen_m2231_phosphate_stock.
+
+M2231 explicitly makes6 g/L literal K2HPO4·7H2O in deionized water and doses5 ml. The source-defined stock is supported despite unresolved unusual hydrate. Water grade and batch quantities are preserved; no single-chemical alias is added.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: ['W08-IR-011']
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_908_sulfide_10pct_wv.
+
+JCM90810%w/vsulfidenonahydrate filter-sterilestock isdistinctfrompureCHEBI76209solute. Knownsoluteform andpercentbasis aredirect;unknowncarrierretained. No receivingvolumeisstockbatchsize.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_713_sulfide_24pct.
+
+Source24% stock has exact nonahydrate solute but unspecified percent basis/carrier. The payload deliberately lacks a converted concentration and uses PARTIAL. Parent-medium1 mL is not an intrinsic stock amount.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-atcc_1943_sulfide_25pct.
+
+ATCC19432.5%sulfidenonahydrate autoclavedunderN2issourceanchor. Percentagebasisandcarrierunknown;PBBMrelatedstocknotexactassigned. Cysteineco-addition belongsreceivingmedium,notthisstock.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if1201-edit-naoh.
+
+PureNaOHpayload rejectsspecified1N/2Nconcentrationaliases withprovenance andappendedhistory. ItsunrelatedRoleandbareparentheticalnotesarealreadyfiltered bynativesynonympolicy. Noowner-widechemical orroleapproval.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if1201-edit-na2moo4_x_2_h2o.
+
+Full current owner has exact disodium molybdate dihydrate chemistry/CAS10102-40-6. Eleven literal aliases changing sodium/oxygen/sulfur or omitting form are REJECTED_LABEL, including inherited RAW_TEXT. Exact hydrate synonyms and all old history retained.1216 supports the bounded repair, not automatic source corrections.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: unknown. Targets: if1201-edit-na2hpo4_x_12_h2o.
+
+Full owner exactCHEBI91259 chemistry now contains12 waters in all structures; three generic aliases and Role-text are rejected, prior sibling rejections retained. Historical contradictory regrades are explicitly superseded. This is the exact worker03-overlap owner: evidence comparison only, no self-proposal or final coalescence approval.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: evidence_comparison_only_shared_worker03_owner. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-atcc_1942_sulfide_5pct.
+
+ATCC1942primaryPDF explicitlygives10ml5%nonahydratestockandfinal0.5g/L,autoclavedunderN2. Source arithmetic supportsnominal5%w/v; solventnotgiven. JCM5%comparisonsremainconditional afterIF1201-R1. Interpretation/calculation mustremaintransparent.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-mediadive_552_thiosulfate_5g_100ml.
+
+The5 g/100 mL-H2O source preparation is distinguishable from pure thiosulfate. Hydration remains UNMAPPED, solvent input is per-batch and no final-volume assertion is added. Genericwater reference is chemical identity only, not approval of water-grade owner aliases.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-new-jcm_941_solution_c.
+
+JCM941/MediaDive4957 preserve the literal dithionite dihydrate and separately define SolutionC as5 g in40 ml distilled water, under nitrogen/autoclaving. Preparation identity is supported while the unusual supplied hydrate remains unresolved. No anhydrous-dithionite correction or source-hold release follows.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: if1201-edit-kh2po4-alias-scope.
+
+The chemical owner is specifically monopotassium dihydrogenphosphate. The class-level Potassium Phosphate name does not universally select that salt; the incomplete KH PO formula does not independently establish its stoichiometry. The inspected automatic addition/merge history is not a source-qualified correction witness establishing universal equivalence. Both exact frozen index rows resolve uniquely to CHEBI:63036, making this a current identity-resolution boundary, not merely an export concern. The source CHEBI63036 identity and three targeted1215 rejections remain supported. The full selected after payload is not accepted for integration planning as scientifically complete until the retained global aliases are corrected or precisely source-adjudicated. This is not deferred solely to a later supported-export gate.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if1201-edit-nonahydrate-stock-aliases.
+
+Nonahydrateowner preservesidentityCHEBI76209 andrejects3%/24%preparationlabels under1215. Oldhistoryunchanged. RemainingRole/bareparentheticalRAW_TEXTstringsaretext-filtered,so nofalse native-resolutionclaim ismadeforthem.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: if1201-edit-tris-alias-scope.
+
+TrisownerpreservesfourHClrejections andadds1Mbuffer/nitrilotriacetate rejectionunder1157; newhistorypreservesolderfix. RawTrisbuffercontextremains broaderthanwholeownerapproval. Amount-bearingTris3gnotadded.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-glycine-naoh-stock.
+
+The separateJCM906 pH10 stock legitimately contains0.5 M glycine andNaOH with unknown titrant amount. The basal900 mL water is correctly excluded. UNKNOWN completeness is defensible; recipe transcription supports literal constituents but not an invented carrier or final volume.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-indicator-stock.
+
+TOGOM2844commentestablishescombined0.5%bromothymolbluein0.2NKOH. CHEBI86155and32035 componentreferencesandnormalitymatch. Percentbasis/solventunknown;UNKNOWNcompletenessfits. NoisolatedKOHfragmentownerassignment.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-toluene-stock.
+
+JCM600literal5mMtoluene water-saturatedsolution,dose40ml,anaerobic/autoclaved. Payloadretainsliteralpreparationandunquantifiedwater,notphaseassumption,saturationtemperatureorgrade. UNKNOWNcompletenessappropriate;no molecularowneridentitycollapse.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-usb-peptic-pepton.
+
+NBRC19 specifies Peptic Pepton (USB) at 2 g/L but supplies neither catalogue code nor substrate/digestion formulation. A named opaque USB material can be represented without inventing casein, generic peptone equivalence or chemical components.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-sulfide-ore.
+
+DSMZ88 adds sulfide ore and separately sterilizes it at 150°C overnight. Pyrite is an example of suitable ore, not an exact pure FeS2 specification. Opaque natural-material registry identity and absent fixed decomposition are justified.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-cereal-leaves.
+
+Existing owner promoted to cereal-leaf registry material with product/source boundary notes. Leaf extract, grain flour and commercialCerophyll are not aliases. Unspecified species/material composition is honest for this undefined biological mixture.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-homopipes-stock.
+
+The0.5 M pH5.4 preparation retainsHOMOPIPES solute with explicit missingcarrier/titrant. It is neither pureHOMOPIPES nor a guessed formulated buffer. Partial enumeration and unknown finalvolume preserve the observed scope.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-dl-asparagine-monohydrate.
+
+Wako originalSDS supports exactDL hydrate andCAS69833-18-7; TCI conflictingCAS remains noted. NARROW_MATCH to genericasparagineCHEBI22653 correctsOP1201-F1 direction. No L-specificNCIT or anhydrous equivalence asserted.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op1201-beta-nad-provenance.
+
+The currentNAD(+) identity and structure match source betaNAD; change retypes unsupported manual-provenance claim with source-backed evidence. This does not infer NADH or a disodium supplied salt, and retained roles remain unapproved.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-laminarin-scope.
+
+Laminarinpreferredtermnowgeneric; sourcebrownalgaeevidencedoesnotlicenseLaminariadigitataspecificity. Formername/sourceformretainedprovenance,noterased. CAS9008-22-4/CHEBI6364 remainpolysaccharidemixturescope.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-bbl-fluid-thioglycollate.
+
+BD211260isconfirmedbyactualATCC474/177primarypages andBDproductpage; do notcopyATCC177scratchformulaasmanufacturercomposition. SourceJCM157/TOGOM148 productassociation usesmatchingEubacteriumrecipe,brandandseparateingredientsasreviewedinterpretation,notadirectcataloguenumberquote. Theboundedcommercialcandidateisreasonablewithoutclaimingidenticalmanufacturercomposition.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-r2a-medium.
+
+Frozen FEBA3 context uses R2A in liquid culture. Retained MicroO0000541 explicitly defines liquid R2A with six organic constituents and separately identifies R2A agar. LABEL_ENUMERATION/PARTIAL avoids transferring the HiMedia supplier recipe or generic agar into this material; ingredient identity is supported, component grounding remains bounded.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-r2a-agar-provenance.
+
+M2972 explicitly labels the Difco material R2A agar, and the plant-stem contact procedure supports an agar surface. The narrow provenance addition to the existing agar owner does not create a global resolving bare Difco/R2A alias or approve all historical agar evidence.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-racemic-sodium-sulfolactate.
+
+Actual Denger2010 methods specify synthesized racemic sulfolactate and10 mM growth substrate; its cited Roy2003 method explicitly produces sodium sulfolactate. The source preparation therefore requires racemic sodium-salt scope. Sodium stoichiometry/hydration/purity remain unstated; NARROW_MATCH to broader sulfolactate parent preserves the bounded relation.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-trypticase-soy-broth.
+
+NBRC1045 uses30 g Trypticase Soy(BBL), separate100 g NaCl and20 g agar. MicroO0000113 identifies Trypticase soy broth as an exact synonym of tryptic soy broth; FAO and BD text support its standard six-input broth composition. Added agar/salt are outside the ingredient. Mapping quality should be SYNONYM_MATCH rather than primary-label EXACT_MATCH; role/export approval remains withheld.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-sodium-lactate-alias-boundary.
+
+The full owner is stereounspecified sodiumlactate. New rejection ofL-only and1 M/1% aliases preserves source strings. DL source does not justify broadening every occurrence into racemate nor treating stocks as pure salt.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: op1201-soy-family-source-boundary.
+
+The notes-only proposal separates exact branded enzymaticsoydigest evidence from the three-owner family problem. ExistingFOODON vegetablehydrolysate primary identity and duplicates remain held. No active-familywinner or productequivalence approved.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-plain-flour.
+
+Existing generic Flour owner maps toFOODON00004510 at the actually stated grain/starchflour scope. It does not force wheat, a defined formula or an automaticCAS identity. History/mixtureclassification preserved.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-amphotericin-stock.
+
+The10 mg/mL preparation retains genericamphotericin as UNMAPPED constituent and PARTIAL completeness. Carrier andA/B selection remain unknown; supplierAmphotericinB products are contrastonly. No concentrationqualified globalalias is introduced.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: op1201-ferric-pyrophosphate-label.
+
+Whole owner chemistry corresponds toFe4(P2O7)3 ferricpyrophosphate; correcting preferredlabel and rejectingFe4(PO4)2 prevents false literalidentity while preserving provenance. It doesnot identify the intended malformed source occurrence.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm1023-vitamin.
+
+JCM1023vitamintableisnotJCM903: preserveform/amountdistinctions andliteralB6identity. Quantitiesandsourceboundariesareconsistent. AllUNMAPPEDcomponents includeseveralalreadyidentifiablecatalogentities,whichisunfinishedauthorizedcuration.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm903-vitamin.
+
+JCM903vitaminrecipeisdistinctfromJCM1023B6form/batch. Preserveentiretablewithoutgenericvitamin-mixturealias. Knownwater,pABA,nicotinicacid,riboflavinreferencescanbecurated;sourceB12/pantothenate limitsremain.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm554-sl10.
+
+JCM554SL10tableexplicitlysevenmetal saltspluswater;absenceofHCl/borateinthissourcecannotbefilledfromothersame-nameSL10recipes. Actualtableandamountsmatch. Completecomponentreferencesremainunfinishedforclearlygroundedforms.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-nbrc1356-mineral-base1.
+
+NBRC1356mineralbase1isprecipitate-removedsupernatantafterautoclaving/standing,notthesumofchargedsolids. Water-onlycomponentisareasonableretainedmaterialinterpretationbutRECIPE_TRANSCRIPTIONfalselydescribesitsderivation. UseCURATED_INTERPRETATIONwithlimits;donotclaimchargedionamountssurvive.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-yps-basea.
+
+M2567 baseA gives seawater salts and water, with unresolved literal NaII CO3 at0.2 g. The proposal includes ten unambiguous immediate inputs and retains the problematic row in notes, PARTIAL. It does not silently turn the source label into carbonate/bicarbonate.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-yps-baseb.
+
+TOGO M2567 enumerates baseB minerals, water and KOH with pH6.5 then7.0; the proposal preserves these endpoints and unquantified KOH. Literal AIK(SO4)2 0.01 g remains outside chemical assertions pending identity/hydration resolution. PARTIAL supports the preparation without guessing that token or cobalt hydration.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm628-toplayer.
+
+JCM628 top layer has100 ml modified Wolfe carrier,1 ml JCM197 minerals,MES0.195 g,NaHCO3 0.042 g,agarose0.15 g and1 ml post-autoclave JCM197 vitamins. JCM629 substitutes artificial saltwater carrier. Both complete source protocols distinguish bottom layer/headspace. Unknown initial titrant and dissolved CO2 uptake justify PARTIAL, not invented amounts. This payload uses the freshwater modified Wolfe carrier.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm629-toplayer.
+
+JCM628 top layer has100 ml modified Wolfe carrier,1 ml JCM197 minerals,MES0.195 g,NaHCO3 0.042 g,agarose0.15 g and1 ml post-autoclave JCM197 vitamins. JCM629 substitutes artificial saltwater carrier. Both complete source protocols distinguish bottom layer/headspace. Unknown initial titrant and dissolved CO2 uptake justify PARTIAL, not invented amounts. This payload uses the saltwater carrier withNaCl27.5g/L; not interchangeable with628.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-nbrc1020-vitamin.
+
+NBRC1020 and824 share all ten vitamin masses and1 L water, notably B122.7 mg. Their downstream processing differs:1020 filter-sterilizes vitamins;824 includes them before medium autoclaving. The corrected notes restrict shared identity to input formula. NBRC1169/1308 instead match the common nine-vitamin preparation.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-nbrc1226-vitamin.
+
+The six frozen Vitamin solution** occurrences split by actual composition:1050/1086/1274/925 match common9,1226 has B125 mg and lipoic5 mg,903 has B120.1 mg,pABA5 mg,lipoic5 mg. The three active payloads preserve these distinctions; generic starred label is not globally resolving. This payload specifically retains1226 B125mg/pABA1mg.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-nbrc903-vitamin.
+
+The six frozen Vitamin solution** occurrences split by actual composition:1050/1086/1274/925 match common9,1226 has B125 mg and lipoic5 mg,903 has B120.1 mg,pABA5 mg,lipoic5 mg. The three active payloads preserve these distinctions; generic starred label is not globally resolving. This payload specifically retains903 B120.1mg/pABA5mg and notes literal agreement with JCM197 without approving cross-worker coalescence.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-nbrc-common9.
+
+NineNBRCtablesmatchthecommon-ninevitaminformula,whiletheirtrace-elementrecipesdiffer. Reuseisjustifiedatinput-formulationlevelwithproperseparatelyfiltereduse. GenericB12andCa-pantothenateformlimitsremain; knowncomponentreferencesneedcuration.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-gibco11120-mem100x.
+
+NBRC1407 names Gibco100X MEM vitamins. Official11120 formula lists nine solutes at manufacturer mg/L and actual product FAQ identifies distilled-water solvent, sterile filtration and identical052/037 product formulation. These facts support the current product-family preparation, without historical lot/package equivalence or100-fold receiving-dose confusion.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm510-methane-air.
+
+JCM510 explicitly requires methane-air 50:50 atmosphere. Both immediate gases are supported. Ratio basis, humidity, pressure and detailed air composition are absent; retaining the literal ratio without numerical fractions is appropriate. The proposal denotes this gas blend, not liquid medium.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm515-b12-partial.
+
+JCM515stock20µg/ml→20mg/Lisexplicit,filtersterile. NBRC0.002%w/vandTOGOM4982mg/100mlonlyconditionalnominalstrengthcomparisons. No carrier/form equivalenceorcyanoassignment. Unknowncompletenessshouldnotassertsourceexplicitomissionswithoutbasis.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm647-b12-partial.
+
+JCM6472mg/ml→2000mg/Lisexplicit;JCM520/533/650nominalmatchesdonotestablishidenticalpreparation. GenericB12componentwithoutmolecularID isproperlybounded. Carrierandotherstockconstituentsremainunknown.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-jcm1354-b12-partial.
+
+JCM13540.01%B12stockisexplicit; percentbasisunknownsoconcentrationfieldomissioniscorrect. No carrier/acid/stabilizer inferred. Boundedsourcecandidatevalidafterevidence/completenessmetadatafixes.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-atcc2883-b12-partial.
+
+ATCC2883 stock0.1 mg/mL is100 mg/L andfiltersterile, used1 mL in both broth/agar recipes. GenericB12 componentUNMAPPED,carrieromitted,PARTIAL. Methanol is separate receivingmedium ingredient and not stocksolvent.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-togo125-k1-partial.
+
+TOGOM125actualrawcaptureidentifiesJCM134and0.1%K1stock0.2mldose. Noexactpercentbasisorcarrier;notDSMz125ethanolstock. Rawcapturehashandoriginaltimestampindependentlychecked.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: concern. Targets: vm1201-prop-dsm1245-k1-partial.
+
+DSMZ1245K11%stockisexplicit; no percentbasis,carrierorvitamerinference. GenericK1componentadequateforboundedpreparationcandidateonly,notpurephylloquinonerelease. Keepserumalternativeandreceivingdose separate.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: requires_payload_correction_or_adjudication. Associated source/evidence findings: []
+
+### Complete selected candidate payload with bounded source acceptance
+
+scope: supported. Targets: vm1201-prop-thauers-source-comparison.
+
+Full inherited11components/quantities were compared with originalCultureBotHT sheet; newTOGO formula/preparation remains separate. GenericB12 versuscyanocobalamin andDL calcium-pantothenate versus unspecifiedsheet salt block exact bridge. COMPLETE refers sheetenumeration, not allTOGOcomponents; inherited componentgrounding still requires review.
+
+Only exact inspected source/formulation/identity claims with documented occurrence exclusions and inherited holds. No whole-owner, role, supported-export, worker03 own-proposal or final coalescence approval. Exact planning disposition: accepted_bounded_planning_with_holds. Associated source/evidence findings: []
+
+## Findings
+
+### W08-IR-001: New mapping evidence mislabels agent work as human-supplied evidence
+
+minor / open / confirmed; issue key: w08-b90-independent-w08-ir-001.
+
+Retype the95new/changed mapping evidence entries across88payloads to truthful source/decision categories, retaining exact primary citations, original history and LLM assistance. Exclude identical inherited human evidence; choose each category from the actual assertion, not a blanket replacement. RawP2normalized to minor: histories already identify agents and the primary chemical evidence may remain sound. This bounded provenance mismatch still requires exact candidate-byte correction; it is not a chemical refutation.
+
+### W08-IR-002: JCM403 numbered pointers remain global resolving labels
+
+major / open / confirmed; issue key: w08-b90-independent-w08-ir-002.
+
+Qualify preferred terms with JCM and preparation identity; preserve exact old pointer strings and all source provenance as REJECTED_LABEL; retain source occurrence routing and append history. Re-review exact successor and all backlinks; do not resolve generic pointers by label alone. The native synonym filter admits all six exact pointers. Provider-free source numbers are occurrence context, while legitimate named stocks need not be rejected. Prior ivm-01 corrected citation attribution only.
+
+### W08-IR-003: Supported component references remain deferred as generic form uncertainty
+
+major / open / confirmed; issue key: w08-b90-independent-w08-ir-003.
+
+Complete the exact component-specific candidates documented in reviewer receipts; use MIM_CATALOG only for verified compatible active entities. Retain unresolved B12 vitamers, pantothenate stereo, unspecified hydrates, nested stocks and malformed formulas with precise limits. Do not mistake lack of role/export approval or duplicate physical catalog rows for lack of a representable entity. This is authorized curation completion, not a demand to map every literal. Explicit source forms and complete baseline owner evidence are required; unknown forms remain unknown.
+
+### W08-IR-004: Established stock and product identity work is still deferred
+
+major / open / confirmed; issue key: w08-b90-independent-w08-ir-004.
+
+Finish bounded existing-owner registry/formulation proposals for JCM403B12stock and DuchefaL0230, after exact duplicate comparison. Preserve imported source bridges, historical placeholders and holds; do not create duplicate owners, guess the B12 vitamer, or infer unlisted finished-medium inputs. Registry preparation identity is distinct from exact molecular component identity. The exact source-to-owner bridges and available formulations are supported. Unknown B12 molecular form and future integration are not sufficient reasons to defer these bounded proposal tasks.
+
+### W08-IR-005: Retained supernatant water inference uses literal transcription method
+
+minor / open / confirmed; issue key: w08-b90-independent-w08-ir-005.
+
+Use CURATED_INTERPRETATION for the water-retention inference with explicit rationale and unmeasured retained-salt limits, or omit the derived has-part list until supported. Preserve all charge recipe facts in provenance and do not convert them into retained concentrations. Ground the water component if retained. Notes already acknowledge uncertain retained salt composition. Correct the inference method without asserting that water is false or converting charged salts to retained concentrations.
+
+### W08-IR-006: Component completeness does not consistently follow source-relative enum meanings
+
+minor / open / confirmed; issue key: w08-b90-independent-w08-ir-006.
+
+For each precisely identified assertion, distinguish explicit omitted constituents (PARTIAL), source-unestablished closure (UNKNOWN), and complete source enumeration (COMPLETE). Missing concentration, final volume, titrant quantity or molecular grounding alone does not determine membership completeness. Preserve the bounded stock and all unknowns. This is metadata/provenance precision, not automatic rejection of a supported stock. Source-specific adjudication must not mechanically change every PARTIAL stock.
+
+### W08-IR-007: Nalidixic-acid occurrence applicability lacks readable primary support
+
+major / open / confirmed; issue key: w08-b90-independent-w08-ir-007.
+
+Bind a readable exact NBRC1314 primary capture or record that occurrence as source-held/unverified while retaining the independently supported acid candidate. Keep the successful1301 capture separate from failed1314/M2023 requests; do not claim an unread source was inspected. Hold only unverified NBRC1314/TOGOM2023 occurrence applicability. Independently read NBRC1301 and ontology evidence support the bounded acid candidate. Failed source access is not evidence of chemical falsity.
+
+### W08-IR-008: Inherited phosphate aliases exceed exact chemical identity
+
+major / open / confirmed; issue key: w08-b90-independent-w08-ir-008.
+
+Adjudicate exact KH2HPO4/K2HPO on dipotassium phosphate and KH PO/Potassium Phosphate on monopotassium phosphate. Preserve strings/provenance as REJECTED_LABEL unless primary evidence and appropriate occurrence routing justify narrower use; retain the already-supported anhydrous spelling and IF1201-R2/#1215 changes. Do not silently remap source memberships. Complete selected payload review includes inherited resolving aliases. Scope differs from the already-resolved concentration aliases. Annotation fragments already excluded by text policy are not included.
+
+### W08-IR-009: Trypticase soy broth mapping grade overstates primary-label match
+
+minor / open / confirmed; issue key: w08-b90-independent-w08-ir-009.
+
+Change mapping_quality to SYNONYM_MATCH with a truthful history event and preserve correct identifier, canonical ontology label, mixture components and own-identifier exact SSSOM semantics. RawP2normalized to minor: exact ontology synonym supports the same identity and exact SSSOM relation. SYNONYM_MATCH describes the actual lookup evidence; no supplier formula or chemistry rejection follows.
+
+### W08-IR-010: Tetrahydrate evidence points to incomplete capture instead of archived full supplier table
+
+minor / open / confirmed; issue key: w08-b90-independent-w08-ir-010.
+
+Add a claim-specific evidence item bound to exact primary-batch7 bytes, URL/locator and its original acquisition timestamp; backlink every affected source case/proposal. Preserve batch6 as unsuccessful/incomplete support and do not relabel its timestamp. RawP2normalized to minor: exact committed batch7 independently supportsCAS7783-13-3. Repair the claim-specific binding and all three source backlinks using original05:08:47.015262UTC capture time; do not falsely recapture or call chemistry unsupported.
+
+### W08-IR-011: Allen phosphate remaining requirement repeats a resolved dose distinction
+
+minor / open / confirmed; issue key: w08-b90-independent-w08-ir-011.
+
+Narrow case63 remaining requirement to unusual seven-water supplied-form confirmation or correction, and state the source-resolved5ml dose transcription separately. Preserve the chemical hold and frozen input. 
+
+### W08-IR-012: L-asparagine monohydrate retains parent treatment despite exact NCIT evidence
+
+major / open / confirmed; issue key: w08-b90-independent-w08-ir-012.
+
+Adjudicate NCIT:C87433 against its exact L-hydrate synonym and CAS5794-13-8 under section3 exact-term priority, updating primary identifier and mapping grade where supported. Preserve the CAS/source alias/history and distinguish DL hydrate. Separately clarify or verify stereochemical SMILES scope without inventing a structure or calling an unspecified SMILES a racemate. The archived exactNCIT evidence and the separateDLproposal contradict treating that same L target merely as a generic parent. Non-isomericSMILES alone does not establish the wrong enantiomer; it is secondary bounded structural incompleteness.
+
+## Recommended Actions And Acceptance Checks
+
+### fix-W08-IR-001
+
+Retype the95new/changed mapping evidence entries across88payloads to truthful source/decision categories, retaining exact primary citations, original history and LLM assistance. Exclude identical inherited human evidence; choose each category from the actual assertion, not a blanket replacement.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-002
+
+Qualify preferred terms with JCM and preparation identity; preserve exact old pointer strings and all source provenance as REJECTED_LABEL; retain source occurrence routing and append history. Re-review exact successor and all backlinks; do not resolve generic pointers by label alone.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-003
+
+Complete the exact component-specific candidates documented in reviewer receipts; use MIM_CATALOG only for verified compatible active entities. Retain unresolved B12 vitamers, pantothenate stereo, unspecified hydrates, nested stocks and malformed formulas with precise limits. Do not mistake lack of role/export approval or duplicate physical catalog rows for lack of a representable entity.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-004
+
+Finish bounded existing-owner registry/formulation proposals for JCM403B12stock and DuchefaL0230, after exact duplicate comparison. Preserve imported source bridges, historical placeholders and holds; do not create duplicate owners, guess the B12 vitamer, or infer unlisted finished-medium inputs. Registry preparation identity is distinct from exact molecular component identity.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-005
+
+Use CURATED_INTERPRETATION for the water-retention inference with explicit rationale and unmeasured retained-salt limits, or omit the derived has-part list until supported. Preserve all charge recipe facts in provenance and do not convert them into retained concentrations. Ground the water component if retained.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-006
+
+For each precisely identified assertion, distinguish explicit omitted constituents (PARTIAL), source-unestablished closure (UNKNOWN), and complete source enumeration (COMPLETE). Missing concentration, final volume, titrant quantity or molecular grounding alone does not determine membership completeness. Preserve the bounded stock and all unknowns.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-007
+
+Bind a readable exact NBRC1314 primary capture or record that occurrence as source-held/unverified while retaining the independently supported acid candidate. Keep the successful1301 capture separate from failed1314/M2023 requests; do not claim an unread source was inspected.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-008
+
+Adjudicate exact KH2HPO4/K2HPO on dipotassium phosphate and KH PO/Potassium Phosphate on monopotassium phosphate. Preserve strings/provenance as REJECTED_LABEL unless primary evidence and appropriate occurrence routing justify narrower use; retain the already-supported anhydrous spelling and IF1201-R2/#1215 changes. Do not silently remap source memberships.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-009
+
+Change mapping_quality to SYNONYM_MATCH with a truthful history event and preserve correct identifier, canonical ontology label, mixture components and own-identifier exact SSSOM semantics.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-010
+
+Add a claim-specific evidence item bound to exact primary-batch7 bytes, URL/locator and its original acquisition timestamp; backlink every affected source case/proposal. Preserve batch6 as unsuccessful/incomplete support and do not relabel its timestamp.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-011
+
+Narrow case63 remaining requirement to unusual seven-water supplied-form confirmation or correction, and state the source-resolved5ml dose transcription separately. Preserve the chemical hold and frozen input.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+### fix-W08-IR-012
+
+Adjudicate NCIT:C87433 against its exact L-hydrate synonym and CAS5794-13-8 under section3 exact-term priority, updating primary identifier and mapping grade where supported. Preserve the CAS/source alias/history and distinguish DL hydrate. Separately clarify or verify stereochemical SMILES scope without inventing a structure or calling an unspecified SMILES a racemate.
+
+- Reproduce exact cited source/payload observation while preserving provenance and genuine scientific unknowns.
+- Bind successor evidence, source decisions, complete payloads and validation to a fresh independent review; no approval transfers from this frozen head.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| I-A | .temp/w08-published-head-independent-review-v1/a/assessment.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Independent63 source cases and46 whole selected payloads. |
+| I-B | .temp/w08-published-head-independent-review-v1/b/assessment.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Independent63 source cases and38 whole selected payloads. |
+| I-C | .temp/w08-published-head-independent-review-v1/c/assessment.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Independent62 source cases and29 whole selected payloads. |
+| I-ROOT | .temp/w08-published-head-independent-review-v1/assessment.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Consolidated full source and payload coverage, scientific finding scopes and bounded acceptance. |
+| I-FINDINGS | .temp/w08-published-head-independent-review-v1/findings.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Exact findings, observations, primary captures, reproduction and bounded fixes. |
+| I-TRANSPORT | .temp/w08-published-head-independent-review-v1/transport-integrity.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | Exact manifests, predecessor, frozen cases, occurrences, capture and owner bindings. |
+| I-STRICT | .temp/w08-published-head-independent-review-v1/fresh-proposal-schema.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | 113 selected proposal schemas pass. |
+| I-PARTONOMY | .temp/w08-published-head-independent-review-v1/fresh-component-partonomy.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | Native2956baseline and3037candidate overlay pass structural component reference checks. |
+| I-NATIVE | .temp/w08-published-head-independent-review-v1/native-integrity.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | Actual author/peer scopes, native targets and exact published input bindings. |
+| I-CONTROLS | .temp/w08-published-head-independent-review-v1/native-controls/native-helpers-review-vitamins-v2.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | New independent mechanical replay of one positive and14negative fixtures. |
+| I-OVERLAP | .temp/w08-published-head-independent-review-v1/worker03-overlaps.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Worker03 overlaps are explicit; no own-proposal or final coalescence approval. |
+| I-HOLDS | .temp/w08-published-head-independent-review-v1/scope-and-hold-integrity.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | Source requirements, native decisions, roles, graph/protein fields and history preserved. Schema pass is not chemical truth. |
+| I-F | .temp/w08-published-head-independent-review-v1/final/partial-completeness-adjudication.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | partial | Separate final reviewer inspected all34PARTIALassertions;29requireUNKNOWN,5retainexplicit omission scope. |
+| I-ROLE | .temp/w08-published-head-independent-review-v1/final/role-status-full-field-check.json; Complete structured receipt; nested exact original primary capture hashes and retrieval timestamps retained. This is receipt inspection time, not primary recapture. | context_only | All32editedownerbefore/afteractualrole/graph/protein/review/statuskeyunions inspected;rolefieldsunchanged,threeexplicitmappingstatuspromotionsnoted. |
+
+## Limits And Additional Notes
+
+- Review is frozen to b90a2fd; no later successor inherits approval.
+- All188case and113wholepayload assessments are complete, including unavailable-source findings; this does not claim every primary request succeeded. NBRC1314/TOGOM2023 remain unread and source-held. Original primary timestamps, private original bytes and failed reads are explicit in child receipts.
+- Schema113PASS and baseline2956/candidate3037partonomyPASS establish structure only. Native69successor targets plus44retained predecessor payloads do not equal188native source-outcome targets; campaign peer receipts cover all188.
+- 19explicit native decision rows across17cases and one embedded downstream hold row are preserved. Roles and other inherited release claims remain unapproved.
+- Worker03 inventory identifies32exact owner/identifier/source-URL overlap pairs across23worker08payloads, including shared Na2hpo4_X_12_H2o owner with c-phosphate-dodecahydrate. No ownworker03proposal or coalescence approval. Broader semantic equivalence requires coordinator review.
+- Original nine predecessor and eight successor internal scientific finding resolutions remain scoped and linked; new inherited-field findings do not erase prior corrected changes. C reviewer attribution correction is appended and original sealed receipts preserved.
+- No author/integration worktree, maintained data, native code/gates, GitHub, Git commits/push, PRs/merges, downstream products, paid providers or external agent sessions were changed/launched.
+- Literal component UNMAPPED or partial stock content is not automatically wrong; only source-supported feasible references and source-relative enum defects are identified. Unknown salts, stereo, hydrate, solvent, percentage basis, titrant quantities and final volumes remain unknown.
+- Native schema and renderer used; native saver intentionally not invoked because user limits all writes to this private .temp review directory. Historical source inputs verified against exact commit bytes.
+- Receipt inspection timestamps do not replace nested original source capture timestamps. Failed/unavailable source requests remain explicitly limited in reviewer receipts.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T065928Z-w08-b90-independent-review
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Independent full source-case and candidate-payload review of worker08 b90a2fd
+started_at: '2026-11-08T06:38:45.975405Z'
+finished_at: '2026-11-08T06:59:28.009089Z'
+reviewer:
+  identity: worker03:/root with /root/w08_review_a, /root/w08_review_b, /root/w08_review_c
+  kind: agent
+  independence: independent
+  independence_basis: Three distinct in-process reviewers did not author worker08;
+    disjoint63/63/62source and46/38/29whole-payload assignments bind all301targets.
+    Root assembled findings and mechanical checks. Ownworker03proposals and cross-shard
+    coalescence are excluded; separate final assembly reviewer provides exact-hash
+    attestation.
+skill: .claude/skills/review-yaml-category/SKILL.md
+completion: completed
+verdict: needs_curation
+scientific_review: true
+summary: Do not accept the complete b90a2fd candidate set as integration-ready. Unaffected
+  bounded source outcomes and explicitly unblocked exact payloads can inform integration
+  planning with retained holds. Correct or scientifically adjudicate named payload/source
+  findings and independently review successor bytes before relying on affected claims.
+source:
+  git_revision: b90a2fd4681d20e2586481b7b9b1114a78281b94
+  state: git_commit
+  inputs:
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json
+    sha256: c9eafc98151c019763071ae65eb7ba8afc9c79112e5ab85d70a2f79d4e75650c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+    sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json
+    sha256: 5ea5e15c5814d7d3bb4428f264895a50285eb937730c737ce19f4489a39b2bd6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/SHA256SUMS
+    sha256: 3e49d83f254fa5956642e50d16a26b464f526d67addc8ce4e743e165ad7d3609
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/SHA256SUMS
+    sha256: cbdc047df4c876c0ee6a9b2ec984676a3ea7b5f09b10154cf49e930eefb663b4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+    sha256: 1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/K2hpo4.yaml
+    sha256: 6bd2194c63c815c81750a6e61e6da8d85db6579ebeee15626caf1328bbc645a4
+    role: target
+  - path: data/ingredients/mapped/K2hpo4.yaml
+    sha256: 7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml
+    sha256: 3dcb2ff6d438659777ce8c37d244a19f21ce89a5332392ae9071efffb9217b55
+    role: target
+  - path: data/ingredients/mapped/Nah2po4_X_2_H2o.yaml
+    sha256: a22b2a81143cde906f2806b7c84c8dcb479fbd72de76aab1ccfae992e5e2e58d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml
+    sha256: e79903919876ad08323eaa4faabee6255367345d6e092b329e7006dd0bcaa3a0
+    role: target
+  - path: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
+    sha256: e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2s2o4.yaml
+    sha256: 569413243139395d50e225efe22b950bd60f5aa3c23ee70d5cfcd002225d1316
+    role: target
+  - path: data/ingredients/mapped/Na2s2o4.yaml
+    sha256: 2a370f469e3a425a6f79d1bbada66f77767b8a7fff649951dffaa3ec90145fc5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml
+    sha256: 4173e5073b8d267983e242a701cdfb275b952372af57514ae7da7aa42c14797b
+    role: target
+  - path: data/ingredients/mapped/Sodium_Dithionite.yaml
+    sha256: 5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml
+    sha256: 74e2cca44589dc54aab6363a06a9cb9b1c535eaad86e131f18f63d19956c91a6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml
+    sha256: 1f981682c97803091dfd5bf91ccf52a8055901df5f132cee2b1effdeb15bb33d
+    role: target
+  - path: data/ingredients/mapped/Na2edta2h2o.yaml
+    sha256: 9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Valeric_Acid.yaml
+    sha256: 321fc7161a295322c2eb7002583eeefe2f7de49771795235ac68c3e6cea7fc49
+    role: target
+  - path: data/ingredients/mapped/Valeric_Acid.yaml
+    sha256: 67ef8d965bb89f4862fac1b03aa2cdfab4505741b27017ae5d2c33fb4ad31a56
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Isovaleric_Acid.yaml
+    sha256: b5d25061615be15e4055434b7a271e608b78650c37fe992d49a19234090ff6d5
+    role: target
+  - path: data/ingredients/mapped/Isovaleric_Acid.yaml
+    sha256: a6ea3dec5b1f41d46baaac946df5e96d6aca41cfb6aa3da3fa1d0bff398d22bd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methane.yaml
+    sha256: 19e46bb75e6a556511aef6f9467578a5e18c478175c61ee728d4dbf4b956445b
+    role: target
+  - path: data/ingredients/mapped/Methane.yaml
+    sha256: c0f1aa55fe19a70d6108f0b9247c852879470d46263195899939cd8e08a6feb3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml
+    sha256: d936af5f0aa4d99913af6bf6ec95ccea6e651064cb61aa1e3f57cba793b6aeb9
+    role: target
+  - path: data/ingredients/mapped/Soy_Flour.yaml
+    sha256: ba96033d326524811bb54040bfca97e7c66140761e4650ca154c8e8621b2dff9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml
+    sha256: 07d8b55d6773f4e16ad57e18e5ed72a4438bdeb207cdfb435da84cc2cb62e20a
+    role: target
+  - path: data/ingredients/mapped/L-Asparagine_Monohydrate.yaml
+    sha256: 0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Ethane.yaml
+    sha256: 6514d4c20262b17fb07646ba5ba4521588c4f0849364325fbde9ea1a98192714
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Nalidixic_Acid.yaml
+    sha256: ca0acf4743b49628c9a2086a412abbc2c82840367a40251061e8b43608b50d72
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml
+    sha256: f5addc808ecde52ecab0d29ba812e7d48c979dace5409bdbac0cd6f0f588312e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methanethiol.yaml
+    sha256: 754de84e222d4baa52be7e46760b353810ae23188718613b7220b039b1ea3219
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Sodium_Nicotinate.yaml
+    sha256: 06447906860830a09cd5b77b4f3366e1533edcfb1041cc8f9f3332ce7c3e8f1d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml
+    sha256: 7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590
+    role: target
+  - path: data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml
+    sha256: a20ab80bfd721b38622db05c4890f6f5ae80540ae038959e0e91446d9edaf5d5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml
+    sha256: d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659
+    role: target
+  - path: data/ingredients/mapped/Menadione.yaml
+    sha256: 2ffe65c6d3f0029bc03ae633447b714b8d2421652aa76c9404dbac6fb9df18d0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml
+    sha256: a86933326bed8cdf623c0a8dc41622bd6e3bc54243addf1610be4f884dda1db5
+    role: target
+  - path: data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml
+    sha256: 32345a69b68f891ceae2da28db7a4840648823327726b4ad3bb645569060ca48
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    sha256: 94956716b71347bd431921e64a06ddd2593d6e7bc50e748e1be3c3cc78bb73a8
+    role: target
+  - path: data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    sha256: 1a9bcd5868a4a1e1385b3574ee5682c571e8f5dcd78fb86ae8d213d11951a471
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    sha256: 85ea6abcfb40e1346da6f38dad3c97bfebbb99993d5237ceb0358026d3501fb0
+    role: target
+  - path: data/ingredients/unmapped/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    sha256: 997fe910f5f0b1ecbc616496082fefaa08fb3b809afcd98a2f725659443b51f1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml
+    sha256: 4f5067b1ee47cbe920dfc989e18e495a1ea575219d5151fc8f54ee0a1cd5877f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml
+    sha256: 70316a108a327f463346cb42f58ce98f083f3b6b354e683a5a230dda22ba008f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml
+    sha256: 9a445d95db93999a2861953bcec387c7212fd965a5b8aee70db3d19c15c4f6df
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml
+    sha256: 63a3e4f42e4dfa13127a253cca16fe4605a265666026bc43b85cedbafc95170a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1118_Vitamin_Mixture.yaml
+    sha256: 8d215b6e039ff7ebdcd711f4a68412e38cffbdabf0c81e4a65e059d9989669b2
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml
+    sha256: db2acb8781510548d63f8148f215bac554c8583289ce5ae0d496193fbcbaa427
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml
+    sha256: ced38b480fb7a57faa8362bb3df67ac0c265a20dc2923659feabc00326a2e81a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1130_Vitamin_Solution_I.yaml
+    sha256: 17d2b1c408a8bf2d61635843d61ca3b30f92a51f048b9644beba9bf9e37c744b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml
+    sha256: 65812b5bc2a51018a2e0606ed156414a64f9733c33658f2f7b7af60e6b9ced63
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM923_Major_Metals_Stock.yaml
+    sha256: f75e1999a2c66118f0fc749d8b4fe20e9c2c45785047f7e1d1645c37ede5ff07
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM898_Vitamin_Solution.yaml
+    sha256: 07d57ab6312a8fe3d0182511e49adea3e7e7bd3659bab3c6841fd2a4d7b22867
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM915_Vitamin_Solution.yaml
+    sha256: fdcc0b1e1a8267acf1170e97891460f2ee72555dc5fa70a46f0dc8316e2d9909
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml
+    sha256: 244f4f42c3b00f640c165d4b558d26d5e3fe949619fb51a1803e9d60ab40ae79
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml
+    sha256: 21067756427b40510e5af972a580008ffd0b4b23b4f520e16537a3655e0c50db
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml
+    sha256: fa5869a2f809a679feff7f7c58f074fd32c1efc40e9596dd97a30e591a3edadd
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml
+    sha256: 07195fe7debafe0583588d72428999f65d0a01e5c2c75ed9b7b595cc325af250
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml
+    sha256: 73f37518ec92f98c7bb32e8d6d15ac0e85946bc7e2c366541160426a0cadd9b3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml
+    sha256: 808564e03dd9d66dcabd795be5aa2d7609420a38b9aefbecc9d895ffbd2cacbe
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_Solution.yaml
+    sha256: 7cc39f2a835f5db283cf85aa3c0e6f3a44e9977a616c84f27df855eeddfbb302
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Mineral_Base_2.yaml
+    sha256: 507e9dd99938613ca50e4c18f96f548738d523a77f0fc807b62dd99b8471a3d3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml
+    sha256: ff88641667a68f53b92085197653096925a27a46450449c795defe2d74f854ed
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml
+    sha256: 501c378191aec2ef6967754bdce4f27ca5bcf044028465f08827480acc2f2fdf
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml
+    sha256: d5bad95144efa212a063570979a8c9f2d85bf6953e7ebb407329bff90c8caff7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml
+    sha256: 5cec0aa2b6fd714e79269c13ba4d52f160846eee157a7f21b4fc3e0cbfae41ac
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml
+    sha256: c31473af8f023c6fa0f8b6bc51206cfffa1bd4d4494786b1feaa115a5707ce4c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml
+    sha256: 22c0816d4a59d84a81ade186dbc28f3e5d007e1a7c8421e5926ce852246e4485
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml
+    sha256: 71fdb715cb6de0fe66c3a566893b7fb18a38ece2eeecd1174f3d95170c967973
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml
+    sha256: c84290e3a4d4bff0c05bab944a0e3e35afa57ca26b1edfc5803b4d11ea3f9358
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml
+    sha256: 076e800c2850d826008d0a0baaf65fb124e4b98a3e384c21cd0287883e8e5355
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml
+    sha256: faeb8ee2f511c4382f39de3982af0d91951b4f4370fa543f3cc73d53e365feb3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml
+    sha256: 8957268f2bd1f476e353ef63b235c6c17b3790e30b2997b3727932f90806a57d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml
+    sha256: 48a4b2879ff93e444c27059cb98f94f0d7746d727533e2ca26d031d72bc534b5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml
+    sha256: 6516d1a4e4e1023fd6002fe728ee1aa234bb553a45fa29ed3f19fb7b6164d273
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml
+    sha256: a456e8cf2e0cc35a4caafbd847ea980ddd56072ee8f1adad3f115279e254ba1b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml
+    sha256: 815ecc27eb7b84f482786459535fd079c39525d8b63980b760d73e149e752fb8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml
+    sha256: 64ae342aa82a2711fd9bbc2aefda174a1edd5399c4286bce345b533845da5230
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml
+    sha256: 72a67ba607fdcebb0b980ede6fa8dd983509416c749bd95aa08e070a86288008
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml
+    sha256: 361ea1795a1bcd9c6306376fa7d18ab4bcc27d05b79f6d9fe920b90b34e2e3fa
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml
+    sha256: 099914b3171ed03aa7ff129dccb239f4d7c478e852473c03291b856987bd464a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml
+    sha256: 15ab83965e57361dae012d3dfba6071ec7c19f6d73f613faac2b179f84396a85
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml
+    sha256: 8b0b272de2c91fb75173d0454c01655cd211deabb23fa5fe087d9d256e50c61d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml
+    sha256: e8764ed4b0e723390eda05423315f884a30ebeebab4c6196945dbac0944887e8
+    role: target
+  - path: data/ingredients/mapped/Naoh.yaml
+    sha256: b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml
+    sha256: a81465916836d3c96601136e45f446324ff92091aeb4b9352386afe0760cee97
+    role: target
+  - path: data/ingredients/mapped/Na2moo4_X_2_H2o.yaml
+    sha256: d8ecba6c664d94d9d0f0da89410808b99c3d6ad4cfeb55f122b5df2d7d8b5612
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml
+    sha256: a85b1bdcfb6e87f41878477d5e2c087671844aaab28c11db236b8072f9abeb97
+    role: target
+  - path: data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml
+    sha256: cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml
+    sha256: 9123215c0a354e22947b3f940ec33f321a5db9b98a6a9b41f36f09f145e1c2ee
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml
+    sha256: 568bf840fa163364f3d00536adb9ef6b6662f4e4117d74b32a73827ee81982a3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml
+    sha256: 05d113e0a34366c886293f0d9713214886973ada5f595684064353c0c25cc5b4
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Kh2po4.yaml
+    sha256: 3d0229f92f67f101f4af0975821cbd5ba4e26145c0d8b7f9f5d19ca395708b27
+    role: target
+  - path: data/ingredients/mapped/Kh2po4.yaml
+    sha256: e721979cb20e8dcac144900643442d9d9e1f01e4d69b2073de8266120419f1c4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml
+    sha256: 9fa6da94e753adc5df70a2b38831644fe7264ca604c8a6baa9a322c918f50570
+    role: target
+  - path: data/ingredients/mapped/Na2s_X_9_H2o.yaml
+    sha256: e849eb5c8d5a8d977c572ee249927b7fb71b40506e23ed6fb4c30d089b5c8219
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml
+    sha256: da1673baa37eeed978b5ec7bf79f606b9a3d398eb47b69fbdd805a423e1fa3df
+    role: target
+  - path: data/ingredients/mapped/Tris_Base.yaml
+    sha256: fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml
+    sha256: ed00735f17981421a6b69b4b158a8cec91198601c2e6f1a853955399c7e8f3dc
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml
+    sha256: aec4adced072ccf3c148a4a10c6f4f33721b5e8084cb419647d326adaa2b9295
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml
+    sha256: 6937a925973335ef57255154a68a4ae529c0204d4bed064b46066fa0a4aa8f1b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/nbrc19_usb_peptic_pepton.yaml
+    sha256: f26ba69bf0d206321128fd85a961009e5d1ef94aded5f139ccdfa837a51d5d6a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/sulfide_ore.yaml
+    sha256: 5d359f882591dead79cc4430fc957c4f5fc54472a4c171a2332bfd3bfc607f2e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Cereal_Leaves.yaml
+    sha256: b1fba22ef1fa4a717e432a038707ef5fcb046e320e8803929cf8627b0cc6ba31
+    role: target
+  - path: data/ingredients/unmapped/Cereal_Leaves.yaml
+    sha256: f6c3584ff828b32a718c7767070c17108388645934d3aef3515b3ff734242616
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1938_homopipes_0_5m_ph5_4.yaml
+    sha256: 36ff78d22c89f985aa00b10cf15d7125964cc405df0cea290c1a7750cebd3972
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/DL_Asparagine_Monohydrate.yaml
+    sha256: 7da9966c7a23cdc62b79586bcdb59a44fd27d650f596a1d3997bdae16e9aa0b7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml
+    sha256: c3abed5996fc15ad308c159b0370460ccdaf241f1cea2c4b822b7629fc5ab103
+    role: target
+  - path: data/ingredients/mapped/Beta-nad.yaml
+    sha256: 0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml
+    sha256: f85d2e05b36fc977caac110157f4e8e32bf2acf927cc2ff2f8ff5dd034803619
+    role: target
+  - path: data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml
+    sha256: d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml
+    sha256: 81b554525bf72f919ad9bf47f9ca35c94a9490a3684e52e8638eb90b3917c1b8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml
+    sha256: a615d98d9e8140d38244a9398d16286bc731af03df5a60e87a8e94c4ee192506
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_agar.yaml
+    sha256: 2eae39fd5af4ae11cd77d4ddeee44eff567947401f99158a7460aa358242205d
+    role: target
+  - path: data/ingredients/mapped/R2A_agar.yaml
+    sha256: 3f30f8d570aa668cf5fcd5dbccbce6753712cc2103feacef2deee378e502ed90
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/denger2010_racemic_sodium_sulfolactate.yaml
+    sha256: e40ef291ff85d94cfc157d6641a82f2ddbd654ec6059ddfcce07d060e7494a47
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Trypticase_Soy_Broth.yaml
+    sha256: cbc788c1a9ce7cea22a92b4360bad7c113f0e99c2cf5a1ecbbd3a0e79f99aa6c
+    role: target
+  - path: data/ingredients/unmapped/Trypticase_Soy_Broth.yaml
+    sha256: 217e88e15c71823e46aa27998777a68fa5345302fe595c638227511a2d5adc88
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Sodium_Lactate.yaml
+    sha256: 6d13f67992cf49693b79f411484e2f9fa2ac5aefc47e55bf78410319dae4ad6f
+    role: target
+  - path: data/ingredients/mapped/Sodium_Lactate.yaml
+    sha256: 56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml
+    sha256: 4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91
+    role: target
+  - path: data/ingredients/mapped/Soy_Peptone.yaml
+    sha256: 54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Plain_Flour.yaml
+    sha256: 5aac8116ef12fe8bf6f39f3848440a074cbabf1cbe256ec7fee168851d70c6d3
+    role: target
+  - path: data/ingredients/unmapped/Plain_Flour.yaml
+    sha256: becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1140_amphotericin_stock_10mg_ml.yaml
+    sha256: edd199d8a7cfcd99ec08c2a8920a62b996b99e996525dc15c9da1dbd3093e036
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Fe4_Po42.yaml
+    sha256: a882afca6a6b8b67c46e7ac6f4ef1a9cb7125319a5ac7d4ba05b7941756e5d4a
+    role: target
+  - path: data/ingredients/mapped/Fe4_Po42.yaml
+    sha256: 7753c9cc1725ebf5abcb935bdb2b6d9a96804eec5bbfb0ad8a0af3e322ebb81a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml
+    sha256: b6be1c47bc9a9247bca3dffc2409382ce89d2e55c594724332dcfb8a061e0b09
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml
+    sha256: 098f1e4645ec33bb074296f4585c191ed8802c56f9f21efd3629048513555c8e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml
+    sha256: 2e7d8b8084ef054cb6f7880af5558ba394033a39d0e2614ccad6d9a93e1ec0ee
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml
+    sha256: 0aa699c355adee9161a6778c5ee892e07d5f85b2cf90494dea6b31f9072f0256
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml
+    sha256: df98f05e075917d533c2e21dc7d6ba8f835a7169d1b57de3dc9d3ea25e0f04e5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M2567_Mineral_Base_B.yaml
+    sha256: 9a622201a834e2aa4ef17bbacb1744500b40958d555f33622ba78953cbb9c38d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM628_Top_Layer.yaml
+    sha256: 494a731ee510d784117c9afab83e8b9c1c991c73a565dfcf77c595b57a4cd92b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM629_Top_Layer.yaml
+    sha256: 3d740c2f641e70aafb9da85386379ad6ec749a9efed22aee45d4edc59116aa95
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1020_Vitamin_Solution.yaml
+    sha256: 60ef48ad8288ee1882d9a95ce6150a6bc22ca76c92856a6548ef25f1f3f3ebf7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1226_Vitamin_Solution.yaml
+    sha256: 37de01d1130a7faa1b588da1e6ee7cdcfcc9db111753e63e0094ecddced3c056
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC903_Vitamin_Solution.yaml
+    sha256: fa908ae82f6299b49c9a0482a402949c660ab313fdd068cf65ada44c77b40006
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml
+    sha256: 649355ae72158b74531da36d9342baa19e230609083e03f6a9d0937b6543e0fe
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Gibco11120_MEM_Vitamin_Solution_100X.yaml
+    sha256: d259284376e1dd12b57b8dfa415f2ea46e5f79d1e25a1c222ca41e066377e69c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM510_Methane_Air_50_50.yaml
+    sha256: 8caacd984fd65632058b6b045c609099abf8217de00d3eda3eee884ed7f120ef
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml
+    sha256: b354c025c5af2e0262c2ae5194f2d10a6adf16031e69c171e2111f405141a3cb
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml
+    sha256: 77f56259a0311c636b25750ca0ea3fea236fa857d3f0a2de43a93e2082b7d840
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml
+    sha256: 2161526aaf27c96824fd1cb2154f324568b41e5fb5a183487420d8121ccf8426
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml
+    sha256: fb3fa662f8c8b4a687aa0a2039c9a3ce267bfefa91e32a8fd0b492df47ca9b12
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml
+    sha256: 39a00b197bdfea2b54061a4bf1e7dc6fbe829c4645c9ba327687ecf7f4b1d863
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml
+    sha256: 4f74332fe3d22bdd2c769503a428930a5a150f9331d61af4f4a4b6ce66a77271
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml
+    sha256: 5884dfe7efb9e9f007d49d04b96a53e0b983260d98881ac84142c72ce71fcf01
+    role: target
+  - path: data/ingredients/mapped/Thauers_Vitamin_Mix.yaml
+    sha256: 6f26792c1adf5d2342d0a46faf9f65b9967167d3d5f69f83793c27752c65a90e
+    role: context
+targets:
+- target_id: CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6]
+  label: laminarin (brown algae)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9]
+  label: 1 M KH2PO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6]
+  label: Vitamins mix solution
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd]
+  label: 2N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a]
+  label: 10 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316]
+  label: sodium nicotinate
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54]
+  label: K2HPO4 (anhydrous base)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499]
+  label: Vitamin K1 solution
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275]
+  label: (NH4)MgPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7]
+  label: Vitamin B12 (0.002% (w/v))
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45]
+  label: Na2S・9H2O (10%, w/v)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be]
+  label: Vitamin solution No. 6
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e]
+  label: 0.01% Vitamin B12 solution
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4]
+  label: Soya flour
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df]
+  label: Mineral base 1*
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e]
+  label: 0.1% Vitamin K1
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733]
+  label: 0.2NKOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41]
+  label: Vitamin B12 (2 mg/ml)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596]
+  label: Vitamin B12 solution* (see Medium No. 403 )
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216]
+  label: Vitamin mixture (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e]
+  label: KH2PO4 x 7 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13]
+  label: EDTA・Na2
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e]
+  label: SL10 elements (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468]
+  label: Ethane
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e]
+  label: Nalidixic acid
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b]
+  label: iso -Valeric acid
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb]
+  label: Component III
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5]
+  label: 5.0 mM Toluene (water--saturated)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc]
+  label: 1 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e]
+  label: Wolin's vitamin solution (10x)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49]
+  label: Na2Mo4O4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08]
+  label: Vitamin B12 solution******
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758]
+  label: Difco 0003 or Difco 0001
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd]
+  label: Na2NPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a]
+  label: 50mM Na2HPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378]
+  label: 6N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439]
+  label: MnSO .7H O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909]
+  label: EDTA·Na2
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028]
+  label: Vitamin solution* (see Medium No. 403 )
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378]
+  label: Vitamin B12/corrinoid supplement
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6]
+  label: 5% Na2S·9H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb]
+  label: n--Valeric acid
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380]
+  label: Vitamin solution B (1000 x stock)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf]
+  label: Na2S . 9H2O (2.5%)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45]
+  label: 5% Na2S・9H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda]
+  label: Vitamin K1 (1% solution)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05]
+  label: 0.1N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0]
+  label: NaHPO4・12H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877]
+  label: KH2PO4・2H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f]
+  label: Vitamin solution (see Medium No. 403)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394]
+  label: Fluid thioglycolate (BD-BBL)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9]
+  label: 1 M K2HPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4]
+  label: Mineral base D
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae]
+  label: Na2S2O3・5H2O(final conc.)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec]
+  label: iso--Valeric acid
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab]
+  label: Na
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7]
+  label: 1N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03]
+  label: KH2PO4 x 2 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22]
+  label: 100 x Vitamin mixture (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f]
+  label: 2 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51]
+  label: Vitamin solution***
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521]
+  label: Na2S x 9 H2O 3.00 g
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757]
+  label: Tris (hydroxymethyl aminomethane) 3.00 g
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69]
+  label: K2HPO4·7H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca]
+  label: Vitamin B6 supplement
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f]
+  label: Vitamin mixture(see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d]
+  label: methane--air (50:50)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f]
+  label: EDTA・2Na・2H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297]
+  label: 5% Na2S・9H2O (autoclaved)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959]
+  label: Na-PO4 (pH 7.5)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d]
+  label: SL10
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b]
+  label: R2A
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f]
+  label: NaNH4HPO4 . 4H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072]
+  label: Mineral base 2**
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f]
+  label: R2A (Difco)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099]
+  label: Peptic Pepton (USB)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3]
+  label: 1M KH2PO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683]
+  label: sulfide ore
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6]
+  label: Mineral base B
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c]
+  label: Vitamin mixture solution* (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba]
+  label: 0.1 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71]
+  label: dTMP
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b]
+  label: RST vitamin solution* (see Medium No. 1097 )
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b]
+  label: Glycine betaine
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573]
+  label: 3-Sulfolactate
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f]
+  label: Mineral base A
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5]
+  label: N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb]
+  label: Vitamin solution I (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8]
+  label: Na2S2O4 x 2 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7]
+  label: Top layer
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde]
+  label: H3BO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e]
+  label: CO
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c]
+  label: Vitamin B12 (20 μg/ml) (filter--sterilized)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6]
+  label: 8 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2]
+  label: Vitamin solution*
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020]
+  label: Na2S2O4・2H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce]
+  label: 1M Na2HPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16]
+  label: KH2PO4 (dissolve first, adjust pH to 7.0)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3]
+  label: Volatile fatty acid mixture
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e]
+  label: 0.2 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082]
+  label: CaCl
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8]
+  label: H2O (deionized)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c]
+  label: 5% Na2S . 9H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793]
+  label: 2.5% Na2S . 9H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623]
+  label: K2PO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a]
+  label: Vitamin B12 (2 mg/100 ml)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533]
+  label: Mineral base C
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41]
+  label: NaNH4HPO4 x 4 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604]
+  label: n -Valeric acid
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03]
+  label: Artificial marine water
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724]
+  label: Vitamin solution A (1000 x stock)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86]
+  label: Vitamin solution****
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f]
+  label: Major metals (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2]
+  label: Trimethylglycine
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43]
+  label: Vitamin supplement (ATCC)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20]
+  label: 100X MEM Vitamins (Gibco)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563]
+  label: K2HPO4·7H2O (6 g/L)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506]
+  label: Vitamin solution**
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1]
+  label: Vitamin mixture solution* (see Medium No. 1363 )
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118]
+  label: Vitamin solution (see Medium No. 898 )
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b]
+  label: Vitamin solution* (see Medium No. 915 )
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9]
+  label: Trypticase Soy (BBL)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563]
+  label: Na2S・9H2O (final conc.)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc]
+  label: Na2S・9H2O(final conc.)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff]
+  label: Menadione (Vitamin K3)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1]
+  label: Vitamin B12 solution (see Medium No. 403)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7]
+  label: ZnCI2
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc]
+  label: 0.5 M Glycine--NaOH buffer (pH 10.0)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6]
+  label: Cereal grass leaves
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd]
+  label: Hutner's vitamin free mineral base (see below)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa]
+  label: 0.5 N NaOH
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c]
+  label: Methane gas
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe]
+  label: Vitamin B12 (0.1 mg/ml, filter sterilized)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223]
+  label: Na2S・9H2O (final concentration)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083]
+  label: Pyroroquinoline quinone (PQQ)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7]
+  label: 50mM NaH2PO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307]
+  label: L-Asparagine*H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc]
+  label: Methanethiol
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97]
+  label: Thauers vitamins
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188]
+  label: 24% Na2S・9H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9]
+  label: Tris (Hydroxymethyl) Aminomethane HCl
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5]
+  label: Na2S2O3・5H2O (final conc.)
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f]
+  label: Na2HPO4 x H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3]
+  label: 6-methylnicotinate
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39]
+  label: Na2HPO4 x 6 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8]
+  label: Na-stearate
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2]
+  label: Vitamin B12 solution see Medium No. 403
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309]
+  label: NH4MgPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5]
+  label: KH2PO4 x 2 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83]
+  label: NH42HPO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b]
+  label: DL-Na-lactate
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e]
+  label: Na2S x H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75]
+  label: ß-nicotinamide adenine dinucleotide
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c]
+  label: H3BO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee]
+  label: Soytone
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c]
+  label: Glycyl-glycine
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02]
+  label: cytovirin
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8]
+  label: Soya flour
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac]
+  label: Na2HPO4 x 7 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67]
+  label: Bacto Soytone
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830]
+  label: Alpha-hydroxyglutarate-gamma-lactone
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb]
+  label: Linsmaier & Skoog Med. incl. vitamins
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db]
+  label: K2HPO4 x 3 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26]
+  label: Na2S2O4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545]
+  label: chlororaphin
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578]
+  label: NaH2PO4 x 2 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997]
+  label: Glycerol-asparagine agar
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52]
+  label: SL10
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30]
+  label: HOMOPIPES
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e]
+  label: KH2PO4 x 7 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05]
+  label: NaNH4HPO4 x 4 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4]
+  label: Na2HPO4 x 12 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb]
+  label: KH2PO4
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184]
+  label: Se-acid
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185]
+  label: Alpha-hydroxyglutarate-gamma-lactone
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c]
+  label: chlororaphin
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3]
+  label: primocarcin
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04]
+  label: NaH2PO4 x H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991]
+  label: Na2S2O3
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49]
+  label: Na2Mo4 x 2 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e]
+  label: Plain flour
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd]
+  label: DL-Asparagine x H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45]
+  label: Na2S2O4 x 2 H2O
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0]
+  label: Amphotericin
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630]
+  label: MES Hydrat
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b]
+  label: Vitamine B12
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b]
+  label: Fe4PO42
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  path: reports/all_unmatched_20261107/worker-08/provenance/shard-08.json
+  selector: cases[case_id=KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0]
+  label: D-Trehalose
+  kind: source
+  ownership_note: Frozen source-case row; source identity/occurrence decision does
+    not invent a maintained owner or release approval.
+- target_id: if-add-anhydrous-k2hpo4
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/K2hpo4.yaml
+  label: if-add-anhydrous-k2hpo4
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/K2hpo4.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if-reject-monohydrate-on-dihydrate
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Nah2po4_X_2_H2o.yaml
+  label: if-reject-monohydrate-on-dihydrate
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nah2po4_X_2_H2o.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if-add-mono-source-spelling
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_phosphate_monobasic_monohydrate.yaml
+  label: if-add-mono-source-spelling
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if-repair-dithionite-Na2s2o4
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2s2o4.yaml
+  label: if-repair-dithionite-Na2s2o4
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2s2o4.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if-repair-dithionite-Sodium_Dithionite
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Dithionite.yaml
+  label: if-repair-dithionite-Sodium_Dithionite
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Dithionite.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if-new-sodium-ammonium-phosphate-tetrahydrate
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml
+  label: if-new-sodium-ammonium-phosphate-tetrahydrate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Sodium_Ammonium_Hydrogenphosphate_Tetrahydrate.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if-add-edta-disodium-dihydrate-spelling
+  path: reports/all_unmatched_20261107/worker-08/research/inorganic_forms/proposed_owners/Na2edta2h2o.yaml
+  label: if-add-edta-disodium-dihydrate-spelling
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2edta2h2o.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op-valeric-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Valeric_Acid.yaml
+  label: op-valeric-alias
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Valeric_Acid.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op-isovaleric-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Isovaleric_Acid.yaml
+  label: op-isovaleric-alias
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Isovaleric_Acid.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op-methane-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methane.yaml
+  label: op-methane-alias
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Methane.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op-soy-flour-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml
+  label: op-soy-flour-alias
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soy_Flour.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op-l-asn-hydrate-alias
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml
+  label: op-l-asn-hydrate-alias
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-Asparagine_Monohydrate.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op-ethane-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Ethane.yaml
+  label: op-ethane-new
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Ethane.yaml. No
+    maintained owner exists in frozen baseline; integration must reconcile exact source
+    membership and duplicates.'
+- target_id: op-nalidixic-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Nalidixic_Acid.yaml
+  label: op-nalidixic-new
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Nalidixic_Acid.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op-glycine-betaine-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml
+  label: op-glycine-betaine-new
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Glycine_Betaine.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op-methanethiol-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Methanethiol.yaml
+  label: op-methanethiol-new
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Methanethiol.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op-sodium-nicotinate-new
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Sodium_Nicotinate.yaml
+  label: op-sodium-nicotinate-new
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Sodium_Nicotinate.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op-glycerol-asparagine-source-note
+  path: reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml
+  label: op-glycerol-asparagine-source-note
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: vm-prop-menadione
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml
+  label: vm-prop-menadione
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menadione.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: vm-prop-jcm403-vitamin
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_Solution_See_Medium_No_403.yaml
+  label: vm-prop-jcm403-vitamin
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vitamin_Solution_See_Medium_No_403.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: vm-prop-jcm403-b12
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Vitamin_B12_Solution_See_Medium_No_403.yaml
+  label: vm-prop-jcm403-b12
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Vitamin_B12_Solution_See_Medium_No_403.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: vm-prop-linsmaier-skoog
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners_v2/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+  label: vm-prop-linsmaier-skoog
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Linsmaier_Skoog_Medium_Including_Vitamins.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: vm-prop-new-2
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM296_Vitamins_Mix_Solution.yaml
+  label: vm-prop-new-2
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM296_Vitamins_Mix_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-11
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM995_Vitamin_Solution_No6.yaml
+  label: vm-prop-new-11
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM995_Vitamin_Solution_No6.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-42
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_B_1000x.yaml
+  label: vm-prop-new-42
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1100_Vitamin_Solution_B_1000x.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-58
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM848_Vitamin_Mixture_100x.yaml
+  label: vm-prop-new-58
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM848_Vitamin_Mixture_100x.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-65
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1118_Vitamin_Mixture.yaml
+  label: vm-prop-new-65
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1118_Vitamin_Mixture.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-79
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1363_Vitamin_Mixture_Solution.yaml
+  label: vm-prop-new-79
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1363_Vitamin_Mixture_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-82
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1097_RST_Vitamin_Solution.yaml
+  label: vm-prop-new-82
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1097_RST_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-87
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1130_Vitamin_Solution_I.yaml
+  label: vm-prop-new-87
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1130_Vitamin_Solution_I.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-110
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM1100_Vitamin_Solution_A_1000x.yaml
+  label: vm-prop-new-110
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1100_Vitamin_Solution_A_1000x.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-112
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM923_Major_Metals_Stock.yaml
+  label: vm-prop-new-112
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM923_Major_Metals_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-119
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM898_Vitamin_Solution.yaml
+  label: vm-prop-new-119
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM898_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-120
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM915_Vitamin_Solution.yaml
+  label: vm-prop-new-120
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM915_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-129
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml
+  label: vm-prop-new-129
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-7
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ125_Vitamin_K1_Solution.yaml
+  label: vm-prop-new-7
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/DSMZ125_Vitamin_K1_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-29
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml
+  label: vm-prop-new-29
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/DSMZ5980_Wolins_Vitamin_Solution_10x.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-98
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml
+  label: vm-prop-new-98
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/DSMZ608_Volatile_Fatty_Acid_Mixture.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-26
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml
+  label: vm-prop-new-26
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/ATCC1249_Component_III.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-31
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_B12_Solution.yaml
+  label: vm-prop-new-31
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1321_Vitamin_B12_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-111
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1321_Vitamin_Solution.yaml
+  label: vm-prop-new-111
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1321_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-73
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/NBRC1356_Mineral_Base_2.yaml
+  label: vm-prop-new-73
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1356_Mineral_Base_2.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-52
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_D.yaml
+  label: vm-prop-new-52
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/TOGO_M2567_Mineral_Base_D.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm-prop-new-106
+  path: reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_C.yaml
+  label: vm-prop-new-106
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/TOGO_M2567_Mineral_Base_C.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-deionized_water
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml
+  label: if1201-new-deionized_water
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/deionized_water.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-dsmz_trace_2n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml
+  label: if1201-new-dsmz_trace_2n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/dsmz_trace_2n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_1130_10n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml
+  label: if1201-new-jcm_1130_10n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_1130_10n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-atcc_nitrosolobus_6n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml
+  label: if1201-new-atcc_nitrosolobus_6n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/atcc_nitrosolobus_6n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-pcr_s11_01n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml
+  label: if1201-new-pcr_s11_01n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/pcr_s11_01n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-dsmz_104_8n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml
+  label: if1201-new-dsmz_104_8n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/dsmz_104_8n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_221_02n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml
+  label: if1201-new-jcm_221_02n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_221_02n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-wolin_mineral_05n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml
+  label: if1201-new-wolin_mineral_05n_naoh
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/wolin_mineral_05n_naoh.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-atcc_1340_naoh_4g_100ml
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml
+  label: if1201-new-atcc_1340_naoh_4g_100ml
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/atcc_1340_naoh_4g_100ml.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_574_1m_kh2po4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml
+  label: if1201-new-jcm_574_1m_kh2po4
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_574_1m_kh2po4.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_574_1m_k2hpo4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml
+  label: if1201-new-jcm_574_1m_k2hpo4
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_574_1m_k2hpo4.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-pbbm_1m_na2hpo4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml
+  label: if1201-new-pbbm_1m_na2hpo4
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/pbbm_1m_na2hpo4.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-pcr_s11_50mm_nah2po4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml
+  label: if1201-new-pcr_s11_50mm_nah2po4
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/pcr_s11_50mm_nah2po4.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-pcr_s11_50mm_na2hpo4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml
+  label: if1201-new-pcr_s11_50mm_na2hpo4
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/pcr_s11_50mm_na2hpo4.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml
+  label: if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/pcr_s11_sodium_phosphate_buffer_ph75.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-allen_m2231_phosphate_stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml
+  label: if1201-new-allen_m2231_phosphate_stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/allen_m2231_phosphate_stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_908_sulfide_10pct_wv
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml
+  label: if1201-new-jcm_908_sulfide_10pct_wv
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_908_sulfide_10pct_wv.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_713_sulfide_24pct
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml
+  label: if1201-new-jcm_713_sulfide_24pct
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_713_sulfide_24pct.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-atcc_1943_sulfide_25pct
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml
+  label: if1201-new-atcc_1943_sulfide_25pct
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/atcc_1943_sulfide_25pct.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-edit-naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml
+  label: if1201-edit-naoh
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Naoh.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if1201-edit-na2moo4_x_2_h2o
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml
+  label: if1201-edit-na2moo4_x_2_h2o
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2moo4_X_2_H2o.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if1201-edit-na2hpo4_x_12_h2o
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml
+  label: if1201-edit-na2hpo4_x_12_h2o
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if1201-new-atcc_1942_sulfide_5pct
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml
+  label: if1201-new-atcc_1942_sulfide_5pct
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/atcc_1942_sulfide_5pct.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-mediadive_552_thiosulfate_5g_100ml
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml
+  label: if1201-new-mediadive_552_thiosulfate_5g_100ml
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/mediadive_552_thiosulfate_5g_100ml.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-new-jcm_941_solution_c
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml
+  label: if1201-new-jcm_941_solution_c
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm_941_solution_c.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: if1201-edit-kh2po4-alias-scope
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Kh2po4.yaml
+  label: if1201-edit-kh2po4-alias-scope
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kh2po4.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if1201-edit-nonahydrate-stock-aliases
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml
+  label: if1201-edit-nonahydrate-stock-aliases
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2s_X_9_H2o.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: if1201-edit-tris-alias-scope
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml
+  label: if1201-edit-tris-alias-scope
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tris_Base.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-glycine-naoh-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml
+  label: op1201-glycine-naoh-stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-indicator-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml
+  label: op1201-indicator-stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/togo_m2844_bromothymol_blue_koh_stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-toluene-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml
+  label: op1201-toluene-stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/jcm600_water_saturated_toluene_stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-usb-peptic-pepton
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/nbrc19_usb_peptic_pepton.yaml
+  label: op1201-usb-peptic-pepton
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/nbrc19_usb_peptic_pepton.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-sulfide-ore
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/sulfide_ore.yaml
+  label: op1201-sulfide-ore
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/sulfide_ore.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-cereal-leaves
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Cereal_Leaves.yaml
+  label: op1201-cereal-leaves
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Cereal_Leaves.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-homopipes-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1938_homopipes_0_5m_ph5_4.yaml
+  label: op1201-homopipes-stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/mediadive1938_homopipes_0_5m_ph5_4.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-dl-asparagine-monohydrate
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/DL_Asparagine_Monohydrate.yaml
+  label: op1201-dl-asparagine-monohydrate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/DL_Asparagine_Monohydrate.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-beta-nad-provenance
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml
+  label: op1201-beta-nad-provenance
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-nad.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-laminarin-scope
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml
+  label: op1201-laminarin-scope
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-bbl-fluid-thioglycollate
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml
+  label: op1201-bbl-fluid-thioglycollate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/bbl_fluid_thioglycollate_bd211260.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-r2a-medium
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml
+  label: op1201-r2a-medium
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/R2A_medium.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-r2a-agar-provenance
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_agar.yaml
+  label: op1201-r2a-agar-provenance
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/R2A_agar.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-racemic-sodium-sulfolactate
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/denger2010_racemic_sodium_sulfolactate.yaml
+  label: op1201-racemic-sodium-sulfolactate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/denger2010_racemic_sodium_sulfolactate.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-trypticase-soy-broth
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Trypticase_Soy_Broth.yaml
+  label: op1201-trypticase-soy-broth
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Trypticase_Soy_Broth.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-sodium-lactate-alias-boundary
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Sodium_Lactate.yaml
+  label: op1201-sodium-lactate-alias-boundary
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Lactate.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-soy-family-source-boundary
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml
+  label: op1201-soy-family-source-boundary
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soy_Peptone.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-plain-flour
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Plain_Flour.yaml
+  label: op1201-plain-flour
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Plain_Flour.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: op1201-amphotericin-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1140_amphotericin_stock_10mg_ml.yaml
+  label: op1201-amphotericin-stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/mediadive1140_amphotericin_stock_10mg_ml.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: op1201-ferric-pyrophosphate-label
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Fe4_Po42.yaml
+  label: op1201-ferric-pyrophosphate-label
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fe4_Po42.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+- target_id: vm1201-prop-jcm1023-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml
+  label: vm1201-prop-jcm1023-vitamin
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1023_Vitamin_Mixture.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm903-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml
+  label: vm1201-prop-jcm903-vitamin
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM903_Vitamin_Mixture.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm554-sl10
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml
+  label: vm1201-prop-jcm554-sl10
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM554_SL10_Elements_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-nbrc1356-mineral-base1
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml
+  label: vm1201-prop-nbrc1356-mineral-base1
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1356_Mineral_Base1_Supernatant.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-yps-basea
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml
+  label: vm1201-prop-yps-basea
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/TOGO_M2567_Mineral_Base_A.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-yps-baseb
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M2567_Mineral_Base_B.yaml
+  label: vm1201-prop-yps-baseb
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/TOGO_M2567_Mineral_Base_B.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm628-toplayer
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM628_Top_Layer.yaml
+  label: vm1201-prop-jcm628-toplayer
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM628_Top_Layer.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm629-toplayer
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM629_Top_Layer.yaml
+  label: vm1201-prop-jcm629-toplayer
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM629_Top_Layer.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-nbrc1020-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1020_Vitamin_Solution.yaml
+  label: vm1201-prop-nbrc1020-vitamin
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1020_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-nbrc1226-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1226_Vitamin_Solution.yaml
+  label: vm1201-prop-nbrc1226-vitamin
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1226_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-nbrc903-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC903_Vitamin_Solution.yaml
+  label: vm1201-prop-nbrc903-vitamin
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC903_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-nbrc-common9
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml
+  label: vm1201-prop-nbrc-common9
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/NBRC1356_Vitamin_Solution.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-gibco11120-mem100x
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Gibco11120_MEM_Vitamin_Solution_100X.yaml
+  label: vm1201-prop-gibco11120-mem100x
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/Gibco11120_MEM_Vitamin_Solution_100X.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm510-methane-air
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM510_Methane_Air_50_50.yaml
+  label: vm1201-prop-jcm510-methane-air
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM510_Methane_Air_50_50.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm515-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml
+  label: vm1201-prop-jcm515-b12-partial
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM515_Vitamin_B12_20ug_ml_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm647-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml
+  label: vm1201-prop-jcm647-b12-partial
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM647_Vitamin_B12_2mg_ml_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-jcm1354-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml
+  label: vm1201-prop-jcm1354-b12-partial
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/JCM1354_Vitamin_B12_001percent_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-atcc2883-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml
+  label: vm1201-prop-atcc2883-b12-partial
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-togo125-k1-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml
+  label: vm1201-prop-togo125-k1-partial
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/TOGO_M125_Vitamin_K1_01percent_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-dsm1245-k1-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml
+  label: vm1201-prop-dsm1245-k1-partial
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: 'Proposed new owner only: data/ingredients/mapped/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml.
+    No maintained owner exists in frozen baseline; integration must reconcile exact
+    source membership and duplicates.'
+- target_id: vm1201-prop-thauers-source-comparison
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml
+  label: vm1201-prop-thauers-source-comparison
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Thauers_Vitamin_Mix.yaml
+    role: Frozen maintained preimage; candidate delta not applied
+scope:
+  description: All188frozen source cases and113complete selected candidate payloads,
+    authoritative worker08 successor only.
+  selection: Exact immutable assignment, full ordered shard08 and active successor
+    proposal index; no sampling or superseded draft selection.
+  coverage: full
+  population_size: 301
+  reviewed_target_ids:
+  - CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  - CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  - CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  - CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  - CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  - CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  - CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  - CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  - CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  - CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  - CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  - CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  - CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  - CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  - CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  - CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  - CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  - CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  - CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  - CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  - CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  - CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  - CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  - CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  - CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  - CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  - CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  - CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  - CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  - CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  - CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  - CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  - CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  - CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  - CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  - CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  - CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  - CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  - CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  - CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  - CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  - CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  - CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  - CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  - CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  - CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  - CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  - CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  - CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  - CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  - CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  - CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  - CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  - CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  - CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  - CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  - CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  - CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  - CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  - CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  - CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  - CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  - CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  - CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  - CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  - CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  - CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  - CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  - CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  - CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  - CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  - CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  - CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  - CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  - CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  - CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  - CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  - CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  - CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  - CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  - CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  - CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  - CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  - CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  - CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  - CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  - CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  - CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  - CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  - CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  - CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  - CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  - CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  - CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  - CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  - CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  - CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  - CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  - CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  - CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  - CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  - CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  - CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  - CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  - CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  - CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  - CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  - CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  - CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  - CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  - CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  - CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  - CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  - CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  - CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  - CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  - CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  - CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  - CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  - CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  - CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  - CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  - CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  - CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  - CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  - CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  - CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  - CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  - CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  - CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  - CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  - CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  - KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  - KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  - KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  - KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  - KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  - KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  - KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  - KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  - KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  - KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  - KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  - KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  - KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  - KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  - KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  - KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  - KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  - KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  - KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  - KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  - KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  - KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  - KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  - KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  - KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  - KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  - KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  - KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  - KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  - KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  - KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  - KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  - KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  - KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  - KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  - KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  - KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  - KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  - KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  - KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  - KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  - KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  exclusions:
+  - target: Whole-owner roles, supported export and final cross-shard coalescence
+    reason: Separate content-bound integration and release gates; all holds retained.
+checks:
+- check_id: transport
+  name: Historical input, capture and predecessor integrity
+  status: passed
+  required: true
+  command: verify_transport.py
+  exit_code: 0
+  summary: Historical input, capture and predecessor integrity; limited to declared
+    mechanics, not chemistry or export approval.
+  target_ids:
+  - CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  - CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  - CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  - CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  - CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  - CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  - CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  - CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  - CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  - CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  - CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  - CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  - CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  - CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  - CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  - CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  - CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  - CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  - CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  - CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  - CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  - CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  - CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  - CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  - CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  - CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  - CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  - CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  - CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  - CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  - CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  - CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  - CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  - CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  - CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  - CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  - CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  - CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  - CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  - CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  - CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  - CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  - CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  - CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  - CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  - CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  - CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  - CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  - CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  - CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  - CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  - CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  - CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  - CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  - CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  - CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  - CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  - CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  - CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  - CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  - CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  - CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  - CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  - CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  - CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  - CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  - CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  - CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  - CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  - CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  - CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  - CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  - CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  - CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  - CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  - CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  - CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  - CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  - CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  - CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  - CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  - CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  - CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  - CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  - CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  - CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  - CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  - CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  - CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  - CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  - CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  - CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  - CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  - CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  - CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  - CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  - CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  - CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  - CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  - CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  - CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  - CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  - CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  - CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  - CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  - CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  - CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  - CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  - CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  - CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  - CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  - CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  - CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  - CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  - CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  - CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  - CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  - CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  - CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  - CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  - CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  - CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  - CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  - CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  - CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  - CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  - CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  - CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  - CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  - CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  - CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  - CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  - KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  - KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  - KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  - KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  - KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  - KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  - KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  - KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  - KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  - KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  - KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  - KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  - KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  - KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  - KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  - KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  - KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  - KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  - KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  - KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  - KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  - KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  - KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  - KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  - KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  - KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  - KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  - KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  - KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  - KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  - KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  - KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  - KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  - KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  - KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  - KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  - KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  - KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  - KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  - KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  - KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  - KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-TRANSPORT
+- check_id: strict
+  name: Native strict schema for all selected payloads
+  status: passed
+  required: true
+  command: 'fresh_structural_checks.py: native validate_strict.validate_one'
+  exit_code: 0
+  summary: Native strict schema for all selected payloads; limited to declared mechanics,
+    not chemistry or export approval.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-STRICT
+- check_id: partonomy
+  name: Native full-catalog partonomy with in-memory proposal overlay
+  status: passed
+  required: true
+  command: 'fresh_structural_checks.py: native validate_component_partonomy'
+  exit_code: 0
+  summary: Native full-catalog partonomy with in-memory proposal overlay; limited
+    to declared mechanics, not chemistry or export approval.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-PARTONOMY
+- check_id: native
+  name: Author native schema, renderer, input hashes and scope
+  status: passed
+  required: true
+  command: check_native_integrity.py
+  exit_code: 0
+  summary: Author native schema, renderer, input hashes and scope; limited to declared
+    mechanics, not chemistry or export approval.
+  target_ids:
+  - CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  - CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  - CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  - CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  - CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  - CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  - CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  - CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  - CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  - CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  - CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  - CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  - CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  - CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  - CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  - CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  - CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  - CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  - CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  - CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  - CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  - CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  - CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  - CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  - CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  - CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  - CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  - CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  - CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  - CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  - CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  - CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  - CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  - CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  - CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  - CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  - CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  - CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  - CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  - CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  - CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  - CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  - CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  - CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  - CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  - CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  - CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  - CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  - CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  - CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  - CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  - CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  - CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  - CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  - CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  - CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  - CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  - CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  - CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  - CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  - CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  - CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  - CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  - CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  - CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  - CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  - CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  - CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  - CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  - CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  - CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  - CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  - CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  - CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  - CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  - CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  - CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  - CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  - CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  - CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  - CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  - CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  - CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  - CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  - CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  - CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  - CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  - CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  - CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  - CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  - CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  - CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  - CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  - CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  - CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  - CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  - CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  - CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  - CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  - CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  - CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  - CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  - CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  - CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  - CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  - CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  - CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  - CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  - CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  - CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  - CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  - CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  - CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  - CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  - CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  - CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  - CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  - CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  - CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  - CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  - CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  - CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  - CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  - CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  - CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  - CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  - CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  - CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  - CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  - CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  - CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  - CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  - KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  - KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  - KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  - KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  - KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  - KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  - KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  - KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  - KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  - KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  - KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  - KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  - KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  - KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  - KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  - KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  - KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  - KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  - KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  - KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  - KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  - KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  - KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  - KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  - KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  - KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  - KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  - KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  - KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  - KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  - KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  - KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  - KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  - KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  - KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  - KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  - KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  - KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  - KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  - KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  - KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  - KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-NATIVE
+- check_id: controls
+  name: Meaningful native authoring controls
+  status: passed
+  required: true
+  command: native-controls/replay_controls.py
+  exit_code: 0
+  summary: Meaningful native authoring controls; limited to declared mechanics, not
+    chemistry or export approval.
+  target_ids:
+  - CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  - CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  - CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  - CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  - CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  - CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  - CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  - CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  - CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  - CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  - CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  - CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  - CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  - CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  - CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  - CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  - CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  - CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  - CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  - CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  - CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  - CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  - CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  - CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  - CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  - CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  - CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  - CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  - CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  - CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  - CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  - CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  - CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  - CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  - CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  - CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  - CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  - CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  - CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  - CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  - CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  - CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  - CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  - CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  - CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  - CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  - CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  - CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  - CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  - CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  - CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  - CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  - CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  - CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  - CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  - CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  - CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  - CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  - CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  - CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  - CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  - CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  - CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  - CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  - CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  - CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  - CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  - CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  - CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  - CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  - CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  - CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  - CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  - CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  - CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  - CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  - CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  - CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  - CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  - CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  - CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  - CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  - CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  - CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  - CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  - CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  - CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  - CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  - CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  - CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  - CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  - CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  - CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  - CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  - CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  - CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  - CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  - CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  - CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  - CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  - CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  - CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  - CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  - CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  - CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  - CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  - CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  - CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  - CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  - CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  - CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  - CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  - CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  - CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  - CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  - CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  - CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  - CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  - CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  - CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  - CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  - CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  - CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  - CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  - CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  - CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  - CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  - CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  - CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  - CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  - CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  - CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  - KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  - KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  - KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  - KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  - KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  - KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  - KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  - KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  - KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  - KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  - KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  - KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  - KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  - KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  - KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  - KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  - KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  - KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  - KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  - KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  - KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  - KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  - KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  - KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  - KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  - KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  - KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  - KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  - KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  - KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  - KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  - KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  - KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  - KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  - KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  - KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  - KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  - KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  - KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  - KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  - KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  - KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-CONTROLS
+- check_id: publication
+  name: Maintained synchronization and supported-export admission
+  status: not_applicable
+  required: false
+  summary: Read-only candidate review; no integration or export generation authorized
+    here. All native release holds retained.
+  target_ids:
+  - CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  - CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  - CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  - CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  - CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  - CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  - CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  - CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  - CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  - CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  - CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  - CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  - CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  - CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  - CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  - CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  - CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  - CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  - CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  - CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  - CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  - CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  - CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  - CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  - CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  - CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  - CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  - CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  - CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  - CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  - CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  - CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  - CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  - CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  - CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  - CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  - CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  - CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  - CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  - CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  - CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  - CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  - CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  - CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  - CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  - CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  - CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  - CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  - CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  - CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  - CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  - CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  - CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  - CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  - CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  - CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  - CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  - CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  - CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  - CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  - CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  - CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  - CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  - CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  - CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  - CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  - CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  - CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  - CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  - CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  - CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  - CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  - CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  - CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  - CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  - CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  - CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  - CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  - CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  - CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  - CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  - CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  - CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  - CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  - CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  - CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  - CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  - CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  - CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  - CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  - CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  - CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  - CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  - CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  - CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  - CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  - CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  - CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  - CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  - CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  - CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  - CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  - CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  - CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  - CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  - CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  - CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  - CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  - CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  - CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  - CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  - CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  - CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  - CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  - CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  - CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  - CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  - CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  - CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  - CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  - CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  - CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  - CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  - CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  - CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  - CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  - CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  - CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  - CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  - CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  - CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  - CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  - KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  - KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  - KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  - KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  - KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  - KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  - KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  - KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  - KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  - KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  - KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  - KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  - KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  - KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  - KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  - KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  - KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  - KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  - KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  - KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  - KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  - KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  - KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  - KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  - KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  - KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  - KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  - KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  - KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  - KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  - KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  - KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  - KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  - KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  - KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  - KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  - KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  - KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  - KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  - KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  - KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  - KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  - if-add-anhydrous-k2hpo4
+  - if-reject-monohydrate-on-dihydrate
+  - if-add-mono-source-spelling
+  - if-repair-dithionite-Na2s2o4
+  - if-repair-dithionite-Sodium_Dithionite
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if-add-edta-disodium-dihydrate-spelling
+  - op-valeric-alias
+  - op-isovaleric-alias
+  - op-methane-alias
+  - op-soy-flour-alias
+  - op-l-asn-hydrate-alias
+  - op-ethane-new
+  - op-nalidixic-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-sodium-nicotinate-new
+  - op-glycerol-asparagine-source-note
+  - vm-prop-menadione
+  - vm-prop-jcm403-vitamin
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - vm-prop-new-2
+  - vm-prop-new-11
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-110
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-7
+  - vm-prop-new-29
+  - vm-prop-new-98
+  - vm-prop-new-26
+  - vm-prop-new-31
+  - vm-prop-new-111
+  - vm-prop-new-73
+  - vm-prop-new-52
+  - vm-prop-new-106
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-HOLDS
+evidence:
+- evidence_id: I-A
+  kind: prior_review
+  reference: .temp/w08-published-head-independent-review-v1/a/assessment.json
+  snapshot_sha256: fa78484d77c87d27e052d69209695c57481d84f457d7137dfb01cc3b0e7b71e3
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Independent63 source cases and46 whole selected payloads.
+- evidence_id: I-B
+  kind: prior_review
+  reference: .temp/w08-published-head-independent-review-v1/b/assessment.json
+  snapshot_sha256: ee52d32a898a1d4a0c74c9ee0fa5f0b07bf5ab97e4e3504710b12d3c3dca9e22
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Independent63 source cases and38 whole selected payloads.
+- evidence_id: I-C
+  kind: prior_review
+  reference: .temp/w08-published-head-independent-review-v1/c/assessment.json
+  snapshot_sha256: de21ad866efc0e322aff65ea0cb71fe09e94c147688cade68f6ba9894650bbb9
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Independent62 source cases and29 whole selected payloads.
+- evidence_id: I-ROOT
+  kind: prior_review
+  reference: .temp/w08-published-head-independent-review-v1/assessment.json
+  snapshot_sha256: 1f2b4f6787fd744ee156946733b1b0c9d5247704f0ba36147f0c4b0083b688c1
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Consolidated full source and payload coverage, scientific finding scopes
+    and bounded acceptance.
+- evidence_id: I-FINDINGS
+  kind: prior_review
+  reference: .temp/w08-published-head-independent-review-v1/findings.json
+  snapshot_sha256: 11e3681d90be88d52a309fc6ed301bcb4c37c749ffb144640175cea6db501af5
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Exact findings, observations, primary captures, reproduction and bounded
+    fixes.
+- evidence_id: I-TRANSPORT
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/transport-integrity.json
+  snapshot_sha256: 329732751f16545c86712831ec33700d11528048e059121e91ef3f05ca7a1fe5
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Exact manifests, predecessor, frozen cases, occurrences, capture and owner
+    bindings.
+- evidence_id: I-STRICT
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/fresh-proposal-schema.json
+  snapshot_sha256: bee8b6d07231dc715cb6840777f779a7c0d3ede2cf0ee143b0c0b155954730ef
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: 113 selected proposal schemas pass.
+- evidence_id: I-PARTONOMY
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/fresh-component-partonomy.json
+  snapshot_sha256: 5a47b799f3f9f3697d1a30401fc03aad05c0ff6619c50a3a460570cd8783d817
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Native2956baseline and3037candidate overlay pass structural component reference
+    checks.
+- evidence_id: I-NATIVE
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/native-integrity.json
+  snapshot_sha256: 577684f0a9e85502840d2e7026e6ec9c6153d0bd2a4e1bbf88be1d4b0ce5a5cd
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Actual author/peer scopes, native targets and exact published input bindings.
+- evidence_id: I-CONTROLS
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/native-controls/native-helpers-review-vitamins-v2.json
+  snapshot_sha256: ae217e52bae51c358790bc7f86ca7ce2a4b832c901a8e5ff5fb172644dbffdbf
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: New independent mechanical replay of one positive and14negative fixtures.
+- evidence_id: I-OVERLAP
+  kind: record_content
+  reference: .temp/w08-published-head-independent-review-v1/worker03-overlaps.json
+  snapshot_sha256: 77baddb1470a33935e8d4bf06ab1180e5674eb83862a844b4f2b9fc3fa584a6f
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Worker03 overlaps are explicit; no own-proposal or final coalescence approval.
+- evidence_id: I-HOLDS
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/scope-and-hold-integrity.json
+  snapshot_sha256: 26ff1c95a88ad020dc01f7615c7a3c88f918eaf380d24f2fdcdb29adbe1c9617
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Source requirements, native decisions, roles, graph/protein fields and
+    history preserved. Schema pass is not chemical truth.
+- evidence_id: I-F
+  kind: prior_review
+  reference: .temp/w08-published-head-independent-review-v1/final/partial-completeness-adjudication.json
+  snapshot_sha256: 6f163949f4825e4ca33faf3c3bbabc16c8d33d63c6989f3c22df067f526b68f0
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: partial
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: Separate final reviewer inspected all34PARTIALassertions;29requireUNKNOWN,5retainexplicit
+    omission scope.
+- evidence_id: I-ROLE
+  kind: validation
+  reference: .temp/w08-published-head-independent-review-v1/final/role-status-full-field-check.json
+  snapshot_sha256: 3dc8204a353cee11e3e1d431e308cf9e9fc104c8e7a639864ae3f95ae33e23da
+  accessed_at: '2026-11-08T06:59:28.009089Z'
+  support: context_only
+  locator: Complete structured receipt; nested exact original primary capture hashes
+    and retrieval timestamps retained. This is receipt inspection time, not primary
+    recapture.
+  summary: All32editedownerbefore/afteractualrole/graph/protein/review/statuskeyunions
+    inspected;rolefieldsunchanged,threeexplicitmappingstatuspromotionsnoted.
+assessments:
+- assessment_id: case-000
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: TOGO M2313 specifies laminarin among alternative carbon sources and only
+    a brown-algae description. Generic laminarin is supported; a universal Laminaria
+    digitata restriction is not. The final owner correctly moves that historical qualifier
+    into supplied-form provenance rather than extending it to this occurrence.
+  target_ids:
+  - CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-001
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM574 explicitly combines 16.6 ml of 1 M KH2PO4 with 83.4 ml of a different
+    1 M K2HPO4 stock, then dilutes with equal water; JCM1181 imports that preparation.
+    PBBM is a conditional comparison, not an exact assigned source. No stock carrier
+    or supplied solid hydrate follows from receiving-buffer dilution water.
+  target_ids:
+  - CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-002
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The JCM1037→1036→296 reference chain supports the ten-vitamin stock. Seven
+    20 mg vitamins, folic acid/B12/biotin 1 mg each and 1 L water agree with the proposed
+    recipe; generic B12 and specified DL calcium pantothenate retain their form limits.
+    Known component references remain feasible curation.
+  target_ids:
+  - CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-003
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The DSMZ trace protocols explicitly use 2 N NaOH as an input. The hydroxide
+    concentration is supported, while later recipe water and metal constituents are
+    not constituents of that reagent. Source anchors and receiving protocols remain
+    distinct from universal stock identity.
+  target_ids:
+  - CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-004
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1130 directly gives 26 ml 10 N NaOH in its VFA mixture. This is a concentrated
+    reagent input, not pure NaOH or a VFA owner. JCM870/crotonate and TOGO contexts
+    cannot acquire its complete preparation identity solely from equal strength.
+  target_ids:
+  - CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-005
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM393 identifies sodium nicotinate; NIST confirms CAS54-86-4 and C6H4NNaO2.
+    The acid parent CHEBI15940 is not exact salt identity. CAS primary identity plus
+    NARROW_MATCH preserves the asymmetric parent bridge; claimed human mapping evidence
+    needs correction.
+  target_ids:
+  - CM_NAME:07741f1c879c8db100ba323bdd67a8f86fed919f1fa6c4130e1da70ef94bc316
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Integration must repeat exact-form ontology
+    lookup and confirm no more-specific term before CAS-primary creation.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-006
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC268 expressly says K2HPO4 (anhydrous base), supporting the bounded
+    source alias on the anhydrous dipotassium phosphate owner, rather than the trihydrate.
+    The entire payload retains unrelated malformed resolving formulas KH2HPO4 and
+    K2HPO; their existence is not cured by the new supported alias.
+  target_ids:
+  - CM_NAME:078f095171ab69dc524ee59fadcc97d96dceb553cd9b04ea8d6465a4d3c37c54
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-007
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: DSMZ solution125 specifies 0.1 ml vitamin K1 dissolved in 20 ml 95% ethanol,
+    filtered and refrigerated in a brown bottle. Twenty ml is solvent input, not a
+    final volume. The stock is distinct from pure phylloquinone and from 0.1% or 1%
+    source labels with unspecified basis.
+  target_ids:
+  - CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-008
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The ammonium magnesium phosphate literal does not establish hydration;
+    supplier sources distinguish hydrate/hexahydrate conventions. Keeping the source
+    unresolved is justified. A candidate registry or ontology formula cannot establish
+    the original supplied hydrate without a source bridge.
+  target_ids:
+  - CM_NAME:0c5317b523d9545202718a2c9d8f183cd563bb6381248d2cb29e6ba8c75f4275
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Primary C100 supplier/material evidence
+    establishing the actual hydrate form for CAS 7785-21-9; current source CAS alone
+    is insufficient.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-009
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Eight NBRC sources specify 0.002% w/v vitamin B12; all read recipes filter-sterilize
+    it separately. This converts to 20 mg/L. The JCM515 20 µg/ml anchor is related
+    by nominal strength only; neither carrier nor vitamin species identity is proven
+    shared. No transferred water or cyanocobalamin identity is allowed.
+  target_ids:
+  - CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Recover an explicit common stock protocol
+    or complete formulation bridge before exact NBRC→JCM 515 membership. Unknown carriers/vitamers
+    remain unasserted; the proposed anchor is a distinct source-defined preparation
+    candidate, not blanket resolution.; exact source-specific unknowns, original holds
+    and occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-010
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM908 explicitly calls for a filter-sterilized 10% w/v sodium sulfide
+    nonahydrate solution. Nonahydrate reference and concentration are supported; unspecified
+    carrier is not inferred. The receiving-volume dose remains separate from stock
+    amount and native source unit defects.
+  target_ids:
+  - CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-011
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM995 vitamin solution No.6 is its own nine-vitamin recipe, including
+    nicotinamide and thiamine hydrochloride dihydrate. The exact names and quantities
+    agree; do not replace them with nicotinic acid or unsolvated thiamine salt. Baseline
+    lookup can resolve other unambiguous components.
+  target_ids:
+  - CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-012
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1354 directly specifies 0.01% B12 solution but does not state the percentage
+    basis, carrier or exact vitamer. The source-qualified stock candidate is feasible;
+    no numeric mass conversion, ethanol or water can be added from inference.
+  target_ids:
+  - CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Carrier, additional constituents and
+    percentage basis remain unknown; recover them before complete decomposition or
+    equivalence to a quantitatively defined B12 stock.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-013
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive1894 says soya flour from the supermarket and 20 g/L. A generic
+    soy-flour mixture alias is supported; no supplier, defatting, extraction or fixed
+    molecular composition is justified. Existing broad FoodOn scope is compatible.
+  target_ids:
+  - CM_NAME:162358bfb111a5d7cab7acafeb7b737c40af76cb7591e9bbcb7fad099ff510a4
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-014
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1356 charges four salts and water, autoclaves under N2, waits for precipitate
+    and uses only supernatant at pH10. Treating the resulting material as an undefined
+    preparation is justified; charged masses are not retained supernatant composition.
+    The water-only component assertion is an interpretation and must not be labeled
+    direct recipe transcription.
+  target_ids:
+  - CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-015
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: 'The exact private TOGO M125 response was rehashed and read: JCM134 context
+    gives 0.2 ml of 0.1% vitamin K1. Carrier and percentage basis are absent. The
+    stock candidate must retain those absences and cannot be equated to DSMZ125 ethanol
+    stock.'
+  target_ids:
+  - CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Recover carrier, extra constituents and
+    percentage basis for complete formulation; no equivalence to DSMZ 125 or OTEB1%stock
+    is asserted.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-016
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: TOGO M2844 comments specify one 0.5% bromothymol-blue solution in 0.2 N
+    KOH, dosed 5 ml/L. The separately parsed 0.2 N KOH fragment is not the whole named
+    ingredient. The combined indicator preparation preserves unknown percentage basis
+    and carrier without taking receiving-medium water as stock water.
+  target_ids:
+  - CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-017
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM647 explicitly specifies B12 at 2 mg/ml, filter-sterilized; JCM520/533/650
+    give the same nominal strength. They are conditional comparisons, not proof of
+    identical carrier/form. The 2000 mg/L conversion is correct; exact B12 species
+    remains unknown.
+  target_ids:
+  - CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Recover explicit shared stock provenance
+    or complete formulations before assigning the other three occurrences to the JCM
+    647 owner. The written2 mg/ml is not silently corrected; carrier and molecular
+    vitamer remain unknown.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-018
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: JCM403 separately lists B12 5 mg plus distilled water100 ml, distinct from
+    its five-vitamin/phosphate-buffer solution and thiamine solution. The source-bound
+    assignment is supported, but all three bare Medium No.403 resolving aliases and
+    the unqualified preferred label violate the provider boundary.
+  target_ids:
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-019
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The frozen generic vitamin-mixture label spans JCM1023 and JCM903. Complete
+    tables differ in B6 naming/form and quantities; splitting their source-qualified
+    recipes is justified. Do not derive their identity from the shared generic label,
+    and finish feasible references for explicitly named constituents.
+  target_ids:
+  - CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-020
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Literal KH2PO4 heptahydrate is not an established monobasic-phosphate form
+    merely because a nearby magnesium salt has seven waters. No global correction
+    or exact owner is justified without a source correction or product identity; hold
+    remains warranted.
+  target_ids:
+  - CM_NAME:249daac55648df6a9c10e74196516d7a5e475f73df6be4193de104c29190ab0e
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain an MMN source correction or a
+    material specification for KH2PO4·7H2O; establish whether hydration is intentional
+    before a distinct owner or corrected source link.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-021
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM1171 and1304 explicitly name EDTA·Na2 in their trace mixtures, without
+    water of crystallization. The disodium salt class is clear but exact supplied
+    hydrate is not. An available dihydrate owner is not evidence that these sources
+    supplied dihydrate.
+  target_ids:
+  - CM_NAME:257808275bd99c26a9ae06ba9c38f58777e77821a0287c53affa9101a1f8dd13
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Resolve hydration from each JCM1171/1304/1357
+    material specification or supplier CAS; do not equate this unqualified source
+    with an anhydrous-only owner by spelling.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-022
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM554 SL10 explicitly gives seven named metal salts and water and omits
+    the HCl/borate of other commonly named SL10 recipes. The payload appropriately
+    preserves this exact table rather than importing a customary formulation. Source
+    names alone cannot establish equality to other SL10 records.
+  target_ids:
+  - CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-023
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: TOGO M1198 identifies ethane in a gas-phase recipe context. Ethane CHEBI42266
+    is a defensible component identity, not the whole headspace mixture and not an
+    implied pure gas product grade. No receiving gas proportions belong on the molecular
+    owner.
+  target_ids:
+  - CM_NAME:2833b32264a11152ad717a53773431eca0d02279f51da9ad7537c0664ffdc468
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-024
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: Nalidixic acid molecular identity is supported by the ontology and an independently
+    obtained NBRC1301 primary table showing a separately filtered 30 mg/ml stock.
+    The archived author package did not expose a readable primary table for every
+    frozen NBRC1301/1314 occurrence. Direct NBRC1314 and TOGO M2023 access failed;
+    source applicability for that occurrence remains unverified, not approved by a
+    nearby recipe.
+  target_ids:
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-025
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The source iso-Valeric acid spelling denotes branched isovaleric acid and
+    is distinct from n-valeric acid in the same VFA context. Adding the spelling with
+    exact source provenance is supported; no isomer merge or dosage transfer is justified.
+  target_ids:
+  - CM_NAME:2d001347c9ffad22aa31a473457e89550634ea87ab91db7c2a678fc88bcd331b
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-026
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: ATCC1249 Component III explicitly comprises 3.5 g sodium lactate,1 g yeast
+    extract,400 ml deionized water, pH7.5 and autoclaving. The named stock is supported;
+    unspecified pH titrant is not an additional quantified ingredient and sodium-lactate
+    stereo/form remains unasserted.
+  target_ids:
+  - CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-027
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM600 literally specifies a separate 5 mM toluene water-saturated solution,
+    anaerobic and autoclaved, added40 ml. The payload preserves that wording and an
+    unspecified water component without inventing saturation temperature, stock water
+    amount or solvent grade; it must not become a generic toluene molecular alias.
+  target_ids:
+  - CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-028
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: ATCC1340 explicitly names NaOH solution4 g/100 ml as the source anchor.
+    Other 1 N receiving contexts are conditional only. New stock identity does not
+    cure or authorize unrelated pure-NaOH aliases. The pure-owner proposal correctly
+    rejects the specified 1 N/2 N labels while preserving provenance.
+  target_ids:
+  - CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Exact cross-source assignment requires
+    an actual stock formulation/protocol bridge. Different receiving recipes and omitted
+    carrier/percent metadata alone establish neither equivalence nor distinct material
+    identity.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-029
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: DSMZ5980 explicitly lists the tenfold Wolin vitamins with 1 mg B12,20 mg
+    biotin/folic acid,100 mg pyridoxineHCl and the remaining named50 mg constituents
+    per1 L. D(+)-calcium pantothenate and DL-alpha-lipoic acid stay as written. Complete
+    formula does not mean exact component grounding has been completed.
+  target_ids:
+  - CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-030
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: NBRC1601 literally retains Na2Mo4O4 and its microgram amount. This malformed
+    formula cannot be silently corrected to sodium molybdate dihydrate. The source
+    unit/extraction defect is separate from substance identity; no payload is justified
+    until a primary correction supplies the missing identity.
+  target_ids:
+  - CM_NAME:322afbdac3a808f53f9d914a7e42519ce5a1269f5e278e44f1e5cbc4ae644e49
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain correction of NBRC1601 formula/CAS
+    or supplier material; separately repair the 27.6 μg/L versus G_PER_L source-unit
+    conversion.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-031
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1321 specifically says cyanocobalamin5 mg plus distilled water100 ml,
+    filter-sterilized. This supports a cyanocobalamin stock rather than generic B12
+    or an unexplained vitamer class. Both explicit constituents have verified baseline
+    catalog references, so leaving both UNMAPPED is feasible curation left unfinished.
+  target_ids:
+  - CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-032
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ672 explicitly permits Difco0003 or Difco0001 alternatives. A disjunctive
+    product instruction is not one commercial identity or a mixture of both powders.
+    Preserve the alternatives and selection requirement rather than one globally resolving
+    alias.
+  target_ids:
+  - CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Which product was actually selected in
+    this occurrence, or an explicit source representation preserving both alternatives
+    as alternatives.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-033
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: TOGO M3140 literally uses Na2NPO4 in Medium D. The corrupted formula is
+    not enough to choose a sodium-phosphate stoichiometry or hydrate. Nearby customary
+    recipes or ontology similarity cannot supply an exact source correction; retain
+    hold.
+  target_ids:
+  - CM_NAME:375a474e30dbfde77db29b133878c40242cb19d6d41e99406656771e60cc03dd
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Original Medium D source correction or
+    material specification for literal Na2NPO4; the primary record now retrieved still
+    contains that formula.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-034
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: PCR-S11 TOGO M2262 explicitly gives3.55 g Na2HPO4 in500 ml distilled water
+    and describes50 mM phosphate stock. Numeric values are preserved without inferring
+    a hydrate from molecular mass. Exact supplied form is unknown; it is separate
+    from component-list completeness and from2019Roscoff/Gaffron related formulations.
+  target_ids:
+  - CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-035
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: ATCC Nitrosolobus recipe explicitly uses1 ml6 N NaOH with phenol red and99
+    ml deionized water. That receiving indicator's water does not identify the6 N
+    stock carrier. The partial reagent anchor is supported with known NaOH concentration
+    and no borrowed components.
+  target_ids:
+  - CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-036
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: CCAP SP primary recipe clarifies MnSO4·7H2O and a separate0.002 g amount;
+    frozen spaced text is extraction corruption. A scoped upstream repair is justified;
+    globally adding the corrupted full label as a salt synonym is not required or
+    authorized.
+  target_ids:
+  - CM_NAME:3e704daab5eb4cdbab2eb78c10504b6d5f558325c4089ebecb925f04248fb439
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-037
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM1357 trace solution says EDTA·Na2, no hydrate. The same source's malformed
+    Na2MnO4·2H2O remains a separate issue1179 hold and cannot be repaired through
+    the EDTA decision. Preserve exact-form uncertainty rather than assuming the catalog
+    dihydrate.
+  target_ids:
+  - CM_NAME:3f1bebfcc9c06d3fe59ea3726b44152d4eff034a69df5950c38841057a3d4909
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Resolve hydration from each JCM1171/1304/1357
+    material specification or supplier CAS; do not equate this unqualified source
+    with an anhydrous-only owner by spelling.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-038
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The starred JCM403 vitamin pointer reaches the five-vitamin stock in10
+    mM sodium phosphate buffer, not the separate B12 stock. Its exact source assignment
+    is supported, but globally resolving bare numbered-pointer aliases are unsafe
+    and need rejection with provenance retained.
+  target_ids:
+  - CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-039
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The actual archived PMC3146290 HTML hash was independently verified and
+    Methods inspected. Each5 ml culture receives30–50 µg of one of hydroxocobalamin
+    acetate,hydroxocobalaminHCl,methylcobalamin or cyanocobalamin. This is a choice
+    of forms, not a combined formulation or missing mixture ratio. Condition-specific
+    selection remains the actual requirement.
+  target_ids:
+  - CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: The primary4YACo methods specify one
+    of four corrinoid alternatives, not a premixed preparation. Recover condition-specific
+    selection for the collapsed occurrence before mapping it to one supplied reagent.
+    No four-component stock or mixture ratio can be inferred.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-040
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: ATCC1942 directly relates10 ml of5% nonahydrate stock to final0.5 g/L and
+    autoclaving underN2, supporting nominal5%w/v. JCM899 and other5% contexts are
+    conditional, not exact shared preparations. Do not transfer the ATCC basis or
+    atmosphere to all labels.
+  target_ids:
+  - CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Exact cross-source assignment requires
+    an actual stock formulation/protocol bridge. Different receiving recipes and omitted
+    carrier/percent metadata alone establish neither equivalence nor distinct material
+    identity.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-041
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The n--Valeric spelling is an extraction/name variant of straight-chain
+    valeric acid; primary VFA tables distinguish it from iso-valeric. The bounded
+    alias is supported, while inherited pentanoate/acid interpretation is outside
+    a release approval and remains a full-owner caution.
+  target_ids:
+  - CM_NAME:43a181d6626f8d71d4f539d7b349692563823a7831c70c6243ddc1f0fce5bbfb
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-042
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1100 vitamin solutionB1000x is only B12100 mg in100 ml water, separate
+    from vitaminA. The payload preserves this decomposition; it does not import other
+    vitamins or identify an unspecified B12 species as cyano by convention.
+  target_ids:
+  - CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-043
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: TOGO M2760 PBBM gives a2.5% nonahydrate stock25 ml but no basis or carrier.
+    ATCC1943 is a better documented conditional preparation, not proof that PBBM's
+    stock is identical. Preserve source labels and the preparation-equivalence requirement.
+  target_ids:
+  - CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Concrete ATCC 1943 partial-stock comparison
+    is supplied. PBBM reuse requires evidence of its carrier/percent basis and preparation
+    treatment; neither equality nor a distinct second formulation follows from 2.5%
+    alone.; exact source-specific unknowns, original holds and occurrence scope remain.
+    Case assessment is separate from global source mapping, whole-owner and export
+    approval.'
+- assessment_id: case-044
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The multiple5% sulfide contexts retain their own autoclaving/filter/gas
+    instructions. ATCC1942 is the direct anchor; related JCM stocks cannot inherit
+    itsw/v basis merely because nonahydrate and nominal percent agree. The withdrawn
+    second owner stays withdrawn without assigning the conditional cases automatically.
+  target_ids:
+  - CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Exact cross-source assignment requires
+    an actual stock formulation/protocol bridge. Different receiving recipes and omitted
+    carrier/percent metadata alone establish neither equivalence nor distinct material
+    identity.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-045
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: DSMZ1245 explicitly specifies1% K1 solution but does not identify carrier
+    or percent basis. A source-bound preparation is feasible; no arbitrary ethanol,
+    mass conversion or equivalence to DSMZ125 is justified. The calf-serum alternative
+    in the actual source must not be replaced with FBS from a derived record.
+  target_ids:
+  - CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Carrier, percent basis and complete constituent
+    list remain unknown; no full formulation equivalence or molecular identity claim
+    is made.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-046
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: PCR-S11 directly dissolves1.488 g Na2-EDTA in40 ml0.1 N NaOH. Other ATCC
+    hemin and SGP7 titration uses establish reagent contexts, not full preparation
+    identity. The final anchor/comparison distinction fixes the earlier source-number
+    duplicate error.
+  target_ids:
+  - CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-047
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM820 literally gives NaHPO4·12H2O. Missing sodium stoichiometry is a
+    real source-form defect; it must not be mapped automatically to the known Na2HPO4
+    dodecahydrate owner, including worker03's own proposal. No worker03 or cross-shard
+    coalescence approval follows.
+  target_ids:
+  - CM_NAME:56a1c4437c7b01c8571bb7c0e10d0432d6c9b2b68ec7d177c7d88b679cc19aa0
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain JCM820 clarification or an independent
+    original material specification for the intended sodium count and dodecahydrate.;
+    exact source-specific unknowns, original holds and occurrence scope remain. Case
+    assessment is separate from global source mapping, whole-owner and export approval.'
+- assessment_id: case-048
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive1810 retains KH2PO4x2H2O literally while direct JCM566 retrieval
+    was unavailable. The available primary-derived source supports the ambiguous text
+    but not a corrected form. A real source correction is still required; unavailable
+    access is not evidence of chemical absence.
+  target_ids:
+  - CM_NAME:57c5b9b2272ebf61c143b286e27161f3f1f9e5588694125be63e1939f72fe877
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Verify an authoritative formulation/material
+    specification for Ilyobacter/SGP7 source KH2PO4 dihydrate or obtain a source correction;
+    PubChem/depositor formula alone is insufficient for release.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-049
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: All eleven MediaDive main-solution backlinks identify their JCM-numbered
+    recipe context and separate vitamin,thiamine andB12 pointers to403. Those occurrence
+    contexts support the JCM403 five-vitamin assignment. They do not make an unqualified
+    Medium No.403 label globally unique.
+  target_ids:
+  - CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-050
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The source label is commercial fluid thioglycollate BD-BBL. ATCC474 explicitly
+    identifies BD211260 at29.5 g/L and separately adds yeast extract and sodium thioglycollate;
+    ATCC177 gives a separate from-scratch alternative. Matching Eubacterium recipe,
+    brand and separate ingredients support the bounded product association by interpretation.
+    This cross-provider bridge is not a direct catalogue-number assertion in JCM157/TOGOM148
+    and does not establish manufacturer composition.
+  target_ids:
+  - CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-051
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM574 specifies the distinct1 M K2HPO4 input83.4 ml alongside16.6 ml1
+    M KH2PO4; later dilution water belongs to the combined phosphate buffer. The stock
+    is not the pure solid and exact hydrate/carrier remain unknown.
+  target_ids:
+  - CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-052
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: TOGO M2567 Mineral baseD is5 ml14%w/v NH4Cl solution plus5 ml7%w/v KH2PO4
+    solution. Keeping these nested stocks avoids replacing them with inaccurate dry
+    masses or inferring water quantities. Unknown stock carriers remain unknown.
+  target_ids:
+  - CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-053
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The JCM final-concentration sodium thiosulfate pentahydrate label describes
+    an addition to the receiving medium, not a stock preparation. Preserve the hydrate
+    and final-dose context; no new concentration-stock owner or instruction-bearing
+    global alias is justified.
+  target_ids:
+  - CM_NAME:62e0544cca5ca6b09a9109ae6a558bce0b1b56d257ea2306106c6f8670c735ae
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-054
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The iso--Valeric occurrence is the branched acid already supported by the
+    exact sourceVFA context. It shares the isovaleric alias payload, not the straight-chain
+    valeric owner; extra hyphen does not change stereochemistry or composition.
+  target_ids:
+  - CM_NAME:671b05f93b01e25606f0084a9f110ac6adc6f65f8c80e4dfb5f00aebecfb28ec
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-055
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: All six bare Na occurrences are truncations from sodium-sesquicarbonate-buffer
+    notes in the original recipe. They do not identify elemental sodium. The source
+    extraction/role repair belongs under1172; deleting the context or minting aNaowner
+    would be wrong.
+  target_ids:
+  - CM_NAME:6987456ddf2caf9d7981c8970484d0b2873d088bd56eaf9c50dcebfaf50070ab
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-056
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The1NNaOH lexical case spans chopped-meat and hemin inputs; the actual
+    ATCC and DSMZ protocols retain receiving-water additions separately. ATCC1340's4g/100ml
+    anchor is conditional relative to these cases. Equal nominal normality alone does
+    not establish carrier/preparation identity.
+  target_ids:
+  - CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Exact cross-source assignment requires
+    an actual stock formulation/protocol bridge. Different receiving recipes and omitted
+    carrier/percent metadata alone establish neither equivalence nor distinct material
+    identity.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-057
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Both SGP7 TOGO M3249 and Ilyobacter MediaDive4391 preserve literalKH2PO4·2H2O.
+    SGP7's pH7.0 NaOH adjustment and final ultrapure-water volume do not establish
+    the phosphate hydrate. The source/form hold is justified and is not simply deferred
+    workflow.
+  target_ids:
+  - CM_NAME:6cfd20c782d09879cc6733747f204e42439f5bae248aeccb05dfd94be72adb03
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: Verify an authoritative formulation/material
+    specification for Ilyobacter/SGP7 source KH2PO4 dihydrate or obtain a source correction;
+    PubChem/depositor formula alone is insufficient for release.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-058
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM848 directly provides100fold vitamin recipe with100mg biotin/B12,300mgpABA,500mg
+    folic/thiamine/riboflavin,1.5gpyridoxineHCl and1Lwater. Source amounts and separate
+    stock identity are sound; ordinary component reference completion is still feasible.
+  target_ids:
+  - CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-059
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The2NNaOH spelling variant reaches the same scoped DSMZ trace-reagent proposal.
+    It does not gain a globally resolving alias on pureNaOH, and no source-specific
+    carrier or trace-metal recipe can be inferred into the stock from a receiving
+    mixture.
+  target_ids:
+  - CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-060
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1356/857/936/1169/1308/1050/1086/1274/925 have the same common-nine-vitamin
+    input table and separately filtered use. Reusing one source-bound formula candidate
+    is supported; different trace-metal tables and receiving media are not part of
+    that identity. All explicit source holds and unresolved vitamin forms remain.
+  target_ids:
+  - CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-061
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ901a has a nonahydrate reagent column and separate3.00g amount. The
+    concatenated label is not a new synonym. The final owner correctly rejects the
+    two known concentration-qualified aliases under1215; native policy already filters
+    role-prefix and bare-parenthetical remnants, so those are not a newly demonstrated
+    resolver defect.
+  target_ids:
+  - CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-062
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ1669 separates Tris and3.00g. The final payload preserves the four
+    hydrochloride rejections and adds rejection of1Mbuffer and nitrilotriacetate labels.
+    These bounded fixes are present under1157; they do not approve every inherited
+    role or all buffered-Tris ambiguities.
+  target_ids:
+  - CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-063
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: M2231 explicitly prepares phosphate stock from literal K2HPO4·7H2O 6 g
+    in 1 L deionized water and doses 5 ml. The stock proposal is supported; seven-water
+    chemical identity is not independently established. The remaining requirement
+    incorrectly still treats the 6-versus-5 row as unresolved; the primary source
+    already distinguishes stock strength from receiving dose.
+  target_ids:
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Retrieve the original Allen-medium formulation
+    and supplier material to settle seven waters; resolve 6 g/L in label versus 5
+    G_PER_L in the second frozen row.; exact source-specific unknowns, original holds
+    and occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-064
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The actual retained PMC methods name pyridoxal-HCl AND pyridoxal-phosphate
+    at 120–200 micrograms per 5 ml culture. They do not define one premixed stock
+    or allocate the amount between the reagents. The supplement concerns pathways
+    and expression tables, not formulation. A held premix identity is justified; no
+    unnamed-vitamer or zero/variable-dose assertion is supported.
+  target_ids:
+  - CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Primary methods identify both pyridoxal-HCl
+    and pyridoxal-phosphate additions but do not establish that they were one physical
+    premixed stock, rather than separate reagent additions. Recover that preparation/occurrence
+    structure. Missing quantitative allocation alone would not prevent a genuine documented
+    partial mixture; no premix carrier is currently identified.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-065
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1118 enumerates B12 1.1 mg, biotin 1 mg and thiamine hydrochloride 200
+    mg in 1 L distilled water. The four immediate entries and literal batch units
+    are supported. B12 vitamer is unspecified; the source-defined mixture remains
+    distinct from its chemical ingredients.
+  target_ids:
+  - CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-066
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM510 explicitly requires methane-air 50:50 atmosphere. Both immediate
+    gases are supported. Ratio basis, humidity, pressure and detailed air composition
+    are absent; retaining the literal ratio without numerical fractions is appropriate.
+    The proposal denotes this gas blend, not liquid medium.
+  target_ids:
+  - CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-067
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Source EDTA・2Na・2H2O supports the live CHEBI:64758 dihydrate owner; the
+    old second file is a rejected merge tombstone, not a competing live identity.
+    The new spelling preserves hydration and sodium stoichiometry. The whole inherited
+    payload retains provisional chelator evidence, which this source review does not
+    approve. Native policy already suppresses three annotation strings despite RAW_TEXT
+    typing.
+  target_ids:
+  - CM_NAME:86d83ca48b66e6afc9c4c8afb834ab4ecdaab0ce986a580645fbc62053da4e5f
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Complete content-bound review of the
+    live owner after alias addition, including annotation-like synonyms and provisional
+    CHELATOR evidence; preserve original retirement and current memberships/counts.
+    No merge is pending for these two files.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-068
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1020 explicitly supplies a nitrogen/autoclaved 5% nonahydrate stock.
+    ATCC1942 is an independently defined comparison preparation with a supported w/v
+    ratio; its carrier/protocol cannot be silently transferred to JCM1020. The active
+    conditional link preserves that distinction and avoids a source-number-only duplicate.
+  target_ids:
+  - CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Exact cross-source assignment requires
+    an actual stock formulation/protocol bridge. Different receiving recipes and omitted
+    carrier/percent metadata alone establish neither equivalence nor distinct material
+    identity.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-069
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: PCR-S11/M2262 makes the phosphate buffer from 100 ml each of 50 mM NaH2PO4
+    and Na2HPO4 inputs, then adjusts pH to 7.5. The unidentified titrant warrants
+    PARTIAL. The nearby 2 L instruction belongs to a separate EDTA/iron preparation,
+    not this buffer.
+  target_ids:
+  - CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-070
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ1521 PDF and MediaDive3148 name SL10 at 1 ml without a stock formula
+    or identifier. Existing DSMZ4178 and explicit JCM554 preparations differ in acid/borate/water
+    details. A real formulation bridge remains missing; neither the short label nor
+    a generic name establishes membership.
+  target_ids:
+  - CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: DSMZ 1521/main3148 lists SL10 as1 ml
+    but does not bind a stock formula or solution identifier. Recover that primary
+    formulation bridge, particularly HCl/borate and water batch, before assigning
+    the existing DSMZ 4178 owner. Additional direct portal/ingredient retrievals did
+    not resolve it.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-071
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Frozen FEBA3 context uses R2A in liquid culture. Retained MicroO0000541
+    explicitly defines liquid R2A with six organic constituents and separately identifies
+    R2A agar. LABEL_ENUMERATION/PARTIAL avoids transferring the HiMedia supplier recipe
+    or generic agar into this material; ingredient identity is supported, component
+    grounding remains bounded.
+  target_ids:
+  - CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-072
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: DSMZ694 source literal and Thermo retained full product record support
+    sodium ammonium hydrogenphosphate tetrahydrate, CAS7783-13-3, H13NNaO8P. CAS-primary
+    plus broader sodium-phosphate parent preserves the exact form. Selected supplier
+    evidence points at a header-only capture; the actual supporting batch7 bytes need
+    an explicit evidence backlink. Ontology absence is only bounded search, not universal
+    proof.
+  target_ids:
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Before integration, validate proposed
+    parent specificity and new-owner identifier collision, then generate CAS identity
+    and required B1 handle/parent rows; no source occurrence quantities or memberships
+    are transferred by this proposal. Exact-term search is bounded to inspected local
+    ChEBI/NCIt and current OLS queries.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-073
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1356 mineral base2 separately enumerates NaCl240 g, NH4Cl0.5 g, K2HPO4
+    2.5 g, KCl5 g and water1 L, autoclaved under nitrogen with stated final pH7.3.
+    Its later 1:1 mixing with base1 is outside this owner. COMPLETE is immediate source
+    enumeration, not proof of exact hydrated salt forms or final dissolved speciation.
+  target_ids:
+  - CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-074
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: M2972 explicitly labels the Difco material R2A agar, and the plant-stem
+    contact procedure supports an agar surface. The narrow provenance addition to
+    the existing agar owner does not create a global resolving bare Difco/R2A alias
+    or approve all historical agar evidence.
+  target_ids:
+  - CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-075
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC19 specifies Peptic Pepton (USB) at 2 g/L but supplies neither catalogue
+    code nor substrate/digestion formulation. A named opaque USB material can be represented
+    without inventing casein, generic peptone equivalence or chemical components.
+  target_ids:
+  - CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-076
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: PBBM names a 1 M KH2PO4 input but does not establish the same carrier or
+    preparation as JCM574. Conditional comparison is justified; concentration alone
+    supports neither equivalence nor a separate substance. The withdrawn source-number-only
+    owner must stay withdrawn.
+  target_ids:
+  - CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: An explicit preparation/formulation bridge
+    is needed for exact PBBM membership in the JCM 574 anchor, or actual reagent composition/process
+    evidence is needed to establish a different material. The receiving medium or
+    mixture is not that missing evidence.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-077
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: DSMZ88 adds sulfide ore and separately sterilizes it at 150°C overnight.
+    Pyrite is an example of suitable ore, not an exact pure FeS2 specification. Opaque
+    natural-material registry identity and absent fixed decomposition are justified.
+  target_ids:
+  - CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-078
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: TOGO M2567 enumerates baseB minerals, water and KOH with pH6.5 then7.0;
+    the proposal preserves these endpoints and unquantified KOH. Literal AIK(SO4)2
+    0.01 g remains outside chemical assertions pending identity/hydration resolution.
+    PARTIAL supports the preparation without guessing that token or cobalt hydration.
+  target_ids:
+  - CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: For complete molecular decomposition
+    only, resolve the source token AIK(SO4)2 and its hydration. KOH quantity remains
+    unspecified but its two pH endpoints are known. These limits do not block the
+    partial preparation proposal.; exact source-specific unknowns, original holds
+    and occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-079
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1363 gives eight vitamins and 100 ml 10 mM sodium phosphate buffer pH7.1,
+    including DL-calcium pantothenate1 mg and pyridoxine HCl15 mg. Exact quantities
+    match. This differs from the JCM403 five-vitamin formula; numbered pointers require
+    occurrence-level routing.
+  target_ids:
+  - CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-080
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NOS VFA uses 0.1 N NaOH, but the PCR-S11 anchor has independent EDTA-preparation
+    provenance. Different receiving recipes do not establish different supplied stocks,
+    nor do matching normalities prove equality. Conditional comparison preserves the
+    actual unknown formulation bridge.
+  target_ids:
+  - CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: An explicit preparation/formulation bridge
+    is needed for exact NOS VFA membership in the PCR-S11 anchor, or actual reagent
+    composition/process evidence is needed to establish a different material. The
+    receiving medium or mixture is not that missing evidence.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-081
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Both frozen dTMP observations lack a supplied reagent form and amount;
+    VARIABLE was withdrawn. ChEBI distinguishes neutral dTMP17013, monoanion46960
+    and dianion63528; the generic parent15245 is not an exact supplied-form answer.
+    A source-supported protonation/form convention remains genuinely missing; neither
+    zero nor variable dose should be invented.
+  target_ids:
+  - CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: A reagent form or source-supported pH/protonation
+    convention for the Song-medium dTMP ingredient. Its quantity remains unavailable,
+    not variable or zero.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-082
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1097 explicitly enumerates Coenzyme M5 mg and nine vitamins in 1 L distilled
+    water, without B12; JCM1344 explicitly points to1097. The complete immediate recipe
+    and quantities match, with source-qualified identity and form-specific constituent
+    holds retained.
+  target_ids:
+  - CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-083
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Sigma B2629 and ChEBI17750 support glycine betaine/trimethylglycine zwitterion,
+    CAS107-43-7. This is distinct from hydrochloride and hydrated preparations in
+    the baseline. No acid salt, hydrate, purity or supplier-specific grade is inferred.
+  target_ids:
+  - CM_NAME:9eccf5df7239217b1f507215b2328543e44a373f232b4b4cbfff790f84ca8a9b
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-084
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Actual Denger2010 methods specify synthesized racemic sulfolactate and10
+    mM growth substrate; its cited Roy2003 method explicitly produces sodium sulfolactate.
+    The source preparation therefore requires racemic sodium-salt scope. Sodium stoichiometry/hydration/purity
+    remain unstated; NARROW_MATCH to broader sulfolactate parent preserves the bounded
+    relation.
+  target_ids:
+  - CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-085
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: M2567 baseA gives seawater salts and water, with unresolved literal NaII
+    CO3 at0.2 g. The proposal includes ten unambiguous immediate inputs and retains
+    the problematic row in notes, PARTIAL. It does not silently turn the source label
+    into carbonate/bicarbonate.
+  target_ids:
+  - CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: For complete molecular decomposition
+    only, resolve literal NaII CO3 at 0.2 g. This limit does not block the partial
+    source-qualified preparation proposal.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-086
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Only ATCC1340 among the six bare-N occurrences explicitly defines its NaOH
+    reagent as4 g/100 ml. This supports that anchor and30 ml reducing-mixture use,
+    not a universal1 N interpretation of N NaOH. Other occurrences remain conditional/unassigned
+    and receiving water is not stock solvent.
+  target_ids:
+  - CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-087
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1385 directly imports1130. Vitamin solutionI is biotin5, B125, pABA15,
+    folic acid25 and pyridoxine HCl75 mg in500 ml water. SolutionII is a separate
+    thiamine/riboflavin stock; it is correctly excluded.
+  target_ids:
+  - CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-088
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM941/MediaDive4957 preserve the literal dithionite dihydrate and separately
+    define SolutionC as5 g in40 ml distilled water, under nitrogen/autoclaving. Preparation
+    identity is supported while the unusual supplied hydrate remains unresolved. No
+    anhydrous-dithionite correction or source-hold release follows.
+  target_ids:
+  - CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain JCM941 original material/supplier
+    specification confirming dithionite dihydrate or a source correction; retain Solution
+    C as a stock and do not map it exactly to anhydrous dithionite.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-089
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM628 top layer has100 ml modified Wolfe carrier,1 ml JCM197 minerals,MES0.195
+    g,NaHCO3 0.042 g,agarose0.15 g and1 ml post-autoclave JCM197 vitamins. JCM629
+    substitutes artificial saltwater carrier. Both complete source protocols distinguish
+    bottom layer/headspace. Unknown initial titrant and dissolved CO2 uptake justify
+    PARTIAL, not invented amounts.
+  target_ids:
+  - CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Initial pH-adjustment reagent and retained
+    dissolved CO2/speciation are unquantified. Both prepared layer identities are
+    supported; these gaps limit component completeness without preventing the source-qualified
+    proposals.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-090
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Primary JCM776 family, DSMZ1396/1497 and NBRC sources actually print H3BO4.
+    Their source records differ; automated boric-acid labels cannot establish a universal
+    H3BO3 correction. Preserve family-specific chemical-specification/correction requirements
+    and raw literal formulas.
+  target_ids:
+  - CM_NAME:a7e4c3521881431d534714ab5cc3de156bb387b39d2b54e5a3b24a6a46ab8fde
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain primary-source correction or chemical
+    specification for each linked H3BO4 material family, particularly JCM776/DSMZ1396
+    and NBRC W-medium/flexibacteria formulations; preserve occurrence-specific identity
+    until reconciled.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-091
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: M3160 identifies100% carbon-monoxide gas in context. The current casefold
+    resolver cannot safely admit CO as a global alias because Co then inherits the
+    carbon-monoxide identity. Source-only identification and issue1178 hold remain
+    justified; the withdrawn alias is not part of this successor.
+  target_ids:
+  - CM_NAME:a85d32e4db2ff39c2e5d40027736dd6f2a6bdaf6648ee6e46130ee677f4b789e
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Case-sensitive or source-occurrence mapping
+    capability to resolve this verified CO gas without making Co resolve to carbon
+    monoxide.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-092
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM515 explicitly adds1 ml of20 microgram/ml filter-sterilized B12 stock
+    after autoclaving. PARTIAL one-component20 mg/L preparation is supported; carrier
+    and vitamer are genuinely absent. Equal-strength NBRC and M498 comparisons do
+    not establish occurrence membership.
+  target_ids:
+  - CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Recover carrier, other constituents and
+    specific vitamer for more complete decomposition; those gaps do not block the
+    bounded JCM 515 stock proposal.; exact source-specific unknowns, original holds
+    and occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-093
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: DSMZ104 uses8 N NaOH for pH7.2 adjustment and separately describes1 N NaOH
+    in haemin preparation. The proposal preserves the former reagent concentration,
+    not an inferred solvent or the receiving dose; PARTIAL is appropriate.
+  target_ids:
+  - CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-094
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1020 and824 share all ten vitamin masses and1 L water, notably B122.7
+    mg. Their downstream processing differs:1020 filter-sterilizes vitamins;824 includes
+    them before medium autoclaving. The corrected notes restrict shared identity to
+    input formula. NBRC1169/1308 instead match the common nine-vitamin preparation.
+  target_ids:
+  - CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-095
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The alternate glyph Na2S2O4・2H2O carries the same JCM941 literal-source
+    uncertainty as case88. SolutionC5 g/40 ml is a contextual preparation proposal,
+    not an exact chemical assignment. Source-form and inherited dithionite alias holds
+    remain.
+  target_ids:
+  - CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain JCM941 original material/supplier
+    specification confirming dithionite dihydrate or a source correction; retain Solution
+    C as a stock and do not map it exactly to anhydrous dithionite.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-096
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: PBBM/M2760 explicitly supplies a1 M Na2HPO4 solution to its buffer. The
+    source does not identify hydrate or solvent. PARTIAL source-qualified reagent
+    preserves nominal strength without selecting anhydrous/dodecahydrate or claiming
+    equivalence with another phosphate input.
+  target_ids:
+  - CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-097
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM554 names KH2PO4 as a receiving recipe component and says dissolve first/adjustpH7.0.
+    Those are procedural annotations, not a new distinct chemical name or stock formulation.
+    No global procedure alias is needed; hydration is not invented.
+  target_ids:
+  - CM_NAME:b46299db8562e79e9440b9447147a5cc01d4dd9d9b347912d9833e41b5ee6a16
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-098
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: MediaDive453 and606 explicitly reference solution608. Its seven acid volumes
+    are548.5,193.5,129 and four32.25 ml entries, including DL-2-methylbutyric acid.
+    These sum to1 L without added water; source batch quantities and stereochemical
+    prefix are preserved. Straight-chain valeric acid is distinct from isovaleric
+    acid.
+  target_ids:
+  - CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-099
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM221 uses200 ml0.2 N NaOH before adding separate sulfide nonahydrate
+    and cysteine hydrochloride monohydrate. The proposal denotes only the NaOH input,
+    not the whole reducing mixture; no solvent, cooling-gas solubility or cross-ATCC
+    whole-stock identity is inferred.
+  target_ids:
+  - CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-100
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: CCAPPCrev002 explicitly gives CaCl2 10 g/L stock with1 ml receiving dose.
+    The malformed frozen CaCl drops a subscript; actual source formula correction
+    is already supported. Exact supplied hydration remains absent, so no form-specific
+    identity is claimed.
+  target_ids:
+  - CM_NAME:b958cbd9d81690483aca30ac038a71f341bf6a23f38c55ef31f1718402a4d082
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Only the supplied solid hydration state
+    remains unknown if an exact form-specific chemical mapping is required; the CaCl2
+    formula and stock amount are already established.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-101
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: DSMZ533 explicitly distinguishes deionized water, including its trace-stock
+    preparation. Registry identity preserves processing grade separately from distilled-water
+    identity. The source supplies no resistivity, sterility or purity specification;
+    none is inferred.
+  target_ids:
+  - CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-102
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: ATCC1942 specifies10 ml5% nonahydrate stock yielding0.5 g/L and nitrogen
+    autoclaving. This source-linked arithmetic supports5%w/v for this anchor. Unknown
+    carrier remains PARTIAL; independent same-strength JCM cases are not silently
+    attached.
+  target_ids:
+  - CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-103
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: ATCC1943 explicitly prepares2.5% nonahydrate stock under nitrogen/autoclaving
+    and doses10 ml. Unlike1942 it does not establish a percent basis/carrier. The
+    proposal correctly retains literal percentage in notes without unsupported numeric
+    concentration; separate cysteine stock is excluded.
+  target_ids:
+  - CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-104
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The retained LS4D primary PDF methods explicitly specify2.2 mM K2HPO4.
+    That resolves the malformed frozen K2PO4 formula; the remaining unknown is supplied
+    hydration, not missing original formulation. The proposed no-exact-form disposition
+    is appropriate.
+  target_ids:
+  - CM_NAME:c2858b2854488e98244f0f7887c64246b6cfce3885cc63af10e7a4825d899623
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: The supplied hydration state is not specified
+    in the primary LS4D formulation. The K2HPO4 formula itself is established and
+    no further formulation retrieval is pending for that correction.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-105
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Actual retained TOGO M498 JSON identifies original JCM497 and1 ml B12 stock2
+    mg/100 ml after autoclaving.20 mg/L agrees nominally with JCM515, but carrier/provenance
+    are not shown identical. Conditional link is justified; unavailable original JCM
+    page is not treated as an inspected primary.
+  target_ids:
+  - CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Recover an explicit preparation/formulation
+    bridge for exact M498→JCM 515 identity. Unknown carrier and original JCM page
+    absence remain limits, while receiving dose and stock context are now recovered.;
+    exact source-specific unknowns, original holds and occurrence scope remain. Case
+    assessment is separate from global source mapping, whole-owner and export approval.'
+- assessment_id: case-106
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: M2567 baseC combines1 ml10 mM Na2WO4 solution and1 ml25 mM FeCl3 solution.
+    These are two immediate liquid reagents, not neat salts. COMPLETE immediate enumeration
+    does not infer their solvents, hydrated solutes or full molecular decomposition.
+  target_ids:
+  - CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-107
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: The alternate NaNH4HPO4 x4H2O source spelling has the same supported tetrahydrate
+    identity and CAS-primary/broader-parent logic as case72. The selected Thermo capture
+    binding still needs repair to the actual full product capture; no general hydrate
+    normalization is authorized.
+  target_ids:
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: Before integration, validate proposed
+    parent specificity and new-owner identifier collision, then generate CAS identity
+    and required B1 handle/parent rows; no source occurrence quantities or memberships
+    are transferred by this proposal. Exact-term search is bounded to inspected local
+    ChEBI/NCIt and current OLS queries.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-108
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM1385 imports1130, whose VFA formula separately lists n-valeric and iso-valeric
+    acid. The spacing alias n -Valeric acid preserves the straight-chain acid identity.
+    Existing record structures/CAS identify pentanoic acid. Generic parent roles and
+    legacy annotations are not approved by adding this spelling.
+  target_ids:
+  - CM_NAME:c36be1d71540b2db2461f2c1f3abc5e1e9f810bb3118035f84d5ec1e026b8604
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-109
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: NBRC1076 and1077 name500 ml artificial marine water but give no supplier
+    or formulation. Distinct real saltwater recipes exist; half-volume use does not
+    select one. This is a genuine composition/product bridge requirement, not merely
+    deferred registry curation.
+  target_ids:
+  - CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: NBRC 1076/1077 and the new targeted official-site
+    search do not identify a marine-salt formulation or product. Recover actual artificial
+    marine water recipe or supplier formulation; 500 ml addition alone cannot distinguish
+    materially different saltwater preparations.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-110
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1100 vitaminA has thirteen named vitamins/cofactors plus100 ml10 mM
+    potassium phosphate bufferpH7.2. All quantities match, including10 mg biotin/riboflavin
+    and100 mg for the other named solutes. VitaminB/B12 stock is separate. Generic
+    calcium pantothenate, lipoate stereochemistry and buffer ingredients remain unresolved.
+  target_ids:
+  - CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-111
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1321 gives pABA4,biotin1,nicotinic acid10,Ca-pantothenate5,pyridoxine
+    HCl15 mg in100 ml10 mM sodium phosphatepH7.1. JCM403 differs in pyridoxine10 mg
+    and explicit DL-pantothenate. The new source-qualified stock preserves this distinction.
+  target_ids:
+  - CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-112
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM923 major-metals stock contains KCl0.15 g,KH2PO4 1.36 g,NH4Cl2.68 g
+    and water1 L. Source composition is complete at immediate level. Blanket UNMAPPED
+    on KCl,NH4Cl and distilled water defers exact existing baseline candidates without
+    identifying missing science.
+  target_ids:
+  - CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-113
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Trimethylglycine is an independently supported synonym of glycine betaine,
+    not betaine hydrochloride. The same new CHEBI17750 candidate is appropriate for
+    this spelling; no separate owner should be minted solely for this synonym.
+  target_ids:
+  - CM_NAME:ce5120998c850847e4630cd678175dbc1d1c536736a245284008a1a147b9e6c2
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-114
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Frozen M3136 calls the material Vitamin supplement (ATCC); current JCM242
+    points to JCM197 trace vitamins. That current recipe is known, but no archived
+    bridge establishes that the ATCC-labelled frozen material denotes it. Hold the
+    historical/source identity bridge, not an abstract lack of ontology term or catalogue
+    code.
+  target_ids:
+  - CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: The current JCM 242→JCM 197 formula is
+    known, but no primary statement binds the frozen TOGO M3136 ATCC-labelled supplement
+    to it. Recover the ATCC product/formulation or explicit historical equivalence.
+    Neither a catalogue-code absence by itself nor a missing ontology term is the
+    blocker; the conflicting source identity bridge is.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-115
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1407 names Gibco100X MEM vitamins. Official11120 formula lists nine
+    solutes at manufacturer mg/L and actual product FAQ identifies distilled-water
+    solvent, sterile filtration and identical052/037 product formulation. These facts
+    support the current product-family preparation, without historical lot/package
+    equivalence or100-fold receiving-dose confusion.
+  target_ids:
+  - CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-116
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: M2231 explicitly makes6 g/L literal K2HPO4·7H2O in deionized water and
+    doses5 ml. The source-defined stock is supported despite unresolved unusual hydrate.
+    Water grade and batch quantities are preserved; no single-chemical alias is added.
+  target_ids:
+  - CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-117
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The six frozen Vitamin solution** occurrences split by actual composition:1050/1086/1274/925
+    match common9,1226 has B125 mg and lipoic5 mg,903 has B120.1 mg,pABA5 mg,lipoic5
+    mg. The three active payloads preserve these distinctions; generic starred label
+    is not globally resolving.
+  target_ids:
+  - CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-118
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1364 explicitly points to JCM1363 vitamin-mixture solution; the actual
+    hyperlink/formula bridge supports occurrence routing. It does not turn a bare
+    numbered pointer into a global identity name or identify generic B12 as cyanocobalamin.
+  target_ids:
+  - CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-119
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1423 and1424 explicitly point to898; the latter provides B12100,pABA80,biotin20,nicotinic200,DL-calcium
+    pantothenate100,pyridoxine HCl300,thiamine HCl200 mg in1 L water. Complete immediate
+    formula matches; source-qualified identity avoids generic numbered aliases.
+  target_ids:
+  - CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-120
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM1430/1431/1479 point to915. The recipe has thiamine HCl90,myo-inositol40,Ca-pantothenate4,pABA5,B125,pyridoxine
+    HCl4,nicotinic4,biotin0.1,folic2 mg in100 ml water. Matching source pointers support
+    memberships, not generic universal vitamin-stock identity.
+  target_ids:
+  - CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-121
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: NBRC1045 uses30 g Trypticase Soy(BBL), separate100 g NaCl and20 g agar.
+    MicroO0000113 identifies Trypticase soy broth as an exact synonym of tryptic soy
+    broth; FAO and BD text support its standard six-input broth composition. Added
+    agar/salt are outside the ingredient. Mapping quality should be SYNONYM_MATCH
+    rather than primary-label EXACT_MATCH; role/export approval remains withheld.
+  target_ids:
+  - CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-122
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The final-concentration annotation belongs to the receiving recipe. It
+    does not identify a complete stock. The linked nonahydrate repair correctly rejects
+    existing3%/24% stock labels as chemical synonyms under IF1201-R2/#1215; no dose-bearing
+    alias or occurrence migration follows.
+  target_ids:
+  - CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-123
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The spacing variant Na2S・9H2O(final conc.) has the same receiving-medium
+    scope as case122. Exact nonahydrate chemical identity is retained independently
+    of stock strength; the bounded rejection of preexisting3%/24% aliases does not
+    release source holds.
+  target_ids:
+  - CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-124
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: ATCC1257 identifies Menadione(VitaminK3)50 mg inside a separately prepared
+    ethanol/water solution. The alias is for the solute, not the stock. Frozen50G_PER_L
+    flattening is not approved. Legacy role/annotation strings are native-filtered;
+    provisional historical role claims remain outside acceptance.
+  target_ids:
+  - CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-125
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: Actual JCM403 gives B125 mg in100 ml water, distinct from its separate
+    five-vitamin/phosphate stock; every inspected MediaDive backlink names the JCM403
+    pointer. Vitamer remains unspecified. The full inherited/added numbered aliases
+    are nevertheless globally resolving without JCM namespace, so the source composition
+    can be accepted but exact alias-bearing payload needs bounded repair (cross-check
+    of reviewerA finding).
+  target_ids:
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-126
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The frozen root dose is 42 g/L. The exact TOGO M2277 primary record places
+    ZnCI2 at 42 mg in one litre of SL12; independently inspected Sander 2005 methods
+    print ZnCl2 at 42 mg. This supports a source-local Cl/I correction and nested-stock
+    unit repair. The molybdate amounts differ (2 versus 18 mg), so this comparison
+    does not establish whole-formula equivalence. Hydration remains unspecified; the
+    original 1992 chapter was not inspected.
+  target_ids:
+  - CM_NAME:e4f4dc9043979b211ce8cc40f5024aa5c04334464a9e28e7f682470bb823d6c7
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Supplied zinc-chloride hydration is not
+    specified. The 42 mg stock quantity is directly established; the Cl/I correction
+    is supported by an explicitly scoped independent primary SL12 comparison rather
+    than a claimed inspection of the original 1992 table.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-127
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM906 identifies a separate 0.5 M glycine-NaOH buffer at pH10, added as
+    100 mL to basal ingredients with 900 mL water. The 900 mL is not the stock carrier.
+    Glycine concentration is supported; NaOH quantity, carrier and final stock volume
+    remain unknown. The partial stock is justified without converting this into pure
+    glycine or a universally resolving concentration alias.
+  target_ids:
+  - CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-128
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: CCAP FCGM+HEPES and NCL75S use cereal leaves as the input for an extract,
+    with respectively 0.625 g/500 mL and 1 g/L. Leaf material is distinct from grain
+    flour, commercial Cerophyll and the finished leaf extract. The existing generic
+    cereal-leaf identity is supported; species and product composition remain unspecified.
+  target_ids:
+  - CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-129
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: 'JCM149 enumerates eight immediate Hutner-base constituents: NTA10 g, MgSO4·7H2O14.45
+    g, CaCl2·2H2O3.335 g, ammonium molybdate tetrahydrate9.25 mg, FeSO4·7H2O99 mg,
+    Metals4450 mL, water950 mL and approximately7.3 g KOH. The payload preserves those
+    source-batch quantities and unresolved references instead of flattening Metals44
+    or silently assigning forms. COMPLETE means the immediate source list, not complete
+    independent grounding.'
+  target_ids:
+  - CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-130
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The M3152/M3153 Wolin preparation dissolves NTA in10 mL0.5 N NaOH, then
+    adds500 mL water/minerals and dilutes to1 L. The 0.5 N preparation can be retained
+    as a partial stock; neither later water addition nor JCM4611 N/JCM113010 N establishes
+    its missing carrier or equivalence. The amount10 mL is an addition to the parent
+    stock, not a concentration in the NaOH stock.
+  target_ids:
+  - CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-131
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The frozen recipes use Methane as a gaseous ingredient; CHEBI16183 establishes
+    CH4 identity. The alias does not authorize converting gas partial pressure/volume
+    to mass or treating a mixed gas atmosphere as pure methane. The payload retains
+    retired process-only labels and does not add role evidence.
+  target_ids:
+  - CM_NAME:ed2efcd87f55bb5b3f77825eff9b878ca45ba94c5fbb559338bfa17b1af7db7c
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-132
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The archived ATCC2883 broth and agar recipes each name1 mL vitamin B12
+    stock at0.1 mg/mL, separately filter sterilized. This supports100 mg/L in a source-bound
+    partial stock. The3 mL methanol is a separate medium addition, not demonstrated
+    stock solvent. Generic B12 does not select cyanocobalamin.
+  target_ids:
+  - CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Carrier, other stock constituents and
+    molecular vitamer remain unspecified; these limit full chemical decomposition
+    but do not block the supported shared ATCC 2883 preparation.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-133
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM650 adds sterile sulfide-nonahydrate solution to reach final1 mM. This
+    is a final-medium dose, not a stock strength. The exact pure nonahydrate identity
+    is separate from unknown-strength solution, while the proposed inherited3%/24%
+    stock-alias rejection is independently justified. No stock owner can be inferred
+    from final dose alone.
+  target_ids:
+  - CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-134
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: NBRC1394 supplies PQQ1 mg and pH7 context without specifying acid/salt/hydrate.
+    CHEBI18315 neutral-acid evidence and supplier naming contrast do not prove the
+    NBRC supplied form. Withdrawal of the neutral-acid proposal is justified. Hipolypepton
+    from Wako remains distinct from Polypeptone and the separate issue1202 scope is
+    retained.
+  target_ids:
+  - CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: An NBRC1394 reagent specification, catalog
+    identifier, CAS number, or preparation record identifying the PQQ material actually
+    supplied. The independently verified 1 mg/L dose correction remains applicable
+    without this form identification.; exact source-specific unknowns, original holds
+    and occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-135
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The M2262 PCR-S11 primary comments explicitly define50 mM NaH2PO4 as6 g
+    plus1 L distilled water. The nominal molarity/mass does not prove an anhydrous
+    supplied form. The partial source stock correctly retains unknown solute grounding,
+    per-batch water and mass; it does not claim a final solution volume from a solvent
+    input alone.
+  target_ids:
+  - CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-136
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Sigma A8381 primary product instructions identify L-asparagine monohydrate,
+    CAS5794-13-8, C4H8N2O3·H2O and the(S) synonym. That supports the literal L-Asn*H2O
+    alias, distinct from DL and anhydrous material. The full inherited payload still
+    has a stereounspecified SMILES and requires whole-owner structural review; alias
+    acceptance does not approve that structure or parent mapping.
+  target_ids:
+  - CM_NAME:f92ba1d96e0d0ef990a7398e830acc75ba91fddb8fd89fa0d1453936b339a307
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-137
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The exact ChEBI methanethiol identity is CH4S/CAS74-93-1, and the source
+    gas context supports that chemical. The new compound does not invent a molecular
+    concentration from gaseous addition. Existing role and receiving-medium calculation
+    questions remain outside this source identity conclusion.
+  target_ids:
+  - CM_NAME:f9e39d24d2eddd293e160d417ee3f717676267627752d1963a50ac887d8314bc
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-138
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: TOGO M2809 raw comments specify11 vitamins per litre, DL-pantothenic acid
+    calcium salt, generic B12, pH7 adjustment with1 M KOH and dark4C storage underN2.
+    The original CultureBotHT sheet separately contains11 rows including cyanocobalamin0.1
+    mg/L and calcium pantothenate5 mg/L. Their exact component-form equivalence is
+    not established. The notes-only comparison appropriately preserves both sources;
+    sheet quantities do not resolve TOGO vitamer, titrant amount or inherited component
+    grounding. PLOS methods were read only for their Thauers reference/use, not as
+    a full formula witness.
+  target_ids:
+  - CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: The completed primary lookups leave a
+    specific cross-source reagent-form bridge: TOGO does not select the B12 vitamer,
+    and CultureBotHT does not select pantothenate stereochemistry. Exact equivalence
+    and source membership remain unapproved; this does not prevent bounded provenance
+    curation.; exact source-specific unknowns, original holds and occurrence scope
+    remain. Case assessment is separate from global source mapping, whole-owner and
+    export approval.'
+- assessment_id: case-139
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM713 names24% sodium sulfide nonahydrate solution,1 mL filter sterilized
+    into SolutionC. The source does not define percent basis, carrier or final preparation
+    volume. A partial preparation with exact nonahydrate solute but no invented concentration-unit
+    conversion is supported; pure-solute aliases remain rejected.
+  target_ids:
+  - CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-140
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Sigma T3253 identifies Tris hydrochloride CAS1185-53-1/C4H11NO3·HCl, distinct
+    from tris base CHEBI9754 and protonated tris without a chloride counterion. The
+    bounded free-base alias repair is justified. A separately scoped exact salt candidate
+    remains feasible, and the ledger should distinguish remaining lookup/owner work
+    from an unknown source salt identity; no isolated family or export approval is
+    given.
+  target_ids:
+  - CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Create/select a distinct hydrochloride
+    owner after exact native ontology lookup; the proposed rejection repairs base-owner
+    alias scope but does not approve a new salt mapping.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-141
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM650 specifies final6 mM thiosulfate pentahydrate added from filter-sterile
+    solution. The hydrate is identified, but stock strength/carrier/preparation is
+    not. Keeping the exact compound identity separate from an undefined solution is
+    correct; no new stock concentration follows from the final6 mM.
+  target_ids:
+  - CM_NAME:fe02057980a49b44d5db5a52ff1592a972ee07c0dc3127445b9cf4232cd85ea5
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-142
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive607 literally names Na2HPO4 x H2O and1 g, while its automatic
+    CAS7558-79-4/CHEBI34683 and141.959 mass describe anhydrous salt. Automatic fields
+    do not establish the monohydrate or permit routing to dodecahydrate. The hydration/source
+    hold remains necessary.
+  target_ids:
+  - KG_CASE:07164df96e0cc852632444d89d77150b5419e5451555019c32f8d1d97f5c492f
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain an original recipe/material specification
+    proving disodium hydrogenphosphate monohydrate or correcting the hydration count;
+    preserve all rejected-label dispositions.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-143
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The literal6-methylnicotinate source name does not distinguish acid, salt
+    or ester. The automatic CAS5470-70-2 corresponds in the supplier comparison to
+    methyl6-methylnicotinate and cannot repair the raw name without source-specific
+    support. The5 g/L amount does not settle identity; withholding exact mapping is
+    justified.
+  target_ids:
+  - KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: The original reagent or formulation must
+    identify methyl ester versus 6-methylnicotinic acid/salt. The present record supplies
+    no independent structure or catalog.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-144
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive1580 names Na2HPO4 hexahydrate2.9 g while automatic chemical fields
+    describe another form. The existing local hexahydrate identity remains under source-form
+    review; no exact anhydrous mapping or new owner is justified by those automatic
+    fields.
+  target_ids:
+  - KG_CASE:0eabbaa331c55b9e87acb114a158ef96e99a83f2fe0895367a061c7caa6d2c39
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain primary characterization or supplier
+    CAS for the claimed disodium phosphate hexahydrate and review its exact parent
+    relation and complete aliases under current semantics.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-145
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: ChEBI132109 defines equal sodium and stearate ions, formulaC18H35O2.Na/CAS822-16-2.
+    That directly supports sodium stearate rather than free stearic acid. The existing-identity
+    no-change decision is supportable without certifying all inherited owner roles
+    or preparation occurrences.
+  target_ids:
+  - KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-146
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: JCM403 explicitly enumerates a separate vitaminB12 stock5 mg plus100 mL
+    distilled water; genericB12 leaves vitamer unresolved. The source is tied to imported
+    MediaDive1845, supporting these stock components. However the final payload leaves
+    and adds unqualified MediumNo403 pointers as RAW_TEXT, which are globally resolving
+    aliases. Source provenance in a synonym field does not make a provider-local number
+    globally unique. A owns the consolidated pointer finding.
+  target_ids:
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-147
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive2365 NH4MgPO4 and supplier products labelled ammonium magnesium
+    phosphate hydrate use CAS7785-21-9 alongside an anhydrous formula. They do not
+    establish a fixed hydration number for the source ingredient. The raw formula
+    alone cannot justify selecting struvite hexahydrate or anhydrous material; the
+    supplied-form hold is justified.
+  target_ids:
+  - KG_CASE:14966eca14968a8d731b602a0cc9e2fa8aec54d0dd1d9c75037719f1eb922309
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Primary C100 supplier/material evidence
+    establishing the actual hydrate form for CAS 7785-21-9; current source CAS alone
+    is insufficient.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-148
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive1810 names KH2PO4 dihydrate; PubChem23710200 represents H6KO6P172.12.
+    Database existence is not independent evidence of the actual recipe material.
+    The exact raw source remains recorded while the automatic mapping is not accepted
+    as supplied-form proof.
+  target_ids:
+  - KG_CASE:14db80cbc9a240c7ce8fdcb21fb5ff85482623f88070a89a3d2ca059b91bdbf5
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Verify an authoritative formulation/material
+    specification for Ilyobacter/SGP7 source KH2PO4 dihydrate or obtain a source correction;
+    PubChem/depositor formula alone is insufficient for release.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-149
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The source chemical label is(NH4)2HPO4 despite the malformed queue string
+    NH42HPO4. CHEBI63051 defines diammonium hydrogenphosphate with two ammonium ions;
+    the foreign automatic CHEBI62476 flavonoid is not used. Existing identity is supported
+    with the source metadata conflict explicit.
+  target_ids:
+  - KG_CASE:1516e0f6a1c975af4530ba8fe2a159d585be2474bfb686be0240ae0dbccd3e83
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-150
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The source specifies DL-sodium lactate and a1.12 g dose, not a1 M or1%
+    stock. CHEBI75228 is stereounspecified sodium lactate; CHEBI232798 is the L-specific
+    salt. Rejection of L-only and concentration-qualified aliases is justified, but
+    it does not make all occurrences racemic or all preparation variants identical.
+  target_ids:
+  - KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Source-row release still requires the
+    content-bound native workflow; this proposal does not certify the existing provisional
+    nutritional role or change the inherited hold.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-151
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive1075 Na2S x H2O is supplied40 mg dissolved separately. Its automatic
+    anhydrous identifiers do not determine the literal hydrate number. Preserve unknown
+    form and source scope; it cannot be globally merged with nonahydrate or anhydrous
+    salt.
+  target_ids:
+  - KG_CASE:288dff5776b0661a2e0b1d703a97cfb28269abe9c71a909f7ec3ba52dc839f5e
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain the original sulfide reagent specification
+    with hydrate/CAS or source correction; do not infer nonahydrate or anhydrous identity
+    from solubilization instructions.; exact source-specific unknowns, original holds
+    and occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-152
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The source beta-NAD name and ChEBI15846 NAD(+) structure support the oxidized
+    nucleotide identity; formulaC21H28N7O14P2 and charge+1 are read from the primary
+    ontology capture. The proposal corrects provenance classification and does not
+    infer a sodium salt or reduced NADH from2 mg dose.
+  target_ids:
+  - KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-153
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive1250 and JCM776 literally print H3BO4. Neither provides a correction
+    witness identifying H3BO3. The20 mg quantity and mineral context cannot determine
+    an intended boron compound; the malformed source must remain unresolved.
+  target_ids:
+  - KG_CASE:2ff0366ceab3a7466037d16924c36d2e5d83602a64d7523bd3479602e1cf275c
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain primary-source correction or chemical
+    specification for each linked H3BO4 material family, particularly JCM776/DSMZ1396
+    and NBRC W-medium/flexibacteria formulations; preserve occurrence-specific identity
+    until reconciled.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-154
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The manufacturer describes Bacto Soytone212489 as enzymatic soy digest.
+    That establishes this product category but does not make all Soytone/BactoSoytone/generic
+    soy hydrolysate records identical. Three active family owners and the broad vegetable-hydrolysate
+    FoodOn identity remain a coupled issue; notes-only source comparison preserves
+    the hold.
+  target_ids:
+  - KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: The existing generic family aggregates
+    multiple source labels and products. Exact product-equivalence or a merge requires
+    the occurrence-level source allocation and the historical product/process specifications;
+    the copied family totals cannot establish those facts.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-155
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: ChEBI17201 is neutral glycylglycine, a two-glycine dipeptide with formulaC4H8N2O3.
+    The source literal identity matches the existing owner. Neither monomer glycine
+    nor another salt is inferred, and no additional owner or alias change is needed.
+  target_ids:
+  - KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-156
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The trait source references the existing local Cytovirin record; the blank
+    auxiliary raw source field is not a nameless chemical identity. This supports
+    no-change accounting only. There is no newly inspected external primary structure
+    or formula for Cytovirin and no such claim is made.
+  target_ids:
+  - KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-157
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ1894 uses20 g/L supermarket soya flour. FoodOn03302142 is soybean flour,
+    so the source spelling is within the existing mixture category. A source product
+    or species precision beyond soybean flour is not claimed. The complete linked
+    payload preserves generic mixture scope and does not promote it to a defined digest.
+  target_ids:
+  - KG_CASE:463c572763b0fab0211b5b86703d8b885a65d79b60cbb9e38c44eba19014a6e8
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-158
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive753 names Na2HPO4 heptahydrate. NCITC61946/CAS7782-85-6 represent
+    that specific hydrate, whereas automatic anhydrous fields conflict. The exact-form
+    candidate is known; coupled family/override/owner review remains necessary. A
+    structural pass alone cannot release those holds.
+  target_ids:
+  - KG_CASE:48c5d83da19f5f2bdd7680e3b43ff3e02e092f004991e6368ec63fb94a7784ac
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-159
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Bacto Soytone manufacturer evidence supports a branded enzymatic soybean
+    digest; it does not demonstrate universal equivalence to every Soytone-labelled
+    or hydrolyzed-vegetable-protein record. The same family hold as case154 is retained,
+    with no duplicate consolidation or primary-ID endorsement.
+  target_ids:
+  - KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: The existing generic family aggregates
+    multiple source labels and products. Exact product-equivalence or a merge requires
+    the occurrence-level source allocation and the historical product/process specifications;
+    the copied family totals cannot establish those facts.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-160
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The trait label alpha-hydroxyglutarate-gamma-lactone lacks stereochemical
+    specification. CHEBI73673 is an(S) anionic species and does not exactly identify
+    that generic neutral label. The local registry preserves the source label without
+    inventing stereochemistry or a charge state.
+  target_ids:
+  - KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-161
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: Frozen MediaDive2431 explicitly supplies DuchefaL0230 and the existing
+    UNMAPPED0427 history has the same sourceID. Captured manufacturer page/certificate
+    enumerate the mineral/vitamin basal-medium formula, including100 mg/L inositol,0.4
+    mg/L thiamineHCl and4402.49 mg/L total. The exact product bridge is established.
+    Deferring registry/formulation curation as separately scoped despite missing_requirement=null
+    leaves feasible authorized work incomplete; candidate acceptance needs the bounded
+    correction in C-F001.
+  target_ids:
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-162
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MacklinP816398 primary specification gives K2HPO4·3H2O/CAS16788-57-1/mass228.22.
+    The remaining block is two active owners and coupled memberships/overrides under656,
+    not an unknown chemical formula. Preserving this coupled hold is appropriate;
+    no isolated promotion is approved.
+  target_ids:
+  - KG_CASE:606116d7d33f34dcd8c1a87de0247f2805ee57b67865d8fc7fb3a674db3d57db
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Coupled two-owner/source-membership reconciliation
+    under issue 656; chemical trihydrate identity itself is supported, and no third
+    owner is needed.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-163
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: 'ChEBI66870 is sodium dithionite/Na2S2O4, not scutellarinCHEBI61278. The
+    live and tombstone payloads reject the unrelated flavonoid aliases while retaining
+    their provenance. The rejected tombstone still carries obsolete flavonoid chemistry,
+    explicitly outside the bounded delta; it is not an approved complete chemical
+    record. Explicit corrected owner attribution: Na2s2o4 is the REJECTED flavonoid-property
+    tombstone; Sodium_Dithionite is the active coherent inorganic owner. See C append-only
+    correction.'
+  target_ids:
+  - KG_CASE:6a766ab3775202a15f12a936f6bb1dbe3db85049d16d86863c0082fccaeede26
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-164
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The archived Kluyver1956 introductory page identifies chlororaphin as a
+    semiquinone phenazine-carboxamide material. That does not establish a complete
+    unique structure for the trait label. The existing registry no-change decision
+    is supported; the entire paper was not inspected and no exact chemical promotion
+    is asserted.
+  target_ids:
+  - KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-165
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Monohydrate aliases do not identify the dihydrate owner. The paired rejection/transfer
+    is correct but cannot apply alone because758 requires three-form memberships and
+    six source overrides. Current issue758 already names NCITC66551/CAS13472-35-0
+    as a dihydrate candidate; the missing-facts ledger should distinguish this known
+    candidate from the still-required exact full family adjudication.
+  target_ids:
+  - KG_CASE:717bdd5f0752732c851addddb19a57c3404a9d70e6b20361273f75416ae38578
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Complete exact-term/CAS and parent-relation
+    review for the dihydrate; reject monohydrate aliases independently of any future
+    parent mapping.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-166
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: JCM60/ISP5 provides the exact glycerol-asparagine agar recipe and its trace-salt
+    stock. The inherited generic owner arose from Agar extraction and lacks the same
+    source1754 identity bridge. A notes/history proposal accurately records the exact
+    formula without assigning it wholesale to the generic owner or creating an assumed
+    duplicate; this resolves vor-02 within its bounded scope.
+  target_ids:
+  - KG_CASE:72922d5a8c04a9f7ee6a10176b0f816aba0abcff463e803a02cf58d0292ba997
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Before mapping or decomposing UNMAPPED_0122
+    as exact JCM60, establish that the original Agar-extracted label denotes this
+    formulation/version, including component ratios, trace-stock hydrate forms and
+    preparation, rather than a generic named-medium family. Its current record carries
+    no primary recipe provenance to establish that bridge. Source1754 itself already
+    has a verified JCM60 formulation; no additional discovery of that recipe is required.;
+    exact source-specific unknowns, original holds and occurrence scope remain. Case
+    assessment is separate from global source mapping, whole-owner and export approval.'
+- assessment_id: case-167
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ1521 literally references SL-10 without enumerating that stock. Another
+    existing SL10 owner has a DSM4178 formula, but the capture does not establish
+    the version bridge for this occurrence. Numerical1387 is a source ingredient key,
+    not a chemical ontology identity. Preserve the source/version hold.
+  target_ids:
+  - KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: The KG raw row is exactly mediadive.solution:3148#recipe/11,
+    1 ml SL10, ingredient1387. It supplies no formulation bridge to the existing owner;
+    new portal retrievals remain inaccessible. Recover that stock composition, retaining
+    the separate CHEBI:1387 wrong-ID quarantine.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-168
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The source identifies0.5 M HOMOPIPES stock atpH5.4 and0.05 mL addition.
+    The supplier identity CAS202185-84-0 supports the zwitterionic buffer compound,
+    distinct from the preparation. Unknown carrier, titrant and volume prevent a complete
+    solution formula; the partial stock retains these unknowns.
+  target_ids:
+  - KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-169
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: DSMZ1305 and MediaDive1161 literally specify KH2PO4·7H2O0.5 g. Lack of
+    a verified exact hydrate identity cannot be repaired by dropping seven waters.
+    The anomalous formula remains source-specific and held; no anhydrous mapping is
+    approved.
+  target_ids:
+  - KG_CASE:7abd76e68fb807599fceb4ba28ba02f4860a6b33cda23cce83c4b1f904b9a32e
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain an MMN source correction or a
+    material specification for KH2PO4·7H2O; establish whether hydration is intentional
+    before a distinct owner or corrected source link.; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-170
+  area: identity
+  topic: requires_source_outcome_or_evidence_correction
+  outcome: concern
+  summary: 'DSMZ694 directly prints NaNH4HPO4·4H2O3.5 g. The selected supplier evidence
+    points to primary-batch6 (title/navigation only), but independent reviewerB located
+    the complete committed primary-batch7, which I inspected: Thermo040320.22 lines103–105
+    and147–154 explicitly give tetrahydrateCAS7783-13-3/H13NNaO8P/209.067 and four
+    waters inSMILES. Exact source identity is supported. Repair the selected evidence
+    backlink/locator and preserve original timestamp; this is not absent supplier
+    support or a refutation of the chemistry. B leads the shared binding finding.'
+  target_ids:
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Before integration, validate proposed
+    parent specificity and new-owner identifier collision, then generate CAS identity
+    and required B1 handle/parent rows; no source occurrence quantities or memberships
+    are transferred by this proposal. Exact-term search is bounded to inspected local
+    ChEBI/NCIt and current OLS queries.; exact source-specific unknowns, original
+    holds and occurrence scope remain. Case assessment is separate from global source
+    mapping, whole-owner and export approval.'
+- assessment_id: case-171
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: ChEBI91259 primary chemistry contains twelve waters in formula/InChI/SMILES
+    and CAS10039-32-4. This supports replacing inherited anhydrous structures and
+    rejecting generic/sibling-form aliases; automatic MediaDive95 anhydrous metadata
+    remains held. This exact owner and primary identity overlap worker03 c-phosphate-dodecahydrate,
+    so I explicitly do not approve worker03 science or final cross-shard coalescence.
+  target_ids:
+  - KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-172
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: MediaDive11 uses pure KH2PO4 but also lists concentration-qualified attributes.
+    CHEBI63036 is potassium dihydrogenphosphate. Three specific stock/dibasic aliases
+    are correctly rejected under1215. The full inherited payload retains broad PotassiumPhosphate
+    and malformed KHPO synonyms, so the bounded fix does not constitute whole-owner
+    approval; the generic phosphate issue811 lineage remains relevant.
+  target_ids:
+  - KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-173
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The original source renders Se-acid without an oxidation-state definition.
+    MediaDive automatic H2SeO4/CAS7783-08-6 cannot choose selenic over selenous acid.
+    The raw primary preparation was inspected, but it supplies no correcting chemical
+    identity; preserve the source hold.
+  target_ids:
+  - KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: An original reagent name, formula or
+    supplier specification distinguishing selenious acid from selenic acid.; exact
+    source-specific unknowns, original holds and occurrence scope remain. Case assessment
+    is separate from global source mapping, whole-owner and export approval.'
+- assessment_id: case-174
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: As in case160, the trait alpha-hydroxyglutarate-gamma-lactone label does
+    not select(S) stereochemistry or an anion. The existing local registry remains
+    an honest source identity; no exact CHEBI73673 substitution is supported.
+  target_ids:
+  - KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-175
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The second chlororaphin trait occurrence has the same unresolved semiquinone/material
+    boundary. The inspected1956 introductory evidence does not authorize a unique
+    exact chemical mapping, and the no-change local registry preserves that limit.
+  target_ids:
+  - KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-176
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The primary J-STAGE primocarcin abstract supplies historical antibiotic
+    context and formulaC8H12N2O3, but the full paper and a full exact structure were
+    not inspected. Existing registry no-change is supportable; no unread-paper inspection
+    or new ontology promotion is claimed.
+  target_ids:
+  - KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-177
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: The literal NaH2PO4 x H2O form matches monohydrateCHEBI114249 while automatic
+    source chemistry points to anhydrous material. Adding that spelling to the existing
+    mono owner is chemically justified only as part of the coupled758 operation with
+    sibling alias rejection/overrides; it does not approve isolated application.
+  target_ids:
+  - KG_CASE:9d901e4179349277b6172520333eede4a271b149f678da37699b75492c272c04
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-178
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The frozen MediaDive552 preparation is5 g thiosulfate plus100 mL H2O, with10
+    mL added to parent medium. Automatic PEG/pentahydrate metadata are inconsistent
+    and cannot set supplied hydration. The source stock preserves mass and solvent
+    input, unknown solute form and source-batch units rather than assuming final volume
+    or pure-compound equivalence.
+  target_ids:
+  - KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-179
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: MediaDive736 literally prints Na2Mo4·2H2O without CAS/structure. CHEBI75213
+    is disodium molybdate dihydrate and has MoO4, not the oxygen-deficient literal.
+    Rejection of this and ten related malformed/form-unspecified aliases is supported
+    by exact formula comparison. No corrected identity is inferred for those source
+    occurrences;1216 is the precise bounded lineage.
+  target_ids:
+  - KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Retrieve the specific source recipe/supplier
+    underlying MediaDive736 and document Na2MoO4·2H2O correction; retain malformed-formula
+    hold pending that evidence.; exact source-specific unknowns, original holds and
+    occurrence scope remain. Case assessment is separate from global source mapping,
+    whole-owner and export approval.'
+- assessment_id: case-180
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: The plain Flour source is not wheat-specific. FoodOn00004510 covers finely
+    ground cereal/starchy material and matches that general mixture scope. Promotion
+    of the existing plain-flour owner avoids a duplicate or a forced wheat identity;
+    automatic source CAS is not used as chemical proof.
+  target_ids:
+  - KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-181
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Original Wako SDS2023-01-26 identifies DL-asparagine monohydrate/CAS69833-18-7/C4H8N2O3·H2O.
+    TCI lists the same hydrate formula with CAS3130-87-8, a conflicting registration
+    handled explicitly. The DL hydrate cannot map exactly to L-specificNCITC87433.
+    GenericCHEBI22653 is a parent only; NARROW_MATCH correctly encodes the broader
+    target. I additionally inspected the retained original Wako PDF SHA9d678de5bd4d7b8df46e3dd24a24447b04f42ae0e46b3e7e2d399eb7a560cdbb,
+    issue15-Oct-2026, sections1/3; it independently confirms the same DL monohydrate/CAS.
+    The archived web rendering was the older2023 version, not this directPDF.
+  target_ids:
+  - KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-182
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: JCM941 SolutionC explicitly mixes source-labelled Na2S2O4·2H2O5 g and distilled
+    water40 mL, separately autoclaved underN2. A source-qualified stock can preserve
+    that preparation with an UNMAPPED solute. None of the bare compound cases may
+    resolve to the whole stock, and the anomalous hydrate identity remains unresolved.
+  target_ids:
+  - KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: Obtain JCM941 original material/supplier
+    specification confirming dithionite dihydrate or a source correction; retain Solution
+    C as a stock and do not map it exactly to anhydrous dithionite.; exact source-specific
+    unknowns, original holds and occurrence scope remain. Case assessment is separate
+    from global source mapping, whole-owner and export approval.'
+- assessment_id: case-183
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: MediaDive1140 specifies Amphotericin stock10 mg/mL and the frozen addition
+    is0.02 mL. The source does not select amphotericinA/B or carrier. A partial generic-amphotericin
+    stock is supported; AmphotericinB product information cannot fill those unknowns
+    by analogy.
+  target_ids:
+  - KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-184
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Sigma69889 product evidence identifies MES monohydrate/CAS145224-94-8/formulaC6H13NO4S·H2O/mass213.25.
+    The exact supplied-form registry identity is separate from the anhydrous/generic
+    parent. Existing export and parent-review holds remain; no hydrate collapse is
+    authorized.
+  target_ids:
+  - KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: case-185
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: Generic VitaminB12 at20 mg does not select cyanocobalamin merely because
+    automatic metadata give its CAS or derived molarity. CHEBI176843 is a vitaminB12
+    class. Preserve vitamer ambiguity and WITHHOLD2930; concentration correction and
+    cross-shard source resolution remain distinct from owner approval.
+  target_ids:
+  - KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: No duplicate alias edit is needed: Vitamine
+    B12 already occurs on the candidate owner. The exact primary source reagent remains
+    unselected among a vitamin class; 20 mg and derived mmol do not supply form evidence.
+    Source row2930 WITHHOLD and conflicting exact-form owner assertions remain for
+    specific adjudication.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-186
+  area: identity
+  topic: source_assessment_accepted_payload_corrections_pending
+  outcome: concern
+  summary: Literal Fe4(PO4)2 is not the electroneutral ferric-pyrophosphate formulaFe4(P2O7)3.
+    The exact existing ferric-pyrophosphate identity supports correcting its preferred
+    label and rejecting the malformed inherited string, while the source occurrence
+    itself remains uncorrected/held until a primary correction witness exists.
+  target_ids:
+  - KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: The original reagent label or recipe
+    must establish the chemical intended by Fe4(PO4)2. The inherited CAS and derived
+    molarity follow the current mapping and are not independent evidence for correcting
+    the source occurrence.; exact source-specific unknowns, original holds and occurrence
+    scope remain. Case assessment is separate from global source mapping, whole-owner
+    and export approval.'
+- assessment_id: case-187
+  area: identity
+  topic: accepted_bounded_source_outcome_with_holds
+  outcome: supported
+  summary: ChEBI27082 trehalose describes the1↔1 glucosyl disaccharide without selecting
+    the source anomer or hydration. The literal D-trehalose label can support the
+    existing generic identity but not an alpha-alpha, beta-beta or dihydrate assertion.
+    The no-change conclusion retains those limits.
+  target_ids:
+  - KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Published remaining requirement: None; exact source-specific unknowns,
+    original holds and occurrence scope remain. Case assessment is separate from global
+    source mapping, whole-owner and export approval.'
+- assessment_id: payload-000
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC268 supports the added anhydrous-base source alias and CHEBI131527
+    identity; the full record still has malformed exact/resolving formulasKH2HPO4
+    andK2HPO. The trihydrate rejection is preserved. No inherited roles/export approval.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-001
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Three one-water aliases are rejected on the two-water owner with exact
+    text/provenance retained. All other fields and old history were inspected. This
+    is a coupled758 fragment, not authority to apply one half or bless inherited structure/parent
+    mapping.
+  target_ids:
+  - if-reject-monohydrate-on-dihydrate
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-002
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: The source spelling names the monohydrate and belongs on CHEBI114249, not
+    a two-water owner. The full record remains subject to the same three-form/six-override
+    operation under758; paired alias editing is necessary but not sufficient for release.
+  target_ids:
+  - if-add-mono-source-spelling
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-003
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: This is the REJECTED Na2s2o4 merge tombstone, identifier CHEBI:66870, zero
+    occurrences. It retains obsolete C21H18O12 flavonoid formula/InChI/SMILES as expressly
+    unapproved historical fields. The proposed six scutellarin/glucuronide alias rejections
+    are justified and preserve the tombstone; this is not an active chemical owner
+    and must not be revived or exported as validated dithionite chemistry.
+  target_ids:
+  - if-repair-dithionite-Na2s2o4
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-004
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: This is the active MAPPED Sodium_Dithionite owner, CHEBI:66870/CAS7775-14-6,
+    formula 2Na.O4S2 and dithionite InChI/SMILES. Its six foreign scutellarin/glucuronide
+    aliases are correctly rejected, with text, sources, old history and counts retained.
+    It does not have the obsolete flavonoid chemical_properties attributed to it in
+    the sealed review.
+  target_ids:
+  - if-repair-dithionite-Sodium_Dithionite
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-005
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ694 source literal and Thermo retained full product record support
+    sodium ammonium hydrogenphosphate tetrahydrate, CAS7783-13-3, H13NNaO8P. CAS-primary
+    plus broader sodium-phosphate parent preserves the exact form. Selected supplier
+    evidence points at a header-only capture; the actual supporting batch7 bytes need
+    an explicit evidence backlink. Ontology absence is only bounded search, not universal
+    proof.
+  target_ids:
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    [''W08-IR-010'']'
+- assessment_id: payload-006
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Source EDTA・2Na・2H2O supports the live CHEBI:64758 dihydrate owner; the
+    old second file is a rejected merge tombstone, not a competing live identity.
+    The new spelling preserves hydration and sodium stoichiometry. The whole inherited
+    payload retains provisional chelator evidence, which this source review does not
+    approve. Native policy already suppresses three annotation strings despite RAW_TEXT
+    typing.
+  target_ids:
+  - if-add-edta-disodium-dihydrate-spelling
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-007
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: The added n-/n--valeric aliases carry direct recipe provenance and preserve
+    straight-chain acidCHEBI17418. Earlier vor-03 provenance repair is present. Existing
+    pentanoate synonyms do not independently prove protonation equivalence for all
+    sources.
+  target_ids:
+  - op-valeric-alias
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-008
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: The added iso-/iso--valeric aliases identify branched3-methylbutanoic acidCHEBI28484,
+    separate from valeric acid. Direct source provenance repair vor-03 is present.
+    No isomer merge or occurrence-count transfer.
+  target_ids:
+  - op-isovaleric-alias
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-009
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Methane alias matches CHEBI16183/CH4 and source gas context. The whole
+    payload retains rejected process labels and exact identity; no atmosphere-mixture,
+    mass-conversion or role claims are added.
+  target_ids:
+  - op-methane-alias
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-010
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Generic soy flourFoodOn03302142 correctly includes source supermarketSoyaFlour
+    without claiming a defined chemical composition, defatted product or branded preparation.
+    Existing history and provenance preserved.
+  target_ids:
+  - op-soy-flour-alias
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-011
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The complete payload identifies L-asparagine monohydrate by CAS5794-13-8
+    and stereo-specific InChI, but its SMILES C(C(C(=O)O)N)C(=O)N.O contains no stereo
+    markers. This omission does not itself assert the opposite enantiomer or prove
+    a racemate. The stronger identity-grading concern is its CAS primary plus NARROW_MATCH
+    to NCIT:C87433 despite the archived exact NCIT term having CAS5794-13-8 and exact
+    synonym L-Asparagine Monohydrate. The sealed ACCEPT_BOUNDED_PROPOSAL_FOR_PLANNING_WITH_HOLDS
+    wording must not be read as acceptance of these complete after bytes. Complete
+    payload assessment remains withheld pending this bounded identity/structure adjudication,
+    rather than merely waiting for separate export approval. A chemically justified
+    alias delta may still be used to plan the correction.
+  target_ids:
+  - op-l-asn-hydrate-alias
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-012
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: EthaneCHEBI42266 is the gas component named by the source; no purity or
+    whole headspace identity is inferred. New mapping evidence must describe agent/database
+    provenance accurately.
+  target_ids:
+  - op-ethane-new
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-013
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: CHEBI100147 identifies nalidixic acid and excludes sodium-salt equivalence.
+    PrimaryNBRC1301 stock evidence was independently supplemented;NBRC1314 primary
+    applicability remains unverified after failed read-only retrieval. No claim that
+    every source recipe was inspected can be accepted.
+  target_ids:
+  - op-nalidixic-new
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    [''W08-IR-007'']'
+- assessment_id: payload-014
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Sigma B2629 and ChEBI17750 support glycine betaine/trimethylglycine zwitterion,
+    CAS107-43-7. This is distinct from hydrochloride and hydrated preparations in
+    the baseline. No acid salt, hydrate, purity or supplier-specific grade is inferred.
+    Trimethylglycine is an independently supported synonym of glycine betaine, not
+    betaine hydrochloride. The same new CHEBI17750 candidate is appropriate for this
+    spelling; no separate owner should be minted solely for this synonym.
+  target_ids:
+  - op-glycine-betaine-new
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-015
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: New CHEBI16007 compound correctly identifies methanethiol, distinct from
+    gas mixture/stock. Source alias provenance is explicit and history marks LLM assistance.
+    No unsupported structure, quantity or role is inferred.
+  target_ids:
+  - op-methanethiol-new
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-016
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: CAS54-86-4/C6H4NNaO2 identifies sodium nicotinate. NARROW_MATCH toCHEBI15940
+    nicotinicacid is the correct asymmetric bridge underMAPPING_SEMANTICS, with salt
+    scope preserved. Agent-authored mapping evidence is not human evidence.
+  target_ids:
+  - op-sodium-nicotinate-new
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-017
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: JCM60/ISP5 formula is established, but the generic Agar-extracted owner
+    does not establish that same version. Notes/history record source facts and explicitly
+    retain this bridge gap; no full formulation or generic-owner identity is silently
+    changed.
+  target_ids:
+  - op-glycerol-asparagine-source-note
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-018
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: ATCC1257 identifies Menadione(VitaminK3)50 mg inside a separately prepared
+    ethanol/water solution. The alias is for the solute, not the stock. Frozen50G_PER_L
+    flattening is not approved. Legacy role/annotation strings are native-filtered;
+    provisional historical role claims remain outside acceptance.
+  target_ids:
+  - vm-prop-menadione
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-019
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The completeJCM403 table is pABA4mg,biotin1mg,nicotinicacid10mg,DL-calciumpantothenate5mg,pyridoxineHCl10mg
+    and100ml10mMsodiumphosphatebufferpH7.1. Quantities/source scope are supported.
+    Bare numbered-pointer preferredterm/three RAW_TEXTaliases remain globally resolving;
+    knowncomponent references are unfinished. GenericMICROclosematch does not establish
+    exactstock identity.
+  target_ids:
+  - vm-prop-jcm403-vitamin
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-020
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM403B12 is5mg unspecifiedB12+100ml distilledwater, distinct from its
+    five-vitamin andthiaminestocks. GenericB12 molecularform remains unknown. Three
+    bare numbered-pointeraliases andunqualifiedpreferredterm resolve globally despite
+    source-local applicability. Water grounding is feasible.
+  target_ids:
+  - vm-prop-jcm403-b12
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    [''W08-IR-004'']'
+- assessment_id: payload-021
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The complete inherited owner is UNMAPPED0427, with exact same MediaDive2431
+    sourceID. DuchefaL0230 source/product bridge and full formula are known. Merely
+    adding notes/alias while declaring promotion separately scoped leaves feasible
+    authorized curation undone. C-F001 blocks completed-campaign acceptance, while
+    preserving existing holds.
+  target_ids:
+  - vm-prop-linsmaier-skoog
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    [''W08-IR-004'']'
+- assessment_id: payload-022
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM296 ten-vitamin table and1Lwater match completely; preserveDL-calciumpantothenate
+    and genericB12. Directsource data justify source-qualifiedrecipe, but allUNMAPPEDreferences
+    need bounded grounding of verifiedcatalog-compatible constituents.
+  target_ids:
+  - vm-prop-new-2
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-023
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM995 nine-vitamin formula retains nicotinamide andthiamineHCl·2H2O exactly.
+    No nicotinicacid oranhydrous substitution. Complete quantities agree; source-local
+    nameNo.6is not globalidentity. Resolve unambiguous componentrefs separately from
+    exactform uncertainties.
+  target_ids:
+  - vm-prop-new-11
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-024
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1100vitaminB1000x contains onlyB12100mg/100mlwater; vitaminA is separate.
+    Wholepayload does not merge them. Genericvitamer remainsunresolved,waterreferenceisfeasible.
+  target_ids:
+  - vm-prop-new-42
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-025
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM848100fold recipe exactly preserves0.1gbiotin/B12,0.3gpABA,0.5gfolic/thiamine/riboflavin,1.5gpyridoxineHCl
+    and1Lwater. No concentrationdefault is imposed. Knowncomponent grounding remainscuration,notmissing
+    science.
+  target_ids:
+  - vm-prop-new-58
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-026
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1118 enumerates B12 1.1 mg, biotin 1 mg and thiamine hydrochloride 200
+    mg in 1 L distilled water. The four immediate entries and literal batch units
+    are supported. B12 vitamer is unspecified; the source-defined mixture remains
+    distinct from its chemical ingredients.
+  target_ids:
+  - vm-prop-new-65
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-027
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1363 gives eight vitamins and 100 ml 10 mM sodium phosphate buffer pH7.1,
+    including DL-calcium pantothenate1 mg and pyridoxine HCl15 mg. Exact quantities
+    match. This differs from the JCM403 five-vitamin formula; numbered pointers require
+    occurrence-level routing. JCM1364 explicitly points to JCM1363 vitamin-mixture
+    solution; the actual hyperlink/formula bridge supports occurrence routing. It
+    does not turn a bare numbered pointer into a global identity name or identify
+    generic B12 as cyanocobalamin.
+  target_ids:
+  - vm-prop-new-79
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-028
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1097 explicitly enumerates Coenzyme M5 mg and nine vitamins in 1 L distilled
+    water, without B12; JCM1344 explicitly points to1097. The complete immediate recipe
+    and quantities match, with source-qualified identity and form-specific constituent
+    holds retained.
+  target_ids:
+  - vm-prop-new-82
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-029
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1385 directly imports1130. Vitamin solutionI is biotin5, B125, pABA15,
+    folic acid25 and pyridoxine HCl75 mg in500 ml water. SolutionII is a separate
+    thiamine/riboflavin stock; it is correctly excluded.
+  target_ids:
+  - vm-prop-new-87
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-030
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1100 vitaminA has thirteen named vitamins/cofactors plus100 ml10 mM
+    potassium phosphate bufferpH7.2. All quantities match, including10 mg biotin/riboflavin
+    and100 mg for the other named solutes. VitaminB/B12 stock is separate. Generic
+    calcium pantothenate, lipoate stereochemistry and buffer ingredients remain unresolved.
+  target_ids:
+  - vm-prop-new-110
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-031
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM923 major-metals stock contains KCl0.15 g,KH2PO4 1.36 g,NH4Cl2.68 g
+    and water1 L. Source composition is complete at immediate level. Blanket UNMAPPED
+    on KCl,NH4Cl and distilled water defers exact existing baseline candidates without
+    identifying missing science.
+  target_ids:
+  - vm-prop-new-112
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-032
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1423 and1424 explicitly point to898; the latter provides B12100,pABA80,biotin20,nicotinic200,DL-calcium
+    pantothenate100,pyridoxine HCl300,thiamine HCl200 mg in1 L water. Complete immediate
+    formula matches; source-qualified identity avoids generic numbered aliases.
+  target_ids:
+  - vm-prop-new-119
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-033
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1430/1431/1479 point to915. The recipe has thiamine HCl90,myo-inositol40,Ca-pantothenate4,pABA5,B125,pyridoxine
+    HCl4,nicotinic4,biotin0.1,folic2 mg in100 ml water. Matching source pointers support
+    memberships, not generic universal vitamin-stock identity.
+  target_ids:
+  - vm-prop-new-120
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-034
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM149 Hutner-base source stock contains all eight immediate source ingredients
+    and their batch quantities, including approximateKOH and nestedMetals44. UNMAPPED
+    references preserve literal hydrates rather than guessing; complete enumeration
+    is source-relative. Resolve component grounding before any downstream whole-owner
+    acceptance. Append-only component review confirms seven source-form-compatible
+    baseline entities; blanket UNMAPPED defers feasible curation, while nested Metals44
+    retains a genuine formulation bridge hold.
+  target_ids:
+  - vm-prop-new-129
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-035
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ125K1 stock uses0.1mlK1+20ml95%ethanol. Amounts arecharges,not assertedfinalvolume.
+    UnknownK1stereochemicalvitamer detail andethanolaqueousstock identitymustnotbe
+    collapsed to purecompounds. Distinct fromnominal0.1%/1% stocks.
+  target_ids:
+  - vm-prop-new-7
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-036
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ5980Wolin10x tablepreserves allten quantities,D(+)-calciumpantothenate
+    andDL-alpha-lipoicacid. Noautomaticcomponentform inference;knownnicotinicacid/riboflavin/pABA/waterrefsarefeasible.
+  target_ids:
+  - vm-prop-new-29
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-037
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: MediaDive453 and606 explicitly reference solution608. Its seven acid volumes
+    are548.5,193.5,129 and four32.25 ml entries, including DL-2-methylbutyric acid.
+    These sum to1 L without added water; source batch quantities and stereochemical
+    prefix are preserved. Straight-chain valeric acid is distinct from isovaleric
+    acid.
+  target_ids:
+  - vm-prop-new-98
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-038
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: ATCC1249ComponentIII is3.5gsodiumlactate+1gyeastextract+400mlDIwater,pH7.5,autoclaved.
+    Components match; unspecifiedtitrant andlactatestereochemistryremainunknown. Deionizedwater
+    mustnotbe silently equated todistilledsuppliedmaterial.
+  target_ids:
+  - vm-prop-new-26
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-039
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1321 explicitly specifiescyanocobalamin5mg+100mldistilledwater,filtersterile.
+    This ismore precise than genericB12. BaselineCHEBI17439 andwaterCHEBI15377 referencesarefeasible;
+    currentlybothUNMAPPED.
+  target_ids:
+  - vm-prop-new-31
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-040
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1321 gives pABA4,biotin1,nicotinic acid10,Ca-pantothenate5,pyridoxine
+    HCl15 mg in100 ml10 mM sodium phosphatepH7.1. JCM403 differs in pyridoxine10 mg
+    and explicit DL-pantothenate. The new source-qualified stock preserves this distinction.
+  target_ids:
+  - vm-prop-new-111
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-041
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1356 mineral base2 separately enumerates NaCl240 g, NH4Cl0.5 g, K2HPO4
+    2.5 g, KCl5 g and water1 L, autoclaved under nitrogen with stated final pH7.3.
+    Its later 1:1 mixing with base1 is outside this owner. COMPLETE is immediate source
+    enumeration, not proof of exact hydrated salt forms or final dissolved speciation.
+  target_ids:
+  - vm-prop-new-73
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-042
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: MineralbaseD ismixtureof5ml14%w/vNH4Clstockand5ml7%w/vKH2PO4stock. Nestedcomponentsandquantities
+    correctlyavoidinventingdrycharges orcarrier. Noexactstockownerreference isforced
+    wherepreparationnotestablished.
+  target_ids:
+  - vm-prop-new-52
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-043
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: M2567 baseC combines1 ml10 mM Na2WO4 solution and1 ml25 mM FeCl3 solution.
+    These are two immediate liquid reagents, not neat salts. COMPLETE immediate enumeration
+    does not infer their solvents, hydrated solutes or full molecular decomposition.
+  target_ids:
+  - vm-prop-new-106
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-044
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ533 explicitly distinguishes deionized water, including its trace-stock
+    preparation. Registry identity preserves processing grade separately from distilled-water
+    identity. The source supplies no resistivity, sterility or purity specification;
+    none is inferred.
+  target_ids:
+  - if1201-new-deionized_water
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-045
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ2NNaOH isknownsolute/normality reagentused acrossscoped traceprotocols.
+    Nootherstockcomponents orwaterareimputed. Sameconcentration/sourcecontext alone
+    cannotgrant cross-shardmaterialequivalence;wholepayload'sPARTIAL completeness
+    andhumanmappingprovenance needadjudication.
+  target_ids:
+  - if1201-new-dsmz_trace_2n_naoh
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-046
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM1130specifies10NNaOHinput26ml toVFAmixture. Thepayload correctlykeepsVFAacids
+    outside thereagent anddoesnotassignreceivingwater. Unknowncarrierisretained;PARTIAL
+    enumuse andhumanmappingprovenance needcorrection.
+  target_ids:
+  - if1201-new-jcm_1130_10n_naoh
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-047
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: ATCCNitrosolobus6NNaOHused1ml inphenolred solution;99mlwaterbelongs receivingstock.
+    PayloadNaOHreferencecorrect; nootheringredientsorgradeinvented. Unknowncarrierisreal;completeness
+    classificationneedscontractalignment.
+  target_ids:
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-048
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: PCR-S11uses40ml0.1NNaOHtodissolve1.488gNa2-EDTA. FinalIF1201-R1withdrawsweakerNOSduplicate;sourcecomparisonsremainconditional.
+    Payloadcorrectlycontains onlyNaOHat0.1N,notEDTAorreceivingwater.
+  target_ids:
+  - if1201-new-pcr_s11_01n_naoh
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-049
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ104 uses8 N NaOH for pH7.2 adjustment and separately describes1 N NaOH
+    in haemin preparation. The proposal preserves the former reagent concentration,
+    not an inferred solvent or the receiving dose; PARTIAL is appropriate.
+  target_ids:
+  - if1201-new-dsmz_104_8n_naoh
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-050
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM221 uses200 ml0.2 N NaOH before adding separate sulfide nonahydrate
+    and cysteine hydrochloride monohydrate. The proposal denotes only the NaOH input,
+    not the whole reducing mixture; no solvent, cooling-gas solubility or cross-ATCC
+    whole-stock identity is inferred.
+  target_ids:
+  - if1201-new-jcm_221_02n_naoh
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-051
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Source preparation identity is0.5 N NaOH used in Wolin mineral stock. SoluteCHEBI32145
+    is distinct from stock; unknown carrier omitted, PARTIAL appropriate. No source
+    numbering alone proves a separate material identity; final dedup/coalescence remains
+    with coordinator.
+  target_ids:
+  - if1201-new-wolin_mineral_05n_naoh
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-052
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: ATCC1340explicitly givesNaOH4g/100ml. Thepayload preserves4%w/v ratherthanassumingall1Nlabelsprovethissamepreparation.
+    Chopped-meat/hemincasesconditional;nosolventgiven. PureNaOHowner isseparaterepair.
+  target_ids:
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-053
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM5741MKH2PO4stockis16.6mlinput,followedbyanotherphosphatestock83.4ml
+    andequalwater. Noindividualcarrierorhydrateproven. PBBMduplicatewithdrawal ispresent;no
+    exactassignment bynominalstrength.
+  target_ids:
+  - if1201-new-jcm_574_1m_kh2po4
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-054
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM5741MK2HPO4stockis83.4mlinput with16.6ml1MKH2PO4; thoseareseparateingredients
+    andsubsequentdilution doesnotestablishstocksolvent. Form/stockboundaryholds remain.
+  target_ids:
+  - if1201-new-jcm_574_1m_k2hpo4
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-055
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: PBBM/M2760 explicitly supplies a1 M Na2HPO4 solution to its buffer. The
+    source does not identify hydrate or solvent. PARTIAL source-qualified reagent
+    preserves nominal strength without selecting anhydrous/dodecahydrate or claiming
+    equivalence with another phosphate input.
+  target_ids:
+  - if1201-new-pbbm_1m_na2hpo4
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-056
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Source50 mM stock is explicitly6 g plus1 L distilled water. Solute form
+    stays UNMAPPED; no mass/molarity inference supplies hydration. Per-batch units
+    avoid claiming final volume. PARTIAL and explicit source scope are scientifically
+    conservative.
+  target_ids:
+  - if1201-new-pcr_s11_50mm_nah2po4
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-057
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: PCR-S11Na2HPO4stock has3.55g in500mldistilledwater andnominal50mM. No hydratecanbe
+    inferred frommasscalculation. Componentlistcompleteness mustnotbe downgraded solelybecause
+    hydrate-grounding isunknown;quantities correctlyremaincharges.
+  target_ids:
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-058
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: PCR-S11/M2262 makes the phosphate buffer from 100 ml each of 50 mM NaH2PO4
+    and Na2HPO4 inputs, then adjusts pH to 7.5. The unidentified titrant warrants
+    PARTIAL. The nearby 2 L instruction belongs to a separate EDTA/iron preparation,
+    not this buffer.
+  target_ids:
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-059
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: M2231 explicitly makes6 g/L literal K2HPO4·7H2O in deionized water and
+    doses5 ml. The source-defined stock is supported despite unresolved unusual hydrate.
+    Water grade and batch quantities are preserved; no single-chemical alias is added.
+  target_ids:
+  - if1201-new-allen_m2231_phosphate_stock
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    [''W08-IR-011'']'
+- assessment_id: payload-060
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM90810%w/vsulfidenonahydrate filter-sterilestock isdistinctfrompureCHEBI76209solute.
+    Knownsoluteform andpercentbasis aredirect;unknowncarrierretained. No receivingvolumeisstockbatchsize.
+  target_ids:
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-061
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Source24% stock has exact nonahydrate solute but unspecified percent basis/carrier.
+    The payload deliberately lacks a converted concentration and uses PARTIAL. Parent-medium1
+    mL is not an intrinsic stock amount.
+  target_ids:
+  - if1201-new-jcm_713_sulfide_24pct
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-062
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: ATCC19432.5%sulfidenonahydrate autoclavedunderN2issourceanchor. Percentagebasisandcarrierunknown;PBBMrelatedstocknotexactassigned.
+    Cysteineco-addition belongsreceivingmedium,notthisstock.
+  target_ids:
+  - if1201-new-atcc_1943_sulfide_25pct
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-063
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: PureNaOHpayload rejectsspecified1N/2Nconcentrationaliases withprovenance
+    andappendedhistory. ItsunrelatedRoleandbareparentheticalnotesarealreadyfiltered
+    bynativesynonympolicy. Noowner-widechemical orroleapproval.
+  target_ids:
+  - if1201-edit-naoh
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-064
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Full current owner has exact disodium molybdate dihydrate chemistry/CAS10102-40-6.
+    Eleven literal aliases changing sodium/oxygen/sulfur or omitting form are REJECTED_LABEL,
+    including inherited RAW_TEXT. Exact hydrate synonyms and all old history retained.1216
+    supports the bounded repair, not automatic source corrections.
+  target_ids:
+  - if1201-edit-na2moo4_x_2_h2o
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-065
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: unknown
+  summary: 'Full owner exactCHEBI91259 chemistry now contains12 waters in all structures;
+    three generic aliases and Role-text are rejected, prior sibling rejections retained.
+    Historical contradictory regrades are explicitly superseded. This is the exact
+    worker03-overlap owner: evidence comparison only, no self-proposal or final coalescence
+    approval.'
+  target_ids:
+  - if1201-edit-na2hpo4_x_12_h2o
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    evidence_comparison_only_shared_worker03_owner. Associated source/evidence findings:
+    []'
+- assessment_id: payload-066
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: ATCC1942primaryPDF explicitlygives10ml5%nonahydratestockandfinal0.5g/L,autoclavedunderN2.
+    Source arithmetic supportsnominal5%w/v; solventnotgiven. JCM5%comparisonsremainconditional
+    afterIF1201-R1. Interpretation/calculation mustremaintransparent.
+  target_ids:
+  - if1201-new-atcc_1942_sulfide_5pct
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-067
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The5 g/100 mL-H2O source preparation is distinguishable from pure thiosulfate.
+    Hydration remains UNMAPPED, solvent input is per-batch and no final-volume assertion
+    is added. Genericwater reference is chemical identity only, not approval of water-grade
+    owner aliases.
+  target_ids:
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-068
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM941/MediaDive4957 preserve the literal dithionite dihydrate and separately
+    define SolutionC as5 g in40 ml distilled water, under nitrogen/autoclaving. Preparation
+    identity is supported while the unusual supplied hydrate remains unresolved. No
+    anhydrous-dithionite correction or source-hold release follows.
+  target_ids:
+  - if1201-new-jcm_941_solution_c
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-069
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The chemical owner is specifically monopotassium dihydrogenphosphate. The
+    class-level Potassium Phosphate name does not universally select that salt; the
+    incomplete KH PO formula does not independently establish its stoichiometry. The
+    inspected automatic addition/merge history is not a source-qualified correction
+    witness establishing universal equivalence. Both exact frozen index rows resolve
+    uniquely to CHEBI:63036, making this a current identity-resolution boundary, not
+    merely an export concern. The source CHEBI63036 identity and three targeted1215
+    rejections remain supported. The full selected after payload is not accepted for
+    integration planning as scientifically complete until the retained global aliases
+    are corrected or precisely source-adjudicated. This is not deferred solely to
+    a later supported-export gate.
+  target_ids:
+  - if1201-edit-kh2po4-alias-scope
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-070
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Nonahydrateowner preservesidentityCHEBI76209 andrejects3%/24%preparationlabels
+    under1215. Oldhistoryunchanged. RemainingRole/bareparentheticalRAW_TEXTstringsaretext-filtered,so
+    nofalse native-resolutionclaim ismadeforthem.
+  target_ids:
+  - if1201-edit-nonahydrate-stock-aliases
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-071
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: TrisownerpreservesfourHClrejections andadds1Mbuffer/nitrilotriacetate rejectionunder1157;
+    newhistorypreservesolderfix. RawTrisbuffercontextremains broaderthanwholeownerapproval.
+    Amount-bearingTris3gnotadded.
+  target_ids:
+  - if1201-edit-tris-alias-scope
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-072
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The separateJCM906 pH10 stock legitimately contains0.5 M glycine andNaOH
+    with unknown titrant amount. The basal900 mL water is correctly excluded. UNKNOWN
+    completeness is defensible; recipe transcription supports literal constituents
+    but not an invented carrier or final volume.
+  target_ids:
+  - op1201-glycine-naoh-stock
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-073
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: TOGOM2844commentestablishescombined0.5%bromothymolbluein0.2NKOH. CHEBI86155and32035
+    componentreferencesandnormalitymatch. Percentbasis/solventunknown;UNKNOWNcompletenessfits.
+    NoisolatedKOHfragmentownerassignment.
+  target_ids:
+  - op1201-indicator-stock
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-074
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM600literal5mMtoluene water-saturatedsolution,dose40ml,anaerobic/autoclaved.
+    Payloadretainsliteralpreparationandunquantifiedwater,notphaseassumption,saturationtemperatureorgrade.
+    UNKNOWNcompletenessappropriate;no molecularowneridentitycollapse.
+  target_ids:
+  - op1201-toluene-stock
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-075
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC19 specifies Peptic Pepton (USB) at 2 g/L but supplies neither catalogue
+    code nor substrate/digestion formulation. A named opaque USB material can be represented
+    without inventing casein, generic peptone equivalence or chemical components.
+  target_ids:
+  - op1201-usb-peptic-pepton
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-076
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ88 adds sulfide ore and separately sterilizes it at 150°C overnight.
+    Pyrite is an example of suitable ore, not an exact pure FeS2 specification. Opaque
+    natural-material registry identity and absent fixed decomposition are justified.
+  target_ids:
+  - op1201-sulfide-ore
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-077
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Existing owner promoted to cereal-leaf registry material with product/source
+    boundary notes. Leaf extract, grain flour and commercialCerophyll are not aliases.
+    Unspecified species/material composition is honest for this undefined biological
+    mixture.
+  target_ids:
+  - op1201-cereal-leaves
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-078
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The0.5 M pH5.4 preparation retainsHOMOPIPES solute with explicit missingcarrier/titrant.
+    It is neither pureHOMOPIPES nor a guessed formulated buffer. Partial enumeration
+    and unknown finalvolume preserve the observed scope.
+  target_ids:
+  - op1201-homopipes-stock
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-079
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Wako originalSDS supports exactDL hydrate andCAS69833-18-7; TCI conflictingCAS
+    remains noted. NARROW_MATCH to genericasparagineCHEBI22653 correctsOP1201-F1 direction.
+    No L-specificNCIT or anhydrous equivalence asserted.
+  target_ids:
+  - op1201-dl-asparagine-monohydrate
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-080
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: The currentNAD(+) identity and structure match source betaNAD; change retypes
+    unsupported manual-provenance claim with source-backed evidence. This does not
+    infer NADH or a disodium supplied salt, and retained roles remain unapproved.
+  target_ids:
+  - op1201-beta-nad-provenance
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-081
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Laminarinpreferredtermnowgeneric; sourcebrownalgaeevidencedoesnotlicenseLaminariadigitataspecificity.
+    Formername/sourceformretainedprovenance,noterased. CAS9008-22-4/CHEBI6364 remainpolysaccharidemixturescope.
+  target_ids:
+  - op1201-laminarin-scope
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-082
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: BD211260isconfirmedbyactualATCC474/177primarypages andBDproductpage; do
+    notcopyATCC177scratchformulaasmanufacturercomposition. SourceJCM157/TOGOM148 productassociation
+    usesmatchingEubacteriumrecipe,brandandseparateingredientsasreviewedinterpretation,notadirectcataloguenumberquote.
+    Theboundedcommercialcandidateisreasonablewithoutclaimingidenticalmanufacturercomposition.
+  target_ids:
+  - op1201-bbl-fluid-thioglycollate
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-083
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Frozen FEBA3 context uses R2A in liquid culture. Retained MicroO0000541
+    explicitly defines liquid R2A with six organic constituents and separately identifies
+    R2A agar. LABEL_ENUMERATION/PARTIAL avoids transferring the HiMedia supplier recipe
+    or generic agar into this material; ingredient identity is supported, component
+    grounding remains bounded.
+  target_ids:
+  - op1201-r2a-medium
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-084
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: M2972 explicitly labels the Difco material R2A agar, and the plant-stem
+    contact procedure supports an agar surface. The narrow provenance addition to
+    the existing agar owner does not create a global resolving bare Difco/R2A alias
+    or approve all historical agar evidence.
+  target_ids:
+  - op1201-r2a-agar-provenance
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-085
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Actual Denger2010 methods specify synthesized racemic sulfolactate and10
+    mM growth substrate; its cited Roy2003 method explicitly produces sodium sulfolactate.
+    The source preparation therefore requires racemic sodium-salt scope. Sodium stoichiometry/hydration/purity
+    remain unstated; NARROW_MATCH to broader sulfolactate parent preserves the bounded
+    relation.
+  target_ids:
+  - op1201-racemic-sodium-sulfolactate
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-086
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1045 uses30 g Trypticase Soy(BBL), separate100 g NaCl and20 g agar.
+    MicroO0000113 identifies Trypticase soy broth as an exact synonym of tryptic soy
+    broth; FAO and BD text support its standard six-input broth composition. Added
+    agar/salt are outside the ingredient. Mapping quality should be SYNONYM_MATCH
+    rather than primary-label EXACT_MATCH; role/export approval remains withheld.
+  target_ids:
+  - op1201-trypticase-soy-broth
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-087
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The full owner is stereounspecified sodiumlactate. New rejection ofL-only
+    and1 M/1% aliases preserves source strings. DL source does not justify broadening
+    every occurrence into racemate nor treating stocks as pure salt.
+  target_ids:
+  - op1201-sodium-lactate-alias-boundary
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-088
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: The notes-only proposal separates exact branded enzymaticsoydigest evidence
+    from the three-owner family problem. ExistingFOODON vegetablehydrolysate primary
+    identity and duplicates remain held. No active-familywinner or productequivalence
+    approved.
+  target_ids:
+  - op1201-soy-family-source-boundary
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+- assessment_id: payload-089
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Existing generic Flour owner maps toFOODON00004510 at the actually stated
+    grain/starchflour scope. It does not force wheat, a defined formula or an automaticCAS
+    identity. History/mixtureclassification preserved.
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-090
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The10 mg/mL preparation retains genericamphotericin as UNMAPPED constituent
+    and PARTIAL completeness. Carrier andA/B selection remain unknown; supplierAmphotericinB
+    products are contrastonly. No concentrationqualified globalalias is introduced.
+  target_ids:
+  - op1201-amphotericin-stock
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-091
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: Whole owner chemistry corresponds toFe4(P2O7)3 ferricpyrophosphate; correcting
+    preferredlabel and rejectingFe4(PO4)2 prevents false literalidentity while preserving
+    provenance. It doesnot identify the intended malformed source occurrence.
+  target_ids:
+  - op1201-ferric-pyrophosphate-label
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-092
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: 'JCM1023vitamintableisnotJCM903: preserveform/amountdistinctions andliteralB6identity.
+    Quantitiesandsourceboundariesareconsistent. AllUNMAPPEDcomponents includeseveralalreadyidentifiablecatalogentities,whichisunfinishedauthorizedcuration.'
+  target_ids:
+  - vm1201-prop-jcm1023-vitamin
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-093
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM903vitaminrecipeisdistinctfromJCM1023B6form/batch. Preserveentiretablewithoutgenericvitamin-mixturealias.
+    Knownwater,pABA,nicotinicacid,riboflavinreferencescanbecurated;sourceB12/pantothenate
+    limitsremain.
+  target_ids:
+  - vm1201-prop-jcm903-vitamin
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-094
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM554SL10tableexplicitlysevenmetal saltspluswater;absenceofHCl/borateinthissourcecannotbefilledfromothersame-nameSL10recipes.
+    Actualtableandamountsmatch. Completecomponentreferencesremainunfinishedforclearlygroundedforms.
+  target_ids:
+  - vm1201-prop-jcm554-sl10
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-095
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1356mineralbase1isprecipitate-removedsupernatantafterautoclaving/standing,notthesumofchargedsolids.
+    Water-onlycomponentisareasonableretainedmaterialinterpretationbutRECIPE_TRANSCRIPTIONfalselydescribesitsderivation.
+    UseCURATED_INTERPRETATIONwithlimits;donotclaimchargedionamountssurvive.
+  target_ids:
+  - vm1201-prop-nbrc1356-mineral-base1
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-096
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: M2567 baseA gives seawater salts and water, with unresolved literal NaII
+    CO3 at0.2 g. The proposal includes ten unambiguous immediate inputs and retains
+    the problematic row in notes, PARTIAL. It does not silently turn the source label
+    into carbonate/bicarbonate.
+  target_ids:
+  - vm1201-prop-yps-basea
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-097
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: TOGO M2567 enumerates baseB minerals, water and KOH with pH6.5 then7.0;
+    the proposal preserves these endpoints and unquantified KOH. Literal AIK(SO4)2
+    0.01 g remains outside chemical assertions pending identity/hydration resolution.
+    PARTIAL supports the preparation without guessing that token or cobalt hydration.
+  target_ids:
+  - vm1201-prop-yps-baseb
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-098
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM628 top layer has100 ml modified Wolfe carrier,1 ml JCM197 minerals,MES0.195
+    g,NaHCO3 0.042 g,agarose0.15 g and1 ml post-autoclave JCM197 vitamins. JCM629
+    substitutes artificial saltwater carrier. Both complete source protocols distinguish
+    bottom layer/headspace. Unknown initial titrant and dissolved CO2 uptake justify
+    PARTIAL, not invented amounts. This payload uses the freshwater modified Wolfe
+    carrier.
+  target_ids:
+  - vm1201-prop-jcm628-toplayer
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-099
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM628 top layer has100 ml modified Wolfe carrier,1 ml JCM197 minerals,MES0.195
+    g,NaHCO3 0.042 g,agarose0.15 g and1 ml post-autoclave JCM197 vitamins. JCM629
+    substitutes artificial saltwater carrier. Both complete source protocols distinguish
+    bottom layer/headspace. Unknown initial titrant and dissolved CO2 uptake justify
+    PARTIAL, not invented amounts. This payload uses the saltwater carrier withNaCl27.5g/L;
+    not interchangeable with628.
+  target_ids:
+  - vm1201-prop-jcm629-toplayer
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-100
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1020 and824 share all ten vitamin masses and1 L water, notably B122.7
+    mg. Their downstream processing differs:1020 filter-sterilizes vitamins;824 includes
+    them before medium autoclaving. The corrected notes restrict shared identity to
+    input formula. NBRC1169/1308 instead match the common nine-vitamin preparation.
+  target_ids:
+  - vm1201-prop-nbrc1020-vitamin
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-101
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The six frozen Vitamin solution** occurrences split by actual composition:1050/1086/1274/925
+    match common9,1226 has B125 mg and lipoic5 mg,903 has B120.1 mg,pABA5 mg,lipoic5
+    mg. The three active payloads preserve these distinctions; generic starred label
+    is not globally resolving. This payload specifically retains1226 B125mg/pABA1mg.
+  target_ids:
+  - vm1201-prop-nbrc1226-vitamin
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-102
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: The six frozen Vitamin solution** occurrences split by actual composition:1050/1086/1274/925
+    match common9,1226 has B125 mg and lipoic5 mg,903 has B120.1 mg,pABA5 mg,lipoic5
+    mg. The three active payloads preserve these distinctions; generic starred label
+    is not globally resolving. This payload specifically retains903 B120.1mg/pABA5mg
+    and notes literal agreement with JCM197 without approving cross-worker coalescence.
+  target_ids:
+  - vm1201-prop-nbrc903-vitamin
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-103
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NineNBRCtablesmatchthecommon-ninevitaminformula,whiletheirtrace-elementrecipesdiffer.
+    Reuseisjustifiedatinput-formulationlevelwithproperseparatelyfiltereduse. GenericB12andCa-pantothenateformlimitsremain;
+    knowncomponentreferencesneedcuration.
+  target_ids:
+  - vm1201-prop-nbrc-common9
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-104
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: NBRC1407 names Gibco100X MEM vitamins. Official11120 formula lists nine
+    solutes at manufacturer mg/L and actual product FAQ identifies distilled-water
+    solvent, sterile filtration and identical052/037 product formulation. These facts
+    support the current product-family preparation, without historical lot/package
+    equivalence or100-fold receiving-dose confusion.
+  target_ids:
+  - vm1201-prop-gibco11120-mem100x
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-105
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM510 explicitly requires methane-air 50:50 atmosphere. Both immediate
+    gases are supported. Ratio basis, humidity, pressure and detailed air composition
+    are absent; retaining the literal ratio without numerical fractions is appropriate.
+    The proposal denotes this gas blend, not liquid medium.
+  target_ids:
+  - vm1201-prop-jcm510-methane-air
+  evidence_ids:
+  - I-B
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-106
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM515stock20µg/ml→20mg/Lisexplicit,filtersterile. NBRC0.002%w/vandTOGOM4982mg/100mlonlyconditionalnominalstrengthcomparisons.
+    No carrier/form equivalenceorcyanoassignment. Unknowncompletenessshouldnotassertsourceexplicitomissionswithoutbasis.
+  target_ids:
+  - vm1201-prop-jcm515-b12-partial
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-107
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM6472mg/ml→2000mg/Lisexplicit;JCM520/533/650nominalmatchesdonotestablishidenticalpreparation.
+    GenericB12componentwithoutmolecularID isproperlybounded. Carrierandotherstockconstituentsremainunknown.
+  target_ids:
+  - vm1201-prop-jcm647-b12-partial
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-108
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: JCM13540.01%B12stockisexplicit; percentbasisunknownsoconcentrationfieldomissioniscorrect.
+    No carrier/acid/stabilizer inferred. Boundedsourcecandidatevalidafterevidence/completenessmetadatafixes.
+  target_ids:
+  - vm1201-prop-jcm1354-b12-partial
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-109
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: ATCC2883 stock0.1 mg/mL is100 mg/L andfiltersterile, used1 mL in both broth/agar
+    recipes. GenericB12 componentUNMAPPED,carrieromitted,PARTIAL. Methanol is separate
+    receivingmedium ingredient and not stocksolvent.
+  target_ids:
+  - vm1201-prop-atcc2883-b12-partial
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-110
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: TOGOM125actualrawcaptureidentifiesJCM134and0.1%K1stock0.2mldose. Noexactpercentbasisorcarrier;notDSMz125ethanolstock.
+    Rawcapturehashandoriginaltimestampindependentlychecked.
+  target_ids:
+  - vm1201-prop-togo125-k1-partial
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-111
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: concern
+  summary: DSMZ1245K11%stockisexplicit; no percentbasis,carrierorvitamerinference.
+    GenericK1componentadequateforboundedpreparationcandidateonly,notpurephylloquinonerelease.
+    Keepserumalternativeandreceivingdose separate.
+  target_ids:
+  - vm1201-prop-dsm1245-k1-partial
+  evidence_ids:
+  - I-A
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    requires_payload_correction_or_adjudication. Associated source/evidence findings:
+    []'
+- assessment_id: payload-112
+  area: scope
+  topic: Complete selected candidate payload with bounded source acceptance
+  outcome: supported
+  summary: Full inherited11components/quantities were compared with originalCultureBotHT
+    sheet; newTOGO formula/preparation remains separate. GenericB12 versuscyanocobalamin
+    andDL calcium-pantothenate versus unspecifiedsheet salt block exact bridge. COMPLETE
+    refers sheetenumeration, not allTOGOcomponents; inherited componentgrounding still
+    requires review.
+  target_ids:
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - I-C
+  - I-ROOT
+  details: 'Only exact inspected source/formulation/identity claims with documented
+    occurrence exclusions and inherited holds. No whole-owner, role, supported-export,
+    worker03 own-proposal or final coalescence approval. Exact planning disposition:
+    accepted_bounded_planning_with_holds. Associated source/evidence findings: []'
+findings:
+- finding_id: W08-IR-001
+  issue_key: w08-b90-independent-w08-ir-001
+  category: scope
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: New mapping evidence mislabels agent work as human-supplied evidence
+  description: 'Retype the95new/changed mapping evidence entries across88payloads
+    to truthful source/decision categories, retaining exact primary citations, original
+    history and LLM assistance. Exclude identical inherited human evidence; choose
+    each category from the actual assertion, not a blanket replacement. RawP2normalized
+    to minor: histories already identify agents and the primary chemical evidence
+    may remain sound. This bounded provenance mismatch still requires exact candidate-byte
+    correction; it is not a chemical refutation.'
+  target_ids:
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_941_solution_c
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-wolin_mineral_05n_naoh
+  - op-ethane-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-nalidixic-new
+  - op-sodium-nicotinate-new
+  - op1201-amphotericin-stock
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-cereal-leaves
+  - op1201-dl-asparagine-monohydrate
+  - op1201-ferric-pyrophosphate-label
+  - op1201-glycine-naoh-stock
+  - op1201-homopipes-stock
+  - op1201-indicator-stock
+  - op1201-laminarin-scope
+  - op1201-plain-flour
+  - op1201-r2a-agar-provenance
+  - op1201-r2a-medium
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-sulfide-ore
+  - op1201-toluene-stock
+  - op1201-trypticase-soy-broth
+  - op1201-usb-peptic-pepton
+  - vm-prop-new-106
+  - vm-prop-new-11
+  - vm-prop-new-110
+  - vm-prop-new-111
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-2
+  - vm-prop-new-26
+  - vm-prop-new-29
+  - vm-prop-new-31
+  - vm-prop-new-42
+  - vm-prop-new-52
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-7
+  - vm-prop-new-73
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-98
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  - I-B
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-002
+  issue_key: w08-b90-independent-w08-ir-002
+  category: scope
+  severity: major
+  status: open
+  certainty: confirmed
+  title: JCM403 numbered pointers remain global resolving labels
+  description: Qualify preferred terms with JCM and preparation identity; preserve
+    exact old pointer strings and all source provenance as REJECTED_LABEL; retain
+    source occurrence routing and append history. Re-review exact successor and all
+    backlinks; do not resolve generic pointers by label alone. The native synonym
+    filter admits all six exact pointers. Provider-free source numbers are occurrence
+    context, while legitimate named stocks need not be rejected. Prior ivm-01 corrected
+    citation attribution only.
+  target_ids:
+  - vm-prop-jcm403-b12
+  - vm-prop-jcm403-vitamin
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  - I-B
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1173
+- finding_id: W08-IR-003
+  issue_key: w08-b90-independent-w08-ir-003
+  category: scope
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Supported component references remain deferred as generic form uncertainty
+  description: Complete the exact component-specific candidates documented in reviewer
+    receipts; use MIM_CATALOG only for verified compatible active entities. Retain
+    unresolved B12 vitamers, pantothenate stereo, unspecified hydrates, nested stocks
+    and malformed formulas with precise limits. Do not mistake lack of role/export
+    approval or duplicate physical catalog rows for lack of a representable entity.
+    This is authorized curation completion, not a demand to map every literal. Explicit
+    source forms and complete baseline owner evidence are required; unknown forms
+    remain unknown.
+  target_ids:
+  - vm-prop-jcm403-b12
+  - vm-prop-jcm403-vitamin
+  - vm-prop-new-11
+  - vm-prop-new-110
+  - vm-prop-new-111
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-2
+  - vm-prop-new-29
+  - vm-prop-new-31
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-73
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-98
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  - I-B
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1201
+- finding_id: W08-IR-004
+  issue_key: w08-b90-independent-w08-ir-004
+  category: scope
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Established stock and product identity work is still deferred
+  description: Finish bounded existing-owner registry/formulation proposals for JCM403B12stock
+    and DuchefaL0230, after exact duplicate comparison. Preserve imported source bridges,
+    historical placeholders and holds; do not create duplicate owners, guess the B12
+    vitamer, or infer unlisted finished-medium inputs. Registry preparation identity
+    is distinct from exact molecular component identity. The exact source-to-owner
+    bridges and available formulations are supported. Unknown B12 molecular form and
+    future integration are not sufficient reasons to defer these bounded proposal
+    tasks.
+  target_ids:
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1201
+- finding_id: W08-IR-005
+  issue_key: w08-b90-independent-w08-ir-005
+  category: scope
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Retained supernatant water inference uses literal transcription method
+  description: Use CURATED_INTERPRETATION for the water-retention inference with explicit
+    rationale and unmeasured retained-salt limits, or omit the derived has-part list
+    until supported. Preserve all charge recipe facts in provenance and do not convert
+    them into retained concentrations. Ground the water component if retained. Notes
+    already acknowledge uncertain retained salt composition. Correct the inference
+    method without asserting that water is false or converting charged salts to retained
+    concentrations.
+  target_ids:
+  - vm1201-prop-nbrc1356-mineral-base1
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-006
+  issue_key: w08-b90-independent-w08-ir-006
+  category: scope
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Component completeness does not consistently follow source-relative enum
+    meanings
+  description: For each precisely identified assertion, distinguish explicit omitted
+    constituents (PARTIAL), source-unestablished closure (UNKNOWN), and complete source
+    enumeration (COMPLETE). Missing concentration, final volume, titrant quantity
+    or molecular grounding alone does not determine membership completeness. Preserve
+    the bounded stock and all unknowns. This is metadata/provenance precision, not
+    automatic rejection of a supported stock. Source-specific adjudication must not
+    mechanically change every PARTIAL stock.
+  target_ids:
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_941_solution_c
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-wolin_mineral_05n_naoh
+  - op1201-amphotericin-stock
+  - op1201-r2a-medium
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-togo125-k1-partial
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  - I-F
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-007
+  issue_key: w08-b90-independent-w08-ir-007
+  category: scope
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Nalidixic-acid occurrence applicability lacks readable primary support
+  description: Bind a readable exact NBRC1314 primary capture or record that occurrence
+    as source-held/unverified while retaining the independently supported acid candidate.
+    Keep the successful1301 capture separate from failed1314/M2023 requests; do not
+    claim an unread source was inspected. Hold only unverified NBRC1314/TOGOM2023
+    occurrence applicability. Independently read NBRC1301 and ontology evidence support
+    the bounded acid candidate. Failed source access is not evidence of chemical falsity.
+  target_ids:
+  - op-nalidixic-new
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-008
+  issue_key: w08-b90-independent-w08-ir-008
+  category: scope
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Inherited phosphate aliases exceed exact chemical identity
+  description: Adjudicate exact KH2HPO4/K2HPO on dipotassium phosphate and KH PO/Potassium
+    Phosphate on monopotassium phosphate. Preserve strings/provenance as REJECTED_LABEL
+    unless primary evidence and appropriate occurrence routing justify narrower use;
+    retain the already-supported anhydrous spelling and IF1201-R2/#1215 changes. Do
+    not silently remap source memberships. Complete selected payload review includes
+    inherited resolving aliases. Scope differs from the already-resolved concentration
+    aliases. Annotation fragments already excluded by text policy are not included.
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if1201-edit-kh2po4-alias-scope
+  evidence_ids:
+  - I-FINDINGS
+  - I-A
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/811
+- finding_id: W08-IR-009
+  issue_key: w08-b90-independent-w08-ir-009
+  category: scope
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Trypticase soy broth mapping grade overstates primary-label match
+  description: 'Change mapping_quality to SYNONYM_MATCH with a truthful history event
+    and preserve correct identifier, canonical ontology label, mixture components
+    and own-identifier exact SSSOM semantics. RawP2normalized to minor: exact ontology
+    synonym supports the same identity and exact SSSOM relation. SYNONYM_MATCH describes
+    the actual lookup evidence; no supplier formula or chemistry rejection follows.'
+  target_ids:
+  - op1201-trypticase-soy-broth
+  evidence_ids:
+  - I-FINDINGS
+  - I-B
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-010
+  issue_key: w08-b90-independent-w08-ir-010
+  category: scope
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Tetrahydrate evidence points to incomplete capture instead of archived full
+    supplier table
+  description: 'Add a claim-specific evidence item bound to exact primary-batch7 bytes,
+    URL/locator and its original acquisition timestamp; backlink every affected source
+    case/proposal. Preserve batch6 as unsuccessful/incomplete support and do not relabel
+    its timestamp. RawP2normalized to minor: exact committed batch7 independently
+    supportsCAS7783-13-3. Repair the claim-specific binding and all three source backlinks
+    using original05:08:47.015262UTC capture time; do not falsely recapture or call
+    chemistry unsupported.'
+  target_ids:
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  evidence_ids:
+  - I-FINDINGS
+  - I-B
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-011
+  issue_key: w08-b90-independent-w08-ir-011
+  category: scope
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Allen phosphate remaining requirement repeats a resolved dose distinction
+  description: 'Narrow case63 remaining requirement to unusual seven-water supplied-form
+    confirmation or correction, and state the source-resolved5ml dose transcription
+    separately. Preserve the chemical hold and frozen input. '
+  target_ids:
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  evidence_ids:
+  - I-FINDINGS
+  - I-B
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+- finding_id: W08-IR-012
+  issue_key: w08-b90-independent-w08-ir-012
+  category: scope
+  severity: major
+  status: open
+  certainty: confirmed
+  title: L-asparagine monohydrate retains parent treatment despite exact NCIT evidence
+  description: Adjudicate NCIT:C87433 against its exact L-hydrate synonym and CAS5794-13-8
+    under section3 exact-term priority, updating primary identifier and mapping grade
+    where supported. Preserve the CAS/source alias/history and distinguish DL hydrate.
+    Separately clarify or verify stereochemical SMILES scope without inventing a structure
+    or calling an unspecified SMILES a racemate. The archived exactNCIT evidence and
+    the separateDLproposal contradict treating that same L target merely as a generic
+    parent. Non-isomericSMILES alone does not establish the wrong enantiomer; it is
+    secondary bounded structural incompleteness.
+  target_ids:
+  - op-l-asn-hydrate-alias
+  evidence_ids:
+  - I-FINDINGS
+  - I-C
+  ownership_note: Exact source case and proposal candidate scope; coordinator controls
+    successor edits, issue deduplication and maintained integration.
+  external_issues: []
+actions:
+- action_id: fix-W08-IR-001
+  description: Retype the95new/changed mapping evidence entries across88payloads to
+    truthful source/decision categories, retaining exact primary citations, original
+    history and LLM assistance. Exclude identical inherited human evidence; choose
+    each category from the actual assertion, not a blanket replacement.
+  finding_ids:
+  - W08-IR-001
+  target_ids:
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_941_solution_c
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-wolin_mineral_05n_naoh
+  - op-ethane-new
+  - op-glycine-betaine-new
+  - op-methanethiol-new
+  - op-nalidixic-new
+  - op-sodium-nicotinate-new
+  - op1201-amphotericin-stock
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-cereal-leaves
+  - op1201-dl-asparagine-monohydrate
+  - op1201-ferric-pyrophosphate-label
+  - op1201-glycine-naoh-stock
+  - op1201-homopipes-stock
+  - op1201-indicator-stock
+  - op1201-laminarin-scope
+  - op1201-plain-flour
+  - op1201-r2a-agar-provenance
+  - op1201-r2a-medium
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-sulfide-ore
+  - op1201-toluene-stock
+  - op1201-trypticase-soy-broth
+  - op1201-usb-peptic-pepton
+  - vm-prop-new-106
+  - vm-prop-new-11
+  - vm-prop-new-110
+  - vm-prop-new-111
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-2
+  - vm-prop-new-26
+  - vm-prop-new-29
+  - vm-prop-new-31
+  - vm-prop-new-42
+  - vm-prop-new-52
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-7
+  - vm-prop-new-73
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-98
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-002
+  description: Qualify preferred terms with JCM and preparation identity; preserve
+    exact old pointer strings and all source provenance as REJECTED_LABEL; retain
+    source occurrence routing and append history. Re-review exact successor and all
+    backlinks; do not resolve generic pointers by label alone.
+  finding_ids:
+  - W08-IR-002
+  target_ids:
+  - vm-prop-jcm403-b12
+  - vm-prop-jcm403-vitamin
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-003
+  description: Complete the exact component-specific candidates documented in reviewer
+    receipts; use MIM_CATALOG only for verified compatible active entities. Retain
+    unresolved B12 vitamers, pantothenate stereo, unspecified hydrates, nested stocks
+    and malformed formulas with precise limits. Do not mistake lack of role/export
+    approval or duplicate physical catalog rows for lack of a representable entity.
+  finding_ids:
+  - W08-IR-003
+  target_ids:
+  - vm-prop-jcm403-b12
+  - vm-prop-jcm403-vitamin
+  - vm-prop-new-11
+  - vm-prop-new-110
+  - vm-prop-new-111
+  - vm-prop-new-112
+  - vm-prop-new-119
+  - vm-prop-new-120
+  - vm-prop-new-129
+  - vm-prop-new-2
+  - vm-prop-new-29
+  - vm-prop-new-31
+  - vm-prop-new-42
+  - vm-prop-new-58
+  - vm-prop-new-65
+  - vm-prop-new-73
+  - vm-prop-new-79
+  - vm-prop-new-82
+  - vm-prop-new-87
+  - vm-prop-new-98
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-004
+  description: Finish bounded existing-owner registry/formulation proposals for JCM403B12stock
+    and DuchefaL0230, after exact duplicate comparison. Preserve imported source bridges,
+    historical placeholders and holds; do not create duplicate owners, guess the B12
+    vitamer, or infer unlisted finished-medium inputs. Registry preparation identity
+    is distinct from exact molecular component identity.
+  finding_ids:
+  - W08-IR-004
+  target_ids:
+  - vm-prop-jcm403-b12
+  - vm-prop-linsmaier-skoog
+  - CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596
+  - CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1
+  - KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2
+  - KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-005
+  description: Use CURATED_INTERPRETATION for the water-retention inference with explicit
+    rationale and unmeasured retained-salt limits, or omit the derived has-part list
+    until supported. Preserve all charge recipe facts in provenance and do not convert
+    them into retained concentrations. Ground the water component if retained.
+  finding_ids:
+  - W08-IR-005
+  target_ids:
+  - vm1201-prop-nbrc1356-mineral-base1
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-006
+  description: For each precisely identified assertion, distinguish explicit omitted
+    constituents (PARTIAL), source-unestablished closure (UNKNOWN), and complete source
+    enumeration (COMPLETE). Missing concentration, final volume, titrant quantity
+    or molecular grounding alone does not determine membership completeness. Preserve
+    the bounded stock and all unknowns.
+  finding_ids:
+  - W08-IR-006
+  target_ids:
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_941_solution_c
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-wolin_mineral_05n_naoh
+  - op1201-amphotericin-stock
+  - op1201-r2a-medium
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-togo125-k1-partial
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-007
+  description: Bind a readable exact NBRC1314 primary capture or record that occurrence
+    as source-held/unverified while retaining the independently supported acid candidate.
+    Keep the successful1301 capture separate from failed1314/M2023 requests; do not
+    claim an unread source was inspected.
+  finding_ids:
+  - W08-IR-007
+  target_ids:
+  - op-nalidixic-new
+  - CM_NAME:2bb3718ee2c9642c18c9df4c9cd158caf6ac135cd73ba0d4379835670f58f58e
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-008
+  description: Adjudicate exact KH2HPO4/K2HPO on dipotassium phosphate and KH PO/Potassium
+    Phosphate on monopotassium phosphate. Preserve strings/provenance as REJECTED_LABEL
+    unless primary evidence and appropriate occurrence routing justify narrower use;
+    retain the already-supported anhydrous spelling and IF1201-R2/#1215 changes. Do
+    not silently remap source memberships.
+  finding_ids:
+  - W08-IR-008
+  target_ids:
+  - if-add-anhydrous-k2hpo4
+  - if1201-edit-kh2po4-alias-scope
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-009
+  description: Change mapping_quality to SYNONYM_MATCH with a truthful history event
+    and preserve correct identifier, canonical ontology label, mixture components
+    and own-identifier exact SSSOM semantics.
+  finding_ids:
+  - W08-IR-009
+  target_ids:
+  - op1201-trypticase-soy-broth
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-010
+  description: Add a claim-specific evidence item bound to exact primary-batch7 bytes,
+    URL/locator and its original acquisition timestamp; backlink every affected source
+    case/proposal. Preserve batch6 as unsuccessful/incomplete support and do not relabel
+    its timestamp.
+  finding_ids:
+  - W08-IR-010
+  target_ids:
+  - if-new-sodium-ammonium-phosphate-tetrahydrate
+  - CM_NAME:8bac0114d674b3eb430e27ab1d8a1303a097be9703a2e675d08004be564bcb6f
+  - CM_NAME:c34b779a1d1b186c30423abdb156029aab6fa5151cee079de43a954f612e0f41
+  - KG_CASE:88f420feaab15d64602592bdff6a5c35d9335b806cc9565c7ef7dcd1838e3d05
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-011
+  description: Narrow case63 remaining requirement to unusual seven-water supplied-form
+    confirmation or correction, and state the source-resolved5ml dose transcription
+    separately. Preserve the chemical hold and frozen input.
+  finding_ids:
+  - W08-IR-011
+  target_ids:
+  - CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+- action_id: fix-W08-IR-012
+  description: Adjudicate NCIT:C87433 against its exact L-hydrate synonym and CAS5794-13-8
+    under section3 exact-term priority, updating primary identifier and mapping grade
+    where supported. Preserve the CAS/source alias/history and distinguish DL hydrate.
+    Separately clarify or verify stereochemical SMILES scope without inventing a structure
+    or calling an unspecified SMILES a racemate.
+  finding_ids:
+  - W08-IR-012
+  target_ids:
+  - op-l-asn-hydrate-alias
+  ownership_note: Proposed bounded coordinator follow-up, not work performed in this
+    read-only review.
+  acceptance_checks:
+  - Reproduce exact cited source/payload observation while preserving provenance and
+    genuine scientific unknowns.
+  - Bind successor evidence, source decisions, complete payloads and validation to
+    a fresh independent review; no approval transfers from this frozen head.
+limitations:
+- Review is frozen to b90a2fd; no later successor inherits approval.
+- All188case and113wholepayload assessments are complete, including unavailable-source
+  findings; this does not claim every primary request succeeded. NBRC1314/TOGOM2023
+  remain unread and source-held. Original primary timestamps, private original bytes
+  and failed reads are explicit in child receipts.
+- Schema113PASS and baseline2956/candidate3037partonomyPASS establish structure only.
+  Native69successor targets plus44retained predecessor payloads do not equal188native
+  source-outcome targets; campaign peer receipts cover all188.
+- 19explicit native decision rows across17cases and one embedded downstream hold row
+  are preserved. Roles and other inherited release claims remain unapproved.
+- Worker03 inventory identifies32exact owner/identifier/source-URL overlap pairs across23worker08payloads,
+  including shared Na2hpo4_X_12_H2o owner with c-phosphate-dodecahydrate. No ownworker03proposal
+  or coalescence approval. Broader semantic equivalence requires coordinator review.
+- Original nine predecessor and eight successor internal scientific finding resolutions
+  remain scoped and linked; new inherited-field findings do not erase prior corrected
+  changes. C reviewer attribution correction is appended and original sealed receipts
+  preserved.
+- No author/integration worktree, maintained data, native code/gates, GitHub, Git
+  commits/push, PRs/merges, downstream products, paid providers or external agent
+  sessions were changed/launched.
+- Literal component UNMAPPED or partial stock content is not automatically wrong;
+  only source-supported feasible references and source-relative enum defects are identified.
+  Unknown salts, stereo, hydrate, solvent, percentage basis, titrant quantities and
+  final volumes remain unknown.
+- Native schema and renderer used; native saver intentionally not invoked because
+  user limits all writes to this private .temp review directory. Historical source
+  inputs verified against exact commit bytes.
+- Receipt inspection timestamps do not replace nested original source capture timestamps.
+  Failed/unavailable source requests remain explicitly limited in reviewer receipts.
+tags:
+- independent-review
+- frozen-b90
+- no-release-approval
+```

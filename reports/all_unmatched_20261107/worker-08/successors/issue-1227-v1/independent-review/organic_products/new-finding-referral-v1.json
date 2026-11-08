@@ -1,0 +1,32 @@
+{
+  "finding_id": "IF-OP1227-F1",
+  "severity": "P2",
+  "status": "confirmed_routed_to_coordinator_before_author_fix",
+  "reviewer": "/root/inorganics",
+  "author": "/root/organics",
+  "at": "2026-11-08T07:32:20.980546+00:00",
+  "title": "R2A constituent method claims label enumeration although parts come from ontology definition",
+  "proposal_id": "op1201-r2a-medium",
+  "case_ids": [
+    "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b"
+  ],
+  "pre_fix_capture": {
+    "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/research/organic_products/proposed_owners/R2A_medium.yaml",
+    "sha256": "241db90e4850e9e70c94f7af4e0d8f74735a7c25780230d2e688b7f14d6cd3f3"
+  },
+  "preserved_pre_fix_capture": {
+    "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/organic_products/r2a-before-review-correction.yaml",
+    "sha256": "241db90e4850e9e70c94f7af4e0d8f74735a7c25780230d2e688b7f14d6cd3f3"
+  },
+  "actual_primary_capture": {
+    "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/root-primary/ols-micro-0000541.json",
+    "sha256": "ddfa79647ce61e9e8e1daffd728a960c68032ce795d09b8409eee5075ef4a0a6"
+  },
+  "native_contract": {
+    "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+  },
+  "exact_reproduction": "Read component_assertion.method=LABEL_ENUMERATION. The source label is R2A medium and does not enumerate any constituent. The six names occur in annotation.definition of MICRO:0000541. Native ComponentMethodEnum defines LABEL_ENUMERATION as transcription from an enumerating source label; this is not the actual derivation.",
+  "bounded_fix": "Use CURATED_INTERPRETATION with explicit ontology-definition rationale (or another supported native method), append truthful LLM-assisted history, update dependent ledgers and selected hash. Preserve all six constituents, reference scopes, unknown closure, amounts, identity, case links and holds. Do not treat the excluded agar annotation as the broth recipe.",
+  "lineage": "Additional exact payload in the assertion-method class of original IR005; not a mutation of the original finding or reviewer severity."
+}

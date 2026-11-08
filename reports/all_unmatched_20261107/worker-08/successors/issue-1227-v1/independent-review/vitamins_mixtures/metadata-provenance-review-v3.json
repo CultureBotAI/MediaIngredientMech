@@ -1,0 +1,51 @@
+{
+  "reviewer": "/root/organics",
+  "author": "/root/vitamins",
+  "at": "2026-11-08T07:59:39.271680+00:00",
+  "finding_id": "W08-1227-ASSEMBLY-001",
+  "status": "original_failure_verified_waiting_exact_successor",
+  "coordinator_route": {
+    "path": "successors/issue-1227-v1/COORDINATOR-ASSEMBLY-FINDING-v1.json",
+    "sha256": "0a4e836b89eb224e16e398876cd2296672cc23a35193ed2edf26cc8e39da09da"
+  },
+  "contract": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/OUTCOME-CONTRACT-v1.md",
+    "sha256": "f34854e8d11c9772f4f5e45ff88db53385d1f5397655581fc5c1aebcdf5da026",
+    "locator": "Evidence section, lines69-78",
+    "rule": "Primary-source and ontology evidence requires a URL; local-only evidence permits null under an appropriate other kind."
+  },
+  "auditor": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+    "sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad",
+    "locator": "Evidence loop lines157-188",
+    "actual_predicate_failure": true
+  },
+  "exact_failed_evidence": {
+    "evidence_id": "vm1227-v2-dl-ontology",
+    "kind": "ontology",
+    "capture": {
+      "root": "artifact",
+      "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/exact-form-ontology-lookup.json",
+      "sha256": "1ec1b45da45857aacc16bb75be8ec7fa1d944e4f0286f74195f9f0f5df6892a9"
+    },
+    "url": null,
+    "accessed_at": "2026-11-08T07:52:09.697074+00:00",
+    "locator": "Local primary ChEBI255 and NCIt26.02d statements; CHEBI748116→racemate60911, generic-parent contrasts, exact bounded name/CAS searches.",
+    "supports_or_contradicts": "Supports exact racemic lipoic acid identity under section3 priority, distinguishes generic parents, records candidate and search limits."
+  },
+  "separate_live_primary": {
+    "evidence_id": "vm1227-v2-live-lipoic-ontology",
+    "kind": "ontology",
+    "capture": {
+      "root": "artifact",
+      "path": "successors/issue-1227-v1/root-primary/ols-chebi-748116.json",
+      "sha256": "3186062dacaa1d9066479b22f86c3c78071cf30b4060ad5b7260ee55c81032ca"
+    },
+    "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A748116",
+    "accessed_at": "2026-11-08T07:51:18.538599+00:00",
+    "locator": "Complete current official OLS response, _embedded.terms[0]: active status, canonical label and explicit DL-related synonyms; combined with independently inspected local racemate superclass.",
+    "supports_or_contradicts": "Supports the active exact racemic-lipoic ontology candidate. Original root retrieval time is retained; no paper cited by the term is claimed read."
+  },
+  "judgment": "The capture is a hash-bound local ChEBI/NCIt database inspection and query-result receipt. local_validation truthfully classifies this artifact in the campaign evidence vocabulary. The primary ontology statements retain their scientific value; changing the transport/provenance kind does not weaken their identity facts. Inventing a web URL or retrieval event for this local artifact would misstate provenance. The separate official OLS capture remains ontology evidence with its actual original URL/time.",
+  "scope": "Only the one evidence kind may change. Exact case, payload, ontology-query capture, live OLS evidence, original access timestamps and scientific appraisals remain unchanged. Prior final-v2 indices and review.json remain immutable."
+}

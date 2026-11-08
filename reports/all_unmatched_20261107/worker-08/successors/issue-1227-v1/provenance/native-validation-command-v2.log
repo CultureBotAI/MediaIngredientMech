@@ -1,0 +1,98 @@
+{
+  "at": "2026-11-08T08:06:18.354091+00:00",
+  "validation_command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/venv/bin/python",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/scripts/validate_selection.py",
+    "attempt-v2"
+  ],
+  "proposal_count": 113,
+  "guarded_replays": 113,
+  "baseline_record_count": 2956,
+  "overlay_record_count": 3037,
+  "baseline_partonomy_violations": [],
+  "overlay_partonomy_violations": [],
+  "strict_exit_code": 0,
+  "label_status_counts": {
+    "canonical": 32,
+    "native_engine_A_not_applicable": 1,
+    "official_OLS_canonical_native_adapter_unavailable": 4,
+    "registry_self_consistency": 76
+  },
+  "label_errors": [],
+  "inherited_human_evidence": [
+    {
+      "proposal_id": "if-add-mono-source-spelling",
+      "index": 1,
+      "evidence": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "MIM curation (#312); chebi.db",
+        "notes": "Absorbed Nah2po4h2o (#312): the raw labels 'NaH2PO4\u2022H2O' and 'NaH2PO4\u2022H2O(MCIB 742)' and their 4 CultureMech occurrences now belong here; the cas: identity was the step-2 fallback for a term that exists."
+      },
+      "scope": "Byte-equivalent inherited mapping evidence; retained, not a fresh human authorship attestation."
+    },
+    {
+      "proposal_id": "op1201-r2a-agar-provenance",
+      "index": 0,
+      "evidence": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "MIM curation (#260)",
+        "notes": "Created to cover a CultureMech label MIM could not resolve (#260): Reasoner & Geldreich's low-nutrient agar for heterotrophic plate counts. A named medium, but MICRO has the class, so \u00a73 step 1 grounds it rather than minting \u2014 matching `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114). MICRO:0000541 'R2A medium' is the broth; this label says agar. Cross-reference: CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml)."
+      },
+      "scope": "Byte-equivalent inherited mapping evidence; retained, not a fresh human authorship attestation."
+    },
+    {
+      "proposal_id": "op1201-soy-family-source-boundary",
+      "index": 1,
+      "evidence": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "MIM curation (#260)",
+        "notes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone \u2014 the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+      },
+      "scope": "Byte-equivalent inherited mapping evidence; retained, not a fresh human authorship attestation."
+    }
+  ],
+  "owner_admission_status": "HELD",
+  "owner_admission_failures": [
+    {
+      "proposal_id": "op1201-trypticase-soy-broth",
+      "gate_status": "failed",
+      "maintained_admission": "HELD",
+      "failure": [
+        "changed identity collides",
+        "MICRO:0000113",
+        [
+          "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml"
+        ]
+      ],
+      "dependency_id": "W08-1227-TSB-OWNER-RECONCILIATION",
+      "selected_sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879",
+      "predecessor_sha256": "cbc788c1a9ce7cea22a92b4360bad7c113f0e99c2cf5a1ecbbd3a0e79f99aa6c",
+      "owner_hashes": {
+        "data/ingredients/unmapped/Trypticase_Soy_Broth.yaml": "217e88e15c71823e46aa27998777a68fa5345302fe595c638227511a2d5adc88",
+        "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml": "c335acb9d1ad86d663702a8e193afb1e84d97c8666d49beef9cce8e16b3548cc"
+      },
+      "scope": "Only bounded grade/evidence correction proceeds to validation. This owner is not admitted; no duplicate winner or general collision exemption is selected."
+    }
+  ],
+  "bounded_correction_validation_status": "PASS",
+  "preservation": {
+    "prior_captured_working_files": 15633,
+    "declared_tracked_entries": 15643,
+    "supplemental_git_tree_entries": 10,
+    "mismatches": [],
+    "independent_complete_preservation_receipt": {
+      "path": "successors/issue-1227-v1/independent-review/preservation-final/receipt.json",
+      "sha256": "1e4e3ba36d4def2714b8f28c1004a69f9453961176fd2e52fc1e9636230fd4fb"
+    },
+    "qualification": "Original15,633 working-byte rows plus ten separately checked b90 tree entries, including exact directory-symlink target bytes. No missing original file is inferred from an omitted capture row."
+  },
+  "w05_seals_preserved": true,
+  "input_hashes": {
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/decisions.json": "dbf3213c3cf2a61cb4ac7a500f73dadb17ea170ffff10cda846e24fb34d780aa",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/proposals.json": "61a8b4f873858c12804a769ba29cb11475be4cabc5907726db9c05087e8bf158",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/evidence.json": "dcfa4a65f131c7df5a0317d67393a4b95200a63b4401bee59f354d1381c1ff2b",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2/assembly-provenance.json": "9f60cdc3aa3557d086dd643e347adb57600fd412d03016b47f1c460cce349794"
+  },
+  "scientific_approval": false,
+  "release_approval": false
+}

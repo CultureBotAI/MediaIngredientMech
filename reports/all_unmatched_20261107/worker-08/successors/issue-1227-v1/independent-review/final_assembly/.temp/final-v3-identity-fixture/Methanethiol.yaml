@@ -1,0 +1,39 @@
+identifier: CHEBI:16007
+preferred_term: methanethiol
+ontology_mapping:
+  ontology_id: CHEBI:16007
+  ontology_label: methanethiol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://www.ebi.ac.uk/chebi/CHEBI:16007
+    notes: Primary exact compound page checked against all frozen source contexts;
+      source stocks/headspace and explicit other forms remain distinct. See worker08
+      organic_products evidence/decisions.
+synonyms:
+- synonym_text: Methanethiol
+  synonym_type: RAW_TEXT
+  source: culturemech:Methanethiol
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:17:30.461780+00:00'
+  curator: all_unmatched_20261107_worker08_organics
+  action: CREATED
+  changes: Propose distinct compound owner from verified primary exact identity and
+    frozen occurrences. No stock or alternate supplied-form merge; no role approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to DATABASE_MATCH:
+    The cited ChEBI database identifies methanethiol; gas-dose transcription does
+    not establish a stock or atmosphere identity. Isolated successor proposal only;
+    all inherited source, role and export holds remain. Historical evidence and predecessor
+    files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

@@ -1,0 +1,340 @@
+{
+  "schema_version": "w08-independent-science-c-components-addendum-v1",
+  "reviewer": "/root/w08_review_c",
+  "reviewed_head": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+  "frozen_base": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "append_only": true,
+  "preceding_addendum": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/w08-published-head-independent-review-v1/c/correction-addendum-v1.json",
+    "sha256": "a551aaaebdf833265edbc30413e23268d56363f68af2c7c29b1c5844e14067fd"
+  },
+  "finding_id": "W08-C-COMPONENT-001",
+  "severity": "P2",
+  "title": "JCM149 Hutner stock blanket UNMAPPED component references defer feasible source-specific grounding",
+  "proposal_id": "vm-prop-new-129",
+  "after_capture": {
+    "root": "artifact",
+    "path": "research/vitamins_mixtures/proposed_owners/JCM149_Hutners_Vitamin_Free_Mineral_Base.yaml",
+    "sha256": "244f4f42c3b00f640c165d4b558d26d5e3fe949619fb51a1803e9d60ab40ae79"
+  },
+  "case_id": "CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd",
+  "case_input_sha256": "a3e5246b20b9a102874556c0f3ae33d12a42315f8ce6aa12be6c1f841ee7572e",
+  "affected_sealed_rows": [
+    {
+      "file": "assessment.json",
+      "json_pointer": "/proposals/26",
+      "fields": [
+        "whole_payload_reasoning",
+        "verdict"
+      ]
+    },
+    {
+      "file": "assessment.json",
+      "json_pointer": "/cases/3",
+      "case_index": 129,
+      "fields": [
+        "scientific_reasoning",
+        "verdict",
+        "additional_remaining_requirements"
+      ]
+    }
+  ],
+  "superseding_scope": "The eight immediate source constituents and all quantities remain supported; COMPLETE is source-relative enumeration. My earlier positive wording must not imply that blanket UNMAPPED references complete the authorized scientific component review.",
+  "primary_recipe": {
+    "evidence_id": "vm-fetch-9c2e840069cb8057",
+    "kind": "primary_source",
+    "capture": {
+      "root": "artifact",
+      "path": "research/vitamins_mixtures/captures/9c2e840069cb8057.source",
+      "sha256": "7489686c0f8b4a1fadd428de69fde4f0eaf5a7eebbbd7d60ac725684d49b7490"
+    },
+    "locator": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149; complete recipe/product payload; exact section identified in each linked decision",
+    "supports_or_contradicts": "Primary source recipe/product enumeration or ontology definition. Applicability and limitations are assessed separately for every linked case.",
+    "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149",
+    "accessed_at": "2026-11-08T05:07:20.095049+00:00",
+    "case_ids": [
+      "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+      "CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd"
+    ]
+  },
+  "source_locator": "Hutner vitamin-free mineral-base table and following neutralization sentence; Metals44 table below",
+  "baseline_aggregate": {
+    "git_object": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99:data/curated/mapped_ingredients.yaml",
+    "sha256": "8d61eef218f045e26fc1f3db6755446008def7bc5d341b1da2e9b08686743e7c",
+    "scope": "Read-only candidate/active-owner enumeration of the exact frozen tracked baseline. This is not an independent fresh ontology lookup or approval of candidate owner roles and all inherited fields."
+  },
+  "component_assessments": [
+    {
+      "component_index": 0,
+      "source_component": {
+        "component_name": "Nitrilotriacetic acid",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "10.0",
+        "concentration_unit": "G_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Nitrilotriacetic_Acid.yaml",
+        "before_sha256": "7e9b42c517e23a71ad8c012b4391d2a1fbb89a1fd4814799d6452af97397b392",
+        "identifier": "CHEBI:44557",
+        "preferred_term": "Nitrilotriacetic acid",
+        "mapping_status": "MAPPED",
+        "ontology_label": "nitrilotriacetic acid",
+        "chemical_formula": "C6H9NO6",
+        "cas_rn": "139-13-9"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:44557",
+          "preferred_term": "Nitrilotriacetic acid",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "The source explicitly adds nitrilotriacetic acid and then neutralizes it with KOH. Its supplied acid input is identified; conversion during preparation does not make the original input trisodium NTA or an unidentifiable ingredient.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 1,
+      "source_component": {
+        "component_name": "MgSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "14.45",
+        "concentration_unit": "G_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+        "before_sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2",
+        "identifier": "CHEBI:31795",
+        "preferred_term": "MgSO4 x 7 H2O",
+        "mapping_status": "MAPPED",
+        "ontology_label": "magnesium sulfate heptahydrate",
+        "chemical_formula": "7H2O.Mg.O4S",
+        "cas_rn": "10034-99-8"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:31795",
+          "preferred_term": "MgSO4·7H2O",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "identifier": "CHEBI:31795",
+          "preferred_term": "MgSO47H2O",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "identifier": "CHEBI:31795",
+          "preferred_term": "MgSO4 x 7 H2O",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "The source explicitly specifies seven waters; the exact catalog identity/formula is magnesium sulfate heptahydrate. No anhydrous substitution or hydrate inference is needed.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 2,
+      "source_component": {
+        "component_name": "CaCl2·2H2O",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "3.335",
+        "concentration_unit": "G_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Cacl2_X_2_H2o.yaml",
+        "before_sha256": "029fee355b235b47ffa10aef066b9b7b3b0afe2aa53c4435b12b4d7bd96370d7",
+        "identifier": "CHEBI:86158",
+        "preferred_term": "CaCl2 x 2 H2O",
+        "mapping_status": "MAPPED",
+        "ontology_label": "calcium chloride dihydrate",
+        "chemical_formula": "Ca.2Cl.2H2O",
+        "cas_rn": "10035-04-8"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:86158",
+          "preferred_term": "CaCl22H2O",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "identifier": "CHEBI:86158",
+          "preferred_term": "CaCl2 x 2 H2O",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "The source explicitly specifies two waters; exact catalog calcium chloride dihydrate matches. Rejected sibling tombstones do not create a second live owner.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 3,
+      "source_component": {
+        "component_name": "(NH4)6Mo7O24·4H2O",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "9.25",
+        "concentration_unit": "MG_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml",
+        "before_sha256": "8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15",
+        "identifier": "CHEBI:86244",
+        "preferred_term": "ammonium molybdate tetrahydrate",
+        "mapping_status": "MAPPED",
+        "ontology_label": "hexaammonium heptamolybdate tetrahydrate",
+        "chemical_formula": "H32Mo7N6O28",
+        "cas_rn": "12054-85-2"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:86244",
+          "preferred_term": "ammonium molybdate tetrahydrate",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "The source formula explicitly contains six ammonium ions, seven Mo atoms and four waters. The specific hexaammonium heptamolybdate tetrahydrate candidate matches, whereas diammonium orthomolybdate CHEBI91249 does not. Complete ontology/candidate adjudication is feasible; inherited structure and obsolete history statements are not automatically approved.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 4,
+      "source_component": {
+        "component_name": "FeSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "99.0",
+        "concentration_unit": "MG_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Feso4_X_7_H2o.yaml",
+        "before_sha256": "becd0250e47dc561b10ebceb0d366018bd4790156c055cd299489f0cb034f172",
+        "identifier": "CHEBI:75836",
+        "preferred_term": "FeSO4 x 7 H2O",
+        "mapping_status": "MAPPED",
+        "ontology_label": "iron(2+) sulfate heptahydrate",
+        "chemical_formula": "Fe.7H2O.O4S",
+        "cas_rn": "7782-63-0"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:75836",
+          "preferred_term": "FeSO4 x 7 H2O",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "identifier": "CHEBI:75836",
+          "preferred_term": "FeSO4 x 7H2O",
+          "mapping_status": "REJECTED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "The source explicitly specifies FeSO4·7H2O; the active exact heptahydrate owner matches. The alternate spelling Feso4_X_7h2o is REJECTED, not another active competing owner.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 5,
+      "source_component": {
+        "component_name": "Metals ''44'' (see below)",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "50.0",
+        "concentration_unit": "ML_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Metals_44_see_below.yaml",
+        "before_sha256": "ee92a39088715243e53ac6affea258f3b88f19dab8eda2489dac99d4b2372ce7",
+        "identifier": "MICRO:0000456",
+        "preferred_term": "Metals ''44'' (see below)",
+        "mapping_status": "MAPPED",
+        "ontology_label": "trace metals 44",
+        "chemical_formula": null,
+        "cas_rn": null
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "MICRO:0000456",
+          "preferred_term": "Metals ''44'' (see below)",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "A lexical exact-label candidate exists, but it has no component list and its history records name matching only. The JCM149 primary source enumerates this nested stock (EDTA disodium, ZnSO4·7H2O, FeSO4·7H2O, MnSO4·xH2O, CuSO4·5H2O, Co(NO3)2·6H2O, Na2B4O7·10H2O, water). Exact equivalence of the MICRO recipe/version is not established in the inspected owner bytes. Keep this nested component distinct and UNMAPPED until direct formula comparison, rather than flattening or choosing by name. The unspecified manganese hydration within that nested stock stays unresolved.",
+      "disposition": "PRECISE_FORMULATION_BRIDGE_HOLD_RETAIN_UNMAPPED",
+      "candidate_reference_scope_after_adjudication": null,
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 6,
+      "source_component": {
+        "component_name": "Distilled water",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "950.0",
+        "concentration_unit": "ML_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Distilled_Water.yaml",
+        "before_sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56",
+        "identifier": "CHEBI:15377",
+        "preferred_term": "Distilled water",
+        "mapping_status": "MAPPED",
+        "ontology_label": "water",
+        "chemical_formula": "H2O",
+        "cas_rn": "7732-18-5"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:15377",
+          "preferred_term": "Distilled water",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "JCM149 explicitly says Distilled water950mL. The existing Distilled_Water owner has exactly that preferred term and CHEBI15377 water identity. Referencing this source water input does not collapse tap/deionized/double-distilled states or endorse their rejected aliases. There is no missing carrier or grade fact for this component.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    },
+    {
+      "component_index": 7,
+      "source_component": {
+        "component_name": "KOH (neutralizing nitrilotriacetic acid)",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "ca. 7.3",
+        "concentration_unit": "G_PER_SOURCE_BATCH"
+      },
+      "candidate": {
+        "owner_path": "data/ingredients/mapped/Koh.yaml",
+        "before_sha256": "ae478c37c1f269d5ac551c7773568cdbaf81a7d5af752f33e58775f8c18037c1",
+        "identifier": "CHEBI:32035",
+        "preferred_term": "KOH",
+        "mapping_status": "MAPPED",
+        "ontology_label": "potassium hydroxide",
+        "chemical_formula": "HO.K",
+        "cas_rn": "1310-58-3"
+      },
+      "all_same_identifier_baseline_records": [
+        {
+          "identifier": "CHEBI:32035",
+          "preferred_term": "KOH",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "active_same_identifier_count": 1,
+      "assessment": "The preparation explicitly adds approximately7.3g KOH to neutralize NTA. KOH chemical identity is known; approximate dose does not make it UNMAPPED. Keep ca.7.3 as approximate input and preserve the neutralization qualifier separately from identity. Do not infer endpoint pH, final volume or a KOH stock concentration.",
+      "disposition": "EXACT_SOURCE_FORM_HAS_VERIFIED_BASELINE_CANDIDATE_COMPLETE_BOUNDED_COMPONENT_ADJUDICATION",
+      "candidate_reference_scope_after_adjudication": "MIM_CATALOG",
+      "no_automatic_whole_candidate_owner_approval": true
+    }
+  ],
+  "complete_payload_planning_verdict": "REVISION_REQUIRED_COMPONENT_SPECIFIC_CURATION_INCOMPLETE",
+  "bounded_fix": "For seven source-specified ingredients, complete individual source-form/candidate adjudication and populate supported component_id/reference_scope, or replace a blanket deferral with the exact scientific blocker. Distilled water is a concrete resolved source-grade/catalog candidate; no missing carrier justifies UNMAPPED there. Preserve every quantity, water grade, approximateKOH qualifier, original recipe evidence and provenance. Retain nested Metals44 as UNMAPPED until the exact formula/version bridge is established; do not flatten it or infer its ambiguous manganese hydrate. Do not transfer counts, merge owners, clear source/role/export holds or claim final volume. Obtain separate review of exact successor bytes.",
+  "independence_limit": "This follow-up verifies recipe facts and exact baseline candidates. No new primary network request, paid provider, local corpus write or chemistry approval inferred from a native structural pass.",
+  "sealed_original_manifest_files_unchanged": 41
+}

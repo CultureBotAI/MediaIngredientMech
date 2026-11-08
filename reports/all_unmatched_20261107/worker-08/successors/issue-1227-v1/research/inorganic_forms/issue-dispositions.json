@@ -1,0 +1,204 @@
+{
+  "findings_capture": {
+    "path": "successors/issue-1227-v1/inputs/external-review/findings.json",
+    "sha256": "11e3681d90be88d52a309fc6ed301bcb4c37c749ffb144640175cea6db501af5"
+  },
+  "rows": [
+    {
+      "finding_id": "W08-IR-001",
+      "title": "New mapping evidence mislabels agent work as human-supplied evidence",
+      "normalized_severity_preserved": "minor",
+      "historical_status_preserved": "open_at_frozen_head",
+      "original_observation_lineage": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-004]",
+          "original_finding_id": "W08-A-004",
+          "original_reviewer": "/root/w08_review_a",
+          "original_severity": "P2",
+          "original_status": null
+        },
+        {
+          "path": "b/findings.json",
+          "sha256": "bb2011b15edd9fce21d568f2f45d20edbe5925cb9343227a6b0a9383d02eb505",
+          "selector": "findings[finding_id=W08-B-F01]",
+          "original_finding_id": "W08-B-F01",
+          "original_reviewer": null,
+          "original_severity": "P2",
+          "original_status": "confirmed_requires_bounded_provenance_correction"
+        },
+        {
+          "path": "c/findings.json",
+          "sha256": "1047762a5ca5b88bc5e51ffd7efbbcec9ac9db38426455bc1beb86bf1ab82a49",
+          "selector": "findings[finding_id=W08-C-F002]",
+          "original_finding_id": "W08-C-F002",
+          "original_reviewer": null,
+          "original_severity": "P2",
+          "original_status": "confirmed; root aggregates cohort"
+        }
+      ],
+      "known_issue_preserved": null,
+      "author_disposition": "corrected_pending_peer",
+      "assessment": "47 mapping assertions individually classified. Exactly 23 new LLM-assisted identity judgments changed from MANUAL_CURATION to CURATOR_JUDGMENT. Inherited assertions and ComponentEvidence types are unchanged.",
+      "independent_approval": false,
+      "holds_released": false
+    },
+    {
+      "finding_id": "W08-IR-003",
+      "title": "Supported component references remain deferred as generic form uncertainty",
+      "normalized_severity_preserved": "major",
+      "historical_status_preserved": "open_at_frozen_head",
+      "original_observation_lineage": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-003]",
+          "original_finding_id": "W08-A-003",
+          "original_reviewer": "/root/w08_review_a",
+          "original_severity": "P2",
+          "original_status": null
+        },
+        {
+          "path": "b/findings.json",
+          "sha256": "bb2011b15edd9fce21d568f2f45d20edbe5925cb9343227a6b0a9383d02eb505",
+          "selector": "findings[finding_id=W08-B-F02]",
+          "original_finding_id": "W08-B-F02",
+          "original_reviewer": null,
+          "original_severity": "P2",
+          "original_status": "confirmed_feasible_curation_deferred"
+        },
+        {
+          "path": "c/component-assessment-addendum-v1.json",
+          "sha256": "823adaa9e0892a5bd0ee058922688d54c3e7a47adc61876966967e2b56673176",
+          "selector": "complete supplement",
+          "original_finding_id": "W08-C-COMPONENT-001",
+          "original_reviewer": "/root/w08_review_c",
+          "original_severity": "P2",
+          "original_status": null
+        }
+      ],
+      "known_issue_preserved": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author_disposition": "reassessed_no_compatible_substitution_pending_peer",
+      "assessment": "All 27 component slots inspected: 19 existing active catalog/nested-stock references remain; eight unresolved slots have explicit hydration/form conflicts. Current ignored-inclusive owner candidates are bound. No inorganic replacement is listed by the external feasible-candidate inventory. A separate established Tris salt source fact has an exact W05 coordinator referral, without authorizing that candidate.",
+      "independent_approval": false,
+      "holds_released": false
+    },
+    {
+      "finding_id": "W08-IR-006",
+      "title": "Component completeness does not consistently follow source-relative enum meanings",
+      "normalized_severity_preserved": "minor",
+      "historical_status_preserved": "open_at_frozen_head",
+      "original_observation_lineage": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-005]",
+          "original_finding_id": "W08-A-005",
+          "original_reviewer": "/root/w08_review_a",
+          "original_severity": "P3",
+          "original_status": null
+        },
+        {
+          "path": "final/partial-completeness-adjudication.json",
+          "sha256": "6f163949f4825e4ca33faf3c3bbabc16c8d33d63c6989f3c22df067f526b68f0",
+          "selector": "complete independent adjudication",
+          "original_finding_id": null,
+          "original_reviewer": "worker03:/root/w08_assembly_review",
+          "original_severity": "minor",
+          "original_status": null
+        }
+      ],
+      "known_issue_preserved": null,
+      "author_disposition": "corrected_pending_peer",
+      "assessment": "Applied the exact coordinator refinement: five literal two-input lists COMPLETE, fifteen concentration-defined preparations UNKNOWN, and PCR phosphate buffer retained PARTIAL for an explicit unnamed pH-adjusting input. All five campaign exclusions are retained, including four outside this cohort. No quantity, source form or component membership changed.",
+      "independent_approval": false,
+      "holds_released": false
+    },
+    {
+      "finding_id": "W08-IR-008",
+      "title": "Inherited phosphate aliases exceed exact chemical identity",
+      "normalized_severity_preserved": "major",
+      "historical_status_preserved": "open_at_frozen_head",
+      "original_observation_lineage": [
+        {
+          "path": "a/findings.json",
+          "sha256": "6f251ad4e3b0ba39be7ce9f075174154521b43a5bd4e4b5554803239605716c1",
+          "selector": "findings[finding_id=W08-A-007]",
+          "original_finding_id": "W08-A-007",
+          "original_reviewer": "/root/w08_review_a",
+          "original_severity": "P2",
+          "original_status": null
+        },
+        {
+          "path": "c/correction-addendum-v1.json",
+          "sha256": "a551aaaebdf833265edbc30413e23268d56363f68af2c7c29b1c5844e14067fd",
+          "selector": "corrections[id=C-ADDENDUM-003]",
+          "original_finding_id": null,
+          "original_reviewer": null,
+          "original_severity": null,
+          "original_status": null
+        }
+      ],
+      "known_issue_preserved": "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+      "author_disposition": "corrected_pending_peer",
+      "assessment": "Four named aliases retyped REJECTED_LABEL on the two phosphate owners, preserving exact text/source and prior 1215 stock-label and 1216 molybdate repairs. No malformed source occurrence is silently normalized.",
+      "independent_approval": false,
+      "holds_released": false
+    },
+    {
+      "finding_id": "W08-IR-010",
+      "title": "Tetrahydrate evidence points to incomplete capture instead of archived full supplier table",
+      "normalized_severity_preserved": "minor",
+      "historical_status_preserved": "open_at_frozen_head",
+      "original_observation_lineage": [
+        {
+          "path": "b/findings.json",
+          "sha256": "bb2011b15edd9fce21d568f2f45d20edbe5925cb9343227a6b0a9383d02eb505",
+          "selector": "findings[finding_id=W08-B-F04]",
+          "original_finding_id": "W08-B-F04",
+          "original_reviewer": null,
+          "original_severity": "P2",
+          "original_status": "confirmed_evidence_binding_repair"
+        },
+        {
+          "path": "c/findings.json",
+          "sha256": "1047762a5ca5b88bc5e51ffd7efbbcec9ac9db38426455bc1beb86bf1ab82a49",
+          "selector": "findings[finding_id=W08-C-XREF003]",
+          "original_finding_id": "W08-C-XREF003",
+          "original_reviewer": null,
+          "original_severity": "P2",
+          "original_status": "confirmed shared finding; B lead"
+        }
+      ],
+      "known_issue_preserved": null,
+      "author_disposition": "corrected_pending_peer",
+      "assessment": "Exact original full Thermo batch7 copied and bound at its original access time. All three cases and the proposal use this claim-specific evidence. The property retrieval timestamp now agrees with batch7; old batch6 remains explicitly historical/incomplete.",
+      "independent_approval": false,
+      "holds_released": false
+    },
+    {
+      "finding_id": "W08-IR-011",
+      "title": "Allen phosphate remaining requirement repeats a resolved dose distinction",
+      "normalized_severity_preserved": "minor",
+      "historical_status_preserved": "open_at_frozen_head",
+      "original_observation_lineage": [
+        {
+          "path": "b/findings.json",
+          "sha256": "bb2011b15edd9fce21d568f2f45d20edbe5925cb9343227a6b0a9383d02eb505",
+          "selector": "findings[finding_id=W08-B-F05]",
+          "original_finding_id": "W08-B-F05",
+          "original_reviewer": null,
+          "original_severity": "P3",
+          "original_status": "confirmed_stale_remaining_requirement"
+        }
+      ],
+      "known_issue_preserved": null,
+      "author_disposition": "corrected_pending_peer",
+      "assessment": "Case63 missing_requirement now retains only the unresolved seven-water material/source-correction fact. M2231 already establishes 6 g plus 1 L input recipe and 5 ml receiving dose; no repeated dose research is deferred.",
+      "independent_approval": false,
+      "holds_released": false
+    }
+  ],
+  "authority": "Author correction receipt. Historical reviewer identities and severities remain unchanged. Root coordinates current issues; this author did not mutate GitHub."
+}

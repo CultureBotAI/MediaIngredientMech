@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-08T07:58:57.556598+00:00",
+  "finding_id": "W08-1227-ASSEMBLY-001",
+  "severity": "minor",
+  "reporter": "worker08:/root",
+  "author": "worker08:/root/vitamins",
+  "route": 1227,
+  "status": "routed_before_fix",
+  "title": "Local ontology-query receipt has a web-evidence type without a URL",
+  "failed_gate": "C/scripts/audit_worker_outcomes_v1.py full188case accounting",
+  "error": "InvalidOutcome: primary/ontology evidence URL required",
+  "exact_evidence_entry": {
+    "evidence_id": "vm1227-v2-dl-ontology",
+    "kind": "ontology",
+    "capture": {
+      "root": "artifact",
+      "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/exact-form-ontology-lookup.json",
+      "sha256": "1ec1b45da45857aacc16bb75be8ec7fa1d944e4f0286f74195f9f0f5df6892a9"
+    },
+    "url": null,
+    "accessed_at": "2026-11-08T07:52:09.697074+00:00",
+    "locator": "Local primary ChEBI255 and NCIt26.02d statements; CHEBI748116\u2192racemate60911, generic-parent contrasts, exact bounded name/CAS searches.",
+    "supports_or_contradicts": "Supports exact racemic lipoic acid identity under section3 priority, distinguishes generic parents, records candidate and search limits."
+  },
+  "failed_assembly_inputs": {
+    "decisions.json": "dbf3213c3cf2a61cb4ac7a500f73dadb17ea170ffff10cda846e24fb34d780aa",
+    "proposals.json": "61a8b4f873858c12804a769ba29cb11475be4cabc5907726db9c05087e8bf158",
+    "evidence.json": "adab1f2404ef6c946b428d6ee46c02ce16a31f358b0ea385f8da080c65ce8000",
+    "assembly-provenance.json": "ac395494876b5e135f51d3247f1623e2207119aa88930a11c1f963b925144cf1",
+    "provenance/final-selection.json": "a161bf356cce2834ca4ccf0517c9d8000bafa3616a0c17d62e2990bc0734179a"
+  },
+  "reproduction": "The unchanged auditor requires an HTTP(S) URL for kind ontology or primary_source. vm1227-v2-dl-ontology captures read-only local ChEBI/NCIt queries with url:null. Current exact OLS primary capture is separately bound with its real URL/time.",
+  "bounded_fix": "Preserve all final-v2 indices, payloads and failed rootassembly. Correct this one index entry in an immutable author successor according to its actual local query/validation provenance; do not invent a URL/access event or weaken auditor. Separate peer assesses exact metadata successor, retaining full prior57/47 scientific review and exact unchanged case/payload hashes. Root then assembles a new version, preserving first assembly paths.",
+  "dedup": "Same1227 evidence-provenance class, new exact assertion found by combinedaccounting; no worker GitHub mutation, scientific identity finding or release approval."
+}

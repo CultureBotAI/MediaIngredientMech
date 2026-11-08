@@ -1,0 +1,165 @@
+{
+  "reviewer": "/root/vitamins",
+  "mode": "read_only_artifact_integrity",
+  "scientific_review": false,
+  "self_scientific_approval": false,
+  "started_at": "2026-11-08T07:56:13.894337+00:00",
+  "finished_at": "2026-11-08T07:56:15.850854+00:00",
+  "status": "PASS",
+  "predecessor_input": {
+    "path": "successors/issue-1227-v1/provenance/predecessor-working-bytes.json",
+    "sha256": "a1ef974f55e7aef3c4b80bdfaf6300588839ebeac3d228d8a1a38593e1c63afc",
+    "declared_tracked_count": 15643,
+    "declared_readable_count": 15633,
+    "hashed_rows": 15633
+  },
+  "groups": {
+    "initial_hashed_working_files": {
+      "checks": 15633,
+      "passed": 15633,
+      "failed": 0
+    },
+    "supplemental_ten_baseline_entries": {
+      "checks": 10,
+      "passed": 10,
+      "failed": 0,
+      "qualification": "Nine non-ASCII paths and one directory symlink were absent from the original15,633-row working-byte inventory. Compared against exact predecessor commit blobs here; not represented as originally captured working hashes."
+    },
+    "w05_seal_manifest_handoff": {
+      "checks": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "w05_all_manifest_members": {
+      "checks": 6968,
+      "passed": 6968,
+      "failed": 0
+    },
+    "if_sealed_review_bindings": {
+      "checks": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "if_review_final_input_bindings": {
+      "checks": 23,
+      "passed": 23,
+      "failed": 0
+    },
+    "if_primary_capture_bindings": {
+      "checks": 153,
+      "passed": 153,
+      "failed": 0
+    },
+    "if_canonical_cases": {
+      "checks": 80,
+      "passed": 80,
+      "failed": 0,
+      "bad_case_ids": [],
+      "algorithm": "SHA256(canonical JSON, sort_keys=True, separators=(',',':'), ensure_ascii=False)"
+    },
+    "if_selected_payload_bindings": {
+      "checks": 35,
+      "passed": 35,
+      "failed": 0
+    },
+    "vm_v1_manifest_members": {
+      "checks": 64,
+      "passed": 64,
+      "failed": 0
+    },
+    "vm_v1_preservation_snapshot": {
+      "checks": 64,
+      "passed": 64,
+      "failed": 0
+    },
+    "vm_v2_manifest_members": {
+      "checks": 31,
+      "passed": 31,
+      "failed": 0
+    },
+    "vm_v2_manifest_addendum": {
+      "checks": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "vm_announced_frozen_bindings": {
+      "checks": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "vm_v1_selected_payloads": {
+      "checks": 47,
+      "passed": 47,
+      "failed": 0
+    },
+    "vm_v1_evidence_captures": {
+      "checks": 18,
+      "passed": 18,
+      "failed": 0
+    },
+    "vm_v1_handoff_inputs": {
+      "checks": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "vm_v2_selected_payloads": {
+      "checks": 47,
+      "passed": 47,
+      "failed": 0
+    },
+    "vm_v2_evidence_captures": {
+      "checks": 22,
+      "passed": 22,
+      "failed": 0
+    },
+    "vm_v2_handoff_inputs": {
+      "checks": 21,
+      "passed": 21,
+      "failed": 0
+    },
+    "vm_successor_scope": {
+      "cases_v1": 57,
+      "cases_v2": 57,
+      "proposals_v1": 47,
+      "proposals_v2": 47,
+      "changed_payloads": [
+        "vm-prop-new-29",
+        "vm-prop-new-98"
+      ],
+      "unchanged_payloads": 45,
+      "expected_changed_payloads": [
+        "vm-prop-new-29",
+        "vm-prop-new-98"
+      ],
+      "passed": true,
+      "scientific_approval": false
+    }
+  },
+  "failure_count": 0,
+  "failures": [],
+  "inventory_failures": {},
+  "receipt_files": {
+    "checks.json": {
+      "path": "successors/issue-1227-v1/independent-review/preservation-final/checks.json",
+      "sha256": "8f18d4b5f26ee6c0845386062ef59a1177e3ae50ec86c8263560c2edf115b79f"
+    },
+    "inventories.json": {
+      "path": "successors/issue-1227-v1/independent-review/preservation-final/inventories.json",
+      "sha256": "25f5492145bb856fdb782565b9c0f8dd1db0ec24e250774bb402ba4c6aea902a"
+    }
+  },
+  "limitations": [
+    "This verifies bytes and frozen bindings only. No primary content was scientifically rereviewed and no native/schema/partonomy validator was rerun.",
+    "The original predecessor working-byte capture has15,633 hashed files, not15,643; ten additional git-tree entries were checked separately against b90a2fd commit blobs.",
+    "IF authoritative review/receipt/ledger files are checked against known sealed hashes. Unbound helper/progress files are inventoried, not claimed historically immutable.",
+    "Root unsealed assembly, selection and review files are excluded from immutability assertions. The VM validation-scope addendum remains effective: author diagnostic overlay used earlier organic proposals; the final root combined-overlay gate is separate.",
+    "VM files include reviewer-owned author material. These checks provide mechanical integrity only and cannot approve their scientific content."
+  ],
+  "commands": [
+    "Python3.13 hashlib streamed SHA256 over all manifest files",
+    "git ls-tree -rz b90a2fd4681d20e2586481b7b9b1114a78281b94",
+    "git cat-file blob for ten supplemental entries",
+    "Path.rglob for ignored-inclusive sealed-directory inventory"
+  ],
+  "checked_write_boundary": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/preservation-final"
+}

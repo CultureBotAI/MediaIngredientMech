@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:nbrc1321_vitamin_b12_solution
+preferred_term: NBRC 1321 vitamin B12 solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1321_vitamin_b12_solution
+  ontology_label: NBRC 1321 vitamin B12 solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    notes: 'NBRC 1321: ******Vitamin B12 solution defines this multi-component preparation.
+      Registry identity preserves the recipe-specific stock; no exact molecular ontology
+      mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'This source explicitly identifies cyanocobalamin and filter sterilization.
+  It is distinct from a pure cyanocobalamin ingredient and from vitamer-unspecified
+  JCM 403 B12 stock. Raw source labels retained here, with recipe scope: ''Vitamin
+  B12 solution******''. Generic local labels are not published as global synonyms.
+  Occurrence statistics remain zero until source-specific membership integration;
+  frozen observations are fully recorded in the evidence decisions. Quantities use
+  literal source-batch units, not final culture concentrations. Component references
+  identify compatible active entities only after source-form review. Remaining UNMAPPED
+  components retain their precise form or nested-preparation limits. Component names
+  and quantities remain source-specific; no role or export approval is inherited.'
+components:
+- component_name: Cyanocobalamin
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+  component_id: CHEBI:17439
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    Cyanocobalamin; the inspected active catalog and primary ontology identity CHEBI:17439
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '100'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  component_id: CHEBI:15377
+  source: 'Issue 1227 IR003 component-specific adjudication: The cited recipe names
+    Distilled water; the inspected active catalog and primary ontology identity CHEBI:15377
+    match this stated chemical form. Source spelling, amount, unit and preparation
+    boundary are preserved; no role, owner-wide or export approval is transferred.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    source_record: 'NBRC 1321: ******Vitamin B12 solution'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:01.102491+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined NBRC 1321 vitamin B12 solution with complete immediate
+    constituent enumeration and registry identity. This source explicitly identifies
+    cyanocobalamin and filter sterilization. It is distinct from a pure cyanocobalamin
+    ingredient and from vitamer-unspecified JCM 403 B12 stock. Isolated proposal only;
+    independent and coordinator review remain required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:44.695729+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR003: bind 2 compatible source components to
+    active catalog entities without copying role or export approval. Earlier history
+    and all source, scientific, role, withheld and downstream holds remain. Isolated
+    proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

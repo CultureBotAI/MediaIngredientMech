@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-08T08:08:41.990110+00:00",
+  "command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/venv/bin/python",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/final_assembly/check_final_v2.py",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/final-v2",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/provenance/final-selection-v2.json",
+    "reviews/structured/20261108T080806Z-w08-issue1227-complete-successor/review.yaml"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/final_assembly/check_final_v2.py\", line 46, in <module>\n    for eid,entry in failed_e.items():check('only routed local-query category changed '+eid,final_e[eid]==(dict(entry,kind='local_validation') if eid=='vm1227-v2-dl-ontology' else entry))\n                                      ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/final_assembly/check_final_v2.py\", line 16, in check\n    checks.append({'check':name,'passed':bool(value),'detail':detail});assert value,(name,detail)\n                                                                              ^^^^^\nAssertionError: ('only routed local-query category changed w08-1227-peer-vitamins_mixtures', None)\n"
+}

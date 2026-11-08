@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:dsmz125_vitamin_k1_solution
+preferred_term: DSMZ solution 125 vitamin K1 solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz125_vitamin_k1_solution
+  ontology_label: DSMZ solution 125 vitamin K1 solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://mediadive.dsmz.de/rest/solution/125
+    notes: 'DSMZ MediaDive solution 125: Vitamin K1 solution defines this multi-component
+      preparation. Registry identity preserves the recipe-specific stock; no exact
+      molecular ontology mapping is asserted.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Source dissolves 0.1 ml vitamin K1 in 20 ml 95% ethanol; these are literal
+  additions, not 0.1 g and not an assumed 20.0 ml final volume. Raw source labels
+  retained here, with recipe scope: ''Vitamin K1 solution''. Generic local labels
+  are not published as global synonyms. Occurrence statistics remain zero until source-specific
+  membership integration; frozen observations are fully recorded in the evidence decisions.
+  Quantities use literal source-batch units, not final culture concentrations. UNMAPPED
+  component references preserve source wording without inventing hydrate, stereoisomer
+  or vitamer groundings.'
+components:
+- component_name: Vitamin K1
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Source says K1 without stereoisomer/product
+    specification. The active CHEBI:18067 structure selects natural phylloquinone
+    stereochemistry. Retain this source-form limit without blocking the stock identity.'
+- component_name: Ethanol (95 %)
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 'Issue 1227 IR003 retained limit: Immediate input is 95% ethanol, not neat
+    ethanol; percentage basis and complete prepared-carrier identity are not supplied.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/125
+    source_record: 'DSMZ MediaDive solution 125: Vitamin K1 solution'
+    notes: Complete enumeration at the immediate stock level. Nested buffers/stock
+      preparations remain distinct components. Amounts are those of the original source
+      batch.
+curation_history:
+- timestamp: '2026-11-08T05:20:00.735687+00:00'
+  curator: all-unmatched-20261107-worker08-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-defined DSMZ solution 125 vitamin K1 solution with complete
+    immediate constituent enumeration and registry identity. Source dissolves 0.1
+    ml vitamin K1 in 20 ml 95% ethanol; these are literal additions, not 0.1 g and
+    not an assumed 20.0 ml final volume. Isolated proposal only; independent and coordinator
+    review remain required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:25:44.695729+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes. Earlier history and all source, scientific,
+    role, withheld and downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

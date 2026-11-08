@@ -1,0 +1,86 @@
+identifier: kgmicrobe.ingredient:togo_m125_vitamin_k1_01percent_stock
+preferred_term: TOGO M125 vitamin K1 0.1 percent stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m125_vitamin_k1_01percent_stock
+  ontology_label: TOGO M125 vitamin K1 0.1 percent stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M125
+    notes: Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved
+      primary TOGO M125 record identifies JCM 134 and gives0.2 ml of 0.1%Vitamin K1
+      solution. Percentage basis is unstated and remains a literal label, without
+      converted amount. Registry identity preserves this documented preparation; no
+      exact molecular mapping.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved
+  primary TOGO M125 record identifies JCM 134 and gives 0.2 ml of 0.1% Vitamin K1
+  solution. Percentage basis is unstated and remains a literal label, without converted
+  amount. The carrier and any additional stock constituents are unspecified. No water,
+  ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This
+  is a preparation record with UNKNOWN component completeness; complete-formulation
+  equivalence and source hold release are not asserted. No recipe-supported equivalence
+  to DSMZ 125 ethanol stock or the 1% OTEB stock exists. The partial preparation preserves
+  the source-defined stock without an invented carrier. Quantities, where present,
+  describe the supplied stock, not the finished receiving medium. Raw labels remain
+  source-scoped in evidence; no global synonym, biological role, occurrence count
+  integration or downstream admission is proposed.
+components:
+- component_name: Vitamin K1
+  reference_scope: UNMAPPED
+  source: 'Issue 1227 IR003 retained limit: Source says K1 without stereoisomer/product
+    specification. The active CHEBI:18067 structure selects natural phylloquinone
+    stereochemistry. Retain this source-form limit without blocking the stock identity.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M125
+    source_record: TOGO M125 vitamin K1 0.1 percent stock
+    notes: Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved
+      primary TOGO M125 record identifies JCM 134 and gives0.2 ml of 0.1%Vitamin K1
+      solution. Percentage basis is unstated and remains a literal label, without
+      converted amount. The carrier and any additional stock constituents are unspecified.
+      No water, ethanol, methanol, acid, preservative or molecular vitamin form is
+      inferred. This is a preparation record with UNKNOWN component completeness;
+      complete-formulation equivalence and source hold release are not asserted. No
+      recipe-supported equivalence to DSMZ 125 ethanol stock or the 1% OTEB stock
+      exists. The partial preparation preserves the source-defined stock without an
+      invented carrier.
+curation_history:
+- timestamp: '2026-11-08T06:03:42.242636+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Resolve independent finding VM1201-F1 by representing known source preparation
+    with partial composition instead of treating unknown carrier as an absolute curation
+    blocker. Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved
+    primary TOGOM125 record identifies JCM134 and gives0.2ml of0.1%VitaminK1 solution.
+    Percentage basis is unstated and remains a literal label, without converted amount.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.123917+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:32:14.861375+00:00'
+  curator: all-unmatched-worker08-issue1227-vitamins
+  action: BOUNDED_REVIEW_CORRECTION
+  changes: 'IR001: reclassify newly authored registry decisions as CURATOR_JUDGMENT,
+    preserving source URLs and notes; IR006: set UNKNOWN because the source does not
+    establish retained or full stock membership; no explicitly omitted constituent
+    list is claimed. Earlier history and all source, scientific, role, withheld and
+    downstream holds remain. Isolated proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
