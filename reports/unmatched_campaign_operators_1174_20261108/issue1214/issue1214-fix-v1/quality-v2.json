@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "name": "black",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/src/mediaingredientmech/campaign_publication.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/tests/test_campaign_publication.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "b9cf511501d306d2bd8355ccb165c8ddc0a6fdd62d7c72c4a7b1795cf8934c8c"
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/src/mediaingredientmech/campaign_publication.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/tests/test_campaign_publication.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    }
+  ],
+  "prior_check_limitation": "black-final.log used Path.resolve on the venv executable and lost venv package discovery before checking any file. Retained failure; corrected invocation uses the exact venv path without resolving symlink. No environment mutation."
+}

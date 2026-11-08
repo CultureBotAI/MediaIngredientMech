@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "sealed_at": "2026-11-08T06:10:32.428722+00:00",
+  "result": "review_complete_with_one_open_P2_local_finding",
+  "pr": "https://github.com/CultureBotAI/MediaIngredientMech/pull/1205",
+  "reviewed_head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "base": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "read_only_target": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+  "private_review_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1",
+  "worker01_preserved_head": "26445f23b5a905ac26d864acfbd658570c88769c",
+  "reviewers": [
+    {
+      "identity": "/root",
+      "scope": "Complete owner operator, owner tests and CLI; publisher backup-path cross-check; synthesis and final input verification."
+    },
+    {
+      "identity": "/root/primary_context",
+      "scope": "Complete publisher, its two CLIs and tests; archived regression evidence; original three-case private backup probe."
+    },
+    {
+      "identity": "/root/issue_context",
+      "scope": "Every archive selection mapping, original copy, deduplication group, archive inventory, privacy/exclusion check and retained failure/review history."
+    },
+    {
+      "identity": "/root/skeptical_review",
+      "scope": "Independent live head/base, complete diff, baseline preservation, all final snapshot bindings; separate private reproduction of the backup finding."
+    }
+  ],
+  "independence": "Worker01 root and these in-process reviewers authored neither new operator. Archived author/reviewer identities are retained separately. This is not a human expert sign-off or a new external session.",
+  "head_and_diff": {
+    "current_local_remote_pr_head_and_base_match": true,
+    "pr_state": "OPEN",
+    "pr_is_draft": true,
+    "all_changes_are_additions": true,
+    "total_changed_paths": 249,
+    "new_code_test_cli_paths": 7,
+    "archive_paths_including_readme_and_selection": 242,
+    "all_baseline_regular_files_unchanged": 14405,
+    "both_baseline_symlink_targets_unchanged": true,
+    "maintained_data_workflows_pins_thresholds_and_existing_gates_unchanged": true,
+    "no_code_delta_since_exact_archived_final_rereview": true,
+    "final_commit_adds_archive_only": true
+  },
+  "seven_exact_code_bindings": [
+    {
+      "path": "scripts/apply_unmatched_campaign_owners.py",
+      "sha256": "d68fff3b69e6502bb8adad828019b91e9b664687cdaaf4453159dfb81f16cbdb",
+      "git_blob": "c4b6ce1d3dfea563890757bf3b907d9ca9e5e0e0",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v1/snapshot-v1/scripts/apply_unmatched_campaign_owners.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/source-snapshot-v2.json",
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    },
+    {
+      "path": "scripts/publish_unmatched_campaign.py",
+      "sha256": "73739e37ca8c1cda8c713060b74e0929f5a75b4c92cc4652749f69c14f1e8b3c",
+      "git_blob": "aaa6053675b7f9d4f77cdb5326be85dc3edc3a63",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v1/snapshot-v1/scripts/publish_unmatched_campaign.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    },
+    {
+      "path": "scripts/validate_unmatched_campaign_publication.py",
+      "sha256": "f6f1f8a4ea88417d6434d5d6e63a4b3a3a94697591d4511b6ed9d87980b9b3d4",
+      "git_blob": "180f51a5fa8769567b4391dcbc4d6dd670b4e224",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v1/snapshot-v1/scripts/validate_unmatched_campaign_publication.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    },
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+      "git_blob": "91656e4e02fec033d33b26e6f83dc8ddbeb24e6f",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v3/publisher-snapshot-v2/src/mediaingredientmech/campaign_publication.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    },
+    {
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+      "git_blob": "47dba1b76ad2c3d95f7810a805976ee0e7b3da71",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v3/source-snapshot-v2/src/mediaingredientmech/curate/campaign_owner_apply.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/source-snapshot-v2.json",
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    },
+    {
+      "path": "tests/test_campaign_owner_apply.py",
+      "sha256": "c86993e88a3b270789470aacf0312cc35e0d76c7a7c591808dd74b4db4a98bd2",
+      "git_blob": "74c25f790945fe37b11d3b650287f63c0de167a4",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v3/source-snapshot-v2/tests/test_campaign_owner_apply.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/source-snapshot-v2.json",
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    },
+    {
+      "path": "tests/test_campaign_publication.py",
+      "sha256": "a45eb697a144fafb0e22282d6544337f186b84371a9e5db842485e7c25b383bb",
+      "git_blob": "1401c78cea8148da0490501dd25cdf1c528504c0",
+      "archive_paths": [
+        "reports/unmatched_campaign_operators_1174_20261108/independent-review/independent-v3/publisher-snapshot-v2/tests/test_campaign_publication.py"
+      ],
+      "final_snapshot_manifests": [
+        "independent-v3/publisher-snapshot-v2.json"
+      ],
+      "matches_archived_final_review": true
+    }
+  ],
+  "archive": {
+    "declared_selection_is_authoritative": true,
+    "selection_sha256": "5f154af3da7b9c6111572da8a47ec0eba8468d979dcc49418ce715681a37c409",
+    "source_entries": 319,
+    "unique_files": 240,
+    "archive_files_with_metadata": 242,
+    "selected_bytes": 9117270,
+    "duplicate_mapping_count": 79,
+    "duplicate_target_groups": 45,
+    "original_available": 319,
+    "original_unavailable": 0,
+    "all_originals_and_copies_match": true,
+    "all_archive_bytes_match_head": true,
+    "duplicate_groups_explicit_and_consistent": true,
+    "ignored_and_hidden_files_included": true,
+    "private_account_runtime_capture_or_fixture_git_tree_found": false,
+    "historical_fixture_git_references_preserved_but_not_copied": 323,
+    "failed_probes_and_limitations_retained_honestly": true,
+    "scope_limit": "Archive contents and bounded credential/runtime-signature checks were examined; this is not a universal secret-absence guarantee. Historical paths can refer to deliberately excluded fixtures and require reconstruction for replay."
+  },
+  "regression_review": {
+    "issues": [
+      1194,
+      1195,
+      1197,
+      1198,
+      1200
+    ],
+    "assessment": "Original failures, intermediate unsuccessful repairs, final exact-source regression assertions and repaired independent evidence were reconciled. Existing fixes remain supported within their documented scopes. The new backup-content gap is separately recorded.",
+    "new_executions": "Only the narrow private three-case backup probe and a separate skeptical reproduction. Both used exact head code with existing synthetic owner-proof and external-generation stubs; actual publication, output guards, receipt replay and validation ran.",
+    "not_rerun": [
+      "Full repository suite",
+      "Full QC",
+      "Archived 88-test owner suite",
+      "Archived 106-test publisher suite",
+      "Archived native generation or actual campaign publication"
+    ]
+  },
+  "findings": [
+    {
+      "id": "IR-PR1205-PUBLISHER-001",
+      "priority": "P2",
+      "status": "open_locally_filed_and_independently_reproduced",
+      "path": "publisher/finding-001-backup-integrity.json",
+      "sha256": "54c9f4e1cfc187c17bd86bb707a4c392b73d3d0d2f52b2bd2087744b6f82dc41",
+      "summary": "Either reserved recovery backup can be overwritten in place before completion without refusal. Publication returns complete and standalone projected-state validation returns verified.",
+      "impact_boundary": "Recovery-copy integrity only. Immutable plan beforeimages remain correct; no incorrect canonical projection, owner identity or scientific approval bypass was demonstrated.",
+      "required_followup": "Coordinator should disposition the bounded backup-content guard and regression coverage. No repair or GitHub filing was performed by worker01."
+    }
+  ],
+  "limitations": [
+    "No scientific source-case, owner, ontology, alias, role, mapping, supported-export, publication, release or merge approval.",
+    "No full suite, full QC or all-green CI assertion. Their ongoing coordinator workflows are separate; saved live CI observations are point-in-time context only.",
+    "Infrastructure review and exact-byte agreement do not imply absence of every possible defect.",
+    "The source operator is recoverable rather than transactional; explicit recovery remains required for failed partial application.",
+    "The source acceptance contract binds a supplied ledger and accepted bytes; the coordinator still establishes full campaign completeness and scientific adequacy.",
+    "The skeptical first probe setup used a symlinked package and was correctly refused; that failed harness attempt is retained, followed by the successful exact copied-input reproduction."
+  ],
+  "mutations": {
+    "integration_code_data_or_git": false,
+    "published_worker_files_or_head": false,
+    "github": false,
+    "commits_pushes_checkouts_or_merges": false,
+    "external_sessions_paid_providers_or_session_controls": false,
+    "only_writes": "New private review artifacts, exact input copies and synthetic probe fixtures under the requested worker .temp directory."
+  },
+  "proofs": [
+    {
+      "path": "root/local-state.json",
+      "sha256": "c8cd0d8031cbec5c45a1cf616bd271d479ce5710d009e44c3ea5f4c9838bf256"
+    },
+    {
+      "path": "root/final-live-state-v1.json",
+      "sha256": "7dd47c1ab4684afcf72aa86e139d76f7ebc2c7d2084ac0066b67db3baee022ab"
+    },
+    {
+      "path": "root/pr1205-start.json",
+      "sha256": "c606669113273bc9623e1912f2a4bab2bc5b9768ee056cac04ff2c556978d7f3"
+    },
+    {
+      "path": "root/diff-name-status.tsv",
+      "sha256": "8cd8cb426657320b8fc2d372c3146d2e38327ca5cf9a592c8f5a0b9d9044a2bb"
+    },
+    {
+      "path": "root/complete.diff",
+      "sha256": "b4bcd95d24378f01f80ee929cf0228841e6fbf67a31795ac5255af3a82ee5716"
+    },
+    {
+      "path": "root/commit-history.txt",
+      "sha256": "4e00f6f660c7bb00499ffc14dc43aef43d013f928731f5a145f0c99cbd7575e2"
+    },
+    {
+      "path": "root/owner-operator-review-v1.json",
+      "sha256": "64f0a3b661442e9bdf43b56a62b6dcb6b78c4da0a0bc23aa90e9e02c29cf0c8b"
+    },
+    {
+      "path": "skeptical/skeptical-final-head-review-v1.json",
+      "sha256": "31badf4ec2a00ed181148e6a3d22de890d79569b4c146101910c89582515c011"
+    },
+    {
+      "path": "skeptical/complete-diff-and-bindings-v1.json",
+      "sha256": "14e3b1f2d5e6ba5b7ce46f8834f56954cf31757082be8f4d9bfe30e5cb72bebd"
+    },
+    {
+      "path": "skeptical/skeptical-backup-finding-addendum-v1.json",
+      "sha256": "015b882c5fff53479d7402673883f8ac9cb597aa9aeb13d28321ef158a793bfa"
+    },
+    {
+      "path": "archive/archive-review-v1.json",
+      "sha256": "e0d02233d7e3f3abcb0aa2ac2b353c6e3193c3248a4b08ffd628b8137b0e36f4"
+    },
+    {
+      "path": "archive/audit-summary-v1.json",
+      "sha256": "91bbc780bdb3d96f691b452f37aeefe9a50ea6ddb66b1bb6848dbb0c94c3d9de"
+    },
+    {
+      "path": "publisher/review.json",
+      "sha256": "0490155ae80ac1827a4ec925f70047c4756ad1094b6e4617a3825ff8b383e7de"
+    },
+    {
+      "path": "publisher/finding-001-backup-integrity.json",
+      "sha256": "54c9f4e1cfc187c17bd86bb707a4c392b73d3d0d2f52b2bd2087744b6f82dc41"
+    },
+    {
+      "path": "publisher/finding-001-backup-integrity-addendum-v1.json",
+      "sha256": "25ef3cc21e05c1becf20d2cc8fbaff510475300cffb3f4b9f6e482ccfcdfe16a"
+    },
+    {
+      "path": "publisher/backup-integrity-probe-result.json",
+      "sha256": "8af7c387698002126dd424daa515752ac6ce07074c6260cf8e032a94c77efaaa"
+    },
+    {
+      "path": "skeptical/backup-integrity-probe-result.json",
+      "sha256": "8af7c387698002126dd424daa515752ac6ce07074c6260cf8e032a94c77efaaa"
+    }
+  ],
+  "bundle_manifest": "MANIFEST.json",
+  "next_step": "Await coordinator collection and disposition of the local finding."
+}

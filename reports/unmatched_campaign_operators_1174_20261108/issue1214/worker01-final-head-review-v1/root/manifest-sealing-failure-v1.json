@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-08T06:10:54.323614+00:00",
+  "attempt": "root/seal_review_v1.py",
+  "result": "Stopped before manifest creation on a retained private harness symlink.",
+  "reason": "The first bundler assumed every private artifact was a regular file. The independent reviewer intentionally retained the refused symlink-package setup as failed-probe evidence.",
+  "scope": "Private packaging assumption only; no target PR/archive defect, source edit, lost evidence or change to REVIEW.json/REVIEW.md.",
+  "successor": "root/seal_manifest_v2.py records the link target bytes separately and does not traverse it.",
+  "alias": "skeptical/exact-head-package-alias-refused",
+  "target": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1/publisher/exact-head-package"
+}

@@ -1,0 +1,288 @@
+{
+  "at": "2026-11-08T06:06:55.795873+00:00",
+  "integration_shell_login": false,
+  "read_only_subprocesses": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "b7c48e8269ccf2e4bf004f6ef4a69043875d2bf61d04c2cf6d61381062f3764b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 41,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "merge-base",
+        "--is-ancestor",
+        "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+        "4c8a987da40d48cceeb4390550f1ff7545927a0b"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "--full-tree",
+        "-z",
+        "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "33fdb2d09d2db2ccb1485c005da7355acea7b71de8ceba017094b32f95dcd18b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 1711463,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "--full-tree",
+        "-z",
+        "4c8a987da40d48cceeb4390550f1ff7545927a0b"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "9d828eb3ea0eac63fe04647d3c29ca7935c5d751a5edbb85faa56417cc2862ad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 1757577,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-status",
+        "-z",
+        "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+        "4c8a987da40d48cceeb4390550f1ff7545927a0b"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "6cadf311f10e99c2555d75fb4b2b1e43aa6b23b2d6544db136863836d77012f6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 33415,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+        "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+        "--",
+        "scripts/apply_unmatched_campaign_owners.py",
+        "scripts/publish_unmatched_campaign.py",
+        "scripts/validate_unmatched_campaign_publication.py",
+        "src/mediaingredientmech/campaign_publication.py",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py",
+        "tests/test_campaign_owner_apply.py",
+        "tests/test_campaign_publication.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "log",
+        "--format=%H%x09%cI%x09%s",
+        "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99..4c8a987da40d48cceeb4390550f1ff7545927a0b",
+        "--",
+        "scripts/apply_unmatched_campaign_owners.py",
+        "scripts/publish_unmatched_campaign.py",
+        "scripts/validate_unmatched_campaign_publication.py",
+        "src/mediaingredientmech/campaign_publication.py",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py",
+        "tests/test_campaign_owner_apply.py",
+        "tests/test_campaign_publication.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "eb00763259ed9939a33978a5848338591773e9050896467ed3465598493bc77a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 296,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff-tree",
+        "--no-commit-id",
+        "--name-only",
+        "-r",
+        "4c8a987da40d48cceeb4390550f1ff7545927a0b"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "1a9ab09f9d472d41e3d733e4b64631bb0c40b65a4344905d83e5481902ee569c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 32612,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "HEAD",
+        "--",
+        "scripts/apply_unmatched_campaign_owners.py",
+        "scripts/publish_unmatched_campaign.py",
+        "scripts/validate_unmatched_campaign_publication.py",
+        "src/mediaingredientmech/campaign_publication.py",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py",
+        "tests/test_campaign_owner_apply.py",
+        "tests/test_campaign_publication.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "b7c48e8269ccf2e4bf004f6ef4a69043875d2bf61d04c2cf6d61381062f3764b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 41,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "8cfd54da5e53f32cc882c547bb32db352d3699b3982e788dea0ec2794d9408ae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 41,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "HEAD",
+        "--",
+        "reports/all_unmatched_20261107/worker-01",
+        "reviews/structured"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    }
+  ],
+  "earlier_live_commands": [
+    {
+      "argv": [
+        "gh",
+        "pr",
+        "view",
+        "1205",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,url,state,title,body,headRefName,headRefOid,baseRefName,baseRefOid,statusCheckRollup,commits"
+      ],
+      "capture": "pr1205-live-v1.json",
+      "sha256": "c606669113273bc9623e1912f2a4bab2bc5b9768ee056cac04ff2c556978d7f3",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/curate/all-unmatched-source-integration-20261107",
+        "refs/heads/curate/kgm-unmapped-chemicals-20261107"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+      "capture": "remote-heads-live-v1.txt",
+      "sha256": "a5181590250dc71fd567fdb61ceebf4cacf83a12dcd96e88bf6c94a22c29f702",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "gh",
+        "pr",
+        "view",
+        "1205",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,isDraft,headRefOid,baseRefOid"
+      ],
+      "capture": "pr1205-draft-state-v1.json",
+      "sha256": "6cf381e25d51bcad3abe0077ecf503d371fe89733209554a4410d811de8f07b1",
+      "exit_code": 0
+    }
+  ],
+  "no_project_code_import_or_execution": true,
+  "syntax_only": "ast.parse on allseven bytes; no pycache writes",
+  "not_run": [
+    "pytest/fullsuite",
+    "just qc/fullQC",
+    "anyownerapplicationorpublication",
+    "anyGitHubmutation",
+    "commit/push/checkout"
+  ]
+}

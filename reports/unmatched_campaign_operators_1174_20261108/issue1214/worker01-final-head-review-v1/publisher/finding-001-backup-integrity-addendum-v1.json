@@ -1,0 +1,100 @@
+{
+  "finding_id": "IR-PR1205-PUBLISHER-001",
+  "created_at": "2026-11-08T06:08:20.455979+00:00",
+  "purpose": "Exact line and digest addendum requested by parent; original finding and review remain unchanged.",
+  "parent_finding": {
+    "path": "finding-001-backup-integrity.json",
+    "sha256": "54c9f4e1cfc187c17bd86bb707a4c392b73d3d0d2f52b2bd2087744b6f82dc41"
+  },
+  "source_anchors": [
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "line": 1218,
+      "statement": "check_reserved(handle, path)"
+    },
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "line": 1228,
+      "statement": "canonical_backup receives prepared before canonical; paired policy backup follows."
+    },
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "line": 1256,
+      "statement": "finish_receipt receives complete summary and the same recheck callback."
+    }
+  ],
+  "positive_and_mutation_digests": [
+    {
+      "case": "positive",
+      "publication_status": "complete",
+      "standalone_validation_status": "verified",
+      "same_inode": null,
+      "backups": [
+        {
+          "backup": "canonical-before.tsv",
+          "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "actual_backup_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        },
+        {
+          "backup": "policy-before.json",
+          "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "actual_backup_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        }
+      ]
+    },
+    {
+      "case": "inplace-canonical-before.tsv",
+      "publication_status": "complete",
+      "standalone_validation_status": "verified",
+      "same_inode": true,
+      "backups": [
+        {
+          "backup": "canonical-before.tsv",
+          "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "actual_backup_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+          "backup_matches_beforeimage": false,
+          "immutable_plan_beforeimage_still_valid": true
+        },
+        {
+          "backup": "policy-before.json",
+          "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "actual_backup_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        }
+      ]
+    },
+    {
+      "case": "inplace-policy-before.json",
+      "publication_status": "complete",
+      "standalone_validation_status": "verified",
+      "same_inode": true,
+      "backups": [
+        {
+          "backup": "canonical-before.tsv",
+          "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "actual_backup_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        },
+        {
+          "backup": "policy-before.json",
+          "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "actual_backup_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+          "backup_matches_beforeimage": false,
+          "immutable_plan_beforeimage_still_valid": true
+        }
+      ]
+    }
+  ],
+  "requested_negative_coverage": [
+    "In-place corruption of canonical-before.tsv after it is written and before native finish_receipt must prevent a complete success receipt.",
+    "In-place corruption of policy-before.json at the same boundary must prevent a complete success receipt.",
+    "Keep the unmodified positive and assert both recovery-copy digests match the original immutable beforeimages."
+  ],
+  "severity_limit": "P2 / medium recovery-copy integrity. Alternate immutable plan beforeimages remain correct, and no canonical projection or ontology approval defect is claimed."
+}

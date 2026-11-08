@@ -1,0 +1,64 @@
+{
+  "reviewer": "/root/primary_context",
+  "reviewed_at": "2026-11-08T06:07:56.460343+00:00",
+  "kind": "Independent final-head infrastructure publisher review",
+  "head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "base": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "verdict": "bounded_revision_requested_for_recovery_backup_integrity",
+  "new_findings": [
+    {
+      "path": "finding-001-backup-integrity.json",
+      "sha256": "54c9f4e1cfc187c17bd86bb707a4c392b73d3d0d2f52b2bd2087744b6f82dc41"
+    }
+  ],
+  "scope": "Complete added publisher implementation, two CLI entry points and publisher test file; relevant unchanged native reservation, receipt replay, source binding and Rule K dependencies; archived adversarial fixes. Source-owner operator reviewed only at publisher interface, with independent parent review owning its complete scope.",
+  "regression_assessments": [
+    {
+      "issue": 1194,
+      "assessment": "The publisher captures complete owner and proof-snapshot memberships, immutable input hashes, retired promotion absence and receipt inventory, then rechecks at final prepare and mutation/completion boundaries. The test matrix covers additions, removals and aliases on owner/checkpoint/protected surfaces both prepublication and completed validation, plus hidden receipt addition. Archived independent late-addition probe is refused while positive verifies.",
+      "verdict": "fix supported in reviewed publisher scope"
+    },
+    {
+      "issue": 1195,
+      "assessment": "Bounded native dependencies execute from captured bytes in private namespaces. Closed producer pins and original loaded file identities are checked before and after work. Tests cover missing/extra/stale pins, same-byte inode replacement, and ten public-preload/fresh-private execution cases across five dependencies. Archived matching-private versus stale-public controls support the fix; no public cached module is silently replaced.",
+      "verdict": "fix supported in reviewed publisher scope"
+    },
+    {
+      "issue": 1198,
+      "assessment": "absolute(receipt_dir) runs before prepare, so reports/../outside and in-root noncanonical spellings are refused before reservation in dry-run/apply. Four dedicated tests and archived path probes verify no output or input mutation. CLI passes Path arguments to this guard without resolving aliases away.",
+      "verdict": "fix supported in reviewed publisher scope"
+    },
+    {
+      "issue": 1200,
+      "assessment": "Fresh captured unchanged native Rule K evaluates the entire projected canonical table. Tests and archived independent probes cover collisions on unselected rows both present and absent in the diagnostic suppression table, and retain a noncolliding prior-only alias positive. No policy baseline exemption or unrelated row rewrite is added.",
+      "verdict": "fix supported in reviewed publisher scope"
+    },
+    {
+      "issue": 1197,
+      "assessment": "Prospective native owner-chain validation precedes output reservation and row replay; test matrix spans edits, creation, source-only owner and promotion destinations in dry-run/apply. Prior old/destination promotion chains are explicitly refused. Archived matched/gap probes distinguish complete from refusal.",
+      "verdict": "adjacent archived fix supported in reviewed publisher scope"
+    }
+  ],
+  "archive_validation_scope": {
+    "author_focused_tests": "Archived path-fixed-focused.log records 106 passed, 12 third-party warnings. Exact publisher/test hashes match final head and author handoff. Earlier final-frozen.log records 102 and is retained as historical, not represented as the final 106 run.",
+    "independent_focused_tests": "Archived final-publisher-focused-v1.log records 11 passed, 95 deselected, 12 warnings, covering private preloaded dependencies and actual owner-to-publisher checkpoint integration. No rerun claimed here.",
+    "actual_native_generation": "Archived final-code independent replay reconstructs 3007 candidate rows and exact suppression bytes with pinned Claw revision, 2699 captured inputs and one absent input. Twelve author generation controls (eleven refusals) ran on an earlier source version whose generation AST is documented unchanged; final positive replay uses exact final publisher hash. This review reads/reconciles that evidence rather than claiming new generation execution.",
+    "historical_harness_limits": "Earlier stale fixture snapshots caused precondition refusals before intended probes. Successor probes explicitly refresh synthetic checkpoint/protected snapshots; original failures and adaptation records remain. Their early refusals are not counted as targeted success."
+  },
+  "other_boundaries": "Closed plans reject duplicate JSON fields/nonfinite values; exact native replay binds projected rows; untouched physical rows and historical policy/owner attribution/sidecar/baseline persist; approval remains NONE; aliases, hardlinks, same-byte path swaps, reserved output conflicts and late drift clear success receipts in existing regression coverage. New finding isolates a missing content check on recovery outputs.",
+  "evidence_manifest": {
+    "path": "source-and-evidence-manifest.json",
+    "sha256": "1e2114427384b950ce8d400146f98990e2f814d1252426da390de7fe4408cff4"
+  },
+  "commands": {
+    "path": "commands.json",
+    "sha256": "9a3b3160361a6b2a3d90d22ddeb33320cb250b22911f100554fc48eac8fc5fc4"
+  },
+  "approval_limits": [
+    "No scientific source-case, owner identity, alias correctness, role or release approval.",
+    "No actual campaign application or canonical publication.",
+    "No claim of whole-suite, whole-QC or CI success from this review.",
+    "Head/source files and selected archives byte-match the requested commit; eight relevant native gates/semantics files remain byte-identical to frozen base.",
+    "Final integration worktree remains clean at requested head. All new artifacts and fixtures are confined to the assigned worker-private directory."
+  ]
+}

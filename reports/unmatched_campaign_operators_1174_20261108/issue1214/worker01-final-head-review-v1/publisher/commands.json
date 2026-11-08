@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-11-08T06:07:56.460343+00:00",
+  "integration_workdir": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+  "integration_commands_login": false,
+  "read_only_commands": [
+    {
+      "command": "git rev-parse HEAD; git status --short; git diff --stat e000d66dd26ab053e9b17ce7bf8d3c873c3dde99...4c8a987da40d48cceeb4390550f1ff7545927a0b",
+      "purpose": "Verify requested head, clean initial worktree and change scope. Individual shell invocations used && separators."
+    },
+    {
+      "command": "cat AGENTS.md; cat scripts/publish_unmatched_campaign.py; cat scripts/validate_unmatched_campaign_publication.py; sed -n <successive ranges> src/mediaingredientmech/campaign_publication.py; sed -n <successive ranges> tests/test_campaign_publication.py",
+      "purpose": "Read full 1264-line publisher, both CLI entry points and full 1171-line regression file; all four files are added relative to base."
+    },
+    {
+      "command": "rg --files --hidden --no-ignore -g AGENTS.md -g *campaign*publication* -g *publish*campaign* -g *validate*campaign* -g *1194* -g *1195* -g *1198* -g *1200* -g *adversarial*",
+      "purpose": "Discover implementation and archived evidence including ignored private files. Initial listing was large; later reads were restricted to exact archive paths."
+    },
+    {
+      "command": "git diff --name-status e000d66dd26ab053e9b17ce7bf8d3c873c3dde99...HEAD -- scripts/validate_sssom_invariants.py src/mediaingredientmech/curate/publication_guard.py src/mediaingredientmech/validation/mapping_change_receipts.py src/mediaingredientmech/export/reviewed_sssom.py src/mediaingredientmech/synonym_policy.py src/mediaingredientmech/sssom_metadata.py MAPPING_SEMANTICS.md",
+      "purpose": "Verify relevant existing gates and semantics were not modified."
+    },
+    {
+      "command": "git show <head>:<path>",
+      "purpose": "Byte-compare every reviewed source and selected archive with exact committed head; compare eight native/semantics inputs with frozen base. Enumerate/copy only exact Git blobs for private probe package."
+    },
+    {
+      "command": "git status --porcelain=v1; git rev-parse HEAD",
+      "purpose": "Final integration status clean and head unchanged."
+    }
+  ],
+  "new_executable_probe": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=.temp/infrastructure-pr1205-final-head-review-v1/publisher/exact-head-package/src .temp/all-unmatched-worker-01/shard-venv/bin/python -B .temp/infrastructure-pr1205-final-head-review-v1/publisher/probe_backup_integrity.py",
+    "cwd": "worker01 worktree",
+    "login": false,
+    "exit_code": 0,
+    "wall_time_seconds": 2.428588333,
+    "output_artifact": "backup-integrity-probe-result.json",
+    "cases": 3,
+    "pytest_suite_invoked": false,
+    "imports": "Exact copied head package; existing fixture function called directly with pytest.MonkeyPatch. PYTHONDONTWRITEBYTECODE=1 and -B; no private __pycache__ directories created."
+  },
+  "other_execution": "Read-only Python stdlib AST parsing, SHA256 computations, Git blob comparisons and JSON receipt writes inside the authorized worker output directory. No publisher imports executed in the integration worktree.",
+  "not_run": [
+    "Any broad or focused pytest rerun beyond the single authorized three-case private probe",
+    "Full QC or full test suite",
+    "Actual campaign source/owner operations or canonical publication",
+    "GitHub writes, commits, pushes or external sessions"
+  ]
+}
