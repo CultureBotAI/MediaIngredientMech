@@ -1,0 +1,53 @@
+{
+  "case_id": "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+  "case_input_sha256": "47d61b48a75496eb951ca71d9c137ff53c0d63f6070dc086658d9e0f4c923758",
+  "source": {
+    "source": "culturemech",
+    "source_case_id": "DI WATER",
+    "source_label": "DI WATER",
+    "raw_source_label": "DI WATER"
+  },
+  "occurrence_ids": [
+    "CM_OCC:e5238b57003649de712fdf634e72e56341dd386dd450c3339968c92b38f4d98a"
+  ],
+  "disposition": "supplied_form_correction",
+  "reasoning": "ATCC2686 literally prints DI WATER 1 L in the main medium and separately Distilled water in nested stocks. DI is interpreted as deionized in this source context. W08 already proposes a deionization-only material, kgmicrobe.ingredient:deionized_water, from DSMZ533 explicit H2O (deionized). Reuse that exact current candidate; do not mint another owner or equate it with distilled-water preparation.",
+  "applicability": "Only ATCC2686 main-medium occurrence joins the separately preserved DSMZ533 W08 occurrence through the cross-worker reconciliation ledger. Raw labels remain source-bound; receiving amounts are not owner concentrations.",
+  "evidence_ids": [
+    "B-80-frozen-0",
+    "B-http-a1e8c98f7ff8b1e8",
+    "B-ontology-CHEBI-15377",
+    "B-owner-Distilled_Water",
+    "V5-E-W08-BRIDGE",
+    "V5-E-AUTHOR"
+  ],
+  "proposal_ids": [],
+  "no_change_reason": "No duplicate W06 owner payload is created. A concrete exact-hash cross-worker reuse proposal retains both cases and occurrences without editing W08 or Distilled_Water.",
+  "missing_requirement": "Coordinator must accept the exact W08 1701ccf candidate and W06 successor and retain both source-case links before installation. W06 frozen1G_PER_L versus source1L and W08 frozen1000G_PER_L versus source1000ml remain upstream discrepancies. No purity/resistivity/sterility or distillation equivalence is established.",
+  "owner_records": [
+    {
+      "path": "data/ingredients/mapped/Distilled_Water.yaml",
+      "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+    }
+  ],
+  "issue_refs": [
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719082498"
+  ],
+  "independent_review": {
+    "status": "pending",
+    "evidence_ids": []
+  },
+  "shard_index": 80,
+  "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed.",
+  "prior_v5_independent_review": {
+    "status": "complete",
+    "evidence_ids": [
+      "IR-B"
+    ]
+  },
+  "correction_author": "Codex worker06 /root",
+  "successor_scope_classification": "INFO004 informational scope completion; no new unsafe-mapping allegation.",
+  "cross_worker_reconciliation_ids": [
+    "V5-X-W08-DEIONIZED-WATER"
+  ]
+}

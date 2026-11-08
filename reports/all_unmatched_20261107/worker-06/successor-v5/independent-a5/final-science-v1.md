@@ -1,0 +1,7 @@
+The exact held MICRO:0001349 draft passes this bounded source-transcription review. It remains noninstallable. All seven TOGO M2499 inputs are represented; the unresolved copper formula stays literal and UNMAPPED, while six supported forms reference verified current native identities. COMPLETE describes the printed immediate list only.
+
+The authentic existing-owner beforeimage, historical mappings, aliases, roles and all prior history are preserved. The source’s 1 ml/l receiving dose, explicit stock g/L values and added 1 L distilled water are kept separate; no measured final volume or receiving pH is assigned to the stock. The molybdate component uses the also-printed source label and preserves its exact raw formula in assertion notes.
+
+Native strict schema and the complete current catalogue with this one held in-memory overlay pass. The controls demonstrate why those gates alone cannot detect a fabricated copper correction or stock-unit reinterpretation. No new finding was identified. Copper identity and applicability across the existing owner’s source history remain genuine holds.
+
+Exact payload SHA256: `d2d1399244a70e70562649af5201f1f1a0ec53f800cb0a1477f1e2f10d11cf07`. Full scientific receipt SHA256: `65f7eaf55ede72ae4be6ec435b1d4fd01aaa1915ed9505fdcfec844e6c1566cd`. Exact every-field traces and full source/held-proposal objects are retained separately. Reviewer `/root/residual_stock_review` is distinct from root author. This grants no owner, role, source-case acceptance, export or installation approval.

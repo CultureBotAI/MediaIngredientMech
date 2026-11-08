@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "name": "schema-rejects-approval",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Native closed schema rejects a fabricated approval field before writing."
+    },
+    {
+      "name": "unmapped-copper-with-id",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Native scope validator rejects an identity on literal UNMAPPED copper."
+    },
+    {
+      "name": "unresolved-child",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Native catalogue rejects invented child owner."
+    },
+    {
+      "name": "literal-copper-not-normalized",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Source raw CuSO2・5H2O cannot become normalized copper sulfate."
+    },
+    {
+      "name": "water-input-not-finalvolume",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Source1L water input is not final-volume normalization."
+    },
+    {
+      "name": "A5-hold-not-intake",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Accidentally placing held owner draft in active selection is detectable."
+    },
+    {
+      "name": "PPG-parent-not-exact",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Nominal grade cannot use generic polymer exact identity."
+    },
+    {
+      "name": "PPG-not-aqueous-stock",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Receiving water and sonication do not establish supplied stock components."
+    },
+    {
+      "name": "named-PPG-raw-resolves",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Named nominal-grade labels resolve; a rejected generic-parent candidate would not. Generic PPG is not added."
+    },
+    {
+      "name": "water-source-join-no-duplicate",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Wrong treatment-owner substitution fails exact W08 reference and primary scope."
+    },
+    {
+      "name": "water-frozen-unit-not-primary",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "Frozen import quantity cannot be relabelled as primary1L water."
+    },
+    {
+      "name": "new-mapping-honest-authorship",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "New PPG mapping evidence identifies LLM authorship; historical mapping and component enum untouched."
+    },
+    {
+      "name": "explicit10percentH2O-preserved",
+      "positive_pass": true,
+      "negative_detected": true,
+      "detail": "The explicit10%inH2O source-backed stock remains unchanged."
+    }
+  ],
+  "control_count": 13,
+  "scope": "Actual native guarded/schema/partonomy/alias checks plus bounded local source-regression controls; no policy change."
+}

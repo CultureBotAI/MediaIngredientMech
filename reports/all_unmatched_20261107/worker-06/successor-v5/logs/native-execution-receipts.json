@@ -1,0 +1,47 @@
+{
+  "python": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python",
+  "commands": [
+    {
+      "command": [
+        "scripts/record_review.py",
+        "validate",
+        "reports/all_unmatched_20261107/worker-06/successor-v5/native/review-content.json"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "reports/all_unmatched_20261107/worker-06/successor-v5/logs/native-validate-v1.log",
+        "sha256": "a2de3cfc86a84a8f32a77d77b93af9d202785ae219a3398bd82f540f4ccf7f26"
+      }
+    },
+    {
+      "command": [
+        "scripts/record_review.py",
+        "save",
+        "--content",
+        "reports/all_unmatched_20261107/worker-06/successor-v5/native/review-content.json"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "reports/all_unmatched_20261107/worker-06/successor-v5/logs/native-save-v1.log",
+        "sha256": "ba4e5fb2651258fdca42e2957abbde5a2f0900577c3538e734e93e04050952b5"
+      }
+    },
+    {
+      "command": [
+        "scripts/record_review.py",
+        "check",
+        "--base",
+        "1d62a4084cda998064110c0e6ddfbf943b52c3de",
+        "--require-reviews"
+      ],
+      "exit_code": 0,
+      "log": {
+        "path": "reports/all_unmatched_20261107/worker-06/successor-v5/logs/native-check-v1.log",
+        "sha256": "7f91576198ef3440935d2369b646ba14fb1cba5a6ff374248e82c8ad523dca30"
+      },
+      "valid_reviews": 1025,
+      "coverage": "declared_scopes_only"
+    }
+  ],
+  "no_maintained_writes": true
+}

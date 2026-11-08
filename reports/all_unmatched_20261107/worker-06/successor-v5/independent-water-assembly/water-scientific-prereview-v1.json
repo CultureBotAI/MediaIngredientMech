@@ -1,0 +1,144 @@
+{
+  "schema": "w06-info004-independent-water-science-prereview-v1",
+  "reviewer": "/root/residual_assembly_review",
+  "authored_by_reviewer": false,
+  "candidate_author": "worker08 /root/inorganics; W06 root will author only its case outcome and cross-worker referral",
+  "at": "2026-11-08T08:28:51.001306+00:00",
+  "status": "complete current W08 candidate and scientific applicability prereview; final W06 reference/outcome pending",
+  "verdict": "bounded_compatible_reference_with_explicit_holds",
+  "scientific_review": true,
+  "whole_owner_or_role_or_release_approval": false,
+  "w06_head": "1d62a4084cda998064110c0e6ddfbf943b52c3de",
+  "w08_selected_head": "1701ccf2049022866adfcebcc9bba9b6492407c6",
+  "w08_parent": "b90a2fd4681d20e2586481b7b9b1114a78281b94",
+  "proposal_id": "if1201-new-deionized_water",
+  "payload_sha256": "b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc",
+  "owner_path": "data/ingredients/mapped/deionized_water.yaml",
+  "before_sha256": null,
+  "exact_bridge_sha256": "df07aac4a24d9a7d184ee024d9cc6d56cb2d30f8c8b2e26275adcf4377a06f9e",
+  "source_assessments": [
+    {
+      "worker": 6,
+      "primary": {
+        "evidence_id": "B-http-a1e8c98f7ff8b1e8",
+        "capture": {
+          "root": "artifact",
+          "path": "research-b/captures/http-bd4af7c1c26cc007cb85.pdf",
+          "sha256": "35aba51157d12d455b13a05ccfee84a2042e696b96835e0b67df0ea0a87c1190"
+        },
+        "kind": "primary_source",
+        "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+        "supports_or_contradicts": "Primary producer recipe supports only the explicitly described component, stock and preparation context; no neighbouring ingredient establishes this ingredient identity.",
+        "url": "https://www.atcc.org/~/media/ED2F144D72B749E9B32F46C366F07F69.ashx",
+        "case_ids": [
+          "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e"
+        ],
+        "accessed_at": "2026-11-08T05:07:03.550684+00:00"
+      },
+      "complete_capture_read": true,
+      "literal_fact": "ATCC2686 receiving-medium table prints DI WATER 1 L. Nested trace-elements, selenite-tungstate and vitamin stocks separately print distilled water.",
+      "interpretation": "Within this recipe, DI is interpreted as deionized water; this is a bounded source interpretation, not a quotation claiming the abbreviation was expanded by ATCC. No distilled preparation equivalence is inferred.",
+      "frozen_import_hold": "CultureMech009122 ingredients/9 has value1 G_PER_L; preserve frozen bytes and identify the discrepancy, never promote to source concentration or input correction."
+    },
+    {
+      "worker": 8,
+      "primary": {
+        "evidence_id": "if1201-primary-1394663ed57400f4",
+        "kind": "primary_source",
+        "capture": {
+          "root": "artifact",
+          "path": "successors/issue-1201-v1/research/inorganic_forms/captures/1394663ed57400f4.source",
+          "sha256": "00b130d8df4cf0630bb7648611aeeb4b0f140a13807ed0ff1b630761ec7cd921"
+        },
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf",
+        "accessed_at": "2026-11-08T05:50:56.052296+00:00",
+        "locator": "Exact response; primary recipe or source ingredient record. HTTP 200",
+        "supports_or_contradicts": "Source-specific ingredient, preparation, nested component and unit facts. Automated chemical fields are not accepted over conflicting source labels. Per-case applicability recorded in reassessment ledger.",
+        "case_ids": [
+          "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8"
+        ]
+      },
+      "complete_capture_read": true,
+      "literal_fact": "DSM533 receiving-medium and trace-stock tables each print H2O (deionized) 1000.0 ml.",
+      "frozen_import_hold": "CultureMech009595 ingredients/0 has1000.0 G_PER_L and collapsed duplicate note; preserve as frozen import context, not water stock strength or grade."
+    }
+  ],
+  "compatibility": "Both source contexts support the same bounded deionization-treated material scope. Different recipes, quantities and unspecified purity do not prove separate substances. Refer to one actual W08 current candidate; do not author a second water owner or rewrite W08 history.",
+  "case_bindings": [
+    {
+      "worker": 6,
+      "case_id": "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+      "decision_sha256": "29908a7f44793fab755178ad143d09ff430a43be3389028ecc0125164b9f2a95",
+      "case_input_sha256": "47d61b48a75496eb951ca71d9c137ff53c0d63f6070dc086658d9e0f4c923758",
+      "occurrence_ids": [
+        "CM_OCC:e5238b57003649de712fdf634e72e56341dd386dd450c3339968c92b38f4d98a"
+      ]
+    },
+    {
+      "worker": 8,
+      "case_id": "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8",
+      "decision_sha256": "fa53710717a00f79901214dbf07f248b0fea7ba07f6678149acc145e276e2b27",
+      "case_input_sha256": "148a74444ab38da9b00e68e4198199943073a95d89811693f05776f909ec09b9",
+      "occurrence_ids": [
+        "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd"
+      ]
+    }
+  ],
+  "whole_payload_field_count": 25,
+  "whole_payload_field_trace_sha256": "bdd12ea744ff885337d5cb72a557651e44f7ebb06cfa4d99ede37cc9b68f4484",
+  "catalogue_scope": [
+    {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients",
+      "ignored_files_included": true,
+      "complete_yaml_records": 2956,
+      "exact_identity_label_or_synonym_hits": []
+    },
+    {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients",
+      "ignored_files_included": true,
+      "complete_yaml_records": 2956,
+      "exact_identity_label_or_synonym_hits": []
+    }
+  ],
+  "preserved_owner": "Current native and integration Distilled_Water both exact458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56; complete source/history read and rejected-label boundaries retained.",
+  "native_checks": {
+    "strict": {
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/scripts/validate_strict.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-water-assembly/inputs/w08-current-deionized_water.yaml",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-water-assembly/water-strict.tsv"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-water-assembly",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Validating 1 files with 17 workers; schema=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\n=== validate-strict summary ===\n  files scanned:      1\n  files with ERROR:   0\n  total ERROR rows:   0\n  TSV:                /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-water-assembly/water-strict.tsv\n"
+    },
+    "full_private_overlay": {
+      "native_api": "mediaingredientmech.validation.component_partonomy.validate_component_partonomy",
+      "maintained_input_records": 2956,
+      "private_overlay_records": 2957,
+      "candidate_sha256": "b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc",
+      "violations": [],
+      "candidate_components": [],
+      "no_write_to_catalog": true
+    }
+  },
+  "prior_review_scope": "W08 vitamins independently reviewed exact1701 water bytes; bounded extract retains original receipt identity/hash. Its approval does not transfer to W06 new source referral, which requires exact final review.",
+  "requirements_for_W06_final": [
+    "Exact current selected W08 head/path/payload hash and b90 historic bridge; no old failed assembly selection.",
+    "Keep both frozen case IDs/input hashes/occurrences, original primary hashes/access times, W08 author lineage and genuine null-before history.",
+    "Keep W06 raw DI WATER and W08 H2O (deionized) scoped; no global distilled/raw alias merge.",
+    "State deionization-only compatibility; unknown resistivity, purity, sterility, distillation, catalogue and protocol remain unknown.",
+    "No source concentration from normalized G_PER_L import fields; retain ATCC1L, DSM1000ml as printed inputs and independent unit holds.",
+    "No components or has-part edge to CHEBI15377; no Distilled_Water changes.",
+    "Keep cross-worker candidate intake and source-case/owner/role/export acceptance pending coordinator."
+  ],
+  "new_findings": [],
+  "limitations": [
+    "No final W06 author reference or new case outcome has yet been supplied; this prereview cannot accept unseen bytes.",
+    "This is not a claim that all possible deionized waters have identical analytical purity or manufacture.",
+    "Registry choice uses inspected bounded W08 ontology searches and exact current catalogue comparison; no universal ontology absence claim."
+  ]
+}

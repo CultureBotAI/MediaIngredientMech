@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-08T08:53:24.147957+00:00",
+  "prior_diagnostics_sha256": "2a50b9194e29e68bfebd48d918ffba7744678c1d1ec399755bb86d85f8b09f71",
+  "diagnostic": "First final metadata diff check assumed only original raw captures could produce whitespace flags. The already-staged original text-mode diff diagnostic itself quoted eleven HTTP status header lines with their trailing spaces. This produced two failed checker assertions, not a scientific or candidate change.",
+  "preserved_failed_receipt": {
+    "path": "final-metadata-diff-v1.json",
+    "sha256": "64becab264bbc1210e475a8817208f6854565eb8eaedf3901cdf70a2b2805466"
+  },
+  "resolution": "Read entire diagnostic, reproduced capture-only git diff --check independently, and established exact text equality using universal-newline decoding. Added precisely that historical diagnostic path to the existing twelve exact-original-capture exceptions. No source, diagnostic, candidate, native gate or root report bytes were altered.",
+  "successor_receipt": {
+    "path": "final-metadata-diff-v2.json",
+    "sha256": "5d2585b995238513962a506d3d9714d8f03cf02c957357fd30380a6769d7ac62"
+  },
+  "scope": "49 checks pass, 276 staged files; original151 capture warnings plus11 historical diagnostic lines; all263 other staged paths clean. Root additive proof independently read and corroborated.",
+  "new_scientific_finding": false
+}

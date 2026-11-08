@@ -1,0 +1,873 @@
+{
+  "schema": "w06-info004-ppg-independent-preauthor-v1",
+  "reviewer": "/root/residual_material_review",
+  "candidate_author": "Codex worker06 /root",
+  "at": "2026-11-08T08:28:33.603647+00:00",
+  "independence": "Reviewer authored no original or successor payload/outcome; independent primary/ontology/duplicate review only. Recommendations below are constraints, not a composed candidate or approval.",
+  "classification": "W06-S1217-INFO-004 remains informational authorized completion, not an unsafe-mapping finding.",
+  "case_index": 28,
+  "case_id": "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+  "case_input_sha256": "c299c4138f544c827a95cc3e4f2126564855c363d10c1817fadf2b7992e18ceb",
+  "occurrence_ids": [
+    "CM_OCC:d028235ce925d4b86ef5cd4e61f3bbf74e09929bb5c90efa200bcc304ccc41ca"
+  ],
+  "current_decision": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v4/decisions.json",
+    "file_sha256": "07deb03c96685c80e10e5b9de9d5e9f5eb081c880caea35cf33509f7804ba650",
+    "case_canonical_sha256": "dd043c3b0f3498dd98b6bf613509e9d36909826d29cbac616d5c05821328e991"
+  },
+  "primary_evidence": {
+    "evidence_id": "A-E-CAPTURE-150",
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/research-a/captures/12e21708aed81da6.raw",
+    "sha256": "344ca20b9bc56c7a00b27df21627b5c1d380cb20a138442746b559c88104c79c",
+    "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1400",
+    "original_accessed_at": "2026-11-08T05:07:02.132184+00:00",
+    "read_scope": "Complete original HTML including full composition and process; complete independent HTMLParser text extraction retained.",
+    "derived_text_sha256": "a26d0ea097dea5d66ffabcea7917b6e2e0fc1ff884f3685d22dbdb14d53e05c1",
+    "positive_claims": [
+      "NBRC1400 PPG medium names Polypropylene glycol 2000 (PPG2000),2.0g.",
+      "Distilled water1L is another receiving-medium input, not supplied PPG solvent or measured final volume.",
+      "Sonicate receiving PPG medium except agar until PPG2000 is emulsified, then add optional agar and autoclave.",
+      "pH7.0–7.2 belongs to the receiving medium."
+    ],
+    "negative_boundaries": [
+      "No manufacturer/catalogue/end groups/distribution/average-mass definition is stated for PPG.",
+      "No aqueous supplied stock or exact sample molecular mass is established."
+    ]
+  },
+  "frozen_recipe_bridge": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/ppg_medium.yaml",
+    "sha256": "970e97b7a7da0d186b55efa204096c28492375dc36c225d15935f77f1f6804ab",
+    "recipe_id": "CultureMech:008679",
+    "component_pointer": "/ingredients/6",
+    "togo_id": "TOGO:M2089",
+    "primary_bridge": "Full frozen recipe notes explicitly give NBRC_M1400 and exact NBRC URL. Failed original TOGO web-shell request remains unsuccessful_search, not positive recipe or absence evidence.",
+    "unit_limit": "Frozen PPGG_PER_L2 is retained as input. Positive native source facts are2g PPG plus1L distilled water in receiving recipe; do not infer measured final volume."
+  },
+  "official_ontology_queries": [
+    {
+      "name": "ppg-2000-exact",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=polypropylene+glycol+2000&exact=true&type=class&obsoletes=false&rows=100",
+      "accessed_at": "2026-11-08T08:25:38.221286+00:00",
+      "completed_at": "2026-11-08T08:25:38.830349+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-2000-exact.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-2000-exact.body",
+        "https://www.ebi.ac.uk/ols4/api/search?q=polypropylene+glycol+2000&exact=true&type=class&obsoletes=false&rows=100"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-2000-exact.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+      "numFound": 0,
+      "documents": []
+    },
+    {
+      "name": "ppg-abbreviation-exact",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=PPG+2000&exact=true&type=class&obsoletes=false&rows=100",
+      "accessed_at": "2026-11-08T08:25:38.830497+00:00",
+      "completed_at": "2026-11-08T08:25:39.441145+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-abbreviation-exact.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-abbreviation-exact.body",
+        "https://www.ebi.ac.uk/ols4/api/search?q=PPG+2000&exact=true&type=class&obsoletes=false&rows=100"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-abbreviation-exact.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+      "numFound": 0,
+      "documents": []
+    },
+    {
+      "name": "ppg-generic-exact",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=polypropylene+glycol&exact=true&type=class&obsoletes=false&rows=100",
+      "accessed_at": "2026-11-08T08:25:39.441287+00:00",
+      "completed_at": "2026-11-08T08:25:40.116269+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-generic-exact.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-generic-exact.body",
+        "https://www.ebi.ac.uk/ols4/api/search?q=polypropylene+glycol&exact=true&type=class&obsoletes=false&rows=100"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-generic-exact.body",
+      "sha256": "8cd8f3b745323b3a09d6cd25116d8a3aa5350f8adfd7bed26421a575516e673d",
+      "numFound": 23,
+      "documents": [
+        {
+          "iri": "http://snomed.info/id/9471005",
+          "ontology_name": "snomed",
+          "ontology_prefix": "SNOMED",
+          "short_form": "SNOMED_9471005",
+          "description": [],
+          "label": "Polypropylene glycol",
+          "obo_id": "",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_753711",
+          "ontology_name": "chebi",
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_753711",
+          "description": [],
+          "label": "polypropylene glycol",
+          "obo_id": "CHEBI:753711",
+          "type": "class"
+        },
+        {
+          "iri": "http://id.nlm.nih.gov/mesh/C012504",
+          "ontology_name": "mesh",
+          "related_synonyms": [
+            "laprol-702",
+            "poly(propylene oxide)",
+            "polyoxypropylene",
+            "polyoxypropylenediol"
+          ],
+          "ontology_prefix": "mesh",
+          "short_form": "mesh_C012504",
+          "description": [],
+          "label": "polypropylene glycol",
+          "obo_id": "mesh:C012504",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_753711",
+          "ontology_name": "slm",
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_753711",
+          "description": [],
+          "label": "polypropylene glycol",
+          "obo_id": "",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_179442",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "2-(2-hydroxypropoxy)propan-1-ol"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_179442",
+          "description": [],
+          "label": "Polypropylene glycol (m w 1,200-3,000)",
+          "obo_id": "CHEBI:179442",
+          "type": "class",
+          "exact_synonyms": [
+            "2-(2-hydroxypropoxy)propan-1-ol"
+          ]
+        },
+        {
+          "iri": "http://id.nlm.nih.gov/mesh/C079218",
+          "ontology_name": "mesh",
+          "related_synonyms": [
+            "PUU-PEO-PPO"
+          ],
+          "ontology_prefix": "mesh",
+          "short_form": "mesh_C079218",
+          "description": [],
+          "label": "poly(toluene 2,4-diisocyanate-polyethylene glycol-polypropylene glycol) copolymer",
+          "obo_id": "mesh:C079218",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_53262",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "Methyloxirane homopolymer",
+            "PPG",
+            "PPO",
+            "Poly(propylene oxide)",
+            "Polyoxypropylene glycol",
+            "Polyoxypropylene",
+            "Polypropylene glycol",
+            "Propylene oxide homopolymer",
+            "Propylene oxide, propylene glycol polymer",
+            "alpha-Hydro-omega-hydroxypoly(oxypropylene)",
+            "alpha-hydro-omega-hydroxypoly[oxy(1-methylethylene)]",
+            "poly(propylene glycol)",
+            "poly(propylene oxide)",
+            "polypropylene glycol",
+            "polypropylene oxide"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_53262",
+          "description": [
+            "A macromolecule composed of repeating propyleneoxy units."
+          ],
+          "label": "poly(propylene glycol) macromolecule",
+          "obo_id": "CHEBI:53262",
+          "type": "class",
+          "exact_synonyms": [
+            "alpha-hydro-omega-hydroxypoly[oxy(1-methylethylene)]"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_61615",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "Methyloxirane homopolymer",
+            "PPG",
+            "PPO",
+            "Poly(propylene oxide)",
+            "Polyoxypropylene glycol",
+            "Polyoxypropylene",
+            "Polypropylene glycol",
+            "Propylene oxide homopolymer",
+            "Propylene oxide, propylene glycol polymer",
+            "alpha-Hydro-omega-hydroxypoly(oxypropylene)",
+            "poly(propylene glycol)",
+            "poly(propylene oxide)",
+            "polypropylene glycol",
+            "polypropylene oxide"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_61615",
+          "description": [
+            "A poly(ether) polymer, composed of poly(propylene glycol) macromolecules."
+          ],
+          "label": "poly(propylene glycol) polymer",
+          "obo_id": "CHEBI:61615",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/NCIT_C166504",
+          "ontology_name": "ncit",
+          "ontology_prefix": "NCIT",
+          "short_form": "NCIT_C166504",
+          "description": [],
+          "label": "Polyoxypropylene 15 Stearyl Ether",
+          "obo_id": "NCIT:C166504",
+          "type": "class",
+          "exact_synonyms": [
+            "POLYPROPYLENE GLYCOL 15 STEARYL ETHER",
+            "Polyoxypropylene 15 Stearyl Ether",
+            "Polypropylene Glycol 15 Stearyl Ether",
+            "Ppg-15 Stearyl Ether"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_84895",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "O-(2-aminopropyl)-O'-(2-methoxyethyl)polypropylene glycol"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_84895",
+          "description": [
+            "A polyether that is a nine-membered polypropylene glycol terminated by an amino group at one end and a methoxyethyl termination at the other. A common crystallisation reagent."
+          ],
+          "label": "Jeffamine M-600",
+          "obo_id": "CHEBI:84895",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_43542",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "(10S,13R,16R,19S,22S,25R,28R)-7,10,13,16,19,22,25,28-octamethyl-2,5,9,12,15,18,21,24,27,30-decaoxatritriacontan-32-amine",
+            "(6S,9R,12R,15R,18S,21S,24R,27R,31S)-6,9,12,15,18,21,24,27-octamethyl-2,5,8,11,14,17,20,23,26,29-decaoxadotriacontan-31-amine",
+            "O-(O-(2-AMINOPROPYL)-O'-(2-METHOXYETHYL)POLYPROPYLENE GLYCOL 500)"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_43542",
+          "description": [
+            "A polyether composed of eight propylene glycol units capped at both ends by methoxyethyl and 2−aminopropyl groups (PBD entry:<a href=\"https://www.ebi.ac.uk/pdbe/entry/pdb/1NGX\" target=\"_blank\">1NGX</a>)."
+          ],
+          "label": "O-(2-aminopropyl)-O'-(2-methyoxyethyl)octa(propylene glycol)",
+          "obo_id": "CHEBI:43542",
+          "type": "class",
+          "exact_synonyms": [
+            "(6S,9R,12R,15R,18S,21S,24R,27R,31S)-6,9,12,15,18,21,24,27-octamethyl-2,5,8,11,14,17,20,23,26,29-decaoxadotriacontan-31-amine"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_53515",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "Block polyethylene-polypropylene glycol",
+            "Block polyoxyethylene-polyoxypropylene",
+            "Ethylene glycol-propylene glycol block copolymer",
+            "Pluronic P123",
+            "Poloxamer",
+            "Polyoxypropylene-polyoxyethylene block copolymer",
+            "Propylene oxide ethylene oxide block polymer"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_53515",
+          "description": [
+            "A triblock copolymer composed of a central hydrophobic chain of poly(propylene oxide) (70 units) flanked by two hydrophilic chains of poly(ethylene oxide) (20 units each). A polymer with the formula HO[CH<small><sub>2</sub></small>CH<small><sub>2</sub></small>O]<small><sub>2</sub></small>O[CH<small><sub>2</sub></small>CH(CH<small><sub>3</sub></small>)O]<small><sub>70</sub></small>[CH<small><sub>2</sub></small>CH<small><sub>2</sub></small>O]<small><sub>2</sub></small>OH."
+          ],
+          "label": "pluronic P-123",
+          "obo_id": "CHEBI:53515",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_63052",
+          "ontology_name": "chebi",
+          "related_synonyms": [
+            "O,O'-bis(2-aminopropyl) polypropylene glycol-block-polyethylene glycol-block-polypropylene glycol"
+          ],
+          "ontology_prefix": "CHEBI",
+          "short_form": "CHEBI_63052",
+          "description": [
+            "A diamine in which two primary amino groups are at either end of what is essentially a poly(ethylene glycol) (PEG)backbone, consisting of blocks of ethylene oxide and propylene oxide. In the diagram, m ~ 39,; (l + n) ~ 6. The compound is one of a series of related compounds commonly used to crystallise proteins."
+          ],
+          "label": "Jeffamine ED-2001",
+          "obo_id": "CHEBI:63052",
+          "type": "class"
+        },
+        {
+          "iri": "http://id.nlm.nih.gov/mesh/C451729",
+          "ontology_name": "mesh",
+          "related_synonyms": [
+            "PPG-11",
+            "polypropylene glycol stearyl ether 11"
+          ],
+          "ontology_prefix": "mesh",
+          "short_form": "mesh_C451729",
+          "description": [],
+          "label": "polyoxypropylene 11 stearyl ether",
+          "obo_id": "mesh:C451729",
+          "type": "class"
+        },
+        {
+          "iri": "http://id.nlm.nih.gov/mesh/C451730",
+          "ontology_name": "mesh",
+          "related_synonyms": [
+            "PPG-15",
+            "polypropylene glycol stearyl ether 15"
+          ],
+          "ontology_prefix": "mesh",
+          "short_form": "mesh_C451730",
+          "description": [],
+          "label": "polyoxypropylene 15 stearyl ether",
+          "obo_id": "mesh:C451730",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_179442",
+          "ontology_name": "slm",
+          "related_synonyms": [
+            "2-(2-hydroxypropoxy)propan-1-ol"
+          ],
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_179442",
+          "description": [],
+          "label": "Polypropylene glycol (m w 1,200-3,000)",
+          "obo_id": "",
+          "type": "class",
+          "exact_synonyms": [
+            "2-(2-hydroxypropoxy)propan-1-ol"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_53262",
+          "ontology_name": "micro",
+          "related_synonyms": [
+            "Methyloxirane homopolymer",
+            "PPG",
+            "PPO",
+            "Poly(propylene oxide)",
+            "Polyoxypropylene glycol",
+            "Polyoxypropylene",
+            "Polypropylene glycol",
+            "Propylene oxide homopolymer",
+            "Propylene oxide, propylene glycol polymer",
+            "alpha-Hydro-omega-hydroxypoly(oxypropylene)",
+            "poly(propylene glycol)",
+            "poly(propylene oxide)",
+            "polypropylene glycol",
+            "polypropylene oxide"
+          ],
+          "ontology_prefix": "MICRO",
+          "short_form": "CHEBI_53262",
+          "description": [
+            "A macromolecule composed of repeating propyleneoxy units."
+          ],
+          "label": "poly(propylene glycol) macromolecule",
+          "obo_id": "CHEBI:53262",
+          "type": "class",
+          "exact_synonyms": [
+            "alpha-hydro-omega-hydroxypoly[oxy(1-methylethylene)]"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_53262",
+          "ontology_name": "slm",
+          "related_synonyms": [
+            "Methyloxirane homopolymer",
+            "PPG",
+            "PPO",
+            "Poly(propylene oxide)",
+            "Polyoxypropylene glycol",
+            "Polyoxypropylene",
+            "Polypropylene glycol",
+            "Propylene oxide homopolymer",
+            "Propylene oxide, propylene glycol polymer",
+            "alpha-Hydro-omega-hydroxypoly(oxypropylene)",
+            "alpha-hydro-omega-hydroxypoly[oxy(1-methylethylene)]",
+            "poly(propylene glycol)",
+            "poly(propylene oxide)",
+            "polypropylene glycol",
+            "polypropylene oxide"
+          ],
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_53262",
+          "description": [
+            "A macromolecule composed of repeating propyleneoxy units."
+          ],
+          "label": "poly(propylene glycol) macromolecule",
+          "obo_id": "",
+          "type": "class",
+          "exact_synonyms": [
+            "alpha-hydro-omega-hydroxypoly[oxy(1-methylethylene)]"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_61615",
+          "ontology_name": "slm",
+          "related_synonyms": [
+            "Methyloxirane homopolymer",
+            "PPG",
+            "PPO",
+            "Poly(propylene oxide)",
+            "Polyoxypropylene glycol",
+            "Polyoxypropylene",
+            "Polypropylene glycol",
+            "Propylene oxide homopolymer",
+            "Propylene oxide, propylene glycol polymer",
+            "alpha-Hydro-omega-hydroxypoly(oxypropylene)",
+            "poly(propylene glycol)",
+            "poly(propylene oxide)",
+            "polypropylene glycol",
+            "polypropylene oxide"
+          ],
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_61615",
+          "description": [
+            "A poly(ether) polymer, composed of poly(propylene glycol) macromolecules."
+          ],
+          "label": "poly(propylene glycol) polymer",
+          "obo_id": "",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_43542",
+          "ontology_name": "slm",
+          "related_synonyms": [
+            "(10S,13R,16R,19S,22S,25R,28R)-7,10,13,16,19,22,25,28-octamethyl-2,5,9,12,15,18,21,24,27,30-decaoxatritriacontan-32-amine",
+            "(6S,9R,12R,15R,18S,21S,24R,27R,31S)-6,9,12,15,18,21,24,27-octamethyl-2,5,8,11,14,17,20,23,26,29-decaoxadotriacontan-31-amine",
+            "O-(O-(2-AMINOPROPYL)-O'-(2-METHOXYETHYL)POLYPROPYLENE GLYCOL 500)"
+          ],
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_43542",
+          "description": [
+            "A polyether composed of eight propylene glycol units capped at both ends by methoxyethyl and 2−aminopropyl groups (PBD entry:<a href=\"https://www.ebi.ac.uk/pdbe/entry/pdb/1NGX\" target=\"_blank\">1NGX</a>)."
+          ],
+          "label": "O-(2-aminopropyl)-O'-(2-methyoxyethyl)octa(propylene glycol)",
+          "obo_id": "",
+          "type": "class",
+          "exact_synonyms": [
+            "(6S,9R,12R,15R,18S,21S,24R,27R,31S)-6,9,12,15,18,21,24,27-octamethyl-2,5,8,11,14,17,20,23,26,29-decaoxadotriacontan-31-amine"
+          ]
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_53515",
+          "ontology_name": "slm",
+          "related_synonyms": [
+            "Block polyethylene-polypropylene glycol",
+            "Block polyoxyethylene-polyoxypropylene",
+            "Ethylene glycol-propylene glycol block copolymer",
+            "Pluronic P123",
+            "Poloxamer",
+            "Polyoxypropylene-polyoxyethylene block copolymer",
+            "Propylene oxide ethylene oxide block polymer"
+          ],
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_53515",
+          "description": [
+            "A triblock copolymer composed of a central hydrophobic chain of poly(propylene oxide) (70 units) flanked by two hydrophilic chains of poly(ethylene oxide) (20 units each). A polymer with the formula HO[CH<small><sub>2</sub></small>CH<small><sub>2</sub></small>O]<small><sub>2</sub></small>O[CH<small><sub>2</sub></small>CH(CH<small><sub>3</sub></small>)O]<small><sub>70</sub></small>[CH<small><sub>2</sub></small>CH<small><sub>2</sub></small>O]<small><sub>2</sub></small>OH."
+          ],
+          "label": "pluronic P-123",
+          "obo_id": "",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_63052",
+          "ontology_name": "slm",
+          "related_synonyms": [
+            "O,O'-bis(2-aminopropyl) polypropylene glycol-block-polyethylene glycol-block-polypropylene glycol"
+          ],
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_63052",
+          "description": [
+            "A diamine in which two primary amino groups are at either end of what is essentially a poly(ethylene glycol) (PEG)backbone, consisting of blocks of ethylene oxide and propylene oxide. In the diagram, m ~ 39,; (l + n) ~ 6. The compound is one of a series of related compounds commonly used to crystallise proteins."
+          ],
+          "label": "Jeffamine ED-2001",
+          "obo_id": "",
+          "type": "class"
+        },
+        {
+          "iri": "http://purl.obolibrary.org/obo/CHEBI_84895",
+          "ontology_name": "slm",
+          "ontology_prefix": "SLM",
+          "short_form": "CHEBI_84895",
+          "description": [
+            "A polyether that is a nine-membered polypropylene glycol terminated by an amino group at one end and a methoxyethyl termination at the other. A common crystallisation reagent."
+          ],
+          "label": "Jeffamine M-600",
+          "obo_id": "",
+          "type": "class"
+        }
+      ]
+    },
+    {
+      "name": "ppg-cas-exact",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=25322-69-4&exact=true&type=class&obsoletes=false&rows=100",
+      "accessed_at": "2026-11-08T08:25:40.116457+00:00",
+      "completed_at": "2026-11-08T08:25:40.722655+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-cas-exact.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-cas-exact.body",
+        "https://www.ebi.ac.uk/ols4/api/search?q=25322-69-4&exact=true&type=class&obsoletes=false&rows=100"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-cas-exact.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+      "numFound": 0,
+      "documents": []
+    },
+    {
+      "name": "chebi-53262",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A53262",
+      "accessed_at": "2026-11-08T08:25:40.722828+00:00",
+      "completed_at": "2026-11-08T08:25:41.334982+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/chebi-53262.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/chebi-53262.body",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A53262"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/chebi-53262.body",
+      "sha256": "cc55f3d6aa10a413e00bb7446d1347ded35e91eb14963f27aaf2138ee6b0750d"
+    },
+    {
+      "name": "cas-commonchemistry",
+      "url": "https://commonchemistry.cas.org/api/detail?cas_rn=25322-69-4",
+      "accessed_at": "2026-11-08T08:25:41.335130+00:00",
+      "completed_at": "2026-11-08T08:25:41.472692+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/cas-commonchemistry.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/cas-commonchemistry.body",
+        "https://commonchemistry.cas.org/api/detail?cas_rn=25322-69-4"
+      ],
+      "exit_code": 56,
+      "body_path": null,
+      "sha256": null
+    },
+    {
+      "name": "chebi-61615",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A61615",
+      "accessed_at": "2026-11-08T08:26:13.461698+00:00",
+      "completed_at": "2026-11-08T08:26:14.109298+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-61615.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-61615.body",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A61615"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-61615.body",
+      "sha256": "5d7c051594df573958bd199b48679cebcdcea4f4658dd8b9491c212d2f467ff9"
+    },
+    {
+      "name": "chebi-179442",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A179442",
+      "accessed_at": "2026-11-08T08:26:14.109396+00:00",
+      "completed_at": "2026-11-08T08:26:14.715993+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-179442.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-179442.body",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A179442"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-179442.body",
+      "sha256": "b57b7128746e0b36e76b42804d59ad10c703a64f5147e92ed952b206a128d330"
+    },
+    {
+      "name": "chebi-753711",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A753711",
+      "accessed_at": "2026-11-08T08:26:14.716070+00:00",
+      "completed_at": "2026-11-08T08:26:15.487528+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-753711.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-753711.body",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A753711"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-753711.body",
+      "sha256": "bce708e21e172d3278f93581bb3e64c3b65838978fcebda6f724b3946a65bd5f"
+    },
+    {
+      "name": "mesh-C012504",
+      "url": "https://id.nlm.nih.gov/mesh/C012504.json",
+      "accessed_at": "2026-11-08T08:26:15.487770+00:00",
+      "completed_at": "2026-11-08T08:26:16.511123+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/mesh-C012504.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/mesh-C012504.body",
+        "https://id.nlm.nih.gov/mesh/C012504.json"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/mesh-C012504.body",
+      "sha256": "414dfa3e44e2b687949d20480a8cc5f9e0ee6297d9496a26e38a828bbaaa23d2"
+    },
+    {
+      "name": "ppg-poly-name",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=poly%28propylene+glycol%29+2000&exact=true&type=class&obsoletes=false&rows=100",
+      "accessed_at": "2026-11-08T08:26:16.511334+00:00",
+      "completed_at": "2026-11-08T08:26:17.632807+00:00",
+      "command": [
+        "curl",
+        "--fail",
+        "--location",
+        "--retry",
+        "2",
+        "--connect-timeout",
+        "15",
+        "--max-time",
+        "45",
+        "--silent",
+        "--show-error",
+        "--dump-header",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/ppg-poly-name.headers",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/ppg-poly-name.body",
+        "https://www.ebi.ac.uk/ols4/api/search?q=poly%28propylene+glycol%29+2000&exact=true&type=class&obsoletes=false&rows=100"
+      ],
+      "exit_code": 0,
+      "body_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/ppg-poly-name.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+    }
+  ],
+  "ontology_assessment": [
+    {
+      "target": "CHEBI:61615",
+      "decision": "SUITABLE_BROADER_MATERIAL_PARENT_ONLY",
+      "basis": "Active3_STAR polymer material definition composed of PPG macromolecules; lacks2000grade. It supports family grounding without changing the source-qualified nominal grade into exact generic identity.",
+      "capture": "live-terms-v1/chebi-61615.body",
+      "sha256": "5d7c051594df573958bd199b48679cebcdcea4f4658dd8b9491c212d2f467ff9"
+    },
+    {
+      "target": "CHEBI:53262",
+      "decision": "DO_NOT_SELECT_AS_GRADE_IDENTITY",
+      "basis": "Macromolecule rather than polymer-material grade; generic CAS and representative low-mass structure are not source sample facts.",
+      "capture": "live-ontology-v1/chebi-53262.body",
+      "sha256": "cc55f3d6aa10a413e00bb7446d1347ded35e91eb14963f27aaf2138ee6b0750d"
+    },
+    {
+      "target": "CHEBI:179442",
+      "decision": "REJECT_FOR_THIS_SOURCE",
+      "basis": "Despite1200–3000 display label, complete term specifies small-diol C6H14O3,CAS106-62-7,mass134.175 and corresponding SMILES. Label similarity does not establish nominal PPG2000.",
+      "capture": "live-terms-v1/chebi-179442.body",
+      "sha256": "b57b7128746e0b36e76b42804d59ad10c703a64f5147e92ed952b206a128d330"
+    },
+    {
+      "target": "CHEBI:753711 and mesh:C012504",
+      "decision": "GENERIC_PPG_NOT_EXACT_GRADE",
+      "basis": "Actual full term records do not establish nominal2000 material scope."
+    }
+  ],
+  "bounded_lookup_limit": "Exact nominal-grade searches for polypropylene glycol2000,PPG2000 and poly(propylene glycol)2000 yielded zero official OLS hits at captured times. This is not a universal absence claim. CAS CommonChemistry API request failed and supplies no absence proof. No grade-specific registry identity is established by inspected source or official term bodies.",
+  "supplier_illustration": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w06-info004-feasibility-v1/ppg-official-product-web.json",
+    "sha256": "fedfbe6766accd95f32c5841442b3971512da43837df0e0b2226c2bd3f3d46a6",
+    "original_requested_at": "2026-11-08T08:01:53.992Z",
+    "assessment": "Complete preserved official Sigma/Thermo web responses demonstrate a named orderable variable PPG2000 material. They do not identify NBRC supplier or authorize transfer of genericCAS, representativeSMILES, measuredMn, end groups, liquidform or water specification."
+  },
+  "duplicate_review": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/dedup-scope-v1.json",
+    "sha256": "765e568c4a6673b118f83b08f06db2a7d44f6c839583ecbfdef498fe0b514f07",
+    "native_catalogues": [
+      {
+        "count": 2956,
+        "hits": 0,
+        "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients"
+      },
+      {
+        "count": 2956,
+        "hits": 0,
+        "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients"
+      }
+    ],
+    "selected_payload_count": 985,
+    "selected_name_matches": 0,
+    "all_worker_yaml_count": 6761,
+    "all_worker_ppg_name_matches": 0,
+    "coordinator_candidate_counts": [
+      37,
+      2,
+      4
+    ],
+    "ignored_files_included": true,
+    "selection_limit": "Materialized-v4 is latest discovered frozen publication-origin selector, not acceptance of all current heads. Current W06 1d62 source selection is separately included in report scan; W08 later1701 bridge belongs to independent DI reviewer."
+  },
+  "nearby_owner_boundary": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients/mapped/Polyethylene_Glycol.yaml",
+    "sha256": "eec9979fc7a5c234440476242c5fc374da810c2dce0f574a7495c34af47344fb",
+    "assessment": "Whole existing PEG owner read. Ethylene-glycol family, not polypropylene-glycol family. No ownermerge, borrowedCAS or approval/history transfer."
+  },
+  "bounded_representation_recommendation": {
+    "preferred_scope": "Polypropylene glycol2000 nominal material grade, finer product chemistry unresolved.",
+    "readable_preferred_term": "Polypropylene glycol2000",
+    "candidate_registry_slug": "polypropylene_glycol_2000",
+    "registry_namespace": "kgmicrobe.ingredient",
+    "parent_target": "CHEBI:61615",
+    "ontology_label": "poly(propylene glycol) polymer",
+    "native_mapping_quality": "NARROW_MATCH",
+    "sssom_consequence": "Own registry identity skos:exactMatch plus parent skos:broadMatch under MAPPING_SEMANTICS sections1–3; never generic parent exact or subclass_of substitution.",
+    "method": "Truthful LLM_SUGGESTION for agent mapping assertion and llm_assisted history; no MANUAL_CURATION.",
+    "raw_alias": "Preserve full Polypropylene glycol2000(PPG2000) source spelling exactly as captured/frozen, including spaces. Do not add genericPPG/PPO/PEG/monomer resolving names.",
+    "not_payload_authorship": true
+  },
+  "remaining_unknowns": [
+    "Distribution and chain length",
+    "End groups",
+    "Supplier/catalogue",
+    "Meaning/type of average mass corresponding to nominal2000",
+    "Supplied physical form, concentration or solvent",
+    "Any fixedformula/SMILES/InChI/exactMW",
+    "Role/application or release approval"
+  ],
+  "partonomy": "No polymer repeat-unit or monomer decomposition; preparation sonication does not make supplied PPG an aqueous stock.",
+  "findings": [],
+  "candidate_decision": "PREAUTHOR_CONSTRAINTS_COMPLETE_FINAL_CANDIDATE_REVIEW_PENDING",
+  "approval": false
+}

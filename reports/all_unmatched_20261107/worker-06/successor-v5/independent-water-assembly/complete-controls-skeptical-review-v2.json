@@ -1,0 +1,334 @@
+{
+  "reviewer": "/root/residual_assembly_review",
+  "at": "2026-11-08T08:43:45.111441+00:00",
+  "status": "PASS",
+  "scope": "Independently inspected all eleven full105 selections, all ten whole mutated payloads and per-field deltas, rebound hashes and exact validation code. Re-executed same report-local preservation path for every fixture; re-executed native188case/105proposal audit for explicit-water-loss fixture in reviewer private cwd.",
+  "receipt_sha256": "6728ad5a897b482340b89aa03447266d0088b1296f540e5e3bcc14e638054a71",
+  "actual_function_sha256": "c869748ede78f91fa2aa086f3e7697308c267a23fa19f40f7e5c71426dc59e53",
+  "rows": [
+    {
+      "fixture": "positive-exact105",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "positive_exact_fullobjects": true
+      },
+      "actual_retention_failures": [],
+      "native_audit_sha256": "62d1fd351ed407a83765963f24c7a5deace2672c150337dfb9c580357a17449a"
+    },
+    {
+      "fixture": "negative-00",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "A-P-DSMZ29-CARBONATE-1M",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "03f5f19acf11b2c806c7995768f86fe16f73f885dfa8805b609aec2ebf06b14e",
+          "actual": "b8908324d5ecbe031b9e8fe580145085ef69b19dc25575238119984643712b89"
+        }
+      ],
+      "native_audit_sha256": "d455ed34c527ee3ade6ef773f305de3928d57300645551a9f280f8a65bd42a10",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": "1",
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-01",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "A-P-ATCC1257-CARBONATE-4PCT",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "19e7642e7901a2229626f807eea2364c85d884f1d66ec8b3cd046c33309cdefb",
+          "actual": "58094fdf1d3b0eac17aeb77a97eb8eb09e701cc593b8cd00aba6ed5f576e01de"
+        }
+      ],
+      "native_audit_sha256": "26e1c5aab0cce3f28a47c3f28b29a214070258e6f58f0202c8b71efae6e49cf5",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": "4",
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-02",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "A-P-JCM1344-YEAST-1PCT",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "9b55a41e7081f3642a4e7786a3f2261c54dcc264e39ca356ddcd16759f726599",
+          "actual": "7fc3bb4ad33b7f234ed8c8bd22332ac06e5a04ba7199a941d3be24bb9c49d0ed"
+        }
+      ],
+      "native_audit_sha256": "127354b811a474a9fe6956031f2503f276e03a2b8cfb6394b993fa283703ea63",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": "1",
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-03",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "A-P-TOGO2665-KOH-STOCK",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "5a5924089053b8f2820ece0bf6e19cb229fe19e61a9249b6fdc0681f3ada5cc3",
+          "actual": "00c6fe3c0f18df7148dbb6a2dff2f217cc3da0f4580479e837ee11b46ee4ee90"
+        }
+      ],
+      "native_audit_sha256": "5d3673d236b9faf477d9ae66a4cdd0ff10dda99ba9762e241ddfae04b3fcac0b",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_unit",
+          "before": null,
+          "after": "G_PER_L"
+        },
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": null,
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-04",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "B-P-DSMZ1033-ferric-stock",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "b4c7893eedb7cc34d2a779a6913fbc1f6098f748667fafadb0191b293945f9b6",
+          "actual": "265911b12b36f6755a5a286114c9b1d3247d87d4656f586951909fd448a0ad9c"
+        }
+      ],
+      "native_audit_sha256": "fcb859edd14ab239539fbfa2d63b2786f0ac0de39f02a3b2ff57cd1d96aa8c4e",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": "0.17",
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-05",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "B-P-DSMZ135-339a-carbonate5",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "866dd3c927fb890fd66f7d9cdc6db46aa5fea6b97b733109297631f795beee53",
+          "actual": "a8d387feb3db760a3788c3a50a28173b0f57dbad0956550e733f1dd653e896d0"
+        }
+      ],
+      "native_audit_sha256": "32c7459d7cb92820478282b52134bb2b427a92c762321d5da8f2ebd18825a94b",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": "5",
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-06",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_first_solute_amount_or_unit": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "B-P-ATCC1612-CARBONATE5",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "44f0a08ee463ba99ffff5417fddf6628acf2183d6c5c412f98db51cd13fe8309",
+          "actual": "b6405b2b0cfa3ee85bc86b529855835f4d3be7480ebc3a39c21ce61363403626"
+        }
+      ],
+      "native_audit_sha256": "ec59d9f068f5e350f5d387d09ef0a6281a6cf60e5a9aa2e4861822760b132655",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/0/concentration_value",
+          "before": "5",
+          "after": "999"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-07",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "exactly_one_inherited_manual_retype": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "R-P-MODIFIED-VITAMINS",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "89aa1bb6656afd6e7c6cb53d7b68f43fce6813ba69d7e55b93f317365bc1eb81",
+          "actual": "aacab0666914f8a37ff090b271abbb257931a004c81ae1046838adde356e8699"
+        }
+      ],
+      "native_audit_sha256": "115335757d58a90923238896c98df87a1bf75b49af1e019af43295917457a977",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/ontology_mapping/evidence/0/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-08",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "exactly_one_inherited_manual_retype": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "R-P-PYGS-SOURCE-EVIDENCE",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+          "actual": "86b10508d800352b06ceb59328008bea1c272c90d54776660d1d11478b2ff043"
+        }
+      ],
+      "native_audit_sha256": "350d8a38aecb177f2d26a13241a5f53efcd09ecb34449c1174e24a40cea24c37",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/ontology_mapping/evidence/0/evidence_type",
+          "before": "MANUAL_CURATION",
+          "after": "LLM_SUGGESTION"
+        }
+      ]
+    },
+    {
+      "fixture": "negative-09",
+      "checks": {
+        "whole105_selection": true,
+        "same_actual_retention_result": true,
+        "native_command_exit0": true,
+        "no_declared_capture_mismatch": true,
+        "exactly_one_mutated_proposal": true,
+        "rebound_hash_matches_actualbytes": true,
+        "actual_expected_rejection": true,
+        "only_explicit_water_entry_removed": true
+      },
+      "actual_retention_failures": [
+        {
+          "proposal_id": "R-P-DSMZ1566-GLUCOSE10",
+          "code": "RETAINED_PAYLOAD_BYTES_CHANGED",
+          "expected": "b7d4302d035ca9b3dad366d1ef0f4abd08691415ee8c682251bba482c9f7c2d0",
+          "actual": "396399c4a8711dc436f33feb0db35bdc93da665d86fc9881b12f32eb990e3398"
+        }
+      ],
+      "native_audit_sha256": "501919eed23d1d7120a008b1f80e8b58ea79135ac327272cab244bf10fc39d7a",
+      "whole_payload_field_delta": [
+        {
+          "pointer": "/components/1",
+          "before": {
+            "component_name": "Water",
+            "reference_scope": "UNMAPPED"
+          },
+          "after": null
+        }
+      ]
+    }
+  ],
+  "independent_native_audit_exit_code": 0,
+  "limits": [
+    "Preservation path detects a changed retained payload, including semantically irrelevant byte changes. It is not a chemistry or arbitrary source-validity test.",
+    "Native audit accepting the rebound mutant demonstrates why exact predecessor preservation is a separate requirement; no claim it detects incorrect water removal.",
+    "Prior limited comparisons and failures remain unchanged; this qualifies, rather than rewrites, their historical coverage."
+  ],
+  "findings": [],
+  "native_private_fixture_members": 783,
+  "native_receipt": {
+    "path": "native-audit-private-fixture/native-receipt.json",
+    "sha256": "bf67958863ab7309f48c90d0eaec73703c4e0f6de1f6e845a9c8077db9e33ac3"
+  },
+  "preserved_failed_attempt": "complete-controls-skeptical-review-v1.json and reproduced-negative09-command.json/log: CLI correctly rejected output outside declared public artifact root. Successor uses exact copied private artifact root, preserves all validation guards, and writes only reviewer private output.",
+  "public_copy_instruction": "Copy only bounded review/diagnostic provenance; do not copy the private native fixture tree into published report."
+}

@@ -1,0 +1,61 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "1d62a4084cda998064110c0e6ddfbf943b52c3de",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Trace_Metal_Mix_A5.yaml",
+        "sha256": "5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2",
+        "role": "target"
+      },
+      {
+        "path": "docs/record-reviews.md",
+        "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-06/successor-v4/decisions.json",
+        "sha256": "07deb03c96685c80e10e5b9de9d5e9f5eb081c880caea35cf33509f7804ba650",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-06/successor-v4/proposals.json",
+        "sha256": "6c19c41754652e313dfbc41bb576cc54ad70ecd4d05b7301625c109a657b900d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-06/successor-v4/selection.json",
+        "sha256": "bf5d6bec45951e4966062cf5d574231d51bf17b83fe3c92b57c7a16d38889232",
+        "role": "target"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "A5-authentic-before",
+      "path": "data/ingredients/mapped/Trace_Metal_Mix_A5.yaml",
+      "label": "Existing A5 owner; no scientific approval",
+      "kind": "record",
+      "ownership_note": "Authentic maintained beforeimage; held source-relative draft only, no write authorized."
+    },
+    {
+      "target_id": "W06-current-selection",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v4/selection.json",
+      "label": "Current published 1d62 authoritative predecessor",
+      "kind": "source",
+      "ownership_note": "Prior report-only selection, no maintained application."
+    }
+  ]
+}

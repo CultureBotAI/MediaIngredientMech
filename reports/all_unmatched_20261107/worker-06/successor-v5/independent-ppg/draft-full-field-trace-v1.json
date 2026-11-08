@@ -1,0 +1,1057 @@
+{
+  "schema": "w06-info004-ppg-draft-field-review-v1",
+  "reviewer": "/root/residual_material_review",
+  "candidate_author": "Codex worker06 /root",
+  "review_started_at": "2026-11-08T08:34:08.230243+00:00",
+  "review_completed_at": "2026-11-08T08:34:08.351612+00:00",
+  "review_scope": "Every payload leaf, entire case28 outcome and entire new proposal104, primary source/ontology/copy provenance. Draft evidence attribution remains pending finding W06-I004-PPG-PROVENANCE-001.",
+  "input_hashes": {
+    "reports/all_unmatched_20261107/worker-06/successor-v5/payloads/polypropylene_glycol_2000.yaml": "bbf881245a9f94dcbf368bd2c8e36e28f8fc6eab8f54a90a81c4d08b3c21a1d9",
+    "reports/all_unmatched_20261107/worker-06/successor-v5/author-draft/decisions.json": "d6af7a6a7a8512d52c4c47f13613fa099aac4ce00111f3ce472f1145040fd856",
+    "reports/all_unmatched_20261107/worker-06/successor-v5/author-draft/proposals.json": "f5aac50f6a56b531396bc68fa2b13b07d3a4409575e7888045d33d0400ef9adb",
+    "reports/all_unmatched_20261107/worker-06/successor-v5/author-draft/evidence.json": "26fb3345df1a7336fcd9ebf8dd04af6443d6a520355289c8b9102e87231fa164",
+    "reports/all_unmatched_20261107/worker-06/successor-v5/author-assessment.json": "bc5cf641fd73e7a58df40dfa44f7c04c646e9e00f7b16e90356de2478dad2812",
+    "MAPPING_SEMANTICS.md": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+    "src/mediaingredientmech/schema/mediaingredientmech.yaml": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+  },
+  "objects": {
+    "payload_canonical_sha256": "3b687f093d6e3272f3d00b2a402bdb00ff9cbfbf0751cffa61e9036f529d42be",
+    "case_canonical_sha256": "aa6ecab07bb92c9d2699d195946c69f56379fac08a6fe4f570d9c48c27a44028",
+    "proposal_canonical_sha256": "f5e9aa27fbfb66c16bd8074a12ee7607f0f9aeb243013cdf921e67b9d839aa0d",
+    "old_case_canonical_sha256": "dd043c3b0f3498dd98b6bf613509e9d36909826d29cbac616d5c05821328e991"
+  },
+  "trace": [
+    {
+      "object": "payload",
+      "pointer": "/identifier",
+      "value": "kgmicrobe.ingredient:polypropylene_glycol_2000",
+      "topic": "local material identity",
+      "assessment": "Dedup receipts and MAPPING_SEMANTICS sections2–3 support new nominal-grade registry identity; generic CAS and exact parent are not substituted.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/preferred_term",
+      "value": "Polypropylene glycol 2000 (nominal grade)",
+      "topic": "source-qualified scope",
+      "assessment": "NBRC names polypropylene glycol2000. Added nominal-grade qualifier is disclosed interpretation, not measured exact average mass.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/mapping_status",
+      "value": "MAPPED",
+      "topic": "native status only",
+      "assessment": "MAPPED means ontology grounding exists; not scientific, application or release approval.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ingredient_type",
+      "value": "SINGLE_INGREDIENT",
+      "topic": "material granularity",
+      "assessment": "SINGLE_INGREDIENT denotes one receiving ingredient, not chemical purity or homogeneous chain length.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/ontology_id",
+      "value": "CHEBI:61615",
+      "topic": "broader parent",
+      "assessment": "Full active CHEBI61615 polymer-material term is applicable as parent only; no exactgrade term established by bounded official queries.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/ontology_label",
+      "value": "poly(propylene glycol) polymer",
+      "topic": "canonical label",
+      "assessment": "Full official term label exactly poly(propylene glycol) polymer.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/ontology_source",
+      "value": "CHEBI",
+      "topic": "ontology source",
+      "assessment": "Official CHEBI term, not vendor ontology.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/mapping_quality",
+      "value": "NARROW_MATCH",
+      "topic": "asymmetric relation",
+      "assessment": "NARROW_MATCH correctly retains grade-specific material and projects skos:broadMatch plus own registry exact row.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/evidence/0/evidence_type",
+      "value": "LLM_SUGGESTION",
+      "topic": "primary mapping assertion",
+      "assessment": "NBRC1400 full table directly names material; LLM_SUGGESTION correctly describes author method and unknown supplier/mass specification.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/evidence/0/source",
+      "value": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1400",
+      "topic": "primary mapping assertion",
+      "assessment": "NBRC1400 full table directly names material; LLM_SUGGESTION correctly describes author method and unknown supplier/mass specification.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/evidence/0/notes",
+      "value": "Codex worker06 LLM-assisted proposal: NBRC1400 names Polypropylene glycol 2000 (PPG 2000). Preserve the nominal polymer grade as material identity. The source does not specify a unique molecule, supplier or exact molecular-weight definition.",
+      "topic": "primary mapping assertion",
+      "assessment": "NBRC1400 full table directly names material; LLM_SUGGESTION correctly describes author method and unknown supplier/mass specification.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/evidence/1/evidence_type",
+      "value": "LLM_SUGGESTION",
+      "topic": "ontology mapping assertion",
+      "assessment": "Official full CHEBI61615 and separately captured bounded official exact queries support parent grounding and no supported exactgrade identity. This field is science-supported; draft ledger search capture attribution has separate pending finding.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/evidence/1/source",
+      "value": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A61615",
+      "topic": "ontology mapping assertion",
+      "assessment": "Official full CHEBI61615 and separately captured bounded official exact queries support parent grounding and no supported exactgrade identity. This field is science-supported; draft ledger search capture attribution has separate pending finding.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/ontology_mapping/evidence/1/notes",
+      "value": "Full active CHEBI:61615 term describes polymer material composed of poly(propylene glycol) macromolecules. It is a broader parent only: NARROW_MATCH means this nominal-grade record is narrower and projects skos:broadMatch to CHEBI:61615 plus its own exact registry row under MAPPING_SEMANTICS. Bounded official exact-grade queries found no supported exact term; generic CAS25322-69-4 is not grade-specific identity.",
+      "topic": "ontology mapping assertion",
+      "assessment": "Official full CHEBI61615 and separately captured bounded official exact queries support parent grounding and no supported exactgrade identity. This field is science-supported; draft ledger search capture attribution has separate pending finding.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/synonyms/0/synonym_text",
+      "value": "Polypropylene glycol 2000 (PPG 2000)",
+      "topic": "raw source preservation",
+      "assessment": "Full frozen/primary raw label and exact source case retained. RAW_TEXT alias remains nominal grade, not generic polymer.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/synonyms/0/synonym_type",
+      "value": "RAW_TEXT",
+      "topic": "raw source preservation",
+      "assessment": "Full frozen/primary raw label and exact source case retained. RAW_TEXT alias remains nominal grade, not generic polymer.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/synonyms/0/source",
+      "value": "NBRC1400; CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+      "topic": "raw source preservation",
+      "assessment": "Full frozen/primary raw label and exact source case retained. RAW_TEXT alias remains nominal grade, not generic polymer.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/synonyms/1/synonym_text",
+      "value": "PPG 2000",
+      "topic": "literal abbreviation",
+      "assessment": "Parenthetical PPG2000 abbreviation is printed by NBRC; no added generic PPG alias.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/synonyms/1/synonym_type",
+      "value": "ABBREVIATION",
+      "topic": "literal abbreviation",
+      "assessment": "Parenthetical PPG2000 abbreviation is printed by NBRC; no added generic PPG alias.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/synonyms/1/source",
+      "value": "NBRC1400 literal parenthetical material name",
+      "topic": "literal abbreviation",
+      "assessment": "Parenthetical PPG2000 abbreviation is printed by NBRC; no added generic PPG alias.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/notes",
+      "value": "Bounded nominal polypropylene glycol 2000 material named by NBRC1400; not a fixed molecular species. SINGLE_INGREDIENT denotes recipe-ingredient granularity, not purity or a homogeneous chain length. The receiving recipe lists 2.0 g of this material, separately lists distilled water 1 L, and instructs sonication of the medium excluding agar until PPG2000 is emulsified. These are receiving-medium inputs/process, not evidence of a supplied aqueous stock or an intrinsic 2 g/L material concentration, and the added water is not assumed to be measured final volume. Supplier, catalogue, molecular-weight distribution, the definition of the nominal 2000 average, end groups and supplied physical form are unknown. No fixed molecular weight, formula, SMILES, InChI, CAS, PEG/monomer identity, repeat-unit component, nutritional role or product approval is inferred. Supplier examples establish that nominal polymer grades are representable; they do not establish NBRC procurement. Applicability is bounded to the preserved NBRC1400 occurrence; cross-source material equivalence requires comparison.",
+      "topic": "positive facts and unknowns",
+      "assessment": "Complete NBRC table/process supports2.0g receiving input, separatewater1L and sonication. All source-absent supplier/distribution/endgroups/exactMW/form/stock facts remain unknown. Product examples cannot identify NBRC supplier. No partonomy or role claim.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/curation_history/0/timestamp",
+      "value": "2026-11-08T08:29:41.004578+00:00",
+      "topic": "genuine new origin",
+      "assessment": "CREATED with no false previous identifier/status. Root authorship and actual author-draft timestamp match assessment; llm_assisted true. Informational scope, not unsafe mapping allegation or installed change.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/curation_history/0/curator",
+      "value": "Codex worker06 /root",
+      "topic": "genuine new origin",
+      "assessment": "CREATED with no false previous identifier/status. Root authorship and actual author-draft timestamp match assessment; llm_assisted true. Informational scope, not unsafe mapping allegation or installed change.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/curation_history/0/action",
+      "value": "CREATED",
+      "topic": "genuine new origin",
+      "assessment": "CREATED with no false previous identifier/status. Root authorship and actual author-draft timestamp match assessment; llm_assisted true. Informational scope, not unsafe mapping allegation or installed change.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/curation_history/0/changes",
+      "value": "INFO004 informational scope completion: propose nominal PPG2000 material, with genuine null-before origin and broader CHEBI:61615 grounding. No maintained owner, source import, role or export changed.",
+      "topic": "genuine new origin",
+      "assessment": "CREATED with no false previous identifier/status. Root authorship and actual author-draft timestamp match assessment; llm_assisted true. Informational scope, not unsafe mapping allegation or installed change.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/curation_history/0/new_status",
+      "value": "MAPPED",
+      "topic": "genuine new origin",
+      "assessment": "CREATED with no false previous identifier/status. Root authorship and actual author-draft timestamp match assessment; llm_assisted true. Informational scope, not unsafe mapping allegation or installed change.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "payload",
+      "pointer": "/curation_history/0/llm_assisted",
+      "value": true,
+      "topic": "genuine new origin",
+      "assessment": "CREATED with no false previous identifier/status. Root authorship and actual author-draft timestamp match assessment; llm_assisted true. Informational scope, not unsafe mapping allegation or installed change.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/case_id",
+      "value": "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+      "topic": "frozen identity",
+      "assessment": "Exact preserved frozen case identity.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/case_input_sha256",
+      "value": "c299c4138f544c827a95cc3e4f2126564855c363d10c1817fadf2b7992e18ceb",
+      "topic": "frozen binding",
+      "assessment": "Original case canonical hash preserved.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/source/source",
+      "value": "culturemech",
+      "topic": "raw source continuity",
+      "assessment": "All source fields byte-value identical to predecessor.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/source/source_case_id",
+      "value": "Polypropylene glycol 2000 (PPG 2000)",
+      "topic": "raw source continuity",
+      "assessment": "All source fields byte-value identical to predecessor.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/source/source_label",
+      "value": "Polypropylene glycol 2000 (PPG 2000)",
+      "topic": "raw source continuity",
+      "assessment": "All source fields byte-value identical to predecessor.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/source/raw_source_label",
+      "value": "Polypropylene glycol 2000 (PPG 2000)",
+      "topic": "raw source continuity",
+      "assessment": "All source fields byte-value identical to predecessor.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/occurrence_ids/0",
+      "value": "CM_OCC:d028235ce925d4b86ef5cd4e61f3bbf74e09929bb5c90efa200bcc304ccc41ca",
+      "topic": "occurrence continuity",
+      "assessment": "Exact sole NBRC1400/CultureMech008679 ingredients/6 occurrence retained.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/disposition",
+      "value": "new_distinct_ingredient_proposal",
+      "topic": "bounded resolution",
+      "assessment": "New nominal-grade material proposal is representable without unavailable product specification; not wholeowner approval.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/reasoning",
+      "value": "NBRC1400 explicitly names Polypropylene glycol 2000 (PPG 2000), supporting a nominal polymer-grade material without a fixed molecular formula or a named supplier. CHEBI:61615 is broader polymer material; a new local ingredient identity retains the nominal2000 scope and projects only broadMatch to that parent.",
+      "topic": "identity reasoning",
+      "assessment": "NBRC nominal material and broader CHEBI polymer align; no fixed molecule or supplier inferred.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/applicability",
+      "value": "Only the exact NBRC1400 / CultureMech:008679 ingredients/6 occurrence. The source lists 2.0 g material and separately distilled water 1 L; sonication emulsifies the receiving medium. No supplied aqueous stock, intrinsic stock concentration or measured final volume is inferred.",
+      "topic": "receiving source facts",
+      "assessment": "Source2g plus separatewater1L, sonication of medium and no stock/finalvolume inference correct.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/evidence_ids/0",
+      "value": "A-E-28-S00",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/evidence_ids/1",
+      "value": "A-E-CAPTURE-032",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/evidence_ids/2",
+      "value": "A-E-CAPTURE-150",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/evidence_ids/3",
+      "value": "V5-E-PPG-PARENT",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/evidence_ids/4",
+      "value": "V5-E-PPG-SEARCH",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/evidence_ids/5",
+      "value": "V5-E-AUTHOR",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/proposal_ids/0",
+      "value": "V5-P-PPG2000",
+      "topic": "proposal link",
+      "assessment": "Exactly V5-P-PPG2000 material candidate; no arbitrary owner merge.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/no_change_reason",
+      "value": null,
+      "topic": "transition",
+      "assessment": "Null is appropriate when proposal added; predecessor remains historical.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/missing_requirement",
+      "value": "Supplier/catalogue, exact average-mass definition, chain-length distribution, end groups and supplied physical form remain unknown; they do not bar this bounded material representation. Later source-case intake, cross-worker dedup and export assessment remain required.",
+      "topic": "unknowns held",
+      "assessment": "Finer chemistry unknowns and later intake/release checks explicit without unsupported universal supplier prerequisite.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/owner_records",
+      "value": [],
+      "topic": "nullbefore",
+      "assessment": "No existing owner claimed or merged.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/issue_refs/0",
+      "value": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719082498",
+      "topic": "authorization provenance",
+      "assessment": "Filed INFO004 informational task link; it is not scientific evidence or acceptance.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/independent_review/status",
+      "value": "pending",
+      "topic": "draft review status",
+      "assessment": "Pending truthful at author-draft stage; must bind actual independent receipt later.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/independent_review/evidence_ids",
+      "value": [],
+      "topic": "draft review status",
+      "assessment": "Pending truthful at author-draft stage; must bind actual independent receipt later.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/prior_v5_independent_review/status",
+      "value": "complete",
+      "topic": "historical review",
+      "assessment": "Prior IR-A preserved as historical, not carried as successor acceptance.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/prior_v5_independent_review/evidence_ids/0",
+      "value": "IR-A",
+      "topic": "historical review",
+      "assessment": "Prior IR-A preserved as historical, not carried as successor acceptance.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/correction_author",
+      "value": "Codex worker06 /root",
+      "topic": "authorship",
+      "assessment": "Actual root author, independent reviewer did not compose candidate.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "case",
+      "pointer": "/decisions/28/successor_scope_classification",
+      "value": "INFO004 informational scope completion; no new unsafe-mapping allegation.",
+      "topic": "classification",
+      "assessment": "Informational authorized completion, no unsafe mapping allegation.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/proposal_id",
+      "value": "V5-P-PPG2000",
+      "topic": "proposal identity",
+      "assessment": "Unique new V5-P-PPG2000 selected candidate.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/case_ids/0",
+      "value": "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+      "topic": "case scope",
+      "assessment": "Exact one case28 retained.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/description",
+      "value": "Nominal PPG2000 polymer-grade material; broader CHEBI:61615 grounding only.",
+      "topic": "bounded identity",
+      "assessment": "Nominal grade plus broaderparent only.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/evidence_ids/0",
+      "value": "A-E-28-S00",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/evidence_ids/1",
+      "value": "A-E-CAPTURE-032",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/evidence_ids/2",
+      "value": "A-E-CAPTURE-150",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/evidence_ids/3",
+      "value": "V5-E-PPG-PARENT",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/evidence_ids/4",
+      "value": "V5-E-PPG-SEARCH",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/evidence_ids/5",
+      "value": "V5-E-AUTHOR",
+      "topic": "evidence continuity",
+      "assessment": "Original3 source/evidence entries retained and parent/search/author links added. Search attribution finding remains pending separately.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/kind",
+      "value": "new_owner",
+      "topic": "new owner",
+      "assessment": "New uninstalled material identity; no maintained merge.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/owner_path",
+      "value": "data/ingredients/mapped/polypropylene_glycol_2000.yaml",
+      "topic": "target ownership",
+      "assessment": "Proposed mapped material file has no authentic existing beforeimage; localname convention allowed.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/before_sha256",
+      "value": null,
+      "topic": "genuine nullbefore",
+      "assessment": "Null true origin, not fake promotion predecessor.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/after_capture/root",
+      "value": "artifact",
+      "topic": "payload binding",
+      "assessment": "Artifact-relative exact path and full bytes hash checked.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/after_capture/path",
+      "value": "successor-v5/payloads/polypropylene_glycol_2000.yaml",
+      "topic": "payload binding",
+      "assessment": "Artifact-relative exact path and full bytes hash checked.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/after_capture/sha256",
+      "value": "bbf881245a9f94dcbf368bd2c8e36e28f8fc6eab8f54a90a81c4d08b3c21a1d9",
+      "topic": "payload binding",
+      "assessment": "Artifact-relative exact path and full bytes hash checked.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/author",
+      "value": "Codex worker06 /root",
+      "topic": "authorship",
+      "assessment": "Actual root author, independent reviewer did not compose candidate.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/applicable_occurrence_ids/0",
+      "value": "CM_OCC:d028235ce925d4b86ef5cd4e61f3bbf74e09929bb5c90efa200bcc304ccc41ca",
+      "topic": "occurrence continuity",
+      "assessment": "Exact sole NBRC1400/CultureMech008679 ingredients/6 occurrence retained.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/issue_refs/0",
+      "value": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719082498",
+      "topic": "authorization provenance",
+      "assessment": "Filed INFO004 informational task link; it is not scientific evidence or acceptance.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/independent_review/status",
+      "value": "pending",
+      "topic": "draft review status",
+      "assessment": "Pending truthful at author-draft stage; must bind actual independent receipt later.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/independent_review/evidence_ids",
+      "value": [],
+      "topic": "draft review status",
+      "assessment": "Pending truthful at author-draft stage; must bind actual independent receipt later.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/identity_predicate_alias_consequences",
+      "value": "Local exact registry row plus skos:broadMatch to CHEBI:61615. No exact generic polymer, PEG, CAS, monomer, vendor or structure claim.",
+      "topic": "export consequence",
+      "assessment": "Own exactregistry plus broader CHEBI only; no PEG/CAS/vendor/structure alias conflation.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    },
+    {
+      "object": "proposal",
+      "pointer": "/proposals/104/publication_review_obligations",
+      "value": "Uninstalled proposal; source-case acceptance and whole-owner/role/export approval remain separate.",
+      "topic": "separate approval",
+      "assessment": "Uninstalled; acceptance and wholeowner/role/export review remain separate.",
+      "disposition": "SUPPORTED_WITH_STATED_LIMITATIONS"
+    }
+  ],
+  "checks": [
+    {
+      "name": "native_closed_schema",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "native_closed_schema_negative_unknown_slot",
+      "pass": true,
+      "detail": [
+        "type='jsonschema validation' severity=<Severity.ERROR: 'ERROR'> message=\"Additional properties are not allowed ('invented_stock_approval' was unexpected) in /\" instance={'identifier': 'kgmicrobe.ingredient:polypropylene_glycol_2000', 'preferred_term': 'Polypropylene glycol 2000 (nominal grade)', 'mapping_status': 'MAPPED', 'ingredient_type': 'SINGLE_INGREDIENT', 'ontology_mapping': {'ontology_id': 'CHEBI:61615', 'ontology_label': 'poly(propylene glycol) polymer', 'ontology_source': 'CHEBI', 'mapping_quality': 'NARROW_MATCH', 'evidence': [{'evidence_type': 'LLM_SUGGESTION', 'source': 'https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1400', 'notes': 'Codex worker06 LLM-assisted proposal: NBRC1400 names Polypropylene glycol 2000 (PPG 2000). Preserve the nominal polymer grade as material identity. The source does not specify a unique molecule, supplier or exact molecular-weight definition.'}, {'evidence_type': 'LLM_SUGGESTION', 'source': 'https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI%3A61615', 'notes': 'Full active CHEBI:61615 term describes polymer material composed of poly(propylene glycol) macromolecules. It is a broader parent only: NARROW_MATCH means this nominal-grade record is narrower and projects skos:broadMatch to CHEBI:61615 plus its own exact registry row under MAPPING_SEMANTICS. Bounded official exact-grade queries found no supported exact term; generic CAS25322-69-4 is not grade-specific identity.'}]}, 'synonyms': [{'synonym_text': 'Polypropylene glycol 2000 (PPG 2000)', 'synonym_type': 'RAW_TEXT', 'source': 'NBRC1400; CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25'}, {'synonym_text': 'PPG 2000', 'synonym_type': 'ABBREVIATION', 'source': 'NBRC1400 literal parenthetical material name'}], 'notes': 'Bounded nominal polypropylene glycol 2000 material named by NBRC1400; not a fixed molecular species. SINGLE_INGREDIENT denotes recipe-ingredient granularity, not purity or a homogeneous chain length. The receiving recipe lists 2.0 g of this material, separately lists distilled water 1 L, and instructs sonication of the medium excluding agar until PPG2000 is emulsified. These are receiving-medium inputs/process, not evidence of a supplied aqueous stock or an intrinsic 2 g/L material concentration, and the added water is not assumed to be measured final volume. Supplier, catalogue, molecular-weight distribution, the definition of the nominal 2000 average, end groups and supplied physical form are unknown. No fixed molecular weight, formula, SMILES, InChI, CAS, PEG/monomer identity, repeat-unit component, nutritional role or product approval is inferred. Supplier examples establish that nominal polymer grades are representable; they do not establish NBRC procurement. Applicability is bounded to the preserved NBRC1400 occurrence; cross-source material equivalence requires comparison.', 'curation_history': [{'timestamp': '2026-11-08T08:29:41.004578+00:00', 'curator': 'Codex worker06 /root', 'action': 'CREATED', 'changes': 'INFO004 informational scope completion: propose nominal PPG2000 material, with genuine null-before origin and broader CHEBI:61615 grounding. No maintained owner, source import, role or export changed.', 'new_status': 'MAPPED', 'llm_assisted': True}], 'invented_stock_approval': True} instance_index=0 instantiates='IngredientRecord' context=[] source=<ValidationError: \"Additional properties are not allowed ('invented_stock_approval' was unexpected)\">"
+      ]
+    },
+    {
+      "name": "native_predicate_direction",
+      "pass": true,
+      "detail": "NARROW_MATCH is record narrower than CHEBI parent; no exact generic identity."
+    },
+    {
+      "name": "native_predicate_exact_contrast",
+      "pass": true,
+      "detail": "Exact quality does not project the candidate broader-parent relation; candidate must retain NARROW_MATCH."
+    },
+    {
+      "name": "genuine_null_before",
+      "pass": true,
+      "detail": "Specific target absent. Ignored-inclusive whole-catalogue/selected-payload identity search is independently recorded in dedup-scope-v1.json."
+    },
+    {
+      "name": "source_identity_retained",
+      "pass": true,
+      "detail": "Exact whole source object and sole occurrence retained."
+    },
+    {
+      "name": "original_review_retained",
+      "pass": true,
+      "detail": "Historical review copied into explicitly prior field; new science review pending at draft time."
+    },
+    {
+      "name": "proposal_binding",
+      "pass": true,
+      "detail": "Exact one case/one occurrence and full payload hash."
+    },
+    {
+      "name": "no_chemical_or_component_assertions",
+      "pass": true,
+      "detail": "No fixed molecule, intrinsic solvent, polymer partonomy or role asserted."
+    },
+    {
+      "name": "raw_alias_scope",
+      "pass": true,
+      "detail": "Only literal full name and literal source parenthetical abbreviation; no generic PPG/PPO/PEG alias."
+    },
+    {
+      "name": "authorship_honest",
+      "pass": true,
+      "detail": "Mapping evidence and history explicitly LLM assisted; no manual-curation substitution."
+    },
+    {
+      "name": "all_predecessor_evidence_retained",
+      "pass": true,
+      "detail": {
+        "retained": 1098,
+        "draft_total": 1105
+      }
+    },
+    {
+      "name": "copy_live-ontology-v1_cas-commonchemistry.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_cas-commonchemistry.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_chebi-53262.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_chebi-53262.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_chebi-53262.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-2000-exact.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-2000-exact.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-2000-exact.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-abbreviation-exact.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-abbreviation-exact.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-abbreviation-exact.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-cas-exact.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-cas-exact.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-cas-exact.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-generic-exact.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-generic-exact.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_ppg-generic-exact.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-ontology-v1_receipts.json",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-179442.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-179442.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-179442.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-61615.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-61615.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-61615.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-753711.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-753711.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_chebi-753711.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_mesh-C012504.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_mesh-C012504.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_mesh-C012504.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_ppg-poly-name.body",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_ppg-poly-name.headers",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_ppg-poly-name.stderr",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    },
+    {
+      "name": "copy_live-terms-v1_receipts.json",
+      "pass": true,
+      "detail": "Exact bytes including original request times/headers/errors preserved."
+    }
+  ],
+  "copied_primary_query_files": [
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/cas-commonchemistry.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/cas-commonchemistry.headers",
+      "sha256": "b22436723d866c1915580c956c182642784e43f9240a3437154db98cb40b0d70"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/cas-commonchemistry.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/cas-commonchemistry.stderr",
+      "sha256": "a5a7b6ee2d16ee680e38ddfc6418560007d3afd9491a6d28e6ba1c77605ea3bf"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/chebi-53262.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/chebi-53262.body",
+      "sha256": "cc55f3d6aa10a413e00bb7446d1347ded35e91eb14963f27aaf2138ee6b0750d"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/chebi-53262.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/chebi-53262.headers",
+      "sha256": "4fcca65cbbd39933ebe1c4116698d3df0e6a87a47cdb8a8b1702df95bca40258"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/chebi-53262.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/chebi-53262.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-2000-exact.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-2000-exact.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-2000-exact.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-2000-exact.headers",
+      "sha256": "5bf76ff8a18d7292060b342e6b35e0a0976fc737ca76cacf758cf320dc7f5f1b"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-2000-exact.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-2000-exact.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-abbreviation-exact.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-abbreviation-exact.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-abbreviation-exact.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-abbreviation-exact.headers",
+      "sha256": "f8e16bb9a8fdeb141e76fb5085ca474fed1a2b9f08bb2a7a2f82f8583ef73572"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-abbreviation-exact.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-abbreviation-exact.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-cas-exact.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-cas-exact.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-cas-exact.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-cas-exact.headers",
+      "sha256": "9431cf4ac664442b1a4ab98e8a3fae20bc377d26dd9989c480770c03e411cc4e"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-cas-exact.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-cas-exact.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-generic-exact.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-generic-exact.body",
+      "sha256": "8cd8f3b745323b3a09d6cd25116d8a3aa5350f8adfd7bed26421a575516e673d"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-generic-exact.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-generic-exact.headers",
+      "sha256": "9431cf4ac664442b1a4ab98e8a3fae20bc377d26dd9989c480770c03e411cc4e"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/ppg-generic-exact.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/ppg-generic-exact.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-ontology-v1/receipts.json",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-ontology-v1/receipts.json",
+      "sha256": "3d3460b022aa01b72c457331dd320ea18541e9a0de4cb6a46c557aaf0a59b423"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-179442.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-179442.body",
+      "sha256": "b57b7128746e0b36e76b42804d59ad10c703a64f5147e92ed952b206a128d330"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-179442.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-179442.headers",
+      "sha256": "3dea39a5347449ec900058353befc914cff2703bc2c0632a92b5ca6787e16385"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-179442.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-179442.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-61615.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-61615.body",
+      "sha256": "5d7c051594df573958bd199b48679cebcdcea4f4658dd8b9491c212d2f467ff9"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-61615.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-61615.headers",
+      "sha256": "3dea39a5347449ec900058353befc914cff2703bc2c0632a92b5ca6787e16385"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-61615.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-61615.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-753711.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-753711.body",
+      "sha256": "bce708e21e172d3278f93581bb3e64c3b65838978fcebda6f724b3946a65bd5f"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-753711.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-753711.headers",
+      "sha256": "48ecb9e9bbcaf9fef18927c4e25d9fe33529f20e7e76725f1c78dc867dc8e925"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/chebi-753711.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/chebi-753711.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/mesh-C012504.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/mesh-C012504.body",
+      "sha256": "414dfa3e44e2b687949d20480a8cc5f9e0ee6297d9496a26e38a828bbaaa23d2"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/mesh-C012504.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/mesh-C012504.headers",
+      "sha256": "735107e609dc338d20f9af8ddcd9b74c6381b48f232e3d4ad76b5e7cedddc9d4"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/mesh-C012504.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/mesh-C012504.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/ppg-poly-name.body",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/ppg-poly-name.body",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/ppg-poly-name.headers",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/ppg-poly-name.headers",
+      "sha256": "36c3b10c04fbf2ec8cb41843f98812af6adf6843d1ad758d10aaf0e007f34f39"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/ppg-poly-name.stderr",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/ppg-poly-name.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/live-terms-v1/receipts.json",
+      "copy": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/inputs/ppg/live-terms-v1/receipts.json",
+      "sha256": "c02665652a179af3b4c66dbc7ee8024e846e4f7a05b7d23902f789bdc2cd0315"
+    }
+  ],
+  "scope_exclusions": [
+    "No all-corpus partonomy rerun; parent assembly review runs full private overlay. Candidate has no component edges.",
+    "No maintained/generated write, GitHub mutation, candidate authorship or source/role/release approval.",
+    "No claim that frozen coordinator selector accepts current worker heads; later intake must reconcile them."
+  ],
+  "scientific_disposition": "SUPPORTED_BOUNDED_MATERIAL; final evidence binding awaits issue-first correction",
+  "pending_finding": "W06-I004-PPG-PROVENANCE-001",
+  "native_check_invocation": {
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg",
+    "script": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/.temp/info004-successor-v1/independent-ppg/review_draft_fields_v2.py",
+    "script_sha256": "0bff8bf57a5b2c5e94507c19ee5fccfaee16f29ddaa3d1ec5e74ca66b89c9d8e",
+    "python": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python",
+    "bytecode_disabled": true,
+    "no_coverage": true
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "reconciliations": [
+    {
+      "reconciliation_id": "V5-X-W08-DEIONIZED-WATER",
+      "status": "PROPOSED_REUSE_OF_EXISTING_W08_CANDIDATE",
+      "create_new_owner": false,
+      "author": "Codex worker06 /root",
+      "llm_assisted": true,
+      "referenced_worker_head": "1701ccf2049022866adfcebcc9bba9b6492407c6",
+      "referenced_proposal": {
+        "proposal_id": "if1201-new-deionized_water",
+        "case_ids": [
+          "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8"
+        ],
+        "description": "Deionized water: DSMZ 533 names H2O (deionized) in the main medium and trace stock, each as 1000 ml water. The identity retains the specified deionization treatment only: no resistivity, purity class, sterility or distillation claim. Water is not decomposed into a molecular-water component because treatment grade is not partonomy.",
+        "evidence_ids": [
+          "if1201-owner-search",
+          "if1201-ontology-search",
+          "if1201-ontology-supplement",
+          "if1201-primary-1394663ed57400f4",
+          "if1201-water-issue470",
+          "if1201-guarded-validation",
+          "if1227-source-relative-completeness",
+          "if1227-evidence-category-ledger"
+        ],
+        "kind": "new_owner",
+        "owner_path": "data/ingredients/mapped/deionized_water.yaml",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "successors/issue-1227-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml",
+          "sha256": "b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc"
+        },
+        "identity_predicate_alias_consequences": "New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.",
+        "publication_review_obligations": "Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.",
+        "cross_shard_conflict": "Coordinator must compare existing campaign candidate owners by actual preparation, not label or concentration alone. Distinct source context alone does not establish a distinct substance; consolidate where actual same preparation is demonstrated.",
+        "applicability": "Only the named primary preparation in these linked cases; source-local identity and component scope remain explicit."
+      },
+      "exact_payload_copy": {
+        "root": "artifact",
+        "path": "successor-v5/inputs/w08/deionized_water.yaml",
+        "sha256": "b67b85580ee3b894b6641393520755ffc4aa1a8c90eea7052d4336b7237bfccc"
+      },
+      "before_sha256": null,
+      "w06_cases": [
+        {
+          "case_id": "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+          "case_input_sha256": "47d61b48a75496eb951ca71d9c137ff53c0d63f6070dc086658d9e0f4c923758",
+          "occurrence_ids": [
+            "CM_OCC:e5238b57003649de712fdf634e72e56341dd386dd450c3339968c92b38f4d98a"
+          ],
+          "raw_source_label": "DI WATER",
+          "primary_evidence_id": "B-http-a1e8c98f7ff8b1e8",
+          "primary_amount": "1 L",
+          "frozen_import_amount": "1 G_PER_L",
+          "scope": "ATCC2686 main receiving medium only; interpreting DI as deionized is disclosed source-context interpretation."
+        }
+      ],
+      "retained_w08_case": {
+        "case_id": "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8",
+        "case_input_sha256": "148a74444ab38da9b00e68e4198199943073a95d89811693f05776f909ec09b9",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "H2O (deionized)",
+          "source_label": "H2O (deionized)",
+          "raw_source_label": "H2O (deionized)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd"
+        ],
+        "disposition": "new_distinct_ingredient_proposal",
+        "reasoning": "Deionized water: DSMZ 533 names H2O (deionized) in the main medium and trace stock, each as 1000 ml water. The identity retains the specified deionization treatment only: no resistivity, purity class, sterility or distillation claim. Water is not decomposed into a molecular-water component because treatment grade is not partonomy.",
+        "applicability": "Applies only to source culturemech case 'H2O (deionized)', label 'H2O (deionized)', raw label 'H2O (deionized)'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound. Issue-1201 reassessment: source-qualified preparation proposals apply only within the explicit proposal scope; all original case labels/digests/occurrence IDs and holds are retained. No generic label-to-stock or source-held chemical exact match is introduced.",
+        "evidence_ids": [
+          "if-case-101",
+          "if-recipe-6da16ec764ef",
+          "if-web-1394663ed574",
+          "if1201-primary-1394663ed57400f4",
+          "if1201-water-issue470",
+          "if1201-owner-search",
+          "if1201-ontology-search",
+          "if1201-ontology-supplement",
+          "if1201-case-43",
+          "if1227-source-relative-completeness",
+          "if1227-evidence-category-ledger"
+        ],
+        "proposal_ids": [
+          "if1201-new-deionized_water"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/470"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-1227-peer-inorganic_forms"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M3125_Thermophilic_Hydrogen_Bacteria_Medium.yaml",
+            "component_path": "ingredients/0",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1000.0"
+              },
+              "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component [Collapsed 2 identical duplicates: 1000.0, 1000.0]",
+              "preferred_term": "H2O (deionized)"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3125\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": [],
+        "prior_independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-1201-peer-inorganic_forms"
+          ]
+        },
+        "prior_independent_reviews": [
+          {
+            "status": "complete",
+            "evidence_ids": [
+              "w08-1201-peer-inorganic_forms"
+            ]
+          }
+        ]
+      },
+      "combined_case_ids": [
+        "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+        "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8"
+      ],
+      "combined_occurrence_ids": [
+        "CM_OCC:e5238b57003649de712fdf634e72e56341dd386dd450c3339968c92b38f4d98a",
+        "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd"
+      ],
+      "raw_label_scope": "DI WATER and H2O (deionized) remain exact case-bound strings; no global alias on Distilled_Water or any other owner. The unchanged W08 payload retains deionization-only material scope; W06 adds this proposed occurrence/evidence link through this ledger.",
+      "scientific_basis": "ATCC2686 literally lists DI WATER 1 L, separately distinguishing distilled water in nested stocks. DSMZ533 explicitly lists H2O (deionized) 1000 ml in main medium and trace stock. Both support deionized treatment-only material scope, without purity, resistivity, sterility, distillation, exact process, vendor or inferred components.",
+      "retained_holds": [
+        "W06 frozen1G_PER_L and W08 frozen1000G_PER_L are source-import unit discrepancies, not material strengths.",
+        "Issue470 Distilled_Water rejected-label boundary remains unchanged.",
+        "Coordinator must join exact source-case/occurrence links to current W08 candidate and independently accept both later-head origins before any application.",
+        "Current head bridge confirms exact bytes/history, not whole-owner, role or export approval."
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    }
+  ]
+}

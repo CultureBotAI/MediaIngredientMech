@@ -1,0 +1,168 @@
+identifier: MICRO:0001349
+preferred_term: Trace metal mix A5
+synonyms:
+- synonym_text: Trace metal mix A5
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: Trace Metal Mix A5 (see below)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 7 CultureBot media; samples: BG11C, BG11, BG11R…. No CAS-RN or CHEBI mapping
+    available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.463553+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0258 → MICRO:0001349 via name normalization to 'Trace
+    metal mix A5'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.924925+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Trace
+    metal')
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248262+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-27T03:16:39.519991+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 7/7 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Trace Metal Mix A5 (see below)'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T08:29:41.004578+00:00'
+  curator: Codex worker06 /root
+  action: PROPOSED_SOURCE_TRANSCRIPTION
+  changes: INFO004 held literal seven-input TOGO M2499 transcription against authentic
+    MICRO:0001349 beforeimage. NOT INSTALLABLE; source-list COMPLETE does not approve
+    copper identity or whole-owner applicability. No maintained write, owner merge,
+    promotion, role or export approval. Six literal supported forms reference current
+    native owners; raw molybdate formula is retained in assertion notes, copper stays
+    UNMAPPED.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  7 CultureBot media; samples: BG11C, BG11, BG11R…. No CAS-RN or CHEBI mapping available;
+  curator review needed.
+
+
+  NONINSTALLABLE SOURCE-RELATIVE DRAFT: INFO004 records the complete seven-input TOGO
+  M2499 A5 list only. This draft is excluded from authoritative installable proposals.
+  Authentic MICRO:0001349 owner, historical mapping, aliases, roles and all history
+  are retained as beforeimage continuity, not newly approved. Maintained membership
+  already links this owner to CultureMech:009072, with CultureMech:008772 and CultureMech:015838
+  also present; the source number and malformed copper do not justify another owner.
+  The literal source CuSO2・5H2O remains UNMAPPED with no inferred CuSO4 correction.
+  Six source-supported input forms link to current native owners; raw Na2MoO4 · 2H2O
+  is retained in assertion notes while its explicit source label Sodium molybdate
+  dihydrate names that component. The copper input remains UNMAPPED. Native child
+  links do not clear any inherited whole-owner deficiencies. The stock is added at1ml/l
+  in /components/0/items/9; that dose is not the stock formulation and the frozen
+  G_PER_L conversion remains held. The source lists distilled water1L as an input
+  and six solutes in g/L; no measured final volume is inferred. Source pH7.1 after
+  autoclaving/cooling describes the receiving medium, not this stock. Exact applicability
+  to the existing owner and its other BG11/BG11C/BG11R history remains unproved until
+  an authentic original specification/correction or authoritative lineage resolves
+  copper and whole-owner composition. The inherited exact MICRO mapping and TRACE_ELEMENT
+  role are not endorsed by this draft. Neighboring M2601, ATCC957 and JCM1419 are
+  comparisons with different explicit water/amount/salt facts, not interchangeable
+  formulations.'
+ontology_mapping:
+  ontology_id: MICRO:0001349
+  ontology_label: trace metal mix A5
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0258; matched via 'Trace metal mix A5' (name
+      normalization); label-exact
+ingredient_type: STOCK_SOLUTION
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+components:
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: L
+  component_id: CHEBI:15377
+- component_name: Sodium molybdate dihydrate
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.39'
+  concentration_unit: G_PER_L
+  component_id: CHEBI:75213
+- component_name: H3BO3
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.86'
+  concentration_unit: G_PER_L
+  component_id: CHEBI:33118
+- component_name: MnCl2 · 4H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.81'
+  concentration_unit: G_PER_L
+  component_id: CHEBI:86368
+- component_name: ZnSO4·7H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.222'
+  concentration_unit: G_PER_L
+  component_id: CHEBI:32312
+- component_name: CuSO2・5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.079'
+  concentration_unit: G_PER_L
+- component_name: Co(NO3)2 · 6H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0494'
+  concentration_unit: G_PER_L
+  component_id: CHEBI:86214
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2499
+    source_record: TOGO M2499 /components/1/items (paragraph5 Trace-metal mix A5)
+    notes: 'LLM-assisted literal transcription of all seven immediate printed inputs,
+      retaining source order, amounts and units. COMPLETE is relative only to this
+      source list, not resolved copper identity or whole-owner applicability. Six
+      source-supported names/forms reference current native owners; raw /components/1/items/1
+      component_name is exactly Na2MoO4 · 2H2O, represented using its explicitly printed
+      label Sodium molybdate dihydrate to match the active native owner; no form inference
+      is added. Other six raw component_name strings are preserved exactly. Literal
+      CuSO2・5H2O remains UNMAPPED without component_id: it contradicts the normalized
+      Copper(II) sulfate pentahydrate label and must not be silently corrected. Distilled
+      water1L is an added input, not measured final stock volume; six solute values
+      explicitly use g/L. These component links do not approve the whole child owners,
+      inherited roles or exports.'

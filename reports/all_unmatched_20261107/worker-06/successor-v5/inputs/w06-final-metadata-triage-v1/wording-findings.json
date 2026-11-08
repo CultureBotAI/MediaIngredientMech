@@ -1,0 +1,137 @@
+{
+  "at": "2026-11-08T08:28:07.079241+00:00",
+  "reviewed_head": "1d62a4084cda998064110c0e6ddfbf943b52c3de",
+  "reviewer": "worker08:/root",
+  "status": "one_confirmed_minor_group_pending_coordinator_routing_before_author_fix",
+  "findings": [
+    {
+      "finding_id": "W08-W06V4-001",
+      "title": "Current stock evidence summaries retain unsupported KOH-form and yeast-stock carrier claims",
+      "severity": "minor",
+      "category": "provenance",
+      "status": "open",
+      "certainty": "confirmed",
+      "case_ids": [
+        "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34",
+        "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658"
+      ],
+      "proposal_ids": [
+        "A-P-TOGO2665-KOH-STOCK",
+        "A-P-JCM1344-YEAST-1PCT"
+      ],
+      "issue_key": "w06-current-stock-evidence-scope",
+      "description": "The selected payload correctly says ATCC 1775 omits the supplied KOH form and TOGO M2665 supplies Solution classification. The active evidence description still says ATCC1775 uses KOH solution, and the native evidence summary repeats that attribution. ATCC itself only specifies KOH for pH adjustment. A-E-CAPTURE-102 also still calls the JCM1344 yeast stock aqueous although only basal water is specified. Both descriptions are repeated in the saved native evidence summaries, marked context_only rather than historical-invalidated. This does not invalidate the supported preparations or any of the seven Water removals.",
+      "reproduction": {
+        "evidence_path": ".temp/w06-residual-successor-independent-v1/snapshot/reports/all_unmatched_20261107/worker-06/successor-v4/evidence.json",
+        "evidence_sha256": "3dcaef8d19f978c4c9c3d9618edf0a5f97886831a5ca850f9f5c87258c3ae5b6",
+        "pointer": "/evidence/202/supports_or_contradicts",
+        "before_text": "case20: ATCC1775 uses KOH solution to adjust the trace-mineral preparation to specified pH values. The source provides no stock molarity, density or product identity. The misspelling solusion does not make the whole liquid identical to pure potassium hydroxide.",
+        "atcc_capture": {
+          "root": "artifact",
+          "path": "research-a/captures/c7657f0c7b4b95f6.raw",
+          "sha256": "4e3d3202d90e3388d7165803bd3a62fdfcb591beec25fa8bd47fed0975cd7592"
+        },
+        "atcc_url": "https://www.atcc.org/~/media/385F0331DBAE42A3B87040A1D040AC39.ashx",
+        "atcc_original_accessed_at": "2026-11-08T05:06:53.626932+00:00",
+        "atcc_locator": "Trace Elements Solution final paragraph: KOH at pH 6.5 and pH 7.0; no supplied-form wording",
+        "positive_form_evidence": {
+          "evidence_id": "A-E-COMPLETION-09",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/delta-togo-M2665.raw",
+            "sha256": "4ddbfe8173e144bfe61200a4dbe4924a887374deea0542e82268961292d995f6"
+          },
+          "locator": "Exact query/response and source table; complete raw bytes retained",
+          "supports_or_contradicts": "Fresh exact-source access for the authored completion. Empty ontology query is bounded absence only; retrieved source recipes establish only their own formulation.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2665",
+          "case_ids": [
+            "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34"
+          ],
+          "accessed_at": "2026-11-08T05:37:31.922063+00:00"
+        },
+        "positive_locator": "/components/1/items/15: component_name KOH solusion; label Potassium hydroxide solution; property Solution",
+        "native_summary_path": ".temp/w06-residual-successor-independent-v1/snapshot/reports/all_unmatched_20261107/worker-06/successor-v4/native-v2/review-content.json",
+        "native_summary_sha256": "08e780ca386f977acc6f0bc2f607703ae2b6681f3508e316b8d9e256643cf1c7",
+        "native_locator": "evidence entry A-E-CAPTURE-078 summary"
+      },
+      "bounded_fix": "In a new immutable evidence-index/native successor or explicit claim-level supersession, describe ATCC1775 as specifying KOH pH adjustment with supplied form/strength unstated; assign solution classification only to TOGO M2665. Preserve original raw captures, URLs/timestamps, selected payload and unknown carrier. Do not rewrite historical packets or invent an aqueous carrier. For A-E-CAPTURE-102, remove the unsupported aqueous characterization of the case38 stock while preserving the literal 1% label, receiving dose, sterilization and explicit unknown carrier. Preserve the unrelated case27 annotation; no case27 scientific approval is made.",
+      "suggested_replacement": "ATCC1775 specifies KOH for pH adjustment during trace-element preparation, without stating supplied form, stock strength or carrier. TOGO M2665 separately labels the input as potassium hydroxide solution; that provider classification supports the bounded stock identity.",
+      "routing": "Reported to worker08 root; independently deduplicated by root/skeptic under W08-W06V4-001. Existing issue1217 residual lineage is the recommended route. No original12 reopening, author correction or GitHub mutation was performed.",
+      "whole_stock_identity_blocked": false,
+      "water_removal_correction_blocked": false,
+      "members": [
+        {
+          "case_index": 20,
+          "case_id": "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34",
+          "proposal_id": "A-P-TOGO2665-KOH-STOCK",
+          "evidence_id": "A-E-CAPTURE-078",
+          "current_evidence_pointer": "/evidence/202/supports_or_contradicts",
+          "current_text": "case20: ATCC1775 uses KOH solution to adjust the trace-mineral preparation to specified pH values. The source provides no stock molarity, density or product identity. The misspelling solusion does not make the whole liquid identical to pure potassium hydroxide.",
+          "primary_capture": {
+            "root": "artifact",
+            "path": "research-a/captures/c7657f0c7b4b95f6.raw",
+            "sha256": "4e3d3202d90e3388d7165803bd3a62fdfcb591beec25fa8bd47fed0975cd7592"
+          },
+          "original_url": "https://www.atcc.org/~/media/385F0331DBAE42A3B87040A1D040AC39.ashx",
+          "original_accessed_at": "2026-11-08T05:06:53.626932+00:00",
+          "saved_native_path": ".temp/w06-residual-successor-independent-v1/snapshot/reviews/structured/20261108T080947Z-w06-successor-v4-residuals/review.yaml",
+          "saved_native_sha256": "b7f505b9eb538ae407b1bfc0a9d6c8bc8fbe1e3d6d1fbba60af5ac1093ee8c17",
+          "saved_native_pointer": "/evidence/17/summary",
+          "saved_native_support": "context_only",
+          "saved_native_summary": "case20: ATCC1775 uses KOH solution to adjust the trace-mineral preparation to specified pH values. The source provides no stock molarity, density or product identity. The misspelling solusion does not make the whole liquid identical to pure potassium hydroxide. Exact captured bytes and original retrieval timestamp retained; bounded applicability separately assessed.",
+          "scientific_assessment": "TOGO explicitly labels KOH solusion as Potassium hydroxide solution and assigns the Solution class. The linked ATCC 1775 recipe specifies KOH to dissolve NTA at pH 6.5 and adjust the completed trace preparation to pH 7.0, but does not state the supplied KOH form. The 500 ml initial and 1 L total distilled water belong to that receiving trace preparation. The final payload correctly limits the stock claim to TOGO, retains unquantified KOH, and omits carrier. The active ATCC evidence-description sentence still overattributes solution form and is recorded in the grouped minor provenance finding."
+        },
+        {
+          "case_index": 38,
+          "case_id": "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658",
+          "proposal_id": "A-P-JCM1344-YEAST-1PCT",
+          "evidence_id": "A-E-CAPTURE-102",
+          "current_evidence_pointer": "/evidence/226/supports_or_contradicts",
+          "current_text": "case27: JCM1344 explicitly points to RST trace elements in JCM933. That primary table contains NTA, manganese sulfate, ferrous ammonium sulfate, cobalt, zinc, copper, nickel, molybdate, selenate and tungstate and a pH6 instruction. It is a defined stock preparation, not a generic mineral salt.; case38: JCM1344 separately prepares1%yeast-extract solution, sterilizes it and adds1mL. This is a concentration-qualified aqueous stock, not dry yeast extract. The source does not specify the extract product or explicitly define the percent basis.",
+          "primary_capture": {
+            "root": "artifact",
+            "path": "research-a/captures/98d5aedf61df406f.raw",
+            "sha256": "c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63"
+          },
+          "original_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344",
+          "original_accessed_at": "2026-11-08T05:06:57.155796+00:00",
+          "saved_native_path": ".temp/w06-residual-successor-independent-v1/snapshot/reviews/structured/20261108T080947Z-w06-successor-v4-residuals/review.yaml",
+          "saved_native_sha256": "b7f505b9eb538ae407b1bfc0a9d6c8bc8fbe1e3d6d1fbba60af5ac1093ee8c17",
+          "saved_native_pointer": "/evidence/21/summary",
+          "saved_native_support": "context_only",
+          "saved_native_summary": "case27: JCM1344 explicitly points to RST trace elements in JCM933. That primary table contains NTA, manganese sulfate, ferrous ammonium sulfate, cobalt, zinc, copper, nickel, molybdate, selenate and tungstate and a pH6 instruction. It is a defined stock preparation, not a generic mineral salt.; case38: JCM1344 separately prepares1%yeast-extract solution, sterilizes it and adds1mL. This is a concentration-qualified aqueous stock, not dry yeast extract. The source does not specify the extract product or explicitly define the percent basis. Exact captured bytes and original retrieval timestamp retained; bounded applicability separately assessed.",
+          "scientific_assessment": "JCM 1344 specifies 1 ml of 1% Yeast extract solution after cooling the basal medium. The sterilization key says autoclaved or *filter-sterilized, and the yeast entry has no star, supporting the retained autoclaving statement. The basal 935 ml distilled water is not a recipe for the yeast stock. Yeast extract at 1 PERCENT remains literal, without a 10 g/L conversion or an identified commercial extract; omitting Water and retaining UNKNOWN are justified. Active evidence A-E-CAPTURE-102 and its native summary nevertheless still call this stock aqueous, recorded in the grouped minor provenance finding."
+        }
+      ],
+      "suggested_replacement_case38": "JCM1344 specifies 1 ml of separately sterilized 1% yeast-extract solution. The stock carrier, extract product and percent basis are unspecified; basal water is not stock-carrier evidence.",
+      "bounded_summary_scan": {
+        "scope": "All primary/source-snapshot support summaries linked to the seven assigned decisions, plus their native summaries",
+        "additional_same_pattern_members_found": false,
+        "method": "Actual text inspection against all ten complete primary stock captures; not a blanket search-and-remove of historical prose."
+      }
+    }
+  ],
+  "deduplication": {
+    "canonical_issue_key": "w06-current-stock-evidence-scope",
+    "independent_confirmations": [
+      {
+        "path": "science-stocks/findings.json",
+        "sha256": "2579d0ca645e3efe275d0550f95bf210a878bd60045d6aff7bbb1de7ffc43164"
+      },
+      {
+        "path": "skeptical-lineage/findings-v2.json",
+        "sha256": "59d3caf883932c9374b7df6e001c5f49760e7953f685dd829f524b3083311165"
+      }
+    ],
+    "prior_lineage": "Existing issue1217 residual scope; no original12 group is reopened. The seven Water-removal payload fixes are supported; current source-evidence descriptions remain inconsistent.",
+    "new_group_count": 1,
+    "member_count": 2,
+    "no_duplicate_second_issue": true
+  },
+  "root_assessment": "Root read the full ATCC1775 PDF extraction and JCM1344 HTML text, exact active evidence entries, corrected case20 and saved native evidence summaries. It confirms both narrow attribution defects and supports an immutable current-claim correction preserving the original primary bytes and historical descriptions.",
+  "recommended_route": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217#issuecomment-6718920127",
+  "fix_applied": false,
+  "github_mutation": false,
+  "owner_role_or_export_approval": false
+}

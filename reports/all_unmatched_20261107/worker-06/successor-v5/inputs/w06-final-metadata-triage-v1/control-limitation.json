@@ -1,0 +1,19 @@
+{
+  "findings": [
+    {
+      "finding_id": "W08-W06-LINEAGE-CTRL-001",
+      "severity": "minor",
+      "blocking": false,
+      "status": "validation_evidence_limitation",
+      "title": "Ten reported negative-control arms do not exercise a representative validation path",
+      "affected_cases": [],
+      "affected_proposals": [],
+      "source_path": "snapshot/reports/all_unmatched_20261107/worker-06/successor-v4/scripts/validate_successor_v4.py",
+      "source_sha256": "41a88c48315032fa0f7e7170f56dbe3c94bd6643dac0344aad35282d0868141e",
+      "reproduction": "Inspect the seven solute-exact-* direct dictionary-inequality arms, two historical-evidence-* unrelated-dictionary arms and explicit-H2O-positive filtered-list arm; compare with actual same-guard/native arms in control-adequacy.json. They can pass without testing the corresponding complete-payload regression path.",
+      "bounded_fix": "Retain truthful author outcomes and narrow claims about these arms. Independently mutate complete fixtures and submit them through the actual preservation/stock/campaign validation paths, while retaining a positive exact-byte fixture. No source or payload correction is implied.",
+      "scientific_effect": "None by itself. Actual primary/payload review and independent lineage checks support the bounded correction; schema/control PASS is not scientific approval."
+    }
+  ],
+  "open_blocking_findings": []
+}

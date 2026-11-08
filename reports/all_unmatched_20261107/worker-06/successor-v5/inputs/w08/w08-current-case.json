@@ -1,0 +1,80 @@
+{
+  "case_id": "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8",
+  "case_input_sha256": "148a74444ab38da9b00e68e4198199943073a95d89811693f05776f909ec09b9",
+  "source": {
+    "source": "culturemech",
+    "source_case_id": "H2O (deionized)",
+    "source_label": "H2O (deionized)",
+    "raw_source_label": "H2O (deionized)"
+  },
+  "occurrence_ids": [
+    "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd"
+  ],
+  "disposition": "new_distinct_ingredient_proposal",
+  "reasoning": "Deionized water: DSMZ 533 names H2O (deionized) in the main medium and trace stock, each as 1000 ml water. The identity retains the specified deionization treatment only: no resistivity, purity class, sterility or distillation claim. Water is not decomposed into a molecular-water component because treatment grade is not partonomy.",
+  "applicability": "Applies only to source culturemech case 'H2O (deionized)', label 'H2O (deionized)', raw label 'H2O (deionized)'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound. Issue-1201 reassessment: source-qualified preparation proposals apply only within the explicit proposal scope; all original case labels/digests/occurrence IDs and holds are retained. No generic label-to-stock or source-held chemical exact match is introduced.",
+  "evidence_ids": [
+    "if-case-101",
+    "if-recipe-6da16ec764ef",
+    "if-web-1394663ed574",
+    "if1201-primary-1394663ed57400f4",
+    "if1201-water-issue470",
+    "if1201-owner-search",
+    "if1201-ontology-search",
+    "if1201-ontology-supplement",
+    "if1201-case-43",
+    "if1227-source-relative-completeness",
+    "if1227-evidence-category-ledger"
+  ],
+  "proposal_ids": [
+    "if1201-new-deionized_water"
+  ],
+  "no_change_reason": null,
+  "missing_requirement": null,
+  "owner_records": [],
+  "issue_refs": [
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/470"
+  ],
+  "independent_review": {
+    "status": "complete",
+    "evidence_ids": [
+      "w08-1227-peer-inorganic_forms"
+    ]
+  },
+  "occurrence_context": [
+    {
+      "occurrence_id": "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd",
+      "source_file": "data/normalized_yaml/bacterial/TOGO_M3125_Thermophilic_Hydrogen_Bacteria_Medium.yaml",
+      "component_path": "ingredients/0",
+      "native_scope": "root_component",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "1000.0"
+        },
+        "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component [Collapsed 2 identical duplicates: 1000.0, 1000.0]",
+        "preferred_term": "H2O (deionized)"
+      },
+      "recipe_notes": "Source: https://togomedium.org/medium/M3125\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf",
+      "preparation_steps": []
+    }
+  ],
+  "primary_reviewer": "/root/inorganics",
+  "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+  "preserved_holds": [],
+  "prior_independent_review": {
+    "status": "complete",
+    "evidence_ids": [
+      "w08-1201-peer-inorganic_forms"
+    ]
+  },
+  "prior_independent_reviews": [
+    {
+      "status": "complete",
+      "evidence_ids": [
+        "w08-1201-peer-inorganic_forms"
+      ]
+    }
+  ]
+}
