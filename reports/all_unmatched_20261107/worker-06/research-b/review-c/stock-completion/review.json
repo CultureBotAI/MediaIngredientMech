@@ -1,0 +1,793 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex /root/research_b",
+  "author_reviewed": "Codex /root/research_c",
+  "reviewed_at": "2026-11-08T05:38:35.483506+00:00",
+  "status": "complete_with_limitations",
+  "scope": {
+    "new_stock_payloads": 10,
+    "modified_existing_proposal": "C-P-JCM197",
+    "case_indices": [
+      96,
+      101,
+      113,
+      129,
+      130,
+      133,
+      135,
+      138,
+      140,
+      141
+    ]
+  },
+  "input_hashes": {
+    "decisions.json": "985665db97b084bf75621c174f9cc5e74a10090894ae1b7d3826a1533b993545",
+    "evidence.json": "edbea1f1f34033ebb4aa75f4c140a1f203c1f3d217770812a5e7547c03955acd",
+    "proposals.json": "7c4192424cc9e7368ee0bd67cca8764c48cc22194a3928d6275e364bed32f25d",
+    "stock-completion-review.json": "e9e9ba799ce479c65c4f7c8559186c6d7a3695f13f544dc95c8a4fadef558b33"
+  },
+  "base_review": {
+    "path": "research-b/review-c/review.json",
+    "sha256": "62fc5e2ae37e99985f75c4517b69596c5034bcf8276df3182e83bb27a3b5d0f2"
+  },
+  "separate_nzamine_delta_review": {
+    "path": "research-b/review-c/nzamine-delta-review.json",
+    "sha256": "50a8a6cec7481eddf069c2514cf027c25697173cf5be526356fb0dc41ffb339b"
+  },
+  "independence": "B did not author these10 C payloads or the C197 delta. B directly inspected all named primary captured recipe tables and preparation narrative, compared exact afterbytes and original occurrences. B20% stock comparison is contextual evidence, not self-approval.",
+  "mechanical_checks": {
+    "all_new_after_and_source_hashes": "PASS",
+    "original_cases_and_occurrences": "PASS",
+    "C138_occurrence_partition": "PASS",
+    "new_stock_self_identity_and_agent_evidence_types": "PASS"
+  },
+  "findings": [
+    {
+      "id": "C-STOCK-01",
+      "status": "resolved",
+      "finding": "Feasible captured source stocks were deferred as future curation rather than represented with their known limitations.",
+      "resolution": "Ten concrete source-qualified payloads now retain concentration basis, constituent quantities, process conditions and exact occurrence partitions."
+    },
+    {
+      "id": "C-STOCK-02",
+      "status": "resolved",
+      "finding": "JCM197 vs NBRC837 equal formulation did not explicitly preserve differing detail of source gas preparation.",
+      "resolution": "Final C197 notes and history preserve197 filter-sterilization while gassingN2 and837 filter-sterile anaerobic addition without an explicitstock-gassing statement."
+    },
+    {
+      "id": "C-STOCK-03",
+      "status": "resolved",
+      "finding": "JCM1009 anaerobic20%w/v preparation must not silently broaden JCM977 which omitsN2storage.",
+      "resolution": "Separate JCM1009 stock with exactN2 qualifier; B977 remains unchanged."
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "C-P-TOGO2809-TICL3-20",
+      "case_indices": [
+        96
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/togo_2809_ticl3_20_percent_wv_stock.yaml",
+        "sha256": "293dbd85d2393fba9df426c87bed1f52407af8cf4f659991123ba4edabfe8610"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "Primary LS4D paragraph16 identifies37.5ml20%wt/vol TiCl3 as an input to titanium citrate; the proposal denotes that input alone. Sodium citrate/carbonate/N2 processing belongs to the containing mixture. No solvent, HCl stabilizer, supplier or child CURIE is invented. UNKNOWN closure accurately retains missing reagent details; the frozen37.5G_PER_L import remains unapproved.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+      "case_indices": [
+        113
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+        "sha256": "6a0f58e38af7fee44c04c5c8d659ddb1d6495674dcd0f004d6fb3922d7dd86e4"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "All three captured JCM recipes specify autoclaved sterile anaerobic10%glucose, dosed100ml/5ml/50ml respectively. PERCENT preserves unspecified basis and UNMAPPED glucose preserves unknown chirality/anomer/hydrate. Grouped source scope is supported by the same stated preparation; filter-sterile fresh ETSA10% and explicit20%w/v preparations remain separate.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-TOGO2231-CARBONATE4",
+      "case_indices": [
+        129
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/togo_2231_sodium_carbonate_4g_per_l_stock.yaml",
+        "sha256": "c70e28d7965227472fcdd8f8164cef68edb2955deadb85aeb747098fd6c0d0fc"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "TOGO2231 nested table explicitly states4gNa2CO3 and1L deionized water; receiving dose is5ml. COMPLETE denotes the two listed formulation inputs, not precision of an unstated starting solid hydrate or volume contraction. The source concentration4g/L is not4% and the frozen5G_PER_L value is not adopted.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-TOGO2790-GLUCOSE20",
+      "case_indices": [
+        130
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/togo_2790_glucose_20_percent_stock.yaml",
+        "sha256": "b9e219a8660d13abe331f0e289b8572199acab60fa6f13ca3c8850bfe910d2be"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "TOGO2790 narrative explicitly gives2.5ml20%glucose per100ml receiving medium. The table100mlwater is not a validated final receiving volume; no derived final-glucose concentration is proposed. UnqualifiedPERCENT andUNKNOWN closure avoid borrowing w/v from JCM sources.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM1435-YEAST10",
+      "case_indices": [
+        135
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml",
+        "sha256": "be065e52e02828e3195987d6acd6d7f35b542b4358e73bfc6b82ae206a509593"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "JCM1435 explicitly gives5ml10%Oxoid yeast extract from autoclaved sterile anaerobic stocks. The owner retains brand/stock separation without assuming Oxoid catalogue/lot, percent basis, dry-extract composition or quantified water. It does not alias the entire preparation to generic yeast extract.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-TOGO2568-GLUCOSE10",
+      "case_indices": [
+        141
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/togo_2568_glucose_10_percent_stock.yaml",
+        "sha256": "24ec862593147abf30329cff466f64621a031279a256480ae508d82ad930311b"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "Primary ETSA preparation specifies fresh filter-sterilized10%glucose added10ml after base cooling to55C. This differs in preparation from autoclaved JCM10%stock. PERCENT andUNKNOWN closure preserve missing basis/volume/form, and no medium gas mixture is silently made a stock constituent.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM1009-GLUCOSE20",
+      "case_indices": [
+        140
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml",
+        "sha256": "48e417dad9b8ebd33589d6f1d70f555f9324e22be347fb4e163a35ff34b7fd2f"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "JCM1009 explicitly specifies0.1ml20%w/v glucose per5ml, autoclaved anaerobic stock stored underN2. B JCM977 only states autoclaved stock and does not specify anaerobic storage; separate source-qualified owner preserves this difference. Glucose form and water quantity remain unassigned.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-NBRC1356-TRACE",
+      "case_indices": [
+        133
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/nbrc_1356_trace_elements_stock.yaml",
+        "sha256": "5894ab52e5e649cee09bcd3d149d3723ed42cca6661848dcceaf30078bc170cb"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "All13 named solutes plus1Lwater and namedNaOH adjustment match primary1356. NTA12.8g/FeCl3hex1.35g backbone includesNa2SeO4 andNa2WO4 each0.004g, but noalum. This distinguishes1169 and857/936 as well as B1226 withAlCl3 andKOH. COMPLETE is bounded to listed reagent inputs; unknownNaOHamount and ungrounded hydrate forms remain explicit.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-NBRC1169-TRACE",
+      "case_indices": [
+        138
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/nbrc_1169_trace_elements_stock.yaml",
+        "sha256": "cc64d19e45ee89ccd4d6d425a96e1fa77c82fea46f72e105dce3c6b4c25ca30f"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "Primary1169 has11solutes pluswater/NaOH, excludingselenium,tungsten,alum. Exact occurrence ID points to frozenNBRC1170 with embedded1169identifier, not the filename number. It must not apply to the other two same-label occurrences.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-NBRC857-936-TRACE",
+      "case_indices": [
+        138
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/nbrc_857_936_trace_elements_stock.yaml",
+        "sha256": "0a12202ac305d5033bfbc7bad88af4bd046ffca384c473d4891411cc0d8c61a4"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "Both primary857/936 stock tables contain the same14solutes pluswater/NaOH, includingNa2SeO4/Na2WO4 at0.004g andKAl(SO4)2dodecahydrate0.02g. Receiving-medium gas mixtures differ and are not asserted as stock formula constituents. The two exact occurrence IDs exclude1169; generic starred wording is not a resolving synonym.",
+      "release_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "case_indices": [
+        101
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_197_Trace_Vitamins.yaml",
+        "sha256": "de17dee3c912e05f2ac460ef85d296a8f6d0a20a175de173233a41cb522b8063"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "Every vitamin and quantity in NBRC837 matches the captured197 ten-vitamin table:2mgbiotin,2mgfolate,10mgpyridoxineHCl,5mgthiamineHCl/riboflavin/nicotinicacid/calciumpantothenate/PABA/lipoicacid,0.1mgB12,1Lwater. The new evidence and notes explicitly distinguish197 filter-sterilization while gassingN2 from837 filter-sterile anaerobic addition with no explicitstock-gassing instruction. Link is formulation-specific, not an assertion of unreported preparation equivalence; no generic starred alias added.",
+      "release_approval": false
+    }
+  ],
+  "case_reviews": [
+    {
+      "shard_index": 96,
+      "case_id": "CM_NAME:94ad61abcde91024af2565ab8ca63d1494d372e74ef5008ab779327e48e79b74",
+      "case_input_sha256": "9d5ffc9fa5737ee210a04d15a973837d23c72ba5f8e7744fd952ae08911fd21d",
+      "decision_sha256": "34bb983b88ceeb581a7d14aaf467afc04a560969f5d1e6c836d62edcb86a7f71",
+      "occurrence_ids": [
+        "CM_OCC:504b61efd65bd1390c012d1319b4dc44c98f97d3f29f239c5677e186f852ff6d"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 101,
+      "case_id": "CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9",
+      "case_input_sha256": "9d02be728d17741265a8e4af304f2fbe2cf0075e67b53dcfd4a20ce21eb01f63",
+      "decision_sha256": "f1cc263328491b64625ffbbb4074074272445807c4b23ef09c56f948ec93ad60",
+      "occurrence_ids": [
+        "CM_OCC:815db1ca655dac57a20f09632c8e1991c8bb3a1e2e05c1ed051a2633444607be"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 113,
+      "case_id": "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+      "case_input_sha256": "6b14256df1620c446a7b4beb98d10cab988e313d3e81785cfbfbbd53a6a039c1",
+      "decision_sha256": "51c2f40554071a945d42bfced2085cd111c6a1914307d564a3970279f3751e31",
+      "occurrence_ids": [
+        "CM_OCC:0e09b526ae9dc63566e877eb45740664b448bce491d0f7cc77619c5175bdba1b",
+        "CM_OCC:6ab84cd3163f5e9e295813c2344de82880d27a1090d25c4f1a67de28c600559a",
+        "CM_OCC:63b9152546f093fd295f7fb77ea01d9d97f52c79c6f85e0a2e0544e9673b2d33"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 129,
+      "case_id": "CM_NAME:d9b054cc87995124bea96a6e0469d638875a0b1408a7ef23a0286c24412efa72",
+      "case_input_sha256": "56787e8b160d5a6dde456e8fcd04d7a99511dcba2ef70f32b4fe8ac7d462af2e",
+      "decision_sha256": "859275c08bcef3490d0d81fd55d287d1ba973db9c4dcd1455b80f402ce1f1062",
+      "occurrence_ids": [
+        "CM_OCC:f85661567e56276b90b289776b6fbea69f4d7bbfecbaf92126f68b9f9348c87e"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 130,
+      "case_id": "CM_NAME:d9c0c81fbad77b2409cf51e90a3d284c505b2093dadf44a87f5b8c2c40dcb934",
+      "case_input_sha256": "43c60c6e3abce9628185b06c643d76949a49de9fe7f03d87d13df0c82bfe3fb7",
+      "decision_sha256": "b7732e35b563d34c023fe585380fa246d468e4f92110b14e1ab559de21a17459",
+      "occurrence_ids": [
+        "CM_OCC:e53be9a15dc4dfc0258f4812cfba04d10e618f41c158b32ca44055565eab54b5"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 133,
+      "case_id": "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230",
+      "case_input_sha256": "1bfe3edee45311f9631abef8af89b11f959b57f98eaee25868ef409384672599",
+      "decision_sha256": "fe8f1bc65069da69e1f2800c7bb0784000dc564f689065167e00bcda0a0c745b",
+      "occurrence_ids": [
+        "CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 135,
+      "case_id": "CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f",
+      "case_input_sha256": "39fed6735c2ffa72387d9d8713f954782f91a590a40a2b6aa37ad1dfc0a5b996",
+      "decision_sha256": "df27bde8e0b25e615e5297c93e8723090d4d77e42c5815cc7053088651d59b91",
+      "occurrence_ids": [
+        "CM_OCC:06c02693603c4d592b65e6ef08649878febbaf705e43425625368cd15e94c894"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 138,
+      "case_id": "CM_NAME:ea51faa1c3c7dbee6602bc1ad0ab702e3da852ad639a00ca02911d69e90313e0",
+      "case_input_sha256": "5862fdcc0d92aac8906e42af59bf6836f89ebe5fdc7a99e97938570d5414065a",
+      "decision_sha256": "0ba425d9734df71b646ec418d9a2d945a329f6e62dffb508201a317be6162fd8",
+      "occurrence_ids": [
+        "CM_OCC:32e617d5b606ac386adccbc883d7c17d339ad0c60c850b6b2bf32117c0c370e7",
+        "CM_OCC:d0fdde2af0e764dba50d44c416c2e1cae0f918bdce50f0271bd56ae8740bb91a",
+        "CM_OCC:66eb89b3ab1f2a4d698a36fbd9fa54310df4be7ecb78837b432acac8fe58651b"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 140,
+      "case_id": "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b",
+      "case_input_sha256": "4a2a998378fdf29a1bd2a6c678661e9157ac29ed757320521036908cf1f38b75",
+      "decision_sha256": "1757c448c8fd3ba369b54365caf3aff6b079f8a4f136bb3b9172bb27a3351efd",
+      "occurrence_ids": [
+        "CM_OCC:5bf3b8748c7e93d82364437e58b9cb4cd3e04324fcbe42c27424d9157943c6f6"
+      ],
+      "status": "complete"
+    },
+    {
+      "shard_index": 141,
+      "case_id": "CM_NAME:f0bc7fb6c6e307f5ba078cb41a7e36f0398990ffaffc763152221fd44f1f61a4",
+      "case_input_sha256": "488491c3bd8d4637cd5992e45947271f0e1a2a17adbbd776443eeb4af4194d26",
+      "decision_sha256": "926fbba6567169c459b894a7ba198dd417a805d18e4d39a407cf4d0a50980732",
+      "occurrence_ids": [
+        "CM_OCC:aa87ad1faa7f9f778c3c9db9eba94c1ff75f61daf22612ef262b4ce14d525bf1"
+      ],
+      "status": "complete"
+    }
+  ],
+  "source_hashes": {
+    "C-E-96-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/ls4d.yaml",
+      "sha256": "af629e1b04957e39db52c658fffe33cbe8bf257eb8fc9878adc53cdee784d2a7"
+    },
+    "C-E-togo-M2809": {
+      "root": "artifact",
+      "path": "research-c/captures/togo-M2809.txt",
+      "sha256": "d2459c1c02d6ae4e5b19b4bdc8beb7db97a7b4b3f8546342d29ecfd96f037fcf"
+    },
+    "C-E-113-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1375_MODIFIED_LOW_SALT_MEDIUM_FOR_B11.yaml",
+      "sha256": "1dc737d7793a2a66722f98824167be98ed4d4b0f928fc482ebd6655ae53f9dc3"
+    },
+    "C-E-113-SOURCE-2": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1435_LIMNOCHORDIA_LN_MEDIUM.yaml",
+      "sha256": "079a6b87492088ac63da6c2244301c25d8f82a7bcb39120f23f52502353a3c1f"
+    },
+    "C-E-113-SOURCE-3": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+      "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b"
+    },
+    "C-E-jcm-1375": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1375.txt",
+      "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+    },
+    "C-E-jcm-1435": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1435.txt",
+      "sha256": "e9e326a8e33f7556e7c850615df463cc17cc0b0cb39062344b729380f68f11c3"
+    },
+    "C-E-jcm-825": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-825.txt",
+      "sha256": "b3f4e74d1545ab08e66e8905680a027edc96bd1d681b74892485b87777f5d5c4"
+    },
+    "C-E-129-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml",
+      "sha256": "af65045e3fe660fcac57961abcc27a379f88bd45be403f60084a6b7eb4c3c138"
+    },
+    "C-E-togo-M2231": {
+      "root": "artifact",
+      "path": "research-c/captures/togo-M2231.txt",
+      "sha256": "2327091527bfed277c4a2538ae739de9467901f20ec6f3197bd2c040e760fd5f"
+    },
+    "C-E-130-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+      "sha256": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a"
+    },
+    "C-E-togo-M2790": {
+      "root": "artifact",
+      "path": "research-c/captures/togo-M2790.txt",
+      "sha256": "484ff25c250928b9ff3b98873ff4aa40492e17701226c88be3fe623c0196db2e"
+    },
+    "C-E-135-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1435_LIMNOCHORDIA_LN_MEDIUM.yaml",
+      "sha256": "079a6b87492088ac63da6c2244301c25d8f82a7bcb39120f23f52502353a3c1f"
+    },
+    "C-E-141-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml",
+      "sha256": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe"
+    },
+    "C-E-togo-M2568": {
+      "root": "artifact",
+      "path": "research-c/captures/togo-M2568.txt",
+      "sha256": "a1aa7bdd129aae4edb0022b812a8beeee9ee7d862dab4e84f81f3558ba036a14"
+    },
+    "C-E-140-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1066_Clostridium_Swellfunianum_Medium.yaml",
+      "sha256": "c58a3dbb0e8bb776583bc6dc6de1abac60a0144f0adce881daad8f8bca84cf9a"
+    },
+    "C-E-jcm-1009": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1009.txt",
+      "sha256": "38cba335b0d49ecd28fb5e5457b0678e5e83ef9703349703dfe11d3d39d7b2e2"
+    },
+    "C-E-jcm-197": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-197.txt",
+      "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+    },
+    "C-E-jcm-433": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-433.txt",
+      "sha256": "bd2a35c651cd8b8db154b7025c37fd0bdbcdfc4e7b6e578128ee4500a611333b"
+    },
+    "C-E-133-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1358.yaml",
+      "sha256": "37ec04d2a23888fca73a077abffa7d928f4d312015d3c54e82da039bece02ee9"
+    },
+    "C-E-nbrc-1356": {
+      "root": "artifact",
+      "path": "research-c/captures/nbrc-1356.txt",
+      "sha256": "87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49"
+    },
+    "C-E-138-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1170.yaml",
+      "sha256": "3ca4e98c4114ec75357af06cd7904bf2e41630f74f659f420f278d0a7a5b3387"
+    },
+    "C-E-138-SOURCE-2": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_859.yaml",
+      "sha256": "a32eecd5033944828b2921ee09b1b71edbb6248a65875efac35f1ac34418bd68"
+    },
+    "C-E-138-SOURCE-3": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_937.yaml",
+      "sha256": "fe554d3ff944b99a02add19a5b63aad816f0fed4247ff0a2c142bd608b7aeb54"
+    },
+    "C-E-nbrc-1169": {
+      "root": "artifact",
+      "path": "research-c/captures/nbrc-1169.txt",
+      "sha256": "d2150de60217bee11ae18620b3be0b21fa592c1bedc769ee4a24d8ca1c8c171b"
+    },
+    "C-E-nbrc-857": {
+      "root": "artifact",
+      "path": "research-c/captures/nbrc-857.txt",
+      "sha256": "535c17a3456e7949cd468d7c7a5408ff8b2a20adac51c85a00330e620bb1a7ff"
+    },
+    "C-E-nbrc-936": {
+      "root": "artifact",
+      "path": "research-c/captures/nbrc-936.txt",
+      "sha256": "4efb4081a6af82d62a1ce253d6d17e31e422c0b8bdb08907b71b240d363a4d88"
+    },
+    "C-E-111-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/archaea/halalkaliarchaeum_medium.yaml",
+      "sha256": "4bedcc1e9beb8863ea2758bae1886fcf765341ba206e9672b77009cc586b69d6"
+    },
+    "C-E-111-SOURCE-2": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/archaea/natranaeroarchaeum_medium.yaml",
+      "sha256": "266b7a6571570d13f4f58304ef95ccf0687edf5227afab78cba228bc879fdcf9"
+    },
+    "C-E-111-SOURCE-3": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/archaea/natronolimnobius_aht32_medium_a.yaml",
+      "sha256": "d040ef9a25b7a6209cc8d759ef32d9576b27683f74acee42c71ddddada25c189"
+    },
+    "C-E-111-SOURCE-4": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/archaea/natronolimnobius_aht32_medium_b.yaml",
+      "sha256": "bc86e007ba3b846c647fb3a10f2776d0d8f69e7dd210f7eddd6dda78a8e95466"
+    },
+    "C-E-111-SOURCE-5": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J753_DEHALOSPIRILLUM_MEDIUM.yaml",
+      "sha256": "e15e684ac336a9f0af121a26255448d28b73114a2ece07929ff553abda4b7750"
+    },
+    "C-E-111-SOURCE-6": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J784_DESULFOSPOROSINUS_ACIDOPHILUS_MEDIUM.yaml",
+      "sha256": "0224e5dde9f90f889c3afe81320c02aed5f3548178d7ca02e9f152b8ce505e60"
+    },
+    "C-E-111-SOURCE-7": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J876_DESULFONEMA_MAGNUM_MEDIUM.yaml",
+      "sha256": "1bcc4d5e377e40294548d5831726f3340174f24789e8ec1fc715ef9939418c78"
+    },
+    "C-E-111-SOURCE-8": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/bm_for_syntrophicus_schinkii.yaml",
+      "sha256": "9a12d2307d769fca8e47aef98da04a46df1ccb333ae17a83cfc3793a9db9e864"
+    },
+    "C-E-111-SOURCE-9": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/desulfosporosinus_bsrei1_medium.yaml",
+      "sha256": "e5847f5c99eb5403d96c8d2bdf651c2468e17bec5829c5762ad8a4cd0bf8a33f"
+    },
+    "C-E-111-SOURCE-10": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/fermentative_cellulolytic_anaerobes_medium.yaml",
+      "sha256": "112ad205deb9067220adba943f7248217e687c73a42b578feb1c845765c24354"
+    },
+    "C-E-111-SOURCE-11": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/m25y_medium.yaml",
+      "sha256": "58f84b6a7d3bae0bc85e52b7fc6eb5eecef58a58ea175583f65237374a289f1f"
+    },
+    "C-E-111-SOURCE-12": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mb_medium_with_methanol.yaml",
+      "sha256": "f447264e6a4767ded33bdd297ba7dac26b072157ebe60991311c4667799170bb"
+    },
+    "C-E-111-SOURCE-13": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4314_Mineral_medium.yaml",
+      "sha256": "326b9fe96821f3dd611a520dd1541e414da7e26dbaf95b423d66df3840c3eadf"
+    },
+    "C-E-111-SOURCE-14": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4549_Main_sol_J661.yaml",
+      "sha256": "e6c0fc868ba0aa166ceac971428fc7fab8baa9cb0898fa67b83b7420400bab9a"
+    },
+    "C-E-111-SOURCE-15": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4560_Main_sol_J670.yaml",
+      "sha256": "76e05109eccf31bc429e2a24d5f2406ba5a0e75aeff4540243ea0e25f552aa6f"
+    },
+    "C-E-111-SOURCE-16": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4591_Solution_A.yaml",
+      "sha256": "e7b5069dad091d1c159506233c6c8063f19aa0a7ef6d4647d3ffbc8dc9407ba0"
+    },
+    "C-E-111-SOURCE-17": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4604_Main_sol_J695.yaml",
+      "sha256": "c8cff409293b09daefd059827b21a0d781692d13e0b4089f9975f364819b4c8f"
+    },
+    "C-E-111-SOURCE-18": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4668_Main_sol_J737.yaml",
+      "sha256": "ffaa28d7cbe20ffbdfa5211364d1ee971cbcd979f0a9854afa229a69b7dc7b7c"
+    },
+    "C-E-111-SOURCE-19": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4689_Main_sol_J751.yaml",
+      "sha256": "a4a90d7834f3b15c2ab39c45dae5e93489aa130c835804e15df4cacf88897906"
+    },
+    "C-E-111-SOURCE-20": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4692_Solution_A.yaml",
+      "sha256": "3316e7f7aeeb1bedc1696c96a5fdd16e2b6873281be7a1cb49f30dcb6f42ea14"
+    },
+    "C-E-111-SOURCE-21": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4733_Main_sol_J784.yaml",
+      "sha256": "232e3a497cbba0ffeb8be4be15e6d3399a545f1354df156947dbde3f77839e14"
+    },
+    "C-E-111-SOURCE-22": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4778_Main_sol_J822.yaml",
+      "sha256": "1d7f1ddd304afb90427b271e1ee8f23ac7e10ed9c535e2e819ea7fe483dd3bf1"
+    },
+    "C-E-111-SOURCE-23": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4851_Main_sol_J865.yaml",
+      "sha256": "645b988774ea11eee1b946f26c9c7801beb899e44d1721b38a05b318d6287181"
+    },
+    "C-E-111-SOURCE-24": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4863_Main_sol_J876.yaml",
+      "sha256": "61c1b1d87fa9172766b916df3cc17a7f7601408a97d661abaa3ef6dd631064d0"
+    },
+    "C-E-111-SOURCE-25": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4878_Basal_minerals.yaml",
+      "sha256": "0c3498798fff516f1e7344326e8ea6c5b53a0796547e6fbd11ffe35c42c8c209"
+    },
+    "C-E-111-SOURCE-26": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4977_Main_sol_J955.yaml",
+      "sha256": "85bed95a7a8bbe0135d905acf5f49f0560b9625367d0d0aa0314797a3aa4f3fd"
+    },
+    "C-E-111-SOURCE-27": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5131_Main_sol_J1066.yaml",
+      "sha256": "c43eb36be250f1d92e46b925b8b2201aef9759cd1fade693a2f3de915cb76581"
+    },
+    "C-E-111-SOURCE-28": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5148_Main_sol_J1081.yaml",
+      "sha256": "36b977bf67c438ccea2ea6bc861b657090d6df6ff5db9a28db624c3f9fba72a4"
+    },
+    "C-E-111-SOURCE-29": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5150_Main_sol_J1082.yaml",
+      "sha256": "f80a655b1672c0416533cb838b5733892a1721071cd096a62c89f9fadcc0b684"
+    },
+    "C-E-111-SOURCE-30": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5163_Main_sol_J1092.yaml",
+      "sha256": "74eb7a2a933ce9dca46a32d2f69acb7c9138e6df7521835122bd3ded4aa3f6aa"
+    },
+    "C-E-111-SOURCE-31": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5205_Main_sol_J1115.yaml",
+      "sha256": "a200aa47ffad792b2b25afca5573245621c2a31bd952dae2582a5287982ed7e7"
+    },
+    "C-E-111-SOURCE-32": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5473_Main_sol_J1313.yaml",
+      "sha256": "069af78f2f66b1ef15b2023ebc5d78bc4301bd85024199bc75e2c65b149954f3"
+    },
+    "C-E-111-SOURCE-33": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_am5_medium.yaml",
+      "sha256": "9fc512995270d6ae030217f965b5ff07673bce8befb14e8c820bc1ce473b3e6d"
+    },
+    "C-E-111-SOURCE-34": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_am5_medium_2.yaml",
+      "sha256": "cf6155d44d23af8507efecffbc335874463849951393706d253dfedb922da344"
+    },
+    "C-E-111-SOURCE-35": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_desulfoglaeba_alkanexedens_medium.yaml",
+      "sha256": "7e56f6767ef1fe774011f5a06c14e23d50ecf395e8abb17e545d7c72be9c93f8"
+    },
+    "C-E-111-SOURCE-36": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_nautilia_lithotrophica_medium.yaml",
+      "sha256": "081f6d22be970c352a5138f2d73a529b0ac894930cf9feaf2aa38db0d9b0fd76"
+    },
+    "C-E-111-SOURCE-37": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/nautilia_abyssi_medium.yaml",
+      "sha256": "c6ee17bb087c39e9b5eec5cb2062161ca456e7c0cdc727c953f1af44f4781705"
+    },
+    "C-E-111-SOURCE-38": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/spirochaeta_caldaria_medium.yaml",
+      "sha256": "47b832985c6ed666796de0981ab214d06bf0264d090ab1ff7a983de392973098"
+    },
+    "C-E-111-SOURCE-39": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/thermodesulfobacterium_geofontis_medium.yaml",
+      "sha256": "6e84a4012ac988dcdbd5d08aacb967414535e3ceaee6ac83dbcf0048983947a5"
+    },
+    "C-E-111-SOURCE-40": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/varunavibrio_medium.yaml",
+      "sha256": "c56b757a0c5ab448f49b249febce354a0357fa983c7be05c9908bc9db25e8962"
+    },
+    "C-E-ols-stock-search": {
+      "root": "artifact",
+      "path": "research-c/captures/ols-stock-search.txt",
+      "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+    },
+    "C-E-jcm-1066": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1066.txt",
+      "sha256": "b2aff7797e30cedba452a56eed7f9a2802e006dbe82f6d1a67bb7efa4ba224ec"
+    },
+    "C-E-jcm-1081": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1081.txt",
+      "sha256": "c3bc594a30e3bd7aabf7ef4a8203c3ae802a4f3d1c2748d00bf666b0dd39e51f"
+    },
+    "C-E-jcm-1082": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1082.txt",
+      "sha256": "fd88e30c99abcf2fe23e6a4c16e2f79ca83e4143c9dd1e869baa0fb8851968fd"
+    },
+    "C-E-jcm-1092": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1092.txt",
+      "sha256": "418c240c1fa59b222cd20e05f28c48375f235238d34c1c233a483dbc049f548f"
+    },
+    "C-E-jcm-1115": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1115.txt",
+      "sha256": "6093ab0418721eccafee1a852533c5ddcbea180adf6da20b152e4bdbca2179b6"
+    },
+    "C-E-jcm-1313": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1313.txt",
+      "sha256": "d257e42ec72449ed2b6746561fae987aa9485ad2ec96fea084c8111f051e757b"
+    },
+    "C-E-jcm-521": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-521.txt",
+      "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff"
+    },
+    "C-E-jcm-661": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-661.txt",
+      "sha256": "bb893df844f042280a7574d4a9db15663e9013d94585f50b2dc1abdf61362f79"
+    },
+    "C-E-jcm-670": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-670.txt",
+      "sha256": "449b16a5fb1916d6fef5ba89893ac198b3b23cd585e363e69904a26d62bc367d"
+    },
+    "C-E-jcm-687": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-687.txt",
+      "sha256": "a7d933e920e5778df2a38a4d5e829c44fb9a6772e7d053a6a35b06370d2074eb"
+    },
+    "C-E-jcm-695": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-695.txt",
+      "sha256": "b4e1597e4c535399f7f013860668d4f473ea703268f35faae8c24cb0ce80ae76"
+    },
+    "C-E-jcm-737": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-737.txt",
+      "sha256": "117bcb3e1384be331651b397fa50e6b10f50ab1ae1b079d6ee2d724361ed7e11"
+    },
+    "C-E-jcm-751": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-751.txt",
+      "sha256": "4ef33d9e70108e257a62d72130223821dc586acde8b72f02f868bdcd156bb77c"
+    },
+    "C-E-jcm-753": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-753.txt",
+      "sha256": "951b851e297e5b1db5efc4475d36f682c16518ee5fb8d9224b20a1d75ffdf972"
+    },
+    "C-E-jcm-784": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-784.txt",
+      "sha256": "1766f0ddbb19328bb2b3550ac0a56314ceba8cc84956063ef312ddf344b84e28"
+    },
+    "C-E-jcm-822": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-822.txt",
+      "sha256": "cb0a97140c09b1895332b6e4278b102c36abe60fdb8bcb2dc71a45eda4663757"
+    },
+    "C-E-jcm-865": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-865.txt",
+      "sha256": "a21cc9b21df4485facf7f0602e77eb13e3cb00502711aae24075c80923de8f1a"
+    },
+    "C-E-jcm-876": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-876.txt",
+      "sha256": "ae9c4c27262c2901e2afb6bde93bdb79c639f1a6bc865a74daf08e8a1bdcfaac"
+    },
+    "C-E-jcm-887": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-887.txt",
+      "sha256": "864cc8128e031bb75d6fc2f5974e1ae464181c88a1c5360590da6cd6ded0f76d"
+    },
+    "C-E-jcm-955": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-955.txt",
+      "sha256": "1f8578fa7d60361256dd64a6be5e72d3ead406d77c0bdb0842ad1ca09f63d57e"
+    },
+    "C-E-117-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1456_METHANOCULLEUS_7T_MEDIUM.yaml",
+      "sha256": "7b47ba45d6b3ea4d4d0024179bd0003b5da8373fa576821f84a9f460ad080fa0"
+    },
+    "C-E-jcm-1456": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1456.txt",
+      "sha256": "e4b00e471e369b05c05f85b95d60a8042a7e9f8d1871e059b2fdc79e6d1080e6"
+    },
+    "C-E-101-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_838.yaml",
+      "sha256": "c646dcbf1f1ff54c189f49bfd2c82f0ab9c1005d2a37ef88468c431a25c90b3c"
+    },
+    "C-E-nbrc-837": {
+      "root": "artifact",
+      "path": "research-c/captures/nbrc-837.txt",
+      "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc"
+    }
+  },
+  "scientific_release_approval": false,
+  "limitations": [
+    "C114/115 source contexts were inspected but their external A1M shared-payload delta is reviewed separately by root.",
+    "Full native maintained-owner/release approval remains outside this source-bound delta ledger."
+  ]
+}

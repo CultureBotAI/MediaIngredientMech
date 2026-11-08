@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex /root/research_b",
+  "author_reviewed": "Codex /root/research_c",
+  "reviewed_at": "2026-11-08T05:47:25.227569+00:00",
+  "status": "complete_with_limitations",
+  "input_hashes": {
+    "decisions.json": "8dcd1c637f7b7b474b042459e1a7fe8d84a0f68f8996ca27587166501b44293f",
+    "proposals.json": "e57c9cbf559172793975c9e26fa372fb924af694d7758281a4a4d5d456ee8b5c",
+    "stock-registry-promotion.json": "be5f749e6db9c7bb91ec219446b3260da55a18d65d5cf42cac2f45b336de36e6"
+  },
+  "scope": "Two exact source-defined stock identity/status promotions only; prior source/formulation review retained.",
+  "independence": "B did not author either C payload; direct before/after comparison and current ignored-independent maintained-corpus identifier walk performed.",
+  "proposal_reviews": [
+    {
+      "proposal_id": "C-P-JCM151",
+      "before_sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18",
+      "prior_after_sha256": "6055ec1fcb2adcf6be15e7a228c5e96dccc644a791d99e75a29edb03f5e85d84",
+      "after_sha256": "b954f1bba678038122676027fec9642ba08cb7797f04c13e6722c2232b518ce3",
+      "previous_identifier": "UNMAPPED_0553",
+      "new_identifier": "kgmicrobe.ingredient:jcm_151_trace_minerals",
+      "component_bytes_unchanged": true,
+      "independent_review": "complete_with_limitations",
+      "status": "complete_with_limitations",
+      "changed_fields": [
+        "curation_history",
+        "identifier",
+        "mapping_status",
+        "notes",
+        "ontology_mapping"
+      ],
+      "components_assertions_synonyms_unchanged": true,
+      "new_identifier_maintained_corpus_exact_collisions": [],
+      "scientific_assessment": "JCM151 full primary source defines a particular NTA/sulfate trace-mineral stock, including namedKOH adjustment and source-literal variableMn hydration. A lack of a single chemical ontology term does not prevent a whole-stock local identity; no child form was promoted.",
+      "publication_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "before_sha256": "f14f409a04b1e113f11473f3d7846cd8bc0a85ac19bb4d8fba5a20eaea31f08a",
+      "prior_after_sha256": "3641536905fbb16690b3a69bb7580a03b42708d702c27ec6e25079d8219454d4",
+      "after_sha256": "529f1d564e4abadc2b2b775b0341d196038e9ad3011da0f6727ba0d4b28b2d17",
+      "previous_identifier": "UNMAPPED_0555",
+      "new_identifier": "kgmicrobe.ingredient:jcm_284_trace_vitamins",
+      "component_bytes_unchanged": true,
+      "independent_review": "complete_with_limitations",
+      "status": "complete_with_limitations",
+      "changed_fields": [
+        "curation_history",
+        "identifier",
+        "mapping_status",
+        "notes",
+        "ontology_mapping"
+      ],
+      "components_assertions_synonyms_unchanged": true,
+      "new_identifier_maintained_corpus_exact_collisions": [],
+      "scientific_assessment": "JCM284 full primary source defines a distinct ten-vitamin stock with DLcalciumpantothenate and highB12 amounts, separate from197 vitamins and284minerals. Source-specific local identity preserves that stock boundary without assigning any child chemical identity.",
+      "publication_approval": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "C-REGISTRY-01",
+      "status": "resolved",
+      "finding": "Existing numbered-stock placeholders were retained UNMAPPED despite exact source-defined whole-stock identities being established.",
+      "resolution": "Two scoped localregistry self identities replace placeholders; component/alias/source assertions are unchanged and no chemical child or generic mixture exactmapping is introduced."
+    },
+    {
+      "id": "C-REGISTRY-02",
+      "status": "integration_obligation",
+      "finding": "These edited existing owners still identify their old unmapped baseline paths for exact before-hash binding.",
+      "resolution": "Coordinator must migrate maintained surfaces and registry rows only during separately authorized guarded application; proposal phase neither performs migration nor releases source/owner/export holds. Final case wording must not claim the proposed151/284 owners remainUNMAPPED."
+    }
+  ],
+  "scientific_release_approval": false
+}

@@ -1,0 +1,479 @@
+[
+  {
+    "index": 0,
+    "disposition": "unresolved",
+    "reasoning": "The frozen JCM242 occurrence calls the additive ATCC Trace Mineral Supplement, whereas current JCM242 specifies the trace minerals of JCM151. Official ATCC MD-TMS is an EDTA/cobalt-nitrate formulation; JCM151 uses nitrilotriacetate and cobalt sulfate. These are demonstrably different stocks. The frozen 10 g/L field does not identify a product or resolve this conflict.",
+    "applicability": "This is the sole CultureMech009605/TOGOM3136 occurrence. The JCM242 and151 primary recipes are a contradiction check, while the ATCC product page establishes a competing product, not a substitution.",
+    "missing_requirement": "Recover the versioned TOGOM3136 or original JCM242 record that supports this exact ATCC-labelled occurrence, including product identifier and addition volume; decide which stock the frozen import intended.",
+    "owners": [],
+    "no_change_reason": "No owner or stock alias can be selected across the JCM151/ATCC formulation conflict."
+  },
+  {
+    "index": 1,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC1407 defines a preparation made by boiling 250 g dried baker yeast in 1 L water for 30 minutes, centrifuging away cells and filter sterilizing the supernatant. The 25% designation is the starting biomass loading, not a claim that the final liquid contains 250 g/L commercial yeast extract.",
+    "applicability": "The single PPLO-broth occurrence adds100mL of this named preparation. Preserve the extraction process and the stock addition separately; neither yeast cells nor dry yeast extract is the whole-stock identity.",
+    "missing_requirement": "A preparation-scoped stock owner with the NBRC1407 extraction process and concentration basis is needed before ingredient linking; a dry commercial extract owner is not an acceptable replacement.",
+    "owners": [],
+    "no_change_reason": "No existing preparation-specific owner was identified; report the complete source preparation for coordinator stock curation."
+  },
+  {
+    "index": 2,
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "Hemicalcium D-(+)-pantothenate denotes one-half calcium equivalent per D-pantothenate unit, the same 2:1 D-pantothenate calcium salt represented by CHEBI31345. Official supplier and MediaDive ingredient1123 agree on CAS137-08-6. This supports the raw D-specific alias, but cannot support DL aliases presently on the owner. Four capsaicin names also belong to CHEBI3374 and must be excluded from pantothenate identity matching.",
+    "applicability": "All seven occurrences retain their individual recipe/solution scopes. Source solution recipes identify constituent1123; this proposal adds the chemical alias and rejects six demonstrably wrong owner labels without certifying imported concentrations, roles or the complete published payload.",
+    "missing_requirement": null,
+    "owners": [
+      "mapped/Calcium_Pantothenate.yaml"
+    ],
+    "no_change_reason": null
+  },
+  {
+    "index": 3,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "DSMZ29 prepares a sterile 1M sodium-carbonate stock for pH adjustment; DSMZ40 explicitly derives from29 with added NaCl. Molar concentration is part of the supplied solution identity. Existing Sodium_Carbonate_Solution is typed STOCK_SOLUTION but carries the bare-solute CHEBI29377 identity and assorted solid/buffer aliases, so extending it would propagate a known form conflation.",
+    "applicability": "Both frozen occurrences describe the same 1M stock instruction in DSMZ29/40, not weighed carbonate solid or the 4% stock in case24.",
+    "missing_requirement": "Create or repair a specifically1M aqueous sodium-carbonate stock identity and solution-of relation; review the existing generic owner separately before reusing it.",
+    "owners": [
+      "mapped/Sodium_Carbonate_Solution.yaml"
+    ],
+    "no_change_reason": "The existing owner conflates stock and solute and is not a safe alias target; no maintained owner is altered in this source review."
+  },
+  {
+    "index": 4,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "ATCC1249 defines ComponentI as MgSO4, sodium citrate, CaSO4 dihydrate and NH4Cl in400mL water, adjusted to pH7.5 and sterilized separately from ComponentsII/III. The Roman numeral is recipe-local, not a substance name.",
+    "applicability": "The single ATCC1249/TOGOM2616 occurrence refers to this multi-ingredient precursor. Constituent names lacking hydrate qualifiers remain source-unspecified; the whole component cannot map to one salt.",
+    "missing_requirement": "Represent the ATCC1249 ComponentI preparation with the four source constituents,400mL preparation basis and separate sterilization; use a recipe-qualified local stock identity.",
+    "owners": [],
+    "no_change_reason": "No global ComponentI alias is valid; the fully identified preparation is retained as source-scoped stock evidence for integration."
+  },
+  {
+    "index": 5,
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "The doubled hyphen is punctuation, but DL is a stereochemical boundary. Sixteen available JCM primary recipes explicitly name DL-Calcium pantothenate. CHEBI180950 is current, nonobsolete Calcium DL-pantothenate, distinct from D-specific CHEBI31345. Its structure lacks stereochemical specification and its CAS cross-reference differs from a supplier DL SDS; no CAS or formula enrichment is inferred from that conflict.",
+    "applicability": "All18 frozen occurrences explicitly retain DL. JCM665 and827 currently return no recipe, so those two occurrence histories remain frozen-source assertions rather than independently reconfirmed live recipes. The proposal creates the DL ingredient identity and records this coverage limitation; it does not move D or unspecified-Ca occurrences or repair normalized quantities.",
+    "missing_requirement": null,
+    "owners": [
+      "mapped/Calcium_Pantothenate.yaml"
+    ],
+    "no_change_reason": null
+  },
+  {
+    "index": 6,
+    "disposition": "unresolved",
+    "reasoning": "NBRC906 and977 name sorbitan mono-oleate by liquid volume; the two TOGO MRS contexts use an Oxoid formulation. Commercial sorbitan monooleate materials and polysorbate80 are different identities. The baseline Sorbitan_Monooleate owner explicitly retains an ATCC416-only unresolved material scope and withholds molecular NCIT/CHEBI targets. Oxoid page retrieval does not establish the exact lot or whether the source name is an historical naming error.",
+    "applicability": "All four occurrences were inspected; the NBRC sources say1mL, while normalized entries use mass units. None authorizes extending the existing ATCC416 scope to these MRS materials.",
+    "missing_requirement": "Obtain source-linked product/catalog composition for NBRC906/977 and TOGO2242/2804/Oxoid MRS; determine nonethoxylated sorbitan ester mixture versus polysorbate80 and resolve the liquid-volume import discrepancy.",
+    "owners": [
+      "mapped/Sorbitan_Monooleate.yaml"
+    ],
+    "no_change_reason": "Preserve the existing material hold and do not equate Sorbitan mono-oleate, a pure molecule, and Tween80."
+  },
+  {
+    "index": 7,
+    "disposition": "unresolved",
+    "reasoning": "NBRC360 and361 use the spelling Niacine in the same vitamin-stock context but give no catalog/CAS or structure. The spelling suggests niacin, yet current ontology results cover nicotinic acid and the broader vitamin usage also includes nicotinamide. This source does not identify an acid-versus-amide supplied form.",
+    "applicability": "Both NBRC vitamin mixtures use50mg Niacine per100mL; that numerical recipe detail supports occurrence provenance, not an acid identity.",
+    "missing_requirement": "Find a source revision, supplier catalog or preparation description tied to NBRC360/361 that identifies Niacine as nicotinic acid or nicotinamide; then verify the corresponding exact target.",
+    "owners": [
+      "mapped/Nicotinic_Acid.yaml",
+      "mapped/Nicotinamide.yaml"
+    ],
+    "no_change_reason": "Neither acid nor amide owner receives this unresolved source spelling."
+  },
+  {
+    "index": 8,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "MediaDive ingredient1812 names Trace element solution SL12 and the enclosing solution4409 adds1mL of it in a provider volume1005mL. The frozen percentage0.9950248756 is inconsistent with1/1005*100=0.09950248756% by volume. The ingredient endpoint does not expose the stock composition; the stock name cannot be replaced by a constituent or another SL formulation.",
+    "applicability": "The single composition occurrence is a nested stock addition in solution4409. Evidence establishes source stock identity and a factor-ten concentration discrepancy; it does not infer the receiving medium concentration or final measured volume.",
+    "missing_requirement": "Resolve the source-bound SL12 formulation/version through the provider and correct the arithmetic/unit transformation for the solution4409 occurrence before quantitative integration.",
+    "owners": [],
+    "no_change_reason": "No chemically verified owner for this SL12 preparation was identified; retain the explicit source stock and concentration defect."
+  },
+  {
+    "index": 9,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "DSMZ958 uses2.5g wet washed baker-yeast cell paste. The baseline Yeast_Cell_Paste owner is a process-defined wet whole-cell material and remains unmapped. This is compatible at a descriptive level, but the washing and wet-mass basis must survive; it is neither yeast extract nor dry biomass.",
+    "applicability": "This sole DSMZ958 occurrence specifies deionized-water washing and wet weight. The existing owner history supplies the correct material boundary but has not established an exact ontology or source equivalence for every preparation.",
+    "missing_requirement": "A source-scoped extension must retain washed wet biomass and wet-weight basis; exact ontology identity remains unavailable from the supplied preparation description.",
+    "owners": [
+      "unmapped/Yeast_Cell_Paste.yaml",
+      "mapped/Bakers_Yeast.yaml"
+    ],
+    "no_change_reason": "Preserve the unmapped paste boundary and source-specific process instead of flattening it to baker yeast/extract; no new chemical mapping is justified."
+  },
+  {
+    "index": 10,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC1463 lists dry yeast5g and separately yeast extract0.1g; NBRC828 lists dry yeast10g. The explicit coexistence of extract and dry yeast rules out treating them as synonyms. Neither recipe specifies a strain, species, manufacturer or drying process.",
+    "applicability": "Both occurrences denote dried yeast biomass with recipe-specific dosage, not a25% yeast-derived extraction stock or pressed wet yeast.",
+    "missing_requirement": "A dried-yeast material owner can preserve the generic source claim, but exact taxon/product and equivalence to any baker-yeast product need source evidence.",
+    "owners": [
+      "mapped/Yeast.yaml",
+      "mapped/Bakers_Yeast.yaml"
+    ],
+    "no_change_reason": "No broad yeast or baker-yeast owner is extended to these process-qualified materials without material-level review."
+  },
+  {
+    "index": 11,
+    "disposition": "unresolved",
+    "reasoning": "The LS4D frozen source calls this Thioctic acid (lipoic acid), without stereochemistry. Live CHEBI16494 is generic lipoic acid with CAS62-46-4; the baseline owner is labelled (DL)-alpha-Lipoic acid and retains CAS1077-28-7 plus earlier generic/racemic merge reasoning. That mismatch cannot be resolved by another lexical alias.",
+    "applicability": "The one TOGOM2809 occurrence supports generic lipoic/thioctic acid only. The current Togo page is a shell and its recipe endpoint timed out. Prior owner curation is preserved and treated as a claim to reassess.",
+    "missing_requirement": "Recover source-specific LS4D supplier/stereochemistry or formally narrow/restructure the current lipoic-acid owner after reviewing its generic-versus-racemate identity and registry properties.",
+    "owners": [
+      "mapped/Dl-alpha-lipoic_Acid.yaml"
+    ],
+    "no_change_reason": "Do not silently equate generic source lipoic acid with a declared racemate or approve the inherited CAS."
+  },
+  {
+    "index": 12,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "Roscoff PCRS11 primary protocol explicitly prepares Na2-EDTA/FeCl3 by combining iron-chloride/HCl and disodium-EDTA/NaOH solutions then making2L. It is a prepared mixture, not a synonym for pure sodium ferric EDTA. The protocol distinguishes its2µM addition from an original8µM recipe and has hydrate omissions in the printed preparation.",
+    "applicability": "The single TOGOM2262 PCR-S11 source occurrence is the combined stock. Roscoff protocol is direct preparation evidence but not proof that the frozen occurrence uses its revised2µM rather than original8µM version.",
+    "missing_requirement": "Bind the frozen source to the original or revised PCRS11 preparation, preserving reagent hydration as stated and stock constituents rather than asserting a purified coordination salt.",
+    "owners": [],
+    "no_change_reason": "No pure EDTA or sodium-ferric-EDTA owner is used; source recipe/version differences remain explicit."
+  },
+  {
+    "index": 13,
+    "disposition": "unresolved",
+    "reasoning": "Current JCM1357 itself prints Na2MnO4·2H2O in the trace-A5 table. This is not merely an importer typo that can be silently normalized to Na2MoO4·2H2O: Mn and Mo identify different elements and the recipe also contains anomalous entries. A familiar A5 recipe is not authority to overwrite the printed source.",
+    "applicability": "The exact single JCM1357 occurrence and its raw formula remain unchanged; the live primary source corroborates the spelling, not its chemical correctness.",
+    "missing_requirement": "Obtain an erratum or authoritative revised JCM1357/A5 specification confirming whether Mn is intended or Mo was meant, with hydrate and dose. Until then no molybdate/manganate identity may be assigned.",
+    "owners": [],
+    "no_change_reason": "Source-level chemical ambiguity requires provider correction; no formula autocorrection proposal."
+  },
+  {
+    "index": 14,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The asterisk is a local footnote marker. NBRC1050,1086,1274 and925 each supply a trace-element formula; they differ in nitrilotriacetate quantity and mineral constituents, including selenium/aluminium details. A shared heading does not establish one stock.",
+    "applicability": "All four complete source tables were inspected. Preserve four occurrence-qualified preparations; no single Trace elements solution* owner can represent their unequal formulas.",
+    "missing_requirement": "Integrate separate recipe-qualified stock identities, comparing complete formula and preparation before any pairwise consolidation.",
+    "owners": [],
+    "no_change_reason": "A global alias would merge distinct formulations; this case is explicitly partitioned by its four source recipes."
+  },
+  {
+    "index": 15,
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The six JCM originals spell D-Glucose; the doubled source hyphen is punctuation and does not remove D stereochemistry. Current CHEBI17634 explicitly defines D-glucose and includes D(+)-glucose synonyms. Existing D-glucose is the matching D-specific owner.",
+    "applicability": "JCM379,381,429,476,709 and710 all support D-glucose as a constituent. JCM381 references379 with a peptone change. The proposal covers chemical aliases only and does not interpret1MGlucose whole-stock cases or resurrect Glucose_2.",
+    "missing_requirement": null,
+    "owners": [
+      "mapped/D-glucose.yaml"
+    ],
+    "no_change_reason": null
+  },
+  {
+    "index": 16,
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "JCM558 names D-Calcium pantothenate in its seven-vitamin mixture. This agrees with D-specific CHEBI31345 and the salt stoichiometry corroborated by supplier hemicalcium nomenclature. The doubled hyphen is a harmless raw spelling, unlike a DL qualifier.",
+    "applicability": "The one JCM558 occurrence has an exact D-qualified chemical component. The primary recipe gives5mg per100mL; the normalized5g/L value is not approved by this identity proposal.",
+    "missing_requirement": null,
+    "owners": [
+      "mapped/Calcium_Pantothenate.yaml"
+    ],
+    "no_change_reason": null
+  },
+  {
+    "index": 17,
+    "disposition": "unresolved",
+    "reasoning": "JCM1273 lists Mn(II)·EDTA separately from Fe(III)·EDTA, so the metal and oxidation state are explicit. It does not identify counterions or hydrate. The existing UNMAPPED0451 deliberately retains Mn(II)-EDTA complex identity without mapping to free manganese or EDTA. Its hold remains scientifically appropriate.",
+    "applicability": "This single occurrence is the manganese complex in the picoalgae medium. The primary amount is332µg/L; frozen332g/L is a unit-normalization defect, not evidence of a new species.",
+    "missing_requirement": "Obtain product/formula/counterion/hydrate evidence for the JCM1273 Mn(II)-EDTA reagent and a corresponding specific ontology or registry identity; repair the µg-to-g conversion separately.",
+    "owners": [
+      "unmapped/MnII_X_EDTA.yaml"
+    ],
+    "no_change_reason": "Preserve the complex identity hold; generic manganese, EDTA, or a guessed disodium salt would be incorrect."
+  },
+  {
+    "index": 18,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1354 refers expressly to SL-6 in JCM167. JCM167 gives a seven-salt trace-element preparation in1L water adjusted to pH3.6. This is distinct from SL4, which incorporatesSL6 plus EDTA and ferrous sulfate.",
+    "applicability": "The single numbered reference permits resolution to the JCM167 preparation, with no inference from the numericSL name alone.",
+    "missing_requirement": "Create/reference the recipe-qualified JCM167 SL6 stock with source-specific salts, hydration and acid adjustment; do not alias to an undifferentiated trace-element owner.",
+    "owners": [],
+    "no_change_reason": "Resolved stock context retained; no existing exact source-qualified owner was identified for this preparation."
+  },
+  {
+    "index": 19,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC1020 and824 show related nitrilotriacetate stocks, whereas1308 adds a different set including sodium chloride and selenium/tungsten entries and pH6.5 preparation. The double asterisk is a footnote marker that reuses a heading across recipes.",
+    "applicability": "All three occurrences are independently bounded by their full NBRC tables. Similar NTA/iron entries do not justify treating the whole preparations as identical.",
+    "missing_requirement": "Partition by NBRC recipe and compare complete stoichiometry/preparation before assigning distinct stock owners or merging1020/824.",
+    "owners": [],
+    "no_change_reason": "No single global Trace element solution** alias can represent these three source preparations."
+  },
+  {
+    "index": 20,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "ATCC1775 uses KOH solution to adjust the trace-mineral preparation to specified pH values. The source provides no stock molarity, density or product identity. The misspelling solusion does not make the whole liquid identical to pure potassium hydroxide.",
+    "applicability": "This ATCC1775/Archaeoglobus-medium occurrence is a pH-adjusting reagent instruction within trace-stock preparation. It is not a weighed KOH solid and not evidence for a fixed-strength commercial solution.",
+    "missing_requirement": "Obtain the solution strength or retain an explicitly unspecified aqueous-KOH preparation identity; the pure KOH owner cannot absorb a whole-stock label.",
+    "owners": [
+      "mapped/Koh.yaml"
+    ],
+    "no_change_reason": "No exact pure-solute alias is proposed for an unspecified-strength solution."
+  },
+  {
+    "index": 21,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "Seven JCM recipes explicitly refer to vitamins in Medium197. Current JCM197 provides a ten-vitamin stock. Its calcium-pantothenate label lacks D/L specificity; components must be recorded at the source level. JCM1353 nests this stock inside an additional phosphate-buffered preparation, which is separately reviewed as case39.",
+    "applicability": "JCM1362,1353,1393,1395,1412,1425 and1429 support this numbered-reference alias only. The parent1353 stock is not equivalent to the nested197 stock.",
+    "missing_requirement": "Coordinator should backlink this case to research-c proposal C-P-JCM197 after harmonized independent review; do not import the phosphate-buffered parent as an alias.",
+    "owners": [],
+    "no_change_reason": "Shared JCM197 payload is owned by research-c to avoid concurrent competing owner proposals."
+  },
+  {
+    "index": 22,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1347 explicitly references trace minerals in Medium151. Current JCM151 provides the NTA-based multi-salt stock and pH adjustment, which differs from ATCC MD-TMS. This precise numbered reference supports the existing source-scoped unmapped151 stock owner.",
+    "applicability": "The single JCM1347 occurrence points to151 itself. No generic Trace minerals aliases or ATCC product equivalents are inferred.",
+    "missing_requirement": "Coordinator should backlink this case to research-c proposal C-P-JCM151, preserving its unmapped status and exact source formulation.",
+    "owners": [
+      "unmapped/Trace_Minerals_See_Medium_No_151.yaml"
+    ],
+    "no_change_reason": "Shared151 owner payload is owned by research-c; no duplicate proposal is produced here."
+  },
+  {
+    "index": 23,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC201 and202 specify30g press yeast;202 derives from201 with added calcium carbonate. Pressed yeast is compressed wet biomass, not a dry extract, dried yeast or autolysate. No manufacturer or species is supplied.",
+    "applicability": "Both occurrences share this source material in potato/liver medium, with the calcium-carbonate variation belonging to the receiving recipe.",
+    "missing_requirement": "Preserve pressed wet material as a source-qualified identity; exact baker-yeast species/product equivalence and moisture basis require source evidence.",
+    "owners": [
+      "mapped/Bakers_Yeast.yaml"
+    ],
+    "no_change_reason": "No broad baker-yeast or extract synonym is added for a preparation-qualified wet material."
+  },
+  {
+    "index": 24,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "ATCC1257 explicitly calls for freshly prepared, filter-sterilized4%Na2CO3 and adds10mL to the base medium. The percent basis is not explicitly spelled out and must not be silently equated to1M or to solid sodium carbonate.",
+    "applicability": "The one ETSA occurrence is a distinct4%stock. Existing Sodium_Carbonate_Solution carries a solute identifier and is not safe for concentration-qualified alias extension.",
+    "missing_requirement": "Create a source-qualified4%aqueous stock preserving the source percent convention and filtration; establish w/v explicitly before a derived molarity is asserted.",
+    "owners": [
+      "mapped/Sodium_Carbonate_Solution.yaml"
+    ],
+    "no_change_reason": "The4%stock is preserved separately from case3 and the erroneous generic solute/solution owner."
+  },
+  {
+    "index": 25,
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "Both source contexts explicitly supply lanthanum chloride heptahydrate. MediaDive ingredient1461 assigns CAS10025-84-0; DSMZ1610 solution9 uses0.04g/L of LaCl3·7H2O. Current CHEBI231515 is lanthanum trichloride without seven waters. Searches of current CHEBI for the hydrate name and CAS did not return a specific hydrate term, so the hydrate keeps a CAS identity and only an asymmetric parent mapping.",
+    "applicability": "The solution5755 constituent and DSMZ1610 occurrence describe the same seven-water salt; this is not an alias for existing Lanthanum_Iii_Chloride with CAS20211-76-1 and formulaCl3La. No source quantity is used to erase hydration.",
+    "missing_requirement": null,
+    "owners": [
+      "mapped/Lanthanum_Iii_Chloride.yaml"
+    ],
+    "no_change_reason": null
+  },
+  {
+    "index": 26,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1136 and548 separately prepare and add a1MGlucose solution. The source name lacks a D/L or anomer declaration. A1M stock is a preparation distinct from the glucose compound; molarity cannot independently identify stereochemistry or starting hydrate.",
+    "applicability": "Both occurrences are whole-stock additions in the complete primary recipes. They are not the D-specific solute aliases reviewed in cases15/41.",
+    "missing_requirement": "Represent a1M aqueous glucose stock at source-stated generic stereochemical scope; obtain source reagent specificity before choosing D-only or a starting hydrate.",
+    "owners": [
+      "mapped/Glucose.yaml",
+      "mapped/D-glucose.yaml"
+    ],
+    "no_change_reason": "No compound-level glucose alias is added for this whole solution."
+  },
+  {
+    "index": 27,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1344 explicitly points to RST trace elements in JCM933. That primary table contains NTA, manganese sulfate, ferrous ammonium sulfate, cobalt, zinc, copper, nickel, molybdate, selenate and tungstate and a pH6 instruction. It is a defined stock preparation, not a generic mineral salt.",
+    "applicability": "The single JCM1344 occurrence adds10mL of the933 stock. Hydration qualifiers and pH adjustment belong to the stock representation; they are not inferred from other RST formulations.",
+    "missing_requirement": "Create/reference a JCM933-qualified stock with its complete table and preparation; do not collapse into a generic trace-elements record.",
+    "owners": [],
+    "no_change_reason": "Source-qualified stock context is resolved and retained for coordinator curation; no exact existing owner was identified."
+  },
+  {
+    "index": 28,
+    "disposition": "unresolved",
+    "reasoning": "NBRC1400 names polypropylene glycol2000 and prepares an emulsion by sonication. The2000 denotes a nominal polymer-molecular-weight grade, not one molecule; it does not identify chain-length distribution or end-group/product specification. Polyethylene glycol2000 is chemically different.",
+    "applicability": "The sole NBRC1400 occurrence uses2g/LPPG2000. The source determines polymer family and nominal grade while leaving commercial specification unreported.",
+    "missing_requirement": "Obtain a manufacturer/catalog or polymer specification tied to NBRC1400 that defines end groups and nominal molecular-weight grade; select a polymer-grade registry identity rather than a monomer/PEG mapping.",
+    "owners": [],
+    "no_change_reason": "No fixed molecular formula, monomer ontology identity or PEG2000 alias is justified."
+  },
+  {
+    "index": 29,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "MediaDive main solution4784 points to SL4 solution4059, and JCM825 refers to340. Current JCM340 defines SL4 as0.5gEDTA and0.2gFeSO4·7H2O with100mLSL6 and900mLwater. Thus SL4 is notSL6 itself or pureEDTA.",
+    "applicability": "The one frozen source occurrence is a nested10mL stock addition in JCM825/MediaDive. The340 recipe provides constituent/preparation evidence without authorizing a whole-stock chemical mapping.",
+    "missing_requirement": "Use a source-qualified SL4 stock with nestedSL6,EDTA and ferrous-sulfate-heptahydrate components; keep receiving-medium dosage distinct.",
+    "owners": [],
+    "no_change_reason": "No arbitrary trace-stock alias is proposed; the complete specific preparation is retained for integration."
+  },
+  {
+    "index": 30,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The six contexts identify yeast nitrogen base, including manufacturer wording in JCM240 and source MediaDive ingredient1507, but no uniform catalog or omission profile. Yeast nitrogen base variants can differ in amino acids/ammonium sulfate; grams per liter do not prove a shared product.",
+    "applicability": "All MediaDive3476/3920/6422 and JCM240/DSMZ1837/1682 contexts remain separately scoped. YNB is a multicomponent nutrient base, distinct from Difco yeast carbon base in37 and the entire NCG medium in40.",
+    "missing_requirement": "Determine exact manufacturer/catalog and omission profile for each source occurrence before consolidating product identities or decomposing ingredients.",
+    "owners": [],
+    "no_change_reason": "No single chemical or unqualified product alias is asserted across six incompletely specified product contexts."
+  },
+  {
+    "index": 31,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The ATCC MS-OCM primary recipe identifies MD-TMS by manufacturer catalog. ATCC supplies an explicit EDTA-based trace-mineral formulation and sterile liquid product. This identifies a product stock, not a generic metal or the NTA-based JCM151 formulation.",
+    "applicability": "The sole source occurrence expressly includes ATCC MD-TMS, so the official product specification applies directly. This stronger product evidence cannot resolve the contradictory ATCC wording in case0 by association.",
+    "missing_requirement": "Create a catalog-qualified ATCCMD-TMS stock with supplier-supported constituents and retain bottle/product scope; distinguish generic Wolfe and JCM151 variants.",
+    "owners": [
+      "mapped/ATCC_Wolfes_Mineral_Mix.yaml"
+    ],
+    "no_change_reason": "No existing exact MD-TMS owner was identified; source product identity and full formulation are preserved for separate stock integration."
+  },
+  {
+    "index": 32,
+    "disposition": "unresolved",
+    "reasoning": "The frozen TOGOM3129 label explicitly says DL-Ca-pantothenate, and current CHEBI180950 provides a distinct DL target. The exact Togo primary recipe endpoint timed out and no original source link is present. Another DL occurrence elsewhere in this shard family has a live D-only recipe conflict, so the frozen label must not be promoted on a family-wide assumption.",
+    "applicability": "This one TOGOM3129 occurrence is preserved independently of the18JCM cases supporting the newDL owner. The supplier DL evidence establishes the chemical distinction but does not identify the reagent actually used inM3129.",
+    "missing_requirement": "Recover the primary/history-matched M3129 recipe or supplier provenance confirming DL rather than D or unspecified calcium pantothenate; then link to the separateDL owner if consistent.",
+    "owners": [
+      "mapped/Calcium_Pantothenate.yaml"
+    ],
+    "no_change_reason": "CandidateCHEBI180950 is recorded, but this occurrence is not attached to the newDL proposal without source confirmation."
+  },
+  {
+    "index": 33,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC985 specifies Porphyra thalli in sterilized natural seawater. A thallus is biological biomass; the source does not say purified porphyran, dried seaweed powder, an extract, or a particular Porphyra species.",
+    "applicability": "The single NBRC985 occurrence retains its supplied plant/algal body-part material and preparation context. The existing Porphyran chemical cannot absorb the whole thalli label.",
+    "missing_requirement": "Use a material-level source identity preserving whole thalli and seawater treatment; species/state evidence is needed for a more specific biological-material target.",
+    "owners": [
+      "mapped/Porphyran.yaml"
+    ],
+    "no_change_reason": "No polysaccharide or taxon-as-material exact mapping is justified."
+  },
+  {
+    "index": 34,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The frozen source explicitly treats2xYT as the complete medium used for a20mL overnight culture inoculated into1L; it does not disclose its internal formulation or catalog. Standard textbook2xYT recipes cannot be imported as if they were this source specification.",
+    "applicability": "The soleTOGOM2919 source record is a complete named medium, not a combined synonym for yeast extract and tryptone. The currentTogo page supplies no recipe body and the API attempt timed out.",
+    "missing_requirement": "Recover M2919 primary preparation or supplier/catalog specifying this2xYT formulation before assigning a recipe/product owner or component quantities.",
+    "owners": [],
+    "no_change_reason": "Preserve the named-medium scope; no inferred standard recipe or ingredient-level merge is proposed."
+  },
+  {
+    "index": 35,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "DSMZ1429 names Merck108339 Sabouraud2%glucose broth and adds30g/L; the supplier confirms a dehydrated broth composed of two peptone fractions plus20g/L D(+)glucose after reconstitution. The source also adds agar separately, so the broth product itself is not agar medium or pureglucose.",
+    "applicability": "Both frozen DSMZ/KOMODO1429 occurrences point to the same catalog-qualified broth. Existing UNMAPPED0513 records a broader Sabouraud-bouillon family and deliberately defers product-level curation; product identification now narrows these occurrences without proving all historical family usage identical.",
+    "missing_requirement": "Create a catalog-qualified Merck108339 product identity or review a complete source-bound scope correction of UNMAPPED0513; preserve meat/casein hydrolysate classes and separate recipe agar.",
+    "owners": [
+      "unmapped/SABOURAUD-_Glucose-Bouillon.yaml"
+    ],
+    "no_change_reason": "A broad family owner is not silently replaced by a single product; precise supplier composition is provided for coordinator curation."
+  },
+  {
+    "index": 36,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1088 defines its own trace-vitamin stock: B12,thiamine,folate,ascorbate,riboflavin,niacin and pantothenic acid in500mLwater. Its composition and proportions differ substantially from JCM197 and from other Trace vitamins headings.",
+    "applicability": "The one occurrence refers to the table below in JCM1088 and adds2mL. The deictic label is resolved only within that recipe; its components are not aliases for the whole mixture.",
+    "missing_requirement": "Use a JCM1088-qualified stock identity retaining allseven vitamins and500mLbasis rather than a generic trace-vitamins alias.",
+    "owners": [],
+    "no_change_reason": "No whole-stock equivalence to JCM197 or generic vitamin solution is justified."
+  },
+  {
+    "index": 37,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "NBRC887 explicitly uses Difco Yeast Carbon Base11.7g with ammonium tartrate and other ingredients added separately. The branded base is a multicomponent formulation and chemically distinct from yeast nitrogen base despite the similar words.",
+    "applicability": "The sole source occurrence identifies manufacturer/product family but no catalog or historical product formulation. External additions belong to the receiving recipe, not automatically to the purchased base.",
+    "missing_requirement": "Obtain the catalog/version-specific DifcoYCB formulation linked to NBRC887 to construct a product owner and supported constituent list.",
+    "owners": [],
+    "no_change_reason": "Do not merge YCB with YNB, yeast extract or carbon-source chemicals."
+  },
+  {
+    "index": 38,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1344 separately prepares1%yeast-extract solution, sterilizes it and adds1mL. This is a concentration-qualified aqueous stock, not dry yeast extract. The source does not specify the extract product or explicitly define the percent basis.",
+    "applicability": "The one JCM1344 occurrence is a prepared stock addition, distinct from the RST mineral stock in the same recipe and the25%boiled-baker-yeast extract in case1.",
+    "missing_requirement": "Represent the JCM1344 stock concentration/process and preserve unspecified extract brand; confirm the percent basis before derived mass concentrations.",
+    "owners": [
+      "mapped/Yeast_Extract.yaml"
+    ],
+    "no_change_reason": "No whole-stock alias is added to the dry/generic yeast-extract owner."
+  },
+  {
+    "index": 39,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM1353 defines this stock as1L of JCM197 vitamins plus0.468gNaH2PO4 and0.866gNa2HPO4. The added phosphates make it a distinct buffered preparation rather than a spelling variant of197.",
+    "applicability": "The sole parent-stock occurrence is separated from its nested Trace vitamins (see Medium No.197) ingredient counted in case21. Source hydration of the phosphates is not expanded beyond the printed formula.",
+    "missing_requirement": "Create a JCM1353 buffered-vitamin stock with a JCM197 has-part reference and both phosphate components; retain its separate identity from the shared197 proposal.",
+    "owners": [],
+    "no_change_reason": "No197 alias is proposed for a preparation with additional phosphate constituents."
+  },
+  {
+    "index": 40,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The frozenNCG medium explicitly lists0.5%BDDifco yeast nitrogen base,0.5%casamino acid and2%glycerol. It identifies a supplier-family base, not the entireNCG formulation or a pure nutrient. Primary paper discovery corroborates this wording, but direct fulltext access returned a browser challenge and the TogoAPI timed out.",
+    "applicability": "The oneTOGOM2842 occurrence retains BD Difco and FranklinLakes provenance. It is narrower than unspecifiedYNB but still lacks catalog/omission profile, so it is not automatically the same product as every case30 occurrence.",
+    "missing_requirement": "Recover the original fulltext or provider recipe and theBDDifco catalog/YNB variant used inNCG; then establish product identity and formulation.",
+    "owners": [],
+    "no_change_reason": "Supplier wording alone does not authorize a genericYNB/product merge or invented constituent recipe."
+  },
+  {
+    "index": 41,
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The successfulTogoM2287 JSON recipe explicitly names D(+)glucose22mM and labels itD-Glucose. CHEBI17634 is the current D-glucose target and the matching maintained owner isD-glucose. This supplies primary confirmation beyond punctuation matching.",
+    "applicability": "The single Mitsuhashi-Maramorosch occurrence is a chemical component of the medium, with no salt/hydrate/stock qualifier. Frozen notes explicitly withdraw an unrelated historicalLB expansion; this proposal does not revive that expansion.",
+    "missing_requirement": null,
+    "owners": [
+      "mapped/D-glucose.yaml"
+    ],
+    "no_change_reason": null
+  },
+  {
+    "index": 42,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "The4%YACo source uses yeast autolysate as a prepared biological extract, not whole yeast cells, pressed yeast or necessarily a generic commercial yeast extract. The cited paper and related primary literature lead to autolysate preparations, but direct primary retrieval did not yield sufficient recipe detail in this session.",
+    "applicability": "The soleTOGOM2770 occurrence is scoped to the autolysate in4%YACo; no inference is made about how much dry yeast is represented by4%liquid addition.",
+    "missing_requirement": "Recover the source-linked autolysis preparation, organism/material, processing and concentration basis from the cited primary method before linking to an existing extract product.",
+    "owners": [],
+    "no_change_reason": "Preserve the autolysate process boundary; no exact yeast/extract owner equivalence has been shown."
+  },
+  {
+    "index": 43,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "JCM181 names Hipolypepton from FUJIFILMWako. Manufacturer material describes Hipolypepton as enzymatically hydrolyzed cow-milk casein, dried and purified; similarly namedS/NS soy variants are different products. This is a product/process-defined hydrolysate mixture, not intactcasein or a single peptide.",
+    "applicability": "The oneJCM181 occurrence identifies the base Hipolypepton brand. Supplier evidence supports casein origin for that named product, but no unspecified peptone or soy variant may be substituted.",
+    "missing_requirement": "Create a WakoHipolypepton product/material owner with the supplier preparation and retained catalog/version uncertainty, distinguishingS/NS variants.",
+    "owners": [],
+    "no_change_reason": "No exact genericpeptone/casein molecular mapping is proposed; supplier material identity is retained for product curation."
+  },
+  {
+    "index": 44,
+    "disposition": "stock_product_mixture_context",
+    "reasoning": "CCAPR75S explicitly boils1g driedmilled ryegrass in750mLfiltered seawater and250mLdeionizedwater, filters and autoclaves. The source ingredient is dry milled plant biomass; the final medium is its infusion. The baselineRye_Grass record already rejects aLolium taxon as exact ingredient identity.",
+    "applicability": "Both frozen occurrences are the sameCCAPR75S preparation. Dry/milled state is positive source evidence, while species,plantpart and harvest stage remain unspecified. This does not resolve the old generic owner into a taxon or ryegrain.",
+    "missing_requirement": "Preserve a source-qualified driedmilled ryegrass material and its preparation; obtain botanical material specification before any taxon-linked material target or broad-owner scope change.",
+    "owners": [
+      "unmapped/Rye_Grass.yaml"
+    ],
+    "no_change_reason": "Existing taxon/material hold remains; the more specific supplied state cannot be flattened into a genericgrass alias."
+  },
+  {
+    "index": 45,
+    "disposition": "unresolved",
+    "reasoning": "MediaDB namesD-Ribose5-phosphate and crossreferencesCHEBI17797, while the primaryCarini2014 methods give1µM ribose5-phosphate≥98% withoutD/L,anomer or counterion. The frozen source explicitly preserves this stereochemical limitation. Database annotation cannot by itself prove which supplied salt or stereoisomer the experiment used.",
+    "applicability": "The soleMediaDB481 occurrence is the experimentalphosphorus supplement inAMS1pyruvate/glycine. The paper confirms dose and ribose-phosphate family, but not the full chemical identity carried by the database label.",
+    "missing_requirement": "Locate theCarini2014 reagent supplier/catalog or contemporaneous supplementary specification establishingD stereochemistry,anomer andcounterion/hydrate; then verify the appropriate exact target rather than importingCHEBI17797 uncritically.",
+    "owners": [],
+    "no_change_reason": "No exact stereoisomer/salt mapping is approved from a database label contradicted in specificity by the experimental report."
+  },
+  {
+    "index": 46,
+    "disposition": "unresolved",
+    "reasoning": "NBRC829 and966 listFe-EDTA without an ironoxidation state,sodiumstate orhydrate. ExistingIron-EDTA deliberately retains the same ambiguity and excludes exactFe(III)-EDTA or sodiumferricEDTA mappings. The primary quantities are75mg and0.5mg,respectively; frozenmass fields appear in grams and require separate normalization review.",
+    "applicability": "Both source occurrences support a genericiron-EDTAcomplex only. No evidence makes these different medium reagents one suppliedsalt, and no metal/freeEDTA mapping preserves thecomplex.",
+    "missing_requirement": "Obtain formulation orcatalog evidence tied toNBRC829 and966 identifyingironoxidationstate,counterion andhydrate; repair sourceunit normalization independently.",
+    "owners": [
+      "unmapped/Iron-EDTA.yaml"
+    ],
+    "no_change_reason": "Retain theexistingcomplexambiguityhold; no guessed ferricsodiumsalt identity."
+  }
+]

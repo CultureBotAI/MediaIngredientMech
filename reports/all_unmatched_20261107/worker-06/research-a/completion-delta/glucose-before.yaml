@@ -1,0 +1,54 @@
+identifier: kgmicrobe.ingredient:jcm_1136_548_glucose_1m_stock
+preferred_term: JCM 1136/548 glucose 1 M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1136_548_glucose_1m_stock
+  ontology_label: JCM 1136/548 glucose 1 M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548
+    source_record: JCM 1136/548 glucose 1 M stock
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: Both JCM548 and1136 explicitly add separately autoclaved1MGlucose stock.
+    JCM548 says autoclave and store the non-bicarbonate stocks anaerobically underN2;
+    JCM1136 adds stock aseptically and anaerobically after cooling. Glucose stereochemistry,
+    anomer and starting hydrate are not stated. Water is implied by the aqueous stock
+    context; gas amount and final water volume are unquantified. Whole solution is
+    distinct from D-glucose solute aliases.
+notes: 'Both JCM548 and1136 explicitly add separately autoclaved1MGlucose stock. JCM548
+  says autoclave and store the non-bicarbonate stocks anaerobically underN2; JCM1136
+  adds stock aseptically and anaerobically after cooling. Glucose stereochemistry,
+  anomer and starting hydrate are not stated. Water is implied by the aqueous stock
+  context; gas amount and final water volume are unquantified. Whole solution is distinct
+  from D-glucose solute aliases. Raw source label retained for this occurrence only:
+  ''1 M Glucose''. Generic wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true

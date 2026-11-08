@@ -1,0 +1,49 @@
+identifier: kgmicrobe.ingredient:mediadive_124_haemin_0p05_percent_stock
+preferred_term: MediaDive 124 haemin 0.05% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COFACTOR_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_124_haemin_0p05_percent_stock
+  ontology_label: MediaDive 124 haemin 0.05% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/rest/solution/124
+    notes: Source-defined preparation with retained formulation boundary; registry identity denotes the
+      whole stock, not any component.
+components:
+- component_name: Haemin
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: MG
+- component_name: NaOH (1 N)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/124
+    source_record: MediaDive 124 haemin 0.05% w/v stock
+    notes: Verbatim constituent names and source batch quantities; water is a preparation input. Child
+      reference_scope UNMAPPED means no exact child identifier was independently established.
+  notes: Dissolve50 mg haemin in1 ml1 NNaOH, make up to100 ml with distilled water and filter sterilize.
+    Final stock strength0.05% w/v;2 ml is the source606 medium dose. The stock does not denote purehaemin.
+notes: 'Dissolve50 mg haemin in1 ml1 NNaOH, make up to100 ml with distilled water and filter sterilize.
+  Final stock strength0.05% w/v;2 ml is the source606 medium dose. The stock does not denote purehaemin.
+  Raw source labels retained without global resolving aliases: ["Haemin solution"]. Occurrence-specific
+  linkage is required; identical generic words in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary recipe evidence;
+    no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED

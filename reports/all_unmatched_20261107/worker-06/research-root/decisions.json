@@ -1,0 +1,1670 @@
+{
+  "schema_version": 1,
+  "worker_slot": 6,
+  "shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "KG_CASE:04f810be4e371e85c9b335d9d5d23eeb4cfcf63a799f3939b6de8277840696e8",
+      "case_input_sha256": "a47994d5c24020e06fe98b6ea0f183b9fbb7d68a8375e87bde3bac9a574f1d80",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1123",
+        "source_label": "Hemicalcium D-+-pantothenate",
+        "raw_source_label": "Hemicalcium D-(+)-pantothenate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The raw hemicalcium D-(+)-pantothenate name and MediaDive CAS137-08-6 agree with stereospecific CHEBI:31345. Half-calcium formula convention is a formula-unit representation, not a different racemate. The damaged KG punctuation is retained as provenance. The baseline owner mixes DL and capsaicin aliases; its WITHHOLD remains and any corrected payload requires a new complete review.",
+      "applicability": "Assigned shard index145; source mediadive.ingredient:1123; exact frozen source_record={\"amount\": 17, \"compound\": \"Hemicalcium D-(+)-pantothenate\", \"compound_id\": 1123, \"g_l\": 0.017, \"optional\": 0, \"recipe_order\": 5, \"unit\": \"mg\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1123",
+        "R-chebi-31345",
+        "R-issue-1157"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The raw hemicalcium D-(+)-pantothenate name and MediaDive CAS137-08-6 agree with stereospecific CHEBI:31345. Half-calcium formula convention is a formula-unit representation, not a different racemate. The damaged KG punctuation is retained as provenance. The baseline owner mixes DL and capsaicin aliases; its WITHHOLD remains and any corrected payload requires a new complete review.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:0d41efa23c100f1398a95c032eff1013b97a9d78ca7b19fa887802de490379cf",
+      "case_input_sha256": "11888745b4717722f901b8f9afc1c0e6e478b437051e298d365198bddaf05163",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2202",
+        "source_label": "α-D-Glucose monohydrate",
+        "raw_source_label": "α-D-Glucose monohydrate"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "MediaDive2202 specifies alpha-D-glucose monohydrate, CAS14431-43-7 and C6H12O6.H2O. Verified current NCIT:C61629 explicitly represents that same anomeric monohydrate with the same CAS/formula, resolving the earlier local review gap. The 10% aqueous preparation in medium1566 remains a separate stock context; this proposal promotes only the supplied hydrate substance. A separate formulation registry proposal now preserves the10% aqueous stock with its unstated percentage basis, without asserting persistent alpha-anomer composition in water.",
+      "applicability": "Assigned shard index146; source mediadive.ingredient:2202; exact frozen source_record={\"amount\": 1, \"attribute\": \"10% in H2O\", \"compound\": \"α-D-Glucose monohydrate\", \"compound_id\": 2202, \"g_l\": 0.4, \"mmol_l\": 2.22025, \"optional\": 0, \"recipe_order\": 5, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2202",
+        "R-medium-1566",
+        "R-chebi-17925",
+        "R-ncit-C61717",
+        "R-ols2-14431-43-7",
+        "R-ncit-C61629-final"
+      ],
+      "proposal_ids": [
+        "R-P-ALPHA-GLUCOSE-MONOHYDRATE",
+        "R-P-DSMZ1566-GLUCOSE10"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "For complete stock concentration closure, confirm the percentage basis in DSMZ1566; the supplied solid identity is independently resolved.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml",
+          "sha256": "a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289",
+      "case_input_sha256": "e50586a07e7d9b86f5c11aa6088ebb9635edb1e8b78ad8944803472683230af3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1031",
+        "source_label": "Trace minerals",
+        "raw_source_label": "Trace minerals"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen attribute refers to Medium243. Live MediaDiveJ1328 reproduces that reference, and JCM243 supplies an NTA-based trace-element stock (NTA12.8g, FeCl3·6H2O1.35g and ten further ingredients including water). This is a source-defined mixture, not the trace-elements class or every stock named Trace minerals. The generic owner and its starred/see-below alias hold do not settle that identity.",
+      "applicability": "Assigned shard index147; source mediadive.ingredient:1031; exact frozen source_record={\"amount\": 1, \"attribute\": \"see Medium No. 243\", \"compound\": \"Trace minerals\", \"compound_id\": 1031, \"optional\": 0, \"recipe_order\": 10, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1031",
+        "R-medium-J1328",
+        "R-jcm-final-243"
+      ],
+      "proposal_ids": [
+        "R-P-JCM243-STOCK"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Trace_Minerals.yaml",
+          "sha256": "9a1b033572d1f6462d4de4d9f07d655e34f98fe37d82c2449d4a48cc2dadd1bc"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:114f6e0d8269e32cce44dcaef1d9ce718e0c02b8537f0548f0e4a6ddc2356209",
+      "case_input_sha256": "9486d8fbbfe84ee31f0a1b53d8f382d6196c5d77e984fe1b83287ae13c100c21",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1833",
+        "source_label": "Trace minerals see Medium No. 197",
+        "raw_source_label": "Trace minerals (see Medium No. 197"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The exact raw label says trace minerals and refers to Medium197, so minerals are the leading formulation interpretation. Current JCM197 contains a mineral stock distinct from its vitamin stock. The KG ingredient1833 endpoint has no media links or collection identifier; the truncated label alone does not establish that its197 is JCM197. Do not silently redirect this minerals source to vitamins merely because nearby labels mention vitamins197.",
+      "applicability": "Assigned shard index148; source mediadive.ingredient:1833; exact frozen source_record={\"amount\": 1, \"compound\": \"Trace minerals (see Medium No. 197\", \"compound_id\": 1833, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1833",
+        "R-jcm-shared-197"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The exact raw label says trace minerals and refers to Medium197, so minerals are the leading formulation interpretation. Current JCM197 contains a mineral stock distinct from its vitamin stock. The KG ingredient1833 endpoint has no media links or collection identifier; the truncated label alone does not establish that its197 is JCM197. Do not silently redirect this minerals source to vitamins merely because nearby labels mention vitamins197.",
+      "missing_requirement": "Recover the originating medium/collection and complete stock reference for ingredient1833. If JCM197 is confirmed, transcribe its mineral stock; do not use the JCM197 vitamin owner.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_197.yaml",
+          "sha256": "a9e737479a38a8691ae742f88cedc7a591762a2c972bbc60271f87440c23ad0e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:12da08e4bdcef8551ac7c8ab6aef8fa3c4e5761444706aa3af949952c3288ff0",
+      "case_input_sha256": "0a15f56cee3e8b175bd217562258832968c16a4e92fdf3a3144d82aaf105d77a",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:144",
+        "source_label": "Na-formate",
+        "raw_source_label": "Na-formate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "MediaDive144 supplies CAS141-53-7, formulaCHNaO2 and CHEBI62965; the ontology explicitly defines the monosodium salt of formic acid. This confirms the bare sodium-formate source substance without changing the owner. The occurrence amount6g and molar concentration are contextual quantities. Existing owner role and final-synonym concerns remain outside this narrow identity agreement.",
+      "applicability": "Assigned shard index149; source mediadive.ingredient:144; exact frozen source_record={\"amount\": 6, \"compound\": \"Na-formate\", \"compound_id\": 144, \"g_l\": 7.034, \"mmol_l\": 103.43, \"optional\": 0, \"recipe_order\": 9, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-144",
+        "R-chebi-62965"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive144 supplies CAS141-53-7, formulaCHNaO2 and CHEBI62965; the ontology explicitly defines the monosodium salt of formic acid. This confirms the bare sodium-formate source substance without changing the owner. The occurrence amount6g and molar concentration are contextual quantities. Existing owner role and final-synonym concerns remain outside this narrow identity agreement.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-formate.yaml",
+          "sha256": "1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:15a35bccce86c7950cf3c599ccbfc826704b60d564abeadac1cd2650e1936106",
+      "case_input_sha256": "e0da88d5ec95c1a0df58ea9783c5a63931c2499cd9f455ae4ade061f17db3361",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2051",
+        "source_label": "MnII x EDTA",
+        "raw_source_label": "Mn(II) x EDTA"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Mn(II) x EDTA denotes a metal complex rather than EDTA or elemental manganese. Primary ingredient2051 reports zero-prefixed CAS015375-84-5 but no formula, counterions or hydration; the JCM1273 recipe states332 micrograms. Those fields do not establish a specific purchasable salt, and stripping the metal or charge would collapse distinct scope.",
+      "applicability": "Assigned shard index150; source mediadive.ingredient:2051; exact frozen source_record={\"amount\": 332, \"compound\": \"Mn(II) x EDTA\", \"compound_id\": 2051, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"&mu;g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2051",
+        "R-medium-J1273",
+        "R-ols2-15375-84-5"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: Mn(II) x EDTA denotes a metal complex rather than EDTA or elemental manganese. Primary ingredient2051 reports zero-prefixed CAS015375-84-5 but no formula, counterions or hydration; the JCM1273 recipe states332 micrograms. Those fields do not establish a specific purchasable salt, and stripping the metal or charge would collapse distinct scope.",
+      "missing_requirement": "Obtain the JCM1273 reagent catalogue or preparation with counterion, ligand protonation and hydrate state and validate the reported CAS15375-84-5 against that exact salt.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/MnII_X_EDTA.yaml",
+          "sha256": "45ce565420a5cff5d36490b064f7a25a4b9c111e23497131bb8cdc23c3d4bfa2"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:24431e8d578feda8c12e6fcea6f9e8f9dc31bc9728dccf1d69da4752a0ff9694",
+      "case_input_sha256": "7bb4cfd18aea02bbd3b1b0cc5d160ddd41005e29bd010f5ba8729971c652fee4",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:ardacin_c",
+        "source_label": "ardacin C",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "Primary1986 biosynthesis evidence distinguishes theA/B/C glycopeptide components. Exact NCATS GSRS P211231K6P independently links ArdacinC andAridicinC toCAS95935-23-2 andC83H86Cl4N8O30. Bounded localCHEBI/NCIT name/CAS searches return genericArdacin only. Preserve theC-component using its ownCAS and a broad parent relation to currentCHEBI24396glycopeptide; obsolete24395 and undefined genericArdacin are not acceptable exact identities.",
+      "applicability": "Assigned shard index151; source kgmicrobe.compound:ardacin_c; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"deprecated\": \"\", \"description\": \"\", \"id\": \"kgmicrobe.compound:ardacin_c\", \"name\": \"ardacin C\", \"provided_by\": \"infores:metatraits\", \"same_as\": \"\", \"synonym\": \"\", \"xref\": \"MIM:Ardacin_C\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ardacin-1986",
+        "R-ncats-ardacin-exact",
+        "R-ncit-C169786",
+        "R-chebi-753252",
+        "R-gsrs-ardacin-c",
+        "R-gsrs-ardacin-c-codes",
+        "R-gsrs-ardacin-c-names",
+        "R-ardacin-local-search",
+        "R-chebi-24395",
+        "R-chebi-24396"
+      ],
+      "proposal_ids": [
+        "R-P-ARDACIN-C"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ardacin_C.yaml",
+          "sha256": "5260b98fc1b241df143125e03a7c6b86608ee52342740d617ebb3c1789c0aa1e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8",
+      "case_input_sha256": "407735ff4f71accffb622ff05777dc2a82f4b6fb7d90b6becf5485b283020ac3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1886",
+        "source_label": "Trace element solution see Medium No. 187",
+        "raw_source_label": "Trace element solution (see Medium No. 187"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The truncated raw label names the trace-element recipe of JCM187. That primary recipe establishes a specific multicomponent stock, and the existing registry owner already preserves this formulation-level identity. Missing components can be transcribed without equating the mixture to a trace-element class; the malformed source label remains provenance and existing WITHHOLD is not cleared.",
+      "applicability": "Assigned shard index152; source mediadive.ingredient:1886; exact frozen source_record={\"amount\": 1, \"compound\": \"Trace element solution (see Medium No. 187\", \"compound_id\": 1886, \"optional\": 0, \"recipe_order\": 12, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1886",
+        "R-jcm-shared-187"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The truncated raw label names the trace-element recipe of JCM187. That primary recipe establishes a specific multicomponent stock, and the existing registry owner already preserves this formulation-level identity. Missing components can be transcribed without equating the mixture to a trace-element class; the malformed source label remains provenance and existing WITHHOLD is not cleared.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml",
+          "sha256": "eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f",
+      "case_input_sha256": "f1969ab47cd17483f82c1ef2f7287723072cd211f7e1731d64fc460b0cb737f4",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2017",
+        "source_label": "Modified trace vitamins",
+        "raw_source_label": "Modified trace vitamins"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive2017 is used in JCM1158. The original JCM1158 section specifies ten vitamins including DL-calcium pantothenate plus0.9g KH2PO4 and1L water. MediaDive flattens this subrecipe into the parent recipe, producing a misleading2002ml volume. The separate stock definition, source stereochemistry and batch amounts control the proposed component transcription.",
+      "applicability": "Assigned shard index153; source mediadive.ingredient:2017; exact frozen source_record={\"amount\": 1, \"attribute\": \"see below\", \"compound\": \"Modified trace vitamins\", \"compound_id\": 2017, \"optional\": 0, \"recipe_order\": 4, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies. Compared JCM1353 case39: that stock is1L JCM197 vitamins plusNaH2PO4/Na2HPO4, whereas JCM1158 usesDL-calcium pantothenate andKH2PO4. Baseline owner was created specifically from ingredient2017; the proposal is bound to that definition and does not absorb1353.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2017",
+        "R-medium-J1158",
+        "R-jcm-final-1158",
+        "A-E-CAPTURE-104"
+      ],
+      "proposal_ids": [
+        "R-P-MODIFIED-VITAMINS"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Modified_Trace_Vitamins.yaml",
+          "sha256": "4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:2dba55d82767b4d947fc18b30c2c2a0d669b4b58df3aa04f43ba5a924be92bd1",
+      "case_input_sha256": "0ba899b639e18cfc9076d24749ca34f1e708a94aac572876b8cd3ad40069d3f9",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:922",
+        "source_label": "FeCl3 x 4 H2O",
+        "raw_source_label": "FeCl3 x 4 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The frozen and live name says FeCl3 x4H2O, but ingredient922 supplies anhydrous CAS7705-08-0, formulaCl3Fe and162.203 mass. Its g/L-to-mM calculation follows the anhydrous mass. The current MIM local tetrahydrate identity preserves the explicit name and rejects anhydrous labels; neither that preservation nor the numerical conversion resolves which reagent was used.",
+      "applicability": "Assigned shard index154; source mediadive.ingredient:922; exact frozen source_record={\"amount\": 0.01, \"compound\": \"FeCl3 x 4 H2O\", \"compound_id\": 922, \"g_l\": 0.01, \"mmol_l\": 0.0616511, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-922",
+        "R-medium-1019",
+        "R-medium-1343"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The frozen and live name says FeCl3 x4H2O, but ingredient922 supplies anhydrous CAS7705-08-0, formulaCl3Fe and162.203 mass. Its g/L-to-mM calculation follows the anhydrous mass. The current MIM local tetrahydrate identity preserves the explicit name and rejects anhydrous labels; neither that preservation nor the numerical conversion resolves which reagent was used.",
+      "missing_requirement": "Obtain original DSMZ1019/1343 formulation revision or reagent certificate that resolves four waters versus anhydrous metadata; do not rewrite to hexahydrate or promote the anhydrous CAS from these contradictory fields.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Fecl3_X_4_H2o.yaml",
+          "sha256": "35539ce2262b60cf377be78d8709ecb1b5cbee07d090e6cff2bc577abfc880b7"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:33d6a088f09e00ec7da0b3224cb4ea75edc99b2f7e4a6bce8c5a0cb267417a2b",
+      "case_input_sha256": "e171faa421ee85beefb11836d9113c376e18f5590eaeee9ddf2ea58d59ecdfeb",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:69",
+        "source_label": "Na2CO3 anhydrous",
+        "raw_source_label": "Na2CO3 anhydrous"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Ingredient69 explicitly says anhydrous sodium carbonate, with CAS497-19-8 and CHEBI29377. The ontology confirms Na2CO3 and anhydrous synonyms. The solute owner Na2co3 is relevant; Sodium_Carbonate_Solution is a separate stock owner sharing the same identifier and alias in error. This case cannot approve the stock or its whole payload; maintain the cross-owner hold.",
+      "applicability": "Assigned shard index155; source mediadive.ingredient:69; exact frozen source_record={\"amount\": 5.3, \"compound\": \"Na2CO3 anhydrous\", \"compound_id\": 69, \"g_l\": 53, \"mmol_l\": 500.057, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-69",
+        "R-chebi-29377",
+        "R-medium-31",
+        "R-medium-529",
+        "R-medium-1063"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: Ingredient69 explicitly says anhydrous sodium carbonate, with CAS497-19-8 and CHEBI29377. The ontology confirms Na2CO3 and anhydrous synonyms. The solute owner Na2co3 is relevant; Sodium_Carbonate_Solution is a separate stock owner sharing the same identifier and alias in error. This case cannot approve the stock or its whole payload; maintain the cross-owner hold.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2co3.yaml",
+          "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:3bef9a6f0e3901c3db7a69b2c6cb9cb9c040316056f9fcde773445471e50ca35",
+      "case_input_sha256": "39280ee21514c9a069819c0c46452330af9234e0e1da87712306509f3f1c79ef",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:331",
+        "source_label": "Trishydroxymethylmethylamine",
+        "raw_source_label": "Tris(hydroxymethyl)methylamine"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The raw source is Tris(hydroxymethyl)methylamine, CAS77-86-1/CHEBI9754, and medium239 has a6g ingredient addition. The transformed label merely drops parentheses. The correct raw spelling already exists on Tris_Base, while its hydrochloride/concentration/wrong-substance aliases are independently held under1157. Do not add an unnecessary damaged synonym or infer buffer formulation from buffer activity.",
+      "applicability": "Assigned shard index156; source mediadive.ingredient:331; exact frozen source_record={\"amount\": 6, \"compound\": \"Tris(hydroxymethyl)methylamine\", \"compound_id\": 331, \"g_l\": 6, \"mmol_l\": 49.5295, \"optional\": 0, \"recipe_order\": 4, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-331",
+        "R-medium-239",
+        "R-chebi-9754",
+        "R-issue-1157"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The raw source is Tris(hydroxymethyl)methylamine, CAS77-86-1/CHEBI9754, and medium239 has a6g ingredient addition. The transformed label merely drops parentheses. The correct raw spelling already exists on Tris_Base, while its hydrochloride/concentration/wrong-substance aliases are independently held under1157. Do not add an unnecessary damaged synonym or infer buffer formulation from buffer activity.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Tris_Base.yaml",
+          "sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:3d023d889bf993a140c96aff582ae41242a085e57d42cf59c7d4d2a4a74ad0fd",
+      "case_input_sha256": "def646d190464e827c18bc7d5c120fc98f0e863f04d66036eab0bec410a3d23a",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:460",
+        "source_label": "Proteose yeastolate",
+        "raw_source_label": "Proteose yeastolate"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen attribute retains TC and DIFCO5577-15. DSMZ403/MediaDive solution819 names Proteose yeastolate alongside distinct proteose peptone and tryptone; it is therefore a catalog-defined complex nutrient product, not one of those neighboring ingredients. A current generic yeast-extract term cannot establish equivalence of this historical catalog item.",
+      "applicability": "Assigned shard index157; source mediadive.ingredient:460; exact frozen source_record={\"amount\": 1, \"attribute\": \"TC) (DIFCO 5577-15\", \"compound\": \"Proteose yeastolate\", \"compound_id\": 460, \"g_l\": 1, \"optional\": 0, \"recipe_order\": 4, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-460",
+        "R-medium-403",
+        "R-dsmz-403"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The frozen attribute retains TC and DIFCO5577-15. DSMZ403/MediaDive solution819 names Proteose yeastolate alongside distinct proteose peptone and tryptone; it is therefore a catalog-defined complex nutrient product, not one of those neighboring ingredients. A current generic yeast-extract term cannot establish equivalence of this historical catalog item.",
+      "missing_requirement": "Obtain the historical Difco5577-15 specification or an authoritative successor crosswalk before merging this product with TC255772 or generic yeast extract.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Proteose_Yeastolate.yaml",
+          "sha256": "470d5049ae7615b6676bf0a720b261d4840e44c343d2ed4d9cce9c8b0f9c96c3"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:3d3a9c7f2200b092b4d01b11dbaa420116e932bd088b6b8747413cde39907e56",
+      "case_input_sha256": "958467a76af771b78b32d2814db6224fe3d5f973bff73d9b5d526d445560a4e9",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1463",
+        "source_label": "PrCl3 x H2O",
+        "raw_source_label": "PrCl3 x H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "Although the short label can look monohydrated, MediaDive1463 explicitly stores Cl3Pr.xH2O and CAS19423-77-9. Its DSMZ1610 lanthanide-stock occurrence does not specify n. This supports praseodymium chloride hydrate of unspecified water content and contradicts automatic interpretation as a verified monohydrate or substitution by a hexahydrate.",
+      "applicability": "Assigned shard index158; source mediadive.ingredient:1463; exact frozen source_record={\"amount\": 0.02, \"compound\": \"PrCl3 x H2O\", \"compound_id\": 1463, \"g_l\": 0.02, \"optional\": 0, \"recipe_order\": 4, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1463",
+        "R-medium-1610",
+        "R-dsmz-1610",
+        "R-ols2-19423-77-9"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: Although the short label can look monohydrated, MediaDive1463 explicitly stores Cl3Pr.xH2O and CAS19423-77-9. Its DSMZ1610 lanthanide-stock occurrence does not specify n. This supports praseodymium chloride hydrate of unspecified water content and contradicts automatic interpretation as a verified monohydrate or substitution by a hexahydrate.",
+      "missing_requirement": "Verify the supplied praseodymium chloride product and hydration range/stoichiometry for DSMZ1610; obtain the form-specific ontology or CAS identity without assigning n=1 from typography.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/PrCl3_X_H2O.yaml",
+          "sha256": "028e993ebadb8580efad84770baa5bcd8d8ed2c0a0a8e160c836d45d430760ec"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:3ee3d2e1d667b8255a300de9c5480b36a398916e2295921e5954f1daba39045e",
+      "case_input_sha256": "47aacc8721497fe4134231b0ae842dd03cb1c16b5cc98672be7f796fb58d72a3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1829",
+        "source_label": "N-Z-Case",
+        "raw_source_label": "N-Z-Case"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Ingredient1829 occurrence identifies Wako and peptone from casein; linked JCM618/DSMZ1108 retain this preparation. That supports a casein-derived nutrient product, not purified casein or an exact synonym of every N-Z-Amine grade. The existing undefined-mixture owner preserves the right product boundary.",
+      "applicability": "Assigned shard index159; source mediadive.ingredient:1829; exact frozen source_record={\"amount\": 3, \"attribute\": \"Wako pure chemicals, Japan = Peptone from Casein\", \"compound\": \"N-Z-Case\", \"compound_id\": 1829, \"condition\": \"\", \"g_l\": 3, \"optional\": 0, \"recipe_order\": 1, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1829",
+        "R-medium-J618",
+        "R-medium-1108",
+        "R-medium-1108a"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: Ingredient1829 occurrence identifies Wako and peptone from casein; linked JCM618/DSMZ1108 retain this preparation. That supports a casein-derived nutrient product, not purified casein or an exact synonym of every N-Z-Amine grade. The existing undefined-mixture owner preserves the right product boundary.",
+      "missing_requirement": "Retrieve Wako N-Z-Case product code and digestion specification before a product-specific registry promotion or merge.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/N-Z-Case.yaml",
+          "sha256": "6cbc14e3a60be2996f2df26720070690c5ea62b0fc9d3e325e95d2d85cae057b"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:42b67ab7ee8fe3fd7657f524ac700e319f86ccfa93f117bcba558e88072728d0",
+      "case_input_sha256": "6e343148f4c96933a3ef0d0fc46892c5cc80a8c68a26db8a217501cec5570b2f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2135",
+        "source_label": "Bacto Bitone",
+        "raw_source_label": "Bacto Bitone"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive2135 and DSMZ687 Columbia Blood Agar Base explicitly list Bacto Bitone peptone among other constituents. The entry is marked complex. Its brand/product name is not evidence that it equals generic peptone, tryptone or Bacto yeast. Retain the existing product owner and seek its manufacturer catalog history.",
+      "applicability": "Assigned shard index160; source mediadive.ingredient:2135; exact frozen source_record={\"amount\": 10, \"attribute\": \"Peptone\", \"compound\": \"Bacto Bitone\", \"compound_id\": 2135, \"g_l\": 10, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2135",
+        "R-medium-687"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive2135 and DSMZ687 Columbia Blood Agar Base explicitly list Bacto Bitone peptone among other constituents. The entry is marked complex. Its brand/product name is not evidence that it equals generic peptone, tryptone or Bacto yeast. Retain the existing product owner and seek its manufacturer catalog history.",
+      "missing_requirement": "An authoritative Bacto Bitone catalog description/part number is required to distinguish typo, retired peptone product, and any proposed successor identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Bacto_Bitone.yaml",
+          "sha256": "844fc438634cac8f34f3159a36089e2d1b2086f4286fa4f8113736e82a730a15"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f",
+      "case_input_sha256": "e3552f28e90115fec608420c3c978f0e1e731798d1a1d64154bab4ebdd9c4534",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1507",
+        "source_label": "Yeast Nitrogen Base",
+        "raw_source_label": "Yeast Nitrogen Base"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1507 is a complex Yeast Nitrogen Base entry used at6.7g in J240 and at other quantities in1682/1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+      "applicability": "Assigned shard index161; source mediadive.ingredient:1507; exact frozen source_record={\"amount\": 6.7, \"compound\": \"Yeast Nitrogen Base\", \"compound_id\": 1507, \"g_l\": 6.7, \"optional\": 0, \"recipe_order\": 1, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1507",
+        "R-medium-J240",
+        "R-medium-1682",
+        "R-medium-1837"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive1507 is a complex Yeast Nitrogen Base entry used at6.7g in J240 and at other quantities in1682/1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+      "missing_requirement": "Resolve amino-acid and ammonium-sulfate inclusion and manufacturer/catalog for each recipe; no generic merge into a w/o-amino-acids or w/o-ammonium-sulfate owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+      "case_input_sha256": "5c1f43970dfec31e8bbb2d4873b018473ca8d1aad0a8628eb9e213888350135f",
+      "source": {
+        "source": "microbedecoder",
+        "source_case_id": "kgmicrobe.compound:pygs",
+        "source_label": "PYGS",
+        "raw_source_label": "PYGS"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen records4104,4109,8883 are end-product observations in PYGS, with existing source-specific material holds. Independently retrieved primary species-description abstracts (PMID10555335 for frigidicarnis,10826793 for gasigenes,10758868 for algidixylanolyticum) explicitly use peptone/yeast-extract/glucose/starch broth and report fermentation products in it. This corroborates the starch expansion for each of these three exact organism contexts; it does not establish universal PYGS component quantities, source identity approval, or consumption of each constituent. Preserve all three downstream holds.",
+      "applicability": "Assigned shard index162; source kgmicrobe.compound:pygs; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"curator_notes\": \"\", \"label\": \"PYGS\", \"mapping_status\": \"UNMAPPED\", \"occurrences\": \"3\", \"placeholder_curie\": \"kgmicrobe.compound:pygs\", \"source_columns\": \"bergey:substrates\", \"target_curie\": \"\", \"target_label\": \"\"}. Assessed all 3 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-issue-718",
+        "R-PYGS-raw-records",
+        "R-epmc-algidixylanolyticum",
+        "R-epmc-frigidicarnis",
+        "R-epmc-gasigenes"
+      ],
+      "proposal_ids": [
+        "R-P-PYGS-SOURCE-EVIDENCE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Coordinator native content-bound review must assess the revised existing owner and each exact held source-material claim; quantitative recipe and universal PYGS equivalence remain unknown.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/PYGS.yaml",
+          "sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:4843776b2ffa42fc1a4698a4581f92a4639b0a281670d505d8f73b2e43551dea",
+      "case_input_sha256": "c531b0b6377ae06b661d043555915b62751eede36837fba32de2aff1282588e7",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:canarius",
+        "source_label": "canarius",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The metatraits graph node supplies only canarius and a MIM xref, with no structure or source sentence. Primary LPSN shows canarius is used as a Streptomyces epithet, while bounded CHEBI searches provide no chemical candidate. This does not prove the graph token is a taxon error, nor support substituting any antibiotic produced by that taxon.",
+      "applicability": "Assigned shard index163; source kgmicrobe.compound:canarius; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"deprecated\": \"\", \"description\": \"\", \"id\": \"kgmicrobe.compound:canarius\", \"name\": \"canarius\", \"provided_by\": \"infores:metatraits\", \"same_as\": \"\", \"synonym\": \"\", \"xref\": \"MIM:Canarius\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-canarius-lpsn",
+        "R-ols2-canarius"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The metatraits graph node supplies only canarius and a MIM xref, with no structure or source sentence. Primary LPSN shows canarius is used as a Streptomyces epithet, while bounded CHEBI searches provide no chemical candidate. This does not prove the graph token is a taxon error, nor support substituting any antibiotic produced by that taxon.",
+      "missing_requirement": "Recover the original metatraits assertion and cited publication behind kgmicrobe.compound:canarius; determine whether it is a chemical name, truncated compound phrase, or taxon token before changing category or identity.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Canarius.yaml",
+          "sha256": "af2f972bff0e1c4b2a25e303a39212c576c996aec3157fc16464ab3637766807"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:50834dd9dce08101958d5a14719e1908e57bc56bbda6cf39983a9c903462ca99",
+      "case_input_sha256": "20b9559c9567f27ba336e5c9beefa256aaf08d05cf6c5169b8b9008d8b45732c",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:canarius",
+        "source_label": "canarius",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "unresolved",
+      "reasoning": "The GTDB-projected metatraits node repeats canarius with the same placeholder and xref but a distinct provider. Its repetition is not independent chemical evidence. LPSN establishes a taxonomic use of the word only. Keep this source case separately accounted and preserve its unresolved chemical identity.",
+      "applicability": "Assigned shard index164; source kgmicrobe.compound:canarius; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"deprecated\": \"\", \"description\": \"\", \"id\": \"kgmicrobe.compound:canarius\", \"name\": \"canarius\", \"provided_by\": \"infores:gtdb-metatraits\", \"same_as\": \"\", \"synonym\": \"\", \"xref\": \"MIM:Canarius\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-canarius-lpsn",
+        "R-ols2-canarius"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The GTDB-projected metatraits node repeats canarius with the same placeholder and xref but a distinct provider. Its repetition is not independent chemical evidence. LPSN establishes a taxonomic use of the word only. Keep this source case separately accounted and preserve its unresolved chemical identity.",
+      "missing_requirement": "Trace the GTDB-metatraits assertion to its original observation/source sentence and reconcile it with, but do not automatically merge it into, the separate metatraits case163.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Canarius.yaml",
+          "sha256": "af2f972bff0e1c4b2a25e303a39212c576c996aec3157fc16464ab3637766807"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470",
+      "case_input_sha256": "fbac26ea1b0950392fc2e2845f322b3b4dcfd498b0bc62da74360f7af8358cd9",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1982",
+        "source_label": "Trace vitamins solution see Medium No. 284",
+        "raw_source_label": "Trace vitamins solution (see Medium No. 284)"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1982 retains the explicit JCM284 vitamin-solution reference and the star attribute. JCM284 defines a particular vitamin stock, which is not a complete named growth medium or every trace-vitamin mixture. The existing unmapped owner can receive stock classification and sourced component quantities without granting individual component ontology identities.",
+      "applicability": "Assigned shard index165; source mediadive.ingredient:1982; exact frozen source_record={\"amount\": 1, \"attribute\": \"*\", \"compound\": \"Trace vitamins solution (see Medium No. 284)\", \"compound_id\": 1982, \"optional\": 0, \"recipe_order\": 17, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1982",
+        "R-medium-J1051",
+        "R-jcm-shared-284"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive1982 retains the explicit JCM284 vitamin-solution reference and the star attribute. JCM284 defines a particular vitamin stock, which is not a complete named growth medium or every trace-vitamin mixture. The existing unmapped owner can receive stock classification and sourced component quantities without granting individual component ontology identities.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+          "sha256": "f14f409a04b1e113f11473f3d7846cd8bc0a85ac19bb4d8fba5a20eaea31f08a"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:5d2b66b49c3347a03b3fbf848843da8fcea89a6d3fd0df5d10a7d6e8de00fbfd",
+      "case_input_sha256": "a980aedd748425d91c740e660096a4cb998c83b16acc0ab339ff486a77748da1",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1512",
+        "source_label": "Calcium D-+-pantothenate",
+        "raw_source_label": "Calcium D-(+)-pantothenate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The raw Calcium D-(+)-pantothenate label, CAS137-08-6, and stereospecific CHEBI31345 agree. MediaDive1512 additionally emits CHEBI1687714, so its identifier field is not accepted uncritically; the independently checked established term and CAS support the substance. Current owner DL/capsaicin alias defects and issue1157 remain explicit.",
+      "applicability": "Assigned shard index166; source mediadive.ingredient:1512; exact frozen source_record={\"amount\": 50, \"compound\": \"Calcium D-(+)-pantothenate\", \"compound_id\": 1512, \"g_l\": 0.05, \"mmol_l\": 0.209846, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"mg\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1512",
+        "R-chebi-31345",
+        "R-issue-1157"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The raw Calcium D-(+)-pantothenate label, CAS137-08-6, and stereospecific CHEBI31345 agree. MediaDive1512 additionally emits CHEBI1687714, so its identifier field is not accepted uncritically; the independently checked established term and CAS support the substance. Current owner DL/capsaicin alias defects and issue1157 remain explicit.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:5ea3a1e7e21d9ad154af9e0989aef7bf402cc96bf6ca13337bde7594e08d466a",
+      "case_input_sha256": "db0cd07847096ba013156c304da9d7b6e882c325e4ff370a8e4a9b541e5e4b87",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1462",
+        "source_label": "NdCl3 x 6 H2O",
+        "raw_source_label": "NdCl3 x 6 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "supplied_form_correction",
+      "reasoning": "The source explicitly says NdCl3 x6H2O and MediaDive1462 gives CAS13477-89-9. The Wako primary product page independently gives that CAS, NdCl3·6H2O and358.69 mass. This resolves the supplied hexahydrate and justifies recording form evidence. Bounded live/local CHEBI/NCIT searches did not validate an exact grounding; an elemental Nd node would be a different substance. Current OLS independently verifies CHEBI37280 neodymium molecular entity, a broader class. The proposal now uses the hydrate ownCAS and NARROW_MATCH to that parent, requiring the registry sibling; no exact hydrate term is claimed.",
+      "applicability": "Assigned shard index167; source mediadive.ingredient:1462; exact frozen source_record={\"amount\": 0.04, \"compound\": \"NdCl3 x 6 H2O\", \"compound_id\": 1462, \"g_l\": 0.04, \"optional\": 0, \"recipe_order\": 3, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1462",
+        "R-medium-1610",
+        "R-wako-neodymium",
+        "R-ols2-13477-89-9",
+        "R-ncit-search-13477-89-9",
+        "R-chebi-37280-final"
+      ],
+      "proposal_ids": [
+        "R-P-NEODYMIUM-FORM"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/NdCl3_X_6_H2O.yaml",
+          "sha256": "f275bd5659798b16a4f9914d8f6df8c15c687fd8c5607485369708f2b3752261"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:5fd7281bbd71818c1b346149fa60a116ad2105136e750cb4e01d9c3599861345",
+      "case_input_sha256": "c0a73c678c1cc9302bde73c321c0d98867c44273ca3b6f71de1a1091ba32bade",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2079",
+        "source_label": "Yeast cell paste",
+        "raw_source_label": "Yeast cell paste"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The raw source and DSMZ958 specify washed baker's yeast cell paste measured by wet weight. This is whole cellular biomass, not yeast extract, autolysate or a taxonomic entity. The preparation qualifier is useful curation evidence on the existing undefined-mixture owner; strain/species is not supplied and is not inferred.",
+      "applicability": "Assigned shard index168; source mediadive.ingredient:2079; exact frozen source_record={\"amount\": 2.5, \"attribute\": \"bakers yeast, washed in deion. water, wet weight\", \"compound\": \"Yeast cell paste\", \"compound_id\": 2079, \"g_l\": 2.5, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2079",
+        "R-medium-958",
+        "R-dsmz-958"
+      ],
+      "proposal_ids": [
+        "R-P-YEAST-CELL-PASTE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Yeast_Cell_Paste.yaml",
+          "sha256": "48f80a904c853250f65d7a8c6b04e53a8ac5541499197984d5c644e9b76f3c70"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:6840ee22ba6f48558df69e4dece268d9a8b734ee03e69efbc99aa0f5fd76c07e",
+      "case_input_sha256": "dc00668c23247056faa6dd60c062cdeb53c49603430870b6aa21e855d7a9613e",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2362",
+        "source_label": "Rye grass",
+        "raw_source_label": "Rye grass"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Ingredient2362 preserves dried,milled rye grass and the live linked C82-C88 media retain that plant-material ingredient. Neither Lolium taxon identity nor arbitrary grass material is an exact ingredient identity. Drying/milling and unspecified species/source remain part of the source-material boundary.",
+      "applicability": "Assigned shard index169; source mediadive.ingredient:2362; exact frozen source_record={\"amount\": 1, \"attribute\": \"dried, milled\", \"compound\": \"Rye grass\", \"compound_id\": 2362, \"g_l\": 1, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2362",
+        "R-medium-C82",
+        "R-medium-C83",
+        "R-medium-C84",
+        "R-medium-C85",
+        "R-medium-C86",
+        "R-medium-C87",
+        "R-medium-C88"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: Ingredient2362 preserves dried,milled rye grass and the live linked C82-C88 media retain that plant-material ingredient. Neither Lolium taxon identity nor arbitrary grass material is an exact ingredient identity. Drying/milling and unspecified species/source remain part of the source-material boundary.",
+      "missing_requirement": "For a material-specific registry or ontology grounding, obtain species and plant-part/procurement scope; do not substitute a taxon CURIE or assume fresh grass.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Rye_Grass.yaml",
+          "sha256": "d596d7281521a34f3354767e88d6aae6c1740ef16832b1124133111ddca9e551"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:71d90c182388cac6c4256bc0a73d43542a593829e9054df50f299479a67ba433",
+      "case_input_sha256": "fa7bb66608ea20de2cca475ffcbae3a7f41aa32e17fdfe993d5cd2c3aa5908c3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1461",
+        "source_label": "LaCl3 x 7 H2O",
+        "raw_source_label": "LaCl3 x 7 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "The raw LaCl3 x7H2O label and primary ingredient1461 CAS10025-84-0 agree on lanthanum trichloride heptahydrate; DSMZ1610 places it in the100µM lanthanide stock. This case can share a proposed heptahydrate owner with the CM formula case only through that exact form agreement, never with anhydrous LaCl3 or the whole stock.",
+      "applicability": "Assigned shard index170; source mediadive.ingredient:1461; exact frozen source_record={\"amount\": 0.04, \"compound\": \"LaCl3 x 7 H2O\", \"compound_id\": 1461, \"g_l\": 0.04, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1461",
+        "R-medium-1610",
+        "R-dsmz-1610"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The raw LaCl3 x7H2O label and primary ingredient1461 CAS10025-84-0 agree on lanthanum trichloride heptahydrate; DSMZ1610 places it in the100µM lanthanide stock. This case can share a proposed heptahydrate owner with the CM formula case only through that exact form agreement, never with anhydrous LaCl3 or the whole stock.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:74abfcb6980074e222c98ba850d79f585d74cc05e9c4539e2522b445ea388b9a",
+      "case_input_sha256": "9ced96613204008be116bf48e084863b3666e977fbf022ec15cd573c927221e1",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1530",
+        "source_label": "Tropic Marine salt",
+        "raw_source_label": "Tropic Marine salt"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1530/DSMZ1702 name Tropic Marine salt as20g of a commercial sea-salt mixture. The source has no SKU or grade; a current Tropic Marin brand page alone cannot prove which historical salt blend was intended. Keep the spelling and mixture boundary, not an exact NaCl/seawater identity or a forced brand correction.",
+      "applicability": "Assigned shard index171; source mediadive.ingredient:1530; exact frozen source_record={\"amount\": 20, \"compound\": \"Tropic Marine salt\", \"compound_id\": 1530, \"g_l\": 20, \"optional\": 0, \"recipe_order\": 4, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1530",
+        "R-medium-1702"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive1530/DSMZ1702 name Tropic Marine salt as20g of a commercial sea-salt mixture. The source has no SKU or grade; a current Tropic Marin brand page alone cannot prove which historical salt blend was intended. Keep the spelling and mixture boundary, not an exact NaCl/seawater identity or a forced brand correction.",
+      "missing_requirement": "Obtain the DSMZ1702 product/SKU or original supplier formulation and reconcile Tropic Marine versus Tropic Marin before assigning a particular commercial blend.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:7578b9b52690ee55dc6927897ee93d1466434fbbf16466139c1c6079552278a0",
+      "case_input_sha256": "9d041901a3f9bbef6775d3988b4d99aa5a7d1f9dd169dac9aa551a8d0870fe5c",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:xanthocidin",
+        "source_label": "xanthocidin",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The primary1970 Structure of Xanthocidin paper identifies a distinct antibiotic with formulaC11H16O5 and a substituted cyclopentanone skeleton, corroborated by a2014 primary synthesis/derivative study. This supports the named local compound, not xanthicin/xanthocillin or the activity of every derivative. The local registry identity can retain bounded literature evidence while exact external grounding remains unvalidated.",
+      "applicability": "Assigned shard index172; source kgmicrobe.compound:xanthocidin; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"deprecated\": \"\", \"description\": \"\", \"id\": \"kgmicrobe.compound:xanthocidin\", \"name\": \"xanthocidin\", \"provided_by\": \"infores:metatraits\", \"same_as\": \"\", \"synonym\": \"\", \"xref\": \"MIM:Xanthocidin\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-xanthocidin-structure",
+        "R-xanthocidin2014",
+        "R-ols2-xanthocidin"
+      ],
+      "proposal_ids": [
+        "R-P-XANTHOCIDIN-EVIDENCE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Xanthocidin.yaml",
+          "sha256": "ba7cbc1a0edb478929e8ff71e4714555bf448783cbf779500696755f28007a04"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:76b7ec57f55a2844dca81522cea506fb5fe462bb33e816d65567073dd433cde5",
+      "case_input_sha256": "8f7d7762797420dcbb92a255e583d488877e6fdca3c32e8865931f7c9430a7f7",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1608",
+        "source_label": "N-Z amine",
+        "raw_source_label": "N-Z amine"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1608 identifies enzymatic casein digest and CAS91079-40-2, but its source usages and synonyms span N-Z amine and N-Z amine A. Product-grade identity is not determined by that generic CAS. The existing undefined-mixture owner is retained; no typeA/typeB equivalence follows.",
+      "applicability": "Assigned shard index173; source mediadive.ingredient:1608; exact frozen source_record={\"amount\": 2, \"attribute\": \"enzymatic digest of casein\", \"compound\": \"N-Z amine\", \"compound_id\": 1608, \"g_l\": 2, \"optional\": 0, \"recipe_order\": 3, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1608",
+        "R-medium-1762",
+        "R-medium-J44",
+        "R-medium-J45",
+        "R-medium-J47",
+        "R-medium-J80",
+        "R-medium-J103",
+        "R-medium-J104",
+        "R-medium-J437",
+        "R-medium-548",
+        "R-medium-552",
+        "R-medium-554"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive1608 identifies enzymatic casein digest and CAS91079-40-2, but its source usages and synonyms span N-Z amine and N-Z amine A. Product-grade identity is not determined by that generic CAS. The existing undefined-mixture owner is retained; no typeA/typeB equivalence follows.",
+      "missing_requirement": "Recover supplier and grade for each source occurrence; generic enzymatic casein hydrolysate does not identify an N-Z-Amine product line.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/N-Z_Amine.yaml",
+          "sha256": "04a6280ff4194111ff27f13f5f98cde91290488d25239e0546d3da0ad5d9f053"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:9c4ea075537f54044f90a1d22c9946cc1b5128a79fef529f9ffe52b7bc754ab0",
+      "case_input_sha256": "a88cf85f05b034ebd776f00febbf9618603108756388516fbff9affba4a4109f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1585",
+        "source_label": "Calcium D-Pantothenate",
+        "raw_source_label": "Calcium D-Pantothenate"
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Primary1585 gives the D-pantothenate name and CAS137-08-6 consistent with CHEBI31345. Frozen owners include a REJECTED duplicate Calcium_D-Pantothenate and the active Calcium_Pantothenate. The rejected owner is preserved and not revived. Active-owner stereochemistry/foreign-alias defects remain; existing same-label agreement does not settle publication.",
+      "applicability": "Assigned shard index174; source mediadive.ingredient:1585; exact frozen source_record={\"amount\": 5, \"compound\": \"Calcium D-Pantothenate\", \"compound_id\": 1585, \"g_l\": 0.005, \"optional\": 0, \"recipe_order\": 8, \"unit\": \"mg\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1585",
+        "R-chebi-31345",
+        "R-medium-1738",
+        "R-medium-1739",
+        "R-medium-1741",
+        "R-issue-1157"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: Primary1585 gives the D-pantothenate name and CAS137-08-6 consistent with CHEBI31345. Frozen owners include a REJECTED duplicate Calcium_D-Pantothenate and the active Calcium_Pantothenate. The rejected owner is preserved and not revived. Active-owner stereochemistry/foreign-alias defects remain; existing same-label agreement does not settle publication.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_D-Pantothenate.yaml",
+          "sha256": "998e92d031c051f86e367a28c7a8cde15478d31b4d9a56683c1fe755387a837b"
+        },
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:9c792ed382c3a3d541d900d38cb0e79d7a9f631a2b1322cbe6523655dc4cf635",
+      "case_input_sha256": "8f405170d59f73f4073c03ab30e9fc9cb7c24308430a3fd9aa13ebe4a6d47569",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1603",
+        "source_label": "Yeast autolysate",
+        "raw_source_label": "Yeast autolysate"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1603 labels a complex yeast autolysate in JCM18, distinguishing autolysis from intact cells. Source CAS977046-75-5 is retained as a database claim, not registry-certified identity. Without the preparation/product specification it is unsafe to collapse it into generic extracted yeast material or fresh yeast.",
+      "applicability": "Assigned shard index175; source mediadive.ingredient:1603; exact frozen source_record={\"amount\": 5, \"compound\": \"Yeast autolysate\", \"compound_id\": 1603, \"g_l\": 4.9505, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1603",
+        "R-medium-J18"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive1603 labels a complex yeast autolysate in JCM18, distinguishing autolysis from intact cells. Source CAS977046-75-5 is retained as a database claim, not registry-certified identity. Without the preparation/product specification it is unsafe to collapse it into generic extracted yeast material or fresh yeast.",
+      "missing_requirement": "Obtain JCM18 yeast-autolysate preparation or supplier specification, including soluble versus whole-cell fraction, before selecting an existing yeast-extract/autolysate owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:b538e6e55f8682caccd3202146ccbea3f6508aad1c1b778468a171a1d55b85d3",
+      "case_input_sha256": "f7a31fb7b3a4dace5cc7dee9e8dd893e1b802ff1303abe0aeccf7404f112016d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1551",
+        "source_label": "Trace metal solution",
+        "raw_source_label": "Trace metal solution"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1551 is reused for the JCM776 and JCM820 trace-metal additions. Their primary stocks differ: JCM776 contains12 salts including Ba and thiosulfate with H3BO4 written explicitly; JCM820 has six salts and different amounts. A single ingredient ID/name therefore does not establish one composition. Do not transcribe either list onto the generic owner as universal. The unambiguous JCM820 occurrence is now a separate proposal; JCM776 remains excluded because its boron compound is unresolved.",
+      "applicability": "Assigned shard index176; source mediadive.ingredient:1551; exact frozen source_record={\"amount\": 2, \"compound\": \"Trace metal solution\", \"compound_id\": 1551, \"optional\": 0, \"recipe_order\": 11, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1551",
+        "R-medium-J776",
+        "R-medium-J820",
+        "R-jcm-final-776",
+        "R-jcm-final-820"
+      ],
+      "proposal_ids": [
+        "R-P-JCM820-TRACE-STOCK"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "JCM820 now has a bounded stock proposal. Obtain an authoritative correction or reagent specification for JCM776 H3BO4 before assigning that stock an exact chemical composition; retain generic-owner hold.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Trace_Metal_Solution.yaml",
+          "sha256": "b7ab5c76c74a3803abae8e6f13cd04596c382ac4e360ef9b9935932691649d6f"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+      "case_input_sha256": "42fd0c11b00b13b74e4ee36eb1578c1470bb970c729bb38fd5c668ff9cfe3c4b",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1784",
+        "source_label": "Trace vitamins see Medium No. 197",
+        "raw_source_label": "Trace vitamins (see Medium No. 197)"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The exact raw source names trace vitamins of JCM197; its complete frozen84 downstream hold records bind source-material contexts and historical wrong numeric-CHEBI claims. The JCM197 vitamin formulation provides recipe-level evidence, but no source ingredient1784→CHEBI1784 identity exists. A new formulation-specific stock proposal does not remove any of those source-specific quarantines.",
+      "applicability": "Assigned shard index177; source mediadive.ingredient:1784; exact frozen source_record={\"amount\": 0.1, \"attribute\": \"*\", \"compound\": \"Trace vitamins (see Medium No. 197)\", \"compound_id\": 1784, \"optional\": 0, \"recipe_order\": 8, \"unit\": \"ml\"}. Assessed all 84 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1784",
+        "R-jcm-shared-197",
+        "R-medium-J661",
+        "R-medium-J670",
+        "R-medium-J695",
+        "R-medium-J737",
+        "R-medium-J751",
+        "R-medium-J784",
+        "R-medium-J822",
+        "R-medium-J837",
+        "R-medium-J865",
+        "R-medium-J876",
+        "R-medium-J955",
+        "R-medium-J1066",
+        "R-medium-J1081",
+        "R-medium-J1082",
+        "R-medium-J1092",
+        "R-medium-J1115",
+        "R-medium-J1313"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The exact raw source names trace vitamins of JCM197; its complete frozen84 downstream hold records bind source-material contexts and historical wrong numeric-CHEBI claims. The JCM197 vitamin formulation provides recipe-level evidence, but no source ingredient1784→CHEBI1784 identity exists. A new formulation-specific stock proposal does not remove any of those source-specific quarantines.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:b97d90ed98d42ecd692ff23c9f67ea28e2a0773f1a487db3f973df758c29c755",
+      "case_input_sha256": "622617bd70c32661d573b6bc8f92fed4f5435a68c6c08af8e1e512470af549ae",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1444",
+        "source_label": "CeCl3 x 7 H2O",
+        "raw_source_label": "CeCl3 x 7 H2O"
+      },
+      "occurrence_ids": [],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "The explicit CeCl3 x7H2O label and source recipe preserve a heptahydrate; MediaDive1444 simultaneously gives anhydrous CAS7790-86-5, formulaCeCl3 and246.474 mass. Current MIM bytes instead retain cas18618-55-8 and CeCl3.7H2O with anhydrous synonyms rejected. Preserve that distinction and all inherited holds; historical review text about structure drift is not itself evidence that current bytes still contain those fields.",
+      "applicability": "Assigned shard index178; source mediadive.ingredient:1444; exact frozen source_record={\"amount\": 11.2, \"compound\": \"CeCl3 x 7 H2O\", \"compound_id\": 1444, \"g_l\": 11.2, \"mmol_l\": 45.4409, \"optional\": 0, \"recipe_order\": 1, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1444",
+        "R-medium-1610",
+        "R-dsmz-1610"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The explicit CeCl3 x7H2O label and source recipe preserve a heptahydrate; MediaDive1444 simultaneously gives anhydrous CAS7790-86-5, formulaCeCl3 and246.474 mass. Current MIM bytes instead retain cas18618-55-8 and CeCl3.7H2O with anhydrous synonyms rejected. Preserve that distinction and all inherited holds; historical review text about structure drift is not itself evidence that current bytes still contain those fields.",
+      "missing_requirement": "Confirm the actual supplied cerium product against the contradictory MediaDive metadata before source-equivalence approval; separately review the current broad relation and provisional role.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cecl3_X_7_H2o.yaml",
+          "sha256": "7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:bbb947918f786a57d394fe5f8667876ebdc74817e11ad5265b48f71b366b33ce",
+      "case_input_sha256": "273e0b5d089a132b69f267b06811cc4d86d1e7883f32a043f70ed08bc517153c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2439",
+        "source_label": "N-Z-Amine® A",
+        "raw_source_label": "N-Z-Amine® A"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Ingredient2439 explicitly names Sigma C7290. The independently opened official supplier page confirms powdered enzymatic casein hydrolysate under that exact catalog code. This supports a distinct catalog-qualified undefined-mixture proposal. Shared peptone CAS values, similar N-Z-Amine names and cross-sold products do not establish equivalence to Sheffield typeA, C0626, EZMix or typeB; no historical lot invariance is asserted.",
+      "applicability": "Assigned shard index179; source mediadive.ingredient:2439; exact frozen source_record={\"amount\": 2, \"attribute\": \"Sigma C7290\", \"compound\": \"N-Z-Amine® A\", \"compound_id\": 2439, \"g_l\": 2, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2439",
+        "R-medium-1885",
+        "R-sigma-c7290-final",
+        "R-sigma-c7290-web"
+      ],
+      "proposal_ids": [
+        "R-P-SIGMA-C7290"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Historical lot/formulation concordance and any proposed cross-grade merge need additional supplier evidence; source-specific C7290 product identity is now bounded in a separate proposal.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/N-Z-Amine_A.yaml",
+          "sha256": "ce2bff1b6931364260cb5469ae368622a574aeb59bffd1a6be9c5e7499fea078"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:bf8ae6e3cdd69df690fee4aed1454faaa1cc89abee05c13c4cc0c7da5169c8bc",
+      "case_input_sha256": "986d66fee28c4890d0a383b4c6e6a3290c270e3a5f02014866badf896f62dd77",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1812",
+        "source_label": "Trace element solution SL12",
+        "raw_source_label": "Trace element solution SL12"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen compound1812/SL12 context is linked through CM solution4409. Newly recovered primary MediaDiveJ576 explicitly binds4409 and the separateSL12 stock4411; JCM576 independently prints its ten inputs. The A-authored stock proposal preserves disodiumEDTA and source hydrates. DSMZ998 SL12 differs, so no global SL12 alias or completeness of all unlisted occurrences is asserted.",
+      "applicability": "Exact ingredient1812 and frozen CM solution4409 context are supported by recovered primary JCM576 and MediaDiveJ576 links to the separate SL12 stock4411. Source-specific origin is recovered; retain the CM tenfold concentration-conversion hold and do not extend this composition to other SL12 occurrences or infer EDTA hydration.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1812",
+        "A-E-08-S00",
+        "A-E-CAPTURE-012",
+        "A-E-TARGETED-010",
+        "R-A-JCM576-SL12",
+        "R-A-MEDIADIVE-J576"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Use the single independently reviewed A-P-JCM576-SL12 formulation payload in final assembly rather than creating a duplicate.",
+      "missing_requirement": "The stock formula for the verified JCM576 context is recovered. Correct the CM tenfold volume-percentage transformation before quantitative integration; preserve unspecified EDTA hydration and do not transfer this formulation to otherSL12 occurrences without source evidence.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:cb29f7fb59dac2eabcdc00bcc662aacc3ae4afa83767a9d99e7a2fffa8e2ca27",
+      "case_input_sha256": "8934c85fc35bce3ceac0d2d67ad75c6b03bf7de9a93f46c937e134e48630c147",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:672",
+        "source_label": "Substrate",
+        "raw_source_label": "Substrate"
+      },
+      "occurrence_ids": [],
+      "disposition": "malformed_or_nonchemical_token",
+      "reasoning": "MediaDive672 is the substrate slot of DSMZ701, whose attribute explicitly offers glucose,chitin etc. These are alternatives, not ingredients that jointly define one compound. The live source has no chemical identifier and the frozen downstream quarantine records preserve this role-like slot. NCIT:C120264 on the current MIM owner does not make the slot a single chemical or authorize substituting one alternative.",
+      "applicability": "Assigned shard index181; source mediadive.ingredient:672; exact frozen source_record={\"amount\": 5, \"attribute\": \"glucose, chitin etc.\", \"compound\": \"Substrate\", \"compound_id\": 672, \"g_l\": 5, \"optional\": 0, \"recipe_order\": 14, \"unit\": \"g\"}. Assessed all 1 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-672",
+        "R-medium-701"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive672 is the substrate slot of DSMZ701, whose attribute explicitly offers glucose,chitin etc. These are alternatives, not ingredients that jointly define one compound. The live source has no chemical identifier and the frozen downstream quarantine records preserve this role-like slot. NCIT:C120264 on the current MIM owner does not make the slot a single chemical or authorize substituting one alternative.",
+      "missing_requirement": "Keep source alternatives and selection conditions explicit in a recipe-level representation; retire or reclassify the MIM single-ingredient model only through a dedicated owner/consumer review.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Substrate.yaml",
+          "sha256": "4b0134fa9b74a3528e74af03437654fe792727760d4c695930b46dccca9f5f70"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee",
+      "case_input_sha256": "210ade2c612dbc5f60dc65912b1dbbe4d53b47c1b01ce4039a900b0477a4ae8d",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1883",
+        "source_label": "Trace minerals see Medium No. 151",
+        "raw_source_label": "Trace minerals (see Medium No. 151"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The exact truncated raw label references trace minerals in JCM151 and appears as10ml in JCM744. JCM151 defines a multicomponent stock, not a named complete medium. The existing unmapped owner can receive stock classification and recipe components while retaining raw reference spelling and source quantities.",
+      "applicability": "Assigned shard index182; source mediadive.ingredient:1883; exact frozen source_record={\"amount\": 10, \"compound\": \"Trace minerals (see Medium No. 151\", \"compound_id\": 1883, \"optional\": 0, \"recipe_order\": 14, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1883",
+        "R-medium-J744",
+        "R-jcm-shared-151"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain the frozen owner/source state for this case: The exact truncated raw label references trace minerals in JCM151 and appears as10ml in JCM744. JCM151 defines a multicomponent stock, not a named complete medium. The existing unmapped owner can receive stock classification and recipe components while retaining raw reference spelling and source quantities.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_151.yaml",
+          "sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e",
+      "case_input_sha256": "d96f289af369b2ff7ef2242843371f79e7b056fc8bfd69c423d34eb712b14fd2",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1279",
+        "source_label": "SABOURAUD- Glucose-Bouillon",
+        "raw_source_label": "SABOURAUD- Glucose-Bouillon"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The raw source specifies Merck108339,2% glucose broth in DSMZ1429. Official supplier composition verifies the catalog-qualified dehydrated broth as5g/L meatpeptone,5g/L caseinpeptone and20g/L D(+)glucose at30g product/L. A separate A-authored product proposal preserves the raw qualifier; the receiving recipe adds agar separately. This supports bounded product identity, not historical lot invariance or generic Sabouraud family equivalence.",
+      "applicability": "Assigned shard index183; source mediadive.ingredient:1279; exact frozen source_record={\"amount\": 30, \"attribute\": \"Merck 108339, 2 %\", \"compound\": \"SABOURAUD- Glucose-Bouillon\", \"compound_id\": 1279, \"g_l\": 30, \"optional\": 0, \"recipe_order\": 1, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1279",
+        "R-medium-1429",
+        "R-A-MERCK108339"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Use the single A-P-MERCK108339 product payload in final assembly; do not author a competing duplicate or change generic Sabouraud owners.",
+      "missing_requirement": "Current Merck108339 typical formulation is verified. Historical lot/formulation concordance remains unverified; keep generic Sabouraud family owner separate and require version-specific source review before release.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/SABOURAUD-_Glucose-Bouillon.yaml",
+          "sha256": "16a488870e9482b4214215bcf0482817f0f1311c9bbe58597fec4018b82901aa"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308",
+      "case_input_sha256": "fa3b4a27f35ff99ceb9a3c4cbe53ccfba0f914ca717a4bc8f9456fb65f784cea",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1684",
+        "source_label": "Salts solution",
+        "raw_source_label": "Salts solution"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive1684 is50ml of a salts stock in JCM209. Its recipe-order16 step explicitly starts the separate salts section, listing six salts and100ml water; flattening them into the1092ml parent yields misleading stock concentrations. Current JCM209 lookup is unavailable, so the authoritative MediaDive section supports a source-specific candidate, not a universal component list on generic Salts_Solution.",
+      "applicability": "Assigned shard index184; source mediadive.ingredient:1684; exact frozen source_record={\"amount\": 50, \"attribute\": \"see below\", \"compound\": \"Salts solution\", \"compound_id\": 1684, \"optional\": 0, \"recipe_order\": 8, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1684",
+        "R-medium-J209"
+      ],
+      "proposal_ids": [
+        "R-P-JCM209-STOCK"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Use the exact MediaDiveJ209 subsection and preserve source version; do not equate other salts stocks or remove the generic starred-alias hold.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Salts_Solution.yaml",
+          "sha256": "c3a5fcceab6fecdd4083b4efe8ef4ece19f5a68b475919fa331240d53f13f6ca"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:e5708083b9e7bc630bb4751c7f65e633a2288994c266df2f57514a78b99f35f5",
+      "case_input_sha256": "126a60cc9e62b57bb61d226061797f79cdc186b485fc46d4559a4583ca22cb27",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1618",
+        "source_label": "GYP-sodium acetate-mineral salts broth",
+        "raw_source_label": "GYP-sodium acetate-mineral salts broth"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The raw GYP-sodium acetate-mineral salts broth reference in JCM69 points to JCM68. The original JCM68 recipe supplies glucose, yeast extract, Bacto peptone, sodium acetate and four salts plus water, withpH6.8; JCM69 adds50gNaCl separately. This supports a bounded transcription on the existing named-medium owner and excludes that added salt from the JCM68 base. The exact named-broth recipe also supports a formulation registry identity, replacing status-only retention of the placeholder without claiming any single-compound mapping.",
+      "applicability": "Assigned shard index185; source mediadive.ingredient:1618; exact frozen source_record={\"amount\": 1000, \"attribute\": \"see Medium No. 68\", \"compound\": \"GYP-sodium acetate-mineral salts broth\", \"compound_id\": 1618, \"optional\": 0, \"recipe_order\": 1, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1618",
+        "R-medium-J69",
+        "R-jcm-final-68",
+        "R-jcm-rest-68"
+      ],
+      "proposal_ids": [
+        "R-P-GYP-BROTH"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Identify the JCM68 pH6.8 titrant before asserting complete formulation closure; numbered broth registry identity does not depend on guessing that reagent.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/GYP-sodium_Acetate-mineral_Salts_Broth.yaml",
+          "sha256": "b3aed94d0043a0e6bdc941d52492f6ff98b5e3e571e75ffa15a9189592e1b026"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:f2d0636c5d67db581b492d12ea17da1e61d670643e82e4d43b7cc62ddb22b9c5",
+      "case_input_sha256": "1c0188cc415e25fa680d1488e6aec7494adbc4e9e6104368a00aa58e8cd597ff",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:viridogrisein",
+        "source_label": "viridogrisein",
+        "raw_source_label": ""
+      },
+      "occurrence_ids": [],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The1979 primary fermentation study compares authentic viridogrisein from Parke,Davis and etamycin from Bristol, identifies the recovered compound by physicochemical properties and depicts the shared structure. It distinguishes neoviridogriseinsI-III from viridogrisein/IV. This directly supports the exact alias beyond the related-MeSH synonym previously considered insufficient. The proposed evidence update does not clear release holds or approve the provisional selective-agent role.",
+      "applicability": "Assigned shard index186; source kgmicrobe.compound:viridogrisein; exact frozen source_record={\"category\": \"biolink:ChemicalEntity\", \"deprecated\": \"\", \"description\": \"\", \"id\": \"kgmicrobe.compound:viridogrisein\", \"name\": \"viridogrisein\", \"provided_by\": \"infores:metatraits\", \"same_as\": \"\", \"synonym\": \"\", \"xref\": \"\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-etamycin-1979",
+        "R-etamycin-2017",
+        "R-mesh-etamycin"
+      ],
+      "proposal_ids": [
+        "R-P-VIRIDOGRISEIN-EVIDENCE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Etamycin.yaml",
+          "sha256": "84d07722cb91d161afb8211b2a1cf76bfec8eaa9182b01d12c9e5f85648d8933"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    },
+    {
+      "case_id": "KG_CASE:fa6c89f1dd4918983e2964be8bf7962005239bfca4fe81c84bb3619b5aff135d",
+      "case_input_sha256": "eb1872c8ece1f712a7a840bd88b20d707897b7dcb3defd0bf4968e20ac218f21",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:897",
+        "source_label": "Trace mineral solution",
+        "raw_source_label": "Trace mineral solution"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive897 denotes different see-below stocks in JCM1167 and JCM1211: one is a low-mass EDTA stock and the other a citrate-based multisalts stock. JCM1167 primary text verifies the first; the current JCM1211 page is unavailable but MediaDive preserves the second complete recipe. Equal source ID/name cannot authorize a shared composition, and neither stock is identical to generic trace elements. Separate exact payloads now preserve both stock scopes, literal hydrate uncertainty, and JCM1211 unknown pH titrant; no common-stock identity follows.",
+      "applicability": "Assigned shard index187; source mediadive.ingredient:897; exact frozen source_record={\"amount\": 1, \"attribute\": \"see below\", \"compound\": \"Trace mineral solution\", \"compound_id\": 897, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-897",
+        "R-medium-J1167",
+        "R-medium-J1211",
+        "R-jcm-final-1167"
+      ],
+      "proposal_ids": [
+        "R-P-JCM1167-TRACE-STOCK",
+        "R-P-JCM1211-TRACE-STOCK"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Recover version-matched original JCM1211 recipe and identify its pH titrant before complete formulation closure; generic owner aliases remain held. JCM1167 and captured JCM1211 now have separate proposals.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Trace_Mineral_Solution.yaml",
+          "sha256": "03837875ebc88c1ab82387c244b383de83a01bc77f4fd60cd75fbbecdcd31f81"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root",
+      "source_holds_preserved": true,
+      "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners."
+    }
+  ]
+}

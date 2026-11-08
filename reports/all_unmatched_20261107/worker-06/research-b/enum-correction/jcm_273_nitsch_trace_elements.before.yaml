@@ -1,0 +1,73 @@
+identifier: kgmicrobe.ingredient:jcm_273_nitsch_trace_elements
+preferred_term: JCM 273 Nitsch trace elements
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_273_nitsch_trace_elements
+  ontology_label: JCM 273 Nitsch trace elements
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=273
+    notes: Source-defined preparation with retained formulation boundary; registry identity denotes the
+      whole stock, not any component.
+components:
+- component_name: H2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: ML
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.2'
+  concentration_unit: G
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.016'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.046'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=273
+    source_record: JCM 273 Nitsch trace elements
+    notes: Verbatim constituent names and source batch quantities; water is a preparation input. Child
+      reference_scope UNMAPPED means no exact child identifier was independently established.
+  notes: PrimarychainJCM625→624→273defines thisNitsch preparation. Variablexwater inMnSO4 remainsliteral
+    andunmapped; sulfuricacidconcentration isnot specified. This source version isdistinct fromATCC461Nitsch,
+    which printsH3BO4 anddifferenthydratequalifiers. No precisechildformoranalyticalclosure isclaimed.
+notes: 'PrimarychainJCM625→624→273defines thisNitsch preparation. Variablexwater inMnSO4 remainsliteral
+  andunmapped; sulfuricacidconcentration isnot specified. This source version isdistinct fromATCC461Nitsch,
+  which printsH3BO4 anddifferenthydratequalifiers. No precisechildformoranalyticalclosure isclaimed. Raw
+  source labels retained without global resolving aliases: ["Nitsch''s trace elements"]. Occurrence-specific
+  linkage is required; identical generic words in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:21:16+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary recipe evidence;
+    no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED

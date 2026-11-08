@@ -1,0 +1,1442 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "A-P-CALCIUM-D",
+      "case_ids": [
+        "CM_NAME:012330c5320a4968ed592d7a76fff13d4dcad09a07528cf53127908aa4a08938",
+        "CM_NAME:11e4479bd0ecc400516731fbfcc48ebb29a1be6b76404f62c27481856b1059cc",
+        "KG_CASE:04f810be4e371e85c9b335d9d5d23eeb4cfcf63a799f3939b6de8277840696e8",
+        "KG_CASE:5d2b66b49c3347a03b3fbf848843da8fcea89a6d3fd0df5d10a7d6e8de00fbfd",
+        "KG_CASE:9c4ea075537f54044f90a1d22c9946cc1b5128a79fef529f9ffe52b7bc754ab0"
+      ],
+      "description": "Correct D-calcium-pantothenate alias boundaries and retain rejected-label provenance.",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-02-S00",
+        "A-E-02-S01",
+        "A-E-02-S02",
+        "A-E-02-S03",
+        "A-E-02-S04",
+        "A-E-02-S05",
+        "A-E-02-S06",
+        "A-E-CAPTURE-002",
+        "A-E-CAPTURE-008",
+        "A-E-CAPTURE-010",
+        "A-E-CAPTURE-082",
+        "A-E-CAPTURE-083",
+        "A-E-CAPTURE-087",
+        "A-E-CAPTURE-088",
+        "A-E-CAPTURE-090",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-011",
+        "A-E-EXTRA-018",
+        "A-E-TARGETED-008",
+        "A-E-SIGMA-HEMICALCIUM",
+        "A-E-16-S00",
+        "A-E-CAPTURE-061",
+        "A-E-CAPTURE-129",
+        "R-frozen-shard",
+        "R-ingredient-1123",
+        "R-chebi-31345",
+        "R-issue-1157",
+        "R-ingredient-1512",
+        "R-ingredient-1585",
+        "R-medium-1738",
+        "R-medium-1739",
+        "R-medium-1741"
+      ],
+      "owner_path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Calcium_Pantothenate.yaml",
+        "sha256": "b3f1668bccca4f6f8b23b316d5cf13432652954dd7c07beb7bc1509ad00ddc5e"
+      },
+      "before_sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+      "identity_predicate_alias_consequences": "CHEBI31345 exact identity unchanged; six labels become nonmatching/nonexported REJECTED_LABEL. Adds only explicitlyD-qualified source labels. NoDL merge and no tombstone resurrection.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-CALCIUM-DL",
+      "case_ids": [
+        "CM_NAME:059a93d33a57f51788fe5cf8de33a803d555df73119e6b9bdaa15e430969f59f"
+      ],
+      "description": "Propose distinctDL calcium-pantothenate owner for the explicitlyDL JCM source family.",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-05-S00",
+        "A-E-05-S01",
+        "A-E-05-S02",
+        "A-E-05-S03",
+        "A-E-05-S04",
+        "A-E-05-S05",
+        "A-E-05-S06",
+        "A-E-05-S07",
+        "A-E-05-S08",
+        "A-E-05-S09",
+        "A-E-05-S10",
+        "A-E-05-S11",
+        "A-E-05-S12",
+        "A-E-05-S13",
+        "A-E-05-S14",
+        "A-E-05-S15",
+        "A-E-05-S16",
+        "A-E-05-S17",
+        "A-E-CAPTURE-016",
+        "A-E-CAPTURE-018",
+        "A-E-CAPTURE-045",
+        "A-E-CAPTURE-054",
+        "A-E-CAPTURE-057",
+        "A-E-CAPTURE-058",
+        "A-E-CAPTURE-060",
+        "A-E-CAPTURE-062",
+        "A-E-CAPTURE-063",
+        "A-E-CAPTURE-064",
+        "A-E-CAPTURE-065",
+        "A-E-CAPTURE-068",
+        "A-E-CAPTURE-069",
+        "A-E-CAPTURE-070",
+        "A-E-CAPTURE-071",
+        "A-E-CAPTURE-072",
+        "A-E-CAPTURE-073",
+        "A-E-CAPTURE-074",
+        "A-E-CAPTURE-097",
+        "A-E-CAPTURE-099",
+        "A-E-CAPTURE-119",
+        "A-E-CAPTURE-122",
+        "A-E-CAPTURE-125",
+        "A-E-CAPTURE-126",
+        "A-E-CAPTURE-128",
+        "A-E-CAPTURE-130",
+        "A-E-CAPTURE-131",
+        "A-E-CAPTURE-132",
+        "A-E-CAPTURE-133",
+        "A-E-CAPTURE-136",
+        "A-E-CAPTURE-137",
+        "A-E-CAPTURE-139",
+        "A-E-CAPTURE-140",
+        "A-E-CAPTURE-141",
+        "A-E-CAPTURE-142",
+        "A-E-CAPTURE-144",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-007",
+        "A-E-EXTRA-012",
+        "A-E-TARGETED-012",
+        "A-E-SPECTRUM-DL"
+      ],
+      "owner_path": "data/ingredients/mapped/Calcium_DL-Pantothenate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Calcium_DL-Pantothenate.yaml",
+        "sha256": "1b74318859eb0cc1edaafe8a13eb536107ff651edd453c780f88e286a43eb533"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "CHEBI180950 exactMatch. Preserve racemate boundary fromCHEBI31345. Case32 and other unconfirmed source labels are excluded; two missinglive JCMrecipes remain explicit limitations.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-D-GLUCOSE",
+      "case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+        "CM_NAME:4102832afa3835505e3db683a0cfa50f14daaab21c73635b74f45fba60c99ca9",
+        "CM_NAME:c8ca0d762ce96c815bed427a72871872ab31e21e401857b26cd17858b525480b"
+      ],
+      "description": "Add twoD-glucose source spelling variants to the D-specific owner.",
+      "evidence_ids": [
+        "A-E-OWNER-09",
+        "A-E-15-S00",
+        "A-E-15-S01",
+        "A-E-15-S02",
+        "A-E-15-S03",
+        "A-E-15-S04",
+        "A-E-15-S05",
+        "A-E-CAPTURE-052",
+        "A-E-CAPTURE-053",
+        "A-E-CAPTURE-055",
+        "A-E-CAPTURE-056",
+        "A-E-CAPTURE-066",
+        "A-E-CAPTURE-067",
+        "A-E-CAPTURE-120",
+        "A-E-CAPTURE-121",
+        "A-E-CAPTURE-123",
+        "A-E-CAPTURE-124",
+        "A-E-CAPTURE-134",
+        "A-E-CAPTURE-135",
+        "A-E-EXTRA-000",
+        "A-E-41-S00",
+        "A-E-CAPTURE-037",
+        "A-E-CAPTURE-075",
+        "A-E-TARGETED-006",
+        "C-E-124-SOURCE-1",
+        "C-E-124-SOURCE-2",
+        "C-E-chebi-17634",
+        "C-E-retry-source-pages",
+        "C-E-OWNER-D-glucose"
+      ],
+      "owner_path": "data/ingredients/mapped/D-glucose.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/D-glucose.yaml",
+        "sha256": "8c922860115dd5dfaa3a9f1db92dc8b1a7d5b179bf48500c63b46fa3ea58512d"
+      },
+      "before_sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914",
+      "identity_predicate_alias_consequences": "CHEBI17634 exact identity unchanged. No genericglucose, specificanomer/hydrate, or stocksolution merge. Research-c case124 can join only after independent evidence/backlink integration.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-LANTHANUM-HEPTAHYDRATE",
+      "case_ids": [
+        "CM_NAME:1f300cfe5fc1038138dfc840a9ec07bd1b5b96e12e8de10add68930ab70b8731",
+        "KG_CASE:71d90c182388cac6c4256bc0a73d43542a593829e9054df50f299479a67ba433"
+      ],
+      "description": "Propose a separateCAS-backed lanthanumchlorideheptahydrate owner.",
+      "evidence_ids": [
+        "A-E-OWNER-13",
+        "A-E-25-S00",
+        "A-E-25-S01",
+        "A-E-CAPTURE-003",
+        "A-E-CAPTURE-014",
+        "A-E-CAPTURE-085",
+        "A-E-EXTRA-005",
+        "A-E-EXTRA-006",
+        "A-E-EXTRA-013",
+        "A-E-EXTRA-019",
+        "A-E-TARGETED-009",
+        "A-E-TARGETED-014",
+        "A-E-TARGETED-015",
+        "R-frozen-shard",
+        "R-ingredient-1461",
+        "R-medium-1610",
+        "R-dsmz-1610"
+      ],
+      "owner_path": "data/ingredients/mapped/Lanthanum_III_Chloride_Heptahydrate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Lanthanum_III_Chloride_Heptahydrate.yaml",
+        "sha256": "8616bbbdeb7d5097a1eddd3b8e813ba2f0f738505b58a00accc14ecbf1723fb5"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "cas10025-84-0 exact identity; NARROW_MATCH emits skos:broadMatch toCHEBI231515 plus mandatorylocalregistry exact row. Do notalias orreplace existingCAS20211-76-1 owner.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-MERCK108339",
+      "case_ids": [
+        "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+        "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e"
+      ],
+      "description": "Propose separate Merck108339 dehydrated broth product while preserving generic Sabouraud family owner.",
+      "evidence_ids": [
+        "A-E-OWNER-16",
+        "A-E-35-S00",
+        "A-E-35-S01",
+        "A-E-CAPTURE-084",
+        "A-E-EXTRA-021",
+        "A-E-MERCK108339",
+        "R-frozen-shard",
+        "R-ingredient-1279",
+        "R-medium-1429"
+      ],
+      "owner_path": "data/ingredients/mapped/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+        "sha256": "b4e64838097743c7f21d9437d69813bb0267ff99bee59a2f868ab57c76a3b6aa"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Localproduct identity/exact registryrow only; no wholeproduct chemical mapping. Component amounts use supplier30g/Lreconstitutionbasis. GenericUNMAPPED0513isunchanged; rootmaybacklink KG183 onlywithsamecatalogevidence.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "B-P-Yeast_Extract",
+      "case_ids": [
+        "CM_NAME:52c9de92b40f1bd9badda302a411f54e2c6028f105d8b0f1803c3133ea3d07f0",
+        "CM_NAME:89b2f49caff82261f5440e3c404bb41d949eae1a81d0490c9f86c53d01266c2b",
+        "CM_NAME:aac849a997b9a529adc90abb92e983d277e66a271a77b42acbb4fee27449b3cb",
+        "CM_NAME:fbadb09d45d534aadd984afeac7a81cf2bbe17740162ed23aa1463725e2b104f"
+      ],
+      "description": "Add source-verified Bacto-yeast and Yeast extrakt raw aliases; TOGO2497 explicitly identifies Bacto yeast extract and DSMZ29/40 supply the extrakt spelling. No inherited composition/role claims are newly endorsed.",
+      "evidence_ids": [
+        "B-47-frozen-0",
+        "B-90-frozen-0",
+        "B-90-frozen-1",
+        "B-http-148404e4228b1b65",
+        "B-http-3f9e8c681159ee37",
+        "B-http-b12dfeab66ec37eb",
+        "B-ontology-FOODON-03315426",
+        "B-owner-Yeast_Extract",
+        "C-E-107-SOURCE-1",
+        "C-E-nbrc-1140",
+        "C-E-ols-foodon-yeast-extract",
+        "C-E-nbrc-114",
+        "C-E-OWNER-Yeast_Extract",
+        "C-E-144-SOURCE-1",
+        "C-E-togo-M2529",
+        "C-E-dsmz-194"
+      ],
+      "owner_path": "data/ingredients/mapped/Yeast_Extract.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/Yeast_Extract.yaml",
+        "sha256": "d1d043b038774cdad5afa75cb91a7bad35df446dcab94d0f116bbc2234545771"
+      },
+      "before_sha256": "e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28",
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-Alpha-d-glucose",
+      "case_ids": [
+        "CM_NAME:7fc4fcdc626f033207d081d9114ff9c21661d641cbca3910541eb2020b421eaa"
+      ],
+      "description": "Add DSMZ403 raw Glucose (α-, D+) alias to exact alpha-D-glucose; do not infer monohydrate.",
+      "evidence_ids": [
+        "B-79-frozen-0",
+        "B-http-bcafba69536a20e5",
+        "B-ontology-CHEBI-17925",
+        "B-owner-Alpha-d-glucose"
+      ],
+      "owner_path": "data/ingredients/mapped/Alpha-d-glucose.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/Alpha-d-glucose.yaml",
+        "sha256": "828ed6c6e20856fbcf06ef1f939d9d3e5330548884ddbf45ff9d1f3f468ea8ed"
+      },
+      "before_sha256": "9800d079702afb2d9b677c6a3eb558f61ebe43d75665e6849af40dd4715c417c",
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-3-_N-morpholinopropanesulfonic_Acid",
+      "case_ids": [
+        "CM_NAME:7ecad0eaa6874a18efcafb58e963d264b06411526d870ac26173cbf27a321db5"
+      ],
+      "description": "Add the raw broken-line MOPS acid spelling to exact CHEBI:44115 acid owner; preserve broader MOPS owner boundary.",
+      "evidence_ids": [
+        "B-78-frozen-0",
+        "B-http-af18091d4d1ed17a",
+        "B-ontology-CHEBI-39074",
+        "B-ontology-CHEBI-44115",
+        "B-owner-3-_N-morpholinopropanesulfonic_Acid",
+        "B-owner-Mops"
+      ],
+      "owner_path": "data/ingredients/mapped/3-_N-morpholinopropanesulfonic_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/3-_N-morpholinopropanesulfonic_Acid.yaml",
+        "sha256": "52f8f160a3c5aeecfb1ac9dadac67931b231806b2408c9f21916322a39ab4332"
+      },
+      "before_sha256": "4a35a2accdf85d154e95876ebda72d163d4ba454623dc1be67ff5c81290d0b95",
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-Chromium_Iii_Chloride_Hexahydrate",
+      "case_ids": [
+        "CM_NAME:8e323b47669a43b11bf2ad18ad984e16108517debc057d8e29b9b895a771bca2"
+      ],
+      "description": "Add CrCl3.6H2O raw alias and replace stale anhydrous SMILES/InChI with exact CHEBI:53442 hexahydrate structures from captured OLS ontology.",
+      "evidence_ids": [
+        "B-93-frozen-0",
+        "B-attempts-extra-manifest.json",
+        "B-http-7b2431846833713c",
+        "B-ontology-CHEBI-53442",
+        "B-owner-Chromium_Iii_Chloride_Hexahydrate"
+      ],
+      "owner_path": "data/ingredients/mapped/Chromium_Iii_Chloride_Hexahydrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/Chromium_Iii_Chloride_Hexahydrate.yaml",
+        "sha256": "a897237b15f055bceacd5eff72c263dc54127f02e88569dc2d5fda269df16a9f"
+      },
+      "before_sha256": "a795fdcc84e8ee8bd079a7fcba7b44d8a046c8772d27b6c6aafd3114e3d712b4",
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-NBRC1257-1321",
+      "case_ids": [
+        "CM_NAME:5a6a64dd3c8441d7132e42bb195aedac764e54ea5bf512ed61957272a8b62696",
+        "CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938"
+      ],
+      "description": "Propose NBRC 1257/1321 trace element mixture with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-52-frozen-0",
+        "B-52-frozen-1",
+        "B-http-93af0b491a06a026",
+        "B-http-cea6a91a0c986292",
+        "C-E-134-SOURCE-1",
+        "C-E-134-SOURCE-2",
+        "C-E-134-SOURCE-3",
+        "C-E-134-SOURCE-4",
+        "C-E-jcm-439",
+        "C-E-jcm-1363",
+        "C-E-jcm-1364",
+        "C-E-jcm-1400",
+        "C-E-jcm-1444"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1257_1321_trace_element_mixture.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/nbrc_1257_1321_trace_element_mixture.yaml",
+        "sha256": "419863f71419c2bd40baf83acb72988fbeee75718a3e53d6bb7d4f7a4cdc20eb"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-NBRC1117-SL7",
+      "case_ids": [
+        "CM_NAME:5f58a859c7735e1087f439350f93965408ec8cf4c93a6673e3881608230471b9"
+      ],
+      "description": "Propose NBRC 1117 SL7 trace element solution with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-55-frozen-0",
+        "B-http-f18240593e700519"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1117_sl7_trace_element_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/nbrc_1117_sl7_trace_element_solution.yaml",
+        "sha256": "b80283dd7839fd7301e90804983f87ea87ecf1e03452951d8477264bb26adb15"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-NBRC268-trace-salts",
+      "case_ids": [
+        "CM_NAME:5f615f5b32980cd55699d5175e8421d922a23a011fa7a0a1c66681de0ef0d530"
+      ],
+      "description": "Propose NBRC 268 ISP4 trace salts solution with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-56-frozen-0",
+        "B-http-ffa3384fa2158fad"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_268_trace_salts_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/nbrc_268_trace_salts_solution.yaml",
+        "sha256": "e988ff4723139ed914eb00db8134e6bb7a5d654b45e4b7158bb7e035daf92911"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-ATCC1464-trace-metals",
+      "case_ids": [
+        "CM_NAME:6a3d70ebe7c1308142da9937d310fd5726c2ef0c8bf9ee0f0392e829b266c430"
+      ],
+      "description": "Propose ATCC 1464 trace metals stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-63-frozen-0",
+        "B-http-4a2fe590f275a149",
+        "B-owner-Trace_Metals_Solution"
+      ],
+      "owner_path": "data/ingredients/mapped/atcc_1464_trace_metals.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/atcc_1464_trace_metals.yaml",
+        "sha256": "ad81f259715f8dae75fee10abe6cc3497c5ed4c4ccb3177d77fdf9f0ccdb3881"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-JCM301-growth-factors",
+      "case_ids": [
+        "CM_NAME:73690b2414ae0ababb90be00260c1dc93697629d065026d690c3cd99d31d4456"
+      ],
+      "description": "Propose JCM 301 growth stimulating factors with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-69-frozen-0",
+        "B-http-12c890f95c1df1c2"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_301_growth_stimulating_factors.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/jcm_301_growth_stimulating_factors.yaml",
+        "sha256": "df79648deee18a5f8f9984540a053e7f4f032ba9fc995e58aec68923975670dd"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-MediaDive124-haemin",
+      "case_ids": [
+        "CM_NAME:58f1cedd776533c90268c41dbf955e440c818a60ce9fb214fafe40cfbea20f15"
+      ],
+      "description": "Propose MediaDive 124 haemin 0.05% w/v stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-50-frozen-0",
+        "B-http-cbc1bbe3727805d3",
+        "B-http-e38b2af711101baa",
+        "B-owner-Hemin_solution_see_below"
+      ],
+      "owner_path": "data/ingredients/mapped/mediadive_124_haemin_0p05_percent_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/mediadive_124_haemin_0p05_percent_stock.yaml",
+        "sha256": "46e8c1673dc3309fb82a78bca140afb142a7c4748bfcff130e7d30d77852148c"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-DSMZ1033-ferric-stock",
+      "case_ids": [
+        "CM_NAME:67b97cde045959a5f5754cebd9e262c5fbe9699e7c1b4bb5a1015386c6caadeb"
+      ],
+      "description": "Propose DSMZ 1033 ferric chloride hexahydrate 0.17 mM stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-59-frozen-0",
+        "B-http-655217ec6658eef1"
+      ],
+      "owner_path": "data/ingredients/mapped/dsmz_1033_ferric_chloride_0p17_mm_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/dsmz_1033_ferric_chloride_0p17_mm_stock.yaml",
+        "sha256": "ba906455927c84415fedddc3f208c5ee5cc5038649acec91affb17c4b8b6e748"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-JCM977-glucose20",
+      "case_ids": [
+        "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190"
+      ],
+      "description": "Propose JCM 977 glucose 20% w/v stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-64-frozen-0",
+        "B-http-4f360397f0c066dd",
+        "B-owner-Glucose"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_977_glucose_20_percent_wv_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/jcm_977_glucose_20_percent_wv_stock.yaml",
+        "sha256": "a4c547d2b160ea0993121e05e479f10b55eb15b966200046cac8ec63c406ab37"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-TOGO2601-A5Co",
+      "case_ids": [
+        "CM_NAME:67df6b74ff6c1efcad081d376f41b48ca214ad1b98c47423eb93bb13b46282ac"
+      ],
+      "description": "Propose TOGO M2601 A5 plus cobalt trace metal stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-60-frozen-0",
+        "B-http-ab8b3babd9a9da0c",
+        "B-owner-Bg-11_Trace_Metals_Solution",
+        "B-owner-Trace_Metal_Mix_A5"
+      ],
+      "owner_path": "data/ingredients/mapped/togo_2601_a5_cobalt_trace_metal_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/togo_2601_a5_cobalt_trace_metal_stock.yaml",
+        "sha256": "71a2b9b36f0196dd08f43b87eda149a615c809f07e388b11913d390dc90b2feb"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-ATCC957-A5",
+      "case_ids": [
+        "CM_NAME:786fd5af1b3d918603c70be3290128c282321d91bf432b1ef0ff99f0ac25543e"
+      ],
+      "description": "Propose ATCC 957 A5 trace metals stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-73-frozen-0",
+        "B-http-894f736757cddb4d",
+        "B-owner-Trace_Metal_Mix_A5"
+      ],
+      "owner_path": "data/ingredients/mapped/atcc_957_a5_trace_metals.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/atcc_957_a5_trace_metals.yaml",
+        "sha256": "ec355d19e79d733be4995966564b84cb07f0e2646f2bc8ac15514f67571832b9"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-ATCC461-Castenholz2x",
+      "case_ids": [
+        "CM_NAME:716889195f214d2c07686a1c89a9bb2537b0e336bf43a3f26b103b8ed6cc8a46"
+      ],
+      "description": "Propose ATCC 461 Castenholz salts 2x with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-67-frozen-0",
+        "B-67-frozen-1",
+        "B-http-d53fbdee364b0edb"
+      ],
+      "owner_path": "data/ingredients/mapped/atcc_461_castenholz_salts_2x.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/atcc_461_castenholz_salts_2x.yaml",
+        "sha256": "3a4a52f102a61ad0f4cc8e382f25dea15ff6e7aef9a457aa2f7d20bc8941104b"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-TOGO2788-VogelBonner50x",
+      "case_ids": [
+        "CM_NAME:88e1442beb3c27dd0db92a2929f3860f3f9a06b4e6a7d82cbee6b59b327e310e"
+      ],
+      "description": "Propose TOGO M2788 Vogel-Bonner salts 50x with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-88-frozen-0",
+        "B-attempts-extra-manifest.json",
+        "B-http-402989b474db5d8d"
+      ],
+      "owner_path": "data/ingredients/mapped/togo_2788_vogel_bonner_salts_50x.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/togo_2788_vogel_bonner_salts_50x.yaml",
+        "sha256": "cf76164096365df5c25f0d8fb7d655f5d474e55788d578545421f4f20a50aead"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-DSMZ135-339a-carbonate5",
+      "case_ids": [
+        "CM_NAME:59124a174f61aef7996a991b5ebcd6f8915ffee8721654101f87cea90f834be6"
+      ],
+      "description": "Propose DSMZ 135/339a sodium carbonate 5% w/v stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-51-frozen-0",
+        "B-51-frozen-1",
+        "B-http-d2660a1591be1f66",
+        "B-http-ea9cb2ab0c21925e",
+        "B-owner-Sodium_Carbonate_Solution"
+      ],
+      "owner_path": "data/ingredients/mapped/dsmz_135_339a_sodium_carbonate_5_percent_wv_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/dsmz_135_339a_sodium_carbonate_5_percent_wv_stock.yaml",
+        "sha256": "8e797dc36eabbecaf777b3327e0a444213f32408b65a9f1441bdd940841478d3"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "B-P-JCM273-Nitsch",
+      "case_ids": [
+        "CM_NAME:866a617a54bf030caf30c4a006b6c6ec0e11de87d6891246bbf2b9aba867a249"
+      ],
+      "description": "Propose JCM 273 Nitsch trace elements with source-specific constituent assertion and no ambiguous generic-label alias.",
+      "evidence_ids": [
+        "B-86-frozen-0",
+        "B-attempts-extra-manifest.json",
+        "B-attempts-retry-manifest.json",
+        "B-http-4e0ae342dc2ccc4f",
+        "B-http-8c90d800b230c7a6",
+        "B-http-fa617908944dfecf"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_273_nitsch_trace_elements.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/jcm_273_nitsch_trace_elements.yaml",
+        "sha256": "5dc91434220de08e1ba761779aef993217e2961d37266119cad6daf21e30ccbc"
+      },
+      "before_sha256": null,
+      "application_scope": "Source-bound proposal only; native payload review, independent scientific review, guarded write, synchronization and SSSOM/roundtrip gates remain coordinator obligations."
+    },
+    {
+      "proposal_id": "C-P-NZAMINE-A",
+      "case_ids": [
+        "CM_NAME:a068b8e304ea67121e10f7c68d6740704e58bb067bf7a3240715296058cf201c"
+      ],
+      "description": "Bounded raw-source alias addition with existing identity/status and prior decisions preserved; The primary JCM437 table spells N-Z Amine,type A(Sheffield), resolving the doubled dash in the frozen label while retaining the type-A qualifier. The supplier description confirms N-Z-Amine A is an enzymatic casein digest; this is not pure casein, TypeB or N-Z-Case by lexical similarity.",
+      "evidence_ids": [
+        "C-E-102-SOURCE-1",
+        "C-E-jcm-437",
+        "C-E-nzamine-product",
+        "C-E-OWNER-N-Z-Amine_A"
+      ],
+      "owner_path": "data/ingredients/unmapped/N-Z-Amine_A.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/N-Z-Amine_A.yaml",
+        "sha256": "e90083d9710b99ab2d5e9b586e0b5b13b2e30110f66e9226cd89198c928a0cf3"
+      },
+      "before_sha256": "ce2bff1b6931364260cb5469ae368622a574aeb59bffd1a6be9c5e7499fea078",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-SULFUR",
+      "case_ids": [
+        "CM_NAME:a1ec56b39c499e067f3680dcd3de08cc28a174c09113a71e04e1f022e3c3eefa"
+      ],
+      "description": "Bounded raw-source alias addition with existing identity/status and prior decisions preserved; Elemental sulfer is an explicit elemental-sulfur misspelling. The frozen MMJS context specifies a weighed3g ingredient and current ChEBI33403 denotes elemental sulfur. This follows the existing owner’s documented #368 distinction from sulfur atom and polysulfur.",
+      "evidence_ids": [
+        "C-E-103-SOURCE-1",
+        "C-E-chebi-33403",
+        "C-E-retry-source-pages",
+        "C-E-OWNER-Sulfur"
+      ],
+      "owner_path": "data/ingredients/mapped/Sulfur.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Sulfur.yaml",
+        "sha256": "05307ea33e85fb88ce93e90d15298f23f211323453f5719758039b0efec7ceb5"
+      },
+      "before_sha256": "d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-ORNITHINE-HCL",
+      "case_ids": [
+        "CM_NAME:a632d00f64336d1f7f5d51f9680c2f9df316a97b0a7121fcf74c3bfc479f786e"
+      ],
+      "description": "Bounded raw-source alias addition with existing identity/status and prior decisions preserved; L-Ornithine HCl denotes the hydrochloride salt. Current ChEBI195690 has the salt formula C5H12N2O2.HCl and stereospecific structure; the existing monohydrochloride owner matches. The frozen source CHEBI15729 is free L-ornithine and cannot identify this supplied salt.",
+      "evidence_ids": [
+        "C-E-105-SOURCE-1",
+        "C-E-105-SOURCE-2",
+        "C-E-chebi-195690",
+        "C-E-OWNER-L-ornithine_Monohydrochloride"
+      ],
+      "owner_path": "data/ingredients/mapped/L-ornithine_Monohydrochloride.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/L-ornithine_Monohydrochloride.yaml",
+        "sha256": "aab3fb9a5c4bc142c78ef1916149601be6ed8efb5a02b807699720125e3a81eb"
+      },
+      "before_sha256": "420c77b8adacc5770dc705ca374f09a3470dff65077b929a25047484ae6465f8",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM187",
+      "case_ids": [
+        "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+        "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8"
+      ],
+      "description": "Source-bound stock decomposition and numbered aliases; preserve existing identifier and status. The explicit187 reference denotes the seven-salt trace-element stock plus water defined in JCM187. FeCl2 solution is a separate stock in that medium and must not be imported into this constituent list. Existing local identity and its nonexact generic NCIT mapping remain unchanged.",
+      "evidence_ids": [
+        "C-E-106-SOURCE-1",
+        "C-E-106-SOURCE-2",
+        "C-E-106-SOURCE-3",
+        "C-E-106-SOURCE-4",
+        "C-E-106-SOURCE-5",
+        "C-E-106-SOURCE-6",
+        "C-E-106-SOURCE-7",
+        "C-E-106-SOURCE-8",
+        "C-E-106-SOURCE-9",
+        "C-E-106-SOURCE-10",
+        "C-E-106-SOURCE-11",
+        "C-E-jcm-187",
+        "C-E-jcm-1351",
+        "C-E-jcm-1365",
+        "C-E-jcm-1388",
+        "C-E-jcm-1389",
+        "C-E-jcm-1406",
+        "C-E-jcm-1423",
+        "C-E-jcm-1424",
+        "C-E-jcm-1425",
+        "C-E-jcm-1456",
+        "C-E-jcm-1468",
+        "C-E-jcm-1475",
+        "C-E-OWNER-Trace_Element_Solution_See_Medium_No_187",
+        "R-frozen-shard",
+        "R-ingredient-1886",
+        "R-jcm-shared-187"
+      ],
+      "owner_path": "data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Element_Solution_See_Medium_No_187.yaml",
+        "sha256": "5e66d1346b2c9b5ca3f1e8f13494bb7286b450b469ac45f38df2bdc433bfb25e"
+      },
+      "before_sha256": "eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "case_ids": [
+        "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+        "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+        "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee"
+      ],
+      "description": "Source-bound stock decomposition and numbered aliases; preserve existing identifier and status. The nested chain806→262→265→151 identifies the JCM151 trace-mineral preparation, not the complete Pyrococcus medium. Its NTA/sulfate-salt recipe supports correcting NAMED_MEDIUM to STOCK_SOLUTION and transcribing the minerals, water and KOH adjustment. Variable MnSO4·xH2O remains source text.",
+      "evidence_ids": [
+        "C-E-110-SOURCE-1",
+        "C-E-jcm-151",
+        "C-E-jcm-262",
+        "C-E-jcm-265",
+        "C-E-jcm-806",
+        "C-E-jcm-197",
+        "C-E-OWNER-Trace_Minerals_See_Medium_No_151",
+        "A-E-OWNER-12",
+        "A-E-22-S00",
+        "A-E-CAPTURE-103",
+        "A-E-CAPTURE-113",
+        "R-frozen-shard",
+        "R-ingredient-1883",
+        "R-medium-J744",
+        "R-jcm-shared-151"
+      ],
+      "owner_path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_151.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Minerals_See_Medium_No_151.yaml",
+        "sha256": "6055ec1fcb2adcf6be15e7a228c5e96dccc644a791d99e75a29edb03f5e85d84"
+      },
+      "before_sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "case_ids": [
+        "CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2",
+        "CM_NAME:6d6ebd68cac4ad55515d9c4606112ed3713710431fa05569bc7bd23849fc67c6",
+        "CM_NAME:85e975201016d92df32666f4d249c9efbd68de8641d88c73fc0d38b1ade328ab",
+        "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470"
+      ],
+      "description": "Source-bound stock decomposition and numbered aliases; preserve existing identifier and status. JCM1375 explicitly references the trace-vitamin solution of284. The284 table has different vitamin amounts from197 and explicitly DL-calcium pantothenate; the asterisk marks preparation instructions and must not merge vitamin and mineral stocks.",
+      "evidence_ids": [
+        "C-E-123-SOURCE-1",
+        "C-E-jcm-1375",
+        "C-E-jcm-284",
+        "C-E-OWNER-Trace_Vitamins_Solution_See_Medium_No_284",
+        "B-65-frozen-0",
+        "B-http-d50ed9514d6b22ce",
+        "B-http-befa4f78ee1ad79d",
+        "B-owner-Trace_Vitamins_Solution_See_Medium_No_284",
+        "B-85-frozen-0",
+        "B-http-34edbeca7d7ef6cb",
+        "R-frozen-shard",
+        "R-ingredient-1982",
+        "R-medium-J1051",
+        "R-jcm-shared-284"
+      ],
+      "owner_path": "data/ingredients/unmapped/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+        "sha256": "3641536905fbb16690b3a69bb7580a03b42708d702c27ec6e25079d8219454d4"
+      },
+      "before_sha256": "f14f409a04b1e113f11473f3d7846cd8bc0a85ac19bb4d8fba5a20eaea31f08a",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "case_ids": [
+        "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+        "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+        "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+        "CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3",
+        "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea"
+      ],
+      "description": "JCM197 defines ten vitamins and water with explicit amounts. This is a recipe-defined stock, not a generic vitamin chemical class. Existing Wolfe/ATCC-labelled stocks are not automatically identical: their phosphate or pantothenate-form differences preclude a lexical merge. A source-specific local identity is proposed.",
+      "evidence_ids": [
+        "C-E-111-SOURCE-1",
+        "C-E-111-SOURCE-2",
+        "C-E-111-SOURCE-3",
+        "C-E-111-SOURCE-4",
+        "C-E-111-SOURCE-5",
+        "C-E-111-SOURCE-6",
+        "C-E-111-SOURCE-7",
+        "C-E-111-SOURCE-8",
+        "C-E-111-SOURCE-9",
+        "C-E-111-SOURCE-10",
+        "C-E-111-SOURCE-11",
+        "C-E-111-SOURCE-12",
+        "C-E-111-SOURCE-13",
+        "C-E-111-SOURCE-14",
+        "C-E-111-SOURCE-15",
+        "C-E-111-SOURCE-16",
+        "C-E-111-SOURCE-17",
+        "C-E-111-SOURCE-18",
+        "C-E-111-SOURCE-19",
+        "C-E-111-SOURCE-20",
+        "C-E-111-SOURCE-21",
+        "C-E-111-SOURCE-22",
+        "C-E-111-SOURCE-23",
+        "C-E-111-SOURCE-24",
+        "C-E-111-SOURCE-25",
+        "C-E-111-SOURCE-26",
+        "C-E-111-SOURCE-27",
+        "C-E-111-SOURCE-28",
+        "C-E-111-SOURCE-29",
+        "C-E-111-SOURCE-30",
+        "C-E-111-SOURCE-31",
+        "C-E-111-SOURCE-32",
+        "C-E-111-SOURCE-33",
+        "C-E-111-SOURCE-34",
+        "C-E-111-SOURCE-35",
+        "C-E-111-SOURCE-36",
+        "C-E-111-SOURCE-37",
+        "C-E-111-SOURCE-38",
+        "C-E-111-SOURCE-39",
+        "C-E-111-SOURCE-40",
+        "C-E-jcm-197",
+        "C-E-ols-stock-search",
+        "C-E-jcm-1066",
+        "C-E-jcm-1081",
+        "C-E-jcm-1082",
+        "C-E-jcm-1092",
+        "C-E-jcm-1115",
+        "C-E-jcm-1313",
+        "C-E-jcm-521",
+        "C-E-jcm-661",
+        "C-E-jcm-670",
+        "C-E-jcm-687",
+        "C-E-jcm-695",
+        "C-E-jcm-737",
+        "C-E-jcm-751",
+        "C-E-jcm-753",
+        "C-E-jcm-784",
+        "C-E-jcm-822",
+        "C-E-jcm-865",
+        "C-E-jcm-876",
+        "C-E-jcm-887",
+        "C-E-jcm-955",
+        "C-E-117-SOURCE-1",
+        "C-E-jcm-1456",
+        "A-E-21-S00",
+        "A-E-21-S01",
+        "A-E-21-S02",
+        "A-E-21-S03",
+        "A-E-21-S04",
+        "A-E-21-S05",
+        "A-E-21-S06",
+        "A-E-CAPTURE-104",
+        "A-E-CAPTURE-107",
+        "A-E-CAPTURE-108",
+        "A-E-CAPTURE-109",
+        "A-E-CAPTURE-110",
+        "A-E-CAPTURE-111",
+        "A-E-CAPTURE-112",
+        "A-E-CAPTURE-116",
+        "B-76-frozen-0",
+        "B-76-frozen-1",
+        "B-76-frozen-2",
+        "B-76-frozen-3",
+        "B-76-frozen-4",
+        "B-76-frozen-5",
+        "B-76-frozen-6",
+        "B-76-frozen-7",
+        "B-76-frozen-8",
+        "B-76-frozen-9",
+        "B-76-frozen-10",
+        "B-76-frozen-11",
+        "B-http-8dd308173ad7207c",
+        "B-http-a6a4d58305d04001",
+        "B-http-fdf48b323e1d899f",
+        "B-http-a7547d464b81ce67",
+        "B-http-f7ffdaa1dff6cbe8",
+        "B-http-2901198d433b3282",
+        "B-http-b007dfdb295fbce2",
+        "B-http-aecdb8723a49919a",
+        "B-http-5199e6aceec4b587",
+        "B-http-32c0b2bc604e3670",
+        "B-http-11747b3469a0ffc1",
+        "B-http-08326634790a5b2e",
+        "R-frozen-shard",
+        "R-ingredient-1784",
+        "R-jcm-shared-197",
+        "R-medium-J661",
+        "R-medium-J670",
+        "R-medium-J695",
+        "R-medium-J737",
+        "R-medium-J751",
+        "R-medium-J784",
+        "R-medium-J822",
+        "R-medium-J837",
+        "R-medium-J865",
+        "R-medium-J876",
+        "R-medium-J955",
+        "R-medium-J1066",
+        "R-medium-J1081",
+        "R-medium-J1082",
+        "R-medium-J1092",
+        "R-medium-J1115",
+        "R-medium-J1313"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_197_Trace_Vitamins.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_197_Trace_Vitamins.yaml",
+        "sha256": "5806486753588e1cbcf314363d302e04b6d999b641be776e9c96ba52de225833"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-ALGINIC-ACID",
+      "case_ids": [
+        "CM_NAME:c023caecc7c41084f1f51d7f79bc4fc60fcca13926b7565880e7b2761beb8e4f"
+      ],
+      "description": "DSMZ1285 explicitly uses alginic acid to adjust pH4–5, resolving the truncated alginic label. ChEBI17548 denotes alginic acid. Existing alginate anion and sodium alginate owners are chemically distinct and cannot serve as exact acid identities.",
+      "evidence_ids": [
+        "C-E-122-SOURCE-1",
+        "C-E-dsmz-1285",
+        "C-E-chebi-17548"
+      ],
+      "owner_path": "data/ingredients/mapped/Alginic_Acid.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Alginic_Acid.yaml",
+        "sha256": "0d0a17bcc246e1fbce90d4215eabe2941b7ffb42a6bf598cae730bbec7453d20"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM899",
+      "case_ids": [
+        "CM_NAME:947dc2dc2ee1922fcddb0ac1f991c44e28eedcc8bfcf3973d5ec6652cf17c861",
+        "CM_NAME:f76ab08b98796bcd6405bdbfa93dc50018d21ca3b2386aac9a37783818d24ba5"
+      ],
+      "description": "The numbered reference identifies the acidified trace-element formulation in JCM899, not a chemical named Trace Element. Its recipe and receiving-media reference are available; the formulation must remain distinct from JCM187,439 and1079. Dissolve ammonium iron sulfate in25%HCl before diluting with water; add remaining salts in source order. Water995ml and acid5ml are source batch inputs; no molarity or percent basis beyond the source is inferred.",
+      "evidence_ids": [
+        "C-E-95-SOURCE-1",
+        "C-E-95-SOURCE-2",
+        "C-E-95-SOURCE-3",
+        "C-E-jcm-899",
+        "C-E-jcm-1393",
+        "C-E-jcm-1395",
+        "C-E-jcm-1415",
+        "C-E-143-SOURCE-1",
+        "C-E-jcm-1341"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_899_Trace_Element_Solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_899_Trace_Element_Solution.yaml",
+        "sha256": "ef20198ebab15776c5ce5cf982f963b2c69f5f223217c5d2eb7afe6af89b8b7a"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM1355",
+      "case_ids": [
+        "CM_NAME:992088dbcf34a6ff065bc676dffee75093e312d7788cc4adb614181744b9c6e7"
+      ],
+      "description": "JCM1355 defines a modified trace-mineral stock with nitrilotriacetic acid and specified chloride salts, including MgCl2 hexahydrate and MnCl2 dihydrate. This differs from sulfate-based JCM151 and the named unmodified trace-mineral stocks. Dissolve NTA and adjust pH6.5 with KOH before minerals; final pH7.0. KOH amount unspecified. Distinct from sulfate-based JCM151 and the separate1355 FeNTA solution.",
+      "evidence_ids": [
+        "C-E-98-SOURCE-1",
+        "C-E-jcm-1355"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1355_Modified_Trace_Minerals.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_1355_Modified_Trace_Minerals.yaml",
+        "sha256": "2a53b4cdeff09a229e20cdf7dffb580e621bf2cf7d1982c24c78bcbc03ab29bf"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM1079",
+      "case_ids": [
+        "CM_NAME:dafcc305d38e480df087be418af0a7e4fda32dc46baff6af5ef163c47c111785"
+      ],
+      "description": "JCM1079 defines an EDTA-containing acidic trace-element stock with FeSO4 heptahydrate and other salts, adjusted to pH3.6. The explicit1079 reference prevents identity with187,439 or899 despite similar names. Source requires pH3.6 but does not name a titrant. UNKNOWN completeness preserves that unresolved preparation constituent; do not invent HCl/NaOH or a salt form of EDTA.",
+      "evidence_ids": [
+        "C-E-131-SOURCE-1",
+        "C-E-jcm-1079",
+        "C-E-jcm-1404"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1079_Trace_Element_Solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_1079_Trace_Element_Solution.yaml",
+        "sha256": "5311d8446ce0a803a6ae9aed985ada233c82825925ca5ffff9c08c01b19d2f9d"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "C-P-JCM284-MINERALS",
+      "case_ids": [
+        "CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88"
+      ],
+      "description": "This is the trace-element solution of284, not that same medium’s trace-vitamin solution. JCM284 explicitly supplies separate mineral and vitamin tables and a third Se/W stock. NTA is first dissolved in200ml water with KOH to pH6.5, then salts added and volume brought to1.0L; final pH7.0 with KOH. Water1L denotes total source stock volume, not1L plus200ml. Distinct from284vitamin and Se/W solutions.",
+      "evidence_ids": [
+        "C-E-139-SOURCE-1",
+        "C-E-jcm-1375",
+        "C-E-jcm-284"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_284_Trace_Element_Solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_284_Trace_Element_Solution.yaml",
+        "sha256": "ce63147153e11371cfb5545ccb93798c45f0fd141f3224241a842c54f2555ec0"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ]
+    },
+    {
+      "proposal_id": "R-P-ALPHA-GLUCOSE-MONOHYDRATE",
+      "case_ids": [
+        "KG_CASE:0d41efa23c100f1398a95c032eff1013b97a9d78ca7b19fa887802de490379cf"
+      ],
+      "description": "Promote the existing UNMAPPED hydrate owner to exact NCIT:C61629; preserve solid/aqueous-stock distinction.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2202",
+        "R-medium-1566",
+        "R-chebi-17925",
+        "R-ncit-C61717",
+        "R-ols2-14431-43-7",
+        "R-ncit-C61629-final"
+      ],
+      "owner_path": "data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-ALPHA-GLUCOSE-MONOHYDRATE.yaml",
+        "sha256": "a98a1a7ea40b0c08a214eab7a80c3c0838754dd63f12312762ec03556cef546e"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ],
+      "proposed_destination_path": "data/ingredients/mapped/Α-D-Glucose_Monohydrate.yaml"
+    },
+    {
+      "proposal_id": "R-P-JCM243-STOCK",
+      "case_ids": [
+        "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289"
+      ],
+      "description": "Source-bound NTA trace-element stock of JCM243, referenced by MediaDive ingredient1031 in J1328. Generic Trace minerals owner is not globally equivalent.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1031",
+        "R-medium-J1328",
+        "R-jcm-final-243"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_243_Trace_Element_Solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM243-STOCK.yaml",
+        "sha256": "f5e46b2009bd8db8768dc82c4fd6ee5aadbc485e5590570e2fe46326a385de14"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "case_ids": [
+        "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f"
+      ],
+      "description": "Add exact JCM1158 Modified trace vitamins components with source stereochemistry and batch quantities.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2017",
+        "R-medium-J1158",
+        "R-jcm-final-1158",
+        "A-E-CAPTURE-104"
+      ],
+      "owner_path": "data/ingredients/mapped/Modified_Trace_Vitamins.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-MODIFIED-VITAMINS.yaml",
+        "sha256": "ee25e3cc8c5849c63e08d32a5abcc0644e625561168f97651ec2928765de6141"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-NEODYMIUM-FORM",
+      "case_ids": [
+        "KG_CASE:5ea3a1e7e21d9ad154af9e0989aef7bf402cc96bf6ca13337bde7594e08d466a"
+      ],
+      "description": "Record verified neodymium chloride hexahydrate form without an unsupported ontology promotion.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1462",
+        "R-medium-1610",
+        "R-wako-neodymium",
+        "R-ols2-13477-89-9",
+        "R-ncit-search-13477-89-9"
+      ],
+      "owner_path": "data/ingredients/unmapped/NdCl3_X_6_H2O.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "f275bd5659798b16a4f9914d8f6df8c15c687fd8c5607485369708f2b3752261",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-NEODYMIUM-FORM.yaml",
+        "sha256": "7296ee3775f54a28e4c0bfc6ce22f803fc6098d33c1db654de3d57503af86175"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-YEAST-CELL-PASTE",
+      "case_ids": [
+        "KG_CASE:5fd7281bbd71818c1b346149fa60a116ad2105136e750cb4e01d9c3599861345",
+        "CM_NAME:07f7d3254418ca916ec548eebaf436f4242b69296012ef64e4b5c6cb9200d40f"
+      ],
+      "description": "Preserve whole-cell yeast material and wet-weight preparation rather than extract identity.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2079",
+        "R-medium-958",
+        "R-dsmz-958",
+        "A-E-OWNER-05",
+        "A-E-OWNER-06",
+        "A-E-09-S00",
+        "A-E-CAPTURE-038",
+        "A-E-CAPTURE-093"
+      ],
+      "owner_path": "data/ingredients/unmapped/Yeast_Cell_Paste.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "48f80a904c853250f65d7a8c6b04e53a8ac5541499197984d5c644e9b76f3c70",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-YEAST-CELL-PASTE.yaml",
+        "sha256": "e0d23726c136ec4af3e1acbac5228596547be0c6c507ce607506f6f5a7fdb349"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-XANTHOCIDIN-EVIDENCE",
+      "case_ids": [
+        "KG_CASE:7578b9b52690ee55dc6927897ee93d1466434fbbf16466139c1c6079552278a0"
+      ],
+      "description": "Add primary literature identity evidence to the local xanthocidin owner, retaining its unresolved grounding.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-xanthocidin-structure",
+        "R-xanthocidin2014",
+        "R-ols2-xanthocidin"
+      ],
+      "owner_path": "data/ingredients/mapped/Xanthocidin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "ba7cbc1a0edb478929e8ff71e4714555bf448783cbf779500696755f28007a04",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-XANTHOCIDIN-EVIDENCE.yaml",
+        "sha256": "bec328a4905488a0e19f527a2d3650705f73ab2969f2f7f43157b2321b75e9a2"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-JCM209-STOCK",
+      "case_ids": [
+        "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308"
+      ],
+      "description": "Create source-specific JCM209 six-salt stock; keep generic Salts solution owner and its holds.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1684",
+        "R-medium-J209"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_209_Salts_Solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM209-STOCK.yaml",
+        "sha256": "05e31d8617dcdbe12c6ecea50a221d0060a7947ab27d9c59de9b7602ef888844"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-GYP-BROTH",
+      "case_ids": [
+        "KG_CASE:e5708083b9e7bc630bb4751c7f65e633a2288994c266df2f57514a78b99f35f5"
+      ],
+      "description": "Add source-defined JCM68 named-medium components without folding JCM69 supplementation into the base.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1618",
+        "R-medium-J69",
+        "R-jcm-final-68",
+        "R-jcm-rest-68"
+      ],
+      "owner_path": "data/ingredients/unmapped/GYP-sodium_Acetate-mineral_Salts_Broth.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "b3aed94d0043a0e6bdc941d52492f6ff98b5e3e571e75ffa15a9189592e1b026",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-GYP-BROTH.yaml",
+        "sha256": "2edc0c6d6435c0a0b00497af9be8ffe8521eda35fb21364a23c3a5599df6aedc"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-VIRIDOGRISEIN-EVIDENCE",
+      "case_ids": [
+        "KG_CASE:f2d0636c5d67db581b492d12ea17da1e61d670643e82e4d43b7cc62ddb22b9c5"
+      ],
+      "description": "Support existing viridogrisein/etamycin synonym with primary comparative evidence; keep other owner concerns held.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-etamycin-1979",
+        "R-etamycin-2017",
+        "R-mesh-etamycin"
+      ],
+      "owner_path": "data/ingredients/mapped/Etamycin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "84d07722cb91d161afb8211b2a1cf76bfec8eaa9182b01d12c9e5f85648d8933",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-VIRIDOGRISEIN-EVIDENCE.yaml",
+        "sha256": "f4418a0283115bb427d9b173c0dbcdd5687405414116dfeab5749cc01c42eb50"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-ARDACIN-C",
+      "case_ids": [
+        "KG_CASE:24431e8d578feda8c12e6fcea6f9e8f9dc31bc9728dccf1d69da4752a0ff9694"
+      ],
+      "description": "Promote distinct ArdacinC to independently verifiedCAS95935-23-2, broad parentCHEBI24396glycopeptide, with mandatory registry-row obligation reserved for coordinator.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ardacin-1986",
+        "R-ncats-ardacin-exact",
+        "R-ncit-C169786",
+        "R-chebi-753252",
+        "R-gsrs-ardacin-c",
+        "R-gsrs-ardacin-c-codes",
+        "R-gsrs-ardacin-c-names",
+        "R-ardacin-local-search",
+        "R-chebi-24395",
+        "R-chebi-24396"
+      ],
+      "owner_path": "data/ingredients/mapped/Ardacin_C.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "5260b98fc1b241df143125e03a7c6b86608ee52342740d617ebb3c1789c0aa1e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-ARDACIN-C.yaml",
+        "sha256": "8f3757ff740aadac05e150a36f1d63e4ee4134760bbddaaadf5d0a0a20bd2f7d"
+      },
+      "integration_constraints": [
+        "Source, owner and export holds remain; complete new native review before integration.",
+        "Broad parent plusCAS identity and mandatorykgmicrobe registry row must be emitted coherently by coordinator."
+      ]
+    }
+  ]
+}

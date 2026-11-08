@@ -1,0 +1,108 @@
+identifier: kgmicrobe.ingredient:jcm_1435_trace_element_solution
+preferred_term: JCM 1435 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1435_trace_element_solution
+  ontology_label: JCM 1435 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435
+    notes: Source-specific stock identity; no exact identity with a constituent or every generic trace-element
+      label.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: G
+- component_name: FeCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.03'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.03'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.04'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: as needed for pH 6.5
+  concentration_unit: VARIABLE
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435
+    source_record: Trace element solution
+    notes: All listed stock inputs, water and named KOH preparation reagent are retained. Child identities
+      remain UNMAPPED; source formula text is not silently normalized. Source batch amounts do not denote
+      receiving-medium concentrations.
+  notes: JCM1435 dissolves NTA first in200ml of the preparation water and adjusts pH6.5 with KOH, then
+    adds remaining salts and adjusts volume to1000ml, finally readjusting pH6.5. The listed1L water is
+    retained as source batch formulation text; it is not an additional1L beyond the volumetric make-up.
+    Initial KOH amount/strength and final readjustment reagent are unspecified, so closure is UNKNOWN.
+    The parent LIMNOCHORDIA LN medium uses10ml. Distinct from JCM1465 stock with raw H3BO2, and from NBRC1226
+    Fe(III) stock.
+notes: JCM1435 dissolves NTA first in200ml of the preparation water and adjusts pH6.5 with KOH, then adds
+  remaining salts and adjusts volume to1000ml, finally readjusting pH6.5. The listed1L water is retained
+  as source batch formulation text; it is not an additional1L beyond the volumetric make-up. Initial KOH
+  amount/strength and final readjustment reagent are unspecified, so closure is UNKNOWN. The parent LIMNOCHORDIA
+  LN medium uses10ml. Distinct from JCM1465 stock with raw H3BO2, and from NBRC1226 Fe(III) stock. Applies
+  only to CultureMech:015867 ingredients/7 (CM_OCC:c55f3229b400e935da8415c0d32a36511f9754c0ec46c73cd88e8abe1401de48).
+  Raw label "Trace element solution (see below)" is retained as provenance, not a globally resolving synonym.
+  Other occurrences sharing this raw label require their own formulation identities.
+curation_history:
+- timestamp: '2026-11-08T05:32:38+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create occurrence-scoped source-defined stock proposal with primary recipe inputs and explicit
+    preparation limitations. No chemical child mapping or generic-label identity inferred.
+  new_status: MAPPED
+  llm_assisted: true

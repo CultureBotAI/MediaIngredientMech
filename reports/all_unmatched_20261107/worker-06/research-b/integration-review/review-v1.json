@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex /root/research_b",
+  "reviewed_at": "2026-11-08T05:28:44.916341+00:00",
+  "review_type": "independent integration review; not a repeat of complete scientific authorship reviews",
+  "status": "findings_open_awaiting_final_assembly",
+  "scope": {
+    "assembled_cases": 188,
+    "assembled_proposals": 45,
+    "cross_group_proposals": 11
+  },
+  "input_sha256": {
+    "decisions.json": "e4ff496c7de7076868b8a85ad98c9aa728c0b99d02a36e26f9e3542b604e91d2",
+    "evidence.json": "23fd973be014d06052f2bc8924243e28f6a87276ba0d880284e3767841731cb0",
+    "proposals.json": "dd219f440ba629f3c5447a1737dd39d55305ad40b92ad53ec9efc0f476566a87"
+  },
+  "mechanical_checks": {
+    "original_case_digests_sources_occurrences": "PASS",
+    "all_evidence_capture_hashes": "PASS",
+    "payload_hashes_pending_assembly_refresh": [
+      {
+        "proposal_id": "A-P-CALCIUM-D",
+        "assembled_sha256": "b3f1668bccca4f6f8b23b316d5cf13432652954dd7c07beb7bc1509ad00ddc5e",
+        "current_sha256": "02c83e893a0913abe360b98b3da60188b533ca66a0106ed9812d7d4286d03b0c",
+        "reason": "Author changed bytes during integration review; final assembled refresh and independent delta review required."
+      },
+      {
+        "proposal_id": "A-P-CALCIUM-DL",
+        "assembled_sha256": "1b74318859eb0cc1edaafe8a13eb536107ff651edd453c780f88e286a43eb533",
+        "current_sha256": "3f622028193f83d4c0ff3d95e3c4d89ed1436e06c1bc6089f4a5e602a5ed849c",
+        "reason": "Author changed bytes during integration review; final assembled refresh and independent delta review required."
+      },
+      {
+        "proposal_id": "A-P-D-GLUCOSE",
+        "assembled_sha256": "8c922860115dd5dfaa3a9f1db92dc8b1a7d5b179bf48500c63b46fa3ea58512d",
+        "current_sha256": "318fb75b1beb2c2a8b1635c3a499ca6025b3fe6c863f825529498d221d178d2a",
+        "reason": "Author changed bytes during integration review; final assembled refresh and independent delta review required."
+      },
+      {
+        "proposal_id": "A-P-LANTHANUM-HEPTAHYDRATE",
+        "assembled_sha256": "8616bbbdeb7d5097a1eddd3b8e813ba2f0f738505b58a00accc14ecbf1723fb5",
+        "current_sha256": "ee699f4b0616218ea3a552cb8a9984f713a382ba4014fc479f650e861fdb01f0",
+        "reason": "Author changed bytes during integration review; final assembled refresh and independent delta review required."
+      },
+      {
+        "proposal_id": "A-P-MERCK108339",
+        "assembled_sha256": "b4e64838097743c7f21d9437d69813bb0267ff99bee59a2f868ab57c76a3b6aa",
+        "current_sha256": "a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217",
+        "reason": "Author changed bytes during integration review; final assembled refresh and independent delta review required."
+      },
+      {
+        "proposal_id": "R-P-YEAST-CELL-PASTE",
+        "assembled_sha256": "e0d23726c136ec4af3e1acbac5228596547be0c6c507ce607506f6f5a7fdb349",
+        "current_sha256": "6f8d7977a6f6f90dd2a648d4258791838eba9a80cd5dc9909c62207d1a5b5352",
+        "reason": "Author changed bytes during integration review; final assembled refresh and independent delta review required."
+      }
+    ],
+    "all_proposal_case_backlinks": "PASS",
+    "baseline_owner_hashes": "PASS"
+  },
+  "independence": "Reviewer authored B47:94 and combined B owner proposals; does not self-approve those payloads. They have separate A review-b-v2. Reviewer independently assessed C94:145. This integration ledger checks shared scope, provenance, and retained hold boundaries.",
+  "scientific_release_approval": false,
+  "cross_group_reviews": [
+    {
+      "proposal_id": "A-P-CALCIUM-D",
+      "case_indices": [
+        2,
+        16,
+        145,
+        166,
+        174
+      ],
+      "case_ids": [
+        "CM_NAME:012330c5320a4968ed592d7a76fff13d4dcad09a07528cf53127908aa4a08938",
+        "CM_NAME:11e4479bd0ecc400516731fbfcc48ebb29a1be6b76404f62c27481856b1059cc",
+        "KG_CASE:04f810be4e371e85c9b335d9d5d23eeb4cfcf63a799f3939b6de8277840696e8",
+        "KG_CASE:5d2b66b49c3347a03b3fbf848843da8fcea89a6d3fd0df5d10a7d6e8de00fbfd",
+        "KG_CASE:9c4ea075537f54044f90a1d22c9946cc1b5128a79fef529f9ffe52b7bc754ab0"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Calcium_Pantothenate.yaml",
+        "sha256": "b3f1668bccca4f6f8b23b316d5cf13432652954dd7c07beb7bc1509ad00ddc5e"
+      },
+      "skeptical_assessment": "CM2/16 and KG145/166/174 retain explicit D or D-(+) qualifiers. Primary MediaDive1123/1512/1585 CAS137-08-6 agrees with the D-specific owner; 1512 CHEBI1687714 is not adopted. The payload rejects DL and capsaicin aliases while retaining provenance. Unspecified CM49/77 and source-conflicted CM70 are correctly excluded; owner-wide and historical holds remain.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "A-P-D-GLUCOSE",
+      "case_indices": [
+        15,
+        41,
+        124
+      ],
+      "case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+        "CM_NAME:4102832afa3835505e3db683a0cfa50f14daaab21c73635b74f45fba60c99ca9",
+        "CM_NAME:c8ca0d762ce96c815bed427a72871872ab31e21e401857b26cd17858b525480b"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/D-glucose.yaml",
+        "sha256": "8c922860115dd5dfaa3a9f1db92dc8b1a7d5b179bf48500c63b46fa3ea58512d"
+      },
+      "skeptical_assessment": "CM15/41 primary sources establish D-glucose without a hydrate/anomer. C124 is narrowly compatible based on exact frozen D--glucose labels and current ontology, including the nested stock constituent rather than whole stock. It has no successful live primary recipe confirmation; missing_requirement must retain that gap. None of this supports alpha-specific B79 or alpha monohydrate KG146.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "A-P-LANTHANUM-HEPTAHYDRATE",
+      "case_indices": [
+        25,
+        170
+      ],
+      "case_ids": [
+        "CM_NAME:1f300cfe5fc1038138dfc840a9ec07bd1b5b96e12e8de10add68930ab70b8731",
+        "KG_CASE:71d90c182388cac6c4256bc0a73d43542a593829e9054df50f299479a67ba433"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Lanthanum_III_Chloride_Heptahydrate.yaml",
+        "sha256": "8616bbbdeb7d5097a1eddd3b8e813ba2f0f738505b58a00accc14ecbf1723fb5"
+      },
+      "skeptical_assessment": "CM25 and KG170 preserve the same explicit LaCl3 x7H2O source form and MediaDive1461 CAS10025-84-0. Separate CAS primary identity with narrower-than mapping to CHEBI231515 preserves the seven-water distinction. This is a solute alias, not an identity for the containing lanthanide stock.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "A-P-MERCK108339",
+      "case_indices": [
+        35,
+        183
+      ],
+      "case_ids": [
+        "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+        "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+        "sha256": "b4e64838097743c7f21d9437d69813bb0267ff99bee59a2f868ab57c76a3b6aa"
+      },
+      "skeptical_assessment": "CM35 and KG183 both explicitly identify Merck108339 in DSMZ1429 context at30g/L. The supplier current typical formulation is5g/L meat peptone,5g/L casein peptone,20g/L D(+)glucose after reconstitution. Generic Sabouraud family and separately added agar are excluded. Stale missing requirements must become the actual historical-lot/version limitation.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "B-P-Yeast_Extract",
+      "case_indices": [
+        47,
+        90,
+        107,
+        144
+      ],
+      "case_ids": [
+        "CM_NAME:52c9de92b40f1bd9badda302a411f54e2c6028f105d8b0f1803c3133ea3d07f0",
+        "CM_NAME:89b2f49caff82261f5440e3c404bb41d949eae1a81d0490c9f86c53d01266c2b",
+        "CM_NAME:aac849a997b9a529adc90abb92e983d277e66a271a77b42acbb4fee27449b3cb",
+        "CM_NAME:fbadb09d45d534aadd984afeac7a81cf2bbe17740162ed23aa1463725e2b104f"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/Yeast_Extract.yaml",
+        "sha256": "d1d043b038774cdad5afa75cb91a7bad35df446dcab94d0f116bbc2234545771"
+      },
+      "skeptical_assessment": "The four linked cases47/90/107/144 refer to generic yeast extract, including TOGO2497 explicit database annotation of Bacto Yeast extract and independently checked NBRC1140/TOGO2529 spellings. This reviewer authored the merged B payload and does not self-approve its science; A review-b-v2 independently binds the exact final hash. Fresh25% yeast preparation58 and wet biomass9/168 remain separate.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "B-P-NBRC1257-1321",
+      "case_indices": [
+        52,
+        134
+      ],
+      "case_ids": [
+        "CM_NAME:5a6a64dd3c8441d7132e42bb195aedac764e54ea5bf512ed61957272a8b62696",
+        "CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/nbrc_1257_1321_trace_element_mixture.yaml",
+        "sha256": "419863f71419c2bd40baf83acb72988fbeee75718a3e53d6bb7d4f7a4cdc20eb"
+      },
+      "skeptical_assessment": "Cases52 and134 link complete identical NBRC1257/1321 and JCM439 trace tables, preserving all acid/water/solute batch inputs. JCM439 explicitly states25% HCl while7.7M is sourced specifically to NBRC. This reviewer authored the merged payload, so independent payload approval is A review-b-v2; the integration check verifies backlinks and provenance without self-approval.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM187",
+      "case_indices": [
+        106,
+        152
+      ],
+      "case_ids": [
+        "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+        "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Element_Solution_See_Medium_No_187.yaml",
+        "sha256": "5e66d1346b2c9b5ca3f1e8f13494bb7286b450b469ac45f38df2bdc433bfb25e"
+      },
+      "skeptical_assessment": "C106 and KG152 carry explicit Medium187 trace-element references. Missing parenthesis does not change the numbered stock; primary ingredient1886 supplies the truncated string and JCM187 the formulation. Existing owner remains source-specific and none of the historic hold state is lifted.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "case_indices": [
+        110,
+        22,
+        182
+      ],
+      "case_ids": [
+        "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+        "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+        "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Minerals_See_Medium_No_151.yaml",
+        "sha256": "6055ec1fcb2adcf6be15e7a228c5e96dccc644a791d99e75a29edb03f5e85d84"
+      },
+      "skeptical_assessment": "C110 nested806→262→265→151, A22 JCM1347 and KG182 JCM744 each explicitly reference151 trace minerals. Source tables retain variable Mn hydration, alum without guessed hydration, KOH adjustment and batchwater. This stock remains distinct from current ATCCMD-TMS; the actual numbered-reference chain, not the word minerals, establishes sharing.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "case_indices": [
+        123,
+        65,
+        85,
+        165
+      ],
+      "case_ids": [
+        "CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2",
+        "CM_NAME:6d6ebd68cac4ad55515d9c4606112ed3713710431fa05569bc7bd23849fc67c6",
+        "CM_NAME:85e975201016d92df32666f4d249c9efbd68de8641d88c73fc0d38b1ade328ab",
+        "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+        "sha256": "3641536905fbb16690b3a69bb7580a03b42708d702c27ec6e25079d8219454d4"
+      },
+      "skeptical_assessment": "C123, B65/B85 and KG165 all explicitly reference284 vitamins. They share this stock only: its DL calcium pantothenate and highB12 distinguish197. B85 parentdose discrepancy remains visible (primary1ml/1004ml vs tenfold frozen percentage). JCM284 minerals C139 are a separate proposal.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "case_indices": [
+        111,
+        117,
+        21,
+        76,
+        177
+      ],
+      "case_ids": [
+        "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+        "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+        "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+        "CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3",
+        "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_197_Trace_Vitamins.yaml",
+        "sha256": "5806486753588e1cbcf314363d302e04b6d999b641be776e9c96ba52de225833"
+      },
+      "skeptical_assessment": "C111/117, A21, B76 and KG177 all explicitly refer197 vitamins; source dose differences do not change stock identity. Forty C occurrences, twelve B occurrences and seven A occurrences retain their own scopes. Generic Trace vitamins B57 includes a separate three-vitamin RM stock and is correctly excluded as a whole-case alias; all84 KG177 downstream holds remain in the hash-bound frozen case.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    },
+    {
+      "proposal_id": "R-P-YEAST-CELL-PASTE",
+      "case_indices": [
+        168,
+        9
+      ],
+      "case_ids": [
+        "KG_CASE:5fd7281bbd71818c1b346149fa60a116ad2105136e750cb4e01d9c3599861345",
+        "CM_NAME:07f7d3254418ca916ec548eebaf436f4242b69296012ef64e4b5c6cb9200d40f"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-YEAST-CELL-PASTE.yaml",
+        "sha256": "e0d23726c136ec4af3e1acbac5228596547be0c6c507ce607506f6f5a7fdb349"
+      },
+      "skeptical_assessment": "A9 and KG168 are the same DSMZ958 washed baker-yeast paste with2.5g wet-weight dosing. The payload retains whole-cell material and remains UNMAPPED; no species/strain, extract or dry-biomass equivalence is asserted. Add the explicitly sourced deionized-water washing qualifier to supplied_form so the full preparation bound by A9 survives.",
+      "source_and_evidence_backlinks_match": true,
+      "whole_owner_scientific_approval": false
+    }
+  ],
+  "findings": [
+    {
+      "id": "BI-01",
+      "priority": "P2",
+      "case_indices": [
+        35,
+        183
+      ],
+      "status": "open",
+      "finding": "Merck missing_requirement still asks for catalog/formulation work that the linked supplier-qualified proposal now supplies. Generic-owner merge is also an inappropriate remaining alternative.",
+      "required_resolution": "State current typical product composition verified, historical-lot invariance unverified; preserve generic family owner and separate agar. Attach supplier evidence directly to the cases or clearly via the shared proposal."
+    },
+    {
+      "id": "BI-02",
+      "priority": "P2",
+      "case_indices": [
+        124
+      ],
+      "status": "open",
+      "finding": "The narrow spelling proposal is reasonable, but missing_requirement=null suppresses the explicitly documented live JCM490/TOGO491 primary-source gap.",
+      "required_resolution": "Retain successful primary recipe recovery as an unresolved source-coverage requirement; frozen labels plus ontology support only bounded spelling compatibility and do not constitute live primary recipe verification."
+    },
+    {
+      "id": "BI-03",
+      "priority": "P2",
+      "case_indices": [
+        9,
+        168
+      ],
+      "status": "open",
+      "finding": "The joined yeast-paste source explicitly specifies washing in deionized water; proposed supplied_form currently says only washed.",
+      "required_resolution": "Preserve deionized-water washing and wet-weight basis in the proposed preparation notes; obtain an independent review of changed root payload bytes."
+    },
+    {
+      "id": "BI-04",
+      "priority": "P2",
+      "case_indices": [
+        71,
+        102
+      ],
+      "status": "open",
+      "finding": "Six source-verified B71 type-A Sheffield occurrences remain a hold despite an exact type-A owner alias proposal for C102; lowercase amine raw label is not yet in the payload.",
+      "required_resolution": "Combine the exact B71 raw alias and case/evidence backlinks into C-P-NZAMINE-A, retaining product type and UNMAPPED status; independently review changed bytes."
+    },
+    {
+      "id": "BI-05",
+      "priority": "P2",
+      "case_indices": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "status": "expected_refresh",
+      "finding": "Assembled B independent_review points to initial findings-open state although A review-b-v2 completed all47 cases/18 current payloads. A/C pending statuses likewise await coordinator final review assembly.",
+      "required_resolution": "Bind final independent ledgers and current hashes before final full188 audit; do not reinterpret completed source review as release approval."
+    },
+    {
+      "id": "BI-06",
+      "priority": "P2",
+      "case_indices": [
+        81
+      ],
+      "status": "expected_refresh",
+      "finding": "Current assembly predates A-P-ATCC-MDTMS. B81 contains the explicit catalogue MD-TMS source context, with historical/current formulation equivalence unresolved.",
+      "required_resolution": "Attach the new supplier-qualified proposal to B81 only with its version limitation and catalog evidence; do not merge generic Wolfe stock cases."
+    }
+  ],
+  "hold_inventory": [
+    {
+      "case_id": "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+      "shard_index": 162,
+      "downstream_hold_count": 3,
+      "full_input_sha256": "5c1f43970dfec31e8bbb2d4873b018473ca8d1aad0a8628eb9e213888350135f",
+      "decision_explicitly_preserves_holds": true
+    },
+    {
+      "case_id": "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+      "shard_index": 177,
+      "downstream_hold_count": 84,
+      "full_input_sha256": "42fd0c11b00b13b74e4ee36eb1578c1470bb970c729bb38fd5c668ff9cfe3c4b",
+      "decision_explicitly_preserves_holds": true
+    },
+    {
+      "case_id": "KG_CASE:cb29f7fb59dac2eabcdc00bcc662aacc3ae4afa83767a9d99e7a2fffa8e2ca27",
+      "shard_index": 181,
+      "downstream_hold_count": 1,
+      "full_input_sha256": "8934c85fc35bce3ceac0d2d67ad75c6b03bf7de9a93f46c937e134e48630c147",
+      "decision_explicitly_preserves_holds": true
+    }
+  ],
+  "limitations": [
+    "Final A stock additions and final independent-review binding are still expected.",
+    "No maintained YAML/SSSOM, hold record or downstream artifact was changed.",
+    "Exact primary captures are reused with their existing timestamps and hashes; no new retrieval timestamp is assigned."
+  ]
+}

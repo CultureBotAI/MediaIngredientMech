@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:jcm_1009_anaerobic_glucose_20_percent_wv_stock
+preferred_term: JCM 1009 anaerobic glucose 20% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1009_anaerobic_glucose_20_percent_wv_stock
+  ontology_label: JCM 1009 anaerobic glucose 20% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: PERCENT_W_V
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009
+    source_record: JCM 1009 anaerobic glucose 20% w/v stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an
+    autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer,
+    starting hydrate and stock water volume are unstated; water is implied by aqueous
+    stock context and closure remains UNKNOWN. JCM977 has the same explicit mass concentration
+    and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified
+    preparation is kept separate. No frozen root-level or mass-style dose is silently
+    approved.
+notes: 'JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an
+  autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer,
+  starting hydrate and stock water volume are unstated; water is implied by aqueous
+  stock context and closure remains UNKNOWN. JCM977 has the same explicit mass concentration
+  and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified
+  preparation is kept separate. No frozen root-level or mass-style dose is silently
+  approved. Raw labels retained only in this source context: ["20% (w/v) Glucose solution"].
+  No global resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed JCM 1009 anaerobic glucose 20% w/v stock with source-bound components
+    and retained preparation limits. Isolated proposal; no maintained owner edit or
+    support/release approval.
+  llm_assisted: true

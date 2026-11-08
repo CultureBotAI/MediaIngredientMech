@@ -1,0 +1,107 @@
+identifier: kgmicrobe.ingredient:jcm_197_trace_vitamins
+preferred_term: JCM 197 trace vitamins
+synonyms:
+- synonym_text: Trace vitamins (see Medium No. 197)
+  synonym_type: RAW_TEXT
+  source: JCM197 stock reference; CultureMech frozen shard06
+- synonym_text: Trace vitamin (see Medium No. 197 )
+  synonym_type: RAW_TEXT
+  source: JCM197 stock reference; CultureMech frozen shard06
+- synonym_text: Trace vitamins (see Medium No. 197 )
+  synonym_type: RAW_TEXT
+  source: JCM197 stock reference; worker06 parallel author verified receiving recipe;
+    coordinator must attach corresponding case backlink
+- synonym_text: Trace vitamins* (see Medium No. 197 )
+  synonym_type: RAW_TEXT
+  source: JCM197 stock reference; worker06 parallel author verified receiving recipe;
+    coordinator must attach corresponding case backlink
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed source-specific local identity for the JCM197 trace-vitamin formulation
+    after comparison with existing Wolfe/ATCC candidates. No generic Trace vitamins
+    alias or ontology exact mapping asserted. Isolated proposal only; no publication
+    or inherited support approval.
+  llm_assisted: true
+notes: Recipe-defined JCM197 vitamin stock; local formulation identity, with no exact
+  ontology identity or whole-medium claim. Occurrence counts not recomputed in the
+  isolated proposal.
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: MG
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2.0'
+  concentration_unit: MG
+- component_name: Pyridoxine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG
+- component_name: Thiamine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG
+- component_name: Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: MG
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG
+- component_name: Lipoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - supports: SUPPORT
+    evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197
+    source_record: Trace vitamins
+    notes: Transcribed exact constituent names and source batch amounts from the captured
+      primary table. Component identities deliberately remain UNMAPPED; no hydrate/stereoisomer/registry
+      normalization is asserted.
+  notes: Amounts are source batch amounts, not inferred final-volume concentrations.
+    Water is retained. Source name/form qualifiers are preserved. Completeness concerns
+    the cited listed formulation; it is not analytical speciation or component-CURIE
+    approval.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_197_trace_vitamins
+  ontology_label: JCM 197 trace vitamins
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197
+    notes: Source-defined multicomponent vitamin stock with a local formulation registry
+      identity; no identity mapping to a component or generic vitamin class. Source-specific
+      formulation comparison and local owner search are recorded in the worker06 evidence
+      bundle.

@@ -1,0 +1,166 @@
+{
+  "at": "2026-11-08T05:52:57.800919+00:00",
+  "inputs": {
+    "decisions.json": "8dcd1c637f7b7b474b042459e1a7fe8d84a0f68f8996ca27587166501b44293f",
+    "evidence.json": "edbea1f1f34033ebb4aa75f4c140a1f203c1f3d217770812a5e7547c03955acd",
+    "proposals.json": "e57c9cbf559172793975c9e26fa372fb924af694d7758281a4a4d5d456ee8b5c"
+  },
+  "prior25_payloads_unchanged": true,
+  "new_proposals": [
+    {
+      "proposal_id": "C-P-BD-DIFCO-YNB-WITHOUT-AA",
+      "case_ids": [
+        "CM_NAME:e7c307d8d284823640d26e5722c132fcd5f02b8538f8a4713429baea18c4f2bd",
+        "CM_NAME:f2cb86c7eecafde7402e1a8ae9843dfe7fa2ca0d7376effc2b3c9389ccb3e1ad"
+      ],
+      "description": "This is the BD-Difco/Bacto yeast nitrogen base family without amino acids, before separate glucose, amino-acid or agar supplementation. NBRC114 and NBRC111 each explicitly name Bacto-Yeast Nitrogen Base w/o Amino acids (Difco),6.7g, but their receiving amino-acid supplements differ. NBRC1402 prints Bactp-Yeast Nitrogen Base w/o Amino Acids,6.7g, with glucose/water/agar only; Bactp is interpreted as a typographical brand variant by the otherwise matching product name, exclusion qualifier and dose, without assigning an unstated historical SKU. The current official BD291940 title corroborates the without-amino-acids product family, but neither its catalogue number nor a particular historical manufacturing lot is assigned to these source recipes. This family excludes complete YNB and the distinct formulation lacking both amino acids and ammonium sulfate. No full chemical composition, invariant lot, whole receiving medium or role is asserted. Raw source labels Bactp-Yeast Nitrogen Base w/o Amino Acids and Bacto-Yeast Nitrogen Base w/o Amino acids (Difco) remain occurrence provenance, not global resolving synonyms.",
+      "evidence_ids": [
+        "C-E-136-SOURCE-1",
+        "C-E-nbrc-1402",
+        "C-E-bd-ynb-primary",
+        "C-E-142-SOURCE-1",
+        "C-E-142-SOURCE-2",
+        "C-E-142-SOURCE-3",
+        "C-E-nbrc-114",
+        "C-E-nbrc-111"
+      ],
+      "owner_path": "data/ingredients/mapped/bd_difco_ynb_without_amino_acids_family.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/bd_difco_ynb_without_amino_acids_family.yaml",
+        "sha256": "567e8544184833c23c02eb7d5530a1841d0923483095efe0b4559f2bce99deaf"
+      },
+      "integration_obligations": [
+        "Independent skeptical review of exact after bytes before guarded application.",
+        "Preserve all source holds and occurrence-specific evidence; no global generic synonym or automatic original-version release."
+      ]
+    },
+    {
+      "proposal_id": "C-P-ROSCOFF2019-GAFFRON-SE",
+      "case_ids": [
+        "CM_NAME:cfad1fac04ef2d227458d27da4c27cffaedc5f24df493269df098a0bf71f6faf"
+      ],
+      "description": "Roscoff PCR-S11 protocol2019 (DOI10.17504/protocols.io.sz3ef8n), section4, defines this Gaffron+Se stock by adding the15listed solutes to500ml water then making a final1L, refrigerated. The payload transcribes the printed mg/L column, not recalculated rounded micromolar values. Actual PDF pages4–5 confirm cadmium nitrate Cd(NO3)2·4H2O and potassium aluminium sulfate KAl(SO4)2·12H2O; these are not guesses from TOGO malformed Cd(NO3).4H2O and KAI(SO4)2.12H2O. Raw TOGO text remains unchanged in evidence. The protocol prints5.16mg/L ammonium molybdate tetrahydrate and1.5mg/L vanadyl sulfate pentahydrate, with footnotes4.94 and1.52 respectively for the original recipe. Its receiving medium uses0.1ml/L and states this gives twice the original PCR-S11 Gaffron level. TOGO M2262 instead records0.5ml/L and a stock table roughly tenfold lower (for example H3BO3 300uM versus this protocol3008.25uM; Ni salt3uM versus30uM). These versions and inconsistent source-dose context are not collapsed. The frozen0.5G_PER_L is also a volume/unit error. This concrete2019stock is a version-qualified related preparation proposal, not automatic identity or composition assignment to the frozen M2262 occurrence. Raw Trace metals Gaffron+Se is not a global alias. All child references remain UNMAPPED, and no complete-medium release is implied. Protocol section6 states that added nutrients have been autoclaved except vitamins; the listed Gaffron+Se nutrient stock is therefore autoclaved before receiving-medium addition. No temperature or duration is supplied or invented.",
+      "evidence_ids": [
+        "C-E-126-SOURCE-1",
+        "C-E-togo-M2262",
+        "C-E-ROSCOFF-2019-PDF",
+        "C-E-ROSCOFF-2019-TEXT",
+        "C-E-ROSCOFF-2019-P4",
+        "C-E-ROSCOFF-2019-P5",
+        "C-E-ROSCOFF-2019-A-REUSE"
+      ],
+      "owner_path": "data/ingredients/mapped/roscoff_pcrs11_2019_gaffron_se_stock.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/roscoff_pcrs11_2019_gaffron_se_stock.yaml",
+        "sha256": "243ffb767bfc6065fc9719647497829fef56e570b6ebd567bd2b127d58f303e6"
+      },
+      "integration_obligations": [
+        "Independent skeptical review of exact after bytes before guarded application.",
+        "Preserve all source holds and occurrence-specific evidence; no global generic synonym or automatic original-version release."
+      ],
+      "application_scope": "Version-qualified 2019 primary stock proposal only. It is a related recipe-version candidate for frozen TOGO M2262, not an approved exact mapping of its 0.5ml/L occurrence or its reported micromolar stock table."
+    }
+  ],
+  "new_capture_metadata": [
+    {
+      "evidence_id": "C-E-ROSCOFF-2019-PDF",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/roscoff-pcrs11-2019.pdf",
+        "sha256": "5c3a575aef0b07e8435561de60a2c06d007445f8416d8e7d492dce8b1500da8a"
+      },
+      "locator": "Full six-page original PDF. Pages4–5 visually inspected after pdftoppm rendering; all15solute formulas/mg-per-L amounts and footnotes read.",
+      "supports_or_contradicts": "Supports only source-version-qualified 2019 Gaffron+Se stock. Contradicts automatic concentration/dose equivalence to TOGO M2262; no source-release approval.",
+      "kind": "primary_source",
+      "url": "https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf",
+      "accessed_at": "2026-11-08T05:51:30.447288+00:00",
+      "case_ids": [
+        "CM_NAME:cfad1fac04ef2d227458d27da4c27cffaedc5f24df493269df098a0bf71f6faf"
+      ]
+    },
+    {
+      "evidence_id": "C-E-ROSCOFF-2019-TEXT",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/roscoff-pcrs11-2019.txt",
+        "sha256": "b347983ce431b211e2bbb585b6655bd67ab4fb16b2ef22f1712de195309c4d1b"
+      },
+      "locator": "pdftotext -layout derivative of captured PDF, full six pages; original PDF hash bound by companion evidence.",
+      "supports_or_contradicts": "Supports only source-version-qualified 2019 Gaffron+Se stock. Contradicts automatic concentration/dose equivalence to TOGO M2262; no source-release approval.",
+      "kind": "primary_source",
+      "url": "https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf",
+      "accessed_at": "2026-11-08T05:51:30.447288+00:00",
+      "case_ids": [
+        "CM_NAME:cfad1fac04ef2d227458d27da4c27cffaedc5f24df493269df098a0bf71f6faf"
+      ]
+    },
+    {
+      "evidence_id": "C-E-ROSCOFF-2019-P4",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/roscoff-pcrs11-2019-4.png",
+        "sha256": "6a712d0f1855f8b56df7761b02d2a743bfb31afa907014bfaeda8f95020d7a69"
+      },
+      "locator": "Derived render of PDF page4, visually inspected formula subscripts and first8solute rows.",
+      "supports_or_contradicts": "Supports only source-version-qualified 2019 Gaffron+Se stock. Contradicts automatic concentration/dose equivalence to TOGO M2262; no source-release approval.",
+      "kind": "primary_source",
+      "url": "https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf",
+      "accessed_at": "2026-11-08T05:51:30.447288+00:00",
+      "case_ids": [
+        "CM_NAME:cfad1fac04ef2d227458d27da4c27cffaedc5f24df493269df098a0bf71f6faf"
+      ]
+    },
+    {
+      "evidence_id": "C-E-ROSCOFF-2019-P5",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/roscoff-pcrs11-2019-5.png",
+        "sha256": "9fc84280b8df9b5199bbd1f14700d842f5b00eaac035207439f3e01dc34b70bf"
+      },
+      "locator": "Derived render of PDF page5, visually inspected remaining7solute rows and version footnotes.",
+      "supports_or_contradicts": "Supports only source-version-qualified 2019 Gaffron+Se stock. Contradicts automatic concentration/dose equivalence to TOGO M2262; no source-release approval.",
+      "kind": "primary_source",
+      "url": "https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf",
+      "accessed_at": "2026-11-08T05:51:30.447288+00:00",
+      "case_ids": [
+        "CM_NAME:cfad1fac04ef2d227458d27da4c27cffaedc5f24df493269df098a0bf71f6faf"
+      ]
+    },
+    {
+      "evidence_id": "C-E-ROSCOFF-2019-A-REUSE",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/reused-a-roscoff-web.json",
+        "sha256": "232605c48ba1a8d95207e933aae1eac20929c30736f21d05026085cee5605b9c"
+      },
+      "locator": "Exact previously captured A web response reused with original access time; its cached rendering date June13 differs from current PDF June12, both2019 and same stock quantities.",
+      "supports_or_contradicts": "Supports only source-version-qualified 2019 Gaffron+Se stock. Contradicts automatic concentration/dose equivalence to TOGO M2262; no source-release approval.",
+      "kind": "primary_source",
+      "url": "https://www.protocols.io/view/pcr-s11-red-sea-medium-sz3ef8n.pdf",
+      "accessed_at": "2026-11-08T05:13:51+00:00",
+      "case_ids": [
+        "CM_NAME:cfad1fac04ef2d227458d27da4c27cffaedc5f24df493269df098a0bf71f6faf"
+      ]
+    }
+  ],
+  "capture_time_basis": "Original PDF capture completion filesystem mtime; derivative captures inherit original source retrieval time and have independent hashes. A web response retains original access time.",
+  "ignored_inclusive_owner_search": {
+    "files_scanned": 2956,
+    "hits": []
+  },
+  "corrected_decision_indices": [
+    114,
+    115,
+    126,
+    136,
+    142
+  ],
+  "scientific_review": "Pending independent research-b final-completion delta review. This is author evidence, not self-approval.",
+  "independent_review_correction": "Preserved stock autoclaving from protocolsection6; no time/temperature invented."
+}

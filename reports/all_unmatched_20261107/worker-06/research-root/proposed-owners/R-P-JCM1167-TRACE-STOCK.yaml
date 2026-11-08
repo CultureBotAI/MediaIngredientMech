@@ -1,0 +1,92 @@
+identifier: kgmicrobe.ingredient:jcm_1167_trace_mineral_solution
+preferred_term: JCM 1167 trace mineral solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1167_trace_mineral_solution
+  ontology_label: JCM 1167 trace mineral solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1167
+    notes: Source-defined whole stock; no component identity mapping.
+components:
+- component_name: Na2-EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '22.59'
+  concentration_unit: mg
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '246.0'
+  concentration_unit: mg
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '14.0'
+  concentration_unit: mg
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '3.5'
+  concentration_unit: mg
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.584'
+  concentration_unit: mg
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: mg
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.2'
+  concentration_unit: mg
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.19'
+  concentration_unit: mg
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.944'
+  concentration_unit: mg
+- component_name: Na2SeO3·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.395'
+  concentration_unit: mg
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.257'
+  concentration_unit: mg
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.136'
+  concentration_unit: mg
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.205'
+  concentration_unit: mg
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1167
+    source_record: JCM 1167 trace mineral solution
+    supports: SUPPORT
+    notes: The original JCM1167 Trace mineral solution subsection defines these batch amounts; the parent
+      uses1ml. Keep source897 JCM1211 citrate stock distinct.
+  notes: Literal source batch quantities and unresolved child forms retained; no normalization using flattened
+    parent recipe volume.
+notes: The original JCM1167 Trace mineral solution subsection defines these batch amounts; the parent
+  uses1ml. Keep source897 JCM1211 citrate stock distinct.
+curation_history:
+- timestamp: '2026-11-08T05:36:28.285714+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Propose JCM 1167 trace mineral solution with recipe-specific scope. Proposal only; all source
+    and publication holds retained.
+  new_status: MAPPED
+  llm_assisted: true

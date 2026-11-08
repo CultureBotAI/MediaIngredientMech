@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:togo_2809_ticl3_20_percent_wv_stock
+preferred_term: TOGO M2809 TiCl3 20% wt/vol reagent solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2809_ticl3_20_percent_wv_stock
+  ontology_label: TOGO M2809 TiCl3 20% wt/vol reagent solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2809
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: TiCl3
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2809
+    source_record: TOGO M2809 TiCl3 20% wt/vol reagent solution
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: The LS4D titanium-citrate preparation adds 37.5 ml of 20% (wt/vol) TiCl3
+    to 500 ml 0.2 M sodium citrate and 100 ml 8% (wt/vol) Na2CO3 under nitrogen. This
+    owner denotes only the TiCl3 reagent solution before mixing, not titanium citrate
+    or dry TiCl3. The source does not name the reagent solvent, acid stabilizer, supplier
+    or catalogue; no water/HCl constituent or exact solute CURIE is invented. UNKNOWN
+    closure preserves that gap. Frozen 37.5 G_PER_L is a flattened source-volume error
+    and remains held.
+notes: 'The LS4D titanium-citrate preparation adds 37.5 ml of 20% (wt/vol) TiCl3 to
+  500 ml 0.2 M sodium citrate and 100 ml 8% (wt/vol) Na2CO3 under nitrogen. This owner
+  denotes only the TiCl3 reagent solution before mixing, not titanium citrate or dry
+  TiCl3. The source does not name the reagent solvent, acid stabilizer, supplier or
+  catalogue; no water/HCl constituent or exact solute CURIE is invented. UNKNOWN closure
+  preserves that gap. Frozen 37.5 G_PER_L is a flattened source-volume error and remains
+  held. Raw labels retained only in this source context: ["20% (wt/vol) TiCl3"]. No
+  global resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed TOGO M2809 TiCl3 20% wt/vol reagent solution with source-bound
+    components and retained preparation limits. Isolated proposal; no maintained owner
+    edit or support/release approval.
+  llm_assisted: true

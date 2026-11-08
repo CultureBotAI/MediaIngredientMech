@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:atcc_1612_sodium_carbonate_5_percent_stock
+preferred_term: ATCC 1612 sodium carbonate 5% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1612_sodium_carbonate_5_percent_stock
+  ontology_label: ATCC 1612 sodium carbonate 5% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx
+    notes: Source-qualified whole stock identity. Generic source wording is not introduced as a globally
+      resolving alias.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx
+    source_record: ATCC 1612 sodium carbonate 5% stock
+    notes: Source names and stated quantities retained without inferred salt, hydrate, stereochemistry
+      or percentage basis.
+  notes: ATCC1612 specifies sterile anaerobic5%Na2CO3, adding0.25ml per10ml receiving medium to adjust
+    that medium to pH8.2. PERCENT preserves the literal unspecified basis; it does not assertw/v,w/w,g/L
+    or molarity. Water follows aqueous solution context, but grade, stock volume, preparation gas and
+    starting carbonate hydrate are unspecified. The main medium80%N2/20%CO2 condition is not automatically
+    an explicit stock preparation recipe. This stock is kept separate from the source-explicit5%w/v DSMZ135/339a
+    preparation and from pure sodium carbonate.
+notes: ATCC1612 specifies sterile anaerobic5%Na2CO3, adding0.25ml per10ml receiving medium to adjust that
+  medium to pH8.2. PERCENT preserves the literal unspecified basis; it does not assertw/v,w/w,g/L or molarity.
+  Water follows aqueous solution context, but grade, stock volume, preparation gas and starting carbonate
+  hydrate are unspecified. The main medium80%N2/20%CO2 condition is not automatically an explicit stock
+  preparation recipe. This stock is kept separate from the source-explicit5%w/v DSMZ135/339a preparation
+  and from pure sodium carbonate. Exact raw label "5% Na2CO3" retained here as provenance. Applies only
+  to CultureMech:009299 ingredients/13; no globally resolving alias is added.
+curation_history:
+- timestamp: '2026-11-08T05:35:11.685684+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Propose isolated source-qualified stock with literal components, occurrence scope and explicit
+    unresolved preparation details. No maintained data or release state changed.
+  new_status: MAPPED
+  llm_assisted: true

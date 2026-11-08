@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:jcm_284_trace_element_solution
+preferred_term: JCM 284 trace element solution
+mapping_status: MAPPED
+synonyms:
+- synonym_text: Trace element solution (see Medium No. 284 )
+  synonym_type: RAW_TEXT
+  source: JCM284 named stock reference; frozen CultureMech shard06
+curation_history:
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed exact source-defined JCM 284 trace element solution with primary
+    recipe component transcription and local registry identity. All child references
+    remain UNMAPPED; no source concentration correction or release change is applied.
+    Isolated proposal only; no publication or inherited support approval.
+  llm_assisted: true
+notes: NTA is first dissolved in200ml water with KOH to pH6.5, then salts added and
+  volume brought to1.0L; final pH7.0 with KOH. Water1L denotes total source stock
+  volume, not1L plus200ml. Distinct from284vitamin and Se/W solutions.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_284_trace_element_solution
+  ontology_label: JCM 284 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284
+    notes: Exact source-defined multicomponent stock registry identity; no whole-stock
+      identity with a single chemical or generic trace-element class.
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: G
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.35'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: as needed for pH adjustment
+  concentration_unit: VARIABLE
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - supports: SUPPORT
+    evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284
+    source_record: Trace element solution
+    notes: Transcribed exact constituent names and source batch amounts from the captured
+      primary table. Component identities deliberately remain UNMAPPED; no hydrate/stereoisomer/registry
+      normalization is asserted.
+  notes: Amounts are source batch amounts, not inferred final-volume concentrations.
+    Water is retained. Source name/form qualifiers are preserved. Completeness concerns
+    the cited listed formulation; it is not analytical speciation or component-CURIE
+    approval. NTA is first dissolved in200ml water with KOH to pH6.5, then salts added
+    and volume brought to1.0L; final pH7.0 with KOH. Water1L denotes total source
+    stock volume, not1L plus200ml. Distinct from284vitamin and Se/W solutions.

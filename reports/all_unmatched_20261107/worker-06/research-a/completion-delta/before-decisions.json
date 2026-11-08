@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "worker_slot": 6,
+  "shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+  "phase": "shard",
+  "fragment_scope": "indices0through46only; parent assembles full188",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:00f71c2ed12275529002235de4990061e773aab36d7c8bbfa4a34f922d9f5140",
+      "case_input_sha256": "f47acd731c59154c4db1248fbe08795595f8dd2efefde765dfad3e7b16f63b82",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace Mineral Supplement (ATCC)",
+        "source_label": "Trace Mineral Supplement (ATCC)",
+        "raw_source_label": "Trace Mineral Supplement (ATCC)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9454f3431c62164f8c9ae2c3fd4ce180226c9578e9aa108beeb47fe60a963ecd"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The frozen JCM242 occurrence calls the additive ATCC Trace Mineral Supplement, whereas current JCM242 specifies the trace minerals of JCM151. Official ATCC MD-TMS is an EDTA/cobalt-nitrate formulation; JCM151 uses nitrilotriacetate and cobalt sulfate. These are demonstrably different stocks. The frozen 10 g/L field does not identify a product or resolve this conflict.",
+      "applicability": "This is the sole CultureMech009605/TOGOM3136 occurrence. The JCM242 and151 primary recipes are a contradiction check, while the ATCC product page establishes a competing product, not a substitution. Exact frozen scopes: CultureMech:009605:ingredients/16",
+      "evidence_ids": [
+        "A-E-00-S00",
+        "A-E-CAPTURE-051",
+        "A-E-CAPTURE-076",
+        "A-E-CAPTURE-118",
+        "A-E-TARGETED-000"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No owner or stock alias can be selected across the JCM151/ATCC formulation conflict.",
+      "missing_requirement": "Recover the versioned TOGOM3136 or original JCM242 record that supports this exact ATCC-labelled occurrence, including product identifier and addition volume; decide which stock the frozen import intended.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:01127d93f1baaa6ac9f89388777c8ee0921a7658c1005bbc470bbef0f2ad5a25",
+      "case_input_sha256": "04bdd367c4cc60616fe10c664caa464e61c7bec06e2091f9e509ee53e7d97dd5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "25% Yeast extract solution",
+        "source_label": "25% Yeast extract solution",
+        "raw_source_label": "25% Yeast extract solution"
+      },
+      "occurrence_ids": [
+        "CM_OCC:782fd771f91b100435caa8a33cd8b946cb766e519bc2c54cfed8ec0cb05b58ba"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1407 defines a preparation made by boiling 250 g dried baker yeast in 1 L water for 30 minutes, centrifuging away cells and filter sterilizing the supernatant. The 25% designation is the starting biomass loading, not a claim that the final liquid contains 250 g/L commercial yeast extract.",
+      "applicability": "The single PPLO-broth occurrence adds100mL of this named preparation. Preserve the extraction process and the stock addition separately; neither yeast cells nor dry yeast extract is the whole-stock identity. Exact frozen scopes: CultureMech:015909:ingredients/2",
+      "evidence_ids": [
+        "A-E-01-S00",
+        "A-E-CAPTURE-151",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-NBRC1407-BOILED-YEAST"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Recovered supernatant volume, soluble yield and organism/product detail remain unreported; proposed process identity does not claim those analytical properties.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:012330c5320a4968ed592d7a76fff13d4dcad09a07528cf53127908aa4a08938",
+      "case_input_sha256": "bc6288900aa43703165a48171c918123e39f8ef5798eab6c2039296ce2d4d0dc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Hemicalcium D-(+)-pantothenate",
+        "source_label": "Hemicalcium D-(+)-pantothenate",
+        "raw_source_label": "Hemicalcium D-(+)-pantothenate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:822fce74723edaa052c8d83ff6ed83250b518802b6c4afb743d1fa212a2d794b",
+        "CM_OCC:00776d38dd9ad67c0206a38321bd6790cc6fe98fb373d41d7514ba57709c31cc",
+        "CM_OCC:4dd0033befc2fe5cef76f31a8c9af5a53998fbe760e0bf93861df63377f43492",
+        "CM_OCC:9320ea1d8b62a6a21b66af353b9f18fc60490b765bbfcc8fa69ee7611b05e723",
+        "CM_OCC:fb9dcb90d2cd82c5eb8c5ffb0b8b61d618b71e78e1b48aeead09a1fe017532ce",
+        "CM_OCC:3f8102e8377e4fbb60d34166eb4b680a66fc581e1eecf75304f9d280bd320f19",
+        "CM_OCC:1dc22cc50ffbf4ee6f348212658c386537e968579fe93ea29629fd3ad9454880"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Hemicalcium D-(+)-pantothenate denotes one-half calcium equivalent per D-pantothenate unit, the same 2:1 D-pantothenate calcium salt represented by CHEBI31345. Official supplier and MediaDive ingredient1123 agree on CAS137-08-6. This supports the raw D-specific alias, but cannot support DL aliases presently on the owner. Four capsaicin names also belong to CHEBI3374 and must be excluded from pantothenate identity matching.",
+      "applicability": "All seven occurrences retain their individual recipe/solution scopes. Source solution recipes identify constituent1123; this proposal adds the chemical alias and rejects six demonstrably wrong owner labels without certifying imported concentrations, roles or the complete published payload. Exact frozen scopes: CultureMech:001187:ingredients/13; CultureMech:011873:composition/4; CultureMech:012637:composition/5; CultureMech:001278:ingredients/25; CultureMech:000725:ingredients/23; CultureMech:001236:ingredients/10; CultureMech:000843:ingredients/21",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-02-S00",
+        "A-E-02-S01",
+        "A-E-02-S02",
+        "A-E-02-S03",
+        "A-E-02-S04",
+        "A-E-02-S05",
+        "A-E-02-S06",
+        "A-E-CAPTURE-002",
+        "A-E-CAPTURE-008",
+        "A-E-CAPTURE-010",
+        "A-E-CAPTURE-082",
+        "A-E-CAPTURE-083",
+        "A-E-CAPTURE-087",
+        "A-E-CAPTURE-088",
+        "A-E-CAPTURE-090",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-011",
+        "A-E-EXTRA-018",
+        "A-E-TARGETED-008",
+        "A-E-SIGMA-HEMICALCIUM"
+      ],
+      "proposal_ids": [
+        "A-P-CALCIUM-D"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:037e958a66f64078d543213f3a007cfc1d873519d9274fb48f506ac94bb3bc31",
+      "case_input_sha256": "f42178724238680fb0355df8abd74926b2a9cf51f9bf1ea1412dcfd965d3458a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1M Na2CO3",
+        "source_label": "1M Na2CO3",
+        "raw_source_label": "1M Na2CO3"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6d66121c6c78b0fbd2c8394f14dafa77dbca2aec50401777aaf0364c92f917a7",
+        "CM_OCC:08558eb8cc674db76653dcd0ed52d971f7df09f36297ca38cfa730fa3efb57a6"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ29 prepares a sterile 1M sodium-carbonate stock for pH adjustment; DSMZ40 explicitly derives from29 with added NaCl. Molar concentration is part of the supplied solution identity. Existing Sodium_Carbonate_Solution is typed STOCK_SOLUTION but carries the bare-solute CHEBI29377 identity and assorted solid/buffer aliases, so extending it would propagate a known form conflation.",
+      "applicability": "Both frozen occurrences describe the same 1M stock instruction in DSMZ29/40, not weighed carbonate solid or the 4% stock in case24. Exact frozen scopes: CultureMech:008844:ingredients/2; CultureMech:009162:ingredients/0",
+      "evidence_ids": [
+        "A-E-OWNER-01",
+        "A-E-03-S00",
+        "A-E-03-S01",
+        "A-E-CAPTURE-035",
+        "A-E-CAPTURE-040",
+        "A-E-CAPTURE-091",
+        "A-E-CAPTURE-092",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-DSMZ29-CARBONATE-1M"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Exact starting carbonate hydrate and solvent/preparation details are unspecified; the bounded1M stock proposal retains them as unknown. Existing generic solute-grounded Sodium_Carbonate_Solution remains a separate review defect.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:05063ed12d4ca5d9048db0e4b85a8db7a55bcbe3327e5acdf5d29839fa798b3b",
+      "case_input_sha256": "7556fa506d22f218fb558e30081993a2c1ab7d4f3df8c6b1785a7dacf63a0dbd",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Component I",
+        "source_label": "Component I",
+        "raw_source_label": "Component I"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f02a82009b07d75fac9f4109b16df08bef796c0a9534d7bc0ecc3f50dd486b11"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "ATCC1249 defines ComponentI as MgSO4, sodium citrate, CaSO4 dihydrate and NH4Cl in400mL water, adjusted to pH7.5 and sterilized separately from ComponentsII/III. The Roman numeral is recipe-local, not a substance name.",
+      "applicability": "The single ATCC1249/TOGOM2616 occurrence refers to this multi-ingredient precursor. Constituent names lacking hydrate qualifiers remain source-unspecified; the whole component cannot map to one salt. Exact frozen scopes: CultureMech:009183:ingredients/0",
+      "evidence_ids": [
+        "A-E-04-S00",
+        "A-E-CAPTURE-041",
+        "A-E-CAPTURE-077",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-ATCC1249-COMPONENT-I"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "The source omits the pH7.5 titrant and unspecified salt hydrate details; proposed exact recipe scope preserves those gaps.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:059a93d33a57f51788fe5cf8de33a803d555df73119e6b9bdaa15e430969f59f",
+      "case_input_sha256": "259c96e21efbbd2b2274317d1132392a2c7d8c4bb1c5770d7c35bcd6c960325a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "DL--Calcium pantothenate",
+        "source_label": "DL--Calcium pantothenate",
+        "raw_source_label": "DL--Calcium pantothenate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e9c16b7d04492ef8084ae90db20c672b584f4f5caf8c0bdfa9fe6da72c7c108c",
+        "CM_OCC:b3e3dfea9ad09af34a5e63f48d9238d38dc2edb20970ed4ac8d82849f5771563",
+        "CM_OCC:5e3e7a5f8a8c508d1d9556580dfe3d8eb44f1dfc847a9af3b47663ee27613644",
+        "CM_OCC:5185e6a40e73b44556b32ab5a350de25830d33271f65feac5bfda2adbffd6ade",
+        "CM_OCC:1c12a7f3f90e70dc20e78af6a203dff492612871973f35536b1ce49b98a7d158",
+        "CM_OCC:cecb3b7e34655fda07bf0d18ecaa63d539cc1f7d285ae7f165dde029400f2603",
+        "CM_OCC:fec575f576feb9f089020710bd3ed6fbdedea3729dcf74f3125faf691ac18055",
+        "CM_OCC:c069702910be03d8245464d4cf80de7445148a508390ab326fdcfc0d25f8eead",
+        "CM_OCC:d4097b1b3eaf61981d69de0cc914a2f8b5f5a4e27c56ecdc723c35a368677116",
+        "CM_OCC:42a9793bf4b470263c4b5c1f2bc90de708c9c51157e0dc0eec5a4c5f65ea622a",
+        "CM_OCC:49e9c3857f874a7ce5b517e228e3d24b4f6bbe4c39630c0073cfb99d018f80ab",
+        "CM_OCC:88e759fd3057ba9c607a01a110b355cae7e76fa7a8bca2f4d7a7cb487d9ee1df",
+        "CM_OCC:18c6538c28125c05168875a10d9ec4d7cd694e642cecc50b3ee24df84f0f12b8",
+        "CM_OCC:052dc53d08e781dbfa7112bbf0d7adb8308b60ce2d24e0c5504401bf23a705b5",
+        "CM_OCC:7c8d21f2927b3359731132393098f1f50048b53adf6c84cf6d0f728ac4b96395",
+        "CM_OCC:24efd2fbe7692ed6c4ba793a51165f7c45da361baeeadc4f4ebaf69063dd5d58",
+        "CM_OCC:9e66d559bc0c56cb0cae85574ce049b4726cd59b916f4b55f2b4d830992a1408",
+        "CM_OCC:142e889c02feadbf131b0f94f34af06e489aaf568445afb907896f56fe18428c"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "The doubled hyphen is punctuation, but DL is a stereochemical boundary. Sixteen available JCM primary recipes explicitly name DL-Calcium pantothenate. CHEBI180950 is current, nonobsolete Calcium DL-pantothenate, distinct from D-specific CHEBI31345. Its structure lacks stereochemical specification and its CAS cross-reference differs from a supplier DL SDS; no CAS or formula enrichment is inferred from that conflict.",
+      "applicability": "All18 frozen occurrences explicitly retain DL. JCM665 and827 currently return no recipe, so those two occurrence histories remain frozen-source assertions rather than independently reconfirmed live recipes. The proposal creates the DL ingredient identity and records this coverage limitation; it does not move D or unspecified-Ca occurrences or repair normalized quantities. Exact frozen scopes: CultureMech:010419:ingredients/32; CultureMech:007577:ingredients/23; CultureMech:007695:ingredients/19; CultureMech:009337:ingredients/22; CultureMech:009785:ingredients/22; CultureMech:009912:ingredients/17; CultureMech:009930:ingredients/18; CultureMech:009955:ingredients/19; CultureMech:009974:ingredients/22; CultureMech:010008:ingredients/30; CultureMech:010025:ingredients/25; CultureMech:010088:ingredients/23; CultureMech:010145:ingredients/34; CultureMech:010208:ingredients/38; CultureMech:010279:ingredients/23; CultureMech:010306:ingredients/33; CultureMech:010361:ingredients/14; CultureMech:010367:ingredients/23",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-05-S00",
+        "A-E-05-S01",
+        "A-E-05-S02",
+        "A-E-05-S03",
+        "A-E-05-S04",
+        "A-E-05-S05",
+        "A-E-05-S06",
+        "A-E-05-S07",
+        "A-E-05-S08",
+        "A-E-05-S09",
+        "A-E-05-S10",
+        "A-E-05-S11",
+        "A-E-05-S12",
+        "A-E-05-S13",
+        "A-E-05-S14",
+        "A-E-05-S15",
+        "A-E-05-S16",
+        "A-E-05-S17",
+        "A-E-CAPTURE-016",
+        "A-E-CAPTURE-018",
+        "A-E-CAPTURE-045",
+        "A-E-CAPTURE-054",
+        "A-E-CAPTURE-057",
+        "A-E-CAPTURE-058",
+        "A-E-CAPTURE-060",
+        "A-E-CAPTURE-062",
+        "A-E-CAPTURE-063",
+        "A-E-CAPTURE-064",
+        "A-E-CAPTURE-065",
+        "A-E-CAPTURE-068",
+        "A-E-CAPTURE-069",
+        "A-E-CAPTURE-070",
+        "A-E-CAPTURE-071",
+        "A-E-CAPTURE-072",
+        "A-E-CAPTURE-073",
+        "A-E-CAPTURE-074",
+        "A-E-CAPTURE-097",
+        "A-E-CAPTURE-099",
+        "A-E-CAPTURE-119",
+        "A-E-CAPTURE-122",
+        "A-E-CAPTURE-125",
+        "A-E-CAPTURE-126",
+        "A-E-CAPTURE-128",
+        "A-E-CAPTURE-130",
+        "A-E-CAPTURE-131",
+        "A-E-CAPTURE-132",
+        "A-E-CAPTURE-133",
+        "A-E-CAPTURE-136",
+        "A-E-CAPTURE-137",
+        "A-E-CAPTURE-139",
+        "A-E-CAPTURE-140",
+        "A-E-CAPTURE-141",
+        "A-E-CAPTURE-142",
+        "A-E-CAPTURE-144",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-007",
+        "A-E-EXTRA-012",
+        "A-E-TARGETED-012",
+        "A-E-SPECTRUM-DL",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-CALCIUM-DL"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:05b1ecebc5fac960750bccaf731587fb26ba8a4c477d8de38c63b2c4a5717cc5",
+      "case_input_sha256": "2aab3284a42154951d5ce0a70b0f586be9abedf51603276a677e80f6c05c4f8e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sorbitan mono-oleate",
+        "source_label": "Sorbitan mono-oleate",
+        "raw_source_label": "Sorbitan mono-oleate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8b8ad7da6a3369e9713007a8283880a8a63a1291753b83dad22f0e24f0582413",
+        "CM_OCC:fd6f960a7e2ecdb2b41babba5112365fa255226f11ce8c7768592db23e583216",
+        "CM_OCC:f84d8bad7ea3d1469a5b2b7b5bcee9d5718192d61ff43f154a71fd990a8b4286",
+        "CM_OCC:945749cfab55eeb21afb3429ea2b29b58010579aca5a0d1f8e377da6c8583c0a"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC906 and977 name sorbitan mono-oleate by liquid volume; the two TOGO MRS contexts use an Oxoid formulation. Commercial sorbitan monooleate materials and polysorbate80 are different identities. The baseline Sorbitan_Monooleate owner explicitly retains an ATCC416-only unresolved material scope and withholds molecular NCIT/CHEBI targets. Oxoid page retrieval does not establish the exact lot or whether the source name is an historical naming error.",
+      "applicability": "All four occurrences were inspected; the NBRC sources say1mL, while normalized entries use mass units. None authorizes extending the existing ATCC416 scope to these MRS materials. Exact frozen scopes: CultureMech:008329:ingredients/7; CultureMech:008262:ingredients/7; CultureMech:008831:ingredients/5; CultureMech:009352:ingredients/6",
+      "evidence_ids": [
+        "A-E-OWNER-02",
+        "A-E-06-S00",
+        "A-E-06-S01",
+        "A-E-06-S02",
+        "A-E-06-S03",
+        "A-E-CAPTURE-028",
+        "A-E-CAPTURE-030",
+        "A-E-CAPTURE-034",
+        "A-E-CAPTURE-046",
+        "A-E-CAPTURE-161",
+        "A-E-CAPTURE-164",
+        "A-E-EXTRA-017"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve the existing material hold and do not equate Sorbitan mono-oleate, a pure molecule, and Tween80.",
+      "missing_requirement": "Obtain source-linked product/catalog composition for NBRC906/977 and TOGO2242/2804/Oxoid MRS; determine nonethoxylated sorbitan ester mixture versus polysorbate80 and resolve the liquid-volume import discrepancy.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+          "sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:063ab5a2d7117f68166c69cce2f0e3a3f7a730db87cac10b6601d877b517fe7c",
+      "case_input_sha256": "705d964f0656678c50bfdca2c7e4f1c1e4c9923b5e1e80ea0864754cf8b12c0e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Niacine",
+        "source_label": "Niacine",
+        "raw_source_label": "Niacine"
+      },
+      "occurrence_ids": [
+        "CM_OCC:608ba26dd0f726f415c0f6b7bda986ae0f20e4ca0994be4d2e2cf36bc89245b2",
+        "CM_OCC:d2374c241cd3d80ac101ab58c9292675328e5f285ce0bf60f443fffe983b2541"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC360 and361 use the spelling Niacine in the same vitamin-stock context but give no catalog/CAS or structure. The spelling suggests niacin, yet current ontology results cover nicotinic acid and the broader vitamin usage also includes nicotinamide. This source does not identify an acid-versus-amide supplied form.",
+      "applicability": "Both NBRC vitamin mixtures use50mg Niacine per100mL; that numerical recipe detail supports occurrence provenance, not an acid identity. Exact frozen scopes: CultureMech:008107:ingredients/16; CultureMech:008109:ingredients/18",
+      "evidence_ids": [
+        "A-E-OWNER-03",
+        "A-E-OWNER-04",
+        "A-E-07-S00",
+        "A-E-07-S01",
+        "A-E-CAPTURE-023",
+        "A-E-CAPTURE-024",
+        "A-E-CAPTURE-155",
+        "A-E-CAPTURE-156",
+        "A-E-EXTRA-003",
+        "A-E-EXTRA-010"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Neither acid nor amide owner receives this unresolved source spelling.",
+      "missing_requirement": "Find a source revision, supplier catalog or preparation description tied to NBRC360/361 that identifies Niacine as nicotinic acid or nicotinamide; then verify the corresponding exact target.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+          "sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b"
+        },
+        {
+          "path": "data/ingredients/mapped/Nicotinamide.yaml",
+          "sha256": "724181418c9efc54cff5930bb942c07ed23e1417144bbc0c785caa58b5683325"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:074679291094b29db457272b18e3b9d62c0ce4046ff026549a15e090feb9ed6e",
+      "case_input_sha256": "fe88bcde7f83b73e0fd906a7cc4d8912b22a175473039594ecb2a5d7e09ed043",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace element solution SL12",
+        "source_label": "Trace element solution SL12",
+        "raw_source_label": "Trace element solution SL12"
+      },
+      "occurrence_ids": [
+        "CM_OCC:468709baea80611693262fd660675692f1069c51864a11f3105689c8209364fb"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive ingredient1812 names Trace element solution SL12 and the enclosing solution4409 adds1mL of it in a provider volume1005mL. The frozen percentage0.9950248756 is inconsistent with1/1005*100=0.09950248756% by volume. The ingredient endpoint does not expose the stock composition; the stock name cannot be replaced by a constituent or another SL formulation.",
+      "applicability": "The single composition occurrence is a nested stock addition in solution4409. Evidence establishes source stock identity and a factor-ten concentration discrepancy; it does not infer the receiving medium concentration or final measured volume. Exact frozen scopes: CultureMech:013396:composition/7",
+      "evidence_ids": [
+        "A-E-08-S00",
+        "A-E-CAPTURE-005",
+        "A-E-CAPTURE-012",
+        "A-E-EXTRA-020",
+        "A-E-TARGETED-010"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No chemically verified owner for this SL12 preparation was identified; retain the explicit source stock and concentration defect.",
+      "missing_requirement": "Resolve the source-bound SL12 formulation/version through the provider and correct the arithmetic/unit transformation for the solution4409 occurrence before quantitative integration.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:07f7d3254418ca916ec548eebaf436f4242b69296012ef64e4b5c6cb9200d40f",
+      "case_input_sha256": "be05e8a5958d6f4fd7f2355b2a0a96807b0dfb125acd819bc2e35da1b786e336",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Yeast cell paste (bakers yeast,washed in deion. water) wet weight",
+        "source_label": "Yeast cell paste (bakers yeast,washed in deion. water) wet weight",
+        "raw_source_label": "Yeast cell paste (bakers yeast,washed in deion. water) wet weight"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9056aa3b4ba3dd5d480f852a21d27777d70f171a1e68923c756eab71f5a46fbd"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ958 uses2.5g wet washed baker-yeast cell paste. The baseline Yeast_Cell_Paste owner is a process-defined wet whole-cell material and remains unmapped. This is compatible at a descriptive level, but the washing and wet-mass basis must survive; it is neither yeast extract nor dry biomass.",
+      "applicability": "This sole DSMZ958 occurrence specifies deionized-water washing and wet weight. The existing owner history supplies the correct material boundary but has not established an exact ontology or source equivalence for every preparation. Exact frozen scopes: CultureMech:008887:ingredients/2",
+      "evidence_ids": [
+        "A-E-OWNER-05",
+        "A-E-OWNER-06",
+        "A-E-09-S00",
+        "A-E-CAPTURE-038",
+        "A-E-CAPTURE-093"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No duplicate A payload is authored because root owns the concrete DSMZ958 washed yeast-cell-paste proposal R-P-YEAST-CELL-PASTE.",
+      "missing_requirement": "Coordinator must bind the already-authored R-P-YEAST-CELL-PASTE shared proposal to this exact DSMZ958 occurrence and independent review.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Yeast_Cell_Paste.yaml",
+          "sha256": "48f80a904c853250f65d7a8c6b04e53a8ac5541499197984d5c644e9b76f3c70"
+        },
+        {
+          "path": "data/ingredients/mapped/Bakers_Yeast.yaml",
+          "sha256": "11eda0e05a1a8abf2779d8eb421548e31e82d06387dfa388d8526b6523a0154e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:08db909532e92ec4fd5f74e20f687d6fc9fe065c933ea60428e96a6c79e0cf70",
+      "case_input_sha256": "36e2811001786b19f555fb8fe94bbec1769b33f247c824f1425e1b61bb4de2ea",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Dry yeast",
+        "source_label": "Dry yeast",
+        "raw_source_label": "Dry yeast"
+      },
+      "occurrence_ids": [
+        "CM_OCC:23f3c5ee7951772e0a843c1f70ce39331461c9e6fa03e6167420edbbbf24320e",
+        "CM_OCC:bd68d98726bc9ac03da9631933e159f7ee4d3a55c55f98ea1c7dc9dd8b5d2e5a"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1463 lists dry yeast5g and separately yeast extract0.1g; NBRC828 lists dry yeast10g. The explicit coexistence of extract and dry yeast rules out treating them as synonyms. Neither recipe specifies a strain, species, manufacturer or drying process.",
+      "applicability": "Both occurrences denote dried yeast biomass with recipe-specific dosage, not a25% yeast-derived extraction stock or pressed wet yeast. Exact frozen scopes: CultureMech:008725:ingredients/10; CultureMech:008181:ingredients/2",
+      "evidence_ids": [
+        "A-E-OWNER-06",
+        "A-E-OWNER-07",
+        "A-E-10-S00",
+        "A-E-10-S01",
+        "A-E-CAPTURE-025",
+        "A-E-CAPTURE-033",
+        "A-E-CAPTURE-152",
+        "A-E-CAPTURE-158"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No broad yeast or baker-yeast owner is extended to these process-qualified materials without material-level review.",
+      "missing_requirement": "A dried-yeast material owner can preserve the generic source claim, but exact taxon/product and equivalence to any baker-yeast product need source evidence.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Yeast.yaml",
+          "sha256": "43bdb48b5f14686043a720ef52314c7f84a94043c08123c171fa6556992c896a"
+        },
+        {
+          "path": "data/ingredients/mapped/Bakers_Yeast.yaml",
+          "sha256": "11eda0e05a1a8abf2779d8eb421548e31e82d06387dfa388d8526b6523a0154e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:09fd77b4ff29c65b54c1982ef56be2f97ef6dcb9c71fd154a8d0ff79ae6a39f3",
+      "case_input_sha256": "be7dec3d53f51571ff1550721eceed56da3084179da98a762a9e0a92286dce6c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Thioctic acid (lipoic acid)",
+        "source_label": "Thioctic acid (lipoic acid)",
+        "raw_source_label": "Thioctic acid (lipoic acid)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4b44aed32dad67e9908850cc1701ff7db1f262afdcd014093378bcb096922643"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The LS4D frozen source calls this Thioctic acid (lipoic acid), without stereochemistry. Live CHEBI16494 is generic lipoic acid with CAS62-46-4; the baseline owner is labelled (DL)-alpha-Lipoic acid and retains CAS1077-28-7 plus earlier generic/racemic merge reasoning. That mismatch cannot be resolved by another lexical alias.",
+      "applicability": "The one TOGOM2809 occurrence supports generic lipoic/thioctic acid only. The current Togo page is a shell and its recipe endpoint timed out. Prior owner curation is preserved and treated as a claim to reassess. Exact frozen scopes: CultureMech:009357:ingredients/22",
+      "evidence_ids": [
+        "A-E-OWNER-08",
+        "A-E-11-S00",
+        "A-E-CAPTURE-047",
+        "A-E-EXTRA-002",
+        "A-E-EXTRA-009",
+        "A-E-TARGETED-001"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Do not silently equate generic source lipoic acid with a declared racemate or approve the inherited CAS.",
+      "missing_requirement": "Recover source-specific LS4D supplier/stereochemistry or formally narrow/restructure the current lipoic-acid owner after reviewing its generic-versus-racemate identity and registry properties.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Dl-alpha-lipoic_Acid.yaml",
+          "sha256": "0ed895bde2be0c24acba5da9eb925485ebea8dd04b8058cce77270e1677629bc"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:0b9cac1a7214be756e0532ecb869139cfd7d67b907c4365d90ba272f4214de3f",
+      "case_input_sha256": "416fb5fbabaa0d826b0794cb5d2fdc5a1a5b4331b5f69cf5e19cbfbcea3e0777",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2-EDTA/FeCl3",
+        "source_label": "Na2-EDTA/FeCl3",
+        "raw_source_label": "Na2-EDTA/FeCl3"
+      },
+      "occurrence_ids": [
+        "CM_OCC:780ac454fc1f915571797639d6abc34dfce5475ba78f6a27f5964f83b6671606"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Roscoff PCRS11 primary protocol explicitly prepares Na2-EDTA/FeCl3 by combining iron-chloride/HCl and disodium-EDTA/NaOH solutions then making2L. It is a prepared mixture, not a synonym for pure sodium ferric EDTA. The protocol distinguishes its2µM addition from an original8µM recipe and has hydrate omissions in the printed preparation.",
+      "applicability": "The single TOGOM2262 PCR-S11 source occurrence is the combined stock. Roscoff protocol is direct preparation evidence but not proof that the frozen occurrence uses its revised2µM rather than original8µM version. Exact frozen scopes: CultureMech:008849:ingredients/6",
+      "evidence_ids": [
+        "A-E-12-S00",
+        "A-E-CAPTURE-036",
+        "A-E-TARGETED-002",
+        "A-E-PCRS11"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No pure EDTA or sodium-ferric-EDTA owner is used; source recipe/version differences remain explicit.",
+      "missing_requirement": "Bind the frozen source to the original or revised PCRS11 preparation, preserving reagent hydration as stated and stock constituents rather than asserting a purified coordination salt.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:0de1cd6a8da27db3330c739fddfbd28decf8c771a01ff97a40179faca8894f95",
+      "case_input_sha256": "fc9e8546517b09b001d04d89914f5d3c1dae2a926d92fbe66bf12b909571ef22",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2MnO4·2H2O",
+        "source_label": "Na2MnO4·2H2O",
+        "raw_source_label": "Na2MnO4·2H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b5b72fc7813f7b52ee67a7b16188ff34857233f3e69eccdeb3aeaf7020f62a76"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Current JCM1357 itself prints Na2MnO4·2H2O in the trace-A5 table. This is not merely an importer typo that can be silently normalized to Na2MoO4·2H2O: Mn and Mo identify different elements and the recipe also contains anomalous entries. A familiar A5 recipe is not authority to overwrite the printed source.",
+      "applicability": "The exact single JCM1357 occurrence and its raw formula remain unchanged; the live primary source corroborates the spelling, not its chemical correctness. Exact frozen scopes: CultureMech:015838:ingredients/14",
+      "evidence_ids": [
+        "A-E-13-S00",
+        "A-E-CAPTURE-106"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Source-level chemical ambiguity requires provider correction; no formula autocorrection proposal.",
+      "missing_requirement": "Obtain an erratum or authoritative revised JCM1357/A5 specification confirming whether Mn is intended or Mo was meant, with hydrate and dose. Until then no molybdate/manganate identity may be assigned.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:0fbc4237ec3587e18ff78d8bf9f2bf0381a32f1e4084be5ad3e8e1d5d4139749",
+      "case_input_sha256": "15162665c19bd1d9c612b3186651b1d0653da650a0a75ca5ffcd9823f49d80cf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace elements solution*",
+        "source_label": "Trace elements solution*",
+        "raw_source_label": "Trace elements solution*"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b046623299506b477431c439e142e044ab47a4e3ede2dc25909f95ee80f0ab81",
+        "CM_OCC:ee62e818c67f30f24dfbc93029ed46e8faa709660c5b51373f12aacbd99b3004",
+        "CM_OCC:04c0ce44e32257a9f8e68e35785298e674cbf7522c389dda38076b88c797e544",
+        "CM_OCC:62482ecc19aaa9e1c7abb07a1491d14bb63002a8b17ad032608e2db669e1b817"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The asterisk is a local footnote marker. NBRC1050,1086,1274 and925 each supply a trace-element formula; they differ in nitrilotriacetate quantity and mineral constituents, including selenium/aluminium details. A shared heading does not establish one stock.",
+      "applicability": "All four complete source tables were inspected. Preserve four occurrence-qualified preparations; no single Trace elements solution* owner can represent their unequal formulas. Exact frozen scopes: CultureMech:007452:ingredients/13; CultureMech:007455:ingredients/9; CultureMech:007468:ingredients/9; CultureMech:007505:ingredients/6",
+      "evidence_ids": [
+        "A-E-14-S00",
+        "A-E-14-S01",
+        "A-E-14-S02",
+        "A-E-14-S03",
+        "A-E-CAPTURE-146",
+        "A-E-CAPTURE-147",
+        "A-E-CAPTURE-148",
+        "A-E-CAPTURE-162"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "A global alias would merge distinct formulations; this case is explicitly partitioned by its four source recipes.",
+      "missing_requirement": "Integrate separate recipe-qualified stock identities, comparing complete formula and preparation before any pairwise consolidation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+      "case_input_sha256": "9ee26fb221ffc339c14ebc4dae9b0749377784ae287ff67b6dd9fc0e715f2fda",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "D--Glucose",
+        "source_label": "D--Glucose",
+        "raw_source_label": "D--Glucose"
+      },
+      "occurrence_ids": [
+        "CM_OCC:427e76e513e9950966c4be648307bc9cf31dce31dc599a405a258824e107fcf6",
+        "CM_OCC:9384884b3b2f531071e4fc736c3e4b3cca603816857dde091643cf363195fb52",
+        "CM_OCC:24a59e2909fb8a023285979cc078dccc113da9bf64db4c7917949993cefebeed",
+        "CM_OCC:b00619cf30d735be28fb7e0f7cb7cc602ac7aab69631b016a78823646325ecaa",
+        "CM_OCC:d62cf8b3026ecc2f95ec8c551e2533811f1975c3737b82df6c12d98ecac6f466",
+        "CM_OCC:48e4e636d151f2df39211d56da8013e8b2c6efa0bfacdaac3ef07e2f9c6877f8"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The six JCM originals spell D-Glucose; the doubled source hyphen is punctuation and does not remove D stereochemistry. Current CHEBI17634 explicitly defines D-glucose and includes D(+)-glucose synonyms. Existing D-glucose is the matching D-specific owner.",
+      "applicability": "JCM379,381,429,476,709 and710 all support D-glucose as a constituent. JCM381 references379 with a peptone change. The proposal covers chemical aliases only and does not interpret1MGlucose whole-stock cases or resurrect Glucose_2. Exact frozen scopes: CultureMech:009755:ingredients/5; CultureMech:009757:ingredients/5; CultureMech:009814:ingredients/4; CultureMech:009863:ingredients/4; CultureMech:010141:ingredients/1; CultureMech:010142:ingredients/1",
+      "evidence_ids": [
+        "A-E-OWNER-09",
+        "A-E-15-S00",
+        "A-E-15-S01",
+        "A-E-15-S02",
+        "A-E-15-S03",
+        "A-E-15-S04",
+        "A-E-15-S05",
+        "A-E-CAPTURE-052",
+        "A-E-CAPTURE-053",
+        "A-E-CAPTURE-055",
+        "A-E-CAPTURE-056",
+        "A-E-CAPTURE-066",
+        "A-E-CAPTURE-067",
+        "A-E-CAPTURE-120",
+        "A-E-CAPTURE-121",
+        "A-E-CAPTURE-123",
+        "A-E-CAPTURE-124",
+        "A-E-CAPTURE-134",
+        "A-E-CAPTURE-135",
+        "A-E-EXTRA-000"
+      ],
+      "proposal_ids": [
+        "A-P-D-GLUCOSE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/D-glucose.yaml",
+          "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:11e4479bd0ecc400516731fbfcc48ebb29a1be6b76404f62c27481856b1059cc",
+      "case_input_sha256": "59cf455cc3455721183cef52bbcf794fbf53f2f4968410573ecee2f34804cba6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "D--Calcium pantothenate",
+        "source_label": "D--Calcium pantothenate",
+        "raw_source_label": "D--Calcium pantothenate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c720bb89e2dac77a3949294a6a1206b25018dd22f3165462fdb847be6cdc885c"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM558 names D-Calcium pantothenate in its seven-vitamin mixture. This agrees with D-specific CHEBI31345 and the salt stoichiometry corroborated by supplier hemicalcium nomenclature. The doubled hyphen is a harmless raw spelling, unlike a DL qualifier.",
+      "applicability": "The one JCM558 occurrence has an exact D-qualified chemical component. The primary recipe gives5mg per100mL; the normalized5g/L value is not approved by this identity proposal. Exact frozen scopes: CultureMech:009957:ingredients/20",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-16-S00",
+        "A-E-CAPTURE-061",
+        "A-E-CAPTURE-129",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-011",
+        "A-E-SIGMA-HEMICALCIUM"
+      ],
+      "proposal_ids": [
+        "A-P-CALCIUM-D"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:12d5a1e4a69db3211da7933818120defbdfbee79e75f49bdb6bdb894cea6d843",
+      "case_input_sha256": "970c55558334dcfcda031d4e3c048b443c1cd8c6c8f143efd71736486019e51a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Mn(II)・EDTA",
+        "source_label": "Mn(II)・EDTA",
+        "raw_source_label": "Mn(II)・EDTA"
+      },
+      "occurrence_ids": [
+        "CM_OCC:db69b375111681d92eee6e1d267d798cb35935c1ffebe7f508ad25e40ecc440f"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "JCM1273 lists Mn(II)·EDTA separately from Fe(III)·EDTA, so the metal and oxidation state are explicit. It does not identify counterions or hydrate. The existing UNMAPPED0451 deliberately retains Mn(II)-EDTA complex identity without mapping to free manganese or EDTA. Its hold remains scientifically appropriate.",
+      "applicability": "This single occurrence is the manganese complex in the picoalgae medium. The primary amount is332µg/L; frozen332g/L is a unit-normalization defect, not evidence of a new species. Exact frozen scopes: CultureMech:007907:ingredients/11",
+      "evidence_ids": [
+        "A-E-OWNER-10",
+        "A-E-17-S00",
+        "A-E-CAPTURE-020",
+        "A-E-CAPTURE-101"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve the complex identity hold; generic manganese, EDTA, or a guessed disodium salt would be incorrect.",
+      "missing_requirement": "Obtain product/formula/counterion/hydrate evidence for the JCM1273 Mn(II)-EDTA reagent and a corresponding specific ontology or registry identity; repair the µg-to-g conversion separately.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/MnII_X_EDTA.yaml",
+          "sha256": "45ce565420a5cff5d36490b064f7a25a4b9c111e23497131bb8cdc23c3d4bfa2"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:1306d71cf68bc81dd0d31b7b6dff3a8af17c74cdfdaa20c222f51608d1345b7f",
+      "case_input_sha256": "290a6fb17aaac7136f165c135c397e973a8343352ab9b34cda48570dd7debe57",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "SL-6 Trace element solution (see Medium No. 167 )",
+        "source_label": "SL-6 Trace element solution (see Medium No. 167 )",
+        "raw_source_label": "SL-6 Trace element solution (see Medium No. 167 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5ff5faa35dcddc65f12f2edbb7d15c834695c59c40ddb9ce2a35a79513e4bb18"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1354 refers expressly to SL-6 in JCM167. JCM167 gives a seven-salt trace-element preparation in1L water adjusted to pH3.6. This is distinct from SL4, which incorporatesSL6 plus EDTA and ferrous sulfate.",
+      "applicability": "The single numbered reference permits resolution to the JCM167 preparation, with no inference from the numericSL name alone. Exact frozen scopes: CultureMech:015837:ingredients/10",
+      "evidence_ids": [
+        "A-E-18-S00",
+        "A-E-CAPTURE-105",
+        "A-E-CAPTURE-114",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM167-SL6"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Titrant identity and quantity for stock pH3.6 remain unspecified; no acid is invented.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+      "case_input_sha256": "b7cb6a3fd6f8ced006c34317b734193d0b7b9d24245075b5509fc8035d3a776f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace element solution**",
+        "source_label": "Trace element solution**",
+        "raw_source_label": "Trace element solution**"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+        "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5",
+        "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1020 and824 show related nitrilotriacetate stocks, whereas1308 adds a different set including sodium chloride and selenium/tungsten entries and pH6.5 preparation. The double asterisk is a footnote marker that reuses a heading across recipes.",
+      "applicability": "All three occurrences are independently bounded by their full NBRC tables. Similar NTA/iron entries do not justify treating the whole preparations as identical. Exact frozen scopes: CultureMech:007450:ingredients/8; CultureMech:007471:ingredients/8; CultureMech:007496:ingredients/7",
+      "evidence_ids": [
+        "A-E-19-S00",
+        "A-E-19-S01",
+        "A-E-19-S02",
+        "A-E-CAPTURE-145",
+        "A-E-CAPTURE-149",
+        "A-E-CAPTURE-157"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No single global Trace element solution** alias can represent these three source preparations.",
+      "missing_requirement": "Partition by NBRC recipe and compare complete stoichiometry/preparation before assigning distinct stock owners or merging1020/824.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34",
+      "case_input_sha256": "f3537ff48bec8488115c73b81263f8cf946fb1bf53a3b12f76150220c3a710f3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "KOH solusion",
+        "source_label": "KOH solusion",
+        "raw_source_label": "KOH solusion"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0aedb54c475214aee9fe439653a935255c2a9dd3cb262c1260d2a11af0e3b0fd"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "ATCC1775 uses KOH solution to adjust the trace-mineral preparation to specified pH values. The source provides no stock molarity, density or product identity. The misspelling solusion does not make the whole liquid identical to pure potassium hydroxide.",
+      "applicability": "This ATCC1775/Archaeoglobus-medium occurrence is a pH-adjusting reagent instruction within trace-stock preparation. It is not a weighed KOH solid and not evidence for a fixed-strength commercial solution. Exact frozen scopes: CultureMech:009220:ingredients/27",
+      "evidence_ids": [
+        "A-E-OWNER-11",
+        "A-E-20-S00",
+        "A-E-CAPTURE-043",
+        "A-E-CAPTURE-078"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact pure-solute alias is proposed for an unspecified-strength solution.",
+      "missing_requirement": "Obtain the solution strength or retain an explicitly unspecified aqueous-KOH preparation identity; the pure KOH owner cannot absorb a whole-stock label.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Koh.yaml",
+          "sha256": "ae478c37c1f269d5ac551c7773568cdbaf81a7d5af752f33e58775f8c18037c1"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+      "case_input_sha256": "7b878e02533cda2a1f92b5e6c62f4fbf3c271209435719102d516d5043d6ff4f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace vitamins (see Medium No. 197 )",
+        "source_label": "Trace vitamins (see Medium No. 197 )",
+        "raw_source_label": "Trace vitamins (see Medium No. 197 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3ca1791901995a6909f961f4f23d63e30fa0e3c2ba0a7a9f990b45da1f84463f",
+        "CM_OCC:742362b1e2dbbe5b8486e43e20698ee1240b98525bb2ac54e90bf28304d97f49",
+        "CM_OCC:634219ee71e89fb0e86e6c8a9d4a6c1a16e382a517d47d26b1b9a11e4d82a180",
+        "CM_OCC:792d34dd500778b4573e3613aeee6d6af82623503a43331b40476efbe6066889",
+        "CM_OCC:9a0fbc59fd9e6b4e784f29c4a71c5ff03a9c6bcee765d4bf8f0602ee1e6b6a62",
+        "CM_OCC:7d9186d2aa1e8577e2d6db2535c603377ac61645c2e49b37aa481e1ca666a56e",
+        "CM_OCC:419c2ea12761cacf4568815c315fcfbda53d6b25cbaf1de8cba1e4f50979d68c"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Seven JCM recipes explicitly refer to vitamins in Medium197. Current JCM197 provides a ten-vitamin stock. Its calcium-pantothenate label lacks D/L specificity; components must be recorded at the source level. JCM1353 nests this stock inside an additional phosphate-buffered preparation, which is separately reviewed as case39.",
+      "applicability": "JCM1362,1353,1393,1395,1412,1425 and1429 support this numbered-reference alias only. The parent1353 stock is not equivalent to the nested197 stock. Exact frozen scopes: CultureMech:015840:ingredients/8; CultureMech:015836:ingredients/21; CultureMech:015851:ingredients/8; CultureMech:015852:ingredients/9; CultureMech:015857:ingredients/7; CultureMech:015862:ingredients/15; CultureMech:015864:ingredients/9",
+      "evidence_ids": [
+        "A-E-21-S00",
+        "A-E-21-S01",
+        "A-E-21-S02",
+        "A-E-21-S03",
+        "A-E-21-S04",
+        "A-E-21-S05",
+        "A-E-21-S06",
+        "A-E-CAPTURE-104",
+        "A-E-CAPTURE-107",
+        "A-E-CAPTURE-108",
+        "A-E-CAPTURE-109",
+        "A-E-CAPTURE-110",
+        "A-E-CAPTURE-111",
+        "A-E-CAPTURE-112",
+        "A-E-CAPTURE-116"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Shared JCM197 payload is owned by research-c to avoid concurrent competing owner proposals.",
+      "missing_requirement": "Coordinator should backlink this case to research-c proposal C-P-JCM197 after harmonized independent review; do not import the phosphate-buffered parent as an alias.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+      "case_input_sha256": "7059be33e376b8c64513cfd58cc8a43060838225e51a138793d6bd6d18ae1351",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace minerals (see Medium No. 151 )",
+        "source_label": "Trace minerals (see Medium No. 151 )",
+        "raw_source_label": "Trace minerals (see Medium No. 151 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e2416d805f8a46242ddec6080d33aadc45bf038852f6d1cae2f7674e2e860575"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1347 explicitly references trace minerals in Medium151. Current JCM151 provides the NTA-based multi-salt stock and pH adjustment, which differs from ATCC MD-TMS. This precise numbered reference supports the existing source-scoped unmapped151 stock owner.",
+      "applicability": "The single JCM1347 occurrence points to151 itself. No generic Trace minerals aliases or ATCC product equivalents are inferred. Exact frozen scopes: CultureMech:015883:ingredients/1",
+      "evidence_ids": [
+        "A-E-OWNER-12",
+        "A-E-22-S00",
+        "A-E-CAPTURE-103",
+        "A-E-CAPTURE-113"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Shared151 owner payload is owned by research-c; no duplicate proposal is produced here.",
+      "missing_requirement": "Coordinator should backlink this case to research-c proposal C-P-JCM151, preserving its unmapped status and exact source formulation.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_151.yaml",
+          "sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:1b6c0b5684948dcbb9bf5f2a21f9d7d6cdeabf16e48b65bcfb2a1fd71bb6fed6",
+      "case_input_sha256": "8005eebc70082290fcf5bdf2af9676e85fd36d6c981b8fd8c18a91b6707ff1a5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Press yeast",
+        "source_label": "Press yeast",
+        "raw_source_label": "Press yeast"
+      },
+      "occurrence_ids": [
+        "CM_OCC:25910b89b89a39ffcc41b60db0333deba94710103b4370feb6bbfe00cc174890",
+        "CM_OCC:61e33b23ad45fdb987b348523b2ddf38946c8a85e3eabbade3b8c0c793bed838"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC201 and202 specify30g press yeast;202 derives from201 with added calcium carbonate. Pressed yeast is compressed wet biomass, not a dry extract, dried yeast or autolysate. No manufacturer or species is supplied.",
+      "applicability": "Both occurrences share this source material in potato/liver medium, with the calcium-carbonate variation belonging to the receiving recipe. Exact frozen scopes: CultureMech:007981:ingredients/1; CultureMech:007982:ingredients/1",
+      "evidence_ids": [
+        "A-E-OWNER-06",
+        "A-E-23-S00",
+        "A-E-23-S01",
+        "A-E-CAPTURE-021",
+        "A-E-CAPTURE-022",
+        "A-E-CAPTURE-153",
+        "A-E-CAPTURE-154"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No broad baker-yeast or extract synonym is added for a preparation-qualified wet material.",
+      "missing_requirement": "Preserve pressed wet material as a source-qualified identity; exact baker-yeast species/product equivalence and moisture basis require source evidence.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Bakers_Yeast.yaml",
+          "sha256": "11eda0e05a1a8abf2779d8eb421548e31e82d06387dfa388d8526b6523a0154e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:1f2b92647e0cf40d84143aa15ca22db0cda14f5f8695a06efae27fe70424a05a",
+      "case_input_sha256": "36b4ab28d56e9fa92a342449fbe0834e5d780cd5d346ed14a89bcde2e2ab54d6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "4% Na2CO3",
+        "source_label": "4% Na2CO3",
+        "raw_source_label": "4% Na2CO3"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f32814cc4e01d32041f6dcfd7d439809bf0a3992c00bd34d478ec853eac6981f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "ATCC1257 explicitly calls for freshly prepared, filter-sterilized4%Na2CO3 and adds10mL to the base medium. The percent basis is not explicitly spelled out and must not be silently equated to1M or to solid sodium carbonate.",
+      "applicability": "The one ETSA occurrence is a distinct4%stock. Existing Sodium_Carbonate_Solution carries a solute identifier and is not safe for concentration-qualified alias extension. Exact frozen scopes: CultureMech:009136:ingredients/13",
+      "evidence_ids": [
+        "A-E-OWNER-01",
+        "A-E-24-S00",
+        "A-E-CAPTURE-039",
+        "A-E-CAPTURE-079",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-ATCC1257-CARBONATE-4PCT"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Percent basis and starting hydrate remain unreported; no derived concentration is authorized by this bounded proposal.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:1f300cfe5fc1038138dfc840a9ec07bd1b5b96e12e8de10add68930ab70b8731",
+      "case_input_sha256": "436dc4af8e1897b681ab2eed65b5d80823ce0e0914452d487471d2d8ddc9a86a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "LaCl3 x 7 H2O",
+        "source_label": "LaCl3 x 7 H2O",
+        "raw_source_label": "LaCl3 x 7 H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fbd753864f35f36d2fab81801d4433365af83263196318c88b6b0c932aa1e953",
+        "CM_OCC:a79cdcfcf2624e639f08d811d9ab59c03a9c97d069a57577e0199dca20c19775"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Both source contexts explicitly supply lanthanum chloride heptahydrate. MediaDive ingredient1461 assigns CAS10025-84-0; DSMZ1610 solution9 uses0.04g/L of LaCl3·7H2O. Current CHEBI231515 is lanthanum trichloride without seven waters. Searches of current CHEBI for the hydrate name and CAS did not return a specific hydrate term, so the hydrate keeps a CAS identity and only an asymmetric parent mapping.",
+      "applicability": "The solution5755 constituent and DSMZ1610 occurrence describe the same seven-water salt; this is not an alias for existing Lanthanum_Iii_Chloride with CAS20211-76-1 and formulaCl3La. No source quantity is used to erase hydration. Exact frozen scopes: CultureMech:014611:composition/1; CultureMech:001092:ingredients/20",
+      "evidence_ids": [
+        "A-E-OWNER-13",
+        "A-E-25-S00",
+        "A-E-25-S01",
+        "A-E-CAPTURE-003",
+        "A-E-CAPTURE-014",
+        "A-E-CAPTURE-085",
+        "A-E-EXTRA-005",
+        "A-E-EXTRA-006",
+        "A-E-EXTRA-013",
+        "A-E-EXTRA-019",
+        "A-E-TARGETED-009",
+        "A-E-TARGETED-014",
+        "A-E-TARGETED-015",
+        "A-E-NCIT-LANTHANUM",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-LANTHANUM-HEPTAHYDRATE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml",
+          "sha256": "96311e80548f14eeabbda8c8b632749db62809ada70245b411f341f495e46907"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77",
+      "case_input_sha256": "28954f190177b542835ebd52bb5d4f069fc3ab61908fa6470874b23653043616",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M Glucose",
+        "source_label": "1 M Glucose",
+        "raw_source_label": "1 M Glucose"
+      },
+      "occurrence_ids": [
+        "CM_OCC:15749d42fc1c33eacc66f9e01e0916b564f9cb76d86fcacd2f759afd7f5a042c",
+        "CM_OCC:6941fa9f66b1ed2b19305295ed78d704b00fd880f656a68bcb0cf34fb8ec34a9"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1136 and548 separately prepare and add a1MGlucose solution. The source name lacks a D/L or anomer declaration. A1M stock is a preparation distinct from the glucose compound; molarity cannot independently identify stereochemistry or starting hydrate.",
+      "applicability": "Both occurrences are whole-stock additions in the complete primary recipes. They are not the D-specific solute aliases reviewed in cases15/41. Exact frozen scopes: CultureMech:007744:ingredients/11; CultureMech:009944:ingredients/7",
+      "evidence_ids": [
+        "A-E-OWNER-09",
+        "A-E-OWNER-14",
+        "A-E-26-S00",
+        "A-E-26-S01",
+        "A-E-CAPTURE-019",
+        "A-E-CAPTURE-059",
+        "A-E-CAPTURE-100",
+        "A-E-CAPTURE-127",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM1136-548-GLUCOSE-1M"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Solute stereochemistry, anomer, hydrate and complete solvent/gas preparation are unspecified; proposed generic1M stock does not assign them.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Glucose.yaml",
+          "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+        },
+        {
+          "path": "data/ingredients/mapped/D-glucose.yaml",
+          "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:21664cd99c73caf7229e3fa2430f1ff3e3ea0092420389959f15b5731a8064ee",
+      "case_input_sha256": "a6ff6cfa8b277133aba54ae932231c3f174f949eab1e9d95b48c21b191daef1a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "RST trace elements (see Medium No. 933 )",
+        "source_label": "RST trace elements (see Medium No. 933 )",
+        "raw_source_label": "RST trace elements (see Medium No. 933 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:43ce14131b8bf03d61c67868b0779ddf9d0afec84616750392c568411b16a6cc"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1344 explicitly points to RST trace elements in JCM933. That primary table contains NTA, manganese sulfate, ferrous ammonium sulfate, cobalt, zinc, copper, nickel, molybdate, selenate and tungstate and a pH6 instruction. It is a defined stock preparation, not a generic mineral salt.",
+      "applicability": "The single JCM1344 occurrence adds10mL of the933 stock. Hydration qualifiers and pH adjustment belong to the stock representation; they are not inferred from other RST formulations. Exact frozen scopes: CultureMech:015834:ingredients/6",
+      "evidence_ids": [
+        "A-E-27-S00",
+        "A-E-CAPTURE-102",
+        "A-E-CAPTURE-143",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM933-RST"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "The source leaves manganese-sulfate hydration and KOH amount unknown; the proposal retains both without substituting a better-known RST variant.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+      "case_input_sha256": "c299c4138f544c827a95cc3e4f2126564855c363d10c1817fadf2b7992e18ceb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Polypropylene glycol 2000 (PPG 2000)",
+        "source_label": "Polypropylene glycol 2000 (PPG 2000)",
+        "raw_source_label": "Polypropylene glycol 2000 (PPG 2000)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d028235ce925d4b86ef5cd4e61f3bbf74e09929bb5c90efa200bcc304ccc41ca"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1400 names polypropylene glycol2000 and prepares an emulsion by sonication. The2000 denotes a nominal polymer-molecular-weight grade, not one molecule; it does not identify chain-length distribution or end-group/product specification. Polyethylene glycol2000 is chemically different.",
+      "applicability": "The sole NBRC1400 occurrence uses2g/LPPG2000. The source determines polymer family and nominal grade while leaving commercial specification unreported. Exact frozen scopes: CultureMech:008679:ingredients/6",
+      "evidence_ids": [
+        "A-E-28-S00",
+        "A-E-CAPTURE-032",
+        "A-E-CAPTURE-150"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No fixed molecular formula, monomer ontology identity or PEG2000 alias is justified.",
+      "missing_requirement": "Obtain a manufacturer/catalog or polymer specification tied to NBRC1400 that defines end groups and nominal molecular-weight grade; select a polymer-grade registry identity rather than a monomer/PEG mapping.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:24d8804d062b6fdbb87367e03a815734fe9750a9fac95cdf40679665f54fe151",
+      "case_input_sha256": "f591b74e1b31b6ea4e99a5ecccc711272849a2de09eee94bdd9a4e7684d46745",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace element solution SL-4",
+        "source_label": "Trace element solution SL-4",
+        "raw_source_label": "Trace element solution SL-4"
+      },
+      "occurrence_ids": [
+        "CM_OCC:01dc923d0d71a79d59b6b286d31361687e4f461543edb134b9254cfa8a8ed0a9"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "MediaDive main solution4784 points to SL4 solution4059, and JCM825 refers to340. Current JCM340 defines SL4 as0.5gEDTA and0.2gFeSO4·7H2O with100mLSL6 and900mLwater. Thus SL4 is notSL6 itself or pureEDTA.",
+      "applicability": "The one frozen source occurrence is a nested10mL stock addition in JCM825/MediaDive. The340 recipe provides constituent/preparation evidence without authorizing a whole-stock chemical mapping. Exact frozen scopes: CultureMech:013726:composition/8",
+      "evidence_ids": [
+        "A-E-29-S00",
+        "A-E-CAPTURE-001",
+        "A-E-CAPTURE-013",
+        "A-E-CAPTURE-138",
+        "A-E-TARGETED-013",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM340-SL4"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "The nested JCM167 stock can receive a validated shared-owner reference at integration; EDTA form remains only as printed.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:255e7262b5002032aaef471371aedccb95a3cfaa9ada6bccd6738862e60041fc",
+      "case_input_sha256": "a86c721e9e11673b1d9016d7c5943c485bdd9f240b0794158f45971c1390195a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Yeast Nitrogen Base",
+        "source_label": "Yeast Nitrogen Base",
+        "raw_source_label": "Yeast Nitrogen Base"
+      },
+      "occurrence_ids": [
+        "CM_OCC:371e3a97a4859be442f8352ef97343837f407aa3d40b5d56f634bfe66a6a3800",
+        "CM_OCC:0586d631747515ce87511af3ad4ad85ec14671a28f59d9a5993d862295eab82a",
+        "CM_OCC:6d1c9741c74ecf22e7873e51aaf31f9fb4fe20692a5fed98fc944f0e08b226f6",
+        "CM_OCC:19072a4f506593689fa330a04938b99133a58803d65889dd4c51cde6af8aca45",
+        "CM_OCC:55b4bec28c8821740c69d68a0ba19119aee9acefee24106d3f16825f3e50f3a6",
+        "CM_OCC:0fdf098c0119b8c1f1d3601ced75f01e0b7c3f815d6ed4574de48c1c07f0af3f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The six contexts identify yeast nitrogen base, including manufacturer wording in JCM240 and source MediaDive ingredient1507, but no uniform catalog or omission profile. Yeast nitrogen base variants can differ in amino acids/ammonium sulfate; grams per liter do not prove a shared product.",
+      "applicability": "All MediaDive3476/3920/6422 and JCM240/DSMZ1837/1682 contexts remain separately scoped. YNB is a multicomponent nutrient base, distinct from Difco yeast carbon base in37 and the entire NCG medium in40. Exact frozen scopes: CultureMech:012596:composition/0; CultureMech:012986:composition/2; CultureMech:015026:composition/0; CultureMech:002601:ingredients/2; CultureMech:010461:ingredients/0; CultureMech:010458:ingredients/0",
+      "evidence_ids": [
+        "A-E-30-S00",
+        "A-E-30-S01",
+        "A-E-30-S02",
+        "A-E-30-S03",
+        "A-E-30-S04",
+        "A-E-30-S05",
+        "A-E-CAPTURE-004",
+        "A-E-CAPTURE-006",
+        "A-E-CAPTURE-007",
+        "A-E-CAPTURE-009",
+        "A-E-CAPTURE-011",
+        "A-E-CAPTURE-015",
+        "A-E-CAPTURE-086",
+        "A-E-CAPTURE-089",
+        "A-E-CAPTURE-096",
+        "A-E-CAPTURE-117",
+        "A-E-EXTRA-016",
+        "A-E-TARGETED-011"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No single chemical or unqualified product alias is asserted across six incompletely specified product contexts.",
+      "missing_requirement": "Determine exact manufacturer/catalog and omission profile for each source occurrence before consolidating product identities or decomposing ingredients.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:272de5a8aa1236d07bfc1c5131c690bba21dbe125bba0385efc7fbbf781101d5",
+      "case_input_sha256": "e255095c22b07bb6426db79c0656e641f85a61eba81489b269f5deb5109c7c87",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace Mineral Supplement, ATCC MD-TMS",
+        "source_label": "Trace Mineral Supplement, ATCC MD-TMS",
+        "raw_source_label": "Trace Mineral Supplement, ATCC MD-TMS"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1b547a68edde5bafa64c8ecbe58a21fc905f5ad62fde349a97e16ac45a9a5c8e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source recipe specifies ATCCMD-TMS, and the current supplier provides an EDTA-based fifteen-solute formulation. Existing ATCC_Wolfes_Mineral_Mix explicitly claims MD-TMS but encodes a different cobalt salt, alum hydration and shorter constituent list from ATCC2672. A catalog-qualified current-formulation proposal preserves this conflict; it does not establish that historical source occurrences used today’s exact formula.",
+      "applicability": "The sole source occurrence expressly includes ATCC MD-TMS, so the official product specification applies directly. This stronger product evidence cannot resolve the contradictory ATCC wording in case0 by association. Exact frozen scopes: CultureMech:009199:ingredients/6",
+      "evidence_ids": [
+        "A-E-OWNER-15",
+        "A-E-31-S00",
+        "A-E-CAPTURE-042",
+        "A-E-CAPTURE-076",
+        "A-E-CAPTURE-080",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-ATCC-MDTMS"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Historical MD-TMS formulation/lot concordance is required before projecting the current fifteen-solute table onto the older source recipe or merging the conflicting existing Wolfe owner.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/ATCC_Wolfes_Mineral_Mix.yaml",
+          "sha256": "d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:2825b13cac1d4958ca31908cb0d6be31c6480344a51bdbbc7c245547cc2f3779",
+      "case_input_sha256": "1f28a6ca32a333a1900fa9dabeb95317b11a75a494665f353fc2bb3be5f86307",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "DL-Ca-pantothenate",
+        "source_label": "DL-Ca-pantothenate",
+        "raw_source_label": "DL-Ca-pantothenate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4ffdbf9d851b2f93fdd799e0a57e1f4f4ad4b847e389a59bca548a29bd368e5d"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The frozen TOGOM3129 label explicitly says DL-Ca-pantothenate, and current CHEBI180950 provides a distinct DL target. The exact Togo primary recipe endpoint timed out and no original source link is present. Another DL occurrence elsewhere in this shard family has a live D-only recipe conflict, so the frozen label must not be promoted on a family-wide assumption.",
+      "applicability": "This one TOGOM3129 occurrence is preserved independently of the18JCM cases supporting the newDL owner. The supplier DL evidence establishes the chemical distinction but does not identify the reagent actually used inM3129. Exact frozen scopes: CultureMech:009599:ingredients/23",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-32-S00",
+        "A-E-CAPTURE-050",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-007",
+        "A-E-EXTRA-012",
+        "A-E-TARGETED-003",
+        "A-E-TARGETED-012",
+        "A-E-SPECTRUM-DL"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "CandidateCHEBI180950 is recorded, but this occurrence is not attached to the newDL proposal without source confirmation.",
+      "missing_requirement": "Recover the primary/history-matched M3129 recipe or supplier provenance confirming DL rather than D or unspecified calcium pantothenate; then link to the separateDL owner if consistent.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:2a26bde9a33b38660aadcc007672a50d48345dc31285a6de72ef0c81c8d52d0c",
+      "case_input_sha256": "b4cadfe2283d5ffefc329a8a84201377638af3f300d0f7ce617f6fd977768f59",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Porphyra thalli",
+        "source_label": "Porphyra thalli",
+        "raw_source_label": "Porphyra thalli"
+      },
+      "occurrence_ids": [
+        "CM_OCC:cc6511994d383a4df8d6fd566a5198674b9e54a2f6608ee8a57087be640b3cbb"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC985 specifies Porphyra thalli in sterilized natural seawater. A thallus is biological biomass; the source does not say purified porphyran, dried seaweed powder, an extract, or a particular Porphyra species.",
+      "applicability": "The single NBRC985 occurrence retains its supplied plant/algal body-part material and preparation context. The existing Porphyran chemical cannot absorb the whole thalli label. Exact frozen scopes: CultureMech:008336:ingredients/1",
+      "evidence_ids": [
+        "A-E-OWNER-16",
+        "A-E-33-S00",
+        "A-E-CAPTURE-031",
+        "A-E-CAPTURE-165"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No polysaccharide or taxon-as-material exact mapping is justified.",
+      "missing_requirement": "Use a material-level source identity preserving whole thalli and seawater treatment; species/state evidence is needed for a more specific biological-material target.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Porphyran.yaml",
+          "sha256": "cb718edbc15023a68df4058a7436d3f9e4c04afe4a2e943c8c7763d088835209"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:2f60424d75d0e0dc71afa04c92ab6f4d190d45d1e587b65fd99bd3b2323c00c3",
+      "case_input_sha256": "b8d9d5c196085a7e1ff37c0e4983308f04899832e5eea4f59ec46f3b6f599397",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2x Yeast Extract Tryptone (2xYT)",
+        "source_label": "2x Yeast Extract Tryptone (2xYT)",
+        "raw_source_label": "2x Yeast Extract Tryptone (2xYT)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:15ba69b080aab2544490968ecd73f11931b7e54b2945b6ee4e3fa0f2f0465881"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozen source explicitly treats2xYT as the complete medium used for a20mL overnight culture inoculated into1L; it does not disclose its internal formulation or catalog. Standard textbook2xYT recipes cannot be imported as if they were this source specification.",
+      "applicability": "The soleTOGOM2919 source record is a complete named medium, not a combined synonym for yeast extract and tryptone. The currentTogo page supplies no recipe body and the API attempt timed out. Exact frozen scopes: CultureMech:009454:ingredients/0",
+      "evidence_ids": [
+        "A-E-34-S00",
+        "A-E-CAPTURE-049",
+        "A-E-TARGETED-004"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve the named-medium scope; no inferred standard recipe or ingredient-level merge is proposed.",
+      "missing_requirement": "Recover M2919 primary preparation or supplier/catalog specifying this2xYT formulation before assigning a recipe/product owner or component quantities.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+      "case_input_sha256": "478103ce90a6568498b7fe303abd8ccee40ed30861a6c472d47e321b21c3a9fb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)",
+        "source_label": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)",
+        "raw_source_label": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:56e56e41a414f10d2a62788eb34da604ace932d45f7e7cc7d5c9be5f00a969fc",
+        "CM_OCC:70da74da3ba85406ff0a77b058dac2ae6bea2f44cd8fd330c8b30fb538fe44b1"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ1429 names Merck108339 Sabouraud2%glucose broth and adds30g/L; the supplier confirms a dehydrated broth composed of two peptone fractions plus20g/L D(+)glucose after reconstitution. The source also adds agar separately, so the broth product itself is not agar medium or pureglucose.",
+      "applicability": "Both frozen DSMZ/KOMODO1429 occurrences point to the same catalog-qualified broth. Existing UNMAPPED0513 records a broader Sabouraud-bouillon family and deliberately defers product-level curation; product identification now narrows these occurrences without proving all historical family usage identical. Exact frozen scopes: CultureMech:004154:ingredients/0; CultureMech:010453:ingredients/0",
+      "evidence_ids": [
+        "A-E-OWNER-17",
+        "A-E-35-S00",
+        "A-E-35-S01",
+        "A-E-CAPTURE-084",
+        "A-E-EXTRA-021",
+        "A-E-MERCK108339",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-MERCK108339"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Create a catalog-qualified Merck108339 product identity or review a complete source-bound scope correction of UNMAPPED0513; preserve meat/casein hydrolysate classes and separate recipe agar.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/SABOURAUD-_Glucose-Bouillon.yaml",
+          "sha256": "16a488870e9482b4214215bcf0482817f0f1311c9bbe58597fec4018b82901aa"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:3668e84f71c1d0505e5f9293badeaee1d3696167a55e31e9a8994445c3c9aa66",
+      "case_input_sha256": "1af19565e344ec67cfa35bb47ff19a60790376bd20adde4cffcdd8d2de33b495",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace vitamins (see below)",
+        "source_label": "Trace vitamins (see below)",
+        "raw_source_label": "Trace vitamins (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f9f7dbe0ffe2333d1be14b6aceea1ee15a2c23d4d023dddf795a4f9394ae1765"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1088 defines its own trace-vitamin stock: B12,thiamine,folate,ascorbate,riboflavin,niacin and pantothenic acid in500mLwater. Its composition and proportions differ substantially from JCM197 and from other Trace vitamins headings.",
+      "applicability": "The one occurrence refers to the table below in JCM1088 and adds2mL. The deictic label is resolved only within that recipe; its components are not aliases for the whole mixture. Exact frozen scopes: CultureMech:007681:ingredients/7",
+      "evidence_ids": [
+        "A-E-36-S00",
+        "A-E-CAPTURE-017",
+        "A-E-CAPTURE-098",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM1088-VITAMINS"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Exact chemical forms of generic vitaminB12, Niacin and pantothenic-acid inputs require reagent evidence before child identity mappings.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:399fa0850537dfe03fbb5902fc9ca7209456ac6928381e523a92a80079cc36c9",
+      "case_input_sha256": "a67bddf9db6400eb7fbad419c795e7f929e47d596822022fbe39b96ba2beac7f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Difco Yeast Carbon Base",
+        "source_label": "Difco Yeast Carbon Base",
+        "raw_source_label": "Difco Yeast Carbon Base"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0f1228b4d00a2389e694bc00ca44d73910eb5d92b279cd9179df083e2f3dd2d2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC887 explicitly uses Difco Yeast Carbon Base11.7g with ammonium tartrate and other ingredients added separately. The branded base is a multicomponent formulation and chemically distinct from yeast nitrogen base despite the similar words.",
+      "applicability": "The sole source occurrence identifies manufacturer/product family but no catalog or historical product formulation. External additions belong to the receiving recipe, not automatically to the purchased base. Exact frozen scopes: CultureMech:008241:ingredients/4",
+      "evidence_ids": [
+        "A-E-37-S00",
+        "A-E-CAPTURE-027",
+        "A-E-CAPTURE-160",
+        "A-E-EXTRA-016"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Do not merge YCB with YNB, yeast extract or carbon-source chemicals.",
+      "missing_requirement": "Obtain the catalog/version-specific DifcoYCB formulation linked to NBRC887 to construct a product owner and supported constituent list.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658",
+      "case_input_sha256": "c58ecd4e84187fab073feabecbe6eaaa45963b4db7b6556c0040cc1cd2c8af2b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1% Yeast extract solution",
+        "source_label": "1% Yeast extract solution",
+        "raw_source_label": "1% Yeast extract solution"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5d86b87cffe1c4d677773bae272d0af5ebc48f3e0940dedf7f7bd022e907ed82"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1344 separately prepares1%yeast-extract solution, sterilizes it and adds1mL. This is a concentration-qualified aqueous stock, not dry yeast extract. The source does not specify the extract product or explicitly define the percent basis.",
+      "applicability": "The one JCM1344 occurrence is a prepared stock addition, distinct from the RST mineral stock in the same recipe and the25%boiled-baker-yeast extract in case1. Exact frozen scopes: CultureMech:015834:ingredients/12",
+      "evidence_ids": [
+        "A-E-OWNER-18",
+        "A-E-38-S00",
+        "A-E-CAPTURE-102",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM1344-YEAST-1PCT"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Percent basis, extract product and complete stock solvent preparation remain unspecified; the bounded proposal preserves those limitations.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Yeast_Extract.yaml",
+          "sha256": "e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:3d728d854b965ccca90fd64e664a84f05072954748ba1df16403f75963509bbb",
+      "case_input_sha256": "610ae87544aca167e45ff4c116641fdc899ae09c4a56d0e5eb9e27827c544d95",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trace vitamins solution* (see below)",
+        "source_label": "Trace vitamins solution* (see below)",
+        "raw_source_label": "Trace vitamins solution* (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:698b94b80a7cc1c02ebd6de6408708cf370c3d708e3809ec36e860c1ff3bcd44"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1353 defines this stock as1L of JCM197 vitamins plus0.468gNaH2PO4 and0.866gNa2HPO4. The added phosphates make it a distinct buffered preparation rather than a spelling variant of197.",
+      "applicability": "The sole parent-stock occurrence is separated from its nested Trace vitamins (see Medium No.197) ingredient counted in case21. Source hydration of the phosphates is not expanded beyond the printed formula. Exact frozen scopes: CultureMech:015836:ingredients/9",
+      "evidence_ids": [
+        "A-E-39-S00",
+        "A-E-CAPTURE-104",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "proposal_ids": [
+        "A-P-JCM1353-BUFFERED-VITAMINS"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Nested JCM197 may receive the independently reviewed shared-owner reference at integration; printed phosphate formulas do not specify additional hydrate forms.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:40c0b3aab7055b9e171c11922fccd1ef51c5d989efea4e2a1468656a35adf548",
+      "case_input_sha256": "e0d3050c82541d48fbc02b7e6922a3bb1613a39bc39a32b632150c4ed43fe7b4",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "yeast nitrogen base (BD Difco, Franklin Lakes, NJ, USA)",
+        "source_label": "yeast nitrogen base (BD Difco, Franklin Lakes, NJ, USA)",
+        "raw_source_label": "yeast nitrogen base (BD Difco, Franklin Lakes, NJ, USA)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c57a4fc4c3c45ab3c8b2177b14509a2f1e240f63ef37a86d9226c33f11d97222"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The frozenNCG medium explicitly lists0.5%BDDifco yeast nitrogen base,0.5%casamino acid and2%glycerol. It identifies a supplier-family base, not the entireNCG formulation or a pure nutrient. Primary paper discovery corroborates this wording, but direct fulltext access returned a browser challenge and the TogoAPI timed out.",
+      "applicability": "The oneTOGOM2842 occurrence retains BD Difco and FranklinLakes provenance. It is narrower than unspecifiedYNB but still lacks catalog/omission profile, so it is not automatically the same product as every case30 occurrence. Exact frozen scopes: CultureMech:009384:ingredients/1",
+      "evidence_ids": [
+        "A-E-40-S00",
+        "A-E-CAPTURE-048",
+        "A-E-EXTRA-016",
+        "A-E-TARGETED-005",
+        "A-E-SEARCH-PRODUCTS",
+        "A-E-PRIMARY-ACCESS-FAILURES",
+        "A-E-NCG-PAPER"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Supplier wording alone does not authorize a genericYNB/product merge or invented constituent recipe.",
+      "missing_requirement": "Recover the original fulltext or provider recipe and theBDDifco catalog/YNB variant used inNCG; then establish product identity and formulation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:4102832afa3835505e3db683a0cfa50f14daaab21c73635b74f45fba60c99ca9",
+      "case_input_sha256": "5177352fa591d0f3ef15dd274d0e51a6d8826b785e10ce58cd700c94d77acb74",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "D (+) glucose",
+        "source_label": "D (+) glucose",
+        "raw_source_label": "D (+) glucose"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2a895a334f5c4b29fd5c8caf784d032e96d430f71a5d107a99581dce131b178d"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The successfulTogoM2287 JSON recipe explicitly names D(+)glucose22mM and labels itD-Glucose. CHEBI17634 is the current D-glucose target and the matching maintained owner isD-glucose. This supplies primary confirmation beyond punctuation matching.",
+      "applicability": "The single Mitsuhashi-Maramorosch occurrence is a chemical component of the medium, with no salt/hydrate/stock qualifier. Frozen notes explicitly withdraw an unrelated historicalLB expansion; this proposal does not revive that expansion. Exact frozen scopes: CultureMech:008873:solutions/0/composition/3",
+      "evidence_ids": [
+        "A-E-OWNER-09",
+        "A-E-41-S00",
+        "A-E-CAPTURE-037",
+        "A-E-CAPTURE-075",
+        "A-E-EXTRA-000",
+        "A-E-TARGETED-006"
+      ],
+      "proposal_ids": [
+        "A-P-D-GLUCOSE"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/D-glucose.yaml",
+          "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:432eabdd53c43f8991d7a4a73f0dfb5bef3a4fb584badd6b3043a36367c74c13",
+      "case_input_sha256": "fb405d0cb065c6d24c0902123d3116f7005b4873b3d26305ce24f1311f6e8981",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "yeast autolysate",
+        "source_label": "yeast autolysate",
+        "raw_source_label": "yeast autolysate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d9c18c7b4b50cb20b0374734ad86541915ec9d6941e6e7732c27a16015f056c2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The4%YACo source uses yeast autolysate as a prepared biological extract, not whole yeast cells, pressed yeast or necessarily a generic commercial yeast extract. The cited paper and related primary literature lead to autolysate preparations, but direct primary retrieval did not yield sufficient recipe detail in this session.",
+      "applicability": "The soleTOGOM2770 occurrence is scoped to the autolysate in4%YACo; no inference is made about how much dry yeast is represented by4%liquid addition. Exact frozen scopes: CultureMech:009318:ingredients/0",
+      "evidence_ids": [
+        "A-E-42-S00",
+        "A-E-CAPTURE-000",
+        "A-E-CAPTURE-044",
+        "A-E-TARGETED-007",
+        "A-E-SEARCH-PRODUCTS",
+        "A-E-PRIMARY-ACCESS-FAILURES",
+        "A-E-YACO-PAPER"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Preserve the autolysate process boundary; no exact yeast/extract owner equivalence has been shown.",
+      "missing_requirement": "Recover the source-linked autolysis preparation, organism/material, processing and concentration basis from the cited primary method before linking to an existing extract product.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:4a6653ffe2ccb9bccc2c85168233e12e2b236e6a766010f0189e1501ae2f4497",
+      "case_input_sha256": "c126ebb88e285dd2eedcb91a061a279883177f4b9f9ed80d282c739826e76e66",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Hipolypepton (FUJIFILM Wako)",
+        "source_label": "Hipolypepton (FUJIFILM Wako)",
+        "raw_source_label": "Hipolypepton (FUJIFILM Wako)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1efda60c1a06e807248ccaf3bec78eeeb967512730f6cac6880574c183bd96ff"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM181 names Hipolypepton from FUJIFILMWako. Manufacturer material describes Hipolypepton as enzymatically hydrolyzed cow-milk casein, dried and purified; similarly namedS/NS soy variants are different products. This is a product/process-defined hydrolysate mixture, not intactcasein or a single peptide.",
+      "applicability": "The oneJCM181 occurrence identifies the base Hipolypepton brand. Supplier evidence supports casein origin for that named product, but no unspecified peptone or soy variant may be substituted. Exact frozen scopes: CultureMech:002542:ingredients/1",
+      "evidence_ids": [
+        "A-E-43-S00",
+        "A-E-CAPTURE-095",
+        "A-E-CAPTURE-115",
+        "A-E-EXTRA-014",
+        "A-E-EXTRA-015"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact genericpeptone/casein molecular mapping is proposed; supplier material identity is retained for product curation.",
+      "missing_requirement": "Create a WakoHipolypepton product/material owner with the supplier preparation and retained catalog/version uncertainty, distinguishingS/NS variants.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:4b040563de90befbb3f0006d6caa542968e08b05535d3e1825d41eea602ef495",
+      "case_input_sha256": "88515362a852be7178525f9a810cbbeb007211c7a642c423f69f38f66c9e242c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Dried milled rye grass",
+        "source_label": "Dried milled rye grass",
+        "raw_source_label": "Dried milled rye grass"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1f50a61474aab2cbdb30972fe28febaaf4f63291c3a6ab7b57013b402571a30f",
+        "CM_OCC:3bb76d13815dbc41ddf1976d9b795d15d5f2f055ca23c0669e834ffea779ccfc"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "CCAPR75S explicitly boils1g driedmilled ryegrass in750mLfiltered seawater and250mLdeionizedwater, filters and autoclaves. The source ingredient is dry milled plant biomass; the final medium is its infusion. The baselineRye_Grass record already rejects aLolium taxon as exact ingredient identity.",
+      "applicability": "Both frozen occurrences are the sameCCAPR75S preparation. Dry/milled state is positive source evidence, while species,plantpart and harvest stage remain unspecified. This does not resolve the old generic owner into a taxon or ryegrain. Exact frozen scopes: CultureMech:000118:ingredients/2; CultureMech:000401:ingredients/2",
+      "evidence_ids": [
+        "A-E-OWNER-19",
+        "A-E-44-S00",
+        "A-E-44-S01",
+        "A-E-CAPTURE-081",
+        "A-E-CAPTURE-094"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Existing taxon/material hold remains; the more specific supplied state cannot be flattened into a genericgrass alias.",
+      "missing_requirement": "Preserve a source-qualified driedmilled ryegrass material and its preparation; obtain botanical material specification before any taxon-linked material target or broad-owner scope change.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Rye_Grass.yaml",
+          "sha256": "d596d7281521a34f3354767e88d6aae6c1740ef16832b1124133111ddca9e551"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:4b932b5e1dc75fae7c6a1e19ff9be52cc666c409ca5abccb31feabb0ddc0c5b0",
+      "case_input_sha256": "b1d081987ec92e92151c7595cdc14e8fd04cf38ea411d6be50d920d36c715cc3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "D-Ribose 5-phosphate",
+        "source_label": "D-Ribose 5-phosphate",
+        "raw_source_label": "D-Ribose 5-phosphate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:84e125d8bc07b720c284a25b83dd73196db8dfcd6545a006c112a037b2d8ab53"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "MediaDB namesD-Ribose5-phosphate and crossreferencesCHEBI17797, while the primaryCarini2014 methods give1µM ribose5-phosphate≥98% withoutD/L,anomer or counterion. The frozen source explicitly preserves this stereochemical limitation. Database annotation cannot by itself prove which supplied salt or stereoisomer the experiment used.",
+      "applicability": "The soleMediaDB481 occurrence is the experimentalphosphorus supplement inAMS1pyruvate/glycine. The paper confirms dose and ribose-phosphate family, but not the full chemical identity carried by the database label. Exact frozen scopes: CultureMech:007389:ingredients/10",
+      "evidence_ids": [
+        "A-E-45-S00",
+        "A-E-EXTRA-008",
+        "A-E-MEDIADB-114-WEB",
+        "A-E-MEDIADB-EARLIER-RESPONSE",
+        "A-E-CARINI-2014",
+        "A-E-MEDIADB-114"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No exact stereoisomer/salt mapping is approved from a database label contradicted in specificity by the experimental report.",
+      "missing_requirement": "Locate theCarini2014 reagent supplier/catalog or contemporaneous supplementary specification establishingD stereochemistry,anomer andcounterion/hydrate; then verify the appropriate exact target rather than importingCHEBI17797 uncritically.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    {
+      "case_id": "CM_NAME:504b8a80fa4c2e2c9f7d05ba7852439040a9efe1dade59696bb296a6fc1607db",
+      "case_input_sha256": "0b37f3d6cafcc268dccaecb6f2446f2b8a65e8178ff519707223a43a250f136c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Fe-EDTA",
+        "source_label": "Fe-EDTA",
+        "raw_source_label": "Fe-EDTA"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7775b54bf6e3ad770753183a5f362a0c489fe36cebbc6b1ecb6d9916d7e96069",
+        "CM_OCC:321e6ee46aade50156272c37dea7195ba5e2e78f9f784f24b6188772ebc4190d"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC829 and966 listFe-EDTA without an ironoxidation state,sodiumstate orhydrate. ExistingIron-EDTA deliberately retains the same ambiguity and excludes exactFe(III)-EDTA or sodiumferricEDTA mappings. The primary quantities are75mg and0.5mg,respectively; frozenmass fields appear in grams and require separate normalization review.",
+      "applicability": "Both source occurrences support a genericiron-EDTAcomplex only. No evidence makes these different medium reagents one suppliedsalt, and no metal/freeEDTA mapping preserves thecomplex. Exact frozen scopes: CultureMech:008182:ingredients/6; CultureMech:008319:ingredients/10",
+      "evidence_ids": [
+        "A-E-OWNER-20",
+        "A-E-46-S00",
+        "A-E-46-S01",
+        "A-E-CAPTURE-026",
+        "A-E-CAPTURE-029",
+        "A-E-CAPTURE-159",
+        "A-E-CAPTURE-163"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Retain theexistingcomplexambiguityhold; no guessed ferricsodiumsalt identity.",
+      "missing_requirement": "Obtain formulation orcatalog evidence tied toNBRC829 and966 identifyingironoxidationstate,counterion andhydrate; repair sourceunit normalization independently.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Iron-EDTA.yaml",
+          "sha256": "b8d7d6913bd06487bdecb6b4458092e07a1a6354d95876cbba5cf5bd4722c4db"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    }
+  ]
+}

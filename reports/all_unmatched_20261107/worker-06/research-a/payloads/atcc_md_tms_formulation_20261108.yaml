@@ -1,0 +1,115 @@
+identifier: kgmicrobe.ingredient:atcc_md_tms_formulation_20261108
+preferred_term: ATCC MD-TMS trace mineral supplement, formulation captured 2026-11-08
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_md_tms_formulation_20261108
+  ontology_label: ATCC MD-TMS trace mineral supplement, formulation captured 2026-11-08
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.atcc.org/products/md-tms
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.0'
+  concentration_unit: G_PER_L
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: Co(NO3)2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CaCl2 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.010'
+  concentration_unit: G_PER_L
+- component_name: AlK(SO4)2 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '0.010'
+  concentration_unit: G_PER_L
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.010'
+  concentration_unit: G_PER_L
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.010'
+  concentration_unit: G_PER_L
+- component_name: Na2SeO3 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '0.001'
+  concentration_unit: G_PER_L
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.010'
+  concentration_unit: G_PER_L
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.020'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/products/md-tms
+    source_record: ATCC MD-TMS trace mineral supplement, formulation captured 2026-11-08
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: Current supplier formulation captured2026-11-08 specifies fifteen solutes
+    and a10ml sterile liquid product. Solvent quantity is not explicitly given on
+    the product table, so completeness is UNKNOWN. The existing ATCC_Wolfes_Mineral_Mix
+    owner cites an older recipe with cobalt chloride, hydrated alum and noSe/W/Ni;
+    it is retained as a separate conflicting formulation candidate. This proposal
+    identifies the current supplier formulation, not historical lot invariance. Catalog-qualified
+    source occurrences can reference the product family, but applying this constituent
+    table to their historical versions requires version concordance. No timeless raw
+    MD-TMS or generic Wolfe resolving alias is added.
+notes: 'Current supplier formulation captured2026-11-08 specifies fifteen solutes
+  and a10ml sterile liquid product. Solvent quantity is not explicitly given on the
+  product table, so completeness is UNKNOWN. The existing ATCC_Wolfes_Mineral_Mix
+  owner cites an older recipe with cobalt chloride, hydrated alum and noSe/W/Ni; it
+  is retained as a separate conflicting formulation candidate. This proposal identifies
+  the current supplier formulation, not historical lot invariance. Catalog-qualified
+  source occurrences can reference the product family, but applying this constituent
+  table to their historical versions requires version concordance. No timeless raw
+  MD-TMS or generic Wolfe resolving alias is added. Raw source label retained for
+  this occurrence only: ''Trace Mineral Supplement, ATCC MD-TMS''. Generic wording
+  is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true

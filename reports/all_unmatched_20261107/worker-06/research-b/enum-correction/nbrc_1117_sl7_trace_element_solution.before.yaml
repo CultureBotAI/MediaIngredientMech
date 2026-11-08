@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:nbrc_1117_sl7_trace_element_solution
+preferred_term: NBRC 1117 SL7 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1117_sl7_trace_element_solution
+  ontology_label: NBRC 1117 SL7 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1117
+    notes: Source-defined preparation with retained formulation boundary; registry identity denotes the
+      whole stock, not any component.
+components:
+- component_name: HCl (25%; 7.7 M)
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ML
+- component_name: FeCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '70'
+  concentration_unit: MG
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: MG
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '60'
+  concentration_unit: MG
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: MG
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '40'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '990'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1117
+    source_record: NBRC 1117 SL7 trace element solution
+    notes: Verbatim constituent names and source batch quantities; water is a preparation input. Child
+      reference_scope UNMAPPED means no exact child identifier was independently established.
+  notes: Dissolve FeCl2·4H2O first in25% HCl, then add water and other components. Batch quantities retain
+    the source preparation. This SL7 differs from SL10 formulations.
+notes: 'Dissolve FeCl2·4H2O first in25% HCl, then add water and other components. Batch quantities retain
+  the source preparation. This SL7 differs from SL10 formulations. Raw source labels retained without
+  global resolving aliases: ["Trace element solution SL7**"]. Occurrence-specific linkage is required;
+  identical generic words in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary recipe evidence;
+    no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED

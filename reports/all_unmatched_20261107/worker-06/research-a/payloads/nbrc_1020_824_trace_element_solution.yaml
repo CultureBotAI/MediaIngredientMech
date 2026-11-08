@@ -1,0 +1,93 @@
+identifier: kgmicrobe.ingredient:nbrc_1020_824_trace_element_solution
+preferred_term: NBRC 1020/824 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1020_824_trace_element_solution
+  ontology_label: NBRC 1020/824 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    notes: Source-qualified preparation/material identity; no chemical, taxon or generic
+      product exact mapping is asserted.
+notes: 'Independently compared NBRC1020 and824 complete stock tables and preparation:
+  all inputs and amounts match. Start dissolving NTA in200ml water and adjust pH6.5
+  with KOH. The200ml is part of listed preparation water, not an additional volume.
+  Final stock pH and KOH amount/strength are not given. The separate Se/W solution
+  in each receiving recipe is excluded. NBRC1020 uses2ml and824 uses1ml; doses do
+  not change stock identity. Raw labels retained as occurrence provenance only: [''Trace
+  element solution**''].'
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: G
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.35'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    source_record: NBRC 1020/824 trace element solution
+    notes: Literal preparation inputs; unspecified child forms and amounts stay unmapped.
+      These are not receiving-medium doses or post-reaction speciation.
+    supports: SUPPORT
+  notes: 'Independently compared NBRC1020 and824 complete stock tables and preparation:
+    all inputs and amounts match. Start dissolving NTA in200ml water and adjust pH6.5
+    with KOH. The200ml is part of listed preparation water, not an additional volume.
+    Final stock pH and KOH amount/strength are not given. The separate Se/W solution
+    in each receiving recipe is excluded. NBRC1020 uses2ml and824 uses1ml; doses do
+    not change stock identity.'

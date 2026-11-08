@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:jcm_340_sl4_trace_elements
+preferred_term: JCM 340 SL-4 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_340_sl4_trace_elements
+  ontology_label: JCM 340 SL-4 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=340
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G
+- component_name: SL-6 trace element solution (JCM167)
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '900.0'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=340
+    source_record: JCM 340 SL-4 trace element solution
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: JCM340 defines SL4 as these four preparation inputs and directs filtration
+    before addition. Nested SL6 is the JCM167 preparation, retained as an unmapped
+    named child pending shared-proposal integration; no flattening or whole-stock
+    EDTA mapping. JCM825 uses10ml; JCM340 uses2ml in its own receiving medium. EDTA
+    protonation and hydration remain source-unspecified.
+notes: 'JCM340 defines SL4 as these four preparation inputs and directs filtration
+  before addition. Nested SL6 is the JCM167 preparation, retained as an unmapped named
+  child pending shared-proposal integration; no flattening or whole-stock EDTA mapping.
+  JCM825 uses10ml; JCM340 uses2ml in its own receiving medium. EDTA protonation and
+  hydration remain source-unspecified. Raw source label retained for this occurrence
+  only: ''Trace element solution SL-4''. Generic wording is not a global resolving
+  alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+synonyms:
+- synonym_text: Trace element solution SL-4
+  synonym_type: RAW_TEXT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=340

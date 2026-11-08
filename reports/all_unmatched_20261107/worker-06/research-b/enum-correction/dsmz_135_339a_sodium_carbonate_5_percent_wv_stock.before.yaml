@@ -1,0 +1,49 @@
+identifier: kgmicrobe.ingredient:dsmz_135_339a_sodium_carbonate_5_percent_wv_stock
+preferred_term: DSMZ 135/339a sodium carbonate 5% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_135_339a_sodium_carbonate_5_percent_wv_stock
+  ontology_label: DSMZ 135/339a sodium carbonate 5% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium135.pdf
+    notes: Source-defined preparation with retained formulation boundary; registry identity denotes the
+      whole stock, not any component.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT_W_V
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium135.pdf
+    source_record: DSMZ 135/339a sodium carbonate 5% w/v stock
+    notes: Verbatim constituent names and source batch quantities; water is a preparation input. Child
+      reference_scope UNMAPPED means no exact child identifier was independently established.
+  notes: Both primary recipes specify5%w/vNa2CO3 stock forpH adjustment, prepared sterile andanoxic under80%N2/20%CO2
+    gas. Dissolvedgas/speciation is notquantified. Solvent water follows aqueous preparationcontext; the
+    source doesnot specify crystalhydrate orcompletepreparation. The stock isnot exactidentity withpureNa2CO3.
+    Separate5%withoutbasis ATCC1612 case62 isnotautomaticallyincluded.
+notes: 'Both primary recipes specify5%w/vNa2CO3 stock forpH adjustment, prepared sterile andanoxic under80%N2/20%CO2
+  gas. Dissolvedgas/speciation is notquantified. Solvent water follows aqueous preparationcontext; the
+  source doesnot specify crystalhydrate orcompletepreparation. The stock isnot exactidentity withpureNa2CO3.
+  Separate5%withoutbasis ATCC1612 case62 isnotautomaticallyincluded. Raw source labels retained without
+  global resolving aliases: ["Na2CO3 (5% w/v)"]. Occurrence-specific linkage is required; identical generic
+  words in other recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:21:16+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary recipe evidence;
+    no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED

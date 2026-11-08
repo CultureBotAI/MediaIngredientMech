@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "R-P-ALPHA-GLUCOSE-MONOHYDRATE",
+      "case_ids": [
+        "KG_CASE:0d41efa23c100f1398a95c032eff1013b97a9d78ca7b19fa887802de490379cf"
+      ],
+      "description": "Promote the existing UNMAPPED hydrate owner to exact NCIT:C61629; preserve solid/aqueous-stock distinction.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2202",
+        "R-medium-1566",
+        "R-chebi-17925",
+        "R-ncit-C61717",
+        "R-ols2-14431-43-7",
+        "R-ncit-C61629-final"
+      ],
+      "owner_path": "data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-ALPHA-GLUCOSE-MONOHYDRATE.yaml",
+        "sha256": "a98a1a7ea40b0c08a214eab7a80c3c0838754dd63f12312762ec03556cef546e"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ],
+      "proposed_destination_path": "data/ingredients/mapped/Α-D-Glucose_Monohydrate.yaml"
+    },
+    {
+      "proposal_id": "R-P-JCM243-STOCK",
+      "case_ids": [
+        "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289"
+      ],
+      "description": "Source-bound NTA trace-element stock of JCM243, referenced by MediaDive ingredient1031 in J1328. Generic Trace minerals owner is not globally equivalent.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1031",
+        "R-medium-J1328",
+        "R-jcm-final-243"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_243_Trace_Element_Solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM243-STOCK.yaml",
+        "sha256": "f5e46b2009bd8db8768dc82c4fd6ee5aadbc485e5590570e2fe46326a385de14"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "case_ids": [
+        "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f"
+      ],
+      "description": "Add exact JCM1158 Modified trace vitamins components with source stereochemistry and batch quantities.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2017",
+        "R-medium-J1158",
+        "R-jcm-final-1158",
+        "A-E-CAPTURE-104"
+      ],
+      "owner_path": "data/ingredients/mapped/Modified_Trace_Vitamins.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-MODIFIED-VITAMINS.yaml",
+        "sha256": "ee25e3cc8c5849c63e08d32a5abcc0644e625561168f97651ec2928765de6141"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-NEODYMIUM-FORM",
+      "case_ids": [
+        "KG_CASE:5ea3a1e7e21d9ad154af9e0989aef7bf402cc96bf6ca13337bde7594e08d466a"
+      ],
+      "description": "Preserve neodymium chloride hexahydrate with its own CAS13477-89-9 and broad parent CHEBI37280; never identify it as the anhydrous form.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1462",
+        "R-medium-1610",
+        "R-wako-neodymium",
+        "R-ols2-13477-89-9",
+        "R-ncit-search-13477-89-9",
+        "R-chebi-37280-final"
+      ],
+      "owner_path": "data/ingredients/unmapped/NdCl3_X_6_H2O.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "f275bd5659798b16a4f9914d8f6df8c15c687fd8c5607485369708f2b3752261",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-NEODYMIUM-FORM.yaml",
+        "sha256": "5c6ff5de70025c48d5f4bd53437490948b35b937efb97043f21cdf269dbf5dc1"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ],
+      "proposed_destination_path": "data/ingredients/mapped/NdCl3_X_6_H2O.yaml"
+    },
+    {
+      "proposal_id": "R-P-YEAST-CELL-PASTE",
+      "case_ids": [
+        "KG_CASE:5fd7281bbd71818c1b346149fa60a116ad2105136e750cb4e01d9c3599861345"
+      ],
+      "description": "Preserve whole-cell yeast material and wet-weight preparation rather than extract identity.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2079",
+        "R-medium-958",
+        "R-dsmz-958"
+      ],
+      "owner_path": "data/ingredients/unmapped/Yeast_Cell_Paste.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "48f80a904c853250f65d7a8c6b04e53a8ac5541499197984d5c644e9b76f3c70",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-YEAST-CELL-PASTE.yaml",
+        "sha256": "6f8d7977a6f6f90dd2a648d4258791838eba9a80cd5dc9909c62207d1a5b5352"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-XANTHOCIDIN-EVIDENCE",
+      "case_ids": [
+        "KG_CASE:7578b9b52690ee55dc6927897ee93d1466434fbbf16466139c1c6079552278a0"
+      ],
+      "description": "Add primary literature identity evidence to the local xanthocidin owner, retaining its unresolved grounding.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-xanthocidin-structure",
+        "R-xanthocidin2014",
+        "R-ols2-xanthocidin"
+      ],
+      "owner_path": "data/ingredients/mapped/Xanthocidin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "ba7cbc1a0edb478929e8ff71e4714555bf448783cbf779500696755f28007a04",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-XANTHOCIDIN-EVIDENCE.yaml",
+        "sha256": "bec328a4905488a0e19f527a2d3650705f73ab2969f2f7f43157b2321b75e9a2"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-JCM209-STOCK",
+      "case_ids": [
+        "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308"
+      ],
+      "description": "Create source-specific JCM209 six-salt stock; keep generic Salts solution owner and its holds.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1684",
+        "R-medium-J209"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_209_Salts_Solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM209-STOCK.yaml",
+        "sha256": "05e31d8617dcdbe12c6ecea50a221d0060a7947ab27d9c59de9b7602ef888844"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-GYP-BROTH",
+      "case_ids": [
+        "KG_CASE:e5708083b9e7bc630bb4751c7f65e633a2288994c266df2f57514a78b99f35f5"
+      ],
+      "description": "Promote source-defined JCM68 GYP broth to formulation registry with primary recipe components; exclude JCM69 supplemental salt.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1618",
+        "R-medium-J69",
+        "R-jcm-final-68",
+        "R-jcm-rest-68"
+      ],
+      "owner_path": "data/ingredients/unmapped/GYP-sodium_Acetate-mineral_Salts_Broth.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "b3aed94d0043a0e6bdc941d52492f6ff98b5e3e571e75ffa15a9189592e1b026",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-GYP-BROTH.yaml",
+        "sha256": "9930dae6e22d196d00835d0488219af423d4ebea7060961b56f3063e9d85f9f5"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ],
+      "proposed_destination_path": "data/ingredients/mapped/GYP-sodium_Acetate-mineral_Salts_Broth.yaml",
+      "identity_predicate_alias_consequences": "Local formulation registry exact identity only. No single-compound ontology identity, genericGYP equivalence, or component hydrate inference."
+    },
+    {
+      "proposal_id": "R-P-VIRIDOGRISEIN-EVIDENCE",
+      "case_ids": [
+        "KG_CASE:f2d0636c5d67db581b492d12ea17da1e61d670643e82e4d43b7cc62ddb22b9c5"
+      ],
+      "description": "Support existing viridogrisein/etamycin synonym with primary comparative evidence; keep other owner concerns held.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-etamycin-1979",
+        "R-etamycin-2017",
+        "R-mesh-etamycin"
+      ],
+      "owner_path": "data/ingredients/mapped/Etamycin.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "84d07722cb91d161afb8211b2a1cf76bfec8eaa9182b01d12c9e5f85648d8933",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-VIRIDOGRISEIN-EVIDENCE.yaml",
+        "sha256": "f4418a0283115bb427d9b173c0dbcdd5687405414116dfeab5749cc01c42eb50"
+      },
+      "integration_constraints": [
+        "No inherited source-case, owner or export approval.",
+        "Use guarded writer after complete native owner review; preserve all frozen source-specific holds.",
+        "Regenerate synchronized YAML/SSSOM only in coordinator integration; worker publishes no exports."
+      ]
+    },
+    {
+      "proposal_id": "R-P-ARDACIN-C",
+      "case_ids": [
+        "KG_CASE:24431e8d578feda8c12e6fcea6f9e8f9dc31bc9728dccf1d69da4752a0ff9694"
+      ],
+      "description": "Promote distinct ArdacinC to independently verifiedCAS95935-23-2, broad parentCHEBI24396glycopeptide, with mandatory registry-row obligation reserved for coordinator.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ardacin-1986",
+        "R-ncats-ardacin-exact",
+        "R-ncit-C169786",
+        "R-chebi-753252",
+        "R-gsrs-ardacin-c",
+        "R-gsrs-ardacin-c-codes",
+        "R-gsrs-ardacin-c-names",
+        "R-ardacin-local-search",
+        "R-chebi-24395",
+        "R-chebi-24396"
+      ],
+      "owner_path": "data/ingredients/mapped/Ardacin_C.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "5260b98fc1b241df143125e03a7c6b86608ee52342740d617ebb3c1789c0aa1e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-ARDACIN-C.yaml",
+        "sha256": "8f3757ff740aadac05e150a36f1d63e4ee4134760bbddaaadf5d0a0a20bd2f7d"
+      },
+      "integration_constraints": [
+        "Source, owner and export holds remain; complete new native review before integration.",
+        "Broad parent plusCAS identity and mandatorykgmicrobe registry row must be emitted coherently by coordinator."
+      ]
+    },
+    {
+      "proposal_id": "R-P-JCM1167-TRACE-STOCK",
+      "case_ids": [
+        "KG_CASE:fa6c89f1dd4918983e2964be8bf7962005239bfca4fe81c84bb3619b5aff135d"
+      ],
+      "description": "Define JCM1167 low-mass EDTA trace stock independently of JCM1211.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-897",
+        "R-medium-J1167",
+        "R-medium-J1211",
+        "R-jcm-final-1167"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM1167_TRACE_STOCK.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM1167-TRACE-STOCK.yaml",
+        "sha256": "4aefaa20b1d11821ba851f10e2f8ff69d433b4002247bd142554b738545335fc"
+      },
+      "identity_predicate_alias_consequences": "Define JCM1167 low-mass EDTA trace stock independently of JCM1211.",
+      "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+      "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+    },
+    {
+      "proposal_id": "R-P-JCM1211-TRACE-STOCK",
+      "case_ids": [
+        "KG_CASE:fa6c89f1dd4918983e2964be8bf7962005239bfca4fe81c84bb3619b5aff135d"
+      ],
+      "description": "Define captured MediaDive JCM1211 citrate stock with unspecified pH titrant and separate source scope.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-897",
+        "R-medium-J1167",
+        "R-medium-J1211",
+        "R-jcm-final-1167"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM1211_TRACE_STOCK.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM1211-TRACE-STOCK.yaml",
+        "sha256": "bd8a81a1f9eaae2951649c4faefc8751947dd5fdf29636102ff56b3105d1d22c"
+      },
+      "identity_predicate_alias_consequences": "Define captured MediaDive JCM1211 citrate stock with unspecified pH titrant and separate source scope.",
+      "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+      "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+    },
+    {
+      "proposal_id": "R-P-JCM820-TRACE-STOCK",
+      "case_ids": [
+        "KG_CASE:b538e6e55f8682caccd3202146ccbea3f6508aad1c1b778468a171a1d55b85d3"
+      ],
+      "description": "Define JCM820 six-salt trace stock; keep JCM776 malformed boron formula unresolved.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-1551",
+        "R-medium-J776",
+        "R-medium-J820",
+        "R-jcm-final-776",
+        "R-jcm-final-820"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM820_TRACE_STOCK.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM820-TRACE-STOCK.yaml",
+        "sha256": "6ed2c05e945b0557b18e6efb93ff7c0a7e0ba90f5c9dafa0194922beb9c6b8d7"
+      },
+      "identity_predicate_alias_consequences": "Define JCM820 six-salt trace stock; keep JCM776 malformed boron formula unresolved.",
+      "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+      "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+    },
+    {
+      "proposal_id": "R-P-DSMZ1566-GLUCOSE10",
+      "case_ids": [
+        "KG_CASE:0d41efa23c100f1398a95c032eff1013b97a9d78ca7b19fa887802de490379cf"
+      ],
+      "description": "Preserve the source-specific aqueous10% glucose stock separately from its alpha-D monohydrate starting solid.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2202",
+        "R-medium-1566",
+        "R-chebi-17925",
+        "R-ncit-C61717",
+        "R-ols2-14431-43-7",
+        "R-ncit-C61629-final"
+      ],
+      "owner_path": "data/ingredients/mapped/DSMZ1566_GLUCOSE10.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-DSMZ1566-GLUCOSE10.yaml",
+        "sha256": "b7d4302d035ca9b3dad366d1ef0f4abd08691415ee8c682251bba482c9f7c2d0"
+      },
+      "identity_predicate_alias_consequences": "Preserve the source-specific aqueous10% glucose stock separately from its alpha-D monohydrate starting solid.",
+      "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+      "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+    },
+    {
+      "proposal_id": "R-P-SIGMA-C7290",
+      "case_ids": [
+        "KG_CASE:bbb947918f786a57d394fe5f8667876ebdc74817e11ad5265b48f71b366b33ce"
+      ],
+      "description": "Create catalog-specific SigmaC7290 product proposal, preserving grade and historical version boundaries.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-ingredient-2439",
+        "R-medium-1885",
+        "R-sigma-c7290-final",
+        "R-sigma-c7290-web"
+      ],
+      "owner_path": "data/ingredients/mapped/SIGMA_C7290.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-SIGMA-C7290.yaml",
+        "sha256": "7954c1d2ce585d71eba3c6f53338eb87b7798ce86d4fc748d86343d40f6d5671"
+      },
+      "identity_predicate_alias_consequences": "Create catalog-specific SigmaC7290 product proposal, preserving grade and historical version boundaries.",
+      "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+      "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+    },
+    {
+      "proposal_id": "R-P-PYGS-SOURCE-EVIDENCE",
+      "case_ids": [
+        "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27"
+      ],
+      "description": "Attach three primary source-context supports for existing PYGS starch component without clearing material holds.",
+      "evidence_ids": [
+        "R-frozen-shard",
+        "R-issue-718",
+        "R-PYGS-raw-records",
+        "R-epmc-algidixylanolyticum",
+        "R-epmc-frigidicarnis",
+        "R-epmc-gasigenes"
+      ],
+      "owner_path": "data/ingredients/mapped/PYGS.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml",
+        "sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d"
+      },
+      "identity_predicate_alias_consequences": "Attach three primary source-context supports for existing PYGS starch component without clearing material holds.",
+      "publication_review_obligations": "No source, owner or export approval. Coordinator must use guarded writers, withdraw inherited support for all changed bytes, independently review complete native payloads and regenerate synchronized exports.",
+      "cross_shard_dependencies": "Reconcile exact baseline owner hashes and source-specific scopes before integration."
+    }
+  ]
+}

@@ -1,0 +1,1084 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "A-P-CALCIUM-D",
+      "case_ids": [
+        "CM_NAME:012330c5320a4968ed592d7a76fff13d4dcad09a07528cf53127908aa4a08938",
+        "CM_NAME:11e4479bd0ecc400516731fbfcc48ebb29a1be6b76404f62c27481856b1059cc"
+      ],
+      "description": "Correct D-calcium-pantothenate alias boundaries and retain rejected-label provenance.",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-02-S00",
+        "A-E-02-S01",
+        "A-E-02-S02",
+        "A-E-02-S03",
+        "A-E-02-S04",
+        "A-E-02-S05",
+        "A-E-02-S06",
+        "A-E-CAPTURE-002",
+        "A-E-CAPTURE-008",
+        "A-E-CAPTURE-010",
+        "A-E-CAPTURE-082",
+        "A-E-CAPTURE-083",
+        "A-E-CAPTURE-087",
+        "A-E-CAPTURE-088",
+        "A-E-CAPTURE-090",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-011",
+        "A-E-EXTRA-018",
+        "A-E-TARGETED-008",
+        "A-E-SIGMA-HEMICALCIUM",
+        "A-E-16-S00",
+        "A-E-CAPTURE-061",
+        "A-E-CAPTURE-129",
+        "A-E-SHARED-B-75-frozen-0",
+        "A-E-SHARED-B-http-95a53e48afc87ab8"
+      ],
+      "owner_path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Calcium_Pantothenate.yaml",
+        "sha256": "e889930da07173f1c26f092c2a777e3be7be8eace79b5b159af1fd8fd98ae5e6"
+      },
+      "before_sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+      "identity_predicate_alias_consequences": "CHEBI31345 exact identity unchanged; six labels become nonmatching/nonexported REJECTED_LABEL. Adds only explicitlyD-qualified source labels. NoDL merge and no tombstone resurrection.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash. Coordinator mustattach B75 backlink with its metadata-only liveP5 limitation."
+    },
+    {
+      "proposal_id": "A-P-CALCIUM-DL",
+      "case_ids": [
+        "CM_NAME:059a93d33a57f51788fe5cf8de33a803d555df73119e6b9bdaa15e430969f59f"
+      ],
+      "description": "Propose distinctDL calcium-pantothenate owner for the explicitlyDL JCM source family.",
+      "evidence_ids": [
+        "A-E-OWNER-00",
+        "A-E-05-S00",
+        "A-E-05-S01",
+        "A-E-05-S02",
+        "A-E-05-S03",
+        "A-E-05-S04",
+        "A-E-05-S05",
+        "A-E-05-S06",
+        "A-E-05-S07",
+        "A-E-05-S08",
+        "A-E-05-S09",
+        "A-E-05-S10",
+        "A-E-05-S11",
+        "A-E-05-S12",
+        "A-E-05-S13",
+        "A-E-05-S14",
+        "A-E-05-S15",
+        "A-E-05-S16",
+        "A-E-05-S17",
+        "A-E-CAPTURE-016",
+        "A-E-CAPTURE-018",
+        "A-E-CAPTURE-045",
+        "A-E-CAPTURE-054",
+        "A-E-CAPTURE-057",
+        "A-E-CAPTURE-058",
+        "A-E-CAPTURE-060",
+        "A-E-CAPTURE-062",
+        "A-E-CAPTURE-063",
+        "A-E-CAPTURE-064",
+        "A-E-CAPTURE-065",
+        "A-E-CAPTURE-068",
+        "A-E-CAPTURE-069",
+        "A-E-CAPTURE-070",
+        "A-E-CAPTURE-071",
+        "A-E-CAPTURE-072",
+        "A-E-CAPTURE-073",
+        "A-E-CAPTURE-074",
+        "A-E-CAPTURE-097",
+        "A-E-CAPTURE-099",
+        "A-E-CAPTURE-119",
+        "A-E-CAPTURE-122",
+        "A-E-CAPTURE-125",
+        "A-E-CAPTURE-126",
+        "A-E-CAPTURE-128",
+        "A-E-CAPTURE-130",
+        "A-E-CAPTURE-131",
+        "A-E-CAPTURE-132",
+        "A-E-CAPTURE-133",
+        "A-E-CAPTURE-136",
+        "A-E-CAPTURE-137",
+        "A-E-CAPTURE-139",
+        "A-E-CAPTURE-140",
+        "A-E-CAPTURE-141",
+        "A-E-CAPTURE-142",
+        "A-E-CAPTURE-144",
+        "A-E-EXTRA-001",
+        "A-E-EXTRA-004",
+        "A-E-EXTRA-007",
+        "A-E-EXTRA-012",
+        "A-E-TARGETED-012",
+        "A-E-SPECTRUM-DL",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/Calcium_DL-Pantothenate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Calcium_DL-Pantothenate.yaml",
+        "sha256": "3f622028193f83d4c0ff3d95e3c4d89ed1436e06c1bc6089f4a5e602a5ed849c"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "CHEBI180950 exactMatch. Preserve racemate boundary fromCHEBI31345. Case32 and other unconfirmed source labels are excluded; two missinglive JCMrecipes remain explicit limitations.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-D-GLUCOSE",
+      "case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+        "CM_NAME:4102832afa3835505e3db683a0cfa50f14daaab21c73635b74f45fba60c99ca9"
+      ],
+      "description": "Add threeD-glucose raw spellings to the D-specific owner with separate live/frozen evidence scope.",
+      "evidence_ids": [
+        "A-E-OWNER-09",
+        "A-E-15-S00",
+        "A-E-15-S01",
+        "A-E-15-S02",
+        "A-E-15-S03",
+        "A-E-15-S04",
+        "A-E-15-S05",
+        "A-E-CAPTURE-052",
+        "A-E-CAPTURE-053",
+        "A-E-CAPTURE-055",
+        "A-E-CAPTURE-056",
+        "A-E-CAPTURE-066",
+        "A-E-CAPTURE-067",
+        "A-E-CAPTURE-120",
+        "A-E-CAPTURE-121",
+        "A-E-CAPTURE-123",
+        "A-E-CAPTURE-124",
+        "A-E-CAPTURE-134",
+        "A-E-CAPTURE-135",
+        "A-E-EXTRA-000",
+        "A-E-41-S00",
+        "A-E-CAPTURE-037",
+        "A-E-CAPTURE-075",
+        "A-E-TARGETED-006",
+        "A-E-SHARED-C-E-124-SOURCE-1",
+        "A-E-SHARED-C-E-124-SOURCE-2",
+        "A-E-SHARED-C-E-chebi-17634"
+      ],
+      "owner_path": "data/ingredients/mapped/D-glucose.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/D-glucose.yaml",
+        "sha256": "318fb75b1beb2c2a8b1635c3a499ca6025b3fe6c863f825529498d221d178d2a"
+      },
+      "before_sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914",
+      "identity_predicate_alias_consequences": "CHEBI17634 exact identity unchanged. No genericglucose, specificanomer/hydrate, or stocksolution merge. LowercaseD--glucose from research-c124 requires coordinator case124 backlink and independent review; linked captures preserve its frozen-only source support.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-LANTHANUM-HEPTAHYDRATE",
+      "case_ids": [
+        "CM_NAME:1f300cfe5fc1038138dfc840a9ec07bd1b5b96e12e8de10add68930ab70b8731"
+      ],
+      "description": "Propose a separateCAS-backed lanthanumchlorideheptahydrate owner.",
+      "evidence_ids": [
+        "A-E-OWNER-13",
+        "A-E-25-S00",
+        "A-E-25-S01",
+        "A-E-CAPTURE-003",
+        "A-E-CAPTURE-014",
+        "A-E-CAPTURE-085",
+        "A-E-EXTRA-005",
+        "A-E-EXTRA-006",
+        "A-E-EXTRA-013",
+        "A-E-EXTRA-019",
+        "A-E-TARGETED-009",
+        "A-E-TARGETED-014",
+        "A-E-TARGETED-015",
+        "A-E-NCIT-LANTHANUM",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/Lanthanum_III_Chloride_Heptahydrate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Lanthanum_III_Chloride_Heptahydrate.yaml",
+        "sha256": "ee699f4b0616218ea3a552cb8a9984f713a382ba4014fc479f650e861fdb01f0"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "cas10025-84-0 exact identity; NARROW_MATCH emits skos:broadMatch toCHEBI231515 plus mandatorylocalregistry exact row. Do notalias orreplace existingCAS20211-76-1 owner.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-MERCK108339",
+      "case_ids": [
+        "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd"
+      ],
+      "description": "Propose separate Merck108339 dehydrated broth product while preserving generic Sabouraud family owner.",
+      "evidence_ids": [
+        "A-E-OWNER-17",
+        "A-E-35-S00",
+        "A-E-35-S01",
+        "A-E-CAPTURE-084",
+        "A-E-EXTRA-021",
+        "A-E-MERCK108339",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+        "sha256": "a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Localproduct identity/exact registryrow only; no wholeproduct chemical mapping. Component amounts use supplier30g/Lreconstitutionbasis. GenericUNMAPPED0513isunchanged; rootmaybacklink KG183 onlywithsamecatalogevidence.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-NBRC1407-BOILED-YEAST",
+      "case_ids": [
+        "CM_NAME:01127d93f1baaa6ac9f89388777c8ee0921a7658c1005bbc470bbef0f2ad5a25"
+      ],
+      "description": "Propose the process-defined NBRC1407 yeast extract preparation.",
+      "evidence_ids": [
+        "A-E-01-S00",
+        "A-E-CAPTURE-151",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1407_boiled_bakers_yeast_extract.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_1407_boiled_bakers_yeast_extract.yaml",
+        "sha256": "5958a73d33201b4e803bafdf83792967e67d57eaf63b142b97d96a99c9b930d7"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity; noexact yeast-cell or commercial-extract mapping. Preparation inputs are not asserted as final constituent quantities.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-DSMZ29-CARBONATE-1M",
+      "case_ids": [
+        "CM_NAME:037e958a66f64078d543213f3a007cfc1d873519d9274fb48f506ac94bb3bc31"
+      ],
+      "description": "Propose DSMZ 29/40 sodium carbonate 1 M stock with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-OWNER-01",
+        "A-E-03-S00",
+        "A-E-03-S01",
+        "A-E-CAPTURE-035",
+        "A-E-CAPTURE-040",
+        "A-E-CAPTURE-091",
+        "A-E-CAPTURE-092",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/dsmz_29_40_sodium_carbonate_1m_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/dsmz_29_40_sodium_carbonate_1m_stock.yaml",
+        "sha256": "c739d5e2a0901ffa8766b47220bcf1baaf29deb05a1f52f10f0301ab6f193968"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-ATCC1249-COMPONENT-I",
+      "case_ids": [
+        "CM_NAME:05063ed12d4ca5d9048db0e4b85a8db7a55bcbe3327e5acdf5d29839fa798b3b"
+      ],
+      "description": "Propose ATCC 1249 Component I with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-04-S00",
+        "A-E-CAPTURE-041",
+        "A-E-CAPTURE-077",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/atcc_1249_component_i.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/atcc_1249_component_i.yaml",
+        "sha256": "4d877d9fa4f3801ae772150313dcb82779b6b6dabaf63093a9493728873156c8"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-JCM167-SL6",
+      "case_ids": [
+        "CM_NAME:1306d71cf68bc81dd0d31b7b6dff3a8af17c74cdfdaa20c222f51608d1345b7f"
+      ],
+      "description": "Propose JCM 167 SL-6 trace element solution with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-18-S00",
+        "A-E-CAPTURE-105",
+        "A-E-CAPTURE-114",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_167_sl6_trace_elements.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_167_sl6_trace_elements.yaml",
+        "sha256": "4503cbdfc784f03126d8023125894299ed4d1e4aeca15bf51c9093f602d809f9"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-ATCC1257-CARBONATE-4PCT",
+      "case_ids": [
+        "CM_NAME:1f2b92647e0cf40d84143aa15ca22db0cda14f5f8695a06efae27fe70424a05a"
+      ],
+      "description": "Propose ATCC 1257 sodium carbonate 4% stock with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-OWNER-01",
+        "A-E-24-S00",
+        "A-E-CAPTURE-039",
+        "A-E-CAPTURE-079",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/atcc_1257_sodium_carbonate_4_percent_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/atcc_1257_sodium_carbonate_4_percent_stock.yaml",
+        "sha256": "42bb0651b003a22ab9a2a2ca754f72dd3f6cc0cec5dc1fe4f46a9e3c80701cad"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+      "case_ids": [
+        "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77"
+      ],
+      "description": "Propose shared generic1M glucose stock for JCM548/1136/1406/1412 with explicitly bounded preparation details.",
+      "evidence_ids": [
+        "A-E-OWNER-09",
+        "A-E-OWNER-14",
+        "A-E-26-S00",
+        "A-E-26-S01",
+        "A-E-CAPTURE-019",
+        "A-E-CAPTURE-059",
+        "A-E-CAPTURE-100",
+        "A-E-CAPTURE-127",
+        "A-E-NATIVE-OWNER-DEDUP",
+        "A-E-SHARED-C-E-jcm-1406",
+        "A-E-SHARED-C-E-jcm-1412"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_1136_548_glucose_1m_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+        "sha256": "3f916beac02d141f498e9cf2179bcbe1ada84f80aa25e09fd407742324ca5673"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must attach research-c114/115 source case and occurrence backlinks; currentAfragment authorsonly26. Existing localidentifier/filename retained."
+    },
+    {
+      "proposal_id": "A-P-JCM933-RST",
+      "case_ids": [
+        "CM_NAME:21664cd99c73caf7229e3fa2430f1ff3e3ea0092420389959f15b5731a8064ee"
+      ],
+      "description": "Propose JCM 933 RST trace elements with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-27-S00",
+        "A-E-CAPTURE-102",
+        "A-E-CAPTURE-143",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_933_rst_trace_elements.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_933_rst_trace_elements.yaml",
+        "sha256": "ad37039d69d79482d2896190adcd0935674a823dcb37b97520c41bf75eb6a5a8"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-JCM340-SL4",
+      "case_ids": [
+        "CM_NAME:24d8804d062b6fdbb87367e03a815734fe9750a9fac95cdf40679665f54fe151"
+      ],
+      "description": "Propose JCM 340 SL-4 trace element solution with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-29-S00",
+        "A-E-CAPTURE-001",
+        "A-E-CAPTURE-013",
+        "A-E-CAPTURE-138",
+        "A-E-TARGETED-013",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_340_sl4_trace_elements.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_340_sl4_trace_elements.yaml",
+        "sha256": "a95940f70c74f6c6b69ecc41aa2ce4fe20b8ee2c328f4199f7ae5ecc0b862f11"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-ATCC-MDTMS",
+      "case_ids": [
+        "CM_NAME:272de5a8aa1236d07bfc1c5131c690bba21dbe125bba0385efc7fbbf781101d5"
+      ],
+      "description": "Propose ATCC MD-TMS trace mineral supplement, formulation captured 2026-11-08 with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-OWNER-15",
+        "A-E-31-S00",
+        "A-E-CAPTURE-042",
+        "A-E-CAPTURE-076",
+        "A-E-CAPTURE-080",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/atcc_md_tms_formulation_20261108.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/atcc_md_tms_formulation_20261108.yaml",
+        "sha256": "79f245040e19091badc3175c90d0c5123c9a79f4823296d8e307d5070ba7a282"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Potential duplicate/formulation conflict with current baseline data/ingredients/mapped/ATCC_Wolfes_Mineral_Mix.yaml, sha256 d1a3c0cd0b18a8df04ba988240ea929afbff4c94b0bad76ea348c12c9129ebf4. Existing full owner/history and source table differ from the supplier formulation captured2026-11-08. Independent source-scope review is required before owner integration; B81 catalog match does not prove historical component concordance."
+    },
+    {
+      "proposal_id": "A-P-JCM1088-VITAMINS",
+      "case_ids": [
+        "CM_NAME:3668e84f71c1d0505e5f9293badeaee1d3696167a55e31e9a8994445c3c9aa66"
+      ],
+      "description": "Propose JCM 1088 trace vitamins with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-36-S00",
+        "A-E-CAPTURE-017",
+        "A-E-CAPTURE-098",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_1088_trace_vitamins.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_1088_trace_vitamins.yaml",
+        "sha256": "162a54cc5b2f7f02e17c94e16eed25694a14d9a007417b7295fa66adcc811621"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-JCM1344-YEAST-1PCT",
+      "case_ids": [
+        "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658"
+      ],
+      "description": "Propose JCM 1344 yeast extract 1% stock with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-OWNER-18",
+        "A-E-38-S00",
+        "A-E-CAPTURE-102",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_1344_yeast_extract_1_percent_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_1344_yeast_extract_1_percent_stock.yaml",
+        "sha256": "66cce4c6df6a38d3241527db9da2a9a12061b8cfb340cb1f626d82d93bc746a3"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-JCM1353-BUFFERED-VITAMINS",
+      "case_ids": [
+        "CM_NAME:3d728d854b965ccca90fd64e664a84f05072954748ba1df16403f75963509bbb"
+      ],
+      "description": "Propose JCM 1353 phosphate-buffered trace vitamins with primary-source preparation boundaries.",
+      "evidence_ids": [
+        "A-E-39-S00",
+        "A-E-CAPTURE-104",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_1353_phosphate_buffered_trace_vitamins.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_1353_phosphate_buffered_trace_vitamins.yaml",
+        "sha256": "5376aeb864f9e444fd66e74cb278f80edafc773cdb9cee0cf2615022f6b0371a"
+      },
+      "before_sha256": null,
+      "identity_predicate_alias_consequences": "Local registry identity and required self row only. Components are has-part assertions, not whole-stock chemical mappings. Literal source uncertainties and receiving-medium dose remain separate.",
+      "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+      "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+    },
+    {
+      "proposal_id": "A-P-NBRC1050-TRACE",
+      "case_ids": [
+        "CM_NAME:0fbc4237ec3587e18ff78d8bf9f2bf0381a32f1e4084be5ad3e8e1d5d4139749"
+      ],
+      "description": "Propose NBRC 1050 trace elements solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-14-S00",
+        "A-E-14-S01",
+        "A-E-14-S02",
+        "A-E-14-S03",
+        "A-E-CAPTURE-146",
+        "A-E-CAPTURE-147",
+        "A-E-CAPTURE-148",
+        "A-E-CAPTURE-162",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1050_trace_elements_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_1050_trace_elements_solution.yaml",
+        "sha256": "86a2111dacfa35286339ce84eb943c8f4d8466d80db7b12175f09ff1a56255d6"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:b046623299506b477431c439e142e044ab47a4e3ede2dc25909f95ee80f0ab81"
+      ],
+      "excluded_occurrence_ids": [
+        "CM_OCC:ee62e818c67f30f24dfbc93029ed46e8faa709660c5b51373f12aacbd99b3004",
+        "CM_OCC:04c0ce44e32257a9f8e68e35785298e674cbf7522c389dda38076b88c797e544",
+        "CM_OCC:62482ecc19aaa9e1c7abb07a1491d14bb63002a8b17ad032608e2db669e1b817"
+      ],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-NBRC1086-TRACE",
+      "case_ids": [
+        "CM_NAME:0fbc4237ec3587e18ff78d8bf9f2bf0381a32f1e4084be5ad3e8e1d5d4139749"
+      ],
+      "description": "Propose NBRC 1086 trace elements solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-14-S00",
+        "A-E-14-S01",
+        "A-E-14-S02",
+        "A-E-14-S03",
+        "A-E-CAPTURE-146",
+        "A-E-CAPTURE-147",
+        "A-E-CAPTURE-148",
+        "A-E-CAPTURE-162",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1086_trace_elements_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_1086_trace_elements_solution.yaml",
+        "sha256": "a41dde8a29319e0a7eec95a9d50a41ea6acacca1707d0719816c0ef06281e675"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:ee62e818c67f30f24dfbc93029ed46e8faa709660c5b51373f12aacbd99b3004"
+      ],
+      "excluded_occurrence_ids": [
+        "CM_OCC:b046623299506b477431c439e142e044ab47a4e3ede2dc25909f95ee80f0ab81",
+        "CM_OCC:04c0ce44e32257a9f8e68e35785298e674cbf7522c389dda38076b88c797e544",
+        "CM_OCC:62482ecc19aaa9e1c7abb07a1491d14bb63002a8b17ad032608e2db669e1b817"
+      ],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-NBRC925-TRACE",
+      "case_ids": [
+        "CM_NAME:0fbc4237ec3587e18ff78d8bf9f2bf0381a32f1e4084be5ad3e8e1d5d4139749"
+      ],
+      "description": "Propose NBRC 925 trace elements solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-14-S00",
+        "A-E-14-S01",
+        "A-E-14-S02",
+        "A-E-14-S03",
+        "A-E-CAPTURE-146",
+        "A-E-CAPTURE-147",
+        "A-E-CAPTURE-148",
+        "A-E-CAPTURE-162",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_925_trace_elements_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_925_trace_elements_solution.yaml",
+        "sha256": "214caf9ffe582f7a0fbb5fa77aed06b4b928d5189b43972d20099fca86235e39"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:62482ecc19aaa9e1c7abb07a1491d14bb63002a8b17ad032608e2db669e1b817"
+      ],
+      "excluded_occurrence_ids": [
+        "CM_OCC:b046623299506b477431c439e142e044ab47a4e3ede2dc25909f95ee80f0ab81",
+        "CM_OCC:ee62e818c67f30f24dfbc93029ed46e8faa709660c5b51373f12aacbd99b3004",
+        "CM_OCC:04c0ce44e32257a9f8e68e35785298e674cbf7522c389dda38076b88c797e544"
+      ],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-NBRC1274-TRACE",
+      "case_ids": [
+        "CM_NAME:0fbc4237ec3587e18ff78d8bf9f2bf0381a32f1e4084be5ad3e8e1d5d4139749"
+      ],
+      "description": "Propose NBRC 1274 trace elements solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-14-S00",
+        "A-E-14-S01",
+        "A-E-14-S02",
+        "A-E-14-S03",
+        "A-E-CAPTURE-146",
+        "A-E-CAPTURE-147",
+        "A-E-CAPTURE-148",
+        "A-E-CAPTURE-162",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1274_trace_elements_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_1274_trace_elements_solution.yaml",
+        "sha256": "7e7cfc9a3143330b98e50f6104f40486768f81e61b98bbd627470a7a134d125c"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:04c0ce44e32257a9f8e68e35785298e674cbf7522c389dda38076b88c797e544"
+      ],
+      "excluded_occurrence_ids": [
+        "CM_OCC:b046623299506b477431c439e142e044ab47a4e3ede2dc25909f95ee80f0ab81",
+        "CM_OCC:ee62e818c67f30f24dfbc93029ed46e8faa709660c5b51373f12aacbd99b3004",
+        "CM_OCC:62482ecc19aaa9e1c7abb07a1491d14bb63002a8b17ad032608e2db669e1b817"
+      ],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-NBRC1308-TRACE",
+      "case_ids": [
+        "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b"
+      ],
+      "description": "Propose NBRC 1308 trace elements solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-19-S00",
+        "A-E-19-S01",
+        "A-E-19-S02",
+        "A-E-CAPTURE-145",
+        "A-E-CAPTURE-149",
+        "A-E-CAPTURE-157",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1308_trace_elements_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_1308_trace_elements_solution.yaml",
+        "sha256": "6a8f4ebc4562e888207270f5fce1dfdc425c581494d9183bd6b8aed5e896a2aa"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5"
+      ],
+      "excluded_occurrence_ids": [
+        "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+        "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+      ],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-NBRC1020-824-TRACE",
+      "case_ids": [
+        "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b"
+      ],
+      "description": "Propose NBRC 1020/824 trace element solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-19-S00",
+        "A-E-19-S01",
+        "A-E-19-S02",
+        "A-E-CAPTURE-145",
+        "A-E-CAPTURE-149",
+        "A-E-CAPTURE-157",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/nbrc_1020_824_trace_element_solution.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/nbrc_1020_824_trace_element_solution.yaml",
+        "sha256": "5da073388a089a3217a5f20b030702a7140536a1c2a30db3553084ee6350ddf7"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+        "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+      ],
+      "excluded_occurrence_ids": [
+        "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5"
+      ],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-JCM576-SL12",
+      "case_ids": [
+        "CM_NAME:074679291094b29db457272b18e3b9d62c0ce4046ff026549a15e090feb9ed6e"
+      ],
+      "description": "Propose JCM 576 SL12 trace metal solution at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-08-S00",
+        "A-E-CAPTURE-005",
+        "A-E-CAPTURE-012",
+        "A-E-EXTRA-020",
+        "A-E-TARGETED-010",
+        "A-E-COMPLETION-00",
+        "A-E-COMPLETION-01",
+        "A-E-COMPLETION-02",
+        "A-E-COMPLETION-08",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_576_sl12_trace_metals.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_576_sl12_trace_metals.yaml",
+        "sha256": "7605fef25483b03626ff239f2709405304976db42e0d4832a773e3e756d2c03a"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:468709baea80611693262fd660675692f1069c51864a11f3105689c8209364fb"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-TOGO2665-KOH-STOCK",
+      "case_ids": [
+        "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34"
+      ],
+      "description": "Propose TOGO M2665 potassium hydroxide solution, strength unspecified at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-OWNER-11",
+        "A-E-20-S00",
+        "A-E-CAPTURE-043",
+        "A-E-CAPTURE-078",
+        "A-E-COMPLETION-09",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/togo_2665_koh_solution_unspecified_strength.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/togo_2665_koh_solution_unspecified_strength.yaml",
+        "sha256": "c297576c743abbef6933e02c9b7081631510a4561d00684b1185fb5c302e0cd6"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:0aedb54c475214aee9fe439653a935255c2a9dd3cb262c1260d2a11af0e3b0fd"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-PCRS11-FE-EDTA-2019",
+      "case_ids": [
+        "CM_NAME:0b9cac1a7214be756e0532ecb869139cfd7d67b907c4365d90ba272f4214de3f"
+      ],
+      "description": "Propose Roscoff PCR S11 FeCl3/Na2-EDTA stock, 2019 protocol at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-12-S00",
+        "A-E-CAPTURE-036",
+        "A-E-TARGETED-002",
+        "A-E-PCRS11",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/roscoff_pcrs11_fecl3_na2edta_stock_2019.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/roscoff_pcrs11_fecl3_na2edta_stock_2019.yaml",
+        "sha256": "463e4f9f95a952dea5fb75ce91dfc0c5188f263984f588e336edceb3cab3bca0"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:780ac454fc1f915571797639d6abc34dfce5475ba78f6a27f5964f83b6671606"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-MATERIAL-10",
+      "case_ids": [
+        "CM_NAME:08db909532e92ec4fd5f74e20f687d6fc9fe065c933ea60428e96a6c79e0cf70"
+      ],
+      "description": "Propose Dried yeast material at the directly observed material scope, without taxon or product identity.",
+      "evidence_ids": [
+        "A-E-OWNER-06",
+        "A-E-OWNER-07",
+        "A-E-10-S00",
+        "A-E-10-S01",
+        "A-E-CAPTURE-025",
+        "A-E-CAPTURE-033",
+        "A-E-CAPTURE-152",
+        "A-E-CAPTURE-158",
+        "A-E-COMPLETION-03",
+        "A-E-GENERIC-YEAST-BASELINE",
+        "A-E-BAKERS-YEAST-BASELINE",
+        "A-E-YEAST-PASTE-BASELINE",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/dried_yeast_material.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/dried_yeast_material.yaml",
+        "sha256": "6b0621b55396596684c5f99871b1266a24a5a39ea8568ab640ff5b423c328c2a"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:23f3c5ee7951772e0a843c1f70ce39331461c9e6fa03e6167420edbbbf24320e",
+        "CM_OCC:bd68d98726bc9ac03da9631933e159f7ee4d3a55c55f98ea1c7dc9dd8b5d2e5a"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-MATERIAL-23",
+      "case_ids": [
+        "CM_NAME:1b6c0b5684948dcbb9bf5f2a21f9d7d6cdeabf16e48b65bcfb2a1fd71bb6fed6"
+      ],
+      "description": "Propose Pressed yeast material at the directly observed material scope, without taxon or product identity.",
+      "evidence_ids": [
+        "A-E-OWNER-06",
+        "A-E-23-S00",
+        "A-E-23-S01",
+        "A-E-CAPTURE-021",
+        "A-E-CAPTURE-022",
+        "A-E-CAPTURE-153",
+        "A-E-CAPTURE-154",
+        "A-E-COMPLETION-04",
+        "A-E-GENERIC-YEAST-BASELINE",
+        "A-E-BAKERS-YEAST-BASELINE",
+        "A-E-YEAST-PASTE-BASELINE",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/pressed_yeast_material.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/pressed_yeast_material.yaml",
+        "sha256": "6088ac3672df0ba238b04bfe9cfdca57f4e85d0392b606be8f718691c4ff82a3"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:25910b89b89a39ffcc41b60db0333deba94710103b4370feb6bbfe00cc174890",
+        "CM_OCC:61e33b23ad45fdb987b348523b2ddf38946c8a85e3eabbade3b8c0c793bed838"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-MATERIAL-33",
+      "case_ids": [
+        "CM_NAME:2a26bde9a33b38660aadcc007672a50d48345dc31285a6de72ef0c81c8d52d0c"
+      ],
+      "description": "Propose Porphyra thallus material at the directly observed material scope, without taxon or product identity.",
+      "evidence_ids": [
+        "A-E-OWNER-16",
+        "A-E-33-S00",
+        "A-E-CAPTURE-031",
+        "A-E-CAPTURE-165",
+        "A-E-COMPLETION-05",
+        "A-E-PORPHYRAN-BASELINE",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/porphyra_thalli_material.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/porphyra_thalli_material.yaml",
+        "sha256": "367aace30df1f518c200004de9f7f3d5b99d8a231c3b19569baffa547e089f12"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:cc6511994d383a4df8d6fd566a5198674b9e54a2f6608ee8a57087be640b3cbb"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-RYEGRASS-MATERIAL-REVIEW",
+      "case_ids": [
+        "CM_NAME:4b040563de90befbb3f0006d6caa542968e08b05535d3e1825d41eea602ef495"
+      ],
+      "description": "Clarify existing unmapped ryegrass owner as the dried,milled source material and preserve exactCCAPrawlabel.",
+      "evidence_ids": [
+        "A-E-OWNER-19",
+        "A-E-44-S00",
+        "A-E-44-S01",
+        "A-E-CAPTURE-081",
+        "A-E-CAPTURE-094",
+        "A-E-COMPLETION-06",
+        "A-E-RYEGRASS-CURRENT-BASELINE",
+        "A-E-SHARED-R-ingredient-2362",
+        "A-E-SHARED-R-medium-C82"
+      ],
+      "owner_path": "data/ingredients/unmapped/Rye_Grass.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Rye_Grass.yaml",
+        "sha256": "1988144aaf769d052daeb6e11bab441ab739340e8315487ed5a855c106319f98"
+      },
+      "before_sha256": "d596d7281521a34f3354767e88d6aae6c1740ef16832b1124133111ddca9e551",
+      "applicable_occurrence_ids": [
+        "CM_OCC:1f50a61474aab2cbdb30972fe28febaaf4f63291c3a6ab7b57013b402571a30f",
+        "CM_OCC:3bb76d13815dbc41ddf1976d9b795d15d5f2f055ca23c0669e834ffea779ccfc"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "UNMAPPED0511 retained; no taxon, ontology, registry promotion or new material duplicate. Sourcephysicalstate and rawlabel added with completeownerreview obligation.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-WAKO-HIPOLYPEPTON",
+      "case_ids": [
+        "CM_NAME:4a6653ffe2ccb9bccc2c85168233e12e2b236e6a766010f0189e1501ae2f4497"
+      ],
+      "description": "Propose FUJIFILM Wako Hipolypepton, casein hydrolysate at the explicitly recorded source scope.",
+      "evidence_ids": [
+        "A-E-43-S00",
+        "A-E-CAPTURE-095",
+        "A-E-CAPTURE-115",
+        "A-E-EXTRA-014",
+        "A-E-EXTRA-015",
+        "A-E-COMPLETION-07",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/wako_hipolypepton_casein_hydrolysate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/wako_hipolypepton_casein_hydrolysate.yaml",
+        "sha256": "e7cc21e8071151ae59d5f9b6b8625bba192830df16bcacf5b3e1073059c3a9a2"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:1efda60c1a06e807248ccaf3bec78eeeb967512730f6cac6880574c183bd96ff"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Whole source-qualified mixture/material registry identity with self row only. No generic raw-label resolving alias, chemical/taxon identity, or unsupported child CURIE.",
+      "publication_review_obligations": "Independent exact-payload review and native source/export gates remain required; proposal is not release approval.",
+      "cross_shard_dependencies": "Coordinator must preserve exact occurrence scope and reconcile related recipe/product owners before application."
+    },
+    {
+      "proposal_id": "A-P-POLYPEPTONE-BOUNDARY",
+      "case_ids": [
+        "CM_NAME:4a6653ffe2ccb9bccc2c85168233e12e2b236e6a766010f0189e1501ae2f4497"
+      ],
+      "description": "Withdraw unsupported Hipolypepton equivalence from the existing Polypeptone owner.",
+      "evidence_ids": [
+        "A-E-43-S00",
+        "A-E-CAPTURE-095",
+        "A-E-CAPTURE-115",
+        "A-E-EXTRA-014",
+        "A-E-EXTRA-015",
+        "A-E-COMPLETION-07",
+        "A-E-POLYPEPTONE-BASELINE"
+      ],
+      "owner_path": "data/ingredients/mapped/Polypeptone.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Polypeptone.yaml",
+        "sha256": "33e474e0751408a59734c527303219dcb5eeb486ced170f9207548a415b0ee9a"
+      },
+      "before_sha256": "5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa",
+      "identity_predicate_alias_consequences": "Three Hipolypepton labels become REJECTED_LABEL; original provenance retained. Existing Polypeptone identifier and unrelated aliases unchanged.",
+      "publication_review_obligations": "Changed owner requires full native content review; inherited roles and mapping are not source-campaign release approved.",
+      "cross_shard_dependencies": "Coordinate with distinct WakoHipolypepton product and any other owner references to the same manufacturer family."
+    },
+    {
+      "proposal_id": "A-P-DIFCO-YEAST-CARBON-BASE",
+      "case_ids": [
+        "CM_NAME:399fa0850537dfe03fbb5902fc9ca7209456ac6928381e523a92a80079cc36c9"
+      ],
+      "description": "Propose the source-named Difco Yeast Carbon Base product family without historical catalogue/formula assumptions.",
+      "evidence_ids": [
+        "A-E-37-S00",
+        "A-E-CAPTURE-027",
+        "A-E-CAPTURE-160",
+        "A-E-EXTRA-016",
+        "A-E-BD239110-PRODUCT",
+        "A-E-NATIVE-OWNER-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/bd_difco_yeast_carbon_base_family.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/bd_difco_yeast_carbon_base_family.yaml",
+        "sha256": "a1846ed1c4c7c964b75d70843f237e33357fa289537241236368e0b140b96c0b"
+      },
+      "before_sha256": null,
+      "applicable_occurrence_ids": [
+        "CM_OCC:0f1228b4d00a2389e694bc00ca44d73910eb5d92b279cd9179df083e2f3dd2d2"
+      ],
+      "excluded_occurrence_ids": [],
+      "identity_predicate_alias_consequences": "Manufacturer-qualified local registry identity. No generic YCB/YNB alias, whole-medium or chemical exactMatch.",
+      "publication_review_obligations": "Native review and current/historical product boundary verification remain required before integration; no component closure or source-release approval.",
+      "cross_shard_dependencies": "Compare other Difco/BD base families by complete product name; YNB and YCB cannot be merged."
+    }
+  ]
+}

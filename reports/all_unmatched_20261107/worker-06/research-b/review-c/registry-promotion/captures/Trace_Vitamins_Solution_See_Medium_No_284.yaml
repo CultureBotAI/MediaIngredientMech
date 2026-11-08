@@ -1,0 +1,153 @@
+identifier: kgmicrobe.ingredient:jcm_284_trace_vitamins
+preferred_term: Trace vitamins solution see Medium No. 284
+synonyms:
+- synonym_text: Trace vitamins solution see Medium No. 284
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Trace vitamins solution* (see Medium No. 284 )
+  synonym_type: RAW_TEXT
+  source: JCM284 stock reference; CultureMech frozen shard06
+- synonym_text: Trace vitamins solution (see Medium No. 284)
+  synonym_type: RAW_TEXT
+  source: JCM284 stock reference; worker06 parallel author verified receiving recipe;
+    coordinator must attach corresponding case backlink
+- synonym_text: Trace vitamins solution (see Medium No.284)
+  synonym_type: RAW_TEXT
+  source: JCM284 stock reference; worker06 parallel author verified receiving recipe;
+    coordinator must attach corresponding case backlink
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1982); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:06.699020+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.974117+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
+    No')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Trace_Vitamins_Solution_See_Medium_No_284-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **recipe-defined,
+    multi-component trace-vitamin stock solution referenced by another medium record**,
+    not a single chemical, salt, hydrate, buffer, extract, or generic vitamin class.
+    The phrase “see Medium No. 284” is a cross-reference rather than a chemically
+    complete name. No ontology CURIE was proposed. Recorded as provenance only — no
+    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:22:50.438983+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CORRECTED
+  changes: Transcribed the primary JCM284 Trace vitamins solution formulation and
+    added numbered source aliases; classified this constituent stock as STOCK_SOLUTION.
+    Existing identifier/mapping status retained. Isolated proposal only; no publication
+    or inherited support approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:44:34.686461+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  changes: Promoted UNMAPPED_0555 to kgmicrobe.ingredient:jcm_284_trace_vitamins after
+    exact source-defined formulation review. Components and previous raw labels unchanged;
+    new FALLBACK_REGISTRY self identity. Isolated proposal only; coordinator must
+    migrate mapped/unmapped surfaces and retain all source/export holds.
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1982); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Current source review establishes the exact
+  JCM284 stock formulation and promotes the prior placeholder to its source-defined
+  local registry identity. Historical lack of a single chemical ontology term does
+  not block a verified whole-stock registry identity. Child identities and all source/publication
+  holds remain separate.
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '4.9'
+  concentration_unit: MG
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '8.8'
+  concentration_unit: MG
+- component_name: Pyridoxine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '4.1'
+  concentration_unit: MG
+- component_name: Thiamine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '6.7'
+  concentration_unit: MG
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '7.5'
+  concentration_unit: MG
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: MG
+- component_name: DL-Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '9.5'
+  concentration_unit: MG
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '27.1'
+  concentration_unit: MG
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2.7'
+  concentration_unit: MG
+- component_name: Lipoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '4.1'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - supports: SUPPORT
+    evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284
+    source_record: Trace vitamins solution
+    notes: Transcribed exact constituent names and source batch amounts from the captured
+      primary table. Component identities deliberately remain UNMAPPED; no hydrate/stereoisomer/registry
+      normalization is asserted.
+  notes: Amounts are source batch amounts, not inferred final-volume concentrations.
+    Water is retained. Source name/form qualifiers are preserved. Completeness concerns
+    the cited listed formulation; it is not analytical speciation or component-CURIE
+    approval.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_284_trace_vitamins
+  ontology_label: Trace vitamins solution see Medium No. 284
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284
+    notes: The exact JCM-numbered stock is defined by the captured full recipe and
+      its retained literal component list. The local registry identity denotes that
+      formulation; it is not an exact mapping to any component or generic trace-mineral/vitamin
+      class. No catalogue or biological-product identity is inferred by analogy.

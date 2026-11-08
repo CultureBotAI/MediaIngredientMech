@@ -1,0 +1,84 @@
+{
+  "recorded_at": "2026-11-08T05:43:46.905402+00:00",
+  "reason": "Coordinator-confirmed concrete A alias and corrected owner payload; preserve primary source coverage gap",
+  "before_decisions_sha256": "9272db9512924c0244ea8f0aae261a3b41689c53e99826641a9246cd6ee51c81",
+  "after_decisions_sha256": "7aa02708d1447f103e1cfe271c2160baf90990bd3f74eaf54def381a0c6a43f4",
+  "before_case": {
+    "case_id": "CM_NAME:7b599107b18fa597f9e1f45628b0f09d8e12e2d9a708db695150ccbdade094d5",
+    "case_input_sha256": "0cea338efcb7af0f21511aaac78fec1ab4cad3a2a511996de7741b90e6d17c5e",
+    "source": {
+      "source": "culturemech",
+      "source_case_id": "D-pantothenate acid hemicalcium salt (B5)",
+      "source_label": "D-pantothenate acid hemicalcium salt (B5)",
+      "raw_source_label": "D-pantothenate acid hemicalcium salt (B5)"
+    },
+    "occurrence_ids": [
+      "CM_OCC:cd1cb51bfb3397b0929af305c37496269a6fb57ff6fec2fdaf444e6efddc2669"
+    ],
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The source label explicitly names D-pantothenate hemicalcium, which is compatible with theD-calcium pantothenate identityCHEBI:31345 rather thanDL salt or free pantothenic acid. The hemicalcium wording expresses the calcium:pantothenate stoichiometry and does not by itself assert a hydrate. The shared owner has erroneousDL and capsaicin-related aliases that this case cannot validate.",
+    "applicability": "Applies to the nutrient-component occurrence of MediaDiveP5 RS medium; it is a vitamin constituent rather than the whole nutrient mixture. Research-a is correcting the sharedD-salt owner.",
+    "evidence_ids": [
+      "B-75-frozen-0",
+      "B-http-95a53e48afc87ab8",
+      "B-ontology-CHEBI-31345",
+      "B-owner-Calcium_Pantothenate"
+    ],
+    "proposal_ids": [],
+    "no_change_reason": "The coordinator must integrate this exactD label into the single corrected shared-owner payload; no competing payload is authored here.",
+    "missing_requirement": "Reconcile the existingD owner unsafe aliases and verify sourceP5 recipe-level ingredient details before applying its source-specific alias.",
+    "owner_records": [
+      {
+        "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+        "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+      }
+    ],
+    "issue_refs": [],
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "shard_index": 75,
+    "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed."
+  },
+  "after_case": {
+    "case_id": "CM_NAME:7b599107b18fa597f9e1f45628b0f09d8e12e2d9a708db695150ccbdade094d5",
+    "case_input_sha256": "0cea338efcb7af0f21511aaac78fec1ab4cad3a2a511996de7741b90e6d17c5e",
+    "source": {
+      "source": "culturemech",
+      "source_case_id": "D-pantothenate acid hemicalcium salt (B5)",
+      "source_label": "D-pantothenate acid hemicalcium salt (B5)",
+      "raw_source_label": "D-pantothenate acid hemicalcium salt (B5)"
+    },
+    "occurrence_ids": [
+      "CM_OCC:cd1cb51bfb3397b0929af305c37496269a6fb57ff6fec2fdaf444e6efddc2669"
+    ],
+    "disposition": "existing_identity_or_alias",
+    "reasoning": "The source label explicitly names D-pantothenate hemicalcium, which is compatible with theD-calcium pantothenate identityCHEBI:31345 rather thanDL salt or free pantothenic acid. The hemicalcium wording expresses the calcium:pantothenate stoichiometry and does not by itself assert a hydrate. The shared owner has erroneousDL and capsaicin-related aliases that this case cannot validate. A single corrected A-P-CALCIUM-D payload now carries the exact source label; this resolves the local proposal-writing dependency while preserving the P5 primary ingredient-table coverage gap.",
+    "applicability": "Applies to the nutrient-component occurrence of MediaDiveP5 RS medium; it is a vitamin constituent rather than the whole nutrient mixture. Research-a is correcting the sharedD-salt owner.",
+    "evidence_ids": [
+      "B-75-frozen-0",
+      "B-http-95a53e48afc87ab8",
+      "B-ontology-CHEBI-31345",
+      "B-owner-Calcium_Pantothenate"
+    ],
+    "proposal_ids": [],
+    "no_change_reason": "Concrete shared A-P-CALCIUM-D payload carries the source-specific D-hemicalcium alias and baseline alias corrections; coordinator attaches its exact independent review and backlinks. No duplicate payload is authored here, and the metadata-only P5 response does not establish ingredient-table source release.",
+    "missing_requirement": "The isolated A-P-CALCIUM-D payload now corrects the baseline unsafe DL/capsaicin aliases and carries this exact D-hemicalcium raw label. Primary MediaDiveP5 currently returns medium metadata only, so recipe-level confirmation of this ingredient remains missing. Retain the P5 source-release hold and require independent native changed-owner/source review; the concrete alias proposal does not establish unpublished source context.",
+    "owner_records": [
+      {
+        "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+        "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121"
+      }
+    ],
+    "issue_refs": [],
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "shard_index": 75,
+    "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed.",
+    "integration_proposal_id": "A-P-CALCIUM-D"
+  },
+  "payloads_changed": false
+}

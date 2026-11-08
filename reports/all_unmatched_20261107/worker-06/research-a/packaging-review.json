@@ -1,0 +1,86 @@
+{
+  "reviewed_at": "2026-11-08T05:53:54.487100+00:00",
+  "reviewer": "/root/research_a",
+  "scope": "Read-only packaging/script review; no rerun or full188 scientific reassessment; no frozenA or B review bytes changed",
+  "input_script": {
+    "path": ".temp/all-unmatched-worker-06/native_review.py",
+    "sha256": "ad758735a6382d8a6039c149989fbfa983cb7b5a49cd22abd14d7354152cc62d"
+  },
+  "contract_inputs": [
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": "docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7"
+    },
+    {
+      "path": "schema/record_review.yaml",
+      "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb"
+    },
+    {
+      "path": "conf/record_review.yaml",
+      "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e"
+    }
+  ],
+  "assembled_inputs_at_inspection": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-06/decisions.json",
+      "sha256": "b0608a326a1b5a2df879f34eb33db23d377d69df10055e0f7cb0366b52c703b0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-06/evidence.json",
+      "sha256": "ebd0e077a9524a80d16774faed781641c8917ef187f054dd9ed5fe19b30df89c"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-06/proposals.json",
+      "sha256": "7a09515699a3dbd52f8025f4c37b27c308e963abe2d3a5912ce4dc2f0568f5de"
+    }
+  ],
+  "verdict": "changes_required_before_final_generation",
+  "findings": [
+    {
+      "id": "PKG-01",
+      "severity": "major",
+      "status": "requires_correction_before_final_generation",
+      "location": ".temp/all-unmatched-worker-06/native_review.py:40,55",
+      "finding": "Passed status, exit_code0, full/completed coverage and counts are asserted in generated prose without reading/asserting the final execution results or final payload/review bindings. Merely hashing a report proves its bytes, not that its checks passed or match the final proposals.",
+      "recommendation": "Before emitting completed synthesis, require188 exact cases, unique final proposal paths, final structural audit success, actual strict-validator exit and zeroerrors for the exact final payload manifest, invariants success, and complete scientific-review bindings for every final payload. Preserve actual command/exit receipts; add their files and agent-scopes/review captures to inspect inputs. Failure or an unavailable required check must stop generation or produce a partial/blocked review.",
+      "observed_state": "At inspection the final structural-audit, invariants and integration-review files were absent, as expected while the lastC pair was pending. Existing schemaTSV contained only its header. Current assembled fragments had188 cases and98 proposals; these are a prefinal observation, not a final acceptance."
+    },
+    {
+      "id": "PKG-02",
+      "severity": "major",
+      "status": "requires_correction_before_final_generation",
+      "location": ".temp/all-unmatched-worker-06/native_review.py:51-53",
+      "finding": "Proposal assessments cite their author evidence plus schema and integration review but omit associated cases independent scientific-review evidence. All98 currently assembled proposal evidence lists lack IR-* entries. N-INTEGRATION expressly does not replace A review of B-authored science.",
+      "recommendation": "Union independent_review.evidence_ids from every associated case into each proposal assessment, and verify the referenced scientific review actually binds that proposal final afterhash. Keep cross-case applicability review separate from exactpayload author-review independence. The team-level self_review declaration should remain."
+    },
+    {
+      "id": "PKG-03",
+      "severity": "minor",
+      "status": "wording_recommendation",
+      "location": ".temp/all-unmatched-worker-06/native_review.py:55",
+      "finding": "Every case has a primary-evidence assessment can be read as claiming successful direct primary coverage for every occurrence, including documented provider failures or metadata-only recipes.",
+      "recommendation": "Use every frozen case has a source-bound assessment and separate skeptical review, including explicit primary-access and source-version gaps. Completed assessment concerns the bounded review work, not primary retrieval success, resolved identity, or release approval."
+    },
+    {
+      "id": "PKG-04",
+      "severity": "minor",
+      "status": "wording_recommendation",
+      "location": ".temp/all-unmatched-worker-06/native_review.py:47-50",
+      "finding": "Every unresolved/malformed case becomes a confirmed major identity finding by template. A documented access or specification gap is confirmed as a limitation, but it does not confirm that the ingredient identity itself is erroneous.",
+      "recommendation": "Make the certainty subject explicit as the observed source-evidence gap, or use provisional where the scientific defect remains unproven. Reserve confirmed identity-error wording for demonstrated contradictions. Do not erase the authored case-specific limitation with generic severity/certainty prose."
+    }
+  ],
+  "positive_assessments": [
+    "Team-authored synthesis correctly declares independence=self_review and names the distinct author/reviewer chain.",
+    "needs_curation, explicit inherited-owner exclusions and no-release limitations are appropriate; completed assessment need not mean every identity resolved.",
+    "Original external access timestamps are retained; missing timestamps are explicitly labeled local inspection rather than fabricated retrieval.",
+    "Failed/negative searches are context_only with bounded search_scope and no global-absence claim.",
+    "Current evidence/proposal tokens, kind mappings, issue-string shape, target/assessment fields and enum values are compatible with the native schema on read-only inspection. Full native validation remains required after final generation."
+  ],
+  "no_release_approval": true,
+  "no_maintained_changes": true
+}

@@ -1,0 +1,9 @@
+Research-a independently reviewed B cases47–93, all original frozen occurrences, linked captured evidence and all18 exact proposed payloads. Four finding groups from review-b-v1 are resolved in review-b-v2 after checking the revised bytes. The source review is complete with explicit limitations, not whole-record publication approval. Current case-input, evidence and payload hashes are bound in review-b-v2.json. Shared C aliases/formulation were additionally checked only for the changed shared-owner bytes; this does not claim full review of C cases.
+
+review-b-v3.json supersedes v2 after independently verifying14 agent-provenance enum corrections. Exactly one evidence_type field changed in each stock YAML; all scientific contents and four existing-owner payloads remain byte-bound to the prior review.
+
+review-b-v4.json supersedes v3:47 cases and21 exact payloads. Three new occurrence-scoped stocks (NBRC1226, NBRC392, JCM1435) were independently checked against full frozen scopes, primary tables, literal hydrates, pH/volume instructions and source-family distinctions. Prior18 payloads are unchanged. NBRC335 H3BO4 and JCM1465 H3BO2 remain separate unresolved occurrences.
+
+review-b-v5.json supersedes v4:47cases and23 exactpayloads. The RM three-vitamin stock and literal5%ATCC1612 carbonate stock were independently checked against primary narrative/table orPDF, frozen occurrence scope and final native schema. Prior21 payloads remain unchanged.
+
+review-b-v6.json is final:47cases,25 exactpayloads. The two product proposals were checked against primary recipe, supplier/source continuity and baseline owner where applicable. Prior23 exactpayloads are unchanged; B75 metadata now acknowledges the concrete shared alias while preserving its liveP5 ingredient-table gap. This is independent source review with limitations, not publication approval.

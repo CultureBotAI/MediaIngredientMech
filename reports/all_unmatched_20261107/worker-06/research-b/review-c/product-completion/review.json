@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex /root/research_b",
+  "author_reviewed": "Codex /root/research_c",
+  "reviewed_at": "2026-11-08T05:40:11.782344+00:00",
+  "status": "complete_with_limitations",
+  "input_hashes": {
+    "decisions.json": "650a00eaec4efd755556cb1740b87bb1a091c578e0fd4e86fe85cb3f35220a69",
+    "evidence.json": "edbea1f1f34033ebb4aa75f4c140a1f203c1f3d217770812a5e7547c03955acd",
+    "proposals.json": "645cdb6933c5410477f075fc7012d3032e3e1bd9e24d9ed44a8dd488451c468b",
+    "product-completion-review.json": "f7dc73ca1550980535d3dd6f5d7330ff3109d637f45a951c479e02e205fa88e3"
+  },
+  "independence": "B did not author either C payload. B directly inspected complete captured JCM1389, JCM896, TOGO2179/2578 definitions and the PMC2267510 methods/title; source-frozen occurrence hashes and exact afterbytes checked.",
+  "scope": {
+    "new_preparation_payloads": 2,
+    "case_indices": [
+      94,
+      97,
+      127
+    ],
+    "prior23_C_payloads_unchanged": [
+      "C-P-NZAMINE-A",
+      "C-P-SULFUR",
+      "C-P-ORNITHINE-HCL",
+      "C-P-YEAST-EXTRACT",
+      "C-P-JCM187",
+      "C-P-JCM151",
+      "C-P-JCM284",
+      "C-P-JCM197",
+      "C-P-ALGINIC-ACID",
+      "C-P-JCM899",
+      "C-P-JCM1355",
+      "C-P-JCM1079",
+      "C-P-JCM284-MINERALS",
+      "C-P-TOGO2809-TICL3-20",
+      "C-P-JCM1375-1435-825-GLUCOSE10",
+      "C-P-TOGO2231-CARBONATE4",
+      "C-P-TOGO2790-GLUCOSE20",
+      "C-P-JCM1435-YEAST10",
+      "C-P-TOGO2568-GLUCOSE10",
+      "C-P-JCM1009-GLUCOSE20",
+      "C-P-NBRC1356-TRACE",
+      "C-P-NBRC1169-TRACE",
+      "C-P-NBRC857-936-TRACE"
+    ]
+  },
+  "findings": [
+    {
+      "id": "C-PRODUCT-01",
+      "status": "resolved",
+      "finding": "Process-defined culture supernatant was deferred merely because its bulk chemical composition is undefined.",
+      "resolution": "Source-specific UNDEFINED_MIXTURE now preserves producer strain, medium, separation, gas/autoclave/storage and receiving dose without inventing chemical components."
+    },
+    {
+      "id": "C-PRODUCT-02",
+      "status": "resolved",
+      "finding": "Earlier C94/C127 narratives incorrectly called PMC2267510 a Borrelia paper; the captured article is an insect-cell yeastolate-fractionation study.",
+      "resolution": "Final case rationales and payload identify the correct paper and use only the directly relevant product-purchase/method facts. The paper is not evidence for a Borrelia-growth claim or intrinsic ultrafiltration of every TC product."
+    },
+    {
+      "id": "C-PRODUCT-03",
+      "status": "resolved",
+      "finding": "ExactBD255772 must not be inferred for JCM896 merely from shared tradefamily wording.",
+      "resolution": "New owner and case scope preserve family-level support and explicitly limit catalogue evidence to the numbered source contexts/paper. No lot or completecomposition equivalence is asserted."
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "C-P-JCM1389-ACC8-SUPERNATANT",
+      "case_indices": [
+        97
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1389_acc8_conditioned_supernatant.yaml",
+        "sha256": "c44e9a25cad3c4044accc727614286b09c61abb0b418b5662adbe0c2cffdf2fe"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "Primary JCM1389 explicitly defines grown Acc8 (=JCM39386) culture in JCM1388, example10000xg10min centrifugation, supernatant autoclaving underN2CO2(80:20), storage underN2 and400ml receiving addition. All process boundaries are retained; the stock is not assigned the organism taxon or an invented metabolite composition. Unknown culture duration/biomass are stated as limitations. UNDEFINED_MIXTURE with source-specific registry identity is appropriate.",
+      "source_case_scope": {
+        "97": [
+          "CM_OCC:faf8b62b136bd1e0597373322e020f2376eae148c36ab37b1d47d76011a16331"
+        ]
+      },
+      "scientific_release_approval": false
+    },
+    {
+      "proposal_id": "C-P-BD-DIFCO-TC-YEASTOLATE",
+      "case_indices": [
+        94,
+        127
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/bd_difco_tc_yeastolate.yaml",
+        "sha256": "1e9c33c66a374690972c836c63b40e5d132cc8a8e2516cf26e48a0e1b3fe30a2"
+      },
+      "status": "complete_with_limitations",
+      "skeptical_assessment": "JCM896 names weighed1gBD-DifcoTCYeastolate but no catalogue/lot; TOGO2179/2578 name BD255772 within10%/2%solution labels, and frozen source components preserve the inner product scope. The actual PMC2267510 insect-cell study explicitly purchases DifcoTCYeastolate255772 and then dissolves/ultrafilters it using10kD membrane. The product is distinct from those later fractions, genericyeastextract, historical5577-15proteose product and the complete2%/10%stocks. The owner is deliberately product-family-scoped; exactcatalogue is not retroactively assigned toJCM896 and no globalrawsynonyms/lot-invariance/composition claims are created.",
+      "source_case_scope": {
+        "94": [
+          "CM_OCC:00b81e7fcaa705e57fbfa60f8d5a83acc3ad74f796545a72253b977dc59a07de",
+          "CM_OCC:b84f41e06222d897fdd5fb9b693bf755205b3fcd3dce8d024e38d6529109f777"
+        ],
+        "127": [
+          "CM_OCC:47960e058905171c0af1648012ac3c2df423a976c7cf4ef497daba007819d9b0",
+          "CM_OCC:dec851dd22227cd4c946ce003f19ea0fe78859f91fb73a1ce0c4679f3ae2eeb9"
+        ]
+      },
+      "scientific_release_approval": false
+    }
+  ],
+  "source_hashes": {
+    "C-E-97-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml",
+      "sha256": "ba044fd2cbe2db63c99561c786b3a8cd58993e51fc4d397e046447500751f46b"
+    },
+    "C-E-jcm-1389": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-1389.txt",
+      "sha256": "fbfe2b0ff18fc42c48e7e0455193e48bad1e7048cbcea21fa5301cf4849ff30d"
+    },
+    "C-E-94-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M937_Modified_BSK_Medium.yaml",
+      "sha256": "bdf4eebf07d22ecde191a4a359433415bab7b4b2612315b8dc8798ad0638811c"
+    },
+    "C-E-94-SOURCE-2": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_bsk_medium.yaml",
+      "sha256": "9be116c770107a7623d83de3208a6ecaf5c5fb72bc6e62011247d90e1359ceeb"
+    },
+    "C-E-jcm-896": {
+      "root": "artifact",
+      "path": "research-c/captures/jcm-896.txt",
+      "sha256": "c6e814a8bff1580ddd42179b7d401a204ae19469786fdafd140408d1522f03c8"
+    },
+    "C-E-tc-yeastolate-paper": {
+      "root": "artifact",
+      "path": "research-c/captures/tc-yeastolate-paper.txt",
+      "sha256": "82aee8b3e19386c00732562b9553fa7c65df43cdc74947d4861a1482700996cd"
+    },
+    "C-E-127-SOURCE-1": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/spiroplasma_medium.yaml",
+      "sha256": "5a7160dc1f0437d6f75441bbc022ac3917bf7c40d357e6d543932ef57c85bc8d"
+    },
+    "C-E-127-SOURCE-2": {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/ureaplasma_medium_special_modified_formulation.yaml",
+      "sha256": "2321073cd406795dbabcc4d8e3a907ca78e5c12fe5d593bca18d687c7f3b6323"
+    },
+    "C-E-togo-M2179": {
+      "root": "artifact",
+      "path": "research-c/captures/togo-M2179.txt",
+      "sha256": "b363b8424f7d06e68e276045237feeb4dfb89065f88370f5f6c17ae706e58d1f"
+    },
+    "C-E-togo-M2578": {
+      "root": "artifact",
+      "path": "research-c/captures/togo-M2578.txt",
+      "sha256": "338404e0a53706393f5e37a882b4c66001800a343ab21515fdc28691b6e0f684"
+    }
+  },
+  "scientific_release_approval": false,
+  "limitations": [
+    "Catalogue/lot invariance and full chemical composition remain unasserted; no stock-to-product or taxon exact mapping is approved.",
+    "Native maintained-owner review and publication gates remain separate."
+  ]
+}

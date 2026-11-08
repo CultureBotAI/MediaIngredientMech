@@ -1,0 +1,93 @@
+identifier: kgmicrobe.ingredient:nbrc_1257_1321_trace_element_mixture
+preferred_term: NBRC 1257/1321 and JCM 439 trace element mixture
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1257_1321_trace_element_mixture
+  ontology_label: NBRC 1257/1321 and JCM 439 trace element mixture
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+    notes: Source-defined preparation with retained formulation boundary; registry identity denotes the
+      whole stock, not any component.
+components:
+- component_name: HCl (25%; 7.7 M)
+  reference_scope: UNMAPPED
+  concentration_value: '12.5'
+  concentration_unit: ML
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2100'
+  concentration_unit: MG
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '30'
+  concentration_unit: MG
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: MG
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '190'
+  concentration_unit: MG
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24'
+  concentration_unit: MG
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: MG
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '144'
+  concentration_unit: MG
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '36'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '987'
+  concentration_unit: ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+    source_record: NBRC 1257/1321 trace element mixture
+    notes: Verbatim constituent names and source batch quantities; water is a preparation input. Child
+      reference_scope UNMAPPED means no exact child identifier was independently established.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=439
+    source_record: Trace element solution
+    notes: 'All listed constituents and amounts match NBRC1257/1321: FeSO4·7H2O2.1g equals2100mg; HCl25%12.5ml
+      andwater987ml retained asbatchinputs. No extra constituent from the receiving medium is included.'
+  notes: 'NBRC1257 and1321 print identical stock inputs; autoclave. Amounts are source batch inputs, not
+    calculated final g/L: the source lists12.5 ml acid plus987 ml water without a final-volume make-up
+    statement.'
+notes: 'NBRC1257 and1321 print identical stock inputs; autoclave. Amounts are source batch inputs, not
+  calculated final g/L: the source lists12.5 ml acid plus987 ml water without a final-volume make-up statement.
+  Raw source labels retained without global resolving aliases: ["Trace element mixture*"]. Occurrence-specific
+  linkage is required; identical generic words in other recipes do not imply the same formulation. Independently
+  compared JCM439 has the identical complete ingredient list and batch quantities. The source-qualified
+  numbered439 alias and four receiving occurrences may join this formulation. Source title expanded without
+  changing the stable proposed registry identifier.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary recipe evidence;
+    no exact mapping to a solute or generic stock. Include independently compared JCM439 exact formulation
+    and numbered439 source alias; coordinator must attach C134 backlinks and primary evidence.
+  llm_assisted: true
+  new_status: MAPPED
+synonyms:
+- synonym_text: Trace element solution (see Medium No. 439 )
+  synonym_type: RAW_TEXT
+  source: JCM439 primary stock reference; CultureMech case CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938

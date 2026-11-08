@@ -1,0 +1,2206 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_c",
+  "independent_of_author": "/root",
+  "reviewed_at": "2026-11-08T05:45:50.666679+00:00",
+  "scope": "Independent completion delta: current43 root KG decisions and16root proposals, source indices145:188, plus3exact shared proposal applicability checks; prior complete scientific review retained for unchanged claims.",
+  "input_hashes": {
+    "decisions.json": "8210af72f3ec9e606bedfa7cdbf74dca7aad4ef64847498ff4b2e6100f41c5ed",
+    "evidence.json": "64fe3cfeda80dffe06f8d4114dc16051c8f97124656e0f13b7f0ed0cba2f6de9",
+    "proposals.json": "0cf3f25a19502a1de6db277cf603f229ca42a494ba2b31456c87b34ea03aae68"
+  },
+  "prior_review_sha256": "567073d83f638f73efd4df1e6a7d52de9d4e72fca1db250d49bf1ddd9767caa4",
+  "prior_yeast_addendum_sha256": "3e385754a8694effa1846c6543832a2469732e2b7e69514a2f82308b37353d67",
+  "status": "complete",
+  "open_findings": 0,
+  "findings": [
+    {
+      "id": "ROOT-DELTA-CREATION-HISTORY",
+      "status": "resolved",
+      "finding": "Five new-owner events incorrectly asserted previous_status MAPPED although no owner existed; author removed previous_status. Existing PYGS MAPPED→MAPPED event correctly retained."
+    },
+    {
+      "id": "ROOT-DELTA-MERCK-STALE-REQUIREMENT",
+      "status": "resolved",
+      "finding": "Root183 still requested manufacturer evidence despite completed A product proposal; author updated fulfilled requirement and exact shared evidence; integration backlink remains required."
+    },
+    {
+      "id": "ROOT-DELTA-SL12-STALE-ORIGIN",
+      "status": "resolved",
+      "finding": "Root180 applicability still said sourceorigin incomplete after recovery; author now explicitly records recoveredJCM576/4409/4411 and retains only correct dose/generalization constraints."
+    },
+    {
+      "id": "ROOT-DELTA-GYP-CLOSURE",
+      "status": "resolved",
+      "finding": "JCM68 requires pH6.8 adjustment but names no titrant. Author changed completeness COMPLETE to UNKNOWN and precise missing requirement; the nine listed inputs and justified source-defined registry identity are unchanged."
+    }
+  ],
+  "cases": [
+    {
+      "index": 145,
+      "case_id": "KG_CASE:04f810be4e371e85c9b335d9d5d23eeb4cfcf63a799f3939b6de8277840696e8",
+      "case_input_sha256": "a47994d5c24020e06fe98b6ea0f183b9fbb7d68a8375e87bde3bac9a574f1d80",
+      "reviewed_decision_sha256": "a7fa2f154c479212761ddead7b765d60f5b01a468d0e00a231d3feecd5bd4918",
+      "changed_since_first_review": false,
+      "assessment": "Checked raw hemicalcium name, half-calcium formula and CAS137-08-6 against stereospecific parent evidence. Half-formula notation does not imply DL; active-owner alias defects remain held.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 146,
+      "case_id": "KG_CASE:0d41efa23c100f1398a95c032eff1013b97a9d78ca7b19fa887802de490379cf",
+      "case_input_sha256": "11888745b4717722f901b8f9afc1c0e6e478b437051e298d365198bddaf05163",
+      "reviewed_decision_sha256": "adaf81b1bb0fc341b511916af14a792ef21fc0eb1b4d4920ed754d98ae839b66",
+      "changed_since_first_review": true,
+      "assessment": "Read MediaDive1566 entire recipe and source recipe_order22: alpha-D-glucose monohydrate,10% inH2O,1ml addition from sterile stock. New source-defined stock retains unspecified percentage basis and no persistent aqueous alpha-anomer purity. NCIT solid proposal unchanged and independently reviewed.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 147,
+      "case_id": "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289",
+      "case_input_sha256": "e50586a07e7d9b86f5c11aa6088ebb9635edb1e8b78ad8944803472683230af3",
+      "reviewed_decision_sha256": "3cbd082a245fc585db5db227739ae03adb1be4ed58b9af14209cbf53720093ce",
+      "changed_since_first_review": false,
+      "assessment": "Compared every JCM243 constituent and amount with payload. Twelve table inputs plus the explicitly stated KOH adjustment are retained;200ml dissolving water is inside the final1L and is not double-counted. Generic Trace minerals remains nonresolving context.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 148,
+      "case_id": "KG_CASE:114f6e0d8269e32cce44dcaef1d9ce718e0c02b8537f0548f0e4a6ddc2356209",
+      "case_input_sha256": "9486d8fbbfe84ee31f0a1b53d8f382d6196c5d77e984fe1b83287ae13c100c21",
+      "reviewed_decision_sha256": "bf22aa5088978db9354f3e704eb1f6a9e851550f3ad9112479b53fff983b827a",
+      "changed_since_first_review": false,
+      "assessment": "Challenged original minerals-versus-vitamins ambiguity: raw word minerals is already specific. Revised decision correctly makes the remaining requirement collection/origin confirmation for the truncated197 reference, and excludes vitamin substitution.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 149,
+      "case_id": "KG_CASE:12da08e4bdcef8551ac7c8ab6aef8fa3c4e5761444706aa3af949952c3288ff0",
+      "case_input_sha256": "0a15f56cee3e8b175bd217562258832968c16a4e92fdf3a3144d82aaf105d77a",
+      "reviewed_decision_sha256": "7ea975e7b16c3692d3f71d1e640b1ca3c1523f967cb6ede5c8e511507a836de6",
+      "changed_since_first_review": false,
+      "assessment": "MediaDive144 CAS/formula and CHEBI62965 identify sodium formate. No hydrate or stock transformation is inferred from6g dosing. Existing owner role/synonym concerns remain outside this exact source decision.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 150,
+      "case_id": "KG_CASE:15a35bccce86c7950cf3c599ccbfc826704b60d564abeadac1cd2650e1936106",
+      "case_input_sha256": "e0da88d5ec95c1a0df58ea9783c5a63931c2499cd9f455ae4ade061f17db3361",
+      "reviewed_decision_sha256": "0fc94498e862ff82566eb092c9f5b3f79bbfab1e7f0e22b8b9d78e924372dc65",
+      "changed_since_first_review": false,
+      "assessment": "The332microgram Mn(II)EDTA occurrence does not specify counterion, protonation or water. Zero-prefixed CAS needs product verification; no EDTA-only or elemental manganese identity is proposed.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 151,
+      "case_id": "KG_CASE:24431e8d578feda8c12e6fcea6f9e8f9dc31bc9728dccf1d69da4752a0ff9694",
+      "case_input_sha256": "7bb4cfd18aea02bbd3b1b0cc5d160ddd41005e29bd010f5ba8729971c652fee4",
+      "reviewed_decision_sha256": "06814bb8294365ee01f71d22ca22285e19e66906c5d9d44c4fe3bd3c90e1575d",
+      "changed_since_first_review": false,
+      "assessment": "Read primary1986 page652 distinguishing A/B/C components and aridicin-to-ardacin naming; read GSRS codes,names,structure with CAS95935-23-2 and C83H86Cl4N8O30. Verified current CHEBI24396 structural glycopeptide class and its24395alternative. CAS-specific component with asymmetric broader-class relation is supported; registry row and changed-owner review remain integration obligations.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 152,
+      "case_id": "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8",
+      "case_input_sha256": "407735ff4f71accffb622ff05777dc2a82f4b6fb7d90b6becf5485b283020ac3",
+      "reviewed_decision_sha256": "6fbbd5f7d15a08e8e4d38850895321e6ae3170bed985a06662724ddca9688c52",
+      "changed_since_first_review": false,
+      "assessment": "JCM187 stock matches the C primary review: seven trace salts and water, excluding separately prepared FeCl2. Crosslink the single C payload; no whole-stock identity to NCIT trace-element class is approved.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 153,
+      "case_id": "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f",
+      "case_input_sha256": "f1969ab47cd17483f82c1ef2f7287723072cd211f7e1731d64fc460b0cb737f4",
+      "reviewed_decision_sha256": "32fc4fcfb6280154dd2c670cc5818655caa6979e0d197213c75e41aff409504f",
+      "changed_since_first_review": false,
+      "assessment": "Compared JCM1158 twelve listed inputs against payload and challenged applicability to other modified stocks. Revised notes explicitly compare JCM1353 sodium-phosphate-buffered197 stock and exclude equivalence; baseline owner source2017 is1158. KH2PO4 and DL-calcium qualifier are retained.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 154,
+      "case_id": "KG_CASE:2dba55d82767b4d947fc18b30c2c2a0d669b4b58df3aa04f43ba5a924be92bd1",
+      "case_input_sha256": "0ba899b639e18cfc9076d24749ca34f1e708a94aac572876b8cd3ad40069d3f9",
+      "reviewed_decision_sha256": "30dd8a706fd3f056e8c42572353fc92b60cabb04c0553663af26841c2f4ffb23",
+      "changed_since_first_review": false,
+      "assessment": "Confirmed live922 name tetrahydrate conflicts with anhydrous CAS/formula/mass and calculated molarity. Neither arithmetic nor existing local tetrahydrate naming proves supplied bottle; unresolved status is justified.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 155,
+      "case_id": "KG_CASE:33d6a088f09e00ec7da0b3224cb4ea75edc99b2f7e4a6bce8c5a0cb267417a2b",
+      "case_input_sha256": "e171faa421ee85beefb11836d9113c376e18f5590eaeee9ddf2ea58d59ecdfeb",
+      "reviewed_decision_sha256": "17403c90f5a075c3d5efac16360ba0bb820249197dc4ae50e3a4858b3814591e",
+      "changed_since_first_review": false,
+      "assessment": "Confirmed ingredient69 expressly says anhydrous and agrees with CAS497-19-8/CHEBI29377. Separate sodium-carbonate solution owner cannot receive dry-solute identity; cross-owner hold remains.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 156,
+      "case_id": "KG_CASE:3bef9a6f0e3901c3db7a69b2c6cb9cb9c040316056f9fcde773445471e50ca35",
+      "case_input_sha256": "39280ee21514c9a069819c0c46452330af9234e0e1da87712306509f3f1c79ef",
+      "reviewed_decision_sha256": "9f33f3f613f8636a4611628f0e7ebf529d78836e3f4f63857a90bada58d0fa8c",
+      "changed_since_first_review": false,
+      "assessment": "Raw parenthesized Tris base and CAS77-86-1 are clear. Transformed unparenthesized label is not a new chemical or a Tris-HCl formulation. Existing correct raw synonym makes no-change appropriate.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 157,
+      "case_id": "KG_CASE:3d023d889bf993a140c96aff582ae41242a085e57d42cf59c7d4d2a4a74ad0fd",
+      "case_input_sha256": "def646d190464e827c18bc7d5c120fc98f0e863f04d66036eab0bec410a3d23a",
+      "reviewed_decision_sha256": "81d07701c1c1b9034a6e486766998adc716607fb79f65dd965bba6a2d195f226",
+      "changed_since_first_review": false,
+      "assessment": "The historicalTC/DIFCO5577-15 attribute is retained. Proteose yeastolate sits beside distinct peptone and tryptone in the source, so generic extract or modern255772 equivalence is not established.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 158,
+      "case_id": "KG_CASE:3d3a9c7f2200b092b4d01b11dbaa420116e932bd088b6b8747413cde39907e56",
+      "case_input_sha256": "958467a76af771b78b32d2814db6224fe3d5f973bff73d9b5d526d445560a4e9",
+      "reviewed_decision_sha256": "024b13bd184d4099a24422e2f3eb22d627b4d3dd85908f817244558f5e7ae657",
+      "changed_since_first_review": false,
+      "assessment": "MediaDive1463 formula explicitly contains xH2O and CAS19423-77-9. The string x H2O is not evidence for one water. Unknown hydration remains source-specific rather than being coerced to a common hexahydrate.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 159,
+      "case_id": "KG_CASE:3ee3d2e1d667b8255a300de9c5480b36a398916e2295921e5954f1daba39045e",
+      "case_input_sha256": "47aacc8721497fe4134231b0ae842dd03cb1c16b5cc98672be7f796fb58d72a3",
+      "reviewed_decision_sha256": "514d75e1def18798a7fc6243a9130c93756c6eec7ff7c6b0ca6f9bbf8f0eee3d",
+      "changed_since_first_review": false,
+      "assessment": "N-Z-Case with Wako provenance supports a casein hydrolysate product, not purified casein or all N-Z-Amine grades. Product-code/digestion requirement is specific and current source evidence does not resolve it.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 160,
+      "case_id": "KG_CASE:42b67ab7ee8fe3fd7657f524ac700e319f86ccfa93f117bcba558e88072728d0",
+      "case_input_sha256": "6e343148f4c96933a3ef0d0fc46892c5cc80a8c68a26db8a217501cec5570b2f",
+      "reviewed_decision_sha256": "c2248123463ed908d9265a22caa4018ca7aac91e47a80990c166024633360687",
+      "changed_since_first_review": false,
+      "assessment": "MediaDive687 Columbia base explicitly includes Bacto Bitone peptone and other separate digest ingredients. Catalog-history gap is real; the apparent odd spelling cannot alone justify typo correction or a peptone merge.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 161,
+      "case_id": "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f",
+      "case_input_sha256": "e3552f28e90115fec608420c3c978f0e1e731798d1a1d64154bab4ebdd9c4534",
+      "reviewed_decision_sha256": "65c1e0d5c4aeedc79a7c46f311c39b92b412c548390d8f15bba97eddc6b9879f",
+      "changed_since_first_review": false,
+      "assessment": "Ingredient1507 lacks omission qualifiers; quantities alone cannot select among YNB complete/without-amino-acids/without-ammonium-sulfate formulations. Decision preserves each source context and product ambiguity.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 162,
+      "case_id": "KG_CASE:4534cb257a03f4ae3868ce60bede8cae33a7745592fe0ffaab874e0fab74bb27",
+      "case_input_sha256": "5c1f43970dfec31e8bbb2d4873b018473ca8d1aad0a8628eb9e213888350135f",
+      "reviewed_decision_sha256": "3e0090290ecc4e037d9f90c5e65a32ea22c35dd75b19f32c21e7ddf722fc4edb",
+      "changed_since_first_review": true,
+      "assessment": "Read all three EuropePMC core abstracts, matched exact species/PMIDs10555335,10826793,10758868 to frozen4104/4109/8883. Each says peptone/yeast extract/glucose/starch broth. Added PUBLICATION evidence supports only those context-specific expansions, not quantities, consumption of constituents or removal of three material holds. Existing component CURIEs/registry tuple are untouched.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 163,
+      "case_id": "KG_CASE:4843776b2ffa42fc1a4698a4581f92a4639b0a281670d505d8f73b2e43551dea",
+      "case_input_sha256": "c531b0b6377ae06b661d043555915b62751eede36837fba32de2aff1282588e7",
+      "reviewed_decision_sha256": "8c3d138825ae5dbe0a08fe0c778d0b70032bdc2f455c9841b4e6c408e00af7c5",
+      "changed_since_first_review": false,
+      "assessment": "LPSN establishes taxonomic use of canarius only; it does not identify a chemical. The graph node lacks a source assertion sentence, so unresolved category/chemical identity is warranted.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 164,
+      "case_id": "KG_CASE:50834dd9dce08101958d5a14719e1908e57bc56bbda6cf39983a9c903462ca99",
+      "case_input_sha256": "20b9559c9567f27ba336e5c9beefa256aaf08d05cf6c5169b8b9008d8b45732c",
+      "reviewed_decision_sha256": "e3e4b25bc347cc848d0fcdaefa36c0ca5d999796697dcc65590dffb0a47e6e68",
+      "changed_since_first_review": false,
+      "assessment": "The GTDB-projected canarius node is a distinct provenance case, not independent corroboration of a chemical. Keeping separate accounting and requiring the original observation avoids circular support.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 165,
+      "case_id": "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470",
+      "case_input_sha256": "fbac26ea1b0950392fc2e2845f322b3b4dcfd498b0bc62da74360f7af8358cd9",
+      "reviewed_decision_sha256": "7008893ae5109c46deb13f301d87dbcb92e9a1276dd564010cd1cc3bdd209dcf",
+      "changed_since_first_review": false,
+      "assessment": "JCM284 vitamin formulation is distinct from197 and from284mineral stock. C’s exact vitamin payload is the appropriate proposed shared owner; no global Trace vitamins alias follows.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 166,
+      "case_id": "KG_CASE:5d2b66b49c3347a03b3fbf848843da8fcea89a6d3fd0df5d10a7d6e8de00fbfd",
+      "case_input_sha256": "a980aedd748425d91c740e660096a4cb998c83b16acc0ab339ff486a77748da1",
+      "reviewed_decision_sha256": "6e25e6c194ffa83b09d914f90ba4f313834d6dc2803a4cc379853384c4d63993",
+      "changed_since_first_review": false,
+      "assessment": "Confirmed rawD-(+)qualifier and CAS137-08-6. The source CHEBI1687714 field is not blindly accepted. Active D-calcium owner correction must retain rejected DL/capsaicin aliases and independent owner hold.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 167,
+      "case_id": "KG_CASE:5ea3a1e7e21d9ad154af9e0989aef7bf402cc96bf6ca13337bde7594e08d466a",
+      "case_input_sha256": "db0cd07847096ba013156c304da9d7b6e882c325e4ff370a8e4a9b541e5e4b87",
+      "reviewed_decision_sha256": "789fb5f147f05475d943d38aba64eceb2c641c5b804e572c6378875991fc9f4b",
+      "changed_since_first_review": true,
+      "assessment": "Verified Wako+MediaDive1462 CAS13477-89-9/NdCl3.6H2O/358.69 and official OLS CHEBI37280 current label neodymium molecular entity. Local name/CAS and live exact-CAS bounded searches have no exact hydrate result. CAS primary plus asymmetric broader parent is supported; not elemental Nd, anhydrous chloride or an exact parent mapping. Mandatory registry row and mapped-surface migration remain coordinator work.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 168,
+      "case_id": "KG_CASE:5fd7281bbd71818c1b346149fa60a116ad2105136e750cb4e01d9c3599861345",
+      "case_input_sha256": "c0a73c678c1cc9302bde73c321c0d98867c44273ca3b6f71de1a1091ba32bade",
+      "reviewed_decision_sha256": "692a38f3d7057a8d4712d2df36a348c69ae2f49312ed0bda6f8915e1a5a8393e",
+      "changed_since_first_review": false,
+      "assessment": "Read DSMZ958 primaryPDF: washed baker yeast paste,wet weight2.5g. New supplied-form note faithfully describes whole cells and does not infer species,strain or soluble extract equivalence.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 169,
+      "case_id": "KG_CASE:6840ee22ba6f48558df69e4dece268d9a8b734ee03e69efbc99aa0f5fd76c07e",
+      "case_input_sha256": "dc00668c23247056faa6dd60c062cdeb53c49603430870b6aa21e855d7a9613e",
+      "reviewed_decision_sha256": "79a82b8e09089dfcc567f37d10fa7240be1fbcfc4ee922acc885fac67dfe4fbf",
+      "changed_since_first_review": false,
+      "assessment": "Dried,milled rye-grass material preserves processing qualifiers. A plant taxon cannot replace the material; species and plant-part/procurement are not supplied by the frozen source.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 170,
+      "case_id": "KG_CASE:71d90c182388cac6c4256bc0a73d43542a593829e9054df50f299479a67ba433",
+      "case_input_sha256": "fa7bb66608ea20de2cca475ffcbae3a7f41aa32e17fdfe993d5cd2c3aa5908c3",
+      "reviewed_decision_sha256": "f5e5568ec327e0c1e0f3ca43bdef8aabbf812fe029660b9bc3041ba6d39d93db",
+      "changed_since_first_review": false,
+      "assessment": "LaCl3·7H2O and CAS10025-84-0 support the heptahydrate, distinct from its100micromolar stock. A’s shared exact-form payload must carry the KG backlink; anhydrous mapping would be unsafe.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 171,
+      "case_id": "KG_CASE:74abfcb6980074e222c98ba850d79f585d74cc05e9c4539e2522b445ea388b9a",
+      "case_input_sha256": "9ced96613204008be116bf48e084863b3666e977fbf022ec15cd573c927221e1",
+      "reviewed_decision_sha256": "577f24caeedb2d96e43efa7f050f09a4c3ba3a2b284c3a0277a50fb22c370d73",
+      "changed_since_first_review": false,
+      "assessment": "Marine-salt product is a multisalts mixture. Without SKU/grade, a current TropicMarin brand page cannot pick Classic or another historical formulation. No NaCl/sea-water equivalence is proposed.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 172,
+      "case_id": "KG_CASE:7578b9b52690ee55dc6927897ee93d1466434fbbf16466139c1c6079552278a0",
+      "case_input_sha256": "9d041901a3f9bbef6775d3988b4d99aa5a7d1f9dd169dac9aa551a8d0870fe5c",
+      "reviewed_decision_sha256": "3e695d9e542ce923a4b52b88a55e5e0a646dae4a6f16382a42e3fbd0a1814fff",
+      "changed_since_first_review": false,
+      "assessment": "Read the primary1970 structure report: Xanthocidin C11H16O5 and a substituted cyclopentanone; checked that payload adds bounded literature evidence only. No2014 derivative activity or unverified external CURIE is transferred.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 173,
+      "case_id": "KG_CASE:76b7ec57f55a2844dca81522cea506fb5fe462bb33e816d65567073dd433cde5",
+      "case_input_sha256": "8f7d7762797420dcbb92a255e583d488877e6fdca3c32e8865931f7c9430a7f7",
+      "reviewed_decision_sha256": "fad3191fd48f2973b009cb435b5076e2bb489535a5dbd55f371493eaf1b710ca",
+      "changed_since_first_review": false,
+      "assessment": "Enzymatic casein-digest CAS describes a material family, not an N-Z-Amine grade. Source variants do not prove TypeA/TypeB identity; retaining the generic owner without promotion is supported.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 174,
+      "case_id": "KG_CASE:9c4ea075537f54044f90a1d22c9946cc1b5128a79fef529f9ffe52b7bc754ab0",
+      "case_input_sha256": "a88cf85f05b034ebd776f00febbf9618603108756388516fbff9affba4a4109f",
+      "reviewed_decision_sha256": "dcd8f2f7fee4fae59ec6ba9c8c7b694006809a0a7e5dd6e97f6548efb243e0ec",
+      "changed_since_first_review": false,
+      "assessment": "Calcium D-pantothenate agrees with CAS137-08-6, while the rejected duplicate owner must stay rejected. Shared active-owner correction is conditional on the separate complete owner review.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 175,
+      "case_id": "KG_CASE:9c792ed382c3a3d541d900d38cb0e79d7a9f631a2b1322cbe6523655dc4cf635",
+      "case_input_sha256": "8f405170d59f73f4073c03ab30e9fc9cb7c24308430a3fd9aa13ebe4a6d47569",
+      "reviewed_decision_sha256": "6a82ab0914b4ccf4353fc53150cc5560381e0e7fcc25cbcf1f6e07b7f5d7f42a",
+      "changed_since_first_review": false,
+      "assessment": "JCM18 source names autolysate rather than intact cells. The database CAS is not independently registry-certified, and soluble-fraction/process scope remains missing. No generic extract merge is supported.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 176,
+      "case_id": "KG_CASE:b538e6e55f8682caccd3202146ccbea3f6508aad1c1b778468a171a1d55b85d3",
+      "case_input_sha256": "f7a31fb7b3a4dace5cc7dee9e8dd893e1b802ff1303abe0aeccf7404f112016d",
+      "reviewed_decision_sha256": "0064acd09271bef678c678b4456cd98064084db65fa3a246a8948fe4baba2756",
+      "changed_since_first_review": true,
+      "assessment": "Compared all six salts plus water in JCM820 original source and payload, including variable MnSO4 hydrate. Separate JCM776 H3BO4 source ambiguity remains precise and does not contaminate820. Generic ingredient1551 does not confer one universal stock composition.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 177,
+      "case_id": "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+      "case_input_sha256": "42fd0c11b00b13b74e4ee36eb1578c1470bb970c729bb38fd5c668ff9cfe3c4b",
+      "reviewed_decision_sha256": "9f1ff6f054eca2cb3d3d567577d6532de023fcf94ad69213db76f79fce11fe81",
+      "changed_since_first_review": false,
+      "assessment": "All84 frozen quarantine rows preserve the distinct solution/recipe assertions and wrongCHEBI1784 historical targets. JCM197 stock evidence supports a source-defined mixture only; none of these holds is removed by the proposed C owner.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 178,
+      "case_id": "KG_CASE:b97d90ed98d42ecd692ff23c9f67ea28e2a0773f1a487db3f973df758c29c755",
+      "case_input_sha256": "622617bd70c32661d573b6bc8f92fed4f5435a68c6c08af8e1e512470af549ae",
+      "reviewed_decision_sha256": "0c8c3645ffe835e2381f0cb0ba7696466487db26c8716b1b3dcc7abcbe31f68e",
+      "changed_since_first_review": false,
+      "assessment": "Live1444 anhydrous CAS/mass contradict the explicit seven-water label. Baseline owner currently preserves its hydrateCAS/formula; historical structural drift is not assumed current. Broad parent relation remains withheld pending supplied-product confirmation.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 179,
+      "case_id": "KG_CASE:bbb947918f786a57d394fe5f8667876ebdc74817e11ad5265b48f71b366b33ce",
+      "case_input_sha256": "273e0b5d089a132b69f267b06811cc4d86d1e7883f32a043f70ed08bc517153c",
+      "reviewed_decision_sha256": "1b441f34b02589c397cf939f7e12dfd3e3db8afdca7e1b18e02daac033356f20",
+      "changed_since_first_review": true,
+      "assessment": "Matched frozen SigmaC7290 attribute and MediaDive1885 to independently opened official Sigma product text: C7290, N-Z-AmineA, powder, enzymatic casein hydrolysate. Capture preserves DE cache age and IT crawled-today metadata; failedcurl is not primary proof. Product-qualified local identity supports this source only; no Sheffield/C0626/EZMix/typeB equivalence or catalogue-wide CAS exact identity.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 180,
+      "case_id": "KG_CASE:bf8ae6e3cdd69df690fee4aed1454faaa1cc89abee05c13c4cc0c7da5169c8bc",
+      "case_input_sha256": "986d66fee28c4890d0a383b4c6e6a3290c270e3a5f02014866badf896f62dd77",
+      "reviewed_decision_sha256": "92bfe0acab1b72afbb692a16594dadee8c3d4b15747a4996e604d435419913ff",
+      "changed_since_first_review": true,
+      "assessment": "Read exact primary JCM576 SL12 table and MediaDiveJ576 containing both SolutionA4409 with ingredient1812 and separate stock4411. All ten inputs and quantities agree with A-P-JCM576-SL12; disodiumEDTA hydration remains unspecified. Source-specific origin is now recovered; source percentage0.9950248756 remains tenfold above1ml/1005ml=0.09950248756%. No genericSL12 or DSMZ998 equivalence is implied.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 181,
+      "case_id": "KG_CASE:cb29f7fb59dac2eabcdc00bcc662aacc3ae4afa83767a9d99e7a2fffa8e2ca27",
+      "case_input_sha256": "8934c85fc35bce3ceac0d2d67ad75c6b03bf7de9a93f46c937e134e48630c147",
+      "reviewed_decision_sha256": "84c41efaea3ee51016dab3ee4044a29586e06f416804043b814b81217b2598bb",
+      "changed_since_first_review": false,
+      "assessment": "Substrate is a selectable slot with glucose/chitin alternatives, not a compound or conjunction of them. The frozen material hold and live701 attribute agree. No alternate is selected without source conditions.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 182,
+      "case_id": "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee",
+      "case_input_sha256": "210ade2c612dbc5f60dc65912b1dbbe4d53b47c1b01ce4039a900b0477a4ae8d",
+      "reviewed_decision_sha256": "f9da38bb58154d03402460669172a7693500907e08c69566422ec7e93870ed48",
+      "changed_since_first_review": false,
+      "assessment": "JCM744 ten-ml reference to151 matches C’s captured mineral-stock definition. It is not the complete151growth medium. C type/component proposal preserves unspecifiedMn hydration and original owner identity.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 183,
+      "case_id": "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e",
+      "case_input_sha256": "d96f289af369b2ff7ef2242843371f79e7b056fc8bfd69c423d34eb712b14fd2",
+      "reviewed_decision_sha256": "81d42538465fb6564cbbad111cf4ed5c233a5983649d7f8ccf08c106ae18e372",
+      "changed_since_first_review": true,
+      "assessment": "Prior missing requirement to verify Merck108339 is fulfilled by A product evidence/proposal. Root corrected the stale blocker, reused exact primary bytes/time and delegates a single A owner payload/backlink; no competing owner is proposed.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 184,
+      "case_id": "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308",
+      "case_input_sha256": "fa3b4a27f35ff99ceb9a3c4cbe53ccfba0f914ca717a4bc8f9456fb65f784cea",
+      "reviewed_decision_sha256": "e86e49c910dc12696c0bfbac1545ee1328066820e7b0b3bf67a0ffbf0032cfe8",
+      "changed_since_first_review": false,
+      "assessment": "Read complete MediaDiveJ209 JSON and recipe_order16 section heading. Six salts plus100mlwater match payload; parent1092ml is not the stock denominator. Source-specific registry proposal avoids asserting generic Salts_solution identity.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 185,
+      "case_id": "KG_CASE:e5708083b9e7bc630bb4751c7f65e633a2288994c266df2f57514a78b99f35f5",
+      "case_input_sha256": "126a60cc9e62b57bb61d226061797f79cdc186b485fc46d4559a4583ca22cb27",
+      "reviewed_decision_sha256": "35fd826429d9d4cd91ddeff0ed47fad5c7ae10ce15bf47a0a8c612d3340d96e7",
+      "changed_since_first_review": true,
+      "assessment": "Re-read full JCM68 primary and MediaDive J68: nine listed inputs and amounts agree, including source NaCl10mg and variable MnSO4 hydration; JCM69 additional50gNaCl stays separate. Exact named medium supports local registry identity. Challenged COMPLETE closure because source says adjustpH6.8 without naming titrant; author corrected UNKNOWN and precise missing requirement. No single-component/taxon mapping is asserted.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 186,
+      "case_id": "KG_CASE:f2d0636c5d67db581b492d12ea17da1e61d670643e82e4d43b7cc62ddb22b9c5",
+      "case_input_sha256": "1c0188cc415e25fa680d1488e6aec7494adbc4e9e6104368a00aa58e8cd597ff",
+      "reviewed_decision_sha256": "9e3e38ad5cc184117593e5c42b27784bcfd544f3aac97ca623b3d59fabb9c174",
+      "changed_since_first_review": false,
+      "assessment": "Read1979 primary comparative study: viridogrisein explicitly equals etamycin and is separated from neoviridogriseinsI–III. Bounded exact synonym evidence is stronger than related-MeSH alone; selective-agent role/publication remain held.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    },
+    {
+      "index": 187,
+      "case_id": "KG_CASE:fa6c89f1dd4918983e2964be8bf7962005239bfca4fe81c84bb3619b5aff135d",
+      "case_input_sha256": "eb1872c8ece1f712a7a840bd88b20d707897b7dcb3defd0bf4968e20ac218f21",
+      "reviewed_decision_sha256": "457313c4c4021e842341314564ef3722a4c811cdf8d51df159f88f051bbb06d5",
+      "changed_since_first_review": true,
+      "assessment": "Read full JCM1167 original low-mass EDTA stock and all13salt amounts+water; compared MediaDiveJ1211 recipe_order17-30 and explicit subsection marker/preparation. Separate citrate stock retains all14tableinputs and unknown pH titrant as UNKNOWN closure; no use of flattened2030ml parent volume or fixed n-hydrate guesses. Separate local identities correct generic897 collision.",
+      "status": "accepted_scoped_decision",
+      "source_holds_preserved": true
+    }
+  ],
+  "proposals": [
+    {
+      "proposal_id": "R-P-ALPHA-GLUCOSE-MONOHYDRATE",
+      "before_sha256": "a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-ALPHA-GLUCOSE-MONOHYDRATE.yaml",
+        "sha256": "a98a1a7ea40b0c08a214eab7a80c3c0838754dd63f12312762ec03556cef546e"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-JCM243-STOCK",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM243-STOCK.yaml",
+        "sha256": "f5e46b2009bd8db8768dc82c4fd6ee5aadbc485e5590570e2fe46326a385de14"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "before_sha256": "4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-MODIFIED-VITAMINS.yaml",
+        "sha256": "ee25e3cc8c5849c63e08d32a5abcc0644e625561168f97651ec2928765de6141"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-NEODYMIUM-FORM",
+      "before_sha256": "f275bd5659798b16a4f9914d8f6df8c15c687fd8c5607485369708f2b3752261",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-NEODYMIUM-FORM.yaml",
+        "sha256": "5c6ff5de70025c48d5f4bd53437490948b35b937efb97043f21cdf269dbf5dc1"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-YEAST-CELL-PASTE",
+      "before_sha256": "48f80a904c853250f65d7a8c6b04e53a8ac5541499197984d5c644e9b76f3c70",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-YEAST-CELL-PASTE.yaml",
+        "sha256": "6f8d7977a6f6f90dd2a648d4258791838eba9a80cd5dc9909c62207d1a5b5352"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-XANTHOCIDIN-EVIDENCE",
+      "before_sha256": "ba7cbc1a0edb478929e8ff71e4714555bf448783cbf779500696755f28007a04",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-XANTHOCIDIN-EVIDENCE.yaml",
+        "sha256": "bec328a4905488a0e19f527a2d3650705f73ab2969f2f7f43157b2321b75e9a2"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-JCM209-STOCK",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM209-STOCK.yaml",
+        "sha256": "05e31d8617dcdbe12c6ecea50a221d0060a7947ab27d9c59de9b7602ef888844"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-GYP-BROTH",
+      "before_sha256": "b3aed94d0043a0e6bdc941d52492f6ff98b5e3e571e75ffa15a9189592e1b026",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-GYP-BROTH.yaml",
+        "sha256": "9930dae6e22d196d00835d0488219af423d4ebea7060961b56f3063e9d85f9f5"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-VIRIDOGRISEIN-EVIDENCE",
+      "before_sha256": "84d07722cb91d161afb8211b2a1cf76bfec8eaa9182b01d12c9e5f85648d8933",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-VIRIDOGRISEIN-EVIDENCE.yaml",
+        "sha256": "f4418a0283115bb427d9b173c0dbcdd5687405414116dfeab5749cc01c42eb50"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-ARDACIN-C",
+      "before_sha256": "5260b98fc1b241df143125e03a7c6b86608ee52342740d617ebb3c1789c0aa1e",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-ARDACIN-C.yaml",
+        "sha256": "8f3757ff740aadac05e150a36f1d63e4ee4134760bbddaaadf5d0a0a20bd2f7d"
+      },
+      "delta_from_first_review": false,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-JCM1167-TRACE-STOCK",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM1167-TRACE-STOCK.yaml",
+        "sha256": "4aefaa20b1d11821ba851f10e2f8ff69d433b4002247bd142554b738545335fc"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-JCM1211-TRACE-STOCK",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM1211-TRACE-STOCK.yaml",
+        "sha256": "bd8a81a1f9eaae2951649c4faefc8751947dd5fdf29636102ff56b3105d1d22c"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-JCM820-TRACE-STOCK",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM820-TRACE-STOCK.yaml",
+        "sha256": "6ed2c05e945b0557b18e6efb93ff7c0a7e0ba90f5c9dafa0194922beb9c6b8d7"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-DSMZ1566-GLUCOSE10",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-DSMZ1566-GLUCOSE10.yaml",
+        "sha256": "b7d4302d035ca9b3dad366d1ef0f4abd08691415ee8c682251bba482c9f7c2d0"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-SIGMA-C7290",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-SIGMA-C7290.yaml",
+        "sha256": "7954c1d2ce585d71eba3c6f53338eb87b7798ce86d4fc748d86343d40f6d5671"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    },
+    {
+      "proposal_id": "R-P-PYGS-SOURCE-EVIDENCE",
+      "before_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml",
+        "sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d"
+      },
+      "delta_from_first_review": true,
+      "status": "accepted_scoped_proposal",
+      "constraint": "Exact reviewed bytes only; source/publication holds remain. New localstock identities do not exactMap to components. CAS suppliedforms require mapped-surface migration and separate registry SSSOM identity rows."
+    }
+  ],
+  "shared_proposal_applicability": [
+    {
+      "index": 157,
+      "case_id": "KG_CASE:3d023d889bf993a140c96aff582ae41242a085e57d42cf59c7d4d2a4a74ad0fd",
+      "proposal_id": "B-P-PROTEOSE-TC5577",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/Proteose_Yeastolate.yaml",
+        "sha256": "3d8457342cdfe7ae8bad753ac36ebcb3c5310bb018042af32711aca2b658b7ee"
+      },
+      "before_sha256": "470d5049ae7615b6676bf0a720b261d4840e44c343d2ed4d9cce9c8b0f9c96c3",
+      "status": "accepted_scoped_shared_case_applicability",
+      "assessment": "Frozen owner imported460, liveingredient460 solely links403, full DSMZ403 originalPDF explicitly printsTC/Difco5577-15 at1g. New alias/suppliedform/notes retain UNMAPPED and avoid255772 successor equivalence.",
+      "integration_requirement": "Add exact KGcase backlink/evidence and replace stale no_change_reason in final assembly; preserve existingsource/product/botanical or concentration constraints."
+    },
+    {
+      "index": 169,
+      "case_id": "KG_CASE:6840ee22ba6f48558df69e4dece268d9a8b734ee03e69efbc99aa0f5fd76c07e",
+      "proposal_id": "A-P-RYEGRASS-MATERIAL-REVIEW",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/Rye_Grass.yaml",
+        "sha256": "1988144aaf769d052daeb6e11bab441ab739340e8315487ed5a855c106319f98"
+      },
+      "before_sha256": "d596d7281521a34f3354767e88d6aae6c1740ef16832b1124133111ddca9e551",
+      "status": "accepted_scoped_shared_case_applicability",
+      "assessment": "Baselineowner2362 and all currentC82-C88 ingrediententries explicitly match dried,milled ryegrass. Read original CCAPR75S PDF:1g drymilled input is boiled in75%seawater then filtered; payload retains plantinput versusinfusion and UNMAPPED/botanical scope.",
+      "integration_requirement": "Add exact KGcase backlink/evidence and replace stale no_change_reason in final assembly; preserve existingsource/product/botanical or concentration constraints."
+    },
+    {
+      "index": 180,
+      "case_id": "KG_CASE:bf8ae6e3cdd69df690fee4aed1454faaa1cc89abee05c13c4cc0c7da5169c8bc",
+      "proposal_id": "A-P-JCM576-SL12",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_576_sl12_trace_metals.yaml",
+        "sha256": "7605fef25483b03626ff239f2709405304976db42e0d4832a773e3e756d2c03a"
+      },
+      "before_sha256": null,
+      "status": "accepted_scoped_shared_case_applicability",
+      "assessment": "Read exact primary JCM576 SL12 table and MediaDiveJ576 containing both SolutionA4409 with ingredient1812 and separate stock4411. All ten inputs and quantities agree with A-P-JCM576-SL12; disodiumEDTA hydration remains unspecified. Source-specific origin is now recovered; source percentage0.9950248756 remains tenfold above1ml/1005ml=0.09950248756%. No genericSL12 or DSMZ998 equivalence is implied.",
+      "integration_requirement": "Add exact KGcase backlink/evidence and replace stale no_change_reason in final assembly; preserve existingsource/product/botanical or concentration constraints."
+    }
+  ],
+  "evidence_captures": {
+    "R-frozen-shard": {
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-06.json",
+        "sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808"
+      },
+      "accessed_at": null,
+      "kind": "source_snapshot"
+    },
+    "R-ingredient-1123": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1123.body",
+        "sha256": "b9c4b1e6e4157d082e28337f8c6b72191bc6e66ade7694d3712a2f335532c411"
+      },
+      "accessed_at": "2026-11-08T05:08:43.021618+00:00",
+      "kind": "primary_source"
+    },
+    "R-chebi-31345": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-31345.body",
+        "sha256": "d2a04309eb6976fd395f9684ec4c3f5192362e2b6b75464b0af128a28e188d25"
+      },
+      "accessed_at": "2026-11-08T05:08:50.903585+00:00",
+      "kind": "ontology"
+    },
+    "R-issue-1157": {
+      "capture": {
+        "root": "artifact",
+        "path": "shared/issue-1157.json",
+        "sha256": "1cb28e012f7cd774f2ce766f1bd773d1d31f7c9f983a030041bc6f191099ec07"
+      },
+      "accessed_at": null,
+      "kind": "source_snapshot"
+    },
+    "R-ingredient-2202": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2202.body",
+        "sha256": "a79e9785484fd091bb5aa3bebdd97ab5206370f34a3659e133efbe29ec31dafe"
+      },
+      "accessed_at": "2026-11-08T05:08:43.021818+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1566": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1566.body",
+        "sha256": "91f0bebac7e7a6fcfd617675d77fb691275a628329a78d1bba61f30efab22893"
+      },
+      "accessed_at": "2026-11-08T05:09:50.950887+00:00",
+      "kind": "primary_source"
+    },
+    "R-chebi-17925": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-17925.body",
+        "sha256": "49d1b77135a1f30767d58935d55302039ff012856c6217f88d5683822df9d639"
+      },
+      "accessed_at": "2026-11-08T05:11:05.401192+00:00",
+      "kind": "ontology"
+    },
+    "R-ncit-C61717": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ncit-C61717.body",
+        "sha256": "9d009e9cdcecd169806c5dc307b054b052f979b2da4edea8e78836bb6148aa00"
+      },
+      "accessed_at": "2026-11-08T05:11:04.271019+00:00",
+      "kind": "ontology"
+    },
+    "R-ols2-14431-43-7": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ols2-14431-43-7.body",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "accessed_at": "2026-11-08T05:09:56.726290+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-ncit-C61629-final": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ncit-C61629-final.body",
+        "sha256": "fd35ca00b1ee3f0e6ba61b4456fc013e6d9ccc9e997193e42b643d2105d184f3"
+      },
+      "accessed_at": "2026-11-08T05:16:52.575633+00:00",
+      "kind": "ontology"
+    },
+    "R-ingredient-1031": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1031.body",
+        "sha256": "0d5b6a4cef588f83354c1194d4bc346a69e90b3c24a87fcd40dc94d600a19c7f"
+      },
+      "accessed_at": "2026-11-08T05:08:43.021939+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1328": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1328.body",
+        "sha256": "e329454ef6b83c86a226a3d37a2885d0744ba705571951d057e572d069706a60"
+      },
+      "accessed_at": "2026-11-08T05:09:44.770871+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-final-243": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-243.body",
+        "sha256": "bf40fe2d1711468c6b053599408514bde93b2d0699ee808a51ffcfd7e7b1eff6"
+      },
+      "accessed_at": "2026-11-08T05:11:02.181341+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1833": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1833.body",
+        "sha256": "2797e7a74d6ac579a48d45e7e664a3c12d1cd7294fc4eb10e8aeae64e3841f7a"
+      },
+      "accessed_at": "2026-11-08T05:08:43.025926+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-shared-197": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/0c1e7fd46063ca00.raw",
+        "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+      },
+      "accessed_at": "2026-11-08T05:06:58.516447+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-144": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-144.body",
+        "sha256": "681e86b1b272ccd85392394c9f3870acc1649b7e82a2b5ff78b442373da5c95d"
+      },
+      "accessed_at": "2026-11-08T05:08:43.027176+00:00",
+      "kind": "primary_source"
+    },
+    "R-chebi-62965": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-62965.body",
+        "sha256": "faa44fb7ad16d3c11aae50472c3f1c5919c56f49d42400897a2fccf2e4861763"
+      },
+      "accessed_at": "2026-11-08T05:08:51.537174+00:00",
+      "kind": "ontology"
+    },
+    "R-ingredient-2051": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2051.body",
+        "sha256": "247fd6a07aaa5811c4411b3763be6310e197ed1991fdddd2b919b4fa7c3a45a3"
+      },
+      "accessed_at": "2026-11-08T05:08:43.028818+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1273": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1273.body",
+        "sha256": "1b3e5120d3d31bc171a34196cd37f6ac3180e489d4162f2729c263635f165a81"
+      },
+      "accessed_at": "2026-11-08T05:09:45.877039+00:00",
+      "kind": "primary_source"
+    },
+    "R-ols2-15375-84-5": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ols2-15375-84-5.body",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "accessed_at": "2026-11-08T05:10:00.526261+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-ardacin-1986": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ardacin-1986.body",
+        "sha256": "c0f09e4750cdeef0c3e046cef83e942789acf1497b7de9c08786c897c83dd9d8"
+      },
+      "accessed_at": "2026-11-08T05:08:46.232781+00:00",
+      "kind": "primary_source"
+    },
+    "R-ncats-ardacin-exact": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ncats-ardacin-exact.body",
+        "sha256": "0dc0b0608a77ca9dcc753d86143c257ae83a06e1a328fd7bb5da536648e345d9"
+      },
+      "accessed_at": "2026-11-08T05:09:56.114941+00:00",
+      "kind": "primary_source"
+    },
+    "R-ncit-C169786": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ncit-C169786.body",
+        "sha256": "974f16171a81238baa85de1473f724df8232b1054f899eca637390e20f437e3b"
+      },
+      "accessed_at": "2026-11-08T05:11:05.298429+00:00",
+      "kind": "ontology"
+    },
+    "R-chebi-753252": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-753252.body",
+        "sha256": "f5c6daa1101b546227f7d81b1b1386423e36d89f0d13b87b3f84ab9157ec8eb7"
+      },
+      "accessed_at": "2026-11-08T05:11:05.401238+00:00",
+      "kind": "ontology"
+    },
+    "R-gsrs-ardacin-c": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/gsrs-ardacin-c.body",
+        "sha256": "1bb5fbec3e813e411f00ff65500f74742ba9284136d489aa7a97d31153484b24"
+      },
+      "accessed_at": "2026-11-08T05:16:52.580514+00:00",
+      "kind": "primary_source"
+    },
+    "R-gsrs-ardacin-c-codes": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/gsrs-ardacin-c-codes.body",
+        "sha256": "2de639482cc8ca2a806b5a51abda2217ef7a6d521fa84cac145d41a891131aac"
+      },
+      "accessed_at": "2026-11-08T05:18:53.655143+00:00",
+      "kind": "primary_source"
+    },
+    "R-gsrs-ardacin-c-names": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/gsrs-ardacin-c-names.body",
+        "sha256": "15b6a4d332d8a5520630ff3b814ceb21117c61b7e1142002f1b605c8ef2991e9"
+      },
+      "accessed_at": "2026-11-08T05:18:53.655485+00:00",
+      "kind": "primary_source"
+    },
+    "R-ardacin-local-search": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/ardacin-local-search.json",
+        "sha256": "00d9803015faf7a14316815da54cb9162ab2d3bf8afaa7b37c31bc5e8d8742bd"
+      },
+      "accessed_at": null,
+      "kind": "unsuccessful_search"
+    },
+    "R-chebi-24395": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-24395.body",
+        "sha256": "011ce74efa82b324fab34cb5cd47bf20530a7725a3105c69c373f3b337eee6a4"
+      },
+      "accessed_at": "2026-11-08T05:20:45Z",
+      "kind": "ontology"
+    },
+    "R-chebi-24396": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-24396.body",
+        "sha256": "1a5e279a5b152e29f9616a8a5948c72bdc4335015294250969fd81a67fdd4581"
+      },
+      "accessed_at": "2026-11-08T05:21:33Z",
+      "kind": "ontology"
+    },
+    "R-ingredient-1886": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1886.body",
+        "sha256": "ce1d1f23cc5e6a2e7b3161c22f543c959914f3934062c40570ae2136ddbe5105"
+      },
+      "accessed_at": "2026-11-08T05:08:43.537685+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-shared-187": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-187.txt",
+        "sha256": "e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804"
+      },
+      "accessed_at": "2026-11-08T05:07:31.959853+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-2017": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2017.body",
+        "sha256": "03b6c295170bc2bb18f8befaef4f8524d2b35b3163211c66e023fe7a262b120d"
+      },
+      "accessed_at": "2026-11-08T05:08:43.539722+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1158": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1158.body",
+        "sha256": "0458eb90158b40b2e1061a5591ba564c4668c139452795641b28c328bca8b94f"
+      },
+      "accessed_at": "2026-11-08T05:09:44.783493+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-final-1158": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-1158.body",
+        "sha256": "a6b4bbb782d46582f3ea17fdcce391e9822d5d28efecf68ff218b949182d411e"
+      },
+      "accessed_at": "2026-11-08T05:11:03.284978+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-922": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-922.body",
+        "sha256": "ecb476df6a4e24f84a13d04deaecec6cb0e99683998c49375cab1c32fe0cc6ac"
+      },
+      "accessed_at": "2026-11-08T05:08:43.551016+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1019": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1019.body",
+        "sha256": "00218c4a11b4a3c0b538e1f2696fb9f6da0ea6f42d1ee6a2105330ca1f7b26cb"
+      },
+      "accessed_at": "2026-11-08T05:09:47.961679+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1343": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1343.body",
+        "sha256": "869b76a29596ee9148289881ba37f63af5c7537edc24442808fe83fada3f4606"
+      },
+      "accessed_at": "2026-11-08T05:09:48.129155+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-69": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-69.body",
+        "sha256": "f0ad10e2bf41e1da95446a721324d5bf9724b222389d79bede95cee011cae9c3"
+      },
+      "accessed_at": "2026-11-08T05:08:43.555487+00:00",
+      "kind": "primary_source"
+    },
+    "R-chebi-29377": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-29377.body",
+        "sha256": "b71ad2447ac65f44e33c42bbf9d4bbf1c823efd5f2ebe9ab42eb34d7a353cdcf"
+      },
+      "accessed_at": "2026-11-08T05:08:52.193832+00:00",
+      "kind": "ontology"
+    },
+    "R-medium-31": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-31.body",
+        "sha256": "8d759596f9c27787bbf111759539a20bef83a71d6ee73deb7867f8c00ef6b463"
+      },
+      "accessed_at": "2026-11-08T05:09:47.620720+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-529": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-529.body",
+        "sha256": "d8d1519ede784cc8aba978c185bf449da604cedff5907b3203860ad3a43c4152"
+      },
+      "accessed_at": "2026-11-08T05:09:47.747092+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1063": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1063.body",
+        "sha256": "562442cbadc5bec41c80e7fbf5153d98666696002bde7ea0045e12705f9c40b9"
+      },
+      "accessed_at": "2026-11-08T05:09:47.818976+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-331": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-331.body",
+        "sha256": "df56e71b944de4d355cc4e955fcc68b0077752c2db042f8262356a1ce1a60da1"
+      },
+      "accessed_at": "2026-11-08T05:08:43.557833+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-239": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-239.body",
+        "sha256": "fba5366340061bce0326a229f04f3b82f9382223642c8e93845128a608d838f2"
+      },
+      "accessed_at": "2026-11-08T05:09:45.648861+00:00",
+      "kind": "primary_source"
+    },
+    "R-chebi-9754": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-9754.body",
+        "sha256": "1e190093d33651251165209dcdf79eaf3e60978a8a1f34ba2a99124890ce6734"
+      },
+      "accessed_at": "2026-11-08T05:08:51.601649+00:00",
+      "kind": "ontology"
+    },
+    "R-ingredient-460": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-460.body",
+        "sha256": "fe3ccc3ab615b58319709af738e4836e4c952cfceac5808d372fd40bae195791"
+      },
+      "accessed_at": "2026-11-08T05:08:43.559866+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-403": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-403.body",
+        "sha256": "58cfbf042287555b81f70966ca23533b2e45f3c0aae4bda4a59635be5b01cea9"
+      },
+      "accessed_at": "2026-11-08T05:09:50.612771+00:00",
+      "kind": "primary_source"
+    },
+    "R-dsmz-403": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/dsmz-403.body",
+        "sha256": "8053bfa9ef5ee989f52bc670e76bf85544eeae2142917643c06d99b629a222ef"
+      },
+      "accessed_at": "2026-11-08T05:11:04.173597+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1463": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1463.body",
+        "sha256": "8277692ccb1918287b3deffecc851997acc0821155a1a322ea500356c078fca3"
+      },
+      "accessed_at": "2026-11-08T05:08:44.059155+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1610": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1610.body",
+        "sha256": "fff8c4acc89b69b021ad5d0dc66d96a240f257cf59e722844cea3ed19a76bd8d"
+      },
+      "accessed_at": "2026-11-08T05:09:44.769497+00:00",
+      "kind": "primary_source"
+    },
+    "R-dsmz-1610": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/dsmz-1610.body",
+        "sha256": "bce11e3e26a67ac8bbbf366ecf20dc89084332f517ce590b479333c95b1df26f"
+      },
+      "accessed_at": "2026-11-08T05:11:04.269630+00:00",
+      "kind": "primary_source"
+    },
+    "R-ols2-19423-77-9": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ols2-19423-77-9.body",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "accessed_at": "2026-11-08T05:09:58.440366+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-ingredient-1829": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1829.body",
+        "sha256": "2ee332c55710399a280ff673313289e3ffb02f432ba969b2dacc534c1247d175"
+      },
+      "accessed_at": "2026-11-08T05:08:44.067351+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J618": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J618.body",
+        "sha256": "bde347fe857bd5fca7999f045fab6db74090c21e0e4b3a1bcd9b8cfd9cfaecd9"
+      },
+      "accessed_at": "2026-11-08T05:09:47.086240+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1108": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1108.body",
+        "sha256": "607e4d0b929554d98621158836103af1a47415ea55446b5d2270da2c43d00820"
+      },
+      "accessed_at": "2026-11-08T05:09:47.229458+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1108a": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1108a.body",
+        "sha256": "c8bf03950c5154b98b92678fd5be7f1fa26f1455ea7dc951d0f8dda6b3d91993"
+      },
+      "accessed_at": "2026-11-08T05:09:47.273453+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-2135": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2135.body",
+        "sha256": "7a32e5ca4dc3ed58a9d37d8afdd2f2fd27fbc21ad9ffaea148fb347442a5b2f4"
+      },
+      "accessed_at": "2026-11-08T05:08:44.079510+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-687": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-687.body",
+        "sha256": "e76ca8696e810ff753227180f4bea54cb34f8e19ff89e080ce258617e4cc3bc9"
+      },
+      "accessed_at": "2026-11-08T05:09:46.022290+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1507": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1507.body",
+        "sha256": "7f90a5a69d30204dab49bdd168ef5bc157e4bddb2a48f3f172045c79c3f22387"
+      },
+      "accessed_at": "2026-11-08T05:08:44.081569+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J240": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J240.body",
+        "sha256": "a59c9a368c6ed11e3f7b81d9c16433b1e47f20951c90f46eea72b59286e3564f"
+      },
+      "accessed_at": "2026-11-08T05:09:48.268290+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1682": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1682.body",
+        "sha256": "99cb8bd758abf6ea36da04ccb57702e7b08fd61f93d07c2c2bf8086768622a9e"
+      },
+      "accessed_at": "2026-11-08T05:09:48.149924+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1837": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1837.body",
+        "sha256": "a506053e8c2517513c8763c6aeb60e8c92456618cee9cb224c1c22786a6fea1b"
+      },
+      "accessed_at": "2026-11-08T05:09:48.341827+00:00",
+      "kind": "primary_source"
+    },
+    "R-issue-718": {
+      "capture": {
+        "root": "artifact",
+        "path": "shared/issue-718.json",
+        "sha256": "a1ae420dd57fae7453397fc6532537354e5dc6ceafe6c4d4bb519f2c09b98d72"
+      },
+      "accessed_at": null,
+      "kind": "source_snapshot"
+    },
+    "R-PYGS-raw-records": {
+      "capture": {
+        "root": "source",
+        "path": "inputs/kg-source-audit/queues/microbedecoder-source-records.json",
+        "sha256": "cf68d01251a3ae641385caf0547e19e862d61679e39e3e0e15340565aba50c14"
+      },
+      "accessed_at": null,
+      "kind": "source_snapshot"
+    },
+    "R-epmc-algidixylanolyticum": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/epmc-algidixylanolyticum.body",
+        "sha256": "0cc89e98e8d4f67ef41faade46f3ca1e5f3b8c6d4dd0ed2015df86ddec48767d"
+      },
+      "accessed_at": "2026-11-08T05:18:53.649829+00:00",
+      "kind": "primary_source"
+    },
+    "R-epmc-frigidicarnis": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/epmc-frigidicarnis.body",
+        "sha256": "574c149a422fc9db98e0a71cc25e4b8e2000142d1b6b792e1444fb136ee9853b"
+      },
+      "accessed_at": "2026-11-08T05:18:53.650174+00:00",
+      "kind": "primary_source"
+    },
+    "R-epmc-gasigenes": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/epmc-gasigenes.body",
+        "sha256": "0eda4ebadf8d8a487eb29992202b29ec428fcb881d42bf0cf28c2bec5dcab57d"
+      },
+      "accessed_at": "2026-11-08T05:18:53.652930+00:00",
+      "kind": "primary_source"
+    },
+    "R-canarius-lpsn": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/canarius-lpsn.body",
+        "sha256": "ce113561a53af7555c5182ba062cfce9686f50dd6c67764e5188624f03d2e02d"
+      },
+      "accessed_at": "2026-11-08T05:09:56.172819+00:00",
+      "kind": "primary_source"
+    },
+    "R-ols2-canarius": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ols2-canarius.body",
+        "sha256": "5abcc671980c2417ade7bb480dce2b1f20a0e00af94a73c3c05c5f66561cd4dd"
+      },
+      "accessed_at": "2026-11-08T05:09:59.384139+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-ingredient-1982": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1982.body",
+        "sha256": "ee864994eae2310fbe4719e994e849073182742500b96b140f7ad2266abb1206"
+      },
+      "accessed_at": "2026-11-08T05:08:44.083753+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1051": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1051.body",
+        "sha256": "8b35a7f3c5860c422f0e53b1d4b7a9ff6ad090aa7f6733ba97ce1b09fa4c8486"
+      },
+      "accessed_at": "2026-11-08T05:09:47.601429+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-shared-284": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/030556c223846068.raw",
+        "sha256": "6566ba45030bfac8958271e24e81e63f62ee15deecf119495f03f649797f34d7"
+      },
+      "accessed_at": "2026-11-08T05:06:58.601044+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1512": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1512.body",
+        "sha256": "5aa7ab7164143986b9b901ff89aa593b8dceb587a7fb166581269696658299a9"
+      },
+      "accessed_at": "2026-11-08T05:08:44.099495+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1462": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1462.body",
+        "sha256": "d530b06874e4b2c44488b8868e0eee1905e7a2068413cdef5029392333da7285"
+      },
+      "accessed_at": "2026-11-08T05:08:44.594354+00:00",
+      "kind": "primary_source"
+    },
+    "R-wako-neodymium": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/wako-neodymium.body",
+        "sha256": "bdb9ac0d57d9ec6ac2c398dd8b793cb7e382ad920f5e5b7b17dfb668bfa319ba"
+      },
+      "accessed_at": "2026-11-08T05:09:55.957758+00:00",
+      "kind": "primary_source"
+    },
+    "R-ols2-13477-89-9": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ols2-13477-89-9.body",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "accessed_at": "2026-11-08T05:09:56.879048+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-ncit-search-13477-89-9": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ncit-search-13477-89-9.body",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "accessed_at": "2026-11-08T05:11:05.808262+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-chebi-37280-final": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/chebi-37280-final.body",
+        "sha256": "ece8c04b8997caed450b7ec399cd517339baffe4420a69720ae9fbdbaa06110d"
+      },
+      "accessed_at": "2026-11-08T05:34:59.931872+00:00",
+      "kind": "ontology"
+    },
+    "R-ingredient-2079": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2079.body",
+        "sha256": "659f6b0d0123d103260a84c1bfc8c09f4d38d9be632b468443d7b037d98696ee"
+      },
+      "accessed_at": "2026-11-08T05:08:44.600377+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-958": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-958.body",
+        "sha256": "e63ff3ddb05ef274fec6de292c1f7dba0c7de5b67d1bac47423818563f3d7632"
+      },
+      "accessed_at": "2026-11-08T05:09:50.085867+00:00",
+      "kind": "primary_source"
+    },
+    "R-dsmz-958": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/dsmz-958.body",
+        "sha256": "b8536d250f53579cedb0b38a81d383fc1d336b079c4c1125ea69e414c8c48fdd"
+      },
+      "accessed_at": "2026-11-08T05:11:04.175927+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-2362": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2362.body",
+        "sha256": "ece2be62e72175c08ed67f3a24aca620aabe5f3a3cd76f92b0a00f9d91dd59f4"
+      },
+      "accessed_at": "2026-11-08T05:08:44.619660+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C82": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C82.body",
+        "sha256": "0e8f20a608c6530604e8c9594243cead4885367a8efdaf875f4699b449592225"
+      },
+      "accessed_at": "2026-11-08T05:09:45.346106+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C83": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C83.body",
+        "sha256": "93cd6efde8241cc3c3198b7eaf08149ae58a8807d7e14fd1316d8a307998550f"
+      },
+      "accessed_at": "2026-11-08T05:09:45.472512+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C84": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C84.body",
+        "sha256": "5ad6fe0983505504377b00c79d6d37ba100db935302f39898ec44c6436f7d7d5"
+      },
+      "accessed_at": "2026-11-08T05:09:45.488316+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C85": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C85.body",
+        "sha256": "42d88b2c5d608c3f6e5d265d35674768206ce153f5e1a6c4adf8674b3b3443cc"
+      },
+      "accessed_at": "2026-11-08T05:09:45.491927+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C86": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C86.body",
+        "sha256": "6b0df62f1770d5bac17c1de818775cd06a05e560c8386ab2661bfa4e03505bde"
+      },
+      "accessed_at": "2026-11-08T05:09:45.510369+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C87": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C87.body",
+        "sha256": "0e2acf3b9ed711df911b2809aee683530122783884f9fbccf23cc5686dc8ad31"
+      },
+      "accessed_at": "2026-11-08T05:09:44.943161+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-C88": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-C88.body",
+        "sha256": "4fbcba786c77e608217d701934b28c812dda006a572277dce13e69bb924a3a04"
+      },
+      "accessed_at": "2026-11-08T05:09:45.098593+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1461": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1461.body",
+        "sha256": "fb36adb2f109b2e86d9b1ea615ad3f3c63ef57849b812d2975f273161f4817a3"
+      },
+      "accessed_at": "2026-11-08T05:08:44.626580+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1530": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1530.body",
+        "sha256": "10664fb54783a6cd4113b6a99c56b3e68c5ea8f16f51b8b648db478118d28a4c"
+      },
+      "accessed_at": "2026-11-08T05:08:44.630883+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1702": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1702.body",
+        "sha256": "0facf1a00b52a06382bd051ef923a4cee225c0805a585a74c71ccdf32fae62c8"
+      },
+      "accessed_at": "2026-11-08T05:09:50.712430+00:00",
+      "kind": "primary_source"
+    },
+    "R-xanthocidin-structure": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/xanthocidin-structure.body",
+        "sha256": "8d4d045d9fc0dfe60778cb84ff75733e805ff47d453da7664a580092f7edeb33"
+      },
+      "accessed_at": "2026-11-08T05:09:55.890077+00:00",
+      "kind": "primary_source"
+    },
+    "R-xanthocidin2014": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/xanthocidin2014.body",
+        "sha256": "dcbb504626717d0d9c22ba87434bdb65573b60b86b994f9628e85311ea696953"
+      },
+      "accessed_at": "2026-11-08T05:09:55.900007+00:00",
+      "kind": "primary_source"
+    },
+    "R-ols2-xanthocidin": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ols2-xanthocidin.body",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "accessed_at": "2026-11-08T05:09:59.193993+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-ingredient-1608": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1608.body",
+        "sha256": "4663f8296e592edfc2f23cbf7bcd31cb62579387d7d5bd3edc0e7d3b78db6ed8"
+      },
+      "accessed_at": "2026-11-08T05:08:44.651906+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1762": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1762.body",
+        "sha256": "6db19defa7628bcdfb2cc8e5b34f47cfcfac0a1e6bec265547ac9a77bba46957"
+      },
+      "accessed_at": "2026-11-08T05:09:46.052424+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J44": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J44.body",
+        "sha256": "e32c78d31b6f5b6c75d9ced9e47942b1b383e2bc3ec6979c6dbd226bf7e991a5"
+      },
+      "accessed_at": "2026-11-08T05:09:46.547450+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J45": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J45.body",
+        "sha256": "18a010cc5e471c5e74f57a7656f9605c7b30e87a745e19cc3adf93c3266ecf3a"
+      },
+      "accessed_at": "2026-11-08T05:09:46.568526+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J47": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J47.body",
+        "sha256": "09e2d1296555fcfa80f1c1d51702b2e1684dcdacc51bffc09e8e034002399b2d"
+      },
+      "accessed_at": "2026-11-08T05:09:46.709451+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J80": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J80.body",
+        "sha256": "b541c6c2c7b3a095b6b3093dcbe86f3c2cf334b003bd3e56b967c693368bbeb4"
+      },
+      "accessed_at": "2026-11-08T05:09:46.725180+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J103": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J103.body",
+        "sha256": "c1b0f9e6ca75c70d69fc989633798aa5d217be1a236f739e944cbd90027fd242"
+      },
+      "accessed_at": "2026-11-08T05:09:46.912730+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J104": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J104.body",
+        "sha256": "84b553523c77e790c16f6382a9b14da4ec3ad27b29cfab7d8d2beedff66e436b"
+      },
+      "accessed_at": "2026-11-08T05:09:47.081523+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J437": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J437.body",
+        "sha256": "d18a108b4834aa251706aad2d0baaf77c4884e6ad082caca281308c4bdd5278e"
+      },
+      "accessed_at": "2026-11-08T05:09:47.081577+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-548": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-548.body",
+        "sha256": "091fb0a6d947e54abcdec442c4281b2c418118586f48161a46539e4b26c32bc1"
+      },
+      "accessed_at": "2026-11-08T05:09:46.184711+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-552": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-552.body",
+        "sha256": "7cc5094a115efb528f159a1f1b41664536354653f09455f41f9e4be7533fc5df"
+      },
+      "accessed_at": "2026-11-08T05:09:46.398730+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-554": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-554.body",
+        "sha256": "0106dcad7316a712a984402535a6007855c6de2950a8afbf291829ce4fddb2ba"
+      },
+      "accessed_at": "2026-11-08T05:09:46.543332+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1585": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1585.body",
+        "sha256": "14cf94c06dda6bac45bb9b86a0d8893c3091d78a39505a40825c23514591114f"
+      },
+      "accessed_at": "2026-11-08T05:08:45.120733+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1738": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1738.body",
+        "sha256": "f8f0d5951fa459c1a867162e49d36165e92dc8c796bb3d7d8f1175c0a7220446"
+      },
+      "accessed_at": "2026-11-08T05:09:50.244368+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1739": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1739.body",
+        "sha256": "96059a89b55a347a09fcc62f3cb32b66b98326b26ecfb9e438053b8392f4a81f"
+      },
+      "accessed_at": "2026-11-08T05:09:50.263848+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1741": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1741.body",
+        "sha256": "32896d6bbc09914b1c647639e7a05e395f6c9b9639e2512f659ac621418268b1"
+      },
+      "accessed_at": "2026-11-08T05:09:50.348609+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1603": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1603.body",
+        "sha256": "ad35ecab8253b1ab84d08c1b79c6515b4da1551ec7ed1e1bd99e94a520f39893"
+      },
+      "accessed_at": "2026-11-08T05:08:45.133985+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J18": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J18.body",
+        "sha256": "6935fbdde91e90ab669a2f306411eb786e3513e6ff92cfffa71801180b6f1306"
+      },
+      "accessed_at": "2026-11-08T05:09:51.001653+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1551": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1551.body",
+        "sha256": "da8691b4e97ef8926957e0a8822c43ddc1959f55367b8e6e1825b7a9088f33b0"
+      },
+      "accessed_at": "2026-11-08T05:08:45.154236+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J776": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J776.body",
+        "sha256": "2d3845e9fea3039edbf877dfcb342895f9600ad971b69edb8cbb4c3648e06cb3"
+      },
+      "accessed_at": "2026-11-08T05:09:51.057610+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J820": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J820.body",
+        "sha256": "23e035d7eede4aa574abdff125f32db530950a01d2bf39b5f7918702ee9713c7"
+      },
+      "accessed_at": "2026-11-08T05:09:51.057409+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-final-776": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-776.body",
+        "sha256": "a54092f1f667438c4f46ae97dcb62f21b31dd66a2b3c60864d4dcd5019626b8e"
+      },
+      "accessed_at": "2026-11-08T05:11:02.182624+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-final-820": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-820.body",
+        "sha256": "7c4449e1cb1ba2088f3df04785cf34b5cf04f5a8f83508c8b7ce00c441faecf7"
+      },
+      "accessed_at": "2026-11-08T05:11:03.284863+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1784": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1784.body",
+        "sha256": "1c1eecc0b500ca8233566f645f659a563a6ab5c48651293b892abe06394b8f77"
+      },
+      "accessed_at": "2026-11-08T05:08:45.165159+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J661": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J661.body",
+        "sha256": "1de2a889918d2018d215034b2c9aa97405cee0671029bc338c3b4d04f694721e"
+      },
+      "accessed_at": "2026-11-08T05:09:48.484288+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J670": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J670.body",
+        "sha256": "ab80df1fbdc76b5a573040eb329037b738f79d2e71ee4d266165c54e33a78a23"
+      },
+      "accessed_at": "2026-11-08T05:09:48.528640+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J695": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J695.body",
+        "sha256": "e7e4dad45fa748715158fe4106e3fd40470daac4ddcba3d9ba7a566a33b02a86"
+      },
+      "accessed_at": "2026-11-08T05:09:48.674523+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J737": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J737.body",
+        "sha256": "2e97f1a0c4f29806ff9a9cdd70cb8ef54202130314e94f2405d4ede23c415370"
+      },
+      "accessed_at": "2026-11-08T05:09:48.680679+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J751": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J751.body",
+        "sha256": "825112bdce2d7c2c38625719785827e593c41063392afa9136f4e0b8dfd892ac"
+      },
+      "accessed_at": "2026-11-08T05:09:48.796489+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J784": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J784.body",
+        "sha256": "e3c6184286ac52ccab36915fbdb7bc5f9e3bfec604a1413e608d26f4c48faec2"
+      },
+      "accessed_at": "2026-11-08T05:09:48.871365+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J822": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J822.body",
+        "sha256": "adc798fef8f52606496e6bfaeac813d6cb7ee7ef1a7032ef38593dabe78d360d"
+      },
+      "accessed_at": "2026-11-08T05:09:49.179825+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J837": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J837.body",
+        "sha256": "85f8859dfd402288f4ed0e876ed59454f8a99b4f391644d12caef8ab7ca4605e"
+      },
+      "accessed_at": "2026-11-08T05:09:49.192310+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J865": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J865.body",
+        "sha256": "6205db455e345bd8fea24bd94b53521349bb17376d710bb3f24bfc8ed1a52d88"
+      },
+      "accessed_at": "2026-11-08T05:09:49.256615+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J876": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J876.body",
+        "sha256": "f1f9edaf647042f0c72383df5b08eeed2e9dcdfaed63adbb54eed3223af16684"
+      },
+      "accessed_at": "2026-11-08T05:09:49.399767+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J955": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J955.body",
+        "sha256": "864a44f3323df73edb715700a0115ccf39247061d100c4a7247da9f12fedcc3a"
+      },
+      "accessed_at": "2026-11-08T05:09:49.406729+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1066": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1066.body",
+        "sha256": "2bd65e9dbf482e960031a61076f592c7cffcd434c032f7e19d8923c780f0b646"
+      },
+      "accessed_at": "2026-11-08T05:09:49.478777+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1081": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1081.body",
+        "sha256": "e7b8d165ee43e665112ebc23498e5f169746bfea4689a8445f4db2cd9ed64515"
+      },
+      "accessed_at": "2026-11-08T05:09:49.711580+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1082": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1082.body",
+        "sha256": "b3640357d56c398ed4fa85f069ae40e56650cc1ca60e9544a6ad3236c22f6976"
+      },
+      "accessed_at": "2026-11-08T05:09:49.713975+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1092": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1092.body",
+        "sha256": "39684b635cab54c84bb966757019b962fcfb55d8108d41375eeb01f54e2bd9e4"
+      },
+      "accessed_at": "2026-11-08T05:09:49.787493+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1115": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1115.body",
+        "sha256": "5a7c50fd0b3b2588e2fa612ec7be61d4aaef71c96d74aa5d54eb22319de75b21"
+      },
+      "accessed_at": "2026-11-08T05:09:49.956432+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1313": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1313.body",
+        "sha256": "e02c18fc0dc56799e63e296d6c5ed8668bd93c2137a01876ba3893279f4744c9"
+      },
+      "accessed_at": "2026-11-08T05:09:50.000727+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1444": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1444.body",
+        "sha256": "812c5fa87ce7df36b6fdd1801a577deb947fd3fd39049b2b175751ec51fcaac5"
+      },
+      "accessed_at": "2026-11-08T05:08:45.182889+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-2439": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2439.body",
+        "sha256": "ed0e3b0780f7dbcb8c7beef152ef102dcad3a905083c984800ab9d799116e320"
+      },
+      "accessed_at": "2026-11-08T05:08:45.184680+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1885": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1885.body",
+        "sha256": "a278cdcbefe517c8a321acfb19280cd5f59bb22b4bb9eb02de3169b25d61911a"
+      },
+      "accessed_at": "2026-11-08T05:09:47.441645+00:00",
+      "kind": "primary_source"
+    },
+    "R-sigma-c7290-final": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/capture-index-final.json",
+        "sha256": "e5c4afc183ca480e72831b617e396fcca8dc2764182194c085159d12b4b289ce"
+      },
+      "accessed_at": "2026-11-08T05:34:59.931609+00:00",
+      "kind": "unsuccessful_search"
+    },
+    "R-sigma-c7290-web": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/sigma-c7290-web-response.txt",
+        "sha256": "b14a684b88619f7fd89dac0d577bace77b0aaa01c2702454115ea96fd8a538e4"
+      },
+      "accessed_at": "2026-11-08T05:35:12.538775+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1812": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1812.body",
+        "sha256": "9ae4a849053e35192b8137d3c08da86a449eedc5a4bd340d22a71c48a907e472"
+      },
+      "accessed_at": "2026-11-08T05:08:45.667370+00:00",
+      "kind": "primary_source"
+    },
+    "R-A-JCM576-SL12": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/delta-ea3c225c9c7aba24.raw",
+        "sha256": "25afea3069bc76e6cfe1d37d763c6efe74eb056b062205a391a843653687e9b4"
+      },
+      "accessed_at": "2026-11-08T05:35:27.849403+00:00",
+      "kind": "primary_source"
+    },
+    "R-A-MEDIADIVE-J576": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/delta-mediadive-J576.raw",
+        "sha256": "673cd469bf63fa0ab9c7130e78b41ed7c98232f0fe5c5a2ef2c24870e9227760"
+      },
+      "accessed_at": "2026-11-08T05:36:00.186582+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-672": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-672.body",
+        "sha256": "276391281d45f619aaf8c80d5596d54d4028691c5b2d6198cffd308d7eb7deb2"
+      },
+      "accessed_at": "2026-11-08T05:08:45.670192+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-701": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-701.body",
+        "sha256": "22c94eb0f82f8b5d4c0483728804a8e5e7fbd171169816a72c1679ef113f6691"
+      },
+      "accessed_at": "2026-11-08T05:09:46.018652+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1883": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1883.body",
+        "sha256": "cd43bdf0b2c297bc3d82b3c001cae8c0d32081e5593a58b330e3f77f39f79658"
+      },
+      "accessed_at": "2026-11-08T05:08:45.686488+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J744": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J744.body",
+        "sha256": "f2ddd79b457a25f9d6ed18b8325933c5e42edb29e4b8bfe4a8ab7b5907840d91"
+      },
+      "accessed_at": "2026-11-08T05:09:44.044461+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-shared-151": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/74d36a1f693c9e5a.raw",
+        "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7"
+      },
+      "accessed_at": "2026-11-08T05:06:58.023508+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1279": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1279.body",
+        "sha256": "ddf97485833c4033cf50c26ce03bb973d62d0d003e6a9e2f2ef467addc2c765e"
+      },
+      "accessed_at": "2026-11-08T05:08:45.698808+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-1429": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1429.body",
+        "sha256": "167947f7dc3044852f6626a962803d93884037f62e9f1c0ce5d9bc2561d4e733"
+      },
+      "accessed_at": "2026-11-08T05:09:47.606103+00:00",
+      "kind": "primary_source"
+    },
+    "R-A-MERCK108339": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/product-web-open.json",
+        "sha256": "4a2ee7ed984ccfb8a492699352b06f9e0e234bfc0d2d849b477229522170547e"
+      },
+      "accessed_at": "2026-11-08 05:09:18 UTC",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1684": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1684.body",
+        "sha256": "8d868ac826c016b1ff0af18a82dc13e511cd1c03c31586b16c50fc012769aaf7"
+      },
+      "accessed_at": "2026-11-08T05:08:45.707529+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J209": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J209.body",
+        "sha256": "8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050"
+      },
+      "accessed_at": "2026-11-08T05:09:46.016221+00:00",
+      "kind": "primary_source"
+    },
+    "R-ingredient-1618": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1618.body",
+        "sha256": "81aad3fa0608a5c31f1513b1a114f918b1131250d337ce93258fc0ff1060055b"
+      },
+      "accessed_at": "2026-11-08T05:08:45.731268+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J69": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J69.body",
+        "sha256": "3dfebbc3c45015374477b729d8a15b4cd67214bfe8317190b70b401a8104270b"
+      },
+      "accessed_at": "2026-11-08T05:09:50.499121+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-final-68": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-68.body",
+        "sha256": "dc3d62c66272f1cfcd65e76b94921df6aa95576e69e8e12556d29d2d86b7f81e"
+      },
+      "accessed_at": "2026-11-08T05:11:02.177062+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-rest-68": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-rest-68.body",
+        "sha256": "c893893d3f0b5b01c8a4ba0ed5892676ff135e7cc0ded18b5ee3d0d4bd08efe0"
+      },
+      "accessed_at": "2026-11-08T05:11:09.086467+00:00",
+      "kind": "primary_source"
+    },
+    "R-etamycin-1979": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/etamycin-1979.body",
+        "sha256": "51501e12425d0329439bd301a9e8d451fd71f0ed8784bf8d0e8eb11ab7eecc82"
+      },
+      "accessed_at": "2026-11-08T05:08:46.219329+00:00",
+      "kind": "primary_source"
+    },
+    "R-etamycin-2017": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/etamycin-2017.body",
+        "sha256": "6cd77b2d52218e4423891454ab0ccaa1a7a4d39bc98b0a1c5cc5ff0a24f3bf2c"
+      },
+      "accessed_at": "2026-11-08T05:08:46.249864+00:00",
+      "kind": "primary_source"
+    },
+    "R-mesh-etamycin": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/mesh-etamycin.body",
+        "sha256": "0c6b9c64c75d65a25d585f1960e353587d4351955045991d41c32ccd0e9f5e74"
+      },
+      "accessed_at": "2026-11-08T05:08:46.261097+00:00",
+      "kind": "ontology"
+    },
+    "R-ingredient-897": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-897.body",
+        "sha256": "e26e00b83c7e8d3c94ed3a809ef1cd8a10a74036f06608c4e91d5a34eafd99d8"
+      },
+      "accessed_at": "2026-11-08T05:08:46.202238+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1167": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1167.body",
+        "sha256": "e478f51e225e9c0f11b9602e46c21ec29352e0bb131858c46b0a47f4f2177208"
+      },
+      "accessed_at": "2026-11-08T05:09:44.045900+00:00",
+      "kind": "primary_source"
+    },
+    "R-medium-J1211": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1211.body",
+        "sha256": "f08e7a5d023d8422861633dce37ff4b88cf9d999963d6eb9fdbf4ee409951b2a"
+      },
+      "accessed_at": "2026-11-08T05:09:44.047140+00:00",
+      "kind": "primary_source"
+    },
+    "R-jcm-final-1167": {
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-1167.body",
+        "sha256": "11fd1557d1701161068fe757864e9b3b0a71a33f830b174d3d8a573e7fa79148"
+      },
+      "accessed_at": "2026-11-08T05:11:03.287697+00:00",
+      "kind": "primary_source"
+    }
+  },
+  "feasible_work_scope": "Re-examined all43 current rationales/missing requirements and source-defined stock opportunities. The previously feasible Nd parent, PYGS primary evidence, JCM1167/JCM1211/JCM820, DSMZ1566 stock, C7290 product, SL12 recipe recovery, dried/milled ryegrass annotation, historicalTC5577 annotation and exactJCM68 named-medium registry are now concrete, including delegated sharedpayloads. No further fullyspecified source-definedstock or verified supplied-form omission was identified in the inspected root43 evidence. Remaining requirements concern actual unknown source origins, catalogue/species scope, contradictory formula/hydration, source-case alternatives, or quantitativeclosure; this is a bounded review, not a claim that all possible future research is exhausted.",
+  "limits": "No release approval, no reapproval of untouched inherited child identifiers/roles, no cross-shard scientific review, no downstream execution."
+}

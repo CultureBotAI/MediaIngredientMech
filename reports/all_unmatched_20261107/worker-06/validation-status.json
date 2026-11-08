@@ -1,0 +1,111 @@
+{
+  "at": "2026-11-08T05:58:29.007528+00:00",
+  "runtime": "read-only maintained Python3.13 environment",
+  "checks": [
+    {
+      "name": "whole-shard structural audit",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/structural-audit-command.json"
+    },
+    {
+      "name": "strict100proposal schema",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/proposal-schema-command.json"
+    },
+    {
+      "name": "final source/owner/hold invariants",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/final-invariants.json"
+    },
+    {
+      "name": "auditor synthetic controls",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/auditor-synthetic-tests-retry.log",
+      "command": "python -m pytest -q -o addopts= -p no:cacheprovider --basetemp .temp/all-unmatched-worker-06/auditor-synthetic-tests /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/test_audit_worker_outcomes_v1.py"
+    },
+    {
+      "name": "invariant negative controls",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/invariant-controls.json"
+    },
+    {
+      "name": "native inspect",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/native-inspect.log"
+    },
+    {
+      "name": "native validate",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/native-validate.log",
+      "command": "python scripts/record_review.py validate reports/all_unmatched_20261107/worker-06/native-review-content.json"
+    },
+    {
+      "name": "native save",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/native-save.json",
+      "command": "python scripts/record_review.py save --content reports/all_unmatched_20261107/worker-06/native-review-content.json"
+    },
+    {
+      "name": "native retained-review append-only check",
+      "exit_code": 0,
+      "status": "PASS",
+      "receipt": "logs/native-check.log",
+      "command": "python scripts/record_review.py check --base e000d66dd26ab053e9b17ce7bf8d3c873c3dde99 --require-reviews"
+    },
+    {
+      "name": "core authored bundle whitespace",
+      "status": "PASS",
+      "exit_code": 0,
+      "scope": "canonical decisions/evidence/proposals, HANDOFF.md and README.md"
+    },
+    {
+      "name": "native rendered Markdown whitespace",
+      "status": "NONBLOCKING_FORMATTING_LIMITATION",
+      "exit_code": 2,
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        "reviews/structured/20261108T055544Z-w06-source-shard"
+      ],
+      "receipt": "logs/native-render-whitespace.log",
+      "detail": "Saved native renderer preserves trailing spaces in composed assessment text and blank-source titles. Its authoritative YAML and native validation/save/retained-review checks pass; immutable native artifacts and exact capture bytes are preserved."
+    },
+    {
+      "name": "credential-pattern scan",
+      "status": "PASS",
+      "exit_code": 1,
+      "detail": "rg --no-ignore --hidden scanned full report tree for private-key markers, GitHub/OpenAI token shapes and literal authorization/API-key headers; no matching files. Exit1 is rg no matches, not a comprehensive security certification."
+    }
+  ],
+  "earlier_attempts": [
+    {
+      "step": "native synthesis preparation",
+      "status": "failed then corrected",
+      "detail": "Original UTC timestamp format YYYY-MM-DD HH:MM:SS UTC required ISO serialization. Same instant now serialized as UTC ISO; original capture timestamps remain unchanged."
+    },
+    {
+      "step": "synthetic auditor tests",
+      "exit_code": 4,
+      "status": "retried successfully",
+      "receipt": "logs/auditor-synthetic-tests.log",
+      "detail": "Optional pytest-cov unavailable in read-only environment; isolated external auditor tests rerun without unrelated project coverage addopts, no repo config changed."
+    }
+  ],
+  "not_run": [
+    {
+      "check": "maintained-data synchronization and full export/QC rebuild",
+      "reason": "No maintained data changed; prohibited downstream rebuild and coordinator-owned integration remain separate."
+    }
+  ]
+}

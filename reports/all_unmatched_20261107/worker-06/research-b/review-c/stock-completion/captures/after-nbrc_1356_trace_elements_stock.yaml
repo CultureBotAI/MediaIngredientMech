@@ -1,0 +1,107 @@
+identifier: kgmicrobe.ingredient:nbrc_1356_trace_elements_stock
+preferred_term: NBRC 1356 trace elements stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1356_trace_elements_stock
+  ontology_label: NBRC 1356 trace elements stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: G
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.35'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: G
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.004'
+  concentration_unit: G
+- component_name: Na2WO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.004'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: NaOH
+  reference_scope: UNMAPPED
+  concentration_value: as needed for pH adjustment
+  concentration_unit: VARIABLE
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    source_record: NBRC 1356 trace elements stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: Dissolve NTA first and adjust to pH 6.5 with NaOH before adding minerals;
+    final pH 7.0. The named NaOH constituent is included with an unspecified amount.
+    Listed source batch quantities and variable titrant are preserved; component CURIEs
+    and unstated hydrate forms are not guessed. NBRC1356 includes sodium selenate
+    and sodium tungstate but no alum. It differs from NBRC1169 and from NBRC857/936;
+    the four-star label is a local footnote only.
+notes: 'Dissolve NTA first and adjust to pH 6.5 with NaOH before adding minerals;
+  final pH 7.0. The named NaOH constituent is included with an unspecified amount.
+  Listed source batch quantities and variable titrant are preserved; component CURIEs
+  and unstated hydrate forms are not guessed. NBRC1356 includes sodium selenate and
+  sodium tungstate but no alum. It differs from NBRC1169 and from NBRC857/936; the
+  four-star label is a local footnote only. Raw labels retained only in this source
+  context: ["Trace element solution****"]. No global resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed NBRC 1356 trace elements stock with source-bound components and
+    retained preparation limits. Isolated proposal; no maintained owner edit or support/release
+    approval.
+  llm_assisted: true
