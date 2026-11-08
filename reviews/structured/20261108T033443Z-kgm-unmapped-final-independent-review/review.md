@@ -1,0 +1,3304 @@
+# Independent final KG-Microbe source reconciliation, scoped curation and release-boundary review
+
+- Review: 20261108T033443Z-kgm-unmapped-final-independent-review
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T02:55:20Z
+- Finished UTC: 2026-11-08T03:34:43.878689Z
+- Reviewer: /root/step7d_independent_review (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Only the sodium acetate trihydrate mapping identity and complete six-token publication, and the literal source provenance underlying the still-rejected 3-methylacetate record. This review does not reassess or approve unrelated chemical identities, whole records, roles, occurrence counts, unresolved source materials or downstream graph adoption. Five exact prior findings are resolved against current repaired code and independent reprobes; no new finding was identified in this scope. Completed local validation passes:4898passed525skipped31warnings0failed, packagecoverage79percent against unchanged35percentfloor, and1018retained native review bundles validated. All new tests executed; old optional skip controls remain unchanged. Remote CI and the actual final published-head attestation are explicitly pending; this is a local science/implementation verdict, not publication or merge authorization.
+
+## Scope And Provenance
+
+Exact two-owner source changes, one canonical mapping row, native reviewed/companion/supported products,13-cell unified rebuild, code/test/workflow boundaries and all five native finding predecessors.
+
+Selection: Explicit exact target list; complete changed-cell and assertion-disposition comparison plus complete native input and receipt chain checks. Scientific assessment is limited to the named mapped identity and rejected-label provenance.
+Coverage: full; 82 reviewed / 82 in the declared population.
+Source: working_tree at Git base 0dac278466699129a083343a921c2e0ca18a9ab4.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| typed-refresh | src/mediaingredientmech/ingredient_bundle_refresh.py | source | Existing three typed successor contexts |
+| policy-history | mappings/ingredient_mappings.sssom.tsv.manifest.json | source | Current legitimate policy history |
+| canonical | mappings/ingredient_mappings.sssom.tsv | source | Baseline canonical mapping rows |
+| mapping-review | reports/sssom_completion_20260921/review.json | source | Content-bound mapping dispositions |
+| companion | reports/owned_name_deferred_669_20261103/companion-review.json | source | Separate scoped companion review |
+| unified | UNIFIED_INGREDIENT_MAPPING.tsv | source | Baseline unified snapshot |
+| unified-provenance | UNIFIED_INGREDIENT_MAPPING.provenance.json | source | Native MIM input provenance |
+| history-probe | reports/kgm_unmapped_chemicals_20261107/baseline-independent/typed-history-proof-v1.json | source | Independent read-only compatibility reproduction |
+| alias-writer-original | reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/curate_mediadive_acetate_alias.py | source | alias-writer-original |
+| canonical-publisher-original | reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publish_mediadive_acetate_alias.py | source | canonical-publisher-original |
+| policy-writer-original | reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/refresh_kgm_source_policy_manifest.py | source | policy-writer-original |
+| queue-writer-original | reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/reconcile_kgm_chemical_queue.py | source | queue-writer-original |
+| publication-boundary-proof | reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publication-boundaries-v1-result.json | source | publication-boundary-proof |
+| queue-parent-swap-proof | reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-parent-swap-result-v1.json | source | queue-parent-swap-proof |
+| release-guide | docs/SSSOM_RELEASE.md | source | Supported predicate release guidance |
+| acetate-owner | data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml | maintained | Exact trihydrate owner and new MediaDive spelling |
+| methylacetate-owner | data/ingredients/unmapped/3-methylacetate.yaml | maintained | Unresolved rejected label, provenance-only notes correction |
+| mapped-aggregate | data/curated/mapped_ingredients.yaml # identifier=CHEBI:32138 | generated | Synchronized sodium acetate aggregate entry |
+| unmapped-aggregate | data/curated/unmapped_ingredients.yaml # identifier=UNMAPPED_0736 | generated | Synchronized rejected raw-label aggregate entry |
+| mediadive-capture | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/mediadive-1315.json | source | MediaDive1315 exact raw label/CAS and discrepant formula |
+| chebi-capture | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/chebi-32138.json | source | ChEBI32138 form-specific identity and exact synonym |
+| pubchem-capture | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/pubchem-cas6131-synonyms.json | source | PubChem23665404 CAS/form corroboration |
+| methyl-source | reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/microbedecoder-raw-record19685.csv | source | Raw MicrobeDecoder/Bergey record19685, not a reread primary paper |
+| mapping-followup | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/mapping-followup-decision.json | source | Exact changed owner and complete six-token mapping-only decision |
+| source-proof | reports/kgm_unmapped_chemicals_20261107/source-alias-proof-v1.json | source | Typed proof for exact two source changes |
+| native-author-review | reviews/structured/20261108T024039Z-sodium-acetate-source-alias-scientific-review/review.yaml | source | Separate scientific author assessment of current owner/six tokens |
+| publication-guard | src/mediaingredientmech/curate/publication_guard.py | maintained | Pinned inputs, held directories, atomic target replacement |
+| alias-writer | scripts/curate_mediadive_acetate_alias.py | maintained | Guarded single alias writer |
+| canonical-publisher | scripts/publish_mediadive_acetate_alias.py | maintained | Guarded one-row native-candidate projection and receipt |
+| policy-writer | scripts/refresh_kgm_source_policy_manifest.py | maintained | Guarded metadata/history-preserving manifest successor |
+| notes-writer | scripts/correct_microbedecoder_methylacetate_provenance.py | maintained | Guarded notes/history-only provenance correction |
+| queue-writer | scripts/reconcile_kgm_chemical_queue.py | maintained | Exact source reconciliation and protected output publication |
+| alias-context | src/mediaingredientmech/source_alias_refresh.py | maintained | Closed source alias addition proof and companion boundary |
+| test-1 | tests/test_companion_retained_histories.py | maintained | tests/test_companion_retained_histories.py |
+| test-2 | tests/test_ingredient_bundle.py | maintained | tests/test_ingredient_bundle.py |
+| test-3 | tests/test_kgm_publication_boundaries.py | maintained | tests/test_kgm_publication_boundaries.py |
+| test-4 | tests/test_mediadive_acetate_alias.py | maintained | tests/test_mediadive_acetate_alias.py |
+| test-5 | tests/test_microbedecoder_methylacetate_provenance.py | maintained | tests/test_microbedecoder_methylacetate_provenance.py |
+| test-6 | tests/test_reconcile_kgm_chemical_queue.py | maintained | tests/test_reconcile_kgm_chemical_queue.py |
+| test-7 | tests/test_source_alias_projection.py | maintained | tests/test_source_alias_projection.py |
+| test-8 | tests/test_source_provenance_projection.py | maintained | tests/test_source_provenance_projection.py |
+| companion-workflow | .github/workflows/qc-reviewed-sssom.yaml | maintained | Paired immutable companion-review selector only |
+| protected-qc-evidence | .github/workflows/qc-evidence.yaml | maintained | Unchanged evidence gate |
+| protected-pin | scripts/.vendored_canon_ref | maintained | Unchanged vendored pin |
+| current-companion | reports/kgm_unmapped_chemicals_20261107/companion-review.json | generated | Current exact20-owner/51-claim companion |
+| companion-proof | reports/kgm_unmapped_chemicals_20261107/companion-refresh-v2.json | generated | Native refresh proof bound to final typed implementation |
+| withdrawal | reports/kgm_unmapped_chemicals_20261107/withdrawal-review.json | generated | Receipt27 first withdrew stale mapping support |
+| semantic-delta | reports/kgm_unmapped_chemicals_20261107/semantic-disposition-delta.json | generated | Exact one inherited BUFFER approval withdrawal and changed mapping assertion ID |
+| supported | reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/ingredient_mappings.sssom.tsv | generated | 1739 supported rows including two broad mappings |
+| withheld | reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/withheld_mappings.sssom.tsv | generated | 1275 withheld rows preserved byte-for-byte |
+| dispositions | reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/mapping-dispositions.tsv | generated | Native complete reviewed mapping partition |
+| release-manifest | reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/manifest.json | generated | Immutable coherent reviewed release manifest |
+| bundle-manifest | reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/manifest.json | generated | Exact companion export manifest and 20-owner scope |
+| unified-trace | reports/kgm_unmapped_chemicals_20261107/unified-generation/traced-rebuild.json | generated | Native producer and complete before/after input inventory |
+| unified-cell-diff | reports/kgm_unmapped_chemicals_20261107/unified-generation/cell-diff.json | generated | Exactly13 cells across8 sodium acetate rows |
+| b4-readonly | reports/kgm_unmapped_chemicals_20261107/b4-readonly-result.json | generated | Actual native B4 validation against five available transforms |
+| adoption-guard | reports/kgm_unmapped_chemicals_20261107/downstream-adoption-inspection.json | generated | Native KG admission requires separate release refresh |
+| receipt-27 | reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json | generated | Native mapping change receipt27, two owners and one row |
+| suppression-sidecar | mappings/suppressed_aliases.tsv | generated | Unchanged prior-only synonym policy sidecar |
+| collision-baseline | mappings/other_cross_record_baseline.tsv | generated | Unchanged cross-record baseline |
+| semantic-review | reports/semantic_review_20260921/resolution/current-review.json | generated | Content-bound full graph review and dispositions |
+| semantic-dispositions | reports/semantic_review_20260921/resolution/assertion-dispositions.tsv | generated | Exact mapping and nonmapping assertion statuses |
+| source-manifest | reports/kgm_unmapped_chemicals_20261107/source-audit/source-manifest.json | source | Exact fresh read-only source pack and consumer input identity |
+| reconciliation-before | reports/kgm_unmapped_chemicals_20261107/reconciliation-before/ledger.json | source | 549 baseline source candidates |
+| reconciliation-after | reports/kgm_unmapped_chemicals_20261107/reconciliation-after-v1/ledger.json | source | 549 source candidates after two bounded changes |
+| reconciliation-delta | reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/summary.json | source | 547 unchanged entries, two bounded differences |
+| scientific-holds | reports/kgm_unmapped_chemicals_20261107/scientific-holds/microbedecoder-holds-v1.md | source | 10 material identities and225 exact source assertions retained |
+| mediadive-holds | reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-mediadive-holds-v1.md | source | Five unresolved targeted source cases remain open |
+| synthesis | reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/README.md | source | Bounded diagnostic synthesis without bulk curation |
+| independent-implementation | reports/kgm_unmapped_chemicals_20261107/independent-review/implementation-rereview-v1.json | source | Independent repaired writer/context/queue retests |
+| independent-head | reports/kgm_unmapped_chemicals_20261107/independent-review/committed-head-cd76-audit-v1.json | source | Actual committed-head exact scope and disposition audit |
+| independent-native-replay | reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/assessment.json | source | Independent full native unified replay and18880-input stability |
+| independent-writer-probes | reports/kgm_unmapped_chemicals_20261107/independent-review/publication-boundaries-recheck-v3/result.json | source | Original faults now refused with unrelated paths intact |
+| independent-queue-probe | reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/parent-swap-result-recheck-v2.json | source | Original output-parent swap now refuses |
+| validation-status | reports/kgm_unmapped_chemicals_20261107/validation-v1/status.json | source | Completed native/local validation logs, initial pending items preserved |
+| local-suite-log | reports/kgm_unmapped_chemicals_20261107/validation-final/full-pytest-v1.log | source | local suite log |
+| local-coverage-log | reports/kgm_unmapped_chemicals_20261107/validation-final/package-coverage-final.log | source | local coverage log |
+| native-retained-check-log | reports/kgm_unmapped_chemicals_20261107/validation-final/record-reviews.log | source | native retained check log |
+| local-validation-receipt | reports/kgm_unmapped_chemicals_20261107/validation-final/local-checks.json | source | local validation receipt |
+| independent-test-scope | reports/kgm_unmapped_chemicals_20261107/independent-review/final-scope-child-assessment.json | source | independent test scope |
+| independent-skip-scope | reports/kgm_unmapped_chemicals_20261107/independent-review/skip-qualification-v1.json | source | independent skip scope |
+| independent-local-completion | reports/kgm_unmapped_chemicals_20261107/independent-review/local-completion-independent-v1.json | source | independent local completion |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native composite QC | passed | True | acetate-owner, methylacetate-owner, canonical, unified, unified-provenance | Completed native composite includes strict/shape/round-trip/flat products, freshness, synonym and SSSOM gates. No active invariant rejects; default B4 path skip is separately qualified. |
+| Native static quality | passed | True | publication-guard, typed-refresh, alias-context | Ruff/Black/Mypy passed; maintained Python source scope61files. |
+| Reviewed SSSOM schema and release replay | passed | True | canonical, mapping-review, release-manifest, supported, withheld | Actual native partition and schema replay passed;1739SUPPORTED/1275WITHHOLD; exact input/output hashes inspected. |
+| Bounded companion refresh and export | passed | True | current-companion, companion-proof, alias-context, bundle-manifest | Actual final code-bound refresh/export passed;20owners/51claims unchanged; native proof verifies receipt27 and all old histories. |
+| Native supported KGX gate | passed | True | semantic-review, semantic-dispositions, semantic-delta | Supported subset passed. Full semantic graph retains existing unresolved backlog and one newly withdrawn inherited BUFFER approval; no blanket pass inferred. |
+| Complete local pytest invocation | passed | True | local-suite-log, local-validation-receipt, independent-skip-scope, independent-test-scope | Actual invocation completed4898passed525skipped31warnings0failed in1257.40seconds. All seven added test files ran183passing cases with no skips; existing skipped-module attribution is source-based because log lacks individual skip reasons. |
+| Maintained package coverage gate | passed | True | local-coverage-log, publication-guard, typed-refresh, alias-context | Actual maintained package coverage79percent meets unchanged35percentfloor. This is distinct from combined scripts/package advisory report. |
+| Native immutable review contract | passed | True | native-retained-check-log, history-probe, publication-boundary-proof, queue-parent-swap-proof | Actual native checker validated1018retained bundles; exact missing historical bases were fetched without changing any historical review. This count predates this new review. |
+| Native B4 default sibling-path coverage | skipped | False | canonical | Default nested-worktree sibling ontology path absent; native B4 is skipped without altering its policy. Separate actual-transform check below supplies bounded available coverage. |
+| Unchanged native B4 function against actual available transforms | passed | True | b4-readonly, canonical | Baseline and candidate both have zero mismatches against five available read-only ontology transforms; BTO/MICRO unavailable and full coverage is not asserted. |
+| independent-focused-tests | passed | True | publication-guard, alias-context, queue-writer | Actual independent reruns:52typed-history/source-alias,47queue and91writer-boundary tests passed, with no production edits. |
+| independent-native-unified-replay | passed | True | unified, unified-provenance | Actual independent native replay completed exit0;18880input members/bytes remained unchanged before/after and complete output equals maintained TSV. |
+
+## Scientific And Domain Assessments
+
+### Exact trihydrate alias and provenance-only rejected-label correction
+
+identity: supported. Targets: acetate-owner, methylacetate-owner, mapped-aggregate, unmapped-aggregate, mediadive-capture, chebi-capture, pubchem-capture, methyl-source, mapping-followup, source-proof, native-author-review.
+
+MediaDive1315 explicitly pairs Na acetate x 3 H2O with CAS6131-90-4. The inspected ChEBI32138 capture supplies the form-specific trihydrate term, CAS cross-reference, C2H3O2.3H2O.Na formula and three waters in the structure; PubChem23665404 independently corroborates the form and CAS. All six active SSSOM tokens preserve that identity: Na-acetate x 3 H2O, Sodium acetate x 3 H2O, sodium acetate--water (1/3), Sodium acetate·3H2O, CAS:6131-90-4 and the new exact MediaDive spelling. The source's discrepant hydrogen count is retained as a conflict and was not imported. Exact owner diff is one alias plus one history event; mapped aggregate agrees. The second record changes only active notes and one history event: literal 3-methylacetate exists in raw record19685 in both prose and structured minor-product data. Historical speculation remains historical; identity remains unresolved and REJECTED, with no mapping or replacement. This is a raw database provenance conclusion, not a primary-paper interpretation or approval of its chemical identity.
+
+### Guarded source publication, exact successor proof and native queue inventory
+
+consistency: supported. Targets: publication-guard, alias-writer, canonical-publisher, policy-writer, notes-writer, queue-writer, alias-context.
+
+The repaired writers reject aliased or nonregular targets, capture exact input bytes and identities, stage through native validation and atomically replace the held target entry. Late manifest/candidate substitutions now refuse; original private reproductions no longer overwrite unrelated linked files or produce a success receipt. Scientific transform functions remain unchanged by boundary repair. The queue writer reserves and rechecks the complete output directory chain and native file reservations, refusing the original post-preflight parent swap. Its inventory includes ignored direct mapped/unmapped records and excludes nested historical backups. The source-alias context permits exactly the reviewed two source changes and one canonical row projection with native receipt27, full old-history preservation and no companion-claim approval. Legacy contexts admit unrelated histories only as immutable lists, preserving all original scientific and receipt assertions.
+
+### Regression coverage and preserved workflow assertions
+
+scope: supported. Targets: test-1, test-2, test-3, test-4, test-5, test-6, test-7, test-8, companion-workflow, protected-qc-evidence, protected-pin.
+
+The only modification to an existing test is the companion REVIEW selector, paired with the workflow's --review argument. Both point to the same immutable new companion; assertions remain unchanged. All other test files are additions. The independent committed-head scope check found no new skip, xfail or importorskip controls. Protected qc-evidence, vendored pin, semantics, justfile and Python version are unchanged. Focused independent reruns passed:52 typed-history/source-alias tests,47 reconciliation tests and91 writer/publication tests. They exercise valid paths and rejected history mutations, aliases and boundary substitutions without widening scientific approval.
+
+### Scoped mapping publication, unchanged companion claims and traced native unified rebuild
+
+provenance: supported. Targets: current-companion, companion-proof, withdrawal, semantic-delta, supported, withheld, dispositions, release-manifest, bundle-manifest, unified-trace, unified-cell-diff, b4-readonly, adoption-guard, receipt-27, suppression-sidecar, collision-baseline, semantic-review, semantic-dispositions.
+
+Canonical membership/order remain3014. Receipt27 binds exactly two owner changes and one changed row at position2556; all prior26 receipt bytes remain unchanged. Only that row's source, mapping_date and other change, with legitimate header-date updates. Receipt replay first withdraws inherited support; the new current-owner six-token scientific followup restores only that mapping. Final partition remains1739SUPPORTED/1275WITHHOLD; withheld bytes are unchanged. Companion20owner inputs/51decisions/claims are unchanged; final v2 audit binds final typed source. Exactly one inherited nonmapping BUFFER approval becomes OPEN because ownerbytes changed; every other nonmapping disposition row is identical. The two supported broad mappings remain intentional. Native unified rebuild retains4170rows/order and changes13cells across8rows, all traced to this one new alias. Independent full native replay equals the maintained TSV and verifies all18880 input members/bytes before and after; native provenance matches. Five available ontology transforms yield no B4 mismatches; unavailable prefixes remain qualified. No KG release adoption or graph rebuild is performed or inferred.
+
+### Fresh source queue and preserved scientific holds
+
+scope: supported. Targets: source-manifest, reconciliation-before, reconciliation-after, reconciliation-delta, scientific-holds, mediadive-holds, synthesis.
+
+The bounded reconciliation retains all549source candidates, including low-frequency MicrobeDecoder compounds, raw labels and source IDs. Exactly547before/after entries remain identical; only the new sodium spelling's owner coverage and the rejected record's provenance hash change. This is lexical/source reconciliation, not approval or KG adoption. All26downstream-held candidates and225 source assertions across10 MicrobeDecoder material labels remain held, and five targeted MediaDive scientific questions remain open. Source manifests bind the actual read-only checkout and consumed generation. Old helper occurrence constants are not interpreted as measured medium counts; absent exact names are not declared absent substances.
+
+### Independent observed checks and immutable lineage
+
+evidence: supported. Targets: independent-implementation, independent-head, independent-native-replay, independent-writer-probes, independent-queue-probe, validation-status.
+
+Independent evidence records actual private reprobes, focused checks, native full-producer replay and exact committed-head audit. Frozen initial failures remain separate from repaired observations; no failed observation is rewritten. These artifacts establish only their stated scope and do not substitute for final completed local/remote gates. The native final review must add completed gate evidence and bind its actual source state before saving.
+
+### Legacy history successor repair and original negative proof
+
+consistency: supported. Targets: typed-refresh, policy-history, history-probe.
+
+Legacy form/registry/stock contexts now accept owned-name and source-alias histories only as immutable unrelated lists. Independent focused regressions exercise preservation and reject deletion, alteration, reordering and JSON type substitutions while retaining original transition checks. Prior failure proof is preserved unchanged.
+
+### Current canonical source and content-bound mapping review
+
+provenance: supported. Targets: canonical, mapping-review.
+
+The current canonical row and native review satisfy the exact receipt27/fresh six-token followup boundary. No unrelated mapping disposition changes; complete prior receipt history and withheld bytes remain unchanged.
+
+### Preserved historical companion input
+
+provenance: supported. Targets: companion.
+
+The prior companion remains immutable. New metadata successor retains identical20record inputs and51decisions/claims, and is validated by the final code-bound native refresh proof; it does not rewrite or repurpose its predecessor.
+
+### Independently replayed native unified snapshot pair
+
+consistency: supported. Targets: unified, unified-provenance.
+
+The maintained TSV/provenance pair matches the native rebuild. Independent native replay verifies13changed cells across8rows, all from the same alias,4170same-order rows and18880unchanged producer inputs before/after.
+
+### Preserved original writer and queue failures with verified fixes
+
+provenance: supported. Targets: alias-writer-original, canonical-publisher-original, policy-writer-original, queue-writer-original, publication-boundary-proof, queue-parent-swap-proof.
+
+The archived source and original proofs remain byte-exact historical observations. Current production writers now reject those reproduced attacks, as independently retested; terminal dispositions concern the current repair and do not relabel the original unsafe executions as successful controls.
+
+### Supported predicate scope documentation
+
+representation: supported. Targets: release-guide.
+
+Release guide now explicitly permits the two reviewed broad mappings in the actual supported subset, retaining direction and exact-identity safeguards. No mapping predicate, review disposition or hold changed to make the documentation pass.
+
+### Actual completed local and remote check evidence
+
+evidence: supported. Targets: independent-local-completion, independent-skip-scope, independent-test-scope, local-coverage-log, local-suite-log, local-validation-receipt, native-retained-check-log.
+
+Completed local validation passes:4898passed525skipped31warnings0failed, packagecoverage79percent against unchanged35percentfloor, and1018retained native review bundles validated. All new tests executed; old optional skip controls remain unchanged. Remote CI and the actual final published-head attestation are explicitly pending; this is a local science/implementation verdict, not publication or merge authorization.
+
+## Findings
+
+### typed-successor-rejects-owned-name-history: Older typed refresh contexts reject legitimate owned-name history
+
+minor / resolved / confirmed; issue key: mim-typed-successor-owned-name-history.
+
+Current canonical manifest contains owned_name_suppression_updates, but the shared form/registry/stock shape check excludes it. All three native paths refuse before validating a successor. Preserve existing history and scientific constraints; do not remove the key to pass.
+
+Disposition: Legacy form/registry/stock contexts now accept owned-name and source-alias histories only as immutable unrelated lists. Independent focused regressions exercise preservation and reject deletion, alteration, reordering and JSON type substitutions while retaining original transition checks. Prior failure proof is preserved unchanged.
+
+### source-alias-writers-hardlink-side-effects: Hard-linked mutation targets allow unrelated file writes
+
+major / resolved / confirmed; issue key: mim-source-alias-writer-hardlink-scope.
+
+Actual owner and canonical private fixtures complete successfully and overwrite a second hard-linked unrelated path. Symlink-only checks and native YAML validation do not protect write scope. The policy writer has the same unchecked direct-write pattern and needs the same bounded assessment.
+
+Disposition: Shared guard now rejects hard-linked/symlinked targets, pins identities and parent bindings, stages through native validation and replaces only the held target entry atomically. Original owner/canonical hard-link reprobes refuse without modifying unrelated aliases; all four writers receive the same guarded boundary. Historical observed source/probe targets remain intact.
+
+### source-alias-publisher-unverified-late-manifest: Late manifest replacement is attributed without validation
+
+major / resolved / confirmed; issue key: mim-source-alias-publisher-late-manifest.
+
+The publisher checks manifest once, reserves outputs, and rechecks only canonical/owner. A real private reservation callback replaced manifest with a zero producer and FAILED validation; publication still returned success and the receipt hashes the replacement manifest.
+
+Disposition: Publisher now captures the exact candidate/manifest bytes and rechecks their identity and content at reservation, write and receipt boundaries. Original late-manifest substitution refuses and leaves no success receipt. Regression cases cover late candidate/manifest/source evidence and receipt inventory mutations.
+
+### queue-output-parent-swap: Queue output can be redirected into protected upstream after preflight
+
+minor / resolved / confirmed; issue key: mim-chemical-queue-output-parent-swap.
+
+Delegated independent reviewer swapped initially safe output parent to a symlink during load_review. run() returned success and created ledger.json,ledger.tsv,receipt.json,summary.json inside the private upstream fixture. Real KG-Microbe and MIM inputs were untouched.
+
+Disposition: Reconciler holds and revalidates a root-anchored O_NOFOLLOW directory chain through native file reservation and input rechecks. The original independent late-parent swap refuses and creates no redirected upstream report. Positive nested-output and additional late-directory/leaf swaps are covered.
+
+### release-guide-supported-predicate-scope: Release guide incorrectly describes supported mappings as exact only
+
+minor / resolved / confirmed; issue key: mim-release-guide-supported-broad-predicates.
+
+Actual baseline native export contains two supported broad mappings while guide says all supported rows in the snapshot are skos:exactMatch. This is documentation drift, not a reason to narrow or change approved predicates.
+
+Disposition: Release guide now explicitly permits the two reviewed broad mappings in the actual supported subset, retaining direction and exact-identity safeguards. No mapping predicate, review disposition or hold changed to make the documentation pass.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| e1 | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/mediadive-1315.json | supports | Exact trihydrate alias and provenance-only rejected-label correction |
+| e2 | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/chebi-32138.json | supports | Exact trihydrate alias and provenance-only rejected-label correction |
+| e3 | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/pubchem-cas6131-synonyms.json | supports | Exact trihydrate alias and provenance-only rejected-label correction |
+| e4 | reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/microbedecoder-raw-record19685.csv | supports | Exact trihydrate alias and provenance-only rejected-label correction |
+| e5 | reports/kgm_unmapped_chemicals_20261107/independent-review/source-and-receipt-audit-v1.json | supports | Exact trihydrate alias and provenance-only rejected-label correction |
+| e6 | reports/kgm_unmapped_chemicals_20261107/independent-review/implementation-rereview-v1.json | supports | Guarded source publication, exact successor proof and native queue inventory |
+| e7 | reports/kgm_unmapped_chemicals_20261107/independent-review/publication-boundaries-recheck-v3/result.json | supports | Guarded source publication, exact successor proof and native queue inventory |
+| e8 | reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/parent-swap-result-recheck-v2.json | supports | Guarded source publication, exact successor proof and native queue inventory |
+| e9 | reports/kgm_unmapped_chemicals_20261107/independent-review/scientific-transform-preservation-v1.json | supports | Guarded source publication, exact successor proof and native queue inventory |
+| e10 | reports/kgm_unmapped_chemicals_20261107/companion-refresh-v2.json | supports | Guarded source publication, exact successor proof and native queue inventory |
+| e11 | reports/kgm_unmapped_chemicals_20261107/independent-review/committed-head-cd76-audit-v1.json | supports | Regression coverage and preserved workflow assertions |
+| e12 | reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/assessment.json | supports | Scoped mapping publication, unchanged companion claims and traced native unified rebuild |
+| e13 | reports/kgm_unmapped_chemicals_20261107/unified-generation/cell-diff.json | supports | Scoped mapping publication, unchanged companion claims and traced native unified rebuild |
+| e14 | reports/kgm_unmapped_chemicals_20261107/semantic-disposition-delta.json | supports | Scoped mapping publication, unchanged companion claims and traced native unified rebuild |
+| e15 | reports/kgm_unmapped_chemicals_20261107/b4-readonly-result.json | supports | Scoped mapping publication, unchanged companion claims and traced native unified rebuild |
+| e16 | reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/summary.json | supports | Fresh source queue and preserved scientific holds |
+| e17 | reports/kgm_unmapped_chemicals_20261107/source-audit/source-manifest.json | supports | Fresh source queue and preserved scientific holds |
+| e18 | reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/assessment-v1.json | supports | Fresh source queue and preserved scientific holds |
+| e19 | reports/kgm_unmapped_chemicals_20261107/scientific-holds/microbedecoder-holds-v1.md | supports | Fresh source queue and preserved scientific holds |
+| e20 | reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-mediadive-holds-v1.md | supports | Fresh source queue and preserved scientific holds |
+| e21 | reports/kgm_unmapped_chemicals_20261107/validation-v1/status.json | supports | Independent observed checks and immutable lineage |
+| e22 | reviews/structured/20261108T023208Z-kgm-unmapped-baseline-contract-review/review.yaml | supports | Immutable prior native finding observation; exact IDs and affected targets are preserved. |
+| e23 | reviews/structured/20261108T024658Z-kgm-source-writer-boundary-findings/review.yaml | supports | Immutable prior native finding observation; exact IDs and affected targets are preserved. |
+| e24 | reports/kgm_unmapped_chemicals_20261107/sodium-acetate/mapping-followup-decision.json | supports | Current canonical source and content-bound mapping review |
+| e25 | docs/SSSOM_RELEASE.md | supports | Supported predicate scope documentation |
+| e26 | reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/manifest.json | supports | Supported predicate scope documentation |
+| e27 | reports/kgm_unmapped_chemicals_20261107/validation-final/local-checks.json | supports | Actual completed gate evidence inspected independently; counts and limitations are separated by runtime. |
+| e28 | reports/kgm_unmapped_chemicals_20261107/independent-review/skip-qualification-v1.json | supports | Actual completed gate evidence inspected independently; counts and limitations are separated by runtime. |
+| e29 | reports/kgm_unmapped_chemicals_20261107/independent-review/final-scope-child-assessment.json | supports | Actual completed gate evidence inspected independently; counts and limitations are separated by runtime. |
+| e30 | reports/kgm_unmapped_chemicals_20261107/independent-review/local-completion-independent-v1.json | supports | Actual completed gate evidence inspected independently; counts and limitations are separated by runtime. |
+| e31 | reports/kgm_unmapped_chemicals_20261107/validation-v1/final-qc-v1.log | supports | Completed native composite includes strict/shape/round-trip/flat products, freshness, synonym and SSSOM gates. No active invariant rejects; default B4 path skip is separately qualified. |
+| e32 | reports/kgm_unmapped_chemicals_20261107/validation-v1/static-quality-final.log | supports | Ruff/Black/Mypy passed; maintained Python source scope61files. |
+| e33 | reports/kgm_unmapped_chemicals_20261107/validation-v1/reviewed-qc-v1.log | supports | Actual native partition and schema replay passed;1739SUPPORTED/1275WITHHOLD; exact input/output hashes inspected. |
+| e34 | reports/kgm_unmapped_chemicals_20261107/validation-v1/reviewed-export-v1.log | supports | Actual native partition and schema replay passed;1739SUPPORTED/1275WITHHOLD; exact input/output hashes inspected. |
+| e35 | reports/kgm_unmapped_chemicals_20261107/validation-v1/companion-refresh-v2.log | supports | Actual final code-bound refresh/export passed;20owners/51claims unchanged; native proof verifies receipt27 and all old histories. |
+| e36 | reports/kgm_unmapped_chemicals_20261107/validation-v1/companion-export-v1.log | supports | Actual final code-bound refresh/export passed;20owners/51claims unchanged; native proof verifies receipt27 and all old histories. |
+| e37 | reports/kgm_unmapped_chemicals_20261107/validation-v1/supported-kgx-qc-v1.log | supports | Supported subset passed. Full semantic graph retains existing unresolved backlog and one newly withdrawn inherited BUFFER approval; no blanket pass inferred. |
+| e38 | reports/kgm_unmapped_chemicals_20261107/validation-final/full-pytest-v1.log | supports | Actual invocation completed4898passed525skipped31warnings0failed in1257.40seconds. All seven added test files ran183passing cases with no skips; existing skipped-module attribution is source-based because log lacks individual skip reasons. |
+| e39 | reports/kgm_unmapped_chemicals_20261107/validation-final/package-coverage-final.log | supports | Actual maintained package coverage79percent meets unchanged35percentfloor. This is distinct from combined scripts/package advisory report. |
+| e40 | reports/kgm_unmapped_chemicals_20261107/validation-final/record-reviews.log | supports | Actual native checker validated1018retained bundles; exact missing historical bases were fetched without changing any historical review. This count predates this new review. |
+| e41 | reports/kgm_unmapped_chemicals_20261107/validation-final/historical-base-recovery.json | supports | Actual native checker validated1018retained bundles; exact missing historical bases were fetched without changing any historical review. This count predates this new review. |
+| e42 | reports/kgm_unmapped_chemicals_20261107/validation-v1/native-candidate-invariants.log | supports | Default nested-worktree sibling ontology path absent; native B4 is skipped without altering its policy. Separate actual-transform check below supplies bounded available coverage. |
+
+## Limits And Additional Notes
+
+- Scientific review is deliberately limited to the exact sodium acetate trihydrate mapping and six active tokens plus raw-source provenance for the unchanged rejected 3-methylacetate identity. It is not whole-record, role or corpus-wide scientific approval.
+- Sodium acetate's inherited BUFFER approval is withdrawn to OPEN; this mapping-only review does not restore it. Every other nonmapping disposition remains unchanged. The full semantic graph remains FAIL because existing claims are unresolved, while the supported subset passes its native gate.
+- The original primary paper behind raw MicrobeDecoder record19685 was not independently reread; conclusions concern literal database provenance only. No replacement chemical identity is inferred.
+- Native qc-sssom in the nested worktree skips RuleB4 by its default sibling path. Separate unchanged native B4 evaluation against five available read-only ontology transforms reports zero mismatches; BTO/MICRO transforms are unavailable, so complete ontology-label coverage is not claimed.
+- The KG-Microbe checkout and installed generation are read-only and remain the baseline consumed pair. A later consumer admission/rebuild requires its own reviewed-release refresh and material-hold checks. No prospective downstream-resolution count is claimed.
+- Issue1152 is assessed as a supported direct-record inventory correction without inventing a missing predecessor finding. Closed dispositions apply only to the five exact prior native finding identities retained here.
+- The actual private overlay HEAD is durable baseline0dac2784; exact final bytes are captured as working_tree, not mislabeled committed at that base. Actual implementation headcd76b3e5 is independently content-verified in the committed-head audit. A separate actual final published-head attestation follows the report/evidence-only successor commit.
+- Remote CI is still pending and is not claimed green in this observation. Root must verify the final published head and its complete required CI independently before any later permitted release action.
+- Of525local skips,524are in15unchanged modules with optionalClaw/native-producer/profile checks and one in the unchanged data-dependent CURIE module. Their exact runtime reason per test was not printed; the category explanation is based on unchanged source controls and observed module skip markers. All7new test files executed183passing cases, zero skips.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T033443Z-kgm-unmapped-final-independent-review
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: Independent final KG-Microbe source reconciliation, scoped curation and release-boundary
+  review
+started_at: '2026-11-08T02:55:20Z'
+finished_at: '2026-11-08T03:34:43.878689Z'
+reviewer:
+  identity: /root/step7d_independent_review
+  kind: agent
+  model: gpt-6
+  independence: independent
+  independence_basis: The reviewer authored no production implementation, data correction,
+    test, source decision or GitHub publication. It independently inspected primary
+    database captures, exact source bytes, generated products and release boundaries;
+    reran original private fault injections and focused tests; replayed the full native
+    unified producer with before/after input membership checks. Independent child
+    /root/step7d_independent_review/queue_adversarial audited source reconciliation
+    and its original output-parent race; separate child /root/step7d_independent_review/final_scope
+    corroborated the final committed test/workflow/disposition boundary. Their actual
+    artifacts and identities remain preserved.
+skill: review-sssom-output
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Exact scoped source/alias publication and repaired guards pass independent
+  review; five prior findings resolved. No whole-corpus, role or downstream adoption
+  approval.
+scientific_review: true
+summary: Only the sodium acetate trihydrate mapping identity and complete six-token
+  publication, and the literal source provenance underlying the still-rejected 3-methylacetate
+  record. This review does not reassess or approve unrelated chemical identities,
+  whole records, roles, occurrence counts, unresolved source materials or downstream
+  graph adoption. Five exact prior findings are resolved against current repaired
+  code and independent reprobes; no new finding was identified in this scope. Completed
+  local validation passes:4898passed525skipped31warnings0failed, packagecoverage79percent
+  against unchanged35percentfloor, and1018retained native review bundles validated.
+  All new tests executed; old optional skip controls remain unchanged. Remote CI and
+  the actual final published-head attestation are explicitly pending; this is a local
+  science/implementation verdict, not publication or merge authorization.
+source:
+  git_revision: 0dac278466699129a083343a921c2e0ca18a9ab4
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/SKILL.md
+    sha256: 4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a
+    role: context
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: .github/workflows/qc-evidence.yaml
+    sha256: 288ef1795582105763952c4104d1455c1fef273a65528949f1e558d39c7306f3
+    role: target
+  - path: .github/workflows/qc-reviewed-sssom.yaml
+    sha256: 849fe71376f666ba0b6db133022b5b0b3aa4c2366b78f2d6c0e3d97352c0c422
+    role: target
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+    sha256: 7175c41748e60418b6e57a984eb8450aa20ed64b1015286a52aff4ec1c0256f4
+    role: target
+  - path: UNIFIED_INGREDIENT_MAPPING.tsv
+    sha256: c12f09602dbb4be511c6e813b046fe5965a42134a124a2b3678deb3880591b70
+    role: target
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 8d61eef218f045e26fc1f3db6755446008def7bc5d341b1da2e9b08686743e7c
+    role: target
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: ad752dc70127edd2b4d073c3ff42d136b89d605a9b5a9151922ffe01d8f873d3
+    role: target
+  - path: data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml
+    sha256: 77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376
+    role: target
+  - path: data/ingredients/unmapped/3-methylacetate.yaml
+    sha256: 3ce45f6d8c8757b762b1d57fb5dd7c0c9907a8dd2829ab1431d2f522e98bf0aa
+    role: target
+  - path: docs/SSSOM_RELEASE.md
+    sha256: c7e398f487bc097b91ad092d3311f9f7cce721ee73cabcb998b4f9999f973197
+    role: target
+  - path: docs/data/all_ingredients.csv
+    sha256: 93528d150ab574ac75f2239a58c236b8d44992db0d6a93b0ae4ded29a9b78e9c
+    role: context
+  - path: docs/data/all_ingredients.json
+    sha256: 3ce89798adf31564a382f1acc2581144370943325f65b87613885762095ad91d
+    role: context
+  - path: docs/data/all_ingredients.md
+    sha256: dc0cfe0b0ce3c26396a5174fee4c8960f048a1401c33466cb8d1aee59d278075
+    role: context
+  - path: docs/data/ingredient_graph.json
+    sha256: e9049b6d0903e74c81ef052e2f041de109fa8a3c0e2e96cde009838731d7ee9a
+    role: context
+  - path: docs/data/ingredient_umap.json
+    sha256: 500dfaa5c7ea0c88f3abc857359f60bf81ba0f77e7ae5e9932c7d6fb48602913
+    role: context
+  - path: docs/data/ingredients.json
+    sha256: 363e11eacf5f551fd85222de848084ef88459444d9a68b63ab8d28d52293e427
+    role: context
+  - path: docs/data/label_index.csv
+    sha256: afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16
+    role: context
+  - path: docs/data/mapped_ingredients.csv
+    sha256: 26d6d06981796f8dc025c55f04624bf5cfa5450e7aac25d1c49bea6dfb252a6a
+    role: context
+  - path: docs/data/mapped_ingredients.json
+    sha256: 87e6fb13f5f73fff48a63ef7cd63d6a29672b88afe3bd419ba2451db3b4f9f3f
+    role: context
+  - path: docs/data/mapped_ingredients.md
+    sha256: 61d9ea0a08e861d19121f2a18e0bf4eecfa80c38d7d247986fa5777c6617d7fd
+    role: context
+  - path: docs/data/unmapped_ingredients.md
+    sha256: ee218895cb0f16d1b0bd7b877659d4fd500adc29cc45658e56ecc2a60c373641
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: justfile
+    sha256: a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a
+    role: context
+  - path: mappings/ingredient_mappings.sssom.tsv
+    sha256: 097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221
+    role: target
+  - path: mappings/ingredient_mappings.sssom.tsv.manifest.json
+    sha256: 6233ebf63626baa948c48592d6b11a88e3c75e65448431c2268daa579c51f8b3
+    role: target
+  - path: mappings/needs_curator_review.tsv
+    sha256: 3dc66babde70d8edcf296ec33ed76e350481391c39015b86d2fbaf3f0efe4342
+    role: context
+  - path: mappings/other_cross_record_baseline.tsv
+    sha256: 1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f
+    role: target
+  - path: mappings/suppressed_aliases.tsv
+    sha256: ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/README.md
+    sha256: d374a3690389a574e3e3a838839363a09cd2077d1e51931360a389ea309fc223
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/b4-readonly-result.json
+    sha256: 36794c4cdfeb741e01fa8f61361e6cb8f75074681c170870df8a73a1d963433b
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-companion-export-v1.json
+    sha256: df3f64db4b5b226bfd92b068b78be6e574e95f15f1e49053784bd3d7080168a9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-companion-export-v1.log
+    sha256: 61dc25102e26d7e3594995debc43efb8808b2abe6c07c74d3bd73a42c521e9a3
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-contract-audit-v1.json
+    sha256: dc1ac887c54ae13d00800b8941c281c88d5ac08015ec424ad002ab7a3e5f7ac6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-reviewed-export-v1.json
+    sha256: 6b78fc7c577e817f45b64b979d683353698a5e27fd581044785a8a79f02b18dc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-reviewed-export-v1.log
+    sha256: b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-reviewed-replay-v1.json
+    sha256: 88b36a24931d83064044e7d3809da9342e42e805a094b4461b7194e67dbd0357
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-reviewed-replay-v1.log
+    sha256: b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/probe_typed_history_v1.py
+    sha256: 8de5e6e685e6bc8b4e14563709b3b6b8dbc86872ee8826fa7130a65bd77a5549
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/typed-history-issue-body-v1.md
+    sha256: d5d4d4e4360fc750e2bef7728fbf7cbaaa524495b46e84e0949b5557b5ca97a0
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/typed-history-proof-v1.json
+    sha256: 081f877937478210cff1b8b54353471d6dcbef17900f88c55f858aebc9a05de4
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/ingredient_bundle_v1.schema.json
+    sha256: c0faabc0870bdcb3f03847f5e6597bbe4e245ccc775fc398f536c7c3f0ea4ab2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/ingredient_identifier_annotations.tsv
+    sha256: 50e4d1f4a6aa6378cb3fe9a0ae6c5664dbba2a157fe0f8368f2e817fb32362be
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/ingredient_mappings.sssom.tsv
+    sha256: c51ac9274325b7894530b745bec64f2f773904cb9652c8a0da46ef9937d76aa4
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/ingredient_occurrences.json
+    sha256: c9aaf7c7d58fe1a872ca762b476ac18459c1a06a9642a01bb51431cf1dacbcd2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/ingredient_products.json
+    sha256: ebff6bc2ee5d4c5ff0b21031c26e7569903673a1be1d8b0272446cff5486f492
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/ingredient_scope_v1.yaml
+    sha256: dd2f78e6b6fcbdf8a715bebcec14e0f86c1e431bf28e5b9d7f3524a62e5bce3a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/manifest.json
+    sha256: b602726948d5ab7fe6ea13a900aa3d11c2f2b75075487907de527805881b278a
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/review.json
+    sha256: ac305758168ffe30c2d37d2f0cd73fab152e61c95ab1bd99e98750ec8f139068
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Acriflavine.yaml
+    sha256: d8ec8d8d5d56bfde012c54709bd80b33dff64660df7ce111d28de40707e9824e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Anabasine_Hydrochloride.yaml
+    sha256: c9c693f7bc5354b5c472efaf4472f66b56e5c4e8d3a814490982da1d94810215
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Bovine_Serum_Albumin.yaml
+    sha256: 43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Cotarnine_Chloride.yaml
+    sha256: 821fd7dd0dd3c8308727c3e6a4999c860eb6be69a42d6bb996b6d3a94b2a4860
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Locust_Bean_Gum.yaml
+    sha256: 973e02f8ba4ad966f8fc9acf5174d47f9aa6cc17c9f45afb632c6e9776276cfd
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Lysozyme.yaml
+    sha256: 797929d4ebcbf1c034daeaf8f45bc28c4de79196fff8e30e926a087f0afdff2f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Polymyxin_B.yaml
+    sha256: d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Pretomanid.yaml
+    sha256: 7b02eca54a257804e1203999faede7e6fade61657d201fa2fd0f21f1a7ee89af
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Proteose_Peptone_No_2.yaml
+    sha256: 67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Rabbit_Serum.yaml
+    sha256: 031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Rifamycin.yaml
+    sha256: 0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Rifamycin_Sv.yaml
+    sha256: 7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Sodium_Adipate.yaml
+    sha256: 0699b67ffbcc35d3566ff531350c753d93b677718cb4e550bdfa6257ba35886d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Sorbitan_Monooleate.yaml
+    sha256: 09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Sunflower_Oil.yaml
+    sha256: b6c22eaea1a8bd7c243b5eb9da1b4c6c36c6b9de1e3ac25768283684d1dc9e03
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Sutezolid.yaml
+    sha256: 61bda78a8cb9a9d96639219d4ef514a4ed7de658d0fe1b373edf20a9f1cebf7b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Tara_Gum.yaml
+    sha256: d52f83dbd41f5fac0215e6d47bbf9d9b46ee39aa2a7c78a5552cb7ccdebe693b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/V-8_Juice.yaml
+    sha256: 44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Xanthine.yaml
+    sha256: c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/data/ingredients/mapped/Zymosan.yaml
+    sha256: a445e9bbdf842cd2a732fd2fe999014ddbffe7b9ace8f6bf0c273d7981f80662
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/mappings/ingredient_mappings.sssom.tsv
+    sha256: 097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/mappings/ingredient_mappings.sssom.tsv.manifest.json
+    sha256: 6233ebf63626baa948c48592d6b11a88e3c75e65448431c2268daa579c51f8b3
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/mappings/other_cross_record_baseline.tsv
+    sha256: 1e8018b22b7e242e919372a51290966c0f42b6dd01580a988f2e43df1ffe775f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/mappings/suppressed_aliases.tsv
+    sha256: ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/ingredient_bundle_20260924/claims.json
+    sha256: 52c5c0e9938725524ed9680c736e1015b74dba1c603c2b76da62b7cc17175a8b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/ingredient_bundle_20260924/review-evidence.json
+    sha256: 34e8e6575bb4e80fd09234661a0c6a8db0c061d449b9529bb9dd74aad4a4e6d1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/ingredient_bundle_20260924/scope-rulings.json
+    sha256: 3ae5d5a6a5b82ab6890a110c154cf602701282f25ee18f9a1f0f609869106555
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/ingredient_bundle_20261101_owned_names669/metadata-review-authority.json
+    sha256: 43b72aa39326e90bee7f5b2f6f8a94d06357ee8d8050403cc302a6aaceb78847
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/ingredient_bundle_20261101_owned_names669/ownership-inputs.json
+    sha256: eef0c1f6562ac57207db041f581885d6c6e8bdb06443b2208fdee4259244bd71
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/ingredient_bundle_20261101_owned_names669/review-evidence.json
+    sha256: 17ade75073f296e59e075ba6121f3cdf9a4ecd8937c27ee8590dc377ff5612e0
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping-evidence.json
+    sha256: d597a2e45e02ab46c6d6373ef1ebed41fd469359de0e200ea76cf25a9164e91c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json
+    sha256: 4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    sha256: e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json
+    sha256: 91da2d86f8359520bfb70a3ef411de9c64f068d623ded3c2c9159435d67911c7
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json
+    sha256: 157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json
+    sha256: af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json
+    sha256: 93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/micro-source-review.md
+    sha256: e2f70e3950362dbb9fee47de191f8db1ca26eff9a3951f1021eed14c8b3fda71
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json
+    sha256: 9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json
+    sha256: 4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/reports/sssom_completion_20260921/review.json
+    sha256: d9ced43acf6bd739e2c9f8ed060e6dbc6d4d32b7b8efbff83dddef237946a410
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/sources/src/mediaingredientmech/ontology_sources/micro/manifest.json
+    sha256: 9e3ee88942aafbf0687bbbfc08c3e653b0ad0d104e7ea80efd07b1f0a4350feb
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/ingredient_mappings.sssom.tsv
+    sha256: 204c7909ecad9762704d950693210a4e25b53fdac2fdb2e8e6689270889d64cd
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/manifest.json
+    sha256: 86cc8cec342e5aa28373abcd59c90e428d3fcfedeef646234a323bb31142bc67
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/mapping-dispositions.tsv
+    sha256: b04cf2ad39e5f3574fcc01de87e9a789c6ecd8e9dc088327cb63368ea0b5efb2
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/withheld_mappings.sssom.tsv
+    sha256: 5817fb845c65f995fb0c78095168af1cbf0c837a991004fcd0a9d73cd0874c88
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/check_b4_readonly.py
+    sha256: bbb9bd7c6fe3ef0a10f5b54f44eccc9e1a01441abef06b1ad0385984b9bf622c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/companion-prior-v2.json
+    sha256: ba15d43306f33972d7abcd67185e5bf571f2224f00e757c2603e017a895ac815
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/companion-prior.json
+    sha256: ba15d43306f33972d7abcd67185e5bf571f2224f00e757c2603e017a895ac815
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/companion-refresh-v2.json
+    sha256: 9fdd719440e66bf21a284f97d4a6d96dfc0f79e86d18c8222c8fdeffb9323976
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/companion-refresh.json
+    sha256: 79f17f727a7179ec43537646aad258d140b581e9c2990b822f9c1f96bb466120
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/companion-review-v2.json
+    sha256: ac305758168ffe30c2d37d2f0cd73fab152e61c95ab1bd99e98750ec8f139068
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/companion-review.json
+    sha256: ac305758168ffe30c2d37d2f0cd73fab152e61c95ab1bd99e98750ec8f139068
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/downstream-adoption-inspection.json
+    sha256: 008af3f64dc8b9fb82e573b5f9abd8c5f674d102864d1275e3c759c5ea8675c8
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/audit_unified_native_v1.py
+    sha256: 8b0c8fb855d84ac37b997753500f658cf0f859a830e5f652b0be23177648fd21
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/committed-head-cd76-audit-v1.json
+    sha256: e990b8e4de61beab496cc8296923e5677f37cc9f66c10561938b938dc854cc88
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/final-scope-child-assessment.json
+    sha256: 6af9969f152deb5c5287b627e50003411e8d57748a8fadef60af383ca84458b3
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/implementation-rereview-v1.json
+    sha256: 9a76c1339501e49aee8e852f0d905cb3fbd2aeda77bb9c9da459289f683923d7
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/local-completion-independent-v1.json
+    sha256: 3f3aad36f8a5bb9ed5179fca4616baf34c40721a261656cdeae08bb55714531e
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/probe_publication_boundaries_recheck_v2.py
+    sha256: 8d433fd7dfe87588d9a5249835ae5858247ff7805d31c444271d9a602e92ea13
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/probe_publication_boundaries_recheck_v3.py
+    sha256: 94a14b98dea2e8caf609b2912e09f11268c8de649b02dd6539d4bf5a3b59da8a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/publication-boundaries-recheck-v3/result.json
+    sha256: 81e697f6a1900f8b77428e3b32df89d316a2a638282897793cb64a9da8d13c87
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/assessment-v1.json
+    sha256: 105a3f2205fa8b7563048f208e951320e5d2bca89358f929356fe31d6c083be9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/parent-swap-result-recheck-v2.json
+    sha256: b1117977119fce195f99911ef37f4cfc1e7c37923a13a91b4be8d0fbf141387d
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/probe_output_parent_swap_recheck_v2.py
+    sha256: e5f276dcd973e8f11a98594f3a2f385a6ec5bba10e61388ba86409763a02da38
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/test-preservation-v2.json
+    sha256: 438e5000514bdc9a2415d1e5db7c1b939beaa1c656dffb71f2293a4d80c49db3
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/scientific-transform-preservation-v1.json
+    sha256: f90f116f29a3bca0a2cb08dcdac515b4d66fae9e1abcc53855eb22a007c728a8
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/skip-qualification-v1.json
+    sha256: de147f84e9e6f5adbc2d0112ab11580cedf5d4c8d4c63d3671e833c662d4ee8b
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/source-alias-context-direct-replay-v1.json
+    sha256: edfc3f3935fd5519cc3c7efe67c19e1c2f2afa9691f785d6f64eba7431cf52b0
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/source-and-receipt-audit-v1.json
+    sha256: 652797ecf8d3fc56fdc9cb646d3ae6b3586a1fe2e2188f2da73cfa5a9d41f86a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/assessment.json
+    sha256: 75d7be9e8d8c319205ce31244893e2a1e993c6908c796dd879d6d9e64d8089de
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/native-replay.log
+    sha256: 5c2cf55b25195b9eb01eff3854f420ff015c69290af31564678d1928d6be1da6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/native-replay.tsv
+    sha256: c12f09602dbb4be511c6e813b046fe5965a42134a124a2b3678deb3880591b70
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/execution/apply-receipt.json
+    sha256: fc2abda78eb58f1aa49bb6bc5f0968f944bcba8fe05414dbc2fb336ea2d883a1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/execution/apply.stderr.log
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/execution/apply.stdout.log
+    sha256: eaa29d964be9cc7f371b30406254df7e619bc01ceb1f73cd826f2995aa905b93
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/manifest.json
+    sha256: d7921a894ea1a0dc1e9133060f23f2ac790a6c0e163fb29f60506d65e0d8adb7
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/microbedecoder-raw-record19685.csv
+    sha256: b60fee13501d1ddba9d53688462f86055a9c1d6c6a470157e336a00ca93e7360
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/owner-reviewed-before.yaml
+    sha256: 98d0af6ac0a86e2ae354ffeb39933840658bfec5550a0b2e81a1f59246eb604a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/source-observation-proof.json
+    sha256: 39ca87637b1c478a84750dad02282d051fff91132827277a83be7da7cf6ed135
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/validation-v1/manifest.json
+    sha256: ad6f3a5fb219978e0012a8b4b58f26dce1144040596c4f03d67a8803ac810b51
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/validation-v1/receipt.json
+    sha256: 160740c7440aa97291399449e162c64804e6c1b87f312e39288cd25aeb48d722
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/validation-v1/stderr.log
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/validation-v1/stdout.log
+    sha256: b34e6bf238956c9791f795c8f2f73fc0f9fc70224c3129c9120de24a141284f6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/write/apply-log.json
+    sha256: 376ef73c4da174f156109c779c843d829e97df2fc4edb88ac484db855cb4f857
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/methylacetate/write/owner-before.yaml
+    sha256: 98d0af6ac0a86e2ae354ffeb39933840658bfec5550a0b2e81a1f59246eb604a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/native-generation/native-candidate.sssom.tsv
+    sha256: 0a5697d67e4bf19367a74d3ac4a29b101f13b17c8da672745451b3fb585f79db
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/native-generation/native-candidate.sssom.tsv.manifest.json
+    sha256: 23162641d8263e3cb051f8742e7bebdc5e4b4da5f27bef629031f57141aaa441
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/native-generation/native-invariant-rejects.tsv
+    sha256: 2633165ff38f0a8717d50465891de984d584251737a7cde2d9c83ecf0876f6a7
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/native-generation/suppressed_aliases.tsv
+    sha256: 1097726cc109e74ffb3f77bb30b9bef6c252839e9f89873f44266a3f7d98ea72
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/policy-write/policy-manifest-before.json
+    sha256: 6b6fe48246bd43dd70499e82f508a7b7ea0fcd121bccafafa0217aae84a17778
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/policy-write/policy-manifest-write.json
+    sha256: e24573ba07477b056c053610b96c41d4fdab5ad7e82cd233d0c06b3abb555385
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciler-1155-validation-v1/receipt.json
+    sha256: 918a8d24d2b8e9a80da9ffa2d7b816a42ade8e310e80a53abde8c32e4b5c501d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciler-1155-validation-v1/reconciler-black-1155-v1.log
+    sha256: b9cf511501d306d2bd8355ccb165c8ddc0a6fdd62d7c72c4a7b1795cf8934c8c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciler-1155-validation-v1/reconciler-ruff-1155-v1.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciler-1155-validation-v1/reconciler-tests-1155-v1.log
+    sha256: 6a99b176bb4863b4ce4516c13ee4f029370bbfaf6918761d9801512d39c95050
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciler-1155-validation-v1/reconciliation-after-v1.log
+    sha256: 6d1242be1031668598a84ffbf3dca16be68731847590fa7112f385fda784a28a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciler-1155-validation-v1/reconciliation-comparison-v1.log
+    sha256: 324c2b45c70d8558cbb4af90889f01341522f620708a44d29339b0dfbf03a169
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-after-v1/ledger.json
+    sha256: 5445c09c856c557293375e8f27bf99c3a18888d806540f66623453e334660271
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-after-v1/ledger.tsv
+    sha256: aa379e1a49a41eb963dc05ede785648612f26eeb86778d178bcd3006cc6c886f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-after-v1/receipt.json
+    sha256: 4f736b50edd06e40bf75a2d854a4d739f32e1e16e5b8ecfd5c12da5712724cbd
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-after-v1/summary.json
+    sha256: bd3caef690a3cdc52365a05c2cbd9b508f6ca0be2ddc742194246a4ec7b3d3e8
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-before/ledger.json
+    sha256: 9c21f4a226b0e27a08857584a5ec675e57d6439a1ea38a16fc8ea3b20f7f2339
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-before/ledger.tsv
+    sha256: 25e56880fd1205c51d3dc98aed42a16ab50a849d5a5b2bb920c94e2862ff8871
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-before/receipt.json
+    sha256: 4d33b12774477cd5112dcf94451e11449da67d376b65317a7385e6cfbd5b64aa
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-before/summary.json
+    sha256: 59b6a983fa1111104c8ca42cee40ac8f903218b7d9e56c9b5481e719f25ca6b1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/README.md
+    sha256: 39f471f178e7a30fda9c24efa3c8ce4ec60c45e9dbea7128254af90717596909
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/changed-candidates.json
+    sha256: 464828c50bb1c16c903bbca71c9642eb2bf362ecaec33643f1044eb18977ce51
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/derivation.py
+    sha256: 32cba7d9e2d73f6d8503b4504c4b36bfaeb603973a2ad8532060021d2599dd22
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/summary.json
+    sha256: 324c2b45c70d8558cbb4af90889f01341522f620708a44d29339b0dfbf03a169
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/README.md
+    sha256: 0dd6b9dce2ea6205bf0dbcfdb58976f2dc4852945f1bb30d89b6d497adde6578
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/all-source-diagnostic-partition.json
+    sha256: 45a44d77068e2f70ca8457a0ac12c32c110fe000eba77085de348c90b03d490b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/derivation.py
+    sha256: 7d51c0da5ead1e61bd2a581150906d1ca369e1811651ae927e91fc07265f47c8
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/nonhit-review.json
+    sha256: 6f29f4dc3d3270955b77e0f2acdf92652a7852da63d6b25cb2e18ebc7141fa67
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/summary.json
+    sha256: 061d0f215765d00cfd2722d517130a2ab7b8ce40715c5f67e017bb5854704817
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/3-methylacetate.yaml
+    sha256: 98d0af6ac0a86e2ae354ffeb39933840658bfec5550a0b2e81a1f59246eb604a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/CMC_PY_Horse_Serum.yaml
+    sha256: 39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/CyclopentanolCO2.yaml
+    sha256: 7124309eeffdd8fe6e1aea37843fb554ffe353068888e502d4ca850e54ed5ce8
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/H2_CO2.yaml
+    sha256: 6110474b9aa1b58a1beef31ed1f51546f853e74812c226799b3c3aa5cfe887f5
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/Mono-_And_Disaccharides.yaml
+    sha256: 4c64d86e2defacfa0f41b9857551adb8633dff11109bfbcdb20313ab2262023e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/PYG.yaml
+    sha256: 2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/PYGS.yaml
+    sha256: b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/Peptone.yaml
+    sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/bounded-owner-captures-v1/Sugar.yaml
+    sha256: 082779704d42c90bf0f1fb76bfec3164986a590b65d6bb27736121700141f7ab
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/kg-microbe-1220.json
+    sha256: 51c932aab9ddb8a96b767dddfc14e45d9d921570327dc2d99fb80eb833927da4
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/kg-microbe-1220.stderr
+    sha256: d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/manifest.json
+    sha256: 7afba9d21dcb2feb51a17426441d8ded9e3aca06ac875a4b547f805693d89f72
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-251-comments.json
+    sha256: 2e0f94242df4987a6a40344e7c2441761e3519c907537df2004f7e8b8d5c355e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-251-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-251.json
+    sha256: 47ec2be835a005d75d302cc11fb9419ca30b1172e77ca3825c5428fa9befdc6e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-251.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-308-comments.json
+    sha256: 36ced0ce9f48ea96c53b4cf1b9509dea4bee3a5c076d35a0df42b5786b3e2954
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-308-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-308.json
+    sha256: 1b4a129a2135d80016116cd6394c88d0fcc1c82aaf20c7742b328d685564ab37
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-308.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-811-comments.json
+    sha256: 5bfb26aa380c73b6f6df0b4d5c7064e386f92c0d4f71ccb2040acc15085285ef
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-811-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-811.json
+    sha256: 5f599e2660ac5c913fdd53e1219e22fa5b4d00967b53c0f0a02db59bf35ef43e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-811.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-868-comments.json
+    sha256: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-868-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-868.json
+    sha256: 7c00890a11cc774a0f544a35f7cd66fa48e732772bb323e4ea8761c8905321fc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v2/mediaingredientmech-868.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/kg-microbe-1220-comments.json
+    sha256: 6277c2fe22faad9b4f51752d6cf29c181c7d19b5c7e00e69edf087d32ed4e64b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/kg-microbe-1220-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/kg-microbe-1220.json
+    sha256: 2abc1560351d9f8b3af4bc2e9325a637db4c978352552606caa6670031910667
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/kg-microbe-1220.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/manifest.json
+    sha256: 0b0913a79606176ff77a2e066edd5da31c1209204c1141315d6b063326aa35cb
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/mediaingredientmech-213-comments.json
+    sha256: 11fde49915c60dea53912b2e9c6b584cb87fe32cb0b5cfd63a356830341898d8
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/mediaingredientmech-213-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/mediaingredientmech-213.json
+    sha256: 2c86f7a285e9f975a8b495867ad799619a6493df239062a386db5743662c66bf
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/holds-github-v3/mediaingredientmech-213.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/microbedecoder-holds-v1.json
+    sha256: 28a858709540fec97e9b24fa4d20de19f29f130134cd25aa1182f45631dc710e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/microbedecoder-holds-v1.md
+    sha256: ba6d2324379fb83fb624b4ac4f5a92ac205789bd8becac82d0380f9ab03e9363
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-captures-v1/manifest.json
+    sha256: 1db7fbb475cdf354c413014b0f41f8cd293f1627fe21d338fc96eddd5fec51e2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-captures-v1/mediadive-1512.json
+    sha256: d697390049df7dc59b32987c9cdf4417da693ac37c77ec937e2e5560052688c2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-captures-v1/mediadive-1930.json
+    sha256: 11288c275bf1cfcc181036e9142a43eddbffc15a438c78d633274d3f07d1abfc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-captures-v1/mediadive-2160.json
+    sha256: c8961f85cb7ffbbb66006e10423d97f1ba322f5ef5f43eef22612abdc0f28076
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-captures-v1/mediadive-331.json
+    sha256: b6ea249d20dd601749b45f057de21bd3fc2504ce0506cdc0ad0ceabfe8fd2c18
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-captures-v1/mediadive-776.json
+    sha256: 87a2ae8bf44049b33a392575de4c883a1a9e67e055a886942278e3dbda888793
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Calcium_Pantothenate.yaml
+    sha256: b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/D-Maltose_Monohydrate.yaml
+    sha256: b188ec71ed2df3319a96143eff91ee7589587aa655b6c77490db9a6df4f3b9c3
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Maltose.yaml
+    sha256: d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Maltose_Hydrate.yaml
+    sha256: 10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Na-silicate.yaml
+    sha256: 5655d72545f3b5e0d55759fcada4bf9e516fa3a66287590f4f6fc2cc1e91c2e2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Na2sio3_X_9_H2o.yaml
+    sha256: f4d860dd443582074583a911491db43130dd92efe57488228012c85da842798b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Nitrilotriacetic_Acid_Trisodium_Salt.yaml
+    sha256: c68bf8109946d2a5ccd474860657d19663520960f962b9845de82b269940a137
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-holds-owner-captures-v1/Tris_Base.yaml
+    sha256: fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-mediadive-holds-v1.json
+    sha256: 2f7bad610fa863762899d1781795c7409c096467792d7c90e58114ae16d7b419
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-mediadive-holds-v1.md
+    sha256: 8d36a888a2f66c4808fdad47c4ca73ea47494a0464b22a7169e5034ca30d2e2a
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/semantic-disposition-delta.json
+    sha256: a9de380ec2e2ab2abcd04a42c6f964668b753098d85ee211d251727d603b2318
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/append_mapping_followup.py
+    sha256: 206e14910ac0b2857f5f750d7722e3c015aaf6c76be0e31e28612803496a0a68
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/first-example-assessment-v1.json
+    sha256: 2e4789f4bdc8dbeaa48f0ca03274a9fac60bcfdb9397c98feeb79b127613cc6f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/mapping-followup-before.json
+    sha256: ef579acad2f93859b8851894ce7e4d3d2896d7fbf78176de40466a152ad681c0
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/mapping-followup-decision.json
+    sha256: 6424b427065258c91f01fada8dd39272ab323ffc0eb6b715c87a25cb8f3c1f00
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/publication/canonical-before.tsv
+    sha256: d5f76fc404967477903fafc79eaba86ecfef9e2c391926ec08c3c1af4a5220b6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/publication/projection.json
+    sha256: e8fa77286d1f4c9dbf7ca7b4b7d128cc60bed69c17319b65860e173c35375d5d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/archive-index.json
+    sha256: 62cc1da06d610f38162767d4bb4fae03c7f8113531cef9244be0ecb1750459ed
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/inspect-receipt.json
+    sha256: 81d5e098dce5de1af7c5ffc72d30c130e4faaa40a6fd5402cd11c231b799b097
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/inspect.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/inspect.stdout
+    sha256: ec712edde03858faaa9519ecf2b67422150acd27946e87d5e096a9134ab6d9ea
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/readback.json
+    sha256: 01acb7dde413cd4b68df8a7560bf33acc466fd9092b1d6fe413bfc1e7d473c85
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/strict-errors.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/strict.stderr
+    sha256: 3f299017073e40f54a5197b31ccb675008684d4cf939805de3ab5f5156e1719d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/strict.stdout
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/targets.json
+    sha256: 8238024c9c5ef309a3f5315d220f6c22ec626d8a7b6b482c1101b4479fe8bb36
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/terms.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/terms.stdout
+    sha256: 23acda1c1d3194d12bc947d897d07de83f4a076a9d93c135148885108530e018
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/scientific-review-inputs-v1/validation-receipts.json
+    sha256: 63e4f9a4ba5c8b53b09fe3c0a5907cf47ca410e7544c77b576d4c86bfe88fb98
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/chebi-32138.json
+    sha256: 360383e4c9a6f04c00a315b76ca0a0bbf59e93638368db930e67acec7e1dd388
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/manifest.json
+    sha256: 09a5e0a2061dffda77bacb49cf51cfd41e0c711d1944f4033c3ac4c86628a72e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/mediadive-1315.json
+    sha256: 93d213c95d4619c2135836a993d13ed54229f3920a241147d5f4e0eb69bf5d72
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/pubchem-cas6131-synonyms.json
+    sha256: 5035690cedd4523533fd1023e1bfd9d92f4a90841101d551fb96f6371d4b0072
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/write/apply-log.json
+    sha256: 526bb9731cbfb10a219caa324e32ef85dcb3538f6fa7800d2a589032692770f9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/write/owner-before.yaml
+    sha256: f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-alias-proof-v1.json
+    sha256: e51bfddadc6f9b8e17dc07a1f2c18b27d63706e4d27845f4728c25ba4555e6a2
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/source-apply-log.json
+    sha256: 14802fe6f60a339e4852e3c9c1725d09f29b728df852dfc4db4f3f9b35ccb283
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/SOURCE_AUDIT_README.md
+    sha256: 93c3e4aaecc2e3ed1787c5d2d9819b71b3460491dd94b2fe9a5f5b77b2b417de
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/copy-receipt.json
+    sha256: a8564d6811e986ec8c572ea4d5e5f87ceb56c95a21141988384294d9e034cd3d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/reconciler-black-final-v1.log
+    sha256: b9cf511501d306d2bd8355ccb165c8ddc0a6fdd62d7c72c4a7b1795cf8934c8c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/reconciler-handoff-v1.json
+    sha256: 7b5f479f3d3e1724b6a59ff25a16d1039e5355abdb4e65c606911f6503fb0607
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/reconciler-ruff-final-v1.log
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/reconciler-tests-v2.log
+    sha256: a95a04c8efbf2682ab6651b8bd5b7e4490b090b1c1332b4485f40e6f10b6295f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit-execution/reconciliation-before-v3.log
+    sha256: 05437a4b6b9049980a3aaa8be1e1c80e24ae89e1e94559360de3eabbc644382b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/additional-sources.json
+    sha256: 72fc2a362944aa2cd552315a3c0a8f7923a7c2f266a0848e7075617d6392ae33
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/bind_microbedecoder_observations.py
+    sha256: ca0731aa8f6b0cbb8a0de65d9ab4ba455e69341538e4738a7ecc13afa32b6e18
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/build_additional_source_inventory.py
+    sha256: 5c3035c08455e1bba95be2eced6c0beee0b04a009fca5a85d86275f2a85e15ec
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/ignored-inclusive-output-search-request.json
+    sha256: 98881e59fcce27dfd152b86f3c23ed1e0bf9a48f31de46a2742c7d82d4767bcf
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/ignored-inclusive-output-search.txt
+    sha256: bff838f6c1e416362cd265e6c65078ee19976d75e618fa585b72d07a9610aa7a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/mediadive-queue-comparison.json
+    sha256: 1c71ebc5529450ecf181c6ea2503c8f2187d2ce096cd8a611506cd4eedeef550
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/microbedecoder-observation-proof.json
+    sha256: 39ca87637b1c478a84750dad02282d051fff91132827277a83be7da7cf6ed135
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/native-runs/mediadive-run.json
+    sha256: 369839895ef37d93f195fcde8a15c98d8a305cc8c22c12885c4b567a26943bab
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/native-runs/mediadive-stderr.log
+    sha256: 2ef1a28fb5e22d9a600bf4c6b8664621f0f229dc5465bc3b88a332ec941cc609
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/native-runs/mediadive-stdout.log
+    sha256: 3db505384dadc791fa0faa991f1e7cfce0a4d8a60cc6ce84fbbcd06044150a54
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/native-runs/microbedecoder-run.json
+    sha256: 81bc316e7244c5ffd63c477f20ada1de6d7ebd4a449bf6a246ff0029652d1daa
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/native-runs/microbedecoder-stderr.log
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/native-runs/microbedecoder-stdout.log
+    sha256: 62c139796b228a2dd2567075dbefa7a9cd95dafb01e1fd156ce0a4ea9bd36841
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/mediadive-all415-source-bound.tsv
+    sha256: 0201d1f66e3ee16ba842cbfdedd66ee490ec26cabcc0ec857c03583741b4360d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/mediadive-fresh.tsv
+    sha256: 0acf3b06718dff07900653bd1b4d7964b576a87f2c15345a8f8eaa3c2edd1472
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/mediadive-native-identity-retry.tsv
+    sha256: 472533bcb84fec73ddbeefda8dde04f02bfbf6d2caa439226686db5c51c1d471
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/microbedecoder-current-edges.tsv
+    sha256: a335df1bbdbbcfce441333bbb8b0f5795ebf4da5678fdfe754d66ae30b3ee45f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/microbedecoder-current-material-holds.json
+    sha256: 39c5d25dcb3e96ad4b96fea3150a573efcd6dbf6185c13e7f3350989380fddfc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/microbedecoder-fresh.tsv
+    sha256: f1bbd735abbe17a1c10aade1d042d198205b8d8a7f7caaae6eef965c5074aefd
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/microbedecoder-raw-record19685.csv
+    sha256: b60fee13501d1ddba9d53688462f86055a9c1d6c6a470157e336a00ca93e7360
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/microbedecoder-source-records.json
+    sha256: cf68d01251a3ae641385caf0547e19e862d61679e39e3e0e15340565aba50c14
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/other-current-compound-placeholders.tsv
+    sha256: a2938e2e872f3a40a6f3e4839eabc0daece25362dd7e861dcfc210389f893aa6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/queues/source-candidates.json
+    sha256: 7132ced195fe02156cc88ef467ea7ca721e43471930f817afe08a8f69cde60f2
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/run_native_queue_readonly.py
+    sha256: dbf034231a8db939296dc07c69d3eba3dda1dc29e400f60938f6264897196fb3
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/AGENTS.md
+    sha256: 379c608ae707567147cd1fd60c5002afd0e631abb14ef2388cecf4f7c93c5c8c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/raw/mediadive/current.json
+    sha256: 8f92fa326a469e98e958724570c99c6c63419dbdbac9475dc6a73cacca456f51
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/raw/mediadive/generations/resolution-admitted-r2/compounds.json
+    sha256: 5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/raw/mediadive/generations/resolution-admitted-r2/manifest.json
+    sha256: fa3c9e47bad5ff298b35e32382de7bd642e6be6ed95540db128d7d674058924f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/raw/mediadive/generations/resolution-admitted-r2/unknown-policy.json
+    sha256: 2e1915efda265be4cbaea8921f126a7a1ea04e7c8110194ead915cfc1cecbd08
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/mim1788-merge-launch-preconditions-r1.json
+    sha256: 0a016619dfd50550f45e7d09cd609fdc4288485c95c7ec13dd56480a8714cbad
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/native-export-reproduction-r2.json
+    sha256: 5dd0b50133c8a0acf43d2861b26de42db98b7c5668b41775b6a51e66564f602f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/official-export-0dac2784/ingredient_mappings.sssom.tsv
+    sha256: 7e68fea7fd788928f29c7671156198af101baaa3b3051f19bab78a5479d2a940
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/official-export-0dac2784/manifest.json
+    sha256: b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/official-export-0dac2784/mapping-dispositions.tsv
+    sha256: 2a075c9c4a699c9d22a5e8b736bc6d7c00c344f19363f28178c0b50b6b590a19
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/official-export-0dac2784/withheld_mappings.sssom.tsv
+    sha256: 5817fb845c65f995fb0c78095168af1cbf0c837a991004fcd0a9d73cd0874c88
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/official-export-acquisition-r1.json
+    sha256: 4fed8cf57acf472ebc3c66106c738e6a4e298ae0283722f9574b27862e9388b9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/paired-promotion-r2.json
+    sha256: 4e57c47b91e9c44864781bfc8871750fb839ed02a9208ecb613d2543e051e878
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/rebuild-evidence/mim-1788-20261107/proposed-immutable-pin-r1.json
+    sha256: 8c66be0b68dcb773a908b17de56ff34b6270dc9eebf114e759552b07c3907cd5
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv
+    sha256: c719ea356cfcc22bb9b134d3a05f6572b3fbed839e733cac67520ddc18efe450
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/mediadive/mediadive_oatmeal_identity.tsv
+    sha256: fd29481c08a5de524b95d8532f8459ce57129212cabfe44ce468d26b71349a7d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/mediadive/mediadive_substrate_identity.tsv
+    sha256: 5e37d322631d3517be4e647c6ecb98bedba6c8dd202b91de8c17a9d3a055e1bb
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/mediadive/nodes.tsv
+    sha256: 8a40514a975cd7acca8ea3b287e03d970030e0fe078e07eec8c4c1a913dfcad4
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/mediadive/source_finalization.json
+    sha256: 6846c8b3cea242b36a4b04cc8961520b207dfe29c0c59344d5826d1ead960d83
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/mediadive/source_fingerprint.json
+    sha256: e5e35c499feb9ebc1237600db4d4e9b9f16ebd3239d7cacadc3cc7a5fb50be8b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits/nodes.tsv
+    sha256: 431a44b0ce7601be628346e9ad17fca5e021ad231c7866f10233f8068495b61c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits/source_finalization.json
+    sha256: a4c6838b80fb698cee8fc51c27a8838655051d147cf8f4e572a8797e76347b6a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits/source_fingerprint.json
+    sha256: b1702b8e112d6b8e4110da896f57a5dd09efb17601597599fe51d86589ac259c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits/unmapped_traits.tsv
+    sha256: 1d96828219c07c62e639975946961c654d613e44b79f02cbf65f5626e48951a9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits_gtdb/nodes.tsv
+    sha256: c0e966bca61d515ccfacf87ee618d677c38853375624dcc85bfe4c37ae60583f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits_gtdb/source_finalization.json
+    sha256: d7ce35b26577c922a1fc5d6582e4cf89f8d5e33c902be57857104aba9ce88f4c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits_gtdb/source_fingerprint.json
+    sha256: 8e688b34340e8ef69da149cbe000a4e0f847335aad500b915e72fa3852457fc6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/metatraits_gtdb/unmapped_traits.tsv
+    sha256: f4ff0d4e8e1d54703fdcaa806f6583515c01532360a8694b347148ae0836c1da
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/microbedecoder/source_finalization.json
+    sha256: fbf3ee8c63b2ad2db5cfd3b53acaf31bf760723daf7cd12c1787de3b8bf16220
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/microbedecoder/source_fingerprint.json
+    sha256: 17f9d6c3472fce827b7285fd3eb641609464f27831512f0caf5363875d2c9884
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/microbedecoder/unmapped_labels.tsv
+    sha256: 49ce65201af4e6034cab02a8de48cd5982913881862bc9a66293a178c96240a1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/data/transformed/prego_habitat/unmapped_associations.tsv
+    sha256: 1476862eb6a29ed2095399fb39dacfaa3811d672df3ad170606632c777950bef
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/docs/metatraits/unmapped_compounds.tsv
+    sha256: 5e27c20e869df0ac5d08bdf95ba973b432e6e8472afd30ef7720e53b05511bbf
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/__init__.py
+    sha256: 8a0afe5089c32f200af378dfa77ba54d28db827a9a4cb525984af22fd2c6c637
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/download.py
+    sha256: 24da75437177503d266ebb99cb5f92aca7cccc5a0226f73a9ab8599746e2247b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/profiles/ingredient_scope_v1.yaml
+    sha256: dd2f78e6b6fcbdf8a715bebcec14e0f86c1e431bf28e5b9d7f3524a62e5bce3a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/transform_utils/__init__.py
+    sha256: 8bf23dcb5caf75f7fbc3100db981626a4c6eca29adc402fea5e9075d61a26c9b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/transform_utils/constants.py
+    sha256: 899ab7fc44992844f395fd3664b976c81365f45d19965ad8940badc03a40ba8b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/transform_utils/microbedecoder/chemical_curation.py
+    sha256: 42370d3a1cc9def003ad2aefb8031c340333436abd24f12c2ad5eaef7c51de1c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/transform_utils/microbedecoder/material_dispositions.py
+    sha256: e8e99733b27d6bb5c9e085708c41158881522fc0ed5786c47f29b3821fafd23d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/transform_utils/microbedecoder/microbedecoder.py
+    sha256: 8aa801621cae6df7605a38b04a4f1eaf8da57aa2239db770f0ad3c5ab741d63b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/transform_utils/transform.py
+    sha256: e25c7edf6aae96efd5aa7b32924f8573e97f96e4b09b58ca307ab6347f55b9d8
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/__init__.py
+    sha256: 5ef816ae18c814d59d5405714019a65724735d6fe7d8ab574ed10ee871e4260f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/cas.py
+    sha256: 39d526c55af41a3c792aa2e5c1fef1486fbb11f3a54c9da0138ea189c4e92775
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/chemical_mapping_utils.py
+    sha256: 3ec59d6123da19eae19e997c63dd455ab25e3bbcc867ddabc82352a5c1a12c19
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/download_manifest.py
+    sha256: 764720aae1fa3e4b97a4af94bd7a3a838eb0b7b11dd7ec01967b1c01038d07d0
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/graph_canonicalization.py
+    sha256: ab865e5433b4650ec96d4ed24c29c9e8d2a3230b8257e3ed6b4d79f2d191311b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/ingredient_context.py
+    sha256: 1d41042b05763064820a13098750448628ebe8aa3b86e5321a9cb767c87868ea
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/ingredient_identity.py
+    sha256: 2fbf540fcc3a0f62ae855bf38d888246764cd4f0fce2c2ee6ed036ddb0ba4099
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/ingredient_scope.py
+    sha256: f87281c84af5569a1211a14bbe2e4dcf8476df1a56035c0b3a176c829d44bf62
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/sssom_identity_policy.py
+    sha256: 3685d46f1621ee471cf5b8c0a94f333f7ff037eac0bf4bc23412bc14e493e53f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/canonical/mediadive_material_context_dispositions.tsv
+    sha256: 062cc2c1e79b1bacc1e095844f7212519b270906667351c00610039c4dc3a7a1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv
+    sha256: cdf7ee7005604daaba73eee179b2c6181fe1fb309e7ff1ce7f2307df080c9a68
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/ingredient_context_dispositions.json
+    sha256: c1035fa5fac058b3a21c5ee815092020ee6811db659faa29666542d1a3872e8e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/ingredient_identity_exclusions.tsv
+    sha256: adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/ingredient_mappings.sssom.tsv
+    sha256: 7e68fea7fd788928f29c7671156198af101baaa3b3051f19bab78a5479d2a940
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/ingredient_name_scopes.tsv
+    sha256: 683c5410418f2d33a41985a1d168c8f86e47b7fa2a91ea8c97bc9f029f4d3f8a
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz
+    sha256: f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/mediadive_material_grounding_review.json
+    sha256: b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/mediadive_recipe_identity_evidence.json
+    sha256: 5ec6fc063a5c0c10a77392b20e9f3fe70272479d1ba0a3396dd49a472645ab92
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/mediadive_recipe_identity_policy.json
+    sha256: 9f590b55a9183b5dfec6cc9082c6193db79b2fd7b6bd8e938a5c4a35126e059f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/mediadive_unknown_dispositions.json
+    sha256: 2e1915efda265be4cbaea8921f126a7a1ea04e7c8110194ead915cfc1cecbd08
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/mediadive_unmapped_ingredients_to_curate.tsv
+    sha256: c14697b3b9eabb832777d078409db5366a370d5b669b83561cb770985bff7ebb
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/microbedecoder_unmapped_labels_to_curate.tsv
+    sha256: d58076872bfe5beedcc9ffe8c03b9f7b8a68a912ca92820e7ba94bd0e8f44379
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/poetry.lock
+    sha256: 485cace2112e25e50312a57296a7b1e56500d09b5f3d5f4f39166f906991663c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/pyproject.toml
+    sha256: 6feef59b4dbebaa5e6ef150ef6c7a55bb53478317d44b830d203a14f9e387812
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/scripts/dump_unmapped_mediadive_ingredients.py
+    sha256: 95d409829107a0c8d8310ea873bcd0efdc52a837e053831e19d19a068b6241df
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/scripts/dump_unmapped_microbedecoder_labels.py
+    sha256: 889f9cfc496c30140cc072334874129092d556de679637a2180433e2190c7a0f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/source-inputs-after.json
+    sha256: 9f77092607e069c999685610a4dc264adc86e087bf5b074b6377ce90860e07dc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/source-inputs-before.json
+    sha256: ab46f57b9ac797c3d25df2e4607dfc9a8a24a06a039ece4f3e0c79d6374f5b86
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/source-inputs-final.json
+    sha256: 6fda72b0784e7e40d37c925685d2e1d8243023f817a8739ca51b5e5f7168bd6e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/source-audit/source-manifest.json
+    sha256: e2f4252a44aabaffaad7d3d3ca27ac0fb96e50b58939747e095e2ca1b9e3b48e
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/source-preservation-final-v1.json
+    sha256: 71c693bc393c0e4df9e8b887ad644c971c77a6e4c5a5135bd1b990d8d5a5556d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/candidate.provenance.json
+    sha256: 7175c41748e60418b6e57a984eb8450aa20ed64b1015286a52aff4ec1c0256f4
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/candidate.tsv
+    sha256: c12f09602dbb4be511c6e813b046fe5965a42134a124a2b3678deb3880591b70
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/cell-diff.json
+    sha256: f32bc56999288f7ef8c05bb328b4e596fd29d76c1f0f99083a2802a6c30ac6ce
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/native-generation.log
+    sha256: 675927cb10e033363639658b1cbcfc9308a198370769e220e5c76f9d129e0ab7
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/provenance-before.json
+    sha256: 075fcc6ef6eca25c1e63d65889df37d4893be2b1b9d3630df90704012dc2c831
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/trace_rebuild.py
+    sha256: 362e3fa498f2614dd05d62cd45b544347490a737f86d78bbc8056593024799ad
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/unified-generation/traced-rebuild.json
+    sha256: 23281f957f3b8f0ae40acadcbfd0cd71fc0641ee131d3530a785b33832e8d0d7
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-final/full-pytest-v1.log
+    sha256: c4051a8e76801a6af0ed30ff0731c967ea1b4c7cf321962f30658be9f130c72c
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-final/historical-base-recovery.json
+    sha256: 31f9bc640dc52be7974f67c4f8b8b3d94c6cc584e11d3ec1c3a5064225ddb9e7
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-final/local-checks.json
+    sha256: f177482c788dd08cfdf6cfd8611278bdd8c1a8b0e6b21d7584a4bc707195e385
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-final/package-coverage-final.log
+    sha256: 8bcaae3e999d1f9ce60242970f0216fb8dae738a068aa48f938f1cc7b35b6166
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-final/record-reviews.log
+    sha256: 634b5032cb3921e4f54bfccd514c03fc1294da21d96ce9ac3020f2f775254e64
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/companion-export-v1.log
+    sha256: 44287393c4f9595f991c23d3dfd8d54fb032a56346199988007b231e4fea131f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/companion-refresh-v2.log
+    sha256: f7f8bb7a1a0c0a08809fb43c76366217bb96cb14505a939437640cb1a913f2bc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/final-qc-v1.log
+    sha256: e2d9464fe829d5601539297009cf90a7a98f29cfe80417b95ae532a84e4d5a51
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/native-candidate-invariants.log
+    sha256: cb0f6ecb71bf5d64d7ae591c1443a9ae579c79292ade585cbfbb5ee3131ab99c
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/reviewed-export-v1.log
+    sha256: 848de09ace53702e4504f011dc1414ccfd8509bed184d873adcc75ff1dda66e9
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/reviewed-qc-v1.log
+    sha256: 40d9cd5a4abfdfa3b694eddc4c01ed96a190702ed2b914fecf08b11e2e047af1
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/semantic-review-v1.log
+    sha256: 971ad4073f773c9c94aa35af55f24595cd579f7e543c3a636dac69c7aff2a7ee
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/static-quality-final.log
+    sha256: 6df1afb7bf063199bf1d7a4b52566a0b9806f32a9ba9771356e209f154d93461
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/status.json
+    sha256: 75028e2e8fb4ae2dd89a5577f7f179805f7c9b4238afeffe2c12ccdea5509042
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/supported-kgx-qc-v1.log
+    sha256: e3a4de079089461dad9da02d7a3a698410a3cbb68b4a131dd605a9aab36f34af
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/validation-v1/supported-kgx-v1.log
+    sha256: 82c5dd7808095f3e6cba0381b304e1db864f7642fab9fbdfa12cf2cc30762da6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/visualization-refresh/diagnostic.json
+    sha256: 961d46819782758a5629d844110a1e06a9776ff8d0eea6fbe780a5c6282f7d26
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/withdrawal-review.json
+    sha256: e5b9bc3dcd16fb0aa234994d3d27d0c75cb0d1198d35319a4fff4f5e93c58bab
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/curate_mediadive_acetate_alias.py
+    sha256: 3c0087a02c42c4555fb64191ab609a3464b797d991919883667a271a027f1f0e
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/probe_publication_boundaries_v1.py
+    sha256: 8a62b4f4b8ff35a3cde442a9d24a4b58cca3ce4af09e4b6b118908d9833d5684
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publication-boundaries-v1-result.json
+    sha256: cca6832aab0edc3db9633af4fd0ba5e99c3c6126915e0ef1220075cf00ff351d
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publish_mediadive_acetate_alias.py
+    sha256: 624aaa31aaa203cbe79ab14dca398a6212c39267ff14a213706165eaf6d9a776
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-parent-swap-result-v1.json
+    sha256: 5a9c1bd1cdf53f8086be136980bd0ff068ba4b3e73bcaee3560f3e5ce83e5e71
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-probe_output_parent_swap_v1.py
+    sha256: ff6fa18d2ff4b71acd3b8f6ba9bec639e0d928a652f43ca5b133ace785666480
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/reconcile_kgm_chemical_queue.py
+    sha256: 3a044cb9d991a07e521090d0daa925b18b7749414db1172a42dc1ccd1c929750
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/refresh_kgm_source_policy_manifest.py
+    sha256: ad41326679ed00aaad7f26a8c8c1c3343535aab4f5e54fa6cd1427145a64e505
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/writer-findings-v1.json
+    sha256: aae054088218843c7c58d2e843fb16fbdef1cd57494032ec1d19e30eddc314dc
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/HANDOFF.json
+    sha256: 0dbf880c9b1f225721a4840ea509f75c99477b8cf093c8628ec7fa31460c30fa
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/black-receipt.json
+    sha256: 20d2dcc806a4eb82ae1870276d63bca781fb992b8ff4303ebfd231364d22efbd
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/black.stderr
+    sha256: 92aa03151aac11a6a2858431d3a65e1d3a9c02b208849bad15a5d01e63497b9e
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/black.stdout
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/pytest-receipt.json
+    sha256: 463eaad7aab18c38c1ac33e8204fe417dd3d9d28e9a5dcfdbef4608aacbabaf0
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/pytest.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/pytest.stdout
+    sha256: 237ccd9211da584e81bbaf9bf415ea783a9ea2d9703344022f0e4d9dd30ac83d
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/ruff-receipt.json
+    sha256: 3dc66d32561ef5cf717d64a2b7a7832c37d6d2bf9bba3bc74aeda689e68f2c3f
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/ruff.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-remediation-v2/ruff.stdout
+    sha256: 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18
+    role: context
+  - path: reports/owned_name_deferred_669_20261103/companion-review.json
+    sha256: ba15d43306f33972d7abcd67185e5bf571f2224f00e757c2603e017a895ac815
+    role: target
+  - path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+    sha256: 88ea97166c4281737a473e63da5048730b22469294a6e717d4f2e312cba71034
+    role: target
+  - path: reports/semantic_review_20260921/resolution/current-review.json
+    sha256: 8b3b33ba5e05107a27c424d2c1162c30526e6d3313ead1bbd6e7d675e91f6ad4
+    role: target
+  - path: reports/sssom_completion_20260921/assemble_review.py
+    sha256: 5e15fab63ae6adbb4babbcff2b20d64b02113f9b4ac846c79d7141b3f8f84f33
+    role: context
+  - path: reports/sssom_completion_20260921/mapping-evidence.json
+    sha256: d597a2e45e02ab46c6d6373ef1ebed41fd469359de0e200ea76cf25a9164e91c
+    role: context
+  - path: reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json
+    sha256: 7e85407431d709192b3a702027fab9b398eb239570f901d8cdfd812a06602dec
+    role: target
+  - path: reports/sssom_completion_20260921/mapping_review/kgmicrobe-followup.json
+    sha256: 764c03827ec2e68f00829f8d623915c06d878c4fb1549bb3fd4198806cfcba7d
+    role: context
+  - path: reports/sssom_completion_20260921/review.json
+    sha256: d9ced43acf6bd739e2c9f8ed060e6dbc6d4d32b7b8efbff83dddef237946a410
+    role: target
+  - path: reviews/structured/20261108T023208Z-kgm-unmapped-baseline-contract-review/review.md
+    sha256: 0d35dffe0b8080dd4acb4025ab361c99dbed75fe87fba1e78264b4fa878d91c9
+    role: context
+  - path: reviews/structured/20261108T023208Z-kgm-unmapped-baseline-contract-review/review.yaml
+    sha256: 02d59f9785bde78c99a1bfcf2ae2fae3d8a89b0b714146d9a6afba5935bcafa0
+    role: context
+  - path: reviews/structured/20261108T024039Z-sodium-acetate-source-alias-scientific-review/review.md
+    sha256: 00754f3e4a66d850c494c0db305f20d7cfaa14ff692bbb5720f5141484f83bbc
+    role: context
+  - path: reviews/structured/20261108T024039Z-sodium-acetate-source-alias-scientific-review/review.yaml
+    sha256: 649f610d9828ed931b479f6197f11703a17c1dd0615d4fbf35a98a85171927f9
+    role: target
+  - path: reviews/structured/20261108T024658Z-kgm-source-writer-boundary-findings/review.md
+    sha256: b7d57577bdd8d58c8dee94bf2f9a2a78a44b2da985f581d653610d3ce8304330
+    role: context
+  - path: reviews/structured/20261108T024658Z-kgm-source-writer-boundary-findings/review.yaml
+    sha256: adc7696a1a8a650bdea1e05274dee42e210dd23bfbb36a157fbcce34fbcdc12a
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/.vendored_canon_ref
+    sha256: 0b149759f0cae8c48e6175432125374296fbdf27c9d23d0868b7e4a056780ad7
+    role: target
+  - path: scripts/correct_microbedecoder_methylacetate_provenance.py
+    sha256: e236f416d3c0bc3486f1611c5fc6880c2507dce22275f1a50482d202c03421dd
+    role: target
+  - path: scripts/curate_mediadive_acetate_alias.py
+    sha256: acfdc2580ad84dd5b02c62b6946a9d6e954bf52af565fd4f17d922335c758bb4
+    role: target
+  - path: scripts/publish_mediadive_acetate_alias.py
+    sha256: c42c2e58e1efa0cc2c1950b0496afbac823bd5409fbc31474f5a5ac0dfccbd08
+    role: target
+  - path: scripts/reconcile_kgm_chemical_queue.py
+    sha256: beace018fdcd0dbf1cca9a1ad0e82e3d719692e1d843444096c0beeda765b2df
+    role: target
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: scripts/refresh_kgm_source_policy_manifest.py
+    sha256: a77209058973603577f14bb276fce974594442b692cd727b0715761dc474adc9
+    role: target
+  - path: src/mediaingredientmech/curate/publication_guard.py
+    sha256: f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b
+    role: target
+  - path: src/mediaingredientmech/ingredient_bundle_refresh.py
+    sha256: d0826b8ac0867604a233ae3df951b569e90dfa5b7892e62ce40015e9d8c15ee3
+    role: target
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/source_alias_refresh.py
+    sha256: 94b054569f5ecc084b913817b62017f3432dcfda8eb3a76f8f3138d677e4809a
+    role: target
+  - path: tests/test_companion_retained_histories.py
+    sha256: caad37ce7f831b299d6a38568e4a4a853409ac035a54af71b499bb0e3ceda0f8
+    role: target
+  - path: tests/test_ingredient_bundle.py
+    sha256: 84a14994318bfd0a5358f286a5018941ca1af59413d01654e80baa8e3ccf5263
+    role: target
+  - path: tests/test_kgm_publication_boundaries.py
+    sha256: 57d405feae3a3dd2875b0a815ee6931926501f98d59077810d949306b8788d08
+    role: target
+  - path: tests/test_mediadive_acetate_alias.py
+    sha256: 3d13b1e6585868000bff48f53721f8288bf05a5279c27f06bab3e66f4f22b89c
+    role: target
+  - path: tests/test_microbedecoder_methylacetate_provenance.py
+    sha256: 8dcfc4dd36f6343a4d86b142aaec9e348aaaf4bcf732d04e4aa27c9b2b3d1b68
+    role: target
+  - path: tests/test_reconcile_kgm_chemical_queue.py
+    sha256: a7f9d7e3d936b5d070ba41455762b7f42d737aa65091b6ff6edb5fa06fbe68a0
+    role: target
+  - path: tests/test_source_alias_projection.py
+    sha256: eeed37fd4cc95dba093bf5e7aa2063936603db70f49374baf7ea5cef12eb9aa8
+    role: target
+  - path: tests/test_source_provenance_projection.py
+    sha256: 1d37db569bcfc2a9a120e259326239a0222caf3cebf8ac24260b50d254b1c15b
+    role: target
+scope:
+  description: Exact two-owner source changes, one canonical mapping row, native reviewed/companion/supported
+    products,13-cell unified rebuild, code/test/workflow boundaries and all five native
+    finding predecessors.
+  selection: Explicit exact target list; complete changed-cell and assertion-disposition
+    comparison plus complete native input and receipt chain checks. Scientific assessment
+    is limited to the named mapped identity and rejected-label provenance.
+  coverage: full
+  population_size: 82
+  reviewed_target_ids:
+  - typed-refresh
+  - policy-history
+  - canonical
+  - mapping-review
+  - companion
+  - unified
+  - unified-provenance
+  - history-probe
+  - alias-writer-original
+  - canonical-publisher-original
+  - policy-writer-original
+  - queue-writer-original
+  - publication-boundary-proof
+  - queue-parent-swap-proof
+  - release-guide
+  - acetate-owner
+  - methylacetate-owner
+  - mapped-aggregate
+  - unmapped-aggregate
+  - mediadive-capture
+  - chebi-capture
+  - pubchem-capture
+  - methyl-source
+  - mapping-followup
+  - source-proof
+  - native-author-review
+  - publication-guard
+  - alias-writer
+  - canonical-publisher
+  - policy-writer
+  - notes-writer
+  - queue-writer
+  - alias-context
+  - test-1
+  - test-2
+  - test-3
+  - test-4
+  - test-5
+  - test-6
+  - test-7
+  - test-8
+  - companion-workflow
+  - protected-qc-evidence
+  - protected-pin
+  - current-companion
+  - companion-proof
+  - withdrawal
+  - semantic-delta
+  - supported
+  - withheld
+  - dispositions
+  - release-manifest
+  - bundle-manifest
+  - unified-trace
+  - unified-cell-diff
+  - b4-readonly
+  - adoption-guard
+  - receipt-27
+  - suppression-sidecar
+  - collision-baseline
+  - semantic-review
+  - semantic-dispositions
+  - source-manifest
+  - reconciliation-before
+  - reconciliation-after
+  - reconciliation-delta
+  - scientific-holds
+  - mediadive-holds
+  - synthesis
+  - independent-implementation
+  - independent-head
+  - independent-native-replay
+  - independent-writer-probes
+  - independent-queue-probe
+  - validation-status
+  - local-suite-log
+  - local-coverage-log
+  - native-retained-check-log
+  - local-validation-receipt
+  - independent-test-scope
+  - independent-skip-scope
+  - independent-local-completion
+  exclusions:
+  - target: All other scientific identities and unresolved corpus assertions
+    reason: No bulk scientific re-review or approval is inferred from lexical reconciliation
+      or a supported subset.
+  - target: KG-Microbe consumer release refresh, rebuild or adoption
+    reason: Upstream checkout and current consumed pair are read-only; separate native
+      admission remains necessary.
+targets:
+- target_id: typed-refresh
+  path: src/mediaingredientmech/ingredient_bundle_refresh.py
+  label: Existing three typed successor contexts
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: policy-history
+  path: mappings/ingredient_mappings.sssom.tsv.manifest.json
+  label: Current legitimate policy history
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: canonical
+  path: mappings/ingredient_mappings.sssom.tsv
+  label: Baseline canonical mapping rows
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: mapping-review
+  path: reports/sssom_completion_20260921/review.json
+  label: Content-bound mapping dispositions
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: companion
+  path: reports/owned_name_deferred_669_20261103/companion-review.json
+  label: Separate scoped companion review
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: unified
+  path: UNIFIED_INGREDIENT_MAPPING.tsv
+  label: Baseline unified snapshot
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: unified-provenance
+  path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+  label: Native MIM input provenance
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: history-probe
+  path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/typed-history-proof-v1.json
+  label: Independent read-only compatibility reproduction
+  kind: source
+  ownership_note: Baseline provenance or maintained contract; this audit changes no
+    scientific record or approval.
+- target_id: alias-writer-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/curate_mediadive_acetate_alias.py
+  label: alias-writer-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: canonical-publisher-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publish_mediadive_acetate_alias.py
+  label: canonical-publisher-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: policy-writer-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/refresh_kgm_source_policy_manifest.py
+  label: policy-writer-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: queue-writer-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/reconcile_kgm_chemical_queue.py
+  label: queue-writer-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: publication-boundary-proof
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publication-boundaries-v1-result.json
+  label: publication-boundary-proof
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: queue-parent-swap-proof
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-parent-swap-result-v1.json
+  label: queue-parent-swap-proof
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: release-guide
+  path: docs/SSSOM_RELEASE.md
+  label: Supported predicate release guidance
+  kind: source
+  ownership_note: Maintained release guidance; documentation observation confers no
+    scientific approval and changes no mapping.
+- target_id: acetate-owner
+  path: data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml
+  label: Exact trihydrate owner and new MediaDive spelling
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: methylacetate-owner
+  path: data/ingredients/unmapped/3-methylacetate.yaml
+  label: Unresolved rejected label, provenance-only notes correction
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: mapped-aggregate
+  path: data/curated/mapped_ingredients.yaml
+  label: Synchronized sodium acetate aggregate entry
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+  selector: identifier=CHEBI:32138
+- target_id: unmapped-aggregate
+  path: data/curated/unmapped_ingredients.yaml
+  label: Synchronized rejected raw-label aggregate entry
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+  selector: identifier=UNMAPPED_0736
+- target_id: mediadive-capture
+  path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/mediadive-1315.json
+  label: MediaDive1315 exact raw label/CAS and discrepant formula
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: chebi-capture
+  path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/chebi-32138.json
+  label: ChEBI32138 form-specific identity and exact synonym
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: pubchem-capture
+  path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/pubchem-cas6131-synonyms.json
+  label: PubChem23665404 CAS/form corroboration
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: methyl-source
+  path: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/microbedecoder-raw-record19685.csv
+  label: Raw MicrobeDecoder/Bergey record19685, not a reread primary paper
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: mapping-followup
+  path: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/mapping-followup-decision.json
+  label: Exact changed owner and complete six-token mapping-only decision
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: source-proof
+  path: reports/kgm_unmapped_chemicals_20261107/source-alias-proof-v1.json
+  label: Typed proof for exact two source changes
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: native-author-review
+  path: reviews/structured/20261108T024039Z-sodium-acetate-source-alias-scientific-review/review.yaml
+  label: Separate scientific author assessment of current owner/six tokens
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: publication-guard
+  path: src/mediaingredientmech/curate/publication_guard.py
+  label: Pinned inputs, held directories, atomic target replacement
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: alias-writer
+  path: scripts/curate_mediadive_acetate_alias.py
+  label: Guarded single alias writer
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: canonical-publisher
+  path: scripts/publish_mediadive_acetate_alias.py
+  label: Guarded one-row native-candidate projection and receipt
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: policy-writer
+  path: scripts/refresh_kgm_source_policy_manifest.py
+  label: Guarded metadata/history-preserving manifest successor
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: notes-writer
+  path: scripts/correct_microbedecoder_methylacetate_provenance.py
+  label: Guarded notes/history-only provenance correction
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: queue-writer
+  path: scripts/reconcile_kgm_chemical_queue.py
+  label: Exact source reconciliation and protected output publication
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: alias-context
+  path: src/mediaingredientmech/source_alias_refresh.py
+  label: Closed source alias addition proof and companion boundary
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-1
+  path: tests/test_companion_retained_histories.py
+  label: tests/test_companion_retained_histories.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-2
+  path: tests/test_ingredient_bundle.py
+  label: tests/test_ingredient_bundle.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-3
+  path: tests/test_kgm_publication_boundaries.py
+  label: tests/test_kgm_publication_boundaries.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-4
+  path: tests/test_mediadive_acetate_alias.py
+  label: tests/test_mediadive_acetate_alias.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-5
+  path: tests/test_microbedecoder_methylacetate_provenance.py
+  label: tests/test_microbedecoder_methylacetate_provenance.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-6
+  path: tests/test_reconcile_kgm_chemical_queue.py
+  label: tests/test_reconcile_kgm_chemical_queue.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-7
+  path: tests/test_source_alias_projection.py
+  label: tests/test_source_alias_projection.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: test-8
+  path: tests/test_source_provenance_projection.py
+  label: tests/test_source_provenance_projection.py
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: companion-workflow
+  path: .github/workflows/qc-reviewed-sssom.yaml
+  label: Paired immutable companion-review selector only
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: protected-qc-evidence
+  path: .github/workflows/qc-evidence.yaml
+  label: Unchanged evidence gate
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: protected-pin
+  path: scripts/.vendored_canon_ref
+  label: Unchanged vendored pin
+  kind: maintained
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: current-companion
+  path: reports/kgm_unmapped_chemicals_20261107/companion-review.json
+  label: Current exact20-owner/51-claim companion
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: companion-proof
+  path: reports/kgm_unmapped_chemicals_20261107/companion-refresh-v2.json
+  label: Native refresh proof bound to final typed implementation
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: withdrawal
+  path: reports/kgm_unmapped_chemicals_20261107/withdrawal-review.json
+  label: Receipt27 first withdrew stale mapping support
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: semantic-delta
+  path: reports/kgm_unmapped_chemicals_20261107/semantic-disposition-delta.json
+  label: Exact one inherited BUFFER approval withdrawal and changed mapping assertion
+    ID
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: supported
+  path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/ingredient_mappings.sssom.tsv
+  label: 1739 supported rows including two broad mappings
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: withheld
+  path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/withheld_mappings.sssom.tsv
+  label: 1275 withheld rows preserved byte-for-byte
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: dispositions
+  path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/mapping-dispositions.tsv
+  label: Native complete reviewed mapping partition
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: release-manifest
+  path: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/manifest.json
+  label: Immutable coherent reviewed release manifest
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: bundle-manifest
+  path: reports/kgm_unmapped_chemicals_20261107/candidate-ingredient-bundle/manifest.json
+  label: Exact companion export manifest and 20-owner scope
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: unified-trace
+  path: reports/kgm_unmapped_chemicals_20261107/unified-generation/traced-rebuild.json
+  label: Native producer and complete before/after input inventory
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: unified-cell-diff
+  path: reports/kgm_unmapped_chemicals_20261107/unified-generation/cell-diff.json
+  label: Exactly13 cells across8 sodium acetate rows
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: b4-readonly
+  path: reports/kgm_unmapped_chemicals_20261107/b4-readonly-result.json
+  label: Actual native B4 validation against five available transforms
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: adoption-guard
+  path: reports/kgm_unmapped_chemicals_20261107/downstream-adoption-inspection.json
+  label: Native KG admission requires separate release refresh
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: receipt-27
+  path: reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json
+  label: Native mapping change receipt27, two owners and one row
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: suppression-sidecar
+  path: mappings/suppressed_aliases.tsv
+  label: Unchanged prior-only synonym policy sidecar
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: collision-baseline
+  path: mappings/other_cross_record_baseline.tsv
+  label: Unchanged cross-record baseline
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: semantic-review
+  path: reports/semantic_review_20260921/resolution/current-review.json
+  label: Content-bound full graph review and dispositions
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: semantic-dispositions
+  path: reports/semantic_review_20260921/resolution/assertion-dispositions.tsv
+  label: Exact mapping and nonmapping assertion statuses
+  kind: generated
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: source-manifest
+  path: reports/kgm_unmapped_chemicals_20261107/source-audit/source-manifest.json
+  label: Exact fresh read-only source pack and consumer input identity
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: reconciliation-before
+  path: reports/kgm_unmapped_chemicals_20261107/reconciliation-before/ledger.json
+  label: 549 baseline source candidates
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: reconciliation-after
+  path: reports/kgm_unmapped_chemicals_20261107/reconciliation-after-v1/ledger.json
+  label: 549 source candidates after two bounded changes
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: reconciliation-delta
+  path: reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/summary.json
+  label: 547 unchanged entries, two bounded differences
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: scientific-holds
+  path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/microbedecoder-holds-v1.md
+  label: 10 material identities and225 exact source assertions retained
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: mediadive-holds
+  path: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-mediadive-holds-v1.md
+  label: Five unresolved targeted source cases remain open
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: synthesis
+  path: reports/kgm_unmapped_chemicals_20261107/reconciliation-synthesis/README.md
+  label: Bounded diagnostic synthesis without bulk curation
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: independent-implementation
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/implementation-rereview-v1.json
+  label: Independent repaired writer/context/queue retests
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: independent-head
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/committed-head-cd76-audit-v1.json
+  label: Actual committed-head exact scope and disposition audit
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: independent-native-replay
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/assessment.json
+  label: Independent full native unified replay and18880-input stability
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: independent-writer-probes
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/publication-boundaries-recheck-v3/result.json
+  label: Original faults now refused with unrelated paths intact
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: independent-queue-probe
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/parent-swap-result-recheck-v2.json
+  label: Original output-parent swap now refuses
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: validation-status
+  path: reports/kgm_unmapped_chemicals_20261107/validation-v1/status.json
+  label: Completed native/local validation logs, initial pending items preserved
+  kind: source
+  ownership_note: Maintained owner/code or exact immutable diagnostic/release artifact;
+    scientific scope and future-fix ownership are stated in its grouped assessment.
+- target_id: local-suite-log
+  path: reports/kgm_unmapped_chemicals_20261107/validation-final/full-pytest-v1.log
+  label: local suite log
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+- target_id: local-coverage-log
+  path: reports/kgm_unmapped_chemicals_20261107/validation-final/package-coverage-final.log
+  label: local coverage log
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+- target_id: native-retained-check-log
+  path: reports/kgm_unmapped_chemicals_20261107/validation-final/record-reviews.log
+  label: native retained check log
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+- target_id: local-validation-receipt
+  path: reports/kgm_unmapped_chemicals_20261107/validation-final/local-checks.json
+  label: local validation receipt
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+- target_id: independent-test-scope
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/final-scope-child-assessment.json
+  label: independent test scope
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+- target_id: independent-skip-scope
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/skip-qualification-v1.json
+  label: independent skip scope
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+- target_id: independent-local-completion
+  path: reports/kgm_unmapped_chemicals_20261107/independent-review/local-completion-independent-v1.json
+  label: independent local completion
+  kind: source
+  ownership_note: Exact completed local validation or independent scope evidence;
+    does not substitute for pending final-head remote CI.
+checks:
+- check_id: local-qc
+  name: Native composite QC
+  status: passed
+  required: true
+  command: just qc
+  summary: Completed native composite includes strict/shape/round-trip/flat products,
+    freshness, synonym and SSSOM gates. No active invariant rejects; default B4 path
+    skip is separately qualified.
+  target_ids:
+  - acetate-owner
+  - methylacetate-owner
+  - canonical
+  - unified
+  - unified-provenance
+  exit_code: 0
+  evidence_ids:
+  - e31
+  - e21
+- check_id: static-quality
+  name: Native static quality
+  status: passed
+  required: true
+  command: just lint format-check typecheck
+  summary: Ruff/Black/Mypy passed; maintained Python source scope61files.
+  target_ids:
+  - publication-guard
+  - typed-refresh
+  - alias-context
+  exit_code: 0
+  evidence_ids:
+  - e32
+- check_id: reviewed-export
+  name: Reviewed SSSOM schema and release replay
+  status: passed
+  required: true
+  command: just qc-reviewed-sssom
+  summary: Actual native partition and schema replay passed;1739SUPPORTED/1275WITHHOLD;
+    exact input/output hashes inspected.
+  target_ids:
+  - canonical
+  - mapping-review
+  - release-manifest
+  - supported
+  - withheld
+  exit_code: 0
+  evidence_ids:
+  - e33
+  - e34
+- check_id: companion-export
+  name: Bounded companion refresh and export
+  status: passed
+  required: true
+  command: python -m mediaingredientmech.ingredient_bundle_refresh; python -m mediaingredientmech.export.ingredient_bundle
+    export
+  summary: Actual final code-bound refresh/export passed;20owners/51claims unchanged;
+    native proof verifies receipt27 and all old histories.
+  target_ids:
+  - current-companion
+  - companion-proof
+  - alias-context
+  - bundle-manifest
+  exit_code: 0
+  evidence_ids:
+  - e35
+  - e36
+  - e10
+- check_id: supported-kgx
+  name: Native supported KGX gate
+  status: passed
+  required: true
+  command: just qc-supported-kgx
+  summary: Supported subset passed. Full semantic graph retains existing unresolved
+    backlog and one newly withdrawn inherited BUFFER approval; no blanket pass inferred.
+  target_ids:
+  - semantic-review
+  - semantic-dispositions
+  - semantic-delta
+  exit_code: 0
+  evidence_ids:
+  - e37
+  - e14
+- check_id: local-full-suite
+  name: Complete local pytest invocation
+  status: passed
+  required: true
+  command: uv run --frozen pytest
+  summary: Actual invocation completed4898passed525skipped31warnings0failed in1257.40seconds.
+    All seven added test files ran183passing cases with no skips; existing skipped-module
+    attribution is source-based because log lacks individual skip reasons.
+  target_ids:
+  - local-suite-log
+  - local-validation-receipt
+  - independent-skip-scope
+  - independent-test-scope
+  exit_code: 0
+  evidence_ids:
+  - e38
+  - e27
+  - e28
+- check_id: local-coverage
+  name: Maintained package coverage gate
+  status: passed
+  required: true
+  command: uv run --frozen coverage report --include='src/mediaingredientmech/*' --fail-under=35
+  summary: Actual maintained package coverage79percent meets unchanged35percentfloor.
+    This is distinct from combined scripts/package advisory report.
+  target_ids:
+  - local-coverage-log
+  - publication-guard
+  - typed-refresh
+  - alias-context
+  exit_code: 0
+  evidence_ids:
+  - e39
+  - e27
+- check_id: retained-native-reviews
+  name: Native immutable review contract
+  status: passed
+  required: true
+  command: python scripts/record_review.py check
+  summary: Actual native checker validated1018retained bundles; exact missing historical
+    bases were fetched without changing any historical review. This count predates
+    this new review.
+  target_ids:
+  - native-retained-check-log
+  - history-probe
+  - publication-boundary-proof
+  - queue-parent-swap-proof
+  exit_code: 0
+  evidence_ids:
+  - e40
+  - e41
+- check_id: b4-default-path
+  name: Native B4 default sibling-path coverage
+  status: skipped
+  required: false
+  command: python scripts/validate_sssom_invariants.py
+  summary: Default nested-worktree sibling ontology path absent; native B4 is skipped
+    without altering its policy. Separate actual-transform check below supplies bounded
+    available coverage.
+  target_ids:
+  - canonical
+  evidence_ids:
+  - e42
+- check_id: b4-available-transforms
+  name: Unchanged native B4 function against actual available transforms
+  status: passed
+  required: true
+  command: python reports/kgm_unmapped_chemicals_20261107/check_b4_readonly.py
+  summary: Baseline and candidate both have zero mismatches against five available
+    read-only ontology transforms; BTO/MICRO unavailable and full coverage is not
+    asserted.
+  target_ids:
+  - b4-readonly
+  - canonical
+  exit_code: 0
+  evidence_ids:
+  - e15
+- check_id: independent-focused-tests
+  name: independent-focused-tests
+  status: passed
+  required: true
+  exit_code: 0
+  summary: Actual independent reruns:52typed-history/source-alias,47queue and91writer-boundary
+    tests passed, with no production edits.
+  target_ids:
+  - publication-guard
+  - alias-context
+  - queue-writer
+  evidence_ids:
+  - e6
+- check_id: independent-native-unified-replay
+  name: independent-native-unified-replay
+  status: passed
+  required: true
+  exit_code: 0
+  summary: Actual independent native replay completed exit0;18880input members/bytes
+    remained unchanged before/after and complete output equals maintained TSV.
+  target_ids:
+  - unified
+  - unified-provenance
+  evidence_ids:
+  - e12
+evidence:
+- evidence_id: e1
+  kind: database
+  reference: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/mediadive-1315.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Exact trihydrate alias and provenance-only rejected-label correction
+  snapshot_sha256: 93d213c95d4619c2135836a993d13ed54229f3920a241147d5f4e0eb69bf5d72
+- evidence_id: e2
+  kind: database
+  reference: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/chebi-32138.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Exact trihydrate alias and provenance-only rejected-label correction
+  snapshot_sha256: 360383e4c9a6f04c00a315b76ca0a0bbf59e93638368db930e67acec7e1dd388
+- evidence_id: e3
+  kind: database
+  reference: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/sources/pubchem-cas6131-synonyms.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Exact trihydrate alias and provenance-only rejected-label correction
+  snapshot_sha256: 5035690cedd4523533fd1023e1bfd9d92f4a90841101d551fb96f6371d4b0072
+- evidence_id: e4
+  kind: database
+  reference: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/microbedecoder-raw-record19685.csv
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Exact trihydrate alias and provenance-only rejected-label correction
+  snapshot_sha256: b60fee13501d1ddba9d53688462f86055a9c1d6c6a470157e336a00ca93e7360
+- evidence_id: e5
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/source-and-receipt-audit-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Exact trihydrate alias and provenance-only rejected-label correction
+  snapshot_sha256: 652797ecf8d3fc56fdc9cb646d3ae6b3586a1fe2e2188f2da73cfa5a9d41f86a
+- evidence_id: e6
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/implementation-rereview-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Guarded source publication, exact successor proof and native queue inventory
+  snapshot_sha256: 9a76c1339501e49aee8e852f0d905cb3fbd2aeda77bb9c9da459289f683923d7
+- evidence_id: e7
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/publication-boundaries-recheck-v3/result.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Guarded source publication, exact successor proof and native queue inventory
+  snapshot_sha256: 81e697f6a1900f8b77428e3b32df89d316a2a638282897793cb64a9da8d13c87
+- evidence_id: e8
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/parent-swap-result-recheck-v2.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Guarded source publication, exact successor proof and native queue inventory
+  snapshot_sha256: b1117977119fce195f99911ef37f4cfc1e7c37923a13a91b4be8d0fbf141387d
+- evidence_id: e9
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/scientific-transform-preservation-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Guarded source publication, exact successor proof and native queue inventory
+  snapshot_sha256: f90f116f29a3bca0a2cb08dcdac515b4d66fae9e1abcc53855eb22a007c728a8
+- evidence_id: e10
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/companion-refresh-v2.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Guarded source publication, exact successor proof and native queue inventory
+  snapshot_sha256: 9fdd719440e66bf21a284f97d4a6d96dfc0f79e86d18c8222c8fdeffb9323976
+- evidence_id: e11
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/committed-head-cd76-audit-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Regression coverage and preserved workflow assertions
+  snapshot_sha256: e990b8e4de61beab496cc8296923e5677f37cc9f66c10561938b938dc854cc88
+- evidence_id: e12
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/unified-native-review-v1/assessment.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Scoped mapping publication, unchanged companion claims and traced native
+    unified rebuild
+  snapshot_sha256: 75d7be9e8d8c319205ce31244893e2a1e993c6908c796dd879d6d9e64d8089de
+- evidence_id: e13
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/unified-generation/cell-diff.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Scoped mapping publication, unchanged companion claims and traced native
+    unified rebuild
+  snapshot_sha256: f32bc56999288f7ef8c05bb328b4e596fd29d76c1f0f99083a2802a6c30ac6ce
+- evidence_id: e14
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/semantic-disposition-delta.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Scoped mapping publication, unchanged companion claims and traced native
+    unified rebuild
+  snapshot_sha256: a9de380ec2e2ab2abcd04a42c6f964668b753098d85ee211d251727d603b2318
+- evidence_id: e15
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/b4-readonly-result.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Scoped mapping publication, unchanged companion claims and traced native
+    unified rebuild
+  snapshot_sha256: 36794c4cdfeb741e01fa8f61361e6cb8f75074681c170870df8a73a1d963433b
+- evidence_id: e16
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/reconciliation-comparison-v1/summary.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Fresh source queue and preserved scientific holds
+  snapshot_sha256: 324c2b45c70d8558cbb4af90889f01341522f620708a44d29339b0dfbf03a169
+- evidence_id: e17
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/source-audit/source-manifest.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Fresh source queue and preserved scientific holds
+  snapshot_sha256: e2f4252a44aabaffaad7d3d3ca27ac0fb96e50b58939747e095e2ca1b9e3b48e
+- evidence_id: e18
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/queue-adversarial/assessment-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Fresh source queue and preserved scientific holds
+  snapshot_sha256: 105a3f2205fa8b7563048f208e951320e5d2bca89358f929356fe31d6c083be9
+- evidence_id: e19
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/scientific-holds/microbedecoder-holds-v1.md
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Fresh source queue and preserved scientific holds
+  snapshot_sha256: ba6d2324379fb83fb624b4ac4f5a92ac205789bd8becac82d0380f9ab03e9363
+- evidence_id: e20
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/scientific-holds/targeted-mediadive-holds-v1.md
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Fresh source queue and preserved scientific holds
+  snapshot_sha256: 8d36a888a2f66c4808fdad47c4ca73ea47494a0464b22a7169e5034ca30d2e2a
+- evidence_id: e21
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/status.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Independent observed checks and immutable lineage
+  snapshot_sha256: 75028e2e8fb4ae2dd89a5577f7f179805f7c9b4238afeffe2c12ccdea5509042
+- evidence_id: e22
+  kind: prior_review
+  reference: reviews/structured/20261108T023208Z-kgm-unmapped-baseline-contract-review/review.yaml
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Immutable prior native finding observation; exact IDs and affected targets
+    are preserved.
+  snapshot_sha256: 02d59f9785bde78c99a1bfcf2ae2fae3d8a89b0b714146d9a6afba5935bcafa0
+- evidence_id: e23
+  kind: prior_review
+  reference: reviews/structured/20261108T024658Z-kgm-source-writer-boundary-findings/review.yaml
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Immutable prior native finding observation; exact IDs and affected targets
+    are preserved.
+  snapshot_sha256: adc7696a1a8a650bdea1e05274dee42e210dd23bfbb36a157fbcce34fbcdc12a
+- evidence_id: e24
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/sodium-acetate/mapping-followup-decision.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Current canonical source and content-bound mapping review
+  snapshot_sha256: 6424b427065258c91f01fada8dd39272ab323ffc0eb6b715c87a25cb8f3c1f00
+- evidence_id: e25
+  kind: record_content
+  reference: docs/SSSOM_RELEASE.md
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Supported predicate scope documentation
+  snapshot_sha256: c7e398f487bc097b91ad092d3311f9f7cce721ee73cabcb998b4f9999f973197
+- evidence_id: e26
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/manifest.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Supported predicate scope documentation
+  snapshot_sha256: 86cc8cec342e5aa28373abcd59c90e428d3fcfedeef646234a323bb31142bc67
+- evidence_id: e27
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-final/local-checks.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual completed gate evidence inspected independently; counts and limitations
+    are separated by runtime.
+  snapshot_sha256: f177482c788dd08cfdf6cfd8611278bdd8c1a8b0e6b21d7584a4bc707195e385
+- evidence_id: e28
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/skip-qualification-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual completed gate evidence inspected independently; counts and limitations
+    are separated by runtime.
+  snapshot_sha256: de147f84e9e6f5adbc2d0112ab11580cedf5d4c8d4c63d3671e833c662d4ee8b
+- evidence_id: e29
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/final-scope-child-assessment.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual completed gate evidence inspected independently; counts and limitations
+    are separated by runtime.
+  snapshot_sha256: 6af9969f152deb5c5287b627e50003411e8d57748a8fadef60af383ca84458b3
+- evidence_id: e30
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/independent-review/local-completion-independent-v1.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual completed gate evidence inspected independently; counts and limitations
+    are separated by runtime.
+  snapshot_sha256: 3f3aad36f8a5bb9ed5179fca4616baf34c40721a261656cdeae08bb55714531e
+- evidence_id: e31
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/final-qc-v1.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Completed native composite includes strict/shape/round-trip/flat products,
+    freshness, synonym and SSSOM gates. No active invariant rejects; default B4 path
+    skip is separately qualified.
+  snapshot_sha256: e2d9464fe829d5601539297009cf90a7a98f29cfe80417b95ae532a84e4d5a51
+- evidence_id: e32
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/static-quality-final.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Ruff/Black/Mypy passed; maintained Python source scope61files.
+  snapshot_sha256: 6df1afb7bf063199bf1d7a4b52566a0b9806f32a9ba9771356e209f154d93461
+- evidence_id: e33
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/reviewed-qc-v1.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual native partition and schema replay passed;1739SUPPORTED/1275WITHHOLD;
+    exact input/output hashes inspected.
+  snapshot_sha256: 40d9cd5a4abfdfa3b694eddc4c01ed96a190702ed2b914fecf08b11e2e047af1
+- evidence_id: e34
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/reviewed-export-v1.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual native partition and schema replay passed;1739SUPPORTED/1275WITHHOLD;
+    exact input/output hashes inspected.
+  snapshot_sha256: 848de09ace53702e4504f011dc1414ccfd8509bed184d873adcc75ff1dda66e9
+- evidence_id: e35
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/companion-refresh-v2.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual final code-bound refresh/export passed;20owners/51claims unchanged;
+    native proof verifies receipt27 and all old histories.
+  snapshot_sha256: f7f8bb7a1a0c0a08809fb43c76366217bb96cb14505a939437640cb1a913f2bc
+- evidence_id: e36
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/companion-export-v1.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual final code-bound refresh/export passed;20owners/51claims unchanged;
+    native proof verifies receipt27 and all old histories.
+  snapshot_sha256: 44287393c4f9595f991c23d3dfd8d54fb032a56346199988007b231e4fea131f
+- evidence_id: e37
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/supported-kgx-qc-v1.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Supported subset passed. Full semantic graph retains existing unresolved
+    backlog and one newly withdrawn inherited BUFFER approval; no blanket pass inferred.
+  snapshot_sha256: e3a4de079089461dad9da02d7a3a698410a3cbb68b4a131dd605a9aab36f34af
+- evidence_id: e38
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-final/full-pytest-v1.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual invocation completed4898passed525skipped31warnings0failed in1257.40seconds.
+    All seven added test files ran183passing cases with no skips; existing skipped-module
+    attribution is source-based because log lacks individual skip reasons.
+  snapshot_sha256: c4051a8e76801a6af0ed30ff0731c967ea1b4c7cf321962f30658be9f130c72c
+- evidence_id: e39
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-final/package-coverage-final.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual maintained package coverage79percent meets unchanged35percentfloor.
+    This is distinct from combined scripts/package advisory report.
+  snapshot_sha256: 8bcaae3e999d1f9ce60242970f0216fb8dae738a068aa48f938f1cc7b35b6166
+- evidence_id: e40
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-final/record-reviews.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual native checker validated1018retained bundles; exact missing historical
+    bases were fetched without changing any historical review. This count predates
+    this new review.
+  snapshot_sha256: 634b5032cb3921e4f54bfccd514c03fc1294da21d96ce9ac3020f2f775254e64
+- evidence_id: e41
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-final/historical-base-recovery.json
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Actual native checker validated1018retained bundles; exact missing historical
+    bases were fetched without changing any historical review. This count predates
+    this new review.
+  snapshot_sha256: 31f9bc640dc52be7974f67c4f8b8b3d94c6cc584e11d3ec1c3a5064225ddb9e7
+- evidence_id: e42
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/validation-v1/native-candidate-invariants.log
+  accessed_at: '2026-11-08T03:34:43.878689Z'
+  support: supports
+  summary: Default nested-worktree sibling ontology path absent; native B4 is skipped
+    without altering its policy. Separate actual-transform check below supplies bounded
+    available coverage.
+  snapshot_sha256: cb0f6ecb71bf5d64d7ae591c1443a9ae579c79292ade585cbfbb5ee3131ab99c
+assessments:
+- assessment_id: assess-science
+  area: identity
+  topic: Exact trihydrate alias and provenance-only rejected-label correction
+  outcome: supported
+  summary: 'MediaDive1315 explicitly pairs Na acetate x 3 H2O with CAS6131-90-4. The
+    inspected ChEBI32138 capture supplies the form-specific trihydrate term, CAS cross-reference,
+    C2H3O2.3H2O.Na formula and three waters in the structure; PubChem23665404 independently
+    corroborates the form and CAS. All six active SSSOM tokens preserve that identity:
+    Na-acetate x 3 H2O, Sodium acetate x 3 H2O, sodium acetate--water (1/3), Sodium
+    acetate·3H2O, CAS:6131-90-4 and the new exact MediaDive spelling. The source''s
+    discrepant hydrogen count is retained as a conflict and was not imported. Exact
+    owner diff is one alias plus one history event; mapped aggregate agrees. The second
+    record changes only active notes and one history event: literal 3-methylacetate
+    exists in raw record19685 in both prose and structured minor-product data. Historical
+    speculation remains historical; identity remains unresolved and REJECTED, with
+    no mapping or replacement. This is a raw database provenance conclusion, not a
+    primary-paper interpretation or approval of its chemical identity.'
+  target_ids:
+  - acetate-owner
+  - methylacetate-owner
+  - mapped-aggregate
+  - unmapped-aggregate
+  - mediadive-capture
+  - chebi-capture
+  - pubchem-capture
+  - methyl-source
+  - mapping-followup
+  - source-proof
+  - native-author-review
+  evidence_ids:
+  - e1
+  - e2
+  - e3
+  - e4
+  - e5
+- assessment_id: assess-implementation
+  area: consistency
+  topic: Guarded source publication, exact successor proof and native queue inventory
+  outcome: supported
+  summary: The repaired writers reject aliased or nonregular targets, capture exact
+    input bytes and identities, stage through native validation and atomically replace
+    the held target entry. Late manifest/candidate substitutions now refuse; original
+    private reproductions no longer overwrite unrelated linked files or produce a
+    success receipt. Scientific transform functions remain unchanged by boundary repair.
+    The queue writer reserves and rechecks the complete output directory chain and
+    native file reservations, refusing the original post-preflight parent swap. Its
+    inventory includes ignored direct mapped/unmapped records and excludes nested
+    historical backups. The source-alias context permits exactly the reviewed two
+    source changes and one canonical row projection with native receipt27, full old-history
+    preservation and no companion-claim approval. Legacy contexts admit unrelated
+    histories only as immutable lists, preserving all original scientific and receipt
+    assertions.
+  target_ids:
+  - publication-guard
+  - alias-writer
+  - canonical-publisher
+  - policy-writer
+  - notes-writer
+  - queue-writer
+  - alias-context
+  evidence_ids:
+  - e6
+  - e7
+  - e8
+  - e9
+  - e10
+- assessment_id: assess-tests
+  area: scope
+  topic: Regression coverage and preserved workflow assertions
+  outcome: supported
+  summary: The only modification to an existing test is the companion REVIEW selector,
+    paired with the workflow's --review argument. Both point to the same immutable
+    new companion; assertions remain unchanged. All other test files are additions.
+    The independent committed-head scope check found no new skip, xfail or importorskip
+    controls. Protected qc-evidence, vendored pin, semantics, justfile and Python
+    version are unchanged. Focused independent reruns passed:52 typed-history/source-alias
+    tests,47 reconciliation tests and91 writer/publication tests. They exercise valid
+    paths and rejected history mutations, aliases and boundary substitutions without
+    widening scientific approval.
+  target_ids:
+  - test-1
+  - test-2
+  - test-3
+  - test-4
+  - test-5
+  - test-6
+  - test-7
+  - test-8
+  - companion-workflow
+  - protected-qc-evidence
+  - protected-pin
+  evidence_ids:
+  - e6
+  - e11
+- assessment_id: assess-release
+  area: provenance
+  topic: Scoped mapping publication, unchanged companion claims and traced native
+    unified rebuild
+  outcome: supported
+  summary: Canonical membership/order remain3014. Receipt27 binds exactly two owner
+    changes and one changed row at position2556; all prior26 receipt bytes remain
+    unchanged. Only that row's source, mapping_date and other change, with legitimate
+    header-date updates. Receipt replay first withdraws inherited support; the new
+    current-owner six-token scientific followup restores only that mapping. Final
+    partition remains1739SUPPORTED/1275WITHHOLD; withheld bytes are unchanged. Companion20owner
+    inputs/51decisions/claims are unchanged; final v2 audit binds final typed source.
+    Exactly one inherited nonmapping BUFFER approval becomes OPEN because ownerbytes
+    changed; every other nonmapping disposition row is identical. The two supported
+    broad mappings remain intentional. Native unified rebuild retains4170rows/order
+    and changes13cells across8rows, all traced to this one new alias. Independent
+    full native replay equals the maintained TSV and verifies all18880 input members/bytes
+    before and after; native provenance matches. Five available ontology transforms
+    yield no B4 mismatches; unavailable prefixes remain qualified. No KG release adoption
+    or graph rebuild is performed or inferred.
+  target_ids:
+  - current-companion
+  - companion-proof
+  - withdrawal
+  - semantic-delta
+  - supported
+  - withheld
+  - dispositions
+  - release-manifest
+  - bundle-manifest
+  - unified-trace
+  - unified-cell-diff
+  - b4-readonly
+  - adoption-guard
+  - receipt-27
+  - suppression-sidecar
+  - collision-baseline
+  - semantic-review
+  - semantic-dispositions
+  evidence_ids:
+  - e11
+  - e12
+  - e13
+  - e14
+  - e10
+  - e15
+- assessment_id: assess-queue
+  area: scope
+  topic: Fresh source queue and preserved scientific holds
+  outcome: supported
+  summary: The bounded reconciliation retains all549source candidates, including low-frequency
+    MicrobeDecoder compounds, raw labels and source IDs. Exactly547before/after entries
+    remain identical; only the new sodium spelling's owner coverage and the rejected
+    record's provenance hash change. This is lexical/source reconciliation, not approval
+    or KG adoption. All26downstream-held candidates and225 source assertions across10
+    MicrobeDecoder material labels remain held, and five targeted MediaDive scientific
+    questions remain open. Source manifests bind the actual read-only checkout and
+    consumed generation. Old helper occurrence constants are not interpreted as measured
+    medium counts; absent exact names are not declared absent substances.
+  target_ids:
+  - source-manifest
+  - reconciliation-before
+  - reconciliation-after
+  - reconciliation-delta
+  - scientific-holds
+  - mediadive-holds
+  - synthesis
+  evidence_ids:
+  - e16
+  - e17
+  - e18
+  - e19
+  - e20
+- assessment_id: assess-review-proof
+  area: evidence
+  topic: Independent observed checks and immutable lineage
+  outcome: supported
+  summary: Independent evidence records actual private reprobes, focused checks, native
+    full-producer replay and exact committed-head audit. Frozen initial failures remain
+    separate from repaired observations; no failed observation is rewritten. These
+    artifacts establish only their stated scope and do not substitute for final completed
+    local/remote gates. The native final review must add completed gate evidence and
+    bind its actual source state before saving.
+  target_ids:
+  - independent-implementation
+  - independent-head
+  - independent-native-replay
+  - independent-writer-probes
+  - independent-queue-probe
+  - validation-status
+  evidence_ids:
+  - e6
+  - e11
+  - e21
+- assessment_id: prior-typed
+  area: consistency
+  topic: Legacy history successor repair and original negative proof
+  outcome: supported
+  summary: Legacy form/registry/stock contexts now accept owned-name and source-alias
+    histories only as immutable unrelated lists. Independent focused regressions exercise
+    preservation and reject deletion, alteration, reordering and JSON type substitutions
+    while retaining original transition checks. Prior failure proof is preserved unchanged.
+  target_ids:
+  - typed-refresh
+  - policy-history
+  - history-probe
+  evidence_ids:
+  - e6
+  - e10
+- assessment_id: prior-mapping
+  area: provenance
+  topic: Current canonical source and content-bound mapping review
+  outcome: supported
+  summary: The current canonical row and native review satisfy the exact receipt27/fresh
+    six-token followup boundary. No unrelated mapping disposition changes; complete
+    prior receipt history and withheld bytes remain unchanged.
+  target_ids:
+  - canonical
+  - mapping-review
+  evidence_ids:
+  - e11
+  - e24
+- assessment_id: prior-companion
+  area: provenance
+  topic: Preserved historical companion input
+  outcome: supported
+  summary: The prior companion remains immutable. New metadata successor retains identical20record
+    inputs and51decisions/claims, and is validated by the final code-bound native
+    refresh proof; it does not rewrite or repurpose its predecessor.
+  target_ids:
+  - companion
+  evidence_ids:
+  - e10
+- assessment_id: prior-unified
+  area: consistency
+  topic: Independently replayed native unified snapshot pair
+  outcome: supported
+  summary: The maintained TSV/provenance pair matches the native rebuild. Independent
+    native replay verifies13changed cells across8rows, all from the same alias,4170same-order
+    rows and18880unchanged producer inputs before/after.
+  target_ids:
+  - unified
+  - unified-provenance
+  evidence_ids:
+  - e12
+- assessment_id: prior-boundaries
+  area: provenance
+  topic: Preserved original writer and queue failures with verified fixes
+  outcome: supported
+  summary: The archived source and original proofs remain byte-exact historical observations.
+    Current production writers now reject those reproduced attacks, as independently
+    retested; terminal dispositions concern the current repair and do not relabel
+    the original unsafe executions as successful controls.
+  target_ids:
+  - alias-writer-original
+  - canonical-publisher-original
+  - policy-writer-original
+  - queue-writer-original
+  - publication-boundary-proof
+  - queue-parent-swap-proof
+  evidence_ids:
+  - e6
+  - e7
+  - e8
+- assessment_id: guide
+  area: representation
+  topic: Supported predicate scope documentation
+  outcome: supported
+  summary: Release guide now explicitly permits the two reviewed broad mappings in
+    the actual supported subset, retaining direction and exact-identity safeguards.
+    No mapping predicate, review disposition or hold changed to make the documentation
+    pass.
+  target_ids:
+  - release-guide
+  evidence_ids:
+  - e25
+  - e26
+- assessment_id: final-gate-evidence
+  area: evidence
+  topic: Actual completed local and remote check evidence
+  outcome: supported
+  summary: Completed local validation passes:4898passed525skipped31warnings0failed,
+    packagecoverage79percent against unchanged35percentfloor, and1018retained native
+    review bundles validated. All new tests executed; old optional skip controls remain
+    unchanged. Remote CI and the actual final published-head attestation are explicitly
+    pending; this is a local science/implementation verdict, not publication or merge
+    authorization.
+  target_ids:
+  - independent-local-completion
+  - independent-skip-scope
+  - independent-test-scope
+  - local-coverage-log
+  - local-suite-log
+  - local-validation-receipt
+  - native-retained-check-log
+  evidence_ids:
+  - e27
+  - e28
+  - e29
+  - e30
+findings:
+- finding_id: typed-successor-rejects-owned-name-history
+  issue_key: mim-typed-successor-owned-name-history
+  category: consistency
+  severity: minor
+  native_severity: P3 / fail-closed successor compatibility
+  normalization_reason: Current exports pass; the defect blocks later typed transitions
+    without admitting unsupported data.
+  status: resolved
+  certainty: confirmed
+  title: Older typed refresh contexts reject legitimate owned-name history
+  description: Current canonical manifest contains owned_name_suppression_updates,
+    but the shared form/registry/stock shape check excludes it. All three native paths
+    refuse before validating a successor. Preserve existing history and scientific
+    constraints; do not remove the key to pass.
+  target_ids:
+  - typed-refresh
+  - policy-history
+  - history-probe
+  field_paths:
+  - '_verify_policy_projection: allowed manifest keys'
+  - owned_name_suppression_updates
+  evidence_ids:
+  - e22
+  - e6
+  - e10
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: src/mediaingredientmech/ingredient_bundle_refresh.py
+    role: Typed companion successor contract
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1150
+  disposition_reason: Legacy form/registry/stock contexts now accept owned-name and
+    source-alias histories only as immutable unrelated lists. Independent focused
+    regressions exercise preservation and reject deletion, alteration, reordering
+    and JSON type substitutions while retaining original transition checks. Prior
+    failure proof is preserved unchanged.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T023208Z-kgm-unmapped-baseline-contract-review
+    finding_id: typed-successor-rejects-owned-name-history
+- finding_id: source-alias-writers-hardlink-side-effects
+  issue_key: mim-source-alias-writer-hardlink-scope
+  category: consistency
+  severity: major
+  native_severity: P2 correctness/write scope
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: resolved
+  certainty: confirmed
+  title: Hard-linked mutation targets allow unrelated file writes
+  description: Actual owner and canonical private fixtures complete successfully and
+    overwrite a second hard-linked unrelated path. Symlink-only checks and native
+    YAML validation do not protect write scope. The policy writer has the same unchecked
+    direct-write pattern and needs the same bounded assessment.
+  target_ids:
+  - alias-writer-original
+  - canonical-publisher-original
+  - policy-writer-original
+  - publication-boundary-proof
+  evidence_ids:
+  - e23
+  - e6
+  - e7
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_mediadive_acetate_alias.py
+    role: Maintained implementation or guide requiring bounded correction
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/publish_mediadive_acetate_alias.py
+    role: Maintained implementation or guide requiring bounded correction
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/refresh_kgm_source_policy_manifest.py
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1153
+  disposition_reason: Shared guard now rejects hard-linked/symlinked targets, pins
+    identities and parent bindings, stages through native validation and replaces
+    only the held target entry atomically. Original owner/canonical hard-link reprobes
+    refuse without modifying unrelated aliases; all four writers receive the same
+    guarded boundary. Historical observed source/probe targets remain intact.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T024658Z-kgm-source-writer-boundary-findings
+    finding_id: source-alias-writers-hardlink-side-effects
+- finding_id: source-alias-publisher-unverified-late-manifest
+  issue_key: mim-source-alias-publisher-late-manifest
+  category: provenance
+  severity: major
+  native_severity: P2 correctness/write scope
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: resolved
+  certainty: confirmed
+  title: Late manifest replacement is attributed without validation
+  description: The publisher checks manifest once, reserves outputs, and rechecks
+    only canonical/owner. A real private reservation callback replaced manifest with
+    a zero producer and FAILED validation; publication still returned success and
+    the receipt hashes the replacement manifest.
+  target_ids:
+  - canonical-publisher-original
+  - publication-boundary-proof
+  evidence_ids:
+  - e23
+  - e6
+  - e7
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/publish_mediadive_acetate_alias.py
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1154
+  disposition_reason: Publisher now captures the exact candidate/manifest bytes and
+    rechecks their identity and content at reservation, write and receipt boundaries.
+    Original late-manifest substitution refuses and leaves no success receipt. Regression
+    cases cover late candidate/manifest/source evidence and receipt inventory mutations.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T024658Z-kgm-source-writer-boundary-findings
+    finding_id: source-alias-publisher-unverified-late-manifest
+- finding_id: queue-output-parent-swap
+  issue_key: mim-chemical-queue-output-parent-swap
+  category: consistency
+  severity: minor
+  native_severity: P3 bounded safeguard/documentation
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: resolved
+  certainty: confirmed
+  title: Queue output can be redirected into protected upstream after preflight
+  description: Delegated independent reviewer swapped initially safe output parent
+    to a symlink during load_review. run() returned success and created ledger.json,ledger.tsv,receipt.json,summary.json
+    inside the private upstream fixture. Real KG-Microbe and MIM inputs were untouched.
+  target_ids:
+  - queue-writer-original
+  - queue-parent-swap-proof
+  evidence_ids:
+  - e23
+  - e6
+  - e8
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/reconcile_kgm_chemical_queue.py
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1155
+  disposition_reason: Reconciler holds and revalidates a root-anchored O_NOFOLLOW
+    directory chain through native file reservation and input rechecks. The original
+    independent late-parent swap refuses and creates no redirected upstream report.
+    Positive nested-output and additional late-directory/leaf swaps are covered.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T024658Z-kgm-source-writer-boundary-findings
+    finding_id: queue-output-parent-swap
+- finding_id: release-guide-supported-predicate-scope
+  issue_key: mim-release-guide-supported-broad-predicates
+  category: provenance
+  severity: minor
+  native_severity: P3 bounded safeguard/documentation
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: resolved
+  certainty: confirmed
+  title: Release guide incorrectly describes supported mappings as exact only
+  description: Actual baseline native export contains two supported broad mappings
+    while guide says all supported rows in the snapshot are skos:exactMatch. This
+    is documentation drift, not a reason to narrow or change approved predicates.
+  target_ids:
+  - release-guide
+  evidence_ids:
+  - e23
+  - e6
+  - e25
+  - e26
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: docs/SSSOM_RELEASE.md
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1156
+  disposition_reason: Release guide now explicitly permits the two reviewed broad
+    mappings in the actual supported subset, retaining direction and exact-identity
+    safeguards. No mapping predicate, review disposition or hold changed to make the
+    documentation pass.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T024658Z-kgm-source-writer-boundary-findings
+    finding_id: release-guide-supported-predicate-scope
+actions: []
+limitations:
+- Scientific review is deliberately limited to the exact sodium acetate trihydrate
+  mapping and six active tokens plus raw-source provenance for the unchanged rejected
+  3-methylacetate identity. It is not whole-record, role or corpus-wide scientific
+  approval.
+- Sodium acetate's inherited BUFFER approval is withdrawn to OPEN; this mapping-only
+  review does not restore it. Every other nonmapping disposition remains unchanged.
+  The full semantic graph remains FAIL because existing claims are unresolved, while
+  the supported subset passes its native gate.
+- The original primary paper behind raw MicrobeDecoder record19685 was not independently
+  reread; conclusions concern literal database provenance only. No replacement chemical
+  identity is inferred.
+- Native qc-sssom in the nested worktree skips RuleB4 by its default sibling path.
+  Separate unchanged native B4 evaluation against five available read-only ontology
+  transforms reports zero mismatches; BTO/MICRO transforms are unavailable, so complete
+  ontology-label coverage is not claimed.
+- The KG-Microbe checkout and installed generation are read-only and remain the baseline
+  consumed pair. A later consumer admission/rebuild requires its own reviewed-release
+  refresh and material-hold checks. No prospective downstream-resolution count is
+  claimed.
+- Issue1152 is assessed as a supported direct-record inventory correction without
+  inventing a missing predecessor finding. Closed dispositions apply only to the five
+  exact prior native finding identities retained here.
+- The actual private overlay HEAD is durable baseline0dac2784; exact final bytes are
+  captured as working_tree, not mislabeled committed at that base. Actual implementation
+  headcd76b3e5 is independently content-verified in the committed-head audit. A separate
+  actual final published-head attestation follows the report/evidence-only successor
+  commit.
+- Remote CI is still pending and is not claimed green in this observation. Root must
+  verify the final published head and its complete required CI independently before
+  any later permitted release action.
+- Of525local skips,524are in15unchanged modules with optionalClaw/native-producer/profile
+  checks and one in the unchanged data-dependent CURIE module. Their exact runtime
+  reason per test was not printed; the category explanation is based on unchanged
+  source controls and observed module skip markers. All7new test files executed183passing
+  cases, zero skips.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T023208Z-kgm-unmapped-baseline-contract-review
+  relationship: Exact successor resolves the retained finding IDs and preserves their
+    full affected-target sets.
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T024658Z-kgm-source-writer-boundary-findings
+  relationship: Exact successor resolves the retained finding IDs and preserves their
+    full affected-target sets.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1149
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1150
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1151
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1152
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1153
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1154
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1155
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1156
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1157
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+tags:
+- independent-review
+- source-alias
+- reviewed-sssom
+- native-unified-replay
+- no-downstream-adoption
+```
