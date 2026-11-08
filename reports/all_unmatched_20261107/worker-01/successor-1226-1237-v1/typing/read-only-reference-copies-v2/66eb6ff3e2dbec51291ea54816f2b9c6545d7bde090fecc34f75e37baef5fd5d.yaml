@@ -1,0 +1,234 @@
+id: CultureMech:007510
+name: '990'
+original_name: '990'
+category: bacterial
+description: 990. NBRC 989.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 7.0
+media_term:
+  preferred_term: NBRC Medium 989
+  term:
+    id: nbrc.medium:989
+    label: NBRC Medium 989
+ingredients:
+- preferred_term: Trypticase Peptone (BBL)
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: MICRO:0000175
+    label: Trypticase peptone
+- preferred_term: Bacto Yeast Extract (Difco)
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+- preferred_term: 50% Sodium lactate
+  concentration:
+    value: '25'
+    unit: ML_PER_L
+- preferred_term: Biotin solution*
+  concentration:
+    value: '2'
+    unit: ML_PER_L
+- preferred_term: K solution**
+  concentration:
+    value: '10'
+    unit: ML_PER_L
+- preferred_term: M solution***
+  concentration:
+    value: '2.5'
+    unit: ML_PER_L
+- preferred_term: C solution****
+  concentration:
+    value: '2.5'
+    unit: ML_PER_L
+- preferred_term: Resazurin
+  concentration:
+    value: '1'
+    unit: MG_PER_L
+  term:
+    id: CHEBI:8806
+    label: Resazurin
+- preferred_term: 15% Na2CO3 solution
+  concentration:
+    value: '20'
+    unit: ML_PER_L
+- preferred_term: Cysteine-HCl
+  concentration:
+    value: '0.75'
+    unit: G_PER_L
+  term:
+    id: CHEBI:91247
+    label: L-cysteine hydrochloride
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Mix ingredients except for Na2CO3 and cysteine-HCl.
+- step_number: 2
+  action: ALIQUOT
+  description: Dispense under N2/CO2 (80/20) into culture vessels and seal with butyl
+    rubber stoppers.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 115 C for 25 minutes.
+- step_number: 4
+  action: FILTER_STERILIZE
+  description: Filter-sterilize Na2CO3 and cysteine-HCl solutions.
+- step_number: 5
+  action: MIX
+  description: Aseptically and anaerobically add filter-sterile Na2CO3 and cysteine-HCl
+    solutions.
+- step_number: 6
+  action: ADJUST_PH
+  description: Adjust pH to 7.0 with 3 N HCl.
+curation_history:
+- timestamp: '2026-02-20T00:22:36.001571Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 989, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=989.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-09T08:04:22.623223+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T03:08:50.811605Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 62 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.298981Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007510'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.763030+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:23.115528+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 989 composition table from the preserved scrape;
+    11 ingredient(s) restored, 4 stock solution(s) nested rather than flattened, 1
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:16.194144+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 10 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_nbrc_partial_score25.py
+  action: RESOLVED_NBRC_PARTIAL_SCORE25
+  changes: Added source metadata to recovered NBRC score-25 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+  notes: Preserved the recovered NBRC Medium 989 composition table.
+solutions:
+- preferred_term: Biotin solution
+  composition:
+  - preferred_term: Biotin
+    concentration:
+      value: '5'
+      unit: MG_PER_L
+    term:
+      id: CHEBI:15956
+      label: biotin
+  - preferred_term: Ethanol
+    concentration:
+      value: '100'
+      unit: ML_PER_L
+    term:
+      id: CHEBI:16236
+      label: ethanol
+  name: Biotin solution
+- preferred_term: K solution
+  composition:
+  - preferred_term: KH2PO4
+    concentration:
+      value: '90'
+      unit: G_PER_L
+    term:
+      id: CHEBI:63036
+      label: potassium dihydrogen phosphate
+  - preferred_term: NaCl
+    concentration:
+      value: '90'
+      unit: G_PER_L
+    term:
+      id: CHEBI:26710
+      label: sodium chloride
+  - preferred_term: (NH4)2SO4
+    concentration:
+      value: '90'
+      unit: G_PER_L
+    term:
+      id: CHEBI:62946
+      label: ammonium sulfate
+  - preferred_term: Distilled water
+    concentration:
+      value: '1'
+      unit: L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: K solution
+- preferred_term: M solution
+  composition:
+  - preferred_term: MnCl2·4H2O
+    concentration:
+      value: '4'
+      unit: G_PER_L
+  - preferred_term: CoCl2·6H2O
+    concentration:
+      value: '4'
+      unit: G_PER_L
+  - preferred_term: Distilled water
+    concentration:
+      value: '1'
+      unit: L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: M solution
+- preferred_term: C solution
+  composition:
+  - preferred_term: CaCl2·2H2O
+    concentration:
+      value: '10.6'
+      unit: G_PER_L
+    term:
+      id: CHEBI:86158
+      label: CaCl2 x 2 H2O
+  - preferred_term: Distilled water
+    concentration:
+      value: '1'
+      unit: L
+    term:
+      id: CHEBI:15377
+      label: water
+  name: C solution
+notes: 'Source: NBRC Medium 989 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+
+
+  The NBRC TYL medium table lists biotin, K, M, and C stock solutions, final pH 7.0,
+  115 C autoclaving for 25 minutes, and aseptic anaerobic addition of filter-sterile
+  carbonate and cysteine solutions.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989

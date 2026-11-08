@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/accounting_controls.py", line 50, in main
+    module.audit(**control_kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py", line 238, in audit
+    require(
+    ~~~~~~~^
+        row.get("case_input_sha256") == case_digest(case), "input case hash differs: " + key
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py", line 25, in require
+    raise InvalidOutcome(message)
+campaign_outcome_auditor.InvalidOutcome: input case hash differs: CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/accounting_controls.py", line 61, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/accounting_controls.py", line 52, in main
+    controls.append({'control':label,'rejected':True,'exception':type(exc).__name__,'message':str(exc),'counterexample_path':str(path.relative_to(D)),'sha256':sha(path)})
+                                                                                                                                 ~~~~~~~~~~~~~~~~^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 385, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: 'reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/checks/accounting-pre-review-v1/stale-full-case-object.json' is not in the subpath of '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1'

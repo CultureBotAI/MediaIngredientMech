@@ -1,0 +1,30 @@
+{
+  "author": "Codex /root/primary_context (worker01)",
+  "recorded_at_utc": "2026-11-08T08:01:29.961857+00:00",
+  "runtime": ".temp/all-unmatched-worker-01/shard-venv/bin/python -B",
+  "shell_login": false,
+  "successful_author_commands": [
+    ".temp/all-unmatched-worker-01/shard-venv/bin/python -B reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/science_inputs_v1.py",
+    ".temp/all-unmatched-worker-01/shard-venv/bin/python -B reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/science_author_v1.py",
+    ".temp/all-unmatched-worker-01/shard-venv/bin/python -B reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/scripts/science_complete_v1.py"
+  ],
+  "bounded_attempts_and_corrections": [
+    {
+      "operation": "Primary HTML readback attempted with bs4",
+      "result": "ModuleNotFoundError: No module named bs4; no environment install or output mutation. Repeated using standard-library HTMLParser; complete primary bodies read."
+    },
+    {
+      "operation": "Initial science_complete_v1.py execution",
+      "result": "KeyError allocation_index when indexing unrelated full-shard decisions; occurred before output writes. Author helper narrowed index to rows possessing allocation_index; successful rerun retained exact five assigned rows. No candidate changes or fabricated successful check."
+    }
+  ],
+  "native_interfaces": [
+    "mediaingredientmech.validation.write_validated.validate_ingredient",
+    "mediaingredientmech.validation.write_validated.write_validated_ingredient",
+    "mediaingredientmech.curate.curation_event.record_curation_event",
+    "mediaingredientmech.synonym_policy.preferred_term_owners",
+    "mediaingredientmech.synonym_policy.is_resolving_synonym",
+    "mediaingredientmech.export.reviewed_sssom._safe_synonyms"
+  ],
+  "scope": "Read-only source/case/record inspection and only authorized report writes; no Git/GitHub/source/maintained mutations, external sessions, paid research or full suite."
+}

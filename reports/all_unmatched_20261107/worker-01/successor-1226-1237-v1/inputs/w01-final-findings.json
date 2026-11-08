@@ -1,0 +1,222 @@
+[
+  {
+    "finding_ids": [
+      "CHEM-COMP-002"
+    ],
+    "entries": [
+      6,
+      13
+    ],
+    "originals": [
+      {
+        "finding_id": "CHEM-COMP-002",
+        "source_family": "chemical",
+        "primary_scientist": "Codex /root/chemicals_research",
+        "title": "Omitted tungstate hydration cannot establish anhydrous NBRC1020",
+        "entry_indices": [
+          6,
+          13
+        ],
+        "original_finding": {
+          "path": "primary-chemicals/findings.json",
+          "sha256": "d3bc434a2548a23e14f7ba19d0e2accb1130aabef42b4edb6f54d8e792361019",
+          "selector": "CHEM-COMP-002"
+        },
+        "independent_observations": [
+          {
+            "path": "skeptical-review/source-observation-002.json",
+            "sha256": "99beefc22bac662323114cf0323cc46be84a9f82b3a4a17285077aa5ca994fcb",
+            "selector": "FPC-W05-SKEPTICAL-002",
+            "relation": "same bounded issue; skeptical observation may cover a subset of the primary finding"
+          }
+        ],
+        "related_issues_as_originally_reported": [],
+        "coordinator_status": "coordinator_live_dedup_and_bounded_followup_required",
+        "bounded_fix": "Replace the unsupported disjointness claim with unresolved supplied hydration. Keep the positive JCM317 dihydrate fact and literal NBRC1020 recipe. Resolve exact reagent form only if needed to merge; component uncertainty is not a prohibition on retaining the whole-stock identities.",
+        "record_unchanged": {
+          "finding_id": "CHEM-COMP-002",
+          "scientist": "Codex /root/chemicals_research",
+          "entry_indices": [
+            6,
+            13
+          ],
+          "title": "Omitted tungstate hydration cannot establish anhydrous NBRC1020",
+          "observation": "JCM317 payload calls NBRC1020 unhydrated and distinct, while NBRC1020 primary only prints Na2WO4. Both batches print4/4 mg and1 L water.",
+          "bounded_coordinator_fix": "Replace the unsupported disjointness claim with unresolved supplied hydration. Keep the positive JCM317 dihydrate fact and literal NBRC1020 recipe. Resolve exact reagent form only if needed to merge; component uncertainty is not a prohibition on retaining the whole-stock identities.",
+          "existing_issue": null,
+          "application": false,
+          "immutable_reproduction": [
+            {
+              "entry_id": "w01::NSV4-PROP-NBRC_1020_Se_W_Solution",
+              "payload": {
+                "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml",
+                "sha256": "235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7"
+              },
+              "source_decisions": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+                  "sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+                  "case_id": "CM_NAME:8f4f818454b45cde5b8fac36155fb028ce405d508d1c62d696f00675a673e89b"
+                }
+              ],
+              "primary_captures": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1020.html",
+                  "sha256": "6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c",
+                  "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020"
+                }
+              ]
+            },
+            {
+              "entry_id": "w01::NSV4-PROP-JCM_317_Se_W_Solution",
+              "payload": {
+                "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/quantity-v4/proposals/JCM_317_Se_W_Solution.yaml",
+                "sha256": "1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62"
+              },
+              "source_decisions": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+                  "sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+                  "case_id": "CM_NAME:bb437f3399b9bb25eecebdf8961226f0e498c508494f893b21186a8974484bbd"
+                }
+              ],
+              "primary_captures": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-317.html",
+                  "sha256": "fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "issue_route": "new-family-tracker",
+    "decision": "Remove the unsupported claim that printed Na2WO4 establishes anhydrous NBRC1020 or proves it distinct from JCM317 dihydrate. Preserve both literal 4/4 mg plus 1 L water recipes.",
+    "allowable_delta": "Remove the unsupported claim that printed Na2WO4 establishes anhydrous NBRC1020 or proves it distinct from JCM317 dihydrate. Preserve both literal 4/4 mg plus 1 L water recipes.",
+    "missing_fact_or_limit": "Unspecified tungstate hydration prevents full chemical equivalence; retain source-bound partial proposals, but do not co-install as proven distinct formulations on this evidence alone.",
+    "scientific_or_release_approval": false,
+    "author_packet": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/final-preparation-comparison-v1",
+    "author_packet_manifest_sha256": "a96332acbacc4245c7d07fce73dbc8b1e11d432f708a607b0f5407000e181b28"
+  },
+  {
+    "finding_ids": [
+      "CHEM-COMP-006"
+    ],
+    "entries": [
+      35,
+      36
+    ],
+    "originals": [
+      {
+        "finding_id": "CHEM-COMP-006",
+        "source_family": "chemical",
+        "primary_scientist": "Codex /root/chemicals_research",
+        "title": "Authentic source labels require a claim-specific resolver disposition",
+        "entry_indices": [
+          35,
+          36
+        ],
+        "original_finding": {
+          "path": "primary-chemicals/findings.json",
+          "sha256": "d3bc434a2548a23e14f7ba19d0e2accb1130aabef42b4edb6f54d8e792361019",
+          "selector": "CHEM-COMP-006"
+        },
+        "independent_observations": [],
+        "related_issues_as_originally_reported": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1173",
+        "coordinator_status": "claim_specific_scope_decision_with_related_1173_context_not_claimed_already_filed",
+        "bounded_fix": "Preserve all existing rejected entries and their original sources. Before introducing/reasserting a rejection in reconciliation, assess each exact string under current mapping section3. Retain genuine ambiguous pointers in notes/occurrence ledger; use an applicable export suppression rule only where its ownership condition is met. Do not blanket-reactivate or blanket-reject authentic stock labels.",
+        "record_unchanged": {
+          "finding_id": "CHEM-COMP-006",
+          "scientist": "Codex /root/chemicals_research",
+          "entry_indices": [
+            35,
+            36
+          ],
+          "title": "Authentic source labels require a claim-specific resolver disposition",
+          "observation": "W01 exact operational labels are REJECTED_LABEL solely to keep source-local text out of global resolution, including the fully specified FeSO4/HCl stock label. Historical1173 approval is provenance, not new proof that each identity-bearing label is scientifically a non-name.",
+          "bounded_coordinator_fix": "Preserve all existing rejected entries and their original sources. Before introducing/reasserting a rejection in reconciliation, assess each exact string under current mapping section3. Retain genuine ambiguous pointers in notes/occurrence ledger; use an applicable export suppression rule only where its ownership condition is met. Do not blanket-reactivate or blanket-reject authentic stock labels.",
+          "existing_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1173",
+          "application": false,
+          "immutable_reproduction": [
+            {
+              "entry_id": "w01::CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK",
+              "payload": {
+                "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/JCM1430_Ferrous_Sulfate_HCl_Stock.yaml",
+                "sha256": "6e0ae3d8ec0984d7e29034b2fd41d3589f26fb7f236bdcc7a829d632837e0c59"
+              },
+              "source_decisions": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+                  "sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+                  "case_id": "CM_NAME:5d9e2026ac8ea68a5e50d234ffa4d2b73bea306b5a9bb33353d17aeb26f713d0"
+                }
+              ],
+              "primary_captures": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/JCM-1430.html",
+                  "sha256": "1ef26e91d1007c1271a846bf63eba954587484830625935f4fe7dd0deebc9b48",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/JCM-1431.html",
+                  "sha256": "5dac3a613f9cd40af54eefeb8f8ef2228375eb44c59cdc779508587cc8fb8edb",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1431"
+                }
+              ]
+            },
+            {
+              "entry_id": "w01::CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+              "payload": {
+                "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+                "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c"
+              },
+              "source_decisions": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+                  "sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+                  "case_id": "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+                  "sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+                  "case_id": "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3"
+                }
+              ],
+              "primary_captures": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/NBRC-1321.html",
+                  "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b",
+                  "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/crosslane-nbrc-1257.html",
+                  "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+                  "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/crosslane-nbrc-1321.html",
+                  "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b",
+                  "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html",
+                  "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+                  "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "issue_route": "new-family-tracker",
+    "decision": "Assess each authentic raw label under §3. The fully specified FeSO4/heptahydrate/HCl stock label is not demonstrated to be a non-name merely because global resolution was unwanted. The bicarbonate footnote pointers carry different ambiguity.",
+    "allowable_delta": "Assess each authentic raw label under §3. The fully specified FeSO4/heptahydrate/HCl stock label is not demonstrated to be a non-name merely because global resolution was unwanted. The bicarbonate footnote pointers carry different ambiguity.",
+    "missing_fact_or_limit": "Preserve all existing rejected entries. No blanket reactivation or new rejection; record claim-specific identity evidence and use owned-name suppression only where its ownership conditions hold. #1173 is historical lineage, not scientific authorization.",
+    "scientific_or_release_approval": false,
+    "author_packet": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/final-preparation-comparison-v1",
+    "author_packet_manifest_sha256": "a96332acbacc4245c7d07fce73dbc8b1e11d432f708a607b0f5407000e181b28"
+  }
+]

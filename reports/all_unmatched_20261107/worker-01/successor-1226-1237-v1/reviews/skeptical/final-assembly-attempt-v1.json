@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-08T08:09:23.490185+00:00",
+  "reviewer": "/root/skeptical_review",
+  "command": [
+    "python3",
+    "-B",
+    "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/reviews/skeptical/check_final_assembly_v1.py"
+  ],
+  "exit_code": 1,
+  "error": "AssertionError: ('obligation field depends_on_proposals', None)",
+  "cause": "47 proposal rows omit optional depends_on_proposals; remaining-requirements report deliberately renders [] for absence. My v1 helper compared that presentation default to None. No source/core/candidate defect.",
+  "v1_script_sha256": "040ed8b34cc92c2b06c69a02652a0cbc40cbe39f001c4e72608e00cf5cbbf98d",
+  "successor": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/reviews/skeptical/check_final_assembly_v2.py",
+  "correction": "Use [] only as expected display default for absent depends_on_proposals, while whole core pre/final comparison remains exact.",
+  "artifact_or_candidate_mutation": false
+}

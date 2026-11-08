@@ -1,0 +1,122 @@
+identifier: kgmicrobe.ingredient:hy_case_amino
+preferred_term: Hy-Case Amino
+synonyms:
+- synonym_text: Hy-Case Amino
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Hy--Case Amino (Sigma)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Hy-Case Amino (Sigma)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.sigmaaldrich.com/US/en/product/sial/c0501
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1875); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a casein/amino nutrient hydrolysate preparation and left
+    unmapped pending product-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Hy-Case_Amino-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended classification:** commercial, casein-derived
+    nutrient hydrolysate mixture; retain `UNDEFINED_MIXTURE`. No ontology CURIE was
+    proposed. Recorded as provenance only — no grounding applied from this run. Edison''s
+    recommendations are deliberately conservative, and a plausible identifier promoted
+    by a mechanism that never decided anything is what #203 and #263 exist to undo.
+    Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Hy--Case Amino (Sigma)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T04:34:34.024027+00:00'
+  curator: worker01_add_media_identity
+  action: PROMOTED_TO_MAPPED
+  changes: 'Isolated proposal: promote existing source-linked owner UNMAPPED_0404
+    to kgmicrobe.ingredient:hy_case_amino. Original JCM722 identifies Hy-Case Amino
+    (Sigma), and official C0501 identifies the named bovine-milk casein acid hydrolysate.
+    It is a complex powder of free amino acids, some peptides and salts, distinct
+    from enzymatic N-Z-Amine, intact casein or any single amino acid. Current product
+    identity supports the named product; historical lot quantitative composition is
+    not asserted. Preserve original history and occurrence counts; no maintained data
+    are changed.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.127236+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies
+  the named bovine-milk casein acid hydrolysate. It is a complex powder of free amino
+  acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact casein
+  or any single amino acid. Current product identity supports the named product; historical
+  lot quantitative composition is not asserted.
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Hy-Case Amino Casein Acid Hydrolysate
+  supplier: Sigma-Aldrich
+  catalog_number: C0501
+  form: bovine casein acid-hydrolysate powder
+  notes: Current official product corroborates source brand; no historical lot composition
+    inferred.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hy_case_amino
+  ontology_label: Hy-Case Amino
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.sigmaaldrich.com/US/en/product/sial/c0501
+    notes: Original JCM722 identifies Hy-Case Amino (Sigma), and official C0501 identifies
+      the named bovine-milk casein acid hydrolysate. It is a complex powder of free
+      amino acids, some peptides and salts, distinct from enzymatic N-Z-Amine, intact
+      casein or any single amino acid. Current product identity supports the named
+      product; historical lot quantitative composition is not asserted.
+components:
+- component_name: Free amino acids
+  reference_scope: UNMAPPED
+- component_name: Peptides
+  reference_scope: UNMAPPED
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: https://www.sigmaaldrich.com/US/en/product/sial/c0501
+    source_record: Hy-Case Amino
+    notes: Named material classes only; no full molecular decomposition or historical
+      quantitative composition asserted.
+  notes: Complex biological/polymer preparation. Component identifiers remain unassigned
+    instead of guessing exact ontology entities. Current supplier supports general
+    product class; historical lot variability retained.

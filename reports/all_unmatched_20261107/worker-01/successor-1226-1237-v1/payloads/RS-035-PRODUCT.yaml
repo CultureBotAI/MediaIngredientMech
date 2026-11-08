@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:wards_cerophyll_cereal_grass_leaves
+preferred_term: Ward's Cerophyll cereal grass leaves
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wards_cerophyll_cereal_grass_leaves
+  ontology_label: Ward's Cerophyll cereal grass leaves
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ccap.ac.uk/wp-content/uploads/MR_N75S.pdf
+    notes: Original CCAP identifies Ward's Cerophyll cereal grass leaves as the powdered
+      input to N75S. This establishes a named supplier-associated biological material;
+      no specific cereal species, chemical composition or equivalence with the finished
+      filtered infusion is inferred. The existing unqualified Cerophyll owner from
+      MediaDive2360 is a potential same-product candidate, but its complete source
+      context does not establish the Ward's preparation here; coordinator must reconcile
+      before integration without an automatic merge.
+synonyms:
+- synonym_text: Cerophyll cereal grass leaves
+  synonym_type: REJECTED_LABEL
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_N75S.pdf
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+notes: Original CCAP identifies Ward's Cerophyll cereal grass leaves as the powdered
+  input to N75S. This establishes a named supplier-associated biological material;
+  no specific cereal species, chemical composition or equivalence with the finished
+  filtered infusion is inferred. The existing unqualified Cerophyll owner from MediaDive2360
+  is a potential same-product candidate, but its complete source context does not
+  establish the Ward's preparation here; coordinator must reconcile before integration
+  without an automatic merge. Isolated proposal; no maintained source changes or inherited
+  hold removal. Full publication and cross-shard duplicate review remain required.
+  The unqualified raw source label is retained as REJECTED_LABEL solely for provenance
+  because RAW_TEXT also resolves globally in the native matcher. The exact source
+  occurrence may bind to this source-qualified preparation after coordinator integration;
+  no global same-label binding is proposed.
+curation_history:
+- timestamp: '2026-11-08T04:36:57.253562+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create the supported source-qualified named product identity without asserting
+    unavailable component or role claims.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:45:12.617124+00:00'
+  curator: codex-worker01
+  action: CORRECTED
+  changes: 'IR-SHARD-ARTIFACT-9: make ambiguous source-local label provenance non-resolving
+    under the actual native matcher. Whole source-qualified identity unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.063896+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

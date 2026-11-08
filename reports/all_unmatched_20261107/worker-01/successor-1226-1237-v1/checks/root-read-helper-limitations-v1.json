@@ -1,0 +1,21 @@
+{
+  "scope": "Read/display helper exceptions; no candidate/source/native validator mutation",
+  "attempts": [
+    {
+      "operation": "Read selected decision allocation indices",
+      "failure": "KeyError: 'allocation_index' on a decision without that optional field",
+      "successor": "Read with get; five scoped cases and their actual dispositions verified."
+    },
+    {
+      "operation": "Read author seal members using a shared assumed key",
+      "failure": "KeyError: 'files'; science manifest uses members",
+      "successor": "Inspect each manifest schema and verify members/files separately; both complete seals match."
+    },
+    {
+      "operation": "Search native proposal module by guessed filename glob",
+      "failure": "No matching filename at curate/*proposal*",
+      "successor": "Ignored-inclusive content search located actual curate/publication_guard.py."
+    }
+  ],
+  "not_used_as_negative_scientific_evidence": true
+}

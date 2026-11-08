@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-08T08:00:53.256580+00:00",
+  "reviewer": "/root/skeptical_review",
+  "attempt": "probe_label_projection_v1.py",
+  "script_sha256": "a12df68cbba7f68924a0f6895917041b52f0e9053af04e7ce5f3a0a067615eef",
+  "result": "failed reviewer probe expectation; not a candidate failure",
+  "observed_traceback": "AssertionError at assert counterexample[\"rejected\"]",
+  "explanation": "The real producer defensively drops the token if any active REJECTED_LABEL shares it. The v1 expected the downstream gate to raise on producer-cleaned rows, which was incorrect. v2 separately observes producer exclusion and passes the previously positive row against the contradictory in-memory record to test gate refusal. No candidate, previous receipt or gate changed.",
+  "output_receipt_created": false,
+  "actual_numeric_exit_code_retained": false,
+  "successor_script": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/reviews/skeptical/probe_label_projection_v2.py",
+  "successor_script_sha256": "b139290f49284499bff7786f75e0e06151c17566658867ecde8517ec822a764e"
+}
