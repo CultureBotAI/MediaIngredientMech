@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "native_auditor_sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad",
+  "actual_checks": [
+    {
+      "name": "stale-real-before",
+      "native_rejected": true,
+      "message": "existing-owner proposal is not bound to verified owner bytes",
+      "expected": "not bound to verified owner bytes"
+    },
+    {
+      "name": "duplicate-origin",
+      "native_rejected": true,
+      "message": "duplicate proposal_id",
+      "expected": "duplicate proposal_id"
+    },
+    {
+      "name": "invented-source-case",
+      "native_rejected": true,
+      "message": "proposal claims an unassigned case",
+      "expected": "unassigned case"
+    },
+    {
+      "name": "invented-source-occurrence",
+      "native_rejected": true,
+      "message": "missing/changed occurrence reference: CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+      "expected": "missing/changed occurrence"
+    },
+    {
+      "name": "wrong-new-owner-origin",
+      "native_rejected": true,
+      "message": "new owner has a before hash",
+      "expected": "new owner has a before hash"
+    },
+    {
+      "name": "missing-new-case-backlink",
+      "native_rejected": true,
+      "message": "proposal has missing case backlinks",
+      "expected": "missing case backlinks"
+    }
+  ],
+  "native_actual_inputs": {
+    "cases": 188,
+    "proposals": 115,
+    "evidence": 1114
+  },
+  "approval": false
+}

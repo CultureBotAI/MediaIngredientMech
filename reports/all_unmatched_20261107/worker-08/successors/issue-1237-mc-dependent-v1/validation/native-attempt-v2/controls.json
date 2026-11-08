@@ -1,0 +1,198 @@
+{
+  "controls": [
+    {
+      "name": "unknown-component-field",
+      "category": "ACTUAL_NATIVE_GUARDED_WRITER",
+      "rejected": true,
+      "reason": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/mc-dependent-successor-v1/final-review/native-attempt-v2/unknown-component-field.yaml\n  - Additional properties are not allowed ('unknown_native_field' was unexpected) in /components/6",
+      "output_exists": false
+    },
+    {
+      "name": "bad-scope-enum",
+      "category": "ACTUAL_NATIVE_GUARDED_WRITER",
+      "rejected": true,
+      "reason": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/mc-dependent-successor-v1/final-review/native-attempt-v2/bad-scope-enum.yaml\n  - 'MIM_CATALOGUE' is not one of ['MIM_CATALOG', 'EXTERNAL_TERM', 'UNMAPPED'] in /components/6/reference_scope",
+      "output_exists": false
+    },
+    {
+      "name": "unmapped-retains-id",
+      "category": "ACTUAL_NATIVE_GUARDED_WRITER",
+      "rejected": true,
+      "reason": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/mc-dependent-successor-v1/final-review/native-attempt-v2/unmapped-retains-id.yaml\n  - {'component_name': 'calcium D,L-pantothenate', 'reference_scope': 'UNMAPPED', 'concentration_value': '0.005', 'concentration_unit': 'G_PER_L', 'source': 'CultureBotHT Mixes row1122 literally names cal",
+      "output_exists": false
+    },
+    {
+      "name": "unmapped-retains-id",
+      "category": "ACTUAL_NATIVE_PARTONOMY_FULL_OVERLAY",
+      "rejected": true,
+      "expected_code": "UNMAPPED_WITH_ID",
+      "violations": [
+        {
+          "code": "UNMAPPED_WITH_ID",
+          "record_id": "kgmicrobe.ingredient:mc_vitamins",
+          "message": "component 7 (calcium D,L-pantothenate): UNMAPPED must omit component_id"
+        }
+      ]
+    },
+    {
+      "name": "mapped-without-id",
+      "category": "ACTUAL_NATIVE_PARTONOMY_FULL_OVERLAY",
+      "rejected": true,
+      "expected_code": "MISSING_COMPONENT_ID",
+      "violations": [
+        {
+          "code": "MISSING_COMPONENT_ID",
+          "record_id": "kgmicrobe.ingredient:mc_vitamins",
+          "message": "component 7 (calcium D,L-pantothenate): MIM_CATALOG needs an id"
+        }
+      ]
+    },
+    {
+      "name": "missing-quantity-unit",
+      "category": "ACTUAL_NATIVE_PARTONOMY_FULL_OVERLAY",
+      "rejected": true,
+      "expected_code": "INCOMPLETE_CONCENTRATION",
+      "violations": [
+        {
+          "code": "INCOMPLETE_CONCENTRATION",
+          "record_id": "kgmicrobe.ingredient:mc_vitamins",
+          "message": "component 7 (calcium D,L-pantothenate): concentration_value and concentration_unit must occur together"
+        }
+      ]
+    },
+    {
+      "name": "whole-self-reference",
+      "category": "ACTUAL_NATIVE_PARTONOMY_FULL_OVERLAY",
+      "rejected": true,
+      "expected_code": "SELF_REFERENCE",
+      "violations": [
+        {
+          "code": "SELF_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:mc_vitamins",
+          "message": "component 7 (Mc_vitamins): a record cannot contain itself"
+        },
+        {
+          "code": "SELF_REFERENCE_NAME",
+          "record_id": "kgmicrobe.ingredient:mc_vitamins",
+          "message": "component 7 (Mc_vitamins): component name repeats the parent identity"
+        }
+      ]
+    },
+    {
+      "name": "old-history-mutated",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "original history prefix"
+    },
+    {
+      "name": "missing-original-history",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "original history prefix"
+    },
+    {
+      "name": "false-new-llm-attribution",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "actual LLM attribution"
+    },
+    {
+      "name": "changed-literal-DL-name",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "('literal input', 6, 'component_name')"
+    },
+    {
+      "name": "changed-literal-quantity",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "('literal input', 6, 'concentration_value')"
+    },
+    {
+      "name": "changed-literal-unit",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "('literal input', 6, 'concentration_unit')"
+    },
+    {
+      "name": "added-unsupported-water",
+      "category": "SUPPLEMENTAL_REVIEWED_PAYLOAD_INVARIANT",
+      "rejected": true,
+      "reason": "ten input parts"
+    },
+    {
+      "name": "null-before",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "exact nonnull preimage"
+    },
+    {
+      "name": "stale-before",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "exact nonnull preimage"
+    },
+    {
+      "name": "wrong-owner",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "exact owner"
+    },
+    {
+      "name": "invented-Mc-occurrence",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "no invented Mc occurrence"
+    },
+    {
+      "name": "wrong-trigger",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "only actual trigger"
+    },
+    {
+      "name": "changed-case-source",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "('frozen source', 'source')"
+    },
+    {
+      "name": "lost-case-occurrence",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "('frozen source', 'occurrence_ids')"
+    },
+    {
+      "name": "changed-frozen-case-digest",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "('frozen source', 'case_input_sha256')"
+    },
+    {
+      "name": "lost-prior-origin",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "prior origins remain"
+    },
+    {
+      "name": "premature-W04-routing",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "routing not approved"
+    },
+    {
+      "name": "lost-exclusion",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": "source envelope counts"
+    },
+    {
+      "name": "released-role-export-hold",
+      "category": "SUPPLEMENTAL_ORIGIN_SOURCE_INVARIANT",
+      "rejected": true,
+      "reason": ""
+    }
+  ],
+  "count": 26,
+  "native_semantic_limit": "Known literal DL/D mismatch passes native schema and catalog name resolution; separate scientific review is mandatory."
+}

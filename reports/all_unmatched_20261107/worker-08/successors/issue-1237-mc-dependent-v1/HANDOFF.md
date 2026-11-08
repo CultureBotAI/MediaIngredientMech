@@ -1,0 +1,13 @@
+# W08 Mc dependent source successor
+
+This isolated proposal corrects filed SCI-TENVIT-003 by withdrawing D-specific CHEBI:31345 from the literal Mc calcium D,L-pantothenate input. The component remains UNMAPPED at the original 0.005 g/L. All ten literal inputs, other nine component objects, identity, aliases, source statistics, roles and four original history events are preserved. One truthful LLM-assisted event was recorded with the native helper and guarded writer.
+
+Full authoritative selection: `selection.json`, SHA256 `33f0f1f5166e75283a3e0488f6172844002919cc2461a04f2089f8c4f8fedab8`. It contains 188 cases, 320 occurrence IDs and 115 origins: all 114 prior proposal objects/payloads are exact, plus one genuine new edit-existing-owner dependency from maintained Mc beforeimage `59c53dfe4e273ebfc7c3fe86fd4244978868ff1879dcde97af64bbeb61c07123`. There are no new cases, Mc campaign occurrences or new-owner proposals. Only existing NBRC903 mixed-case dependency metadata changes; its six occurrences remain exact. The CB successor and original NBRC903 null-before origin remain unchanged.
+
+The complete Mc payload and source outcome have actual separate science, lineage and final-assembly reviews. Native exact replay, closed schema, full catalog partonomy, SSSOM identity/alias/predicate checks and 27 technical controls passed; six native accounting controls passed. Producer source/date change with the new event. Structural checks also accept the historical D/DL mismatch, so their PASS is not scientific approval. Exact receipts and canonical native review pair are indexed in `HANDOFF.json`.
+
+The family envelope retains all eight cases, 71 CM occurrences, 84 separate KG holds and six exclusions. Common nominal recipe support is positive; W04/coordinator cross-owner Mc/CB routing remains pending. Generic B12, source-specific pantothenate, preparation and actual supplied-form limits remain. No owner merge, duplicate source-number installation, role or export approval is granted. TSB/Bacto FAILED/HELD admission and all inherited planning/scientific holds persist.
+
+All earlier source/review artifacts remain preserved. Exact full thesis captures are private; the public bundle contains bounded factual support and original URL/hash/time. The inspected thesis scope was printed pages 28–29. Failed harness/read-only network attempts and truthful corrections are retained.
+
+Parent: `a0190fed72b8f5119432003d1f9c84b8c1de7a48` on `review/all-unmatched-w08-source-review-20261107`. Ordinary publication receipt with exact committed/remote head is `.temp/mc-dependent-successor-v1/publication-receipt.json`. Root performs a separate final-head review; maintained application remains separate.
