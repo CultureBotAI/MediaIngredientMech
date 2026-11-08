@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:dsmz498_nickel_ammonium_sulfate_0_1pct_wv_stock
+preferred_term: DSMZ498 nickel ammonium sulfate stock (0.1% w/v)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+synonyms:
+- synonym_text: (NH4)2Ni(SO4)2
+  synonym_type: REJECTED_LABEL
+  source: mediadive.ingredient:514; bare source ingredient name lacks concentration
+    and source qualification
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz498_nickel_ammonium_sulfate_0_1pct_wv_stock
+  ontology_label: DSMZ498 nickel ammonium sulfate stock (0.1% w/v)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium498.pdf
+    notes: Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium498.pdf.
+      0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+      stock concentration. The source does not disclose stock solvent or other constituents;
+      these are not inferred, and component completeness is UNKNOWN. This whole stock
+      is not identical to its solute. The bare ingredient label remains provenance-only
+      on this stock owner.
+notes: ' Issue1201 successor scope: Source-qualified 0.1% w/v stock as explicitly
+  supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium498.pdf. 0.1
+  g per 100 mL is represented as 1 g/L. The receiving addition volume is not stock
+  concentration. The source does not disclose stock solvent or other constituents;
+  these are not inferred, and component completeness is UNKNOWN. This whole stock
+  is not identical to its solute. The bare ingredient label remains provenance-only
+  on this stock owner.'
+components:
+- component_name: (NH4)2Ni(SO4)2
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium498.pdf
+    notes: Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium498.pdf.
+      0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+      stock concentration. The source does not disclose stock solvent or other constituents;
+      these are not inferred, and component completeness is UNKNOWN. This whole stock
+      is not identical to its solute. The bare ingredient label remains provenance-only
+      on this stock owner.
+curation_history:
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CREATED
+  changes: Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium498.pdf.
+    0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+    stock concentration. The source does not disclose stock solvent or other constituents;
+    these are not inferred, and component completeness is UNKNOWN. This whole stock
+    is not identical to its solute. The bare ingredient label remains provenance-only
+    on this stock owner. All prior source, native-owner, SSSOM and downstream holds
+    remain in force; this isolated proposal is not publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

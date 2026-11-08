@@ -1,0 +1,81 @@
+identifier: kgmicrobe.ingredient:mpbiomedical_lipoprotein_concentrate_dsmz1555
+preferred_term: MPBiomedical lipoprotein concentrate (DSMZ1555)
+synonyms:
+- synonym_text: lipoprotein concentrate
+  synonym_type: REJECTED_LABEL
+  source: mim-queue
+- synonym_text: MPBiomedical lipoprotein concentrate (DSMZ1555)
+  synonym_type: EXACT_SYNONYM
+  source: DSMZ1555 source-qualified material interpretation
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1410); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:42:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a biological concentrate/preparation and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Lipoprotein_concentrate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **biological lipoprotein
+    concentrate/preparation**, probably the supplier-specific **bovine cholesterol
+    lipoprotein concentrate** abbreviated **LPPC** and sold by MP Biomedicals—not
+    a single chemical, salt, hydrate, buffer, extract, or fully defined formulation.
+    CURIEs discussed: CHEBI:16113. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: PROMOTED_TO_MAPPED
+  changes: Promote the existing lipoprotein-concentrate placeholder as the MPBiomedical
+    material specified by DSMZ1555; preserve the unqualified source label as non-resolving
+    provenance, without imposing current catalogue composition. All prior source,
+    native-owner, SSSOM and downstream holds remain in force; this isolated proposal
+    is not publication approval.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1410); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a biological concentrate/preparation
+  pending source-backed composition curation. Issue1201 successor scope: DSMZ1555
+  specifies lipoprotein concentrate (LPC; MPBiomedical) as a 0.1% receiving-medium
+  addition. This owner denotes the named manufacturer-associated concentrate at that
+  source scope. The source does not specify a catalogue number, exact cholesterol
+  content, organism origin or complete formulation; none is inferred from current
+  manufacturer examples. The 0.1% is the receiving dose, not a concentration of the
+  supplied concentrate. Named material curation does not require an exact ontology
+  product term.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mpbiomedical_lipoprotein_concentrate_dsmz1555
+  ontology_label: MPBiomedical lipoprotein concentrate (DSMZ1555)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1555.pdf
+    notes: DSMZ1555 specifies lipoprotein concentrate (LPC; MPBiomedical) as a 0.1%
+      receiving-medium addition. This owner denotes the named manufacturer-associated
+      concentrate at that source scope. The source does not specify a catalogue number,
+      exact cholesterol content, organism origin or complete formulation; none is
+      inferred from current manufacturer examples. The 0.1% is the receiving dose,
+      not a concentration of the supplied concentrate. Named material curation does
+      not require an exact ontology product term.

@@ -1,0 +1,87 @@
+identifier: kgmicrobe.compound:poly_hexamethylene_carbonate
+preferred_term: Poly hexamethylene carbonate
+synonyms:
+- synonym_text: Poly hexamethylene carbonate
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:812); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:14:56Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_POLYMER
+  changes: Classified as a single polymer ingredient and left unmapped because no
+    exact local ontology identity for poly hexamethylene carbonate was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Poly_hexamethylene_carbonate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** the raw label denotes
+    **poly(hexamethylene carbonate)**, an aliphatic homopolycarbonate whose ideal
+    constitutional repeat unit is `–O–(CH2)6–O–C(=O)–`. It is a polymeric single ingredient,
+    not a hydrate, salt, buffer, extract, culture-medium family, or inherently a commercial
+    mixture. No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: PROMOTED_TO_MAPPED
+  changes: Promote the named PHC polymer with a distinct local compound identity and
+    broader polycarbonate-polymer mapping; preserve Mn2000/Toagosei source context
+    without equating the polymer to its emulsion. All prior source, native-owner,
+    SSSOM and downstream holds remain in force; this isolated proposal is not publication
+    approval.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:812); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a specific polymer;
+  no generic parent identity asserted. Issue1201 successor scope: DSMZ885 identifies
+  poly(hexamethylene carbonate), PHC, from Toagosei with number-average molecular
+  mass 2000, and lists Plysurf A210G surfactant separately. This is the polymer ingredient;
+  its chain-length distribution and undisclosed end groups do not make its identity
+  unknown. The emulsion and entire PHC medium are distinct preparations. Retain source
+  CAS61630-98-6 only as an unverified source annotation in evidence, not an exact
+  identifier, because independent applicability to this polymer grade has not been
+  established. No fixed molecular formula, molecular weight, end-group structure,
+  or monomer components are asserted.'
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:61433
+  ontology_label: polycarbonate polymer
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium885.pdf
+    notes: DSMZ885 identifies poly(hexamethylene carbonate), PHC, from Toagosei with
+      number-average molecular mass 2000, and lists Plysurf A210G surfactant separately.
+      This is the polymer ingredient; its chain-length distribution and undisclosed
+      end groups do not make its identity unknown. The emulsion and entire PHC medium
+      are distinct preparations. Retain source CAS61630-98-6 only as an unverified
+      source annotation in evidence, not an exact identifier, because independent
+      applicability to this polymer grade has not been established. No fixed molecular
+      formula, molecular weight, end-group structure, or monomer components are asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:61433
+    notes: CHEBI61433 is polycarbonate polymer, a broader polymer class. Exact-name
+      search retrieved copolymers with different comonomers, not this homopolycarbonate.
+      Local compound primary and asymmetric parent grounding follow MAPPING_SEMANTICS
+      section3.

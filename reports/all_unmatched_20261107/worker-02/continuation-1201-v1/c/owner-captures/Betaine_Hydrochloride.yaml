@@ -1,0 +1,79 @@
+identifier: cas:590-46-5
+preferred_term: Betaine hydrochloride
+ontology_mapping:
+  ontology_id: CHEBI:17750
+  ontology_label: glycine betaine
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 590-46-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 247'
+synonyms:
+- synonym_text: (trimethylammonio)acetate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:590-46-5 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.399235+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:52:08.265431+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C5H11NO2; smiles=C[N+](C)(C)CC(=O)[O-]; inchi=InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.809182+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:41:49.293459+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:17750 (pubchem-xref)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_parent_inherited_formulas
+  action: CORRECTED_INHERITED_FORMULA
+  changes: molecular_formula 'C5H11NO2' -> 'C5H12ClNO2' (#326). The recorded value
+    was identical to the narrowMatch parent's, so it described the parent rather than
+    this salt/hydrate. Corrected from the record's own CAS 590-46-5, which resolves
+    in PubChem to 'Betaine chloride' — provenance independent of the ChEBI mapping
+    under test, per MAPPING_SEMANTICS §3. The narrowMatch itself is correct and is
+    unchanged.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518425+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+chemical_properties:
+  cas_rn: 590-46-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C5H12ClNO2
+  smiles: C[N+](C)(C)CC(=O)[O-]
+  inchi: InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3
+  pubchem_cid: 247
+ingredient_type: SINGLE_INGREDIENT

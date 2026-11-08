@@ -1,0 +1,1 @@
+Preserved exact primary draft before A skeptical-review revisions: polymer CAS applicability, magnesium hexahydrate CAS, fifth silicate alias, and explicit source CAS disagreement. Original after payload files remain immutable; changed payloads receive versioned filenames.

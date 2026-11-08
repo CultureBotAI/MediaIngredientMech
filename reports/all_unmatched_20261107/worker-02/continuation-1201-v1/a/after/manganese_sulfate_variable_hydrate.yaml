@@ -1,0 +1,45 @@
+identifier: cas:15244-36-7
+preferred_term: Manganese(II) sulfate hydrate (variable hydration)
+ingredient_type: SINGLE_INGREDIENT
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: CHEBI:86360
+  ontology_label: manganese(II) sulfate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.sigmaaldrich.com/US/en/product/aldrich/229784
+    notes: The supplier linear formula MnSO4·xH2O and CAS15244-36-7 identify the hydration-unspecified
+      registry substance. Exact OLS hydrate/CAS searches did not establish an eligible
+      variable-hydrate ontology term; CHEBI:86364 is monohydrate and is rejected as
+      exact. CHEBI:86360 is only the nearest asymmetric parent.
+chemical_properties:
+  cas_rn: 15244-36-7
+  data_source: https://www.sigmaaldrich.com/US/en/product/aldrich/229784
+synonyms:
+- synonym_text: MnSO4.xH2O
+  synonym_type: HYDRATE_FORM
+  source: source_review_worker02_continuation1201:CM_NAME:3847ab1169f928757cef3efc95af946477697bd8ee0525e592901d92dc751d9e
+- synonym_text: MnSO4 x xH2O
+  synonym_type: REJECTED_LABEL
+  source: source_review_worker02_continuation1201:CM_NAME:3ac35d3372d1017fc514082c0a030b78c2c0f419cdb4ec0496109d542886ded9
+- synonym_text: MnSO4·xH2O
+  synonym_type: HYDRATE_FORM
+  source: source_review_worker02_continuation1201:CM_NAME:3d0569352b2629ba7aa2db060f25f9e298daf7d3d1e420806854575931d05b32
+notes: Variable hydration remains unspecified. Sigma229784 linear formula supports
+  variable hydration but its InChI/SMILES widgets encode one water; no fixed structure
+  or molecular weight is copied. Wako13900825 supplies a pentahydrate under CAS15244-36-7,
+  demonstrating that this registration does not select n=1 or n=5. Sigma221287 separately
+  identifies monohydrate CAS10034-96-5. Existing fixed-hydrate owners and their rejected
+  variable-hydrate aliases remain unchanged. Raw duplicated-x syntax is non-resolving
+  provenance. No source metadata mass/formula contradiction is overwritten.
+curation_history:
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: Create hydration-unspecified manganese sulfate registry identity, with
+    CAS15244-36-7 and only asymmetric CHEBI:86360 grounding. Preserve supplier metadata
+    contradictions and each occurrence source claim; never infer a fixed n.
+  new_status: MAPPED
+  llm_assisted: true

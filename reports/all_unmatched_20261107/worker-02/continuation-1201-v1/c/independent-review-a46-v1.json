@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_c",
+  "reviewed_at": "2026-11-08T06:16:16.241316+00:00",
+  "independence": "Reviewer authored neither A46 nor B concentrated-acid payload.",
+  "input_hash_manifest": [
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/assembled-v1/decisions.json",
+      "sha256": "7ad481212ee9c127e3cb529f06d3065abb1bcdb3cd0d2ba6971518775691399f"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/assembled-v1/proposals.json",
+      "sha256": "4aeafd5d213757d667922d2bea92b3fec77ee4efb5c0db1b077cd30440522b79"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/integration/assembled-v1/evidence.json",
+      "sha256": "a5ff54f732abbcf29a5945dc858b99263c7a7822081210d164db32a8c595b98d"
+    },
+    {
+      "root": "source",
+      "path": "shards/shard-02.json",
+      "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+    },
+    {
+      "root": "source",
+      "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1483_AMMONIA_OXIDIZING_BACTERIA_MEDIUM.yaml",
+      "sha256": "f5ed63c01f9d1b28ebffbc3bdd1c3df6a52f59a5c613a3ad27a37da5c33c21e9"
+    },
+    {
+      "root": "artifact",
+      "path": "a/captures/primary-df98906c6050fd7f.html",
+      "sha256": "9d0b36db683814a567bebe88cc02887cc55e2289e257fdd80a0401e3af2b82fd"
+    },
+    {
+      "root": "artifact",
+      "path": "continuation-1201-v1/b/after/concentrated_sulfuric_acid_assay_unspecified.yaml",
+      "sha256": "690437336a97d4467bca7eadc455d455c954182d966f3e93e02641c8ac7b7c50"
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:44c218c55dedc04905bf7f598b5db490993079ffca1f2db2fca9012b9bbe058e",
+      "case_input_sha256": "368b8f9bd150ed5b6a96d3984235a933f768f21607cd3ba6bf4a3505fe7e14c3",
+      "decision_canonical_sha256": "3c9a96287c868b6ec6d594def9ba40f8dcfa8157a0bb1d5fcfa29dd105e45fe4",
+      "status": "needs_revision",
+      "reasoning": "The frozen CultureMech015918 recipe explicitly contains SolutionC with Conc.H2SO4, one drop per100mL stock, but its linked current JCM1483 primary capture has SolutionsA/B plus trace elements and no concentrated acid or SolutionC. Final reasoning wrongly attributes the frozen recipe directly to currentJCM1483. Preserve the source-version/provenance discrepancy, revise applicability to the actual evidenced frozen scope, and pursue source lineage if available before claiming original collection confirmation.",
+      "evidence_ids_checked": [
+        "a-case-46-input",
+        "a-case-46-occ-00",
+        "a-primary-primary-df98906c6050fd7f",
+        "a2-case-46-component-owner-validation",
+        "a2-case-46-owner-and-occurrence-review",
+        "a2-ols-search-18",
+        "a2-review-b-source-scope-consolidation"
+      ],
+      "proposal_ids": [
+        "b2-proposal-concentrated_sulfuric_acid_assay_unspecified"
+      ]
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "b2-proposal-concentrated_sulfuric_acid_assay_unspecified",
+      "after_capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/b/after/concentrated_sulfuric_acid_assay_unspecified.yaml",
+        "sha256": "690437336a97d4467bca7eadc455d455c954182d966f3e93e02641c8ac7b7c50"
+      },
+      "status": "approve",
+      "reasoning": "Shared concentrated-acid material chemistry is supported by independently inspected B sources at unspecified-assay scope. This approval does not verify the disputed A46 JCM source attribution."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "c2-a46-current-source-mismatch",
+      "status": "open",
+      "description": "Current JCM1483 does not contain the frozen SolutionC/concentrated-acid formulation; final direct-primary claim requires revision."
+    }
+  ],
+  "publication_authorization": "None; all inherited source and release holds remain."
+}

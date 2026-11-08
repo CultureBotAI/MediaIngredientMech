@@ -1,0 +1,24 @@
+[
+  {
+    "at": "2026-11-08T05:52:39.138781+00:00",
+    "name": "writer-inventory",
+    "command": [
+      ".temp/all-unmatched-worker-02/venv/bin/python",
+      "-B",
+      "scripts/audit_writers.py",
+      "--out",
+      "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/validation/writer-inventory.tsv"
+    ],
+    "exit_code": 0
+  },
+  {
+    "at": "2026-11-08T05:52:44.067626+00:00",
+    "name": "baseline-partonomy",
+    "command": [
+      ".temp/all-unmatched-worker-02/venv/bin/python",
+      "-B",
+      "scripts/validate_component_partonomy.py"
+    ],
+    "exit_code": 0
+  }
+]

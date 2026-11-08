@@ -1,0 +1,51 @@
+identifier: ENVO:00002149
+preferred_term: Sea water
+synonyms:
+- synonym_text: Sea water
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:286); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.450233+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_ENVO
+  changes: primary UNMAPPED_0518 → ENVO:00002149 via name normalization to 'Sea water'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.201290+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Sea
+    water')
+  llm_assisted: false
+- timestamp: '2026-08-05T06:58:07.759804+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into ENVO:00002149 'Seawater'; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:286); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: ENVO:00002149
+  ontology_label: sea water
+  ontology_source: ENVO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: ENVO via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0518; matched via 'Sea water' (name normalization);
+      label-exact
+ingredient_type: UNDEFINED_MIXTURE

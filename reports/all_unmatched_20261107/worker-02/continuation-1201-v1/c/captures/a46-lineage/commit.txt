@@ -1,0 +1,36 @@
+commit 231e0ba71b41d45362168d539efebe7991823464
+Author:     marcin p. joachimiak <4625870+realmarcin@users.noreply.github.com>
+AuthorDate: Thu Oct 22 04:22:22 2026 +0000
+Commit:     GitHub <noreply@github.com>
+CommitDate: Thu Oct 22 04:22:22 2026 +0000
+
+    feat(media): add 5 missing JCM GRMD growth media and stock solutions (Cycle 2 Stage 1) (#657)
+    
+    * feat(media): add 5 missing JCM GRMD growth media and stock solutions (Cycle 2 Stage 1)
+    
+    * fix(c2-stage1): add composition_type, sync category indexes and corpus stats
+
+ README.md                                          |  10 +-
+ app/index.html                                     |   4 +-
+ data/culturemech_id_registry.tsv                   |   5 +
+ data/culturemech_recipe_catalog.tsv                |   5 +
+ .../merged/ammonia_oxidizing_bacteria_medium.yaml  | 326 ++++++++++++++++++
+ .../autotrophic_nitrobacter_medium_jcm_1503.yaml   | 254 ++++++++++++++
+ .../merged/bap_medium_for_frankia_jcm_1492.yaml    | 365 +++++++++++++++++++++
+ ...thanocorpusculum_aggregans_medium_jcm_1422.yaml | 241 ++++++++++++++
+ .../merged/modified_ureaplasma_medium.yaml         | 170 ++++++++++
+ ..._J1422_METHANOCORPUSCULUM_AGGREGANS_MEDIUM.yaml | 236 +++++++++++++
+ data/normalized_yaml/archaea_index.json            |  15 +-
+ .../JCM_J1476_MODIFIED_UREAPLASMA_MEDIUM.yaml      | 165 ++++++++++
+ ...CM_J1483_AMMONIA_OXIDIZING_BACTERIA_MEDIUM.yaml | 321 ++++++++++++++++++
+ .../JCM_J1492_BAP_MEDIUM_FOR_FRANKIA.yaml          | 360 ++++++++++++++++++++
+ .../JCM_J1503_AUTOTROPHIC_NITROBACTER_MEDIUM.yaml  | 249 ++++++++++++++
+ data/normalized_yaml/bacterial_index.json          |  54 ++-
+ reviews/workflow/latest.yaml                       |  41 +++
+ .../stage-01/revision-0001/discovery_ledger.md     | 111 +++++++
+ .../stage-01/revision-0001/evidence.yaml           |  31 ++
+ .../stage-01/revision-0001/validation.md           | 112 +++++++
+ scripts/import_jcm_grmd.py                         |  18 +-
+ tests/test_import_jcm_grmd.py                      |  26 +-
+ tests/test_record_io.py                            |  62 ++--
+ 23 files changed, 3134 insertions(+), 47 deletions(-)

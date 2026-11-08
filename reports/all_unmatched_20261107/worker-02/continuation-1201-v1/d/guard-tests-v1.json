@@ -1,0 +1,52 @@
+{
+  "executed_at": "2026-11-08T06:23:12.926143+00:00",
+  "command": [
+    "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/bin/python3.13",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/d/review-v1-inputs",
+    "-p",
+    "test_*guards.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_conflicting_new_field_fails (test_composition_guards.CompositionGuards.test_conflicting_new_field_fails) ... ok\ntest_conflicting_scalar_fails (test_composition_guards.CompositionGuards.test_conflicting_scalar_fails) ... ok\ntest_deleted_original_list_item_fails (test_composition_guards.CompositionGuards.test_deleted_original_list_item_fails) ... ok\ntest_retains_both_additions_and_rejected_source_text (test_composition_guards.CompositionGuards.test_retains_both_additions_and_rejected_source_text) ... ok\ntest_source_text_changed_fails (test_composition_guards.CompositionGuards.test_source_text_changed_fails) ... ok\ntest_author_cannot_approve (test_review_binding_guards.ReviewBindingGuards.test_author_cannot_approve) ... ok\ntest_blank_assessment_rejected (test_review_binding_guards.ReviewBindingGuards.test_blank_assessment_rejected) ... ok\ntest_case_swap_rejected (test_review_binding_guards.ReviewBindingGuards.test_case_swap_rejected) ... ok\ntest_changed_science_rejected (test_review_binding_guards.ReviewBindingGuards.test_changed_science_rejected) ... ok\ntest_exact_separate_review_accepted (test_review_binding_guards.ReviewBindingGuards.test_exact_separate_review_accepted) ... ok\ntest_open_finding_not_approval (test_review_binding_guards.ReviewBindingGuards.test_open_finding_not_approval) ... ok\ntest_cannot_change_frozen_case_digest (test_successor_guards.SuccessionGuards.test_cannot_change_frozen_case_digest) ... ok\ntest_cannot_change_raw_source_label (test_successor_guards.SuccessionGuards.test_cannot_change_raw_source_label) ... ok\ntest_cannot_drop_occurrence (test_successor_guards.SuccessionGuards.test_cannot_drop_occurrence) ... ok\ntest_cannot_revise_outside_cohort (test_successor_guards.SuccessionGuards.test_cannot_revise_outside_cohort) ... ok\ntest_duplicate_case_rejected (test_successor_guards.SuccessionGuards.test_duplicate_case_rejected) ... ok\ntest_supported_reassessment_may_change_reasoning (test_successor_guards.SuccessionGuards.test_supported_reassessment_may_change_reasoning) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.000s\n\nOK\n",
+  "helper_inputs": [
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/assemble_successor.py",
+      "sha256": "a3fd2f4752837f620291c89f3bc2ed8b9ce87bc8c913cebd130df641c530a809"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/compose_owner_versions.py",
+      "sha256": "400d474bae3d1dde7359dd80bca172d8c57bface31f2b6be8adcd18f5c5b4083"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/integrate_successor.py",
+      "sha256": "7d6b18ab4164f973a15dcf59373878259badd66c784346d9e64e26b4ec34f11e"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/bind_successor_reviews.py",
+      "sha256": "f755862f892c5f2c926010efbb31cf33d34a00f3c3c9ad914d2f4304d776b8b8"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/validate_successor_proposals.py",
+      "sha256": "08f51d6c849d87ab9ba2c64bfdc745f2e96a29bacdc270158481abaada3c9ad3"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/test_successor_guards.py",
+      "sha256": "97fc82335fdb6d04d3943aa1aae0b0ca0b471e195129a75e1573a30e5f6d9da5"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/test_composition_guards.py",
+      "sha256": "a119ddf82344581c6cfe5ca412411bac30d34d5e1952aa23c2f2da2acef8612b"
+    },
+    {
+      "path": "continuation-1201-v1/d/review-v1-inputs/test_review_binding_guards.py",
+      "sha256": "90152c6308c5a1c283de9014748f9481d258b30cf82df4b177f63fdb3e5c85ba"
+    }
+  ]
+}

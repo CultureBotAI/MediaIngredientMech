@@ -1,0 +1,184 @@
+identifier: cas:10031-43-3
+preferred_term: Cu(NO3)2 x 3 H2O
+ontology_mapping:
+  ontology_id: CHEBI:78036
+  ontology_label: copper(II) nitrate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is a
+      hydrate of CHEBI:78036, not an exact match to it] Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:78036 ('copper(II)
+      nitrate') and was sharing that term's identifier — the identity collapse MAPPING_SEMANTICS
+      §3 forbids, which made a distinct substance indistinguishable from its anhydrous
+      parent downstream. ChEBI has no term for this hydrate and the record carries
+      no verified CAS, so steps 1 and 2 are unavailable and step 3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 3 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:78036's
+      ChEBI formula ('Cu.2NO3') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:78036 (''copper(II) nitrate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Historical source, current formula and independent GSRS/PubChem agree
+      on copper(II) nitrate trihydrate CAS10031-43-3. The ignored-inclusive owner
+      scan found no other current owner of this CAS. Promote local primary to cas:10031-43-3,
+      retain existing local registry identity, and NARROW_MATCH/broadMatch CHEBI78036.
+      No exact eligible CHEBI/NCIT trihydrate term was established by the bounded
+      queries. Keep CAS and Cu.2NO3.3H2O. Do not automatically add CID/SMILES/InChI
+      from the reviewed comparator. Primary source references: https://gsrs.ncats.nih.gov/api/v1/substances/066PG1506T?view=full;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/10031-43-3/property/Title,MolecularFormula,MolecularWeight,InChI,InChIKey,CanonicalSMILES/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/78036/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      Independent review identifies the existing exact synonym ''copper(2+) dinitrate''
+      as the water-free parent, not this hydrate; preserve it as REJECTED_LABEL. This
+      curation adds no scientific, mapping-release or role approval; changed owner
+      bytes withdraw inherited support.'
+synonyms:
+- synonym_text: copper(II) nitrate (anhydrous)
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: copper(2+) dinitrate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 10031-43-3 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: copper(II) nitrate (anhydrous)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.937262+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.831051+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cu.2NO3; inchi=InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1;
+    smiles=O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.577264+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.746528+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Cu(NO3)2 x 3 H2O'' -> ''copper(II) nitrate'': synced
+    to canonical CHEBI label (preferred_term ''Cu(NO3)2 x 3 H2O'' unchanged).'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:78036 -> kgmicrobe.compound:cu_no32_x_3_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'Cu.2NO3' -> 'Cu.2NO3.3H2O' (#321); the label states
+    3 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:78036's ChEBI formula ('Cu.2NO3') — the mark of a value inherited
+    from the parent rather than measured for this record. Water appended in ChEBI's
+    own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518635+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-10-13T11:00:00+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped wrong-hydration synonym to REJECTED_LABEL: copper(II) nitrate
+    (anhydrous) (#878).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-02T05:34:27.474256+00:00'
+  curator: Codex
+  action: CORRECTED_HYDRATE_STOCK_CHEMISTRY
+  changes: '#871/#268 bounded source chemistry correction. Removed fields: chemical_properties.inchi,
+    chemical_properties.smiles. Set fields: {}. Record states a fixed hydrate while
+    exact archived parent ontology supplies the current water-free structures. Remove
+    the incompatible inherited structures rather than calculate or guess replacements.
+    No exact form ID selection, invented water-containing SMILES, or verification
+    of every retained field. Existing form/identity questions remain held. Original
+    chemical_properties={"cas_rn": "10031-43-3", "data_source": "CultureBotHT/compounds_to_cas.csv",
+    "inchi": "InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1", "molecular_formula": "Cu.2NO3.3H2O",
+    "retrieval_date": "2026-04-09T00:32:50.689620+00:00", "smiles": "O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]"}.
+    Preserved identifier, ontology mapping and grade, roles, synonyms, counts, status
+    and original history. No mapping, role or release approval. Exact preimage and
+    evidence: reports/hydrate_stock_chemistry_871_268_20261102/source-evidence.json;
+    owner=data/ingredients/mapped/Cu_No32_X_3_H2o.yaml; before_sha256=cd39be349f5571862ff1fcd66ad7c32f911c7186f94816e59556521b0ceb875c.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"set","path":["identifier"],"before":"kgmicrobe.compound:cu_no32_x_3_h2o","after":"cas:10031-43-3"},{"op":"set","path":["synonyms",1,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-a/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 10031-43-3
+  data_source: CultureBotHT/compounds_to_cas.csv
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: Cu.2NO3.3H2O
+ingredient_type: SINGLE_INGREDIENT

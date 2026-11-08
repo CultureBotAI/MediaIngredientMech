@@ -1,0 +1,73 @@
+identifier: mesh:D009429
+preferred_term: Netropsin
+synonyms:
+- synonym_text: Netropsin
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: Congocidin
+  synonym_type: EXACT_SYNONYM
+  source: NLM MeSH D009429/M0014675; PubChem CID4461; PubMed19389628
+- synonym_text: Congocidine
+  synonym_type: EXACT_SYNONYM
+  source: NLM MeSH D009429/M0014675; PubChem CID4461; PubMed19389628
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:netropsin); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0832 -> mesh:D009429 "Netropsin" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CORRECTED
+  changes: Official MeSH places Congocidine within the preferred Netropsin concept
+    M0014675, while netropsin hydrochloride is a separate narrower concept. PubChem
+    CID4461 also records Congocidin as a synonym. This supports the source bare antibiotic
+    name, without a hydrochloride/dihydrochloride assignment. Existing Congocidin.yaml
+    remains a separately held placeholder owner; no owner merge or duplicate closure
+    is proposed. The owned-name/export conflict must be reconciled before publishing
+    this new alias under MAPPING_SEMANTICS section3; adding the isolated alias does
+    not release it. All prior source, native-owner, SSSOM and downstream holds remain
+    in force; this isolated proposal is not publication approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:netropsin); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:D009429
+  ontology_label: Netropsin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Exact MeSH label match; absent from CHEBI and NCIT (#213).
+  - evidence_type: MANUAL_CURATION
+    source: https://id.nlm.nih.gov/mesh/M0014675.json
+    notes: Official MeSH places Congocidine within the preferred Netropsin concept
+      M0014675, while netropsin hydrochloride is a separate narrower concept. PubChem
+      CID4461 also records Congocidin as a synonym. This supports the source bare
+      antibiotic name, without a hydrochloride/dihydrochloride assignment. Existing
+      Congocidin.yaml remains a separately held placeholder owner; no owner merge
+      or duplicate closure is proposed. The owned-name/export conflict must be reconciled
+      before publishing this new alias under MAPPING_SEMANTICS section3; adding the
+      isolated alias does not release it.

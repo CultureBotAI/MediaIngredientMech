@@ -1,0 +1,54 @@
+identifier: kgmicrobe.ingredient:concentrated_sulfuric_acid_utex_bbm
+preferred_term: Concentrated sulfuric acid preparation (UTEX BBM trace stock)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:concentrated_sulfuric_acid_utex_bbm
+  ontology_label: Concentrated sulfuric acid preparation (UTEX BBM trace stock)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://utex.org/products/bbm-bold-trace-stock-solution
+    notes: UTEX BBM trace stock explicitly lists10mLconcentrated H2SO4 and makes the
+      total trace-stock volume1L. That establishes the acid volume per litre of trace
+      stock, not the acid assay. This owner captures the supplied concentrated acid
+      with no assumed97/98% strength. Component completeness is UNKNOWN. Unstated
+      solvent, hydration, assay and final volume are not invented. This is the named
+      preparation at the cited source scope; no full-formulation equivalence with
+      other products is asserted.
+notes: UTEX BBM trace stock explicitly lists10mLconcentrated H2SO4 and makes the total
+  trace-stock volume1L. That establishes the acid volume per litre of trace stock,
+  not the acid assay. This owner captures the supplied concentrated acid with no assumed97/98%
+  strength. Component completeness is UNKNOWN. Unstated solvent, hydration, assay
+  and final volume are not invented. This is the named preparation at the cited source
+  scope; no full-formulation equivalence with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: UTEX BBM trace stock explicitly lists10mLconcentrated H2SO4 and makes the
+    total trace-stock volume1L. That establishes the acid volume per litre of trace
+    stock, not the acid assay. This owner captures the supplied concentrated acid
+    with no assumed97/98% strength. Component completeness is UNKNOWN. Unstated solvent,
+    hydration, assay and final volume are not invented. This is the named preparation
+    at the cited source scope; no full-formulation equivalence with other products
+    is asserted. Isolated proposal, pending independent and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: H2SO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26836
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://utex.org/products/bbm-bold-trace-stock-solution
+    source_record: Sulfuric acid (concentrated)
+    notes: UTEX BBM trace stock explicitly lists10mLconcentrated H2SO4 and makes the
+      total trace-stock volume1L. That establishes the acid volume per litre of trace
+      stock, not the acid assay. This owner captures the supplied concentrated acid
+      with no assumed97/98% strength.

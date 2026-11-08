@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:magnesium_sulfate_heptahydrate_6gl_togo_m2231
+preferred_term: 6 g/L magnesium sulfate heptahydrate stock (TOGO M2231)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:magnesium_sulfate_heptahydrate_6gl_togo_m2231
+  ontology_label: 6 g/L magnesium sulfate heptahydrate stock (TOGO M2231)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+    notes: M2231 explicitly labels the stock6g/L and lists6gMgSO4·7H2O plus1Ldeionized
+      water. The6g/L assertion comes from the source label, not a final-volume inference
+      from added water. Water quantity is preserved only as added batch water in this
+      note. The separate PIV metal-solution make-up instruction is not applied to
+      this stock. Component completeness is UNKNOWN. Unstated solvent, hydration,
+      assay and final volume are not invented. This is the named preparation at the
+      cited source scope; no full-formulation equivalence with other products is asserted.
+notes: M2231 explicitly labels the stock6g/L and lists6gMgSO4·7H2O plus1Ldeionized
+  water. The6g/L assertion comes from the source label, not a final-volume inference
+  from added water. Water quantity is preserved only as added batch water in this
+  note. The separate PIV metal-solution make-up instruction is not applied to this
+  stock. Component completeness is UNKNOWN. Unstated solvent, hydration, assay and
+  final volume are not invented. This is the named preparation at the cited source
+  scope; no full-formulation equivalence with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: M2231 explicitly labels the stock6g/L and lists6gMgSO4·7H2O plus1Ldeionized
+    water. The6g/L assertion comes from the source label, not a final-volume inference
+    from added water. Water quantity is preserved only as added batch water in this
+    note. The separate PIV metal-solution make-up instruction is not applied to this
+    stock. Component completeness is UNKNOWN. Unstated solvent, hydration, assay and
+    final volume are not invented. This is the named preparation at the cited source
+    scope; no full-formulation equivalence with other products is asserted. Isolated
+    proposal, pending independent and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: MgSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31795
+  concentration_value: '6'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+    source_record: MgSO4·7H2O (6 g/L)
+    notes: M2231 explicitly labels the stock6g/L and lists6gMgSO4·7H2O plus1Ldeionized
+      water. The6g/L assertion comes from the source label, not a final-volume inference
+      from added water. Water quantity is preserved only as added batch water in this
+      note. The separate PIV metal-solution make-up instruction is not applied to
+      this stock.

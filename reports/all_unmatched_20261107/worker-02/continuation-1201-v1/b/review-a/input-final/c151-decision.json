@@ -1,0 +1,101 @@
+{
+  "case_id": "KG_CASE:55268b66b04a59d2f2c6487270ae15e4a4686148d8fff29fd66b248269821cd8",
+  "case_input_sha256": "45d5a3eb9ebcea7cda972c2b01eb8f6e49126792b4d67d75bcb6b78defff4c9e",
+  "source": {
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1000",
+    "source_label": "MnSO4 x n H2O",
+    "raw_source_label": "MnSO4 x n H2O"
+  },
+  "occurrence_ids": [],
+  "disposition": "new_distinct_ingredient_proposal",
+  "reasoning": "MediaDive1000 expressly names MnSO4 xnH2O and supplies no fixed-hydrate identifiers. The all-owner lookup found fixed one/two/four/five/six/seven-water records and anhydrous MnSO4, but no matching variable-hydrate owner. Variable hydration is the supported substance scope, not a missing fact requiring a guessed n. Continuation A proposes the shared variable-hydrate identity supported by Sigma229784 and the hydration-unspecified CAS15244-36-7; this case links that proposal without inventing a fixed molecular weight or structure.",
+  "applicability": "Issue1201 continuation of this exact frozen source case. MediaDive1000 expressly names MnSO4 xnH2O and supplies no fixed-hydrate identifiers. The all-owner lookup found fixed one/two/four/five/six/seven-water records and anhydrous MnSO4, but no matching variable-hydrate owner. Variable hydration is the supported substance scope, not a missing fact requiring a guessed n. Continuation A proposes the shared variable-hydrate identity supported by Sigma229784 and the hydration-unspecified CAS15244-36-7; this case links that proposal without inventing a fixed molecular weight or structure. Helper/incident-edge count definitions, original source ID and raw label are unchanged. Every inherited nonpositive row decision, source placeholder and downstream hold remains in force. Scope-specific proposals do not approve generic labels globally or release complete owner/export payloads.",
+  "evidence_ids": [
+    "c-frozen-case-151",
+    "c-mediadive-1000",
+    "c-chebi-86360",
+    "c-chebi-86364",
+    "c-owner-Mnso4",
+    "c-owner-Mnso4_X_7_H2o",
+    "a2-manganese-primary-final-0",
+    "a2-manganese-primary-final-1",
+    "a2-manganese-primary-final-2",
+    "a2-manganese-cas-scope-comparison",
+    "a2-ols-mn-parent",
+    "a2-ols-mn-monohydrate",
+    "c2-owner-lookup-151"
+  ],
+  "proposal_ids": [
+    "a2-proposal-manganese-sulfate-variable-hydrate"
+  ],
+  "no_change_reason": null,
+  "missing_requirement": "None for the variable-hydrate identity. Fixed water count is deliberately unspecified. Final shared-proposal bytes and independent C151 review belong to B, not A.",
+  "owner_records": [
+    {
+      "path": "data/ingredients/mapped/Mnso4.yaml",
+      "sha256": "18004a608a6c1ffd4d3fd01f65fe8804b29d6b31b98d458d94e8bd222f4160cd"
+    },
+    {
+      "path": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+      "sha256": "16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852"
+    },
+    {
+      "path": "data/ingredients/mapped/Mnso4_X_H2o.yaml",
+      "sha256": "ef3f2be9b77f0b62db71ecc37aa161a45e3693208a6b3919d681b2fe6e23b57b"
+    }
+  ],
+  "issue_refs": [
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201"
+  ],
+  "independent_review": {
+    "status": "pending",
+    "evidence_ids": []
+  },
+  "author": "/root/research_c",
+  "shard_case_index": 151,
+  "inherited_nonpositive_row_decisions": [
+    {
+      "owner_path": "data/ingredients/mapped/Mnso4.yaml",
+      "decision": {
+        "disposition": "WITHHOLD",
+        "evidence_key": "1914",
+        "owner_record": "data/ingredients/mapped/Mnso4.yaml",
+        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+        "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+        "row_sha256": "8645baf41af0c790611aecc31205c6bdee4675e617663683d3041765ed10e08e",
+        "source_position": 1914
+      }
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+      "decision": {
+        "disposition": "WITHHOLD",
+        "evidence_key": "1919",
+        "owner_record": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+        "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+        "row_sha256": "474c5a7a80a950175e13b788bc159b4e247c97896c2ad2d06996fa396221910f",
+        "source_position": 1919
+      }
+    },
+    {
+      "owner_path": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+      "decision": {
+        "disposition": "WITHHOLD",
+        "evidence_key": "1920",
+        "owner_record": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+        "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+        "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+        "row_sha256": "54e485a19453e808f1143399c23e0c33a6255dc37d11d21144b823a109db3be9",
+        "source_position": 1920
+      }
+    }
+  ],
+  "source_downstream_holds": [],
+  "continuation_predecessor": {
+    "artifact": "decisions.json",
+    "published_commit": "58f885fef05f8ff6e8b9b56fcb2479fef23b55c8",
+    "case_decision_sha256": "c88b03f2c24f7cf2c2da465b40e031ba22bb8aa0205e3c337a3a1dbd0fb5d142"
+  }
+}

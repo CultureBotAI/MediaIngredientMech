@@ -1,0 +1,48 @@
+identifier: kgmicrobe.ingredient:jcm1483_concentrated_sulfuric_acid
+preferred_term: JCM 1483 concentrated sulfuric acid input
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1483_concentrated_sulfuric_acid
+  ontology_label: JCM 1483 concentrated sulfuric acid input
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1483
+    notes: JCM1483 Solution C specifies concentrated H2SO4. No numerical assay, water
+      content, molarity or density is supplied. The source-defined concentrated input
+      is represented without asserting 100% acid. No verified exact eligible ontology
+      term or existing whole-preparation owner was established by the bounded source/owner
+      review. This self-registry mapping represents the preparation, not its individual
+      constituents.
+synonyms: []
+notes: JCM1483 Solution C specifies concentrated H2SO4. No numerical assay, water
+  content, molarity or density is supplied. The source-defined concentrated input
+  is represented without asserting 100% acid. Raw source labels and original occurrence
+  IDs remain in the evidence ledger; no recipe-local label is activated as a global
+  synonym. All inherited release holds remain.
+solution_type: OTHER
+components:
+- component_name: H2SO4
+  component_id: CHEBI:26836
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1483
+    source_record: JCM 1483 concentrated sulfuric acid input
+    notes: JCM1483 Solution C specifies concentrated H2SO4. No numerical assay, water
+      content, molarity or density is supplied. The source-defined concentrated input
+      is represented without asserting 100% acid.
+curation_history:
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: JCM1483 Solution C specifies concentrated H2SO4. No numerical assay, water
+    content, molarity or density is supplied. The source-defined concentrated input
+    is represented without asserting 100% acid.
+  new_status: MAPPED
+  llm_assisted: true

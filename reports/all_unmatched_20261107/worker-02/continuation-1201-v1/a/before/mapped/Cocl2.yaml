@@ -1,0 +1,170 @@
+identifier: CHEBI:35696
+preferred_term: CoCl2
+ontology_mapping:
+  ontology_id: CHEBI:35696
+  ontology_label: cobalt dichloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Simple component,
+    Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Simple component, Inorganic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: CoCl .6H O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CoCl 2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CoCl2 × 6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: CoCl2 ∙ 6 H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: CoCl2∙6H2O
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Cobalt chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Kobalt chlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Kobalt(II)-chlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Kobaltdichlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cobalt dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cobalt(2+) chloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: cobalt(II) chloride
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: CoCl2.6H2O
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 527
+  media_count: 527
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:30.557989+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-589-4 from PubChem API via name lookup (CoCl2)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7646-79-9 from PubChem (via CHEBI:35696)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: CoCl .6H O, CoCl 2,
+    CoCl2 × 6H2O, CoCl2 ∙ 6 H2O, CoCl2∙6H2O, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.848945+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.713512+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2Cl.Co; inchi=InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2; smiles=[Cl-].[Cl-].[Co+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.456585+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110523+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.744015+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CoCl2'' -> ''cobalt dichloride'': synced to canonical
+    CHEBI label (preferred_term ''CoCl2'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-27T03:16:39.518585+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 25/25 -> 527/527 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''CoCl2.6H2O''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''CoCl2 × 6H2O'', ''CoCl2 ∙ 6 H2O'',
+    ''CoCl2∙6H2O'', ''CoCl2.6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 7646-79-9
+  data_source: PubChem (via CHEBI:35696)
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: 2Cl.Co
+  inchi: InChI=1S/2ClH.Co/h2*1H;/q;;+2/p-2
+  smiles: '[Cl-].[Cl-].[Co+2]'
+kg_microbe_node_id: CHEBI:35696
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (25 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+      Simple component'
+    curator_note: Widespread use in media formulations (25 occurrences). High confidence
+      based on 'Defined component' property.

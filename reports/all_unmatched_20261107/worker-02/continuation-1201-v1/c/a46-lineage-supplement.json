@@ -1,0 +1,85 @@
+{
+  "captured_at": "2026-11-08T06:19:00.998389+00:00",
+  "case_id": "CM_NAME:44c218c55dedc04905bf7f598b5db490993079ffca1f2db2fca9012b9bbe058e",
+  "historical_revision": "231e0ba71b41d45362168d539efebe7991823464",
+  "assessment": "The 2026-10-22 commit and its discovery ledger repeat the frozen Solution C formulation and claim JCM1483 derivation. Their evidence ledger links derived discovery and validation artifacts, not a preserved primary JCM page. This establishes curation lineage only and does not resolve the contradiction with the captured current JCM1483. No claim that the historical recipe never existed is made.",
+  "captures": [
+    {
+      "command": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech",
+        "show",
+        "231e0ba71b41d45362168d539efebe7991823464:data/normalized_yaml/bacterial/JCM_J1483_AMMONIA_OXIDIZING_BACTERIA_MEDIUM.yaml"
+      ],
+      "capture": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/a46-lineage/recipe.yaml",
+      "sha256": "f5ed63c01f9d1b28ebffbc3bdd1c3df6a52f59a5c613a3ad27a37da5c33c21e9",
+      "source_scope": "Historical derived curation, not independently archived primary JCM source"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech",
+        "show",
+        "231e0ba71b41d45362168d539efebe7991823464:reviews/workflow/mech-goal-sequence-20261019/cycle-000002/stage-01/revision-0001/evidence.yaml"
+      ],
+      "capture": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/a46-lineage/evidence.yaml",
+      "sha256": "b3e243bb1cc3553d7a9cb8d3c326f52fb20e9513b275e658ef546e1fc516c2f9",
+      "source_scope": "Historical derived curation, not independently archived primary JCM source"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech",
+        "show",
+        "231e0ba71b41d45362168d539efebe7991823464:reviews/workflow/mech-goal-sequence-20261019/cycle-000002/stage-01/revision-0001/discovery_ledger.md"
+      ],
+      "capture": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/a46-lineage/discovery_ledger.md",
+      "sha256": "e4cb0d484e905ae8759f565dc81accf624d71f6ea8f22960b46806a1bb3be96f",
+      "source_scope": "Historical derived curation, not independently archived primary JCM source"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech",
+        "show",
+        "--stat",
+        "--format=fuller",
+        "231e0ba71b41d45362168d539efebe7991823464"
+      ],
+      "capture": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/a46-lineage/commit.txt",
+      "sha256": "d36da450773f3d752bccdb2a94925306efd6e52ec0e927826f750c7196efd079"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech",
+        "log",
+        "-5",
+        "--format=%H %aI %s",
+        "--",
+        "data/normalized_yaml/bacterial/JCM_J1483_AMMONIA_OXIDIZING_BACTERIA_MEDIUM.yaml"
+      ],
+      "capture": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/a46-lineage/history.txt",
+      "sha256": "3a286900b9db0af98b9e792f6018a39949d792576bdcf5fca77f5bd8ba88aa94"
+    },
+    {
+      "command": [
+        "rg",
+        "--files",
+        "--no-ignore",
+        "--hidden",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech"
+      ],
+      "filter": "1483|ammonia_oxid|grmd_cache|jcm_raw",
+      "ignored_files_included": true,
+      "capture": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/a46-lineage/filename-search.txt",
+      "sha256": "f221d0329c15e8c1584fbff9d7287006a0361a324d0f5a13f174173228a28519",
+      "limitation": "Filename search only; neither full content nor external historical archive exhaustive."
+    }
+  ]
+}

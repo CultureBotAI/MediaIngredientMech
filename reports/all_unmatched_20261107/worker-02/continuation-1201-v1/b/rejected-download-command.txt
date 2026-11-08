@@ -1,0 +1,13 @@
+.temp/all-unmatched-worker-02/venv/bin/python - <<'PY'
+import urllib.request,concurrent.futures,json,hashlib,datetime
+from pathlib import Path
+b=Path('reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b')
+urls={'bd-manual-seco':'https://www.seco.us/ASSETS/DOCUMENTS/ITEMS/EN/212240.pdf','bd-manual-seco351':'https://www.seco.us/ASSETS/DOCUMENTS/ITEMS/EN/212351.pdf','verduyn-preview':'https://repository.tudelft.nl/file/File_025a63db-3c03-4a9d-b18c-d37a795e6cad?preview=1','flikweert-preview':'https://repository.tudelft.nl/file/File_980a303e-e5c4-40e9-ae2c-d1efee438339?preview=1','sigma-pipes-sds':'https://www.sigmaaldrich.com/US/en/sds/SIGMA/P6757?userType=undefined'}
+def go(x):
+ n,u=x;r={'name':n,'url':u,'accessed_at':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+ try:
+  resp=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'MIM-source-review/1.0'}),timeout=30);d=resp.read();p=b/'captures'/('finalfetch-'+n+'.bin');p.write_bytes(d);r.update(status=resp.status,path=str(p),sha256=hashlib.sha256(d).hexdigest(),bytes=len(d),content_type=resp.headers.get('Content-Type'))
+ except Exception as e:r['error']=repr(e)
+ return r
+r=list(concurrent.futures.ThreadPoolExecutor(max_workers=5).map(go,urls.items()));(b/'finalfetch-retrievals.json').write_text(json.dumps(r,indent=2)+'\n');print(r)
+PY

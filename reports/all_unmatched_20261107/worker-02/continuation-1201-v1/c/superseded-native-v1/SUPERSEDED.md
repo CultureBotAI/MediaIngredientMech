@@ -1,0 +1,1 @@
+This exact initial C draft was superseded after native partonomy found bare-solute REJECTED_LABEL entries equal to component names on three stock owners. Original15 after captures remain at their original paths with unchanged bytes. Corrected three stock payloads use new -v2 filenames; no old capture was overwritten.

@@ -1,0 +1,210 @@
+identifier: CHEBI:63675
+preferred_term: Sodium succinate
+ontology_mapping:
+  ontology_id: CHEBI:63675
+  ontology_label: sodium succinate (anhydrous)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Growth factor; Properties: Defined component, Organic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Growth factor; Properties: Defined component, Simple component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Growth factor; Properties: Organic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Growth factor; Properties: Simple component, Defined component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Disodium succinate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Succinic acid disodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: disodium butanedioate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: disodium succinate (anh.)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Growth factor; Properties: Simple component, Organic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Disodium succinate·6H2O
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 195
+  media_count: 195
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:53.072238+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:150-90-3 from PubChem API via name lookup (Disodium succinate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.815550+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6106-21-4 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium succinate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.817748+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6106-21-4 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium Succinate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.819661+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6106-21-4 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium succinate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: Disodium succinate,
+    Succinic acid disodium salt, disodium butanedioate, disodium succinate (anh.)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: Sodium Succinate, Succinic
+    acid disodium salt, disodium butanedioate, disodium succinate (anh.)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Disodium_Succinate.yaml,
+    Sodium_Succinate_2.yaml, Sodium_Succinate_3.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (150-90-3|6106-21-4) resolved via
+    OAK canonical xref: 150-90-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.354384+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.446923+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C4H4O4.2Na; inchi=InChI=1S/C4H6O4.2Na/c5-3(6)1-2-4(7)8;;/h1-2H2,(H,5;
+    smiles=O=C([O-])CCC(=O)[O-].[Na+].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.510118+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.596937+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-04T05:38:59.201319+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.836736+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sodium succinate'' -> ''sodium succinate (anhydrous)'':
+    synced to canonical CHEBI label (preferred_term ''Sodium succinate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'sodium succinate (anhydrous)'; it matches
+    the ChEBI synonym 'disodium succinate (anh.)' on CHEBI:63675. The schema defines
+    EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known
+    synonym, so the recorded grade overstated. ontology_id is unchanged — the term
+    is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519880+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 111/145 -> 195/195 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Disodium
+    succinate·6H2O''. Tokens already present on the kg-microbe ontology node were
+    left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''Disodium succinate·6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 150-90-3
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  molecular_formula: C4H4O4.2Na
+  inchi: InChI=1S/C4H6O4.2Na/c5-3(6)1-2-4(7)8;;/h1-2H2,(H,5,6)(H,7,8);;/q;2*+1/p-2
+  smiles: O=C([O-])CCC(=O)[O-].[Na+].[Na+]
+kg_microbe_node_id: CHEBI:63675
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+      recommended.

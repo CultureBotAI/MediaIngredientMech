@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:atcc2883_filter_sterilized_methanol
+preferred_term: ATCC 2883 filter-sterilized methanol input
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc2883_filter_sterilized_methanol
+  ontology_label: ATCC 2883 filter-sterilized methanol input
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2445;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2444; https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx
+    notes: The original ATCC2883 broth and agar recipes both specify 3 ml filter-sterilized
+      methanol added after autoclaving. Filtration treatment and methanol input are
+      established; dilution, assay and additional solvent are not. This bounded preparation
+      does not assert pure methanol or a specific aqueous dilution. No verified exact
+      eligible ontology term or existing whole-preparation owner was established by
+      the bounded source/owner review. This self-registry mapping represents the preparation,
+      not its individual constituents.
+synonyms: []
+notes: The original ATCC2883 broth and agar recipes both specify 3 ml filter-sterilized
+  methanol added after autoclaving. Filtration treatment and methanol input are established;
+  dilution, assay and additional solvent are not. This bounded preparation does not
+  assert pure methanol or a specific aqueous dilution. Raw source labels and original
+  occurrence IDs remain in the evidence ledger; no recipe-local label is activated
+  as a global synonym. All inherited release holds remain.
+solution_type: OTHER
+components:
+- component_name: Methanol
+  component_id: CHEBI:17790
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2445
+    source_record: ATCC 2883 filter-sterilized methanol input
+    notes: The original ATCC2883 broth and agar recipes both specify 3 ml filter-sterilized
+      methanol added after autoclaving. Filtration treatment and methanol input are
+      established; dilution, assay and additional solvent are not. This bounded preparation
+      does not assert pure methanol or a specific aqueous dilution.
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2444
+    source_record: ATCC 2883 filter-sterilized methanol input
+    notes: The original ATCC2883 broth and agar recipes both specify 3 ml filter-sterilized
+      methanol added after autoclaving. Filtration treatment and methanol input are
+      established; dilution, assay and additional solvent are not. This bounded preparation
+      does not assert pure methanol or a specific aqueous dilution.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx
+    source_record: ATCC 2883 filter-sterilized methanol input
+    notes: The original ATCC2883 broth and agar recipes both specify 3 ml filter-sterilized
+      methanol added after autoclaving. Filtration treatment and methanol input are
+      established; dilution, assay and additional solvent are not. This bounded preparation
+      does not assert pure methanol or a specific aqueous dilution.
+curation_history:
+- timestamp: '2026-11-08T06:40:00+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: The original ATCC2883 broth and agar recipes both specify 3 ml filter-sterilized
+    methanol added after autoclaving. Filtration treatment and methanol input are
+    established; dilution, assay and additional solvent are not. This bounded preparation
+    does not assert pure methanol or a specific aqueous dilution.
+  new_status: MAPPED
+  llm_assisted: true

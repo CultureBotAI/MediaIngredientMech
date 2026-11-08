@@ -1,0 +1,60 @@
+identifier: kgmicrobe.ingredient:concentrated_sulfuric_acid_jcm970_atcc920
+preferred_term: Concentrated sulfuric acid preparation (JCM970/ATCC920 source scope)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:concentrated_sulfuric_acid_jcm970_atcc920
+  ontology_label: Concentrated sulfuric acid preparation (JCM970/ATCC920 source scope)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/9/2/0/atcc-medium-920.pdf?rev=17abd380bc714f0fbf0f8d4e7d9c200b;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3140; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3142;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1020
+    notes: TOGO M1020/JCM970 specifies2mLconcentrated sulfuric acid; ATCC920-derived
+      M3142/M3140 micronutrient stocks specify0.5mL. This bounded named-material record
+      captures only the shared stated concentrated-acid description; no equal assay
+      or full-formulation equivalence is claimed between the source preparations.
+      Component completeness is UNKNOWN. Unstated solvent, hydration, assay and final
+      volume are not invented. This is the named preparation at the cited source scope;
+      no full-formulation equivalence with other products is asserted.
+notes: TOGO M1020/JCM970 specifies2mLconcentrated sulfuric acid; ATCC920-derived M3142/M3140
+  micronutrient stocks specify0.5mL. This bounded named-material record captures only
+  the shared stated concentrated-acid description; no equal assay or full-formulation
+  equivalence is claimed between the source preparations. Component completeness is
+  UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented. This
+  is the named preparation at the cited source scope; no full-formulation equivalence
+  with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: TOGO M1020/JCM970 specifies2mLconcentrated sulfuric acid; ATCC920-derived
+    M3142/M3140 micronutrient stocks specify0.5mL. This bounded named-material record
+    captures only the shared stated concentrated-acid description; no equal assay
+    or full-formulation equivalence is claimed between the source preparations. Component
+    completeness is UNKNOWN. Unstated solvent, hydration, assay and final volume are
+    not invented. This is the named preparation at the cited source scope; no full-formulation
+    equivalence with other products is asserted. Isolated proposal, pending independent
+    and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: H2SO4
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26836
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/9/2/0/atcc-medium-920.pdf?rev=17abd380bc714f0fbf0f8d4e7d9c200b;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3140; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3142;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1020
+    source_record: H2SO4 (concentrated)
+    notes: TOGO M1020/JCM970 specifies2mLconcentrated sulfuric acid; ATCC920-derived
+      M3142/M3140 micronutrient stocks specify0.5mL. This bounded named-material record
+      captures only the shared stated concentrated-acid description; no equal assay
+      or full-formulation equivalence is claimed between the source preparations.

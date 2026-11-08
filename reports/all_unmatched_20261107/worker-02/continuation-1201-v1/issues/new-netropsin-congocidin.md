@@ -1,0 +1,28 @@
+Worker-02 continuation of #1201. These are isolated review proposals against the campaign's unchanged maintained owner bytes, not applied data changes. All artifact paths are repository relative. The published predecessor at `58f885fef05f8ff6e8b9b56fcb2479fef23b55c8` remains unchanged.
+
+`mapped/Congocidin.yaml` remains a `kgmicrobe.compound:congocidin` PLACEHOLDER owner, while `mapped/Netropsin.yaml` is already mapped to `mesh:D009429`. Primary nomenclature evidence now supports the bare antibiotic name Congocidin/Congocidine as Netropsin. Publishing the proposed aliases without reconciling the existing Congocidin owner would create competing name ownership.
+
+NLM MeSH places term T028107, Congocidine, inside the preferred Netropsin concept M0014675. The salt concepts are separately represented; this conclusion does not assign hydrochloride or dihydrochloride to the frozen source. PubChem CID4461 corroborates the Congocidin spelling; its mixed salt synonym list is not used to infer supplied salt. The metatraits case has the graph label `congocidin`, a blank raw source-label field and no supplied-form observation. The isolated proposal adds the two supported bare aliases to Netropsin, with the competing-owner/export dependency explicitly held.
+
+- Proposal `c2-proposal-netropsin-congocidin-alias`. Current campaign-baseline owner: `data/ingredients/mapped/Netropsin.yaml` (SHA256 `b29f27812022327ca5b2b6b895a944a7d47188bfbf48b57c008fa13a6edb34aa`).
+- Exact proposed payload: `reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/proposed-owners/c2-proposal-netropsin-congocidin-alias.yaml` (SHA256 `21d8c26fdfcf8b4fb0a8c6f83f9e3676193d38f0fbc2f5ee9dcdad401be70595`).
+- Competing maintained placeholder: `data/ingredients/mapped/Congocidin.yaml` (SHA256 `225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0`).
+
+- `KG_CASE:96d8ecb6c781fa8e567937a84b0f668eebae5dec838143f1c96e10b1c9c10bdd`; source `kgmicrobe.compound:congocidin`; raw source label ``.
+
+- `c2-mesh-netropsin-concept`: [https://id.nlm.nih.gov/mesh/M0014675.json](https://id.nlm.nih.gov/mesh/M0014675.json); accessed `2026-11-08T05:57:08.042650+00:00`; `reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/mesh-netropsin-concept.json` (SHA256 `8a8ff663fc20a81e09e4b9c07c81f21c8df9ac64dc4333ea65fb05f85f7acede`).
+- `c2-mesh-congocidine-term`: [https://id.nlm.nih.gov/mesh/T028107.json](https://id.nlm.nih.gov/mesh/T028107.json); accessed `2026-11-08T05:58:26.542892+00:00`; `reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/mesh-congocidine-term.json` (SHA256 `60f6ca04ecb98cd8bab12b90bd66a042a351c14fa77c364924acd177494ddd6d`).
+- `c-pubchem-synonyms-4461`: [https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4461/synonyms/JSON](https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/4461/synonyms/JSON); accessed `2026-11-08T05:10:08.271592+00:00`; `reports/all_unmatched_20261107/worker-02/c/captures/pubchem-synonyms-4461.json` (SHA256 `05c16667df0cbe2a0b8bf591e49362cd30de1c89e250b7f4502e02b4a4f14aa6`).
+- `c-root-congocidine-pubmed`: [https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=19389628&retmode=xml](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=19389628&retmode=xml); accessed `2026-11-08T05:12:07.090095+00:00`; `reports/all_unmatched_20261107/worker-02/c/captures/root-congocidine-pubmed.xml` (SHA256 `6dff7492f35a4242ff2462d9d4f24656b408f62387d31dae5a50407c1531c23f`).
+
+Independent reviewer `/root/research_a` approved these exact bounded payloads in `reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/review-c/independent-review.json` (SHA256 `37577be2e1881e5e32fb430f68ffd15a7dedc86994b135c9bd5764f3b3116a71`). This is not a whole-owner, merge or publication approval.
+
+Follow-up must review both actual owners, their source observations, current mapping scopes and owned-name/export dependencies. Decide the appropriate duplicate reconciliation through the repository procedure, preserving history and source identities. No survivor, deletion, tombstone, role union, count sum or SSSOM merge is authorized by this alias proposal. The existing Congocidin WITHHOLD remains; the descriptor's wider salt scope is not approved by inspecting its preferred concept alone.
+
+The captured issue index has no Netropsin/Congocidin-specific ticket. #226 concerns a different enumerated set of duplicate-identifier groups and does not cover this pair.
+
+Before applying any accepted delta, compare the then-current owner bytes and reconcile concurrent proposals. Preserve every raw label, original source reference, existing REJECTED_LABEL, WITHHOLD, source-quantity and downstream hold. Use guarded curation with history and the required maintained-surface/SSSOM synchronization and native validation. This draft requests no merge, downstream rebuild, automatic owner release or closure of broader issues.
+
+<!-- mim-review-round: worker02-continuation1201-v1 -->
+<!-- mim-review-bundle: new-netropsin-congocidin -->
+<!-- mim-fingerprints: 234a48bb3638b0eecfba018a557573e04d7c6fa761e03ae39d0c677392cc798f -->

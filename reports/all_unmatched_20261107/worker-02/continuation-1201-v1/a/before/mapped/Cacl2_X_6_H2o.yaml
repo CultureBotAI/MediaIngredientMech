@@ -1,0 +1,120 @@
+identifier: CHEBI:91243
+preferred_term: CaCl2 x 6 H2O
+ontology_mapping:
+  ontology_id: CHEBI:91243
+  ontology_label: calcium chloride hexahydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: CaCl2.6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CaCl2x6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CaCl2·6H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: CaCl2・6 H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: calcium chloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: calcium chloride--water (1/6)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 70
+  media_count: 70
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 10043-52-4 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: CaCl2.6H2O, CaCl2x6H2O,
+    CaCl2·6H2O, CaCl2・6 H2O, calcium chloride hexahydrate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.520988+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.340850+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Ca.2Cl.6H2O; inchi=InChI=1S/Ca.2ClH.6H2O/h;2*1H;6*1H2/q+2;;;;;;;;/p-2;
+    smiles=O.O.O.O.O.O.[Ca+2].[Cl-].[Cl-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.981091+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110348+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.733252+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CaCl2 x 6 H2O'' -> ''calcium chloride hexahydrate'':
+    synced to canonical CHEBI label (preferred_term ''CaCl2 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_scrambled_hydrate_cas
+  action: CORRECTED_SCRAMBLED_CAS
+  changes: cas_rn '10043-52-4' -> '7774-34-7' (#320/#334). The recorded value denotes
+    anhydrous calcium dichloride, contradicting the hydration state this record's
+    own label states. Replaced with ChEBI's hasDbXref on CHEBI:91243, the specific
+    term this record is mapped to — provenance independent of the value being replaced,
+    per MAPPING_SEMANTICS §3.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518482+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 42/42 -> 70/70 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+kg_microbe_node_id: CHEBI:91243
+chemical_properties:
+  cas_rn: 7774-34-7
+  data_source: CultureBotHT/compounds_to_cas.csv
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: Ca.2Cl.6H2O
+  inchi: InChI=1S/Ca.2ClH.6H2O/h;2*1H;6*1H2/q+2;;;;;;;;/p-2
+  smiles: O.O.O.O.O.O.[Ca+2].[Cl-].[Cl-]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

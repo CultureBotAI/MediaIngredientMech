@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:mohr_salt_02_percent_hcl0037_percent_jcm764
+preferred_term: 0.2% Mohr salt in0.037% HCl stock (JCM764)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mohr_salt_02_percent_hcl0037_percent_jcm764
+  ontology_label: 0.2% Mohr salt in0.037% HCl stock (JCM764)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=764; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M791
+    notes: JCM764 explicitly specifies0.2%(NH4)2Fe(SO4)2·6H2O in0.037%HCl, with1mLstock
+      addition. Both percent bases are unstated. Two known components are recorded
+      without inventing water or treating the mixture as Mohr salt itself. Component
+      completeness is UNKNOWN. Unstated solvent, hydration, assay and final volume
+      are not invented. This is the named preparation at the cited source scope; no
+      full-formulation equivalence with other products is asserted.
+notes: JCM764 explicitly specifies0.2%(NH4)2Fe(SO4)2·6H2O in0.037%HCl, with1mLstock
+  addition. Both percent bases are unstated. Two known components are recorded without
+  inventing water or treating the mixture as Mohr salt itself. Component completeness
+  is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+  This is the named preparation at the cited source scope; no full-formulation equivalence
+  with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: JCM764 explicitly specifies0.2%(NH4)2Fe(SO4)2·6H2O in0.037%HCl, with1mLstock
+    addition. Both percent bases are unstated. Two known components are recorded without
+    inventing water or treating the mixture as Mohr salt itself. Component completeness
+    is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+    This is the named preparation at the cited source scope; no full-formulation equivalence
+    with other products is asserted. Isolated proposal, pending independent and coordinator
+    review.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: Fe(NH4)2(SO4)2 x 6 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:76181
+  concentration_value: '0.2'
+  concentration_unit: PERCENT
+- component_name: HCl
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17883
+  concentration_value: '0.037'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=764; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M791
+    source_record: 0.2% Fe(NH4)2(SO4)2・6H2O (in 0.037% HCl)
+    notes: JCM764 explicitly specifies0.2%(NH4)2Fe(SO4)2·6H2O in0.037%HCl, with1mLstock
+      addition. Both percent bases are unstated. Two known components are recorded
+      without inventing water or treating the mixture as Mohr salt itself.

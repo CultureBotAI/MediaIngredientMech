@@ -1,0 +1,83 @@
+identifier: kgmicrobe.ingredient:desiccated_ox_bile
+preferred_term: Desiccated ox bile
+synonyms:
+- synonym_text: Desicatted Ox-bile
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Desiccated ox bile
+  synonym_type: EXACT_SYNONYM
+  source: NBRC1004/NBRC1390; corrected spelling of raw Desicatted Ox-bile
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2375); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as an animal-derived bile preparation and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Desicatted_Ox-bile-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended normalized label:** **Desiccated ox
+    bile**. The current label, “Desicatted Ox-bile,” contains a spelling error; retain
+    it only as a legacy/raw-text synonym. CURIEs discussed: UBERON:0001970. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: PROMOTED_TO_MAPPED
+  changes: Promote the existing misspelled desiccated-ox-bile placeholder to a distinct
+    dried biological-material registry identity; preserve raw spelling and unknown
+    product composition. All prior source, native-owner, SSSOM and downstream holds
+    remain in force; this isolated proposal is not publication approval.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2375); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as an animal-derived bile preparation pending
+  source-backed composition curation. Issue1201 successor scope: The source ingredient
+  is desiccated ox bile, a dried bovine bile material. NBRC1004 and NBRC1390 independently
+  name desiccated ox bile as a weighed dry ingredient; Sigma70168 confirms the material
+  is produced by dehydrating fresh ox bile. This is neither fresh liquid bile nor
+  an isolated bile salt, and no supplier-specific grade or constituent concentration
+  is asserted. Generic ox-bile owners and Oxgall are recorded reconciliation candidates,
+  not automatically merged or equated to this explicitly dried material.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: CHEBI:752954
+  ontology_label: ox bile
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:752954
+    notes: Generic ox bile is a verified broader material parent; the local ingredient
+      identity preserves the explicitly desiccated preparation rather than identifying
+      it with every fresh/dried bile material.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.sigmaaldrich.com/US/en/product/sial/70168
+    notes: The source ingredient is desiccated ox bile, a dried bovine bile material.
+      NBRC1004 and NBRC1390 independently name desiccated ox bile as a weighed dry
+      ingredient; Sigma70168 confirms the material is produced by dehydrating fresh
+      ox bile. This is neither fresh liquid bile nor an isolated bile salt, and no
+      supplier-specific grade or constituent concentration is asserted. Generic ox-bile
+      owners and Oxgall are recorded reconciliation candidates, not automatically
+      merged or equated to this explicitly dried material.

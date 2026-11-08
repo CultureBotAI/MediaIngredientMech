@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:middlebrook_oadc_bd_bbl
+preferred_term: Middlebrook OADC enrichment (BD-BBL)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:middlebrook_oadc_bd_bbl
+  ontology_label: Middlebrook OADC enrichment (BD-BBL)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=386; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=714
+    notes: JCM386 and714 explicitly supply BD-BBL Middlebrook OADC enrichment. BD
+      confirms the named BBL product. OADC constituent scope is corroborated by the
+      primary protocol authors; no precise commercial formula, lot or recipe-selected
+      pack code is asserted. The existing generic/Difco OADC owner is not silently
+      made identical to this branded material. Component completeness is UNKNOWN.
+      Unstated solvent, hydration, assay and final volume are not invented. This is
+      the named preparation at the cited source scope; no full-formulation equivalence
+      with other products is asserted.
+notes: JCM386 and714 explicitly supply BD-BBL Middlebrook OADC enrichment. BD confirms
+  the named BBL product. OADC constituent scope is corroborated by the primary protocol
+  authors; no precise commercial formula, lot or recipe-selected pack code is asserted.
+  The existing generic/Difco OADC owner is not silently made identical to this branded
+  material. Component completeness is UNKNOWN. Unstated solvent, hydration, assay
+  and final volume are not invented. This is the named preparation at the cited source
+  scope; no full-formulation equivalence with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: JCM386 and714 explicitly supply BD-BBL Middlebrook OADC enrichment. BD
+    confirms the named BBL product. OADC constituent scope is corroborated by the
+    primary protocol authors; no precise commercial formula, lot or recipe-selected
+    pack code is asserted. The existing generic/Difco OADC owner is not silently made
+    identical to this branded material. Component completeness is UNKNOWN. Unstated
+    solvent, hydration, assay and final volume are not invented. This is the named
+    preparation at the cited source scope; no full-formulation equivalence with other
+    products is asserted. Isolated proposal, pending independent and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: OTHER
+components:
+- component_name: Oleic acid
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:16196
+- component_name: Albumin
+  reference_scope: UNMAPPED
+- component_name: Dextrose
+  reference_scope: UNMAPPED
+- component_name: Catalase
+  reference_scope: MIM_CATALOG
+  component_id: cas:9001-05-2
+component_assertion:
+  method: ABBREVIATION_EXPANSION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=386; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=714
+    source_record: Middlebrook OADC Enrichment (BD-BBL)
+    notes: JCM386 and714 explicitly supply BD-BBL Middlebrook OADC enrichment. BD
+      confirms the named BBL product. OADC constituent scope is corroborated by the
+      primary protocol authors; no precise commercial formula, lot or recipe-selected
+      pack code is asserted. The existing generic/Difco OADC owner is not silently
+      made identical to this branded material.

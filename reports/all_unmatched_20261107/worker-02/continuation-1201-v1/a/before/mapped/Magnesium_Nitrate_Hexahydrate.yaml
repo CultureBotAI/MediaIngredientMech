@@ -1,0 +1,111 @@
+identifier: cas:13446-18-9
+preferred_term: magnesium nitrate hexahydrate
+synonyms:
+- synonym_text: MgNO32 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Mg(NO3)2 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: mediadive.ingredient:1763
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1763); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic salt hydrate and left unmapped because
+    the source formula appears to abbreviate magnesium nitrate hexahydrate but is
+    not locally verified as an exact ontology identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: salt_hydrate_pass
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: 'Promoted UNMAPPED_0444 ''MgNO32 x 6 H2O'' -> cas:13446-18-9 ''magnesium
+    nitrate hexahydrate'', narrowMatch to parent CHEBI:64736 ''magnesium nitrate''.
+    MediaDive ingredient 1763 CAS 13446-18-9 confirms the hexahydrate; CHEBI lacks
+    the hydrate term so cas: is the primary identifier with the parent as narrowMatch
+    (Rule B1 registry rows added). Resolves the prior ''pending CAS evidence'' review.'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518214+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:64736
+  ontology_label: magnesium nitrate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient 1763 (CAS 13446-18-9)
+    notes: MediaDive REST gives CAS 13446-18-9 = magnesium nitrate hexahydrate for
+      source name 'Mg(NO3)2 x 6 H2O'. CHEBI has only the anhydrous parent (CHEBI:64736
+      'magnesium nitrate'), so the hexahydrate is a narrowMatch to it, with cas:13446-18-9
+      preserved as the exact-identity primary (cf. ammonium molybdate tetrahydrate).
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI (parent)
+    notes: Parent anhydrous term CHEBI:64736 'magnesium nitrate'; no hexahydrate term
+      exists in CHEBI.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:64736 (''magnesium nitrate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'MediaDiveingredient1763 explicitly names Mg(NO3)2 x6H2O and CAS13446-18-9;
+      freshPubChemCAS resolvesCID202877 with magnesium dinitrate hexahydrate/H12MgN2O12.
+      ParentCHEBI64736 is magnesium nitrate withoutwaters. No exacteligiblehydrate
+      candidatefound. RetainformCAS and broadMatch toparent with B1registry; no inventedchemicalprops.
+      See the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml. Primary
+      source references: https://github.com/CultureBotAI/CultureBotHT; https://mediadive.dsmz.de/rest/ingredients;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13446-18-9/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.ebi.ac.uk/chebi/backend/api/public/compound/64736/. Captures, exact
+      input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'

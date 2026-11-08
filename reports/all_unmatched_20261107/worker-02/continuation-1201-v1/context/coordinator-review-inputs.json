@@ -1,0 +1,658 @@
+{
+  "head": "58f885fef05f8ff6e8b9b56fcb2479fef23b55c8",
+  "worker": 2,
+  "scope": "Completeness review only; no scientific identity approval",
+  "cases": [
+    {
+      "index": 11,
+      "decision": {
+        "case_id": "CM_NAME:0d53956af62fee7d17d6e5543a4a57c135008254fd1a28207994c30db02afa4c",
+        "case_input_sha256": "f34eebdfa0bdf1226858a221738015b632c7e48f20498232d9635cfaa3cc9892",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "0.01 M H2SO4",
+          "source_label": "0.01 M H2SO4",
+          "raw_source_label": "0.01 M H2SO4"
+        },
+        "occurrence_ids": [
+          "CM_OCC:084807e10354e1e25f168f3cf314a5a92bded847fabbca3b4431a4c290f4bdd4"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "TOGO M1267/JCM1182 uses one liter of 0.01 M sulfuric acid as the trace-element solution solvent. Its explicit molarity and solution type define a dilute preparation. The stock must retain concentration and component scope instead of becoming an alias of H2SO4.",
+        "applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label '0.01 M H2SO4'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-11-input",
+          "a-case-11-occ-00",
+          "a-primary-togo-M1267",
+          "a-primary-primary-83ec71c2607f25e6"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "A future stock owner must retain 0.01 M concentration and recipe provenance; no pure-acid identity link is justified.",
+        "missing_requirement": "A future stock owner must retain 0.01 M concentration and recipe provenance; no pure-acid identity link is justified.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w02-review-b-of-a"
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "a-case-11-input",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-02.json",
+            "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+          },
+          "kind": "source_snapshot",
+          "locator": "case_id=CM_NAME:0d53956af62fee7d17d6e5543a4a57c135008254fd1a28207994c30db02afa4c; complete case object including all original occurrences and inherited constraints",
+          "supports_or_contradicts": "Exact frozen input; source labels, source identifiers, full recipe paths, native occurrence definitions, and inherited holds remain authoritative. The assessment changes no source bytes.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:0d53956af62fee7d17d6e5543a4a57c135008254fd1a28207994c30db02afa4c"
+          ]
+        },
+        {
+          "evidence_id": "a-case-11-occ-00",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/ferrous_iron_yeast_extract_medium.yaml",
+            "sha256": "5d59729232224d55de3f119c67b82b00ca8ea22f4e52332661ec06b5e6c63144"
+          },
+          "kind": "source_snapshot",
+          "locator": "ingredients/8; occurrence_id=CM_OCC:084807e10354e1e25f168f3cf314a5a92bded847fabbca3b4431a4c290f4bdd4; whole recipe and preparation context",
+          "supports_or_contradicts": "Original occurrence '0.01 M H2SO4'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 11.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:0d53956af62fee7d17d6e5543a4a57c135008254fd1a28207994c30db02afa4c"
+          ]
+        },
+        {
+          "evidence_id": "a-primary-togo-M1267",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M1267.json",
+            "sha256": "c391f4a69c44662534452958eb4b00c12f898d3c225ff27e49598d4878518507"
+          },
+          "kind": "primary_source",
+          "locator": "$.components[2].items[0].component_name",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1267",
+          "case_ids": [
+            "CM_NAME:0d53956af62fee7d17d6e5543a4a57c135008254fd1a28207994c30db02afa4c"
+          ],
+          "accessed_at": "2026-11-08T05:06:57.432684+00:00"
+        },
+        {
+          "evidence_id": "a-primary-primary-83ec71c2607f25e6",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-83ec71c2607f25e6.html",
+            "sha256": "8d2402eeffba4c8805c3f6a88f9e0b0e3ec1a6e90f9c00573b8bd3b59660aa5a"
+          },
+          "kind": "primary_source",
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1182",
+          "case_ids": [
+            "CM_NAME:0d53956af62fee7d17d6e5543a4a57c135008254fd1a28207994c30db02afa4c"
+          ],
+          "accessed_at": "2026-11-08T05:06:57.593147+00:00"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "decision": {
+        "case_id": "CM_NAME:0e073b816603e0f1cb41a47e4e5ff944bc69eaad591ece800dce675d335e4341",
+        "case_input_sha256": "418fc60b120ab8495aa42c113f20edb1bc601bba8e98b969d3b87d66b7e59f44",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Meat filtrate",
+          "source_label": "Meat filtrate",
+          "raw_source_label": "Meat filtrate"
+        },
+        "occurrence_ids": [
+          "CM_OCC:a866cedb976e39590ffb6a773221f99be2c3955ee52c4ff4c7cb74e0617120c8"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "DSMZ110a defines meat filtrate using 500 g fat-free ground beef, 25 ml 1 N NaOH and distilled water, followed by the specified extraction/filtration procedure. TOGO M2717 links Meat filtrate to this recipe. The product is a process-defined biological mixture, not generic meat extract or a single chemical.",
+        "applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Meat filtrate'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-12-input",
+          "a-case-12-occ-00",
+          "a-primary-togo-M2717",
+          "a-primary-primary-4f48699b35b3587d"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "Curate the complete DSMZ110a meat-filtrate recipe and preparation as a distinct formulation before proposing an exact MIM owner.",
+        "missing_requirement": "Curate the complete DSMZ110a meat-filtrate recipe and preparation as a distinct formulation before proposing an exact MIM owner.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w02-review-b-of-a"
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "a-case-12-input",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-02.json",
+            "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+          },
+          "kind": "source_snapshot",
+          "locator": "case_id=CM_NAME:0e073b816603e0f1cb41a47e4e5ff944bc69eaad591ece800dce675d335e4341; complete case object including all original occurrences and inherited constraints",
+          "supports_or_contradicts": "Exact frozen input; source labels, source identifiers, full recipe paths, native occurrence definitions, and inherited holds remain authoritative. The assessment changes no source bytes.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:0e073b816603e0f1cb41a47e4e5ff944bc69eaad591ece800dce675d335e4341"
+          ]
+        },
+        {
+          "evidence_id": "a-case-12-occ-00",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2717_CMC_Medium_N2_CO2.yaml",
+            "sha256": "bf5e10438db50982f22e9ce529bf12ba457e708bda05d8b57b019d332e8c9825"
+          },
+          "kind": "source_snapshot",
+          "locator": "ingredients/9; occurrence_id=CM_OCC:a866cedb976e39590ffb6a773221f99be2c3955ee52c4ff4c7cb74e0617120c8; whole recipe and preparation context",
+          "supports_or_contradicts": "Original occurrence 'Meat filtrate'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 12.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:0e073b816603e0f1cb41a47e4e5ff944bc69eaad591ece800dce675d335e4341"
+          ]
+        },
+        {
+          "evidence_id": "a-primary-togo-M2717",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M2717.json",
+            "sha256": "726d5b6196521852f6e623ae073902f98b484a915bae70a3aa922fe16803ad11"
+          },
+          "kind": "primary_source",
+          "locator": "$.components[0].items[10].component_name; $.components[1].subcomponent_name",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2717",
+          "case_ids": [
+            "CM_NAME:0e073b816603e0f1cb41a47e4e5ff944bc69eaad591ece800dce675d335e4341"
+          ],
+          "accessed_at": "2026-11-08T05:06:57.883323+00:00"
+        },
+        {
+          "evidence_id": "a-primary-primary-4f48699b35b3587d",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-4f48699b35b3587d.pdf",
+            "sha256": "4d34e2a937cbfc9520977bca08d23d4a281a82701a8de1d2bdade4946cbb7797"
+          },
+          "kind": "primary_source",
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110a.pdf",
+          "case_ids": [
+            "CM_NAME:0e073b816603e0f1cb41a47e4e5ff944bc69eaad591ece800dce675d335e4341"
+          ],
+          "accessed_at": "2026-11-08T05:06:57.989813+00:00"
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "decision": {
+        "case_id": "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082",
+        "case_input_sha256": "91078954822fc05a2dfdd0175980d41470504b83edd4638910ba8e55ec5b8a11",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Sol.1",
+          "source_label": "Sol.1",
+          "raw_source_label": "Sol.1"
+        },
+        "occurrence_ids": [
+          "CM_OCC:343f2c0cd793ce71334fec809474360d834560bf6f885115515bee67839b7b29"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "TOGO M373/JCM378 defines Sol.1 as the alkaliphilic crotonate medium base, a fourteen-component recipe preceding separate crotonate, cysteine and sulfide additions. Sol.1 is a local section reference, not a substance name and not the same object as every Sol.1 in other recipes.",
+        "applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Sol.1'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-44-input",
+          "a-case-44-occ-00",
+          "a-primary-togo-M373",
+          "a-primary-primary-b6aea64a290c3186"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "Represent the M373/JCM378 base as a recipe-qualified formulation with its own components and preparation.",
+        "missing_requirement": "Represent the M373/JCM378 base as a recipe-qualified formulation with its own components and preparation.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w02-review-b-of-a"
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "a-case-44-input",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-02.json",
+            "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+          },
+          "kind": "source_snapshot",
+          "locator": "case_id=CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082; complete case object including all original occurrences and inherited constraints",
+          "supports_or_contradicts": "Exact frozen input; source labels, source identifiers, full recipe paths, native occurrence definitions, and inherited holds remain authoritative. The assessment changes no source bytes.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082"
+          ]
+        },
+        {
+          "evidence_id": "a-case-44-occ-00",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M373_Alkaliphilus_Crotonatoxidans_Medium.yaml",
+            "sha256": "a844be64aeb44490151b4b75d31e75ce863da625eb0d71a116fc0a82bb7ee698"
+          },
+          "kind": "source_snapshot",
+          "locator": "ingredients/0; occurrence_id=CM_OCC:343f2c0cd793ce71334fec809474360d834560bf6f885115515bee67839b7b29; whole recipe and preparation context",
+          "supports_or_contradicts": "Original occurrence 'Sol.1'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 44.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082"
+          ]
+        },
+        {
+          "evidence_id": "a-primary-togo-M373",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M373.json",
+            "sha256": "7648bdd8903a2b1b1f1f22024cb100f1f6bbce21fc4851f54eeaef7abd23a9ad"
+          },
+          "kind": "primary_source",
+          "locator": "$.components[0].items[0].component_name; $.components[1].subcomponent_name",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M373",
+          "case_ids": [
+            "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082"
+          ],
+          "accessed_at": "2026-11-08T05:07:15.061234+00:00"
+        },
+        {
+          "evidence_id": "a-primary-primary-b6aea64a290c3186",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-b6aea64a290c3186.html",
+            "sha256": "ea5b13a5a03be4d5478f086d1433d260146f2a9862da77d121f272cdc7bf0029"
+          },
+          "kind": "primary_source",
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=378",
+          "case_ids": [
+            "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082"
+          ],
+          "accessed_at": "2026-11-08T05:07:15.262807+00:00"
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "decision": {
+        "case_id": "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2",
+        "case_input_sha256": "0dd7beb1a9b092760abd7c031ef7f6e68c82afe7f2dea98eceba6d7d5a825d00",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Whatman #1 filter paper",
+          "source_label": "Whatman #1 filter paper",
+          "raw_source_label": "Whatman #1 filter paper"
+        },
+        "occurrence_ids": [
+          "CM_OCC:f2ec9f3ae0a72a2721366df01e2981cfff82951dd203e67805cd5bc8ccfdbd56",
+          "CM_OCC:3e666702a618cf206cd4ae5033326d6b3831fe684395551946683d59ae175e56"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "The two TOGO/ATCC sources name Whatman grade1 filter paper as a mass input, not merely equipment. Cytiva identifies grade1 among its cellulose filter papers. The physical manufactured paper product is not chemically identical to an arbitrary cellulose polymer record; paper grade/material scope must remain explicit.",
+        "applicability": "All 2 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Whatman #1 filter paper'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-50-input",
+          "a-case-50-occ-00",
+          "a-case-50-occ-01",
+          "a-primary-togo-M3174",
+          "a-primary-togo-M2697",
+          "a-primary-supplier-whatman"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "If adding an owner, retain manufacturer, grade1 and supplied paper form, and use component/material relations to cellulose rather than whole-product exact identity.",
+        "missing_requirement": "If adding an owner, retain manufacturer, grade1 and supplied paper form, and use component/material relations to cellulose rather than whole-product exact identity.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w02-review-b-of-a"
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "a-case-50-input",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-02.json",
+            "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+          },
+          "kind": "source_snapshot",
+          "locator": "case_id=CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2; complete case object including all original occurrences and inherited constraints",
+          "supports_or_contradicts": "Exact frozen input; source labels, source identifiers, full recipe paths, native occurrence definitions, and inherited holds remain authoritative. The assessment changes no source bytes.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2"
+          ]
+        },
+        {
+          "evidence_id": "a-case-50-occ-00",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3174_Clostridium_thermocellum_medium.yaml",
+            "sha256": "693548ba2284b84076bf31ee2410a08af8932b95492e572302dc13403a67adca"
+          },
+          "kind": "source_snapshot",
+          "locator": "ingredients/7; occurrence_id=CM_OCC:f2ec9f3ae0a72a2721366df01e2981cfff82951dd203e67805cd5bc8ccfdbd56; whole recipe and preparation context",
+          "supports_or_contradicts": "Original occurrence 'Whatman #1 filter paper'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 50.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2"
+          ]
+        },
+        {
+          "evidence_id": "a-case-50-occ-01",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/clostridium_thermocellum_medium_atcc_medium_1190_with_18_75_g_filter_paper_substituted_for_the_glucose.yaml",
+            "sha256": "7dc863ff5b8ac1b99b9b049c7aa4daecf37dfb6bbbf7ee8dca0be37d1d9f6ac8"
+          },
+          "kind": "source_snapshot",
+          "locator": "ingredients/7; occurrence_id=CM_OCC:3e666702a618cf206cd4ae5033326d6b3831fe684395551946683d59ae175e56; whole recipe and preparation context",
+          "supports_or_contradicts": "Original occurrence 'Whatman #1 filter paper'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 50.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2"
+          ]
+        },
+        {
+          "evidence_id": "a-primary-togo-M3174",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M3174.json",
+            "sha256": "7c61d46843f5475ecd61249de912494e47f5cecb86071366c38d44dbc5bcd3a5"
+          },
+          "kind": "primary_source",
+          "locator": "$.components[0].items[7].component_name; $.components[3].items[11].component_name",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3174",
+          "case_ids": [
+            "CM_NAME:3c40b79a7b419764c6340b27fc10f93907a75220fed833f2226483153814cf66",
+            "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2"
+          ],
+          "accessed_at": "2026-11-08T05:07:08.902179+00:00"
+        },
+        {
+          "evidence_id": "a-primary-togo-M2697",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M2697.json",
+            "sha256": "87d0962c78f523bad24386a74a5bc5435d1ea736f81d926235d36f058d608107"
+          },
+          "kind": "primary_source",
+          "locator": "$.components[0].items[7].component_name",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2697",
+          "case_ids": [
+            "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2"
+          ],
+          "accessed_at": "2026-11-08T05:07:17.120385+00:00"
+        },
+        {
+          "evidence_id": "a-primary-supplier-whatman",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/supplier-whatman.html",
+            "sha256": "bc3c696436ff26f53cbe8c0b59b1965ae9de35dbca0f3ab0474e595a829b611b"
+          },
+          "kind": "primary_source",
+          "locator": "Whatman Grade1 cellulose filter-paper product section",
+          "supports_or_contradicts": "Manufacturer identifies a cellulose filter-paper grade, supporting a product/material scope rather than pure cellulose synonym.",
+          "url": "https://info.cytivalifesciences.com/cellulose-filter-paper-ppc.html",
+          "case_ids": [
+            "CM_NAME:4edac6f5bee02716a4f1fbbc5a7db38a57884d411e9b9a3ca969206d84ae68d2"
+          ],
+          "accessed_at": "2026-11-08T05:09:17.495242+00:00"
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "decision": {
+        "case_id": "CM_NAME:5c7524ac291fa6aaba0a71ba0c0f0bc198eaa43be8f028df943ed422c23e1948",
+        "case_input_sha256": "4f010176bd18a3a85ee64c2b652f19d4e685ca3c6a26035f0546caa5ed7d3e46",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Standard mineral base (see below)",
+          "source_label": "Standard mineral base (see below)",
+          "raw_source_label": "Standard mineral base (see below)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:f3ad6758fe243962dd78764e467fbeeb5a8b257dfddf015fdcd21c472ad94cf0"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM149 and TOGO M140 define Standard mineral base as1M phosphate buffer plus Hutner vitamin-free mineral base, ammonium sulfate and water. This is an explicit nested formulation; the parenthetical see-below is a recipe pointer. It must not resolve as a single mineral ingredient or as all mineral bases.",
+        "applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Standard mineral base (see below)'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-56-input",
+          "a-case-56-occ-00",
+          "a-primary-togo-M140",
+          "a-primary-primary-9c2e840069cb8057"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "Represent the JCM149-qualified nested formulation, including Hutner subrecipe, rather than globally alias the generic label.",
+        "missing_requirement": "Represent the JCM149-qualified nested formulation, including Hutner subrecipe, rather than globally alias the generic label.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w02-review-b-of-a"
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "a-case-56-input",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-02.json",
+            "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+          },
+          "kind": "source_snapshot",
+          "locator": "case_id=CM_NAME:5c7524ac291fa6aaba0a71ba0c0f0bc198eaa43be8f028df943ed422c23e1948; complete case object including all original occurrences and inherited constraints",
+          "supports_or_contradicts": "Exact frozen input; source labels, source identifiers, full recipe paths, native occurrence definitions, and inherited holds remain authoritative. The assessment changes no source bytes.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:5c7524ac291fa6aaba0a71ba0c0f0bc198eaa43be8f028df943ed422c23e1948"
+          ]
+        },
+        {
+          "evidence_id": "a-case-56-occ-00",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M140_Tetramethyl_Ammonium_Medium.yaml",
+            "sha256": "3638f7f62dccab3daa46fd96697f84ff4a4222d82bd7f6b71756c23455e2bc92"
+          },
+          "kind": "source_snapshot",
+          "locator": "ingredients/3; occurrence_id=CM_OCC:f3ad6758fe243962dd78764e467fbeeb5a8b257dfddf015fdcd21c472ad94cf0; whole recipe and preparation context",
+          "supports_or_contradicts": "Original occurrence 'Standard mineral base (see below)'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 56.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:5c7524ac291fa6aaba0a71ba0c0f0bc198eaa43be8f028df943ed422c23e1948"
+          ]
+        },
+        {
+          "evidence_id": "a-primary-togo-M140",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M140.json",
+            "sha256": "2d65200988cd53b3bee7a9c4f733b47299a732b8741d11302f63d22e9f6b12f3"
+          },
+          "kind": "primary_source",
+          "locator": "$.components[0].items[3].component_name",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M140",
+          "case_ids": [
+            "CM_NAME:5c7524ac291fa6aaba0a71ba0c0f0bc198eaa43be8f028df943ed422c23e1948"
+          ],
+          "accessed_at": "2026-11-08T05:07:21.774262+00:00"
+        },
+        {
+          "evidence_id": "a-primary-primary-9c2e840069cb8057",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-9c2e840069cb8057.html",
+            "sha256": "7489686c0f8b4a1fadd428de69fde4f0eaf5a7eebbbd7d60ac725684d49b7490"
+          },
+          "kind": "primary_source",
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149",
+          "case_ids": [
+            "CM_NAME:5c7524ac291fa6aaba0a71ba0c0f0bc198eaa43be8f028df943ed422c23e1948"
+          ],
+          "accessed_at": "2026-11-08T05:07:22.367899+00:00"
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "decision": {
+        "case_id": "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b",
+        "case_input_sha256": "e48f6130c2d0020e5924d1cf4ab6146afc4065a582883660682fd4fa14b68ff1",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "1M MgSO4",
+          "source_label": "1M MgSO4",
+          "raw_source_label": "1M MgSO4"
+        },
+        "occurrence_ids": [
+          "CM_OCC:0dc9dc7db5cba718eb8a8f0e63be3cefdd54b3eb1d1b6be9693513a74932ddb3"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "TOGO API M2790 M9 context explicitly supplies 1 M MgSO4 as 200 microlitres. This contradicts the frozen 200 G_PER_L transcription and establishes a stock addition, not a crystalline supplied form. Neither magnesium sulfate nor its heptahydrate can own the complete stock name exactly.",
+        "applicability": "Case index 101: all 1 original occurrences and complete frozen recipe snapshots were read. TOGO API M2790 M9 context explicitly supplies 1 M MgSO4 as 200 microlitres. This contradicts the frozen 200 G_PER_L transcription and establishes a stock addition, not a crystalline supplied form. Neither magnesium sulfate nor its heptahydrate can own the complete stock name exactly. Evidence from another recipe or manufacturer is used only for the stated chemical/form comparison, never to replace missing source recipe context. All frozen downstream/native holds remain in force.",
+        "evidence_ids": [
+          "b-case-101",
+          "b-recipe-101-0",
+          "b-source-96d6d603e458caec",
+          "b-togo-ffe943eb560f848d",
+          "b-reference-337fef9ac68fb1e2"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained-data change is authorized by this source-only decision. Correct the source occurrence unit to microlitres while preserving 1 M stock identity; obtain stock preparation only if assigning a reusable stock owner.",
+        "missing_requirement": "Correct the source occurrence unit to microlitres while preserving 1 M stock identity; obtain stock preparation only if assigning a reusable stock owner.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w02-review-c-of-b"
+          ]
+        },
+        "primary_author": "/root/research_b",
+        "scope_index": 101
+      },
+      "evidence": [
+        {
+          "evidence_id": "b-source-96d6d603e458caec",
+          "kind": "unsuccessful_search",
+          "capture": {
+            "root": "artifact",
+            "path": "b/captures/source-96d6d603e458caec09ec.bin",
+            "sha256": "78669d85db93e40276577aaf5073aa0bc2420fe5b7be6212de5619e445da93aa"
+          },
+          "locator": "https://togomedium.org/medium/M2790; HTML application shell has no recipe content; not ingredient evidence.",
+          "supports_or_contradicts": "HTML application shell has no recipe content; not ingredient evidence.",
+          "url": "https://togomedium.org/medium/M2790",
+          "accessed_at": "2026-11-08T05:07:00.815549+00:00",
+          "case_ids": [
+            "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b"
+          ]
+        },
+        {
+          "evidence_id": "b-reference-337fef9ac68fb1e2",
+          "kind": "ontology",
+          "capture": {
+            "root": "artifact",
+            "path": "b/captures/ontology-337fef9ac68fb1e2.bin",
+            "sha256": "45b9cc51f5d062ae7e320b9f043d8cd770234d811ec3bf26bc247b51c22213bb"
+          },
+          "locator": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_31795; complete captured response",
+          "supports_or_contradicts": "Official ontology term CHEBI:31795: magnesium sulfate heptahydrate; inspect definition, annotations, synonyms and obsolete flag. Exact supplied forms must agree; this capture alone does not establish a recipe material.",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_31795",
+          "accessed_at": "2026-11-08T05:09:19.574945+00:00"
+        },
+        {
+          "evidence_id": "b-togo-ffe943eb560f848d",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "b/captures/togo-M2790.json",
+            "sha256": "484ff25c250928b9ff3b98873ff4aa40492e17701226c88be3fe623c0196db2e"
+          },
+          "locator": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790; complete meta, components and comments",
+          "supports_or_contradicts": "Primary TOGO API distinguishes raw component_name, curated GMO label, amount/unit, stock concentration and preparation groups. All fields were compared with frozen occurrences.",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790",
+          "accessed_at": "2026-11-08T05:15:28.397338+00:00",
+          "case_ids": [
+            "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b"
+          ]
+        },
+        {
+          "evidence_id": "b-case-101",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "artifact",
+            "path": "b/captures/case-101.json",
+            "sha256": "2515edbf59866ae3547fdba44e766333f23387c83490c561e4f0f44e0397e532"
+          },
+          "locator": "Complete frozen case object; all raw labels, occurrences, source fields and embedded holds",
+          "supports_or_contradicts": "Binds this unchanged source case; downstream fields are context, not independent chemical proof.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b"
+          ]
+        },
+        {
+          "evidence_id": "b-recipe-101-0",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+            "sha256": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a"
+          },
+          "locator": "ingredients/1 in complete recipe CultureMech:009338",
+          "supports_or_contradicts": "Full recipe inspected, including ingredients, solutions, concentrations, notes, references and preparation context; occurrence CM_OCC:0dc9dc7db5cba718eb8a8f0e63be3cefdd54b3eb1d1b6be9693513a74932ddb3 is preserved.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b"
+          ]
+        }
+      ]
+    }
+  ]
+}

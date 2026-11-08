@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:ferrous_sulfate_002m_nbrc213
+preferred_term: 0.02 M FeSO4 stock (NBRC213)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ferrous_sulfate_002m_nbrc213
+  ontology_label: 0.02 M FeSO4 stock (NBRC213)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=213;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1445
+    notes: NBRC213 explicitly calls for2.5mL of FeSO4(0.02M). The stock concentration
+      is known; reagent hydration and solvent are not. The component therefore remains
+      UNMAPPED rather than asserting anhydrous or heptahydrate identity. Component
+      completeness is UNKNOWN. Unstated solvent, hydration, assay and final volume
+      are not invented. This is the named preparation at the cited source scope; no
+      full-formulation equivalence with other products is asserted.
+notes: NBRC213 explicitly calls for2.5mL of FeSO4(0.02M). The stock concentration
+  is known; reagent hydration and solvent are not. The component therefore remains
+  UNMAPPED rather than asserting anhydrous or heptahydrate identity. Component completeness
+  is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+  This is the named preparation at the cited source scope; no full-formulation equivalence
+  with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: NBRC213 explicitly calls for2.5mL of FeSO4(0.02M). The stock concentration
+    is known; reagent hydration and solvent are not. The component therefore remains
+    UNMAPPED rather than asserting anhydrous or heptahydrate identity. Component completeness
+    is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+    This is the named preparation at the cited source scope; no full-formulation equivalence
+    with other products is asserted. Isolated proposal, pending independent and coordinator
+    review.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: FeSO4 (hydration unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: M
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=213;
+      https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1445
+    source_record: FeSO4 (0.02 M)
+    notes: NBRC213 explicitly calls for2.5mL of FeSO4(0.02M). The stock concentration
+      is known; reagent hydration and solvent are not. The component therefore remains
+      UNMAPPED rather than asserting anhydrous or heptahydrate identity.
