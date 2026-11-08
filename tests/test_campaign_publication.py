@@ -1169,3 +1169,117 @@ def test_1198_noncanonical_receipt_argument_refused_before_preparation(
     assert {p: (root / p).read_bytes() for p in before} == before
     assert not list(outside.iterdir()) and not list(case["out"].iterdir())
     assert not native._names(root)
+
+
+def test_1214_completed_publication_retains_exact_recovery_beforeimages(case):
+    result = c.publish(case["root"], case["path"], case["out"], apply=True)
+    assert result["status"] == "complete"
+    for filename, role in (
+        ("canonical-before.tsv", "canonical"),
+        ("policy-before.json", "policy"),
+    ):
+        reference = case["plan"]["before"][role]
+        backup = case["out"] / filename
+        assert backup.read_bytes() == (case["root"] / reference["path"]).read_bytes()
+        assert c.sha(backup.read_bytes()) == reference["sha256"]
+    assert c.validate(case["root"], case["path"])["status"] == "verified"
+
+
+@pytest.mark.parametrize("filename", ["canonical-before.tsv", "policy-before.json"])
+@pytest.mark.parametrize(
+    "phase",
+    ["backup_flush", "before_publication", "after_canonical", "before_finish", "after_finish"],
+)
+def test_1214_inplace_recovery_corruption_never_completes(case, monkeypatch, filename, phase):
+    from contextlib import contextmanager
+
+    backup = case["out"] / filename
+    mutated = []
+    before_policy = (case["root"] / c.POLICY).read_bytes()
+
+    def corrupt():
+        assert not mutated
+        identity = backup.stat()
+        expected = backup.read_bytes()
+        assert expected
+        backup.write_bytes(b"corrupted same-inode recovery evidence\n")
+        actual = backup.stat()
+        assert (identity.st_dev, identity.st_ino) == (actual.st_dev, actual.st_ino)
+        assert backup.read_bytes() != expected
+        mutated.append(True)
+
+    if phase == "backup_flush":
+        reserve = c._reserve
+
+        class CorruptAfterFlush:
+            def __init__(self, handle):
+                self.handle = handle
+
+            def __getattr__(self, name):
+                return getattr(self.handle, name)
+
+            def flush(self):
+                self.handle.flush()
+                if not mutated:
+                    corrupt()
+
+        @contextmanager
+        def late_backup_flush(paths):
+            with reserve(paths) as (handles, parents):
+                modified = list(handles)
+                index = list(paths).index(backup)
+                modified[index] = CorruptAfterFlush(handles[index])
+                yield modified, parents
+
+        monkeypatch.setattr(c, "_reserve", late_backup_flush)
+    elif phase in {"before_publication", "after_canonical"}:
+        publish_validated = c.publish_validated
+
+        def late_publication(*args, **kwargs):
+            if phase == "before_publication" and not mutated:
+                corrupt()
+            result = publish_validated(*args, **kwargs)
+            if phase == "after_canonical" and not mutated:
+                corrupt()
+            return result
+
+        monkeypatch.setattr(c, "publish_validated", late_publication)
+    else:
+        finish_receipt = c.finish_receipt
+
+        def late_completion(*args, **kwargs):
+            if phase == "before_finish":
+                corrupt()
+            result = finish_receipt(*args, **kwargs)
+            if phase == "after_finish":
+                corrupt()
+            return result
+
+        monkeypatch.setattr(c, "finish_receipt", late_completion)
+
+    with pytest.raises(ValueError, match="reserved recovery backup changed"):
+        c.publish(case["root"], case["path"], case["out"], apply=True)
+    assert mutated == [True]
+    assert (case["out"] / "publication.json").read_bytes() == b""
+    receipts = list((case["root"] / native.RECEIPTS_DIR).glob("*.json"))
+    assert len(receipts) == 1 and receipts[0].read_bytes() == b""
+    if phase in {"backup_flush", "before_publication"}:
+        assert (case["root"] / c.SOURCE).read_bytes() == case["before"]
+        assert (case["root"] / c.POLICY).read_bytes() == before_policy
+    # The accepted immutable beforeimages remain independently available.
+    for role in ("canonical", "policy"):
+        reference = case["plan"]["before"][role]
+        assert c.sha((case["root"] / reference["path"]).read_bytes()) == reference["sha256"]
+
+
+def test_1214_standalone_validation_scope_excludes_later_recovery_file_drift(case):
+    c.publish(case["root"], case["path"], case["out"], apply=True)
+    for filename in ("canonical-before.tsv", "policy-before.json"):
+        (case["out"] / filename).write_bytes(b"corruption after publication returned\n")
+    # validate has no receipt-directory argument or recovery-file bindings; it
+    # independently proves the accepted projected state and immutable plan.
+    assert "not recovery files" in c.validate.__doc__
+    assert c.validate(case["root"], case["path"])["status"] == "verified"
+    for role in ("canonical", "policy"):
+        reference = case["plan"]["before"][role]
+        assert c.sha((case["root"] / reference["path"]).read_bytes()) == reference["sha256"]

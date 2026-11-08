@@ -1089,6 +1089,12 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
 
 
 def validate(root: Path, plan_path: Path) -> dict:
+    """Replay accepted canonical/policy/native-chain state, not recovery files.
+
+    The plan binds immutable beforeimages; it does not name a publication
+    receipt directory. Recovery-backup integrity is checked by ``publish``
+    through its final completion boundary, not by this standalone verifier.
+    """
     prepared = prepare(root, plan_path, completed=True)
     return summary(prepared, "verified")
 
@@ -1198,6 +1204,7 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
         receipt_handle, canonical_backup, policy_backup, native_handle = handles
         all_handles = list(zip(outputs, handles, strict=True))
         native_written = False
+        expected_backups = dict.fromkeys(backups, b"")
 
         def recheck(skip: Path | None = None) -> None:
             capture.verify(set(destinations))
@@ -1216,6 +1223,8 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
                 )
             for path, handle in all_handles:
                 check_reserved(handle, path)
+            for path, content in expected_backups.items():
+                require(path.read_bytes() == content, "reserved recovery backup changed")
             for path, item in current.items():
                 if path != skip:
                     item.verify()
@@ -1224,12 +1233,14 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
 
         try:
             recheck()
-            for handle, content in (
-                (canonical_backup, prepared["before"]["canonical"]),
-                (policy_backup, prepared["before"]["policy"]),
+            for path, handle, content in (
+                (backups[0], canonical_backup, prepared["before"]["canonical"]),
+                (backups[1], policy_backup, prepared["before"]["policy"]),
             ):
                 handle.write(content)
                 handle.flush()
+                expected_backups[path] = content
+                recheck()
             for target, content in destinations.items():
 
                 def render(staged: Path, value: bytes = content) -> None:
@@ -1254,6 +1265,7 @@ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = Fal
                 "completed independent verification differs",
             )
             finish_receipt(receipt_handle, log, summary(prepared, "complete"), recheck)
+            recheck()
             return summary(prepared, "complete")
         except Exception:
             # A partial attempt is evidence, never a success-shaped mapping link.
