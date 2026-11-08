@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "stage": "validate-v2",
+      "status": "failed",
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-validate-v2.log",
+      "exit_code": null,
+      "explanation": "Evidence added after original review finish; shell wrapper did not preserve validator exit. Exact original draft/log preserved; v3 records actual later final consolidation time, no payload or scientific change."
+    },
+    {
+      "name": "validate-v3",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "validate",
+        "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/native-review-content-v3.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-validate-v3.log",
+      "log_sha256": "9cb58ebb2f7364cf1f9099155a4edc053a18a9e379e33e31981b32bf8fbcbd1c"
+    },
+    {
+      "name": "save-v3",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "save",
+        "--content",
+        "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/native-review-content-v3.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-save-v3.log",
+      "log_sha256": "e39af8b4416a50dbc29bdadf2a831fdb282d1af8e884bc94017ff3e4e5ef26ff"
+    }
+  ],
+  "review_id": "20261108T084949Z-worker04-ferriseltz-source-origin-successor"
+}

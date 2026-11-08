@@ -1,0 +1,94 @@
+{
+  "reviewer": "/root/biological",
+  "author": "/root",
+  "created_at": "2026-11-08T08:47:33.677442+00:00",
+  "status": "complete",
+  "scientific_disposition": "accepted_narrow_scope_unchanged",
+  "purpose": "Additive review of native validation receipts and maintained surfaces after the sealed independent scientific review. No prior sealed file was changed.",
+  "bindings": [
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/independent-review/SEAL-v1.json",
+      "sha256": "bf30917a6f1bc9d5da1c788c818ba0b7206a397761675b3c2ca51a3096cec9d1"
+    },
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/independent-review/successor-review-v1.json",
+      "sha256": "e1d8c7ebcfabc46570b87dce4910e9a1b05adb83e2d878eb0a5a5f4025e3282f"
+    },
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-validation-receipt.json",
+      "sha256": "0e1820b287a6473634c6ac5f3318bcd49cd7c637e2803f57920c5b3fe21ca0a3"
+    },
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/guarded-writer-alias-and-fixture.json",
+      "sha256": "9b76b12653e3c7828fe4b861dddc4590e5045c85dd7ebc7be4bca93eeb2ff404"
+    },
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/closed_schema.log",
+      "sha256": "e18653945bfe8b28f1112455b0b308a146dd20add9587669fb8a6acc93cba72b"
+    },
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/full_overlay_partonomy.log",
+      "sha256": "10ff2db5208962d4a03b821e71222a751207e502c956a0564e3801e240a9ccdf"
+    },
+    {
+      "root": "repository",
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/maintained-surface-inspection.json",
+      "sha256": "7bda5d853ed7cd609bfb06f86fb1fe1cbe4cf1b6c60e836698431924363f104f"
+    },
+    {
+      "root": "repository",
+      "path": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+      "sha256": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e"
+    },
+    {
+      "root": "repository",
+      "path": "data/curated/mapped_ingredients.yaml",
+      "sha256": "8d61eef218f045e26fc1f3db6755446008def7bc5d341b1da2e9b08686743e7c"
+    },
+    {
+      "root": "repository",
+      "path": "mappings/ingredient_mappings.sssom.tsv",
+      "sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221"
+    }
+  ],
+  "selected_proposal_id": "I1239-P-ferric-ammonium-citrate",
+  "selected_after_sha256": "90b583b2603fb0d42edb9d15d2342659f4894195bd4389348b6e4f2bedb61762",
+  "case_id": "CM_NAME:83637b465eeb4e8f0203f455ed0e87a88f2463531cf5f294bf72466f46483953",
+  "candidate_case_sha256": "e25ec16e4e06c1be6afe630c421724db535a6812c0bad6b1bbcca9f78f4425d7",
+  "actual_verification": [
+    "Read both complete native logs and checked their exact hashes and recorded exit codes against the root execution receipt: one changed payload closed-schema validation reported zero errors; the full private overlay reported 3029 records, 119 decompositions, 746 components, zero partonomy violations.",
+    "Verified the guarded-writer/alias/fixture receipt hash and unchanged predecessor validation receipt hash. The prior sealed scientific review separately inspected native alias controls. I did not rerun these validators.",
+    "Independently parsed the complete maintained aggregate and selected its ferric ammonium citrate record; confirmed exact object equality to the complete maintained individual owner and the inspection receipt. Both retain FerriSeltz as EXACT_SYNONYM from kg_microbe.",
+    "Independently parsed the actual maintained SSSOM and confirmed the exact FAC row equals the receipt: MIM:Ferric_Ammonium_Citrate skos:exactMatch CHEBI:31604, with FerriSeltz still present in other.",
+    "Rechecked the selected candidate payload and every file listed in the prior independent seal against their recorded SHA256 values; all remain unchanged."
+  ],
+  "validation_scope": {
+    "executing_author": "/root",
+    "independent_review": "Receipt and log reading, hash verification, direct maintained-surface parsing; not an independent rerun of the validator commands.",
+    "unchanged_baseline_limitation": "The prior frozen duplicate-identifier baseline failure concerning retired CHEBI:86477 and the separately proposed one-row baseline reconciliation remain retained. This alias-only candidate makes no identity or baseline change; no claim that all canonical integration gates pass.",
+    "scientific_inference_from_schema": false
+  },
+  "finding_disposition": {
+    "FAC-F01": "The exact reviewed W04 report candidate corrects its FerriSeltz alias. The defect remains open on the maintained individual, aggregate and SSSOM surfaces because the candidate is not applied.",
+    "FAC-F02": "The four role/properties metadata aliases remain unchanged and nonresolving, as in the sealed review.",
+    "issue_1226": "The exact candidate retains the reviewed truthful LLM_SUGGESTION mapping evidence; no claim about fixing older combined union artifacts.",
+    "union_level_terminal_supersession": false,
+    "W09_approval": false,
+    "combined_TARGET009_approval": false,
+    "maintained_owner_integration_approval": false,
+    "whole_owner_or_export_approval": false
+  },
+  "retained_obligations": [
+    "Canonical application and synchronized export remain separate authorized integration work; no maintained edit was made.",
+    "Union, W09, all 191 owner occurrences, inherited roles, and unrelated identity or source claims remain outside this narrow successor approval.",
+    "No medicine owner, medicine-as-part, inferred excipient quantities, new roles, or source reassignment is approved."
+  ],
+  "blocking_findings_in_bounded_successor": [],
+  "previous_seal_unchanged": true
+}

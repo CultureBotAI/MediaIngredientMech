@@ -1,0 +1,70 @@
+{
+  "scope": "Native review validation, save and one full check for this supplement; independent science is separate.",
+  "checks": [
+    {
+      "stage": "validate-v2",
+      "status": "failed",
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-validate-v2.log",
+      "exit_code": null,
+      "explanation": "Evidence added after original review finish; shell wrapper did not preserve validator exit. Exact original draft/log preserved; v3 records actual later final consolidation time, no payload or scientific change."
+    },
+    {
+      "name": "validate-v3",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "validate",
+        "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/native-review-content-v3.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-validate-v3.log",
+      "log_sha256": "9cb58ebb2f7364cf1f9099155a4edc053a18a9e379e33e31981b32bf8fbcbd1c"
+    },
+    {
+      "name": "save-v3",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "save",
+        "--content",
+        "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/native-review-content-v3.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-save-v3.log",
+      "log_sha256": "e39af8b4416a50dbc29bdadf2a831fdb282d1af8e884bc94017ff3e4e5ef26ff"
+    },
+    {
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "check",
+        "--base",
+        "030ba5a8965bc193955c7c14d125eb098fc56036",
+        "--require-reviews"
+      ],
+      "started_at": "2026-11-08T08:49:56.454181+00:00",
+      "finished_at": "2026-11-08T08:51:31.470008+00:00",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-full-check.log",
+      "log_sha256": "63fe7167a5c9a06f245c43e83ccc88efe2a518c73362512eae511698dda5da53"
+    }
+  ],
+  "native_pair": [
+    {
+      "path": "reviews/structured/20261108T084949Z-worker04-ferriseltz-source-origin-successor/review.yaml",
+      "sha256": "635d4cff38d48ddf54780eb344b7ec11ecf1a045b3a77a21dfac16af5b6dbfa0"
+    },
+    {
+      "path": "reviews/structured/20261108T084949Z-worker04-ferriseltz-source-origin-successor/review.md",
+      "sha256": "35d24a599890834b0c0a8fee2e926ae2249aebfc93d2776edd3873d539eda162"
+    }
+  ],
+  "whole_owner_or_export_approval": false,
+  "timestamp_clarification": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/native-lineage-inspection-time-clarification-v1.json",
+    "sha256": "c886ceee64f72731f978fa4355eb0d67813a982faa871d728394a04b6de1b85a"
+  }
+}

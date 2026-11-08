@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-08T08:44:51.744590+00:00",
+  "payload_sha256": "90b583b2603fb0d42edb9d15d2342659f4894195bd4389348b6e4f2bedb61762",
+  "status": "PASS_for_narrow_changed_payload_and_full_overlay_partonomy",
+  "checks": [
+    {
+      "name": "closed_schema",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_strict.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/issue-1239-v1/native-fixture/selected",
+        "--workers",
+        "1",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/proposal-schema.tsv"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/closed_schema.log",
+      "sha256": "e18653945bfe8b28f1112455b0b308a146dd20add9587669fb8a6acc93cba72b"
+    },
+    {
+      "name": "full_overlay_partonomy",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_component_partonomy.py",
+        "--curated-dir",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/issue-1239-v1/native-fixture/overlay/data/curated"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/full_overlay_partonomy.log",
+      "sha256": "10ff2db5208962d4a03b821e71222a751207e502c956a0564e3801e240a9ccdf"
+    }
+  ],
+  "writer_alias_filename": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/guarded-writer-alias-and-fixture.json",
+    "sha256": "9b76b12653e3c7828fe4b861dddc4590e5045c85dd7ebc7be4bca93eeb2ff404"
+  },
+  "unchanged118payload_validation": {
+    "receipt": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/final-command-receipts.json",
+    "sha256": "e203043fe73fdb8f3e840f0d80517a46f85ee0c5245b47da507028db5aa314b2",
+    "reason": "118 full payloads are byte-identical; only1 changed payload required new closed-schema and guarded serialization. Full prospective partonomy rerun on3029-record private overlay."
+  },
+  "identifier_baseline": "Identity, preferred term, mapping status, paths, parent mappings and all other records are unchanged. Preserve exact earlier frozen duplicate-baseline exit2 on retired CHEBI86477 and separate proposed one-row ledger PASS; no repeat of unchanged duplicate audit, canonical baseline still unchanged.",
+  "source_or_owner_export_approval": false
+}

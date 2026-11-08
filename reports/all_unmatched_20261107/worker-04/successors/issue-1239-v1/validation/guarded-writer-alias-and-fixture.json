@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "payload_sha256": "90b583b2603fb0d42edb9d15d2342659f4894195bd4389348b6e4f2bedb61762",
+  "guarded_roundtrip_sha256": "90b583b2603fb0d42edb9d15d2342659f4894195bd4389348b6e4f2bedb61762",
+  "semantic_roundtrip": true,
+  "catalog_records": 3029,
+  "changed_catalog_file": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+  "unchanged_fields_supporting_identifier_partonomy_reuse": [
+    "identifier",
+    "preferred_term",
+    "mapping_status",
+    "ontology_mapping",
+    "components",
+    "component_assertion",
+    "ingredient_type"
+  ],
+  "native_filename_checks": {
+    "drift": [],
+    "collisions": [],
+    "failure_reasons": []
+  },
+  "synonym_controls": [
+    {
+      "index": 0,
+      "text": "Role: Nitrogen source; Properties: Defined component, Simple component, Organic compound",
+      "source": "CultureMech",
+      "before_resolves": false,
+      "after_resolves": false,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 1,
+      "text": "Role: Nitrogen source; Properties: Organic compound, Defined component, Simple component",
+      "source": "CultureMech",
+      "before_resolves": false,
+      "after_resolves": false,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 2,
+      "text": "Role: Nitrogen source; Properties: Organic compound, Simple component, Defined component",
+      "source": "CultureMech",
+      "before_resolves": false,
+      "after_resolves": false,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 3,
+      "text": "Role: Nitrogen source; Properties: Simple component, Defined component, Organic compound",
+      "source": "CultureMech",
+      "before_resolves": false,
+      "after_resolves": false,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 4,
+      "text": "Ammonium ferric citrate",
+      "source": "kg_microbe",
+      "before_resolves": true,
+      "after_resolves": true,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 5,
+      "text": "E381",
+      "source": "kg_microbe",
+      "before_resolves": true,
+      "after_resolves": true,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 6,
+      "text": "Fe(NH4)citrate",
+      "source": "kg_microbe",
+      "before_resolves": true,
+      "after_resolves": true,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 7,
+      "text": "FerriSeltz",
+      "source": "kg_microbe",
+      "before_resolves": true,
+      "after_resolves": false,
+      "exact_entry_unchanged": false
+    },
+    {
+      "index": 8,
+      "text": "ammonium iron(III) citrate",
+      "source": "kg_microbe",
+      "before_resolves": true,
+      "after_resolves": true,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 9,
+      "text": "Ferric ammmonium citrate",
+      "source": "sssom_other_backfill",
+      "before_resolves": true,
+      "after_resolves": true,
+      "exact_entry_unchanged": true
+    },
+    {
+      "index": 10,
+      "text": "Fe(III)NH4-Citrate",
+      "source": "all_unmatched_20261107_worker04_source_review",
+      "before_resolves": true,
+      "after_resolves": true,
+      "exact_entry_unchanged": true
+    }
+  ],
+  "meaningful_negative_control": "Reintroducing EXACT_SYNONYM for FerriSeltz makes native resolution true; expected rejection check would detect the regression.",
+  "four_nonname_labels_remain_nonresolving": true,
+  "mapping_evidence_unchanged": true,
+  "roles_and_statistics_unchanged": true,
+  "native_inputs": [
+    {
+      "path": "src/mediaingredientmech/synonym_policy.py",
+      "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34"
+    },
+    {
+      "path": "scripts/check_record_filename_case.py",
+      "sha256": "74a19871127372e2680e8776c37b867bb3b82f9b334fd1f8926d996ca205d658"
+    }
+  ]
+}

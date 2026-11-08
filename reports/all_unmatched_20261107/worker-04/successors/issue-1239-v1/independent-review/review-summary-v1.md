@@ -1,0 +1,3 @@
+The exact W04 FAC successor is accepted within its declared scope. The complete payload and both bound SL7 recipes were inspected. PMDA formulation evidence supports making FerriSeltz a nonresolving REJECTED_LABEL while preserving its text and source. Identity, other aliases, mapping evidence, roles and occurrence statistics remain unchanged; prior notes and all17 historical events are preserved.
+
+This corrects only the W04 origin candidate. It does not close the union-level FAC finding, approve W09/combined bytes, release the191-occurrence or role/export holds, or affect Columbia. Final native packaging remains coordinator work.

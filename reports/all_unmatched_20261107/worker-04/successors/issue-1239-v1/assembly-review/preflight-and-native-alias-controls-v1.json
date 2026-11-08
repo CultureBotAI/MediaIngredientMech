@@ -1,0 +1,214 @@
+{
+  "reviewer": "/root/assembly_review",
+  "at": "2026-11-08T08:42:42.273943+00:00",
+  "head": "030ba5a8965bc193955c7c14d125eb098fc56036",
+  "scope": "Independent preflight and native alias controls only. Root candidate/full science/closed accounting/native report still forthcoming. No scientific acceptance or file mutation outside assembly-review.",
+  "triage_handoff_sha256": "104fb4aa417c6a49cab0feda1ffcd24526b0868a42af06640729971664a2d9f4",
+  "published_predecessor_sha256": "0ffadb41562f1baedb86136939efaf34a626805f6ce3eb8847bb72a994c95835",
+  "authentic_before_sha256": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e",
+  "source_review": "Read PMDA September2024 page1 composition-table image and extracted text, plus p2section19 activeingredient text. Product600mgFACin3g with namedadditives differs from genericFAC. No medicine owner, product composition, quantities or roles proposed.",
+  "issue_scope": "Read captured1239issue(no comments),1226comment6718777633 and1237Columbia ownership text/comment6719045619. Root retrievaltimestamps retained; no claim of own network retrieval. Other1237family text is contextual, not independently scientifically re-reviewed here.",
+  "generic_medium_alias_scope": "W04 selected predecessor has Fe(III)NH4-Citrate only; other W09 medium aliases and eight union occurrences are not copied into this single-worker supplement. Root coordinator owns later union rebuild.",
+  "facet_hold": "Four Role/Properties strings already nonresolving; optional FAC-F02 metadata typing is not an export leak or evidence that NITROGEN_SOURCE is false. Provisional role and all source/owner/export holds remain.",
+  "columbia_hold": "BLOCKED_OWNER_CONTINUITY retained; no medicine or Columbia mixedowner fix/union/partition is authorized in this review.",
+  "checks": {
+    "triage_handoff_bound": true,
+    "published_and_authentic_hashes_bound": true,
+    "FerriSeltz_resolves_before": true,
+    "REJECTED_LABEL_negative_control_nonresolving": true,
+    "other_supported_label_controls_unchanged": true,
+    "four_metadata_controls_already_filtered": true,
+    "native_row_before_includes_FerriSeltz": true,
+    "native_row_negative_control_omits_only_FerriSeltz": true
+  },
+  "controls": [
+    {
+      "index": 0,
+      "synonym": {
+        "synonym_text": "Role: Nitrogen source; Properties: Defined component, Simple component, Organic compound",
+        "synonym_type": "RAW_TEXT",
+        "source": "CultureMech"
+      },
+      "mim_resolving": false,
+      "claw_publishable": false
+    },
+    {
+      "index": 1,
+      "synonym": {
+        "synonym_text": "Role: Nitrogen source; Properties: Organic compound, Defined component, Simple component",
+        "synonym_type": "RAW_TEXT",
+        "source": "CultureMech"
+      },
+      "mim_resolving": false,
+      "claw_publishable": false
+    },
+    {
+      "index": 2,
+      "synonym": {
+        "synonym_text": "Role: Nitrogen source; Properties: Organic compound, Simple component, Defined component",
+        "synonym_type": "RAW_TEXT",
+        "source": "CultureMech"
+      },
+      "mim_resolving": false,
+      "claw_publishable": false
+    },
+    {
+      "index": 3,
+      "synonym": {
+        "synonym_text": "Role: Nitrogen source; Properties: Simple component, Defined component, Organic compound",
+        "synonym_type": "RAW_TEXT",
+        "source": "CultureMech"
+      },
+      "mim_resolving": false,
+      "claw_publishable": false
+    },
+    {
+      "index": 4,
+      "synonym": {
+        "synonym_text": "Ammonium ferric citrate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "index": 5,
+      "synonym": {
+        "synonym_text": "E381",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "index": 6,
+      "synonym": {
+        "synonym_text": "Fe(NH4)citrate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "index": 7,
+      "synonym": {
+        "synonym_text": "FerriSeltz",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "index": 8,
+      "synonym": {
+        "synonym_text": "ammonium iron(III) citrate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "index": 9,
+      "synonym": {
+        "synonym_text": "Ferric ammmonium citrate",
+        "synonym_type": "RAW_TEXT",
+        "source": "sssom_other_backfill"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "index": 10,
+      "synonym": {
+        "synonym_text": "Fe(III)NH4-Citrate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "all_unmatched_20261107_worker04_source_review"
+      },
+      "mim_resolving": true,
+      "claw_publishable": true
+    },
+    {
+      "label": "in_memory_REJECTED_LABEL_negative_control_only",
+      "synonym": {
+        "synonym_text": "FerriSeltz",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "kg_microbe"
+      },
+      "mim_resolving": false,
+      "claw_publishable": false
+    }
+  ],
+  "native_before_rows": [
+    {
+      "subject_id": "MIM:Ferric_Ammonium_Citrate",
+      "subject_label": "Ferric ammonium citrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:31604",
+      "object_label": "ferric ammonium citrate",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:LexicalMatching",
+      "source": "MIM:CultureMech|MIM:all_unmatched_20261107 worker04 primary proposal ferric-ammonium-citrate|MIM:curator=/root/correction_chemistry",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "Ammonium ferric citrate|E381|Fe(NH4)citrate|FerriSeltz|ammonium iron(III) citrate|Ferric ammmonium citrate|Fe(III)NH4-Citrate|CAS:1185-57-5",
+      "validation_method": ""
+    }
+  ],
+  "in_memory_negative_control_rows": [
+    {
+      "subject_id": "MIM:Ferric_Ammonium_Citrate",
+      "subject_label": "Ferric ammonium citrate",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:31604",
+      "object_label": "ferric ammonium citrate",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:LexicalMatching",
+      "source": "MIM:CultureMech|MIM:all_unmatched_20261107 worker04 primary proposal ferric-ammonium-citrate|MIM:curator=/root/correction_chemistry",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "Ammonium ferric citrate|E381|Fe(NH4)citrate|ammonium iron(III) citrate|Ferric ammmonium citrate|Fe(III)NH4-Citrate|CAS:1185-57-5",
+      "validation_method": ""
+    }
+  ],
+  "input_sha256": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/HANDOFF.json": "104fb4aa417c6a49cab0feda1ffcd24526b0868a42af06640729971664a2d9f4",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/proposals/chemistry/Ferric_Ammonium_Citrate.final-review-v1.after.yaml": "0ffadb41562f1baedb86136939efaf34a626805f6ce3eb8847bb72a994c95835",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/REPORT.md": "82e683f97a436c50b86806693b134cd32ee00ffe96009e9f5f64d791d046ea92",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/TRIAGE.json": "410dac767e843c8c411dd43cb89b78b98201d2f6fad320ae20f4fafaddbebbd9",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/new-issue-ferriseltz.md": "835aa3d0b4ba3fcda5665f1d2653d7afd83bee99b917e1d74b3626b769bedc2a",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/comment-1226.md": "9b1e0ea72b63d1ce65b1670cccff19e8a7c4f3700f9139693411ee8f0b452b9e",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/native-reproduction.json": "a1167fd739ae77859ff46bf65d71642a85c6d1f81b278aa70768d964a39323d0",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/primary-bindings.json": "08d40ae4c31c5049173dcdeec83b8eb9cfde42bbd7895b6311c649539db8b061",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/primary/ferriseltz-pmda-202409.pdf": "ed32d4c1c55534ae3ebf4eb7e51739d645b751fb63dfe51126c49fc29cb4a98d",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/primary/ferriseltz-pmda-202409.txt": "b6b1b5e284a9340410a2beb2d2f9113e38d1a4c92e364633ebdf9fb8fe3a89ac",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/fac-polypeptone-findings-triage-v1/primary/ferriseltz-page1.png": "7e7a9c6612bd9bf165c835f8e4b9fe7da97a6933fa40634f906fbc8d099e5933",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/MAPPING_SEMANTICS.md": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/docs/record-reviews.md": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/docs/record-review-profile.md": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.claude/skills/review-yaml-category/SKILL.md": "154758ee4b3bd401e19c89d488ff648014c5ec4282c6c1b710de5093ce36c101",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.claude/skills/add-media/SKILL.md": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/src/mediaingredientmech/synonym_policy.py": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/scripts/export_lists.py": "24230cbb1e57dcc76f97c7809763e67e60d6f95987371b1450579036ed9c9fcc",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/scripts/browser_export.py": "a834b3510161a20c027eb8fcb858d7a35f32caba7bd93d3cd74503a2e12302c2",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live-retrieval-receipt.json": "d13fc14555651d11cd20c82cb34fc6c8e476ccdc6ddc2363f0e41f492060349f",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/issue-1239.json": "202edb19ff72c6643ee2ae4ab6fa8eebdee9e844e3bd92fde523c4736a1df851",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/issue-1239-comments.json": "cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/issue-1237.json": "b7b4334befcd7c88c9aba966ff49c1c8ff57103edf611a01082a577ddca0d30c",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/issue-1237-comments.json": "5f4d1365343b51ad2bb55c331f0e68ee1f2a753907e4d595e5c3af9a2e0751db",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/issue-1226.json": "9c24af647c2ea66ce07c70f46fb5bd499d4f4be930c42200342a3de6b0198c03",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/issue-1226-comments.json": "95b7e8d250a82ceba33a03496666b2b3da49beefecd13f0c58bc07cb768966ee",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/comment-6718777633.json": "efe7cc576e79725be609640436a5fea59505034d2cbf096e7fc0005c5c801726",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/provenance/live/remote-head.txt": "e9d75a30bbe7139bcff32eb002c0354e9a3d4b4878a96abc98606479f36c58ae",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "candidate_or_owner_edited": false,
+  "whole_owner_or_export_approval": false
+}
