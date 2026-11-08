@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="23" time="0.784" timestamp="2026-11-08T00:14:11.093939-08:00" hostname="marcins-MacBook-Pro-3.local"><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_exact_claim_preserves_component_enum_and_quality" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_unchanged_historical_human_object_refused" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_same_source_but_different_historical_claim_is_not_misclassified" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_mutated_full_entry_refused" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_duplicate_evidence_pointer_refused" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_missing_or_inappropriate_provenance_refused[new_type-MANUAL_REVIEW]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_missing_or_inappropriate_provenance_refused[classification-ambiguous_needs_review]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_missing_or_inappropriate_provenance_refused[basis-]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_missing_or_inappropriate_provenance_refused[original_flag_indices-value3]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_source_or_hydrate_change_detected_by_frozen_input" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_frozen_input_alias_refused[symlink]" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_frozen_input_alias_refused[hardlink]" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_existing_output_not_overwritten" time="0.002" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_output_parent_alias_refused" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_stale_snapshot_refuses_publication" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_duplicate_output_paths_refused" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_native_unknown_field_refused_before_write" time="0.121" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_native_wrong_component_scope_refused" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_native_partonomy_missing_catalog_target" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_output_outside_private_root_refused" time="0.001" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_proposal_duplicate_owner_refused" time="0.001"><failure message="mediaingredientmech.validation.write_validated.ValidationFailedError: validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_proposal_duplicate_owner_0/candidate.yaml&#10;  - Additional properties are not allowed ('stock_type' was unexpected) in /">evidence_record = {'component_assertion': {'completeness': 'UNKNOWN', 'evidence': [{'evidence_type': 'MANUAL_CURATION', 'source': 'compo...m_assisted': True, 'timestamp': '2026-11-08T08:00:00+00:00'}], 'identifier': 'kgmicrobe.ingredient:guard_fixture', ...}
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_proposal_duplicate_owner_0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10d9735c0&gt;
+
+    def test_proposal_duplicate_owner_refused(evidence_record,tmp_path,monkeypatch):
+&gt;    monkeypatch.setattr(validation,'A',tmp_path);payload=tmp_path/'candidate.yaml';write_validated_ingredient(evidence_record,payload)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../../reports/all_unmatched_20261107/worker-02/final-corrections-v1/test_correction_guards.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'component_assertion': {'completeness': 'UNKNOWN', 'evidence': [{'evidence_type': 'MANUAL_CURATION', 'source': 'compo...m_assisted': True, 'timestamp': '2026-11-08T08:00:00+00:00'}], 'identifier': 'kgmicrobe.ingredient:guard_fixture', ...}
+path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_proposal_duplicate_owner_0/candidate.yaml')
+
+    def write_validated_ingredient(
+        record: dict[str, Any],
+        path: Path,
+        *,
+        target_class: str | None = None,
+        schema_path: Path = DEFAULT_SCHEMA_PATH,
+        yaml_kwargs: dict[str, Any] | None = None,
+    ) -&gt; None:
+        """Write `record` to `path` as YAML, but only if validation passes.
+    
+        Raises `ValidationFailedError` (without writing) when closed-schema
+        validation finds any error. Use in place of `yaml.safe_dump(record, fh)`
+        inside enrichment / migration / merge scripts.
+        """
+        errors = validate_ingredient(record, target_class=target_class, schema_path=schema_path)
+        if errors:
+&gt;           raise ValidationFailedError(path, errors)
+E           mediaingredientmech.validation.write_validated.ValidationFailedError: validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_proposal_duplicate_owner_0/candidate.yaml
+E             - Additional properties are not allowed ('stock_type' was unexpected) in /
+
+../../src/mediaingredientmech/validation/write_validated.py:127: ValidationFailedError</failure></testcase><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_stale_owner_preimage_refused" time="0.000" /><testcase classname="reports.all_unmatched_20261107.worker-02.final-corrections-v1.test_correction_guards" name="test_changed_payload_hash_refused" time="0.001"><failure message="mediaingredientmech.validation.write_validated.ValidationFailedError: validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_changed_payload_hash_refu0/candidate.yaml&#10;  - Additional properties are not allowed ('stock_type' was unexpected) in /">evidence_record = {'component_assertion': {'completeness': 'UNKNOWN', 'evidence': [{'evidence_type': 'MANUAL_CURATION', 'source': 'compo...m_assisted': True, 'timestamp': '2026-11-08T08:00:00+00:00'}], 'identifier': 'kgmicrobe.ingredient:guard_fixture', ...}
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_changed_payload_hash_refu0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x10e30c710&gt;
+
+    def test_changed_payload_hash_refused(evidence_record,tmp_path,monkeypatch):
+&gt;    monkeypatch.setattr(validation,'A',tmp_path);payload=tmp_path/'candidate.yaml';write_validated_ingredient(evidence_record,payload)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../../reports/all_unmatched_20261107/worker-02/final-corrections-v1/test_correction_guards.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+record = {'component_assertion': {'completeness': 'UNKNOWN', 'evidence': [{'evidence_type': 'MANUAL_CURATION', 'source': 'compo...m_assisted': True, 'timestamp': '2026-11-08T08:00:00+00:00'}], 'identifier': 'kgmicrobe.ingredient:guard_fixture', ...}
+path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_changed_payload_hash_refu0/candidate.yaml')
+
+    def write_validated_ingredient(
+        record: dict[str, Any],
+        path: Path,
+        *,
+        target_class: str | None = None,
+        schema_path: Path = DEFAULT_SCHEMA_PATH,
+        yaml_kwargs: dict[str, Any] | None = None,
+    ) -&gt; None:
+        """Write `record` to `path` as YAML, but only if validation passes.
+    
+        Raises `ValidationFailedError` (without writing) when closed-schema
+        validation finds any error. Use in place of `yaml.safe_dump(record, fh)`
+        inside enrichment / migration / merge scripts.
+        """
+        errors = validate_ingredient(record, target_class=target_class, schema_path=schema_path)
+        if errors:
+&gt;           raise ValidationFailedError(path, errors)
+E           mediaingredientmech.validation.write_validated.ValidationFailedError: validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/runtime/test_changed_payload_hash_refu0/candidate.yaml
+E             - Additional properties are not allowed ('stock_type' was unexpected) in /
+
+../../src/mediaingredientmech/validation/write_validated.py:127: ValidationFailedError</failure></testcase></testsuite></testsuites>

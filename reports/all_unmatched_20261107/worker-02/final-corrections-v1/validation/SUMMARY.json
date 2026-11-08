@@ -1,0 +1,98 @@
+{
+  "completed_at": "2026-11-08T08:37:01.271771+00:00",
+  "checks": {
+    "structural": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/structural-review-bound-v1.json",
+      "sha256": "8181e462dc52cf3c1586203a82106dfa27a0b377bad22dc75fe1609c90719e70"
+    },
+    "native_payloads": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/native-v1-receipt.json",
+      "sha256": "e8a00a5bd465dcf341e7d8678fe2262d79d9597f991dd29e771fa89e02805ad7"
+    },
+    "labels": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/labels-v1.json",
+      "sha256": "f30c6f2021f0b8e93f3b72efc8ab9ec182677d9df6081cd918e03acc82dce274"
+    },
+    "helper37": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/helper-tests-v4.log",
+      "sha256": "95969cda1d3023f2b7a731bd6e38da8decae242521c78a722f78a0060a57879d"
+    },
+    "binder11": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/review-binding-tests-v1.log",
+      "sha256": "0a2b653d484301f075e9a929bd7841083118c5c7e4f660a31521d06ac3b79515"
+    },
+    "technical_helpers": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/technical-review-final-v2.json",
+      "sha256": "2372fb09d8a25c39873dca337d7dcd05c359c883989674487db3498db364d78f"
+    },
+    "technical_typing": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/additional-technical-review-v3.json",
+      "sha256": "5a28a94efbb7b2e0e70a57c27b1f7380986f18b7e8d5a86c3f6ef200bdb33662"
+    },
+    "technical_binder": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/review-binding-technical-v4.json",
+      "sha256": "4b9635cbd128f0859254d84a1c2f162ebf990e2408b2a10dff23d8faa6f4e623"
+    },
+    "native_save": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/native-review-save-v3.log",
+      "sha256": "d0884325916659c016058ef4e6a37e4ddbcdc8a5642d256da62ad38d1f1cc881"
+    },
+    "native_all_reviews": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/native-review-check-v1.log",
+      "sha256": "692113cdc62df3dec186c237fbff7dee8ccdf5c07421667dc23398aa79a040bb"
+    },
+    "preservation": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/preservation-v2.json",
+      "sha256": "05cd7c5663b655d8abc2ead4ea0730ac83764545be2a457920f67bbe62910c92"
+    },
+    "post_type_objects": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validation/post-type-exact-object-audit-v1.json",
+      "sha256": "99024f7f976383aa788a165666ac4c1f74d8daccbea2d707d893884c65665860"
+    },
+    "native_independent_pair": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/independent/saved-native-pair-review-v1.json",
+      "sha256": "aff1c19db04c8093a9ddd607e79809491d66bc0bd0532c1dcbe90eba94e6dfc5"
+    }
+  },
+  "actual_results": {
+    "full_case_accounting": "PASS188",
+    "native_schema_writer_roundtrip_payloads": 117,
+    "baseline_catalog_records": 2956,
+    "projected_partonomy_violations": 0,
+    "new_identifier_collisions": 0,
+    "retained_collision_groups": 5,
+    "negative_unknown_field_write_rejected": true,
+    "helper_controls_passed": 37,
+    "review_binding_controls_passed": 11,
+    "canonical_labels": 49,
+    "registry_self_consistency": 67,
+    "unavailable_adapters": [
+      {
+        "proposal_id": "w02-proposal-clarified-rumen-fluid",
+        "ontology_id": "MICRO:0000520",
+        "status": "UNAVAILABLE_ADAPTER",
+        "release_hold_retained": true
+      }
+    ],
+    "native_save_exit_code": 0,
+    "native_all_reviews_check_exit_code": 0,
+    "valid_native_reviews": 1022,
+    "preserved_original_regular_files": 20057,
+    "preserved_original_symlinks": 49,
+    "unexpected_maintained_additions": 0,
+    "new_manual_mapping_evidence_remaining": 0,
+    "unchanged_baseline_manual_mapping_evidence_retained": 1
+  },
+  "commands": {
+    "native_all_reviews": [
+      ".temp/all-unmatched-worker-02/venv/bin/python",
+      "scripts/record_review.py",
+      "check",
+      "--base",
+      "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+      "--require-reviews"
+    ]
+  },
+  "retained_failed_attempts": "Historical fixture/guard/native-document format failures and later successful successors are preserved; no current failure was relabeled a pass. Full details are in development-history and independent revision receipts.",
+  "scientific_or_release_approval_from_validation": false
+}

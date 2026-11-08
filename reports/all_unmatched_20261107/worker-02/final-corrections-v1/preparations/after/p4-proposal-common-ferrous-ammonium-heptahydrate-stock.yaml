@@ -1,0 +1,127 @@
+identifier: kgmicrobe.ingredient:ferrous_ammonium_sulfate_heptahydrate_nominal_0_1_percent_wv_stock
+preferred_term: Nominal 0.1% w/v ferrous ammonium sulfate heptahydrate stock
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ferrous_ammonium_sulfate_heptahydrate_nominal_0_1_percent_wv_stock
+  ontology_label: Nominal 0.1% w/v ferrous ammonium sulfate heptahydrate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/medium/M2625
+    notes: DSMZ718 specifies 2 ml of a 0.1% w/v preparation named Fe(NH4)2(SO4)2 x
+      7 H2O. The source heptahydrate claim is preserved and is not replaced by the
+      familiar hexahydrate. Solvent is unstated; the whole stock has its own identity.
+      No verified exact eligible ontology term or existing whole-preparation owner
+      was established by the bounded source/owner review. This self-registry mapping
+      represents the preparation, not its individual constituents.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf
+    notes: 'Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf.
+      0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+      stock concentration. The source does not disclose stock solvent or other constituents;
+      these are not inferred, and component completeness is UNKNOWN. This whole stock
+      is not identical to its solute. The bare ingredient label is retained in these
+      notes and frozen case evidence, not as a stock synonym. Raw source label: ''Fe(NH4)2(SO4)2
+      x 7 H2O''; source ID: mediadive.ingredient:456.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium718.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf
+    notes: 'Shared nominal preparation scope supported by DSMZ718 andDSMZ399: both
+      explicitly name Fe(NH4)2(SO4)2 x7H2O at0.1%w/v and a2mLreceiving addition. 0.1g/100mL
+      equals1g/L. These facts justify one represented known material scope rather
+      than two candidates distinguished only by recipe number. Neither source supplies
+      solvent/full formulation, so this is not complete-composition equivalence; UNKNOWN
+      closure and all exact-source/owner holds remain. Literal seven waters are retained,
+      without substitution of conventional Mohr hexahydrate. No receiving gas atmosphere
+      is a stock constituent.'
+synonyms: []
+notes: 'Shared nominal preparation scope supported by DSMZ718 andDSMZ399: both explicitly
+  name Fe(NH4)2(SO4)2 x7H2O at0.1%w/v and a2mLreceiving addition. 0.1g/100mL equals1g/L.
+  These facts justify one represented known material scope rather than two candidates
+  distinguished only by recipe number. Neither source supplies solvent/full formulation,
+  so this is not complete-composition equivalence; UNKNOWN closure and all exact-source/owner
+  holds remain. Literal seven waters are retained, without substitution of conventional
+  Mohr hexahydrate. No receiving gas atmosphere is a stock constituent. Both predecessor
+  proposal histories are retained below. Old source-specific local handles are superseded
+  proposal artifacts, not installed aliases or claims of distinct stock chemistry.'
+solution_type: OTHER
+components:
+- component_name: Fe(NH4)2(SO4)2 x 7 H2O
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: PERCENT_W_V
+  component_id: CHEBI:131378
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2625
+    source_record: DSMZ 718 0.1% w/v source-heptahydrate iron stock
+    notes: DSMZ718 specifies 2 ml of a 0.1% w/v preparation named Fe(NH4)2(SO4)2 x
+      7 H2O. The source heptahydrate claim is preserved and is not replaced by the
+      familiar hexahydrate. Solvent is unstated; the whole stock has its own identity.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf
+    notes: 'Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf.
+      0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+      stock concentration. The source does not disclose stock solvent or other constituents;
+      these are not inferred, and component completeness is UNKNOWN. This whole stock
+      is not identical to its solute. The bare ingredient label is retained in these
+      notes and frozen case evidence, not as a stock synonym. Raw source label: ''Fe(NH4)2(SO4)2
+      x 7 H2O''; source ID: mediadive.ingredient:456.'
+  notes: 'Shared nominal preparation scope supported by DSMZ718 andDSMZ399: both explicitly
+    name Fe(NH4)2(SO4)2 x7H2O at0.1%w/v and a2mLreceiving addition. 0.1g/100mL equals1g/L.
+    These facts justify one represented known material scope rather than two candidates
+    distinguished only by recipe number. Neither source supplies solvent/full formulation,
+    so this is not complete-composition equivalence; UNKNOWN closure and all exact-source/owner
+    holds remain. Literal seven waters are retained, without substitution of conventional
+    Mohr hexahydrate. No receiving gas atmosphere is a stock constituent.'
+curation_history:
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_NEW_INGREDIENT
+  changes: DSMZ718 specifies 2 ml of a 0.1% w/v preparation named Fe(NH4)2(SO4)2 x
+    7 H2O. The source heptahydrate claim is preserved and is not replaced by the familiar
+    hexahydrate. Solvent is unstated; the whole stock has its own identity.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:11:19.032553+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: CORRECTED
+  changes: Independent reviewer B requested complete assessment of known components.
+    Resolve verified source-form parts to actual active MIM owners without changing
+    source amounts or inferring any new formulation. Fe(NH4)2(SO4)2 x 7 H2O
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CREATED
+  changes: 'Source-qualified 0.1% w/v stock as explicitly supplied in https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf.
+    0.1 g per 100 mL is represented as 1 g/L. The receiving addition volume is not
+    stock concentration. The source does not disclose stock solvent or other constituents;
+    these are not inferred, and component completeness is UNKNOWN. This whole stock
+    is not identical to its solute. The bare ingredient label is retained in these
+    notes and frozen case evidence, not as a stock synonym. Raw source label: ''Fe(NH4)2(SO4)2
+    x 7 H2O''; source ID: mediadive.ingredient:456. All prior source, native-owner,
+    SSSOM and downstream holds remain in force; this isolated proposal is not publication
+    approval.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:06:25.208302+00:00'
+  curator: codex_worker02_final_corrections_research_c
+  action: CORRECTED
+  changes: 'Issue1237 W02-F-IRON-STOCK-DUPLICATE: consolidate two unapplied source-qualified
+    proposals into one bounded nominal preparation. Shared nominal preparation scope
+    supported by DSMZ718 andDSMZ399: both explicitly name Fe(NH4)2(SO4)2 x7H2O at0.1%w/v
+    and a2mLreceiving addition. 0.1g/100mL equals1g/L. These facts justify one represented
+    known material scope rather than two candidates distinguished only by recipe number.
+    Neither source supplies solvent/full formulation, so this is not complete-composition
+    equivalence; UNKNOWN closure and all exact-source/owner holds remain. Literal
+    seven waters are retained, without substitution of conventional Mohr hexahydrate.
+    No receiving gas atmosphere is a stock constituent.'
+  new_status: MAPPED
+  llm_assisted: true

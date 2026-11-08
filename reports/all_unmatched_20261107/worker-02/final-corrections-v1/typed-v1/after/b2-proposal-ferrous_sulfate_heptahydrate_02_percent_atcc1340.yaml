@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:ferrous_sulfate_heptahydrate_02_percent_atcc1340
+preferred_term: 0.2% ferrous sulfate heptahydrate stock (ATCC1340)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ferrous_sulfate_heptahydrate_02_percent_atcc1340
+  ontology_label: 0.2% ferrous sulfate heptahydrate stock (ATCC1340)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/0E4A2A5D877748B9972B492CE502DBCB.ashx; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2653
+    notes: ATCC1340 explicitly specifies0.2%FeSO4·7H2O stock and0.4mL addition. Percent
+      basis and stock solvent are unspecified. Do not equate this with M2649 explicit
+      w/v formulation or infer full formulation from the receiver. Component completeness
+      is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+      This is the named preparation at the cited source scope; no full-formulation
+      equivalence with other products is asserted.
+notes: ATCC1340 explicitly specifies0.2%FeSO4·7H2O stock and0.4mL addition. Percent
+  basis and stock solvent are unspecified. Do not equate this with M2649 explicit
+  w/v formulation or infer full formulation from the receiver. Component completeness
+  is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+  This is the named preparation at the cited source scope; no full-formulation equivalence
+  with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: ATCC1340 explicitly specifies0.2%FeSO4·7H2O stock and0.4mL addition. Percent
+    basis and stock solvent are unspecified. Do not equate this with M2649 explicit
+    w/v formulation or infer full formulation from the receiver. Component completeness
+    is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+    This is the named preparation at the cited source scope; no full-formulation equivalence
+    with other products is asserted. Isolated proposal, pending independent and coordinator
+    review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.207464+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: FeSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:75836
+  concentration_value: '0.2'
+  concentration_unit: PERCENT
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/0E4A2A5D877748B9972B492CE502DBCB.ashx; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2653
+    source_record: 0.2% FeSO4 . 7H2O
+    notes: ATCC1340 explicitly specifies0.2%FeSO4·7H2O stock and0.4mL addition. Percent
+      basis and stock solvent are unspecified. Do not equate this with M2649 explicit
+      w/v formulation or infer full formulation from the receiver.

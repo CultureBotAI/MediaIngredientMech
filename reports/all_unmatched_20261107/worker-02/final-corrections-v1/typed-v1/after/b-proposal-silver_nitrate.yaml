@@ -1,0 +1,47 @@
+identifier: CHEBI:32130
+preferred_term: silver(1+) nitrate
+ontology_mapping:
+  ontology_id: CHEBI:32130
+  ontology_label: silver(1+) nitrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:32130
+    notes: Exact substance verified from official ChEBI record and frozen source contexts
+      in reports/all_unmatched_20261107/worker-02/b; no salt, hydrate or stock specificity
+      inferred.
+  - evidence_type: LLM_SUGGESTION
+    source: reports/all_unmatched_20261107/worker-02/b/evidence.json
+    notes: 'Create distinct silver(1+) nitrate owner from exact ontology and source
+      ingredient evidence. No stock, salt or hydrate variant is inferred. Sources:
+      https://mediadive.dsmz.de/medium/P4; https://www.bacmedia.dsmz.de/medium/P4;
+      https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_32130'
+synonyms:
+- synonym_text: AgNO3
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech frozen source case CM_NAME:8bf0c6851ed47d10bea51b1b9249c734bfee6c2a7e8e122314bb75d63fd28414
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7761-88-8
+  molecular_formula: AgNO3
+  data_source: ChEBI official OLS capture; source-bound worker02 review
+curation_history:
+- timestamp: '2026-11-08T05:23:20.450045+00:00'
+  curator: codex_worker02_source_review
+  action: CREATED
+  changes: Create distinct silver(1+) nitrate owner from exact ontology and source
+    ingredient evidence. No stock, salt or hydrate variant is inferred. Isolated proposal
+    only; coordinator must re-review changed owner and synchronize native outputs
+    before application.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.145495+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0,1 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true

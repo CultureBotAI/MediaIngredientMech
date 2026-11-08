@@ -1,0 +1,209 @@
+{
+  "reviewer": "reviewer-c (/root/media)",
+  "status": "complete",
+  "scientific_disposition": "changes_requested",
+  "author_head": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+  "created_at": "2026-11-08T07:14:13.973084+00:00",
+  "purpose": "Post-seal assembly challenge: actual scientific unknowns versus feasible source-qualified partial preparation work.",
+  "conclusion": "The challenge is upheld. No inspected source or governing contract establishes that partial preparation curation is infeasible for NBRC869 or DSMZ375. The sealed review applied the preparation allowance inconsistently: missing exact chemical identity remains a valid hold, but cannot by itself defer these explicitly described solution/stock contexts.",
+  "sealed_outputs_preserved": {
+    "case-assessments.json": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+    "payload-assessments.json": "527f07c7636f9f022d7de67c654d64b4b90518b91c21215a165a7b760f0230b4",
+    "findings.json": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1",
+    "read-register.json": "4a75d6fada5bf594753d1b794b00c3603bb9d309f0b86ef966763046f84ce615",
+    "review-summary.md": "affcee97bce9887279646514c01d091bb0fe233cd435e7ec2a297e77b1d2a657"
+  },
+  "sealed_scope_receipt_sha256": "64a3f4a728fb1b659cebcff9cbcaf9fe19619ac12209418cb223ed04f3ed83d4",
+  "original_decisions_file": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/decisions.json",
+    "sha256": "cc97c2346f44e2398a0657a7e90513f104331cc6fceee80e49eca8035ec39edf"
+  },
+  "decision_hash_method": "sha256 of UTF-8 json.dumps(decision, sort_keys=True, separators=(comma,colon), ensure_ascii=False); exact containing-file hash also provided.",
+  "contract_basis": {
+    "interpretation": "§3 prohibits invented exact salt/form identities; §6 separates whole preparation from components and explicitly permits named ungrounded parts and incomplete assertions. Add-media permits registry preparations and variable/undefined mixtures. These authorize representation at known scope, not invented missing values. A source-qualified partial owner is not a declaration of one fully characterized composition.",
+    "references": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "sections_reread": "§3 identity granularity; §6 whole versus components, UNMAPPED component scope and explicit completeness"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.claude/skills/add-media/SKILL.md",
+        "sha256": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b",
+        "sections_reread": "Overview; Steps2/3: registry preparation identity, undefined mixtures, optional concentration pair and ungrounded parts"
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "index": 109,
+      "case_id": "CM_NAME:d43bf05b39ad79c197b613ac5a34b7c8dcfc03ec4a8604a2424723f15dbaa0bd",
+      "case_input_sha256": "0992554221aa50d9df1dc894298b31a2e2c4df22ddcf9f438dd82b53566a6faf",
+      "original_decision_canonical_json_sha256": "19f553bd7979a731bd8f308eddefaf15882908f24a99d942f2814904752bc109",
+      "revised_verdict": "changes_requested_feasible_preparation_work_deferred",
+      "supersedes_review_scope": "The sealed case109 endorsement of no-change is superseded insofar as it treated missing chemical form/stock strength as sufficient to defer the preparation representation.",
+      "primary_facts": [
+        "NBRC869 table lists approximately20mg dithionite in the receiving recipe.",
+        "Its instructions separately require aseptic, anaerobic addition of dithionite solution using sterile syringes after autoclaving.",
+        "The phrase aqueous solution in the following sentence applies to sodium glutamate and sodium thiosulfate; it does not establish dithionite solvent."
+      ],
+      "genuine_unknowns": [
+        "Dithionite counterion and supplied chemical form",
+        "Stock strength, solvent and complete stock composition",
+        "Exact chemical equivalence to sodium dithionite or a commercial product"
+      ],
+      "authorized_work_to_complete": "Prepare a bounded NBRC869 dithionite preparation representation with honest partial/unknown composition, or reconcile an existing matching preparation if found. Source-qualified preparation identity is supported even though exact salt identity is not. Use an unresolved source-literal component without component_id and no concentration, or no component assertion if components cannot be asserted; do not map the whole preparation to CHEBI42160 or CHEBI66870.",
+      "not_authorized_by_evidence": [
+        "No calcium inference from ca.",
+        "No sodium counterion or water inference",
+        "No20mg receiving-recipe amount as stock concentration",
+        "No global exact alias from Dithionite(ca.) to a stock or sodium salt",
+        "No EXACT_FORMULATION assertion against the full medium"
+      ],
+      "occurrence_applicability": [
+        "CM_OCC:75002e72fa268f68885782cc363434df2ecbb7dd63781314faeb31c4d2cf47ee"
+      ],
+      "lookup_conclusion": "Ignored-inclusive lookup found Dithionite anion, Sodium_Dithionite and its REJECTED Na2s2o4 tombstone, but no named dithionite stock among maintained matching records or selected published proposals. The chemical owners are not the preparation. Their inherited claims were read but are not approved.",
+      "retained_hold": "Exact purchasable salt/form, full formulation and global source-label identity remain unresolved after preparation curation."
+    },
+    {
+      "indices": [
+        29,
+        165
+      ],
+      "cases": [
+        {
+          "index": 29,
+          "case_id": "CM_NAME:2feb52ed67f813e796ebca4439616167b770c91f3f19dec61dc3907b8399f0cf",
+          "case_input_sha256": "b6f0d4ad68714814384d741c81dec0dfb86f02038677804ed2985d6a2bf89629",
+          "original_decision_canonical_json_sha256": "3b77bf6bcce70e9745b66a031b65259cd1226e6bee7a138b535563df08c22a3c"
+        },
+        {
+          "index": 165,
+          "case_id": "KG_CASE:9a63321cc5427c62952c9a1dab31dddb9eb4c2602949386ec2a5e06b85d6bfca",
+          "case_input_sha256": "e40758ff0368437d07469b4f4255edadc54c5bc0f51509b29ea4dc33be45d6bd",
+          "original_decision_canonical_json_sha256": "363f434154899266c147364a2d627654d01157b95e4d9db131e26516492b27e4"
+        }
+      ],
+      "revised_verdict": "changes_requested_wording_and_preparation_curation",
+      "supersedes_review_scope": "W02C-003 remains valid, but its wording-only bounded fix was incomplete. A concrete partial preparation representation must also be assessed and produced; exact chemical holds alone do not justify deferral.",
+      "primary_facts": [
+        "DSMZ375 table names0.30g Cystein-HCl x2H2O for the receiving recipe.",
+        "Preparation step1 requires cysteine addition from a sterile anoxic stock prepared under100%N2.",
+        "The explicit filtration instruction applies to DTT and vitamin solutions. It does not establish the sterilization method of the cysteine stock.",
+        "DSMZ1107 separately specifies a5%w/v cysteine-HCl x2H2O solution and filtration; those additional facts do not transfer to375."
+      ],
+      "genuine_unknowns": [
+        "Cysteine stereochemistry and validity/intended meaning of the unusual literal two-water hydrochloride form",
+        "DSMZ375 stock strength, solvent, complete composition and sterilization method",
+        "Whether the375 stock has the same composition as the1107 5% stock or another existing cysteine preparation"
+      ],
+      "authorized_work_to_complete": "Represent the source-defined sterile anoxic cysteine-HCl preparation used in DSMZ375 at its known scope, preserving the literal uncertain solute as UNMAPPED if a component is asserted. Unknown concentration and chemical form do not prevent a bounded preparation/class registry representation. Reconcile owner granularity with the existing1107 preparation and L-cysteine hydrate solution before minting; source ID alone is not evidence of a chemically disjoint product. If a source-qualified partial record is used, its denotation and unresolved overlap must be explicit, with no exact-composition or disjointness claim.",
+      "case29_bindings": {
+        "dsmz375_preparation_scope": [
+          "CM_OCC:51579d9b15c67f614c3908fc413fa2b7ca277f5295c05be09941a765d2d37910",
+          "CM_OCC:7093245bb848baf0b5a34d6f507d97a515c087f2e700022918010bc10e76073b",
+          "CM_OCC:eae05ab92796b93183c6270c7c9c4bb694800836f1d4b2a932bd02993ae8486c"
+        ],
+        "unchanged_dsmz1107_5_percent_scope": [
+          "CM_OCC:e7da09de0c588f7ddec050d5abf1ce5865a5fa95c7a48d62a257c2ba008b84c5",
+          "CM_OCC:66a6e406565070564b8d3a1044079b72eb8e5f63506fc4a7a5c24ac6e240bfe4",
+          "CM_OCC:d5314246c150d1779fbc661032a4dad9980f79f6a5c299096e15d35b907f441f"
+        ]
+      },
+      "case165_binding": "Keep mediadive.ingredient:983 as the unresolved chemical/source-ingredient identity. Link its DSMZ375 usage context to the preparation assessment; do not globally remap ingredient983 or its raw label to the whole stock, and do not manufacture occurrence IDs for the KG case.",
+      "not_authorized_by_evidence": [
+        "No L stereochemistry or monohydrate substitution",
+        "No0.30g receiving-recipe amount as stock concentration",
+        "No water,5%w/v or filtration inference for375",
+        "No equation of375 stock with1107 stock",
+        "No declaration that two source-qualified records are proven chemically distinct",
+        "No N2 atmosphere as a material component",
+        "No generic Cystein-HCl x2H2O alias globally resolving to the stock"
+      ],
+      "lookup_conclusion": "The only matching maintained cysteine solution explicitly carries L/hydrate scope; the published1107 stock explicitly carries5%w/v. Neither establishes exact375 composition. This requires bounded owner reconciliation and representation, not silent reuse or an identity hold on all preparation work.",
+      "retained_hold": "The unresolved chemical-form claim remains. Case165 is not an exact-stock source ID; only its source-use context can support a preparation backlink."
+    }
+  ],
+  "finding_lineage": {
+    "extend_existing_cause_family": "W02C-002: feasible bounded preparation work deferred by demanding exact formulation/form facts first",
+    "expand_existing_finding": "W02C-003: retain source-wording defect and add concrete preparation-curation obligation",
+    "no_new_independent_cause_required": true,
+    "superseded_review_conclusions": [
+      "case109 bounded no-change endorsement insofar as it defers preparation work",
+      "W02C-003 wording-only remedy"
+    ]
+  },
+  "acceptance_checks": [
+    "Produce/reconcile exact isolated preparation payloads and bind the correct source occurrences/context without editing published author artifacts.",
+    "Independent reviewer checks denotation, unresolved owner overlap, component assertion and every explicitly unknown field.",
+    "Preserve109 exact-salt hold and29/165 chemical-form/stereochemistry hold.",
+    "Keep DSMZ375 and1107 applicability partition explicit; case165 retains chemical identity scope.",
+    "Do not use receiving mass as stock concentration or infer solvent/sterilization/counterion.",
+    "Full identity/publication/downstream holds remain; no complete-owner or export approval."
+  ],
+  "actual_source_rereads": [
+    {
+      "evidence_id": "a-primary-primary-a88fe2ac6e424e19",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/a/captures/primary-a88fe2ac6e424e19.pdf",
+      "sha256": "4951273b45475689b009f47438a6a74075df48d468326f2c8b28d50c8b92cbc2",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium375.pdf",
+      "original_accessed_at": "2026-11-08T05:07:03.465929+00:00",
+      "actual_read_scope": "Full PDF text reread"
+    },
+    {
+      "evidence_id": "a-primary-primary-beef55cb4575fc62",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/a/captures/primary-beef55cb4575fc62.pdf",
+      "sha256": "70c78679367d4a01daa7cdafd9828c19265d4fa819746c4715f73fb8518b3547",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1107.pdf",
+      "original_accessed_at": "2026-11-08T05:07:03.522570+00:00",
+      "actual_read_scope": "Full PDF text reread"
+    },
+    {
+      "evidence_id": "b-source-8e304c12faf5af99",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/b/captures/source-8e304c12faf5af99ee8b.bin",
+      "sha256": "9131b5b7cd28f3f3c3a5b38cbeb50cfebeae7c9e5f18ed3119f2957bb739d7e7",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=869",
+      "original_accessed_at": "2026-11-08T05:07:15.688235+00:00",
+      "actual_read_scope": "Full visible HTML recipe text reread; scripts/styles omitted"
+    }
+  ],
+  "actual_baseline_rereads": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/data/ingredients/mapped/Dithionite.yaml",
+      "sha256": "223989fc29bf0ff1986c59a2d0abc929cd5751c8a9c43a50307b813e2a554ba5",
+      "identifier": "CHEBI:42160",
+      "mapping_status": "MAPPED",
+      "actual_read_scope": "complete baseline record including inherited aliases, roles, properties and history"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/data/ingredients/mapped/Sodium_Dithionite.yaml",
+      "sha256": "5ca626463094c6d84a610a408f11b7c904421bc9c421aac4b8507c271c7bb1d1",
+      "identifier": "CHEBI:66870",
+      "mapping_status": "MAPPED",
+      "actual_read_scope": "complete baseline record including inherited aliases, roles, properties and history"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/data/ingredients/mapped/Na2s2o4.yaml",
+      "sha256": "2a370f469e3a425a6f79d1bbada66f77767b8a7fff649951dffaa3ec90145fc5",
+      "identifier": "CHEBI:66870",
+      "mapping_status": "REJECTED",
+      "actual_read_scope": "complete baseline record including inherited aliases, roles, properties and history"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml",
+      "sha256": "ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105",
+      "identifier": "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+      "mapping_status": "MAPPED",
+      "actual_read_scope": "complete baseline record including inherited aliases, roles, properties and history"
+    }
+  ],
+  "lookup": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-c/addenda/preparation-lookup-v1.txt",
+    "sha256": "fea05ddb342dc0111f76fed34d281bdbd65704af3cca19265d5e13f6e1526d6b",
+    "ignored_files_included": true,
+    "scope": "Maintained per-record owners, label_index.csv and selected published successor proposals; not a claim that every archived file outside these roots was searched."
+  },
+  "incidental_owner_limits": "The lookup candidates retain unrelated inherited alias problems (including scutellarin strings on sodium dithionite and QSY9/instruction text on the cysteine solution). Their presence is not identity evidence and this addendum grants no whole-owner approval or additional mutation authority.",
+  "mutations": "New reviewer addendum/search receipt only. No sealed output, author artifact or maintained record changed."
+}

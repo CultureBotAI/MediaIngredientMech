@@ -1,0 +1,1368 @@
+{
+  "checked_at": "2026-11-08T07:16:21.629522+00:00",
+  "reviewer": "/root/assembly_review",
+  "ignored_inclusive": true,
+  "scope": "All JSON files in complete author artifact tree without filename filters; same explicit finding-object predicate as index",
+  "json_files": 1064,
+  "non_json_or_decode_failures": [
+    "reports/all_unmatched_20261107/worker-02/context/se-acid-issue-search.json",
+    "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/mg-cas-lead-not-mn.json",
+    "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/mg6-icsc.json",
+    "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/phc-commonchem-html.json",
+    "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/mesh-netropsin-browser.json",
+    "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/phc-tss.json"
+  ],
+  "extra_finding_objects": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/0",
+      "object": {
+        "finding_id": "b-source-defect-66",
+        "scope_index": 66,
+        "case_id": "CM_NAME:6f29a0416dad4b5abe39633c347267176782130cb98b269871909d3e1c4a24ee",
+        "case_input_sha256": "66f8a81d0e35559b85ffab25d5ef3a28e9e40a76bbd4a228481a01a01bff00d9",
+        "raw_source_label": "KAl(SO4)2\u00b72H2O",
+        "kind": "hydrate_transcription",
+        "contrast": "Frozen and TOGO raw KAl(SO4)2\u00b72H2O; original NBRC1126 table KAl(SO4)2\u00b712H2O0.018g in trace elements solution.",
+        "required_source_action": "Occurrence-specific two-to-twelve water correction; preserve original erroneous token as non-resolving provenance.",
+        "primary_locator": "NBRC1126 trace elements table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:e6640f4c8df8d9a97bc891e9413c47a2d362ccf69ec85a90f108b11f9ee6737d",
+            "recipe_id": "CultureMech:008456",
+            "source_file": "data/normalized_yaml/archaea/TOGO_M1882_Methanoregula_medium.yaml",
+            "component_path": "ingredients/25",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M1882_Methanoregula_medium.yaml",
+            "source_file_sha256": "5cb8d12c30e7e197fd1015eb5164daa1ba12d9b41d37ded095055195be5ad763",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "0.018"
+              },
+              "mediaingredientmech_term": {
+                "id": "MediaIngredientMech:000293",
+                "label": "KAl(SO4)2\u00b72H2O"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "KAl(SO4)2\u00b72H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-760da802b292f0cf",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1126",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-760da802b292f0cfa978.bin",
+              "sha256": "4b128503477c747ba28eba1b6e6e2860fd814f53d0471943a387f322322ffefd"
+            },
+            "accessed_at": "2026-11-08T05:07:14.688581+00:00"
+          },
+          {
+            "evidence_id": "b-togo-2f27f98fcc5afb90",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1882",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M1882.json",
+              "sha256": "102576db61ecdb04ea8dcab640b0f2fcc2d52776a7f5dded3c569cc9bfaf0ab5"
+            },
+            "accessed_at": "2026-11-08T05:19:54.547528+00:00"
+          }
+        ],
+        "prior_independent_review": {
+          "finding_id": "b-source-defect-66",
+          "case_id": "CM_NAME:6f29a0416dad4b5abe39633c347267176782130cb98b269871909d3e1c4a24ee",
+          "scope_index": 66,
+          "status": "approve",
+          "reasoning": "NBRC1126 directly specifies KAl(SO4)2.12H2O in its trace recipe, whereas the frozen and derived TOGO token has two waters. The original supports twelve waters for this occurrence only; retain the erroneous literal as non-resolving provenance.",
+          "occurrence_ids": [
+            "CM_OCC:e6640f4c8df8d9a97bc891e9413c47a2d362ccf69ec85a90f108b11f9ee6737d"
+          ],
+          "evidence_ids_checked": [
+            "b-source-760da802b292f0cf",
+            "b-togo-2f27f98fcc5afb90"
+          ]
+        },
+        "triage_assessment": "Inspected original NBRC1126 HTML table with explicit subscript markup: KAl(SO4)2\u00b712H2O, 0.018 g in trace elements. TOGO1882 component_name explicitly has 2 waters and generic aluminum potassium sulfate type; the twelve-water identity comes from the original NBRC recipe. Preserve trace-stock stage and original quantity.",
+        "current_recipe_checks": [
+          {
+            "occurrence_id": "CM_OCC:e6640f4c8df8d9a97bc891e9413c47a2d362ccf69ec85a90f108b11f9ee6737d",
+            "commit": "199cd9191881e8e929cd95ea0ed13aabe388e58c",
+            "capture": {
+              "root": "artifact",
+              "path": "context/a-live-sourcefiles/TOGO_M1882_Methanoregula_medium.yaml",
+              "sha256": "5cb8d12c30e7e197fd1015eb5164daa1ba12d9b41d37ded095055195be5ad763"
+            },
+            "same_bytes_as_frozen": true,
+            "same_exact_component_as_frozen": true
+          }
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/0/prior_independent_review",
+      "object": {
+        "finding_id": "b-source-defect-66",
+        "case_id": "CM_NAME:6f29a0416dad4b5abe39633c347267176782130cb98b269871909d3e1c4a24ee",
+        "scope_index": 66,
+        "status": "approve",
+        "reasoning": "NBRC1126 directly specifies KAl(SO4)2.12H2O in its trace recipe, whereas the frozen and derived TOGO token has two waters. The original supports twelve waters for this occurrence only; retain the erroneous literal as non-resolving provenance.",
+        "occurrence_ids": [
+          "CM_OCC:e6640f4c8df8d9a97bc891e9413c47a2d362ccf69ec85a90f108b11f9ee6737d"
+        ],
+        "evidence_ids_checked": [
+          "b-source-760da802b292f0cf",
+          "b-togo-2f27f98fcc5afb90"
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/1",
+      "object": {
+        "finding_id": "b-source-defect-74",
+        "scope_index": 74,
+        "case_id": "CM_NAME:8039182ccb56665e768289fb1a2063527f85a0e26a2984ea03323179ecb84441",
+        "case_input_sha256": "96bd3b51b84da11f78dcb8b6586aa73a669e5f85616b436abbe64e422d318617",
+        "raw_source_label": "ATP",
+        "kind": "supplied_counterion_lost",
+        "contrast": "Frozen CDM/LP ATP(CHEBI15422)0.00036mM; original Merlen1999 Table1 ATP(Na2)0.36\u00b5M. Quantity agrees, supplied disodium form was omitted.",
+        "required_source_action": "Correct onlyCultureMech007240 occurrence to source-specific disodiumATP context; do not generalize to25 otherATP cases or infer hydration.",
+        "primary_locator": "Originalp42Table1; renderedmerlen-page42.png visually checked",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:fdffaad87b725dedd6eb08e7e52d3f375b86991dafdaff0d047cefd347e2a1fd",
+            "recipe_id": "CultureMech:007240",
+            "source_file": "data/normalized_yaml/bacterial/cdm_lp.yaml",
+            "component_path": "ingredients/0",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/cdm_lp.yaml",
+            "source_file_sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31",
+            "raw_component": {
+              "concentration": {
+                "unit": "MILLIMOLAR",
+                "value": "0.00036"
+              },
+              "notes": "Restored from MediaDB compound row C00002; the archived leading compound labels are corrupt, while the row sequence preserves the KEGG identity.",
+              "preferred_term": "ATP",
+              "term": {
+                "id": "CHEBI:15422",
+                "label": "ATP"
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-merlen1999-table1",
+            "url": "https://citeseerx.ist.psu.edu/document?doi=6d6d6ab5ec65f241db3a1bf37332a12556aa254c&repid=rep1&type=pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/review-a-merlen-293cd6aa6001a127.bin",
+              "sha256": "36aab822e2b8cbabd34c1239364e4b669e010e186f79c9896e7dcae6c6cd3bdc"
+            },
+            "accessed_at": "2026-11-08T05:29:22.772721+00:00"
+          }
+        ],
+        "prior_independent_review": {
+          "finding_id": "b-source-defect-74",
+          "case_id": "CM_NAME:8039182ccb56665e768289fb1a2063527f85a0e26a2984ea03323179ecb84441",
+          "scope_index": 74,
+          "status": "approve",
+          "reasoning": "The rendered Merlen1999 Table1 visibly reads ATP (Na2) 0.36 micromolar; extraction text misreads the micro symbol. Frozen 0.00036 mM is quantitatively equivalent, so the concrete defect is missing disodium form for CultureMech007240. It does not prove the supplied form of the other25 ATP occurrences or any hydration.",
+          "occurrence_ids": [
+            "CM_OCC:fdffaad87b725dedd6eb08e7e52d3f375b86991dafdaff0d047cefd347e2a1fd"
+          ],
+          "evidence_ids_checked": [
+            "b-merlen1999-table1"
+          ]
+        },
+        "triage_assessment": "Visually inspected rendered original Merlen Table 1 on printed page42: ATP (Na2), 0.36 \u00b5M. Current/frozen 0.00036 MILLIMOLAR is numerically equivalent. Missing disodium form is occurrence-specific; neither ATP hydration nor other25 ATP occurrences is established.",
+        "current_recipe_checks": [
+          {
+            "occurrence_id": "CM_OCC:fdffaad87b725dedd6eb08e7e52d3f375b86991dafdaff0d047cefd347e2a1fd",
+            "commit": "199cd9191881e8e929cd95ea0ed13aabe388e58c",
+            "capture": {
+              "root": "artifact",
+              "path": "context/a-live-sourcefiles/cdm_lp.yaml",
+              "sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31"
+            },
+            "same_bytes_as_frozen": true,
+            "same_exact_component_as_frozen": true
+          }
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/1/prior_independent_review",
+      "object": {
+        "finding_id": "b-source-defect-74",
+        "case_id": "CM_NAME:8039182ccb56665e768289fb1a2063527f85a0e26a2984ea03323179ecb84441",
+        "scope_index": 74,
+        "status": "approve",
+        "reasoning": "The rendered Merlen1999 Table1 visibly reads ATP (Na2) 0.36 micromolar; extraction text misreads the micro symbol. Frozen 0.00036 mM is quantitatively equivalent, so the concrete defect is missing disodium form for CultureMech007240. It does not prove the supplied form of the other25 ATP occurrences or any hydration.",
+        "occurrence_ids": [
+          "CM_OCC:fdffaad87b725dedd6eb08e7e52d3f375b86991dafdaff0d047cefd347e2a1fd"
+        ],
+        "evidence_ids_checked": [
+          "b-merlen1999-table1"
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/2",
+      "object": {
+        "finding_id": "b-source-defect-76",
+        "scope_index": 76,
+        "case_id": "CM_NAME:849cf52732c076356294f5f6158cab770bc61a61f46f4c0fe3f60f2d68c7c165",
+        "case_input_sha256": "1609efe1b731491b89722610473d37ca04d616cd24d2ddfaf701bbde1c303f33",
+        "raw_source_label": "Cd(NO3).4H2O",
+        "kind": "source_formula_field_conflict",
+        "contrast": "Frozen and TOGO rawCd(NO3).4H2O3\u00b5M; same primaryAPI separately types Cadmium nitrate tetrahydrateGMO002395.",
+        "required_source_action": "Provider/case-scoped formula repair toCd(NO3)2\u00b74H2O is supported by named compound; do not publish malformed literal as global alias.",
+        "primary_locator": "Gaffron+Se trace-metal table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:1599db70fd05b6d4e592334c3f2735faa12b50230c8810a7d08c76f6277bfe81",
+            "recipe_id": "CultureMech:008849",
+            "source_file": "data/normalized_yaml/bacterial/pcr_s11_medium.yaml",
+            "component_path": "ingredients/23",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/pcr_s11_medium.yaml",
+            "source_file_sha256": "d999969421b96869ea832e3d126998661c122268c824661eca03f5b1ba1b048e",
+            "raw_component": {
+              "concentration": {
+                "unit": "MICROMOLAR",
+                "value": "3"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "Cd(NO3).4H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-reused-689514d53e5e1369",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/reused-togo-M2262.json",
+              "sha256": "b5776fddefb8ec19fb2321bda3dad07b72cc0b0ed0cb9f27b9b39847803d7c22"
+            },
+            "accessed_at": "2026-11-08T05:07:01.617702+00:00"
+          },
+          {
+            "evidence_id": "b-togo-a5447f8f1279d666",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2262.json",
+              "sha256": "b5776fddefb8ec19fb2321bda3dad07b72cc0b0ed0cb9f27b9b39847803d7c22"
+            },
+            "accessed_at": "2026-11-08T05:19:56.476340+00:00"
+          }
+        ],
+        "prior_independent_review": {
+          "finding_id": "b-source-defect-76",
+          "case_id": "CM_NAME:849cf52732c076356294f5f6158cab770bc61a61f46f4c0fe3f60f2d68c7c165",
+          "scope_index": 76,
+          "status": "approve",
+          "reasoning": "M2262 preserves Cd(NO3).4H2O and separately identifies cadmium nitrate tetrahydrate GMO002395 at 3 micromolar. The extra nitrate is supported by the named source identity, not by changing the raw literal into an exact global synonym. This is a provider raw-label/type conflict.",
+          "occurrence_ids": [
+            "CM_OCC:1599db70fd05b6d4e592334c3f2735faa12b50230c8810a7d08c76f6277bfe81"
+          ],
+          "evidence_ids_checked": [
+            "b-reused-689514d53e5e1369",
+            "b-togo-a5447f8f1279d666"
+          ]
+        },
+        "triage_assessment": "Inspected actual M2262 JSON: raw Cd(NO3).4H2O, volume3, unit uM, GMO_002395, label Cadmium nitrate tetrahydrate. This is a provider raw-label/type conflict, not evidence that CultureMech alone lost the coefficient. Named source entity supports balanced Cd(NO3)2\u00b74H2O for this occurrence. Keep Gaffron+Se stock context; do not claim3\u00b5M as final-medium dose.",
+        "current_recipe_checks": [
+          {
+            "occurrence_id": "CM_OCC:1599db70fd05b6d4e592334c3f2735faa12b50230c8810a7d08c76f6277bfe81",
+            "commit": "199cd9191881e8e929cd95ea0ed13aabe388e58c",
+            "capture": {
+              "root": "artifact",
+              "path": "context/a-live-sourcefiles/pcr_s11_medium.yaml",
+              "sha256": "d999969421b96869ea832e3d126998661c122268c824661eca03f5b1ba1b048e"
+            },
+            "same_bytes_as_frozen": true,
+            "same_exact_component_as_frozen": true
+          }
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/2/prior_independent_review",
+      "object": {
+        "finding_id": "b-source-defect-76",
+        "case_id": "CM_NAME:849cf52732c076356294f5f6158cab770bc61a61f46f4c0fe3f60f2d68c7c165",
+        "scope_index": 76,
+        "status": "approve",
+        "reasoning": "M2262 preserves Cd(NO3).4H2O and separately identifies cadmium nitrate tetrahydrate GMO002395 at 3 micromolar. The extra nitrate is supported by the named source identity, not by changing the raw literal into an exact global synonym. This is a provider raw-label/type conflict.",
+        "occurrence_ids": [
+          "CM_OCC:1599db70fd05b6d4e592334c3f2735faa12b50230c8810a7d08c76f6277bfe81"
+        ],
+        "evidence_ids_checked": [
+          "b-reused-689514d53e5e1369",
+          "b-togo-a5447f8f1279d666"
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/3",
+      "object": {
+        "finding_id": "b-source-defect-91",
+        "scope_index": 91,
+        "case_id": "CM_NAME:a6e96e8274e90caec9533eec13e45fb8cf4a38a137877e5292b4af7ea9b21b2d",
+        "case_input_sha256": "c1ac164919be1bc3e7bc56028fd0ef130944bdcb458dc912bcbae0e81db4f71d",
+        "raw_source_label": "Ca(NO3)2 x 5 H2O",
+        "kind": "hydrate_transcription",
+        "contrast": "Frozen Ca(NO3)2x5H2O0.02G_PER_L; originalDSMZ1250 tableCa(NO3)2\u00b74H2O0.02g.",
+        "required_source_action": "Source-scoped correctionfive-to-four waters; rawfive-water token stays non-resolving.",
+        "primary_locator": "DSMZ1250 medium table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:5339e9aa028fc894a251ea64c6d24430b7f95f713f97ebfcd9b8f3bb2bb06a47",
+            "recipe_id": "CultureMech:009101",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2531_Desulfosporosinus_Acidophilus_Medium.yaml",
+            "component_path": "ingredients/8",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2531_Desulfosporosinus_Acidophilus_Medium.yaml",
+            "source_file_sha256": "1f443806eba7a7c53cf4900f9807622cc34542a2500eaa180564640ea080fa6b",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "0.02"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "Ca(NO3)2 x 5 H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-c7c5bd7a6a5433b2",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1250.pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-c7c5bd7a6a5433b22b6b.bin",
+              "sha256": "5649f6ceee1b07f3e78dc25b8b85864fe2e89ec66f1a12d0ebca3c8842c227dc"
+            },
+            "accessed_at": "2026-11-08T05:07:06.285180+00:00"
+          },
+          {
+            "evidence_id": "b-togo-1404f19a544bac56",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2531",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2531.json",
+              "sha256": "3649d6873cf44799f252f55e1fa47a0a53a272324270e565831a643cc29edbda"
+            },
+            "accessed_at": "2026-11-08T05:19:57.857013+00:00"
+          }
+        ],
+        "prior_independent_review": {
+          "finding_id": "b-source-defect-91",
+          "case_id": "CM_NAME:a6e96e8274e90caec9533eec13e45fb8cf4a38a137877e5292b4af7ea9b21b2d",
+          "scope_index": 91,
+          "status": "approve",
+          "reasoning": "The original DSMZ1250 formula has calcium nitrate tetrahydrate at 0.02 g; frozen TOGO2531 says pentahydrate. The exact source supports the occurrence-specific four-water correction, not generic five-to-four normalization.",
+          "occurrence_ids": [
+            "CM_OCC:5339e9aa028fc894a251ea64c6d24430b7f95f713f97ebfcd9b8f3bb2bb06a47"
+          ],
+          "evidence_ids_checked": [
+            "b-source-c7c5bd7a6a5433b2",
+            "b-togo-1404f19a544bac56"
+          ]
+        },
+        "triage_assessment": "Read original DSMZ1250 page1 table and preparation context: Ca(NO3)2 x4H2O 0.02g. Current/frozen TOGO2531 literal has5waters. Four-water correction is specific to this recipe; no global hydrate substitution is justified.",
+        "current_recipe_checks": [
+          {
+            "occurrence_id": "CM_OCC:5339e9aa028fc894a251ea64c6d24430b7f95f713f97ebfcd9b8f3bb2bb06a47",
+            "commit": "199cd9191881e8e929cd95ea0ed13aabe388e58c",
+            "capture": {
+              "root": "artifact",
+              "path": "context/a-live-sourcefiles/TOGO_M2531_Desulfosporosinus_Acidophilus_Medium.yaml",
+              "sha256": "1f443806eba7a7c53cf4900f9807622cc34542a2500eaa180564640ea080fa6b"
+            },
+            "same_bytes_as_frozen": true,
+            "same_exact_component_as_frozen": true
+          }
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/3/prior_independent_review",
+      "object": {
+        "finding_id": "b-source-defect-91",
+        "case_id": "CM_NAME:a6e96e8274e90caec9533eec13e45fb8cf4a38a137877e5292b4af7ea9b21b2d",
+        "scope_index": 91,
+        "status": "approve",
+        "reasoning": "The original DSMZ1250 formula has calcium nitrate tetrahydrate at 0.02 g; frozen TOGO2531 says pentahydrate. The exact source supports the occurrence-specific four-water correction, not generic five-to-four normalization.",
+        "occurrence_ids": [
+          "CM_OCC:5339e9aa028fc894a251ea64c6d24430b7f95f713f97ebfcd9b8f3bb2bb06a47"
+        ],
+        "evidence_ids_checked": [
+          "b-source-c7c5bd7a6a5433b2",
+          "b-togo-1404f19a544bac56"
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/4",
+      "object": {
+        "finding_id": "b-source-defect-129",
+        "scope_index": 129,
+        "case_id": "CM_NAME:fe96db05f76e36ddfdb75c3d798b85585c055eba76a65cb961b96506d5b314d7",
+        "case_input_sha256": "d124b53c430b34f4a4eb910404ebc13ee55a6f7cc47d85d29ddfeaf05170ce4a",
+        "raw_source_label": "Mg(NO3)\u00b76H2O",
+        "kind": "nitrate_coefficient_lost",
+        "contrast": "Frozen/TOGO Mg(NO3)\u00b76H2O2.54G_PER_L; originalJCM448 explicitlyMg(NO3)2\u00b76H2O2.54g.",
+        "required_source_action": "Restore second nitrate at the affected occurrence; malformed rawtoken remains provenance, notgloballyresolving alias.",
+        "primary_locator": "originalJCM448 ingredient table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:679296725a3a5c52f0a6b6911eb80e514c9df8dd0e0e6cf11e6bc91509974f13",
+            "recipe_id": "CultureMech:009835",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M449_KA22_Medium.yaml",
+            "component_path": "ingredients/8",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M449_KA22_Medium.yaml",
+            "source_file_sha256": "42059fa1ced122e09eaa4ffb9513965b02f01910c091bc3e950d447224f0cd3d",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "2.54"
+              },
+              "notes": "Role: Mineral source; Properties: Defined component, Simple component, Inorganic compound",
+              "preferred_term": "Mg(NO3)\u00b76H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-efc59482d5f1002a",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=448",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-efc59482d5f1002a9dce.bin",
+              "sha256": "ab7631296a07fdcdc03dacb55f3e508d3b6e97ce9f21f06690dbdfc4811b49cb"
+            },
+            "accessed_at": "2026-11-08T05:07:12.340576+00:00"
+          },
+          {
+            "evidence_id": "b-togo-2498864c8dd920d3",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M449",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M449.json",
+              "sha256": "f9900ab7a6f34cc75cf7ea293386d335a3af65d9709b86ed34d247c9eb4472ba"
+            },
+            "accessed_at": "2026-11-08T05:15:38.227893+00:00"
+          }
+        ],
+        "prior_independent_review": {
+          "finding_id": "b-source-defect-129",
+          "case_id": "CM_NAME:fe96db05f76e36ddfdb75c3d798b85585c055eba76a65cb961b96506d5b314d7",
+          "scope_index": 129,
+          "status": "approve",
+          "reasoning": "Original JCM448 explicitly gives Mg(NO3)2.6H2O at 2.54 g, while frozen/TOGO449 lacks the second nitrate. The source-scoped coefficient correction is supported; the malformed literal remains provenance.",
+          "occurrence_ids": [
+            "CM_OCC:679296725a3a5c52f0a6b6911eb80e514c9df8dd0e0e6cf11e6bc91509974f13"
+          ],
+          "evidence_ids_checked": [
+            "b-source-efc59482d5f1002a",
+            "b-togo-2498864c8dd920d3"
+          ]
+        },
+        "triage_assessment": "Inspected original JCM448 HTML: Mg(NO3)2\u00b76H2O with preserved subscript2, amount2.54g. Current/frozen TOGO449 lacks nitrate coefficient2. Source-backed occurrence correction is justified; preserve batch/preparation basis.",
+        "current_recipe_checks": [
+          {
+            "occurrence_id": "CM_OCC:679296725a3a5c52f0a6b6911eb80e514c9df8dd0e0e6cf11e6bc91509974f13",
+            "commit": "199cd9191881e8e929cd95ea0ed13aabe388e58c",
+            "capture": {
+              "root": "artifact",
+              "path": "context/a-live-sourcefiles/TOGO_M449_KA22_Medium.yaml",
+              "sha256": "42059fa1ced122e09eaa4ffb9513965b02f01910c091bc3e950d447224f0cd3d"
+            },
+            "same_bytes_as_frozen": true,
+            "same_exact_component_as_frozen": true
+          }
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/4/prior_independent_review",
+      "object": {
+        "finding_id": "b-source-defect-129",
+        "case_id": "CM_NAME:fe96db05f76e36ddfdb75c3d798b85585c055eba76a65cb961b96506d5b314d7",
+        "scope_index": 129,
+        "status": "approve",
+        "reasoning": "Original JCM448 explicitly gives Mg(NO3)2.6H2O at 2.54 g, while frozen/TOGO449 lacks the second nitrate. The source-scoped coefficient correction is supported; the malformed literal remains provenance.",
+        "occurrence_ids": [
+          "CM_OCC:679296725a3a5c52f0a6b6911eb80e514c9df8dd0e0e6cf11e6bc91509974f13"
+        ],
+        "evidence_ids_checked": [
+          "b-source-efc59482d5f1002a",
+          "b-togo-2498864c8dd920d3"
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/context/a-source-identity-triage.json",
+      "pointer": "/findings/5",
+      "object": {
+        "finding_id": "a-source-defect-33",
+        "scope_index": 33,
+        "case_id": "CM_NAME:3646798b8a696dd609cf6125da5356d1bc8d42bb445250d1efc76027ee88c749",
+        "case_input_sha256": "0c2befbd4dade878de3ed32e306126f64dc8d058bf22732ade650c7498af82dc",
+        "raw_source_label": "Arginine HCl",
+        "kind": "source_stereochemical_qualifier_lost",
+        "contrast": "CDM/LP source Table 1 specifies L-Arginine\u00b7HCl 1.90 mM; the preserved occurrence says Arginine HCl 1.9 MILLIMOLAR.",
+        "required_source_action": "Restore the L qualifier only for this source-supported occurrence; preserve the unqualified original as provenance and do not add a global Arginine HCl alias to an L-specific owner.",
+        "primary_locator": "Merlen et al. 1999, printed page 42, Table 1, Essential amino acids, L-Arginine\u00b7HCl row",
+        "occurrences": [
+          {
+            "component_path": "ingredients/58",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/cdm_lp.yaml",
+            "native_name": "Arginine HCl",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:3d768b03f2666296af0764276d7473b21f22de5a5343d2be711adb442c131c63",
+            "raw_component": {
+              "concentration": {
+                "unit": "MILLIMOLAR",
+                "value": "1.9"
+              },
+              "preferred_term": "Arginine HCl"
+            },
+            "raw_preferred_term": "Arginine HCl",
+            "recipe_id": "CultureMech:007240",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:007240"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "MEDIADB:33"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/cdm_lp.yaml",
+            "source_file_sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31",
+            "source_identifiers": []
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-merlen1999-table1",
+            "url": "https://citeseerx.ist.psu.edu/document?doi=6d6d6ab5ec65f241db3a1bf37332a12556aa254c&repid=rep1&type=pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/review-a-merlen-293cd6aa6001a127.bin",
+              "sha256": "36aab822e2b8cbabd34c1239364e4b669e010e186f79c9896e7dcae6c6cd3bdc"
+            },
+            "accessed_at": "2026-11-08T05:29:22.772721+00:00"
+          }
+        ],
+        "prior_independent_review": {
+          "reviewer": "/root/research_b",
+          "receipt": {
+            "root": "artifact",
+            "path": "b/review-a/review.json",
+            "sha256": "af8ebb941d2d3d15575549a21d430d6f5dc66bdb63c012a9e975935277a8f05e"
+          },
+          "scope": "Final A63 independent review includes A33. A authored A33 and therefore does not claim independent scientific review of that finding."
+        },
+        "triage_assessment": "Visually inspected Merlen page42 Table1: L-Arginine\u00b7HCl1.90mM. Exact current/frozen CDM/LP row says Arginine HCl1.9mM. Evidence supplies L stereochemistry for this occurrence, without a hydrate claim. B independently approved this A-authored decision; this supplemental A work is source/issue triage.",
+        "current_recipe_checks": [
+          {
+            "occurrence_id": "CM_OCC:3d768b03f2666296af0764276d7473b21f22de5a5343d2be711adb442c131c63",
+            "commit": "199cd9191881e8e929cd95ea0ed13aabe388e58c",
+            "capture": {
+              "root": "artifact",
+              "path": "context/a-live-sourcefiles/cdm_lp.yaml",
+              "sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31"
+            },
+            "same_bytes_as_frozen": true,
+            "same_exact_component_as_frozen": true
+          }
+        ]
+      },
+      "sha256": "852241445d30005a2aa0bc375049f4723d6cec2e4ebfe3c5093a29ef2bd4ffd4"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/0",
+      "object": {
+        "finding_id": "b-source-defect-63",
+        "scope_index": 63,
+        "case_id": "CM_NAME:677eea89e6c05433665f6d3a63b923d0e2559ef3b4ea1cd117690d70a2db6639",
+        "case_input_sha256": "b78b4420f67a7e65ba5501490231f83185eabe6bc5d4feb4a6cc4073bfe7ae74",
+        "raw_source_label": "8% (w/v) Na2CO3",
+        "kind": "volume_transcribed_as_mass",
+        "contrast": "Frozen stock concentration field2.5G_PER_L; original addition2.5mL of8%w/vNa2CO3.",
+        "required_source_action": "Preserve liquid addition and stock strength separately; do not reinterpret2.5 as grams or map stock to pure carbonate.",
+        "primary_locator": "main solution row",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:5466186ebb341438bf1ba0e2ca0cbdda045212de7c59fef5a57a32493fdc0109",
+            "recipe_id": "CultureMech:007600",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M1084_Pyvl_Medium.yaml",
+            "component_path": "ingredients/0",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1084_Pyvl_Medium.yaml",
+            "source_file_sha256": "83d3cf8c20dc62020312a9054fbf901b7a6c5dbabaa27031999b3d83b75269a2",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "2.5"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "8% (w/v) Na2CO3"
+            }
+          },
+          {
+            "occurrence_id": "CM_OCC:341482ebbaaab8db2e0a10967b333a9c80201cc1736a62be06cfb69b6fb7d546",
+            "recipe_id": "CultureMech:009737",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M357_PY4S_Agar.yaml",
+            "component_path": "ingredients/0",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M357_PY4S_Agar.yaml",
+            "source_file_sha256": "fa50bffc1f4c3ca104134d4b9994fc772840968bb80eee775b7fe12b961db4f8",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "2.5"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "8% (w/v) Na2CO3"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-d98555f5a92588b7",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1023",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-d98555f5a92588b70837.bin",
+              "sha256": "1ce34826de4c0b8f2eb7a32456dbd8c6c74fd647778ecb5ad9a8100f2e9afc60"
+            },
+            "accessed_at": "2026-11-08T05:07:09.858246+00:00"
+          },
+          {
+            "evidence_id": "b-source-0f367e017df38199",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=363",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-0f367e017df3819933dd.bin",
+              "sha256": "c4a470170f39aa1e9effd3eb70b7c9ac96b51a109fced58f4b1b305c368e72cc"
+            },
+            "accessed_at": "2026-11-08T05:07:11.277056+00:00"
+          },
+          {
+            "evidence_id": "b-togo-77801bc613f96d20",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M357",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M357.json",
+              "sha256": "ee89ef826c7be6ddb5bb4e7e5b39ca5d0a78d85846598b261c7a899e4a030ed1"
+            },
+            "accessed_at": "2026-11-08T05:15:34.019954+00:00"
+          },
+          {
+            "evidence_id": "b-togo-707e11dffd31fe45",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1084",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M1084.json",
+              "sha256": "29a851437eba17bfa03bab5d2bd65d2d1efc2a3a7a832766783f84f3368e2745"
+            },
+            "accessed_at": "2026-11-08T05:19:49.486255+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/1",
+      "object": {
+        "finding_id": "b-source-defect-64",
+        "scope_index": 64,
+        "case_id": "CM_NAME:6bbaec38cb2ee0c52194327b4584765d793a7b9da67c54e6715aecc4c57623f4",
+        "case_input_sha256": "afc20cc4159fb323acdd55b5b7ef947e4989be23d5815914a957ece1f6d3a9bd",
+        "raw_source_label": "CoCI2.6H2O",
+        "kind": "formula_typography_and_stock_units",
+        "contrast": "Frozen CoCI2.6H2O190G_PER_L; TOGO names same raw token but labels cobalt dichloride hexahydrate190mg within Solution2(SL12).",
+        "required_source_action": "Correct I/l using named source entity; retain190mg in its stock preparation, not190g/L final medium.",
+        "primary_locator": "components paragraph12 Solution2(SL12)",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:7bb32bde12a10bcce030282456b74f8b980ae79e8cfa1f5d8346d8858174c2c6",
+            "recipe_id": "CultureMech:008863",
+            "source_file": "data/normalized_yaml/bacterial/pfennig_s_medium.yaml",
+            "component_path": "ingredients/9",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/pfennig_s_medium.yaml",
+            "source_file_sha256": "9264041f69b7653f53d2d1cea7b56d20695331374bab8d4d035ab716636b32ad",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "190"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "CoCI2.6H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-togo-9ec16ea3e8f88288",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2277",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2277.json",
+              "sha256": "f655575e993dd27ffda8dd57afcdbce8c941ca22a9061a9b561199901dcdf04f"
+            },
+            "accessed_at": "2026-11-08T05:19:56.686312+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/2",
+      "object": {
+        "finding_id": "b-source-defect-66",
+        "scope_index": 66,
+        "case_id": "CM_NAME:6f29a0416dad4b5abe39633c347267176782130cb98b269871909d3e1c4a24ee",
+        "case_input_sha256": "66f8a81d0e35559b85ffab25d5ef3a28e9e40a76bbd4a228481a01a01bff00d9",
+        "raw_source_label": "KAl(SO4)2\u00b72H2O",
+        "kind": "hydrate_transcription",
+        "contrast": "Frozen and TOGO raw KAl(SO4)2\u00b72H2O; original NBRC1126 table KAl(SO4)2\u00b712H2O0.018g in trace elements solution.",
+        "required_source_action": "Occurrence-specific two-to-twelve water correction; preserve original erroneous token as non-resolving provenance.",
+        "primary_locator": "NBRC1126 trace elements table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:e6640f4c8df8d9a97bc891e9413c47a2d362ccf69ec85a90f108b11f9ee6737d",
+            "recipe_id": "CultureMech:008456",
+            "source_file": "data/normalized_yaml/archaea/TOGO_M1882_Methanoregula_medium.yaml",
+            "component_path": "ingredients/25",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M1882_Methanoregula_medium.yaml",
+            "source_file_sha256": "5cb8d12c30e7e197fd1015eb5164daa1ba12d9b41d37ded095055195be5ad763",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "0.018"
+              },
+              "mediaingredientmech_term": {
+                "id": "MediaIngredientMech:000293",
+                "label": "KAl(SO4)2\u00b72H2O"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "KAl(SO4)2\u00b72H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-760da802b292f0cf",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1126",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-760da802b292f0cfa978.bin",
+              "sha256": "4b128503477c747ba28eba1b6e6e2860fd814f53d0471943a387f322322ffefd"
+            },
+            "accessed_at": "2026-11-08T05:07:14.688581+00:00"
+          },
+          {
+            "evidence_id": "b-togo-2f27f98fcc5afb90",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1882",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M1882.json",
+              "sha256": "102576db61ecdb04ea8dcab640b0f2fcc2d52776a7f5dded3c569cc9bfaf0ab5"
+            },
+            "accessed_at": "2026-11-08T05:19:54.547528+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/3",
+      "object": {
+        "finding_id": "b-source-defect-70",
+        "scope_index": 70,
+        "case_id": "CM_NAME:7a330523dd1cc8c7c0c5deee2e2a424ecefd3f2c969ec57245c8f46c733f2284",
+        "case_input_sha256": "31bc5077f7e81b9d0cc9a208f539e45dcc2a551111b109457d10630ee1d15736",
+        "raw_source_label": "FeSO4 x 7 H2O (0.2% w/v)",
+        "kind": "volume_transcribed_as_mass_and_version_drift",
+        "contrast": "Frozen10G_PER_L of0.2%w/vFeSO4\u00b77H2O; source TOGOM2649 explicitly10mL/L of0.2%w/v stock. Current DSMZ503 instead describes0.1% stock.",
+        "required_source_action": "Fix liquid quantity representation against pinnedTOGO source; keep currentDSMZ version discrepancy explicit and do not silently replace0.2% by0.1%.",
+        "primary_locator": "M2649 paragraph26 and comment28; compare currentDSMZ503",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:a16974d824ef8a056b111b4b0b4a4e5eea7c3b3630667131d4089fe0631cb03b",
+            "recipe_id": "CultureMech:009205",
+            "source_file": "data/normalized_yaml/bacterial/anaerobic_freshwater_fwm_medium_for_dsm_15978.yaml",
+            "component_path": "ingredients/30",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_freshwater_fwm_medium_for_dsm_15978.yaml",
+            "source_file_sha256": "ad3f2fe4fc99302398f80e749d9fd3f224de73ee2d7deba3d87425eea26c8cc2",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "10"
+              },
+              "notes": "Role: Mineral source; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "FeSO4 x 7 H2O (0.2% w/v)"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-b86ee1b419507c87",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium503.pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-b86ee1b419507c874128.bin",
+              "sha256": "2a3e34f68943a632052d156b00e910a1da44621a0256aa48c49b1a6580ca72fa"
+            },
+            "accessed_at": "2026-11-08T05:07:08.121807+00:00"
+          },
+          {
+            "evidence_id": "b-togo-5f0dc5f3ba082f2c",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2649",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M2649.json",
+              "sha256": "b7eb3df13093707c514ade18961ee9b61452cf20509bf2cfdadd60059ea9a6a2"
+            },
+            "accessed_at": "2026-11-08T05:15:23.523943+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/4",
+      "object": {
+        "finding_id": "b-source-defect-74",
+        "scope_index": 74,
+        "case_id": "CM_NAME:8039182ccb56665e768289fb1a2063527f85a0e26a2984ea03323179ecb84441",
+        "case_input_sha256": "96bd3b51b84da11f78dcb8b6586aa73a669e5f85616b436abbe64e422d318617",
+        "raw_source_label": "ATP",
+        "kind": "supplied_counterion_lost",
+        "contrast": "Frozen CDM/LP ATP(CHEBI15422)0.00036mM; original Merlen1999 Table1 ATP(Na2)0.36\u00b5M. Quantity agrees, supplied disodium form was omitted.",
+        "required_source_action": "Correct onlyCultureMech007240 occurrence to source-specific disodiumATP context; do not generalize to25 otherATP cases or infer hydration.",
+        "primary_locator": "Originalp42Table1; renderedmerlen-page42.png visually checked",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:fdffaad87b725dedd6eb08e7e52d3f375b86991dafdaff0d047cefd347e2a1fd",
+            "recipe_id": "CultureMech:007240",
+            "source_file": "data/normalized_yaml/bacterial/cdm_lp.yaml",
+            "component_path": "ingredients/0",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/cdm_lp.yaml",
+            "source_file_sha256": "880d388577afcbf670bc39af93fce2fdaa898dff0fa89c0c1d386aa04c822c31",
+            "raw_component": {
+              "concentration": {
+                "unit": "MILLIMOLAR",
+                "value": "0.00036"
+              },
+              "notes": "Restored from MediaDB compound row C00002; the archived leading compound labels are corrupt, while the row sequence preserves the KEGG identity.",
+              "preferred_term": "ATP",
+              "term": {
+                "id": "CHEBI:15422",
+                "label": "ATP"
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-merlen1999-table1",
+            "url": "https://citeseerx.ist.psu.edu/document?doi=6d6d6ab5ec65f241db3a1bf37332a12556aa254c&repid=rep1&type=pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/review-a-merlen-293cd6aa6001a127.bin",
+              "sha256": "36aab822e2b8cbabd34c1239364e4b669e010e186f79c9896e7dcae6c6cd3bdc"
+            },
+            "accessed_at": "2026-11-08T05:29:22.772721+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/5",
+      "object": {
+        "finding_id": "b-source-defect-76",
+        "scope_index": 76,
+        "case_id": "CM_NAME:849cf52732c076356294f5f6158cab770bc61a61f46f4c0fe3f60f2d68c7c165",
+        "case_input_sha256": "1609efe1b731491b89722610473d37ca04d616cd24d2ddfaf701bbde1c303f33",
+        "raw_source_label": "Cd(NO3).4H2O",
+        "kind": "source_formula_field_conflict",
+        "contrast": "Frozen and TOGO rawCd(NO3).4H2O3\u00b5M; same primaryAPI separately types Cadmium nitrate tetrahydrateGMO002395.",
+        "required_source_action": "Provider/case-scoped formula repair toCd(NO3)2\u00b74H2O is supported by named compound; do not publish malformed literal as global alias.",
+        "primary_locator": "Gaffron+Se trace-metal table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:1599db70fd05b6d4e592334c3f2735faa12b50230c8810a7d08c76f6277bfe81",
+            "recipe_id": "CultureMech:008849",
+            "source_file": "data/normalized_yaml/bacterial/pcr_s11_medium.yaml",
+            "component_path": "ingredients/23",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/pcr_s11_medium.yaml",
+            "source_file_sha256": "d999969421b96869ea832e3d126998661c122268c824661eca03f5b1ba1b048e",
+            "raw_component": {
+              "concentration": {
+                "unit": "MICROMOLAR",
+                "value": "3"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "Cd(NO3).4H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-reused-689514d53e5e1369",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/reused-togo-M2262.json",
+              "sha256": "b5776fddefb8ec19fb2321bda3dad07b72cc0b0ed0cb9f27b9b39847803d7c22"
+            },
+            "accessed_at": "2026-11-08T05:07:01.617702+00:00"
+          },
+          {
+            "evidence_id": "b-togo-a5447f8f1279d666",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2262",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2262.json",
+              "sha256": "b5776fddefb8ec19fb2321bda3dad07b72cc0b0ed0cb9f27b9b39847803d7c22"
+            },
+            "accessed_at": "2026-11-08T05:19:56.476340+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/6",
+      "object": {
+        "finding_id": "b-source-defect-86",
+        "scope_index": 86,
+        "case_id": "CM_NAME:9b83239a183cd5bdb20173204afaac7510ddac5d267a462fbc118e46da0df159",
+        "case_input_sha256": "346ae1406dbe7a5b149059b870e7ec2944f7b69e82f93e8897ffe1a74bbbdf14",
+        "raw_source_label": "MgSO4\u00b77H2O (6 g/L)",
+        "kind": "volume_transcribed_as_mass",
+        "contrast": "Frozen5G_PER_L ofMgSO4\u00b77H2O(6g/L); TOGOM2231 specifies5mL addition of that6g/L stock.",
+        "required_source_action": "Preserve stock strength6g/L and addition5mL as separate quantities; no5g/L claim.",
+        "primary_locator": "components paragraph3; stock recipe paragraph11",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:e9c9d8e00a2d78070e4c469e60a0333c7d509a09e977784dd7784410b5c85a80",
+            "recipe_id": "CultureMech:008820",
+            "source_file": "data/normalized_yaml/bacterial/allen_medium.yaml",
+            "component_path": "ingredients/4",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/allen_medium.yaml",
+            "source_file_sha256": "af65045e3fe660fcac57961abcc27a379f88bd45be403f60084a6b7eb4c3c138",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "5"
+              },
+              "preferred_term": "MgSO4\u00b77H2O (6 g/L)"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-togo-20cef4bdcea912e7",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2231.json",
+              "sha256": "2327091527bfed277c4a2538ae739de9467901f20ec6f3197bd2c040e760fd5f"
+            },
+            "accessed_at": "2026-11-08T05:19:55.524549+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/7",
+      "object": {
+        "finding_id": "b-source-defect-87",
+        "scope_index": 87,
+        "case_id": "CM_NAME:9df2e5383945c29981721560d28379995b38003d759f55082d8ffead8447fdea",
+        "case_input_sha256": "9e048ffea732af7673e99aef34a0502d7ccfc9d89a64886840b1a4a260d5eab1",
+        "raw_source_label": "Fe(SO4)\u00b77H2O",
+        "kind": "stock_and_medium_contributions_flattened",
+        "contrast": "Frozen0.8500000000000001G_PER_L with note merged0.05+0.8; originalTOGOM3155 states0.05g/L directFeSO4\u00b77H2O plus10mL/L trace stock containing0.8g/L.",
+        "required_source_action": "Restore preparation hierarchy.0.8g/L stock composition must not be summed directly with0.05g/L final-medium input; derived effective concentration is not proposed by this inventory.",
+        "primary_locator": "comments2,3 and component paragraphs7,9",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:2804e07f495199d6aad49107b3d8701bcf79c8eef1f82e9c89fb250734b47e8d",
+            "recipe_id": "CultureMech:009617",
+            "source_file": "data/normalized_yaml/bacterial/petc_mes_medium.yaml",
+            "component_path": "ingredients/5",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/petc_mes_medium.yaml",
+            "source_file_sha256": "882d40b488a4282ae5f6c4d3879d133dbc95f93d69ec3df9590a9a9b12d5bf6c",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "0.8500000000000001"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component [Merged 2 duplicates: 0.05, 0.8]",
+              "preferred_term": "Fe(SO4)\u00b77H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-togo-b6ef67bbd758b133",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3155",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M3155.json",
+              "sha256": "40cd8eac51ed9b8273911b94971469722a6df62198d2398a8654653be060866e"
+            },
+            "accessed_at": "2026-11-08T05:15:31.193215+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/8",
+      "object": {
+        "finding_id": "b-source-defect-91",
+        "scope_index": 91,
+        "case_id": "CM_NAME:a6e96e8274e90caec9533eec13e45fb8cf4a38a137877e5292b4af7ea9b21b2d",
+        "case_input_sha256": "c1ac164919be1bc3e7bc56028fd0ef130944bdcb458dc912bcbae0e81db4f71d",
+        "raw_source_label": "Ca(NO3)2 x 5 H2O",
+        "kind": "hydrate_transcription",
+        "contrast": "Frozen Ca(NO3)2x5H2O0.02G_PER_L; originalDSMZ1250 tableCa(NO3)2\u00b74H2O0.02g.",
+        "required_source_action": "Source-scoped correctionfive-to-four waters; rawfive-water token stays non-resolving.",
+        "primary_locator": "DSMZ1250 medium table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:5339e9aa028fc894a251ea64c6d24430b7f95f713f97ebfcd9b8f3bb2bb06a47",
+            "recipe_id": "CultureMech:009101",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2531_Desulfosporosinus_Acidophilus_Medium.yaml",
+            "component_path": "ingredients/8",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2531_Desulfosporosinus_Acidophilus_Medium.yaml",
+            "source_file_sha256": "1f443806eba7a7c53cf4900f9807622cc34542a2500eaa180564640ea080fa6b",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "0.02"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "Ca(NO3)2 x 5 H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-c7c5bd7a6a5433b2",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1250.pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-c7c5bd7a6a5433b22b6b.bin",
+              "sha256": "5649f6ceee1b07f3e78dc25b8b85864fe2e89ec66f1a12d0ebca3c8842c227dc"
+            },
+            "accessed_at": "2026-11-08T05:07:06.285180+00:00"
+          },
+          {
+            "evidence_id": "b-togo-1404f19a544bac56",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2531",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2531.json",
+              "sha256": "3649d6873cf44799f252f55e1fa47a0a53a272324270e565831a643cc29edbda"
+            },
+            "accessed_at": "2026-11-08T05:19:57.857013+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/9",
+      "object": {
+        "finding_id": "b-source-defect-96",
+        "scope_index": 96,
+        "case_id": "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+        "case_input_sha256": "bccb1b20a52833ac6952992e5692e45c4c01a45dac7b5ffc48911ee2c8168295",
+        "raw_source_label": "(NH4)2Fe(SO4)2\u30fb6H2O",
+        "kind": "milligram_transcribed_as_gram",
+        "contrast": "Frozen2G_PER_L in both recipes; originalJCM950/JCM966 and correspondingTOGOM997/M1016 specify(NH4)2Fe(SO4)2\u00b76H2O2.0mg.",
+        "required_source_action": "Retain2mg addition in original recipe volume; identity alias approval does not certify frozen2g/L.",
+        "primary_locator": "originalJCM medium ingredient tables",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:22d979c16ae385ca67c9aaa4ed9464be60b73cfbd394ac56c64bccbae06914e8",
+            "recipe_id": "CultureMech:007530",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M1016_PA_Medium.yaml",
+            "component_path": "ingredients/10",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1016_PA_Medium.yaml",
+            "source_file_sha256": "d57c9acb38925e05ea7d40918e0901ed9100bafad29e86c0e563e102014dff31",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "2"
+              },
+              "notes": "Role: Mineral source; Properties: Defined component, Simple component, Inorganic compound",
+              "preferred_term": "(NH4)2Fe(SO4)2\u30fb6H2O"
+            }
+          },
+          {
+            "occurrence_id": "CM_OCC:d5112b0badcb05aab5be1e48e1ced8ba62e7acdc8efaf5a9118a5f47a6a3b232",
+            "recipe_id": "CultureMech:010425",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M997_NH-JN4_Medium.yaml",
+            "component_path": "ingredients/11",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M997_NH-JN4_Medium.yaml",
+            "source_file_sha256": "61c5b3bdc75550b845e1164b5f69ee84b8ba0cd02744c16cfdfcfd2b919229af",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "2"
+              },
+              "notes": "Role: Mineral source; Properties: Simple component, Defined component, Inorganic compound",
+              "preferred_term": "(NH4)2Fe(SO4)2\u30fb6H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-51b504f992baa9fd",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=950",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-51b504f992baa9fded36.bin",
+              "sha256": "df7564df3936a6a38cbf4b339dea5d51ccdb5e9f8e106a897fe0e7eadeb68d08"
+            },
+            "accessed_at": "2026-11-08T05:07:13.649199+00:00"
+          },
+          {
+            "evidence_id": "b-source-21fcdd4ef87d360a",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=966",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-21fcdd4ef87d360ad1ef.bin",
+              "sha256": "15923f4ffd5529a3f049f606c1ce361981d3c76533c6c6dfc05149dec777ef2c"
+            },
+            "accessed_at": "2026-11-08T05:07:13.677253+00:00"
+          },
+          {
+            "evidence_id": "b-togo-2d0ed411fea8dc70",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M997",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M997.json",
+              "sha256": "b1a39cac7864d65388d48ef2ca969e9855aa55844022d4b3a946ff5b72e3c312"
+            },
+            "accessed_at": "2026-11-08T05:15:42.896287+00:00"
+          },
+          {
+            "evidence_id": "b-togo-6d50028ab51b523d",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1016",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M1016.json",
+              "sha256": "f0d5e45498fe89a99ae850d7ba1772ea80bc1e085b4359e2394b47067474ef75"
+            },
+            "accessed_at": "2026-11-08T05:19:49.485665+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/10",
+      "object": {
+        "finding_id": "b-source-defect-98",
+        "scope_index": 98,
+        "case_id": "CM_NAME:b2842dee958925abda8f2e56af9eb9a5fd009b8306848c04ae6782597864506c",
+        "case_input_sha256": "f0185e0584c95bbf6a165300fc1f6a48202c4930530c89cd9cb9e8cef37664c6",
+        "raw_source_label": "MnSO4 \u00b7 5H2O 1 )",
+        "kind": "footnote_in_label_and_stock_units",
+        "contrast": "Frozen MnSO4\u00b75H2O1)217G_PER_L; originalNIES SOT footnote replaces250mg heptahydrate by217mg pentahydrate. TOGOM2509 puts217mg in100mL A5stock, with0.1mL A5 addition.",
+        "required_source_action": "Remove footnote marker from chemical label while preserving footnote provenance; restore mg andstock hierarchy, not217g/L final concentration.",
+        "primary_locator": "NIES SOT A5 footnote andTOGO paragraphs3,5,6",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:eaaf0a6844aaf8749a8d742b8758d8d02f9513a7e14ac6369665ac2caf4b4bcc",
+            "recipe_id": "CultureMech:009080",
+            "source_file": "data/normalized_yaml/bacterial/sot_medium.yaml",
+            "component_path": "ingredients/15",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/sot_medium.yaml",
+            "source_file_sha256": "51daf92c37a47525cf99d2ef6214f62552e47875cf9b3c59b1432530c757f486",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "217"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "preferred_term": "MnSO4 \u00b7 5H2O 1 )"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-togo-229f91b4f93c8927",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2509",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/retry-togo-M2509.json",
+              "sha256": "5cf01f0691361181fa733c2163aaed917feabce24da5c2fec876e5616ed83950"
+            },
+            "accessed_at": "2026-11-08T05:19:57.821372+00:00"
+          },
+          {
+            "evidence_id": "b-reference-34442c33cf8fafdf",
+            "url": "https://mcc.nbrp.jp/medium/ja/sot.pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/final-source-34442c33cf8fafdf.bin",
+              "sha256": "f862752213b8ab62c5b16234d08156ab3f6a7317ef0013c4921e65e4e73db0c4"
+            },
+            "accessed_at": "2026-11-08T05:14:53.387379+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/11",
+      "object": {
+        "finding_id": "b-source-defect-101",
+        "scope_index": 101,
+        "case_id": "CM_NAME:b88bc93175e092f9aae91f120cd1f992e30e1e889f092f464b4741bb6b15ff4b",
+        "case_input_sha256": "e48f6130c2d0020e5924d1cf4ab6146afc4065a582883660682fd4fa14b68ff1",
+        "raw_source_label": "1M MgSO4",
+        "kind": "microlitre_transcribed_as_mass",
+        "contrast": "Frozen1MMgSO4 with concentration200G_PER_L; originalTOGOM2790 specifies200ul of1Mstock.",
+        "required_source_action": "Store200\u00b5L addition separately from1M stock concentration; no200g/L orsolid-hydrate inference.",
+        "primary_locator": "components paragraph3 1MMgSO4 row",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:0dc9dc7db5cba718eb8a8f0e63be3cefdd54b3eb1d1b6be9693513a74932ddb3",
+            "recipe_id": "CultureMech:009338",
+            "source_file": "data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+            "component_path": "ingredients/1",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/m9_minimal_media.yaml",
+            "source_file_sha256": "a0bd5e5d256aff1e96b73a73f94e6c2dbdfe095a3132e47f8dd7cfa9e83f333a",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "200"
+              },
+              "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component",
+              "preferred_term": "1M MgSO4"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-togo-ffe943eb560f848d",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M2790.json",
+              "sha256": "484ff25c250928b9ff3b98873ff4aa40492e17701226c88be3fe623c0196db2e"
+            },
+            "accessed_at": "2026-11-08T05:15:28.397338+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/b/source-defect-inventory.json",
+      "pointer": "/findings/12",
+      "object": {
+        "finding_id": "b-source-defect-129",
+        "scope_index": 129,
+        "case_id": "CM_NAME:fe96db05f76e36ddfdb75c3d798b85585c055eba76a65cb961b96506d5b314d7",
+        "case_input_sha256": "d124b53c430b34f4a4eb910404ebc13ee55a6f7cc47d85d29ddfeaf05170ce4a",
+        "raw_source_label": "Mg(NO3)\u00b76H2O",
+        "kind": "nitrate_coefficient_lost",
+        "contrast": "Frozen/TOGO Mg(NO3)\u00b76H2O2.54G_PER_L; originalJCM448 explicitlyMg(NO3)2\u00b76H2O2.54g.",
+        "required_source_action": "Restore second nitrate at the affected occurrence; malformed rawtoken remains provenance, notgloballyresolving alias.",
+        "primary_locator": "originalJCM448 ingredient table",
+        "occurrences": [
+          {
+            "occurrence_id": "CM_OCC:679296725a3a5c52f0a6b6911eb80e514c9df8dd0e0e6cf11e6bc91509974f13",
+            "recipe_id": "CultureMech:009835",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M449_KA22_Medium.yaml",
+            "component_path": "ingredients/8",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M449_KA22_Medium.yaml",
+            "source_file_sha256": "42059fa1ced122e09eaa4ffb9513965b02f01910c091bc3e950d447224f0cd3d",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "2.54"
+              },
+              "notes": "Role: Mineral source; Properties: Defined component, Simple component, Inorganic compound",
+              "preferred_term": "Mg(NO3)\u00b76H2O"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "b-source-efc59482d5f1002a",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=448",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/source-efc59482d5f1002a9dce.bin",
+              "sha256": "ab7631296a07fdcdc03dacb55f3e508d3b6e97ce9f21f06690dbdfc4811b49cb"
+            },
+            "accessed_at": "2026-11-08T05:07:12.340576+00:00"
+          },
+          {
+            "evidence_id": "b-togo-2498864c8dd920d3",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M449",
+            "capture": {
+              "root": "artifact",
+              "path": "b/captures/togo-M449.json",
+              "sha256": "f9900ab7a6f34cc75cf7ea293386d335a3af65d9709b86ed34d247c9eb4472ba"
+            },
+            "accessed_at": "2026-11-08T05:15:38.227893+00:00"
+          }
+        ]
+      },
+      "sha256": "e6a1322b9d5902ea70619c77b31b416857eb62594d88adb9f592c61670f7520a"
+    }
+  ]
+}

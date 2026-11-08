@@ -1,0 +1,64 @@
+{
+  "author": "worker02 /root",
+  "decisions": [],
+  "proposals": [
+    {
+      "proposal_id": "a2-proposal-water-source-quality-provenance",
+      "case_ids": [
+        "CM_NAME:0ccbde4e3f0ed570e6bb238ed22013033521974fe04e8958b97e35c6800715c5"
+      ],
+      "description": "TOGO M3249 explicitly specifies Ultrapure water. This is source-qualified molecular-water provenance only: no purity standard, resistivity, purification process or formulation difference is established. Quality alone does not justify a separate mixture identity under MAPPING_SEMANTICS sections3/6. This annotation does not identify ultrapure water with the named distilled preparation, activate a resolving alias, reverse rejected water labels, or establish grade interchangeability. PMID36233206 remains genuine contextual literature only; its support is PARTIAL, with no exact-owner or role validation.",
+      "owner_path": "data/ingredients/mapped/Distilled_Water.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/water/after/Distilled_Water.yaml",
+        "sha256": "45b00768443f21bd0322a5fcdd2eb20fb0c8d1952ee398527b80d620bad26985"
+      },
+      "before_sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56",
+      "evidence_ids": [
+        "a-case-09-input",
+        "a-case-09-occ-00",
+        "a-ontology-15377",
+        "a-primary-togo-M3249",
+        "a2-case-09-component-owner-validation",
+        "a2-case-09-owner-and-occurrence-review",
+        "a2-ols-search-08",
+        "a2-case-09-quality-treatment-owner",
+        "a2-review-b-quality-treatment-boundaries",
+        "w02-final-water-contextual-literature"
+      ],
+      "publication_authorization": "None. Isolated review proposal only; every inherited source, ingredient and downstream publication hold remains.",
+      "mapping_consequence": "No identity, grounding, preferred-label, synonym or role change. Qualify only adjacent literature applicability; all quality/source/whole-owner/export holds remain.",
+      "inherited_owner_findings": [
+        "Bounded source amendment only; inherited owner synonym/evidence history is not globally approved. Water preparation rejection policy remains intact."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "w02-final-water-contextual-literature",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/water/captures/PMC9569759.html",
+        "sha256": "e094cf5cab7cd650254016ac4d699a9ef4986b9621fe02aef4ed922b26760b88"
+      },
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569759/",
+      "accessed_at": "2026-11-08T06:47:49.502438+00:00",
+      "locator": "PMID36233206/PMC9569759 abstract and animal-experiment methods; complete original HTML retained",
+      "supports_or_contradicts": "The cited article uses distilled water as a negative-control vehicle in the fish-collagen mouse experiment (abstract and animal methods). This is a genuine contextual mention, not evidence establishing this MIM molecular-water grounding, interchangeability of water preparations, or a microbial functional role. The original automatic citation and snippet are retained; exact-owner and role support are withheld.",
+      "case_ids": [
+        "CM_NAME:0ccbde4e3f0ed570e6bb238ed22013033521974fe04e8958b97e35c6800715c5"
+      ],
+      "original_capturer": "W04 /root/reviewer-b",
+      "current_assessor": "worker02 /root"
+    }
+  ],
+  "superseded_proposal_ids": [],
+  "proposal_authors": {
+    "a2-proposal-water-source-quality-provenance": [
+      "worker02 /root"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# Reassess chrome-alum parent rationale on double-salt as well as hydrate evidence
+
+Reviewed W02 head `0597d00417be4d7cdfb5a31970043eec9bbc88fe`, frozen campaign base `e000d66dd26ab053e9b17ce7bf8d3c873c3dde99`. Authoritative peer review is `assembly-v2/review.yaml` (SHA256 `31cac38cae0cfb3dcfae4453a01402dc98d249f70ad9a7698a89b25eed5eae11`) in the sealed W04 independent W02 packet, whose 2,399-member SHA256SUMS is `99306617655b1e3df84368079e49f4341a0fd05667bdf9fedf18dda24f4f7ca7`. The coordinator verified all manifest members, rebound all188 case decisions and106 selected payloads, and independently repeated all106 native guarded writes and baseline/overlay partonomy. Structural validation passes; the scientific verdict remains needs_curation. These are unapplied proposal corrections, not changes already made to main or whole-owner/export approval.
+
+`W02-F-CHROME-ALUM-RELATION` (`w02-external-b-009`, cases2/18) identifies a retained rationale gap. The exact chrome-alum owner denotes potassium chromium sulfate dodecahydrate, CAS7788-99-0. The [supplier](https://www.sigmaaldrich.com/US/en/product/saj/054560) states CrK(SO4)2·12H2O; captured response SHA256 `77b726fcac0fc0b767c38e78366aef115d4ab3bda6b0e7f052289b8c819d2762`. Its selected CHEBI53471 target is chromium(III) sulfate, formula2Cr·3O4S ([ChEBI](https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:53471), capture `31570b47373542315c166514c0e90d6a5dd201b03d2cadc524327392f07b6ef6`). Potassium and salt stoichiometry differ, not only hydration.
+
+The current CLOSE_MATCH justification inherited from342 describes hydrate versus anhydrous form and does not establish this double-salt relation. Preserve own CAS and authentic history; assess the closest supported ontology relation under current MAPPING_SEMANTICS. Do not automatically change CLOSE_MATCH to NARROW_MATCH, assert that chromium sulfate is an is_a parent, or merge distinct salts. A justified non-exact relationship may remain; the defect is the incomplete active rationale, not proof that every non-exact relation must disappear.
+
+| Proposal | Owner | Exact selected SHA256 |
+|---|---|---|
+| `a-proposal-chrome-alum` | `data/ingredients/mapped/CrKSO42_X_12_H2O.yaml` | `e4f2fb4d6d39e19bdbad76bbd5a8cedbf960507fb825714922fb6a4d0d19c5d0` |
+
+Full closed342 and245 comments were inspected. They record historical hydrate/predicate decisions and later SKOS direction, not an exact potassium-double-salt justification. Live all-state chrome-alum title/body/comment searches found no dedicated tracker. Record the bounded reassessment without silently rewriting those prior decisions.
+
+Preserve published original payloads/reviews, capture timestamps, histories, rejected text and all precise source/form/role/release holds. Prepare immutable corrected proposals through existing guarded validation, record claim-specific changes, and obtain independent review of the exact successor. No corpus application, owner merge, gate/schema/test/producer change or approval transfer follows from this issue.

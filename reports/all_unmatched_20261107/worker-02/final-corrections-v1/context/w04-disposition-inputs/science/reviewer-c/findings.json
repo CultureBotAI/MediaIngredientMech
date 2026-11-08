@@ -1,0 +1,2059 @@
+{
+  "reviewer": "reviewer-c (/root/media)",
+  "author_head": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+  "assignment_sha256": "04a0689584fe3ae44e80f62d0affe37f33c71901d1ec2ca5688865707b134e73",
+  "status": "complete",
+  "reviewed_at": "2026-11-08T07:10:47.850332+00:00",
+  "whole_owner_or_export_approval": false,
+  "scientific_disposition": "findings_open",
+  "findings": [
+    {
+      "finding_id": "W02C-001",
+      "title": "Three preparations use the wrong mineral-stock category",
+      "severity": "P2",
+      "status": "open",
+      "case_indices": [
+        44,
+        75,
+        126
+      ],
+      "case_ids": [
+        "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082",
+        "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448",
+        "CM_NAME:f954ba78fd83301a37a1a7ee5b5d81797c126d8f07e4d1c00438ba8e3ed7f2f9"
+      ],
+      "targets": [
+        {
+          "proposal_id": "a2-proposal-jcm378-preaddition-basal-preparation",
+          "owner_path": "data/ingredients/mapped/jcm378_preaddition_basal_preparation.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/a/after/jcm378_preaddition_basal_preparation.yaml",
+            "sha256": "6511f1be0d51490e09fb693ff8354d18a26c08d6eeccb7e7192dac894eb49844"
+          },
+          "fields": [
+            "solution_type"
+          ],
+          "case_ids": [
+            "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082"
+          ]
+        },
+        {
+          "proposal_id": "b2-proposal-methanol_50_percent_vv_jcm_sources",
+          "owner_path": "data/ingredients/mapped/methanol_50_percent_vv_jcm_sources.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/b/after/methanol_50_percent_vv_jcm_sources.yaml",
+            "sha256": "1e7ef83bf7afacdc950c4e2013a6ce1dc3550e503a1810780ebdd50ca27b0348"
+          },
+          "fields": [
+            "solution_type"
+          ],
+          "case_ids": [
+            "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+          ]
+        },
+        {
+          "proposal_id": "b2-proposal-resazurin_0025_percent_atcc_chopped_meat",
+          "owner_path": "data/ingredients/mapped/resazurin_0025_percent_atcc_chopped_meat.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/b/after/resazurin_0025_percent_atcc_chopped_meat.yaml",
+            "sha256": "43559067e33088d4353e4b9d37babf9996f6304afbcedbba1b15d0b77069d45a"
+          },
+          "fields": [
+            "solution_type"
+          ],
+          "case_ids": [
+            "CM_NAME:f954ba78fd83301a37a1a7ee5b5d81797c126d8f07e4d1c00438ba8e3ed7f2f9"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "b-source-5035c1dae7ddc53d",
+        "b-togo-59fb9148ad86efc9",
+        "b-togo-31b31ea13b2730a4",
+        "a-primary-primary-b6aea64a290c3186"
+      ],
+      "observation": "All three payloads say MINERAL_STOCK. The schema defines that as Concentrated mineral stock solution. JCM378 is a nutrient-containing basal preparation;50% methanol is organic-substrate stock; resazurin is indicator preparation. Schema-enum membership alone does not support the scientific category.",
+      "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+      "bounded_fix": "Choose a source-faithful allowed category, using OTHER if no specific category is justified; do not invent roles or components. Retain all three payload targets in one issue family.",
+      "acceptance_checks": [
+        "Reinspect solution_type on all three exact revised payloads against schema descriptions.",
+        "Preserve component/occurrence scope and rerun native/schema checks; those checks alone do not close the science finding."
+      ],
+      "lineage": [],
+      "capture_refs": [
+        {
+          "evidence_id": "b-source-5035c1dae7ddc53d",
+          "root": "artifact",
+          "path": "b/captures/source-5035c1dae7ddc53de96c.bin",
+          "sha256": "63ff0d7864c0c87286c6f6b790cf45462d75a609c754356f24b99ecbf2557407",
+          "url": "https://www.atcc.org/~/media/D1EF22ABE8034FE5B83EFF9D1BC65E18.ashx",
+          "accessed_at": "2026-11-08T05:07:04.686261+00:00"
+        },
+        {
+          "evidence_id": "b-togo-59fb9148ad86efc9",
+          "root": "artifact",
+          "path": "b/captures/retry-togo-M1256.json",
+          "sha256": "36876c15da80c06d1ebcdb2024a7830beba6fd2b5c7c22a5e1866ae3d87cb1be",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1256",
+          "accessed_at": "2026-11-08T05:19:50.942515+00:00"
+        },
+        {
+          "evidence_id": "b-togo-31b31ea13b2730a4",
+          "root": "artifact",
+          "path": "b/captures/retry-togo-M1257.json",
+          "sha256": "9aea2b6525fc9dee58317f877d4898e5dd82cd28ee93e1ff9548201ea423e937",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1257",
+          "accessed_at": "2026-11-08T05:19:50.967059+00:00"
+        },
+        {
+          "evidence_id": "a-primary-primary-b6aea64a290c3186",
+          "root": "artifact",
+          "path": "a/captures/primary-b6aea64a290c3186.html",
+          "sha256": "ea5b13a5a03be4d5478f086d1433d260146f2a9862da77d121f272cdc7bf0029",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=378",
+          "accessed_at": "2026-11-08T05:07:15.262807+00:00"
+        }
+      ]
+    },
+    {
+      "finding_id": "W02C-002",
+      "title": "Case163 defers feasible partial stock representation and overstates solvent",
+      "severity": "P2",
+      "status": "open",
+      "case_indices": [
+        163
+      ],
+      "case_ids": [
+        "KG_CASE:91fbd30ef38331c306f684d5bc27b3b8da74ab0f203c2dd1839859d33421388c"
+      ],
+      "targets": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/decisions.json",
+          "selector": "case index163",
+          "fields": [
+            "reasoning",
+            "missing_requirement",
+            "proposal_ids"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "c-mediadive-1316",
+        "c-chebi-91261"
+      ],
+      "observation": "DSMZ221 explicitly prescribes25ml of filter-sterilized20% Na-malate, but the decision requires complete formulation/basis/solvent/solute CAS before any stock owner and calls it aqueous. Primary PDF does not specify solvent or percent basis. An ignored-inclusive search across maintained owners/index/all published worker02 artifacts found only decision/evidence mentions, not a20%stock owner.",
+      "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+      "bounded_fix": "Prepare/reconcile a DSMZ221-qualified partial stock preserving literal20%, unknown basis/solvent/sodium stoichiometry/stereo and unresolved source-literal solute; retain the exact L-component hold and global Na-malate non-equivalence. Withdraw aqueous as an asserted source fact unless independently documented.",
+      "acceptance_checks": [
+        "Independent review of exact new payload and source occurrence binding.",
+        "No inferred water, L form, sodium ratio, percentage basis or normalized component amount.",
+        "Keep existing811/868 generic-malate obligations open."
+      ],
+      "lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+      ],
+      "capture_refs": [
+        {
+          "evidence_id": "c-mediadive-1316",
+          "root": "artifact",
+          "path": "c/captures/mediadive-1316.json",
+          "sha256": "44aca8f31d2dc1bad81f84431fbbe7f981beca547ff8b7e391f09b5c454e954e",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1316",
+          "accessed_at": "2026-11-08T05:07:34.261511+00:00"
+        },
+        {
+          "evidence_id": "c-chebi-91261",
+          "root": "artifact",
+          "path": "c/captures/chebi-91261.json",
+          "sha256": "f7a8b91684b0de2fb93fee5c827d1e84a7d24e5590d0ef571e93a26d4ef89a9e",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:91261",
+          "accessed_at": "2026-11-08T05:07:39.722462+00:00"
+        }
+      ],
+      "additional_primary_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-c/new-captures/dsmz221.pdf",
+        "sha256": "125bbbc48bf2566d20f3b850aacb03d2390c021c13a1a329a9850584b5a754e1",
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium221.pdf",
+        "accessed_at": "2026-11-08T06:42:54.644389+00:00",
+        "note": "Complete DSMZ221 PDF text read; primary preparation instructions establish literal20% and filter sterilization."
+      }
+    },
+    {
+      "finding_id": "W02C-003",
+      "title": "DSMZ375 administration is incorrectly described as solid context",
+      "severity": "P2",
+      "status": "open",
+      "case_indices": [
+        29,
+        165
+      ],
+      "case_ids": [
+        "CM_NAME:2feb52ed67f813e796ebca4439616167b770c91f3f19dec61dc3907b8399f0cf",
+        "KG_CASE:9a63321cc5427c62952c9a1dab31dddb9eb4c2602949386ec2a5e06b85d6bfca"
+      ],
+      "targets": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/decisions.json",
+          "selector": "case29 reasoning and case165 interpretation",
+          "fields": [
+            "reasoning",
+            "applicability"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "a-primary-primary-a88fe2ac6e424e19"
+      ],
+      "observation": "DSMZ375 table gives0.3g Cystein-HCl·2H2O, but the preparation explicitly adds cysteine from sterile anoxic stock solutions under100%N2. Case29 calls the three375 contexts solid; case165 must also preserve known stock administration. Solute mass does not establish solid supply.",
+      "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+      "bounded_fix": "Correct administration wording and partition notes. Keep unspecified375 stock strength and unusual chemical-form hold; do not substitute1107 5%stock or infer its hydrate/stereo.",
+      "acceptance_checks": [
+        "Read complete375 preparation instructions against revised case29/165 text.",
+        "Keep1107 proposal limited to its original occurrence set."
+      ],
+      "lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "capture_refs": [
+        {
+          "evidence_id": "a-primary-primary-a88fe2ac6e424e19",
+          "root": "artifact",
+          "path": "a/captures/primary-a88fe2ac6e424e19.pdf",
+          "sha256": "4951273b45475689b009f47438a6a74075df48d468326f2c8b28d50c8b92cbc2",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium375.pdf",
+          "accessed_at": "2026-11-08T05:07:03.465929+00:00"
+        }
+      ]
+    },
+    {
+      "finding_id": "W02C-004",
+      "title": "Methanol label cites JCM1174 instead of actual JCM1173-2",
+      "severity": "P2",
+      "status": "open",
+      "case_indices": [
+        75
+      ],
+      "case_ids": [
+        "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+      ],
+      "targets": [
+        {
+          "proposal_id": "b2-proposal-methanol_50_percent_vv_jcm_sources",
+          "owner_path": "data/ingredients/mapped/methanol_50_percent_vv_jcm_sources.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/b/after/methanol_50_percent_vv_jcm_sources.yaml",
+            "sha256": "1e7ef83bf7afacdc950c4e2013a6ce1dc3550e503a1810780ebdd50ca27b0348"
+          },
+          "fields": [
+            "preferred_term",
+            "ontology_mapping.ontology_label",
+            "notes/source-scope references"
+          ],
+          "case_ids": [
+            "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+          ]
+        }
+      ],
+      "evidence_ids": [
+        "b-togo-59fb9148ad86efc9",
+        "b-togo-31b31ea13b2730a4"
+      ],
+      "observation": "TOGO M1256 is JCM1173 and M1257 is JCM_M1173-2 with GRMD1173 URL. Payload labels instead list1174. This is a source-identity error, although both recipes support50%v/v methanol.",
+      "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+      "bounded_fix": "Correct the source list to represent1173 and its1173-2 agar variant, retaining all six frozen occurrence links and the supported shared stock identity.",
+      "acceptance_checks": [
+        "No1174 attribution remains in active claim fields without new primary evidence.",
+        "All six original occurrences remain accounted for; no false duplicate stock minted."
+      ],
+      "lineage": [],
+      "capture_refs": [
+        {
+          "evidence_id": "b-togo-59fb9148ad86efc9",
+          "root": "artifact",
+          "path": "b/captures/retry-togo-M1256.json",
+          "sha256": "36876c15da80c06d1ebcdb2024a7830beba6fd2b5c7c22a5e1866ae3d87cb1be",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1256",
+          "accessed_at": "2026-11-08T05:19:50.942515+00:00"
+        },
+        {
+          "evidence_id": "b-togo-31b31ea13b2730a4",
+          "root": "artifact",
+          "path": "b/captures/retry-togo-M1257.json",
+          "sha256": "9aea2b6525fc9dee58317f877d4898e5dd82cd28ee93e1ff9548201ea423e937",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1257",
+          "accessed_at": "2026-11-08T05:19:50.967059+00:00"
+        }
+      ]
+    },
+    {
+      "finding_id": "W02C-005",
+      "title": "Specific inherited resolver claims remain unresolved after narrow repairs",
+      "severity": "P1",
+      "status": "open",
+      "case_indices": [
+        5,
+        20,
+        22,
+        24,
+        31,
+        62,
+        64,
+        66,
+        82,
+        87,
+        89,
+        96,
+        105,
+        120,
+        139,
+        140,
+        143,
+        148,
+        149,
+        155,
+        157,
+        163,
+        168,
+        169,
+        171,
+        174,
+        175
+      ],
+      "case_ids": [
+        "CM_NAME:04fc9a1465f3d659efe08a5ae5dad64549020bcf412b8f9ccb55584876555c2c",
+        "CM_NAME:1bd8d675450108231a5a447707552676245f24c975891b217f1caa5f8170262b",
+        "CM_NAME:2289decfc41318e4897397c7f3bdc6df7fe5c80c55036a4a790cd43309e7acb0",
+        "CM_NAME:25226401c5383e5fd59514613ec3e84d8ed1a31228ae5dd51c3564d409f4c6d4",
+        "CM_NAME:320fb50c4c83c137dea50a4ef6c637bf66ac579be2b2b47c527ec8dc4599f604",
+        "CM_NAME:664ea49b4baffce477446f17556f93e233f5535d0abfdec29fbb8f7384caf80c",
+        "CM_NAME:6bbaec38cb2ee0c52194327b4584765d793a7b9da67c54e6715aecc4c57623f4",
+        "CM_NAME:6f29a0416dad4b5abe39633c347267176782130cb98b269871909d3e1c4a24ee",
+        "CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097",
+        "CM_NAME:9df2e5383945c29981721560d28379995b38003d759f55082d8ffead8447fdea",
+        "CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c",
+        "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+        "CM_NAME:c58da3b08ddcc64366574f1a39fc3ee30f579d5cae53ee33f5ffefaef3d225db",
+        "CM_NAME:e9b9c1de2acbd594e577d7d59fd8324fc03b47985a6e4358e2403d064ffdde08",
+        "KG_CASE:28d34a9d572cf32653def828502c4ebca5538b6ea4d26dada8a0e8380eb8b000",
+        "KG_CASE:2a0e5e0bd8412c77debf98099d168bc5b75755581ddb892c38c4e121ca547416",
+        "KG_CASE:355c966549bfd528a2db00d73e618efa3f291ca3d1d0b34851800a4f43d9aa91",
+        "KG_CASE:43cc527abd97db8f30e73215d6cf922734ae7eec0fa7b9303c3bb4227558a0ea",
+        "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76",
+        "KG_CASE:6ff96a432d284768932c069b30ef2d0262cf5218e424f9783655dd94f9ec6a6d",
+        "KG_CASE:79232876ee0bf1e72b13d7468a47b59d8e0260447848d9b7a13d448f002c70e6",
+        "KG_CASE:91fbd30ef38331c306f684d5bc27b3b8da74ab0f203c2dd1839859d33421388c",
+        "KG_CASE:a5de5680f410f37548a4708f6c56d5137e9140044007527774d011ae38029d60",
+        "KG_CASE:b0f79ac0e254be3ad4be5044f9e9f4d41cd02560322a3b4ff1403653097d2356",
+        "KG_CASE:b8e3bb79e349ae85ae0f77729aad4f1258693e3bfd1134f0eb13f05bdf6c4f17",
+        "KG_CASE:c8c5f6d20657c12e8c7fa05a03c476097421221ae1970a15da8f48464dfd99c4",
+        "KG_CASE:cb6c02faf6843214dc54dcd15660523b93f83e57866a0075a9a0f496a67c1a66"
+      ],
+      "targets": [
+        {
+          "proposal_id": "b-proposal-ferrous_hepta",
+          "owner_path": "data/ingredients/mapped/Feso4_X_7_H2o.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "b/after/Feso4_X_7_H2o.yaml",
+            "sha256": "20c388d3a1d26289f9bf4de5ff1511293dcc3806b36d5e1e0cae698aa946bd2c"
+          },
+          "fields": [
+            "synonyms"
+          ],
+          "case_ids": [
+            "CM_NAME:9df2e5383945c29981721560d28379995b38003d759f55082d8ffead8447fdea"
+          ],
+          "reproduced_current_claims": [
+            {
+              "pointer": "/synonyms/0",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Defined component, Inorganic compound, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/1",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Defined component, Simple component, Inorganic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/2",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/3",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Simple component, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/4",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Simple component, Inorganic compound, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/17",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Simple component, Defined component, Inorganic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            }
+          ]
+        },
+        {
+          "proposal_id": "c-proposal-reject-dl-aliases-on-l-malate",
+          "owner_path": "data/ingredients/mapped/Sodium_Malate.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "c/proposed-owners/c-proposal-reject-dl-aliases-on-l-malate.yaml",
+            "sha256": "e92c173f52dfffdac529265905957bf9f331ff010f4f6daedd1bd9d4e8ca087a"
+          },
+          "fields": [
+            "synonyms"
+          ],
+          "case_ids": [
+            "KG_CASE:28d34a9d572cf32653def828502c4ebca5538b6ea4d26dada8a0e8380eb8b000",
+            "KG_CASE:355c966549bfd528a2db00d73e618efa3f291ca3d1d0b34851800a4f43d9aa91",
+            "KG_CASE:6ff96a432d284768932c069b30ef2d0262cf5218e424f9783655dd94f9ec6a6d",
+            "KG_CASE:79232876ee0bf1e72b13d7468a47b59d8e0260447848d9b7a13d448f002c70e6",
+            "KG_CASE:91fbd30ef38331c306f684d5bc27b3b8da74ab0f203c2dd1839859d33421388c",
+            "KG_CASE:c8c5f6d20657c12e8c7fa05a03c476097421221ae1970a15da8f48464dfd99c4"
+          ],
+          "reproduced_current_claims": [
+            {
+              "pointer": "/synonyms/0",
+              "value": {
+                "synonym_text": "Properties: Defined component, Organic compound, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/1",
+              "value": {
+                "synonym_text": "Properties: Defined component, Simple component, Organic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/5",
+              "value": {
+                "synonym_text": "Na malate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              }
+            },
+            {
+              "pointer": "/synonyms/8",
+              "value": {
+                "synonym_text": "Na-malate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              }
+            },
+            {
+              "pointer": "/synonyms/12",
+              "value": {
+                "synonym_text": "Sodium Malate And",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              }
+            },
+            {
+              "pointer": "/synonyms/19",
+              "value": {
+                "synonym_text": "Properties: Organic compound, Simple component, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/20",
+              "value": {
+                "synonym_text": "Properties: Simple component, Organic compound, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            }
+          ]
+        },
+        {
+          "proposal_id": "c2-proposal-pyruvate-stock-alias",
+          "owner_path": "data/ingredients/mapped/Na-pyruvate.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/c/proposed-owners/c2-proposal-pyruvate-stock-alias.yaml",
+            "sha256": "a0dd95f327ce01bdcdd37747eb6e1ed75d311f570ed2e6283ecbbb21690ded11"
+          },
+          "fields": [
+            "synonyms"
+          ],
+          "case_ids": [
+            "KG_CASE:43cc527abd97db8f30e73215d6cf922734ae7eec0fa7b9303c3bb4227558a0ea",
+            "KG_CASE:a5de5680f410f37548a4708f6c56d5137e9140044007527774d011ae38029d60"
+          ],
+          "reproduced_current_claims": [
+            {
+              "pointer": "/synonyms/0",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Defined component, Simple component, Organic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/1",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/2",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Organic compound, Simple component, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/10",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/11",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Simple component, Defined component, Organic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/12",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Defined component, Organic compound, Solution",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/13",
+              "value": {
+                "synonym_text": "Role: Carbon source; Properties: Simple component, Organic compound, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            }
+          ]
+        },
+        {
+          "proposal_id": "c2-proposal-silicate-related-aliases",
+          "owner_path": "data/ingredients/mapped/Na-silicate.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/c/proposed-owners/c2-proposal-silicate-related-aliases-v2.yaml",
+            "sha256": "46b1f79efe1001b6d413d00db7526bc90014767caabd8914dc5abd000784fff7"
+          },
+          "fields": [
+            "synonyms"
+          ],
+          "case_ids": [
+            "KG_CASE:b8e3bb79e349ae85ae0f77729aad4f1258693e3bfd1134f0eb13f05bdf6c4f17",
+            "KG_CASE:cb6c02faf6843214dc54dcd15660523b93f83e57866a0075a9a0f496a67c1a66"
+          ],
+          "reproduced_current_claims": [
+            {
+              "pointer": "/synonyms/0",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            }
+          ]
+        },
+        {
+          "proposal_id": "w02-v2-mohr-hexahydrate-composed",
+          "owner_path": "data/ingredients/mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/integration/after/Fe_Nh42_So42_X_6_H2o.yaml",
+            "sha256": "a27f84e2768830f06b85fae4d31f8cc561bcc92467b0070630bafbeefde1b61d"
+          },
+          "fields": [
+            "synonyms"
+          ],
+          "case_ids": [
+            "CM_NAME:04fc9a1465f3d659efe08a5ae5dad64549020bcf412b8f9ccb55584876555c2c",
+            "CM_NAME:1bd8d675450108231a5a447707552676245f24c975891b217f1caa5f8170262b",
+            "CM_NAME:664ea49b4baffce477446f17556f93e233f5535d0abfdec29fbb8f7384caf80c",
+            "CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097",
+            "CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c",
+            "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+            "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76"
+          ],
+          "reproduced_current_claims": [
+            {
+              "pointer": "/synonyms/0",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/9",
+              "value": {
+                "synonym_text": "Iron ammonium sulfate hydrate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              }
+            },
+            {
+              "pointer": "/synonyms/12",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Defined component, Simple component, Inorganic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/13",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Simple component, Inorganic compound, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/14",
+              "value": {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Solution, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              }
+            },
+            {
+              "pointer": "/synonyms/17",
+              "value": {
+                "synonym_text": "Fe(NH4)2(SO4)2",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              }
+            }
+          ]
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Alk_So42.yaml",
+          "fields": [
+            "synonyms: Na SiO .9H O; ZnSO .7H O"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "Aluminum potassium sulfate",
+              "synonym_type": "EXACT",
+              "source": "manual"
+            },
+            {
+              "synonym_text": "aluminum potassium sulfate",
+              "synonym_type": "EXACT",
+              "source": "manual"
+            },
+            {
+              "synonym_text": "potassium alum",
+              "synonym_type": "EXACT",
+              "source": "manual"
+            },
+            {
+              "synonym_text": "Role: Mineral source; Properties: Defined component, Inorganic compound, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Aluminium potassium bis(sulphate)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Aluminum potassium alum",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Aluminum potassium disulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Burnt potassium alum",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Na SiO .9H O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Potash alum",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Potassium aluminum alum",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "ZnSO .7H O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "aluminium potassium sulfate (1/1/2)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "potassium aluminium sulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "potassium aluminum disulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "KAl(SO4)2",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "merged_from_duplicate_mim_record"
+            }
+          ],
+          "sha256": "eb7149b3301b2f405c59d0463b04bf6db774703bb3e914d125ffe9086ac717ed"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Coso4.yaml",
+          "fields": [
+            "synonyms: cobalt(2+) sulfate--water (1/7) RAW_TEXT"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "Role: Mineral source; Properties: Defined component, Simple component, Inorganic compound",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Cobaltous sulfate",
+              "synonym_type": "EXACT",
+              "source": "manual"
+            },
+            {
+              "synonym_text": "Cobalt(II) sulfate",
+              "synonym_type": "EXACT",
+              "source": "manual"
+            },
+            {
+              "synonym_text": "Cobalt (2+) sulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Cobalt Brown",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Cobalt monosulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Cobalt sulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "cobalt(2+) sulfate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Cobalt monosulfate heptahydrate",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "sssom_other_backfill"
+            },
+            {
+              "synonym_text": "cobalt(2+) sulfate--water (1/7)",
+              "synonym_type": "RAW_TEXT",
+              "source": "sssom_other_backfill"
+            },
+            {
+              "synonym_text": "cobalt(II) sulfate heptahydrate",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "sssom_other_backfill"
+            },
+            {
+              "synonym_text": "cobaltous sulfate heptahydrate",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "sssom_other_backfill"
+            }
+          ],
+          "sha256": "974a82461672cac1853cae05cdc6285a48f3e2b02619669b8b81067117c19fbd"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml",
+          "fields": [
+            "synonyms: Cobalt(II) chloride--water (1/7) EXACT_SYNONYM"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "Cobalt dichloride hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Cobalt(II) chloride hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "cobalt (II) chloride hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "cobalt chloride hydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "cobalt(2+) dichloride hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Cobalt(II) chloride--water (1/7)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "CoCl2 x 6 H2O",
+              "synonym_type": "RAW_TEXT",
+              "source": "MERGED_FROM_CHEBI:35696"
+            }
+          ],
+          "sha256": "f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Mncl2_X_4_H2o.yaml",
+          "fields": [
+            "synonyms: MnCl4 x4H2O/MnCl4・4H2O RAW_TEXT"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "Manganese (II) chloride tetrahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Manganese chloride tetrahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Manganese dichloride tetrahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Manganous chloride tetrahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnCl2 . 4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnCl2 · 4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnCl2.4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnCl2⋅4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnCl2・4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "manganese(2+) chloride tetrahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "manganese(II) chloride tetrahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnCl2 × 4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe_via_hydration_routing"
+            },
+            {
+              "synonym_text": "MnCl2 ∙ 4 H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe_via_hydration_routing"
+            },
+            {
+              "synonym_text": "MnCl2∙4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe_via_hydration_routing"
+            },
+            {
+              "synonym_text": "MnCl2･4H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe_via_hydration_routing"
+            },
+            {
+              "synonym_text": "dichloromanganese--water (1/4)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "manganese(2+) chloride--water (1/4)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "MnCl4 x 4 H2O",
+              "synonym_type": "RAW_TEXT",
+              "source": "merge_from_UNMAPPED_0449"
+            },
+            {
+              "synonym_text": "MnCl2·4H2O",
+              "synonym_type": "RAW_TEXT",
+              "source": "culturemech:output/ingredient_occurrences.tsv"
+            },
+            {
+              "synonym_text": "MnCl2 x 4H2O",
+              "synonym_type": "RAW_TEXT",
+              "source": "sssom_other_backfill"
+            },
+            {
+              "synonym_text": "MnCl4・4H2O",
+              "synonym_type": "RAW_TEXT",
+              "source": "sssom_other_backfill"
+            }
+          ],
+          "sha256": "ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Mnso4_X_1_H2o.yaml",
+          "fields": [
+            "synonyms: MnSO4・xH2O HYDRATE_FORM on REJECTED monohydrate tombstone"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "Manganese sulfate anhydrous",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnSO4 . 7H2O",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnSO4 x 7 H2O",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnSO4 x 7H2O",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnSO4.7H2O",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnSO4·7H2O",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "MnSO4・xH2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "manganese(2+) sulfate",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "chebi_synonym_review"
+            }
+          ],
+          "sha256": "d68f0e14e5f19625ae1e8476c8dfa3de4932cdf9656a9e6ae58a0a1ec438332f"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Nh42ni_So42.yaml",
+          "fields": [
+            "identifier/ontology_mapping versus anhydrous preferred form/CAS; concentration-qualified synonym"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2•6H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "ammonium nickel(2+) sulfate--water (2/1/2/6)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2 x 6 H2O (0.1% w/v)",
+              "synonym_type": "RAW_TEXT",
+              "source": "sssom_other_backfill"
+            }
+          ],
+          "sha256": "3f2bbdbc092c00cfe0b0d1b82996dc7825db1c13b2f11477ea1da7bd56d3474a"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Nh42ni_So42_X_6_H2o.yaml",
+          "fields": [
+            "synonyms: concentration-qualified0.1%stock alias"
+          ],
+          "role": "baseline comparison; no proposed owner change",
+          "current_synonyms_for_exact_field_comparison": [
+            {
+              "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2 x 6 H2O (0.1% w/v)",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2.6H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2·6H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2・6H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Ammonium nickel(2+) sulfate hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Diammonium nickel disulfate hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Nickel ammonium sulfate hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Nickel diammonium disulfate hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "ammonium nickel sulfate hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "ammonium nickel(II) sulfate hexahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2•6H2O",
+              "synonym_type": "HYDRATE_FORM",
+              "source": "merged_from_duplicate_mim_record"
+            },
+            {
+              "synonym_text": "(NH4)2Ni(SO4)2",
+              "synonym_type": "REJECTED_LABEL",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "ammonium nickel(2+) sulfate--water (2/1/2/6)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            }
+          ],
+          "sha256": "95a9c8fd17541611183de192078aebab13e1d6ebdb9e77808d2800da711a7b47"
+        }
+      ],
+      "evidence_ids": [
+        "c-chebi-76181",
+        "c-chebi-91261",
+        "a-ontology-86465",
+        "a-ontology-91244",
+        "c-chebi-86368"
+      ],
+      "observation": "Current full payloads retain non-name role/property RAW_TEXT; Sodium_Malate retains Sodium Malate And and generic aliases on an L-disodium identity; Mohr retains bare/unqualified hydrate aliases. Baseline comparison owners also retain exact wrong-substance or wrong-water tokens listed per target. A generic hold does not resolve these precise claims. Cocl2_X_6_H2o and Mnso4_X_1_H2o tombstones are not treated as active duplicate winners, but resolving tombstone labels still matter.",
+      "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+      "bounded_fix": "Retain claim-level open obligations and deduplicate against existing811/868/1220 before any curation. For unequivocal wrong/non-name labels, preserve provenance non-resolving; for ambiguous generic material names, adjudicate source scope and representative resolution without blanket stock rejection. Do not auto-merge owners.",
+      "acceptance_checks": [
+        "Every listed alias/field has explicit retained or repaired disposition.",
+        "Replay relevant label-index resolution after any authorized future change.",
+        "Keep actual stock/form distinctions and historical text without reactivating wrong exact aliases."
+      ],
+      "lineage": [
+        "SEM:15761b556078b9a904a8",
+        "D-MOHR-001",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/868",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1220"
+      ],
+      "capture_refs": [
+        {
+          "evidence_id": "c-chebi-76181",
+          "root": "artifact",
+          "path": "c/captures/chebi-76181.json",
+          "sha256": "7c66c3f2971ef73a26f7ac0530c5cb9e7fd9c279d28e0fb955d0e89b73260a45",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:76181",
+          "accessed_at": "2026-11-08T05:07:38.350964+00:00"
+        },
+        {
+          "evidence_id": "c-chebi-91261",
+          "root": "artifact",
+          "path": "c/captures/chebi-91261.json",
+          "sha256": "f7a8b91684b0de2fb93fee5c827d1e84a7d24e5590d0ef571e93a26d4ef89a9e",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:91261",
+          "accessed_at": "2026-11-08T05:07:39.722462+00:00"
+        },
+        {
+          "evidence_id": "a-ontology-86465",
+          "root": "artifact",
+          "path": "a/captures/chebi-86465.json",
+          "sha256": "76cce7fa8230c57138e3569858ecf6a79119be85281bd5d2864ada3223785dc1",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86465",
+          "accessed_at": "2026-11-08T05:09:19.331359+00:00"
+        },
+        {
+          "evidence_id": "a-ontology-91244",
+          "root": "artifact",
+          "path": "a/captures/chebi-91244.json",
+          "sha256": "c8bf30f1c2b4e9c2bcc10bd256b68a090795c083c207baf2d9d9ebb201d0d3c5",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:91244",
+          "accessed_at": "2026-11-08T05:09:19.194016+00:00"
+        },
+        {
+          "evidence_id": "c-chebi-86368",
+          "root": "artifact",
+          "path": "c/captures/chebi-86368.json",
+          "sha256": "2d5685a4a03c5d730876514b4a7664fb477f63682a60cc7e13d7776a250f68e3",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86368",
+          "accessed_at": "2026-11-08T05:07:42.657555+00:00"
+        }
+      ]
+    },
+    {
+      "finding_id": "W02C-006",
+      "title": "Baseline form-specific properties still contradict their record scope",
+      "severity": "P1",
+      "status": "open",
+      "case_indices": [
+        10,
+        31,
+        167
+      ],
+      "case_ids": [
+        "CM_NAME:0cfa5ec7504787012fdc47462acd27fe29cda3866cfda3853ce0de3b13a45d14",
+        "CM_NAME:320fb50c4c83c137dea50a4ef6c637bf66ac579be2b2b47c527ec8dc4599f604",
+        "KG_CASE:9b806ebdd2663e5f6385df36c5dda13fe0962a05d0daccf709aa35abf8d451ec"
+      ],
+      "targets": [
+        {
+          "owner_path": "data/ingredients/mapped/L-Malic_Acid_Disodium_Salt_Monohydrate.yaml",
+          "fields": [
+            "chemical_properties.molecular_formula",
+            "chemical_properties.smiles",
+            "chemical_properties.inchi",
+            "chemical_properties.pubchem_cid"
+          ],
+          "current_identifier": "cas:207511-06-6",
+          "current_preferred_term": "L-Malic acid disodium salt monohydrate",
+          "current_chemical_properties": {
+            "cas_rn": "207511-06-6",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+            "molecular_formula": "C4H4NaO5-",
+            "smiles": "C(C(C(=O)[O-])O)C(=O)[O-].[Na+]",
+            "inchi": "InChI=1S/C4H6O5.Na/c5-2(4(8)9)1-3(6)7;/h2,5H,1H2,(H,6,7)(H,8,9);/q;+1/p-2",
+            "pubchem_cid": 197014
+          },
+          "sha256": "4896efa3f3c06d572e3bf8dffffb131ab36f1e1a31fac75394acca8db7c43080"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Coso4_X_7_H2o.yaml",
+          "fields": [
+            "chemical_properties.inchi",
+            "chemical_properties.smiles"
+          ],
+          "current_identifier": "CHEBI:91244",
+          "current_preferred_term": "CoSO4 x 7 H2O",
+          "current_chemical_properties": {
+            "cas_rn": "10026-24-1",
+            "data_source": "PubChem (via CHEBI:53470)",
+            "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+            "molecular_formula": "Co.O4S.7H2O",
+            "inchi": "InChI=1S/Co.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2",
+            "smiles": "O=S(=O)([O-])[O-].[Co+2]"
+          },
+          "sha256": "3e14e4d57dab11eb3974f45db2894b12bd71aa7a761d823ae8ce401300ceba8d"
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Voso4_X_N_H2o.yaml",
+          "fields": [
+            "chemical_properties.inchi",
+            "chemical_properties.smiles"
+          ],
+          "current_identifier": "CHEBI:87020",
+          "current_preferred_term": "VOSO4 x n H2O",
+          "current_chemical_properties": {
+            "cas_rn": "123334-20-3",
+            "data_source": "PubChem (via CHEBI:87020)",
+            "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+            "molecular_formula": "(H2O)n.O5SV",
+            "inchi": "InChI=1S/H2O4S.H2O.O.V/c1-5(2,3)4;;;/h(H2,1,2,3,4);1H2;;/q;;;+2/p-2",
+            "smiles": "O=S(=O)([O-])[O-].[H]O[H].[O]=[V+2]"
+          },
+          "sha256": "bd15f57d4e547908edcffa874470f4cc2adfe672002fe3532be67c30e63caeaf"
+        }
+      ],
+      "evidence_ids": [
+        "a-ontology-91244",
+        "c-chebi-87020"
+      ],
+      "observation": "The disodium L-malate monohydrate candidate carries C4H4NaO5- and a one-sodium, water-free, stereo-unspecified structure. Cobalt sulfate heptahydrate retains anhydrous structural strings. Variable vanadyl sulfate hydrate carries one-water structure despite unspecified n; that inconsistency is also present in captured ontology metadata and must not be treated as independent fixed-form evidence.",
+      "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+      "bounded_fix": "Preserve the source decision holds and record these inherited property obligations. Independently confirm form-specific structures or withdraw unsupported structural fields with historical provenance; no automatic formula synthesis or CAS reassignment.",
+      "acceptance_checks": [
+        "Compare atom counts/charge/stereo/waters for each structure against actual intended owner.",
+        "Do not equate an ontology copied inconsistency with verified reagent properties."
+      ],
+      "lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/321",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1220"
+      ],
+      "issue_scope_note": "Issue321 is CLOSED historical context, not proof these exact current structure fields were repaired. Issue1220 is an open stock/form-context follow-up; root should deduplicate actual field scope before any new issue.",
+      "capture_refs": [
+        {
+          "evidence_id": "a-ontology-91244",
+          "root": "artifact",
+          "path": "a/captures/chebi-91244.json",
+          "sha256": "c8bf30f1c2b4e9c2bcc10bd256b68a090795c083c207baf2d9d9ebb201d0d3c5",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:91244",
+          "accessed_at": "2026-11-08T05:09:19.194016+00:00"
+        },
+        {
+          "evidence_id": "c-chebi-87020",
+          "root": "artifact",
+          "path": "c/captures/chebi-87020.json",
+          "sha256": "fbf850a3ccae6ed0e62d3e78d0da4bd252a51af85a59c3d70294801eef4adaeb",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:87020",
+          "accessed_at": "2026-11-08T05:07:37.863257+00:00"
+        }
+      ]
+    }
+  ],
+  "prior_finding_dispositions": [
+    {
+      "finding_id": "a-c-review-01",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "La flattened nitrate synonym is non-resolving on final payload; source formula/CAS and exact M0313204 establish La hexahydrate. Cerium case145 is outside this assignment and is not approved here.",
+      "all_prior_indices": [
+        145,
+        162
+      ],
+      "assigned_prior_indices": [
+        162
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/independent-review-c.json",
+          "file_sha256": "82c87155c175c2e3a1153f9e1c85d28643be5bdae4a0209aa9bfc94f2cffdc0d",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "a-c-review-04",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Final O-carbamyl-D-serine current evidence uses exact D-specific M0040464; prior broad descriptor is historical, and actual D/L NLM concepts plus primary paper distinguish them. No exact KG organism edge is thereby verified.",
+      "all_prior_indices": [
+        179
+      ],
+      "assigned_prior_indices": [
+        179
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/independent-review-c.json",
+          "file_sha256": "82c87155c175c2e3a1153f9e1c85d28643be5bdae4a0209aa9bfc94f2cffdc0d",
+          "pointer": "/findings/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-01",
+      "disposition": "resolved_for_assigned_targets",
+      "reasoning": "Actual TOGO captures were inspected for assigned64/82/87/89/101/102/118 and compared to full frozen recipes. Namespaces and original JCM/NBRC IDs are now recoverable; nonassigned69/86/111/121/122/123 remain for their reviewer.",
+      "all_prior_indices": [
+        64,
+        69,
+        82,
+        86,
+        87,
+        89,
+        101,
+        102,
+        111,
+        118,
+        121,
+        122,
+        123
+      ],
+      "assigned_prior_indices": [
+        64,
+        82,
+        87,
+        89,
+        101,
+        102,
+        118
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "file_sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "file_sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "file_sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-02",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "NBRC223 doubled formula and NLM M0141705 support ferric ammonium dodecahydrate; dividing the entire24-water formula yields12waters per formula unit, not ferrous Mohr salt.",
+      "all_prior_indices": [
+        71
+      ],
+      "assigned_prior_indices": [
+        71
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "file_sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/1"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "file_sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/1"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "file_sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/1"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-04",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "P4 full source has nested AgNO3 stock1mg/ml; frozen solute1g/L is not a zero-dose case. Current chemical proposal does not treat the receiving aliquot as solute concentration.",
+      "all_prior_indices": [
+        81
+      ],
+      "assigned_prior_indices": [
+        81
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "file_sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/3"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "file_sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/3"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "file_sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-05",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Both original JCM950 and966 contain2mg Mohr hexahydrate. Source absence claim is superseded; source-unit repair remains held independently.",
+      "all_prior_indices": [
+        96
+      ],
+      "assigned_prior_indices": [
+        96
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "file_sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/4"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "file_sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/4"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "file_sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/4"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-07",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Case112 now links the shared desiccated-ox-bile proposal with case138. Dried material scope is supported; generic/fresh bile and worker03 overlaps remain unresolved.",
+      "all_prior_indices": [
+        112
+      ],
+      "assigned_prior_indices": [
+        112
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "file_sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/6"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "file_sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/6"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "file_sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/6"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-08",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "The larch proposal preserves0.2% without a percentage basis. Actual TOGO2313 confirms an alternative carbon input and does not assign w/v to it.",
+      "all_prior_indices": [
+        102
+      ],
+      "assigned_prior_indices": [
+        102
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "file_sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/7"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "file_sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/7"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "file_sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/7"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-64",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "TOGO2277 typed hexahydrate and190mg SL12 support local glyph/quantity correction. No global malformed alias is proposed. The author artifacts do not demonstrate that upstream source repair has shipped.",
+      "all_prior_indices": [
+        64
+      ],
+      "assigned_prior_indices": [
+        64
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "file_sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/1"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-66",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "NBRC1126 states twelve waters and18mg. Frozen two-water token remains a source defect requiring upstream correction, not new ingredient identity.",
+      "all_prior_indices": [
+        66
+      ],
+      "assigned_prior_indices": [
+        66
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "file_sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-87",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "Actual3155 separates0.05g main-medium Fe salt from0.8g/L trace stock dosed10ml/L. Frozen0.85g/L additive flattening remains a concrete source transformation defect.",
+      "all_prior_indices": [
+        87
+      ],
+      "assigned_prior_indices": [
+        87
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "file_sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/7"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-96",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "Both original JCM sources state2mg; corresponding frozen gram-unit conversions remain unresolved. The correct alias proposal does not repair quantities.",
+      "all_prior_indices": [
+        96
+      ],
+      "assigned_prior_indices": [
+        96
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "file_sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/9"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-101",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "Actual2790 uses200microlitres1M MgSO4 in100ml medium. The stock proposal is feasible and present;200G_PER_L frozen dose remains separately defective.",
+      "all_prior_indices": [
+        101
+      ],
+      "assigned_prior_indices": [
+        101
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "file_sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/11"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-129",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "JCM448 supplies Mg(NO3)2·6H2O2.54g, while the frozen name omits nitrate coefficient. Existing hexahydrate owner is sufficient; source fix remains unapplied by this review.",
+      "all_prior_indices": [
+        129
+      ],
+      "assigned_prior_indices": [
+        129
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "file_sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/12"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-01",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Final selection uses one sulfuric-acid2M proposal across all five contexts. It does not retain duplicate source-ID owners or claim identical unknown solvent formulations.",
+      "all_prior_indices": [
+        17
+      ],
+      "assigned_prior_indices": [
+        17
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "file_sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "file_sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/review-a/findings-v1.json",
+          "file_sha256": "2e7d40ad760d16a4a81b88450604a4e1d531ddc0f0b6785c814e93eb1e32048e",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-03",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "JCM382/TOGO377 final v4 explicitly maps the FeSO4·7H2O component to the existing heptahydrate; no parent-form substitution remains in that component.",
+      "all_prior_indices": [
+        7,
+        58
+      ],
+      "assigned_prior_indices": [
+        7
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "file_sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/2"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "file_sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/2"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/review-a/findings-v1.json",
+          "file_sha256": "2e7d40ad760d16a4a81b88450604a4e1d531ddc0f0b6785c814e93eb1e32048e",
+          "pointer": "/findings/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-04",
+      "disposition": "limited_closure_source_access_obligation_retained",
+      "reasoning": "Successful TOGO377/683 captures support the actual recipe claims while JCM original failures/empty pages do not. Scientific source availability is resolved through those alternatives; evidence-kind classification of failed captures remains root evidence-family work and is not certified here as fixed.",
+      "all_prior_indices": [
+        7,
+        58
+      ],
+      "assigned_prior_indices": [
+        7
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "file_sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/3"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "file_sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/3"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/review-a/findings-v1.json",
+          "file_sha256": "2e7d40ad760d16a4a81b88450604a4e1d531ddc0f0b6785c814e93eb1e32048e",
+          "pointer": "/findings/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-06",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Final25%HCl v4 uses HCl solute rather than the whole acid stock as its component; unknown solvent/basis remain honest. No self has-part or inferred water is accepted.",
+      "all_prior_indices": [
+        43
+      ],
+      "assigned_prior_indices": [
+        43
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "file_sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/5"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "file_sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/5"
+        }
+      ]
+    },
+    {
+      "finding_id": "a2-review-c-169",
+      "disposition": "resolved_rejected_unverified_lead",
+      "reasoning": "Actual JinanShenghe page labels CAS139939-75-6 magnesium sulfate and is internally inconsistent. AlphaChem SDS retrieval did not yield an inspected SDS. The final case correctly rejects that as verified manganese evidence and preserves its local seven-water identity.",
+      "all_prior_indices": [
+        169
+      ],
+      "assigned_prior_indices": [
+        169
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/review-c/independent-review.json",
+          "file_sha256": "37577be2e1881e5e32fb430f68ffd15a7dedc86994b135c9bd5764f3b3116a71",
+          "pointer": "/findings/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "a2-review-c-171",
+      "disposition": "resolved_narrow_target_full_owner_open",
+      "reasoning": "The final v2 silicate payload makes the five challenged related labels non-resolving; exact source composition and inherited non-name/role claims remain open, not silently covered by this closure.",
+      "all_prior_indices": [
+        171
+      ],
+      "assigned_prior_indices": [
+        171
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/review-c/independent-review.json",
+          "file_sha256": "37577be2e1881e5e32fb430f68ffd15a7dedc86994b135c9bd5764f3b3116a71",
+          "pointer": "/findings/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "a2-review-c-175",
+      "disposition": "resolved_narrow_target_full_owner_open",
+      "reasoning": "Same final v2 correction applies to175; source1596 and worker03 pentahydrate scope remain distinct. A source-qualified exact metasilicate identity is not approved.",
+      "all_prior_indices": [
+        175
+      ],
+      "assigned_prior_indices": [
+        175
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage.json",
+      "routing_sha256": "8cee03fe4d39943d15a38fd715cb8bc4e3afce08da2fee8ef8e9d44ba9efc331",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/review-c/independent-review.json",
+          "file_sha256": "37577be2e1881e5e32fb430f68ffd15a7dedc86994b135c9bd5764f3b3116a71",
+          "pointer": "/findings/4"
+        }
+      ]
+    },
+    {
+      "finding_id": "a-b65-routing-01",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Case65 shares final exact M0313204/CAS10277-43-7 owner promotion with162 and no longer defers an absent parent lookup. Complete primary source chain supports La.",
+      "all_prior_indices": [
+        65
+      ],
+      "assigned_prior_indices": [
+        65
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/independent-review-b65.json",
+          "file_sha256": "ead780a492a75137871dbb1aa0077a0c7c1cbdd0e5910c52f4ac36a4485df259",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/review-revisions/independent-review-b65-v1.json",
+          "file_sha256": "ac471da7cb78c27a4df2bc17a882c8a30c2e669774a52d265134dfca15abe79e",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-25-exact-mesh",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Chromium nitrate nonahydrate final proposal uses narrower M0321544 with source nine-water formula and supplier CAS7789-02-8, not broad C041167.",
+      "all_prior_indices": [
+        25
+      ],
+      "assigned_prior_indices": [
+        25
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "file_sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-source-units",
+      "disposition": "open_upstream_source_work",
+      "reasoning": "Assigned case20 retains literal JCM1030/899 milligram trace quantities and frozen unit discrepancy. Other routed targets18/30/39 are outside this cohort and are not adjudicated here.",
+      "all_prior_indices": [
+        18,
+        20,
+        30,
+        39
+      ],
+      "assigned_prior_indices": [
+        20
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "file_sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/1"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-35-se-acid",
+      "disposition": "open_missing_identity_fact",
+      "reasoning": "DSMZ1003 still says only Se-acid. Neither SeIV nor SeVI can be inferred from frozen normalization; source clarification/CultureMech675 obligation remains open.",
+      "all_prior_indices": [
+        35
+      ],
+      "assigned_prior_indices": [
+        35
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "file_sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/4"
+        }
+      ]
+    },
+    {
+      "finding_id": "SEM:15761b556078b9a904a8",
+      "disposition": "open_reproduced_exact_baseline",
+      "reasoning": "Full Alk_So42 baseline still has exact Na SiO .9H O and ZnSO .7H O aliases, which cannot denote potassium aluminium sulfate. This specific defect survives irrespective of hydrate-case dispositions; retained as W02C-005 and deduplicated against811/868.",
+      "all_prior_indices": [
+        22,
+        32,
+        39,
+        52,
+        57,
+        166
+      ],
+      "assigned_prior_indices": [
+        22
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/integration-followup/historical/finding-dispositions-extract.json",
+          "file_sha256": "bab7a907cc07d59faa3edd43f41acd789cc8c7b8695cda6d4e662861373bf7bf",
+          "pointer": "/rows/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "D-MOHR-001",
+      "disposition": "resolved_wording_full_owner_open",
+      "reasoning": "Current82/89/96 missing_requirement explicitly says all three stock aliases are concretely rejected but unapplied. That resolves the stale wording finding; bare hydration-free aliases, role/prose claims and release holds remain separately open.",
+      "all_prior_indices": [
+        82,
+        89,
+        96
+      ],
+      "assigned_prior_indices": [
+        82,
+        89,
+        96
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/d/independent-review-mohr-v1.json",
+          "file_sha256": "a328afc5af85eb392f8b7a5a6328c79e917f73e4fdca75e887872b8af14b3e14",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/d/independent-review-mohr-v2.json",
+          "file_sha256": "9b22001a7400cf1c979dc26ba526ade6155245d79502e564b46ed35bf98cbdab",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "a2-review-b117-quantity-source-wording",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Current117 reasoning separates primary100ml enrichment from the frozen two100G_PER_L and one100PERCENT_V_V encodings. The proposal does not turn that receiving dose into component concentration.",
+      "all_prior_indices": [
+        117
+      ],
+      "assigned_prior_indices": [
+        117
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/review-c/independent-review-b112-b117.json",
+          "file_sha256": "f39743e1446dbcf96b4bee9e0e68c535ed88349fd7460d83419d2731d52f04ad",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "c2-b-chromium-historical-evidence",
+      "disposition": "resolved_narrow_target",
+      "reasoning": "Current chromium variable-hydrate v2 labels earlier no-CAS evidence historical/superseded and uses independently captured hydrate CAS15244-38-9. Its computational role remains provisional.",
+      "all_prior_indices": [
+        99
+      ],
+      "assigned_prior_indices": [
+        99
+      ],
+      "routing_file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-c-lineage-additional.json",
+      "routing_sha256": "d959a56692b3669482026b9af53ee5e19a4b9d68d6149f8335f3217d73c1f757",
+      "prior_occurrence_refs": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/independent-review-b.json",
+          "file_sha256": "b7d86c3d36d16d8fc25fda3afeafd4ef7c51dbab8259e0fe92eb642054650c92",
+          "pointer": "/findings/2"
+        }
+      ]
+    }
+  ],
+  "withdrawn_preliminary_concerns": [
+    {
+      "target": "c2-proposal-emjh-enrichment synonyms",
+      "disposition": "withdrawn_after_precise_contract_review",
+      "reason": "Source-bounded owner may suppress an unqualified family name that would falsely imply exact version/product equivalence; not rejected merely because it is a named stock. §§3/6 and1217 do not require global family resolution."
+    }
+  ]
+}

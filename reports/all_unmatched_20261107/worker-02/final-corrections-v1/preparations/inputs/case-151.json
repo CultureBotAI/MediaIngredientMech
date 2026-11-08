@@ -1,0 +1,231 @@
+{
+  "baseline_outcome": "current_source_placeholder_preserved",
+  "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+  "case_id": "KG_CASE:55268b66b04a59d2f2c6487270ae15e4a4686148d8fff29fd66b248269821cd8",
+  "original_kg_entry": {
+    "candidate_id": "55268b66b04a59d2f2c6487270ae15e4a4686148d8fff29fd66b248269821cd8",
+    "category": "biolink:ChemicalEntity",
+    "consumed_name_hits": [],
+    "downstream_holds": [],
+    "name_hits": [
+      {
+        "candidate_field": "source_label",
+        "kind": "synonym",
+        "label": "MnSO4 x n H2O",
+        "owner": "data/ingredients/mapped/Mnso4.yaml",
+        "resolving": false,
+        "synonym": {
+          "source": "manual",
+          "synonym_text": "MnSO4 x n H2O",
+          "synonym_type": "REJECTED_LABEL"
+        },
+        "synonym_type": "REJECTED_LABEL"
+      },
+      {
+        "candidate_field": "source_label",
+        "kind": "synonym",
+        "label": "MnSO4 x n H2O",
+        "owner": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+        "resolving": false,
+        "synonym": {
+          "source": "sssom_other_backfill",
+          "synonym_text": "MnSO4 x n H2O",
+          "synonym_type": "REJECTED_LABEL"
+        },
+        "synonym_type": "REJECTED_LABEL"
+      },
+      {
+        "candidate_field": "raw_source_label",
+        "kind": "synonym",
+        "label": "MnSO4 x n H2O",
+        "owner": "data/ingredients/mapped/Mnso4.yaml",
+        "resolving": false,
+        "synonym": {
+          "source": "manual",
+          "synonym_text": "MnSO4 x n H2O",
+          "synonym_type": "REJECTED_LABEL"
+        },
+        "synonym_type": "REJECTED_LABEL"
+      },
+      {
+        "candidate_field": "raw_source_label",
+        "kind": "synonym",
+        "label": "MnSO4 x n H2O",
+        "owner": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+        "resolving": false,
+        "synonym": {
+          "source": "sssom_other_backfill",
+          "synonym_text": "MnSO4 x n H2O",
+          "synonym_type": "REJECTED_LABEL"
+        },
+        "synonym_type": "REJECTED_LABEL"
+      }
+    ],
+    "native_identity_target": "",
+    "native_queue_state": "STILL_UNMAPPED",
+    "occurrences": 1,
+    "occurrences_definition": "helper constant; not measured recipe frequency",
+    "owners": [
+      {
+        "identifier": "CHEBI:86360",
+        "mapping_status": "MAPPED",
+        "native_review_rows": [
+          {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "1914",
+              "owner_record": "data/ingredients/mapped/Mnso4.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+              "row_sha256": "8645baf41af0c790611aecc31205c6bdee4675e617663683d3041765ed10e08e",
+              "source_position": 1914
+            },
+            "row": {
+              "comment": "",
+              "confidence": "0.8",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:86360",
+              "object_label": "manganese(II) sulfate",
+              "object_source": "obo:chebi.owl",
+              "other": "Manganese monosulfate|Manganese sulphate|Manganous sulfate|manganese(2+) sulfate|manganese(2+) sulphate|manganese(II) sulphate|CAS:7785-87-7",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=refresh_occurrence_statistics|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+              "subject_id": "MIM:Mnso4",
+              "subject_label": "MnSO4",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            }
+          }
+        ],
+        "ontology_mapping": {
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+              "source": "CultureMech"
+            }
+          ],
+          "mapping_quality": "EXACT_MATCH",
+          "ontology_id": "CHEBI:86360",
+          "ontology_label": "manganese(II) sulfate",
+          "ontology_source": "CHEBI"
+        },
+        "path": "data/ingredients/mapped/Mnso4.yaml",
+        "preferred_term": "MnSO4",
+        "sha256": "18004a608a6c1ffd4d3fd01f65fe8804b29d6b31b98d458d94e8bd222f4160cd",
+        "subject_id": "MIM:Mnso4"
+      },
+      {
+        "identifier": "kgmicrobe.compound:mnso4_x_7_h2o",
+        "mapping_status": "MAPPED",
+        "native_review_rows": [
+          {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "1919",
+              "owner_record": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+              "row_sha256": "474c5a7a80a950175e13b788bc159b4e247c97896c2ad2d06996fa396221910f",
+              "source_position": 1919
+            },
+            "row": {
+              "comment": "Local kgmicrobe.compound identity retained because MnSO4 x 7 H2O names a distinct hydrate with no verified external exact term; CHEBI:86360 is the anhydrous parent. [#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+              "confidence": "0.9",
+              "mapping_date": "2026-09-20",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "CHEBI:86360",
+              "object_label": "manganese(II) sulfate",
+              "object_source": "obo:chebi.owl",
+              "other": "MnSO4 . 7H2O|MnSO4 x 7H2O|MnSO4.7H2O|MnSO4\u00b77H2O",
+              "predicate_id": "skos:broadMatch",
+              "source": "MIM:CultureMech|MIM:MIM curation (#321)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:MIM curation (#652)",
+              "subject_id": "MIM:Mnso4_X_7_H2o",
+              "subject_label": "MnSO4 x 7 H2O",
+              "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+            }
+          },
+          {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "1920",
+              "owner_record": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+              "row_sha256": "54e485a19453e808f1143399c23e0c33a6255dc37d11d21144b823a109db3be9",
+              "source_position": 1920
+            },
+            "row": {
+              "comment": "Registry/identity row preserving kgmicrobe.compound:mnso4_x_7_h2o alongside anhydrous parent CHEBI:86360.",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-12",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "object_id": "kgmicrobe.compound:mnso4_x_7_h2o",
+              "object_label": "MnSO4 x 7 H2O",
+              "object_source": "kgm:compound",
+              "other": "MnSO4 . 7H2O|MnSO4 x 7H2O|MnSO4.7H2O|MnSO4\u00b77H2O",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:MIM curation (#321)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:MIM curation (#652)",
+              "subject_id": "MIM:Mnso4_X_7_H2o",
+              "subject_label": "MnSO4 x 7 H2O",
+              "validation_method": ""
+            }
+          }
+        ],
+        "ontology_mapping": {
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+              "source": "CultureMech"
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "notes": "molecular_formula 'Mn.O4S' -> 'Mn.O4S.7H2O'. The recorded value described the anhydrous salt while the label names a hydrate, understating the mass by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous parent CHEBI:86360's ChEBI formula ('Mn.O4S') \u2014 the mark of a value inherited from the parent rather than measured for this record. Water appended in ChEBI's own dot-separated notation.",
+              "source": "MIM curation (#321)"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "notes": "MnSO4 x 7 H2O names a formula-supported hydrate, but no exact external ontology term is verified. CHEBI:86360 (manganese(II) sulfate) is retained only as the asymmetric anhydrous parent while the supplied hydrate keeps a local kgmicrobe.compound identity.",
+              "source": "MIM curation (#652)"
+            }
+          ],
+          "mapping_quality": "NARROW_MATCH",
+          "ontology_id": "CHEBI:86360",
+          "ontology_label": "manganese(II) sulfate",
+          "ontology_source": "CHEBI"
+        },
+        "path": "data/ingredients/mapped/Mnso4_X_7_H2o.yaml",
+        "preferred_term": "MnSO4 x 7 H2O",
+        "sha256": "16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852",
+        "subject_id": "MIM:Mnso4_X_7_H2o"
+      }
+    ],
+    "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+    "raw_source_label": "MnSO4 x n H2O",
+    "resolving_owner_paths": [],
+    "scientific_identity_approved_by_reconciliation": false,
+    "source": "mediadive",
+    "source_columns": "compound",
+    "source_id": "mediadive.ingredient:1000",
+    "source_label": "MnSO4 x n H2O",
+    "source_record": {
+      "amount": 0.5,
+      "compound": "MnSO4 x n H2O",
+      "compound_id": 1000,
+      "g_l": 0.5,
+      "optional": 0,
+      "recipe_order": 2,
+      "unit": "g"
+    },
+    "triage_flags": [
+      "NON_RESOLVING_OR_REJECTED_LABEL_ONLY"
+    ]
+  },
+  "prior_dependency": "PR1158 candidate baseline, not merged",
+  "raw_source_label": "MnSO4 x n H2O",
+  "source": "mediadive",
+  "source_case_id": "mediadive.ingredient:1000",
+  "source_identity_claimed": false,
+  "source_label": "MnSO4 x n H2O"
+}

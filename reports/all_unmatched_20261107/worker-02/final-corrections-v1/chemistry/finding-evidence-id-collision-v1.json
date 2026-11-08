@@ -1,0 +1,43 @@
+{
+  "finding_id": "W02-CHEM-METADATA-001",
+  "reported_by": "/root assembly duplicate-ID guard",
+  "author": "/root/research_b",
+  "observed_at": "2026-11-08T08:18:06.375088+00:00",
+  "status": "needs_revision",
+  "input": {
+    "path": "evidence-v3.json",
+    "sha256": "3ffd5397fdf9c2d5a4f94bdfd57061410694046f893f3d81098c935e3f06f468"
+  },
+  "duplicate_evidence_id": "fc-chem-ferric-wako",
+  "exact_objects": [
+    {
+      "evidence_id": "fc-chem-ferric-wako",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v2/ferric-wako.body",
+        "sha256": "aad6e725303eb10b02bb60c747dbf0739d24ed8f239e50c2845c8854a975a76c"
+      },
+      "url": "https://labchem-wako.fujifilm.com/europe/product/detail/W01W0109-0106.html",
+      "accessed_at": "2026-11-08T08:04:32.751975+00:00",
+      "locator": "Full response; claim-specific use appears in the disposition ledger.",
+      "supports_or_contradicts": "Failed retrievals establish only access limitations. A successful capture is not source-to-owner approval."
+    },
+    {
+      "evidence_id": "fc-chem-ferric-wako",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/w04-ferric-wako.body",
+        "sha256": "59cf8f48daa8ad28ea509bed1997c9e4fa390ce85be2997a35761c7f5b1b8c9a"
+      },
+      "url": "https://labchem-wako.fujifilm.com/us/product/detail/W01W0109-0283.html",
+      "accessed_at": "2026-11-08T06:47:03.779498+00:00",
+      "locator": "Manufacturer product identity text; retained exact W04 response bytes and original access time.",
+      "supports_or_contradicts": "ABEE is explicitly 4-aminobenzoic acid ethyl ester; Wako explicitly gives variable-n ferric sulfate CAS15244-10-7. Neither source selects historical reagent lots."
+    }
+  ],
+  "impact": "Two separate authentic primary Wako captures use the same evidence ID. Root assembly correctly refused before any selection output. v3 cannot be used as a complete uniquely addressable ledger. Neither capture is scientifically discarded or selected as winner.",
+  "planned_fix": "Assign distinct IDs to Europe n-hydrate page and US99.5% n-hydrate page, retain exact capturebytes/URL/time, expand affected references to both IDs and verify all evidence IDs unique. No YAML chemistry changes.",
+  "prior_validation_limit": "Author v3 integrity checked capturehashes and ID membership but not duplicate new evidence IDs; prior PASS is superseded on that specific completeness claim."
+}

@@ -1,0 +1,110 @@
+{
+  "reviewer": "/root/research_b",
+  "reviewed_at": "2026-11-08T08:28:35.575388+00:00",
+  "verdict": "approve_bounded_binder_code_and_controls_pending_actual_proof_binding",
+  "scope": "Root-only review binder,11 focused controls, and capture-only native inspection helper. No scientific approval of this reviewers own chemistry or other sourceclaims.",
+  "input_hash_manifest": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/bind_independent_review.py",
+      "sha256": "89f1e0bc49db0e99320cbefacdb7f4119a845556a8ce4c447b0bf7dd8f9ee6ec",
+      "mtime_before_control_run": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/test_review_binding_guards.py",
+      "sha256": "13384c250ace45e1bc0b4c33f4cb64553aaa1ad1b9d0ec1452c40cbb43be557e",
+      "mtime_before_control_run": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/prepare_native_inspection.py",
+      "sha256": "575bb6cf4123532ab718720151a46f1b5f4dd2f8e42a3d8fe63f845a36b5f34c",
+      "mtime_before_control_run": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/review-selection-v1/decisions.json",
+      "sha256": "43353f5c0ba5398e3f9e99d11152cfe9fd1e9e5d43d7c0d0fdbd26a44c8feda8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/review-selection-v1/proposals.json",
+      "sha256": "765c0d4cf8a94df0b9a6162361b8bfd2adcdff0f563fb89b88b496889fcdfc9b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/review-selection-v1/review-routing.json",
+      "sha256": "b444484905a845c9e66400df25df81b822807e63f94763c7bfb6cf92e2ce457b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/native-v1/inspection.json",
+      "sha256": "21f6b0c0c31ae2d578bab8bcdc62268e3bb714678cc59f6276b0f6a0e1c47c7a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/native-v1/targets.yaml",
+      "sha256": "7095933ff23576ffd9b20055b03acf6a74d26c7f48440186a462305cb4478555"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/native-v1/inspect-command.json",
+      "sha256": "e4aaaaeaff6a55a6315b41c9fad28f66b8fd74cd6eb6cf4d400c8f1ed52d3c50"
+    },
+    {
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b"
+    },
+    {
+      "path": "src/mediaingredientmech/ingredient_bundle_refresh.py",
+      "sha256": "d0826b8ac0867604a233ae3df951b569e90dfa5b7892e62ce40015e9d8c15ee3"
+    }
+  ],
+  "control_run": {
+    "passed": 11,
+    "failed": 0,
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/chemistry/binding-runtime-v4",
+    "python": "private maintained Python3.13.2",
+    "options": "PYTHONDONTWRITEBYTECODE=1; -o addopts='' -p no:cov -p no:cacheprovider; fresh private basetemp",
+    "xml": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/binding-controls-v4.xml",
+      "sha256": "9a5fad87c1f103b96e16c90c3d28a253d75fc13c45ebd5642c3725aeea796773"
+    },
+    "stdout": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/binding-controls-v4.log",
+      "sha256": "cefbf44a723fd577d5a0bf2a3ea50bf6cf22a4b4c99440ecdb46fba5b259d8f5"
+    },
+    "controls": [
+      "test_valid_review_and_open_findings_are_distinct",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>0]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>1]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>2]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>3]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>4]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>5]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>6]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>7]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>8]",
+      "test_refuses_stale_incomplete_or_self_review[<lambda>9]"
+    ]
+  },
+  "binder_assessment": {
+    "complete_review_coverage": "Requires exact targetset equality and unique proof rows for every case and proposal, plus complete matching author routing.",
+    "staleness": "Checks full canonical decision/proposal digests, frozen caseinputsha, and exact aftercapture; main captures/rehashes every full candidate bytefile with FrozenFile.",
+    "independence": "Only /root/final_reviewer is admitted; normalized currentrouting and originalauthors are checked and authorship_conflict must be literalFalse. This is content/attribution validation, not cryptographic reviewer authentication; actual reviewartifact and workflow attribution still require final independent assembly inspection.",
+    "review_state": "Only approve or findings_open rows with nonempty reasoning/reviewmode accepted. The bound independent_review.status=complete means work completed; per-target findings_open status remains in proof and bindingreceipt. No accepted/closed scientific status is fabricated.",
+    "mutation_scope": "Affected105 cases have only independent_review metadata changed; code removes that field before equality assertion. Proposal ledger is emitted from original held bytes, all117 payloads are read-only. One independent-review evidence link and bindingreceipt are added.",
+    "execution_status": "Actual Dproof binding was not executed by this reviewer; Dproof forthcoming at assignment. Final bound output must still be checked against exact supplied proof and source selection before publication."
+  },
+  "capture_helper_assessment": {
+    "native_status": "inspection_only",
+    "targets": 305,
+    "source_case_targets": 188,
+    "candidate_targets": 117,
+    "input_count": 3317,
+    "current_input_hash_mismatches": [],
+    "target_identity_and_exact_selected_payload_paths_verified": true,
+    "interpretation": "The helper constructs source/candidate target metadata and invokes existing record_review.py inspect; it does not generate scientific findings or approve owners. Labels/selectors are tied to the unchanged188cases; candidatepaths are exactly117selectedpayloads. Source-only cases use ownership_note; existingownerpaths remain baseline comparisons.",
+    "freshness_limit": "New files created after this frozen capture are not retroactively included. This review verifies the declared3317capturedinputs; final assembly may bind later technicalmetadata separately."
+  },
+  "publication_limits": [
+    "Outputpath guard refuses traversal, noncanonical resolved paths and aliasing; existing outputdirectories refused. FrozenFile holds exactsourceinputs and main rechecks them before/after nativepublication.",
+    "Shared native publish_new_files is bounded exclusive publication, not an atomic multi-file transaction or universal hostile-concurrency/late-hardlink guarantee. Failed invocations, residual directories or diagnostic artifacts must remain failed until a new exact success receipt is independently verified.",
+    "Hardcoded revieweridentity and proof fields cannot by themselves prove actual agency/authorship or adequacy of skeptical science review. This code validates exact declared rows; D actual review receipt and final assembly audit remain required."
+  ],
+  "scientific_or_release_approval": false,
+  "prior_seals_preserved": true,
+  "findings": []
+}

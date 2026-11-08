@@ -1,0 +1,96 @@
+{
+  "finding_id": "W02-FC-D-10N-CASE-SCOPE",
+  "reviewer": "/root/final_reviewer",
+  "reported_at": "2026-11-08T08:13:44.487512+00:00",
+  "status": "reported_before_dependent_fix",
+  "severity": "minor",
+  "classification": "case_specific_provenance_scope_ambiguity_not_shared_payload_count_error",
+  "title": "Two individual10N sulfuric acid case narratives repeat their combined seven-occurrence scope",
+  "targets": [
+    {
+      "case_index": 114,
+      "case_id": "CM_NAME:d951d3a06dbf1687dcd7ad4b09cf6eaff094051a7ec99faad346cb175a61b703",
+      "case_canonical_sha256": "4a1d94bb3e5e6fb3a41dfb70eee4790563b98a93e2b620240c35c2bfa8ef8cdd",
+      "own_occurrence_count": 6,
+      "fields": [
+        "reasoning",
+        "applicability"
+      ]
+    },
+    {
+      "case_index": 118,
+      "case_id": "CM_NAME:e487376ddf68008986b13e55fced4761f2f5003a4f0d5b0d12c05e3549a18cdb",
+      "case_canonical_sha256": "3e10aa82527ae450f51ea3b96b68f974f6205150d9b11d34d1fdfa34f122f6a1",
+      "own_occurrence_count": 1,
+      "fields": [
+        "reasoning",
+        "applicability"
+      ]
+    }
+  ],
+  "shared_proposal": {
+    "proposal_id": "b2-proposal-sulfuric_acid_10n_named_sources",
+    "case_ids": [
+      "CM_NAME:d951d3a06dbf1687dcd7ad4b09cf6eaff094051a7ec99faad346cb175a61b703",
+      "CM_NAME:e487376ddf68008986b13e55fced4761f2f5003a4f0d5b0d12c05e3549a18cdb"
+    ],
+    "combined_occurrence_count": 7,
+    "after_capture": {
+      "root": "artifact",
+      "path": "continuation-1201-v1/b/after/sulfuric_acid_10n_named_sources.yaml",
+      "sha256": "ed0be76eef8f563c4a015554bb812fea2c357740e726c70c1301e76e06bde647"
+    },
+    "count_assessment": "Seven is correct for the combined proposal. Do not replace with six. No frozen occurrence ID or source identity changes are justified."
+  },
+  "reasoning": "Case114 contains six exact occurrence IDs and six frozen recipes: M2680,M2734,M377,M84,J382-derivedagc2,andM2668. Case118 contributes one separate Kim/M3239 occurrence. Both copied allseven prose from the combined proposal without saying that it covers two cases. Case114 applicability also explicitly states six and case118 one, so machine accounting is intact. The shared payload contains both case IDs and an additional M3239 component evidence row; its seven-occurrence count is supported. Actual M3239 primary comments/entry state10N acid for pH1.8; stock identity is not challenged.",
+  "bounded_recommendation": "Qualify each case narrative with its own six or one occurrences and explicitly identify seven only as the combined two-case proposal scope. Preserve shared payload science/count, old histories, exact frozen scope, and source/release holds. No new scientific identity or quantity finding.",
+  "dedup": "Potential textual precision extension of existing1241 source-provenance family; root owns live dedup/publication before correction. Reviewer performs no GitHub write.",
+  "input_hash_manifest": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/decisions.json",
+      "sha256": "cc97c2346f44e2398a0657a7e90513f104331cc6fceee80e49eca8035ec39edf"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/proposals.json",
+      "sha256": "07bfa3757c6851a845bb0a71465573328c2347dec17e6ddad3cf815ae5001d58"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/after/sulfuric_acid_10n_named_sources.yaml",
+      "sha256": "ed0be76eef8f563c4a015554bb812fea2c357740e726c70c1301e76e06bde647"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2680_Caldisphaera_Medium.yaml",
+      "sha256": "3cf2cd1cfe95569f1cf3c534f985c48cde2c90b375f04228171bf08d1bbe5ba6"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2734_Thermodesulfobium_Medium.yaml",
+      "sha256": "ad9e61e83659dfb57543f0ad02e4efa8bbc24b471c705fff64a49efb3323b613"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M377_AGC2_Medium.yaml",
+      "sha256": "f37c8673aa5ff88a76168cf48c5332987a6050c89b3fe2a5e26243cb23d976b1"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M84_9K_Medium.yaml",
+      "sha256": "1a648d91304a347fd64d4b50f8f8219b5d136b376ed22cc1ced16a9a40220770"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/agc2_medium.yaml",
+      "sha256": "0b3ddfeefcd2692347c809207977491fd29360eec874dfec9bf8d2ff98976f81"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/jcm_medium_161.yaml",
+      "sha256": "ef15a907dac3595fdd70ec300d3b2f2322408bc81e4da9b40411aa7fbddc579d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/inputs/culturemech/data/normalized_yaml/bacterial/kim_medium.yaml",
+      "sha256": "f3c271c49c8b50b440800968d30877999613e9646973772b443cedfc7e7db880"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/b/captures/togo-M3239.json",
+      "sha256": "9e9d3d3e2b785e61182b1ed7a50cc72b9d9fbfa319ef20f38db52c9f15557ebb"
+    }
+  ],
+  "full_owner_or_release_approval": false,
+  "harness_note": "Initial inline receipt assembly used wrong parent offset for frozen queue and refused before any output. Corrected to exact campaign root; scientific source reads were already performed from explicit correct paths."
+}

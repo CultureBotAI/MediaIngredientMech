@@ -1,0 +1,431 @@
+{
+  "reviewer": "/root/final_reviewer",
+  "assembled_at": "2026-11-08T08:27:44.809788+00:00",
+  "status": "listed_additional_source_reads_complete",
+  "actual_scope": "Additional actual source captures read after or beyond preparatory-source-review-v1. Original access times and bytes are reused; reviewer performed no new remote retrieval. Rows delimit whole-capture versus matched-field inspection. Sources not listed here or in preparatory receipt are not claimed freshly inspected merely because selected evidence links them. Complete final candidate assessments separately inherit unchanged W04 scientific observations.",
+  "source_assessments": [
+    {
+      "evidence_id": "fc-chem-aladdin-malate-coa",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v2/aladdin-malate-coa.body",
+        "sha256": "c5a8ba3e72c05b656010dd56953cde05e2e960355fdaa181034b3c0e4f974d44"
+      },
+      "url": "https://aladdinsci-bucket.s3.ap-northeast-2.amazonaws.com/coa/D302750C.pdf",
+      "original_accessed_at": "2026-11-08T08:04:32.258948+00:00",
+      "actual_inspection_scope": "Full one-page certificate",
+      "independent_assessment": "D302750C labels CAS207511-06-6 DL-disodium malate monohydrate. Conflicts with Sigma L/(S) scope; no supplier winner or CAS reassignment follows."
+    },
+    {
+      "evidence_id": "fc-chem-pubchem-malate-properties",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v2/pubchem-malate-properties.body",
+        "sha256": "976cdf7b87682706ad2e5320c3aae57f21258e369e5be74f2ef7f66096d108d9"
+      },
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/16211643/property/MolecularFormula,IsomericSMILES,InChI/JSON",
+      "original_accessed_at": "2026-11-08T08:04:32.259026+00:00",
+      "actual_inspection_scope": "Full molecular property JSON",
+      "independent_assessment": "CID16211643 supplies two sodium atoms, one water and specified stereochemistry, supporting the proposed L-disodium-monohydrate structural correction, independently of unresolved supplier CAS conflict."
+    },
+    {
+      "evidence_id": "fc-chem-sigma-malate-web",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/sigma-malate-web-extract.json",
+        "sha256": "3182d7aa22e724b3565f7b05100982eaf32c337dcc6d57cf7cebbb9eaf1da5ce"
+      },
+      "url": "https://www.sigmaaldrich.com/US/en/product/aldrich/233935",
+      "original_accessed_at": "2026-11-08T08:05:48+00:00",
+      "actual_inspection_scope": "Full successful captured web extract; unsuccessful raw HTTP response is not substituted",
+      "independent_assessment": "Sigma233935 explicitly supplies L/(S) disodium monohydrate, CAS207511-06-6, formula and stereochemical SMILES. Supports bounded declared L-form structures; Aladdin DL conflict remains."
+    },
+    {
+      "evidence_id": "fc-chem-ols-cobalt-chloride6",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v3/ols-cobalt-chloride6.body",
+        "sha256": "a626d2aa210aafd9572221d4893cd206310d5df507e474e1528997048f522250"
+      },
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:53503",
+      "original_accessed_at": "2026-11-08T08:08:46.039062+00:00",
+      "actual_inspection_scope": "Full exact OLS term response",
+      "independent_assessment": "Definition and structure specify six waters. Exact-synonym labels naming one or seven waters contradict that scope and cannot override explicit form identity."
+    },
+    {
+      "evidence_id": "fc-chem-nbrc1604",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v5/nbrc1604.body",
+        "sha256": "d06d96f2366dc22869283ce082355fbe4ffa236e47974b74e5550b8b12309105"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1604",
+      "original_accessed_at": "2026-11-08T08:10:25.074612+00:00",
+      "actual_inspection_scope": "Full visible recipe and vitamin-stock table",
+      "independent_assessment": "PABA stock is explicitly0.3ug/uL with10uL receiving dose. Carrier is unstated. This historical label context is separate from the two frozen M3160/M3161 free-acid occurrences."
+    },
+    {
+      "evidence_id": "fc-chem-togoM3052",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v5/togoM3052.body",
+        "sha256": "71e6a3dcb37fe735825c083bd7d2009aee7894efb3fe69d0ad110011642dd547"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3052",
+      "original_accessed_at": "2026-11-08T08:10:25.074890+00:00",
+      "actual_inspection_scope": "Full meta, component groups and preparation comments",
+      "independent_assessment": "Provider M3052 is NBRC1604 and retains qualified PABA stock name; original NBRC table supplies receiving dose. No projection onto unrelated frozen source occurrences."
+    },
+    {
+      "evidence_id": "fc-chem-paba-literature-context",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/w04-paba-europepmc.body",
+        "sha256": "119fbd4c5866ce73483a3c629ac40c4695ed1849a14b23140f31b3f53e1b7a0a"
+      },
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:31986050&format=json&resultType=core",
+      "original_accessed_at": "2026-11-08T06:47:03.780376+00:00",
+      "actual_inspection_scope": "Full captured EuropePMC abstract and citation metadata",
+      "independent_assessment": "Ketoconazole/PABA1:1 cocrystal study is relevant PABA context but does not establish exact ingredient or microbial role; PARTIAL contextual support is appropriate."
+    },
+    {
+      "evidence_id": "fc-chem-nlm-chrome-M0314280",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v4/nlm-chrome-M0314280.body",
+        "sha256": "d83520053bcd26e97cfcf78160a0b595c043b0376ccda0a6e8970cb8c2336c3f"
+      },
+      "url": "https://id.nlm.nih.gov/mesh/M0314280.json",
+      "original_accessed_at": "2026-11-08T08:09:21.201518+00:00",
+      "actual_inspection_scope": "Full exact NLM concept JSON",
+      "independent_assessment": "Specific canonical chrome alum, dodecahydrate concept with registryUNIIH54D055WX6 is distinct from broad chrome-alum concept and supports the exact-form term under mapping semantics3."
+    },
+    {
+      "evidence_id": "fc-chem-nlm-chrome-M0074743",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v4/nlm-chrome-M0074743.body",
+        "sha256": "430cdb36aa6f49a9fb76815f72863476909866e0ae37e7fb0d3e770a706a49f1"
+      },
+      "url": "https://id.nlm.nih.gov/mesh/M0074743.json",
+      "original_accessed_at": "2026-11-08T08:09:21.201882+00:00",
+      "actual_inspection_scope": "Full broad NLM concept JSON",
+      "independent_assessment": "Broad chrome-alum registry/CAS context does not make generic chromium(III) sulfate exact. Specific concept is preferred for the dodecahydrate double salt."
+    },
+    {
+      "evidence_id": "fc-chem-jcm369",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v3/jcm369.body",
+        "sha256": "44fc5ac491914a596c80b7f030d26b416275ad5f8f9546f58e2b66cf11ae46f2"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=369",
+      "original_accessed_at": "2026-11-08T08:08:45.603216+00:00",
+      "actual_inspection_scope": "Full visible source recipe and preparation",
+      "independent_assessment": "Separate0.5% ferric sulfate n-hydrate solution in0.1N sulfuric acid is available. Percent basis and fixed hydration remain unstated; ferric owner873 unresolved."
+    },
+    {
+      "evidence_id": "fc-chem-jcm592",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/chemistry/captures/fetch-v3/jcm592.body",
+        "sha256": "97e42ebe07ef7fdc2252dacd468753f2a2fdd5b6fa621fb4e09a163dc632b2b7"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=592",
+      "original_accessed_at": "2026-11-08T08:08:45.603429+00:00",
+      "actual_inspection_scope": "Full visible recipe and preparation",
+      "independent_assessment": "0.01g variable ferric sulfate in solutionA is separate from ferrous sulfate and ferric citrate. Delegation603 is available; no species conflation or fixedn inference."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1597",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1597.json",
+        "sha256": "2d185173dcfad9534ad8cb3676722b73b077a23ecdd8b7eb42cbd1e3925a042a"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1597",
+      "original_accessed_at": "2026-11-08T05:07:09.808611+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1630",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1630.json",
+        "sha256": "164807c358b8d53b6e1bfdd02e294fee67699b0b26ade469e3162a9bb0de1eee"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1630",
+      "original_accessed_at": "2026-11-08T05:07:10.160530+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1706",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1706.json",
+        "sha256": "1b217f57f071b44bfd4aa50bf121c4a9fe4be1404e456280d733e4027f49885b"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1706",
+      "original_accessed_at": "2026-11-08T05:07:10.309625+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1771",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1771.json",
+        "sha256": "cd394c878e1cc088db5532c58aeaa75dcba0aab504d127db9f751beaf5eebe98"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1771",
+      "original_accessed_at": "2026-11-08T05:07:10.773951+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1608",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1608.json",
+        "sha256": "c9532aae5484f558ff0adba2b33f03c9c4a3806eb9ae77351ad78ab7af238518"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1608",
+      "original_accessed_at": "2026-11-08T05:07:11.169406+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1586",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1586.json",
+        "sha256": "989f8087a375e905c4bdbd93f0ae432ab34eaa254b05b4d17f5ece20e7a564d0"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1586",
+      "original_accessed_at": "2026-11-08T05:07:11.371810+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1631",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1631.json",
+        "sha256": "16e4802fffb7cc8da40cad4c897b5d0e812c706f2787c4cd73aa94252665af6f"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1631",
+      "original_accessed_at": "2026-11-08T05:07:11.664169+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1296",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1296.json",
+        "sha256": "512161b85d295ad8fc3002ae028a58830a2abdae167be0eebcc3a935d44fe62a"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1296",
+      "original_accessed_at": "2026-11-08T05:07:12.256470+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1364",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1364.json",
+        "sha256": "a90725d5e248f08815184ceca772b1dfd52199084e742ccff4645aa9cc8916d5"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1364",
+      "original_accessed_at": "2026-11-08T05:07:12.548906+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1618",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1618.json",
+        "sha256": "053aec05438fc18f6a128d9dfac2b4e99f3e7e086997cb6d88508dd12a6c9d3c"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1618",
+      "original_accessed_at": "2026-11-08T05:07:12.704628+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1767",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1767.json",
+        "sha256": "4a6bf25f71eaa41826f63d60636a660b28fb940997840b298150eefd550944c2"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1767",
+      "original_accessed_at": "2026-11-08T05:07:13.392955+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M961",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M961.json",
+        "sha256": "7c192fb5abd70217099880520993486a2409dbc05e5ecb65da12acd2201d9928"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M961",
+      "original_accessed_at": "2026-11-08T05:07:13.523315+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1697",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1697.json",
+        "sha256": "d28bad5b0e444b36c39a12f4a380796fa2dfc38994d4a413bb2d73fdda6e6d7c"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1697",
+      "original_accessed_at": "2026-11-08T05:07:13.860456+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1619",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1619.json",
+        "sha256": "be04da75aa0addcb5b5b12b54e181b62ec469fd5683b8e7186a6fca30e6a8816"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1619",
+      "original_accessed_at": "2026-11-08T05:07:14.146986+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-a-primary-togo-M1757",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-a-primary-togo-M1757.json",
+        "sha256": "528be6e06d54ea8badd02ba0cd4d0609536214e0abffd3ee18464ba8ebc9f542"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1757",
+      "original_accessed_at": "2026-11-08T05:07:14.262389+00:00",
+      "actual_inspection_scope": "Full provider metadata, matched Mn-bearing component/group, and preparation comments; no new review of unrelated ingredient roles",
+      "independent_assessment": "Literal provider MnSO4 variable-hydrate occurrence is retained at stated source scope. This does not resolve the separately contradicted JCM1503 magnesium row or approve receiving-medium units."
+    },
+    {
+      "evidence_id": "p4-b-source-c8ec70d710c58681",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-b-source-c8ec70d710c58681.bin",
+        "sha256": "f4bcb4b44fad96b072381444e0674a88edb5bba797b2a859fd93035b0e60c365"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1415",
+      "original_accessed_at": "2026-11-08T05:07:11.001467+00:00",
+      "actual_inspection_scope": "Full captured recipe or full visible recipe text with component tables and preparation comments",
+      "independent_assessment": "JCM1415 directly states50%v/v methanol and receiving4mL; source-specific preparation is retained without inventing carrier."
+    },
+    {
+      "evidence_id": "p4-b-togo-e85c9667433ea77c",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-b-togo-e85c9667433ea77c.json",
+        "sha256": "90d9760942990b430483900ab0683d85eec5edc911ca611f0b28e76e13462b99"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2721",
+      "original_accessed_at": "2026-11-08T05:15:28.190444+00:00",
+      "actual_inspection_scope": "Full captured recipe or full visible recipe text with component tables and preparation comments",
+      "independent_assessment": "M2721 retains0.025% resazurin4mL; percent basis and exact solute form remain unresolved. OTHER is appropriate."
+    },
+    {
+      "evidence_id": "p4-dsmz221",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-dsmz221.pdf",
+        "sha256": "125bbbc48bf2566d20f3b850aacb03d2390c021c13a1a329a9850584b5a754e1"
+      },
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium221.pdf",
+      "original_accessed_at": "2026-11-08T06:42:54.644389+00:00",
+      "actual_inspection_scope": "Full captured recipe or full visible recipe text with component tables and preparation comments",
+      "independent_assessment": "Full source gives filter-sterilized20%Na-malate stock and25mL receiving dose. Percentage basis, stereo, sodium ratio and carrier are not supplied."
+    },
+    {
+      "evidence_id": "p4-nbrc1604",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-nbrc1604.body",
+        "sha256": "d06d96f2366dc22869283ce082355fbe4ffa236e47974b74e5550b8b12309105"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1604",
+      "original_accessed_at": "2026-11-08T08:10:25.074612+00:00",
+      "actual_inspection_scope": "Full captured recipe or full visible recipe text with component tables and preparation comments",
+      "independent_assessment": "Full original recipe supports0.3ug/uL PABA preparation and10uL dose, not10uL stock volume or unrelated frozen-case stock assignment."
+    },
+    {
+      "evidence_id": "p4-togoM3052",
+      "capture": {
+        "root": "artifact",
+        "path": "final-corrections-v1/preparations/captures/p4-togoM3052.body",
+        "sha256": "71e6a3dcb37fe735825c083bd7d2009aee7894efb3fe69d0ad110011642dd547"
+      },
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3052",
+      "original_accessed_at": "2026-11-08T08:10:25.074890+00:00",
+      "actual_inspection_scope": "Full captured recipe or full visible recipe text with component tables and preparation comments",
+      "independent_assessment": "Full provider meta/component groups/comments corroborate original NBRC1604 context, not M3160/M3161 frozen stock applicability."
+    },
+    {
+      "evidence_id": "a-ontology-747199",
+      "capture": {
+        "root": "artifact",
+        "path": "a/captures/chebi-747199.json",
+        "sha256": "d66467c1ae0920077172a048b8d75ecd2ddee1e29c33c94c40bd04f0a3053faf"
+      },
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:747199",
+      "original_accessed_at": "2026-11-08T05:10:11.769770+00:00",
+      "actual_inspection_scope": "Full exact term JSON",
+      "independent_assessment": "Strontium sulfate exact identifier, label, formula, CAS and structures agree with the selected owner; this does not license quantity repair."
+    },
+    {
+      "evidence_id": "c-jcm-616",
+      "capture": {
+        "root": "artifact",
+        "path": "c/captures/jcm-616.html",
+        "sha256": "d60651f69593907ce9e7e5c4e133f7af72e64b186693d099f8b81932696256fb"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=616",
+      "original_accessed_at": "2026-11-08T05:10:03.673993+00:00",
+      "actual_inspection_scope": "Full visible original JCM616 recipe and stock tables",
+      "independent_assessment": "SL12B literally writes MnCl4·4H2O50mg; no corrigendum establishes MnCl2, so malformed label is nonresolving without source rewrite."
+    },
+    {
+      "evidence_id": "c-medium-J616",
+      "capture": {
+        "root": "artifact",
+        "path": "c/captures/medium-J616.json",
+        "sha256": "4ee12aa5fa985962ad9d2cbe8e3e00286ef24f2752979e4b1ba7c02b17650caa"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J616",
+      "original_accessed_at": "2026-11-08T05:08:45.067708+00:00",
+      "actual_inspection_scope": "Full provider recipe and all three solution groups",
+      "independent_assessment": "Provider repeats literalCl4; repetition is not chemical correction authority."
+    }
+  ],
+  "input_hash_manifest": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/review-selection-v1/evidence.json",
+      "sha256": "206af97ab7d0056724249ff01da05f180cfff2622690e2f24a8ca090d0fd4124"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/preparations/evidence.json",
+      "sha256": "57c038c6504b0b3d1d3744ec7ea683ca475941c01ef5f7bf0ead78438af0524b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/independent/preparatory-source-review-v1.json",
+      "sha256": "c1d78d497850edb3a6a9738ae0baa10cb3f7d2420934eeb5c87c0f72366194f3"
+    }
+  ],
+  "full_owner_or_release_approval": false
+}

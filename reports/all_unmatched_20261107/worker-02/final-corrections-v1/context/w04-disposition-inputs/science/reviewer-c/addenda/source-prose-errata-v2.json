@@ -1,0 +1,700 @@
+{
+  "reviewer": "reviewer-c (/root/media)",
+  "author_head": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+  "status": "complete",
+  "type": "immutable_reviewer_prose_errata",
+  "created_at": "2026-11-08T07:27:07.668736+00:00",
+  "predecessor": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-c/addenda/silicate-source-prose-errata-v1.json",
+    "sha256": "ede64dc6941b32f0813f52e0ca63a0dfb92840827e9fadb3e2f2447b6a9459cf",
+    "preserved": true
+  },
+  "supersession_scope": "This cumulative v2 adds six cases to the three v1 corrections. The v1 entries are copied unchanged. Use v2 for the complete eight-case prose correction; keep v1 and all sealed originals.",
+  "purpose": "Correct reviewer-owned source-number mistakes after rechecking the actual frozen source rows and applicable scientific evidence. These numbers were mistakes, not alternate medium-ID namespaces. No author source record, payload, case binding, verdict, hold or finding disposition is changed.",
+  "errata": [
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/54/reasoning",
+      "case_id": "KG_CASE:43cc527abd97db8f30e73215d6cf922734ae7eec0fa7b9303c3bb4227558a0ea",
+      "case_index": 148,
+      "case_input_sha256": "6e3c235325598f5d99ea9c58413e32f77c81397b7c216e1cc0a5daac94ac246e",
+      "original_reasoning": "Source1920 Na-pyruvate is consistent with neat sodium pyruvate CHEBI50144. Removing the1M stock alias from this chemical owner is supported without changing the source ingredient. The inherited role/property text aliases and high-confidence role inference remain unapproved.",
+      "corrected_reasoning": "Source mediadive.ingredient:113 is Na-pyruvate; its captured ingredient record specifies CHEBI:50144, CAS 113-24-6 and C3H3NaO3, consistent with sodium pyruvate as a chemical rather than a 1 M stock preparation. The frozen source row records 5 g. Making the 1 M stock alias non-resolving on this chemical owner is supported without changing the source ingredient. Inherited role/property text aliases and high-confidence role inference remain unapproved.",
+      "source_case_id": "mediadive.ingredient:113",
+      "source_record": {
+        "amount": 5,
+        "compound": "Na-pyruvate",
+        "compound_id": 113,
+        "g_l": 5.10204,
+        "mmol_l": 46.3636,
+        "optional": 0,
+        "recipe_order": 7,
+        "unit": "g"
+      },
+      "proposal_ids_unchanged": [
+        "c2-proposal-pyruvate-stock-alias"
+      ],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/55/reasoning",
+      "case_id": "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76",
+      "case_index": 149,
+      "case_input_sha256": "01b56128ff63f3ffe353e3c4d62a3bae173bc99ad4a630a0c4b4b32f4dca205e",
+      "original_reasoning": "Source1828 links the flattened Mohr name to an explicit six-water formula, unlike a bare unqualified chemical label. The source-specific interpretation and composed stock-alias repair are supported. It does not authorize using FeNH42SO42 as a universal alias independent of provenance, or merging seven-water/other historical owners.",
+      "corrected_reasoning": "Source mediadive.ingredient:106 is the flattened Fe(NH4)2(SO4)2 entry. Its captured ingredient record explicitly supplies CAS 7783-85-9 and a formula containing six waters; CHEBI:76181 independently defines ferrous ammonium sulfate hexahydrate with that CAS. This supports the source-specific six-water interpretation and the composed stock-alias repair. It does not authorize using FeNH42SO42 as a universal exact alias independent of provenance, or merging seven-water and other historical owners. Inherited full-owner alias and role obligations remain open.",
+      "source_case_id": "mediadive.ingredient:106",
+      "source_record": {
+        "amount": 0.04,
+        "compound": "Fe(NH4)2(SO4)2",
+        "compound_id": 106,
+        "g_l": 0.0474496,
+        "optional": 0,
+        "recipe_order": 3,
+        "unit": "g"
+      },
+      "proposal_ids_unchanged": [
+        "w02-v2-mohr-hexahydrate-composed"
+      ],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/64/reasoning",
+      "case_id": "KG_CASE:a5de5680f410f37548a4708f6c56d5137e9140044007527774d011ae38029d60",
+      "case_index": 168,
+      "case_input_sha256": "fe8eb93eb1076f399cbdca797498855d4417c170d476ef2fdbf8bc4dc289e857",
+      "original_reasoning": "Source468 Na pyruvate supports the same neat sodium-pyruvate scope as148; spacing does not define a new substance. The1M alias rejection applies to the shared chemical owner while preserving its other unresolved inherited claims.",
+      "corrected_reasoning": "Source mediadive.ingredient:762 is Na pyruvate; its captured record specifies CHEBI:50144, CAS 113-24-6 and C3H3NaO3. Together with the frozen 0.5 g source row, this supports the same chemical scope as case148/source113; spacing does not define a new substance. The 1 M alias rejection applies to their shared chemical owner while preserving its other unresolved inherited claims.",
+      "source_case_id": "mediadive.ingredient:762",
+      "source_record": {
+        "amount": 0.5,
+        "compound": "Na pyruvate",
+        "compound_id": 762,
+        "g_l": 0.5,
+        "mmol_l": 4.54364,
+        "optional": 0,
+        "recipe_order": 6,
+        "unit": "g"
+      },
+      "proposal_ids_unchanged": [
+        "c2-proposal-pyruvate-stock-alias"
+      ],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/65/reasoning",
+      "case_id": "KG_CASE:b0f79ac0e254be3ad4be5044f9e9f4d41cd02560322a3b4ff1403653097d2356",
+      "case_index": 169,
+      "case_input_sha256": "a13bc8bd920e08498931d84c1fe4cc1ec59bac794d5d9fea56404403f003d003",
+      "original_reasoning": "Source113 explicitly names seven-water manganese sulfate, already preserved by a local owner. The proposed CAS139939-75-6 lead is not verified: the independently captured supplier labels it magnesium sulfate anhydrous and is internally inconsistent. No actual AlphaChem SDS was inspected. Retain the local seven-water scope and do not infer monohydrate identity or a verified CAS.",
+      "corrected_reasoning": "Source mediadive.ingredient:543 explicitly names MnSO4 x 7 H2O, but its captured record also carries anhydrous CHEBI:86360, CAS 7785-87-7, MnO4S and mass 151.001. This is a source conflict, not evidence that seven-water, monohydrate and anhydrous forms are identical. The existing local owner preserves the declared seven-water scope without exact parent identity. The CAS 139939-75-6 lead is not verified: the captured Jinan Shenghe page calls it magnesium sulfate anhydrous, lists MgSO4 and also lists CAS 7487-88-9. No actual AlphaChem SDS was inspected. Retain the local scope and the unresolved CAS/form requirement; inherited role assertions remain outside approval.",
+      "source_case_id": "mediadive.ingredient:543",
+      "source_record": {
+        "amount": 5,
+        "compound": "MnSO4 x 7 H2O",
+        "compound_id": 543,
+        "g_l": 0.005,
+        "mmol_l": 0.0331124,
+        "optional": 0,
+        "recipe_order": 5,
+        "unit": "mg"
+      },
+      "proposal_ids_unchanged": [],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/66/reasoning",
+      "case_id": "KG_CASE:b8e3bb79e349ae85ae0f77729aad4f1258693e3bfd1134f0eb13f05bdf6c4f17",
+      "case_index": 171,
+      "case_input_sha256": "4438a1ae3b20ab4f5a0c97ecbdd73b9198bfe2ef744f914f243a102b4abb2cfb",
+      "original_reasoning": "Source983 Na silicate does not select sodium/silicon ratio or hydrate. OLS preserves related rather than exact synonym scopes for the five challenged names; the separate metasilicate owner reinforces the need for reconciliation. The narrow predicate repair is supported, but no source-specific metasilicate identity or whole-owner approval is established.",
+      "corrected_reasoning": "Source mediadive.ingredient:1596 is the Na silicate entry at4 mg in Solution A of DSMZ1753; Solution B is an alternative seawater preparation. The source does not select sodium/silicon ratio or hydrate. OLS preserves related rather than exact synonym scopes for the five challenged names, and the separate metasilicate owner reinforces the need for reconciliation. The narrow predicate repair is supported, but no source-specific metasilicate identity or whole-owner approval is established.",
+      "source_case_id": "mediadive.ingredient:1596",
+      "source_record": {
+        "amount": 4,
+        "compound": "Na silicate",
+        "compound_id": 1596,
+        "g_l": 0.004,
+        "mmol_l": 0.03277,
+        "optional": 0,
+        "recipe_order": 13,
+        "unit": "mg"
+      },
+      "proposal_ids_unchanged": [
+        "c2-proposal-silicate-related-aliases"
+      ],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/68/reasoning",
+      "case_id": "KG_CASE:cb6c02faf6843214dc54dcd15660523b93f83e57866a0075a9a0f496a67c1a66",
+      "case_index": 175,
+      "case_input_sha256": "ea3528808a47f80bfae8d35c49fe11b58329693bf3488ab2bc9ccb460fb093ae",
+      "original_reasoning": "Source1596 Na-silicate has the same unresolved generic-family boundary as171. Retyping five overly exact related labels is supported as a narrow claim correction; source composition and worker03 pentahydrate remain separate. Existing mineral role and non-name RAW_TEXT claims are not accepted by this change.",
+      "corrected_reasoning": "Source mediadive.ingredient:524 is the Na-silicate entry at100 mg in the one-litre marine trace-element solution of DSMZ511. It has the same unresolved generic-family boundary as case171, while remaining a distinct source occurrence. Retyping five overly exact related labels is supported as a narrow claim correction; no fixed silicate composition or hydrate is inferred. Case171/source1596 and worker03 pentahydrate remain separate. Existing mineral-role and non-name RAW_TEXT claims are not approved by this change.",
+      "source_case_id": "mediadive.ingredient:524",
+      "source_record": {
+        "amount": 100,
+        "compound": "Na-silicate",
+        "compound_id": 524,
+        "g_l": 0.1,
+        "mmol_l": 0.819249,
+        "optional": 0,
+        "recipe_order": 5,
+        "unit": "mg"
+      },
+      "proposal_ids_unchanged": [
+        "c2-proposal-silicate-related-aliases"
+      ],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/70/reasoning",
+      "case_id": "KG_CASE:e5f16871a2a24d38c1d3f2d049bb12a434485690e664c8d4059b3bdb7ad73bac",
+      "case_index": 180,
+      "case_input_sha256": "e5ed6c3ab490bc3f4962db37d9a4f41ddeb67bc7a9bccb6a862d185bab98fdd7",
+      "original_reasoning": "MediaDive616/DSMZ1113 names EMJH enrichment and100ml dosing, distinct from medium base. Albumin species and unspecified growth factors stay unresolved; BD product evidence is a comparator for partial composition, not proof of exact source catalog/version. Generic-family label suppression is defensible for this bounded owner under §§3/6.",
+      "corrected_reasoning": "Source mediadive.ingredient:992 is Leptospira Enrichment EMJH in DSMZ medium1113. The complete DSMZ recipe adds 100 mL enrichment to separately prepared EMJH base, agarose and water, establishing supplement scope distinct from the base. The captured BD manual supports an enrichment containing albumin, polysorbate80 and unspecified additional growth factors, while the source recipe does not establish an exact catalog/version or albumin species. The bounded source-qualified partial owner is supported within those limits. Making the unqualified family label non-resolving for this bounded owner is defensible under §§3/6; it is not a blanket rejection of named stock or product identities. No whole-owner/export approval follows.",
+      "source_case_id": "mediadive.ingredient:992",
+      "source_record": {
+        "amount": 100,
+        "compound": "Leptospira Enrichment EMJH",
+        "compound_id": 992,
+        "optional": 0,
+        "recipe_order": 4,
+        "unit": "ml"
+      },
+      "proposal_ids_unchanged": [
+        "c2-proposal-emjh-enrichment"
+      ],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "case-assessments.json",
+      "target_file_sha256": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+      "json_pointer": "/cases/71/reasoning",
+      "case_id": "KG_CASE:ef6a026f9b25a4d7d4941d2c3bfccc2f6a0219514dc7bf97b97e1dde2e87bf89",
+      "case_index": 181,
+      "case_input_sha256": "2ffe5c9bbc2a19fd23654badbe63fcffab8ec83bc3aaf9f60971eead1fae5fd8",
+      "original_reasoning": "Source524 declares CaSO4·7H2O but provides no independent confirmation of that anomalous hydrate. The local owner preserves the source claim without anhydrous properties; exact calcium-sulfate identity remains held. A new identifier would not solve the physical-form uncertainty.",
+      "corrected_reasoning": "Source mediadive.ingredient:2000 declares CaSO4 x 7 H2O; the frozen source row records 12.5 mg. Its captured ingredient record simultaneously carries anhydrous CHEBI:31346, CAS 7778-18-9, CaO4S and mass 136.142, so it does not independently verify the anomalous stated hydrate. The existing local owner preserves the source claim with only a close parent comparison and cleared chemical properties. The physical-form identity remains held; a new identifier would not resolve it, and neither anhydrous equivalence nor inherited role claims are approved.",
+      "source_case_id": "mediadive.ingredient:2000",
+      "source_record": {
+        "amount": 12.5,
+        "compound": "CaSO4 x 7 H2O",
+        "compound_id": 2000,
+        "g_l": 0.012219,
+        "mmol_l": 0.0897516,
+        "optional": 0,
+        "recipe_order": 6,
+        "unit": "mg"
+      },
+      "proposal_ids_unchanged": [],
+      "verdict_unchanged": "bounded_disposition_supported_with_retained_obligations"
+    },
+    {
+      "target_file": "findings.json",
+      "target_file_sha256": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1",
+      "json_pointer": "/prior_finding_dispositions/20/reasoning",
+      "finding_id": "a2-review-c-175",
+      "case_index": 175,
+      "case_id": "KG_CASE:cb6c02faf6843214dc54dcd15660523b93f83e57866a0075a9a0f496a67c1a66",
+      "original_reasoning": "Same final v2 correction applies to175; source1596 and worker03 pentahydrate scope remain distinct. A source-qualified exact metasilicate identity is not approved.",
+      "corrected_reasoning": "The same final v2 related-synonym correction applies to case175, whose source is mediadive.ingredient:524 in DSMZ511 at100 mg. Case171/source1596 and worker03 pentahydrate remain distinct source scopes. This narrow proposal does not approve a source-qualified exact metasilicate identity or the complete owner.",
+      "disposition_unchanged": "resolved_narrow_target_full_owner_open"
+    }
+  ],
+  "scientific_verification": [
+    {
+      "case_index": 148,
+      "case_id": "KG_CASE:43cc527abd97db8f30e73215d6cf922734ae7eec0fa7b9303c3bb4227558a0ea",
+      "source_case_id": "mediadive.ingredient:113",
+      "case_input_sha256": "6e3c235325598f5d99ea9c58413e32f77c81397b7c216e1cc0a5daac94ac246e",
+      "capture_paths": [
+        "c/captures/mediadive-113.json",
+        "c/captures/chebi-50144.json"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:113 is Na-pyruvate; its captured ingredient record specifies CHEBI:50144, CAS 113-24-6 and C3H3NaO3, consistent with sodium pyruvate as a chemical rather than a 1 M stock preparation. The frozen source row records 5 g. Making the 1 M stock alias non-resolving on this chemical owner is supported without changing the source ingredient. Inherited role/property text aliases and high-confidence role inference remain unapproved."
+    },
+    {
+      "case_index": 149,
+      "case_id": "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76",
+      "source_case_id": "mediadive.ingredient:106",
+      "case_input_sha256": "01b56128ff63f3ffe353e3c4d62a3bae173bc99ad4a630a0c4b4b32f4dca205e",
+      "capture_paths": [
+        "c/captures/mediadive-106.json",
+        "c/captures/chebi-76181.json"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:106 is the flattened Fe(NH4)2(SO4)2 entry. Its captured ingredient record explicitly supplies CAS 7783-85-9 and a formula containing six waters; CHEBI:76181 independently defines ferrous ammonium sulfate hexahydrate with that CAS. This supports the source-specific six-water interpretation and the composed stock-alias repair. It does not authorize using FeNH42SO42 as a universal exact alias independent of provenance, or merging seven-water and other historical owners. Inherited full-owner alias and role obligations remain open."
+    },
+    {
+      "case_index": 168,
+      "case_id": "KG_CASE:a5de5680f410f37548a4708f6c56d5137e9140044007527774d011ae38029d60",
+      "source_case_id": "mediadive.ingredient:762",
+      "case_input_sha256": "fe8eb93eb1076f399cbdca797498855d4417c170d476ef2fdbf8bc4dc289e857",
+      "capture_paths": [
+        "c/captures/mediadive-762.json",
+        "c/captures/chebi-50144.json"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:762 is Na pyruvate; its captured record specifies CHEBI:50144, CAS 113-24-6 and C3H3NaO3. Together with the frozen 0.5 g source row, this supports the same chemical scope as case148/source113; spacing does not define a new substance. The 1 M alias rejection applies to their shared chemical owner while preserving its other unresolved inherited claims."
+    },
+    {
+      "case_index": 169,
+      "case_id": "KG_CASE:b0f79ac0e254be3ad4be5044f9e9f4d41cd02560322a3b4ff1403653097d2356",
+      "source_case_id": "mediadive.ingredient:543",
+      "case_input_sha256": "a13bc8bd920e08498931d84c1fe4cc1ec59bac794d5d9fea56404403f003d003",
+      "capture_paths": [
+        "c/captures/mediadive-543.json",
+        "c/captures/chebi-86360.json",
+        "c/captures/chebi-86364.json",
+        "continuation-1201-v1/c/captures/mg-cas-lead-not-mn.json",
+        "c/owners/Mnso4_X_7_H2o.yaml"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:543 explicitly names MnSO4 x 7 H2O, but its captured record also carries anhydrous CHEBI:86360, CAS 7785-87-7, MnO4S and mass 151.001. This is a source conflict, not evidence that seven-water, monohydrate and anhydrous forms are identical. The existing local owner preserves the declared seven-water scope without exact parent identity. The CAS 139939-75-6 lead is not verified: the captured Jinan Shenghe page calls it magnesium sulfate anhydrous, lists MgSO4 and also lists CAS 7487-88-9. No actual AlphaChem SDS was inspected. Retain the local scope and the unresolved CAS/form requirement; inherited role assertions remain outside approval."
+    },
+    {
+      "case_index": 171,
+      "case_id": "KG_CASE:b8e3bb79e349ae85ae0f77729aad4f1258693e3bfd1134f0eb13f05bdf6c4f17",
+      "source_case_id": "mediadive.ingredient:1596",
+      "case_input_sha256": "4438a1ae3b20ab4f5a0c97ecbdd73b9198bfe2ef744f914f243a102b4abb2cfb",
+      "capture_paths": [
+        "continuation-1201-v1/c/captures/medium-1753.json"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:1596 is the Na silicate entry at4 mg in Solution A of DSMZ1753; Solution B is an alternative seawater preparation. The source does not select sodium/silicon ratio or hydrate. OLS preserves related rather than exact synonym scopes for the five challenged names, and the separate metasilicate owner reinforces the need for reconciliation. The narrow predicate repair is supported, but no source-specific metasilicate identity or whole-owner approval is established."
+    },
+    {
+      "case_index": 175,
+      "case_id": "KG_CASE:cb6c02faf6843214dc54dcd15660523b93f83e57866a0075a9a0f496a67c1a66",
+      "source_case_id": "mediadive.ingredient:524",
+      "case_input_sha256": "ea3528808a47f80bfae8d35c49fe11b58329693bf3488ab2bc9ccb460fb093ae",
+      "capture_paths": [
+        "continuation-1201-v1/c/captures/medium-511.json"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:524 is the Na-silicate entry at100 mg in the one-litre marine trace-element solution of DSMZ511. It has the same unresolved generic-family boundary as case171, while remaining a distinct source occurrence. Retyping five overly exact related labels is supported as a narrow claim correction; no fixed silicate composition or hydrate is inferred. Case171/source1596 and worker03 pentahydrate remain separate. Existing mineral-role and non-name RAW_TEXT claims are not approved by this change."
+    },
+    {
+      "case_index": 180,
+      "case_id": "KG_CASE:e5f16871a2a24d38c1d3f2d049bb12a434485690e664c8d4059b3bdb7ad73bac",
+      "source_case_id": "mediadive.ingredient:992",
+      "case_input_sha256": "e5ed6c3ab490bc3f4962db37d9a4f41ddeb67bc7a9bccb6a862d185bab98fdd7",
+      "capture_paths": [
+        "c/captures/mediadive-992.json",
+        "c/captures/medium-1113.json",
+        "c/captures/bd-emjh.json",
+        "continuation-1201-v1/c/captures/dsmz-1113.pdf",
+        "continuation-1201-v1/c/captures/bd-emjh-manual.pdf"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:992 is Leptospira Enrichment EMJH in DSMZ medium1113. The complete DSMZ recipe adds 100 mL enrichment to separately prepared EMJH base, agarose and water, establishing supplement scope distinct from the base. The captured BD manual supports an enrichment containing albumin, polysorbate80 and unspecified additional growth factors, while the source recipe does not establish an exact catalog/version or albumin species. The bounded source-qualified partial owner is supported within those limits. Making the unqualified family label non-resolving for this bounded owner is defensible under §§3/6; it is not a blanket rejection of named stock or product identities. No whole-owner/export approval follows."
+    },
+    {
+      "case_index": 181,
+      "case_id": "KG_CASE:ef6a026f9b25a4d7d4941d2c3bfccc2f6a0219514dc7bf97b97e1dde2e87bf89",
+      "source_case_id": "mediadive.ingredient:2000",
+      "case_input_sha256": "2ffe5c9bbc2a19fd23654badbe63fcffab8ec83bc3aaf9f60971eead1fae5fd8",
+      "capture_paths": [
+        "c/captures/mediadive-2000.json",
+        "c/captures/chebi-31346.json",
+        "c/owners/Caso4_X_7_H2o.yaml"
+      ],
+      "scientific_disposition": "unchanged_bounded_judgment",
+      "corrected_reasoning": "Source mediadive.ingredient:2000 declares CaSO4 x 7 H2O; the frozen source row records 12.5 mg. Its captured ingredient record simultaneously carries anhydrous CHEBI:31346, CAS 7778-18-9, CaO4S and mass 136.142, so it does not independently verify the anomalous stated hydrate. The existing local owner preserves the source claim with only a close parent comparison and cleared chemical properties. The physical-form identity remains held; a new identifier would not resolve it, and neither anhydrous equivalence nor inherited role claims are approved."
+    }
+  ],
+  "frozen_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-02.json",
+    "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+  },
+  "source_inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/bd-emjh.json",
+      "relative_path": "c/captures/bd-emjh.json",
+      "sha256": "aa7982120aeb452bde71bddfb94c4921bfb7e1799d4b50d80eba346c32c6da2a",
+      "case_indices": [
+        180
+      ],
+      "actual_read": "Complete available captured web-response text read during coverage addendum; the capture is partial relative to the original website, as recorded there.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-bd-emjh",
+          "kind": "primary_source",
+          "url": "https://www.bd.com/en-us/products-and-solutions/products/product-page.279510",
+          "accessed_at": "2026-11-08T05:09:34.484Z"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/chebi-31346.json",
+      "relative_path": "c/captures/chebi-31346.json",
+      "sha256": "9c8c4bba7eff889940ab991497e3c2f00c79a2a85ec4f2762939aa36a2e29ede",
+      "case_indices": [
+        181
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-chebi-31346",
+          "kind": "ontology",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:31346",
+          "accessed_at": "2026-11-08T05:07:41.375328+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/chebi-50144.json",
+      "relative_path": "c/captures/chebi-50144.json",
+      "sha256": "0d96d95af7783f3b4842a2c748e6e09e3e638436988b096aa19f377587f5d82c",
+      "case_indices": [
+        148,
+        168
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-chebi-50144",
+          "kind": "ontology",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:50144",
+          "accessed_at": "2026-11-08T05:07:40.864927+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/chebi-76181.json",
+      "relative_path": "c/captures/chebi-76181.json",
+      "sha256": "7c66c3f2971ef73a26f7ac0530c5cb9e7fd9c279d28e0fb955d0e89b73260a45",
+      "case_indices": [
+        149
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-chebi-76181",
+          "kind": "ontology",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:76181",
+          "accessed_at": "2026-11-08T05:07:38.350964+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/chebi-86360.json",
+      "relative_path": "c/captures/chebi-86360.json",
+      "sha256": "857672fb1b6a33f508924cdc2e4dfcbdf365a0e54d96fc8379d6ee61aa16cb31",
+      "case_indices": [
+        169
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-chebi-86360",
+          "kind": "ontology",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86360",
+          "accessed_at": "2026-11-08T05:07:41.462306+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/chebi-86364.json",
+      "relative_path": "c/captures/chebi-86364.json",
+      "sha256": "6e685ea7654bc1f4e16b3e3a05d73d8541e84cddcc28de59c4ae57ac288a1505",
+      "case_indices": [
+        169
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-chebi-86364",
+          "kind": "ontology",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86364",
+          "accessed_at": "2026-11-08T05:07:43.033435+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-106.json",
+      "relative_path": "c/captures/mediadive-106.json",
+      "sha256": "2ae43e104d09412fe4659cb816004c252ae1422726bea1a08968690fa8129828",
+      "case_indices": [
+        149
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-mediadive-106",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/106",
+          "accessed_at": "2026-11-08T05:07:31.520209+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-113.json",
+      "relative_path": "c/captures/mediadive-113.json",
+      "sha256": "8d0946e30d7a0c0ccb5b7f1544ae8ff51050c988470fe2423c0634ac758c5a72",
+      "case_indices": [
+        148
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-mediadive-113",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/113",
+          "accessed_at": "2026-11-08T05:07:31.493710+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-2000.json",
+      "relative_path": "c/captures/mediadive-2000.json",
+      "sha256": "838ebc7cc23604bb2ca3acbc8147ee2807bac8d8cccde950c14ac550c5fbc6e0",
+      "case_indices": [
+        181
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-mediadive-2000",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2000",
+          "accessed_at": "2026-11-08T05:07:36.443683+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-543.json",
+      "relative_path": "c/captures/mediadive-543.json",
+      "sha256": "e8925dbfee410bbb416efd997f325dccf1543dbbe9ef1940bc3ab69ac811efb0",
+      "case_indices": [
+        169
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-mediadive-543",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/543",
+          "accessed_at": "2026-11-08T05:07:34.982116+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-762.json",
+      "relative_path": "c/captures/mediadive-762.json",
+      "sha256": "7aaed96b72ed5d95191508b9a6f42a5d10533cf534fddef6575161d2a61cf5ea",
+      "case_indices": [
+        168
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-mediadive-762",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/762",
+          "accessed_at": "2026-11-08T05:07:34.982006+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-992.json",
+      "relative_path": "c/captures/mediadive-992.json",
+      "sha256": "3ce89cb904a58a197a60f4937ff624af089d6b6518071e7326b694790424d667",
+      "case_indices": [
+        180
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-mediadive-992",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/ingredient/992",
+          "accessed_at": "2026-11-08T05:07:36.440731+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/medium-1113.json",
+      "relative_path": "c/captures/medium-1113.json",
+      "sha256": "150bd0c2a397798fe653608c229aae74a2f20ed967520e1719e13a98da4b69b6",
+      "case_indices": [
+        180
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-medium-1113",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/medium/1113",
+          "accessed_at": "2026-11-08T05:08:45.062817+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/owners/Caso4_X_7_H2o.yaml",
+      "relative_path": "c/owners/Caso4_X_7_H2o.yaml",
+      "sha256": "8c80ab54d38ffa3310ad783d85692f36e21b92167d539c179fb3ddede83adbe5",
+      "case_indices": [
+        181
+      ],
+      "actual_read": "Complete captured baseline owner YAML re-read, including inherited mapping, aliases, properties, roles and curation history.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-owner-Caso4_X_7_H2o",
+          "kind": "source_snapshot",
+          "url": null,
+          "accessed_at": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/owners/Mnso4_X_7_H2o.yaml",
+      "relative_path": "c/owners/Mnso4_X_7_H2o.yaml",
+      "sha256": "16fbe26057f3eb769a2054daa6aa374c72af193ac29382246cf26a7eaaaba852",
+      "case_indices": [
+        169
+      ],
+      "actual_read": "Complete captured baseline owner YAML re-read, including inherited mapping, aliases, properties, roles and curation history.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c-owner-Mnso4_X_7_H2o",
+          "kind": "source_snapshot",
+          "url": null,
+          "accessed_at": null
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/bd-emjh-manual.pdf",
+      "relative_path": "continuation-1201-v1/c/captures/bd-emjh-manual.pdf",
+      "sha256": "0de5577e843d292544dd485f30d29db1334f9b11baa177f4d1fbc7c7b272a413",
+      "case_indices": [
+        180
+      ],
+      "actual_read": "Complete PDF text extraction re-read in this errata review; no claim to inspect cited papers.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c2-bd-emjh-manual",
+          "kind": "primary_source",
+          "url": "https://www.seco.us/ASSETS/DOCUMENTS/ITEMS/EN/279410.pdf",
+          "accessed_at": "2026-11-08T05:57:08.042297+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/dsmz-1113.pdf",
+      "relative_path": "continuation-1201-v1/c/captures/dsmz-1113.pdf",
+      "sha256": "04b717179f9edcc1d6feb6215a46ab89f46f3c1ae6e927ac04fabb87df82d2df",
+      "case_indices": [
+        180
+      ],
+      "actual_read": "Complete PDF text extraction re-read in this errata review; no claim to inspect cited papers.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c2-dsmz-1113",
+          "kind": "primary_source",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1113.pdf",
+          "accessed_at": "2026-11-08T05:55:52.212795+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/medium-1753.json",
+      "relative_path": "continuation-1201-v1/c/captures/medium-1753.json",
+      "sha256": "0261c2aecc53f0c972c3c54670c69e55aee012d1fa3fb1d2eb773941e3882def",
+      "case_indices": [
+        171
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c2-medium-1753",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/medium/1753",
+          "accessed_at": "2026-11-08T05:55:50.439043+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/medium-511.json",
+      "relative_path": "continuation-1201-v1/c/captures/medium-511.json",
+      "sha256": "9ba33f53aefec6e1f07c5ddb321ffb992078167a8b54c05a4b13504ec23e51a2",
+      "case_indices": [
+        175
+      ],
+      "actual_read": "Complete captured JSON read during this errata/coverage review, including source identity, formulas, synonyms and full recipe where present; reading is distinct from hash verification.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c2-medium-511",
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/medium/511",
+          "accessed_at": "2026-11-08T05:55:49.080714+00:00"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/mg-cas-lead-not-mn.json",
+      "relative_path": "continuation-1201-v1/c/captures/mg-cas-lead-not-mn.json",
+      "sha256": "e68547f262a9a2cc97a1dcc4a04ae75038f4706b559b1613ccbba73049f17950",
+      "case_indices": [
+        169
+      ],
+      "actual_read": "Complete visible HTML text re-read with scripts/styles excluded; the first raw-HTML tool response was truncated and was not treated as a complete read.",
+      "original_evidence_metadata": [
+        {
+          "evidence_id": "c2-mg-cas-lead-not-mn",
+          "kind": "primary_source",
+          "url": "https://www.shenghechemical.com/product/magnesium-sulphate-anhydrous/",
+          "accessed_at": "2026-11-08T06:08:11.343515+00:00"
+        }
+      ]
+    }
+  ],
+  "repeated_prose_audit": {
+    "files": {
+      "payload-assessments.json": "527f07c7636f9f022d7de67c654d64b4b90518b91c21215a165a7b760f0230b4",
+      "findings.json": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1",
+      "review-summary.md": "affcee97bce9887279646514c01d091bb0fe233cd435e7ec2a297e77b1d2a657"
+    },
+    "method": "Ignored-inclusive explicit-file text search and recursive JSON string inspection; all relevant payload and prior-disposition paragraphs inspected.",
+    "payload_source_number_errors_found": 0,
+    "prior_disposition_source_number_errors_found": 1,
+    "corrected_prior_finding_id": "a2-review-c-175",
+    "scope_note": "The author missing_requirement quoted in case175 mentions source1596 as a separate source. That quotation is preserved, not silently edited. The corrected reasoning states that1596 belongs to case171."
+  },
+  "sealed_inputs_preserved": {
+    "case-assessments.json": "042d4394acef583083ab7db7d7a8dbf56d8c053eadb175cb57e19c033f9c9791",
+    "payload-assessments.json": "527f07c7636f9f022d7de67c654d64b4b90518b91c21215a165a7b760f0230b4",
+    "findings.json": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1",
+    "read-register.json": "4a75d6fada5bf594753d1b794b00c3603bb9d309f0b86ef966763046f84ce615",
+    "review-summary.md": "affcee97bce9887279646514c01d091bb0fe233cd435e7ec2a297e77b1d2a657",
+    "scope-and-integrity.json": "64a3f4a728fb1b659cebcff9cbcaf9fe19619ac12209418cb223ed04f3ed83d4"
+  },
+  "whole_owner_or_export_approval": false,
+  "retained_obligations": "All original scientific findings, identity/source/quantity/publication holds and cross-worker dependencies remain. Main review and preparation-scope addendum conclusions are not weakened by this prose correction.",
+  "acceptance_checks": [
+    "All nine original_reasoning strings exactly match their sealed file/hash/JSON pointer.",
+    "All eight case IDs and source_case_ids agree with the frozen input; source scientific claims were checked against actual captures.",
+    "All source capture hashes match original evidence metadata; original URLs/access timestamps are retained.",
+    "All six main sealed artifact hashes match; v1 errata is preserved.",
+    "No repeated wrong source-ID prose remains unqualified in selected payload assessments; the one repeated lineage target has an exact correction.",
+    "Root may render corrected_reasoning in active assembled views with links to the immutable errata and originals."
+  ]
+}

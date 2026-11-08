@@ -1,0 +1,149 @@
+{
+  "reviewer": "/root/research_b",
+  "reviewed_at": "2026-11-08T08:20:14.868718+00:00",
+  "task_scope": "Independent technical review of root-authored report helpers and bounded control suite only. This author does not independently approve their own chemistry payloads; D handles those.",
+  "verdict": "approve_bounded_private_helper_use_after_revision",
+  "input_hash_manifest": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/assemble_selection.py",
+      "sha256": "ec12bdb9ced041ec18a6f9779c0e6e3502c50c3b6494d0e6a9ca6cf752285866",
+      "mtime_utc": "2026-11-08T08:17:43.168974+00:00",
+      "mtime_precedes_test_start": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/correct_evidence_types.py",
+      "sha256": "271291c0ca92d850477296463d060d1b467380dcc195ff1c494e1ad214419c48",
+      "mtime_utc": "2026-11-08T08:17:43.152499+00:00",
+      "mtime_precedes_test_start": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validate_selection.py",
+      "sha256": "b38385c9e26b35d989f76f45c46ce2a3ed4b2a6c826161860090ea198d9a9fa6",
+      "mtime_utc": "2026-11-08T08:17:43.136130+00:00",
+      "mtime_precedes_test_start": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/build_lineage.py",
+      "sha256": "b41443a12583956294e9ea67b09e8390ced2d15227eaf1a202c0de55e69685f5",
+      "mtime_utc": "2026-11-08T08:17:43.185856+00:00",
+      "mtime_precedes_test_start": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/test_correction_guards.py",
+      "sha256": "c5783a51b0376b9c9d05531a1dad3ae05e00b2e00c7eae549df2fbb779cc3b99",
+      "mtime_utc": "2026-11-08T08:18:08.926201+00:00",
+      "mtime_precedes_test_start": true
+    },
+    {
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+      "scope": "Existing native dependency inspected; unchanged by this reviewer."
+    },
+    {
+      "path": "src/mediaingredientmech/ingredient_bundle_refresh.py",
+      "sha256": "d0826b8ac0867604a233ae3df951b569e90dfa5b7892e62ce40015e9d8c15ee3",
+      "scope": "Existing native dependency inspected; unchanged by this reviewer."
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "scope": "Existing native dependency inspected; unchanged by this reviewer."
+    },
+    {
+      "path": "src/mediaingredientmech/validation/component_partonomy.py",
+      "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+      "scope": "Existing native dependency inspected; unchanged by this reviewer."
+    }
+  ],
+  "finding_resolution": {
+    "finding_id": "W02-TECH-CHEM-001",
+    "predecessor_receipt": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/finding-containment-v1.json",
+      "sha256": "05582435f04e48a5b8f203bad07728548de395cb8c59c07007ab97fa7d51ca97"
+    },
+    "status": "resolved_in_reviewed_successor",
+    "reason": "All four output-entry helpers now explicitly reject .. components and require resolved containment. Validation/type writer also call no_alias. Existing output directories remain refused by mkdir(exist_ok=False). Six added controls cover traversal plus assembly/lineage symlink-parent rejection; no escaped writes were attempted in the original reproduction."
+  },
+  "independent_execution": {
+    "python": "W/.temp/all-unmatched-worker-02/venv/bin/python (3.13.2)",
+    "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/chemistry/technical-runtime-v2",
+    "command": "PYTHONDONTWRITEBYTECODE=1 <python> -m pytest <R>/test_correction_guards.py -o addopts='' -p no:cov -p no:cacheprovider --basetemp <private-runtime>/pytest-basetemp --junitxml=<T>/independent-controls-v2.xml",
+    "test_count": 37,
+    "passed": 37,
+    "failures": 0,
+    "warnings": "12 upstream Pydantic model_fields deprecation warnings, retained in full log.",
+    "xml": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/independent-controls-v2.xml",
+      "sha256": "e5f0adb5f7e070644dac1bdd498e84f548117fd8b6c53922cbe1dd12f585f112"
+    },
+    "stdout": {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/technical-review/independent-controls-v2.log",
+      "sha256": "a891378f354ffd380b3b3da268eac656231b5919341a808480cedbc49316ac21"
+    },
+    "controls": [
+      "test_exact_claim_preserves_component_enum_and_quality",
+      "test_unchanged_historical_human_object_refused",
+      "test_same_source_but_different_historical_claim_is_not_misclassified",
+      "test_mutated_full_entry_refused",
+      "test_duplicate_evidence_pointer_refused",
+      "test_missing_or_inappropriate_provenance_refused[new_type-MANUAL_REVIEW]",
+      "test_missing_or_inappropriate_provenance_refused[classification-ambiguous_needs_review]",
+      "test_missing_or_inappropriate_provenance_refused[basis-]",
+      "test_missing_or_inappropriate_provenance_refused[original_flag_indices-value3]",
+      "test_source_or_hydrate_change_detected_by_frozen_input",
+      "test_frozen_input_alias_refused[symlink]",
+      "test_frozen_input_alias_refused[hardlink]",
+      "test_existing_output_not_overwritten",
+      "test_output_parent_alias_refused",
+      "test_stale_snapshot_refuses_publication",
+      "test_duplicate_output_paths_refused",
+      "test_native_unknown_field_refused_before_write",
+      "test_native_wrong_component_scope_refused",
+      "test_native_partonomy_missing_catalog_target",
+      "test_output_outside_private_root_refused",
+      "test_proposal_duplicate_owner_refused",
+      "test_stale_owner_preimage_refused",
+      "test_changed_payload_hash_refused",
+      "test_omitted_duplicate_or_substituted_flag_refused[indices0]",
+      "test_omitted_duplicate_or_substituted_flag_refused[indices1]",
+      "test_omitted_duplicate_or_substituted_flag_refused[indices2]",
+      "test_frozen_case_scientific_scope_cannot_change[case_id-different]",
+      "test_frozen_case_scientific_scope_cannot_change[occurrence_ids-value1]",
+      "test_frozen_case_scientific_scope_cannot_change[source-value2]",
+      "test_duplicate_case_rows_refused",
+      "test_undeclared_conflicting_science_refused",
+      "test_traversal_refused_even_when_lexically_inside[confined]",
+      "test_traversal_refused_even_when_lexically_inside[contained_output]",
+      "test_assembler_and_lineage_refuse_traversal[assemble_selection]",
+      "test_assembler_and_lineage_refuse_traversal[build_lineage]",
+      "test_assembler_and_lineage_refuse_symlink_parent[assemble_selection]",
+      "test_assembler_and_lineage_refuse_symlink_parent[build_lineage]"
+    ]
+  },
+  "checks": [
+    {
+      "helper": "assemble_selection",
+      "assessment": "Original cases and four frozen source fields remain bound; initial dictionaries reject duplicates. Author fragments are hash-checked, conflicting scientific prose is allowed only for explicitly listed cases, proposal and case backlinks are checked, retired proposals cannot remain selected, and188-case accounting is enforced. Root-owned known metadata collision was actually refused, preserved and corrected separately. Final selected input/output hashes still need root/D assembly binding."
+    },
+    {
+      "helper": "correct_evidence_types",
+      "assessment": "Full expected MappingEvidence objects and evidence indices are checked; historical unchanged objects and wrong target enum/classification are refused. Component evidence and mapping quality survive exact edit controls.58 original flagged indices must be accounted without omission/duplicates; the scientific/provenance classification of each explicit plan row still requires human/independent review rather than being inferred by the helper."
+    },
+    {
+      "helper": "validate_selection",
+      "assessment": "Authentic before hashes, unique owners/proposals, path shape, exact candidate hashes and original history prefixes are checked. Full native writer/roundtrip and projected component-partonomy run are implemented; semantic collisions and partonomy failures are reported without chemical approval. The focused controls exercise stale preimages/payloads, duplicate owners, bad native fields/scopes and missing component targets."
+    },
+    {
+      "helper": "build_lineage",
+      "assessment": "Exact historical sourcefile hashes and pointer object equality are checked; original target objects/holds are retained without false closure.735 objects and72 grouped IDs are cardinality assertions. Evidence copies are byte/hash checked when copied. This review inspects the code; it does not replace the independent content audit of all historical claims or final runtime735-object lineage."
+    }
+  ],
+  "publication_and_concurrency_limits": [
+    "The existing native publish_new_files reserves outputs exclusively, writes through retained handles, checks parent/reservation identities, and removes still-owned outputs on detected failure. This is not an atomic transaction across all files. Failed invocations/staging/partial diagnostic artifacts must never be treated as successful selected artifacts.",
+    "The native publisher does not provide a universal hostile late-hardlink or all-concurrency guarantee. Output identity checks do not prove a directory or inode can never be aliased after a check. No outside-path hardlink attack was performed here.",
+    "Native write_validated_ingredient validates schema before writing but is not itself an exclusive transaction or scientific validator. These helpers rely on fresh confined output paths and unchanged declared inputs; final pre/post preservation and exact review receipt binding remain necessary.",
+    "Assembly/lineage inputs and some catalog parses use ordinary reads rather than a single atomic filesystem snapshot. Root must keep the declared frozen corpus/packets unchanged and verify their preservation; these controls do not prove resistance to a malicious concurrent input rewrite.",
+    "Omission/duplicate tests cover the exact58 flagged-disposition accounting and explicit frozen-case/backlink requirements; they do not establish that any arbitrary supplied provenance plan is scientifically complete. Final approved plan/input hashes remain essential."
+  ],
+  "own_mutation_scope": "Only chemistry/technical-review and private chemistry technical fixture/runtime paths. No maintained code/data/gates, GitHub or Git mutations; root alone authored helper corrections."
+}

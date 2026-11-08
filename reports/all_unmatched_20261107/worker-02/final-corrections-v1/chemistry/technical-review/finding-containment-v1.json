@@ -1,0 +1,43 @@
+{
+  "finding_id": "W02-TECH-CHEM-001",
+  "family": "SKEPTICAL-PROV-001/private-helper lexical containment",
+  "reviewer": "/root/research_b",
+  "observed_at": "2026-11-08T08:17:22.297113+00:00",
+  "status": "needs_revision",
+  "helper_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/assemble_selection.py",
+      "sha256": "13f43dd385c14f1801036d083d57b7ddc9781935d2d2a6dc18c235f07bd031b7"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/correct_evidence_types.py",
+      "sha256": "3ae0d617ccb936b4074fe7546679eb756adea52b4029e6c1911cb6ea1dad931d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/validate_selection.py",
+      "sha256": "57d1de8ede0f85f2b296eb0da8d0261a1baffda6d2e1fa8ab8da17aa6b4728ab"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/build_lineage.py",
+      "sha256": "0a100208afe1083fa632316a2339d0f17b0e21b8e5d439a61336617494a4db7d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/test_correction_guards.py",
+      "sha256": "3b68dcd0e6e97530e06ae27c965763b6d3a7ab3e87786ec520fe276db28ac670"
+    }
+  ],
+  "reproduction": {
+    "function": "validate_selection.confined",
+    "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/chemistry/technical-fixtures-v1/allowed",
+    "requested_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/chemistry/technical-fixtures-v1/allowed/../outside-allowed",
+    "returned_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/chemistry/technical-fixtures-v1/allowed/../outside-allowed",
+    "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/w02-final-corrections-v1/chemistry/technical-fixtures-v1/outside-allowed",
+    "resolved_within_root": false,
+    "write_attempted": false,
+    "escaped_path_exists": false
+  },
+  "related_code": "correct_evidence_types.main uses the same absolute().is_relative_to(R) test with no_alias, which rejects symlinks only. It creates output directories before native publication would reject noncanonical parents.",
+  "risk_scope": "Explicit helper path validation can authorize lexical traversal outside its declared report/private root; no actual out-of-scope write was attempted or observed by this review.",
+  "proposed_fix": "Reject .. path components before mutation; use no_alias on original spelling and resolved strict containment, including root equality as appropriate. Add private traversal and symlink-negative controls. Preserve previous versions/failures.",
+  "non_atomic_limit": "publish_new_files uses exclusive reservations and retained file handles, detects selected parent/path changes, and removes still-owned outputs on failure. It is not a multi-file atomic transaction, and no all-concurrency/hardlink guarantee is inferred."
+}

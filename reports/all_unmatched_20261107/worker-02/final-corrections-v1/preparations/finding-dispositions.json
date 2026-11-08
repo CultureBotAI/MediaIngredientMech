@@ -1,0 +1,1778 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T08:16:53.580249+00:00",
+  "author": "/root/research_c",
+  "status": "author_proposals_pending_fresh_independent_review",
+  "findings": [
+    {
+      "finding_id": "W02-F-QUANTITY",
+      "source_finding_ids": [
+        "W02-RA-02"
+      ],
+      "original_family": {
+        "finding_id": "W02-F-QUANTITY",
+        "title": "Four preparation narratives misstate quantity basis",
+        "source_finding_ids": [
+          "W02-RA-02"
+        ],
+        "area": "quantity",
+        "severity": "P2",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0"
+        ],
+        "proposal_ids": [
+          "a2-proposal-dsmz40-cde-mixed-preparation",
+          "a2-proposal-jcm167-precarbonate-basal-agar",
+          "a2-proposal-jcm665-preaddition-iron-gel-base",
+          "a2-proposal-togo-m2491-mrssi-base"
+        ],
+        "originals": [
+          {
+            "reviewer": "reviewer-a",
+            "source": {
+              "path": "science/reviewer-a/findings.json",
+              "sha256": "5c222d5afb71826f3dc1671a999d1b857f7c0a8554c19178eb94d9dd9fb65a14"
+            },
+            "original": {
+              "finding_id": "W02-RA-02",
+              "status": "open",
+              "classification": "new_quantity_basis_provenance_defect",
+              "severity": "P2",
+              "case_ids": [
+                "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0"
+              ],
+              "case_indices": [
+                58
+              ],
+              "proposal_ids": [
+                "a2-proposal-jcm167-precarbonate-basal-agar",
+                "a2-proposal-jcm665-preaddition-iron-gel-base",
+                "a2-proposal-dsmz40-cde-mixed-preparation",
+                "a2-proposal-togo-m2491-mrssi-base"
+              ],
+              "description": "Four otherwise bounded preparations require quantity-basis corrections/qualification in full-payload narrative provenance. Explicit final-preparation volume or per-litre basis is presented as literal water/whole-stock input. The first two are direct contradictions; the CDE andMRSsi cases require preserving provider-versus-original basis. No numeric component concentration is currently asserted, limiting the affected surface.",
+              "targets": [
+                {
+                  "proposal_id": "a2-proposal-jcm167-precarbonate-basal-agar",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/a/after-v3/jcm167_precarbonate_basal_agar.yaml",
+                    "sha256": "4409f51db458621b0cb67ef34639fee49863bbf90e9ea8fd97ebda74267ebd5c"
+                  },
+                  "fields": [
+                    "/ontology_mapping/evidence/0/notes",
+                    "/notes",
+                    "/component_assertion/evidence/0/notes",
+                    "/component_assertion/evidence/1/notes",
+                    "/curation_history/0/changes"
+                  ],
+                  "description": "Original JCM167 says prepare the basal agar to900mL. The payload opening says to900mL but its repeated source-transcription text labels Distilled water900mL a literal input amount.",
+                  "bounded_fix": "Replace the literal-water assertion with water q.s. to900mL and distinguish the provider table’s900mL row.",
+                  "severity": "P2",
+                  "structured_component_quantity_defect": false
+                },
+                {
+                  "proposal_id": "a2-proposal-jcm665-preaddition-iron-gel-base",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/a/after-v4/jcm665_preaddition_iron_gel_base.yaml",
+                    "sha256": "db1b027dde687f0afabdb0068f6aa0bce7006eb5f5206597581595ed92b96fb4"
+                  },
+                  "fields": [
+                    "/ontology_mapping/evidence/0/notes",
+                    "/notes",
+                    "/component_assertion/evidence/0/notes",
+                    "/curation_history/0/changes"
+                  ],
+                  "description": "TOGO M683 preparation comment says add components to distilled water and bring volume to1L. The payload calls Distilled water1L a literal input, despite soluble stocks already included.",
+                  "bounded_fix": "Preserve q.s. to1L wording and the provider-table claim separately; do not invent an exact amount of added water.",
+                  "severity": "P2",
+                  "structured_component_quantity_defect": false
+                },
+                {
+                  "proposal_id": "a2-proposal-dsmz40-cde-mixed-preparation",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/a/after/dsmz40_cde_mixed_preparation.yaml",
+                    "sha256": "1d4bb6decf8b68edebbdc1dabf670804624c20d01b0e59adb5bd0526d25cd97e"
+                  },
+                  "fields": [
+                    "/ontology_mapping/evidence/0/notes",
+                    "/notes",
+                    "/component_assertion/evidence/0/notes",
+                    "/component_assertion/evidence/1/notes",
+                    "/curation_history/0/changes"
+                  ],
+                  "description": "Provider C50mL/D450mL/E25mL group totals are reproduced as literal whole-stock input amounts. Original inheritedDSMZ29 specifies50/450/25mL water during preparation; D also has0.5mLresazurin andE1mLtrace stock before the whole preparations are combined.",
+                  "bounded_fix": "Label numbers as provider section-volume claims, and state that original mix uses the preparedC/D/E solutions; do not reinterpret water inputs as measured final aliquots.",
+                  "severity": "P3",
+                  "structured_component_quantity_defect": false
+                },
+                {
+                  "proposal_id": "a2-proposal-togo-m2491-mrssi-base",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/a/after-v3/togo_m2491_mrssi_base.yaml",
+                    "sha256": "3838ea36856afdd637869e7818a855779a60d63067406ba08ede81bc80f045c4"
+                  },
+                  "fields": [
+                    "/ontology_mapping/evidence/0/notes",
+                    "/notes",
+                    "/component_assertion/evidence/0/notes",
+                    "/curation_history/0/changes"
+                  ],
+                  "description": "Source MRSsi prose states components per litre, whereas payload narrative asserts1Lwater and all amounts as literal input amounts. Those bases are not interchangeable.",
+                  "bounded_fix": "Retain the source per-litre formulation basis and distinguish its table water row; do not imply measured1L added water or infer an unreported final batch volume.",
+                  "severity": "P3",
+                  "structured_component_quantity_defect": false
+                }
+              ],
+              "evidence": [
+                {
+                  "evidence_id": "a-case-58-occ-00",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M526_Acidianus_SP._JP7_Medium.yaml",
+                    "sha256": "c5937571cd777600a755dce65ba6d009cc449483c864111db41bd2d1f7a31a2b"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:9913ddf203fc31141d521835d7705d7f1da3b2f0d2d4f618d7c09a5524d5648d; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-01",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2477_Pfennig_s_Medium_II_With_Salt.yaml",
+                    "sha256": "9270c3ce3a30e2ff339af59efc1d7a04a0ac66399f37d70f9519bbb5685623e9"
+                  },
+                  "locator": "ingredients/1; occurrence_id=CM_OCC:0234855ebf26bd130de15443de99c21e991f5fe6b850d446729142802b0dc50f; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-02",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M377_AGC2_Medium.yaml",
+                    "sha256": "f37c8673aa5ff88a76168cf48c5332987a6050c89b3fe2a5e26243cb23d976b1"
+                  },
+                  "locator": "ingredients/1; occurrence_id=CM_OCC:69e5143d7afe4555d8ae1b291943a75609cb630c43255263e0d01607a2ad0f5c; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-03",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M412_Modified_SOB_Medium.yaml",
+                    "sha256": "02edcf4a3d85289bd350c19b4b17749932992e16e828caff72d2bff2834506ee"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:1a0df7f74bbb14e1e22ad41dd9ecbc33872e3ea2d48bfe9f0e28037e3f37b371; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-04",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M438_RT2_Medium.yaml",
+                    "sha256": "647c65cfd1d86911b3ca8bdc8d45452715c4a44d6ade2aa5f68a37afb16cdd33"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:5cbf78f16358b70d64a98ccafb41d56050692bf1aa99710519f28c6cb0db5d56; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-05",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M463_Saltwater_Medium_With_Lactate.yaml",
+                    "sha256": "dbaccd6637a9a6fd2c0c4c0f1590eb8e38f84b739c44239ab8a1df7d1fa605f0"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:263f07ec8395698b03b4cf8172c674b78e13c09188fad41e579bce20f401b645; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-06",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M464_Saltwater_Medium_With_Acetate_And_Ferric_Citrate.yaml",
+                    "sha256": "cd6cef464f0a509fd1ac2b07e0a91c1c9007b61e7f78957be70fe4f4ea848709"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:fb988dcaf4f4a51089a49a240acf8b0da60af35fb34f76d03a3d2df484a4329d; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-07",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M481_Modified_Sporomusa_Medium.yaml",
+                    "sha256": "5d19b70d980c6f5ad3bec7b06abf7073619823feb34a80e08f1d731f60c79012"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:a69a92d5e2630f0d7fc827a8d415a1656313ebf6dc55ef53ffbafd9c8cbdcdf9; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-08",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M491_Mg50_Medium.yaml",
+                    "sha256": "4dd1f7e31be0bd4326a59dd20c361ff162c323bb9159e65a7c0d6ef2c2358075"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:2474b8b733ce2962daced402668cb63eaa22d37ac2e60171052dc308ab157352; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-09",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M522_Modified_Desulfoglaeba_Alkanexedens_Medium.yaml",
+                    "sha256": "6fb922185bab862476edfca054346121838bdcd2a822cf57cdfcad9b0ba731a1"
+                  },
+                  "locator": "ingredients/1; occurrence_id=CM_OCC:28202b84ce6b42918ad7f2baed5fd406e67fcfefbc9e4536513e6641903cb0af; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-10",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M539_Treponema_Isopterocola_Medium.yaml",
+                    "sha256": "ce51e547a3128da31db71f66026617bff4cbe4b81846ec52637528fe0dd8019b"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:c5bb6e81aa4d3e27fc99b8e2077d97e4c09d4e2ca5ce389131931ac0d80c39cd; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-11",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M550_Geosporobacter_Subterreneus_Medium.yaml",
+                    "sha256": "7ed5df325dcfe014ca0589ff24b6f9fb366dfff2651edc6b0d312e0ad7359d69"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:62745c36d93e4f15dc23b22c6a55ed9c68e74ab0cdcb2fd1395301f112c1edfa; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-12",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M551_Desulfovibrio_As36_Medium.yaml",
+                    "sha256": "e1e5b8eb97889385b822fcf5bcf90252f7e0785c3c56927b5132419f8b70bd28"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:d69bb8b7129e8ab48a6f26aaee32fa757d8166787b17ba7a1f99d95b8dad7d12; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-13",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M553_Desulfovibrio_Marinus_Medium.yaml",
+                    "sha256": "ef8a786f0f743bfa1979b92e8051a909b662da7e9ff9aefd4d3e49bc7d82b4ba"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:b7aa84a7546a5478348211aafbbe59a613379845b157073c8b858f4184796e61; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-14",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M569_Desulfovibrio_HEB233_Medium.yaml",
+                    "sha256": "22169b703068bfb3f38c6b563450702618663ee3d6aa7f2f2a23c878a897271d"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:7b6a6808bb3e93650a63058e61d98eec112f26f9d87b56addc6e46735c36ce43; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-15",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M577_Clostridiisalibacter_Paucivorans_Medium.yaml",
+                    "sha256": "42cabaff6bc098c842bfac293edf20ba257be267c050d418647db8c3a5ba5564"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:9d8cb94491cf73825466b17fe80a33e2de8ca3d0403c9fd382543a1c1543bebe; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-16",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M683_Freshwater_Iron_GEL_Medium.yaml",
+                    "sha256": "6ad5f50492f97329455ff3f22c1bdcbd336354b311879572392d20788771bbdd"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:7e1a4d480ac048f0172775246129f9b1fe3975c34d55c162238fa7fe3a627e47; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-17",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M702_FRR_Medium.yaml",
+                    "sha256": "b99813c04304e7fcc5702279a6b5942b6fb11105078403a67580479d1b096523"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:65fefb5453f590f12c8e0c6aab495d3b4a99e530e83af60cf79322d5325d12a4; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-18",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M728_Sporosalibacterium_Medium.yaml",
+                    "sha256": "df3892167d1a916f046dc93dc841d87ce66b829d4b4090d0e1491f75cc973c75"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:74655ed5510d71e410407554500ead760c6f5b65d9a2e93d2d395b7693602f39; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-19",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M772_Freshwater_Medium_With_Toluene.yaml",
+                    "sha256": "fabeaef2a46da70043829f2319390fb514eaf0cd311e09d9a7192d5f2d4078ab"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:b45cc105f0a013710dad9a927d8a0edfe3cb56c2c4f700d570f50b76d33f2426; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-20",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M899_Steroidobacter_Medium.yaml",
+                    "sha256": "f1f299656daaef5c9b0e83e35a8e21c9e7411ce2ca24104d5ac6fd3e1411f318"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:db1af0829874560bc91045693a932fbcfb0add599118df318a9dd50d099f8e80; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-21",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M903_Desulfotomaculum_BS_Medium.yaml",
+                    "sha256": "92256ffce930f1ded50d6c9566d968432c64bb813d51620992e41a4d4e76ce01"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:80196aaa5f3194afa36841e8525992dd157e89ef9bba0d2de6c4a3ef7456ba43; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-22",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/mrssi.yaml",
+                    "sha256": "7ed9069ea7d870485e2a3103a6d6ad768691494b851321109a9e5d89ff713799"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:c13999d172db066ae19a4d8eb7e23c314558097f3fc7e2423ba5c81dbebd2283; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-case-58-occ-23",
+                  "capture": {
+                    "root": "source",
+                    "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m158.yaml",
+                    "sha256": "83d43ba80f32427d22157753a580878b06461409692a77ef94cfe6754b3f27f1"
+                  },
+                  "locator": "ingredients/0; occurrence_id=CM_OCC:66fbc743a59568d80813d477a7dc84bb609043ffbe6ac0608a4628d38f9d4604; whole recipe and preparation context",
+                  "url": null,
+                  "original_accessed_at": null,
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a2-unsuccessful-original-jcm-06c82845cf85343d",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-06c82845cf85343d.html",
+                    "sha256": "b713b3fb20420f8910b7570713c030f760119462e4fdda7f7478b985edb31659"
+                  },
+                  "locator": "HTML body: Nothing found.",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=665",
+                  "original_accessed_at": "2026-11-08T05:06:55.809118+00:00",
+                  "read_status": "inspected_unsuccessful_response_no_recipe_support"
+                },
+                {
+                  "evidence_id": "a2-unsuccessful-original-jcm-35d62fba3be2fc9f",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-35d62fba3be2fc9f.html",
+                    "sha256": "5d30054c99b1ba979e6cbc6b6f3a0a7f14d633f5952dc3db948c20b33f5183e7"
+                  },
+                  "locator": "HTML body: Nothing found.",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=382",
+                  "original_accessed_at": "2026-11-08T05:06:54.795347+00:00",
+                  "read_status": "inspected_unsuccessful_response_no_recipe_support"
+                },
+                {
+                  "evidence_id": "a-primary-primary-3f852a56428bf9b0",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-3f852a56428bf9b0.html",
+                    "sha256": "acf6bcb9bf9ad56ade82af6dfaef6b6755f9407e0997f22e435674f0ed6539bc"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=706",
+                  "original_accessed_at": "2026-11-08T05:06:56.294682+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-4317351a57e041e0",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-4317351a57e041e0.html",
+                    "sha256": "a06539f095f3ebec2897c3e56ffa29ad157947a6cf3e3806fc30792c70ff4c78"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=463",
+                  "original_accessed_at": "2026-11-08T05:07:25.609950+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-4801f18449de54e9",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-4801f18449de54e9.html",
+                    "sha256": "0d737b3454b2d958db0d8333f20f168da36d06eb708cf8f6c74e12b8cfb3d31c"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=565",
+                  "original_accessed_at": "2026-11-08T05:07:32.111573+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-5ee38548831fad9b",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-5ee38548831fad9b.html",
+                    "sha256": "781d06ee9f4922f02e47b78fa74b014a595f00b5517fb210b4560167b1b00e3f"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=551",
+                  "original_accessed_at": "2026-11-08T05:07:30.746261+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-627ff3dd192d02a6",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-627ff3dd192d02a6.html",
+                    "sha256": "a484446097e4d96286aa6603d96035dfe3f95d305aa76775a0fe717cb5cf7ba4"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=683",
+                  "original_accessed_at": "2026-11-08T05:07:32.886360+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a2-unsuccessful-original-jcm-6dbfe7abf51bc0ab",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-6dbfe7abf51bc0ab.html",
+                    "sha256": "67448d7ef75285e6e5f170768dd2d583b807b029d3d614191a6cc35837d79492"
+                  },
+                  "locator": "HTML body: Nothing found.",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=490",
+                  "original_accessed_at": "2026-11-08T05:07:26.717886+00:00",
+                  "read_status": "inspected_unsuccessful_response_no_recipe_support"
+                },
+                {
+                  "evidence_id": "a-primary-primary-76189601fcf42e69",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-76189601fcf42e69.html",
+                    "sha256": "4c995fa8c144975f349368190203bfe11cc390d35550fb3556ee0669fe8b4058"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=438",
+                  "original_accessed_at": "2026-11-08T05:07:24.245884+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-84122ecbb9e908f5",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-84122ecbb9e908f5.html",
+                    "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+                  "original_accessed_at": "2026-11-08T05:07:28.083688+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-85d6397dff79ee1e",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-85d6397dff79ee1e.html",
+                    "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521",
+                  "original_accessed_at": "2026-11-08T05:07:27.365140+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-a961d8836825c87a",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-a961d8836825c87a.html",
+                    "sha256": "86a91d54eddb29a1d10cc477d163c933c6740e5786a03c550bcf51b6af26455f"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=573",
+                  "original_accessed_at": "2026-11-08T05:06:55.620446+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-b2fd6b00c870f479",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-b2fd6b00c870f479.html",
+                    "sha256": "1d92c7a7cfcd824d3b68eeb210f64e8193db2f6c23a6142dde99695d56dffd79"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=480",
+                  "original_accessed_at": "2026-11-08T05:07:26.158178+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-b542d9724d51d06b",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-b542d9724d51d06b.html",
+                    "sha256": "f6bf05779def20103af9594c9ef33bc22f00f69cb0f8854820f45fe3151b66ed"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=866",
+                  "original_accessed_at": "2026-11-08T05:06:56.509487+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-c81b11b75b019e40",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-c81b11b75b019e40.html",
+                    "sha256": "4429b809760e580e11fba2d048a487da64fe10ea18f7e3c0b8a89b132def08cb"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=525",
+                  "original_accessed_at": "2026-11-08T05:06:54.274148+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-cafff472840122be",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-cafff472840122be.html",
+                    "sha256": "7fcdc4ebb0cf060a033a38726cc969543625a7af1a7d0f836d21ca4cda2d0cd7"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=862",
+                  "original_accessed_at": "2026-11-08T05:07:37.926470+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-d5a7aaaa78aba9d2",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-d5a7aaaa78aba9d2.html",
+                    "sha256": "8ca012fc8384165d7c08a6bfbdf96c46b390c0daad81d0a2520a3f12fc5fd737"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=549",
+                  "original_accessed_at": "2026-11-08T05:07:29.180154+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-e2aba2dd2e8b673a",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-e2aba2dd2e8b673a.html",
+                    "sha256": "e3a57b06deecd2d9a37b6a41bc162fce8360bda84ca988faa46b6a6953b3557e"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=167",
+                  "original_accessed_at": "2026-11-08T05:07:41.028878+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-e8f4562866a418fc",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-e8f4562866a418fc.html",
+                    "sha256": "f824e6c7456b91f82b3b1992eb4682240e53da6cd80cce2426edc328b28d0340"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=462",
+                  "original_accessed_at": "2026-11-08T05:07:24.933299+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-f0bdc89b615d7574",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-f0bdc89b615d7574.html",
+                    "sha256": "3d4f03fc473bfabda343b25e0edad8bd15fa22920c33f98690538bcf7b6c5ca1"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=414",
+                  "original_accessed_at": "2026-11-08T05:06:54.946617+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-f509f6135173d9c1",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-f509f6135173d9c1.html",
+                    "sha256": "a174da2bbf44618b4665a30f21a070e68c714c4c387e900779f37f81f40ab54d"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=747",
+                  "original_accessed_at": "2026-11-08T05:07:35.627132+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-f5ae8bbd6edc4eab",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-f5ae8bbd6edc4eab.pdf",
+                    "sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium40.pdf",
+                  "original_accessed_at": "2026-11-08T05:07:23.682197+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-primary-faf9798d3df2b31a",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/primary-faf9798d3df2b31a.html",
+                    "sha256": "fcfe3947659547b10aaf3653b048939f5e3a41068e4efa2d62128cab4700f807"
+                  },
+                  "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=537",
+                  "original_accessed_at": "2026-11-08T05:06:55.472126+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M2477",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M2477.json",
+                    "sha256": "0e7a978392f76795ead28d22b5d5d89ac23eb9efe66bb30bd52814b0117f62e6"
+                  },
+                  "locator": "$.components[0].items[2].component_name; $.components[1].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2477",
+                  "original_accessed_at": "2026-11-08T05:07:23.180257+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M2491",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M2491.json",
+                    "sha256": "1b2e805c573ebcb9b5495f978ae93679a4c6839920502d547a1796ee23380511"
+                  },
+                  "locator": "$.components[0].items[0].component_name; $.components[1].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2491",
+                  "original_accessed_at": "2026-11-08T05:07:38.611156+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M377",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M377.json",
+                    "sha256": "f471930488026ecd74c4157f6db8f1e4d8e99802c98daf391c55b78ae9cba496"
+                  },
+                  "locator": "$.components[0].items[1].component_name; $.components[0].items[2].component_name; $.components[1].subcomponent_name; $.components[2].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M377",
+                  "original_accessed_at": "2026-11-08T05:06:54.786481+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M491",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M491.json",
+                    "sha256": "850ae83f7707b6d9049b6a2b4a32dd6cbe01b985e00c4f0c89d2d71eedc21cb7"
+                  },
+                  "locator": "$.components[0].items[0].component_name; $.components[1].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M491",
+                  "original_accessed_at": "2026-11-08T05:07:26.311676+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M522",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M522.json",
+                    "sha256": "507867a8c21e57c770f7277d29dfa9619e0fedb6a24058f36434031d2bf02b1f"
+                  },
+                  "locator": "$.components[0].items[1].component_name; $.components[2].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M522",
+                  "original_accessed_at": "2026-11-08T05:07:26.867202+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M550",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M550.json",
+                    "sha256": "24740a8693d2f18e6d5b78dc566ebe0b791ea5a8abf80be1bfa156a0a976be17"
+                  },
+                  "locator": "$.components[0].items[1].component_name; $.components[2].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M550",
+                  "original_accessed_at": "2026-11-08T05:07:27.393217+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "evidence_id": "a-primary-togo-M683",
+                  "capture": {
+                    "root": "artifact",
+                    "path": "a/captures/togo-M683.json",
+                    "sha256": "9575f3bd45b6386b4061ab7b917aff6742723bc2013dad3960016475e6c3a4cc"
+                  },
+                  "locator": "$.components[0].items[0].component_name; $.components[0].items[1].component_name; $.components[1].subcomponent_name; $.components[2].subcomponent_name",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M683",
+                  "original_accessed_at": "2026-11-08T05:06:55.735296+00:00",
+                  "read_status": "inspected_for_assigned_claims"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-a/captures/dsmz29.pdf",
+                  "sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb"
+                }
+              ],
+              "reproduction": "Compare full notes, mapping-evidence notes and appended curation-history text containing literal input amounts with original JCM167, complete TOGO M683 comments, original DSMZ29 C/D/E preparation and MRSsi per-litre source prose.",
+              "bounded_fix": "Correct only quantity-basis language in a successor proposal; preserve identities, known components, UNKNOWN completeness, source versions, all aliases/occurrence bindings and holds. Do not convert water to final concentrations.",
+              "lineage": {
+                "related_issues": [
+                  "CultureBotAI/CultureMech#408",
+                  "CultureBotAI/CultureMech#150"
+                ],
+                "relationship": "Those issues preserve upstream quantity-stage obligations; these exact proposed-owner narrative errors are additional review targets, not already applied source repairs."
+              },
+              "acceptance_check": "Each affected narrative consistently distinguishes water added, q.s. final preparation volume, provider section-volume claims and receiving-medium dose. Re-read all four exact revised payloads and their original sources; no blanket closure from one corrected target."
+            }
+          }
+        ],
+        "assessment": "Upheld. JCM167 and TOGO683 directly distinguish make-up volume from added water. DSMZ40 C/D/E and MRSsi require provider-versus-original basis qualification (P3 subtargets). Structured component concentrations are not defective; all four complete payload targets remain in one family.",
+        "exact_reproduction": "Compare full notes, mapping-evidence notes and appended curation-history text containing literal input amounts with original JCM167, complete TOGO M683 comments, original DSMZ29 C/D/E preparation and MRSsi per-litre source prose.",
+        "bounded_fix": "Publish immutable corrected after payloads with accurate active quantity-basis prose. Preserve earlier creation-history text and append an honest correction event; do not rewrite published history or invent concentrations. Keep all component, applicability and release holds.",
+        "acceptance_checks": [
+          "Read all four revised complete payloads against exact original recipes.",
+          "Distinguish literal water input, final volume, per-litre basis and provider group-volume labels.",
+          "Rebind all changed payload hashes and obtain separated scientific re-review."
+        ],
+        "dedup_disposition": "No exact existing issue found in bounded captured threads/searches. Analogous quantity issue1217 concerns another worker. Coordinator deduplicates campaign scope before filing.",
+        "issue_urls": [],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1241"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "Only four case58 preparation quantity narratives are corrected. Provider water/group-volume rows, original q.s. instructions and per-litre formulation basis remain distinguished. No concentrations or prepared batch volumes inferred. Other20 occurrence outcomes retained unchanged.",
+      "proposal_ids": [
+        "a2-proposal-jcm167-precarbonate-basal-agar",
+        "a2-proposal-jcm665-preaddition-iron-gel-base",
+        "a2-proposal-dsmz40-cde-mixed-preparation",
+        "a2-proposal-togo-m2491-mrssi-base"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-jcm167-precarbonate-basal-agar.yaml",
+          "sha256": "fbbea2abe379a7a49270320dc2fd89c4f16a85b4249b4f209c2542ffe83222e4"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-jcm665-preaddition-iron-gel-base.yaml",
+          "sha256": "9b6a2de359e7eb7bf682f5d88405ebbb3341312b3bbb5d8c667d4f5f4a463a74"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-dsmz40-cde-mixed-preparation.yaml",
+          "sha256": "62abd4790d274fa4806b0236d1f881c87f60bc9b0d325bca61ba28b1068d3d44"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-togo-m2491-mrssi-base.yaml",
+          "sha256": "4a62f5fe75a4c6384269ccf3118962a1ba11cc4b96a805d54da9840c569086ee"
+        }
+      ],
+      "evidence_ids": [
+        "p4-a-primary-primary-e2aba2dd2e8b673a",
+        "p4-a-primary-primary-f5ae8bbd6edc4eab",
+        "p4-a-primary-togo-M158",
+        "p4-a-primary-togo-M2477",
+        "p4-a-primary-togo-M2491",
+        "p4-a-primary-togo-M683",
+        "p4-b-source-d8d1f6cf56b42751",
+        "p4-preparation-owner-lookup",
+        "p4-source-occurrence-bindings"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-TYPE",
+      "source_finding_ids": [
+        "W02C-001"
+      ],
+      "original_family": {
+        "finding_id": "W02-F-TYPE",
+        "title": "Three preparations have unsupported mineral-stock classification",
+        "source_finding_ids": [
+          "W02C-001"
+        ],
+        "area": "representation",
+        "severity": "P2",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082",
+          "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448",
+          "CM_NAME:f954ba78fd83301a37a1a7ee5b5d81797c126d8f07e4d1c00438ba8e3ed7f2f9"
+        ],
+        "proposal_ids": [
+          "a2-proposal-jcm378-preaddition-basal-preparation",
+          "b2-proposal-methanol_50_percent_vv_jcm_sources",
+          "b2-proposal-resazurin_0025_percent_atcc_chopped_meat"
+        ],
+        "originals": [
+          {
+            "reviewer": "reviewer-c",
+            "source": {
+              "path": "science/reviewer-c/findings.json",
+              "sha256": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1"
+            },
+            "original": {
+              "finding_id": "W02C-001",
+              "title": "Three preparations use the wrong mineral-stock category",
+              "severity": "P2",
+              "status": "open",
+              "case_indices": [
+                44,
+                75,
+                126
+              ],
+              "case_ids": [
+                "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082",
+                "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448",
+                "CM_NAME:f954ba78fd83301a37a1a7ee5b5d81797c126d8f07e4d1c00438ba8e3ed7f2f9"
+              ],
+              "targets": [
+                {
+                  "proposal_id": "a2-proposal-jcm378-preaddition-basal-preparation",
+                  "owner_path": "data/ingredients/mapped/jcm378_preaddition_basal_preparation.yaml",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/a/after/jcm378_preaddition_basal_preparation.yaml",
+                    "sha256": "6511f1be0d51490e09fb693ff8354d18a26c08d6eeccb7e7192dac894eb49844"
+                  },
+                  "fields": [
+                    "solution_type"
+                  ],
+                  "case_ids": [
+                    "CM_NAME:4216b38eb3b4dd89f72c9c3aad0e9223e64995d76756df9f53e5004bd020a082"
+                  ]
+                },
+                {
+                  "proposal_id": "b2-proposal-methanol_50_percent_vv_jcm_sources",
+                  "owner_path": "data/ingredients/mapped/methanol_50_percent_vv_jcm_sources.yaml",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/b/after/methanol_50_percent_vv_jcm_sources.yaml",
+                    "sha256": "1e7ef83bf7afacdc950c4e2013a6ce1dc3550e503a1810780ebdd50ca27b0348"
+                  },
+                  "fields": [
+                    "solution_type"
+                  ],
+                  "case_ids": [
+                    "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+                  ]
+                },
+                {
+                  "proposal_id": "b2-proposal-resazurin_0025_percent_atcc_chopped_meat",
+                  "owner_path": "data/ingredients/mapped/resazurin_0025_percent_atcc_chopped_meat.yaml",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/b/after/resazurin_0025_percent_atcc_chopped_meat.yaml",
+                    "sha256": "43559067e33088d4353e4b9d37babf9996f6304afbcedbba1b15d0b77069d45a"
+                  },
+                  "fields": [
+                    "solution_type"
+                  ],
+                  "case_ids": [
+                    "CM_NAME:f954ba78fd83301a37a1a7ee5b5d81797c126d8f07e4d1c00438ba8e3ed7f2f9"
+                  ]
+                }
+              ],
+              "evidence_ids": [
+                "b-source-5035c1dae7ddc53d",
+                "b-togo-59fb9148ad86efc9",
+                "b-togo-31b31ea13b2730a4",
+                "a-primary-primary-b6aea64a290c3186"
+              ],
+              "observation": "All three payloads say MINERAL_STOCK. The schema defines that as Concentrated mineral stock solution. JCM378 is a nutrient-containing basal preparation;50% methanol is organic-substrate stock; resazurin is indicator preparation. Schema-enum membership alone does not support the scientific category.",
+              "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+              "bounded_fix": "Choose a source-faithful allowed category, using OTHER if no specific category is justified; do not invent roles or components. Retain all three payload targets in one issue family.",
+              "acceptance_checks": [
+                "Reinspect solution_type on all three exact revised payloads against schema descriptions.",
+                "Preserve component/occurrence scope and rerun native/schema checks; those checks alone do not close the science finding."
+              ],
+              "lineage": [],
+              "capture_refs": [
+                {
+                  "evidence_id": "b-source-5035c1dae7ddc53d",
+                  "root": "artifact",
+                  "path": "b/captures/source-5035c1dae7ddc53de96c.bin",
+                  "sha256": "63ff0d7864c0c87286c6f6b790cf45462d75a609c754356f24b99ecbf2557407",
+                  "url": "https://www.atcc.org/~/media/D1EF22ABE8034FE5B83EFF9D1BC65E18.ashx",
+                  "accessed_at": "2026-11-08T05:07:04.686261+00:00"
+                },
+                {
+                  "evidence_id": "b-togo-59fb9148ad86efc9",
+                  "root": "artifact",
+                  "path": "b/captures/retry-togo-M1256.json",
+                  "sha256": "36876c15da80c06d1ebcdb2024a7830beba6fd2b5c7c22a5e1866ae3d87cb1be",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1256",
+                  "accessed_at": "2026-11-08T05:19:50.942515+00:00"
+                },
+                {
+                  "evidence_id": "b-togo-31b31ea13b2730a4",
+                  "root": "artifact",
+                  "path": "b/captures/retry-togo-M1257.json",
+                  "sha256": "9aea2b6525fc9dee58317f877d4898e5dd82cd28ee93e1ff9548201ea423e937",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1257",
+                  "accessed_at": "2026-11-08T05:19:50.967059+00:00"
+                },
+                {
+                  "evidence_id": "a-primary-primary-b6aea64a290c3186",
+                  "root": "artifact",
+                  "path": "a/captures/primary-b6aea64a290c3186.html",
+                  "sha256": "ea5b13a5a03be4d5478f086d1433d260146f2a9862da77d121f272cdc7bf0029",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=378",
+                  "accessed_at": "2026-11-08T05:07:15.262807+00:00"
+                }
+              ]
+            }
+          }
+        ],
+        "assessment": "Upheld against native SolutionTypeEnum description and full sources: nutrient basal mixture, methanol stock and resazurin preparation are not concentrated mineral stocks.",
+        "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+        "bounded_fix": "Choose a supported allowed category, using OTHER if necessary; no inferred biological roles or new component facts.",
+        "acceptance_checks": [
+          "Check all three solution_type values against actual preparations.",
+          "Run native shape/partonomy checks and independently rereview exact payloads."
+        ],
+        "dedup_disposition": "No exact current tracking found by bounded MINERAL_STOCK search; retain one family with all three targets.",
+        "issue_urls": [],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1241"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "Three selected preparations now use existing OTHER category; no new roles inferred and no component or concentration changes.",
+      "proposal_ids": [
+        "a2-proposal-jcm378-preaddition-basal-preparation",
+        "b2-proposal-methanol_50_percent_vv_jcm_sources",
+        "b2-proposal-resazurin_0025_percent_atcc_chopped_meat"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-jcm378-preaddition-basal-preparation.yaml",
+          "sha256": "2ec9ff1cfb283e4669f1f192780c11bd73c2f530d5d53887f48dbb9bfcba509e"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/b2-proposal-methanol_50_percent_vv_jcm_sources.yaml",
+          "sha256": "a48753de85f51a2dd8bc68218b9350255aa0a40f47cd71f9871a301ca2ef00c1"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/b2-proposal-resazurin_0025_percent_atcc_chopped_meat.yaml",
+          "sha256": "395e5cb830d160030c8a8e0d69a2d498a2efbc8f311c1e80c9bec7a46fa51aa6"
+        }
+      ],
+      "evidence_ids": [
+        "p4-a-primary-primary-b6aea64a290c3186",
+        "p4-a-primary-togo-M373",
+        "p4-b-source-c8ec70d710c58681",
+        "p4-b-togo-31b31ea13b2730a4",
+        "p4-b-togo-400a2c5b82fde938",
+        "p4-b-togo-48312c1c324cc2aa",
+        "p4-b-togo-59fb9148ad86efc9",
+        "p4-b-togo-982958d34ccceee4",
+        "p4-b-togo-e85c9667433ea77c",
+        "p4-preparation-owner-lookup",
+        "p4-source-occurrence-bindings"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-PREPARATIONS",
+      "source_finding_ids": [
+        "W02C-002",
+        "W02C-003"
+      ],
+      "original_family": {
+        "finding_id": "W02-F-PREPARATIONS",
+        "title": "Feasible partial preparations remain deferred or inaccurately scoped",
+        "source_finding_ids": [
+          "W02C-002",
+          "W02C-003"
+        ],
+        "area": "completeness",
+        "severity": "P2",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:2feb52ed67f813e796ebca4439616167b770c91f3f19dec61dc3907b8399f0cf",
+          "CM_NAME:d43bf05b39ad79c197b613ac5a34b7c8dcfc03ec4a8604a2424723f15dbaa0bd",
+          "KG_CASE:91fbd30ef38331c306f684d5bc27b3b8da74ab0f203c2dd1839859d33421388c",
+          "KG_CASE:9a63321cc5427c62952c9a1dab31dddb9eb4c2602949386ec2a5e06b85d6bfca"
+        ],
+        "proposal_ids": [],
+        "originals": [
+          {
+            "reviewer": "reviewer-c",
+            "source": {
+              "path": "science/reviewer-c/findings.json",
+              "sha256": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1"
+            },
+            "original": {
+              "finding_id": "W02C-002",
+              "title": "Case163 defers feasible partial stock representation and overstates solvent",
+              "severity": "P2",
+              "status": "open",
+              "case_indices": [
+                163
+              ],
+              "case_ids": [
+                "KG_CASE:91fbd30ef38331c306f684d5bc27b3b8da74ab0f203c2dd1839859d33421388c"
+              ],
+              "targets": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/decisions.json",
+                  "selector": "case index163",
+                  "fields": [
+                    "reasoning",
+                    "missing_requirement",
+                    "proposal_ids"
+                  ]
+                }
+              ],
+              "evidence_ids": [
+                "c-mediadive-1316",
+                "c-chebi-91261"
+              ],
+              "observation": "DSMZ221 explicitly prescribes25ml of filter-sterilized20% Na-malate, but the decision requires complete formulation/basis/solvent/solute CAS before any stock owner and calls it aqueous. Primary PDF does not specify solvent or percent basis. An ignored-inclusive search across maintained owners/index/all published worker02 artifacts found only decision/evidence mentions, not a20%stock owner.",
+              "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+              "bounded_fix": "Prepare/reconcile a DSMZ221-qualified partial stock preserving literal20%, unknown basis/solvent/sodium stoichiometry/stereo and unresolved source-literal solute; retain the exact L-component hold and global Na-malate non-equivalence. Withdraw aqueous as an asserted source fact unless independently documented.",
+              "acceptance_checks": [
+                "Independent review of exact new payload and source occurrence binding.",
+                "No inferred water, L form, sodium ratio, percentage basis or normalized component amount.",
+                "Keep existing811/868 generic-malate obligations open."
+              ],
+              "lineage": [
+                "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+                "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+              ],
+              "capture_refs": [
+                {
+                  "evidence_id": "c-mediadive-1316",
+                  "root": "artifact",
+                  "path": "c/captures/mediadive-1316.json",
+                  "sha256": "44aca8f31d2dc1bad81f84431fbbe7f981beca547ff8b7e391f09b5c454e954e",
+                  "url": "https://mediadive.dsmz.de/rest/ingredient/1316",
+                  "accessed_at": "2026-11-08T05:07:34.261511+00:00"
+                },
+                {
+                  "evidence_id": "c-chebi-91261",
+                  "root": "artifact",
+                  "path": "c/captures/chebi-91261.json",
+                  "sha256": "f7a8b91684b0de2fb93fee5c827d1e84a7d24e5590d0ef571e93a26d4ef89a9e",
+                  "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:91261",
+                  "accessed_at": "2026-11-08T05:07:39.722462+00:00"
+                }
+              ],
+              "additional_primary_capture": {
+                "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-c/new-captures/dsmz221.pdf",
+                "sha256": "125bbbc48bf2566d20f3b850aacb03d2390c021c13a1a329a9850584b5a754e1",
+                "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium221.pdf",
+                "accessed_at": "2026-11-08T06:42:54.644389+00:00",
+                "note": "Complete DSMZ221 PDF text read; primary preparation instructions establish literal20% and filter sterilization."
+              }
+            }
+          },
+          {
+            "reviewer": "reviewer-c",
+            "source": {
+              "path": "science/reviewer-c/findings.json",
+              "sha256": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1"
+            },
+            "original": {
+              "finding_id": "W02C-003",
+              "title": "DSMZ375 administration is incorrectly described as solid context",
+              "severity": "P2",
+              "status": "open",
+              "case_indices": [
+                29,
+                165
+              ],
+              "case_ids": [
+                "CM_NAME:2feb52ed67f813e796ebca4439616167b770c91f3f19dec61dc3907b8399f0cf",
+                "KG_CASE:9a63321cc5427c62952c9a1dab31dddb9eb4c2602949386ec2a5e06b85d6bfca"
+              ],
+              "targets": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/decisions.json",
+                  "selector": "case29 reasoning and case165 interpretation",
+                  "fields": [
+                    "reasoning",
+                    "applicability"
+                  ]
+                }
+              ],
+              "evidence_ids": [
+                "a-primary-primary-a88fe2ac6e424e19"
+              ],
+              "observation": "DSMZ375 table gives0.3g Cystein-HCl·2H2O, but the preparation explicitly adds cysteine from sterile anoxic stock solutions under100%N2. Case29 calls the three375 contexts solid; case165 must also preserve known stock administration. Solute mass does not establish solid supply.",
+              "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+              "bounded_fix": "Correct administration wording and partition notes. Keep unspecified375 stock strength and unusual chemical-form hold; do not substitute1107 5%stock or infer its hydrate/stereo.",
+              "acceptance_checks": [
+                "Read complete375 preparation instructions against revised case29/165 text.",
+                "Keep1107 proposal limited to its original occurrence set."
+              ],
+              "lineage": [
+                "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+              ],
+              "capture_refs": [
+                {
+                  "evidence_id": "a-primary-primary-a88fe2ac6e424e19",
+                  "root": "artifact",
+                  "path": "a/captures/primary-a88fe2ac6e424e19.pdf",
+                  "sha256": "4951273b45475689b009f47438a6a74075df48d468326f2c8b28d50c8b92cbc2",
+                  "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium375.pdf",
+                  "accessed_at": "2026-11-08T05:07:03.465929+00:00"
+                }
+              ]
+            }
+          }
+        ],
+        "assessment": "Upheld with sealed C addendum. DSMZ22120%Na-malate, NBRC869dithionite solution and DSMZ375sterile anoxic cysteine stock support bounded preparation work. Missing exact salt/stereo/hydrate/strength/solvent remains a genuine chemical/formulation hold, not a reason to defer all representation. Case165 is chemical ingredient983 with a contextual backlink, not a global stock remap.",
+        "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified. | Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+        "bounded_fix": "Complete/reconcile isolated partial preparation proposals for cases163,109 and DSMZ375 subset of29. Correct unsupported aqueous/solid wording. Preserve DSMZ375 versus1107 occurrence partitions and unresolved overlap; do not assume5%, water, L form, filtration, N2component or receiving mass as concentration. Retain case165 chemical scope and all owner/source/export holds.",
+        "acceptance_checks": [
+          "Follow exact addendum occurrence IDs and primary captures.",
+          "Search compatible owners before minting; source IDs alone do not prove distinct chemistry.",
+          "Independent full-payload, source-applicability and component-assertion review of each successor."
+        ],
+        "dedup_disposition": "Issue1201 is the authorized deferred-curation cause;811/868 cover related generic-malate identity obligations,905 cysteine-form context. This family does not retire or duplicate those specific form holds.",
+        "issue_urls": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/868",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+        ],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "Three bounded stock proposals now represent actual preparation scope. Na-malate carrier/basis/salt/stereochemistry, dithionite counterion/strength/carrier and cysteine two-water chemical form/strength remain unknown. DSMZ375 may overlap1107; no formulation equality or disjointness claimed. Existing1107 active solid-context language corrected while history retained.",
+      "proposal_ids": [
+        "a2-proposal-dsmz1107-cysteine-hydrochloride-stock",
+        "p4-proposal-nominal20percent-sodium-malate",
+        "p4-proposal-nbrc869-dithionite-preparation",
+        "p4-proposal-cysteine-anoxic-strength-unspecified"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-dsmz1107-cysteine-hydrochloride-stock.yaml",
+          "sha256": "a64faad371873b3d06e40106dd9039ec20d6ecd5db01a3f93db326ec73e64a95"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/p4-proposal-nominal20percent-sodium-malate.yaml",
+          "sha256": "1450dc6baa7331e5f38481660e4c823523c7c11fe3d0aa0b2279407642cefa58"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/p4-proposal-nbrc869-dithionite-preparation.yaml",
+          "sha256": "376cd384cc6d55d3928a63017f96aa1c1773950f74c026f93513270eab639b5c"
+        },
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/p4-proposal-cysteine-anoxic-strength-unspecified.yaml",
+          "sha256": "fe12e1e341da0f437fc733bb495ac3f37f838b248114dd2b3259fd8103d81a77"
+        }
+      ],
+      "evidence_ids": [
+        "p4-a-primary-primary-a88fe2ac6e424e19",
+        "p4-a-primary-primary-beef55cb4575fc62",
+        "p4-b-source-8e304c12faf5af99",
+        "p4-b-togo-474abe49de37cdc0",
+        "p4-dsmz221",
+        "p4-preparation-owner-lookup",
+        "p4-source-occurrence-bindings"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-METHANOL-SOURCE",
+      "source_finding_ids": [
+        "W02C-004"
+      ],
+      "original_family": {
+        "finding_id": "W02-F-METHANOL-SOURCE",
+        "title": "Methanol stock label misidentifies JCM source",
+        "source_finding_ids": [
+          "W02C-004"
+        ],
+        "area": "provenance",
+        "severity": "P2",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+        ],
+        "proposal_ids": [
+          "b2-proposal-methanol_50_percent_vv_jcm_sources"
+        ],
+        "originals": [
+          {
+            "reviewer": "reviewer-c",
+            "source": {
+              "path": "science/reviewer-c/findings.json",
+              "sha256": "819f47e2cccd8d28627c90faca475201dc598966a5d04d216079b94910e2c3e1"
+            },
+            "original": {
+              "finding_id": "W02C-004",
+              "title": "Methanol label cites JCM1174 instead of actual JCM1173-2",
+              "severity": "P2",
+              "status": "open",
+              "case_indices": [
+                75
+              ],
+              "case_ids": [
+                "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+              ],
+              "targets": [
+                {
+                  "proposal_id": "b2-proposal-methanol_50_percent_vv_jcm_sources",
+                  "owner_path": "data/ingredients/mapped/methanol_50_percent_vv_jcm_sources.yaml",
+                  "after_capture": {
+                    "root": "artifact",
+                    "path": "continuation-1201-v1/b/after/methanol_50_percent_vv_jcm_sources.yaml",
+                    "sha256": "1e7ef83bf7afacdc950c4e2013a6ce1dc3550e503a1810780ebdd50ca27b0348"
+                  },
+                  "fields": [
+                    "preferred_term",
+                    "ontology_mapping.ontology_label",
+                    "notes/source-scope references"
+                  ],
+                  "case_ids": [
+                    "CM_NAME:846fbb8593fc43905c4a93b79a1928521070fe07d2101b033a6a8124b0ab7448"
+                  ]
+                }
+              ],
+              "evidence_ids": [
+                "b-togo-59fb9148ad86efc9",
+                "b-togo-31b31ea13b2730a4"
+              ],
+              "observation": "TOGO M1256 is JCM1173 and M1257 is JCM_M1173-2 with GRMD1173 URL. Payload labels instead list1174. This is a source-identity error, although both recipes support50%v/v methanol.",
+              "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+              "bounded_fix": "Correct the source list to represent1173 and its1173-2 agar variant, retaining all six frozen occurrence links and the supported shared stock identity.",
+              "acceptance_checks": [
+                "No1174 attribution remains in active claim fields without new primary evidence.",
+                "All six original occurrences remain accounted for; no false duplicate stock minted."
+              ],
+              "lineage": [],
+              "capture_refs": [
+                {
+                  "evidence_id": "b-togo-59fb9148ad86efc9",
+                  "root": "artifact",
+                  "path": "b/captures/retry-togo-M1256.json",
+                  "sha256": "36876c15da80c06d1ebcdb2024a7830beba6fd2b5c7c22a5e1866ae3d87cb1be",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1256",
+                  "accessed_at": "2026-11-08T05:19:50.942515+00:00"
+                },
+                {
+                  "evidence_id": "b-togo-31b31ea13b2730a4",
+                  "root": "artifact",
+                  "path": "b/captures/retry-togo-M1257.json",
+                  "sha256": "9aea2b6525fc9dee58317f877d4898e5dd82cd28ee93e1ff9548201ea423e937",
+                  "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1257",
+                  "accessed_at": "2026-11-08T05:19:50.967059+00:00"
+                }
+              ]
+            }
+          }
+        ],
+        "assessment": "Upheld: TOGO M1257 is JCM1173-2 with GRMD1173 URL, not1174. The50%v/v stock itself remains supported across all six occurrences.",
+        "exact_reproduction": "Read the hash-bound target fields and cited complete source captures; compare the literal values described here. No author files were modified.",
+        "bounded_fix": "Correct active preferred/mapping/source labels in immutable successor, retain all six occurrences and shared stock identity, preserve earlier history with correction event.",
+        "acceptance_checks": [
+          "No unsupported1174scope remains in active claims.",
+          "Six occurrence bindings retained and no duplicate stock minted."
+        ],
+        "dedup_disposition": "No exact target issue identified by bounded search; unrelated issue-number1174 hits do not establish tracking.",
+        "issue_urls": [],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1241"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "M1257 is JCM_M1173-2 with GRMD1173 source link, not JCM1174. Six original occurrence IDs and50%v/v strength retained; no carrier or uniform sterilization inference.",
+      "proposal_ids": [
+        "b2-proposal-methanol_50_percent_vv_jcm_sources"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/b2-proposal-methanol_50_percent_vv_jcm_sources.yaml",
+          "sha256": "a48753de85f51a2dd8bc68218b9350255aa0a40f47cd71f9871a301ca2ef00c1"
+        }
+      ],
+      "evidence_ids": [
+        "p4-b-source-c8ec70d710c58681",
+        "p4-b-togo-31b31ea13b2730a4",
+        "p4-b-togo-400a2c5b82fde938",
+        "p4-b-togo-48312c1c324cc2aa",
+        "p4-b-togo-59fb9148ad86efc9",
+        "p4-b-togo-982958d34ccceee4",
+        "p4-preparation-owner-lookup",
+        "p4-source-occurrence-bindings"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-IRON-STOCK-DUPLICATE",
+      "source_finding_ids": [
+        "w02-external-b-004"
+      ],
+      "original_family": {
+        "finding_id": "W02-F-IRON-STOCK-DUPLICATE",
+        "title": "Two compatible ferrous-ammonium stock proposals need reconciliation",
+        "source_finding_ids": [
+          "w02-external-b-004"
+        ],
+        "area": "ownership",
+        "severity": "P1",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:5748535cafa1a4e48c96c72498bbbb7b2570b8f51155fe8042c00f9a8aed9028",
+          "KG_CASE:dbf9effa6d88c00375db78f59b88a2e453ec3e356ea81b5a44bb68250deaa1af"
+        ],
+        "proposal_ids": [
+          "a2-proposal-dsmz718-ferrous-ammonium-sulfate-stock",
+          "c2-proposal-ferrous-ammonium-heptahydrate-stock"
+        ],
+        "originals": [
+          {
+            "reviewer": "reviewer-b",
+            "source": {
+              "path": "science/reviewer-b/findings.json",
+              "sha256": "c9d5cafe17c50da31ff5dd672201f6ee593ac1b6f3480537b29351e56095b8da"
+            },
+            "original": {
+              "finding_id": "w02-external-b-004",
+              "status": "open",
+              "severity": "P1",
+              "title": "DSM718 and DSM399 duplicate the same supported heptahydrate stock",
+              "target": {
+                "case_ids": [
+                  "CM_NAME:5748535cafa1a4e48c96c72498bbbb7b2570b8f51155fe8042c00f9a8aed9028",
+                  "KG_CASE:dbf9effa6d88c00375db78f59b88a2e453ec3e356ea81b5a44bb68250deaa1af"
+                ],
+                "case_indices": [
+                  53,
+                  176
+                ],
+                "payloads": [
+                  {
+                    "proposal_id": "a2-proposal-dsmz718-ferrous-ammonium-sulfate-stock",
+                    "path": "continuation-1201-v1/a/after-v3/dsmz718_ferrous_ammonium_sulfate_stock.yaml",
+                    "sha256": "4c8c6b0ee75793b83bddc54f795c249084429aa86e306abd44212c3316d9f818"
+                  },
+                  {
+                    "proposal_id": "c2-proposal-ferrous-ammonium-heptahydrate-stock",
+                    "path": "continuation-1201-v1/c/proposed-owners/c2-proposal-ferrous-ammonium-heptahydrate-stock-v2.yaml",
+                    "sha256": "afcdaa60b415472c2a2663da9f52475149aeb080248cce0598f606d86c837f2b"
+                  }
+                ],
+                "field": "identifier; new_owner; case_ids"
+              },
+              "reasoning": "Both recipes state Fe(NH4)2(SO4)2·7H2O0.1%w/v and2 mL receiving dose. One payload expresses1 g/L, the other0.1%w/v; these are equal. A source-medium number is not positive evidence of a distinct stock.",
+              "evidence_capture_refs": [
+                {
+                  "evidence_id": "c2-dsmz-399",
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/captures/dsmz-399.pdf",
+                  "sha256": "29f9f4df24231ba04f8113f3f7b6d8fd82b186c000608627ad02905808ae7ed0",
+                  "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium399.pdf",
+                  "locator": "Complete DSM399 recipe; ferrous ammonium sulfate stock line"
+                },
+                {
+                  "evidence_id": "a-primary-primary-873a3a71df3a60a2",
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/a/captures/primary-873a3a71df3a60a2.pdf",
+                  "sha256": "09faeca86ec0358bcdc3b5674e2323ac61c3ca554a9323bb09eb6f06fa6feb1c",
+                  "locator": "Complete DSM718; Fe(NH4)2(SO4)2 x7H2O0.1%w/v2mL"
+                }
+              ],
+              "exact_reproduction": "Read the bound complete payload/decision fields and compare the specified primary or ontology locators; source artifacts remain unchanged.",
+              "bounded_fix": "Use one stock identity with both source recipes and both case backlinks, preserving seven-water form and unknown batch details.",
+              "lineage": "Cross-fragment duplicate not resolved by individual narrow partial-stock approvals.",
+              "acceptance_check": "Overlay has one owner for this concentration-qualified material and preserves cases53/176 without changing source formula.",
+              "retained_obligations": [
+                "Source identity, quantity, whole-owner, export and publication holds remain until their own evidence-backed disposition."
+              ],
+              "evidence_ids": [
+                "c2-dsmz-399",
+                "a-primary-primary-873a3a71df3a60a2"
+              ]
+            }
+          }
+        ],
+        "assessment": "Upheld at the supported partial-preparation scope: both exact recipes give literal seven-water solute at0.1%w/v;1g/L is equivalent. Source medium numbers and receiving doses do not establish distinct materials. Missing solvent/full composition does not prove either chemical disjointness or full-formulation equivalence.",
+        "exact_reproduction": "Read the bound complete payload/decision fields and compare the specified primary or ontology locators; source artifacts remain unchanged.",
+        "bounded_fix": "Reconcile to one supported partial stock identity, or provide positive distinguishing preparation evidence, with both case/source links retained. Preserve the explicit seven-water solute, unknown solvent/batch details and every existing source/form hold; no forced whole-formulation equivalence or six-water substitution.",
+        "acceptance_checks": [
+          "Preserve exact original capture bytes, URLs, timestamps and frozen case/occurrence identities.",
+          "Review the complete immutable successor payload/assessment and exact applicability independently; retain all source, role, owner and export holds.",
+          "Rebind changed artifacts and run applicable native schema/writer/partonomy checks; structural PASS alone does not close scientific findings."
+        ],
+        "dedup_disposition": "No exact matching issue found in bounded718/399 search. Existing718 broader candidate work is not closure; coordinator deduplicates campaign findings.",
+        "issue_urls": [],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "One common known nominal0.1%w/v seven-water stock proposal replaces two unapplied source-number-specific candidates. Both original histories preserved as exact segments. This is not proof of full stock equivalence, not a maintained merge, and not a seven-water-owner WITHHOLD clearance.",
+      "proposal_ids": [
+        "p4-proposal-common-ferrous-ammonium-heptahydrate-stock"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/p4-proposal-common-ferrous-ammonium-heptahydrate-stock.yaml",
+          "sha256": "d182e01739918cfe432102df03d4d21a53997d5773a998592214bb1cbfe7c539"
+        }
+      ],
+      "evidence_ids": [
+        "p4-a-primary-primary-873a3a71df3a60a2",
+        "p4-a-primary-togo-M2625",
+        "p4-c2-dsmz-399",
+        "p4-preparation-owner-lookup",
+        "p4-source-occurrence-bindings"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-MN-SOURCE-CONFLICT",
+      "source_finding_ids": [
+        "w02-external-b-005"
+      ],
+      "original_family": {
+        "finding_id": "W02-F-MN-SOURCE-CONFLICT",
+        "title": "Manganese cohort includes a conflicting magnesium source row",
+        "source_finding_ids": [
+          "w02-external-b-005"
+        ],
+        "area": "scope",
+        "severity": "P1",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:3d0569352b2629ba7aa2db060f25f9e298daf7d3d1e420806854575931d05b32"
+        ],
+        "proposal_ids": [
+          "a2-proposal-manganese-sulfate-variable-hydrate"
+        ],
+        "originals": [
+          {
+            "reviewer": "reviewer-b",
+            "source": {
+              "path": "science/reviewer-b/findings.json",
+              "sha256": "c9d5cafe17c50da31ff5dd672201f6ee593ac1b6f3480537b29351e56095b8da"
+            },
+            "original": {
+              "finding_id": "w02-external-b-005",
+              "status": "open",
+              "severity": "P1",
+              "title": "Case41 blanket manganese applicability contradicts JCM1503 magnesium row",
+              "target": {
+                "case_ids": [
+                  "CM_NAME:3d0569352b2629ba7aa2db060f25f9e298daf7d3d1e420806854575931d05b32"
+                ],
+                "case_indices": [
+                  41
+                ],
+                "payloads": [
+                  {
+                    "proposal_id": "a2-proposal-manganese-sulfate-variable-hydrate",
+                    "path": "continuation-1201-v1/a/after-v5/manganese_sulfate_variable_hydrate.yaml",
+                    "sha256": "ac7c4e146dd7b40fc76b77066c6e36e63e52394adaf98f81e4d1c8534bc838a3"
+                  }
+                ],
+                "field": "decision.applicability; missing_requirement; proposal.case_ids"
+              },
+              "reasoning": "Frozen JCM1503 occurrence CM_OCC:9b15f04e391224356807bef1a5f82b76de2fbbcef5ef448cf468b6520d535c3b at solutions/1/composition/0 says MnSO4·xH2O33.8 MG_PER_L. Retained primary JCM1503 says MgCl2·6H2O33.8 mg. The all17 statement omits this ingredient conflict.",
+              "evidence_capture_refs": [
+                {
+                  "evidence_id": "a-primary-primary-dacc370dca3db263",
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/a/captures/primary-dacc370dca3db263.html",
+                  "sha256": "01c7a36ad95a0d476f5fc1806413145c63c56de7bf270d6fbdd006795c6800ef",
+                  "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1503",
+                  "locator": "JCM1503 trace-solution first row MgCl2·6H2O33.8 mg"
+                }
+              ],
+              "exact_reproduction": "Read the bound complete payload/decision fields and compare the specified primary or ontology locators; source artifacts remain unchanged.",
+              "bounded_fix": "Partition the conflicting occurrence from supported Mn occurrences; document source-version/identity correction work without silently editing frozen input.",
+              "lineage": "New source conflict independently reproduced by root; no old hydrate hold closes it.",
+              "acceptance_check": "Exact occurrence has an explicit unresolved source conflict and cannot be included in a blanket resolved Mn identity assignment.",
+              "retained_obligations": [
+                "Source identity, quantity, whole-owner, export and publication holds remain until their own evidence-backed disposition."
+              ],
+              "evidence_ids": [
+                "a-primary-primary-dacc370dca3db263"
+              ]
+            }
+          }
+        ],
+        "assessment": "Upheld. Exact JCM1503 capture statesMgCl2·6H2O33.8mg while frozen occurrence9b15f04e... saysMnSO4·xH2O33.8mg/L. Other neighboring source typos do not prove a corrected reagent. Blanket all17 applicability is not supported.",
+        "exact_reproduction": "Read the bound complete payload/decision fields and compare the specified primary or ontology locators; source artifacts remain unchanged.",
+        "bounded_fix": "Partition and document the conflicting occurrence separately; preserve frozen bytes and determine source/version correction using primary evidence. Maintain supported manganese occurrences and registry work without silently rewriting this source identity.",
+        "acceptance_checks": [
+          "Preserve exact original capture bytes, URLs, timestamps and frozen case/occurrence identities.",
+          "Review the complete immutable successor payload/assessment and exact applicability independently; retain all source, role, owner and export holds.",
+          "Rebind changed artifacts and run applicable native schema/writer/partonomy checks; structural PASS alone does not close scientific findings."
+        ],
+        "dedup_disposition": "Bounded JCM1503 issue query found no exact target; source identity/version conflict needs coordinator triage.",
+        "issue_urls": [],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1241"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "Exact17 partition:16 retain source-variable manganese-hydrate scope; one JCM1503 source conflict remains explicitly unresolved and excluded from proposal applicability. CAS/ontology selection unchanged and no magnesium correction imposed.",
+      "proposal_ids": [
+        "a2-proposal-manganese-sulfate-variable-hydrate"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/a2-proposal-manganese-sulfate-variable-hydrate.yaml",
+          "sha256": "77efa4a7d4f3b3371c59eb0f801d24d8fccc3cdaab6195791b73eb70d00c9bf6"
+        }
+      ],
+      "evidence_ids": [
+        "p4-a-primary-primary-dacc370dca3db263",
+        "p4-a-primary-togo-M1296",
+        "p4-a-primary-togo-M1364",
+        "p4-a-primary-togo-M1586",
+        "p4-a-primary-togo-M1597",
+        "p4-a-primary-togo-M1608",
+        "p4-a-primary-togo-M1618",
+        "p4-a-primary-togo-M1619",
+        "p4-a-primary-togo-M1630",
+        "p4-a-primary-togo-M1631",
+        "p4-a-primary-togo-M1697",
+        "p4-a-primary-togo-M1706",
+        "p4-a-primary-togo-M1757",
+        "p4-a-primary-togo-M1767",
+        "p4-a-primary-togo-M1771",
+        "p4-a-primary-togo-M961",
+        "p4-preparation-owner-lookup",
+        "p4-source-occurrence-bindings"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-PABA-INHERITED-STOCK-ALIAS",
+      "parent_finding_id": "W02-F-INHERITED-ALIASES",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1230"
+      ],
+      "disposition": "author_correction_proposed_independent_final_bytes_pending",
+      "reasoning": "New bounded0.3μg/μL PABA preparation is supported by original NBRC1604. B authors retirement of the inherited concentration-qualified alias on pure PABA; root explicitly composes case69 context patch. Neither frozen M3160/M3161 occurrence is assigned the stock.",
+      "proposal_ids": [
+        "p4-proposal-paba-point3ug-per-ul"
+      ],
+      "after_captures": [
+        {
+          "root": "artifact",
+          "path": "final-corrections-v1/preparations/after/p4-proposal-paba-point3ug-per-ul.yaml",
+          "sha256": "d12c490162bc579c12d5788faca565459520526973ffeb76f550ebf38119bd61"
+        }
+      ],
+      "evidence_ids": [
+        "p4-nbrc1604",
+        "p4-togoM3052",
+        "p4-chebi30753",
+        "p4-paba-owner-lookup"
+      ],
+      "independent_review_status": "pending",
+      "hold_removal_authorized": false
+    },
+    {
+      "finding_id": "W02-F-EBIOS",
+      "original_family": {
+        "finding_id": "W02-F-EBIOS",
+        "title": "Ebios product owner reconciliation remains required",
+        "source_finding_ids": [
+          "w02-external-b-001"
+        ],
+        "area": "ownership",
+        "severity": "P1",
+        "native_severity": "major",
+        "case_ids": [
+          "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+        ],
+        "proposal_ids": [
+          "a2-proposal-nbrc1132-asahi-ebios-tablets"
+        ],
+        "originals": [
+          {
+            "reviewer": "reviewer-b",
+            "source": {
+              "path": "science/reviewer-b/findings.json",
+              "sha256": "c9d5cafe17c50da31ff5dd672201f6ee593ac1b6f3480537b29351e56095b8da"
+            },
+            "original": {
+              "finding_id": "w02-external-b-001",
+              "status": "confirmed_existing_dependency",
+              "severity": "P1",
+              "title": "Source-named Ebios tablet owner duplicates the existing tablet product source",
+              "target": {
+                "proposal_id": "a2-proposal-nbrc1132-asahi-ebios-tablets",
+                "path": "continuation-1201-v1/a/after/nbrc1132_asahi_ebios_tablets.yaml",
+                "sha256": "3275012aad49e7d7e353507d106a3a26c8b2313fad80e5e587ade3bec857bc3c",
+                "case_ids": [
+                  "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+                ],
+                "field": "identifier; new_owner rationale",
+                "case_indices": [
+                  23
+                ],
+                "payloads": [
+                  {
+                    "proposal_id": "a2-proposal-nbrc1132-asahi-ebios-tablets",
+                    "path": "continuation-1201-v1/a/after/nbrc1132_asahi_ebios_tablets.yaml",
+                    "sha256": "3275012aad49e7d7e353507d106a3a26c8b2313fad80e5e587ade3bec857bc3c"
+                  },
+                  {
+                    "proposal_id": "a2-proposal-nbrc1132-asahi-ebios-tablets",
+                    "path": "continuation-1201-v1/a/after/nbrc1132_asahi_ebios_tablets.yaml",
+                    "sha256": "3275012aad49e7d7e353507d106a3a26c8b2313fad80e5e587ade3bec857bc3c"
+                  }
+                ]
+              },
+              "reasoning": "Existing EBIOS owner is imported from MediaDive ingredient1953. Its actual primary source JCM969 identifies EBIOS dried yeast tablets from Asahi. NBRC1132 likewise identifies Asahi Ebios tablets, with Tanabe distribution. The inherited Edison P2G interpretation does not establish a different material. No positive distinct-substance basis supports minting a second identity solely by medium number or historical distributor.",
+              "evidence_capture_refs": [
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-b/captures/ebios-mediadive1953.body",
+                  "sha256": "5259598b8babed741459fc7e0a236e2b179d2329f5dedd7ddb501283f5c2f04a"
+                },
+                {
+                  "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-b/captures/ebios-j969.body",
+                  "sha256": "e0a5b7970d48f4ec47c071f9f21eb039465e95b58ca05efb3a4ed9a69508a1ca"
+                }
+              ],
+              "exact_reproduction": "Inspect target complete payload at the bound SHA and compare the cited primary source locators.",
+              "bounded_fix": "Reconcile actual EBIOS owner source membership and prepare a bounded existing-owner proposal; retain tablet product boundary and historical formulation uncertainty. Do not force generic yeast-extract identity or invent historical excipients.",
+              "lineage": "Confirmed existing issue1221, including EBIOS source1953/JCM969 and W01/W02 competing-owner scope; no new issue requested.",
+              "acceptance_check": "Show exact existing-owner membership, compare NBRC1132/JCM969 product evidence, and either consolidate source backlinks or document positive distinct-product evidence; no duplicate source-local registry owner.",
+              "retained_obligations": [
+                "No source identity, whole-owner, quantity, export or publication hold is released."
+              ],
+              "issue_refs": [
+                "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221"
+              ],
+              "evidence_ids": []
+            }
+          }
+        ],
+        "assessment": "Upheld with actual existing MediaDive1953/JCM969 tablet source: inherited P2G interpretation is not positive evidence for a different substance. New NBRC1132 owner lacks a distinct-material basis.",
+        "exact_reproduction": "Inspect target complete payload at the bound SHA and compare the cited primary source locators.",
+        "bounded_fix": "Coordinate existing-owner/formulation reconciliation with worker01/06 and all source backlinks. Prepare a bounded successor on the appropriate existing identity after review; do not select a winner here, force generic yeast extract or invent historical excipients.",
+        "acceptance_checks": [
+          "Preserve exact original capture bytes, URLs, timestamps and frozen case/occurrence identities.",
+          "Review the complete immutable successor payload/assessment and exact applicability independently; retain all source, role, owner and export holds.",
+          "Rebind changed artifacts and run applicable native schema/writer/partonomy checks; structural PASS alone does not close scientific findings."
+        ],
+        "dedup_disposition": "Exact existing issue1221. This review reproduces the dependency and requests no duplicate issue. Own worker04 proposals and other shard payloads are not approved.",
+        "issue_urls": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221"
+        ],
+        "status": "open",
+        "approval": "No whole-owner/source release/export approval"
+      },
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221"
+      ],
+      "disposition": "existing_coordinator_dependency_retained",
+      "reasoning": "No Ebios owner selected, merged or reinterpreted in this preparation author scope. Existing1221 reconciliation remains with the coordinator and frozen cross-shard source/version boundaries; no new duplicate issue or owner proposal.",
+      "proposal_ids": [],
+      "independent_review_status": "not_newly_reviewed_here",
+      "hold_removal_authorized": false
+    }
+  ]
+}

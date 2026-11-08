@@ -1,0 +1,14 @@
+Reviewed W02 head `0597d00417be4d7cdfb5a31970043eec9bbc88fe`, frozen campaign base `e000d66dd26ab053e9b17ce7bf8d3c873c3dde99`. Authoritative peer review is `assembly-v2/review.yaml` (SHA256 `31cac38cae0cfb3dcfae4453a01402dc98d249f70ad9a7698a89b25eed5eae11`) in the sealed W04 independent W02 packet, whose 2,399-member SHA256SUMS is `99306617655b1e3df84368079e49f4341a0fd05667bdf9fedf18dda24f4f7ca7`. The coordinator verified all manifest members, rebound all188 case decisions and106 selected payloads, and independently repeated all106 native guarded writes and baseline/overlay partonomy. Structural validation passes; the scientific verdict remains needs_curation. These are unapplied proposal corrections, not changes already made to main or whole-owner/export approval.
+
+W02-F-INHERITED-ALIASES contains additional exact form/product-scope obligations. Keep them distinct from already fixed selected aliases and from metadata that native policy already filters.
+
+| Owner | Literal/field | Required bounded disposition |
+|---|---|---|
+| Coso4.yaml | `cobalt(2+) sulfate--water (1/7)` RAW_TEXT | Exact seven-water name on anhydrous identity; preserve nonresolving provenance or supply a claim-specific alternate justification without merging owners. |
+| Cobalt_chloride_hexahydrate.yaml | `Cobalt(II) chloride--water (1/7)` EXACT_SYNONYM | Seven waters conflict with exact hexahydrate; assess/retire this exact claim, not all cobalt names. |
+| Mncl2_X_4_H2o.yaml | `MnCl4 x4H2O`, `MnCl4・4H2O` RAW_TEXT | Wrong chloride count requires original source/history correction evidence; do not invent a universal formula-normalization rule. |
+| Feso4_X_H2o.yaml | `Feromax`, `Fespan` EXACT_SYNONYM | ChEBI75834 explicitly records related BRAND NAME scope. Name import alone does not establish full commercial product equivalence to neat monohydrate. Supply exact evidence or preserve as nonresolving provenance. |
+
+Related W02 scopes remain on their exact trackers: Sodium_Malate generic/fragment strings under811/868; Mohr generic/bare formula and vanadyl's related `vanadic sulfate pentahydrate` under1220; ammonium nickel duplicate form decision under1050; concentration strings under1230. Existing REJECTED tombstones are not active identity winners and must not be revived.
+
+The coordinator re-ran actual native policies: 27 inspected Role:/Properties: strings are excluded by both MIM and Claw. They are optional classification cleanup, not a present resolver leak. `a-proposal-anhydrous-alum` already rejects `Na SiO .9H O` and `ZnSO .7H O`;811's existing exact correction comment remains valid, so do not repeat those changes or reopen them as an uncorrected successor defect. Supported source-proven raw spelling corrections remain admissible under§3; no blanket rejection of missing hydrate qualifiers is authorized.

@@ -1,0 +1,42 @@
+{
+  "finding_id": "W02-CHEM-METADATA-002",
+  "reviewer": "/root/final_reviewer",
+  "recorded_by": "/root/research_b",
+  "observed_at": "2026-11-08T08:18:26.650360+00:00",
+  "status": "needs_revision",
+  "source_input": {
+    "path": "decisions-v3.json",
+    "sha256": "7a0834b0218f0acd746d1ef6d2b0eeecc427d38fdd780c2fe1b392133b0661d7"
+  },
+  "exact_affected_fields": [
+    {
+      "case_index": 82,
+      "case_id": "CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097",
+      "reasoning": "FeSO4(NH4)2SO4.6H2O has one Fe, two ammonium ions, two sulfate ions and six waters, exactly ferrous ammonium sulfate hexahydrate CHEBI76181. TOGO2560 context names this weighed compound; grouping order does not change the salt.",
+      "applicability": "Case index 82: all 1 original occurrences and complete frozen recipe snapshots were read. FeSO4(NH4)2SO4.6H2O has one Fe, two ammonium ions, two sulfate ions and six waters, exactly ferrous ammonium sulfate hexahydrate CHEBI76181. TOGO2560 context names this weighed compound; grouping order does not change the salt. Evidence from another recipe or manufacturer is used only for the stated chemical/form comparison, never to replace missing source recipe context. All frozen downstream/native holds remain in force.",
+      "missing_requirement": "The composed proposal rejects all three stock-solution synonyms; that correction is concrete but unapplied. The remaining bare unhydrated alias still requires exact-form assessment and complete owner/coordinator release review. Preserve the frozen 392 G_PER_L occurrence as an unresolved source-unit/stock-context discrepancy against primary 392 mg in a trace stock; do not repair receiving-medium units by inference."
+    },
+    {
+      "case_index": 89,
+      "case_id": "CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c",
+      "reasoning": "(NH4)2SO4FeSO4 \u00d76H2O is the additive formula of the same ferrous ammonium sulfate hexahydrate as CHEBI76181. TOGO3118 separately names the iron and nickel double salts, preventing cross-metal conflation.",
+      "applicability": "Case index 89: all 1 original occurrences and complete frozen recipe snapshots were read. (NH4)2SO4FeSO4 \u00d76H2O is the additive formula of the same ferrous ammonium sulfate hexahydrate as CHEBI76181. TOGO3118 separately names the iron and nickel double salts, preventing cross-metal conflation. Evidence from another recipe or manufacturer is used only for the stated chemical/form comparison, never to replace missing source recipe context. All frozen downstream/native holds remain in force.",
+      "missing_requirement": "The composed proposal rejects all three stock-solution synonyms; that correction is concrete but unapplied. The remaining bare unhydrated alias still requires exact-form assessment and complete owner/coordinator release review. Preserve the frozen 748 G_PER_L occurrence as an unresolved source-unit/stock-context discrepancy against primary 748 mg in a trace stock; no receiving-medium quantity conversion is authorized."
+    },
+    {
+      "case_index": 96,
+      "case_id": "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+      "reasoning": "(NH4)2Fe(SO4)2\u00b76H2O directly specifies Mohr salt, CHEBI76181. Original JCM950/966 both list 2.0 mg of this salt, corroborated by TOGO M997/M1016. The frozen G_PER_L unit must not be inherited as if the original 2 mg addition were grams. Identity aliasing preserves six waters and does not approve recipe unit flattening.",
+      "applicability": "Case index 96: all 2 original occurrences and complete frozen recipe snapshots were read. (NH4)2Fe(SO4)2\u00b76H2O directly specifies Mohr salt, CHEBI76181. Original JCM950/966 both list 2.0 mg of this salt, corroborated by TOGO M997/M1016. The frozen G_PER_L unit must not be inherited as if the original 2 mg addition were grams. Identity aliasing preserves six waters and does not approve recipe unit flattening. Evidence from another recipe or manufacturer is used only for the stated chemical/form comparison, never to replace missing source recipe context. All frozen downstream/native holds remain in force.",
+      "missing_requirement": "The composed proposal rejects all three stock-solution synonyms; that correction is concrete but unapplied. Preserve source 2 mg units, the unresolved bare unhydrated alias, and full owner/coordinator integration and release review; no release follows from this scoped alias proposal."
+    },
+    {
+      "case_index": 149,
+      "case_id": "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76",
+      "reasoning": "MediaDive106 independently attaches CAS7783-85-9 and a six-water formula to its bare Fe(NH4)2(SO4)2 name, supporting the existing Mohr-hexahydrate interpretation at this source. Expanded lookup also finds the anhydrous and seven-water owners, so bare text is not treated as a universal hydrate alias. Full owner inspection found three concentration-qualified stock tokens incorrectly accepted as hydrate synonyms; the isolated correction preserves them as REJECTED_LABEL and must be composed with the earlier shared Mohr proposal.",
+      "applicability": "Issue1201 continuation of this exact frozen source case. MediaDive106 independently attaches CAS7783-85-9 and a six-water formula to its bare Fe(NH4)2(SO4)2 name, supporting the existing Mohr-hexahydrate interpretation at this source. Expanded lookup also finds the anhydrous and seven-water owners, so bare text is not treated as a universal hydrate alias. Full owner inspection found three concentration-qualified stock tokens incorrectly accepted as hydrate synonyms; the isolated correction preserves them as REJECTED_LABEL and must be composed with the earlier shared Mohr proposal. Helper/incident-edge count definitions, original source ID and raw label are unchanged. Every inherited nonpositive row decision, source placeholder and downstream hold remains in force. Scope-specific proposals do not approve generic labels globally or release complete owner/export payloads.",
+      "missing_requirement": "None for the explicitly CAS/form-qualified MediaDive106 source interpretation. The successor separately makes both underqualified global aliases nonresolving while preserving raw labels; source106 metadata cannot license unrestricted hydrate inference. Original complete-owner and release holds remain."
+    }
+  ],
+  "finding": "Active case prose retains administrative bare-alias assessment/composition requirements already implemented in the complete successor Mohr candidate. Keep quantity and genuine source/owner/release holds; replace only stale active curation-status claims. Exact predecessor prose preserved here and originalledgers."
+}

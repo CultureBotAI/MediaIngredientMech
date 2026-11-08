@@ -1,0 +1,51 @@
+{
+  "finding_id": "W02-FC-D-MOHR-RESIDUAL-PROSE",
+  "reviewer": "/root/final_reviewer",
+  "reviewed_at": "2026-11-08T08:18:32.584938+00:00",
+  "status": "findings_open",
+  "severity": "minor",
+  "scope": "Active source-disposition metadata for four Mohr cases; no payload authorship or owner/release approval.",
+  "input": {
+    "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/decisions-v3.json",
+    "sha256": "7a0834b0218f0acd746d1ef6d2b0eeecc427d38fdd780c2fe1b392133b0661d7"
+  },
+  "targets": [
+    {
+      "case_id": "CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097",
+      "scope_index": 82,
+      "decision_sha256": "f9accacba59e1ad5b6bf04cd4e2ffcb40b20c2de13fa64e33c346a29e07b01c7",
+      "fields": {
+        "missing_requirement": "The composed proposal rejects all three stock-solution synonyms; that correction is concrete but unapplied. The remaining bare unhydrated alias still requires exact-form assessment and complete owner/coordinator release review. Preserve the frozen 392 G_PER_L occurrence as an unresolved source-unit/stock-context discrepancy against primary 392 mg in a trace stock; do not repair receiving-medium units by inference."
+      }
+    },
+    {
+      "case_id": "CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c",
+      "scope_index": 89,
+      "decision_sha256": "4b05978b141808a8bc360c84d509a8a6ec8c671e22de9a256a371ba84c23c142",
+      "fields": {
+        "missing_requirement": "The composed proposal rejects all three stock-solution synonyms; that correction is concrete but unapplied. The remaining bare unhydrated alias still requires exact-form assessment and complete owner/coordinator release review. Preserve the frozen 748 G_PER_L occurrence as an unresolved source-unit/stock-context discrepancy against primary 748 mg in a trace stock; no receiving-medium quantity conversion is authorized."
+      }
+    },
+    {
+      "case_id": "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7",
+      "scope_index": 96,
+      "decision_sha256": "f20827d24f6d10b1c4e57c1039e73d6434e1dee1688c9e3e7c7aca385586cc0d",
+      "fields": {
+        "missing_requirement": "The composed proposal rejects all three stock-solution synonyms; that correction is concrete but unapplied. Preserve source 2 mg units, the unresolved bare unhydrated alias, and full owner/coordinator integration and release review; no release follows from this scoped alias proposal."
+      }
+    },
+    {
+      "case_id": "KG_CASE:4b7e86a2a10425a7d3777449e0375b761cb3821b26155e1e41bf69bf571e5e76",
+      "scope_index": 149,
+      "decision_sha256": "1d6c3e6e4d7fe5684d177e964e0151ad3cfabb18c73345f619b90d6a0f2e95c6",
+      "fields": {
+        "reasoning": "MediaDive106 independently attaches CAS7783-85-9 and a six-water formula to its bare Fe(NH4)2(SO4)2 name, supporting the existing Mohr-hexahydrate interpretation at this source. Expanded lookup also finds the anhydrous and seven-water owners, so bare text is not treated as a universal hydrate alias. Full owner inspection found three concentration-qualified stock tokens incorrectly accepted as hydrate synonyms; the isolated correction preserves them as REJECTED_LABEL and must be composed with the earlier shared Mohr proposal.",
+        "applicability": "Issue1201 continuation of this exact frozen source case. MediaDive106 independently attaches CAS7783-85-9 and a six-water formula to its bare Fe(NH4)2(SO4)2 name, supporting the existing Mohr-hexahydrate interpretation at this source. Expanded lookup also finds the anhydrous and seven-water owners, so bare text is not treated as a universal hydrate alias. Full owner inspection found three concentration-qualified stock tokens incorrectly accepted as hydrate synonyms; the isolated correction preserves them as REJECTED_LABEL and must be composed with the earlier shared Mohr proposal. Helper/incident-edge count definitions, original source ID and raw label are unchanged. Every inherited nonpositive row decision, source placeholder and downstream hold remains in force. Scope-specific proposals do not approve generic labels globally or release complete owner/export payloads."
+      }
+    }
+  ],
+  "finding": "Active missing_requirement on82/89/96 still calls the bare global alias unresolved despite this successor concretely rejecting it. Case149 still says the stock correction must be composed although the selected composed candidate already contains it. Historical obligations remain valid provenance, but these active statements misdescribe current proposed work.",
+  "required_correction": "Retain every original hold object and predecessor unchanged. Version decision metadata so concrete proposed alias corrections are distinguished from full-owner/release and original392/748G_PER_L-vs-mg/2mg source-quantity holds. Do not edit YAML, frozen occurrences, identity interpretation or historical reviews.",
+  "issue_scope": "Within W02-F-INHERITED-ALIASES / final correction metadata; coordinator owns live dedup/publication, no new external issue request by reviewer.",
+  "reported_before_fix": true
+}

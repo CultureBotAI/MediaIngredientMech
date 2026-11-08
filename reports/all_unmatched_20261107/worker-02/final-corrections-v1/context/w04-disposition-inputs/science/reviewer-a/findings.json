@@ -1,0 +1,1618 @@
+{
+  "reviewer": "reviewer-a /root/chemistry",
+  "author_head": "0597d00417be4d7cdfb5a31970043eec9bbc88fe",
+  "assignment": {
+    "path": ".temp/w02-published-head-independent-review-v1/assignments/reviewer-a.json",
+    "sha256": "2f33521bf15fd63aa0490fc6501001affe386e79e9d18ef5286a14288ea3ccc2"
+  },
+  "assessed_at": "2026-11-08T07:08:01.191666+00:00",
+  "status": "complete",
+  "scope": "43 assigned cases and36 complete final payloads; no author/integration/corpus edits; no hold release.",
+  "findings": [
+    {
+      "finding_id": "W02-RA-01",
+      "status": "open",
+      "classification": "new_evidence_classification_defect",
+      "severity": "P2",
+      "case_ids": [
+        "KG_CASE:f84967b186a14516098f30750262c801550a97420d71d4d57e67fa274ca63ee5"
+      ],
+      "case_indices": [
+        184
+      ],
+      "proposal_ids": [],
+      "target": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/evidence.json",
+        "field": "evidence[evidence_id=c-jcm-1323].kind"
+      },
+      "description": "The active ledger declares c-jcm-1323 primary_source, but its exact HTML response says Nothing found and contains no recipe. The decision already acknowledges failure; provenance classification still falsely counts a successful primary source.",
+      "evidence": [
+        {
+          "evidence_id": "c-jcm-1323",
+          "capture": {
+            "root": "artifact",
+            "path": "c/captures/jcm-1323.html",
+            "sha256": "e4d7ffa595190f41a4ae2cec27fff9641431ae2587f52bfdd048581bcc473506"
+          },
+          "locator": "entire visible page; Search for medium no.=1323, Nothing found"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-a/captures/jcm1323-direct.html",
+          "sha256": "e4d7ffa595190f41a4ae2cec27fff9641431ae2587f52bfdd048581bcc473506"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-a/captures/jcm1323-bacmedia.pdf",
+          "sha256": "4b5b8f6a1f21499688bddc411fcb212e1bea4986d88a8b8029678aa9481c3a03"
+        }
+      ],
+      "reproduction": "Read the exact c-jcm-1323 captured HTML; compare kind with its visible no-recipe response. Fresh direct retrieval reproduces the failure. The alternate bacmedia PDF is a separate successful source and must not launder the original failure.",
+      "bounded_fix": "In a successor artifact classify the existing response as unsuccessful_search, retain exact bytes/URL/access time, and add the separately successful bacmedia recipe only with its own provenance. Preserve MnCl4 x6H2O chemical hold.",
+      "lineage": {
+        "related_prior_finding": "b2-review-a-04 concerns other failed JCM pages, not this exact target",
+        "dedup": "Root reported no exact current-worker02 issue match; analogous worker06 issue1217 is not automatic duplicate closure."
+      },
+      "acceptance_check": "No active scientific support count treats this HTML as recipe evidence; actual successful alternate PDF separately bound and chemical-form ambiguity preserved."
+    },
+    {
+      "finding_id": "W02-RA-02",
+      "status": "open",
+      "classification": "new_quantity_basis_provenance_defect",
+      "severity": "P2",
+      "case_ids": [
+        "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0"
+      ],
+      "case_indices": [
+        58
+      ],
+      "proposal_ids": [
+        "a2-proposal-jcm167-precarbonate-basal-agar",
+        "a2-proposal-jcm665-preaddition-iron-gel-base",
+        "a2-proposal-dsmz40-cde-mixed-preparation",
+        "a2-proposal-togo-m2491-mrssi-base"
+      ],
+      "description": "Four otherwise bounded preparations require quantity-basis corrections/qualification in full-payload narrative provenance. Explicit final-preparation volume or per-litre basis is presented as literal water/whole-stock input. The first two are direct contradictions; the CDE andMRSsi cases require preserving provider-versus-original basis. No numeric component concentration is currently asserted, limiting the affected surface.",
+      "targets": [
+        {
+          "proposal_id": "a2-proposal-jcm167-precarbonate-basal-agar",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/a/after-v3/jcm167_precarbonate_basal_agar.yaml",
+            "sha256": "4409f51db458621b0cb67ef34639fee49863bbf90e9ea8fd97ebda74267ebd5c"
+          },
+          "fields": [
+            "/ontology_mapping/evidence/0/notes",
+            "/notes",
+            "/component_assertion/evidence/0/notes",
+            "/component_assertion/evidence/1/notes",
+            "/curation_history/0/changes"
+          ],
+          "description": "Original JCM167 says prepare the basal agar to900mL. The payload opening says to900mL but its repeated source-transcription text labels Distilled water900mL a literal input amount.",
+          "bounded_fix": "Replace the literal-water assertion with water q.s. to900mL and distinguish the provider table’s900mL row.",
+          "severity": "P2",
+          "structured_component_quantity_defect": false
+        },
+        {
+          "proposal_id": "a2-proposal-jcm665-preaddition-iron-gel-base",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/a/after-v4/jcm665_preaddition_iron_gel_base.yaml",
+            "sha256": "db1b027dde687f0afabdb0068f6aa0bce7006eb5f5206597581595ed92b96fb4"
+          },
+          "fields": [
+            "/ontology_mapping/evidence/0/notes",
+            "/notes",
+            "/component_assertion/evidence/0/notes",
+            "/curation_history/0/changes"
+          ],
+          "description": "TOGO M683 preparation comment says add components to distilled water and bring volume to1L. The payload calls Distilled water1L a literal input, despite soluble stocks already included.",
+          "bounded_fix": "Preserve q.s. to1L wording and the provider-table claim separately; do not invent an exact amount of added water.",
+          "severity": "P2",
+          "structured_component_quantity_defect": false
+        },
+        {
+          "proposal_id": "a2-proposal-dsmz40-cde-mixed-preparation",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/a/after/dsmz40_cde_mixed_preparation.yaml",
+            "sha256": "1d4bb6decf8b68edebbdc1dabf670804624c20d01b0e59adb5bd0526d25cd97e"
+          },
+          "fields": [
+            "/ontology_mapping/evidence/0/notes",
+            "/notes",
+            "/component_assertion/evidence/0/notes",
+            "/component_assertion/evidence/1/notes",
+            "/curation_history/0/changes"
+          ],
+          "description": "Provider C50mL/D450mL/E25mL group totals are reproduced as literal whole-stock input amounts. Original inheritedDSMZ29 specifies50/450/25mL water during preparation; D also has0.5mLresazurin andE1mLtrace stock before the whole preparations are combined.",
+          "bounded_fix": "Label numbers as provider section-volume claims, and state that original mix uses the preparedC/D/E solutions; do not reinterpret water inputs as measured final aliquots.",
+          "severity": "P3",
+          "structured_component_quantity_defect": false
+        },
+        {
+          "proposal_id": "a2-proposal-togo-m2491-mrssi-base",
+          "after_capture": {
+            "root": "artifact",
+            "path": "continuation-1201-v1/a/after-v3/togo_m2491_mrssi_base.yaml",
+            "sha256": "3838ea36856afdd637869e7818a855779a60d63067406ba08ede81bc80f045c4"
+          },
+          "fields": [
+            "/ontology_mapping/evidence/0/notes",
+            "/notes",
+            "/component_assertion/evidence/0/notes",
+            "/curation_history/0/changes"
+          ],
+          "description": "Source MRSsi prose states components per litre, whereas payload narrative asserts1Lwater and all amounts as literal input amounts. Those bases are not interchangeable.",
+          "bounded_fix": "Retain the source per-litre formulation basis and distinguish its table water row; do not imply measured1L added water or infer an unreported final batch volume.",
+          "severity": "P3",
+          "structured_component_quantity_defect": false
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "a-case-58-occ-00",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M526_Acidianus_SP._JP7_Medium.yaml",
+            "sha256": "c5937571cd777600a755dce65ba6d009cc449483c864111db41bd2d1f7a31a2b"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:9913ddf203fc31141d521835d7705d7f1da3b2f0d2d4f618d7c09a5524d5648d; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-01",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2477_Pfennig_s_Medium_II_With_Salt.yaml",
+            "sha256": "9270c3ce3a30e2ff339af59efc1d7a04a0ac66399f37d70f9519bbb5685623e9"
+          },
+          "locator": "ingredients/1; occurrence_id=CM_OCC:0234855ebf26bd130de15443de99c21e991f5fe6b850d446729142802b0dc50f; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-02",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M377_AGC2_Medium.yaml",
+            "sha256": "f37c8673aa5ff88a76168cf48c5332987a6050c89b3fe2a5e26243cb23d976b1"
+          },
+          "locator": "ingredients/1; occurrence_id=CM_OCC:69e5143d7afe4555d8ae1b291943a75609cb630c43255263e0d01607a2ad0f5c; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-03",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M412_Modified_SOB_Medium.yaml",
+            "sha256": "02edcf4a3d85289bd350c19b4b17749932992e16e828caff72d2bff2834506ee"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:1a0df7f74bbb14e1e22ad41dd9ecbc33872e3ea2d48bfe9f0e28037e3f37b371; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-04",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M438_RT2_Medium.yaml",
+            "sha256": "647c65cfd1d86911b3ca8bdc8d45452715c4a44d6ade2aa5f68a37afb16cdd33"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:5cbf78f16358b70d64a98ccafb41d56050692bf1aa99710519f28c6cb0db5d56; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-05",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M463_Saltwater_Medium_With_Lactate.yaml",
+            "sha256": "dbaccd6637a9a6fd2c0c4c0f1590eb8e38f84b739c44239ab8a1df7d1fa605f0"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:263f07ec8395698b03b4cf8172c674b78e13c09188fad41e579bce20f401b645; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-06",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M464_Saltwater_Medium_With_Acetate_And_Ferric_Citrate.yaml",
+            "sha256": "cd6cef464f0a509fd1ac2b07e0a91c1c9007b61e7f78957be70fe4f4ea848709"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:fb988dcaf4f4a51089a49a240acf8b0da60af35fb34f76d03a3d2df484a4329d; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-07",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M481_Modified_Sporomusa_Medium.yaml",
+            "sha256": "5d19b70d980c6f5ad3bec7b06abf7073619823feb34a80e08f1d731f60c79012"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:a69a92d5e2630f0d7fc827a8d415a1656313ebf6dc55ef53ffbafd9c8cbdcdf9; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-08",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M491_Mg50_Medium.yaml",
+            "sha256": "4dd1f7e31be0bd4326a59dd20c361ff162c323bb9159e65a7c0d6ef2c2358075"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:2474b8b733ce2962daced402668cb63eaa22d37ac2e60171052dc308ab157352; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-09",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M522_Modified_Desulfoglaeba_Alkanexedens_Medium.yaml",
+            "sha256": "6fb922185bab862476edfca054346121838bdcd2a822cf57cdfcad9b0ba731a1"
+          },
+          "locator": "ingredients/1; occurrence_id=CM_OCC:28202b84ce6b42918ad7f2baed5fd406e67fcfefbc9e4536513e6641903cb0af; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-10",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M539_Treponema_Isopterocola_Medium.yaml",
+            "sha256": "ce51e547a3128da31db71f66026617bff4cbe4b81846ec52637528fe0dd8019b"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:c5bb6e81aa4d3e27fc99b8e2077d97e4c09d4e2ca5ce389131931ac0d80c39cd; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-11",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M550_Geosporobacter_Subterreneus_Medium.yaml",
+            "sha256": "7ed5df325dcfe014ca0589ff24b6f9fb366dfff2651edc6b0d312e0ad7359d69"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:62745c36d93e4f15dc23b22c6a55ed9c68e74ab0cdcb2fd1395301f112c1edfa; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-12",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M551_Desulfovibrio_As36_Medium.yaml",
+            "sha256": "e1e5b8eb97889385b822fcf5bcf90252f7e0785c3c56927b5132419f8b70bd28"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:d69bb8b7129e8ab48a6f26aaee32fa757d8166787b17ba7a1f99d95b8dad7d12; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-13",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M553_Desulfovibrio_Marinus_Medium.yaml",
+            "sha256": "ef8a786f0f743bfa1979b92e8051a909b662da7e9ff9aefd4d3e49bc7d82b4ba"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:b7aa84a7546a5478348211aafbbe59a613379845b157073c8b858f4184796e61; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-14",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M569_Desulfovibrio_HEB233_Medium.yaml",
+            "sha256": "22169b703068bfb3f38c6b563450702618663ee3d6aa7f2f2a23c878a897271d"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:7b6a6808bb3e93650a63058e61d98eec112f26f9d87b56addc6e46735c36ce43; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-15",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M577_Clostridiisalibacter_Paucivorans_Medium.yaml",
+            "sha256": "42cabaff6bc098c842bfac293edf20ba257be267c050d418647db8c3a5ba5564"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:9d8cb94491cf73825466b17fe80a33e2de8ca3d0403c9fd382543a1c1543bebe; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-16",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M683_Freshwater_Iron_GEL_Medium.yaml",
+            "sha256": "6ad5f50492f97329455ff3f22c1bdcbd336354b311879572392d20788771bbdd"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:7e1a4d480ac048f0172775246129f9b1fe3975c34d55c162238fa7fe3a627e47; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-17",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M702_FRR_Medium.yaml",
+            "sha256": "b99813c04304e7fcc5702279a6b5942b6fb11105078403a67580479d1b096523"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:65fefb5453f590f12c8e0c6aab495d3b4a99e530e83af60cf79322d5325d12a4; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-18",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M728_Sporosalibacterium_Medium.yaml",
+            "sha256": "df3892167d1a916f046dc93dc841d87ce66b829d4b4090d0e1491f75cc973c75"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:74655ed5510d71e410407554500ead760c6f5b65d9a2e93d2d395b7693602f39; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-19",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M772_Freshwater_Medium_With_Toluene.yaml",
+            "sha256": "fabeaef2a46da70043829f2319390fb514eaf0cd311e09d9a7192d5f2d4078ab"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:b45cc105f0a013710dad9a927d8a0edfe3cb56c2c4f700d570f50b76d33f2426; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-20",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M899_Steroidobacter_Medium.yaml",
+            "sha256": "f1f299656daaef5c9b0e83e35a8e21c9e7411ce2ca24104d5ac6fd3e1411f318"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:db1af0829874560bc91045693a932fbcfb0add599118df318a9dd50d099f8e80; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-21",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M903_Desulfotomaculum_BS_Medium.yaml",
+            "sha256": "92256ffce930f1ded50d6c9566d968432c64bb813d51620992e41a4d4e76ce01"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:80196aaa5f3194afa36841e8525992dd157e89ef9bba0d2de6c4a3ef7456ba43; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-22",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/mrssi.yaml",
+            "sha256": "7ed9069ea7d870485e2a3103a6d6ad768691494b851321109a9e5d89ff713799"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:c13999d172db066ae19a4d8eb7e23c314558097f3fc7e2423ba5c81dbebd2283; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-case-58-occ-23",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m158.yaml",
+            "sha256": "83d43ba80f32427d22157753a580878b06461409692a77ef94cfe6754b3f27f1"
+          },
+          "locator": "ingredients/0; occurrence_id=CM_OCC:66fbc743a59568d80813d477a7dc84bb609043ffbe6ac0608a4628d38f9d4604; whole recipe and preparation context",
+          "url": null,
+          "original_accessed_at": null,
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a2-unsuccessful-original-jcm-06c82845cf85343d",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-06c82845cf85343d.html",
+            "sha256": "b713b3fb20420f8910b7570713c030f760119462e4fdda7f7478b985edb31659"
+          },
+          "locator": "HTML body: Nothing found.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=665",
+          "original_accessed_at": "2026-11-08T05:06:55.809118+00:00",
+          "read_status": "inspected_unsuccessful_response_no_recipe_support"
+        },
+        {
+          "evidence_id": "a2-unsuccessful-original-jcm-35d62fba3be2fc9f",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-35d62fba3be2fc9f.html",
+            "sha256": "5d30054c99b1ba979e6cbc6b6f3a0a7f14d633f5952dc3db948c20b33f5183e7"
+          },
+          "locator": "HTML body: Nothing found.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=382",
+          "original_accessed_at": "2026-11-08T05:06:54.795347+00:00",
+          "read_status": "inspected_unsuccessful_response_no_recipe_support"
+        },
+        {
+          "evidence_id": "a-primary-primary-3f852a56428bf9b0",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-3f852a56428bf9b0.html",
+            "sha256": "acf6bcb9bf9ad56ade82af6dfaef6b6755f9407e0997f22e435674f0ed6539bc"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=706",
+          "original_accessed_at": "2026-11-08T05:06:56.294682+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-4317351a57e041e0",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-4317351a57e041e0.html",
+            "sha256": "a06539f095f3ebec2897c3e56ffa29ad157947a6cf3e3806fc30792c70ff4c78"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=463",
+          "original_accessed_at": "2026-11-08T05:07:25.609950+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-4801f18449de54e9",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-4801f18449de54e9.html",
+            "sha256": "0d737b3454b2d958db0d8333f20f168da36d06eb708cf8f6c74e12b8cfb3d31c"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=565",
+          "original_accessed_at": "2026-11-08T05:07:32.111573+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-5ee38548831fad9b",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-5ee38548831fad9b.html",
+            "sha256": "781d06ee9f4922f02e47b78fa74b014a595f00b5517fb210b4560167b1b00e3f"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=551",
+          "original_accessed_at": "2026-11-08T05:07:30.746261+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-627ff3dd192d02a6",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-627ff3dd192d02a6.html",
+            "sha256": "a484446097e4d96286aa6603d96035dfe3f95d305aa76775a0fe717cb5cf7ba4"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=683",
+          "original_accessed_at": "2026-11-08T05:07:32.886360+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a2-unsuccessful-original-jcm-6dbfe7abf51bc0ab",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-6dbfe7abf51bc0ab.html",
+            "sha256": "67448d7ef75285e6e5f170768dd2d583b807b029d3d614191a6cc35837d79492"
+          },
+          "locator": "HTML body: Nothing found.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=490",
+          "original_accessed_at": "2026-11-08T05:07:26.717886+00:00",
+          "read_status": "inspected_unsuccessful_response_no_recipe_support"
+        },
+        {
+          "evidence_id": "a-primary-primary-76189601fcf42e69",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-76189601fcf42e69.html",
+            "sha256": "4c995fa8c144975f349368190203bfe11cc390d35550fb3556ee0669fe8b4058"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=438",
+          "original_accessed_at": "2026-11-08T05:07:24.245884+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-84122ecbb9e908f5",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-84122ecbb9e908f5.html",
+            "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+          "original_accessed_at": "2026-11-08T05:07:28.083688+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-85d6397dff79ee1e",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-85d6397dff79ee1e.html",
+            "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521",
+          "original_accessed_at": "2026-11-08T05:07:27.365140+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-a961d8836825c87a",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-a961d8836825c87a.html",
+            "sha256": "86a91d54eddb29a1d10cc477d163c933c6740e5786a03c550bcf51b6af26455f"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=573",
+          "original_accessed_at": "2026-11-08T05:06:55.620446+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-b2fd6b00c870f479",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-b2fd6b00c870f479.html",
+            "sha256": "1d92c7a7cfcd824d3b68eeb210f64e8193db2f6c23a6142dde99695d56dffd79"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=480",
+          "original_accessed_at": "2026-11-08T05:07:26.158178+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-b542d9724d51d06b",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-b542d9724d51d06b.html",
+            "sha256": "f6bf05779def20103af9594c9ef33bc22f00f69cb0f8854820f45fe3151b66ed"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=866",
+          "original_accessed_at": "2026-11-08T05:06:56.509487+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-c81b11b75b019e40",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-c81b11b75b019e40.html",
+            "sha256": "4429b809760e580e11fba2d048a487da64fe10ea18f7e3c0b8a89b132def08cb"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=525",
+          "original_accessed_at": "2026-11-08T05:06:54.274148+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-cafff472840122be",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-cafff472840122be.html",
+            "sha256": "7fcdc4ebb0cf060a033a38726cc969543625a7af1a7d0f836d21ca4cda2d0cd7"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=862",
+          "original_accessed_at": "2026-11-08T05:07:37.926470+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-d5a7aaaa78aba9d2",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-d5a7aaaa78aba9d2.html",
+            "sha256": "8ca012fc8384165d7c08a6bfbdf96c46b390c0daad81d0a2520a3f12fc5fd737"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=549",
+          "original_accessed_at": "2026-11-08T05:07:29.180154+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-e2aba2dd2e8b673a",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-e2aba2dd2e8b673a.html",
+            "sha256": "e3a57b06deecd2d9a37b6a41bc162fce8360bda84ca988faa46b6a6953b3557e"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=167",
+          "original_accessed_at": "2026-11-08T05:07:41.028878+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-e8f4562866a418fc",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-e8f4562866a418fc.html",
+            "sha256": "f824e6c7456b91f82b3b1992eb4682240e53da6cd80cce2426edc328b28d0340"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=462",
+          "original_accessed_at": "2026-11-08T05:07:24.933299+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-f0bdc89b615d7574",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-f0bdc89b615d7574.html",
+            "sha256": "3d4f03fc473bfabda343b25e0edad8bd15fa22920c33f98690538bcf7b6c5ca1"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=414",
+          "original_accessed_at": "2026-11-08T05:06:54.946617+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-f509f6135173d9c1",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-f509f6135173d9c1.html",
+            "sha256": "a174da2bbf44618b4665a30f21a070e68c714c4c387e900779f37f81f40ab54d"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=747",
+          "original_accessed_at": "2026-11-08T05:07:35.627132+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-f5ae8bbd6edc4eab",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-f5ae8bbd6edc4eab.pdf",
+            "sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium40.pdf",
+          "original_accessed_at": "2026-11-08T05:07:23.682197+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-primary-faf9798d3df2b31a",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/primary-faf9798d3df2b31a.html",
+            "sha256": "fcfe3947659547b10aaf3653b048939f5e3a41068e4efa2d62128cab4700f807"
+          },
+          "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=537",
+          "original_accessed_at": "2026-11-08T05:06:55.472126+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M2477",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M2477.json",
+            "sha256": "0e7a978392f76795ead28d22b5d5d89ac23eb9efe66bb30bd52814b0117f62e6"
+          },
+          "locator": "$.components[0].items[2].component_name; $.components[1].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2477",
+          "original_accessed_at": "2026-11-08T05:07:23.180257+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M2491",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M2491.json",
+            "sha256": "1b2e805c573ebcb9b5495f978ae93679a4c6839920502d547a1796ee23380511"
+          },
+          "locator": "$.components[0].items[0].component_name; $.components[1].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2491",
+          "original_accessed_at": "2026-11-08T05:07:38.611156+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M377",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M377.json",
+            "sha256": "f471930488026ecd74c4157f6db8f1e4d8e99802c98daf391c55b78ae9cba496"
+          },
+          "locator": "$.components[0].items[1].component_name; $.components[0].items[2].component_name; $.components[1].subcomponent_name; $.components[2].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M377",
+          "original_accessed_at": "2026-11-08T05:06:54.786481+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M491",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M491.json",
+            "sha256": "850ae83f7707b6d9049b6a2b4a32dd6cbe01b985e00c4f0c89d2d71eedc21cb7"
+          },
+          "locator": "$.components[0].items[0].component_name; $.components[1].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M491",
+          "original_accessed_at": "2026-11-08T05:07:26.311676+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M522",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M522.json",
+            "sha256": "507867a8c21e57c770f7277d29dfa9619e0fedb6a24058f36434031d2bf02b1f"
+          },
+          "locator": "$.components[0].items[1].component_name; $.components[2].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M522",
+          "original_accessed_at": "2026-11-08T05:07:26.867202+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M550",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M550.json",
+            "sha256": "24740a8693d2f18e6d5b78dc566ebe0b791ea5a8abf80be1bfa156a0a976be17"
+          },
+          "locator": "$.components[0].items[1].component_name; $.components[2].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M550",
+          "original_accessed_at": "2026-11-08T05:07:27.393217+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "evidence_id": "a-primary-togo-M683",
+          "capture": {
+            "root": "artifact",
+            "path": "a/captures/togo-M683.json",
+            "sha256": "9575f3bd45b6386b4061ab7b917aff6742723bc2013dad3960016475e6c3a4cc"
+          },
+          "locator": "$.components[0].items[0].component_name; $.components[0].items[1].component_name; $.components[1].subcomponent_name; $.components[2].subcomponent_name",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M683",
+          "original_accessed_at": "2026-11-08T05:06:55.735296+00:00",
+          "read_status": "inspected_for_assigned_claims"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/science/reviewer-a/captures/dsmz29.pdf",
+          "sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb"
+        }
+      ],
+      "reproduction": "Compare full notes, mapping-evidence notes and appended curation-history text containing literal input amounts with original JCM167, complete TOGO M683 comments, original DSMZ29 C/D/E preparation and MRSsi per-litre source prose.",
+      "bounded_fix": "Correct only quantity-basis language in a successor proposal; preserve identities, known components, UNKNOWN completeness, source versions, all aliases/occurrence bindings and holds. Do not convert water to final concentrations.",
+      "lineage": {
+        "related_issues": [
+          "CultureBotAI/CultureMech#408",
+          "CultureBotAI/CultureMech#150"
+        ],
+        "relationship": "Those issues preserve upstream quantity-stage obligations; these exact proposed-owner narrative errors are additional review targets, not already applied source repairs."
+      },
+      "acceptance_check": "Each affected narrative consistently distinguishes water added, q.s. final preparation volume, provider section-volume claims and receiving-medium dose. Re-read all four exact revised payloads and their original sources; no blanket closure from one corrected target."
+    }
+  ],
+  "prior_finding_dispositions": [
+    {
+      "finding_id": "a-c-review-03",
+      "status": "resolved_in_selected_artifacts",
+      "reasoning": "Netropsin actual owner, exact bytes, MeSH concept and new alias payload inspected; duplicate Congocidin owner hold remains.",
+      "assigned_targets": [
+        {
+          "case_index": 164,
+          "case_id": "KG_CASE:96d8ecb6c781fa8e567937a84b0f668eebae5dec838143f1c96e10b1c9c10bdd",
+          "disposition": "resolved_in_selected_artifacts"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/independent-review-c.json",
+          "sha256": "82c87155c175c2e3a1153f9e1c85d28643be5bdae4a0209aa9bfc94f2cffdc0d",
+          "pointer": "/findings/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "a-c-review-05",
+      "status": "resolved_in_selected_payload",
+      "reasoning": "REJECTED nickel tombstone history is CORRECTED with REJECTED→REJECTED; no promotion.",
+      "assigned_targets": [
+        {
+          "case_index": 134,
+          "case_id": "KG_CASE:12dc307a5d0964bc97f7a67ebfd448cf3f1608c060aeb1c2d3e9fbda3a617c8c",
+          "disposition": "resolved_in_selected_payload"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/independent-review-c.json",
+          "sha256": "82c87155c175c2e3a1153f9e1c85d28643be5bdae4a0209aa9bfc94f2cffdc0d",
+          "pointer": "/findings/4"
+        }
+      ]
+    },
+    {
+      "finding_id": "a-c-review-06",
+      "status": "resolved_in_selected_reasoning",
+      "reasoning": "MediaDive1640 literal mass120.369 confirmed; it remains contradictory anhydrous metadata, not monohydrate evidence.",
+      "assigned_targets": [
+        {
+          "case_index": 137,
+          "case_id": "KG_CASE:1b6f31977060be8bfd5d68a1086aef39f5a495aa0275ab272385fac39db55eaa",
+          "disposition": "resolved_in_selected_reasoning"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/a/independent-review-c.json",
+          "sha256": "82c87155c175c2e3a1153f9e1c85d28643be5bdae4a0209aa9bfc94f2cffdc0d",
+          "pointer": "/findings/5"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-01",
+      "status": "resolved_for_assigned_targets_only",
+      "reasoning": "Actual complete TOGO M2231 andM2405 joins support cases86/122. The other eleven original targets are outside this reviewer assignment.",
+      "assigned_targets": [
+        {
+          "case_index": 86,
+          "case_id": "CM_NAME:9b83239a183cd5bdb20173204afaac7510ddac5d267a462fbc118e46da0df159",
+          "disposition": "resolved_for_assigned_targets_only"
+        },
+        {
+          "case_index": 122,
+          "case_id": "CM_NAME:f0241bc2f83bff0db60e35f86e8e68c425c06d1a4acd7b6d382ed136204991de",
+          "disposition": "resolved_for_assigned_targets_only"
+        }
+      ],
+      "unassessed_original_targets": [
+        64,
+        69,
+        82,
+        87,
+        89,
+        101,
+        102,
+        111,
+        118,
+        121,
+        123
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-03",
+      "status": "resolved_in_selected_payload",
+      "reasoning": "Sigma H7154 acid evidence and preferred MeSH acid concept checked; descriptor-wide salt identity not asserted.",
+      "assigned_targets": [
+        {
+          "case_index": 77,
+          "case_id": "CM_NAME:870ab8f30340aec78dd02358022aa015c1a143bffa84a7c6b21f5dfe78ef17ad",
+          "disposition": "resolved_in_selected_payload"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/2"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/2"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "c-b-finding-06",
+      "status": "resolved_in_selected_reasoning",
+      "reasoning": "DSMZ935b delegates trace composition to141, which was read; no claim of a direct935b alum row.",
+      "assigned_targets": [
+        {
+          "case_index": 67,
+          "case_id": "CM_NAME:6ff34718700123094e94b942464302ca9c4ca478aaa09f47281f2ff351ea89a7",
+          "disposition": "resolved_in_selected_reasoning"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b.json",
+          "sha256": "16653e3a8d787f2b9b8bc7ef0b9f41d7c33fb5d088d459c1ade4297ee071c40b",
+          "pointer": "/findings/5"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v1.json",
+          "sha256": "dc6f34434a4ca1b0bd8f8099fcc82319637815b3b414f1475f116adea5708fce",
+          "pointer": "/findings/5"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-v2-reopened.json",
+          "sha256": "77112f7ab065c4c2ba10e3f5b29b69ebfc1864699ceaff2c5d032755cd7ec1dd",
+          "pointer": "/findings/5"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-63",
+      "status": "retained_upstream_obligation",
+      "reasoning": "2.5mL8%w/v stock is frozen2.5G_PER_L; stock proposal does not repair receiving dose.",
+      "assigned_targets": [
+        {
+          "case_index": 63,
+          "case_id": "CM_NAME:677eea89e6c05433665f6d3a63b923d0e2559ef3b4ea1cd117690d70a2db6639",
+          "disposition": "retained_upstream_obligation"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-70",
+      "status": "retained_upstream_obligation",
+      "reasoning": "Pinned0.2%10mLstock versus frozen10G_PER_L, with distinct currentDSMZ0.1%20mL version.",
+      "assigned_targets": [
+        {
+          "case_index": 70,
+          "case_id": "CM_NAME:7a330523dd1cc8c7c0c5deee2e2a424ecefd3f2c969ec57245c8f46c733f2284",
+          "disposition": "retained_upstream_obligation"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-86",
+      "status": "retained_upstream_obligation",
+      "reasoning": "5mL of6g/Lstock versus frozen5G_PER_L; preparation strength differs from receiving dose.",
+      "assigned_targets": [
+        {
+          "case_index": 86,
+          "case_id": "CM_NAME:9b83239a183cd5bdb20173204afaac7510ddac5d267a462fbc118e46da0df159",
+          "disposition": "retained_upstream_obligation"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/6"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-91",
+      "status": "retained_upstream_obligation",
+      "reasoning": "OriginalDSMZ1250tetrahydrate correction remains source-local and is tracked byCultureMech677.",
+      "assigned_targets": [
+        {
+          "case_index": 91,
+          "case_id": "CM_NAME:a6e96e8274e90caec9533eec13e45fb8cf4a38a137877e5292b4af7ea9b21b2d",
+          "disposition": "retained_upstream_obligation"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/8"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-source-defect-98",
+      "status": "retained_upstream_obligation",
+      "reasoning": "Footnote217mgpentahydrate inA5 preparation is not217g/Lfinalmedium; source hierarchy must be restored.",
+      "assigned_targets": [
+        {
+          "case_index": 98,
+          "case_id": "CM_NAME:b2842dee958925abda8f2e56af9eb9a5fd009b8306848c04ae6782597864506c",
+          "disposition": "retained_upstream_obligation"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/independent-review-b-source-defects.json",
+          "sha256": "8cb0679cb10ab8a451cbb32ff5b4d33b4657c350560edfe00584f8be7e2e45e4",
+          "pointer": "/finding_reviews/10"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-03",
+      "status": "resolved_for_assigned_targets_only",
+      "reasoning": "Case58 now uses knownMgheptahydrate andCohexahydrate IDs. Feheptahydrate inJCM382separateSol2 belongs tocase7, which is outside this review; do not mark that target closed here.",
+      "assigned_targets": [
+        {
+          "case_index": 58,
+          "case_id": "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0",
+          "disposition": "resolved_for_assigned_targets_only"
+        }
+      ],
+      "unassessed_original_targets": [
+        7
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/2"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/2"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/review-a/findings-v1.json",
+          "sha256": "2e7d40ad760d16a4a81b88450604a4e1d531ddc0f0b6785c814e93eb1e32048e",
+          "pointer": "/findings/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-04",
+      "status": "resolved_for_assigned_targets_only",
+      "reasoning": "Active case58 JCM382/490/665 original failures are explicitly unsuccessful and provider evidence is distinguished. Remainingcase7targets outside scope. Separatecase184new misclassification is W02-RA-01.",
+      "assigned_targets": [
+        {
+          "case_index": 58,
+          "case_id": "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0",
+          "disposition": "resolved_for_assigned_targets_only"
+        }
+      ],
+      "unassessed_original_targets": [
+        7
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/3"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/3"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/review-a/findings-v1.json",
+          "sha256": "2e7d40ad760d16a4a81b88450604a4e1d531ddc0f0b6785c814e93eb1e32048e",
+          "pointer": "/findings/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-05",
+      "status": "resolved_in_selected_payload",
+      "reasoning": "Read bothJCM462and463 originals: changed late substrate/acceptor/reductant does not alter sharedbase; one payload coversboth exactoccurrences.",
+      "assigned_targets": [
+        {
+          "case_index": 58,
+          "case_id": "CM_NAME:5d56ea306928dff3c50ac9c4131052b3c20acd05e613f9ada5e372418cc549d0",
+          "disposition": "resolved_in_selected_payload"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/4"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/4"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/review-a/findings-v1.json",
+          "sha256": "2e7d40ad760d16a4a81b88450604a4e1d531ddc0f0b6785c814e93eb1e32048e",
+          "pointer": "/findings/4"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-07",
+      "status": "resolved_for_assigned_targets_only",
+      "reasoning": "Case15 final edits existing methanol and records filtration provenance, no treatment-only new owner. Waterqualitycase9 outside scope.",
+      "assigned_targets": [
+        {
+          "case_index": 15,
+          "case_id": "CM_NAME:12f11ea24b8277a93aa7239dc2e5d98a1ede7a288ecdc58381d46cc339ac5435",
+          "disposition": "resolved_for_assigned_targets_only"
+        }
+      ],
+      "unassessed_original_targets": [
+        9
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/6"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/6"
+        }
+      ]
+    },
+    {
+      "finding_id": "b2-review-a-08",
+      "status": "resolved_in_selected_payload",
+      "reasoning": "Methanol10% remains REJECTED_LABEL without claiming unknown stock/dose interpretation. Other inherited aliases remain held.",
+      "assigned_targets": [
+        {
+          "case_index": 15,
+          "case_id": "CM_NAME:12f11ea24b8277a93aa7239dc2e5d98a1ede7a288ecdc58381d46cc339ac5435",
+          "disposition": "resolved_in_selected_payload"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage.json",
+        "sha256": "9b6118b11cea40ef22281edfe3c8adb73964c1e56e66444c8e98a050872278ec"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a-binder-v1.json",
+          "sha256": "f4521c3947dc1a79cde4b5ac94bae8770470cd4c2b83faeab6171b1c931a4206",
+          "pointer": "/findings/7"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/b/independent-review-a.json",
+          "sha256": "f1b00cdcd2f6ae7f66017d5f9cf667d29e9ea97ad8bab90503e886fa7237a59e",
+          "pointer": "/findings/7"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-15-original-atcc",
+      "status": "resolved_in_selected_artifacts",
+      "reasoning": "OriginalATCC2883bothpages actually inspected;3mLfiltersterilizedmethanol addition recovered.",
+      "assigned_targets": [
+        {
+          "case_index": 15,
+          "case_id": "CM_NAME:12f11ea24b8277a93aa7239dc2e5d98a1ede7a288ecdc58381d46cc339ac5435",
+          "disposition": "resolved_in_selected_artifacts"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-hydrate-concept-probe",
+      "status": "resolved_for_assigned_targets_only",
+      "reasoning": "NLM D008278 completeconcept list inspected: genericmagnesiumsulfate andheptahydrate, no exactdihydrate inthis boundedrecord. Case45notreviewed; no globalabsenceclaim.",
+      "assigned_targets": [
+        {
+          "case_index": 13,
+          "case_id": "CM_NAME:101f110afc4053b49ccc32b49320071e421cebab4ccf44b59eb47c9524751320",
+          "disposition": "resolved_for_assigned_targets_only"
+        }
+      ],
+      "unassessed_original_targets": [
+        45
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/5"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-16-source-material",
+      "status": "resolved_by_withdrawal_hold_retained",
+      "reasoning": "No GDPproposal is active; biochemicalcompound35 doesnotsettle originalexperimentalreagent. Independentpaperpursuit unsuccessfulfulltext.",
+      "assigned_targets": [
+        {
+          "case_index": 16,
+          "case_id": "CM_NAME:14d59d34f852ad492b70c79bdcc4d59fca9f029ce48bca03c61e4e6a7367f311",
+          "disposition": "resolved_by_withdrawal_hold_retained"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/6"
+        }
+      ]
+    },
+    {
+      "finding_id": "b-review-a-42-model-ion",
+      "status": "resolved_by_scope_hold_retained",
+      "reasoning": "No suppliedZnowner guessedfrombiochemicalZn2+. FreshTAP/Hutner version corroboratesplausibility only, not historicalmaterialproof.",
+      "assigned_targets": [
+        {
+          "case_index": 42,
+          "case_id": "CM_NAME:3f81e2e3f6f257d163cf9d1469ac285027572847f6889300ff50f6e3f4b90253",
+          "disposition": "resolved_by_scope_hold_retained"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/b/review-a/findings.json",
+          "sha256": "cc76b7c5fac10d2e779bd6b14599b24da5f8dad067f6f49baaefc7054ad8720f",
+          "pointer": "/findings/7"
+        }
+      ]
+    },
+    {
+      "finding_id": "SEM:15761b556078b9a904a8",
+      "status": "retained_open",
+      "reasoning": "ActualAlk_So42 still activatesNaSiO/ZnSOfragments andmetadata; noassignedpayloadrepairsit.",
+      "assigned_targets": [
+        {
+          "case_index": 32,
+          "case_id": "CM_NAME:35391b670229d1a17e3631f591426ca011a59680a3f4c6b5f886077ccc12f7eb",
+          "disposition": "retained_open"
+        },
+        {
+          "case_index": 57,
+          "case_id": "CM_NAME:5cc94fcc80e850437fd4d04851a8b8071ec4cabc7d5ca3c7f5f310d035e7d4b9",
+          "disposition": "retained_open"
+        }
+      ],
+      "unassessed_original_targets": [
+        22,
+        39,
+        52,
+        166
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/integration-followup/historical/finding-dispositions-extract.json",
+          "sha256": "bab7a907cc07d59faa3edd43f41acd789cc8c7b8695cda6d4e662861373bf7bf",
+          "pointer": "/rows/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "SEM:40c78da59752cd7b40cd",
+      "status": "proposed_partial_remedy_rejected_tombstone",
+      "reasoning": "Six-waterproperties corrected inselectedproposal, butsourceisstillREJECTED andproposalunapplied; noactive-release/wholelineageclosure.",
+      "assigned_targets": [
+        {
+          "case_index": 134,
+          "case_id": "KG_CASE:12dc307a5d0964bc97f7a67ebfd448cf3f1608c060aeb1c2d3e9fbda3a617c8c",
+          "disposition": "proposed_partial_remedy_rejected_tombstone"
+        }
+      ],
+      "unassessed_original_targets": [
+        9,
+        28,
+        115,
+        146
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/integration-followup/historical/finding-dispositions-extract.json",
+          "sha256": "bab7a907cc07d59faa3edd43f41acd789cc8c7b8695cda6d4e662861373bf7bf",
+          "pointer": "/rows/1"
+        }
+      ]
+    },
+    {
+      "finding_id": "SEM:1971ff4d47b066a4339f",
+      "status": "retained_outside_selected_payload",
+      "reasoning": "Actualseven-waterowner retainsanhydrousInChI/SMILES. A separateauthoredseven-waterproposal existsoutside this36payload assignment; this reviewer doesnotapproveorcloseit.",
+      "assigned_targets": [
+        {
+          "case_index": 134,
+          "case_id": "KG_CASE:12dc307a5d0964bc97f7a67ebfd448cf3f1608c060aeb1c2d3e9fbda3a617c8c",
+          "disposition": "retained_outside_selected_payload"
+        }
+      ],
+      "unassessed_original_targets": [
+        9,
+        28,
+        146
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/integration-followup/historical/finding-dispositions-extract.json",
+          "sha256": "bab7a907cc07d59faa3edd43f41acd789cc8c7b8695cda6d4e662861373bf7bf",
+          "pointer": "/rows/2"
+        }
+      ]
+    },
+    {
+      "finding_id": "SEM:db276e2e3eae5d2442dc",
+      "status": "retained_open",
+      "reasoning": "Seven-waterTRACE_ELEMENT remainsprovisionalcomputational evidence; six-waterpropertycorrection doesnotvalidateit.",
+      "assigned_targets": [
+        {
+          "case_index": 134,
+          "case_id": "KG_CASE:12dc307a5d0964bc97f7a67ebfd448cf3f1608c060aeb1c2d3e9fbda3a617c8c",
+          "disposition": "retained_open"
+        }
+      ],
+      "unassessed_original_targets": [
+        9,
+        28,
+        146
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/c/integration-followup/historical/finding-dispositions-extract.json",
+          "sha256": "bab7a907cc07d59faa3edd43f41acd789cc8c7b8695cda6d4e662861373bf7bf",
+          "pointer": "/rows/3"
+        }
+      ]
+    },
+    {
+      "finding_id": "c2-b-carbonate-component-owner-collision",
+      "status": "retained_integration_dependency",
+      "reasoning": "Na2co3 andSodium_Carbonate_Solution bothownCHEBI29377;partofnew8%stock isdrychemical,notambiguouswholeoldsolution. W04equivalent-stockconflict alsoflaggedwithoutselfapproval.",
+      "assigned_targets": [
+        {
+          "case_index": 63,
+          "case_id": "CM_NAME:677eea89e6c05433665f6d3a63b923d0e2559ef3b4ea1cd117690d70a2db6639",
+          "disposition": "retained_integration_dependency"
+        }
+      ],
+      "unassessed_original_targets": [],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/independent-review-b.json",
+          "sha256": "b7d86c3d36d16d8fc25fda3afeafd4ef7c51dbab8259e0fe92eb642054650c92",
+          "pointer": "/findings/0"
+        }
+      ]
+    },
+    {
+      "finding_id": "c2-b-atp-selenite-completeness-challenge",
+      "status": "resolved_for_assigned_target_with_hold",
+      "reasoning": "ActualATCC37 andNa2seo3ownerread; physicalselenitesalt/hydrationremainsmissing. ATPcase74outside scope.",
+      "assigned_targets": [
+        {
+          "case_index": 79,
+          "case_id": "CM_NAME:8bb3b1d4276a6060b89e99a3dd79a431a1a83a6247b3af56b466b6e989135099",
+          "disposition": "resolved_for_assigned_target_with_hold"
+        }
+      ],
+      "unassessed_original_targets": [
+        74
+      ],
+      "source_lineage_capture": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/w02-published-head-independent-review-v1/assignments/reviewer-a-lineage-additional.json",
+        "sha256": "5e8ba7e673b623f71038f28ad10afdd3ee1fdba8defb106af2791ea762a7b3f4"
+      },
+      "original_occurrence_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-02/continuation-1201-v1/c/independent-review-b.json",
+          "sha256": "b7d86c3d36d16d8fc25fda3afeafd4ef7c51dbab8259e0fe92eb642054650c92",
+          "pointer": "/findings/3"
+        }
+      ]
+    }
+  ],
+  "retained_full_payload_obligations": [
+    {
+      "proposal_id": "a-proposal-urea",
+      "after_capture": {
+        "root": "artifact",
+        "path": "a/proposed-owners/Urea.yaml",
+        "sha256": "70685cb3d8f4acfa292401a0f60aea1be5f238f1634b99114091b943196a471e"
+      },
+      "reasoning": "Added (NH2)2CO is exact urea. Whole payload still has numeric1728 and KEGG/Properties prose as active synonyms and provisional LLM nitrogen-role evidence. Retain whole-owner hold."
+    },
+    {
+      "proposal_id": "a2-proposal-methanol-source-filtration-provenance",
+      "after_capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/a/after-v6/Methanol.yaml",
+        "sha256": "de3969545ff64b75aa8ded4c783eb37c5db2307348bd09bed3dec7d579f34d08"
+      },
+      "reasoning": "Correctly records ATCC2883 filter-sterilized methanol on existing molecule, rejects10%alias without unsupported stock/dose interpretation, and adds no new treatment identity. Whole payload still has metadata/nonname synonyms and footnote fragments; inherited release hold stays."
+    },
+    {
+      "proposal_id": "b-proposal-trimethyl",
+      "after_capture": {
+        "root": "artifact",
+        "path": "b/after/Trimethylamine-hcl.yaml",
+        "sha256": "35575e4c231b8cbb31ef8b1184c30a9734a358b716e488cc6256ad89081ba168"
+      },
+      "reasoning": "Exact3-carbon hydrochloride identity/CAS593-81-7 supports addedTrimethylamine xHCl and rejection of methylamine alias. Whole payload still has active metadata and erroneous historical merge/membership lineage. PreserveSEM:069f2686d478755f354c/#1181; proposed alias repair alone does not unwind pooled occurrences."
+    },
+    {
+      "proposal_id": "b2-proposal-pipes_sigma",
+      "after_capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/b/after/Pipes.yaml",
+        "sha256": "f07fff16a65a1901f10c1cc89168be20ff8a4914f5ea9f1142d5db60f5829deb"
+      },
+      "reasoning": "Edits existingPipes.yaml/CHEBI39033, not a vendor-specificnewowner. Sigma separately identifies freeacid andsodiumsalts, supportingPIPES(Sigma) name without claimingcatalog/grade. CompletepayloadstillhasfiveRole/Propertiesnonnames; PIPES_Buffer stock’s own mapping/identity remainsheld."
+    },
+    {
+      "proposal_id": "c-proposal-nickel-sulfate-6-water-properties",
+      "after_capture": {
+        "root": "artifact",
+        "path": "c/proposed-owners/c-proposal-nickel-sulfate-6-water-properties.yaml",
+        "sha256": "5af4d77e4240a5e452ee0760075144d64be40829ec25caf785e5a38ca9772371"
+      },
+      "reasoning": "CompleteREJECTEDtombstone receives exactsix-waterCAS/formula/InChI/SMILESfromCHEBI53437 andCORRECTEDhistory withoutpromotion. Provisionaltrace-roleandexcludedstatusretained; not an approvalofactive survivor orseven-waterowner."
+    },
+    {
+      "proposal_id": "c2-proposal-netropsin-congocidin-alias",
+      "after_capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/c/proposed-owners/c2-proposal-netropsin-congocidin-alias.yaml",
+        "sha256": "21d8c26fdfcf8b4fb0a8c6f83f9e3676193d38f0fbc2f5ee9dcdad401be70595"
+      },
+      "reasoning": "MeSHpreferredNetropsinconcept includesCongocidine, while hydrochloride is separate; PubChemcorroboratesCongocidinspelling. No dihydrochloride mapping. ExistingCongocidinplaceholdercreatesowned-namecollision; explicitintegrationholdmustsurvive even though added bare aliases are scientificsynonyms."
+    }
+  ]
+}
