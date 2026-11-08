@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "researcher": "/root/primary_context",
+  "role": "in_process_primary_source_research_subagent",
+  "scope": "Exact canary source case and contextual occurrences of its existing source ID only; no other campaign case is marked reviewed.",
+  "case_id": "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf",
+  "finished_at": "2026-11-08T03:45:58.775379+00:00",
+  "authorship_limits": "Primary-source research input for root curation decision, not the independent skeptical review or a native MIM owner review.",
+  "recommended_disposition": "malformed_or_nonchemical_token",
+  "reasoning": "The frozen source row is traceable exactly to JCM935 via MediaDive J935 solution4947 order12. JCM explicitly identifies a 10% (w/v) BD-Difco yeast-extract stock, but the shared blank MediaDive ID1944 also denotes a Trypticase stock and MES stock in current and frozen source data. Therefore the source ID cannot safely denote a single substance, and no global ID-to-MIM owner or alias is justified.",
+  "preparation_interpretation": {
+    "scope": "Only J935/solution4947/order12",
+    "description": "5 ml of 10% (w/v) yeast-extract solution, BD-Difco, added from an anaerobic stock",
+    "basis": [
+      "PC-JCM-935",
+      "PC-MEDIADIVE-J935-FROZEN",
+      "PC-MEDIADIVE-J935-LIVE"
+    ],
+    "identity_authorization": false
+  },
+  "correction_ownership": [
+    "MediaDive source curation/import must repair blank ingredient1944 and its recipe row associations without relabeling all uses as yeast extract. The precise MediaDive parser implementation was not inspected, so the stage that introduced the defect is not established.",
+    "A downstream KG source transform or content-bound recipe disposition may preserve/quarantine malformed ID1944 and bind any correction to medium+solution+recipe_order+raw-content hash, if its supported contract permits. Never add a global 1944-to-yeast-extract substitution.",
+    "MIM is not the owner of the broken source identifier. New aliases or ingredient records require separately reviewed stable material identity and complete stock scope; source data repair does not itself authorize them."
+  ],
+  "settling_requirement": "An authoritative source correction must separate J935/4947/order12 yeast-extract stock, J935/4947/order13 Trypticase stock, and J1053/5115/order13 MES stock, preserving original source provenance and stock concentrations. To propose any stock/product-specific MIM owner, obtain a stable unambiguous identifier and the complete supplied preparation/product specification (including catalogue identity where product-specific claims require it). JCM already settles the recipe-row intent; generic yeast-extract ontology/supplier identity cannot settle the shared source ID.",
+  "no_change_reason": "No single substance identity can be assigned to the reused blank source ID1944. Neither an alias to generic yeast extract nor a new stock record would repair all source occurrences safely.",
+  "contradictory_source_xref": {
+    "id": "CHEBI:1",
+    "status": "present in live MediaDive; parent independently validates ontology meaning",
+    "scientific_mapping_approval": false
+  },
+  "limitations": [
+    "No source service, recipe, MIM owner, canonical export, or downstream graph was changed.",
+    "No supplier catalogue number or detailed stock-preparation method is present in the inspected JCM rows; no particular commercial catalogue product was inferred.",
+    "The admitted generation population is not a claim about all historical or future MediaDive records.",
+    "The web tool failed to access several direct API/ingredient URLs; subsequent ordinary public curl fetches succeeded with HTTP200. No absence claim follows from the tool failures.",
+    "Frozen queue occurrences=1 is a helper constant and is retained separately from measured contextual recipe rows.",
+    "The live MediaDive UI reports 3 solutions, whereas the manifest-bound exports contain two distinct solution IDs with three affected rows; these are different counting surfaces and no unique-solution equivalence is asserted."
+  ],
+  "unsuccessful_searches": [
+    {
+      "tool": "web",
+      "scope": "Search queries site:mediadive.dsmz.de \"1944\" \"Yeast\" and site:mediadive.dsmz.de \"Yeast extract\" \"10%\" \"5\" \"BD-Difco\"",
+      "outcome": "Returned generic yeast-extract and unrelated recipe hits; no authoritative exact recipe binding from these queries. Exact binding instead came from complete admitted-generation scan and direct JCM source."
+    },
+    {
+      "tool": "web.open",
+      "scope": "ingredients/1944, rest/ingredient/1944, medium/J1053, solutions/4947, rest/medium/J935 and rest/medium/J1053",
+      "outcome": "Tool reported URL inaccessible. Subsequent curl captured ingredient1944, REST media and JCM primary sources successfully; solutions/4947 not retried because exact complete REST medium supplied the same solution context."
+    },
+    {
+      "tool": "curl inside sandbox",
+      "scope": "https://mediadive.dsmz.de/ingredients/1944",
+      "outcome": "DNS error6; approved public network fetch outside sandbox succeeded. No sign-in/trust/account change or external session used."
+    }
+  ],
+  "evidence_ids": [
+    "PC-MEDIADIVE-1944-HTML",
+    "PC-MEDIADIVE-1944-JSON",
+    "PC-MEDIADIVE-J935-LIVE",
+    "PC-MEDIADIVE-J1053-LIVE",
+    "PC-MEDIADIVE-J935-WEB",
+    "PC-JCM-935",
+    "PC-JCM-1053",
+    "PC-MEDIADIVE-J935-FROZEN",
+    "PC-MEDIADIVE-J1053-FROZEN",
+    "PC-FROZEN-CONTEXT",
+    "PC-LIVE-FETCH"
+  ]
+}

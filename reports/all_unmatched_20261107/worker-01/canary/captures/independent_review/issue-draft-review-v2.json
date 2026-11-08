@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/skeptical_review",
+  "review_stage": "source_finding_draft_rereview",
+  "at": "2026-11-08T03:46:35.491505+00:00",
+  "input": {
+    "path": "reports/all_unmatched_20261107/worker-01/canary/source-finding-draft.md",
+    "sha256": "08a55c9fdb06f3e4b1fc45a425a43be1c94dfb0f012270b3734a6346d9057480"
+  },
+  "previous_review": "captures/independent_review/issue-draft-review-v1.json",
+  "verdict": "pass_with_limitations",
+  "positive_assessment": "The revised source finding correctly distinguishes the exact blank shared-ID defect from native-MIM ownership and downstream production claims. The proposed KG-Microbe issue location is appropriate for a source/downstream tracking finding; no external service fix is claimed. Current captured issue1009 closure concerns a finite instruction/name cohort, whereas this ID1944 collision is distinct.",
+  "finding_dispositions": [
+    {
+      "id": "IR-DRAFT-1",
+      "status": "resolved",
+      "reason": "Cross-repository MIM and KG-Microbe references now use explicit full URLs; remaining bare1009/1788 refer to the intended KG-Microbe target repository."
+    },
+    {
+      "id": "IR-DRAFT-2",
+      "status": "resolved",
+      "reason": "The revised draft calls CHEBI:1 a source cross-reference. The source HTML says most identifiers are matched automatically, which does not establish this exact field assignment mechanism; draft no longer overclaims it."
+    }
+  ],
+  "open_findings": [],
+  "limits": [
+    "Scientific content of the source issue draft reviewed; filing and final branch review are separate.",
+    "Search completeness remains bounded to the captured queries; no universal GitHub absence claim is established.",
+    "Final canary decision/proposal/validation/diff not yet reviewed."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/skeptical_review",
+  "review_stage": "source_finding_draft_review",
+  "at": "2026-11-08T03:46:02.848174+00:00",
+  "input": {
+    "path": "reports/all_unmatched_20261107/worker-01/canary/source-finding-draft.md",
+    "sha256": "75bb83754e2fc39c14059b46fd1c69b327e33bb9c7cd43830dfc5d5cc5d3495c"
+  },
+  "verdict": "minor_revisions",
+  "positive_assessment": "The cited frozen and live recipes establish the shared blank source-ID defect; the draft keeps recipe-scoped preparation boundaries, proposes no MIM alias/ontology edit, and expressly declines to assert a current KG endpoint defect.",
+  "findings": [
+    {
+      "id": "IR-DRAFT-1",
+      "severity": "minor",
+      "status": "open",
+      "topic": "cross_repository_issue_links",
+      "description": "Bare #1167/#1171/#1319 on a MIM issue will link to the wrong repository. Use full Knowledge-Graph-Hub/kg-microbe issue URLs.",
+      "acceptance": "All KG-Microbe references resolve explicitly to their owning repository."
+    },
+    {
+      "id": "IR-DRAFT-2",
+      "severity": "minor",
+      "status": "open",
+      "topic": "unsupported_assignment_mechanism",
+      "description": "MediaDive API shows chebi_id:1, but the inspected primary captures do not establish that assignment was automatic.",
+      "acceptance": "Use source cross-reference / contradicted source cross-reference without claiming assignment mechanism, or cite evidence for that mechanism."
+    }
+  ],
+  "limitations": [
+    "This is draft issue review only; final decisions, validation and complete branch diff remain unreviewed."
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "evidence_id": "PC-MEDIADIVE-1944-HTML",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-ingredient-1944.html",
+        "sha256": "d6bda8590ba8d3ee9a9a666dd674c15757ba359795301373c3b6d0fafca597be"
+      },
+      "locator": "HTML lines 1-9, 383-405, 425-439",
+      "supports_or_contradicts": "Blank name and ingredient ID1944 coexist with yeast-extract, Trypticase-peptone and MES attributes; the page emits CHEBI:1 and warns most identifiers/parameters are automatic and uncurated; exact assignment mechanism not established. UI 3-solutions count is not treated as distinct solution-ID frequency.",
+      "url": "https://mediadive.dsmz.de/ingredients/1944",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.914839+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-1944-JSON",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-ingredient-1944.json",
+        "sha256": "49be88790dd88abf7d301f81ba856ec41a0502caad044ccacb474b77b58e4759"
+      },
+      "locator": "JSON /0: id,name,group,chebi_id,cas,mass,formula",
+      "supports_or_contradicts": "The live ingredient record is ID1944 with blank name/group, chebi_id=1, null CAS/formula/mass. No supplier product identity or unique stock identity is supplied.",
+      "url": "https://mediadive.dsmz.de/download/ingredient/1944/json",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.915068+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J935-LIVE",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-rest-medium-J935.json",
+        "sha256": "b1ca9aace98e485c5bda71f778fe9f83bac56eb72ce6a2f9c23bfcbc311ef8df"
+      },
+      "locator": "JSON /data/solutions/0/recipe/11 and /12; /data/solutions/0/steps/0",
+      "supports_or_contradicts": "Same blank compound_id1944 is used for yeast-extract stock at order12 (5 ml) and Trypticase-peptone stock at order13 (20 ml); the instruction explicitly calls these anaerobic stocks. Exact bytes equal the frozen admitted API body.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.915137+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J1053-LIVE",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-rest-medium-J1053.json",
+        "sha256": "e220ccdbf37ac879e8661c3aa75591a3e863fecaa67b39f841dc03f3be22bf98"
+      },
+      "locator": "JSON /data/solutions/0/recipe/12 and /data/solutions/0/steps/0",
+      "supports_or_contradicts": "ID1944 is additionally reused for MES pH6.0 20% at order13 (10 ml), contradicting an ID-wide yeast-extract identity. Exact bytes equal the frozen admitted API body.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J1053",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:30.915628+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J935-WEB",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-medium-J935.html",
+        "sha256": "8d12091d8f8c4e9d0d092cbba47d2bacd3889b8b1f6b41db5152b1713b124c5d"
+      },
+      "locator": "Main solution J935, recipe rows after the anaerobic-stock addition instruction",
+      "supports_or_contradicts": "The rendered source still displays damaged parenthesized yeast-extract and Trypticase preparations; this defect is visible upstream of MIM, not only in the local queue.",
+      "url": "https://mediadive.dsmz.de/medium/J935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.442613+00:00"
+    },
+    {
+      "evidence_id": "PC-JCM-935",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/jcm-medium-935.html",
+        "sha256": "94265b41e387fb64780d00e3eae8735e352655a51eb9cfcb97b05c3f7dab7a4d"
+      },
+      "locator": "HTML lines 39-44: stock addition instruction and first two stock rows",
+      "supports_or_contradicts": "Original JCM recipe independently distinguishes 10% (w/v) BD-Difco yeast-extract solution (5 ml) from 10% (w/v) BD-BBL Trypticase-peptone solution (20 ml). It resolves the intended preparation of the exact canary row, but does not provide a catalogue number or authorize any shared-ID identity mapping.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.604427+00:00"
+    },
+    {
+      "evidence_id": "PC-JCM-1053",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/jcm-medium-1053.html",
+        "sha256": "53572e0223bee08bc3ffc18f3afb41d5454b3cf877b20bd9999c840eb0f63b83"
+      },
+      "locator": "HTML lines 37-43, especially line42",
+      "supports_or_contradicts": "Original JCM recipe independently identifies a separate 20% (w/v) MES pH6.0 solution (10 ml), confirming source-ID heterogeneity.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1053",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-08T03:44:31.612216+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J935-FROZEN",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/frozen-rest-medium-J935.json",
+        "sha256": "b1ca9aace98e485c5bda71f778fe9f83bac56eb72ce6a2f9c23bfcbc311ef8df"
+      },
+      "locator": "JSON /data/solutions/0/recipe and /data/solutions/0/steps; original observation_id 1bf70ca8d2fb6dcd4fb1554dc2feacdf1cc80dad2c033b4c5f784a2676f57f3e",
+      "supports_or_contradicts": "Exact admitted-generation source body, copied without modification; original acquisition time retained. Crosschecked against full frozen generation manifest and live response bytes.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J935",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-05T06:25:10.168226+00:00"
+    },
+    {
+      "evidence_id": "PC-MEDIADIVE-J1053-FROZEN",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/frozen-rest-medium-J1053.json",
+        "sha256": "e220ccdbf37ac879e8661c3aa75591a3e863fecaa67b39f841dc03f3be22bf98"
+      },
+      "locator": "JSON /data/solutions/0/recipe and /data/solutions/0/steps; original observation_id ba641c0bafb603d20e8980357d55479365a99ed4bad01bfbf83fde98aab09951",
+      "supports_or_contradicts": "Exact admitted-generation source body, copied without modification; original acquisition time retained. Crosschecked against full frozen generation manifest and live response bytes.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J1053",
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ],
+      "accessed_at": "2026-11-05T06:25:14.453328+00:00"
+    },
+    {
+      "evidence_id": "PC-FROZEN-CONTEXT",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/frozen-source-context.json",
+        "sha256": "19bfb2acc88032bd396e2b7d4d7650100c2be5a4169dc25f967e4f1fadbf8ccb"
+      },
+      "locator": "/verified_source_files; /media_recipe_hits; /solution_recipe_hits; /preserved_primary_bodies",
+      "supports_or_contradicts": "Complete admitted media and solution scan binds all ID1944 rows to source selectors and hashes. Three recipe rows occur across two medium IDs/two unique solution IDs, represented twice across distinct exports. Full manifest equality and each input hash were verified; counts are scoped to this generation.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    },
+    {
+      "evidence_id": "PC-LIVE-FETCH",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/primary_context/live-fetch-receipt.json",
+        "sha256": "f8846826e9274e3d7e045110c9fa3f7ae035dc6508f869bd358994b4ac5a999b"
+      },
+      "locator": "/fetches",
+      "supports_or_contradicts": "Records actual public-source acquisition commands, start/finish UTC times, return codes, HTTP200 outcomes, body hashes, and explicitly redacted header derivatives. Raw cookie-bearing headers are private; source bodies are unmodified.",
+      "url": null,
+      "case_ids": [
+        "KG_CASE:e431bbfe8e78c226a9a06d038b7944f91e4580b44fe5b9e2c83d0e236c6d23cf"
+      ]
+    }
+  ]
+}

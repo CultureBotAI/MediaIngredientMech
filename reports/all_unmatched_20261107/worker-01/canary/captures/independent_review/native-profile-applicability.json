@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T03:45:30.345510+00:00",
+  "reviewer": "/root/skeptical_review",
+  "stage": "preliminary_applicability",
+  "inputs": [
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": "docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7"
+    },
+    {
+      "path": "conf/record_review.yaml",
+      "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e"
+    },
+    {
+      "path": "scripts/record_review.py",
+      "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": ".claude/skills/review-yaml-record/SKILL.md",
+      "sha256": "4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1"
+    }
+  ],
+  "native_review_applicability": "No configured native MIM route represents the exact raw MediaDive source-only case with no identified MIM ingredient owner and no proposed SSSOM assertion. The campaign contract expressly permits source-only decisions, evidence and independent review under its own contract in this situation.",
+  "technical_distinction": "The generic record_review.py helper supports selector/ownership_note and therefore is not technically incapable of serializing a raw-source target. Non-applicability rests on the local configured assessment routes and exact source scope, not a claimed owner requirement or missing dependencies.",
+  "checks_not_run": [
+    "record_review.py inspect",
+    "record_review.py validate",
+    "record_review.py save"
+  ],
+  "reason_checks_not_run": "No formal native MIM record review is being claimed. This preliminary note and eventual independent assessment belong to the campaign source-only contract.",
+  "limits": [
+    "The final decisions/proposals/evidence and full branch diff are still pending independent review.",
+    "Native source-profile coverage is not being changed by this canary."
+  ]
+}

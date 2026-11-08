@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-08T03:50:06.806251+00:00",
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check",
+    "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+    "--",
+    "reports/all_unmatched_20261107/worker-01/canary",
+    ":(exclude)reports/all_unmatched_20261107/worker-01/canary/captures/primary_context/*.html",
+    ":(exclude)reports/all_unmatched_20261107/worker-01/canary/captures/primary_context/*.headers-redacted"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "excluded_scope_reason": "Immutable source HTML and explicitly redacted HTTP header derivatives preserve their captured whitespace and CRLF bytes. Full staged check result remains recorded separately; no full check PASS is asserted."
+}
