@@ -953,6 +953,29 @@ def prepare(root: Path, plan_path: Path, acceptance_path: Path) -> Prepared:
     return result
 
 
+def _check_mutation_git_state(prepared: Prepared):
+    """#1256: pin live transaction HEAD and scope, not later historical replay."""
+    root, baseline = prepared.root, prepared.plan["baseline_commit"]
+    require(
+        git(root, "rev-parse", "HEAD").decode().strip() == baseline,
+        "Integration HEAD changed during source application",
+    )
+    # #1255: names are literal filesystem paths, never quoted/newline text.
+    changed = git(root, "diff", "--name-only", "-z", baseline, "--").split(b"\0")
+    require(changed[-1] == b"" and all(changed[:-1]), "Malformed Git path listing")
+    allowed = {e["source_record"] for e in prepared.operations} | {
+        e["before_source_record"] for e in prepared.operations if e["before_source_record"]
+    }
+    require(
+        {os.fsdecode(path) for path in changed[:-1]} <= allowed,
+        "Unrelated tracked file changed",
+    )
+    require(
+        git(root, "rev-parse", "HEAD").decode().strip() == baseline,
+        "Integration HEAD changed during source application",
+    )
+
+
 def _recheck(prepared: Prepared, transition=None):
     _check_loaded_producers()
     native_members = set(receipt_paths(prepared.root))
@@ -987,6 +1010,7 @@ def _recheck(prepared: Prepared, transition=None):
         frozen.verify()
     for frozen in prepared.protected.values():
         frozen.verify()
+    _check_mutation_git_state(prepared)
 
 
 def _new_owner(root: Path, name: str, raw: bytes, recheck):
@@ -1254,17 +1278,7 @@ def apply(prepared: Prepared, receipt_dir: Path, *, enabled=False) -> dict:
                 hashes(inventory(root)) == prepared.after_inventory,
                 "Final complete inventory differs",
             )
-            allowed = {e["source_record"] for e in prepared.operations} | {
-                e["before_source_record"] for e in prepared.operations if e["before_source_record"]
-            }
-            # #1255: ordinary Git output quotes Unicode/control characters.
-            # Parse literal filesystem paths, never quoted or newline-separated text.
-            changed = git(root, "diff", "--name-only", "-z", "HEAD", "--").split(b"\0")
-            require(changed[-1] == b"" and all(changed[:-1]), "Malformed Git path listing")
-            require(
-                {os.fsdecode(path) for path in changed[:-1]} <= allowed,
-                "Unrelated tracked file changed",
-            )
+            _check_mutation_git_state(prepared)
             result["state"] = "complete"
             reserved()
             receipt.seek(0)

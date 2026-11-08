@@ -2021,11 +2021,147 @@ def test_1255_unrelated_literal_tracked_file_still_refused(tmp_path, monkeypatch
     put(tmp_path, unrelated, b"unapproved concurrent change\n")
     with pytest.raises(ValueError, match="Unrelated tracked file changed"):
         owner.apply(ready, tmp_path / "receipt", enabled=True)
+    # #1256 detects already-present scope drift before any owned write/reservation.
+    assert not (tmp_path / "receipt").exists()
+    assert (tmp_path / OLD).read_bytes() == before
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+    assert (tmp_path / unrelated).read_bytes() == b"unapproved concurrent change\n"
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+
+
+@pytest.mark.parametrize("malformed", [b"unterminated", b"\0", b"name\0\0"])
+def test_1255_malformed_nul_listing_is_not_accepted(tmp_path, monkeypatch, malformed):
+    """#1255: a broken listing cannot silently become an empty allowed diff."""
+    plan = unmapped_rejection_case(tmp_path)
+    ready = prepare(tmp_path)
+    original_git = owner.git
+
+    def broken_git(root, *args):
+        # #1256 pins the comparison revision; the malformed-listing guard is unchanged.
+        if args == ("diff", "--name-only", "-z", plan["baseline_commit"], "--"):
+            return malformed
+        return original_git(root, *args)
+
+    monkeypatch.setattr(owner, "git", broken_git)
+    with pytest.raises(ValueError, match="Malformed Git path listing"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    # #1256 invokes the unchanged listing guard before output reservation too.
+    assert not (tmp_path / "receipt").exists()
+    assert owner.hashes(owner.inventory(tmp_path)) == owner.hashes(ready.before)
+
+
+def head_lifecycle_case(root, kind):
+    """#1256: select one real native shape without changing its original authority."""
+    if kind == "demote":
+        return demotion_case(root)
+    plan = setup(root)
+    plan["records"] = [entry for entry in plan["records"] if entry["kind"] == kind]
+    assert len(plan["records"]) == 1
+    repin(root, plan)
+    return plan
+
+
+def late_git_commit(root, unrelated=False):
+    """#1256: actual private Git commit, no mocked HEAD or native proof."""
+    if unrelated:
+        put(root, "notes/post-acceptance.txt", b"unrelated committed bytes\n")
+        run_git(root, "add", "--", "notes/post-acceptance.txt")
+    run_git(
+        root,
+        "-c",
+        "user.email=fixture@example.invalid",
+        "-c",
+        "user.name=Fixture",
+        "commit",
+        "--allow-empty",
+        "-qm",
+        "#1256 private lifecycle HEAD change",
+    )
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("unrelated", [False, True])
+@pytest.mark.parametrize("enabled", [False, True])
+def test_1256_late_head_refused_before_receipt_or_source_write(tmp_path, kind, unrelated, enabled):
+    """#1256: a prepared object cannot carry acceptance across a new commit."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    before = owner.hashes(owner.inventory(tmp_path))
+    late_git_commit(tmp_path, unrelated)
+    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
+    with pytest.raises(ValueError, match="Integration HEAD changed during source application"):
+        owner.apply(ready, tmp_path / "receipt", enabled=enabled)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("unrelated", [False, True])
+@pytest.mark.parametrize("boundary", ["before_write", "after_write", "final_receipt_flush"])
+def test_1256_head_drift_at_write_boundaries_invalidates_completion(
+    tmp_path, monkeypatch, kind, unrelated, boundary
+):
+    """#1256: real commits injected at native boundaries never yield success."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    before = owner.hashes(owner.inventory(tmp_path))
+    fired = False
+
+    def commit_once():
+        nonlocal fired
+        assert not fired
+        fired = True
+        late_git_commit(tmp_path, unrelated)
+
+    if boundary == "final_receipt_flush":
+        finish = owner.finish_receipt
+
+        def changed_finish(handle, path, payload, recheck):
+            calls = 0
+
+            def check():
+                nonlocal calls
+                calls += 1
+                if calls == 2:
+                    commit_once()
+                recheck()
+
+            return finish(handle, path, payload, check)
+
+        monkeypatch.setattr(owner, "finish_receipt", changed_finish)
+    else:
+        name = "publish_validated" if kind == "edit" else "_new_owner"
+        writer = getattr(owner, name)
+
+        def changed_write(*args, **kwargs):
+            if boundary == "before_write":
+                commit_once()
+            result = writer(*args, **kwargs)
+            if boundary == "after_write":
+                commit_once()
+            return result
+
+        monkeypatch.setattr(owner, name, changed_write)
+    with pytest.raises(ValueError, match="Integration HEAD changed during source application"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert fired
+    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
     receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
     assert receipt["state"] == "failed" and receipt["recovery_required"]
-    assert (tmp_path / OLD).read_bytes() == ready.payloads[plan["records"][0]["operation_id"]]
-    assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == before
-    assert (tmp_path / unrelated).read_bytes() == b"unapproved concurrent change\n"
+    assert receipt["baseline_commit"] == plan["baseline_commit"]
+    if boundary == "before_write":
+        assert owner.hashes(owner.inventory(tmp_path)) == before
+    else:
+        entry = plan["records"][0]
+        assert (tmp_path / entry["source_record"]).read_bytes() == ready.payloads[
+            entry["operation_id"]
+        ]
+    if plan["records"][0]["before_source_record"]:
+        source = plan["records"][0]["before_source_record"]
+        assert (tmp_path / "receipt/owner-before-0000.yaml").read_bytes() == ready.before[
+            source
+        ].content
     assert (tmp_path / CANONICAL).read_bytes() == SSSOM
     with pytest.raises(ValueError):
         owner.verify_completed(
@@ -2033,24 +2169,150 @@ def test_1255_unrelated_literal_tracked_file_still_refused(tmp_path, monkeypatch
         )
 
 
-@pytest.mark.parametrize("malformed", [b"unterminated", b"\0", b"name\0\0"])
-def test_1255_malformed_nul_listing_is_not_accepted(tmp_path, monkeypatch, malformed):
-    """#1255: a broken listing cannot silently become an empty allowed diff."""
-    unmapped_rejection_case(tmp_path)
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("unrelated", [False, True])
+def test_1256_valid_completed_history_survives_later_commits(tmp_path, kind, unrelated):
+    """#1256: transaction freshness is not an eternal historical HEAD lock."""
+    plan = head_lifecycle_case(tmp_path, kind)
     ready = prepare(tmp_path)
-    original_git = owner.git
+    owner.apply(ready, tmp_path / "receipt", enabled=True)
+    receipt_raw = (tmp_path / "receipt/application.json").read_bytes()
+    run_git(tmp_path, "add", "--", "data/ingredients")
+    late_git_commit(tmp_path, unrelated)
+    assert run_git(tmp_path, "rev-parse", "HEAD") != plan["baseline_commit"]
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert proof["baseline_commit"] == plan["baseline_commit"]
+    assert proof["after_inventory"] == ready.after_inventory
+    assert (tmp_path / "receipt/application.json").read_bytes() == receipt_raw
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM
 
-    def broken_git(root, *args):
-        if args == ("diff", "--name-only", "-z", "HEAD", "--"):
-            return malformed
-        return original_git(root, *args)
 
-    monkeypatch.setattr(owner, "git", broken_git)
-    with pytest.raises(ValueError, match="Malformed Git path listing"):
-        owner.apply(ready, tmp_path / "receipt", enabled=True)
-    receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
-    assert receipt["state"] == "failed" and receipt["recovery_required"]
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("fault", ["owner", "receipt"])
+def test_1256_historical_replay_still_refuses_changed_proof(tmp_path, kind, fault):
+    """#1256: allowing later commits does not relax current content checks."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
+    run_git(tmp_path, "add", "--", "data/ingredients")
+    late_git_commit(tmp_path)
+    if fault == "owner":
+        path = tmp_path / plan["records"][0]["source_record"]
+        path.write_bytes(path.read_bytes() + b"# unauthorised later owner bytes\n")
+    else:
+        path = tmp_path / "receipt/application.json"
+        document = json.loads(path.read_bytes())
+        document["state"] = "failed"
+        put(tmp_path, str(path.relative_to(tmp_path)), document)
     with pytest.raises(ValueError):
         owner.verify_completed(
             tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
         )
+
+
+def test_1256_scope_diff_uses_accepted_baseline_with_literal_paths(tmp_path, monkeypatch):
+    """#1256 and #1255: capture actual Git argv without changing its result."""
+    plan = head_lifecycle_case(tmp_path, "edit")
+    original_git = owner.git
+    diffs = []
+
+    def record_git(root, *args):
+        if args[:3] == ("diff", "--name-only", "-z"):
+            diffs.append(args)
+        return original_git(root, *args)
+
+    monkeypatch.setattr(owner, "git", record_git)
+    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
+    assert diffs
+    assert all(
+        args == ("diff", "--name-only", "-z", plan["baseline_commit"], "--") for args in diffs
+    )
+    owner.verify_completed(tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json")
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("unrelated", [False, True])
+def test_1256_initial_head_drift_remains_refused(tmp_path, kind, unrelated):
+    """#1256: preserve the original pre-prepare baseline refusal."""
+    head_lifecycle_case(tmp_path, kind)
+    before = owner.hashes(owner.inventory(tmp_path))
+    late_git_commit(tmp_path, unrelated)
+    with pytest.raises(ValueError, match="Integration HEAD differs"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("kind", ["edit", "create", "promote", "demote"])
+@pytest.mark.parametrize("boundary", ["before_apply", "before_write", "after_write", "final_flush"])
+def test_1256_unrelated_staged_drift_rechecked_throughout_transaction(
+    tmp_path, monkeypatch, kind, boundary
+):
+    """#1256: unchanged HEAD is insufficient when tracked scope drifts."""
+    plan = head_lifecycle_case(tmp_path, kind)
+    ready = prepare(tmp_path)
+    before = owner.hashes(owner.inventory(tmp_path))
+    staged = False
+
+    def stage_once():
+        nonlocal staged
+        assert not staged
+        staged = True
+        put(tmp_path, "notes/unrelated_ß\nchange.txt", b"unapproved staged bytes\n")
+        run_git(tmp_path, "add", "--", "notes/unrelated_ß\nchange.txt")
+        assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
+
+    if boundary == "before_apply":
+        stage_once()
+    elif boundary == "final_flush":
+        finish = owner.finish_receipt
+
+        def changed_finish(handle, path, payload, recheck):
+            calls = 0
+
+            def check():
+                nonlocal calls
+                calls += 1
+                if calls == 2:
+                    stage_once()
+                recheck()
+
+            return finish(handle, path, payload, check)
+
+        monkeypatch.setattr(owner, "finish_receipt", changed_finish)
+    else:
+        name = "publish_validated" if kind == "edit" else "_new_owner"
+        writer = getattr(owner, name)
+
+        def changed_write(*args, **kwargs):
+            if boundary == "before_write":
+                stage_once()
+            result = writer(*args, **kwargs)
+            if boundary == "after_write":
+                stage_once()
+            return result
+
+        monkeypatch.setattr(owner, name, changed_write)
+    with pytest.raises(ValueError, match="Unrelated tracked file changed"):
+        owner.apply(ready, tmp_path / "receipt", enabled=True)
+    assert staged
+    assert run_git(tmp_path, "rev-parse", "HEAD") == plan["baseline_commit"]
+    if boundary == "before_apply":
+        assert not (tmp_path / "receipt").exists()
+    else:
+        receipt = json.loads((tmp_path / "receipt/application.json").read_bytes())
+        assert receipt["state"] == "failed" and receipt["recovery_required"]
+        with pytest.raises(ValueError):
+            owner.verify_completed(
+                tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+            )
+    if boundary in {"before_apply", "before_write"}:
+        assert owner.hashes(owner.inventory(tmp_path)) == before
+    else:
+        entry = plan["records"][0]
+        assert (tmp_path / entry["source_record"]).read_bytes() == ready.payloads[
+            entry["operation_id"]
+        ]
+    assert (tmp_path / "notes/unrelated_ß\nchange.txt").read_bytes() == b"unapproved staged bytes\n"
+    assert (tmp_path / CANONICAL).read_bytes() == SSSOM

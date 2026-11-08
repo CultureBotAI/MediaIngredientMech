@@ -251,6 +251,7 @@ def prepare_native_case(root, historical_root=None):
         "MEDIAINGREDIENTMECH_ROOT": str(root),
         "KGMICROBE_ROOT": str(kg),
         "TMPDIR": str(temporary),
+        "OPENCLAW_WORKSPACE": str(root / "private-openclaw-workspace"),
         "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
     }
     run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
@@ -262,7 +263,12 @@ def prepare_native_case(root, historical_root=None):
             "returncode": run.returncode,
             "environment": {
                 key: environment[key]
-                for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                for key in (
+                    "MEDIAINGREDIENTMECH_ROOT",
+                    "KGMICROBE_ROOT",
+                    "TMPDIR",
+                    "OPENCLAW_WORKSPACE",
+                )
             },
         },
     )
@@ -555,3 +561,83 @@ def test_real_source_generation_publication_demotion(tmp_path):
         (tmp_path / publication.SOURCE).read_bytes()
     )
     assert {k: v for k, v in current_policy.items() if k != publication.UPDATE} == old_policy
+
+
+@pytest.mark.parametrize("unrelated", [False, True])
+def test_real_1256_commit_between_source_generation_and_publication_refused(tmp_path, unrelated):
+    source, plan, path, destination, _ = prepare_native_case(tmp_path)
+    mapping = fixture_module("test_campaign_publication")
+    before = {p: (tmp_path / p).read_bytes() for p in (publication.SOURCE, publication.POLICY)}
+    mapping.commit_publication_boundary(tmp_path, unrelated=unrelated)
+    # Completion remains a historical source proof; it is the live publisher
+    # transaction which must refuse this intervening commit.
+    assert source.owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "source-receipt/application.json"
+    )
+    with pytest.raises(ValueError, match="live publication HEAD changed"):
+        publication.publish(tmp_path, path, destination, apply=True)
+    assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())
+    assert not list(destination.iterdir())
+    assert native.verify_mapping_chain(tmp_path)["receipt_inputs"] == plan["receipt_prefix"]
+
+
+@pytest.mark.parametrize("phase", ["reserved", "before-completion", "after-completion"])
+def test_real_1256_late_commit_rechecks_actual_source_generation_publication(
+    tmp_path, monkeypatch, phase
+):
+    _, plan, path, destination, _ = prepare_native_case(tmp_path)
+    mapping = fixture_module("test_campaign_publication")
+    before = {p: (tmp_path / p).read_bytes() for p in (publication.SOURCE, publication.POLICY)}
+    entered = []
+
+    def change_head():
+        entered.append(phase)
+        mapping.commit_publication_boundary(tmp_path)
+
+    if phase == "reserved":
+        original = publication._reserve
+
+        @contextmanager
+        def reservation(paths):
+            with original(paths) as handles:
+                change_head()
+                yield handles
+
+        monkeypatch.setattr(publication, "_reserve", reservation)
+    else:
+        original = publication.finish_receipt
+
+        def completion(*args, **kwargs):
+            if phase == "before-completion":
+                change_head()
+            result = original(*args, **kwargs)
+            if phase == "after-completion":
+                change_head()
+            return result
+
+        monkeypatch.setattr(publication, "finish_receipt", completion)
+    with pytest.raises(ValueError, match="live publication HEAD changed"):
+        publication.publish(tmp_path, path, destination, apply=True)
+    assert entered == [phase]
+    if phase == "reserved":
+        assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())
+    for p in [
+        destination / "publication.json",
+        tmp_path / native.RECEIPTS_DIR / (plan["batch"] + ".json"),
+    ]:
+        assert not p.exists() or p.read_bytes() == b""
+
+
+def test_real_1256_historical_completed_validation_after_commit(tmp_path):
+    source, _, path, destination, _ = prepare_native_case(tmp_path)
+    mapping = fixture_module("test_campaign_publication")
+    # Source synchronization may create derived files without committing.
+    source.put(tmp_path, "data/curated/fixture-derived.yaml", b"fixture: derived sync\n")
+    assert publication.publish(tmp_path, path, destination, apply=True)["status"] == "complete"
+    before = {p: (tmp_path / p).read_bytes() for p in (publication.SOURCE, publication.POLICY)}
+    mapping.commit_publication_boundary(tmp_path, unrelated=True)
+    assert publication.validate(tmp_path, path)["status"] == "verified"
+    assert source.owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "source-receipt/application.json"
+    )
+    assert all((tmp_path / p).read_bytes() == raw for p, raw in before.items())

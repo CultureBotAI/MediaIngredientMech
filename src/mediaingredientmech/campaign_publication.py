@@ -921,6 +921,22 @@ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
     for key in ("owner_plan", "owner_receipt"):
         capture.ref(plan[key])
     owner_proof = _owner_proof(root, plan)
+    if not completed:
+        # #1256: source application and live publication are one uncommitted
+        # transaction. Historical standalone verification may follow commits.
+        baseline_commit = owner_proof["baseline_commit"]
+
+        def mutation_head_recheck() -> None:
+            current_head = subprocess.check_output(
+                ["git", "rev-parse", "--verify", "HEAD"], cwd=root, text=True
+            ).strip()
+            require(
+                current_head == baseline_commit,
+                "live publication HEAD changed from source baseline",
+            )
+
+        mutation_head_recheck()
+        capture.checks.append(mutation_head_recheck)
     require(
         owner_proof["plan_sha256"] == plan["owner_plan"]["sha256"]
         and owner_proof["receipt_sha256"] == plan["owner_receipt"]["sha256"],
