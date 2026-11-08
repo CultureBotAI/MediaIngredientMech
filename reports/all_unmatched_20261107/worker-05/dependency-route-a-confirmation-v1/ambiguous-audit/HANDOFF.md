@@ -1,0 +1,38 @@
+# W05 route-A ambiguous-source confirmation
+
+Completed 2026-11-08T10:17:12.453744+00:00 by `/root/buffer_tris`, with LLM assistance. Exact reviewed source head: `108e213e96f7d423ee345ce265d692e79063127c`.
+
+The published successor already contains the seven ambiguous route-A child origins and the three composed existing Fastidious/PY-glucose-rumen/PYG_Rumen origins. No further proposal or payload edit is supported by this confirmation. The current selector has 155 unique proposals and 188 source decisions; this packet changes none. It is report-only and does not approve source admission, whole owners, roles, assays, final integration or export.
+
+I authored the prior ten payloads and am therefore author-related. Original primary scientists `/root/peptone_ambiguous_sources` and `/root/peptone_other_sources`, and original skeptic `/root/peptone_skeptic`, remain credited. This confirmation re-read complete selected payloads and applicable exact primary captures; prior source-search work is not claimed newly performed. Root must provide the separate current skeptical review.
+
+`payload-audit.json` binds every full proposal object, authentic child before, selected predecessor and final after hash. All ten current proposal objects and payloads exactly match the sealed dependencies packet. All original history/evidence prefixes, unrelated component fields, absent quantities, raw labels and whole mappings are retained. Seven new child origins use the real causal generic-peptone case; the three composed origins retain their original meat/rumen source case backlinks. `causal-source-accounting.json` records that distinction explicitly.
+
+`raw-observation-recheck.json` independently re-extracts and compares all 130 full archived database rows for the fifteen W05 child origins, including all 114 PYG observations. There are zero full-row or literal-token mismatches. This is observation accounting, not a claim to have inspected 114 underlying papers. Native closed-schema validation of the ten complete payloads reports zero errors. The old 449-member dependency, 220-member peer, 114-member direct successor, 98-member plan-v1 and 28-member plan-v2 manifests all rehash without mismatch. Root owns final full-overlay checks; no writer, synchronization or downstream rebuild was run here.
+
+`all20-coverage.json` accounts for ten ambiguous withdrawals, five generic W05 origins separately confirmed by `/root/buffer_hepes`, three generic existing other-worker origins, one retained GYPS Bacto reference and one retained Marine-broth withdrawal. Current generic-parent destination is `mesh:D010461`, exact parent payload SHA `c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7`; older local-target advice is preserved only as superseded history.
+
+`scientific-assessment.json` gives supported facts, precise missing facts, options and source prerequisites for each ambiguous claim. The completed withdrawal does not establish that the peptone is absent or that preparations are equal or different. No full-composition or product-detail requirement is imposed on an actually source-supported generic named ingredient.
+
+| Claim | Exact remaining source prerequisite |
+| --- | --- |
+| PC01 | Source-bound FAB method/catalogue/version connecting the original experiment to its peptone input, and separately its granules. Do not use the separate PYG tubes or current alternative product formula as that bridge. |
+| PC06 | An applicable original C. polysaccharolyticum recipe/explicit peptone statement, plus source linkage sufficient to support the aggregate or disjoint occurrence scope. The E. siraeum result cannot stand in for the other observation. |
+| PC07 | Original Andreesen1970 methods or the source chapter/protocol it uses, linked to this observation, supplying the named constituent. No detailed assay or complete species inventory is required merely to support an explicitly named generic ingredient. |
+| PC08 | Original method or directly cited recipe for this source occurrence identifying the PY input; separate evidence of rumen-fluid processing is needed only for any proposed processing-qualified identity. Unrelated Prevotella recipes do not qualify. |
+| PC09 | The applicable historical manual/method recipe bound to the Moore1976 C. leptum observation. Current DSM753 ingredient names and quantities must not be imported into that historical record by similarity. |
+| PC10 | Original T. pectinovorum PY-pectin methods or a documented applicable recipe version linking that observation to its peptone input. ATCC1223 alone is insufficient for historical product identity. |
+| PC11 | Applicable Morris1985/source-chapter methods for C. scindens establishing the PYEG ingredient list or named peptone input, without borrowing a Caulobacter formula. |
+| PC12 | The historical0.02%Tween80 preparation recipe or a cited source protocol establishing its named peptone input and qualifier scope. No substitution from current alternative growth media. |
+| PC13 | Occurrence-to-recipe bindings or explicit source statements sufficient for each selected scope; reuse exact evidence across a cohort only when applicability is demonstrated. An abbreviation or nominal ingredient list alone is not full-formulation equality. |
+| PC15 | Original source chapter/Bryant methods or a directly bound recipe identifying the PYG constituent; separate source processing evidence for any clarified or animal-qualified fluid identity. Neither an alternative ATCC medium nor unrelated Prevotella culture is a bridge. |
+
+The three overlaps remain scientifically bounded: Fastidious retains both meat-granule and peptone withdrawals, recognizes original Oxoid attribution, and does not import the separate Anaerobe Systems PYG formula or remove inherited starch/glucose. Both rumen consumers retain literal rumen fluid without clarification or animal-origin claims; absence of processing information does not prove untreated fluid.
+
+GYPS remains byte-exact at its authentic preimage with its Bacto edge: the original Alain2002 method directly names Bacto-peptone (Difco). Marine broth keeps the published root-owned UNMAPPED peptone, nominal 5g at standard reconstitution, sixteen nominal printed inputs, approximate-formula/performance-adjustment qualification and water outside the dry product.
+
+Three generic consumers remain root-coordinated existing origins: W04 `media-alias-marine2216`, W06 `R-P-PYGS-SOURCE-EVIDENCE`, and W02 `a2-proposal-togo-m2491-mrssi-base`. Their exact frozen source payloads and primary evidence were checked as context, not asserted to be their latest heads. They require exact final composition with the accepted generic parent. Preserve W04 scratch-recipe quantity scope, W06 three source contexts and UNKNOWN completeness, and W02 new_owner/null-before with its literal amounts and separate commercial-MRS context. These are not missing W05 origins and must not be duplicated.
+
+No new finding was identified. Existing unresolved facts remain deduplicated to #1176 and its filed FAB follow-up, with the prior rumen findings under #1204/#1237. Every old capture, review, proposal and manifest is unchanged. New network fetches, paid provider calls, external sessions, Git/GitHub writes, scientific payload changes and maintained-data writes: zero.
+
+Exact input hashes are in `input-bindings.json`. Byte-exact copies of original capture timing/lineage are preserved in `original-capture-ledger.json`, `original-control-network-receipt.json` and `original-control-capture-lineage.json`; the audit timestamp is not substituted for original retrieval times.

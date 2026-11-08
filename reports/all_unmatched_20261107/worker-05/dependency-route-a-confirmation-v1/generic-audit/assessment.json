@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "author": "/root/buffer_hepes",
+  "at": "2026-11-08T10:11:47.548060+00:00",
+  "head": "108e213e96f7d423ee345ce265d692e79063127c",
+  "scope": "Five generic route-A consumers only; full current selected payloads and exact actual beforeimages reviewed, source labels independently re-extracted.",
+  "current_selector": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+    "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+    "proposals": 155,
+    "decisions": 188
+  },
+  "route_plan": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/missing-origin-options-12.json",
+    "sha256": "8dc049c1709aa220d90e78d67c1f8526d80102ca37e4e03c73cdf30c5a94226f",
+    "frozen_target": "kgmicrobe.ingredient:peptone",
+    "current_reviewed_target": "mesh:D010461",
+    "reason": "Later supported native exact-term selection; the immutable route plan is not rewritten."
+  },
+  "parent": {
+    "proposal_id": "W05-FINAL-MAT-039",
+    "after_capture": {
+      "root": "artifact",
+      "path": "buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+      "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+    },
+    "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6"
+  },
+  "rows": [
+    {
+      "target_id": "PC03",
+      "claim_key": "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml#components[1]",
+      "proposal_id": "W05-DEP-PEPTONE-PC03",
+      "proposal_object_sha256": "5e8759e2537b57c413bccec5d2c09b45bb12e51923a6894cc41b8619ec5bfe21",
+      "authentic_origin": {
+        "kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml",
+        "before_sha256": "e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+        "causal_parent_not_child_observation": true
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml",
+        "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"
+      },
+      "committed_bytes_verified_at": "108e213e96f7d423ee345ce265d692e79063127c",
+      "selected_owner_entries": 1,
+      "actual_component_index": 1,
+      "full_components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "changed_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "notes"
+      ],
+      "preserved": {
+        "whole_identity": true,
+        "ontology_mapping": true,
+        "raw_synonyms": true,
+        "occurrence_statistics": true,
+        "all_original_history": true,
+        "all_original_component_evidence": true,
+        "unrelated_parts": true,
+        "literal_names": true,
+        "quantity_absence": true,
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE relative to the named inputs only"
+      },
+      "source_observations": [
+        {
+          "target_id": "PC03",
+          "owner_path": "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml",
+          "csv_row_including_header": 1597,
+          "record_index_zero_based": 1595,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "glucose peptone-yeast extract",
+          "genus": "Anaerofustis",
+          "species": "stercorihominis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerofustis-stercorihominis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00628"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "actual_source_basis": "Exact raw MicrobeDecoder database assertion; each literal explicitly names peptone. This is source-label component evidence, not independent verification of the underlying experimental publication or complete recipe.",
+      "scientific_conclusion": "Generic Peptone part supported; its current exact ordinary generic referent mesh:D010461 is supported by the separately reviewed parent. No manufacturer, animal origin, digestion method, measured lot properties or Bacto identity is imported. Unknown supplier does not block an explicitly generic named part.",
+      "residual_decision": "KEEP_CURRENT_PUBLISHED_PROPOSAL; the route-A missing-origin request is already satisfied for this child at this exact head.",
+      "residual_obligations": [
+        "Root must include this exact child and c083 generic parent in the same accepted source application and perform final whole-overlay/corpus review.",
+        "No new payload, new owner, duplicate origin, source-case assignment, assay/role or export approval is warranted.",
+        "The separate same-named/reordered mixture owners are not proved identical or distinct by this bounded part-reference confirmation."
+      ],
+      "prior_payload_author": "/root/buffer_tris",
+      "prior_primary_source_author": "/root/peptone_other_sources",
+      "prior_skeptic": "/root/peptone_skeptic",
+      "current_confirmation_author": "/root/buffer_hepes"
+    },
+    {
+      "target_id": "PC16",
+      "claim_key": "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC16",
+      "proposal_object_sha256": "ffa97a20b66f8e0f466faebad54e7f8dfe4a0cfdc4f1f6e31bce5fac69cb4208",
+      "authentic_origin": {
+        "kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml",
+        "before_sha256": "e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+        "causal_parent_not_child_observation": true
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml",
+        "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"
+      },
+      "committed_bytes_verified_at": "108e213e96f7d423ee345ce265d692e79063127c",
+      "selected_owner_entries": 1,
+      "actual_component_index": 0,
+      "full_components": [
+        {
+          "component_name": "peptone",
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "changed_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "notes"
+      ],
+      "preserved": {
+        "whole_identity": true,
+        "ontology_mapping": true,
+        "raw_synonyms": true,
+        "occurrence_statistics": true,
+        "all_original_history": true,
+        "all_original_component_evidence": true,
+        "unrelated_parts": true,
+        "literal_names": true,
+        "quantity_absence": true,
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE relative to the named inputs only"
+      },
+      "source_observations": [
+        {
+          "target_id": "PC16",
+          "owner_path": "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml",
+          "csv_row_including_header": 1622,
+          "record_index_zero_based": 1620,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "peptone-yeast extract-glucose",
+          "genus": "Anaerorhabdus",
+          "species": "furcosa",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerorhabdus-furcosa",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00237"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "actual_source_basis": "Exact raw MicrobeDecoder database assertion; each literal explicitly names peptone. This is source-label component evidence, not independent verification of the underlying experimental publication or complete recipe.",
+      "scientific_conclusion": "Generic Peptone part supported; its current exact ordinary generic referent mesh:D010461 is supported by the separately reviewed parent. No manufacturer, animal origin, digestion method, measured lot properties or Bacto identity is imported. Unknown supplier does not block an explicitly generic named part.",
+      "residual_decision": "KEEP_CURRENT_PUBLISHED_PROPOSAL; the route-A missing-origin request is already satisfied for this child at this exact head.",
+      "residual_obligations": [
+        "Root must include this exact child and c083 generic parent in the same accepted source application and perform final whole-overlay/corpus review.",
+        "No new payload, new owner, duplicate origin, source-case assignment, assay/role or export approval is warranted.",
+        "The separate same-named/reordered mixture owners are not proved identical or distinct by this bounded part-reference confirmation."
+      ],
+      "prior_payload_author": "/root/buffer_tris",
+      "prior_primary_source_author": "/root/peptone_other_sources",
+      "prior_skeptic": "/root/peptone_skeptic",
+      "current_confirmation_author": "/root/buffer_hepes"
+    },
+    {
+      "target_id": "PC17",
+      "claim_key": "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC17",
+      "proposal_object_sha256": "99219a43b9a1e5cb8923639c0895df4ca852b04027bcbf4a6c3f6a4677c3e9c4",
+      "authentic_origin": {
+        "kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml",
+        "before_sha256": "49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+        "causal_parent_not_child_observation": true
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml",
+        "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"
+      },
+      "committed_bytes_verified_at": "108e213e96f7d423ee345ce265d692e79063127c",
+      "selected_owner_entries": 1,
+      "actual_component_index": 0,
+      "full_components": [
+        {
+          "component_name": "Peptone",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Beef Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03302088",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "changed_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "notes"
+      ],
+      "preserved": {
+        "whole_identity": true,
+        "ontology_mapping": true,
+        "raw_synonyms": true,
+        "occurrence_statistics": true,
+        "all_original_history": true,
+        "all_original_component_evidence": true,
+        "unrelated_parts": true,
+        "literal_names": true,
+        "quantity_absence": true,
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE relative to the named inputs only"
+      },
+      "source_observations": [
+        {
+          "target_id": "PC17",
+          "owner_path": "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml",
+          "csv_row_including_header": 3775,
+          "record_index_zero_based": 3773,
+          "field": "Literature_Substrates_for_end_products",
+          "literal": "peptone + beef extract + yeast extract",
+          "genus": "Chordicoccus",
+          "species": "furentiruminis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/chordicoccus-furentiruminis"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "actual_source_basis": "Exact raw MicrobeDecoder database assertion; each literal explicitly names peptone. This is source-label component evidence, not independent verification of the underlying experimental publication or complete recipe.",
+      "scientific_conclusion": "Generic Peptone part supported; its current exact ordinary generic referent mesh:D010461 is supported by the separately reviewed parent. No manufacturer, animal origin, digestion method, measured lot properties or Bacto identity is imported. Unknown supplier does not block an explicitly generic named part.",
+      "residual_decision": "KEEP_CURRENT_PUBLISHED_PROPOSAL; the route-A missing-origin request is already satisfied for this child at this exact head.",
+      "residual_obligations": [
+        "Root must include this exact child and c083 generic parent in the same accepted source application and perform final whole-overlay/corpus review.",
+        "No new payload, new owner, duplicate origin, source-case assignment, assay/role or export approval is warranted.",
+        "The separate same-named/reordered mixture owners are not proved identical or distinct by this bounded part-reference confirmation."
+      ],
+      "prior_payload_author": "/root/buffer_tris",
+      "prior_primary_source_author": "/root/peptone_other_sources",
+      "prior_skeptic": "/root/peptone_skeptic",
+      "current_confirmation_author": "/root/buffer_hepes"
+    },
+    {
+      "target_id": "PC18",
+      "claim_key": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC18",
+      "proposal_object_sha256": "27d678472937207c2fd7422bfecda77a02980528e7be740f78d566e5e079f9a2",
+      "authentic_origin": {
+        "kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml",
+        "before_sha256": "90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+        "causal_parent_not_child_observation": true
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml",
+        "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"
+      },
+      "committed_bytes_verified_at": "108e213e96f7d423ee345ce265d692e79063127c",
+      "selected_owner_entries": 1,
+      "actual_component_index": 0,
+      "full_components": [
+        {
+          "component_name": "Peptone",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "changed_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "notes"
+      ],
+      "preserved": {
+        "whole_identity": true,
+        "ontology_mapping": true,
+        "raw_synonyms": true,
+        "occurrence_statistics": true,
+        "all_original_history": true,
+        "all_original_component_evidence": true,
+        "unrelated_parts": true,
+        "literal_names": true,
+        "quantity_absence": true,
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE relative to the named inputs only"
+      },
+      "source_observations": [
+        {
+          "target_id": "PC18",
+          "owner_path": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml",
+          "csv_row_including_header": 1652,
+          "record_index_zero_based": 1650,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "peptone + yeast extract",
+          "genus": "Anaerotruncus",
+          "species": "colihominis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerotruncus-colihominis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00673"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "target_id": "PC18",
+          "owner_path": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml",
+          "csv_row_including_header": 15057,
+          "record_index_zero_based": 15055,
+          "field": "Literature_Substrates_for_end_products",
+          "literal": "peptone + yeast extract",
+          "genus": "Proteiniclasticum",
+          "species": "ruminis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniclasticum-ruminis"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "actual_source_basis": "Exact raw MicrobeDecoder database assertion; each literal explicitly names peptone. This is source-label component evidence, not independent verification of the underlying experimental publication or complete recipe.",
+      "scientific_conclusion": "Generic Peptone part supported; its current exact ordinary generic referent mesh:D010461 is supported by the separately reviewed parent. No manufacturer, animal origin, digestion method, measured lot properties or Bacto identity is imported. Unknown supplier does not block an explicitly generic named part.",
+      "residual_decision": "KEEP_CURRENT_PUBLISHED_PROPOSAL; the route-A missing-origin request is already satisfied for this child at this exact head.",
+      "residual_obligations": [
+        "Root must include this exact child and c083 generic parent in the same accepted source application and perform final whole-overlay/corpus review.",
+        "No new payload, new owner, duplicate origin, source-case assignment, assay/role or export approval is warranted.",
+        "The separate same-named/reordered mixture owners are not proved identical or distinct by this bounded part-reference confirmation."
+      ],
+      "prior_payload_author": "/root/buffer_tris",
+      "prior_primary_source_author": "/root/peptone_other_sources",
+      "prior_skeptic": "/root/peptone_skeptic",
+      "current_confirmation_author": "/root/buffer_hepes"
+    },
+    {
+      "target_id": "PC19",
+      "claim_key": "data/ingredients/mapped/Yeast_Extract_Peptone.yaml#components[1]",
+      "proposal_id": "W05-DEP-PEPTONE-PC19",
+      "proposal_object_sha256": "4f4336bef7dba643ca0ff624d27cfee952498be828d5cd7650bcd8a0a69676dc",
+      "authentic_origin": {
+        "kind": "edit_existing_owner",
+        "owner_path": "data/ingredients/mapped/Yeast_Extract_Peptone.yaml",
+        "before_sha256": "6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6",
+        "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+        "causal_parent_not_child_observation": true
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml",
+        "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"
+      },
+      "committed_bytes_verified_at": "108e213e96f7d423ee345ce265d692e79063127c",
+      "selected_owner_entries": 1,
+      "actual_component_index": 1,
+      "full_components": [
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Peptone",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "mesh:D010461",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "changed_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "notes"
+      ],
+      "preserved": {
+        "whole_identity": true,
+        "ontology_mapping": true,
+        "raw_synonyms": true,
+        "occurrence_statistics": true,
+        "all_original_history": true,
+        "all_original_component_evidence": true,
+        "unrelated_parts": true,
+        "literal_names": true,
+        "quantity_absence": true,
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE relative to the named inputs only"
+      },
+      "source_observations": [
+        {
+          "target_id": "PC19",
+          "owner_path": "data/ingredients/mapped/Yeast_Extract_Peptone.yaml",
+          "csv_row_including_header": 15054,
+          "record_index_zero_based": 15052,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "yeast extract + peptone",
+          "genus": "Proteiniborus",
+          "species": "ethanoligenes",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniborus-ethanoligenes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01395"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "actual_source_basis": "Exact raw MicrobeDecoder database assertion; each literal explicitly names peptone. This is source-label component evidence, not independent verification of the underlying experimental publication or complete recipe.",
+      "scientific_conclusion": "Generic Peptone part supported; its current exact ordinary generic referent mesh:D010461 is supported by the separately reviewed parent. No manufacturer, animal origin, digestion method, measured lot properties or Bacto identity is imported. Unknown supplier does not block an explicitly generic named part.",
+      "residual_decision": "KEEP_CURRENT_PUBLISHED_PROPOSAL; the route-A missing-origin request is already satisfied for this child at this exact head.",
+      "residual_obligations": [
+        "Root must include this exact child and c083 generic parent in the same accepted source application and perform final whole-overlay/corpus review.",
+        "No new payload, new owner, duplicate origin, source-case assignment, assay/role or export approval is warranted.",
+        "The separate same-named/reordered mixture owners are not proved identical or distinct by this bounded part-reference confirmation."
+      ],
+      "prior_payload_author": "/root/buffer_tris",
+      "prior_primary_source_author": "/root/peptone_other_sources",
+      "prior_skeptic": "/root/peptone_skeptic",
+      "current_confirmation_author": "/root/buffer_hepes"
+    }
+  ],
+  "findings": [],
+  "missing_origins_remaining_in_this_scope": 0,
+  "payload_changes_needed_in_this_scope": 0,
+  "source_rows_reextracted": 6,
+  "scope_limits": [
+    "No underlying Bergey chapter or species paper is newly retrieved or presented as a complete recipe here.",
+    "Source labels supply named parts and no quantities; scientific review supports only this exact generic component scope.",
+    "The author previously authored the generic parent. This is primary confirmation of disjoint child origins, not an authorship-independent parent review; a separate skeptical reviewer is required.",
+    "No maintained/public/payload changes or Git/GitHub writes performed."
+  ],
+  "filing": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-dependency-route-a-confirmation-v1/inputs/comment6719248666-live.json",
+    "sha256": "60c2ededb281d6be095a4162e130232f908c6b894ade8955758a57aa3edcec7d",
+    "created_at": "2026-11-08T08:26:00Z",
+    "updated_at": "2026-11-08T08:26:00Z",
+    "relation": "Original filing precedes existing09:30 and09:49 child events; current late confirmation does not invent another correction event."
+  },
+  "new_skeptical_review": "Pending root-assigned separate reviewer"
+}

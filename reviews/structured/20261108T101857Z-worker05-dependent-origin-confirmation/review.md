@@ -1,0 +1,1203 @@
+# W05 route-A dependent-origin confirmation
+
+- Review: 20261108T101857Z-worker05-dependent-origin-confirmation
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T10:18:57Z
+- Finished UTC: 2026-11-08T10:18:57Z
+- Reviewer: Codex W05 /root compiler; independent science /root/final_skeptical, fresh primary scopes /root/buffer_hepes and /root/buffer_tris (self_review)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Twelve already published authentic route-A child origins and three existing composed origins are confirmed by disjoint primary reassessment and separate exact-byte skeptical review. No payload/source/proposal is changed. Unresolved source-part identities and coordinator application obligations remain explicit.
+
+## Scope And Provenance
+
+All15 exact complete dependent payloads, five generic and ten ambiguous/composed, plus contextual20-claim coverage in PEER and controls. Other-worker current payloads are not approved here.
+
+Selection: Exact15 references in selector.json, preserving the complete unchanged188D/155P predecessor core.
+Coverage: full; 15 reviewed / 15 in the declared population.
+Source: working_tree at Git base 108e213e96f7d423ee345ce265d692e79063127c.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml | source | Fastidious Anaerobe Broth With Meat Granules |
+| W05-DEP-PEPTONE-PC03 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml | source | Glucose Peptone-yeast Extract |
+| W05-DEP-PEPTONE-PC06 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml | source | PY-cellobiose |
+| W05-DEP-PEPTONE-PC07 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml | source | PY-fructose |
+| R1193-DEP-rumen-pyglucose | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml | source | PY-glucose-rumen Fluid |
+| W05-DEP-PEPTONE-PC09 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml | source | PY-maltose |
+| W05-DEP-PEPTONE-PC10 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml | source | PY-pectin |
+| W05-DEP-PEPTONE-PC11 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml | source | PYEG |
+| W05-DEP-PEPTONE-PC12 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml | source | PYG-0.02% Tween 80 |
+| W05-DEP-PEPTONE-PC13 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml | source | PYG |
+| R1193-DEP-rumen-pyg | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml | source | PYG + Rumen Fluid |
+| W05-DEP-PEPTONE-PC16 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml | source | Peptone-yeast Extract-glucose |
+| W05-DEP-PEPTONE-PC17 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml | source | Peptone + Beef Extract + Yeast Extract |
+| W05-DEP-PEPTONE-PC18 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml | source | Peptone + Yeast Extract |
+| W05-DEP-PEPTONE-PC19 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml | source | Yeast Extract + Peptone |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent15 complete-payload scientific review | passed | True | M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, R1193-DEP-rumen-pyglucose, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, R1193-DEP-rumen-pyg, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19 | Separate reviewer assessment, not a command or compiler self-approval. |
+| Complete guarded candidate and native partonomy | passed | True | M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, R1193-DEP-rumen-pyglucose, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, R1193-DEP-rumen-pyg, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19 | Fresh read-only validation, scoped to exact selected bytes; no maintained or release approval. |
+| Closed-schema15 dependent payloads | passed | True | M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, R1193-DEP-rumen-pyglucose, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, R1193-DEP-rumen-pyg, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19 | Fresh read-only validation, scoped to exact selected bytes; no maintained or release approval. |
+| Exact188-case accounting | passed | True | M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, R1193-DEP-rumen-pyglucose, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, R1193-DEP-rumen-pyg, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19 | Fresh read-only validation, scoped to exact selected bytes; no maintained or release approval. |
+| All138 original proposal lineages | passed | True | M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, R1193-DEP-rumen-pyglucose, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, R1193-DEP-rumen-pyg, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19 | Fresh read-only validation, scoped to exact selected bytes; no maintained or release approval. |
+
+## Scientific And Domain Assessments
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES.
+
+Falsen distinguishes Oxoid FAB from the separately named Anaerobe Systems fermentation broth. Neither that other broth nor the Neogen/Acumedia comparators identifies the original FAB peptone or meat granules. Both withdrawals remain justified, while inherited starch/glucose are explicitly unverified. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml", "root": "artifact", "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"}, "authentic_before": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Source-bound FAB method/catalogue/version connecting the original experiment to its peptone input, and separately its granules. Do not use the separate PYG tubes or current alternative product formula as that bridge."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC03.
+
+The Anaerofustis raw field explicitly spells glucose peptone-yeast extract. This supports an ordinary generic named peptone input; it supplies no Bacto identity, supplier, animal origin or quantities. COMPLETE is only the named-input enumeration. The current mesh:D010461 target is the separately reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process details are not a new assay gate. Co-application with that exact accepted parent remains required. No global replacement or whole-mixture identity conclusion follows. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml", "root": "artifact", "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"}, "authentic_before": "e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Coordinator acceptance and same-phase application of exact parent c0837946 and this exact child; no additional supplier/lot fact is required for the already explicit generic named part."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC06.
+
+Moore provides positive occurrence-bound generic peptone support for E. siraeum. The independent C. polysaccharolyticum occurrence lacks an applicable ingredient statement. An aggregate resolving edge would generalize beyond that positive evidence. Retain the aggregate UNMAPPED interpretation and the positive subset evidence; supported occurrence-specific scope may be proposed later without a guessed split. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml", "root": "artifact", "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"}, "authentic_before": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "An applicable original C. polysaccharolyticum recipe/explicit peptone statement, plus source linkage sufficient to support the aggregate or disjoint occurrence scope. The E. siraeum result cannot stand in for the other observation."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC07.
+
+C. formicaceticum and fructose context are established by the raw observation and accessible Andreesen abstract; the original PY ingredient list is not. Neither abbreviation expansion nor an alternative current culture recipe establishes a digest here. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-fructose.yaml", "root": "artifact", "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"}, "authentic_before": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Original Andreesen1970 methods or the source chapter/protocol it uses, linked to this observation, supplying the named constituent. No detailed assay or complete species inventory is required merely to support an explicitly named generic ingredient."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: R1193-DEP-rumen-pyglucose.
+
+The raw observation is T. socranskii with the original link to subsp. paredis. The Smibert abstract supports rumen/fatty-acid context but not the PY ingredient. Peptone remains interpreted UNMAPPED; literal rumen fluid remains UNMAPPED, without asserting that missing clarification evidence proves untreated fluid. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml", "root": "artifact", "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"}, "authentic_before": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Original method or directly cited recipe for this source occurrence identifying the PY input; separate evidence of rumen-fluid processing is needed only for any proposed processing-qualified identity. Unrelated Prevotella recipes do not qualify."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC09.
+
+Moore confirms C. leptum PY-maltose use, but the historical basal recipe remains unavailable. Current DSM753 has two separate peptones; choosing either for the old single edge would require a demonstrated source bridge. No current comparator amount is imported. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-maltose.yaml", "root": "artifact", "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"}, "authentic_before": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "The applicable historical manual/method recipe bound to the Moore1976 C. leptum observation. Current DSM753 ingredient names and quantities must not be imported into that historical record by similarity."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC10.
+
+ATCC1223 names BD211910 Polypeptone separately from Heart Infusion. This current product-specific comparator cannot establish the historical T. pectinovorum PY-pectin ingredient. The withdrawal preserves exact source and product boundaries. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-pectin.yaml", "root": "artifact", "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"}, "authentic_before": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Original T. pectinovorum PY-pectin methods or a documented applicable recipe version linking that observation to its peptone input. ATCC1223 alone is insufficient for historical product identity."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC11.
+
+The original PYEG observation concerns C. scindens. Accessible Morris metadata/abstract do not expose the formula; another taxon recipe cannot supply it. Retaining an explicitly interpreted name with UNKNOWN completeness is preferable to asserting a universal three-part recipe. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYEG.yaml", "root": "artifact", "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"}, "authentic_before": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Applicable Morris1985/source-chapter methods for C. scindens establishing the PYEG ingredient list or named peptone input, without borrowing a Caulobacter formula."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC12.
+
+The whole source label retains 0.02% Tween80. Available current alternatives are not a bridge to that historical preparation. No inferred peptone amount, concentration basis or alternative-strength substitution is justified. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml", "root": "artifact", "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"}, "authentic_before": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "The historical0.02%Tween80 preparation recipe or a cited source protocol establishing its named peptone input and qualifier scope. No substitution from current alternative growth media."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC13.
+
+The 114 raw PYG observations retain every taxon, source route and literal label. The inspected occurrence-limited evidence cannot establish one digest across that aggregate. This is an unresolved source-applicability question, not proof that preparations are equal or distinct and not a claim to have read 114 underlying publications. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG.yaml", "root": "artifact", "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"}, "authentic_before": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Occurrence-to-recipe bindings or explicit source statements sufficient for each selected scope; reuse exact evidence across a cohort only when applicability is demonstrated. An abbreviation or nominal ingredient list alone is not full-formulation equality."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: R1193-DEP-rumen-pyg.
+
+E. ruminantium PYG+rumen fluid remains distinct from alternative ATCC media and unrelated Prevotella examples. The unavailable original basal method does not establish a digest or fluid processing. The peptone withdrawal correctly composes with the earlier literal rumen-fluid withdrawal. The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml", "root": "artifact", "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"}, "authentic_before": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Original source chapter/Bryant methods or a directly bound recipe identifying the PYG constituent; separate source processing evidence for any clarified or animal-qualified fluid identity. Neither an alternative ATCC medium nor unrelated Prevotella culture is a bridge."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC16.
+
+The Anaerorhabdus raw field explicitly names peptone-yeast extract-glucose. Its generic part is supported without asserting equivalence to the differently ordered PC03 whole preparation. The current mesh:D010461 target is the separately reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process details are not a new assay gate. Co-application with that exact accepted parent remains required. No global replacement or whole-mixture identity conclusion follows. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml", "root": "artifact", "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"}, "authentic_before": "e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Coordinator acceptance and same-phase application of exact parent c0837946 and this exact child; no additional supplier/lot fact is required for the already explicit generic named part."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC17.
+
+The Chordicoccus raw field explicitly lists peptone, beef extract and yeast extract separately. Adjacent beef extract is not evidence that the peptone derives from beef. The current mesh:D010461 target is the separately reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process details are not a new assay gate. Co-application with that exact accepted parent remains required. No global replacement or whole-mixture identity conclusion follows. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml", "root": "artifact", "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"}, "authentic_before": "49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Coordinator acceptance and same-phase application of exact parent c0837946 and this exact child; no additional supplier/lot fact is required for the already explicit generic named part."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC18.
+
+Both Anaerotruncus and Proteiniclasticum raw observations explicitly name peptone+yeast extract. A shared generic part does not establish a shared supplier, lot or equal full formulation. The current mesh:D010461 target is the separately reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process details are not a new assay gate. Co-application with that exact accepted parent remains required. No global replacement or whole-mixture identity conclusion follows. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml", "root": "artifact", "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"}, "authentic_before": "90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Coordinator acceptance and same-phase application of exact parent c0837946 and this exact child; no additional supplier/lot fact is required for the already explicit generic named part."}
+
+### Exact complete dependent payload and bounded source-part disposition
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC19.
+
+The Proteiniborus raw field explicitly names yeast extract+peptone. Generic input support does not merge the reversed-order whole owner or establish an animal/supplier origin. The current mesh:D010461 target is the separately reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process details are not a new assay gate. Co-application with that exact accepted parent remains required. No global replacement or whole-mixture identity conclusion follows. Complete current YAML content, original history/evidence, raw names, quantities or their absence, whole identity and source-qualified holds are preserved. This is a bounded reference review, not approval of unchanged historical mappings, other components, roles, organism assays, owner application or exports.
+
+{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml", "root": "artifact", "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"}, "authentic_before": "6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6", "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite": "Coordinator acceptance and same-phase application of exact parent c0837946 and this exact child; no additional supplier/lot fact is required for the already explicit generic named part."}
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| PEER | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/review/main-review.json | supports | Current independent skeptical source and exact full-payload confirmation by the named separate reviewer. |
+| SCOPE | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/source-scope-ledger.json | supports | Exact authentic origins, attributed source assessment and individual unresolved source prerequisites. |
+| SELECTOR | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/selector.json | supports | Reference-only successor retaining complete188-case155-proposal selector and unchanged full payloads. |
+| CONTROLS | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/route-a-negative-controls.json | supports | Five generic references, seven new and three composed withdrawals, GYPS retained, Marine preserved, other-worker routes explicit. |
+| OVERLAY | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/full-overlay/native-validation.json | supports | Fresh155 guarded/schema payload replay and3029-record full candidate partonomy. |
+| ACCOUNTING | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.json | supports | Fresh exact188-case accounting with unchanged source scope. |
+| LINEAGE | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/original-lineage-audit.json | supports | Fresh138-original-lineage accounting. |
+| PRESERVATION | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/preservation.json | supports | Predecessor and private sealed packet hash preservation. |
+| PREVIOUS | reviews/structured/20261108T095807Z-worker05-consolidated-source-successor/review.yaml | supports | Actual prior consolidated review preserved; this scoped confirmation does not close whole-owner or historical findings. |
+| ROWS | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-row-projections.json | supports | Previously executed native mapping projections reused only for the exact unchanged payload and baseline bytes; not claimed newly executed. |
+| OVERLAY-COMMAND | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/full-overlay.receipt.json | supports | Actual executed command and exit code. |
+| STRICT-COMMAND | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/strict-dependencies.receipt.json | supports | Actual executed command and exit code. |
+| ACCOUNTING-COMMAND | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.receipt.json | supports | Actual executed command and exit code. |
+| LINEAGE-COMMAND | reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/lineage.receipt.json | supports | Actual executed command and exit code. |
+
+## Limits And Additional Notes
+
+- This is a bounded confirmation successor, not final whole-owner, role, source-case, organism or export approval. No historical structured finding is terminally closed or rewritten.
+- Five generic references require co-application of exact accepted mesh:D010461 parent; the frozen earlier local target is historical. Unknown animal/supplier/digest facts do not make generic labels Bacto.
+- Ten unresolved part identities remain UNMAPPED, preserving literal/interpreted names, quantities, original provenance and exact source prerequisites. Unsupported inherited recipe assertions remain held.
+- Marine agar2216, PYGS and TOGO M2491 MRSSi base remain other-origin coordinator composition dependencies; no duplicate proposal or new worker source case is introduced.
+- GYPS Bacto reference is retained; Marine Broth2216 existing withdrawal is preserved. Root retains final combined-payload review and acceptance.
+- No maintained data, aggregate, source input, producer, gate, workflow, pin, export or GitHub write. Native projection evidence is exact historical execution, not falsely retimed.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T101857Z-worker05-dependent-origin-confirmation
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: W05 route-A dependent-origin confirmation
+started_at: '2026-11-08T10:18:57Z'
+finished_at: '2026-11-08T10:18:57Z'
+reviewer:
+  identity: Codex W05 /root compiler; independent science /root/final_skeptical, fresh
+    primary scopes /root/buffer_hepes and /root/buffer_tris
+  kind: agent
+  independence: self_review
+  independence_basis: Compiler authors the reference selector and native wrapper.
+    Actual separate scientific assessment binds exact full payload/source bytes in
+    PEER; compiler does not claim to be its own independent reviewer.
+skill: reconcile-review-records; add-media
+completion: completed
+verdict: needs_curation
+scientific_review: true
+summary: Twelve already published authentic route-A child origins and three existing
+  composed origins are confirmed by disjoint primary reassessment and separate exact-byte
+  skeptical review. No payload/source/proposal is changed. Unresolved source-part
+  identities and coordinator application obligations remain explicit.
+source:
+  git_revision: 108e213e96f7d423ee345ce265d692e79063127c
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml
+    sha256: f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml
+    sha256: c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+    sha256: 579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml
+    sha256: eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml
+    sha256: a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    sha256: 99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml
+    sha256: fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml
+    sha256: dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+    sha256: 8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml
+    sha256: ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml
+    sha256: 57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml
+    sha256: e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml
+    sha256: 1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml
+    sha256: c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml
+    sha256: 4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-row-projections.json
+    sha256: b1bba4fcf5baffcd88cf9dcb5d9ab81a6abb94b57b99c38deb8118ab78724c54
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/review/main-review.json
+    sha256: 9045f77118b8523e1084a80a3f915dec59b70d416c304ff061e1df5c805e667e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/selector.json
+    sha256: 0d2ed9abf348943542e720ef8413c2241ba86b9f7bfb723fec5b6d52781d6ae5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/source-scope-ledger.json
+    sha256: d9f98573543355205adacf605754bd7c188a71066bc11449d431b5d83b9a1c79
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.json
+    sha256: 9566c58c621660c3e91cf87aad74b8fe51ab0d0eb2162246dff64d344b8f3c62
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.receipt.json
+    sha256: b798a1971761a4ca4228f0e3a3b681ccea39b85312f5056a0e33397c064d511b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/full-overlay.receipt.json
+    sha256: 8dc14ea0c0326aa9cd0830bf2d7449858f003a749185296a23cc2fb3a014ab91
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/full-overlay/native-validation.json
+    sha256: bce27d22274fdf29ef0e57a4a0c472f08e94acd22411b18bbd727e3be94de4dd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/lineage.receipt.json
+    sha256: 61cb1dacbade52627db8530173c226da7031aca3d6b1d62ba456be7e4bc84127
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/original-lineage-audit.json
+    sha256: 32d31c2204d7d1a27149a3086a0332263ddf8b9dc1fb7c1e938948fff6f02cc3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/preservation.json
+    sha256: 88a15c4dd4dcfbebfab7db40f124be16107767ddb8ce2392951bd30d340772f5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/route-a-negative-controls.json
+    sha256: 74fcea54537e5a8e7ed711d38b6eaf191a6494214aa58e81676ed7bbaede72a7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/strict-dependencies.receipt.json
+    sha256: deea01643dbedc8c927b78defb3ae3a1f6aed552c9b51158404b09575f63dea8
+    role: context
+  - path: reviews/structured/20261108T095807Z-worker05-consolidated-source-successor/review.yaml
+    sha256: 372e2eda911b6758bce2263c71fae6e1ddbdc1ed3d5a69e8c1d0cdaf01ee21f9
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: All15 exact complete dependent payloads, five generic and ten ambiguous/composed,
+    plus contextual20-claim coverage in PEER and controls. Other-worker current payloads
+    are not approved here.
+  selection: Exact15 references in selector.json, preserving the complete unchanged188D/155P
+    predecessor core.
+  coverage: full
+  population_size: 15
+  reviewed_target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - R1193-DEP-rumen-pyglucose
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - R1193-DEP-rumen-pyg
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+targets:
+- target_id: M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+  kind: source
+  label: Fastidious Anaerobe Broth With Meat Granules
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC03
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml
+  kind: source
+  label: Glucose Peptone-yeast Extract
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC06
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml
+  kind: source
+  label: PY-cellobiose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-cellobiose.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC07
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml
+  kind: source
+  label: PY-fructose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-fructose.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: R1193-DEP-rumen-pyglucose
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+  kind: source
+  label: PY-glucose-rumen Fluid
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC09
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml
+  kind: source
+  label: PY-maltose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-maltose.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC10
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml
+  kind: source
+  label: PY-pectin
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-pectin.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC11
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml
+  kind: source
+  label: PYEG
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYEG.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC12
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml
+  kind: source
+  label: PYG-0.02% Tween 80
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG-002_Tween_80.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC13
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml
+  kind: source
+  label: PYG
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: R1193-DEP-rumen-pyg
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml
+  kind: source
+  label: PYG + Rumen Fluid
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG_Rumen_Fluid.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC16
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml
+  kind: source
+  label: Peptone-yeast Extract-glucose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC17
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+  kind: source
+  label: Peptone + Beef Extract + Yeast Extract
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC18
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml
+  kind: source
+  label: Peptone + Yeast Extract
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Yeast_Extract.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC19
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml
+  kind: source
+  label: Yeast Extract + Peptone
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Yeast_Extract_Peptone.yaml
+    role: Authentic child proposal origin; coordinator owns maintained application.
+assessments:
+- assessment_id: ASSESS-M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: Falsen distinguishes Oxoid FAB from the separately named Anaerobe Systems
+    fermentation broth. Neither that other broth nor the Neogen/Acumedia comparators
+    identifies the original FAB peptone or meat granules. Both withdrawals remain
+    justified, while inherited starch/glucose are explicitly unverified. The unsupported
+    resolving ID is absent and reference_scope remains UNMAPPED; original interpretation
+    method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML
+    content, original history/evidence, raw names, quantities or their absence, whole
+    identity and source-qualified holds are preserved. This is a bounded reference
+    review, not approval of unchanged historical mappings, other components, roles,
+    organism assays, owner application or exports.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "root": "artifact", "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"},
+    "authentic_before": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Source-bound FAB method/catalogue/version connecting the original experiment
+    to its peptone input, and separately its granules. Do not use the separate PYG
+    tubes or current alternative product formula as that bridge."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC03
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The Anaerofustis raw field explicitly spells glucose peptone-yeast extract.
+    This supports an ordinary generic named peptone input; it supplies no Bacto identity,
+    supplier, animal origin or quantities. COMPLETE is only the named-input enumeration.
+    The current mesh:D010461 target is the separately reviewed ordinary generic Peptone
+    parent c0837946; source-unspecified supplier/process details are not a new assay
+    gate. Co-application with that exact accepted parent remains required. No global
+    replacement or whole-mixture identity conclusion follows. Complete current YAML
+    content, original history/evidence, raw names, quantities or their absence, whole
+    identity and source-qualified holds are preserved. This is a bounded reference
+    review, not approval of unchanged historical mappings, other components, roles,
+    organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC03
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml",
+    "root": "artifact", "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"},
+    "authentic_before": "e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Coordinator acceptance and same-phase application of exact parent c0837946 and
+    this exact child; no additional supplier/lot fact is required for the already
+    explicit generic named part."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC06
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: Moore provides positive occurrence-bound generic peptone support for E.
+    siraeum. The independent C. polysaccharolyticum occurrence lacks an applicable
+    ingredient statement. An aggregate resolving edge would generalize beyond that
+    positive evidence. Retain the aggregate UNMAPPED interpretation and the positive
+    subset evidence; supported occurrence-specific scope may be proposed later without
+    a guessed split. The unsupported resolving ID is absent and reference_scope remains
+    UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain
+    explicit. Complete current YAML content, original history/evidence, raw names,
+    quantities or their absence, whole identity and source-qualified holds are preserved.
+    This is a bounded reference review, not approval of unchanged historical mappings,
+    other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC06
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml",
+    "root": "artifact", "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"},
+    "authentic_before": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "An applicable original C. polysaccharolyticum recipe/explicit peptone statement,
+    plus source linkage sufficient to support the aggregate or disjoint occurrence
+    scope. The E. siraeum result cannot stand in for the other observation."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC07
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: C. formicaceticum and fructose context are established by the raw observation
+    and accessible Andreesen abstract; the original PY ingredient list is not. Neither
+    abbreviation expansion nor an alternative current culture recipe establishes a
+    digest here. The unsupported resolving ID is absent and reference_scope remains
+    UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain
+    explicit. Complete current YAML content, original history/evidence, raw names,
+    quantities or their absence, whole identity and source-qualified holds are preserved.
+    This is a bounded reference review, not approval of unchanged historical mappings,
+    other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC07
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-fructose.yaml",
+    "root": "artifact", "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"},
+    "authentic_before": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Original Andreesen1970 methods or the source chapter/protocol it uses, linked
+    to this observation, supplying the named constituent. No detailed assay or complete
+    species inventory is required merely to support an explicitly named generic ingredient."}'
+- assessment_id: ASSESS-R1193-DEP-rumen-pyglucose
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The raw observation is T. socranskii with the original link to subsp. paredis.
+    The Smibert abstract supports rumen/fatty-acid context but not the PY ingredient.
+    Peptone remains interpreted UNMAPPED; literal rumen fluid remains UNMAPPED, without
+    asserting that missing clarification evidence proves untreated fluid. The unsupported
+    resolving ID is absent and reference_scope remains UNMAPPED; original interpretation
+    method and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML
+    content, original history/evidence, raw names, quantities or their absence, whole
+    identity and source-qualified holds are preserved. This is a bounded reference
+    review, not approval of unchanged historical mappings, other components, roles,
+    organism assays, owner application or exports.
+  target_ids:
+  - R1193-DEP-rumen-pyglucose
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml",
+    "root": "artifact", "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"},
+    "authentic_before": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Original method or directly cited recipe for this source occurrence identifying
+    the PY input; separate evidence of rumen-fluid processing is needed only for any
+    proposed processing-qualified identity. Unrelated Prevotella recipes do not qualify."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC09
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: Moore confirms C. leptum PY-maltose use, but the historical basal recipe
+    remains unavailable. Current DSM753 has two separate peptones; choosing either
+    for the old single edge would require a demonstrated source bridge. No current
+    comparator amount is imported. The unsupported resolving ID is absent and reference_scope
+    remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness
+    remain explicit. Complete current YAML content, original history/evidence, raw
+    names, quantities or their absence, whole identity and source-qualified holds
+    are preserved. This is a bounded reference review, not approval of unchanged historical
+    mappings, other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC09
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-maltose.yaml",
+    "root": "artifact", "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"},
+    "authentic_before": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "The applicable historical manual/method recipe bound to the Moore1976 C. leptum
+    observation. Current DSM753 ingredient names and quantities must not be imported
+    into that historical record by similarity."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC10
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: ATCC1223 names BD211910 Polypeptone separately from Heart Infusion. This
+    current product-specific comparator cannot establish the historical T. pectinovorum
+    PY-pectin ingredient. The withdrawal preserves exact source and product boundaries.
+    The unsupported resolving ID is absent and reference_scope remains UNMAPPED; original
+    interpretation method and UNKNOWN/PARTIAL completeness remain explicit. Complete
+    current YAML content, original history/evidence, raw names, quantities or their
+    absence, whole identity and source-qualified holds are preserved. This is a bounded
+    reference review, not approval of unchanged historical mappings, other components,
+    roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC10
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-pectin.yaml",
+    "root": "artifact", "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"},
+    "authentic_before": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Original T. pectinovorum PY-pectin methods or a documented applicable recipe
+    version linking that observation to its peptone input. ATCC1223 alone is insufficient
+    for historical product identity."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC11
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The original PYEG observation concerns C. scindens. Accessible Morris metadata/abstract
+    do not expose the formula; another taxon recipe cannot supply it. Retaining an
+    explicitly interpreted name with UNKNOWN completeness is preferable to asserting
+    a universal three-part recipe. The unsupported resolving ID is absent and reference_scope
+    remains UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness
+    remain explicit. Complete current YAML content, original history/evidence, raw
+    names, quantities or their absence, whole identity and source-qualified holds
+    are preserved. This is a bounded reference review, not approval of unchanged historical
+    mappings, other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC11
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYEG.yaml",
+    "root": "artifact", "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"},
+    "authentic_before": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Applicable Morris1985/source-chapter methods for C. scindens establishing the
+    PYEG ingredient list or named peptone input, without borrowing a Caulobacter formula."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC12
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The whole source label retains 0.02% Tween80. Available current alternatives
+    are not a bridge to that historical preparation. No inferred peptone amount, concentration
+    basis or alternative-strength substitution is justified. The unsupported resolving
+    ID is absent and reference_scope remains UNMAPPED; original interpretation method
+    and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content,
+    original history/evidence, raw names, quantities or their absence, whole identity
+    and source-qualified holds are preserved. This is a bounded reference review,
+    not approval of unchanged historical mappings, other components, roles, organism
+    assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC12
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml",
+    "root": "artifact", "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"},
+    "authentic_before": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "The historical0.02%Tween80 preparation recipe or a cited source protocol establishing
+    its named peptone input and qualifier scope. No substitution from current alternative
+    growth media."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC13
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The 114 raw PYG observations retain every taxon, source route and literal
+    label. The inspected occurrence-limited evidence cannot establish one digest across
+    that aggregate. This is an unresolved source-applicability question, not proof
+    that preparations are equal or distinct and not a claim to have read 114 underlying
+    publications. The unsupported resolving ID is absent and reference_scope remains
+    UNMAPPED; original interpretation method and UNKNOWN/PARTIAL completeness remain
+    explicit. Complete current YAML content, original history/evidence, raw names,
+    quantities or their absence, whole identity and source-qualified holds are preserved.
+    This is a bounded reference review, not approval of unchanged historical mappings,
+    other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC13
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG.yaml",
+    "root": "artifact", "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"},
+    "authentic_before": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Occurrence-to-recipe bindings or explicit source statements sufficient for each
+    selected scope; reuse exact evidence across a cohort only when applicability is
+    demonstrated. An abbreviation or nominal ingredient list alone is not full-formulation
+    equality."}'
+- assessment_id: ASSESS-R1193-DEP-rumen-pyg
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: E. ruminantium PYG+rumen fluid remains distinct from alternative ATCC media
+    and unrelated Prevotella examples. The unavailable original basal method does
+    not establish a digest or fluid processing. The peptone withdrawal correctly composes
+    with the earlier literal rumen-fluid withdrawal. The unsupported resolving ID
+    is absent and reference_scope remains UNMAPPED; original interpretation method
+    and UNKNOWN/PARTIAL completeness remain explicit. Complete current YAML content,
+    original history/evidence, raw names, quantities or their absence, whole identity
+    and source-qualified holds are preserved. This is a bounded reference review,
+    not approval of unchanged historical mappings, other components, roles, organism
+    assays, owner application or exports.
+  target_ids:
+  - R1193-DEP-rumen-pyg
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml",
+    "root": "artifact", "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"},
+    "authentic_before": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Original source chapter/Bryant methods or a directly bound recipe identifying
+    the PYG constituent; separate source processing evidence for any clarified or
+    animal-qualified fluid identity. Neither an alternative ATCC medium nor unrelated
+    Prevotella culture is a bridge."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC16
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The Anaerorhabdus raw field explicitly names peptone-yeast extract-glucose.
+    Its generic part is supported without asserting equivalence to the differently
+    ordered PC03 whole preparation. The current mesh:D010461 target is the separately
+    reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process
+    details are not a new assay gate. Co-application with that exact accepted parent
+    remains required. No global replacement or whole-mixture identity conclusion follows.
+    Complete current YAML content, original history/evidence, raw names, quantities
+    or their absence, whole identity and source-qualified holds are preserved. This
+    is a bounded reference review, not approval of unchanged historical mappings,
+    other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC16
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml",
+    "root": "artifact", "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"},
+    "authentic_before": "e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Coordinator acceptance and same-phase application of exact parent c0837946 and
+    this exact child; no additional supplier/lot fact is required for the already
+    explicit generic named part."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC17
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The Chordicoccus raw field explicitly lists peptone, beef extract and yeast
+    extract separately. Adjacent beef extract is not evidence that the peptone derives
+    from beef. The current mesh:D010461 target is the separately reviewed ordinary
+    generic Peptone parent c0837946; source-unspecified supplier/process details are
+    not a new assay gate. Co-application with that exact accepted parent remains required.
+    No global replacement or whole-mixture identity conclusion follows. Complete current
+    YAML content, original history/evidence, raw names, quantities or their absence,
+    whole identity and source-qualified holds are preserved. This is a bounded reference
+    review, not approval of unchanged historical mappings, other components, roles,
+    organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC17
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml",
+    "root": "artifact", "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"},
+    "authentic_before": "49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Coordinator acceptance and same-phase application of exact parent c0837946 and
+    this exact child; no additional supplier/lot fact is required for the already
+    explicit generic named part."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC18
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: Both Anaerotruncus and Proteiniclasticum raw observations explicitly name
+    peptone+yeast extract. A shared generic part does not establish a shared supplier,
+    lot or equal full formulation. The current mesh:D010461 target is the separately
+    reviewed ordinary generic Peptone parent c0837946; source-unspecified supplier/process
+    details are not a new assay gate. Co-application with that exact accepted parent
+    remains required. No global replacement or whole-mixture identity conclusion follows.
+    Complete current YAML content, original history/evidence, raw names, quantities
+    or their absence, whole identity and source-qualified holds are preserved. This
+    is a bounded reference review, not approval of unchanged historical mappings,
+    other components, roles, organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC18
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml",
+    "root": "artifact", "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"},
+    "authentic_before": "90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Coordinator acceptance and same-phase application of exact parent c0837946 and
+    this exact child; no additional supplier/lot fact is required for the already
+    explicit generic named part."}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC19
+  area: identity
+  topic: Exact complete dependent payload and bounded source-part disposition
+  outcome: supported
+  summary: The Proteiniborus raw field explicitly names yeast extract+peptone. Generic
+    input support does not merge the reversed-order whole owner or establish an animal/supplier
+    origin. The current mesh:D010461 target is the separately reviewed ordinary generic
+    Peptone parent c0837946; source-unspecified supplier/process details are not a
+    new assay gate. Co-application with that exact accepted parent remains required.
+    No global replacement or whole-mixture identity conclusion follows. Complete current
+    YAML content, original history/evidence, raw names, quantities or their absence,
+    whole identity and source-qualified holds are preserved. This is a bounded reference
+    review, not approval of unchanged historical mappings, other components, roles,
+    organism assays, owner application or exports.
+  target_ids:
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - PEER
+  - SCOPE
+  - CONTROLS
+  details: '{"after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml",
+    "root": "artifact", "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"},
+    "authentic_before": "6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6",
+    "causal_not_observed_recipe": true, "original_author": "/root/buffer_tris", "remaining_source_prerequisite":
+    "Coordinator acceptance and same-phase application of exact parent c0837946 and
+    this exact child; no additional supplier/lot fact is required for the already
+    explicit generic named part."}'
+checks:
+- check_id: SCIENCE
+  name: Independent15 complete-payload scientific review
+  status: passed
+  required: true
+  summary: Separate reviewer assessment, not a command or compiler self-approval.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - R1193-DEP-rumen-pyglucose
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - R1193-DEP-rumen-pyg
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - PEER
+- check_id: OVERLAY
+  name: Complete guarded candidate and native partonomy
+  status: passed
+  required: true
+  command: .temp/all-unmatched-worker-05/venv/bin/python reports/all_unmatched_20261107/worker-05/final-correction-v1/control/validate_overlay_v2.py
+    --proposals reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json
+    --out .temp/w05-dependency-route-a-confirmation-v1/validation/full-overlay
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Fresh read-only validation, scoped to exact selected bytes; no maintained
+    or release approval.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - R1193-DEP-rumen-pyglucose
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - R1193-DEP-rumen-pyg
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - OVERLAY
+  - OVERLAY-COMMAND
+- check_id: STRICT
+  name: Closed-schema15 dependent payloads
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    scripts/validate_strict.py /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml
+    --workers 1 --out /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-dependency-route-a-confirmation-v1/validation/strict-dependencies/failures.tsv
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Fresh read-only validation, scoped to exact selected bytes; no maintained
+    or release approval.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - R1193-DEP-rumen-pyglucose
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - R1193-DEP-rumen-pyg
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - CONTROLS
+  - STRICT-COMMAND
+- check_id: ACCOUNTING
+  name: Exact188-case accounting
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py
+    --shard /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-05.json
+    --decisions /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+    --evidence /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/evidence.json
+    --proposals /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json
+    --artifact-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05
+    --source-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5
+    --mim-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree
+    --output /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.json
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Fresh read-only validation, scoped to exact selected bytes; no maintained
+    or release approval.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - R1193-DEP-rumen-pyglucose
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - R1193-DEP-rumen-pyg
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - ACCOUNTING
+  - ACCOUNTING-COMMAND
+- check_id: LINEAGE
+  name: All138 original proposal lineages
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/final-correction-v1/control/audit_lineage.py
+    --core /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core
+    --out /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/original-lineage-audit.json
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Fresh read-only validation, scoped to exact selected bytes; no maintained
+    or release approval.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - R1193-DEP-rumen-pyglucose
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - R1193-DEP-rumen-pyg
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - LINEAGE
+  - LINEAGE-COMMAND
+evidence:
+- evidence_id: PEER
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/review/main-review.json
+  snapshot_sha256: 9045f77118b8523e1084a80a3f915dec59b70d416c304ff061e1df5c805e667e
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Current independent skeptical source and exact full-payload confirmation
+    by the named separate reviewer.
+- evidence_id: SCOPE
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/source-scope-ledger.json
+  snapshot_sha256: d9f98573543355205adacf605754bd7c188a71066bc11449d431b5d83b9a1c79
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Exact authentic origins, attributed source assessment and individual unresolved
+    source prerequisites.
+- evidence_id: SELECTOR
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/selector.json
+  snapshot_sha256: 0d2ed9abf348943542e720ef8413c2241ba86b9f7bfb723fec5b6d52781d6ae5
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Reference-only successor retaining complete188-case155-proposal selector
+    and unchanged full payloads.
+- evidence_id: CONTROLS
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/route-a-negative-controls.json
+  snapshot_sha256: 74fcea54537e5a8e7ed711d38b6eaf191a6494214aa58e81676ed7bbaede72a7
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Five generic references, seven new and three composed withdrawals, GYPS
+    retained, Marine preserved, other-worker routes explicit.
+- evidence_id: OVERLAY
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/full-overlay/native-validation.json
+  snapshot_sha256: bce27d22274fdf29ef0e57a4a0c472f08e94acd22411b18bbd727e3be94de4dd
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Fresh155 guarded/schema payload replay and3029-record full candidate partonomy.
+- evidence_id: ACCOUNTING
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.json
+  snapshot_sha256: 9566c58c621660c3e91cf87aad74b8fe51ab0d0eb2162246dff64d344b8f3c62
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Fresh exact188-case accounting with unchanged source scope.
+- evidence_id: LINEAGE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/original-lineage-audit.json
+  snapshot_sha256: 32d31c2204d7d1a27149a3086a0332263ddf8b9dc1fb7c1e938948fff6f02cc3
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Fresh138-original-lineage accounting.
+- evidence_id: PRESERVATION
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/preservation.json
+  snapshot_sha256: 88a15c4dd4dcfbebfab7db40f124be16107767ddb8ce2392951bd30d340772f5
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Predecessor and private sealed packet hash preservation.
+- evidence_id: PREVIOUS
+  kind: prior_review
+  reference: reviews/structured/20261108T095807Z-worker05-consolidated-source-successor/review.yaml
+  snapshot_sha256: 372e2eda911b6758bce2263c71fae6e1ddbdc1ed3d5a69e8c1d0cdaf01ee21f9
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Actual prior consolidated review preserved; this scoped confirmation does
+    not close whole-owner or historical findings.
+- evidence_id: ROWS
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-row-projections.json
+  snapshot_sha256: b1bba4fcf5baffcd88cf9dcb5d9ab81a6abb94b57b99c38deb8118ab78724c54
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Previously executed native mapping projections reused only for the exact
+    unchanged payload and baseline bytes; not claimed newly executed.
+- evidence_id: OVERLAY-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/full-overlay.receipt.json
+  snapshot_sha256: 8dc14ea0c0326aa9cd0830bf2d7449858f003a749185296a23cc2fb3a014ab91
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Actual executed command and exit code.
+- evidence_id: STRICT-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/strict-dependencies.receipt.json
+  snapshot_sha256: deea01643dbedc8c927b78defb3ae3a1f6aed552c9b51158404b09575f63dea8
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Actual executed command and exit code.
+- evidence_id: ACCOUNTING-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/exact-accounting.receipt.json
+  snapshot_sha256: b798a1971761a4ca4228f0e3a3b681ccea39b85312f5056a0e33397c064d511b
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Actual executed command and exit code.
+- evidence_id: LINEAGE-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/validation/lineage.receipt.json
+  snapshot_sha256: 61cb1dacbade52627db8530173c226da7031aca3d6b1d62ba456be7e4bc84127
+  accessed_at: '2026-11-08T10:18:57Z'
+  support: supports
+  summary: Actual executed command and exit code.
+findings: []
+actions: []
+limitations:
+- This is a bounded confirmation successor, not final whole-owner, role, source-case,
+  organism or export approval. No historical structured finding is terminally closed
+  or rewritten.
+- Five generic references require co-application of exact accepted mesh:D010461 parent;
+  the frozen earlier local target is historical. Unknown animal/supplier/digest facts
+  do not make generic labels Bacto.
+- Ten unresolved part identities remain UNMAPPED, preserving literal/interpreted names,
+  quantities, original provenance and exact source prerequisites. Unsupported inherited
+  recipe assertions remain held.
+- Marine agar2216, PYGS and TOGO M2491 MRSSi base remain other-origin coordinator
+  composition dependencies; no duplicate proposal or new worker source case is introduced.
+- GYPS Bacto reference is retained; Marine Broth2216 existing withdrawal is preserved.
+  Root retains final combined-payload review and acceptance.
+- No maintained data, aggregate, source input, producer, gate, workflow, pin, export
+  or GitHub write. Native projection evidence is exact historical execution, not falsely
+  retimed.
+links:
+- reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/README.md
+- reports/all_unmatched_20261107/worker-05/dependency-route-a-confirmation-v1/selector.json
+```

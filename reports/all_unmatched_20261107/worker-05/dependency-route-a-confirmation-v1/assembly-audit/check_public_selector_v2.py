@@ -1,0 +1,45 @@
+from pathlib import Path
+import hashlib,json,datetime,yaml,re
+W=Path.cwd();B=W/'reports/all_unmatched_20261107/worker-05';P=B/'buffer-parts-v1';Q=B/'dependency-route-a-confirmation-v1';S=W/'.temp/w05-dependency-route-a-confirmation-v1';R=S/'assembly-audit'
+j=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();oh=lambda v:hashlib.sha256(json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+checks=[];bound=[]
+def ck(n,v):
+ assert v,n;checks.append(n)
+def bind(p):
+ r=dict(path=str(p.relative_to(W)) if p.is_relative_to(W) else str(p),sha256=sha(p));bound.append(r);return r
+def reference(r):
+ p=W/r['path'];ck('bound reference '+r['path'],sha(p)==r['sha256']);return p
+sel=j(Q/'selector.json');ck('expected exact selector',sha(Q/'selector.json')=='0d2ed9abf348943542e720ef8413c2241ba86b9f7bfb723fec5b6d52781d6ae5');ck('reference-only scope',sel['type']=='reference_only_successor' and sel['new_cases']==sel['new_proposals']==sel['payload_changes']==0)
+reference(sel['predecessor_selector'])
+for r in sel['canonical_core']:reference(r)
+ps=j(P/'core/proposals.json')['proposals'];pi={p['proposal_id']:p for p in ps};ds=j(P/'core/decisions.json')['decisions'];es=j(P/'core/evidence.json')['evidence'];lineage=j(P/'core/proposal-lineage.json')
+ck('complete predecessor core counts',sel['counts']==dict(cases=len(ds),proposals=len(ps),original_proposals=lineage['original_count'],evidence=len(es),occurrence_memberships=sum(len(d['occurrence_ids']) for d in ds)))
+deps=j(P/'dependencies-direct-v1/proposals.json')['proposals'];ck('exact fifteen dependent IDs',{r['proposal_id'] for r in sel['dependency_proposals']}=={p['proposal_id'] for p in deps} and len(deps)==15)
+for r in sel['dependency_proposals']:
+ p=pi[r['proposal_id']];ck('exact full proposal object '+p['proposal_id'],oh(p)==r['canonical_proposal_object_sha256']);ck('selected metadata '+p['proposal_id'],all(r[k]==p[k] for k in ['owner_path','before_sha256','after_capture']) and r['source_case_ids']==p['case_ids']);ck('selected payload hash '+p['proposal_id'],sha(B/r['after_capture']['path'])==r['after_capture']['sha256']);dr=p['dependency_reassessment'];ck('causal scope author retained '+p['proposal_id'],r['causal_parent_case']==dr['causal_parent_case_id'] and r['causal_parent_case_input_sha256']==dr['case_input_sha256'] and r['payload_author']==dr['author'] and r['child_recipe_observed_in_causal_source_case'] is False)
+parent=sel['conditional_generic_parent'];ck('conditional exact parent',parent['after_capture']==pi[parent['proposal_id']]['after_capture'] and sha(B/parent['after_capture']['path'])==parent['after_capture']['sha256'] and yaml.safe_load((B/parent['after_capture']['path']).read_text())['identifier']==parent['identifier']=='mesh:D010461')
+ledger=j(Q/'source-scope-ledger.json');old=j(reference(ledger['exact_existing_source_assessment']));reference(ledger['source_observations']);reference(ledger['source_read_ledger']);oldrows={r['proposal_id']:r for r in old['rows']};ck('fifteen historical row identities',set(oldrows)=={r['proposal_id'] for r in ledger['rows']} and len(ledger['rows'])==15)
+for r in ledger['rows']:ck('historical row exact projection '+r['proposal_id'],all(oldrows[r['proposal_id']][k]==v for k,v in r.items()))
+ck('five unchanged outside-scope dispositions',ledger['remaining_plan_claims']==old['out_of_lane_context'] and len(ledger['remaining_plan_claims'])==5)
+nc=j(Q/'validation/route-a-negative-controls.json');ck('three non-W05 dependencies explicit',sel['root_integration_obligations']==nc['other_worker_generic_dependencies'] and len(sel['root_integration_obligations'])==3)
+for r in nc['authentic_missing_origins']:
+ p=pi[r['proposal_id']];rec=yaml.safe_load((B/p['after_capture']['path']).read_text());ix=int(re.search(r'\[(\d+)\]',r['claim_key']).group(1));ck('exact control component '+p['proposal_id'],rec['components'][ix]==r['selected_component']);part=rec['components'][ix];ck('generic or withdrawal control '+p['proposal_id'],(part.get('component_id')=='mesh:D010461' and part['reference_scope']=='MIM_CATALOG') if p['proposal_id'] in nc['generic_ids'] else ('component_id' not in part and part['reference_scope']=='UNMAPPED'))
+gy=nc['GYPS'];ck('GYPS retained with no proposal',sha(W/gy['path'])==gy['sha256'] and all(p['owner_path']!=gy['path'] for p in ps) and yaml.safe_load((W/gy['path']).read_text())['components'][2]==gy['component'])
+ma=nc['Marine_Broth_2216'];ck('Marine existing withdrawal exact',ma['after_capture']==pi[ma['proposal_id']]['after_capture'] and yaml.safe_load((B/ma['after_capture']['path']).read_text())['components'][0]==ma['component'] and 'component_id' not in ma['component'])
+for n in ['full-overlay','strict-dependencies','exact-accounting','lineage']:
+ r=j(Q/f'validation/{n}.receipt.json');ck('actual command successful '+n,r['exit_code']==0 and isinstance(r['command'],list) and len(r['command'])>1)
+failed=j(Q/'diagnostics/private-output-attempt/exact-accounting.receipt.json');ck('first failure preserved',failed['exit_code']==1 and 'receipt must stay inside the explicit worker artifact root' in (Q/'diagnostics/private-output-attempt/exact-accounting.stderr.log').read_text());ck('successful accounting output public',str(Q/'validation/exact-accounting.json') in j(Q/'validation/exact-accounting.receipt.json')['command'])
+acc=j(Q/'validation/exact-accounting.json');ck('full accounting scope',acc['structural_accounting']=='PASS' and acc['scientific_adequacy_or_approval_established'] is False and acc['accounted_case_count']==188 and acc['proposal_count']==155 and acc['evidence_count']==1767 and set(acc['accounted_case_ids'])=={d['case_id'] for d in ds} and not acc['out_of_scope_shard_case_ids'])
+for path,h in acc['input_hashes'].items():ck('fresh accounting bound input '+path,sha(Path(path))==h)
+ov=j(Q/'validation/full-overlay/native-validation.json');ck('overlay exact selected proposals',reference(ov['inputs']['proposals'])==P/'core/proposals.json');ck('full overlay counts and status',ov['status']=='PASS' and ov['baseline_records']==2956 and ov['candidate_payloads']==155 and ov['overlay_records']==3029 and not ov['errors'] and not ov['partonomy_violations']);ck('command binds native result',j(Q/'validation/full-overlay.receipt.json')['native_receipt_sha256']==sha(Q/'validation/full-overlay/native-validation.json'))
+for r in ov['native_implementations']:reference(r)
+readbacks={sha(f) for f in (S/'validation/full-overlay/guarded-readback').glob('*.yaml')}
+ck('155 guarded full payload receipts',len(ov['guarded_payloads'])==155 and {r['proposal_id'] for r in ov['guarded_payloads']}==set(pi))
+for r in ov['guarded_payloads']:
+ ck('exact guarded full payload '+r['proposal_id'],r['selected_capture']==pi[r['proposal_id']]['after_capture'] and r['guarded_schema']=='PASS' and r['selected_capture']['sha256']==r['guarded_readback_sha256'] and r['guarded_readback_sha256'] in readbacks)
+la=j(Q/'validation/original-lineage-audit.json');ck('138 original lineages plus155 selected',la['original_proposals_accounted']==138 and la['selected_proposals']==155)
+strict=j(Q/'validation/strict-dependencies.receipt.json')['command'];ck('strict exact15 files',{str(B/p['after_capture']['path']) for p in deps}=={x for x in strict if x.endswith('.yaml')})
+for f in [Q/'selector.json',Q/'source-scope-ledger.json',Q/'README.md',S/'control/build_native_review.py']+sorted((Q/'validation').rglob('*'))+sorted((Q/'diagnostics').rglob('*')):
+ if f.is_file():bind(f)
+x=dict(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),reviewer='/root/assembly_audit',status='PASS_SELECTOR_LEDGER_AND_RECEIPTS_PENDING_FINAL_NATIVE_AND_SCIENCE',scope='Mechanical exact-byte source-lineage accounting only. Native helper reviewed statically; generated review and final current skeptical receipt not yet certified.',prior_audit=bind(R/'source-lineage-preservation-v1.json'),public_artifacts=bound,checks=checks,check_count=len(checks),new_findings=[],historical_attribution_note='source-scope-ledger rows and precise_remaining_requirement are exact attributed historical projections. Their earlier requests for review are not rewritten; fresh named scientific and skeptical assessments must establish current scoped review separately. No global owner, source, role or export approval is implied.',native_helper_assessment='The helper scopes exactly15 target captures, labels compiler self_review, cites separate peer scientific evidence and actual command/exit receipts, retains needs_curation and precise source holds, and labels original row projections historical. Its execution and resulting source snapshots await final review.',limitations=['Final skeptical15 receipt and generated native saved pair remain pending.','No cross-worker live payload status is asserted.','This mechanical audit does not reauthor or grant primary scientific approval.'])
+f=R/'public-selector-and-receipts-v1.json';assert not f.exists();f.write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n');print(json.dumps(dict(status=x['status'],checks=len(checks),sha256=sha(f))))

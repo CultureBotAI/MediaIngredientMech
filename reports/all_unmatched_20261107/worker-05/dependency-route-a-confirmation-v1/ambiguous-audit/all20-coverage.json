@@ -1,0 +1,372 @@
+{
+  "head": "108e213e96f7d423ee345ce265d692e79063127c",
+  "claim_count": 20,
+  "distinct_claim_keys": 20,
+  "counts": {
+    "ambiguous_withdrawals": 10,
+    "generic_W05_missing_origin_confirmed_by_separate_author": 5,
+    "generic_existing_other_worker_origins": 3,
+    "source_specific_Bacto_retained": 1,
+    "existing_Marine_product_withdrawal": 1
+  },
+  "rows": [
+    {
+      "target_id": "PC01",
+      "claim_key": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": [
+        {
+          "origin_id": "w05::M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "exact_committed_component_at_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        }
+      ],
+      "current_W05_proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC02",
+      "claim_key": "data/ingredients/mapped/GYPS.yaml#components[2]",
+      "scientific_disposition": "RETAIN_SOURCE_SPECIFIC_BACTO",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/negative-control-or-other-owner-scope",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": null,
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC03",
+      "claim_key": "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml#components[1]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "generic-audit/assessment.json by /root/buffer_hepes",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC03",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC04",
+      "claim_key": "data/ingredients/mapped/Marine_Broth_2216.yaml#components[0]",
+      "scientific_disposition": "PRESERVE_EXISTING_MARINE_WITHDRAWAL",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/negative-control-or-other-owner-scope",
+      "authentic_source_origin": [
+        {
+          "origin_id": "w03::b-proposal-marine-aliases",
+          "head": "f6bfbf3c185f705484aa106405f813209146c766",
+          "payload_sha256": "bd529989e05657d43ff31d900f884346604655d0436c84d851eeee0474187933",
+          "git_path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Marine_Broth_2216.yaml",
+          "component_at_selected_index": {
+            "component_name": "Peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "5.0",
+            "concentration_unit": "G_PER_L"
+          },
+          "exact_committed_component_at_index": {
+            "component_name": "Peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "5.0",
+            "concentration_unit": "G_PER_L"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        },
+        {
+          "origin_id": "w05::M1193-P-MARINE2216",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "b7c5a00a78f1c6120e52ac3d88eb16833be86df317680d593e53f21047418abd",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/proposed/Marine_Broth_2216.yaml",
+          "component_at_selected_index": null,
+          "exact_committed_component_at_index": {
+            "component_name": "Peptone",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": "5",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        }
+      ],
+      "current_W05_proposal_id": null,
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC05",
+      "claim_key": "data/ingredients/mapped/Marine_agar_2216.yaml#components[0]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/negative-control-or-other-owner-scope",
+      "authentic_source_origin": [
+        {
+          "origin_id": "w04::media-alias-marine2216",
+          "head": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+          "payload_sha256": "1b07179588f4d24497a5a46ce1aef35fabb43acd50347a3c726c154c9ecca063",
+          "git_path": "reports/all_unmatched_20261107/worker-04/proposals/media/Marine_agar_2216.yaml",
+          "component_at_selected_index": {
+            "component_name": "Peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "5.0",
+            "concentration_unit": "G_PER_L"
+          },
+          "exact_committed_component_at_index": {
+            "component_name": "Peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "5.0",
+            "concentration_unit": "G_PER_L"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        }
+      ],
+      "current_W05_proposal_id": null,
+      "remaining_action": "Root owns composition of existing other-worker origin against accepted generic parent; do not mint a W05 duplicate"
+    },
+    {
+      "target_id": "PC06",
+      "claim_key": "data/ingredients/mapped/PY-cellobiose.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC06",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC07",
+      "claim_key": "data/ingredients/mapped/PY-fructose.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC07",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC08",
+      "claim_key": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": [
+        {
+          "origin_id": "w05::R1193-DEP-rumen-pyglucose",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/dependencies/after/PY-glucose-rumen_Fluid.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "exact_committed_component_at_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        }
+      ],
+      "current_W05_proposal_id": "R1193-DEP-rumen-pyglucose",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC09",
+      "claim_key": "data/ingredients/mapped/PY-maltose.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC09",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC10",
+      "claim_key": "data/ingredients/mapped/PY-pectin.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC10",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC11",
+      "claim_key": "data/ingredients/mapped/PYEG.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC11",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC12",
+      "claim_key": "data/ingredients/mapped/PYG-002_Tween_80.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC12",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC13",
+      "claim_key": "data/ingredients/mapped/PYG.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC13",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC14",
+      "claim_key": "data/ingredients/mapped/PYGS.yaml#components[0]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/negative-control-or-other-owner-scope",
+      "authentic_source_origin": [
+        {
+          "origin_id": "w06::R-P-PYGS-SOURCE-EVIDENCE",
+          "head": "82dce85aea7810941dfdf0bde7480bcdaa0c5826",
+          "payload_sha256": "365515bbd146a2cf8cd1002312a552bdd4ac8d5426b02a5838fd9ec3bfa4238d",
+          "git_path": "reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "exact_committed_component_at_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        }
+      ],
+      "current_W05_proposal_id": null,
+      "remaining_action": "Root owns composition of existing other-worker origin against accepted generic parent; do not mint a W05 duplicate"
+    },
+    {
+      "target_id": "PC15",
+      "claim_key": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]",
+      "scientific_disposition": "UNRESOLVED_IDENTITY_WITHDRAW_RESOLVING_ID",
+      "original_primary_author": "/root/peptone_ambiguous_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/full-current-payload-and-primary-source-confirmation",
+      "authentic_source_origin": [
+        {
+          "origin_id": "w05::R1193-DEP-rumen-pyg",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/dependencies/after/PYG_Rumen_Fluid.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "exact_committed_component_at_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "preview_scope_note": "Inherited component_at_selected_index is a frozen MIM_CATALOG-only preview. A null preview does not assert absence of the part; exact_committed_component_at_index is direct payload readback."
+        }
+      ],
+      "current_W05_proposal_id": "R1193-DEP-rumen-pyg",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC16",
+      "claim_key": "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml#components[0]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "generic-audit/assessment.json by /root/buffer_hepes",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC16",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC17",
+      "claim_key": "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml#components[0]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "generic-audit/assessment.json by /root/buffer_hepes",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC17",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC18",
+      "claim_key": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml#components[0]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "generic-audit/assessment.json by /root/buffer_hepes",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC18",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC19",
+      "claim_key": "data/ingredients/mapped/Yeast_Extract_Peptone.yaml#components[1]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "generic-audit/assessment.json by /root/buffer_hepes",
+      "authentic_source_origin": null,
+      "current_W05_proposal_id": "W05-DEP-PEPTONE-PC19",
+      "remaining_action": "None in W05 report-only route-A confirmation; inherited scientific/application holds remain"
+    },
+    {
+      "target_id": "PC20",
+      "claim_key": "data/ingredients/mapped/togo_m2491_mrssi_base.yaml#components[8]",
+      "scientific_disposition": "CONDITIONAL_GENERIC_REFERENCE",
+      "original_primary_author": "/root/peptone_other_sources",
+      "original_skeptical_author": "/root/peptone_skeptic",
+      "current_audit_route": "ambiguous-audit/negative-control-or-other-owner-scope",
+      "authentic_source_origin": "w02::a2-proposal-togo-m2491-mrssi-base",
+      "current_W05_proposal_id": null,
+      "remaining_action": "Root owns composition of existing other-worker origin against accepted generic parent; do not mint a W05 duplicate"
+    }
+  ]
+}

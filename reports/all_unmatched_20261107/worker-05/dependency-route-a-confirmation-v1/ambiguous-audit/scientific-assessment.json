@@ -1,0 +1,926 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-08T10:16:14.564774+00:00",
+  "reviewer": "/root/buffer_tris",
+  "llm_assisted": true,
+  "scientific_review": true,
+  "scientific_review_scope": "Bounded source-applicability confirmation of ten previously authored withdrawal payloads, plus five negative-control/other-origin contexts; no whole-owner, role, assay, case-admission or export approval.",
+  "new_findings": [],
+  "historical_finding_deduplication": [
+    "#1176 comment6719248666 dependency source scope and route-A completeness",
+    "#1176 comment6719468092 PEPTONE-SOURCE-001 FAB Oxoid versus unselected Neogen comparator",
+    "#1204/#1237 existing rumen processing withdrawals"
+  ],
+  "new_changes": [],
+  "ambiguous_rows": [
+    {
+      "target_id": "PC01",
+      "claim_key": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]",
+      "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+        "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e",
+        "bytes": 17532
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+        "sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+        "bytes": 6097
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "Falsen 2005 associates the observed FAB with Oxoid and separately names Anaerobe Systems PYG fermentation tubes. Those tubes do not supply the FAB recipe. Neogen NCM0199 and Acumedia7110 are comparators only.",
+      "unresolved_identity_or_formulation_fact": "The historical FAB input list and peptone constituent, and the meat-granule preparation actually used. The source does not establish LabM/Neogen identity; it does not prove peptone absent. Existing starch/glucose remain inherited unverified claims, not newly approved.",
+      "options": [
+        "Retain the published two UNMAPPED named parts and explicit partial interpretation.",
+        "If contemporaneous Oxoid documentation or the original method supplies an applicable generic peptone input, propose that bounded named-part identity; product-specific identity needs that product evidence."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Source-bound FAB method/catalogue/version connecting the original experiment to its peptone input, and separately its granules. Do not use the separate PYG tubes or current alternative product formula as that bridge.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://www.academia.edu/145655855/Fastidiosipila_sanguinis_gen_nov_sp_nov_a_new_Gram_positive_coccus_shaped_organism_from_human_blood",
+          "doi": "10.1099/ijs.0.63327-0",
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            },
+            {
+              "path": "original-paper-pages-web.json",
+              "sha256": "3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887"
+            }
+          ],
+          "read_extent": "Original-paper mirror text: title/authors/DOI and methods/results/species-description passages, pp853–856; publisher abstract/title independently matched. Tables, sequence analysis and references not exhaustively reviewed. No raw publisher PDF obtained.",
+          "claim": "Original paper associates the FAB preparation with Oxoid; its separate Anaerobe Systems PYG fermentation broth does not identify the FAB components.",
+          "scope": "Fastidiosipila sanguinis original study. Supports source-attribution discrepancy only; historical catalogue formulation and meat-granule composition unresolved.",
+          "source_id": "FAB_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "url": "https://www.neogen.com/499687/globalassets/pim/assets/original/10007/ncm0199_ts_en-us.pdf",
+          "files": [
+            {
+              "path": "captures/w05-direct-151.body",
+              "sha256": "3ca3efc02a4a025b34ecb3126924fdb8d6fdfe011ba5a1d543af01a344268354"
+            },
+            {
+              "path": "captures/w05-direct-151.body.reuse.json",
+              "sha256": "1061a07dc46598dd817d8c64719fc9ff0110ab3e523c6c7cd7d49daa2c4d5e67"
+            },
+            {
+              "path": "captures/w05-direct-151.extracted.txt",
+              "sha256": "6ac107cbc598b0851bd1fc815c5f76c06f572108a0155f660e1f9713586fc3fc"
+            }
+          ],
+          "read_extent": "Entire two-page manufacturer PDF read via pdftotext; exact archived bytes and original access timestamp 2026-11-08T06:22:02.501887+00:00 reused.",
+          "claim": "2019 manufacturer FAB sheet identifies a peptone mixture; it is a LabM/Neogen formulation.",
+          "scope": "Comparator only. No bridge to original-paper Oxoid attribution; cannot approve original FAB ingredient or starch/glucose assertions.",
+          "source_id": "NEOGEN_NCM0199",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "url": "https://biotrading.com/assets/productinformatie/acumedia/tds/7110.pdf",
+          "files": [
+            {
+              "path": "captures/w05-direct-155.body",
+              "sha256": "331a9e069e2db9f48dae756b62cf5eb33bff6e08f65ae3ce3916b5794132b060"
+            },
+            {
+              "path": "captures/w05-direct-155.body.reuse.json",
+              "sha256": "dfad0b89e1d3a0a806ad13b026400782abad54e74c8376e17eaf1c29693b0ddb"
+            },
+            {
+              "path": "captures/w05-direct-155.extracted.txt",
+              "sha256": "ca7b7e4d0d18ae92ca75fe764817e98dfd75a8f806b57c75cf8e381d98c7fae9"
+            }
+          ],
+          "read_extent": "Entire three-page manufacturer PDF read via pdftotext; exact archived bytes and original access timestamp 2026-11-08T06:22:43.890414+00:00 reused.",
+          "claim": "Manufacturer meat granules denote a formulated cooked-meat medium with multiple constituents.",
+          "scope": "Negative comparator against treating meat granules automatically as pure food meat; does not establish Fastidiosipila granule product.",
+          "source_id": "ACUMEDIA7110",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC06",
+      "claim_key": "data/ingredients/mapped/PY-cellobiose.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC06",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml",
+        "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f",
+        "bytes": 11724
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PY-cellobiose.yaml",
+        "sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f",
+        "bytes": 5680
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "Two source observations are retained. Moore 1976 expressly describes peptone basal medium for Eubacterium siraeum; that is positive occurrence-bound generic support. The Clostridium polysaccharolyticum observation is separate and its original publisher method attempt timed out.",
+      "unresolved_identity_or_formulation_fact": "One resolving part identity across both observations is not yet established. The referenced 1975 Anaerobe Laboratory Manual and the applicable C. polysaccharolyticum recipe were not inspected.",
+      "options": [
+        "Retain the aggregate UNMAPPED interpreted part with the positive E. siraeum evidence.",
+        "Root may later preserve occurrence-qualified support or justified formulation cohorts if source bindings support them; no owner split or identity guess is made here."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "An applicable original C. polysaccharolyticum recipe/explicit peptone statement, plus source linkage sufficient to support the aggregate or disjoint occurrence scope. The E. siraeum result cannot stand in for the other observation.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://scispace.com/pdf/emendation-of-bacteroidaceae-and-butyrivibrio-and-3spebb4661.pdf",
+          "doi": "10.1099/00207713-26-2-238",
+          "files": [
+            {
+              "path": "pdf-access-web-attempts.json",
+              "sha256": "71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3"
+            },
+            {
+              "path": "moore1976-find-web.json",
+              "sha256": "454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806"
+            },
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            }
+          ],
+          "read_extent": "Web-tool PDF text extraction of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not every page/table read. Publisher metadata matched. Direct raw PDF request returned HTML403, retained as denial, not PDF evidence.",
+          "claim": "Exact historical PY-cellobiose and PY-maltose use is confirmed for E.siraeum and C.leptum. E.siraeum text supports peptone as a basal-medium class at that occurrence; recipes refer to the 1975 Anaerobe Laboratory Manual, which was not inspected.",
+          "scope": "Occurrence-bound evidence; neither supplier-specific identity nor one common formulation for all PY/PYG labels is established.",
+          "source_id": "MOORE1976",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "url": "https://www.microbiologyresearch.org/content/journal/micro/10.1099/00221287-116-1-157",
+          "doi": "10.1099/00221287-116-1-157",
+          "files": [
+            {
+              "path": "search-original-specific-8.json",
+              "sha256": "db500532c3863151fa877fbae4d4cc13ddf0b0f073d9a5e4d4f32fe8dfc2967b"
+            },
+            {
+              "path": "original-primary-attempts-9.json",
+              "sha256": "20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe"
+            }
+          ],
+          "read_extent": "Exact citation verified from inspected Bergey reference list; search preview only, attempted original publisher page timed out. Full methods unread.",
+          "claim": "Original species-paper lead retained without formulation claim.",
+          "scope": "Does not extend E.siraeum occurrence support to C.polysaccharolyticum.",
+          "source_id": "POLYSACCHAROLYTICUM1980",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC07",
+      "claim_key": "data/ingredients/mapped/PY-fructose.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC07",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml",
+        "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a",
+        "bytes": 11197
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PY-fructose.yaml",
+        "sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6",
+        "bytes": 5627
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "The raw PY-fructose occurrence belongs to C. formicaceticum. The Andreesen1970 publisher abstract verifies the study and fructose metabolism; captured access exposes subscription preview only.",
+      "unresolved_identity_or_formulation_fact": "The historical PY base and its peptone/digest constituent are not exposed by the inspected abstract. An unrelated current DSM recipe cannot resolve it.",
+      "options": [
+        "Retain UNMAPPED peptone interpretation and UNKNOWN composition.",
+        "Reassess a directly applicable original recipe or explicit named generic input when available, preserving exact source/form scope."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Original Andreesen1970 methods or the source chapter/protocol it uses, linked to this observation, supplying the named constituent. No detailed assay or complete species inventory is required merely to support an explicitly named generic ingredient.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://link.springer.com/article/10.1007/BF00409521",
+          "doi": "10.1007/BF00409521",
+          "files": [
+            {
+              "path": "original-primary-attempts-9.json",
+              "sha256": "20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe"
+            },
+            {
+              "path": "original-primary-read-10.json",
+              "sha256": "c657e5a5d760469ab57438b096f44292f289221783df178b15d44340ed7efdfc"
+            }
+          ],
+          "read_extent": "Publisher abstract, article metadata and explicit subscription-preview boundary inspected. Full text not purchased or read.",
+          "claim": "Original C.formicaceticum study and fructose phenotyping identified; abstract does not identify digest in PY-fructose.",
+          "scope": "Bibliographic/source-access evidence only.",
+          "source_id": "ANDREESEN1970",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC08",
+      "claim_key": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]",
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096",
+        "bytes": 18557
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+        "bytes": 6482
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "The literal PY-glucose-rumen fluid observation is T. socranskii; its LPSN link identifies subsp. paredis. Smibert1984 abstract gives a rumen-fluid or short-chain-fatty-acid growth requirement, without the underlying peptone recipe.",
+      "unresolved_identity_or_formulation_fact": "The PY digest identity and the rumen-fluid preparation/clarification/animal origin remain unestablished. Missing processing information is not evidence that the fluid was untreated.",
+      "options": [
+        "Preserve the two composed withdrawals: interpreted peptone UNMAPPED and literal rumen fluid UNMAPPED.",
+        "Use a source-bound T. socranskii paredis method to support only whichever exact named ingredient/preparation it actually establishes."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Original method or directly cited recipe for this source occurrence identifying the PY input; separate evidence of rumen-fluid processing is needed only for any proposed processing-qualified identity. Unrelated Prevotella recipes do not qualify.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/00207713-34-4-457",
+          "doi": "10.1099/00207713-34-4-457",
+          "files": [
+            {
+              "path": "original-paper-pages-web.json",
+              "sha256": "3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887"
+            },
+            {
+              "path": "original-fulltext-web-attempts.json",
+              "sha256": "8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f"
+            }
+          ],
+          "read_extent": "Publisher abstract/metadata/references read; original complete methods unavailable.",
+          "claim": "Original T.socranskii species/subspecies description identified; no inspected original peptone formulation.",
+          "scope": "No resolution of inherited PY-glucose-rumen-fluid digest identity or clarified-rumen assertion.",
+          "source_id": "SMIBERT1984",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC09",
+      "claim_key": "data/ingredients/mapped/PY-maltose.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC09",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml",
+        "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7",
+        "bytes": 11287
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PY-maltose.yaml",
+        "sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0",
+        "bytes": 5505
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "Moore1976 confirms the historical C. leptum PY-maltose use. Current DSM753 medium104c instead lists Trypticase peptone BD BBL and pepsin-digested meat peptone separately, 5g each, with a maltose modification.",
+      "unresolved_identity_or_formulation_fact": "The historical single peptone edge cannot be assigned to either current digest without a source bridge. The referenced manual formulation remains unread.",
+      "options": [
+        "Retain the UNMAPPED interpreted part and absent quantities.",
+        "If the historical source names generic peptone, support that bounded class; if it names distinct digests, preserve those actual materials without arbitrary selection."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "The applicable historical manual/method recipe bound to the Moore1976 C. leptum observation. Current DSM753 ingredient names and quantities must not be imported into that historical record by similarity.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://scispace.com/pdf/emendation-of-bacteroidaceae-and-butyrivibrio-and-3spebb4661.pdf",
+          "doi": "10.1099/00207713-26-2-238",
+          "files": [
+            {
+              "path": "pdf-access-web-attempts.json",
+              "sha256": "71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3"
+            },
+            {
+              "path": "moore1976-find-web.json",
+              "sha256": "454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806"
+            },
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            }
+          ],
+          "read_extent": "Web-tool PDF text extraction of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not every page/table read. Publisher metadata matched. Direct raw PDF request returned HTML403, retained as denial, not PDF evidence.",
+          "claim": "Exact historical PY-cellobiose and PY-maltose use is confirmed for E.siraeum and C.leptum. E.siraeum text supports peptone as a basal-medium class at that occurrence; recipes refer to the 1975 Anaerobe Laboratory Manual, which was not inspected.",
+          "scope": "Occurrence-bound evidence; neither supplier-specific identity nor one common formulation for all PY/PYG labels is established.",
+          "source_id": "MOORE1976",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "url": "https://bacmedia.dsmz.de/medium/104c?ccno=DSM+753",
+          "files": [
+            {
+              "path": "captures/dsmz104c-dsm753.html",
+              "sha256": "aade50e41ec462a73e20f3c4d5f4e6da2ddb3c1dcbbcf842918b169aa9968305"
+            },
+            {
+              "path": "captures/dsmz104c-dsm753.html.capture.json",
+              "sha256": "9cc9d2298591ee920fc507f6070bd5fec49056084682769d364271845729676d"
+            }
+          ],
+          "read_extent": "Captured original HTML inspected at strain selection/modification, Main sol.104c component table and named digest rows. No historical equivalence certificate.",
+          "claim": "Current C.leptum DSM753 repository recipe contains separate Trypticase peptone (BD BBL) and pepsin-digested meat peptone, 5g each, and substitutes D-maltose for glucose.",
+          "scope": "Current strain-specific comparator, not proof that the historic PY-maltose single peptone edge denotes either product.",
+          "source_id": "DSMZ104C_DSM753",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC10",
+      "claim_key": "data/ingredients/mapped/PY-pectin.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC10",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml",
+        "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48",
+        "bytes": 10819
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PY-pectin.yaml",
+        "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+        "bytes": 5326
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "Smibert1983 abstract establishes T. pectinovorum context. The complete ATCC1223 sheet names Polypeptone Peptone BD211910 5g and a separate heart-infusion broth input.",
+      "unresolved_identity_or_formulation_fact": "No documented bridge establishes that the historic PY-pectin observation uses ATCC1223 or its specified product. Bacto Peptone and Hipolypepton are not interchangeable with that comparator.",
+      "options": [
+        "Retain UNMAPPED interpreted peptone and unknown quantities.",
+        "Reassess the historical recipe or a documented source-version bridge; apply a named generic or specific product identity only to its supported occurrence."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Original T. pectinovorum PY-pectin methods or a documented applicable recipe version linking that observation to its peptone input. ATCC1223 alone is insufficient for historical product identity.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/00207713-33-4-852",
+          "doi": "10.1099/00207713-33-4-852",
+          "files": [
+            {
+              "path": "original-paper-pages-web.json",
+              "sha256": "3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887"
+            },
+            {
+              "path": "original-fulltext-web-attempts.json",
+              "sha256": "8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f"
+            }
+          ],
+          "read_extent": "Publisher abstract/metadata/references read; original complete methods unavailable.",
+          "claim": "Original T.pectinovorum description identified; abstract describes pectin and rumen-fluid/short-chain-fatty-acid requirement but does not supply peptone identity.",
+          "scope": "No formula or historical bridge to ATCC1223 inspected.",
+          "source_id": "SMIBERT1983",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "url": "https://www.atcc.org/~/media/8c253e70949144a6b7038ad5024f8f1d.ashx",
+          "files": [
+            {
+              "path": "captures/atcc1223.pdf",
+              "sha256": "e2957346d4080023473f8cca8eaf72a6a22b523a2cffbe6ed29685a8384c4867"
+            },
+            {
+              "path": "captures/atcc1223.pdf.capture.json",
+              "sha256": "6f648e39d7bc5dcc084a22a1e263dfd3a0745a753f2127e7d75f15f133ff2132"
+            },
+            {
+              "path": "captures/atcc1223.extracted.txt",
+              "sha256": "7185888f217b2b8c41a3b3a9f29f6959e80ba663aaf073c85fb36e829739dbdc"
+            }
+          ],
+          "read_extent": "Entire one-page authentic ATCC PDF read via pdftotext, including composition and preparation.",
+          "claim": "ATCC1223 for T.pectinovorum specifies Polypeptone Peptone (BD211910), 5g, alongside a distinct heart-infusion ingredient and other components.",
+          "scope": "Current authentic repository recipe; no demonstrated identity with historic PY-pectin observation. Polypeptone must not be replaced by Bacto Peptone or Hipolypepton.",
+          "source_id": "ATCC1223",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC11",
+      "claim_key": "data/ingredients/mapped/PYEG.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC11",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml",
+        "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0",
+        "bytes": 10821
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PYEG.yaml",
+        "sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a",
+        "bytes": 5405
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "The raw PYEG observation belongs to C. scindens. Morris1985 abstract and metadata match the taxon; the offered full methods were not accessible. Caulobacter recipe leads concern another taxon.",
+      "unresolved_identity_or_formulation_fact": "The original PYEG formulation and its digest identity remain unread; the abbreviation does not demonstrate a universal three-part recipe.",
+      "options": [
+        "Retain the UNMAPPED interpreted part with UNKNOWN composition.",
+        "Reassess a source-bound explicit generic input or precise material from the original study when available."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Applicable Morris1985/source-chapter methods for C. scindens establishing the PYEG ingredient list or named peptone input, without borrowing a Caulobacter formula.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/00207713-35-4-478",
+          "doi": "10.1099/00207713-35-4-478",
+          "files": [
+            {
+              "path": "original-paper-pages-web.json",
+              "sha256": "3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887"
+            },
+            {
+              "path": "original-fulltext-web-attempts.json",
+              "sha256": "8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f"
+            }
+          ],
+          "read_extent": "Publisher title/abstract/references inspected; offered HTML full text unavailable. No original formula inspected.",
+          "claim": "Matched original C.scindens study identified; no inspected recipe establishes PYEG ingredient identity.",
+          "scope": "Bibliographic/source-access evidence only.",
+          "source_id": "MORRIS1985",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC12",
+      "claim_key": "data/ingredients/mapped/PYG-002_Tween_80.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC12",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml",
+        "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec",
+        "bytes": 11768
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+        "sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f",
+        "bytes": 6097
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "The raw PYG-0.02% Tween80 observation belongs to Holdemanella biformis, historically Eubacterium biforme. The current ATCC27806 lead lists different alternatives, including chopped-meat medium with1%Tween80; direct current-page access timed out.",
+      "unresolved_identity_or_formulation_fact": "No source bridge identifies the original PYG base or its peptone. The 0.02% qualifier remains in the whole raw name, without inferred constituent amount or concentration basis.",
+      "options": [
+        "Retain UNMAPPED peptone and the exact whole-preparation label.",
+        "Use an original source recipe/version bound to the0.02%preparation; keep any current1%alternative separate."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "The historical0.02%Tween80 preparation recipe or a cited source protocol establishing its named peptone input and qualifier scope. No substitution from current alternative growth media.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://www.atcc.org/products/27806",
+          "files": [
+            {
+              "path": "search-original-specific-8.json",
+              "sha256": "db500532c3863151fa877fbae4d4cc13ddf0b0f073d9a5e4d4f32fe8dfc2967b"
+            },
+            {
+              "path": "original-primary-attempts-9.json",
+              "sha256": "20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe"
+            }
+          ],
+          "read_extent": "Current repository search preview offered different growth media; direct page timed out. No original 0.02%Tween80 recipe inspected.",
+          "claim": "No source bridge from current growth-media listing to legacy PYG-0.02%Tween80 established.",
+          "scope": "Discovery/access evidence only, not chemistry proof.",
+          "source_id": "BIFORMIS_CURRENT",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC13",
+      "claim_key": "data/ingredients/mapped/PYG.yaml#components[0]",
+      "proposal_id": "W05-DEP-PEPTONE-PC13",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml",
+        "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9",
+        "bytes": 11831
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PYG.yaml",
+        "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83",
+        "bytes": 5758
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "All114 PYG observations are preserved and checked against full archived database rows. Inspected occurrence-limited papers and current DSMZ recipes do not demonstrate one common digest identity across them.",
+      "unresolved_identity_or_formulation_fact": "A common component identity for the aggregate is unestablished. This audit has not obtained114 underlying articles and does not claim that coverage. Absent formula details do not prove equal or distinct preparations.",
+      "options": [
+        "Keep the aggregate interpreted part UNMAPPED and all114 source occurrences.",
+        "Root may later support occurrence-qualified generic peptone assertions or justified disjoint formulation cohorts using actual recipe evidence; do not force an arbitrary owner or identical formula."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Occurrence-to-recipe bindings or explicit source statements sufficient for each selected scope; reuse exact evidence across a cohort only when applicability is demonstrated. An abbreviation or nominal ingredient list alone is not full-formulation equality.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://scispace.com/pdf/emendation-of-bacteroidaceae-and-butyrivibrio-and-3spebb4661.pdf",
+          "doi": "10.1099/00207713-26-2-238",
+          "files": [
+            {
+              "path": "pdf-access-web-attempts.json",
+              "sha256": "71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3"
+            },
+            {
+              "path": "moore1976-find-web.json",
+              "sha256": "454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806"
+            },
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            }
+          ],
+          "read_extent": "Web-tool PDF text extraction of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not every page/table read. Publisher metadata matched. Direct raw PDF request returned HTML403, retained as denial, not PDF evidence.",
+          "claim": "Exact historical PY-cellobiose and PY-maltose use is confirmed for E.siraeum and C.leptum. E.siraeum text supports peptone as a basal-medium class at that occurrence; recipes refer to the 1975 Anaerobe Laboratory Manual, which was not inspected.",
+          "scope": "Occurrence-bound evidence; neither supplier-specific identity nor one common formulation for all PY/PYG labels is established.",
+          "source_id": "MOORE1976",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "url": "https://bacmedia.dsmz.de/medium/104c?ccno=DSM+753",
+          "files": [
+            {
+              "path": "captures/dsmz104c-dsm753.html",
+              "sha256": "aade50e41ec462a73e20f3c4d5f4e6da2ddb3c1dcbbcf842918b169aa9968305"
+            },
+            {
+              "path": "captures/dsmz104c-dsm753.html.capture.json",
+              "sha256": "9cc9d2298591ee920fc507f6070bd5fec49056084682769d364271845729676d"
+            }
+          ],
+          "read_extent": "Captured original HTML inspected at strain selection/modification, Main sol.104c component table and named digest rows. No historical equivalence certificate.",
+          "claim": "Current C.leptum DSM753 repository recipe contains separate Trypticase peptone (BD BBL) and pepsin-digested meat peptone, 5g each, and substitutes D-maltose for glucose.",
+          "scope": "Current strain-specific comparator, not proof that the historic PY-maltose single peptone edge denotes either product.",
+          "source_id": "DSMZ104C_DSM753",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    },
+    {
+      "target_id": "PC15",
+      "claim_key": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]",
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "current_after": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml",
+        "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec",
+        "bytes": 19238
+      },
+      "origin_before": {
+        "path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+        "sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+        "bytes": 7291
+      },
+      "read_scope": "Complete current selected YAML read, including every history/evidence object; exact primary passages and access evidence named below re-inspected. Broader inaccessible full papers are not claimed read.",
+      "supported": "The literal PYG+rumen fluid observation belongs to E. ruminantium. The source chapter was inaccessible; Bryant1959 PMC body access was challenge-blocked. Current ATCC17233 medium602 is an alternative, without a bridge to the original PYG preparation.",
+      "unresolved_identity_or_formulation_fact": "The historical PYG digest and source rumen-fluid processing/animal origin remain unknown. The literal fluid part is supported while its clarification is not.",
+      "options": [
+        "Preserve the composed peptone and rumen-fluid UNMAPPED withdrawals.",
+        "Use an applicable original E. ruminantium method or explicit source input to resolve only the exact named constituent/preparation supported."
+      ],
+      "recommendation": "Keep exact current published payload and source-specific holds; no duplicate origin or additional payload correction is warranted by this confirmation.",
+      "precise_source_prerequisite": "Original source chapter/Bryant methods or a directly bound recipe identifying the PYG constituent; separate source processing evidence for any clarified or animal-qualified fluid identity. Neither an alternative ATCC medium nor unrelated Prevotella culture is a bridge.",
+      "original_searches_and_primary_sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC181027/",
+          "doi": "10.1128/br.23.3.125-153.1959",
+          "files": [
+            {
+              "path": "original-primary-attempts-9.json",
+              "sha256": "20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe"
+            },
+            {
+              "path": "original-primary-read-10.json",
+              "sha256": "c657e5a5d760469ab57438b096f44292f289221783df178b15d44340ed7efdfc"
+            }
+          ],
+          "read_extent": "Bibliographic search discovery and PMC access attempt; PMC returned browser challenge. No original body inspected.",
+          "claim": "Original taxonomic source located but its recipe remains unread.",
+          "scope": "Current ATCC17233 alternative medium602 listing does not prove original PYG-rumen composition.",
+          "source_id": "RUMINANTIUM1959",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        },
+        {
+          "urls": [
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00619",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm00629",
+            "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118960608.gbm01249"
+          ],
+          "files": [
+            {
+              "path": "original-source-read-6.json",
+              "sha256": "ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d"
+            },
+            {
+              "path": "original-source-read-7.json",
+              "sha256": "1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca"
+            }
+          ],
+          "read_extent": "Clostridium and Treponema abstract/metadata and selected reference lists inspected; full-text links redirected to abstracts. Eubacterium chapter returned403.",
+          "claim": "Direct source chapter references verified where accessible. These accesses did not expose complete source recipes.",
+          "scope": "Raw-source observation lineage verified separately; unavailable chapter contents are not presented as inspected.",
+          "source_id": "BERGEY_ORIGINAL",
+          "recorded_at": "2026-11-08T08:41:38.763783+00:00"
+        }
+      ],
+      "search_provenance": "These are the actual prior primary searches/captures by /root/peptone_ambiguous_sources, with original times in the exact captured ledger; current auditor re-read them, performed no new network search, and does not reauthor prior support.",
+      "original_primary_scientist": "/root/peptone_ambiguous_sources",
+      "original_skeptical_scientist": "/root/peptone_skeptic",
+      "current_confirmation_auditor": "/root/buffer_tris",
+      "current_auditor_author_related": true,
+      "independent_current_packet_review": "Root-assigned separate skeptical reviewer pending; historical review is not transferred into this confirmation.",
+      "scientific_identity_resolved": false,
+      "bounded_withdrawal_complete": true,
+      "new_finding": false
+    }
+  ],
+  "other_owner_pending": [
+    {
+      "target_id": "PC05",
+      "origin": "w04::media-alias-marine2216",
+      "action": "Root must compose the supported generic part reference with the actual W04 Marine agar origin; do not mint W05 owner or duplicate proposal.",
+      "evidence": "ATCC2887 scratch recipe unqualified Peptone5.0g and1000mLwater; no Bacto part follows from whole-medium Difco label.",
+      "residual": "Exact final child successor with accepted generic parent; whole agar formulation and unrelated supplied salt forms remain separate. Preserve5.0G_PER_L as inherited, no dry-product or final-volume conversion."
+    },
+    {
+      "target_id": "PC14",
+      "origin": "w06::R-P-PYGS-SOURCE-EVIDENCE",
+      "action": "Root must compose only the supported generic peptone reference with the W06 exact source-evidence origin.",
+      "evidence": "Three primary article abstracts expressly name peptone/yeast extract/glucose/starch for the three raw organism observations.",
+      "residual": "Supplier, formulation quantities and equivalence across all PYGS preparations remain unresolved; retain three source scopes, starch evidence, UNKNOWN completeness and no inferred amounts."
+    },
+    {
+      "target_id": "PC20",
+      "origin": "w02::a2-proposal-togo-m2491-mrssi-base",
+      "action": "Root must preserve the authentic W02 new_owner/null-before origin while composing component8 with accepted generic parent.",
+      "evidence": "Complete TOGO M2491 JSON Sol.1 item8 explicitly names peptone5g; paragraph3 gives per-litre recipe; paragraph1 commercial Becton Dickinson MRS maintenance medium is distinct.",
+      "residual": "Exact final child and parent review; preserve literal inputs in evidence and unknown concentration/completeness scope, no fabricated child preimage or Bacto supplier inference."
+    }
+  ],
+  "GYPS": "Retain exact original GYPS bytes and source-specific MICRO:0000178 Bacto edge; Alain2002p1622 directly names Bacto-peptone(Difco). Keep source-specific PARTIAL scope, omitted input/quantity limits and separate Bacto owner acceptance.",
+  "Marine_broth": "Current W05 component0 remains UNMAPPED withoutID and5G_PER_L_AT_STANDARD_RECONSTITUTION;16nominal printed inputs withapproximate/performance-adjustment footnote, no water inside dryproduct. Preserve the published root-owned correction without newly approving unrelated salt forms.",
+  "generic_parent": "Current accepted-for-proposal parent byte binding is buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml SHA c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7, mesh:D010461. Prior local-target advice in historical source packets is preserved but superseded; neither old nor current proposal evidence confers application approval.",
+  "source_provenance": "All original scientific authors, captures and review findings preserved. Current source read is not a new primary capture or independent review of our own old authorship.",
+  "read_only_boundaries": {
+    "payload_edits": 0,
+    "maintained_edits": 0,
+    "Git_GitHub_writes": 0,
+    "new_network_source_requests": 0,
+    "new_external_sessions": 0,
+    "new_paid_provider_calls": 0
+  }
+}
