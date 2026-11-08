@@ -1,0 +1,2988 @@
+{
+  "schema_version": 1,
+  "author": "/root/organics",
+  "purpose": "Complete issue1201 reassessment of the 36 original organic no-proposal cases. A changed decision includes replacement of an implementation deferral with an explicit no-delta finding.",
+  "published_baseline": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+  "case_count": 36,
+  "proposal_count": 20,
+  "proposal_cases": 21,
+  "no_proposal_cases": 15,
+  "reassessments": [
+    {
+      "index": 0,
+      "case_id": "CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "laminarin (brown algae)",
+        "source_label": "laminarin (brown algae)",
+        "raw_source_label": "laminarin (brown algae)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-laminarin-scope"
+      ],
+      "reasoning": "CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa. The current owner has this generic identity but a Laminaria digitata procurement label. Align its preferred name to Laminarin and preserve the original species detail in supplied_form and a catalog synonym. No evidence supports a distinct chemical substance requiring a second owner.",
+      "applicability": "TOGO M2313 names brown-algal laminarin as an alternative carbon input, without identifying a species. The original CultureBotHT Laminaria digitata detail remains credited to its own source. This applies the naming and supplied-form distinction in MAPPING_SEMANTICS section 3, without claiming that TOGO used that species.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "laminarin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml",
+          "sha256": "d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7",
+          "identifier": "CHEBI:6364",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-0",
+        "op-context-0-0",
+        "op-laminarin",
+        "op-owner-search",
+        "op-togo2313",
+        "op1201-chebi-laminarin",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313",
+        "https://www.ebi.ac.uk/chebi/CHEBI:6364"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 16,
+      "case_id": "CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.2NKOH",
+        "source_label": "0.2NKOH",
+        "raw_source_label": "0.2NKOH"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-indicator-stock"
+      ],
+      "reasoning": "The TOGO M2844 comment identifies a 0.5% bromothymol blue solution in 0.2 N KOH, added at 5 mL per litre. A stock owner can preserve this combined preparation. The extracted 0.2NKOH fragment must not denote the whole stock or be added as a global alias.",
+      "applicability": "The original comment and component table were inspected. Percentage basis and carrier solvent remain unspecified. Normality is not converted to mass, and the frozen 5 G_PER_L receiving dose remains an upstream unit defect.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "potassium hydroxide",
+        "bromothymol"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Koh.yaml",
+          "sha256": "ae478c37c1f269d5ac551c7773568cdbaf81a7d5af752f33e58775f8c18037c1",
+          "identifier": "CHEBI:32035",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bromothymol_Blue.yaml",
+          "sha256": "f564008408b0b163148d3ca0b924e31c3602fdad07a349085a4a712d06c64bab",
+          "identifier": "CHEBI:86155",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-16",
+        "op-context-16-0",
+        "op-owner-search",
+        "op-togo2844",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2844"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 27,
+      "case_id": "CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "5.0 mM Toluene (water--saturated)",
+        "source_label": "5.0 mM Toluene (water--saturated)",
+        "raw_source_label": "5.0 mM Toluene (water--saturated)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-toluene-stock"
+      ],
+      "reasoning": "JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock described as 5.0 mM and added at 40 mL per litre. This supports a stock record separate from pure toluene and from the receiving medium.",
+      "applicability": "The exact M607/G5G6 source points to JCM600. The source concentration descriptor is transcribed; saturation temperature, water grade and final-medium concentration are not inferred. The receiving mass-unit error is preserved separately.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "toluene"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Trinitrotoluene.yaml",
+          "sha256": "03d1567343d3fd70b13610a477d7cf6908ceb39be55de5dd8df90a5e2632e172",
+          "identifier": "CHEBI:27135",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Phenol_Red.yaml",
+          "sha256": "4e2b528c26a9528ceda34065306bc9f995ab137ef2cb0a00d8fc3a34f0f18061",
+          "identifier": "CHEBI:31991",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Toluene.yaml",
+          "sha256": "6bc26620c17b72911a12c1c82433f9fe04e79ffbef1d29e79bb2390444d6db73",
+          "identifier": "CHEBI:17578",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/M-xylene.yaml",
+          "sha256": "31f4e266d3794ee7494468b5e6801cf0d98126e9c51db8b89fc86be253a7027d",
+          "identifier": "CHEBI:28488",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-27",
+        "op-context-27-0",
+        "op-jcm600",
+        "op-owner-search",
+        "op1201-jcm600",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=600"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 32,
+      "case_id": "CM_NAME:36f63bd8daf1cd150e7b136c0d6b3b822783c65c6082b580da3fa5b05fc41758",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Difco 0003 or Difco 0001",
+        "source_label": "Difco 0003 or Difco 0001",
+        "raw_source_label": "Difco 0003 or Difco 0001"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The source explicitly offers Difco0003 or Difco0001 as alternatives. These are different nutrient broth/agar products, not two synonyms for one substance. No single owner payload can encode the unresolved choice as exact identity.",
+      "applicability": "The complete frozen recipe and primary product contrasts were reread. Preserve both alternatives in source context. A chosen product is an experimental selection absent from the record, not a missing ontology lookup.",
+      "precise_remaining_requirement": "Which product was actually selected in this occurrence, or an explicit source representation preserving both alternatives as alternatives.",
+      "owner_lookup_queries": [
+        "0003",
+        "0001",
+        "nutrient broth",
+        "nutrient agar"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Bovine_Serum.yaml",
+          "sha256": "31c09e4c6df658ccb66e0eedfcee3f9337dfb754dd6a72c48d254e1684002227",
+          "identifier": "UNMAPPED_0345",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Difco_0001.yaml",
+          "sha256": "1022f65c906f4ea050aaf3d671a01a030fdc538f66052afed941ed80f98633be",
+          "identifier": "UNMAPPED_0377",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Sterile_Serum.yaml",
+          "sha256": "29287e70537f3ceaa457f2e6eb178e12ca9fbb7bbe135e0d1b10047bd5f8183a",
+          "identifier": "UNMAPPED_0534",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Full_Composition_Available_At_Source_Database.yaml",
+          "sha256": "3521b19020100e3a606627502c3e066dca7f9b6343af0352206837891bef82c0",
+          "identifier": "UNMAPPED_0001",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml",
+          "sha256": "39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077",
+          "identifier": "UNMAPPED_0740",
+          "mapping_status": "AMBIGUOUS"
+        },
+        {
+          "path": "data/ingredients/unmapped/Desicatted_Ox-bile.yaml",
+          "sha256": "aa7a189593271ca93c76c9f538d85db908736eb542dc01b16bc0b0059ee01663",
+          "identifier": "UNMAPPED_0374",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Plain_Flour.yaml",
+          "sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e",
+          "identifier": "UNMAPPED_0490",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Nutrient_Agar.yaml",
+          "sha256": "388e1ef281ecb16b643b4f9b97e2b59fb8b74da2ac5128c9fcb027ef0c08e3a6",
+          "identifier": "UNMAPPED_0481",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Isobutyric_Acid.yaml",
+          "sha256": "de152124fd72af219fcdfe1bb6dce1e3254666174b8112b4d452063fa3844f31",
+          "identifier": "CHEBI:16135",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/TYGVS_Glucose.yaml",
+          "sha256": "0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e",
+          "identifier": "kgmicrobe.ingredient:tygvs_glucose",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/V-8_Juice.yaml",
+          "sha256": "44229e30128f51e28f1b117122f0f7f6bf405ba52b6b38cf3eaf0a66a129798f",
+          "identifier": "MICRO:0002250",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Horse_Serum.yaml",
+          "sha256": "82f2dcc3c661aaa4ebe3cd39c378e06999dfe68aaf9f8c5d5597dc94ea19060c",
+          "identifier": "MICRO:0001235",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Anaerobic_water.yaml",
+          "sha256": "b8bfa22be7bbff832ecc3dfc4fa10915b1d3dccfb22bd2a1bf0be3f0ed6ef77d",
+          "identifier": "ENVO:01000173",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml",
+          "sha256": "ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615",
+          "identifier": "cas:100037-69-2",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PYEG.yaml",
+          "sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a",
+          "identifier": "kgmicrobe.ingredient:pyeg",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Liver_Extract_Concentrate.yaml",
+          "sha256": "e0caf606f7a4a437843e740b0c982af74d654c21ae0a635a5d9da1d021987597",
+          "identifier": "MICRO:0001363",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Defibrinated_sheep_blood.yaml",
+          "sha256": "ee71b3eb16d3f3c6227560c7672de07ba042ce31224e43ffc646f0c456aeeb0f",
+          "identifier": "MICRO:0001570",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Lactalbumin_Hydrolysate.yaml",
+          "sha256": "24416a2a9fe69c14ca1a8f57098750a9a4fb8b3055ba267a4e19cf10626f8213",
+          "identifier": "MICRO:0001365",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Blood.yaml",
+          "sha256": "d1bb0db849599b2b88a480bca03dcd2ae09684f2735c7f68b79df8d0c3273330",
+          "identifier": "UBERON:0000178",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Rabbit_Blood.yaml",
+          "sha256": "c0536dd8c804df064ca27d57abfc55569cf43ed1b0ade522dd7007473c1beb96",
+          "identifier": "MICRO:0001229",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PYGS.yaml",
+          "sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+          "identifier": "kgmicrobe.ingredient:pygs",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml",
+          "sha256": "49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139",
+          "identifier": "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tryptone_Peptone.yaml",
+          "sha256": "d9feb1586ea8908bcf25248a1b9390909a71b72d9def8eedc39d3a0617b9e585",
+          "identifier": "MICRO:0000182",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Ground_Beef.yaml",
+          "sha256": "bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e",
+          "identifier": "FOODON:00001282",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase.yaml",
+          "sha256": "ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef",
+          "identifier": "MICRO:0000175",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bg-11_Medium.yaml",
+          "sha256": "157d6d854d2dd2d3f85b0e659b39f587791f8046a8cc702cd026c15716f7a9f4",
+          "identifier": "MICRO:0001348",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Nutrient_Broth_No_2.yaml",
+          "sha256": "b4cb841422e83f9216512cea52201b2e83350d158b90052c6d7fc1514bdc3a17",
+          "identifier": "MICRO:0000082",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tryptose.yaml",
+          "sha256": "6f2175ad4c3a9a65128a17cf32375598b7ca2a16e9de686c298203d931108b6f",
+          "identifier": "MICRO:0000183",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Fildes_Enrichment.yaml",
+          "sha256": "d727aed0bae7bdea93acd6b1c67bf4efd9d301b869105aaf300b42a843ee3ab4",
+          "identifier": "MICRO:0001597",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Casein_Peptone.yaml",
+          "sha256": "6c8f30e9340d2df5b8477791831810db38cdf6a03df96643304e43f1e2157a64",
+          "identifier": "FOODON:03315719",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+          "sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2",
+          "identifier": "CHEBI:31795",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PY-fructose.yaml",
+          "sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6",
+          "identifier": "kgmicrobe.ingredient:py_fructose",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml",
+          "sha256": "e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5",
+          "identifier": "kgmicrobe.ingredient:glucose_peptone_yeast_extract",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PY-maltose.yaml",
+          "sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0",
+          "identifier": "kgmicrobe.ingredient:py_maltose",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glucose_Cellobiose_Starch_Trypticase_Yeast_Extract.yaml",
+          "sha256": "34723916c18d5bdcc0f9db97894e83201077c2bce417221dcefeb08bcfb666a8",
+          "identifier": "kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Cr1_Soil.yaml",
+          "sha256": "806cb0bcb6ac7d866b7d8b664dc4fa2942920d5096f3fc1b22f6932b36a92e47",
+          "identifier": "ENVO:00001998",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PY-pectin.yaml",
+          "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+          "identifier": "kgmicrobe.ingredient:py_pectin",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Brain_Heart_Infusion.yaml",
+          "sha256": "022df020b7f4660ac46d19baf0847df3ba868608398e97b2f027bb73be58b2f5",
+          "identifier": "MICRO:0000193",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bovine_Albumin.yaml",
+          "sha256": "6fede17cd3c2e2547278ae75d0b11cdb8d0aaafaa498a186155c567fdaae22f8",
+          "identifier": "MICRO:0000307",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sheep_blood.yaml",
+          "sha256": "ee0341f1f8fc7e6de8805a05aa863b7f061d0252275f0953e950279e5f2437d5",
+          "identifier": "MICRO:0001230",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Casein_hydrolysate.yaml",
+          "sha256": "a61d7e5378b52c5798f9161e8a6a75d1d76da1e5af96275d6207ad15b8199e49",
+          "identifier": "MICRO:0001366",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto-tryptone.yaml",
+          "sha256": "cab30ffd901d05f125c7da64298ea68c43578c92cd8acc962a84b9318a628dda",
+          "identifier": "MICRO:0000182",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tryptone.yaml",
+          "sha256": "2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356",
+          "identifier": "MICRO:0000182",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase-glucose-yeast_Extract.yaml",
+          "sha256": "dd8cff5daf1d1ba4c784e36305963b72d73079532b80b5bf86d6ba060cc2a0a3",
+          "identifier": "kgmicrobe.ingredient:trypticase_glucose_yeast_extract",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Brain_Heart_Infusion.yaml",
+          "sha256": "77230cb3783ad3fbeb96695e96958441f8d0c9ac6f5a9595ac1816a72b7d86d8",
+          "identifier": "MICRO:0000193",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trace_Metal_Mix_A5.yaml",
+          "sha256": "5982838d016b9e668006fa6cd8108c3930358970b2156b2a1596425af3ab4ef2",
+          "identifier": "MICRO:0001349",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Digested_Serum.yaml",
+          "sha256": "66c9d7b79fe966263a397f01b2fd82162b70b171611ba6e271ce9f938b813e35",
+          "identifier": "MICRO:0001362",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Yeast_Extract_Peptone.yaml",
+          "sha256": "6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6",
+          "identifier": "kgmicrobe.ingredient:yeast_extract_peptone",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sulfur.yaml",
+          "sha256": "d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323",
+          "identifier": "CHEBI:33403",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na-caseinate.yaml",
+          "sha256": "bb6de81d86b90e5771834801f2a0c76265a30d5874e85abb92f500147053fc70",
+          "identifier": "MICRO:0001611",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Apple_Juice.yaml",
+          "sha256": "18436f7037c5b8756da87c89e5822bdc6d2c2d9424180b7c8bc7acee81e33125",
+          "identifier": "FOODON:00001059",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Tryptic_Soy_Agar_Difco.yaml",
+          "sha256": "d1b9316f3d032d5886186cae078d8a7fd11f04c4897ac7df7175e3f48c729882",
+          "identifier": "MICRO:0000114",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Green_House_Soil.yaml",
+          "sha256": "eace9ac3f9184f238e7125db89506b0663d5a78831f162e6ad365f4e4b68f3be",
+          "identifier": "kgmicrobe.ingredient:green_house_soil",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soil_Extract.yaml",
+          "sha256": "6983e9a7a4460eb605e05eaed32f6c08397e2555ce1356d98fb5d301b592e848",
+          "identifier": "MICRO:0000457",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Vermont_Soil.yaml",
+          "sha256": "01539d1727fe3c91e43b8ae5ca7e56e98a6152ce4e8967cc5b38a5ca5108e72b",
+          "identifier": "kgmicrobe.ingredient:vermont_soil",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Filtered_Seawater.yaml",
+          "sha256": "5256325a957d3055e060f04a7fa4d658e3d31f4a5d6cedd182e9b1ffe9d0841f",
+          "identifier": "MICRO:0001773",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Meat_peptone.yaml",
+          "sha256": "7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966",
+          "identifier": "MICRO:0000176",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tryptoneyeastbeef_(tyb).yaml",
+          "sha256": "51534075a64e3b15332938e6140d8511170a6ab999a155baf74aa087e5fae947",
+          "identifier": "kgmicrobe.ingredient:tryptone_yeast_beef_tyb",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Hemin_solution_see_below.yaml",
+          "sha256": "094b5ebc7a6dd4c4517517cf7c7cb52046ed6d3bc4a8888951d66e1c6015ba12",
+          "identifier": "MICRO:0001598",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Liver_Extract.yaml",
+          "sha256": "55ee994c1efbbf9ab375e9d673b4f46119d3ed7d8392d48519723de35b903e19",
+          "identifier": "MICRO:0001363",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase_Peptone.yaml",
+          "sha256": "88e513d4f6e6fa153ae508047b9a654922dad2bab84d4624cca2a17ade2b742c",
+          "identifier": "MICRO:0000175",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Artificial_seawater.yaml",
+          "sha256": "9efeac859a634d9d5daf17c7da4e058b51ce7538b0b802fa6ac2b7f6f602e708",
+          "identifier": "MICRO:0001715",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+          "sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+          "identifier": "kgmicrobe.ingredient:py_glucose_rumen_fluid",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/R2A_agar.yaml",
+          "sha256": "3f30f8d570aa668cf5fcd5dbccbce6753712cc2103feacef2deee378e502ed90",
+          "identifier": "MICRO:0000543",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Defibrinated_horse_blood.yaml",
+          "sha256": "9e5c9eb2624156ad752a630d1875e836985da7fa6a187aeda2b7053593496168",
+          "identifier": "MICRO:0001572",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Liver_Digest.yaml",
+          "sha256": "1bc5fa7ff48d85da3d138e5ecf6fa3496dc3beefbe43d581f634a16967568565",
+          "identifier": "MICRO:0001668",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml",
+          "sha256": "e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7",
+          "identifier": "kgmicrobe.ingredient:peptone_yeast_extract_glucose",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Liver_Extract_Infusion.yaml",
+          "sha256": "b9282556e77cf35f541d0da1d2099a62ee35cbaf115bddec21a1e2c7d7ddefac",
+          "identifier": "MICRO:0001363",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sulfur-free_DL_Minerals.yaml",
+          "sha256": "84b4158b9b15d8bc874a09c62f2e5d88f727826dfca6576ad8f38c2cd23ab487",
+          "identifier": "kgmicrobe.ingredient:sulfur-free_dl_minerals",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Dried_Bovine_Hemoglobin_BD_212392.yaml",
+          "sha256": "2a4afa73a48ec0dc9edbfd04fea7b52da211d69825e6f9a8b36da045cc88f757",
+          "identifier": "MICRO:0001599",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/O_Carbamyl_D_Serine.yaml",
+          "sha256": "c2e412c5d2bfa83323f0d6dd9e0e10b9ee574bb8204c994a34485f3c18d6cccb",
+          "identifier": "mesh:C000366",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/GYPS.yaml",
+          "sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+          "identifier": "kgmicrobe.ingredient:gyps",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Arabinan_From_Sugar_Beet.yaml",
+          "sha256": "0f7efcf2d026ed5ad88d0b062e4cb3553a2a4b3eb44ffc9c1f5ce1d1c1e42aa2",
+          "identifier": "cas:11078-27-6",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PY-cellobiose.yaml",
+          "sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f",
+          "identifier": "kgmicrobe.ingredient:py_cellobiose",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Brain_Heart_Infusion_Broth.yaml",
+          "sha256": "8c742451138c16e6d483be385ee3c4ab97fd1ce47890f2dd04fd76a0f1d8f85a",
+          "identifier": "MICRO:0000193",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PYG.yaml",
+          "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83",
+          "identifier": "kgmicrobe.ingredient:pyg",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Artificial_Sea_Salt.yaml",
+          "sha256": "effd1c0c9ca3056f20eceebebb7ab9c5dddff4434d0ed12dba6c344c7f91c389",
+          "identifier": "kgmicrobe.ingredient:artificial_sea_salt",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml",
+          "sha256": "c335acb9d1ad86d663702a8e193afb1e84d97c8666d49beef9cce8e16b3548cc",
+          "identifier": "MICRO:0000113",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Proteose_Peptone_No_2.yaml",
+          "sha256": "67ca4baee47a98b1ccd293403503a20d1ed757055d179658689f9ab7a6a17533",
+          "identifier": "MICRO:0002393",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Peptone.yaml",
+          "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+          "identifier": "MICRO:0000178",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sugar_Beet_Molasses.yaml",
+          "sha256": "64a35d50a0df41bf8097f57af5a581c730d26e2895e82396df10d7aadf817ca5",
+          "identifier": "FOODON:00003412",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Skim_milk_powder.yaml",
+          "sha256": "c228ed915edc1080c0b949eb5c6e8b60bca43c729af7fb9bb50c8ada7b400fd9",
+          "identifier": "MICRO:0001241",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+          "sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+          "identifier": "MICRO:0000178",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+          "sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+          "identifier": "kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tricine.yaml",
+          "sha256": "a437294e8d72a87d9e0312005d7c1426fc95cd4af5a885f7724910a26d8c0187",
+          "identifier": "CHEBI:39063",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Eugon_agar_BD-Difco.yaml",
+          "sha256": "532b790c14461f0524e1307e87e36168d794360f1aa60dd371ff18984d0b8d1b",
+          "identifier": "MICRO:0001358",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Rabbit_Serum.yaml",
+          "sha256": "031bddb1376c30e284b08ab91209ff3c5465cc5a0b49a82b70a4758aae0a0f7c",
+          "identifier": "MICRO:0002392",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Porcine_Serum.yaml",
+          "sha256": "55db34244beed3a4065dba84ff2c4dba1d41c4434948bbf85834b86cc2f3b131",
+          "identifier": "MICRO:0001238",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Serum.yaml",
+          "sha256": "bad2776abd495bb123b9f2bc5e13c4f8eea1c943cefd43e719ff20f2f4dc4e57",
+          "identifier": "UBERON:0001977",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Tryptic_Soy_Agar.yaml",
+          "sha256": "3ef3996a02e7b04b09aa9dd5eb3fa165effc9b0cd821564760eb0d1d2fd6ef38",
+          "identifier": "MICRO:0000114",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Milk.yaml",
+          "sha256": "5f5a8a8ab966aac7458296ec386072d7bf856caa9d24c30b28193a5997ded3dd",
+          "identifier": "UBERON:0001913",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Proteose_Peptone.yaml",
+          "sha256": "c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e",
+          "identifier": "MICRO:0000180",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Mc_vitamins.yaml",
+          "sha256": "59c53dfe4e273ebfc7c3fe86fd4244978868ff1879dcde97af64bbeb61c07123",
+          "identifier": "kgmicrobe.ingredient:mc_vitamins",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Dry_Cow-manure.yaml",
+          "sha256": "8757eda7514278480daa397b84d468e34376af4573a305d6874d0ee5d99e8cc9",
+          "identifier": "kgmicrobe.ingredient:dry_cow-manure",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/MH_agar.yaml",
+          "sha256": "22ec7ee7dd59eb6415840e811166736555fa5b1d85e3d988759c05b1e20c893f",
+          "identifier": "MICRO:0001328",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/BHI.yaml",
+          "sha256": "8a92a45109104ea66b2df383dcb5b22a82683e29d201ba493125cf35e968ce0d",
+          "identifier": "kgmicrobe.ingredient:bhi",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+          "sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+          "identifier": "kgmicrobe.ingredient:marine_broth_2216",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Horse_blood.yaml",
+          "sha256": "a6a2270e0689b45a836de30e50474a1cf3dd3d2f8124bd8586cf250b6f757c26",
+          "identifier": "MICRO:0001234",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Rice_straw.yaml",
+          "sha256": "1d7819ac6eaeb3e2422a39b05d4daf821347b628c61f49e8aefdf216d19aeb70",
+          "identifier": "ENVO:00003870",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Artepaulin.yaml",
+          "sha256": "b31abbde10fca9689aa0774c356cca420f0995ee3f6a73399345dccc10922642",
+          "identifier": "cas:13902-54-0",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+          "sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f",
+          "identifier": "kgmicrobe.ingredient:pyg_0_02_tween_80",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+          "sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+          "identifier": "kgmicrobe.ingredient:marine_agar_2216",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bovine_Calf_Serum.yaml",
+          "sha256": "3303d83e01c861d0344266c6f5ecc3f34f8ab6f79c7e649c203ea01b0c651857",
+          "identifier": "MICRO:0001709",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Washed_agar.yaml",
+          "sha256": "4a309314727f6ed9af7533e50b4434d67732169275444eb4c761b46fcae95c19",
+          "identifier": "MICRO:0001723",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Hydrogen_Sulfide.yaml",
+          "sha256": "86a9e7563630ce4704cc3046ee639708650888be6bdaf7bd389e4a66711671a0",
+          "identifier": "CHEBI:16136",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+          "sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+          "identifier": "kgmicrobe.ingredient:pyg_rumen_fluid",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth_Difco.yaml",
+          "sha256": "2339c760edea771c2451728e9d0232181c3980e6b4d6a85d43873be97a07dc3c",
+          "identifier": "MICRO:0000113",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soil.yaml",
+          "sha256": "bdf0ed420d352f6c31f25317929c929d8d3a77223014a2dd0d6a0c4779707ee6",
+          "identifier": "ENVO:00001998",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml",
+          "sha256": "90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a",
+          "identifier": "kgmicrobe.ingredient:peptone_yeast_extract",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-32",
+        "op-context-32-0",
+        "op-context-32-1",
+        "op-dsm672",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium672.pdf"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 50,
+      "case_id": "CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Fluid thioglycolate (BD-BBL)",
+        "source_label": "Fluid thioglycolate (BD-BBL)",
+        "raw_source_label": "Fluid thioglycolate (BD-BBL)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-bbl-fluid-thioglycollate"
+      ],
+      "reasoning": "ATCC474 independently identifies the fluid thioglycollate ingredient in this Eubacterium recipe as BD211260 at 29.5 g/L. The current BD catalog names BBL fluid thioglycollate medium. This resolves the earlier missing product identification and supports a commercial named-medium owner.",
+      "applicability": "TOGO M148/MediaDive J157 and ATCC474 have the same named medium and matching separate yeast-extract, sodium-thioglycollate and fluid-medium ingredients. The proposed owner is BD211260, not sodium thioglycollate. ATCC177 provides a separate scratch formula, which is not asserted to be the exact dry-product composition.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "thioglycol",
+        "thioglycoll"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Thioglycolate.yaml",
+          "sha256": "7bc62ba32447aaba996dbb9c6baf037c658c2d8ba7abf4d392e8c2c540b215a4",
+          "identifier": "CHEBI:47869",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/2-mercaptoethanol.yaml",
+          "sha256": "b32f24ce80193042971850fb87c4b1c8836eb8a72b09e9e1bd48ad0cfcfe84bd",
+          "identifier": "CHEBI:41218",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Thioglycollic_Acid.yaml",
+          "sha256": "c4725d5660294a1fe780ba4863acec59e7097e64b3ec721ac013380d67166323",
+          "identifier": "CHEBI:30065",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na-thioglycolate.yaml",
+          "sha256": "e0bcb3157267205aea8d37c5a5b0f0321f4b5c332e579c35cf554f96c8a6a702",
+          "identifier": "CHEBI:86481",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-50",
+        "op-context-50-0",
+        "op-owner-search",
+        "op-thioglycollate",
+        "op1201-atcc177",
+        "op1201-atcc474",
+        "op1201-bd211260",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/7/7/atcc-medium-177.pdf?rev=e1a2507d9d6d43f798cf5bc2921f0e3a",
+        "https://www.atcc.org/~/media/0f29052bb3524daebdfc48491950d569.ashx",
+        "https://www.bd.com/en-us/products-and-solutions/products/product-page.211260",
+        "https://www.sigmaaldrich.com/US/en/product/sial/70157"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 71,
+      "case_id": "CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "R2A",
+        "source_label": "R2A",
+        "raw_source_label": "R2A"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-r2a-medium"
+      ],
+      "reasoning": "The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula.",
+      "applicability": "All three complete FEBA/CultureBotHT records were inspected. The owner denotes the named base only, not their kanamycin, lactate, Tween or cycloheximide supplements. A DAIGO R2A-broth proposal in worker03 is a product-qualified contrast and is not silently treated as the FEBA product.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "r2a",
+        "MICRO:0000541"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml",
+          "sha256": "ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615",
+          "identifier": "cas:100037-69-2",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/HOMOPIPES.yaml",
+          "sha256": "1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7",
+          "identifier": "cas:202185-84-0",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/R2A_agar.yaml",
+          "sha256": "3f30f8d570aa668cf5fcd5dbccbce6753712cc2103feacef2deee378e502ed90",
+          "identifier": "MICRO:0000543",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Agar.yaml",
+          "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db",
+          "identifier": "CHEBI:2509",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-71",
+        "op-context-71-0",
+        "op-context-71-1",
+        "op-context-71-2",
+        "op-owner-search",
+        "op-r2a-broth",
+        "op1201-ols-micro-0000541",
+        "op1201-ols-micro-r2a",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541",
+        "https://www.ebi.ac.uk/ols4/api/search?q=R2A&ontology=micro&rows=50",
+        "https://www.himedialabs.com/us/fields-of-application/water/drinking-water/m1687-r2a-broth.html"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 74,
+      "case_id": "CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "R2A (Difco)",
+        "source_label": "R2A (Difco)",
+        "raw_source_label": "R2A (Difco)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-r2a-agar-provenance"
+      ],
+      "reasoning": "The primary TOGO M2972 component is explicitly labelled Difco R2A agar, and the preparation describes plant-stem contact with a medium surface. This supports the agar interpretation of this occurrence and a source-provenance enrichment of the existing R2A-agar owner.",
+      "applicability": "The source-local label R2A (Difco) is not made a global alias. The generic owner keeps MICRO:0000543 and its existing counts. Reclassify it as NAMED_MEDIUM, consistent with its whole-medium scope; do not infer a catalog number or equate its formulation to every R2A product.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "r2a"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/PIPES_Sesquisodium_Salt.yaml",
+          "sha256": "ca21b5f27bcffef9d50b68671ab1aacccf4868cd48ff76b591c4620fd3258615",
+          "identifier": "cas:100037-69-2",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/HOMOPIPES.yaml",
+          "sha256": "1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7",
+          "identifier": "cas:202185-84-0",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/R2A_agar.yaml",
+          "sha256": "3f30f8d570aa668cf5fcd5dbccbce6753712cc2103feacef2deee378e502ed90",
+          "identifier": "MICRO:0000543",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Agar.yaml",
+          "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db",
+          "identifier": "CHEBI:2509",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-74",
+        "op-context-74-0",
+        "op-owner-search",
+        "op-r2a-broth",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention",
+        "op1201-togo-M2972"
+      ],
+      "primary_source_urls": [
+        "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2972",
+        "https://www.himedialabs.com/us/fields-of-application/water/drinking-water/m1687-r2a-broth.html"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 75,
+      "case_id": "CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Peptic Pepton (USB)",
+        "source_label": "Peptic Pepton (USB)",
+        "raw_source_label": "Peptic Pepton (USB)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-usb-peptic-pepton"
+      ],
+      "reasoning": "NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material can have an opaque product record without an invented substrate, digestion process or catalog number.",
+      "applicability": "The complete rust-fungi medium and primary NBRC19 recipe support this material. No equivalence to meat peptone, soy peptone or a different supplier is asserted. The source spelling is kept in notes without a global product alias.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "peptic pept"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [],
+      "evidence_ids": [
+        "op-case-75",
+        "op-context-75-0",
+        "op-nbrc19",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=19"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 77,
+      "case_id": "CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "sulfide ore",
+        "source_label": "sulfide ore",
+        "raw_source_label": "sulfide ore"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-sulfide-ore"
+      ],
+      "reasoning": "DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348. The source denotes a generic ore material rather than pure FeS2 or a fixed mineral mixture. A registry record preserves that unspecified material without requiring a mineral assay.",
+      "applicability": "M2320/DSM5348 uses 20 g/L of separately heated ore and lists powdered sulfur separately. Pyrite and chalcopyrite examples do not establish universal constituents. Mineralogy, origin and assay remain unspecified.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "sulfide ore",
+        "sulphide ore"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [],
+      "evidence_ids": [
+        "op-case-77",
+        "op-context-77-0",
+        "op-dsm88",
+        "op-owner-search",
+        "op1201-dsm88",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium88.pdf"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 81,
+      "case_id": "CM_NAME:9c33a36340f36ed926ea3f26958461e5836aef5b9ff12c76fff6174e05dbda71",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "dTMP",
+        "source_label": "dTMP",
+        "raw_source_label": "dTMP"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The admitted dTMP occurrences retain unavailable amounts after withdrawal of the VARIABLE default. That missing dose is not an identity blocker by itself. The actual remaining identity question is the neutral/salt/protonation form: the parent CHEBI:15245 has no protonation-agnostic definition and its specific children are not interchangeable.",
+      "applicability": "Both Song-medium records and their complete raw notes were inspected. The current ChEBI parent and neutral term were read. The source provides no reagent salt, stock specification or recorded medium pH, so choosing a charged child under the protonation rule would add an unsupported fact. No generic parent or invented registry is used to evade that rule.",
+      "precise_remaining_requirement": "A reagent form or source-supported pH/protonation convention for the Song-medium dTMP ingredient. Its quantity remains unavailable, not variable or zero.",
+      "owner_lookup_queries": [
+        "dtmp",
+        "thymidine"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/2-deoxythymidine-5-4-nitrophenyl_Phosphate.yaml",
+          "sha256": "901ededf2ad1d3f7296d551b8199c3ac580a4847d021417e8a3d46b30f4b2a5e",
+          "identifier": "kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/56-dihydro-5-azathymidine.yaml",
+          "sha256": "047fecec23cd83e2c03ad8c2c59dc1c326d0f461f646bb96b6c81e08080cf901",
+          "identifier": "mesh:C014480",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Dihydro_Azathymidine.yaml",
+          "sha256": "52c0e7eb536cff956438cc4cf6029b797bd37ee82a1dbdb01dfecdf37f353f9a",
+          "identifier": "kgmicrobe.compound:dihydro_azathymidine",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/5-methyluridine.yaml",
+          "sha256": "e73fc94a76689f7c94c818a0c187f87e33b48db9f6ee0c44223cf08edc6ff9cc",
+          "identifier": "CHEBI:45996",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Thymidine.yaml",
+          "sha256": "ca9f236adc6f158472573164e05a4eb70fd22057226ea3fdfe0ba5425a667cd8",
+          "identifier": "CHEBI:17748",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-81",
+        "op-context-81-0",
+        "op-context-81-1",
+        "op-dtmp",
+        "op-owner-search",
+        "op1201-chebi-dtmp-neutral",
+        "op1201-chebi-dtmp-parent",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:15245",
+        "https://www.ebi.ac.uk/chebi/CHEBI:17013"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 84,
+      "case_id": "CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "3-Sulfolactate",
+        "source_label": "3-Sulfolactate",
+        "raw_source_label": "3-Sulfolactate"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-racemic-sodium-sulfolactate"
+      ],
+      "reasoning": "The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate preparation; sodium stoichiometry, hydration and isolated-product purity remain unspecified. The narrower supplied form uses NARROW_MATCH, which emits skos:broadMatch to the ontology parent; this is not exact identity.",
+      "applicability": "MEDIADB:16/CultureMech:015430 cites this exact paper and matches its DSM3043 organism and 10 mM carbon substrate. This evidence does not apply to other unqualified sulfolactate occurrences or identify a single enantiomer. The registry preparation is distinct from the neutral generic acid and from R/S-specific ontology terms.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "sulfolact",
+        "CHEBI:38023"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [],
+      "evidence_ids": [
+        "op-case-84",
+        "op-context-84-0",
+        "op-owner-search",
+        "op-search-search-targeted-final",
+        "op-sulfolactate",
+        "op1201-denger2010",
+        "op1201-ols-chebi-38023",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention",
+        "op1201-roy2003",
+        "op1201-peer-remediation-v2"
+      ],
+      "primary_source_urls": [
+        "https://kops.uni-konstanz.de/server/api/core/bitstreams/63138443-5ddf-4e02-abfb-64c4f9cce2ad/content",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC262304/",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:38023",
+        "https://www.microbiologyresearch.org/content/journal/micro/10.1099/mic.0.034736-0"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 121,
+      "case_id": "CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Trypticase Soy (BBL)",
+        "source_label": "Trypticase Soy (BBL)",
+        "raw_source_label": "Trypticase Soy (BBL)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-trypticase-soy-broth"
+      ],
+      "reasoning": "MICRO:0000113 explicitly includes Trypticase soy broth and describes the standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining its history and counts. The NBRC source uses 30 g of this base with agar supplied separately.",
+      "applicability": "Both NBRC957 and NBRC1045 occurrences have the 30 g base and separate agar/extra NaCl. The generic broth formulation is now supported by the MICRO definition and independent FAO compendium. Their completed agar-plus-salt media are not the same whole formulation. The abbreviated Trypticase Soy (BBL) label remains source-local; no catalog or lot is inferred.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "trypticase soy",
+        "MICRO:0000113",
+        "pancreatic digest of casein",
+        "papaic digest of soybean"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Trypticase_Soy_Agar.yaml",
+          "sha256": "4a3700dd02e697b78714e2aea0158e82c5394cc6cbd88bb85c5e3ae001463ada",
+          "identifier": "UNMAPPED_0557",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Trypticase_Soy_Broth.yaml",
+          "sha256": "217e88e15c71823e46aa27998777a68fa5345302fe595c638227511a2d5adc88",
+          "identifier": "UNMAPPED_0252",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Phytone.yaml",
+          "sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase.yaml",
+          "sha256": "ced9ce2808f4e36f73e5a5aa7b2626efa2a85efd67ca1d39b4e15a61d4c454ef",
+          "identifier": "MICRO:0000175",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Casein_Peptone.yaml",
+          "sha256": "6c8f30e9340d2df5b8477791831810db38cdf6a03df96643304e43f1e2157a64",
+          "identifier": "FOODON:03315719",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto-tryptone.yaml",
+          "sha256": "cab30ffd901d05f125c7da64298ea68c43578c92cd8acc962a84b9318a628dda",
+          "identifier": "MICRO:0000182",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tryptone.yaml",
+          "sha256": "2d4142f88d854838da86fa3f81a34d5d40c302627cf127adc0b50006e5b21356",
+          "identifier": "MICRO:0000182",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase_Peptone.yaml",
+          "sha256": "88e513d4f6e6fa153ae508047b9a654922dad2bab84d4624cca2a17ade2b742c",
+          "identifier": "MICRO:0000175",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth.yaml",
+          "sha256": "c335acb9d1ad86d663702a8e193afb1e84d97c8666d49beef9cce8e16b3548cc",
+          "identifier": "MICRO:0000113",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Casitone.yaml",
+          "sha256": "0c76b299992b5211f0094e255079b072bec6202f0412174077c4686e4da531a8",
+          "identifier": "MICRO:0000606",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Tryptic_Soy_Broth_Difco.yaml",
+          "sha256": "2339c760edea771c2451728e9d0232181c3980e6b4d6a85d43873be97a07dc3c",
+          "identifier": "MICRO:0000113",
+          "mapping_status": "REJECTED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-121",
+        "op-context-121-0",
+        "op-context-121-1",
+        "op-nbrc1045",
+        "op-owner-search",
+        "op-source-failures-final",
+        "op1201-fao-tsb",
+        "op1201-micro-tsb-facts",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000113",
+        "https://www.fao.org/4/a0691e/A0691E09.htm",
+        "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1045"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 127,
+      "case_id": "CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.5 M Glycine--NaOH buffer (pH 10.0)",
+        "source_label": "0.5 M Glycine--NaOH buffer (pH 10.0)",
+        "raw_source_label": "0.5 M Glycine--NaOH buffer (pH 10.0)"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-glycine-naoh-stock"
+      ],
+      "reasoning": "JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at pH 10.0. This defines a stock preparation even though its solvent and the amount of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L receiving dose is a separate normalization defect.",
+      "applicability": "Both M949 and M950 trace to JCM906. Distilled water is explicit for the 900 mL basal medium, not for preparation of this stock. No solvent, titrant amount or final-medium glycine concentration is inferred. The raw stock label is preserved in notes, without a global alias.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "glycine",
+        "sodium hydroxide"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/ZMB_ALS.yaml",
+          "sha256": "43cfafcde49b6e5b65dcb7809fc086ade6bd9573cef4ab97cd4abd4792b0f6d3",
+          "identifier": "UNMAPPED_0272",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bicine_Buffer.yaml",
+          "sha256": "690ca43a7c43f5b5c70498026ac073fefcc8d9d066015c57129bd93755f42aab",
+          "identifier": "CHEBI:40957",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Day_AminoAcid20.yaml",
+          "sha256": "77f839fd4267567afb93feda8dcae9fd2fe441e30af45b3ecd54f82dc609f1ad",
+          "identifier": "kgmicrobe.ingredient:day_aminoacid20",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Betaine_Hydrochloride.yaml",
+          "sha256": "77cf04f3fafb04a92080656711b7807ed4e9af7c79f7852ffd31a09fe428f4ac",
+          "identifier": "cas:590-46-5",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/NLDM_metabolites.yaml",
+          "sha256": "457be6fa945786e0f6fbbb29755ac42e069a56fe5eb2d754e9b880fa4063ab10",
+          "identifier": "kgmicrobe.ingredient:nldm_metabolites",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycine.yaml",
+          "sha256": "a3f7af80526ce763ef05d032ef7c31caa28203bbd1ed4b788bf6b921c70f5a57",
+          "identifier": "CHEBI:15428",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Lithocholic_Acid.yaml",
+          "sha256": "1903f7d9517c2c068dbb76387fd4efcd1c497d76da7d1dd4c9a82639879d92f2",
+          "identifier": "CHEBI:16325",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+          "sha256": "c68bf8109946d2a5ccd474860657d19663520960f962b9845de82b269940a137",
+          "identifier": "CHEBI:132766",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/N-N_Dimethyl_Glycine.yaml",
+          "sha256": "655c98f17fd6ca7a227d3cb46ae70f80b4b74d84e8bce470f9bb6533b034f5b1",
+          "identifier": "CHEBI:17724",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Nitrilotriacetic_Acid.yaml",
+          "sha256": "7e9b42c517e23a71ad8c012b4391d2a1fbb89a1fd4814799d6452af97397b392",
+          "identifier": "CHEBI:44557",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/L-Glutathione.yaml",
+          "sha256": "ec615cf6df4296ecc6705c478c4dcc45252fac365d5395778e836f7052e1f92e",
+          "identifier": "CHEBI:16856",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Naoh.yaml",
+          "sha256": "b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31",
+          "identifier": "CHEBI:32145",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml",
+          "sha256": "fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d",
+          "identifier": "cas:15467-20-6",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycyl-glycine.yaml",
+          "sha256": "66281dd8537708a662a74200c22bb1d935b85f35e8dbe809384e1ccc9d9088ac",
+          "identifier": "CHEBI:17201",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Hippuric_Acid.yaml",
+          "sha256": "56016925d71e172cd20e89fea50e538e9868e38a54f852253b8c6cb06ca33c68",
+          "identifier": "CHEBI:18089",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycocyamine.yaml",
+          "sha256": "1a4cc99e4a5532700c6e39fdad29ebb05d70e8fa6ef41b897a6722d86d44b644",
+          "identifier": "CHEBI:16344",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Betaine_X_H2o.yaml",
+          "sha256": "30e8e68f84a2fb6e866ce4356a4514f21701286b04a0f70847d6bf9cb2a0320f",
+          "identifier": "CHEBI:91242",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycylglycine.yaml",
+          "sha256": "3d902b3b5870c5317df4c90d03f58ba75f356236ecb1a1dcda3a9bc4b5d461d9",
+          "identifier": "CHEBI:17201",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bicine.yaml",
+          "sha256": "cf41ceed6bfbc541ebbae72570c6c2ee0df7d4e036499cee389b03f1e8c748ea",
+          "identifier": "CHEBI:40957",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/L-α-phosphatidylinositol_From_Glycine_Max_Soybean.yaml",
+          "sha256": "5e6711fe5b18b3b2fca2ac04d6251e89c32f253398490a4089eac66df1cbde1a",
+          "identifier": "cas:97281-52-2",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycylglycylglycine.yaml",
+          "sha256": "f63e5a69409786eda00ff318d1a478df48d218404008f18ebf1868ff86c2d9bb",
+          "identifier": "CHEBI:63961",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na2-edta.yaml",
+          "sha256": "7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4",
+          "identifier": "CHEBI:64734",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/05_M_Nitrilotriacetic_Acid_Disodium_Salt.yaml",
+          "sha256": "91eae6a773cf1630a143147a314e29f37f430a33f885e0340d08978cb58ea74f",
+          "identifier": "kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycyl-L-proline.yaml",
+          "sha256": "304b15c87db118a3ab5bf4c151049e66ad2df40339f157c973f9681c6bd8eebc",
+          "identifier": "CHEBI:70744",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glutathione.yaml",
+          "sha256": "c4b3b3d8350b182aff417029849e53a271af80f51de35e6b2a0920961a0f90d6",
+          "identifier": "CHEBI:16856",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tricine.yaml",
+          "sha256": "a437294e8d72a87d9e0312005d7c1426fc95cd4af5a885f7724910a26d8c0187",
+          "identifier": "CHEBI:39063",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/L-leucylglycine_2-naphthylamide.yaml",
+          "sha256": "bf456848924447be16701b4f2bc2396619afdc436e60c5b076483b9c457cb321",
+          "identifier": "CHEBI:90741",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Creatine.yaml",
+          "sha256": "032c5ace97ce962ddf8586ac8e75396b47a1702f60cae24624c30dbb2032ab85",
+          "identifier": "CHEBI:16919",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/L-alanylglycine.yaml",
+          "sha256": "be592fbf7c4c0713b0962fb7db4c100d07ebeb53eac160ef4a93adff0f4df93c",
+          "identifier": "CHEBI:73757",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na3-edta.yaml",
+          "sha256": "ea8dbade6d6bfd0bbb478bd146a1266dbb2742c7d022a3de16904465ea73238a",
+          "identifier": "CHEBI:63125",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycine-NaOH_Buffer.yaml",
+          "sha256": "0a826dd3c98af3a73acb1dd82a6df1a0a6c381dde15e1c8bef4fa64523b52e6a",
+          "identifier": "kgmicrobe.ingredient:glycine-naoh_buffer",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycine_Betaine.yaml",
+          "sha256": "f5addc808ecde52ecab0d29ba812e7d48c979dace5409bdbac0cd6f0f588312e",
+          "identifier": "CHEBI:17750",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-127",
+        "op-context-127-0",
+        "op-context-127-1",
+        "op-jcm906",
+        "op-owner-search",
+        "op1201-jcm906",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=906"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 128,
+      "case_id": "CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Cereal grass leaves",
+        "source_label": "Cereal grass leaves",
+        "raw_source_label": "Cereal grass leaves"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-cereal-leaves"
+      ],
+      "reasoning": "The existing Cereal_Leaves record denotes cereal leaf tissue of unspecified species, matching the material named in the CCAP recipes. Promote this existing material to a registry identity and preserve the supplier and preparation context without asserting a plant species or extract composition.",
+      "applicability": "FCGM and FCGMHEPES use 1.25 g/L of leaf input; NCL75S uses 1 g/L. All three use leaves before extraction. The leaf material is not equated to the resulting medium, grain flour or a standardized Cerophyll product.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "cereal"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Cereal_Leaves.yaml",
+          "sha256": "f6c3584ff828b32a718c7767070c17108388645934d3aef3515b3ff734242616",
+          "identifier": "UNMAPPED_0356",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Cerophyll.yaml",
+          "sha256": "005c5ca4840a0580f0e5b7e3dcfcccb8a90e4ff2a93ab9bb147131d7cf25a94b",
+          "identifier": "UNMAPPED_0357",
+          "mapping_status": "UNMAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-128",
+        "op-ccap-fcgm",
+        "op-ccap-ncl",
+        "op-context-128-0",
+        "op-context-128-1",
+        "op-context-128-2",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ccap.ac.uk/wp-content/uploads/MR_FCGM.pdf",
+        "https://www.ccap.ac.uk/wp-content/uploads/MR_NCL75S.pdf"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 134,
+      "case_id": "CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Pyroroquinoline quinone (PQQ)",
+        "source_label": "Pyroroquinoline quinone (PQQ)",
+        "raw_source_label": "Pyroroquinoline quinone (PQQ)"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "NBRC1394 establishes that the intended cofactor is PQQ, despite the spelling error in its expanded name. It does not identify the supplied free acid, salt or hydrate. CHEBI:18315 and the supplier acid product establish an available neutral form, but their nomenclature does not establish which reagent NBRC1394 used. The neutral-acid proposal is withdrawn.",
+      "applicability": "The exact NBRC1394 recipe specifies 1 mg PQQ per 1 L and final medium pH 7.0. The frozen 1 G_PER_L amount is a separate import defect. Final medium pH does not establish the purchased salt or free-acid form. The source spelling and its occurrence are preserved without a global alias, a charged-form inference or an invented registry identity.",
+      "precise_remaining_requirement": "An NBRC1394 reagent specification, catalog identifier, CAS number, or preparation record identifying the PQQ material actually supplied. The independently verified 1 mg/L dose correction remains applicable without this form identification.",
+      "owner_lookup_queries": [
+        "pyrroloquinoline",
+        "pqq",
+        "CHEBI:18315"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [],
+      "evidence_ids": [
+        "op-case-134",
+        "op-context-134-0",
+        "op-nbrc1394",
+        "op-owner-search",
+        "op-pqq",
+        "op1201-chebi-pqq",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention",
+        "op1201-sigma-pqq",
+        "op1201-peer-remediation-v2"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:18315",
+        "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1394",
+        "https://www.sigmaaldrich.com/US/en/substance/pyrroloquinolinequinone3302172909343"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 143,
+      "case_id": "KG_CASE:0d8508095a6c52064b4b278d55dd92623a8680df2e0b59fe3b674e4a9473b3f3",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2119",
+        "source_label": "6-methylnicotinate",
+        "raw_source_label": "6-methylnicotinate"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The raw name 6-methylnicotinate does not unambiguously identify the current automatic methyl-ester cross-reference. The existing unmapped owner already preserves the exact source label. No owner identity can be promoted by treating the derived cross-reference as independent evidence.",
+      "applicability": "MediaDive2119 and the TCI methyl-6-methylnicotinate product contrast were reread. CAS5470-70-2 identifies the methyl ester, whereas a bare nicotinate can denote the acid conjugate base. The 5 g/L record and adjust-if-required note do not decide between them.",
+      "precise_remaining_requirement": "The original reagent or formulation must identify methyl ester versus 6-methylnicotinic acid/salt. The present record supplies no independent structure or catalog.",
+      "owner_lookup_queries": [
+        "methylnicotin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/6-methylnicotinate.yaml",
+          "sha256": "456f78dae5f70565fdcaa5664ba093c4a3e179d0b956627c13574777a992f154",
+          "identifier": "UNMAPPED_0320",
+          "mapping_status": "UNMAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-143",
+        "op-md2119",
+        "op-methyl-ester",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://bacmedia.dsmz.de/ingredients/2119",
+        "https://www.tcichemicals.com/GB/en/p/M1893"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 145,
+      "case_id": "KG_CASE:0ed2d5054b03b53cbf1b28d173d23277db51117fb63501bf2b8eb232611f82d8",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:298",
+        "source_label": "Na-stearate",
+        "raw_source_label": "Na-stearate"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing Na-stearate owner already represents this sodium salt with CHEBI:132109 and CAS822-16-2. Its existing names cover the source, so adding another owner or duplicating an alias would not change curated identity.",
+      "applicability": "The exact owner, frozen row and complete source record were reread. Sodium stearate, Na-stearate and the CAS-decorated token agree on the salt. Native row-level holds remain preserved; this is an explicit no-delta finding, not a deferral of owner curation.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "stearate"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Butyl_Stearate.yaml",
+          "sha256": "a7075c4de783d3c6b7dde20b1ae799da4129b2ea13bdbdbb176618fb0783dfa7",
+          "identifier": "CHEBI:85983",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycerol_Monostearate.yaml",
+          "sha256": "145d4562c2975f01ff2b4ada31e418d9ba52e0640ef6843a7c44eb501c72d2af",
+          "identifier": "CHEBI:75456",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na-stearate.yaml",
+          "sha256": "51532547e6cc93a873def26898ab576bb34fafd988d3254f4a91b7fe810c558d",
+          "identifier": "CHEBI:132109",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Tween_60.yaml",
+          "sha256": "d6784eead1df18b60aef5e8514f81d2685a008195c055125d44c0e9f8bfc251e",
+          "identifier": "CHEBI:53425",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-145",
+        "op-owner-search",
+        "op-stearate",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:132109"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 150,
+      "case_id": "KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:943",
+        "source_label": "DL-Na-lactate",
+        "raw_source_label": "DL-Na-lactate"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-sodium-lactate-alias-boundary"
+      ],
+      "reasoning": "The current owner mixes concentration labels and an L-specific label into the alias channel of sodium lactate. Retype the 1 M stock, 1% stock and L-only label as rejected provenance, retaining their original text and source. The DL salt name and existing identifier remain unchanged; this repairs concrete alias defects without approving the withheld row.",
+      "applicability": "Sigma71720 verifies the DL salt at CAS72-17-3; CHEBI:75228 has an unspecified structure, while CHEBI:232798 explicitly identifies sodium L-lactate. MediaDive943 supplies no stock concentration. Its DL name does not justify exporting either concentration label or the L-only synonym. Existing nutritional-role uncertainty and the native hold are preserved.",
+      "precise_remaining_requirement": "Source-row release still requires the content-bound native workflow; this proposal does not certify the existing provisional nutritional role or change the inherited hold.",
+      "owner_lookup_queries": [
+        "sodium lactate",
+        "dl-lactate"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_L-lactate.yaml",
+          "sha256": "c9b2157390a5a84dfd18e5d8d869edd2114b62b3b92b82e064c0b3a29cb3ccce",
+          "identifier": "CHEBI:232798",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_Lactate.yaml",
+          "sha256": "56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6",
+          "identifier": "CHEBI:75228",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Lactate.yaml",
+          "sha256": "31c51bf1fe574408d0283a89af8923db94f20cdd5405817ad2b35fea8a5f5891",
+          "identifier": "CHEBI:24996",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/D.yaml",
+          "sha256": "3dd35a9da755f08b8a20e5e8ffe9a1b1aae5050aff54cc8b2d1034abcd8a39e4",
+          "identifier": "CHEBI:75228",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na-l-lactate.yaml",
+          "sha256": "afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031",
+          "identifier": "CHEBI:232798",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/proposed_owners/ATCC1249_Component_III.yaml",
+          "sha256": "73f37518ec92f98c7bb32e8d6d15ac0e85946bc7e2c366541160426a0cadd9b3",
+          "identifier": "kgmicrobe.ingredient:atcc1249_component_iii",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-150",
+        "op-lactate",
+        "op-owner-search",
+        "op1201-chebi-sodium-lactate",
+        "op1201-ols-chebi-232798",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention",
+        "op1201-sigma-dl-lactate"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:75228",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:232798",
+        "https://www.sigmaaldrich.com/MV/en/product/sial/71720"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 152,
+      "case_id": "KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1340",
+        "source_label": "ß-nicotinamide adenine dinucleotide",
+        "raw_source_label": "ß-nicotinamide adenine dinucleotide"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-beta-nad-provenance"
+      ],
+      "reasoning": "The source and existing aliases already identify beta-NAD. Maintained history distinguishes the PubChem CAS import from the later ChEBI formula, InChI and SMILES backfill. Correct the conflated chemical-property attribution without changing molecular values, identity, aliases or native holds.",
+      "applicability": "MediaDive1340 names NAD and records a 2 mg dose. This proposal repairs field provenance only; it does not infer a salt, change redox state or approve a withheld SSSOM row.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "nicotinamide adenine",
+        "beta-nad"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Beta-nad.yaml",
+          "sha256": "0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e",
+          "identifier": "CHEBI:15846",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Hydro_Methylpteroylglutamylglutamic_Acid.yaml",
+          "sha256": "987e0750feda0064ce64c91e6989a359043469ec8d8e3ce4ff277bf168ba98ca",
+          "identifier": "kgmicrobe.compound:hydro_methylpteroylglutamylglutamic_acid",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-152",
+        "op-nad",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:15846"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 154,
+      "case_id": "KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:667",
+        "source_label": "Soytone",
+        "raw_source_label": "Soytone"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-soy-family-source-boundary"
+      ],
+      "reasoning": "Primary product evidence identifies Soytone as an enzymatic soybean digest. Record that evidence and the exact scope of the four-member family on the active representative, without treating generic soy peptone, Soytone and every Phytone product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone remains rejected.",
+      "applicability": "MediaDive667 and MediaDive102 use Soytone and Bacto Soytone respectively. The Thermo/BD product evidence supports soybean-digest material, but does not allocate the shared 1089/833 occurrence totals to catalog products. Soy_Peptone, Soya_Pepton and Soya_Peptone were read in full, along with rejected Bacto_Soytone. Their existing identities, aliases, counts and holds are preserved; this is a bounded provenance proposal, not a completed family merge or product-equivalence approval.",
+      "precise_remaining_requirement": "The existing generic family aggregates multiple source labels and products. Exact product-equivalence or a merge requires the occurrence-level source allocation and the historical product/process specifications; the copied family totals cannot establish those facts.",
+      "owner_lookup_queries": [
+        "soytone",
+        "soy peptone",
+        "soya"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Tryptone_Soya_Broth_Oxoid.yaml",
+          "sha256": "7f6eb19e8aeecb6eb0bde218d78655aed8f49f3cf756826432cbef3f95548223",
+          "identifier": "UNMAPPED_0138",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_L-lactate.yaml",
+          "sha256": "c9b2157390a5a84dfd18e5d8d869edd2114b62b3b92b82e064c0b3a29cb3ccce",
+          "identifier": "CHEBI:232798",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Phytone.yaml",
+          "sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soyton.yaml",
+          "sha256": "f7cab549355254938f8999e74762e36328a94c3d9d3369d8c531ca753762d194",
+          "identifier": "kgmicrobe.ingredient:soyton",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soya_Peptone.yaml",
+          "sha256": "4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Soytone.yaml",
+          "sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase_Peptone.yaml",
+          "sha256": "88e513d4f6e6fa153ae508047b9a654922dad2bab84d4624cca2a17ade2b742c",
+          "identifier": "MICRO:0000175",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Staphylomycin_M1.yaml",
+          "sha256": "04785e91917d2e9a1a1e670e3dd871cc6745b43eed0f75d32c41f1e83061a431",
+          "identifier": "NCIT:C1295",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soy_Peptone.yaml",
+          "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soya_Pepton.yaml",
+          "sha256": "941ffbb12746f06f0d1fcd7a7142947f77836b861ffc670ad0ec7c56696ba85c",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml",
+          "sha256": "d936af5f0aa4d99913af6bf6ec95ccea6e651064cb61aa1e3f57cba793b6aeb9",
+          "identifier": "FOODON:03302142",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-154",
+        "op-owner-search",
+        "op-soy-parent",
+        "op-soytone",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03315720",
+        "https://www.thermofisher.com/order/catalog/product/212489"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 155,
+      "case_id": "KG_CASE:41f9033cfb29132a11b4b62da080a26442b252c9b035f21c3b8c251ae813259c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:192",
+        "source_label": "Glycyl-glycine",
+        "raw_source_label": "Glycyl-glycine"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing Glycyl-glycine owner already has the source name, CHEBI:17201 and CAS556-50-3. The proposed alternative would duplicate this same dipeptide, so no YAML change is justified.",
+      "applicability": "The complete owner, source record and source-bound native row were inspected, including the CAS-decorated token. This case already has a suitable owner; preserved release holds are not missing scientific facts and are not lifted here.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "glycyl"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Glycyl-L-bromosuccinic_Glutamic_Acid.yaml",
+          "sha256": "d0921088e01118db4557a5da8ecf518abb4cbd65a656ef5661b21f68ef54f7b6",
+          "identifier": "UNMAPPED_0817",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Gly-DL-Asp.yaml",
+          "sha256": "24c482ea156d61cdf83da519243c5101ee6b8cdc1f24490508de1933fa61c29e",
+          "identifier": "cas:79731-35-4",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycyl_L-aspartic_Acid.yaml",
+          "sha256": "4dac9037d5143263694c5fa105a734cd4675ead4154f1277a9a10ddb7531286a",
+          "identifier": "CHEBI:73804",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycyl-glycine.yaml",
+          "sha256": "66281dd8537708a662a74200c22bb1d935b85f35e8dbe809384e1ccc9d9088ac",
+          "identifier": "CHEBI:17201",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycylglycine.yaml",
+          "sha256": "3d902b3b5870c5317df4c90d03f58ba75f356236ecb1a1dcda3a9bc4b5d461d9",
+          "identifier": "CHEBI:17201",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Gly-Gln_Monohydrate.yaml",
+          "sha256": "d5b74cb58174ded1547ae1ede5e5141afb761249501def738b1a1597412707f4",
+          "identifier": "cas:172669-64-6",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycylglycylglycine.yaml",
+          "sha256": "f63e5a69409786eda00ff318d1a478df48d218404008f18ebf1868ff86c2d9bb",
+          "identifier": "CHEBI:63961",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycerol_3-phosphate.yaml",
+          "sha256": "14a8fceceb872b3afce47201e3343489773c6ac7db09ab588f73f9a7b48bab9b",
+          "identifier": "CHEBI:15978",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Glycyl-L-proline.yaml",
+          "sha256": "304b15c87db118a3ab5bf4c151049e66ad2df40339f157c973f9681c6bd8eebc",
+          "identifier": "CHEBI:70744",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Gly-Glu.yaml",
+          "sha256": "80e4f593664917776479803396992628ae05dec1862f20a8a7030a1ccb8dfd03",
+          "identifier": "CHEBI:73801",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-155",
+        "op-glycylglycine",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:17201"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 156,
+      "case_id": "KG_CASE:43a5876625f87ebfcc5ebfc4d17e2765a5c6ca0d285d168d912e06fb560c3e02",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:cytovirin",
+        "source_label": "cytovirin",
+        "raw_source_label": ""
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "Cytovirin already has a registry owner at the specificity supported by this trait source. The frozen entry provides no independent structural evidence that would justify substituting blasticidin S or its hydrochloride. No identity or alias delta is needed for the admitted registry label.",
+      "applicability": "The original trait record, existing owner and prior bounded primary searches were reread. The source supplies the registry label rather than a reagent specification. Registry coverage remains valid; unavailable external structural grounding is not a reason to duplicate it.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "cytovirin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Cytovirin.yaml",
+          "sha256": "1bb222c9a2df8ece401e0b3ec2978ca7f27e1e6f087826cea60ceafaf3b08178",
+          "identifier": "kgmicrobe.compound:cytovirin",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-156",
+        "op-owner-search",
+        "op-search-search-targeted-final",
+        "op-search-search-unresolved",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 159,
+      "case_id": "KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:102",
+        "source_label": "Bacto Soytone",
+        "raw_source_label": "Bacto Soytone"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-soy-family-source-boundary"
+      ],
+      "reasoning": "Primary product evidence identifies Soytone as an enzymatic soybean digest. Record that evidence and the exact scope of the four-member family on the active representative, without treating generic soy peptone, Soytone and every Phytone product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone remains rejected.",
+      "applicability": "MediaDive667 and MediaDive102 use Soytone and Bacto Soytone respectively. The Thermo/BD product evidence supports soybean-digest material, but does not allocate the shared 1089/833 occurrence totals to catalog products. Soy_Peptone, Soya_Pepton and Soya_Peptone were read in full, along with rejected Bacto_Soytone. Their existing identities, aliases, counts and holds are preserved; this is a bounded provenance proposal, not a completed family merge or product-equivalence approval.",
+      "precise_remaining_requirement": "The existing generic family aggregates multiple source labels and products. Exact product-equivalence or a merge requires the occurrence-level source allocation and the historical product/process specifications; the copied family totals cannot establish those facts.",
+      "owner_lookup_queries": [
+        "soytone",
+        "soy peptone",
+        "soya"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Tryptone_Soya_Broth_Oxoid.yaml",
+          "sha256": "7f6eb19e8aeecb6eb0bde218d78655aed8f49f3cf756826432cbef3f95548223",
+          "identifier": "UNMAPPED_0138",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_L-lactate.yaml",
+          "sha256": "c9b2157390a5a84dfd18e5d8d869edd2114b62b3b92b82e064c0b3a29cb3ccce",
+          "identifier": "CHEBI:232798",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Phytone.yaml",
+          "sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soyton.yaml",
+          "sha256": "f7cab549355254938f8999e74762e36328a94c3d9d3369d8c531ca753762d194",
+          "identifier": "kgmicrobe.ingredient:soyton",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soya_Peptone.yaml",
+          "sha256": "4002653e0decfd0e7821b4bdec8b5868f4d812225a294da510599b4497f06743",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Soytone.yaml",
+          "sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "REJECTED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trypticase_Peptone.yaml",
+          "sha256": "88e513d4f6e6fa153ae508047b9a654922dad2bab84d4624cca2a17ade2b742c",
+          "identifier": "MICRO:0000175",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Staphylomycin_M1.yaml",
+          "sha256": "04785e91917d2e9a1a1e670e3dd871cc6745b43eed0f75d32c41f1e83061a431",
+          "identifier": "NCIT:C1295",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soy_Peptone.yaml",
+          "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soya_Pepton.yaml",
+          "sha256": "941ffbb12746f06f0d1fcd7a7142947f77836b861ffc670ad0ec7c56696ba85c",
+          "identifier": "FOODON:03315720",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml",
+          "sha256": "d936af5f0aa4d99913af6bf6ec95ccea6e651064cb61aa1e3f57cba793b6aeb9",
+          "identifier": "FOODON:03302142",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-159",
+        "op-owner-search",
+        "op-soy-parent",
+        "op-soytone",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03315720",
+        "https://www.thermofisher.com/order/catalog/product/212489"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 160,
+      "case_id": "KG_CASE:52af4d421569663e9f5b4f42ebf1f743a5436aa9d0a6d0638106d0dd535bc830",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone",
+        "source_label": "Alpha-hydroxyglutarate-gamma-lactone",
+        "raw_source_label": ""
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing registry owner preserves alpha-hydroxyglutarate-gamma-lactone without inventing stereochemistry or substituting nonlactonized hydroxyglutarate. This is the complete level of identity supported by the trait entry, so no new owner or alias is needed.",
+      "applicability": "The GTDB trait entry and existing owner were reread. The source gives no independent stereochemistry or counterion. Specific S-anion candidates are excluded; the supported registry identity remains unchanged and all native decisions are preserved.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "hydroxyglutarate"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Alpha-hydroxyglutarate-gamma-lactone.yaml",
+          "sha256": "66929ace9088bcff3146598582eaad59a3a361de38678f1f74d7f7886431045b",
+          "identifier": "kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-160",
+        "op-lactone",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:73673"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 164,
+      "case_id": "KG_CASE:6aa44e4390c5ce9722243f72e2e81bd299209b95576a33ec0dd9f4ed298ad545",
+      "source": {
+        "source": "metatraits_gtdb",
+        "source_case_id": "kgmicrobe.compound:chlororaphin",
+        "source_label": "chlororaphin",
+        "raw_source_label": ""
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "Chlororaphin already has a registry owner representing the named pigment. The source does not establish an independently verified redox/complex structure that would justify replacing that registry identity. No duplicate owner or new alias is needed.",
+      "applicability": "The GTDB trait entry, owner and historical pigment evidence were reread. A taxon and oxidized oxychlororaphin are excluded. Existing source-label coverage is sufficient; absence of a verified exact external term is not an unfinished owner-creation task.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "chlororaphin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Chlororaphin.yaml",
+          "sha256": "b3f19dbdd13eb26fdd4933a39f294a538de741389d70595d01110f2465c1dbfd",
+          "identifier": "kgmicrobe.compound:chlororaphin",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-164",
+        "op-chlororaphin",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://repository.tudelft.nl/file/File_0700877a-931e-411b-b0c3-f612deb5e3b7?preview=1"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 168,
+      "case_id": "KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1938",
+        "source_label": "HOMOPIPES",
+        "raw_source_label": "HOMOPIPES"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-homopipes-stock"
+      ],
+      "reasoning": "The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the solute. A separate stock record can assert the named solute and concentration while leaving the vehicle and titrant unspecified.",
+      "applicability": "The complete raw attribute is pH 5.4, *, 0.5 M, with a 0.05 mL dose. The unresolved asterisk, solvent, titrant amount and sterilization method are not inferred. The bare name HOMOPIPES is not added as a global alias for the stock.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "homopipes"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Calf_Brains.yaml",
+          "sha256": "6bd47b24545672f18205bbdcd5592f4c6aa17c2e442ad89e014f66dd798ab085",
+          "identifier": "UNMAPPED_0170",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Beef_Heart.yaml",
+          "sha256": "ca7de3785bc0a6469a5d60f48de97a49c0c7e460ea11d801bfe6367b1e76dc34",
+          "identifier": "FOODON:00004410",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/HOMOPIPES.yaml",
+          "sha256": "1873785d4e49c89c495ace5a36c8d2d965a3f2347947baffb0e928bb3227ace7",
+          "identifier": "cas:202185-84-0",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-168",
+        "op-homopipes",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://b2b.sigmaaldrich.com/US/en/product/aldrich/53588"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 173,
+      "case_id": "KG_CASE:928b877346f4d44723ae19cce83d300f5349c5926712ca1a574ae02fb6447184",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:914",
+        "source_label": "Se-acid",
+        "raw_source_label": "Se-acid"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The original DSMZ1003 formula repeats Se-acid without an oxidation state. The current MediaDive cross-reference to selenic acid is not an independent specification. The existing unmapped record correctly preserves the unresolved source name.",
+      "applicability": "The original DSMZ PDF, MediaDive914 page/API and frozen record were reread. Neither amount nor the generic acid label distinguishes H2SeO3 from H2SeO4. A registry purporting to be one distinct chemical would conceal this real ambiguity.",
+      "precise_remaining_requirement": "An original reagent name, formula or supplier specification distinguishing selenious acid from selenic acid.",
+      "owner_lookup_queries": [
+        "se-acid",
+        "selenic",
+        "selenious"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Se-acid.yaml",
+          "sha256": "1a10bb7df9210af5e7a7190270b96539a8a42b4a7f989a72d5c7fa2cc9faa0a6",
+          "identifier": "UNMAPPED_0517",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na2seo3.yaml",
+          "sha256": "de098711130ca209fe06ee2a3239125f2aabb60c554830f93b2b24b72cc12cab",
+          "identifier": "CHEBI:48843",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/H2seo3.yaml",
+          "sha256": "70884df864f67411a2584f7a759042fe3855f21a94835d9f7a3ad3c10f9b3907",
+          "identifier": "CHEBI:26642",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Na2seo3_X_5_H2o.yaml",
+          "sha256": "1b808f46bbf0b43885b37fbd0a3e46ce00c363d18d934110c4ff5d36bddcb911",
+          "identifier": "CHEBI:131361",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-173",
+        "op-md914",
+        "op-md914api",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://bacmedia.dsmz.de/ingredients/914",
+        "https://mediadive.dsmz.de/rest/ingredient/914"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 174,
+      "case_id": "KG_CASE:92cee955e27449c26202ec2fafdd9cbdfe6079b59c9250fb8c9f6b8c78e5e185",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone",
+        "source_label": "Alpha-hydroxyglutarate-gamma-lactone",
+        "raw_source_label": ""
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing registry owner preserves alpha-hydroxyglutarate-gamma-lactone at the specificity supported by the trait source. No identity or alias delta is justified without inventing a stereoisomer or replacing the lactone with a different compound.",
+      "applicability": "The non-GTDB trait entry was reviewed separately from case160. It supplies the same registry label and no independent stereochemistry or counterion. The current owner is retained and the exact native decision is preserved.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "hydroxyglutarate"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Alpha-hydroxyglutarate-gamma-lactone.yaml",
+          "sha256": "66929ace9088bcff3146598582eaad59a3a361de38678f1f74d7f7886431045b",
+          "identifier": "kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-174",
+        "op-lactone",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:73673"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 175,
+      "case_id": "KG_CASE:96bf617175de476cb4499f271338cf9174932e34439118f278eb764afc56f40c",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:chlororaphin",
+        "source_label": "chlororaphin",
+        "raw_source_label": ""
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing Chlororaphin registry owner already represents this trait label. The source supplies no new structural claim that would justify a different pigment identity, so no owner payload change is needed.",
+      "applicability": "The non-GTDB trait entry was reviewed independently of case164. Historical pigment evidence and the owner were checked; taxon identity and oxidized oxychlororaphin remain excluded. The exact native decision is preserved.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "chlororaphin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Chlororaphin.yaml",
+          "sha256": "b3f19dbdd13eb26fdd4933a39f294a538de741389d70595d01110f2465c1dbfd",
+          "identifier": "kgmicrobe.compound:chlororaphin",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-175",
+        "op-chlororaphin",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://repository.tudelft.nl/file/File_0700877a-931e-411b-b0c3-f612deb5e3b7?preview=1"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 176,
+      "case_id": "KG_CASE:9b1fc6091f9eced63d6110118782b26cefc98ea81adf80108afc7ab3f30cdab3",
+      "source": {
+        "source": "metatraits",
+        "source_case_id": "kgmicrobe.compound:primocarcin",
+        "source_label": "primocarcin",
+        "raw_source_label": ""
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "Primocarcin already has a registry owner consistent with the named historical antibiotic. No new source fact supports replacing it with an exact external structure or adding a duplicate owner.",
+      "applicability": "The trait entry, existing owner and original isolation-paper evidence were reread. The historical formula alone does not identify a new registry/ontology target. The existing record covers the admitted label; no additional owner curation is deferred.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "primocarcin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Primocarcin.yaml",
+          "sha256": "85f53866d54960d94b988bf028e757106a7465cdc2423b9e66b8813144756120",
+          "identifier": "kgmicrobe.compound:primocarcin",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-176",
+        "op-owner-search",
+        "op-primocarcin",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.jstage.jst.go.jp/article/antibioticsa/15/2/15_77/_article/-char/en"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 180,
+      "case_id": "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1465",
+        "source_label": "Plain flour",
+        "raw_source_label": "Plain flour"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-plain-flour"
+      ],
+      "reasoning": "FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference.",
+      "applicability": "MediaDive1465 reports Plain flour at 2 g/L and does not identify a grain. FOODON:00001056 denotes a food product made from flour and is not the ingredient itself. The generic flour concept is chosen under MAPPING_SEMANTICS section 3 step 4; species-specific terms are excluded.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "plain flour",
+        "flour",
+        "FOODON:00004510"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Barley_Grains.yaml",
+          "sha256": "1a954879e6f48dfdd8d079fef24cf5737fdac6b757c9925df7b5e41e99994721",
+          "identifier": "UNMAPPED_0096",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/unmapped/Plain_Flour.yaml",
+          "sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e",
+          "identifier": "UNMAPPED_0490",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Oat_Flour_B-glucan.yaml",
+          "sha256": "5ac0b28a58c475303b3a7c8169241317e60053324189d598d1836c5141240e9d",
+          "identifier": "FOODON:03301312",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Potato_Flour.yaml",
+          "sha256": "2cf43ad2954e7517837f349ce1be10888f085c253461b2d3f20254bb19673140",
+          "identifier": "FOODON:03302378",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Soy_Flour.yaml",
+          "sha256": "ba96033d326524811bb54040bfca97e7c66140761e4650ca154c8e8621b2dff9",
+          "identifier": "FOODON:03302142",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Arabinoxylan_Rye_Flour.yaml",
+          "sha256": "eed0ccdc99fba905c26e90c39684cfa8a0682cc9909ec94e2fac40e33e734adf",
+          "identifier": "kgmicrobe.ingredient:arabinoxylan_rye_flour",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Soy_Flour.yaml",
+          "sha256": "d936af5f0aa4d99913af6bf6ec95ccea6e651064cb61aa1e3f57cba793b6aeb9",
+          "identifier": "FOODON:03302142",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-180",
+        "op-owner-search",
+        "op-plain-flour-primary",
+        "op1201-ols-foodon-00001056",
+        "op1201-ols-foodon-00004510",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://bacmedia.dsmz.de/ingredients/1465",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00001056",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00004510"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 181,
+      "case_id": "KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1128",
+        "source_label": "DL-Asparagine x H2O",
+        "raw_source_label": "DL-Asparagine x H2O"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-dl-asparagine-monohydrate"
+      ],
+      "reasoning": "The source explicitly specifies DL-asparagine with one water. Wako identifies DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate product, but that number also appears on generic asparagine records; it is not copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653 asparagine. The narrower supplied form uses NARROW_MATCH, which emits skos:broadMatch to the ontology parent; this is not exact identity.",
+      "applicability": "MediaDive1128 supplies the DL and hydration descriptors. Its derived molarity uses an anhydrous mass and does not override the raw 0.8 g reagent identity. Local ChEBI/NCIT and current OLS CAS searches found no exact term. NCIT:C87433 is excluded because its L synonym and CAS 5794-13-8 identify the L hydrate. The existing rejected hydrate alias remains unchanged.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "asparagine",
+        "69833-18-7",
+        "3130-87-8"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Glycerol-asparagine_Agar.yaml",
+          "sha256": "a20ab80bfd721b38622db05c4890f6f5ae80540ae038959e0e91446d9edaf5d5",
+          "identifier": "UNMAPPED_0122",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Day_AminoAcid20.yaml",
+          "sha256": "77f839fd4267567afb93feda8dcae9fd2fe441e30af45b3ecd54f82dc609f1ad",
+          "identifier": "kgmicrobe.ingredient:day_aminoacid20",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/L-Asparagine_Monohydrate.yaml",
+          "sha256": "0f3972bdde44bc5bf922cef4cfa8748d3cd18b5dd7bd9ebea77ae8e6659ed11a",
+          "identifier": "cas:5794-13-8",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/NLDM_metabolites.yaml",
+          "sha256": "457be6fa945786e0f6fbbb29755ac42e069a56fe5eb2d754e9b880fa4063ab10",
+          "identifier": "kgmicrobe.ingredient:nldm_metabolites",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Asparagine.yaml",
+          "sha256": "230bf341a7759b1f6b6b29460d49f47ca56bccf375bc43768fbda08cf9103f79",
+          "identifier": "CHEBI:22653",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Fructose-asparagine.yaml",
+          "sha256": "aece85a59ac14d00da388ff55e8d5e162fb3c92fdc6b28177ebecb481b7a862c",
+          "identifier": "cas:34393-27-6",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Agar.yaml",
+          "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db",
+          "identifier": "CHEBI:2509",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/L-asparagine.yaml",
+          "sha256": "c936ac6337e4d867601ba73d3378e7370518a218e34fc41cbf0bdc506d375b7c",
+          "identifier": "CHEBI:17196",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Daptomycin.yaml",
+          "sha256": "bce1f6044f12b81bdc58d3325cadfa1dcf1e81b597419059f8e894a1569f4b70",
+          "identifier": "CHEBI:600103",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/L-Asparagine_Monohydrate.yaml",
+          "sha256": "07d8b55d6773f4e16ad57e18e5ed72a4438bdeb207cdfb435da84cc2cb62e20a",
+          "identifier": "cas:5794-13-8",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-08/research/organic_products/proposals/Glycerol-asparagine_Agar.yaml",
+          "sha256": "7967781778690110a21339f45a5a161eaaa376ad69d064479c58deeebbbdf590",
+          "identifier": "UNMAPPED_0122",
+          "mapping_status": "UNMAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-181",
+        "op-dl-asn",
+        "op-l-asn-hydrate",
+        "op-owner-search",
+        "op1201-chebi-asn",
+        "op1201-ols-chebi-dl-asparagine-monohydrate-cas",
+        "op1201-ols-ncit-dl-asparagine-monohydrate-cas",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention",
+        "op1201-tci-dl-asn",
+        "op1201-wako-dl-asn",
+        "op1201-peer-remediation-v2"
+      ],
+      "primary_source_urls": [
+        "https://labchem-wako.fujifilm.com/sds/W01W0101-0748JGHEEN.pdf",
+        "https://www.bacmedia.dsmz.de/ingredients/1128",
+        "https://www.ebi.ac.uk/chebi/CHEBI:22653",
+        "https://www.ebi.ac.uk/ols4/api/search?q=69833-18-7&ontology=chebi&rows=50",
+        "https://www.ebi.ac.uk/ols4/api/search?q=69833-18-7&ontology=ncit&rows=50",
+        "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/313/204/a8381pis.pdf",
+        "https://www.tcichemicals.com/US/en/p/A0541"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 183,
+      "case_id": "KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1140",
+        "source_label": "Amphotericin",
+        "raw_source_label": "Amphotericin"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-amphotericin-stock"
+      ],
+      "reasoning": "The frozen source explicitly describes an amphotericin preparation at 10 mg/mL, added by volume. A source-qualified stock record can preserve this preparation with an unresolved amphotericin constituent. The record must not assert amphotericin B, a vehicle or a deoxycholate/lipid formulation.",
+      "applicability": "MediaDive1140 supplies 0.02 mL and the 10 mg/mL attribute. NCIT:C124792 is excluded because its definition requires amphotericin B, which the source does not establish. The existing generic Amphotericin owner remains unmapped and separate. Partial composition is sufficient for the stock; the missing congener and vehicle limit narrower identity, not the source-defined preparation.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "amphotericin"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/unmapped/Amphotericin.yaml",
+          "sha256": "2707caafe7de9f3b5598f4b32b91182816853464bd4944cfa6e5caa7f4480006",
+          "identifier": "UNMAPPED_0325",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Amphotericin_A.yaml",
+          "sha256": "5fd05b51b1510c00941559c7632b178dd057ccce0d35b5dd8aad2c8ca3e297e3",
+          "identifier": "mesh:C041989",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Amphotericin_B.yaml",
+          "sha256": "fc5f6bc5528bc5d761e4aa1a6e53fca4619b9967833aa41fd19fbf01c2ff40f1",
+          "identifier": "CHEBI:2682",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-183",
+        "op-md1140",
+        "op-owner-search",
+        "op1201-ols-ncit-C124792",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://bacmedia.dsmz.de/ingredients/1140",
+        "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C124792"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 184,
+      "case_id": "KG_CASE:e1b206ae7e343f6a08b0dd182bfed8b24ada80be0ffe76a041bb261cd508f630",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2394",
+        "source_label": "MES Hydrat",
+        "raw_source_label": "MES Hydrat"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing MES Hydrat owner already preserves the hydrate identity with CAS145224-94-8 and a broad relation to CHEBI:39005. No source-backed YAML identity change is necessary. The outstanding generated-only alias question belongs to the content-bound export workflow.",
+      "applicability": "The full owner, frozen MediaDive2394 record and held other token were reread. The hydrate must not become the anhydrous chemical. A generated-only token is not invented as a new YAML alias merely to document its later export disposition. All holds remain unchanged.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "mes hydrat"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/MES_Hydrat.yaml",
+          "sha256": "24292497ec7bae482bb3611b8afb9cd1f795332d655be8900f4c59f8d929ebb6",
+          "identifier": "cas:145224-94-8",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-184",
+        "op-mes-hydrate",
+        "op-owner-search",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/324/041/69889dat.pdf"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 186,
+      "case_id": "KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:583",
+        "source_label": "Fe4PO42",
+        "raw_source_label": "Fe4(PO4)2"
+      },
+      "outcome": "proposal",
+      "proposal_ids": [
+        "op1201-ferric-pyrophosphate-label"
+      ],
+      "reasoning": "The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3, structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its preferred label. Correct the preferred label and retain the old string as rejected provenance. This repair does not establish what the malformed source occurrence intended.",
+      "applicability": "The frozen MediaDive583 record and current primary cross-reference were inspected. CHEBI defines Fe(III) and diphosphate in a 4:3 ratio; its formula is not Fe4(PO4)2. The source label therefore remains unresolved and its native WITHHOLD is preserved even after the owner naming repair.",
+      "precise_remaining_requirement": "The original reagent label or recipe must establish the chemical intended by Fe4(PO4)2. The inherited CAS and derived molarity follow the current mapping and are not independent evidence for correcting the source occurrence.",
+      "owner_lookup_queries": [
+        "ferric pyrophosphate",
+        "fe4(po4)2"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/Fe4_Po42.yaml",
+          "sha256": "7753c9cc1725ebf5abcb935bdb2b6d9a96804eec5bbfb0ad8a0af3e322ebb81a",
+          "identifier": "CHEBI:132767",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-186",
+        "op-ferric",
+        "op-md583",
+        "op-owner-search",
+        "op1201-chebi-ferric-pyrophosphate",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://bacmedia.dsmz.de/ingredients/583",
+        "https://www.ebi.ac.uk/chebi/CHEBI:132767"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    },
+    {
+      "index": 187,
+      "case_id": "KG_CASE:ff3474805c31af1030029d9ad78f119e479b7c614b28647bfc0eeb669a6d77c0",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1357",
+        "source_label": "D-Trehalose",
+        "raw_source_label": "D-Trehalose"
+      },
+      "outcome": "no_proposal",
+      "proposal_ids": [],
+      "reasoning": "The existing Trehalose owner already contains the D-trehalose name and its accepted canonical identity. The admitted source provides no anomer or hydrate detail requiring a different owner, so adding a duplicate would reduce rather than improve identity precision.",
+      "applicability": "The raw 4 g source record, complete owner and published D-trehalose, D(+) and CAS-decorated tokens were inspected. No unsupported source-specific form is added. The inherited native row hold remains separate from this explicit no-delta curation result.",
+      "precise_remaining_requirement": null,
+      "owner_lookup_queries": [
+        "trehalose"
+      ],
+      "owner_lookup_scope": "All maintained ingredient YAML files, including ignored files, plus the 46 published payloads. Full text includes history; candidate hits are not identity approvals.",
+      "candidate_records": [
+        {
+          "path": "data/ingredients/mapped/NLDM_metabolites.yaml",
+          "sha256": "457be6fa945786e0f6fbbb29755ac42e069a56fe5eb2d754e9b880fa4063ab10",
+          "identifier": "kgmicrobe.ingredient:nldm_metabolites",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/D-trehalose_Dihydrate.yaml",
+          "sha256": "b51ac9e8b87eb59d58e7ca2545ff69d41fbbb78de14f485725a30ddef0c3fbf1",
+          "identifier": "CHEBI:232797",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Trehalose.yaml",
+          "sha256": "fdcc28ac5e51833fee167b42f4cfa3ffd3bfdb34a1e53fb78c1718eaf2a5c015",
+          "identifier": "CHEBI:27082",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Alphaalpha-Trehalose.yaml",
+          "sha256": "514a863fd2b4161c3e67f612c80a14d0ffc661345708a3d34dcbc12887e83a54",
+          "identifier": "CHEBI:16551",
+          "mapping_status": "MAPPED"
+        }
+      ],
+      "evidence_ids": [
+        "op-case-187",
+        "op-owner-search",
+        "op-trehalose",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "primary_source_urls": [
+        "https://www.ebi.ac.uk/chebi/CHEBI:27082"
+      ],
+      "native_holds": "Exact preserved_native_decisions and original full case digest retained; no hold is lifted.",
+      "independent_review": "pending"
+    }
+  ],
+  "input_hashes": {
+    "decisions-v2.json": "4413f9f4e67fecd09287b6308c9d543d2cc33b3a9d3a25eec8a59394c7e36107",
+    "evidence-v2.json": "a4f0dda95013920fdd64073fb7e262d87e7218e0a6f77b0f1c560e4df6c82d46",
+    "proposals-v2.json": "6127831702a4260f488d7ede65c68ef27d55080cbb4d7b12569c1f7eb538c462"
+  },
+  "supersedes": {
+    "path": "reassessment-ledger.json",
+    "sha256": "3405ae784c43807e932385c2cf03b7a02c2f1dee09768c65cb34b053fb5e0db8"
+  }
+}

@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:chopped_meat_1n_naoh
+preferred_term: Chopped-meat protocol 1 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:chopped_meat_1n_naoh
+  ontology_label: Chopped-meat protocol 1 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: JCM 461, DSMZ 110 and ATCC modified chopped-meat protocols agree on 500 g meat,
+  1 L water and 25 ml 1 N NaOH input; these are explicit matching protocol witnesses
+  for the reagent use. The NaOH stock carrier itself remains unspecified. Hemin-only
+  and other 1 N occurrences remain distinct context, not a proven universal stock.
+  Raw case labels remain only in evidence and case-bound proposal links, not globally
+  resolving synonyms. No occurrence count transfer, source-hold release or receiving-medium
+  dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '1'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461
+    source_record: '461'
+    notes: JCM 461, DSMZ 110 and ATCC modified chopped-meat protocols agree on 500
+      g meat, 1 L water and 25 ml 1 N NaOH input; these are explicit matching protocol
+      witnesses for the reagent use. The NaOH stock carrier itself remains unspecified.
+      Hemin-only and other 1 N occurrences remain distinct context, not a proven universal
+      stock.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110.pdf
+    source_record: DSMZ110
+    notes: JCM 461, DSMZ 110 and ATCC modified chopped-meat protocols agree on 500
+      g meat, 1 L water and 25 ml 1 N NaOH input; these are explicit matching protocol
+      witnesses for the reagent use. The NaOH stock carrier itself remains unspecified.
+      Hemin-only and other 1 N occurrences remain distinct context, not a proven universal
+      stock.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/85260BB7A69A4640A5BB1042498807E4.ashx
+    source_record: https://www.atcc.org/~/media/85260BB7A69A4640A5BB1042498807E4.ashx
+    notes: JCM 461, DSMZ 110 and ATCC modified chopped-meat protocols agree on 500
+      g meat, 1 L water and 25 ml 1 N NaOH input; these are explicit matching protocol
+      witnesses for the reagent use. The NaOH stock carrier itself remains unspecified.
+      Hemin-only and other 1 N occurrences remain distinct context, not a proven universal
+      stock.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 461, DSMZ 110 and ATCC modified chopped-meat protocols agree on 500
+    g meat, 1 L water and 25 ml 1 N NaOH input; these are explicit matching protocol
+    witnesses for the reagent use. The NaOH stock carrier itself remains unspecified.
+    Hemin-only and other 1 N occurrences remain distinct context, not a proven universal
+    stock.
+  new_status: MAPPED
+  llm_assisted: true

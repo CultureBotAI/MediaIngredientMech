@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:nbrc1356_mineral_base1_supernatant
+preferred_term: NBRC 1356 mineral base 1 supernatant
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1356_mineral_base1_supernatant
+  ontology_label: NBRC 1356 mineral base 1 supernatant
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    notes: The aqueous supernatant obtained by the NBRC 1356 Mineral base 1 protocol.
+      Registry preparation identity, not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: The aqueous supernatant obtained by the NBRC 1356 Mineral base 1 protocol.
+  Preparation identity is supported despite unmeasured dissolved composition; PARTIAL
+  assertion includes only the known aqueous carrier. Charge Na2CO3 185 g, NaHCO3 35
+  g, NaCl 16 g and K2HPO4 1 g to distilled water 1 L. Autoclave under nitrogen; after
+  one day of precipitation use only supernatant. Stated final pH is 10. The charged
+  salts and their masses are precursor inputs, not asserted retained solutes or dissolved
+  concentrations. Supernatant recovery volume is unknown. Nitrogen atmosphere is a
+  process condition and is not a component. Raw source labels remain source-scoped
+  in the decisions; no generic label is published as a global synonym. Quantified
+  components use the literal preparation batch unless explicitly marked MG_PER_L.
+  Component names retain source specificity without inferred vitamer, hydrate or stereoisomer
+  IDs. Occurrence counts remain zero pending source-specific integration. No roles
+  or downstream hold release is proposed.
+components:
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    source_record: The aqueous supernatant obtained by the NBRC 1356 Mineral base
+      1 protocol.
+    notes: Partial retained-material assertion; unresolved inputs and amounts are
+      explicitly excluded or unquantified. Preparation identity is supported despite
+      unmeasured dissolved composition; PARTIAL assertion includes only the known
+      aqueous carrier.
+curation_history:
+- timestamp: '2026-11-08T05:57:32.892280+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-qualified preparation proposal after issue1201 reassessment.
+    The aqueous supernatant obtained by the NBRC1356 Mineral base 1 protocol. Preparation
+    identity is supported despite unmeasured dissolved composition; PARTIAL assertion
+    includes only the known aqueous carrier.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.054098+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

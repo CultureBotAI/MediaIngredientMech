@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:jcm906_glycine_naoh_buffer_0_5m_ph10
+preferred_term: JCM906 glycine-NaOH buffer, 0.5 M, pH 10.0
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms: []
+notes: JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at pH 10.0.
+  This defines a stock preparation even though its solvent and the amount of NaOH
+  are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L receiving
+  dose is a separate normalization defect. Both M949 and M950 trace to JCM906. Distilled
+  water is explicit for the 900 mL basal medium, not for preparation of this stock.
+  No solvent, titrant amount or final-medium glycine concentration is inferred. The
+  raw stock label is preserved in notes, without a global alias.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm906_glycine_naoh_buffer_0_5m_ph10
+  ontology_label: JCM906 glycine-NaOH buffer, 0.5 M, pH 10.0
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=906
+    notes: JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at
+      pH 10.0. This defines a stock preparation even though its solvent and the amount
+      of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100
+      G_PER_L receiving dose is a separate normalization defect.
+solution_type: BUFFER_SOLUTION
+components:
+- component_name: Glycine
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15428
+  concentration_value: '0.5'
+  concentration_unit: M
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=906
+    source_record: JCM906 separate buffer line
+    notes: Both M949 and M950 trace to JCM906. Distilled water is explicit for the
+      900 mL basal medium, not for preparation of this stock. No solvent, titrant
+      amount or final-medium glycine concentration is inferred. The raw stock label
+      is preserved in notes, without a global alias.
+  notes: Only source-supported constituents are asserted. No whole-to-part grounding,
+    full culturing recipe or speciation claim is made.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at
+    pH 10.0. This defines a stock preparation even though its solvent and the amount
+    of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L
+    receiving dose is a separate normalization defect. Isolated proposal only; all
+    native holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

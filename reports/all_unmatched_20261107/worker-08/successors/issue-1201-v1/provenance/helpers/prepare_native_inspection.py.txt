@@ -1,0 +1,36 @@
+"""Capture the exact issue1201 successor payload delta scope; not a review."""
+from pathlib import Path
+import json,subprocess,sys,yaml
+ROOT=Path(__file__).resolve().parents[3]
+ARTIFACT=ROOT/'reports/all_unmatched_20261107/worker-08'
+OUT=ARTIFACT/'successors/issue-1201-v1'
+PRIVATE=ROOT/'.temp/all-unmatched-worker-08/issue-1201-v1'
+config=json.loads((PRIVATE/'final-selection.json').read_text())
+proposals=json.loads((OUT/'proposals.json').read_text())['proposals']
+old_ids={p['proposal_id'] for p in json.loads((ARTIFACT/'proposals.json').read_text())['proposals']}
+selected=[p for p in proposals if p['proposal_id'] not in old_ids]
+inputs={str((OUT/n).relative_to(ROOT)) for n in ['decisions.json','evidence.json','proposals.json','reassessments.json','assembly-provenance.json','structural-audit.json','validation/combined-validation.json','validation/peer-receipt-verification.json']}
+inputs.update(['MAPPING_SEMANTICS.md','.claude/skills/add-media/SKILL.md','src/mediaingredientmech/schema/mediaingredientmech.yaml','data/curated/mapped_ingredients.yaml','data/curated/unmapped_ingredients.yaml','reviews/structured/20261108T053536Z-w08-final-isolated-proposals/review.yaml'])
+for group in config['groups']:
+ inputs.add(str((ARTIFACT/group['review']['path']).relative_to(ROOT)))
+ for ref in group['inputs'].values(): inputs.add(str((ARTIFACT/ref['path']).relative_to(ROOT)))
+targets=[]
+for p in selected:
+ payload=ARTIFACT/p['after_capture']['path'];r=yaml.safe_load(payload.read_text())
+ t=dict(target_id=p['proposal_id'],path=str(payload.relative_to(ROOT)),label=r['preferred_term'],kind='source',record_class='IngredientRecord')
+ if p['kind']=='edit_existing_owner':
+  inputs.add(p['owner_path'])
+  aggregate='data/curated/'+('unmapped_ingredients.yaml' if '/unmapped/' in p['owner_path'] else 'mapped_ingredients.yaml')
+  before=yaml.safe_load((ROOT/p['owner_path']).read_text())
+  t['owner_paths']=[dict(repository='CultureBotAI/MediaIngredientMech',path=p['owner_path'],role='Actual frozen maintained preimage; isolated proposed delta is not applied'),dict(repository='CultureBotAI/MediaIngredientMech',path=aggregate,role='Aggregate preimage selector identifier='+before['identifier']+'; coordinator synchronizes only after reviewed integration')]
+ else:
+  t['ownership_note']='Proposed new owner only. Intended future maintained path '+p['owner_path']+' does not exist; no current owner is invented. Coordinator must reconcile duplicates, source membership and publication gates.'
+ targets.append(t)
+(PRIVATE/'native-targets.yaml').write_text(yaml.safe_dump({'targets':targets},sort_keys=False,allow_unicode=True))
+cmd=[sys.executable,'scripts/record_review.py','inspect','--targets',str(PRIVATE/'native-targets.yaml')]
+for p in sorted(inputs):cmd.extend(['--input',p])
+res=subprocess.run(cmd,cwd=ROOT,capture_output=True,text=True)
+(PRIVATE/'native-inspection.json').write_text(res.stdout)
+(PRIVATE/'native-inspection.stderr').write_text(res.stderr)
+assert res.returncode==0,res.stderr
+print(json.dumps({'targets':len(targets),'input_count':len(inputs),'exit_code':res.returncode}))

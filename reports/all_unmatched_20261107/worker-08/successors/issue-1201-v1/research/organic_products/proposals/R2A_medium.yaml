@@ -1,0 +1,69 @@
+identifier: MICRO:0000541
+preferred_term: R2A medium
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+synonyms: []
+notes: 'The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+  outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543
+  separately denotes R2A agar. A generic named-medium record can preserve this source
+  sense without inventing a supplier or formula.
+
+
+  Source context: CultureMech:015693, CultureMech:015694 and CultureMech:015695, imported
+  from CultureBotHT FEBA definitions. Formula and supplier are unspecified. The local
+  label R2A is recorded here rather than added as a global alias that could also resolve
+  an agar product.'
+ontology_mapping:
+  ontology_id: MICRO:0000541
+  ontology_label: R2A medium
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541
+    notes: The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+      outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while
+      MICRO:0000543 separately denotes R2A agar. A generic named-medium record can
+      preserve this source sense without inventing a supplier or formula.
+components:
+- component_name: Yeast extract
+  reference_scope: MIM_CATALOG
+  component_id: FOODON:03315426
+- component_name: Proteose peptone
+  reference_scope: MIM_CATALOG
+  component_id: MICRO:0000180
+- component_name: Casamino acids
+  reference_scope: UNMAPPED
+- component_name: Glucose
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:17234
+- component_name: Starch
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:28017
+- component_name: Pyruvate
+  reference_scope: UNMAPPED
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541
+    source_record: MICRO0000541 liquid-medium definition
+    notes: The liquid-medium definition names these constituents but not their amounts.
+      Its separate source annotation reproduces an agar formula; that annotation is
+      not used to add agar to this broth. Casamino-acid and pyruvate forms remain
+      unresolved rather than inheriting a disputed generic owner or a salt identity.
+  notes: One-level material constituents only; no whole-to-part grounding, complete
+    culturing recipe, or speciation assertion.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+    outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543
+    separately denotes R2A agar. A generic named-medium record can preserve this source
+    sense without inventing a supplier or formula. Isolated proposal only; all native
+    holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

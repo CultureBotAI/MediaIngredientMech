@@ -1,0 +1,108 @@
+identifier: kgmicrobe.ingredient:nbrc903_vitamin_solution
+preferred_term: NBRC 903 vitamin solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc903_vitamin_solution
+  ontology_label: NBRC 903 vitamin solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=903
+    notes: NBRC903 separately prepared vitamin stock. Registry preparation identity,
+      not a molecular exact match.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197
+    notes: NBRC903 separately prepared vitamin stock. Registry preparation identity,
+      not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: NBRC903 separately prepared vitamin stock. Vitamin B12 0.1 mg, pABA5 mg and
+  lipoic acid5 mg per1 L water; generic Ca-pantothenate is preserved. The same literal
+  recipe is used by JCM197 trace vitamins, but a D-specific ATCC calcium-pantothenate
+  formulation and the current Wolfe stock with KH2PO4 are not established identical.
+  Filter sterilize vitamin stock separately before adding to the receiving medium.  Raw
+  source labels remain source-scoped in the decisions; no generic label is published
+  as a global synonym. Quantified components use the literal preparation batch unless
+  explicitly marked MG_PER_L. Component names retain source specificity without inferred
+  vitamer, hydrate or stereoisomer IDs. Occurrence counts remain zero pending source-specific
+  integration. No roles or downstream hold release is proposed.
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Pyridoxine-HCl
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Thiamine-HCl
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Ca-pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Lipoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=903
+    source_record: NBRC903 separately prepared vitamin stock.
+    notes: Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. Vitamin B12 0.1 mg, pABA5 mg and lipoic acid5 mg per1 L water;
+      generic Ca-pantothenate is preserved. The same literal recipe is used by JCM197
+      trace vitamins, but a D-specific ATCC calcium-pantothenate formulation and the
+      current Wolfe stock with KH2PO4 are not established identical.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197
+    source_record: NBRC903 separately prepared vitamin stock.
+    notes: Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. Vitamin B12 0.1 mg, pABA5 mg and lipoic acid5 mg per1 L water;
+      generic Ca-pantothenate is preserved. The same literal recipe is used by JCM197
+      trace vitamins, but a D-specific ATCC calcium-pantothenate formulation and the
+      current Wolfe stock with KH2PO4 are not established identical.
+curation_history:
+- timestamp: '2026-11-08T05:57:32.918513+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-qualified preparation proposal after issue1201 reassessment.
+    NBRC903 separately prepared vitamin stock. Vitamin B12 0.1 mg, pABA5 mg and lipoic
+    acid5 mg per1 L water; generic Ca-pantothenate is preserved. The same literal
+    recipe is used by JCM197 trace vitamins, but a D-specific ATCC calcium-pantothenate
+    formulation and the current Wolfe stock with KH2PO4 are not established identical.
+  new_status: MAPPED
+  llm_assisted: true

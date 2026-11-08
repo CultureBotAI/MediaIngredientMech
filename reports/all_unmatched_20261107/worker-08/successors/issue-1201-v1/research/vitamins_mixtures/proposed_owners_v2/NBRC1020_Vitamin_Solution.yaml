@@ -1,0 +1,130 @@
+identifier: kgmicrobe.ingredient:nbrc1020_vitamin_solution
+preferred_term: NBRC 1020 vitamin solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1020_vitamin_solution
+  ontology_label: NBRC 1020 vitamin solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    notes: Identical enumerated vitamin preparation in NBRC1020 and NBRC824. Registry
+      preparation identity, not a molecular exact match.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+    notes: Identical enumerated vitamin preparation in NBRC1020 and NBRC824. Registry
+      preparation identity, not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Identical enumerated vitamin preparation in NBRC1020 and NBRC824. Ten vitamins
+  with B12 2.7 mg, biotin0.5 mg and folic acid0.9 mg per 1 L water; differs from the
+  common nine-vitamin stock and other starred stocks. NBRC1020 explicitly filter sterilizes
+  the vitamin stock. NBRC824 does not specify vitamin-stock filtration: its receiving-medium
+  instruction dissolves all ingredients except terephthalate, sulfide and cysteine
+  before autoclaving. The identical enumeration supports a shared input-stock formula
+  only; the receiving-medium processing differs and processed-medium equivalence is
+  not asserted.   Raw source labels remain source-scoped in the decisions; no generic
+  label is published as a global synonym. Quantified components use the literal preparation
+  batch unless explicitly marked MG_PER_L. Component names retain source specificity
+  without inferred vitamer, hydrate or stereoisomer IDs. Occurrence counts remain
+  zero pending source-specific integration. No roles or downstream hold release is
+  proposed.'
+components:
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.9'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Pyridoxine-HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.4'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Thiamine-HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.7'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '0.8'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Ca-pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '2.7'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Lipoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.4'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    source_record: Identical enumerated vitamin preparation in NBRC1020 and NBRC824.
+    notes: 'Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. Ten vitamins with B12 2.7 mg, biotin0.5 mg and folic acid0.9 mg
+      per 1 L water; differs from the common nine-vitamin stock and other starred
+      stocks. NBRC1020 explicitly filter sterilizes the vitamin stock. NBRC824 does
+      not specify vitamin-stock filtration: its receiving-medium instruction dissolves
+      all ingredients except terephthalate, sulfide and cysteine before autoclaving.
+      The identical enumeration supports a shared input-stock formula only; the receiving-medium
+      processing differs and processed-medium equivalence is not asserted.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+    source_record: Identical enumerated vitamin preparation in NBRC1020 and NBRC824.
+    notes: 'Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. Ten vitamins with B12 2.7 mg, biotin0.5 mg and folic acid0.9 mg
+      per 1 L water; differs from the common nine-vitamin stock and other starred
+      stocks. NBRC1020 explicitly filter sterilizes the vitamin stock. NBRC824 does
+      not specify vitamin-stock filtration: its receiving-medium instruction dissolves
+      all ingredients except terephthalate, sulfide and cysteine before autoclaving.
+      The identical enumeration supports a shared input-stock formula only; the receiving-medium
+      processing differs and processed-medium equivalence is not asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:57:32.911596+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-qualified preparation proposal after issue1201 reassessment.
+    Identical enumerated vitamin preparation in NBRC1020 and NBRC824. Ten vitamins
+    with B12 2.7 mg, biotin0.5 mg and folic acid0.9 mg per 1 L water; differs from
+    the common nine-vitamin stock and other starred stocks. Both source protocols
+    filter sterilize the vitamin solution.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:04:18.705008+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_PROCESSING_CORRECTED
+  changes: 'Resolve independent finding VM1201-F2. The preceding proposal event incorrectly
+    claimed both NBRC1020 and824 filter-sterilize vitamins. Correct active provenance:
+    NBRC1020 explicitly filter sterilizes the vitamin stock. NBRC824 does not specify
+    vitamin-stock filtration: its receiving-medium instruction dissolves all ingredients
+    except terephthalate, sulfide and cysteine before autoclaving. The identical enumeration
+    supports a shared input-stock formula only; the receiving-medium processing differs
+    and processed-medium equivalence is not asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

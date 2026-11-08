@@ -1,0 +1,60 @@
+{
+  "scope": "Synthetic assembler mechanics only; no scientific approval",
+  "passed": 11,
+  "controls": [
+    {
+      "control": "valid",
+      "result": "accepted_expected_accounting_and_remap"
+    },
+    {
+      "control": "stale_parent",
+      "result": "rejected_as_expected",
+      "assertion": "('parent hash', 'evidence')"
+    },
+    {
+      "control": "stale_fragment",
+      "result": "rejected_as_expected",
+      "assertion": "('fragment hash', 'a', 'decisions')"
+    },
+    {
+      "control": "omitted_cohort",
+      "result": "rejected_as_expected",
+      "assertion": "('unaccounted no-change cohort', ['B'])"
+    },
+    {
+      "control": "self_review",
+      "result": "rejected_as_expected",
+      "assertion": "self review"
+    },
+    {
+      "control": "frozen_source_mutated",
+      "result": "rejected_as_expected",
+      "assertion": "('frozen identity changed', 'A', 'source')"
+    },
+    {
+      "control": "unreviewed_prior_case",
+      "result": "rejected_as_expected",
+      "assertion": "('unreviewed proposal case', 'p1')"
+    },
+    {
+      "control": "lost_original_link",
+      "result": "rejected_as_expected",
+      "assertion": "('lost original case links', 'p1')"
+    },
+    {
+      "control": "owner_collision",
+      "result": "rejected_as_expected",
+      "assertion": "duplicate active proposal owner paths"
+    },
+    {
+      "control": "duplicate_evidence",
+      "result": "rejected_as_expected",
+      "assertion": "duplicate evidence IDs"
+    },
+    {
+      "control": "missing_backlink",
+      "result": "rejected_as_expected",
+      "assertion": "('proposal backlinks', 'p1', {'C'}, {'A', 'C'})"
+    }
+  ]
+}

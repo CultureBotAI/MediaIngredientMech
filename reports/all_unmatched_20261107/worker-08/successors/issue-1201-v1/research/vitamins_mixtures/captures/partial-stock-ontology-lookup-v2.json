@@ -1,0 +1,135 @@
+{
+  "accessed_at": "2026-11-08T06:05:02.070602+00:00",
+  "scope": "Bounded local ontology name/synonym lookup for six additional partial stock proposals; individual-vitamin terms cannot identify the stock. Not universal absence.",
+  "databases": [
+    {
+      "path": "/Users/marcin/.data/oaklib/chebi.db",
+      "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+      "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND (lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ?)",
+      "query_fragments": [
+        "vitamin b12 solution",
+        "vitamin b12 stock",
+        "vitamin k1 solution",
+        "vitamin k1 stock",
+        "jcm 515",
+        "jcm515",
+        "jcm 647",
+        "jcm647",
+        "jcm 1354",
+        "jcm1354",
+        "atcc 2883",
+        "atcc2883",
+        "oteb"
+      ],
+      "results": [
+        {
+          "subject": "CHEBI:31951",
+          "predicate": "oio:hasRelatedSynonym",
+          "object": null,
+          "value": "drotebanol"
+        },
+        {
+          "subject": "CHEBI:31951",
+          "predicate": "oio:hasRelatedSynonym",
+          "object": null,
+          "value": "Drotebanol"
+        }
+      ]
+    },
+    {
+      "path": "/Users/marcin/.data/oaklib/foodon.db",
+      "sha256": "ab21a7b1d712117dceb410e6f92cdd78b67f561d3670f58b0266c8b93f8ad8d0",
+      "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND (lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ?)",
+      "query_fragments": [
+        "vitamin b12 solution",
+        "vitamin b12 stock",
+        "vitamin k1 solution",
+        "vitamin k1 stock",
+        "jcm 515",
+        "jcm515",
+        "jcm 647",
+        "jcm647",
+        "jcm 1354",
+        "jcm1354",
+        "atcc 2883",
+        "atcc2883",
+        "oteb"
+      ],
+      "results": []
+    },
+    {
+      "path": "/Users/marcin/.data/oaklib/envo.db",
+      "sha256": "858814472871c9167a687fedbff2c27d74b35dea6b6b6df0a96e01f08dc4c0f5",
+      "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND (lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ?)",
+      "query_fragments": [
+        "vitamin b12 solution",
+        "vitamin b12 stock",
+        "vitamin k1 solution",
+        "vitamin k1 stock",
+        "jcm 515",
+        "jcm515",
+        "jcm 647",
+        "jcm647",
+        "jcm 1354",
+        "jcm1354",
+        "atcc 2883",
+        "atcc2883",
+        "oteb"
+      ],
+      "results": []
+    },
+    {
+      "path": "/Users/marcin/.data/oaklib/ncit.db",
+      "sha256": "9aac307a33fcf57fb946944a0eaca6029a7d929e29f7522537909da6c71a31d3",
+      "sql": "SELECT subject,predicate,object,value FROM statements WHERE (predicate='rdfs:label' OR predicate LIKE '%Synonym%') AND (lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ? OR lower(value) LIKE ?)",
+      "query_fragments": [
+        "vitamin b12 solution",
+        "vitamin b12 stock",
+        "vitamin k1 solution",
+        "vitamin k1 stock",
+        "jcm 515",
+        "jcm515",
+        "jcm 647",
+        "jcm647",
+        "jcm 1354",
+        "jcm1354",
+        "atcc 2883",
+        "atcc2883",
+        "oteb"
+      ],
+      "results": [
+        {
+          "subject": "NCIT:C20263",
+          "predicate": "rdfs:label",
+          "object": null,
+          "value": "Goteborg ES Cell Line"
+        },
+        {
+          "subject": "NCIT:C20263",
+          "predicate": "oio:hasExactSynonym",
+          "object": null,
+          "value": "Goteborg ES Cell Line"
+        },
+        {
+          "subject": "NCIT:C80575",
+          "predicate": "rdfs:label",
+          "object": null,
+          "value": "Drotebanol"
+        },
+        {
+          "subject": "NCIT:C80575",
+          "predicate": "oio:hasExactSynonym",
+          "object": null,
+          "value": "Drotebanol"
+        },
+        {
+          "subject": "NCIT:C80575",
+          "predicate": "oio:hasExactSynonym",
+          "object": null,
+          "value": "DROTEBANOL"
+        }
+      ]
+    }
+  ],
+  "assessment": "All7 hits are unrelated Drotebanol drug names or Goteborg cell line labels. No exact whole-stock term was found in these bounded queries."
+}

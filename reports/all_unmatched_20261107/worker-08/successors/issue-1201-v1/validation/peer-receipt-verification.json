@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "groups": [
+    {
+      "group": "inorganic_forms",
+      "primary_author": "/root/inorganics",
+      "reviewer": "/root/organics",
+      "review_sha256": "23225192ea64d4142f4ad614afffe86aac859f65ee1b4c399a211e15c6dfbd03",
+      "cohort_count": 71,
+      "reviewed_cases": 72,
+      "reviewed_payloads": 28,
+      "status": "complete_no_open_findings_with_source_holds_preserved",
+      "input_hashes_verified": true,
+      "case_binding_fields_verified": true,
+      "payload_bindings_verified": true,
+      "root_read_complete_scientific_case_and_payload_appraisals": true,
+      "review_findings": [
+        {
+          "finding_id": "IF1201-R1",
+          "severity": "P1",
+          "status": "resolved",
+          "problem": "Source numbers and different receiving recipes were being used to support separate partial stock owners with no demonstrated material distinction.",
+          "challenge": "Compare PCR-S11/NOS 0.1 N NaOH, JCM574/PBBM 1 M KH2PO4, ATCC1340/chopped-meat nominal 1 N NaOH, and ATCC1942/JCM 5% sulfide. Neither unknown carrier nor source numbering proves distinctness; nominal concentration alone also does not prove equivalence.",
+          "resolution": "Four weaker duplicate candidates are withdrawn from the active proposal set. Concrete source anchors remain, with explicit conditional comparisons and no exact assignment of unsupported occurrences. PBBM/ATCC 2.5% sulfide comparison was also checked and remains conditional.",
+          "rereview_evidence": [
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/alias-and-identity-remediation-v5.json",
+              "sha256": "83ee6d33b253be4851dcb3f2cb3274c341fecf157ef518f5d977854e610982c3"
+            },
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/decisions-v8.json",
+              "sha256": "584321fba269b9ec35db65d77aa53755985ae143720df9bc9853e90861f4343d"
+            },
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/proposals-v5.json",
+              "sha256": "79cdbf5d57277feee2d0d24903300063662bed85c4b3efaae32876f26fed875b"
+            }
+          ]
+        },
+        {
+          "finding_id": "IF1201-R2",
+          "severity": "P1",
+          "status": "resolved",
+          "problem": "No-delta judgments missed unsafe concentration or wrong-compound aliases on the existing KH2PO4, sulfide-nonahydrate and Tris owners.",
+          "resolution": "Three bounded payloads reject the specific unsafe aliases while preserving text, sources, chemistry, roles, counts and histories. The Tris payload explicitly supersedes the original four-HCl-rejection proposal and retains its original case/evidence. Six applicability sentences were clarified so no-extra-parsing-alias reasoning does not contradict these separate owner repairs.",
+          "consumer_scope": "Independent exact frozen CSV lookup confirms four concentration-qualified phosphate/sulfide labels uniquely resolve to pure owners. The standalone (dibasic) token is absent as an exact CSV row, so no consumer-resolution claim is made for that fragment. Tris work remains under issue1157.",
+          "rereview_evidence": [
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/alias-scope-qualification-v6.json",
+              "sha256": "0dbee0abf776dd9a5b9f65733f60fc0eb34f78b53e3dc58065309c3ca010927f"
+            },
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/applicability-remediation-v7.json",
+              "sha256": "5cf6bbf174211e3cd382a1ffbb8acdb5446448b4e0cc574b60160e3b785c44ca"
+            },
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/original-tris-backlink-remap-v5.json",
+              "sha256": "304cba119907d034bac1b1755b9dfd1f36982b86af985148c0fb053f3aea2946"
+            },
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/github/stock-alias-index-reproduction.json",
+              "sha256": "b1d0d1cfa5191cede973515adaa790682aa37842bc96c1f9992de6bb3b79129b"
+            }
+          ]
+        },
+        {
+          "finding_id": "IF1201-R3",
+          "severity": "P1",
+          "status": "resolved",
+          "problem": "The same molybdate-dihydrate owner retained ten additional malformed or form-unspecified formula aliases after rejecting the assigned malformed label.",
+          "resolution": "The final v8 owner payload rejects the ten additional literal formulas, retains the original rejection and preserves all exact text/source/history. The inspected historical merge/backfill assertions do not establish source-qualified universal identity. No corrected chemical is inferred for any occurrence, and the original source-form hold remains.",
+          "rereview_evidence": [
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/molybdate-family-remediation-v8.json",
+              "sha256": "c5b9b1df1f9d5f32531ef9a435cadc2a91d072f4d438efba0d66777e7eda63a8"
+            },
+            {
+              "root": "artifact",
+              "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml",
+              "sha256": "a81465916836d3c96601136e45f446324ff92091aeb4b9352386afe0760cee97"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "organic_products",
+      "primary_author": "/root/organics",
+      "reviewer": "/root/vitamins",
+      "review_sha256": "114e122d9e6594ec9a3b0a26e5f5bcc0e67603b3c66ae3ab61dc5b8ba77eadc1",
+      "cohort_count": 36,
+      "reviewed_cases": 36,
+      "reviewed_payloads": 20,
+      "status": "accepted_with_preserved_limits",
+      "input_hashes_verified": true,
+      "case_binding_fields_verified": true,
+      "payload_bindings_verified": true,
+      "root_read_complete_scientific_case_and_payload_appraisals": true,
+      "review_findings": [
+        {
+          "finding_id": "OP1201-F1",
+          "affected_proposals": [
+            "op1201-dl-asparagine-monohydrate",
+            "op1201-racemic-sodium-sulfolactate"
+          ],
+          "finding": "Both narrower supplied-form to generic-parent proposals used BROAD_MATCH, reversing the authoritative relation. MAPPING_SEMANTICS requires NARROW_MATCH to emit broadMatch.",
+          "status": "resolved",
+          "resolution": "Exact successor mapping_quality is NARROW_MATCH; source identity and limited parent scope retained."
+        },
+        {
+          "finding_id": "OP1201-F2",
+          "affected_case_id": "CM_NAME:f438a037d8d082ccf20ed952488dc1a1fe8d015cb07f8e826015a802d7907083",
+          "finding": "Neutral PQQ was inferred from absent salt specification; supplier nomenclature contrast does not establish the NBRC supplied form.",
+          "status": "resolved",
+          "resolution": "Exact acid proposal withdrawn; source-form uncertainty and separate dose defect retained."
+        }
+      ]
+    },
+    {
+      "group": "vitamins_mixtures",
+      "primary_author": "/root/vitamins",
+      "reviewer": "/root/inorganics",
+      "review_sha256": "42adac77cb78c97ecbe86a89e805456c886d99b85a19cb0a655f4a802b8c639d",
+      "cohort_count": 26,
+      "reviewed_cases": 27,
+      "reviewed_payloads": 21,
+      "status": "complete_with_scope_limits",
+      "input_hashes_verified": true,
+      "case_binding_fields_verified": true,
+      "payload_bindings_verified": true,
+      "root_read_complete_scientific_case_and_payload_appraisals": true,
+      "review_findings": [
+        {
+          "finding_id": "VM1201-F1",
+          "status": "resolved_and_rechecked",
+          "problem": "Eight B12/K1 stock cases were withheld solely because carrier or percent basis was unknown despite explicit source preparation context.",
+          "resolution": "Six partial source-bound preparation anchors; generic vitamin components, unknown carriers omitted, unspecified percent basis not converted, same-strength other recipes conditional only.",
+          "case_positions": [
+            0,
+            1,
+            3,
+            4,
+            8,
+            15,
+            17,
+            22
+          ]
+        },
+        {
+          "finding_id": "VM1201-F2",
+          "status": "resolved_and_rechecked",
+          "problem": "Shared NBRC 1020/824 vitamin preparation notes incorrectly attributed vitamin filtration to both.",
+          "resolution": "Actual NBRC 824 excludes only other reagents from autoclaving; final payload scopes filtration to NBRC 1020 and limits shared identity to enumerated input stock formula. Prior history retained with explicit correction.",
+          "case_positions": [
+            16
+          ]
+        },
+        {
+          "finding_id": "VM1201-F3",
+          "status": "resolved_and_rechecked",
+          "problem": "Thauers no-change decision treated actual stock formula as unavailable although direct TOGO source comments establish preparation and an internal pantothenate transcription conflict.",
+          "resolution": "Recovered direct recipe plus original CultureBotHT assertion provenance are kept separate. Existing-owner narrow notes/history proposal records formula/protocol and unresolved bridge without inventing a duplicate owner or endorsing exact form equivalence.",
+          "case_positions": [
+            23
+          ]
+        }
+      ]
+    }
+  ],
+  "configuration_sha256": "83ccf69e3d06ca64db6700b86936488c35427b699bb8d93591e264d4c5d1ad76",
+  "final_input_hashes": {
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "c9eafc98151c019763071ae65eb7ba8afc9c79112e5ab85d70a2f79d4e75650c",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "5ea5e15c5814d7d3bb4428f264895a50285eb937730c737ce19f4489a39b2bd6",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "3f640002ee57ebcb385fc6cb5e3f90f2a5868adc4440159bd9592ce7430dfedd",
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "dba373c7ce0dc2d0bbbd027101c81481bcfe5ea3d71a6998579a0fc6d25db6f3"
+  },
+  "root_scope": "All 133 original no-change cases plus 2 inherited-case supersession bindings have authorship-separated scientific appraisal; original reviews retained for the other53 cases. Exact case and payload review content was read before selection. Integration and source-hold release remain excluded."
+}

@@ -1,0 +1,38 @@
+identifier: kgmicrobe.ingredient:sulfide_ore
+preferred_term: Sulfide ore
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: sulfide ore
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium88.pdf
+notes: DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348. The
+  source denotes a generic ore material rather than pure FeS2 or a fixed mineral mixture.
+  A registry record preserves that unspecified material without requiring a mineral
+  assay. M2320/DSM5348 uses 20 g/L of separately heated ore and lists powdered sulfur
+  separately. Pyrite and chalcopyrite examples do not establish universal constituents.
+  Mineralogy, origin and assay remain unspecified.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sulfide_ore
+  ontology_label: Sulfide ore
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium88.pdf
+    notes: DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348.
+      The source denotes a generic ore material rather than pure FeS2 or a fixed mineral
+      mixture. A registry record preserves that unspecified material without requiring
+      a mineral assay.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348.
+    The source denotes a generic ore material rather than pure FeS2 or a fixed mineral
+    mixture. A registry record preserves that unspecified material without requiring
+    a mineral assay. Isolated proposal only; all native holds remain preserved in
+    source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

@@ -1,0 +1,46 @@
+identifier: kgmicrobe.ingredient:atcc_nitrosolobus_6n_naoh
+preferred_term: ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_nitrosolobus_6n_naoh
+  ontology_label: ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: The phenol-red preparation uses 1 ml 6 N NaOH, 0.5 g phenol red and 99 ml deionized
+  water. Only NaOH is a demonstrated component of the input reagent; the receiving
+  water does not establish the NaOH stock carrier. Raw case labels remain only in
+  evidence and case-bound proposal links, not globally resolving synonyms. No occurrence
+  count transfer, source-hold release or receiving-medium dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '6'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx
+    source_record: https://www.atcc.org/~/media/55C41057CA124E1381E3BDCFC87EC334.ashx
+    notes: The phenol-red preparation uses 1 ml 6 N NaOH, 0.5 g phenol red and 99
+      ml deionized water. Only NaOH is a demonstrated component of the input reagent;
+      the receiving water does not establish the NaOH stock carrier.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: The phenol-red preparation uses 1 ml 6 N NaOH, 0.5 g phenol red and 99
+    ml deionized water. Only NaOH is a demonstrated component of the input reagent;
+    the receiving water does not establish the NaOH stock carrier.
+  new_status: MAPPED
+  llm_assisted: true

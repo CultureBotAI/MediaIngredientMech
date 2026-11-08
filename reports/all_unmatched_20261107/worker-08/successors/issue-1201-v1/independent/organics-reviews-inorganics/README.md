@@ -1,0 +1,3 @@
+Independent review completed for all 71 reopened inorganic cases and the original Tris case affected by supersession. All 28 final payloads are accepted within their stated source and curation scope. Findings IF1201-R1, R2 and R3 are resolved after explicit review of the immutable v8 successor. Source holds, uncertain supplied forms and cross-shard preparation comparisons remain in force.
+
+The exact all-case appraisals, payload hashes, findings and limitations are in review.json. Independent schema, evidence-hash, preimage and partonomy results are in mechanical-checks-v8.json. The earlier mechanical-checks-v7.json is historical and does not bind the expanded molybdate payload. No maintained files were changed.

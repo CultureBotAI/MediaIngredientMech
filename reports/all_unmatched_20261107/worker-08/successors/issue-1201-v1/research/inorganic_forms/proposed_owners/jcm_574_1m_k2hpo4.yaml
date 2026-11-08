@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:jcm_574_1m_k2hpo4
+preferred_term: JCM 574 1 M K2HPO4 phosphate-buffer input
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_574_1m_k2hpo4
+  ontology_label: JCM 574 1 M K2HPO4 phosphate-buffer input
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: JCM 574 combines 83.4 ml of this 1 M K2HPO4 solution with 16.6 ml of a distinct
+  1 M KH2PO4 solution and then an equal volume of distilled water. Stock carrier and
+  supplied solid hydrate are unspecified. JCM 1181 explicitly imports this buffer;
+  receiving-dose mismatches are not identity blockers. Raw case labels remain only
+  in evidence and case-bound proposal links, not globally resolving synonyms. No occurrence
+  count transfer, source-hold release or receiving-medium dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+    source_record: '574'
+    notes: JCM 574 combines 83.4 ml of this 1 M K2HPO4 solution with 16.6 ml of a
+      distinct 1 M KH2PO4 solution and then an equal volume of distilled water. Stock
+      carrier and supplied solid hydrate are unspecified. JCM 1181 explicitly imports
+      this buffer; receiving-dose mismatches are not identity blockers.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1181
+    source_record: '1181'
+    notes: JCM 574 combines 83.4 ml of this 1 M K2HPO4 solution with 16.6 ml of a
+      distinct 1 M KH2PO4 solution and then an equal volume of distilled water. Stock
+      carrier and supplied solid hydrate are unspecified. JCM 1181 explicitly imports
+      this buffer; receiving-dose mismatches are not identity blockers.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 574 combines 83.4 ml of this 1 M K2HPO4 solution with 16.6 ml of a
+    distinct 1 M KH2PO4 solution and then an equal volume of distilled water. Stock
+    carrier and supplied solid hydrate are unspecified. JCM 1181 explicitly imports
+    this buffer; receiving-dose mismatches are not identity blockers.
+  new_status: MAPPED
+  llm_assisted: true

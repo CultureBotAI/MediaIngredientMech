@@ -1,0 +1,48 @@
+identifier: kgmicrobe.ingredient:pbbm_1m_kh2po4
+preferred_term: PBBM 1 M KH2PO4 phosphate-buffer input
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:pbbm_1m_kh2po4
+  ontology_label: PBBM 1 M KH2PO4 phosphate-buffer input
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2760
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: PBBM explicitly enumerates 10 ml 1 M KH2PO4 and 10 ml 1 M Na2HPO4 as its pH
+  7.2 phosphate buffer inputs. This source-bound partial stock preserves the specified
+  component and strength; solvent and supplied solid hydrate are not stated. No equivalence
+  to JCM 574 preparation is claimed. Raw case labels remain only in evidence and case-bound
+  proposal links, not globally resolving synonyms. No occurrence count transfer, source-hold
+  release or receiving-medium dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2760
+    source_record: M2760
+    notes: PBBM explicitly enumerates 10 ml 1 M KH2PO4 and 10 ml 1 M Na2HPO4 as its
+      pH 7.2 phosphate buffer inputs. This source-bound partial stock preserves the
+      specified component and strength; solvent and supplied solid hydrate are not
+      stated. No equivalence to JCM 574 preparation is claimed.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: PBBM explicitly enumerates 10 ml 1 M KH2PO4 and 10 ml 1 M Na2HPO4 as its
+    pH 7.2 phosphate buffer inputs. This source-bound partial stock preserves the
+    specified component and strength; solvent and supplied solid hydrate are not stated.
+    No equivalence to JCM 574 preparation is claimed.
+  new_status: MAPPED
+  llm_assisted: true

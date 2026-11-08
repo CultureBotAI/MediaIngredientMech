@@ -1,0 +1,194 @@
+{
+  "created_at": "2026-11-08T06:13:04.773522+00:00",
+  "findings": [
+    "IF1201-R2",
+    "IF1201-R1 follow-up candidate comparison"
+  ],
+  "alias_changes": [
+    {
+      "proposal_id": "if1201-edit-kh2po4-alias-scope",
+      "owner_path": "data/ingredients/mapped/Kh2po4.yaml",
+      "original_aliases": [
+        {
+          "synonym_text": "(dibasic)",
+          "synonym_type": "RAW_TEXT",
+          "source": "CultureMech"
+        },
+        {
+          "synonym_text": "KH2PO4 (0.4 g/l)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "synonym_text": "KH2PO4 (7% w/v)",
+          "synonym_type": "RAW_TEXT",
+          "source": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "exact_added_rejections": [
+        "(dibasic)",
+        "KH2PO4 (0.4 g/l)",
+        "KH2PO4 (7% w/v)"
+      ],
+      "previous_tris_rejections_preserved": false
+    },
+    {
+      "proposal_id": "if1201-edit-nonahydrate-stock-aliases",
+      "owner_path": "data/ingredients/mapped/Na2s_X_9_H2o.yaml",
+      "original_aliases": [
+        {
+          "synonym_text": "Na2S x 9 H2O (3% w/v)",
+          "synonym_type": "HYDRATE_FORM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "Na2S x 9 H2O(24% w/v)",
+          "synonym_type": "HYDRATE_FORM",
+          "source": "kg_microbe"
+        }
+      ],
+      "exact_added_rejections": [
+        "Na2S x 9 H2O (3% w/v)",
+        "Na2S x 9 H2O(24% w/v)"
+      ],
+      "previous_tris_rejections_preserved": false
+    },
+    {
+      "proposal_id": "if1201-edit-tris-alias-scope",
+      "owner_path": "data/ingredients/mapped/Tris_Base.yaml",
+      "original_aliases": [
+        {
+          "synonym_text": "Tris buffer 1M",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        },
+        {
+          "synonym_text": "nitrilotriacetic acid trisodium salt",
+          "synonym_type": "EXACT_SYNONYM",
+          "source": "kg_microbe"
+        }
+      ],
+      "exact_added_rejections": [
+        "Tris buffer 1M",
+        "nitrilotriacetic acid trisodium salt"
+      ],
+      "previous_tris_rejections_preserved": true
+    }
+  ],
+  "conditional_comparisons": [
+    {
+      "retained": "if1201-new-atcc_1340_naoh_4g_100ml",
+      "withdrawn": "if1201-new-chopped_meat_1n_naoh",
+      "conditional_case_ids": [
+        "CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc",
+        "CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7"
+      ],
+      "direct_anchor_case_ids": [
+        "CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5"
+      ],
+      "reason": "The direct anchor remains the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength is consistent with 1 N; it does not establish identical carrier or full preparation. Chopped-meat protocol occurrences using 1 N are conditional comparisons only. Matching receiving meat recipes establish shared use context, not a distinct NaOH substance. The other bare-N occurrences remain unassigned.",
+      "retained_payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml",
+        "sha256": "8957268f2bd1f476e353ef63b235c6c17b3790e30b2997b3727932f90806a57d"
+      },
+      "historical_withdrawn_payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/chopped_meat_1n_naoh.yaml",
+        "sha256": "043d50674948c9456b89d6b07e6662505c79fbbbf3604bda4940d999cd29e0fe"
+      }
+    },
+    {
+      "retained": "if1201-new-atcc_1942_sulfide_5pct",
+      "withdrawn": "if1201-new-jcm_1020_sulfide_5pct_autoclaved",
+      "conditional_case_ids": [
+        "CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297",
+        "CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6",
+        "CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45"
+      ],
+      "direct_anchor_case_ids": [
+        "CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c"
+      ],
+      "reason": "The direct anchor remains ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere. These omissions do not establish a different substance. Preserve their autoclaving and source instructions as conditional comparisons; do not transfer the ATCC basis, carrier or gas treatment to them or assert exact shared preparation.",
+      "retained_payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml",
+        "sha256": "9123215c0a354e22947b3f940ec33f321a5db9b98a6a9b41f36f09f145e1c2ee"
+      },
+      "historical_withdrawn_payload": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1020_sulfide_5pct_autoclaved.yaml",
+        "sha256": "beb386967b5153d09253ff782bd9f890a81b40a54de6d54aa192a224d8fd8055"
+      }
+    }
+  ],
+  "prior_inputs": {
+    "decisions-v4.json": "6dbc385a50790174a15ed9a207e92d3ad35e58a2c8b1d3542636d1b54f61c49a",
+    "evidence-v3.json": "da55772849bafa8125b45ffef582cae3b559e2ac9de94db42a3d6387acc56a34",
+    "proposals-v2.json": "d09cfdbf90606234f66e6838e5ad10b039d24f1dc609ae53f40968e787c1d8b6",
+    "reassessment-ledger-v3.json": "e325cd7afc911d1ef7df34018ac6cfdaa0cb5ade50eac8e8b192210e4e07d457"
+  },
+  "guarded_payloads": [
+    {
+      "proposal_id": "if1201-edit-kh2po4-alias-scope",
+      "guarded_write": "PASS",
+      "history_helper": "record_curation_event",
+      "before_sha256": "e721979cb20e8dcac144900643442d9d9e1f01e4d69b2073de8266120419f1c4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v5/Kh2po4.yaml",
+        "sha256": "592e1541112679bc837d925ebabd0980d8683cbd9f1ab220cb92bcc5e5c677ac"
+      }
+    },
+    {
+      "proposal_id": "if1201-edit-nonahydrate-stock-aliases",
+      "guarded_write": "PASS",
+      "history_helper": "record_curation_event",
+      "before_sha256": "e849eb5c8d5a8d977c572ee249927b7fb71b40506e23ed6fb4c30d089b5c8219",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v5/Na2s_X_9_H2o.yaml",
+        "sha256": "a24d4353838c30648c2c1eacc4270e6cd9e5138b96b17190ebf2afc166c26940"
+      }
+    },
+    {
+      "proposal_id": "if1201-edit-tris-alias-scope",
+      "guarded_write": "PASS",
+      "history_helper": "record_curation_event",
+      "before_sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v5/Tris_Base.yaml",
+        "sha256": "3cb4f4b2547390852ca8aa4f139a0b7e74e2cfbb35c0a39ce5caa8191db4e735"
+      }
+    }
+  ],
+  "original_tris_proposal": {
+    "proposal_id": "if-reject-tris-hcl-on-base",
+    "case_ids": [
+      "CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9"
+    ],
+    "description": "Reject four hydrochloride/Tris-HCl labels on the free tris base owner; preserve source provenance.",
+    "evidence_ids": [
+      "if-web-6322279750cf",
+      "if-web-dc07e461177a",
+      "if-web-c9217d1795e3",
+      "if-owner-Tris_Base"
+    ],
+    "owner_path": "data/ingredients/mapped/Tris_Base.yaml",
+    "kind": "edit_existing_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "research/inorganic_forms/proposed_owners/Tris_Base.yaml",
+      "sha256": "ff2f93c60edbaa12252ddc22c0fb894b56058179611b836b8f0a83fbb22b857a"
+    },
+    "before_sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+    "identity_predicate_alias_consequences": "Base CHEBI:9754 retained; no chloride salt or solution may resolve to it through these four aliases. Distinct salt owner still requires native lookup.",
+    "publication_review_obligations": "Withdraw inherited content-bound support for changed owner; guarded integration, complete owner/payload review, SSSOM synchronization and native validators required. No roles, full owner, hold removal or export approved.",
+    "cross_shard_conflict": "Coordinator must reconcile any other proposal touching this original before-hash owner. Never adopt another worker after bytes silently."
+  },
+  "original_extra_case_ids": [
+    "CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9"
+  ],
+  "scope": "71 reopened case decisions plus original Tris case backlink/proposal supersession require 72 independent case assessments. Published and all prior successor files are unchanged."
+}

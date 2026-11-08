@@ -1,0 +1,34 @@
+"""Read-only explicit user-scope checks on the assembled successor."""
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,yaml
+ROOT=Path(__file__).resolve().parents[3]
+ARTIFACT=ROOT/'reports/all_unmatched_20261107/worker-08'
+OUT=ARTIFACT/'successors/issue-1201-v1'
+def read(p):return json.loads(p.read_text())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+old={d['case_id']:d for d in read(ARTIFACT/'decisions.json')['decisions']}
+new={d['case_id']:d for d in read(OUT/'decisions.json')['decisions']}
+proposals=read(OUT/'proposals.json')['proposals'];checks=[]
+assert set(old)==set(new) and len(new)==188
+for cid,d in new.items():
+ for key in ['case_id','case_input_sha256','source','occurrence_ids']:
+  assert d[key]==old[cid][key],(cid,key)
+ assert set(old[cid]['issue_refs'])<=set(d['issue_refs']),('lost original issue reference',cid)
+checks.append({'check':'All original frozen case/source/occurrence bindings and issue references retained','cases':len(new),'passed':True})
+for p in proposals:
+ r=yaml.safe_load((ARTIFACT/p['after_capture']['path']).read_text())
+ before=yaml.safe_load((ROOT/p['owner_path']).read_text()) if p['kind']=='edit_existing_owner' else {}
+ for field in ['nutritional_roles','biological_roles','causal_graphs','uniprot_examples']:
+  assert r.get(field,[])==before.get(field,[]),('unrequested role/graph change',p['proposal_id'],field)
+checks.append({'check':'No roles, causal graphs or protein examples added/changed by any active proposal','proposals':len(proposals),'passed':True})
+assembly=read(OUT/'assembly-provenance.json')
+base={p['proposal_id']:p for p in read(ARTIFACT/'proposals.json')['proposals']}
+active={p['proposal_id']:p for p in proposals}
+for oldid,newid in assembly['proposal_supersessions'].items():
+ assert set(base[oldid]['case_ids'])<=set(active[newid]['case_ids'])
+ assert active[newid]['before_sha256']==base[oldid]['before_sha256']
+ assert active[newid]['owner_path']==base[oldid]['owner_path']
+checks.append({'check':'Every predecessor proposal supersession retains original cases, intended owner and frozen before hash','supersessions':assembly['proposal_supersessions'],'passed':True})
+receipt={'checked_at':datetime.now(timezone.utc).isoformat(),'status':'PASS','checks':checks,'source_holds':'All original source cases remain hash-bound, and maintained source/semantic/export surfaces are separately verified unchanged. Proposal association does not imply identity approval or hold release.','inputs':{n:sha(OUT/n) for n in ['decisions.json','proposals.json','assembly-provenance.json']}}
+out=OUT/'validation/scope-constraints.json';assert not out.exists();out.write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2))

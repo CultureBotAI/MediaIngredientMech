@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:jcm_221_02n_naoh
+preferred_term: JCM 221 reducing-preparation 0.2 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_221_02n_naoh
+  ontology_label: JCM 221 reducing-preparation 0.2 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: JCM 221 boils and cools 200 ml of 0.2 N NaOH before adding sulfide nonahydrate
+  and cysteine hydrochloride monohydrate. Only the NaOH input is represented here;
+  downstream solutes and gases are preparation context. Carrier of the NaOH stock
+  is unspecified. ATCC 1190/1191 reducing solutions omit cysteine hydration and are
+  not asserted as the same whole reducing formulation. Raw case labels remain only
+  in evidence and case-bound proposal links, not globally resolving synonyms. No occurrence
+  count transfer, source-hold release or receiving-medium dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '0.2'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221
+    source_record: '221'
+    notes: JCM 221 boils and cools 200 ml of 0.2 N NaOH before adding sulfide nonahydrate
+      and cysteine hydrochloride monohydrate. Only the NaOH input is represented here;
+      downstream solutes and gases are preparation context. Carrier of the NaOH stock
+      is unspecified. ATCC 1190/1191 reducing solutions omit cysteine hydration and
+      are not asserted as the same whole reducing formulation.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 221 boils and cools 200 ml of 0.2 N NaOH before adding sulfide nonahydrate
+    and cysteine hydrochloride monohydrate. Only the NaOH input is represented here;
+    downstream solutes and gases are preparation context. Carrier of the NaOH stock
+    is unspecified. ATCC 1190/1191 reducing solutions omit cysteine hydration and
+    are not asserted as the same whole reducing formulation.
+  new_status: MAPPED
+  llm_assisted: true

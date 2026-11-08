@@ -1,0 +1,56 @@
+identifier: kgmicrobe.ingredient:nos_vfa_01n_naoh
+preferred_term: NOS VFA-preparation 0.1 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nos_vfa_01n_naoh
+  ontology_label: NOS VFA-preparation 0.1 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'JCM 144 and ATCC NOS specify the same VFA preparation: add acids to 70–80
+  ml 0.1 N NaOH, then bring to 100 ml with that NaOH solution. The reagent carrier
+  is not named. ATCC phenol-red use is a separate context and does not prove the same
+  complete stock. Raw case labels remain only in evidence and case-bound proposal
+  links, not globally resolving synonyms. No occurrence count transfer, source-hold
+  release or receiving-medium dose correction is implied.'
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '0.1'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144
+    source_record: '144'
+    notes: 'JCM 144 and ATCC NOS specify the same VFA preparation: add acids to 70–80
+      ml 0.1 N NaOH, then bring to 100 ml with that NaOH solution. The reagent carrier
+      is not named. ATCC phenol-red use is a separate context and does not prove the
+      same complete stock.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/C14CA5B6B5D246A6B8073D6894BFE5EB.ashx
+    source_record: https://www.atcc.org/~/media/C14CA5B6B5D246A6B8073D6894BFE5EB.ashx
+    notes: 'JCM 144 and ATCC NOS specify the same VFA preparation: add acids to 70–80
+      ml 0.1 N NaOH, then bring to 100 ml with that NaOH solution. The reagent carrier
+      is not named. ATCC phenol-red use is a separate context and does not prove the
+      same complete stock.'
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: 'JCM 144 and ATCC NOS specify the same VFA preparation: add acids to 70–80
+    ml 0.1 N NaOH, then bring to 100 ml with that NaOH solution. The reagent carrier
+    is not named. ATCC phenol-red use is a separate context and does not prove the
+    same complete stock.'
+  new_status: MAPPED
+  llm_assisted: true

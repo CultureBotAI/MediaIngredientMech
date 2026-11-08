@@ -1,0 +1,50 @@
+identifier: kgmicrobe.ingredient:atcc_1340_naoh_4g_100ml
+preferred_term: ATCC 1340 NaOH reagent (4 g/100 ml)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1340_naoh_4g_100ml
+  ontology_label: ATCC 1340 NaOH reagent (4 g/100 ml)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/0E4A2A5D877748B9972B492CE502DBCB.ashx
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: ATCC 1340 explicitly defines its N NaOH input as 4 g/100 ml and uses 30 ml
+  in cysteine-sulfide reducing agent. The initial reagent solvent is not specified.
+  This explicit mass/volume definition is confined to CultureMech:009208; the five
+  other bare-N occurrences are not automatically assigned this strength. Raw case
+  labels remain only in evidence and case-bound proposal links, not globally resolving
+  synonyms. No occurrence count transfer, source-hold release or receiving-medium
+  dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '4'
+  concentration_unit: G_PER_100_ML
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/0E4A2A5D877748B9972B492CE502DBCB.ashx
+    source_record: https://www.atcc.org/~/media/0E4A2A5D877748B9972B492CE502DBCB.ashx
+    notes: ATCC 1340 explicitly defines its N NaOH input as 4 g/100 ml and uses 30
+      ml in cysteine-sulfide reducing agent. The initial reagent solvent is not specified.
+      This explicit mass/volume definition is confined to CultureMech:009208; the
+      five other bare-N occurrences are not automatically assigned this strength.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: ATCC 1340 explicitly defines its N NaOH input as 4 g/100 ml and uses 30
+    ml in cysteine-sulfide reducing agent. The initial reagent solvent is not specified.
+    This explicit mass/volume definition is confined to CultureMech:009208; the five
+    other bare-N occurrences are not automatically assigned this strength.
+  new_status: MAPPED
+  llm_assisted: true

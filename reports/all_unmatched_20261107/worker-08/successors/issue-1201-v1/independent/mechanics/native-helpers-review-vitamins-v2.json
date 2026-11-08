@@ -1,0 +1,294 @@
+{
+  "reviewer": "/root/vitamins",
+  "scope": "Independent mechanical recheck of native helpers only, using synthetic private fixtures; no actual native bundle was generated and no scientific approval is established.",
+  "reviewed_at": "2026-11-08T06:16:29.175627+00:00",
+  "helper_hashes": {
+    "save_native_review.py": "bb9f8379e801f30dd02db5fc213c52052cf981627f06e8815358c6f08bce5d2e",
+    "prepare_native_inspection.py": "6fdcf9ddb1d601abeeca3aad438faa545b8525ea2bda84dfe4a25c20b9f9244a",
+    "validate_final_bundle.py": "3f0b043df5b414deeff6b1d10df47fba5baf1ea4f38e50f7a41e6cc4d0cee098",
+    "manifest.py": "759676daf5893edb768509af55b16e017f36b9dce099cb95a5ae58ad8359fcb1"
+  },
+  "finding_id": "MECH-NATIVE-001",
+  "status": "resolved",
+  "controls": [
+    {
+      "control": "positive",
+      "generated_passing_review": true,
+      "rejection": null,
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "7c7f47faf1f7533bb7ad3ab693b3d0675642ba580c4b92054460ac8b63e48087",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "structural-fail",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: structural audit did not pass",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "258b672980a782526790123dfc8899818c36fe7d5a055c33e0f7d0f920ac5823",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "partial-shard",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "0c2a5cc20f71c021c92598ea08ce010526fa75e5bfc4e776f6eb50b9ff917479",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "pending-peer",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "234d76fcbc129548c38621b2b1ee31c0cc22d1a0e9e299e74ca9468cb683b676",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "strict-fail",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: strict schema failed",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "72dec35f5d3934a9dcae819fbd146ebb20ad8a8b1129dd85c07a0cee4ecf223e",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "4fb8552ea18b9a69fbff57fcaaa7814a639cc8580a58cb70b3a7cee5ce2d4ba5",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "partonomy-fail",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ('combined failure', 'overlay_partonomy_violations')",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "17bb99843113a5c0dd151c169b3eb71b03ba61d297667dcd4f9d296566d31773",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "c43191a5525728e8d45defeee47110e86979788408a43e9fb9bddd7b8d1142bb",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "maintained-change",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ('combined failure', 'maintained_changed')",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "a6a34c75ab53e997f055f027d4763641fd8ed2d397ec6a32013edc9f6d04c6aa",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "3b631b126bcde30c371321f76816fa475873577e066d2218c05c00afd103cf86",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "maintained-false",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "8a2c32c1d0a087bf292105babb4d63b9dd6c7e32911e15bde918e18328126ff1",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "a3e7fb2b59f5e84647abe58f0c97a73762416b7779e729116b25506419a8e269",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "published-change",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ('combined failure', 'published_mismatches')",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "8bc903a2b2e6b18ec8e98286a8782d2f89df73af25ef8f5095646196293b722f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "20dce5e901507218111ba3702816324c4e0b1a07704f7a57c2082402abaf268c",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "guarded-count",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "268bf89be7df5d6d7d393cb605d7b8c6a8292d64f719e7b58bf6cbb70d42d034",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "c89b7c8cc59dd2ed12daa304bfff891c1995f3ad288e122ab21aa879cb5aeea3",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "stale-combined",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: stale combined inputs",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "aeb44c521bf45215e7f651fab3b7000c6ad18f1bf0d6f752a33c7a806c6fd412",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "5f9a1341ee28dffcfc9e8bfeb40c6c9c469af88644cf4ca1b4a366b9e4de7ed9",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "stale-proof",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: stale peer-verification inputs",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "017ff79cd3f98bc798914bfb3e32281136562b0bef9c70775eabd80649070939",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "98e7a9f5d8e543faf26f7ece600e2a8d5377f41a6360527d555e358669a3d537",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "stale-config",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: stale peer configuration",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "507c73bb0a666b121d35b7de83d6ae4578d09f7389d20331bc6e95749ec8fd95",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "e1e6b718645623a8f0e0ef367f3a56430dde03f975eed504a892f6b2b9d0d91b",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "stale-payload",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ('stale payload', 'fixture-proposal')",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "e9082715b1d6eb0f278ed6527de2e4e3868f5e0e22ba713be36fb3b63e34384d",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "93c5b0e620ae920d60c7986e6003f24eab7f7f99891d38ed3649b6e35057e99d",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    },
+    {
+      "control": "stale-native-inspection",
+      "generated_passing_review": false,
+      "rejection": "AssertionError: ('stale native inspection', 'reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json')",
+      "inputs": {
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/peer.json": "6c319dadec9b821dad0732c0278de1c01653c0b04db8f326948c6d873ec91a0a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json": "5eed156b8918229a1761d88cc2a580e174dc0bb66d0f460a68bcbee542a1915a",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json": "87bb64c8f37c8990a8dedab4c81db9f3b28727323222e0c1f0a4ff4504252068",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": "11bd76e1e0564ead0ef75a9b56016a74d77026ab3ca22e21a9256e4766308620",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": "8b5f2ae10631180d4c590be0a60e5f5d06ecac25a21919c56e125061ee75e76f",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": "2275ae5b85880c4569041c31e59e2db653b4660e11ead15c2c82f11add5f9e20",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-inspection.json": "7c684c4d2037a63eb6ab8af70903bab52e910ad55df3f10b8ccce76725bc9366",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json": "fad90fbc7b1697f6dffb2c5b6376d8f267b8204ec1066cc743113a8da307ce4e"
+      }
+    }
+  ],
+  "positive_controls": 1,
+  "rejected_negative_controls": 14,
+  "script_sha256": "7b03b5049cd84944da21432b9d3b8d0bf9a137e022b12616a8a93c4a32065d66",
+  "qualifications": [
+    "The positive fixture is a mechanical stub, not 188 scientifically reviewed cases; it only exercises authoring gates. Actual receipt contents must still be independently inspected by root.",
+    "prepare_native_inspection now includes peer-receipt-verification.json as exact context input. Existing-owner preimages and new-owner source-only targets remain distinct.",
+    "The manifest helper remains limited to the new successor subtree and named new native review; predecessor bytes are not rewritten.",
+    "Native authoring trusts the target list generated by prepare_native_inspection; independent final scope inspection must confirm exact selected proposal population."
+  ]
+}

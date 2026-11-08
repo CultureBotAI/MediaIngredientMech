@@ -1,0 +1,47 @@
+identifier: kgmicrobe.ingredient:jcm_1020_sulfide_5pct_autoclaved
+preferred_term: JCM 1020 autoclaved 5% sodium sulfide nonahydrate stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1020_sulfide_5pct_autoclaved
+  ontology_label: JCM 1020 autoclaved 5% sodium sulfide nonahydrate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1020
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: JCM 1020 specifies an autoclaved 5% Na2S·9H2O stock, added 5 ml per liter after
+  basal-medium cooling. Percent basis and stock carrier are not stated. This records
+  the bounded source treatment and solute without borrowing a w/v basis or gas-treatment
+  condition from another recipe. Raw case labels remain only in evidence and case-bound
+  proposal links, not globally resolving synonyms. No occurrence count transfer, source-hold
+  release or receiving-medium dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: Na2S x 9 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:76209
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1020
+    source_record: '1020'
+    notes: JCM 1020 specifies an autoclaved 5% Na2S·9H2O stock, added 5 ml per liter
+      after basal-medium cooling. Percent basis and stock carrier are not stated.
+      This records the bounded source treatment and solute without borrowing a w/v
+      basis or gas-treatment condition from another recipe.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 1020 specifies an autoclaved 5% Na2S·9H2O stock, added 5 ml per liter
+    after basal-medium cooling. Percent basis and stock carrier are not stated. This
+    records the bounded source treatment and solute without borrowing a w/v basis
+    or gas-treatment condition from another recipe.
+  new_status: MAPPED
+  llm_assisted: true

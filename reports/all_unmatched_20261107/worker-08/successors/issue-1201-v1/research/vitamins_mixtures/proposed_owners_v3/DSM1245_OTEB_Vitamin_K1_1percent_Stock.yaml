@@ -1,0 +1,69 @@
+identifier: kgmicrobe.ingredient:dsm1245_oteb_vitamin_k1_1percent_stock
+preferred_term: DSMZ 1245 OTEB vitamin K1 1 percent stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsm1245_oteb_vitamin_k1_1percent_stock
+  ontology_label: DSMZ 1245 OTEB vitamin K1 1 percent stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf
+    notes: Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces
+      the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution);
+      MediaDive main2474 corroborates that row. Registry identity preserves this documented
+      preparation; no exact molecular mapping.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces
+  the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution);
+  MediaDive main2474 corroborates that row. The carrier and any additional stock constituents
+  are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin
+  form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence
+  and source hold release are not asserted. The source does not state percentage basis,
+  solvent or full stock constituents. These remain explicit partial-composition limits.
+  It is not assigned the unrelated DSMZ 125 ethanol-stock recipe. Quantities, where
+  present, describe the supplied stock, not the finished receiving medium. Raw labels
+  remain source-scoped in evidence; no global synonym, biological role, occurrence
+  count integration or downstream admission is proposed.
+components:
+- component_name: Vitamin K1
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf
+    source_record: DSMZ 1245 OTEB vitamin K1 1 percent stock
+    notes: Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces
+      the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution);
+      MediaDive main2474 corroborates that row. The carrier and any additional stock
+      constituents are unspecified. No water, ethanol, methanol, acid, preservative
+      or molecular vitamin form is inferred. This is a PARTIAL preparation record;
+      complete-formulation equivalence and source hold release are not asserted. The
+      source does not state percentage basis, solvent or full stock constituents.
+      These remain explicit partial-composition limits. It is not assigned the unrelated
+      DSMZ 125 ethanol-stock recipe.
+curation_history:
+- timestamp: '2026-11-08T06:03:42.244832+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Resolve independent finding VM1201-F1 by representing known source preparation
+    with partial composition instead of treating unknown carrier as an absolute curation
+    blocker. Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ1245
+    reproduces the Anaerobe Systems AS-603 OTEB formula, including0.1ml of VitaminK1(1%solution);
+    MediaDive main2474 corroborates that row.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.127056+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

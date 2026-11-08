@@ -1,0 +1,2566 @@
+{
+  "scope": "Coordinator completeness review; no identity or release approval",
+  "cases": [
+    {
+      "worker": 4,
+      "head": "0d2c73e5aee5adb88782537755472d9ca0c5c3cd",
+      "index": 29,
+      "decision": {
+        "case_id": "CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5",
+        "case_input_sha256": "cbdd9def6bb2258f618451c7d5c55b8d2fdd881bb833a3adaf9812f5c32f0525",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Vegetable juice",
+          "source_label": "Vegetable juice",
+          "raw_source_label": "Vegetable juice"
+        },
+        "occurrence_ids": [
+          "CM_OCC:e403ae6f5623c9eda1099aa0b71b6e63cb96d796091b2be334fc20ef0c00e983"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "NBRC15 shows Vegetable juice is the supernatant after stirring approximately 300 ml V-8 juice with 3 g CaCO3 for two hours and centrifuging; 200 ml is then combined with seawater and agar. The actual input is clarified, treated mixed vegetable juice. A whole V-8 product, a generic vegetable, and the resulting seawater agar are distinct scopes.",
+        "applicability": "Applies only to culturemech Vegetable juice (raw label 'Vegetable juice'). All 1 occurrence components and full frozen recipe snapshots were read, including preparation and nested solutions: CultureMech:007955 ingredients/0.",
+        "evidence_ids": [
+          "BIO-PRIMARY-38c2e843ce8ce0ce",
+          "BIO-PRIMARY-66a7c00567ef40ce",
+          "BIO-RECIPE-60f7a75bc09f7893",
+          "BIO-SOURCE-29",
+          "BIO-SOURCE-BODY-UNCHANGED-v2"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: Represent the treated supernatant protocol if curated; product formulation/version and extraction yield are not supplied, so no molecular or generic-juice exact mapping is proposed.",
+        "missing_requirement": "Represent the treated supernatant protocol if curated; product formulation/version and extraction yield are not supplied, so no molecular or generic-juice exact mapping is proposed.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-biological-final"
+          ]
+        },
+        "primary_reviewer": "Codex /root/biological",
+        "native_record_review_applicability": "Source-only case with no resolved MIM owner: native owner-review route is not applicable; exact frozen source case and primary evidence retained under campaign contract.",
+        "preserved_holds": [],
+        "source_contexts_inspected": [
+          {
+            "occurrence_id": "CM_OCC:e403ae6f5623c9eda1099aa0b71b6e63cb96d796091b2be334fc20ef0c00e983",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/vegetable_juice_seawater_agar_v_8_swa.yaml",
+            "source_file_sha256": "60f7a75bc09f78932adfb4dc188c6a7be01c4931bb4765be45869812712dee12",
+            "component_path": "ingredients/0"
+          }
+        ],
+        "publication_scope": "Source-case disposition and proposed delta only; all frozen source-specific holds persist; no maintained owner/export approval."
+      },
+      "evidence": [
+        {
+          "evidence_id": "BIO-SOURCE-29",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-04.json",
+            "sha256": "446d8ca4f93e4275a48f42fe29944b09253d2ddd9b7c2575a2ee74b72fcd833a"
+          },
+          "url": null,
+          "locator": "cases[29] case_id=CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5; complete raw case including occurrences, source identifiers and holds",
+          "supports_or_contradicts": "Exact frozen source case; retained verbatim input identity and context, not automatic identity approval.",
+          "case_ids": [
+            "CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5"
+          ]
+        },
+        {
+          "evidence_id": "BIO-RECIPE-60f7a75bc09f7893",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/vegetable_juice_seawater_agar_v_8_swa.yaml",
+            "sha256": "60f7a75bc09f78932adfb4dc188c6a7be01c4931bb4765be45869812712dee12"
+          },
+          "url": null,
+          "locator": "CultureMech:007955 full YAML; component ingredients/0 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-38c2e843ce8ce0ce",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/38c2e843ce8ce0ce.html",
+            "sha256": "3bc67d47952f3bdf726567da54473e18fe5919d134bc989bf1d6ec877b02f95e"
+          },
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=15",
+          "accessed_at": "2026-11-08T05:07:28.095248+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=15",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5",
+            "CM_NAME:c620d59d339544911d9ef1d91ec0c42082357cb9b2a16d6b846ef03bef9eabf4"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-66a7c00567ef40ce",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/66a7c00567ef40ce.json",
+            "sha256": "2d736b5ba9fe4306dc1275885a5f684764d40dcf894561cb24f6fa0daea473c5"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1418",
+          "accessed_at": "2026-11-08T05:07:28.707150+00:00",
+          "locator": "Exact retrieved response; requested source URL https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1418",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5",
+            "CM_NAME:c620d59d339544911d9ef1d91ec0c42082357cb9b2a16d6b846ef03bef9eabf4"
+          ]
+        },
+        {
+          "evidence_id": "BIO-SOURCE-BODY-UNCHANGED-v2",
+          "kind": "local_validation",
+          "capture": {
+            "root": "artifact",
+            "path": "superseded/biological-v1/primary-body-hash-check.json",
+            "sha256": "cf37e9055b181961633fa3806dacbc66cba53d5801b7efe0448a8bc6094101ee"
+          },
+          "url": null,
+          "locator": "All139 v1 primary/ontology response body SHA256 comparisons",
+          "supports_or_contradicts": "PASS: every primary/ontology response body remained byte-identical after receipt-only overwrite. This does not restore lost receipt bytes or confer scientific approval."
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/38c2e843ce8ce0ce.html",
+          "sha256": "3bc67d47952f3bdf726567da54473e18fe5919d134bc989bf1d6ec877b02f95e"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/66a7c00567ef40ce.json",
+          "sha256": "2d736b5ba9fe4306dc1275885a5f684764d40dcf894561cb24f6fa0daea473c5"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/superseded/biological-v1/primary-body-hash-check.json",
+          "sha256": "cf37e9055b181961633fa3806dacbc66cba53d5801b7efe0448a8bc6094101ee"
+        }
+      ]
+    },
+    {
+      "worker": 4,
+      "head": "0d2c73e5aee5adb88782537755472d9ca0c5c3cd",
+      "index": 42,
+      "decision": {
+        "case_id": "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3",
+        "case_input_sha256": "4bcbc914c890df8b8d8c146d13617a365a4a993b8ff83f3a57784e6a428904c2",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Catalase (beef) (Sigma C-9322)",
+          "source_label": "Catalase (beef) (Sigma C-9322)",
+          "raw_source_label": "Catalase (beef) (Sigma C-9322)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:0e840e78efc320df712a25bf49e0e8cab3fdae0b093c88ca494c8b16e33641cd",
+          "CM_OCC:6f057cb3d33f03415a739e3cb3aaa3e686e271e8db69095896078f2dc22bb205",
+          "CM_OCC:237741d95b8cebe4255d9a0af01bae5e7240d1c58143a0b1a5c0d3f4124a0d47"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "The three TOGO occurrences locate Catalase (beef) (Sigma C-9322) inside OADC enrichment, at 0.004 g without an asserted final-volume denominator. Supplier C9322 is bovine-liver catalase lyophilized powder with a stated activity range. CAS9001-05-2 supports the enzyme-reagent family and contradicts substitution by human NCIT:C61062, but does not make the complete OADC stock or every catalase preparation identical.",
+        "applicability": "Applies only to culturemech Catalase (beef) (Sigma C-9322) (raw label 'Catalase (beef) (Sigma C-9322)'). All 3 occurrence components and full frozen recipe snapshots were read, including preparation and nested solutions: CultureMech:008980 solutions/0/composition/5, CultureMech:008985 solutions/1/composition/5, CultureMech:008987 solutions/1/composition/5.",
+        "evidence_ids": [
+          "BIO-FAILED-retrievals-131",
+          "BIO-FAILED-supplementary-retrievals-6",
+          "BIO-ISSUE-312",
+          "BIO-ISSUE-312-comments",
+          "BIO-OWNER-Catalase",
+          "BIO-PRIMARY-2e36b7f2d05209a0",
+          "BIO-PRIMARY-54ec413d4dba0fba",
+          "BIO-PRIMARY-d1ffb78c451bbabf",
+          "BIO-PRIMARY-de6aeb89029c0b8a",
+          "BIO-PRIMARY-supp-8bb907b6a644b834",
+          "BIO-RECIPE-4862f1f812241768",
+          "BIO-RECIPE-5c037b1dc3224f90",
+          "BIO-RECIPE-c8752203c9005b4e",
+          "BIO-SOURCE-42",
+          "BIO-SOURCE-BODY-UNCHANGED-v2"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: A C9322 supplied-form addition must preserve bovine liver, lyophilized preparation and activity. The current generic Catalase owner has pre-existing non-name synonyms; obtain complete owner review before adding a resolving product alias.",
+        "missing_requirement": "A C9322 supplied-form addition must preserve bovine liver, lyophilized preparation and activity. The current generic Catalase owner has pre-existing non-name synonyms; obtain complete owner review before adding a resolving product alias.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Catalase.yaml",
+            "sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd"
+          }
+        ],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/312"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-biological-final"
+          ]
+        },
+        "primary_reviewer": "Codex /root/biological",
+        "native_record_review_applicability": "Current owner comparisons/proposal require root native record-review packaging; this assessment alone does not approve full owner.",
+        "preserved_holds": [],
+        "source_contexts_inspected": [
+          {
+            "occurrence_id": "CM_OCC:0e840e78efc320df712a25bf49e0e8cab3fdae0b093c88ca494c8b16e33641cd",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h10_with_oadc.yaml",
+            "source_file_sha256": "4862f1f812241768ed42e6cdf5df1b1f0786a0a0b78760472e59e70c6e796458",
+            "component_path": "solutions/0/composition/5"
+          },
+          {
+            "occurrence_id": "CM_OCC:6f057cb3d33f03415a739e3cb3aaa3e686e271e8db69095896078f2dc22bb205",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h9_broth_supplemented_with_oleic_acid_albumin_dextrose_catalase_difco.yaml",
+            "source_file_sha256": "5c037b1dc3224f90564ecaeef6ed94606c84d74511768436b082022e4c070e6b",
+            "component_path": "solutions/1/composition/5"
+          },
+          {
+            "occurrence_id": "CM_OCC:237741d95b8cebe4255d9a0af01bae5e7240d1c58143a0b1a5c0d3f4124a0d47",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/supplemented_middlebrook.yaml",
+            "source_file_sha256": "c8752203c9005b4e4a6b48aa0fb0c75ebbacf07b4aaacb798f205b6bc4d6cf90",
+            "component_path": "solutions/1/composition/5"
+          }
+        ],
+        "publication_scope": "Source-case disposition and proposed delta only; all frozen source-specific holds persist; no maintained owner/export approval."
+      },
+      "evidence": [
+        {
+          "evidence_id": "BIO-SOURCE-42",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-04.json",
+            "sha256": "446d8ca4f93e4275a48f42fe29944b09253d2ddd9b7c2575a2ee74b72fcd833a"
+          },
+          "url": null,
+          "locator": "cases[42] case_id=CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3; complete raw case including occurrences, source identifiers and holds",
+          "supports_or_contradicts": "Exact frozen source case; retained verbatim input identity and context, not automatic identity approval.",
+          "case_ids": [
+            "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3"
+          ]
+        },
+        {
+          "evidence_id": "BIO-RECIPE-4862f1f812241768",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h10_with_oadc.yaml",
+            "sha256": "4862f1f812241768ed42e6cdf5df1b1f0786a0a0b78760472e59e70c6e796458"
+          },
+          "url": null,
+          "locator": "CultureMech:008980 full YAML; component solutions/0/composition/5 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-RECIPE-5c037b1dc3224f90",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h9_broth_supplemented_with_oleic_acid_albumin_dextrose_catalase_difco.yaml",
+            "sha256": "5c037b1dc3224f90564ecaeef6ed94606c84d74511768436b082022e4c070e6b"
+          },
+          "url": null,
+          "locator": "CultureMech:008985 full YAML; component solutions/1/composition/5 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-RECIPE-c8752203c9005b4e",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/supplemented_middlebrook.yaml",
+            "sha256": "c8752203c9005b4e4a6b48aa0fb0c75ebbacf07b4aaacb798f205b6bc4d6cf90"
+          },
+          "url": null,
+          "locator": "CultureMech:008987 full YAML; component solutions/1/composition/5 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-54ec413d4dba0fba",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/54ec413d4dba0fba.json",
+            "sha256": "51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2399",
+          "accessed_at": "2026-11-08T05:07:46.419317+00:00",
+          "locator": "Exact retrieved response; requested source URL https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2399",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-2e36b7f2d05209a0",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/2e36b7f2d05209a0.json",
+            "sha256": "f22345c993f16a147234d5ddef2d59a0fb5f673b0123c4e754f75daef54ae4e8"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2402",
+          "accessed_at": "2026-11-08T05:07:48.623710+00:00",
+          "locator": "Exact retrieved response; requested source URL https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2402",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-d1ffb78c451bbabf",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/d1ffb78c451bbabf.json",
+            "sha256": "7ecd8500a459870177ffccd14dbfe1b4266942b157b7df16c0a91ebd1ee3e47a"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2404",
+          "accessed_at": "2026-11-08T05:07:50.677376+00:00",
+          "locator": "Exact retrieved response; requested source URL https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2404",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-de6aeb89029c0b8a",
+          "kind": "ontology",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/de6aeb89029c0b8a.json",
+            "sha256": "c6c535281ee8097990d2138585dc51c233641f11e4d60d0fb2410aa02acac91b"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C61062",
+          "accessed_at": "2026-11-08T05:12:56.834693+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?obo_id=NCIT:C61062",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3",
+            "CM_NAME:53ffd900be4ded45dcd65d619a9372e25409539d538dfe39c254949c3b128097",
+            "KG_CASE:2b880f40fa0fcaeac9f79cb5088bfccab01e853b0240cac6fa32c817c72fc689"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-supp-8bb907b6a644b834",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/supp-8bb907b6a644b834.pdf",
+            "sha256": "f6ba6c3e599f6de2735827892106c78f7d4b79e8cfd756379885cfca4443102e"
+          },
+          "url": "https://www.sigmaaldrich.cn/certificates/sapfs/PROD/sap/certificate_pdfs/COFA/Q14/C9322-1G0000495897.pdf",
+          "accessed_at": "2026-11-08T05:09:27.284529+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.sigmaaldrich.cn/certificates/sapfs/PROD/sap/certificate_pdfs/COFA/Q14/C9322-1G0000495897.pdf",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3"
+          ]
+        },
+        {
+          "evidence_id": "BIO-FAILED-retrievals-131",
+          "kind": "unsuccessful_search",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/retrievals.json",
+            "sha256": "593635e06845ea158faa2148cd7a2330994e5837da20644fd3d331e702331281"
+          },
+          "url": "https://www.sigmaaldrich.com/US/en/product/sigma/c9322",
+          "accessed_at": "2026-11-08T05:12:56.705636+00:00",
+          "locator": "retrievals.json entry[131]",
+          "supports_or_contradicts": "Retrieval failed: The read operation timed out. No missing source content was inferred."
+        },
+        {
+          "evidence_id": "BIO-FAILED-supplementary-retrievals-6",
+          "kind": "unsuccessful_search",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/supplementary-retrievals.json",
+            "sha256": "2dd11891117c6b98f7e7689077bbff158a2279e3cb87dca4a67dd20f631e0bb8"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?obo_id=MESH:D002374",
+          "accessed_at": "2026-11-08T05:09:28.670727+00:00",
+          "locator": "supplementary-retrievals.json entry[6]",
+          "supports_or_contradicts": "Retrieval failed: HTTP Error 404: . No missing source content was inferred."
+        },
+        {
+          "evidence_id": "BIO-OWNER-Catalase",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/owners/Catalase.yaml",
+            "sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd"
+          },
+          "url": null,
+          "locator": "data/ingredients/mapped/Catalase.yaml complete baseline bytes",
+          "supports_or_contradicts": "Current owner identity, accepted/rejected synonyms, source IDs, prior curation events and mapping scope inspected; no blanket approval."
+        },
+        {
+          "evidence_id": "BIO-ISSUE-312",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/issues/issue-312.json",
+            "sha256": "42cab41a402a79982ad48441087636fb9d075af1ab587c2bd2bfc316461cf0b4"
+          },
+          "url": null,
+          "locator": "Live-captured issue #312; retrieval provenance retained in root captures/issues/retrieval-metadata.json",
+          "supports_or_contradicts": "Historical/prior scientific decision inspected; no source identity inferred from issue status."
+        },
+        {
+          "evidence_id": "BIO-ISSUE-312-comments",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/issues/issue-312-comments.json",
+            "sha256": "e6672990848abb20e30614f228be20bc26a9436d80d4ff6e3ed2dbee798e0fbe"
+          },
+          "url": null,
+          "locator": "Live-captured issue #312-comments; retrieval provenance retained in root captures/issues/retrieval-metadata.json",
+          "supports_or_contradicts": "Historical/prior scientific decision inspected; no source identity inferred from issue status."
+        },
+        {
+          "evidence_id": "BIO-SOURCE-BODY-UNCHANGED-v2",
+          "kind": "local_validation",
+          "capture": {
+            "root": "artifact",
+            "path": "superseded/biological-v1/primary-body-hash-check.json",
+            "sha256": "cf37e9055b181961633fa3806dacbc66cba53d5801b7efe0448a8bc6094101ee"
+          },
+          "url": null,
+          "locator": "All139 v1 primary/ontology response body SHA256 comparisons",
+          "supports_or_contradicts": "PASS: every primary/ontology response body remained byte-identical after receipt-only overwrite. This does not restore lost receipt bytes or confer scientific approval."
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/54ec413d4dba0fba.json",
+          "sha256": "51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/2e36b7f2d05209a0.json",
+          "sha256": "f22345c993f16a147234d5ddef2d59a0fb5f673b0123c4e754f75daef54ae4e8"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/d1ffb78c451bbabf.json",
+          "sha256": "7ecd8500a459870177ffccd14dbfe1b4266942b157b7df16c0a91ebd1ee3e47a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/de6aeb89029c0b8a.json",
+          "sha256": "c6c535281ee8097990d2138585dc51c233641f11e4d60d0fb2410aa02acac91b"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/supp-8bb907b6a644b834.pdf",
+          "sha256": "f6ba6c3e599f6de2735827892106c78f7d4b79e8cfd756379885cfca4443102e"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/retrievals.json",
+          "sha256": "593635e06845ea158faa2148cd7a2330994e5837da20644fd3d331e702331281"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/supplementary-retrievals.json",
+          "sha256": "2dd11891117c6b98f7e7689077bbff158a2279e3cb87dca4a67dd20f631e0bb8"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/owners/Catalase.yaml",
+          "sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/issues/issue-312.json",
+          "sha256": "42cab41a402a79982ad48441087636fb9d075af1ab587c2bd2bfc316461cf0b4"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/issues/issue-312-comments.json",
+          "sha256": "e6672990848abb20e30614f228be20bc26a9436d80d4ff6e3ed2dbee798e0fbe"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/superseded/biological-v1/primary-body-hash-check.json",
+          "sha256": "cf37e9055b181961633fa3806dacbc66cba53d5801b7efe0448a8bc6094101ee"
+        }
+      ]
+    },
+    {
+      "worker": 4,
+      "head": "0d2c73e5aee5adb88782537755472d9ca0c5c3cd",
+      "index": 45,
+      "decision": {
+        "case_id": "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+        "case_input_sha256": "231cefcfb8a65506abe1e0207c7a4d16721b39fc2b62c438ca9b8800230d0eea",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Malted wheat meal",
+          "source_label": "Malted wheat meal",
+          "raw_source_label": "Malted wheat meal"
+        },
+        "occurrence_ids": [
+          "CM_OCC:9b1b35af8789bc66b69f766594b39469ecd6e21b86eecc763f63a1f3a54d9dec",
+          "CM_OCC:3cd743667aa3cac796604b04c9e0de66c9dbeb70284f7b2fa14de6326e8c86e7",
+          "CM_OCC:c728f3a8c58250666b5544290ddc97a4857581771f5df445791bc450fb423019"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM730/MediaDive4657 places malted wheat meal at 2 g in the rye-bran extract with rye bran, trypsin and water, incubated 24 h at 50 C then clarified. The meal is an ingredient of that extract, not the complete extract or CHEBI:1881. Its malted plant-material scope must remain distinct from purified carbohydrates. OLS confirms FOODON:03460755wheat malt and FOODON:03306061malted wheat(coarse ground); the latter also asserts unheated medium-ground germinated dried grain. The source meal name does not verify these extra process/particle properties.",
+        "applicability": "Applies only to culturemech Malted wheat meal (raw label 'Malted wheat meal'). All 3 occurrence components and full frozen recipe snapshots were read, including preparation and nested solutions: CultureMech:010159 solutions/0/composition/1, CultureMech:013615 composition/1, CultureMech:003075 solutions/0/composition/1.",
+        "evidence_ids": [
+          "BIO-PRIMARY-final-4b35815fc03de04d",
+          "BIO-PRIMARY-followup-27e3c547f5370eb0",
+          "BIO-PRIMARY-followup-f3f49fe6ad0948a4",
+          "BIO-PRIMARY-supp-ab082efe127ab014",
+          "BIO-RECIPE-71978e36319852c0",
+          "BIO-RECIPE-a224a14151166e96",
+          "BIO-RECIPE-fa9491b68703e000",
+          "BIO-SOURCE-45",
+          "BIO-SOURCE-BODY-UNCHANGED-v2"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: A source-qualified meal identity can retain its plant material scope, but an exactFoodOn mapping requires verified particle/process state; neither the broader wheat malt term nor coarse ground term is automatically identical. The quarantined CHEBI:1881 remains excluded.",
+        "missing_requirement": "A source-qualified meal identity can retain its plant material scope, but an exactFoodOn mapping requires verified particle/process state; neither the broader wheat malt term nor coarse ground term is automatically identical. The quarantined CHEBI:1881 remains excluded.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-biological-final"
+          ]
+        },
+        "primary_reviewer": "Codex /root/biological",
+        "native_record_review_applicability": "Source-only case with no resolved MIM owner: native owner-review route is not applicable; exact frozen source case and primary evidence retained under campaign contract.",
+        "preserved_holds": [],
+        "source_contexts_inspected": [
+          {
+            "occurrence_id": "CM_OCC:9b1b35af8789bc66b69f766594b39469ecd6e21b86eecc763f63a1f3a54d9dec",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M753_RYE-Bran_MRS.yaml",
+            "source_file_sha256": "71978e36319852c023dffde3799b0b2bd3ec422c4c9e608e0fc53e9153ab670d",
+            "component_path": "solutions/0/composition/1"
+          },
+          {
+            "occurrence_id": "CM_OCC:3cd743667aa3cac796604b04c9e0de66c9dbeb70284f7b2fa14de6326e8c86e7",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4657_Rye-bran_extract.yaml",
+            "source_file_sha256": "fa9491b68703e000d1b91fe7fa89d5ae9fb3c85a2476457533dcd1c490cfdb84",
+            "component_path": "composition/1"
+          },
+          {
+            "occurrence_id": "CM_OCC:c728f3a8c58250666b5544290ddc97a4857581771f5df445791bc450fb423019",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/rye_bran_mrs.yaml",
+            "source_file_sha256": "a224a14151166e96c9a3ca8b0681d56207f1aa5bcc43886d5520caa0176fbbcb",
+            "component_path": "solutions/0/composition/1"
+          }
+        ],
+        "publication_scope": "Source-case disposition and proposed delta only; all frozen source-specific holds persist; no maintained owner/export approval."
+      },
+      "evidence": [
+        {
+          "evidence_id": "BIO-SOURCE-45",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-04.json",
+            "sha256": "446d8ca4f93e4275a48f42fe29944b09253d2ddd9b7c2575a2ee74b72fcd833a"
+          },
+          "url": null,
+          "locator": "cases[45] case_id=CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec; complete raw case including occurrences, source identifiers and holds",
+          "supports_or_contradicts": "Exact frozen source case; retained verbatim input identity and context, not automatic identity approval.",
+          "case_ids": [
+            "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec"
+          ]
+        },
+        {
+          "evidence_id": "BIO-RECIPE-71978e36319852c0",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M753_RYE-Bran_MRS.yaml",
+            "sha256": "71978e36319852c023dffde3799b0b2bd3ec422c4c9e608e0fc53e9153ab670d"
+          },
+          "url": null,
+          "locator": "CultureMech:010159 full YAML; component solutions/0/composition/1 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-RECIPE-fa9491b68703e000",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4657_Rye-bran_extract.yaml",
+            "sha256": "fa9491b68703e000d1b91fe7fa89d5ae9fb3c85a2476457533dcd1c490cfdb84"
+          },
+          "url": null,
+          "locator": "CultureMech:013615 full YAML; component composition/1 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-RECIPE-a224a14151166e96",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/rye_bran_mrs.yaml",
+            "sha256": "a224a14151166e96c9a3ca8b0681d56207f1aa5bcc43886d5520caa0176fbbcb"
+          },
+          "url": null,
+          "locator": "CultureMech:003075 full YAML; component solutions/0/composition/1 with complete preparation, stock nesting and historical notes",
+          "supports_or_contradicts": "Complete frozen CultureMech recipe inspected for material scope, quantity basis, alternative preparations and source-reference provenance."
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-supp-ab082efe127ab014",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/supp-ab082efe127ab014.html",
+            "sha256": "a067d45e0890d481197320921366107b989ac492932dab32558fab38ba4c3606"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=730",
+          "accessed_at": "2026-11-08T05:09:28.008509+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=730",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+            "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-final-4b35815fc03de04d",
+          "kind": "ontology",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/final-4b35815fc03de04d.json",
+            "sha256": "e356d4e3d2c62eaee5f4ad953a670cca66688a89862676134be95c71161063e4"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/search?q=malted%20wheat&ontology=foodon&rows=20",
+          "accessed_at": "2026-11-08T05:15:51.886428+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.ebi.ac.uk/ols4/api/search?q=malted%20wheat&ontology=foodon&rows=20",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+            "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-followup-f3f49fe6ad0948a4",
+          "kind": "ontology",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/followup-f3f49fe6ad0948a4.json",
+            "sha256": "8baeb1e8556560a9a1b9fb5a51b547e74c4d1bf15b25484ad4f3f795c87eeb21"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03460755",
+          "accessed_at": "2026-11-08T05:16:25.113070+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03460755",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+            "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+          ]
+        },
+        {
+          "evidence_id": "BIO-PRIMARY-followup-27e3c547f5370eb0",
+          "kind": "ontology",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/biological/followup-27e3c547f5370eb0.json",
+            "sha256": "f19c4a4cf61343ca1799bb56c97abd0d3987dd0513f377065e4fb5574b380068"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03306061",
+          "accessed_at": "2026-11-08T05:16:25.121799+00:00",
+          "locator": "Exact retrieved response; requested source URL https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03306061",
+          "supports_or_contradicts": "Primary source recipe/product/ontology record: inspect exact material name, preparation and amount basis, or term label/definition; applicability is stated separately per case.",
+          "case_ids": [
+            "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+            "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+          ]
+        },
+        {
+          "evidence_id": "BIO-SOURCE-BODY-UNCHANGED-v2",
+          "kind": "local_validation",
+          "capture": {
+            "root": "artifact",
+            "path": "superseded/biological-v1/primary-body-hash-check.json",
+            "sha256": "cf37e9055b181961633fa3806dacbc66cba53d5801b7efe0448a8bc6094101ee"
+          },
+          "url": null,
+          "locator": "All139 v1 primary/ontology response body SHA256 comparisons",
+          "supports_or_contradicts": "PASS: every primary/ontology response body remained byte-identical after receipt-only overwrite. This does not restore lost receipt bytes or confer scientific approval."
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/supp-ab082efe127ab014.html",
+          "sha256": "a067d45e0890d481197320921366107b989ac492932dab32558fab38ba4c3606"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/final-4b35815fc03de04d.json",
+          "sha256": "e356d4e3d2c62eaee5f4ad953a670cca66688a89862676134be95c71161063e4"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/followup-f3f49fe6ad0948a4.json",
+          "sha256": "8baeb1e8556560a9a1b9fb5a51b547e74c4d1bf15b25484ad4f3f795c87eeb21"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/captures/biological/followup-27e3c547f5370eb0.json",
+          "sha256": "f19c4a4cf61343ca1799bb56c97abd0d3987dd0513f377065e4fb5574b380068"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/superseded/biological-v1/primary-body-hash-check.json",
+          "sha256": "cf37e9055b181961633fa3806dacbc66cba53d5801b7efe0448a8bc6094101ee"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 56,
+      "decision": {
+        "case_id": "CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7",
+        "case_input_sha256": "0734d1fc8a957d4c8ea2af363a2b1bb759f13af457031adf87d157cf26936fba",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "1N NaOH",
+          "source_label": "1N NaOH",
+          "raw_source_label": "1N NaOH"
+        },
+        "occurrence_ids": [
+          "CM_OCC:072b93cd4acc033ce4d53a8fcf234156b7cc4492118f68d31d42a82afd52c966",
+          "CM_OCC:4ef04bc84e62c3918f22cdfb49c84121bf9471ff145a2ec675bf54e8902dd8f0",
+          "CM_OCC:4b188db79f5a3ecdff61b20c281bc8ddf6357e77c016bb0ee7aa2915deecea85",
+          "CM_OCC:49721a6cdc111d71f0df71c3aece38324f6ac216eafa6c0ea06ea4c42f28911e"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "This is a normality-qualified sodium hydroxide reagent used in preparation or pH adjustment. CHEBI:32145 denotes NaOH solute, whereas the specified normality belongs to solution scope. Primary JCM 461 and 1130 explicitly dose normal NaOH in ml, illustrating why the frozen stock labels and volumes must survive; their recipes do not make all normalities one identity.",
+        "applicability": "Applies only to source culturemech case '1N NaOH', label '1N NaOH', raw label '1N NaOH'. Reviewed all 4 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-056",
+          "if-recipe-b65c4ab4b00f",
+          "if-recipe-f56728203f72",
+          "if-recipe-e14c5ff523fb",
+          "if-recipe-5c35dd3a7e9a",
+          "if-web-1b07ab5876f8",
+          "if-web-dc2ddc346caa",
+          "if-web-8fe937c1ef6c"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "missing_requirement": "Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:072b93cd4acc033ce4d53a8fcf234156b7cc4492118f68d31d42a82afd52c966",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2576_Modified_chopped_meat_medium.yaml",
+            "component_path": "ingredients/0",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "26.0"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution [Merged 2 duplicates: 25.0, 1.0]",
+              "preferred_term": "1N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2576\nOriginal URL: https://www.atcc.org/~/media/85260BB7A69A4640A5BB1042498807E4.ashx",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:4ef04bc84e62c3918f22cdfb49c84121bf9471ff145a2ec675bf54e8902dd8f0",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2585_PYG_Medium_modified.yaml",
+            "component_path": "ingredients/18",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "1N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2585\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium104.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:4b188db79f5a3ecdff61b20c281bc8ddf6357e77c016bb0ee7aa2915deecea85",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2744_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+            "component_path": "ingredients/12",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "1N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2744\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:49721a6cdc111d71f0df71c3aece38324f6ac216eafa6c0ea06ea4c42f28911e",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M3072_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+            "component_path": "ingredients/12",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "1N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3072\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110.pdf",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-dc2ddc346caa",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/jcm-batch4.json",
+            "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461",
+          "accessed_at": "2026-11-08T05:07:55.507105+00:00"
+        },
+        {
+          "evidence_id": "if-web-1b07ab5876f8",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/ontology-batch1.json",
+            "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+          },
+          "kind": "ontology",
+          "locator": "Returned page at https://www.ebi.ac.uk/chebi/CHEBI:32145; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.ebi.ac.uk/chebi/CHEBI:32145",
+          "accessed_at": "2026-11-08T05:06:49.302432+00:00"
+        },
+        {
+          "evidence_id": "if-web-8fe937c1ef6c",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/primary-batch7.json",
+            "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T05:08:47.015262+00:00"
+        },
+        {
+          "evidence_id": "if-case-056",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[56]; case_id=CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-b65c4ab4b00f",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2576_Modified_chopped_meat_medium.yaml",
+            "sha256": "d7af564a8ed3e0c957f797b74b98d663b6bbf7d55c3545243626553805e2a9e5"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-f56728203f72",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2585_PYG_Medium_modified.yaml",
+            "sha256": "6272cbf36829a4eb257d319b2ff189d1175ccd1b9589e15b0d82955cd1db46e9"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-e14c5ff523fb",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2744_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+            "sha256": "fc5a7bdc4ca2d4d9b9b0cd266c8313a0eb73ba15306c6b63720fb6df9798a40d"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-5c35dd3a7e9a",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3072_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+            "sha256": "04e17a2df2cf7495ed38a3e8c564cce3f29f791c2d7ecd560d3e82e1d3251f23"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/jcm-batch4.json",
+          "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/ontology-batch1.json",
+          "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/primary-batch7.json",
+          "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 59,
+      "decision": {
+        "case_id": "CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f",
+        "case_input_sha256": "a985f9b389e044aeda97194c121d6bceeb76873910183d42882051c286147957",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "2 N NaOH",
+          "source_label": "2 N NaOH",
+          "raw_source_label": "2 N NaOH"
+        },
+        "occurrence_ids": [
+          "CM_OCC:f5c15fdc753e2ad1dc8530fd74204b11df9dfa0ff809bfa1b4550272d9d153d0",
+          "CM_OCC:16e6138f826b5681589bf37fcaffaf6828f47bbb516f2d93491213cf2fbc11a9",
+          "CM_OCC:59a281cf02f0087b32ac0f1fb5dbb9daa300b0ac17066dbe060679cdfb889a2d",
+          "CM_OCC:f3f6cdc242838b8d3f7799694a3dd88663c978d8e5b201aae019d4d5be24750e",
+          "CM_OCC:0147ea4d0b73f8a527c32226349725f901712d005f1133e53ef7bee949292934",
+          "CM_OCC:e715f51ad419036bad1795e5660ec70e55625fdab0499a6c158f9445fba35901",
+          "CM_OCC:de51f8dbd0e177b9f06f3d09404b82bc56498d506b5fd29eec447bcd68d2e2a1",
+          "CM_OCC:e57924c87a493aa5124af791d49b38476fc4cf3817e7e84709f227bc7966f270",
+          "CM_OCC:29d09aa099a0c0fac8b1e50662d241501df840fab80b1a3ebe562e5d5f8e8564"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "This is a normality-qualified sodium hydroxide reagent used in preparation or pH adjustment. CHEBI:32145 denotes NaOH solute, whereas the specified normality belongs to solution scope. Primary JCM 461 and 1130 explicitly dose normal NaOH in ml, illustrating why the frozen stock labels and volumes must survive; their recipes do not make all normalities one identity.",
+        "applicability": "Applies only to source culturemech case '2 N NaOH', label '2 N NaOH', raw label '2 N NaOH'. Reviewed all 9 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-059",
+          "if-recipe-81b2c729d6e0",
+          "if-recipe-1e9372414d26",
+          "if-recipe-0ba40e931015",
+          "if-recipe-d8dc7dfe7634",
+          "if-recipe-0e21c789b9d6",
+          "if-recipe-384768274ddb",
+          "if-recipe-1ed0499b2338",
+          "if-recipe-6bced22336f7",
+          "if-recipe-1d8b98a84a87",
+          "if-web-1b07ab5876f8",
+          "if-web-dc2ddc346caa",
+          "if-web-8fe937c1ef6c"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "missing_requirement": "Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:f5c15fdc753e2ad1dc8530fd74204b11df9dfa0ff809bfa1b4550272d9d153d0",
+            "source_file": "data/normalized_yaml/archaea/methanosphaerula_peat_medium_for_dsm_25616.yaml",
+            "component_path": "ingredients/17",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2661\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1094.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:16e6138f826b5681589bf37fcaffaf6828f47bbb516f2d93491213cf2fbc11a9",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2232_Anaerolinea_Medium.yaml",
+            "component_path": "ingredients/21",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2232\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1004.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:59a281cf02f0087b32ac0f1fb5dbb9daa300b0ac17066dbe060679cdfb889a2d",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2609_Carboxydothermus_Medium.yaml",
+            "component_path": "ingredients/18",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2609\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium507.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:f3f6cdc242838b8d3f7799694a3dd88663c978d8e5b201aae019d4d5be24750e",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2610_Carboxydothermus_Medium_Heterotroph.yaml",
+            "component_path": "ingredients/22",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2610\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium508.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:0147ea4d0b73f8a527c32226349725f901712d005f1133e53ef7bee949292934",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2715_Thermoanaerobacter_KoKo_Medium.yaml",
+            "component_path": "ingredients/23",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2715\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium710.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:e715f51ad419036bad1795e5660ec70e55625fdab0499a6c158f9445fba35901",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2739_Thermoacetogenium_Medium.yaml",
+            "component_path": "ingredients/21",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2739\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium880.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:de51f8dbd0e177b9f06f3d09404b82bc56498d506b5fd29eec447bcd68d2e2a1",
+            "source_file": "data/normalized_yaml/bacterial/carboxydothermus_medium_for_dsm_22663.yaml",
+            "component_path": "ingredients/20",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2674\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium507.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:e57924c87a493aa5124af791d49b38476fc4cf3817e7e84709f227bc7966f270",
+            "source_file": "data/normalized_yaml/bacterial/geobacter_pelophilus_medium_for_dsm_15288.yaml",
+            "component_path": "ingredients/21",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2725\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium838.pdf",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:29d09aa099a0c0fac8b1e50662d241501df840fab80b1a3ebe562e5d5f8e8564",
+            "source_file": "data/normalized_yaml/bacterial/saline_basal_medium.yaml",
+            "component_path": "ingredients/7",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3213",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-dc2ddc346caa",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/jcm-batch4.json",
+            "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461",
+          "accessed_at": "2026-11-08T05:07:55.507105+00:00"
+        },
+        {
+          "evidence_id": "if-web-1b07ab5876f8",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/ontology-batch1.json",
+            "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+          },
+          "kind": "ontology",
+          "locator": "Returned page at https://www.ebi.ac.uk/chebi/CHEBI:32145; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.ebi.ac.uk/chebi/CHEBI:32145",
+          "accessed_at": "2026-11-08T05:06:49.302432+00:00"
+        },
+        {
+          "evidence_id": "if-web-8fe937c1ef6c",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/primary-batch7.json",
+            "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T05:08:47.015262+00:00"
+        },
+        {
+          "evidence_id": "if-case-059",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[59]; case_id=CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-81b2c729d6e0",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/archaea/methanosphaerula_peat_medium_for_dsm_25616.yaml",
+            "sha256": "e242cdb90b1060490974e5dd910a1be89376002a6dd435dbacdfae2e970462b1"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-1e9372414d26",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2232_Anaerolinea_Medium.yaml",
+            "sha256": "5aa2b4c82c939a627313f695dcf8e9a5ed7edb7b67b90866fc0025708c133fa9"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-0ba40e931015",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2609_Carboxydothermus_Medium.yaml",
+            "sha256": "8dddad4735138a6f4dcf90387b4eb555f7b6098a3def56465d433d36a17dca62"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-d8dc7dfe7634",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2610_Carboxydothermus_Medium_Heterotroph.yaml",
+            "sha256": "1daf87955c90fbdb2a5bb2821765596cb32385fba581a4be73a65902882e3814"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-0e21c789b9d6",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2715_Thermoanaerobacter_KoKo_Medium.yaml",
+            "sha256": "654fc33af6754ed09a68b0f057ea75d5c768b8b8e7620feca583ecb2d241c15e"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-384768274ddb",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2739_Thermoacetogenium_Medium.yaml",
+            "sha256": "310ea365dd4244895d76951f3f0c2d873f6135a7a009b0a599adcba83579e3a3"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-1ed0499b2338",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/carboxydothermus_medium_for_dsm_22663.yaml",
+            "sha256": "00be5146d28d29211aa56146e0286002bc6cbfc2307d52b6b8302eed1eb19224"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-6bced22336f7",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/geobacter_pelophilus_medium_for_dsm_15288.yaml",
+            "sha256": "b149115a9ae2313cb9d37d1467aec1e9516ac91934535d1154f3c58efc363218"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-1d8b98a84a87",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/saline_basal_medium.yaml",
+            "sha256": "297ba0a0bb71621a5168866eefaf36ea962d89b3b50995d6d16443acdfcbb84f"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/jcm-batch4.json",
+          "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/ontology-batch1.json",
+          "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/primary-batch7.json",
+          "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 80,
+      "decision": {
+        "case_id": "CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba",
+        "case_input_sha256": "d2b2fe25c9db8019a9fbb9b3bd6f1a61c103961a4b953d5c620b2713644d0d90",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "0.1 N NaOH",
+          "source_label": "0.1 N NaOH",
+          "raw_source_label": "0.1 N NaOH"
+        },
+        "occurrence_ids": [
+          "CM_OCC:cab1ae6c434ea5a0989a31018daf937cc61e593bc4e6e051a2b7508894163628",
+          "CM_OCC:dc597a9b941dc1fc90c9e0cb518817bfa75ce2568fc5f435c7dad191118d8193",
+          "CM_OCC:71701d0f0346d960452e4ece497ae291df2893c7b55b8df7cfaa914bde1bc58c"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "This is a normality-qualified sodium hydroxide reagent used in preparation or pH adjustment. CHEBI:32145 denotes NaOH solute, whereas the specified normality belongs to solution scope. Primary JCM 461 and 1130 explicitly dose normal NaOH in ml, illustrating why the frozen stock labels and volumes must survive; their recipes do not make all normalities one identity.",
+        "applicability": "Applies only to source culturemech case '0.1 N NaOH', label '0.1 N NaOH', raw label '0.1 N NaOH'. Reviewed all 3 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-080",
+          "if-recipe-be519765d02b",
+          "if-recipe-c2dd169ccdde",
+          "if-recipe-dadc09f6711e",
+          "if-web-1b07ab5876f8",
+          "if-web-dc2ddc346caa",
+          "if-web-8fe937c1ef6c"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "missing_requirement": "Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:cab1ae6c434ea5a0989a31018daf937cc61e593bc4e6e051a2b7508894163628",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M135_Modified_NOS_Medium.yaml",
+            "component_path": "ingredients/14",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "100"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.1 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M135\nOriginal source: JCM - JCM_M144\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144\n\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:dc597a9b941dc1fc90c9e0cb518817bfa75ce2568fc5f435c7dad191118d8193",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2577_Modified_NOS_Medium.yaml",
+            "component_path": "ingredients/15",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "100"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.1 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2577\nOriginal URL: https://www.atcc.org/~/media/C14CA5B6B5D246A6B8073D6894BFE5EB.ashx\n\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:71701d0f0346d960452e4ece497ae291df2893c7b55b8df7cfaa914bde1bc58c",
+            "source_file": "data/normalized_yaml/bacterial/ureaplasma_medium_special_modified_formulation.yaml",
+            "component_path": "solutions/2/composition/1",
+            "native_scope": "inline_stock",
+            "raw_component": {
+              "concentration": {
+                "unit": "ML_PER_L",
+                "value": "200.0"
+              },
+              "notes": "TOGO M2179 / ATCC Medium 2616 identifies 0.1% Phenol Red Solution as containing 200.0 ml/L 0.1 N NaOH.",
+              "preferred_term": "0.1 N NaOH",
+              "source": "TOGO M2179 / ATCC Medium 2616"
+            },
+            "recipe_notes": "TOGO M2179 cites ATCC Medium 2616 Ureaplasma Medium - Special Modified Formulation. ATCC Medium 2616 lists a 500 ml basal recipe with PPLO Broth w/o Crystal Violet, pancreatic digests of casein and gelatin, optional agar, and DI Water, adjusts the basal pH to 7.4 +/- 0.2, and autoclaves it at 121 C. The source then prepares a 500 ml additive solution from CMRL 1066, Yeast Extract Solution, 10% TC Yeastolate, heat-inactivated fetal bovine serum, 0.1% Phenol Red Solution, urea, and DI Water; filter-sterilizes the additive; combines it with the basal medium; and records a final pH of 6.0 +/- 0.2.",
+            "preparation_steps": [
+              {
+                "step_number": 1,
+                "action": "MIX",
+                "description": "Mix PPLO Broth w/o Crystal Violet, pancreatic digests of casein and gelatin, optional agar, and DI Water as the basal medium."
+              },
+              {
+                "step_number": 2,
+                "action": "ADJUST_PH",
+                "description": "Adjust the basal medium to pH 7.4 +/- 0.2."
+              },
+              {
+                "step_number": 3,
+                "action": "AUTOCLAVE",
+                "description": "Autoclave the basal medium at 121 C and, if agar is used, cool it to 50-55 C in a water bath."
+              },
+              {
+                "step_number": 4,
+                "action": "FILTER_STERILIZE",
+                "description": "Combine the additive solution and filter-sterilize it through a 0.22 micrometer filter."
+              },
+              {
+                "step_number": 5,
+                "action": "MIX",
+                "description": "Aseptically add the filter-sterilized additive solution to the basal medium."
+              },
+              {
+                "step_number": 6,
+                "action": "ADJUST_PH",
+                "description": "Confirm a final complete-medium pH of 6.0 +/- 0.2 at 25 C."
+              }
+            ]
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-dc2ddc346caa",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/jcm-batch4.json",
+            "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461",
+          "accessed_at": "2026-11-08T05:07:55.507105+00:00"
+        },
+        {
+          "evidence_id": "if-web-1b07ab5876f8",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/ontology-batch1.json",
+            "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+          },
+          "kind": "ontology",
+          "locator": "Returned page at https://www.ebi.ac.uk/chebi/CHEBI:32145; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.ebi.ac.uk/chebi/CHEBI:32145",
+          "accessed_at": "2026-11-08T05:06:49.302432+00:00"
+        },
+        {
+          "evidence_id": "if-web-8fe937c1ef6c",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/primary-batch7.json",
+            "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T05:08:47.015262+00:00"
+        },
+        {
+          "evidence_id": "if-case-080",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[80]; case_id=CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-be519765d02b",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M135_Modified_NOS_Medium.yaml",
+            "sha256": "91db2299c5939106f818bc3f93be621c9c54a1fe925a3b33eadc097d283ef219"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-c2dd169ccdde",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2577_Modified_NOS_Medium.yaml",
+            "sha256": "a7baea9a461b3ec2ea0e94b7877f63f084dbf0561df6012240a3d99ed3a9e989"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-dadc09f6711e",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/ureaplasma_medium_special_modified_formulation.yaml",
+            "sha256": "2321073cd406795dbabcc4d8e3a907ca78e5c12fe5d593bca18d687c7f3b6323"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/jcm-batch4.json",
+          "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/ontology-batch1.json",
+          "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/primary-batch7.json",
+          "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 89,
+      "decision": {
+        "case_id": "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7",
+        "case_input_sha256": "bd7f2d9fb3b7f2a9c198bd385e2b8e725d855a4920871cb37733a1dc11dbd475",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Top layer",
+          "source_label": "Top layer",
+          "raw_source_label": "Top layer"
+        },
+        "occurrence_ids": [
+          "CM_OCC:39fa297f4ba2aeabf2e8b7503ae38cf362a90d97b43d17e7d848547ae53049e5",
+          "CM_OCC:0ce3853268ccaa6f9f04c3e0e9a1bc2dc4f72eef2532c04e8ba2f079fc8c5c68"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "Top layer in JCM628 and629 denotes a semisolid layer used to establish opposing iron/oxygen gradients. The freshwater and saltwater versions differ in mineral formulation. This is a preparation stage carrying multiple substances, not a universal chemical identity; a global Top layer alias would collapse two recipes and their physical roles.",
+        "applicability": "Exact source case Top layer. Reviewed every one of its 2 frozen occurrences: CultureMech:010042 at ingredients/1; CultureMech:010043 at ingredients/1. All full recipe snapshots and their source/source-stock pointers are bound as evidence. Top layer in JCM628 and629 denotes a semisolid layer used to establish opposing iron/oxygen gradients. The freshwater and saltwater versions differ in mineral formulation. This is a preparation stage carrying multiple substances, not a universal chemical identity; a global Top layer alias would collapse two recipes and their physical roles.",
+        "evidence_ids": [
+          "vm-source-a302e4c31321b1a6",
+          "vm-source-f4f6d7b236b1969c",
+          "vm-fetch-c098cecab2d758dd",
+          "vm-fetch-a131b1e4c01f3b83",
+          "vm-owner-search",
+          "vm-context-review"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained owner edit is justified for this source claim. Represent each recipe-specific top layer with its own composition/phase and preserve the stage hierarchy; no shared single-ingredient alias is valid.",
+        "missing_requirement": "Represent each recipe-specific top layer with its own composition/phase and preserve the stage hierarchy; no shared single-ingredient alias is valid.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-vitamins_mixtures-1"
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "evidence_id": "vm-source-a302e4c31321b1a6",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M641_Freshwater_Iron-Oxidizing_Bacteria_Medium.yaml",
+            "sha256": "5b1f0284b8e9f7a44d7e22538a7092a3aa7b7d978cdb370c2d36e36bace60a40"
+          },
+          "locator": "Complete frozen recipe; occurrence-specific component paths are in the bound case.",
+          "supports_or_contradicts": "Source label, quantities, recipe hierarchy, provenance pointers and preparation context. This is a source snapshot, not independent chemical identity proof.",
+          "url": null
+        },
+        {
+          "evidence_id": "vm-source-f4f6d7b236b1969c",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M642_Saltwater_Iron-Oxidizing_Bacteria_Medium.yaml",
+            "sha256": "a2d32d72985e7804531e9c7fb2aecd8201c024ab430d769db2fee0fb7f38b548"
+          },
+          "locator": "Complete frozen recipe; occurrence-specific component paths are in the bound case.",
+          "supports_or_contradicts": "Source label, quantities, recipe hierarchy, provenance pointers and preparation context. This is a source snapshot, not independent chemical identity proof.",
+          "url": null
+        },
+        {
+          "evidence_id": "vm-fetch-c098cecab2d758dd",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/captures/c098cecab2d758dd.source",
+            "sha256": "9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f"
+          },
+          "locator": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628; complete recipe/product payload; exact section identified in each linked decision",
+          "supports_or_contradicts": "Primary source recipe/product enumeration or ontology definition. Applicability and limitations are assessed separately for every linked case.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628",
+          "accessed_at": "2026-11-08T05:07:20.929709+00:00",
+          "case_ids": [
+            "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7"
+          ]
+        },
+        {
+          "evidence_id": "vm-fetch-a131b1e4c01f3b83",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/captures/a131b1e4c01f3b83.source",
+            "sha256": "716c24f1e18d14b2fdaef91969b9364b88f20c99a3284f663e0beef0b8f10a84"
+          },
+          "locator": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629; complete recipe/product payload; exact section identified in each linked decision",
+          "supports_or_contradicts": "Primary source recipe/product enumeration or ontology definition. Applicability and limitations are assessed separately for every linked case.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629",
+          "accessed_at": "2026-11-08T05:07:21.212547+00:00",
+          "case_ids": [
+            "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7"
+          ]
+        },
+        {
+          "evidence_id": "vm-owner-search",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/full-candidate-owners.json",
+            "sha256": "07990ff046f77cb79c2bab42ca51fbd2217fc6f1cfcd82eb94ee481e59848105"
+          },
+          "locator": "Complete current payloads and hashes of vitamin/mixture candidate owners found with Path.rglob (ignored files included).",
+          "supports_or_contradicts": "Existing identity boundaries and stored component formulations; a candidate name is not proof of source identity.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6",
+            "CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499",
+            "CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7",
+            "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+            "CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e",
+            "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+            "CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e",
+            "CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41",
+            "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+            "CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216",
+            "CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e",
+            "CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb",
+            "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e",
+            "CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08",
+            "CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028",
+            "CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378",
+            "CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380",
+            "CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda",
+            "CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f",
+            "CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4",
+            "CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22",
+            "CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51",
+            "CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca",
+            "CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f",
+            "CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d",
+            "CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d",
+            "CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072",
+            "CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6",
+            "CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c",
+            "CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b",
+            "CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f",
+            "CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb",
+            "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7",
+            "CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c",
+            "CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2",
+            "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3",
+            "CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a",
+            "CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533",
+            "CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03",
+            "CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724",
+            "CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86",
+            "CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f",
+            "CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43",
+            "CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20",
+            "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+            "CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1",
+            "CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118",
+            "CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b",
+            "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff",
+            "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+            "CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd",
+            "CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe",
+            "CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97",
+            "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2",
+            "KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb",
+            "KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52",
+            "KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b"
+          ]
+        },
+        {
+          "evidence_id": "vm-context-review",
+          "kind": "source_snapshot",
+          "capture": {
+            "root": "artifact",
+            "path": "research/vitamins_mixtures/source-contexts.json",
+            "sha256": "345201d9c08084e0ca85ed525b1504a9cb80c44f180fd3f4c9d36b3bf099a1f2"
+          },
+          "locator": "All 57 cases, every occurrence, complete ingredient and stock context extracted from hash-verified frozen recipes.",
+          "supports_or_contradicts": "Case-by-case source hierarchy and dose/stock distinctions, including flattened units and source-specific stock components.",
+          "url": null,
+          "case_ids": [
+            "CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6",
+            "CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499",
+            "CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7",
+            "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+            "CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e",
+            "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+            "CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e",
+            "CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41",
+            "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+            "CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216",
+            "CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e",
+            "CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb",
+            "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e",
+            "CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08",
+            "CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028",
+            "CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378",
+            "CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380",
+            "CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda",
+            "CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f",
+            "CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4",
+            "CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22",
+            "CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51",
+            "CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca",
+            "CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f",
+            "CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d",
+            "CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d",
+            "CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072",
+            "CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6",
+            "CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c",
+            "CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b",
+            "CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f",
+            "CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb",
+            "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7",
+            "CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c",
+            "CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2",
+            "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3",
+            "CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a",
+            "CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533",
+            "CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03",
+            "CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724",
+            "CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86",
+            "CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f",
+            "CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43",
+            "CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20",
+            "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+            "CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1",
+            "CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118",
+            "CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b",
+            "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff",
+            "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+            "CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd",
+            "CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe",
+            "CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97",
+            "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2",
+            "KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb",
+            "KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52",
+            "KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b"
+          ]
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/captures/c098cecab2d758dd.source",
+          "sha256": "9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/captures/a131b1e4c01f3b83.source",
+          "sha256": "716c24f1e18d14b2fdaef91969b9364b88f20c99a3284f663e0beef0b8f10a84"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/full-candidate-owners.json",
+          "sha256": "07990ff046f77cb79c2bab42ca51fbd2217fc6f1cfcd82eb94ee481e59848105"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/source-contexts.json",
+          "sha256": "345201d9c08084e0ca85ed525b1504a9cb80c44f180fd3f4c9d36b3bf099a1f2"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 93,
+      "decision": {
+        "case_id": "CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6",
+        "case_input_sha256": "a507989425ed7cb4f2166277f5d234ee92329a915a37d10fc55804c633db5f32",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "8 N NaOH",
+          "source_label": "8 N NaOH",
+          "raw_source_label": "8 N NaOH"
+        },
+        "occurrence_ids": [
+          "CM_OCC:dab49eaa21c2ad55224a25d28c99242ecf74515a6632131ba17d341a85ef02a2"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "This is a normality-qualified sodium hydroxide reagent used in preparation or pH adjustment. CHEBI:32145 denotes NaOH solute, whereas the specified normality belongs to solution scope. Primary JCM 461 and 1130 explicitly dose normal NaOH in ml, illustrating why the frozen stock labels and volumes must survive; their recipes do not make all normalities one identity.",
+        "applicability": "Applies only to source culturemech case '8 N NaOH', label '8 N NaOH', raw label '8 N NaOH'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-093",
+          "if-recipe-f56728203f72",
+          "if-web-1b07ab5876f8",
+          "if-web-dc2ddc346caa",
+          "if-web-8fe937c1ef6c"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "missing_requirement": "Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:dab49eaa21c2ad55224a25d28c99242ecf74515a6632131ba17d341a85ef02a2",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2585_PYG_Medium_modified.yaml",
+            "component_path": "ingredients/10",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "8 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2585\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium104.pdf",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-dc2ddc346caa",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/jcm-batch4.json",
+            "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461",
+          "accessed_at": "2026-11-08T05:07:55.507105+00:00"
+        },
+        {
+          "evidence_id": "if-web-1b07ab5876f8",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/ontology-batch1.json",
+            "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+          },
+          "kind": "ontology",
+          "locator": "Returned page at https://www.ebi.ac.uk/chebi/CHEBI:32145; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.ebi.ac.uk/chebi/CHEBI:32145",
+          "accessed_at": "2026-11-08T05:06:49.302432+00:00"
+        },
+        {
+          "evidence_id": "if-web-8fe937c1ef6c",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/primary-batch7.json",
+            "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T05:08:47.015262+00:00"
+        },
+        {
+          "evidence_id": "if-recipe-f56728203f72",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2585_PYG_Medium_modified.yaml",
+            "sha256": "6272cbf36829a4eb257d319b2ff189d1175ccd1b9589e15b0d82955cd1db46e9"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-case-093",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[93]; case_id=CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/jcm-batch4.json",
+          "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/ontology-batch1.json",
+          "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/primary-batch7.json",
+          "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 99,
+      "decision": {
+        "case_id": "CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e",
+        "case_input_sha256": "705d6c861510adc43d4e71e4b855ef68716277eb525aa488e915310022c187cf",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "0.2 N NaOH",
+          "source_label": "0.2 N NaOH",
+          "raw_source_label": "0.2 N NaOH"
+        },
+        "occurrence_ids": [
+          "CM_OCC:0c6b5a548c243e29520badb8be319b7fbaab70db1183f1a80040ac34337b84f4",
+          "CM_OCC:8ee7eda7d39822e342736cf4c48d701fecc6c12cc123ebf4806a900fb16f1dd0",
+          "CM_OCC:1a621ed226db833e0d8f1b4ab11543ebcce1ed57110651e4d5c106fa4e0935a8"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "This is a normality-qualified sodium hydroxide reagent used in preparation or pH adjustment. CHEBI:32145 denotes NaOH solute, whereas the specified normality belongs to solution scope. Primary JCM 461 and 1130 explicitly dose normal NaOH in ml, illustrating why the frozen stock labels and volumes must survive; their recipes do not make all normalities one identity.",
+        "applicability": "Applies only to source culturemech case '0.2 N NaOH', label '0.2 N NaOH', raw label '0.2 N NaOH'. Reviewed all 3 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-099",
+          "if-recipe-8fca6f5597b0",
+          "if-recipe-cf74e900022c",
+          "if-recipe-532c4e22137b",
+          "if-web-1b07ab5876f8",
+          "if-web-dc2ddc346caa",
+          "if-web-8fe937c1ef6c"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "missing_requirement": "Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:0c6b5a548c243e29520badb8be319b7fbaab70db1183f1a80040ac34337b84f4",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M214_Thermoanaerobacter_Ethanolicus_Medium.yaml",
+            "component_path": "ingredients/35",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "200"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M214\nOriginal source: JCM - JCM_M221\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:8ee7eda7d39822e342736cf4c48d701fecc6c12cc123ebf4806a900fb16f1dd0",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M3174_Clostridium_thermocellum_medium.yaml",
+            "component_path": "ingredients/11",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "200"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3174\nOriginal URL: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/1/9/1/atcc-medium-1191.pdf?rev=ee45c41e11f14bdcb44ffc84735f6331",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:1a621ed226db833e0d8f1b4ab11543ebcce1ed57110651e4d5c106fa4e0935a8",
+            "source_file": "data/normalized_yaml/bacterial/clostridium_thermocellum_medium_atcc_medium_1190_with_18_75_g_filter_paper_substituted_for_the_glucose.yaml",
+            "component_path": "ingredients/11",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "200"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.2 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M2697\nOriginal URL: https://www.atcc.org/~/media/E8C2EBA220F24047A6FDE5432DA668AA.ashx",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-dc2ddc346caa",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/jcm-batch4.json",
+            "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461",
+          "accessed_at": "2026-11-08T05:07:55.507105+00:00"
+        },
+        {
+          "evidence_id": "if-web-1b07ab5876f8",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/ontology-batch1.json",
+            "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+          },
+          "kind": "ontology",
+          "locator": "Returned page at https://www.ebi.ac.uk/chebi/CHEBI:32145; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.ebi.ac.uk/chebi/CHEBI:32145",
+          "accessed_at": "2026-11-08T05:06:49.302432+00:00"
+        },
+        {
+          "evidence_id": "if-web-8fe937c1ef6c",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/primary-batch7.json",
+            "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T05:08:47.015262+00:00"
+        },
+        {
+          "evidence_id": "if-case-099",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[99]; case_id=CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-8fca6f5597b0",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M214_Thermoanaerobacter_Ethanolicus_Medium.yaml",
+            "sha256": "fcdc19bccf3c23c0939e9784dfa5e40dd37240c593a5988e2fe5e9846e892080"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-cf74e900022c",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3174_Clostridium_thermocellum_medium.yaml",
+            "sha256": "693548ba2284b84076bf31ee2410a08af8932b95492e572302dc13403a67adca"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-532c4e22137b",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/clostridium_thermocellum_medium_atcc_medium_1190_with_18_75_g_filter_paper_substituted_for_the_glucose.yaml",
+            "sha256": "7dc863ff5b8ac1b99b9b049c7aa4daecf37dfb6bbbf7ee8dca0be37d1d9f6ac8"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/jcm-batch4.json",
+          "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/ontology-batch1.json",
+          "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/primary-batch7.json",
+          "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 101,
+      "decision": {
+        "case_id": "CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8",
+        "case_input_sha256": "148a74444ab38da9b00e68e4198199943073a95d89811693f05776f909ec09b9",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "H2O (deionized)",
+          "source_label": "H2O (deionized)",
+          "raw_source_label": "H2O (deionized)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "DSMZ533 explicitly specifies deionized H2O in both main and trace stock preparation. Water chemistry does not equate deionization with distillation; the existing Distilled_Water record rejects demineralized water. Preserve water treatment/process scope rather than alias it to that owner.",
+        "applicability": "Applies only to source culturemech case 'H2O (deionized)', label 'H2O (deionized)', raw label 'H2O (deionized)'. Reviewed all 1 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-101",
+          "if-recipe-6da16ec764ef",
+          "if-web-1394663ed574"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Use or create a deionized-water material/process owner after native owner lookup; preserve treatment method and distinguish the two source water occurrences collapsed in the frozen source.",
+        "missing_requirement": "Use or create a deionized-water material/process owner after native owner lookup; preserve treatment method and distinguish the two source water occurrences collapsed in the frozen source.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:9300e7ad740ac451a8ebcb86d0200f211f772be7e3cdce2dca51d818c4a1c0bd",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M3125_Thermophilic_Hydrogen_Bacteria_Medium.yaml",
+            "component_path": "ingredients/0",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1000.0"
+              },
+              "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component [Collapsed 2 identical duplicates: 1000.0, 1000.0]",
+              "preferred_term": "H2O (deionized)"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3125\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-1394663ed574",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/recipe-batch5.json",
+            "sha256": "53f3e71ab918a80be23e8a9bcd0b7d40e0eb92dd3f7c253e7deba41b7cffe0cc"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf",
+          "accessed_at": "2026-11-08T05:08:08.085916+00:00"
+        },
+        {
+          "evidence_id": "if-case-101",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[101]; case_id=CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-6da16ec764ef",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3125_Thermophilic_Hydrogen_Bacteria_Medium.yaml",
+            "sha256": "d77aab888dc1fe71abf59149fb3270cce878171ca3f3c57470923378de8005e6"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/recipe-batch5.json",
+          "sha256": "53f3e71ab918a80be23e8a9bcd0b7d40e0eb92dd3f7c253e7deba41b7cffe0cc"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 127,
+      "decision": {
+        "case_id": "CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc",
+        "case_input_sha256": "1fa0e697f7e46f11de374a3727f96eed13cf4f9059a23826f79593c4c21f3e20",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "0.5 M Glycine--NaOH buffer (pH 10.0)",
+          "source_label": "0.5 M Glycine--NaOH buffer (pH 10.0)",
+          "raw_source_label": "0.5 M Glycine--NaOH buffer (pH 10.0)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:b973c22f92eb2bb1509c21f9e3ec70876b13128e5b38cad3d2af74152d0fd0f3",
+          "CM_OCC:83c0023d177d6a1e5b94793e92c7869bb59ee050d1b01bd44e48b3cad3652c69"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "Glycine-NaOH pH10 buffer contains a titrated glycine preparation,0.5M stock. JCM906 gives100mL, contradicting frozen100G_PER_L. Pure glycine identity cannot represent the entire pH-adjusted stock.",
+        "applicability": "Both M949/M950 occurrences derive from the same JCM906 buffer instruction; retain their100mL addition and preparation separately.",
+        "evidence_ids": [
+          "op-case-127",
+          "op-context-127-0",
+          "op-context-127-1",
+          "op-jcm906",
+          "op-owner-search"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained-data change proposed. Glycine-NaOH pH10 buffer contains a titrated glycine preparation,0.5M stock. JCM906 gives100mL, contradicting frozen100G_PER_L. Pure glycine identity cannot represent the entire pH-adjusted stock.",
+        "missing_requirement": "Represent buffer preparation/titration and correct upstream volume unit; do not infer100g glycine or fixed NaOH stoichiometry.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-organic_products-1"
+          ]
+        },
+        "preserved_native_decisions": [],
+        "native_source_only_review_note": "For no-owner source cases the campaign source-case contract applies; no artificial YAML target is created. Parent worker owns applicable native record reviews.",
+        "primary_reviewer": "in-process child /root/organics; primary review only",
+        "index_for_human_navigation": 127
+      },
+      "evidence": [
+        {
+          "evidence_id": "op-jcm906",
+          "capture": {
+            "root": "artifact",
+            "path": "research/organic_products/sources/web-recipes-1.json",
+            "sha256": "28feca038e8cf4e10decc10ff79ca430c0275a0bfa51a4ef88fb7093e84b1062"
+          },
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=906",
+          "locator": "JCM906 MK medium buffer line and sterilization note",
+          "supports_or_contradicts": "100mL of0.5M glycine-NaOH pH10 is a stock, not100g/L glycine; buffer preparation is separately autoclaved.",
+          "accessed_at": "2026-11-08T05:07:27.643Z"
+        },
+        {
+          "evidence_id": "op-owner-search",
+          "capture": {
+            "root": "artifact",
+            "path": "research/organic_products/owner-search.json",
+            "sha256": "f2dd3c973897048ea32d5d7cdb09e64f0b28503c971ae46f0fe175310bb4b01e"
+          },
+          "kind": "local_validation",
+          "url": null,
+          "locator": "query_terms and results",
+          "supports_or_contradicts": "Gitignore-independent scan of all current ingredient YAML bytes; exact candidate identifiers are distinguished from parent mappings and substrings."
+        },
+        {
+          "evidence_id": "op-case-127",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "url": null,
+          "locator": "cases[case_id=CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc] including every occurrence, original raw KG record and embedded decisions",
+          "supports_or_contradicts": "Exact frozen source identity, counts, raw qualifiers and source-specific prior holds inspected; context does not independently validate ontology identity.",
+          "case_ids": [
+            "CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc"
+          ]
+        },
+        {
+          "evidence_id": "op-context-127-0",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M949_MK_Medium.yaml",
+            "sha256": "56508b3c52518d92df5c07fd99c9456a01cb8a1841730d40a3c791a2b5d6d00c"
+          },
+          "kind": "source_snapshot",
+          "url": null,
+          "locator": "ingredients/11 plus complete recipe, notes, preparation and source identifiers",
+          "supports_or_contradicts": "All recipe context for occurrence CM_OCC:b973c22f92eb2bb1509c21f9e3ec70876b13128e5b38cad3d2af74152d0fd0f3; concentration and stock hierarchy remain separately owned data.",
+          "case_ids": [
+            "CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc"
+          ]
+        },
+        {
+          "evidence_id": "op-context-127-1",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M950_MK_Medium.yaml",
+            "sha256": "4ed72e89185ed129d74395fa3d5d26d47178193cce2e9034748d45022c633f91"
+          },
+          "kind": "source_snapshot",
+          "url": null,
+          "locator": "ingredients/12 plus complete recipe, notes, preparation and source identifiers",
+          "supports_or_contradicts": "All recipe context for occurrence CM_OCC:83c0023d177d6a1e5b94793e92c7869bb59ee050d1b01bd44e48b3cad3652c69; concentration and stock hierarchy remain separately owned data.",
+          "case_ids": [
+            "CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc"
+          ]
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/organic_products/sources/web-recipes-1.json",
+          "sha256": "28feca038e8cf4e10decc10ff79ca430c0275a0bfa51a4ef88fb7093e84b1062"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/organic_products/owner-search.json",
+          "sha256": "f2dd3c973897048ea32d5d7cdb09e64f0b28503c971ae46f0fe175310bb4b01e"
+        }
+      ]
+    },
+    {
+      "worker": 8,
+      "head": "7efd3f8b98f9e822431dcb510c2c242a2569cfc7",
+      "index": 130,
+      "decision": {
+        "case_id": "CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa",
+        "case_input_sha256": "25dd500fd4935ba428c9f258a45208b117a3cfacf57c01b8db45cdfd4467414a",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "0.5 N NaOH",
+          "source_label": "0.5 N NaOH",
+          "raw_source_label": "0.5 N NaOH"
+        },
+        "occurrence_ids": [
+          "CM_OCC:92c4223f81277182ebc7cebd772f58353d2721d1f5e84ceef037a513a0c83c8a",
+          "CM_OCC:334c12264f01c8946dfffbf7363ce1fe49dcc14155e117edbf15a3b6510c8b38"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "This is a normality-qualified sodium hydroxide reagent used in preparation or pH adjustment. CHEBI:32145 denotes NaOH solute, whereas the specified normality belongs to solution scope. Primary JCM 461 and 1130 explicitly dose normal NaOH in ml, illustrating why the frozen stock labels and volumes must survive; their recipes do not make all normalities one identity.",
+        "applicability": "Applies only to source culturemech case '0.5 N NaOH', label '0.5 N NaOH', raw label '0.5 N NaOH'. Reviewed all 2 frozen component occurrences listed in occurrence_context, including their full-recipe notes and preparation. Concentrations/stock qualifiers remain source-bound.",
+        "evidence_ids": [
+          "if-case-130",
+          "if-recipe-9d060e7a708d",
+          "if-recipe-93f4060f4c8b",
+          "if-web-1b07ab5876f8",
+          "if-web-dc2ddc346caa",
+          "if-web-8fe937c1ef6c"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No maintained edit proposed: retain source scope and qualifiers; Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "missing_requirement": "Represent the exact stated normality and solvent as a source-qualified stock; verify actual dose units for this occurrence before new recipe import.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-independent-inorganic_forms-1"
+          ]
+        },
+        "occurrence_context": [
+          {
+            "occurrence_id": "CM_OCC:92c4223f81277182ebc7cebd772f58353d2721d1f5e84ceef037a513a0c83c8a",
+            "source_file": "data/normalized_yaml/bacterial/togo_medium_m3152.yaml",
+            "component_path": "ingredients/23",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "10"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.5 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3152",
+            "preparation_steps": []
+          },
+          {
+            "occurrence_id": "CM_OCC:334c12264f01c8946dfffbf7363ce1fe49dcc14155e117edbf15a3b6510c8b38",
+            "source_file": "data/normalized_yaml/bacterial/togo_medium_m3153.yaml",
+            "component_path": "ingredients/24",
+            "native_scope": "root_component",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "10"
+              },
+              "notes": "Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "0.5 N NaOH"
+            },
+            "recipe_notes": "Source: https://togomedium.org/medium/M3153",
+            "preparation_steps": []
+          }
+        ],
+        "primary_reviewer": "/root/inorganics",
+        "review_scope": "Source identity/form/proposal only; not whole-record/role/release approval",
+        "preserved_holds": []
+      },
+      "evidence": [
+        {
+          "evidence_id": "if-web-dc2ddc346caa",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/jcm-batch4.json",
+            "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=461",
+          "accessed_at": "2026-11-08T05:07:55.507105+00:00"
+        },
+        {
+          "evidence_id": "if-web-1b07ab5876f8",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/ontology-batch1.json",
+            "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+          },
+          "kind": "ontology",
+          "locator": "Returned page at https://www.ebi.ac.uk/chebi/CHEBI:32145; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.ebi.ac.uk/chebi/CHEBI:32145",
+          "accessed_at": "2026-11-08T05:06:49.302432+00:00"
+        },
+        {
+          "evidence_id": "if-web-8fe937c1ef6c",
+          "capture": {
+            "root": "artifact",
+            "path": "research/inorganic_forms/captures/primary-batch7.json",
+            "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+          },
+          "kind": "primary_source",
+          "locator": "Returned page at https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; visible numbered content lines in capture",
+          "supports_or_contradicts": "Primary page content; interpret only the named compound, formulation or source ingredient. Does not approve unrelated cross-references or entire MIM owner.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T05:08:47.015262+00:00"
+        },
+        {
+          "evidence_id": "if-recipe-9d060e7a708d",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m3152.yaml",
+            "sha256": "f447b41612f5938b2d289fd7eedf8ce338084d57421750f63e4ba5ad1ca88394"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-recipe-93f4060f4c8b",
+          "capture": {
+            "root": "source",
+            "path": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m3153.yaml",
+            "sha256": "718981385c21165281cc1770632478afb52c3d7b8450083a8cdc3e7199e53979"
+          },
+          "kind": "source_snapshot",
+          "locator": "Complete frozen recipe; component selected by decision occurrence_context",
+          "supports_or_contradicts": "Recipe formulation, preparation, component hierarchy, source provenance and exact amounts; normalized source is not independent chemical truth.",
+          "url": null
+        },
+        {
+          "evidence_id": "if-case-130",
+          "capture": {
+            "root": "source",
+            "path": "shards/shard-08.json",
+            "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0"
+          },
+          "kind": "source_snapshot",
+          "locator": "cases[130]; case_id=CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa",
+          "supports_or_contradicts": "Complete immutable source case including every raw occurrence, source label, candidate owner and negative disposition.",
+          "url": null
+        }
+      ],
+      "verified_capture_bindings": [
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/jcm-batch4.json",
+          "sha256": "2b950de2e438e6b193a563cdbb98a8aaed350e18a24434ff816fc43ea27a313a"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/ontology-batch1.json",
+          "sha256": "33a4f691ef8380cccc4b401452abdf8bdb7749c46891fc8f4dcb4b630a3eb2fa"
+        },
+        {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/reports/all_unmatched_20261107/worker-08/research/inorganic_forms/captures/primary-batch7.json",
+          "sha256": "c985ded50be0a166b0a0822ccc269a11b78844194e84a5391cb11e5aa4a137eb"
+        }
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.claude/skills/add-media/SKILL.md",
+      "sha256": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b"
+    }
+  ]
+}

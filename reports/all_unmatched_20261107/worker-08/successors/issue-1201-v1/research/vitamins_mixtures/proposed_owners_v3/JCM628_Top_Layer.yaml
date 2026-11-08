@@ -1,0 +1,162 @@
+identifier: kgmicrobe.ingredient:jcm628_top_layer
+preferred_term: JCM 628 freshwater top layer
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm628_top_layer
+  ontology_label: JCM 628 freshwater top layer
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628
+    notes: Semisolid top-layer preparation of JCM 628, used by CultureMech:010042.
+      Registry preparation identity, not a molecular exact match.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197
+    notes: Semisolid top-layer preparation of JCM 628, used by CultureMech:010042.
+      Registry preparation identity, not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Semisolid top-layer preparation of JCM 628, used by CultureMech:010042. Nested
+  carrier input recipe: [["NH4Cl", "1.0", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O", "0.2",
+  "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "0.1", "G_PER_SOURCE_BATCH"], ["KH2PO4", "0.05",
+  "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]]. JCM 197
+  trace-mineral stock input recipe: [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"],
+  ["FeCl2·4H2O", "0.4", "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"],
+  ["CoCl2·6H2O", "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"],
+  ["CaCl2·2H2O", "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"],
+  ["Na2MoO4·2H2O", "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"],
+  ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment
+  with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin",
+  "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"], ["Pyridoxine·HCl",
+  "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"],
+  ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+  ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1", "MG_PER_SOURCE_BATCH"],
+  ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+  ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]]. These nested recipes document
+  carrier identity; their water is not counted again as an immediate top-layer component.
+  Adjust top-layer pH to 6.2 and autoclave; cool to 35–40 °C before adding the 1 ml
+  JCM 197 trace-vitamin stock, then adjust pH to 6.1–6.4 by sterile CO2 bubbling.
+  Overlay 3.75 ml on the solidified bottom layer and allow to solidify. The bottom
+  layer and cultivation headspace gases are outside this material. Six known immediate
+  recipe inputs are represented. The initial pH-adjustment reagent is unspecified
+  and dissolved CO2 uptake is unquantified; no CO2/headspace gas amount or molecular
+  speciation is inferred. This is a source-qualified preparation, not the entire two-layer
+  growth medium. Raw source labels remain source-scoped in the decisions; no generic
+  label is published as a global synonym. Quantified components use the literal preparation
+  batch unless explicitly marked MG_PER_L. Component names retain source specificity
+  without inferred vitamer, hydrate or stereoisomer IDs. Occurrence counts remain
+  zero pending source-specific integration. No roles or downstream hold release is
+  proposed.'
+components:
+- component_name: JCM 628 modified Wolfe mineral solution
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: JCM 197 trace minerals
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: MES
+  reference_scope: UNMAPPED
+  concentration_value: '0.195'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.042'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Agarose
+  reference_scope: UNMAPPED
+  concentration_value: '0.15'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: JCM 197 trace vitamins
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628
+    source_record: Semisolid top-layer preparation of JCM 628, used by CultureMech:010042.
+    notes: 'Partial retained-material assertion; unresolved inputs and amounts are
+      explicitly excluded or unquantified. Nested carrier input recipe: [["NH4Cl",
+      "1.0", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O", "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O",
+      "0.1", "G_PER_SOURCE_BATCH"], ["KH2PO4", "0.05", "G_PER_SOURCE_BATCH"], ["Distilled
+      water", "1.0", "L_PER_SOURCE_BATCH"]]. JCM 197 trace-mineral stock input recipe:
+      [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"], ["FeCl2·4H2O", "0.4",
+      "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"], ["CoCl2·6H2O",
+      "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O",
+      "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"], ["Na2MoO4·2H2O",
+      "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"],
+      ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment
+      with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin",
+      "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"],
+      ["Pyridoxine·HCl", "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"],
+      ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+      ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1",
+      "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+      ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+      These nested recipes document carrier identity; their water is not counted again
+      as an immediate top-layer component.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197
+    source_record: Semisolid top-layer preparation of JCM 628, used by CultureMech:010042.
+    notes: 'Partial retained-material assertion; unresolved inputs and amounts are
+      explicitly excluded or unquantified. Nested carrier input recipe: [["NH4Cl",
+      "1.0", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O", "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O",
+      "0.1", "G_PER_SOURCE_BATCH"], ["KH2PO4", "0.05", "G_PER_SOURCE_BATCH"], ["Distilled
+      water", "1.0", "L_PER_SOURCE_BATCH"]]. JCM 197 trace-mineral stock input recipe:
+      [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"], ["FeCl2·4H2O", "0.4",
+      "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"], ["CoCl2·6H2O",
+      "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O",
+      "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"], ["Na2MoO4·2H2O",
+      "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"],
+      ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment
+      with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin",
+      "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"],
+      ["Pyridoxine·HCl", "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"],
+      ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+      ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1",
+      "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+      ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+      These nested recipes document carrier identity; their water is not counted again
+      as an immediate top-layer component.'
+curation_history:
+- timestamp: '2026-11-08T05:57:32.900874+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: 'Create source-qualified preparation proposal after issue1201 reassessment.
+    Semisolid top-layer preparation of JCM628, used by CultureMech:010042. Nested
+    carrier input recipe: [["NH4Cl", "1.0", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O",
+    "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "0.1", "G_PER_SOURCE_BATCH"], ["KH2PO4",
+    "0.05", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+    JCM197 trace-mineral stock input recipe: [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"],
+    ["FeCl2·4H2O", "0.4", "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"],
+    ["CoCl2·6H2O", "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"],
+    ["CaCl2·2H2O", "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"],
+    ["Na2MoO4·2H2O", "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"],
+    ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH7.0 adjustment
+    with1N KOH (amount unstated). JCM197 trace-vitamin stock input recipe: [["Biotin",
+    "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"], ["Pyridoxine·HCl",
+    "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1",
+    "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+    These nested recipes document carrier identity; their water is not counted again
+    as an immediate top-layer component.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.065705+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

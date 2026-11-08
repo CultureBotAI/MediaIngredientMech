@@ -1,0 +1,32 @@
+{
+  "scope": "Actual executed synthetic failure control only; no actual campaign native review created",
+  "command": ".temp/all-unmatched-worker-08/venv/bin/python .temp/all-unmatched-worker-08/issue-1201-v1/vitamins_mixtures/native_mechanics_control.py",
+  "script_sha256": "2a7f7174679713a6b342f1bfc01415e9450a667cbb15db4e5fe4f7d03205569f",
+  "published_exact_script": "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/mechanics/native_mechanics_control.py",
+  "synthetic_inputs": {
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json": {
+      "status": "FAIL",
+      "reason": "SYNTHETIC FAILURE CONTROL"
+    },
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json": {
+      "proposal_count": 0,
+      "baseline_record_count": 0,
+      "overlay_record_count": 0,
+      "maintained_files_checked": 0,
+      "strict_exit_code": 1,
+      "baseline_partonomy_violations": [],
+      "overlay_partonomy_violations": [
+        "SYNTHETIC FAILURE"
+      ],
+      "maintained_surfaces_unchanged": false,
+      "maintained_changed": [
+        "SYNTHETIC"
+      ]
+    },
+    "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json": {
+      "status": "PASS"
+    }
+  },
+  "actual_outcome": "Current native author helper accepted failed validation inputs and wrote a passing synthetic review. Exact result and source helper hashes in native-helpers-review-vitamins.json.",
+  "reproduction_note": "Use a fresh private fixture directory; the control intentionally refuses an existing directory to prevent stale-input reuse."
+}

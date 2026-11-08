@@ -1,0 +1,58 @@
+{
+  "working_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree",
+  "commands": [
+    {
+      "command": [
+        ".temp/all-unmatched-worker-08/venv/bin/python",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+        "--shard",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-08.json",
+        "--decisions",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json",
+        "--evidence",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json",
+        "--proposals",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json",
+        "--artifact-root",
+        "reports/all_unmatched_20261107/worker-08",
+        "--source-root",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5",
+        "--mim-root",
+        ".",
+        "--output",
+        "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json"
+      ],
+      "exit_code": 0,
+      "receipt": "structural-audit.json"
+    },
+    {
+      "command": [
+        ".temp/all-unmatched-worker-08/venv/bin/python",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/validate_final_bundle.py"
+      ],
+      "exit_code": 0,
+      "receipt": "validation/combined-validation.json"
+    },
+    {
+      "command": [
+        ".temp/all-unmatched-worker-08/venv/bin/python",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/check_scope_constraints.py"
+      ],
+      "exit_code": 0,
+      "receipt": "validation/scope-constraints.json"
+    },
+    {
+      "command": [
+        ".temp/all-unmatched-worker-08/venv/bin/python",
+        "scripts/record_review.py",
+        "validate",
+        ".temp/all-unmatched-worker-08/issue-1201-v1/native-review.yaml"
+      ],
+      "exit_code": 0,
+      "receipt": "validation/native-validate.log"
+    }
+  ],
+  "initial_assembly_attempt": "Rejected repeated original organic evidence rows before emitting outputs. Parent-only identical-row reuse was implemented, independently challenged, and logged in assembly-provenance.json. No original row was replaced.",
+  "initial_audit_attempt": "Ran after rejected assembly and failed due absent successor decisions; no audit receipt was emitted. Final successful command above used complete assembled inputs.",
+  "initial_control_history": "Earlier controls and native authoring defect/remediation receipts preserved under independent/mechanics. No failed run is represented as a pass."
+}

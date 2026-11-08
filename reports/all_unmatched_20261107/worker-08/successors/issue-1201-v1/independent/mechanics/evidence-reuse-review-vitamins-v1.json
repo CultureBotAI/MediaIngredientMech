@@ -1,0 +1,56 @@
+{
+  "reviewer": "/root/vitamins",
+  "created_at": "2026-11-08T06:22:47.867356+00:00",
+  "scope": "Immutable assembler evidence-reuse mechanism supplement; no source science approval.",
+  "helper_sha256": "2ddc41eb4a3eb3c79c85fece99c2c04ab4f140dd04e67649214c103c600d5607",
+  "controls": [
+    {
+      "control": "identical-parent-reuse-two-groups",
+      "outcome": "accepted",
+      "one_parent_row_retained": true,
+      "both_reuse_events_recorded": true
+    },
+    {
+      "control": "changed-parent-row",
+      "outcome": "rejected",
+      "assertion": "('changed parent evidence', 'e0')"
+    },
+    {
+      "control": "duplicate-new-id-within-group",
+      "outcome": "rejected",
+      "assertion": "duplicate evidence IDs"
+    },
+    {
+      "control": "duplicate-new-id-between-groups",
+      "outcome": "rejected",
+      "assertion": "duplicate evidence IDs"
+    },
+    {
+      "control": "collide-generated-peer-id",
+      "outcome": "rejected",
+      "assertion": "duplicate evidence IDs"
+    },
+    {
+      "control": "duplicate-parent-index-ids",
+      "outcome": "rejected",
+      "assertion": "duplicate parent evidence IDs"
+    }
+  ],
+  "positive_controls": 1,
+  "negative_controls": 5,
+  "actual_assembly": {
+    "input_hashes": {
+      "evidence.json": "b5e4ead92bc4adb35aa9b8c9938185d3107592f78a7144d776f1f34f44e9f603",
+      "successors/issue-1201-v1/evidence.json": "1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82",
+      "successors/issue-1201-v1/assembly-provenance.json": "dba373c7ce0dc2d0bbbd027101c81481bcfe5ea3d71a6998579a0fc6d25db6f3"
+    },
+    "reused_identical_parent_rows": 102,
+    "combined_rows": 1024,
+    "all_reused_rows_exactly_equal_parent": true,
+    "all_combined_evidence_ids_unique": true
+  },
+  "source_inspection": "The exception is restricted to IDs present in the frozen parent index and requires whole-object equality. Every reuse is recorded. All other ID collisions still reach the final uniqueness assertion. Parent duplicate IDs are separately rejected.",
+  "test_harness_note": "The old generic duplicate_evidence fixture appends identical e0 and is now a positive reuse case; do not report that stale expected-rejection fixture as still passing. This supplement explicitly tests changed-parent and non-parent duplicate rejection instead.",
+  "trust_boundary": "Peer receipt contents still require the root semantic verification described in the original mechanics receipt. Evidence identity/equality is accounting, not scientific correctness.",
+  "control_script_sha256": "9fbda5f1285f405e3b1a2603e98f2595044f46b99e995e5fa44839a107ac55ab"
+}

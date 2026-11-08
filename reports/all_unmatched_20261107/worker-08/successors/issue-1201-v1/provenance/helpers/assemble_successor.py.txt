@@ -1,0 +1,143 @@
+"""Assemble immutable issue1201 successors; never alter published inputs.
+
+Scientific content comes only from exact primary fragments accepted by separate
+reviewers. This helper accounts for additions/supersessions and backlink metadata.
+It does not assess evidence quality or grant release admission.
+"""
+from pathlib import Path
+import copy
+import hashlib
+import json
+
+ROOT = Path(__file__).resolve().parents[3]
+ARTIFACT = ROOT / 'reports/all_unmatched_20261107/worker-08'
+OUT = ARTIFACT / 'successors/issue-1201-v1'
+CONFIG = ROOT / '.temp/all-unmatched-worker-08/issue-1201-v1/final-selection.json'
+
+def read(path):
+    return json.loads(path.read_text())
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def rows(document, key):
+    return document if isinstance(document, list) else document[key]
+
+def assemble(config, artifact=ARTIFACT):
+    base = {}
+    for key in ['decisions','evidence','proposals']:
+        path = artifact / config['parent_inputs'][key]['path']
+        assert sha(path) == config['parent_inputs'][key]['sha256'], ('parent hash',key)
+        base[key] = read(path)
+    original = {d['case_id']:d for d in base['decisions']['decisions']}
+    decisions = copy.deepcopy(original)
+    evidence = copy.deepcopy(base['evidence']['evidence'])
+    parent_evidence = {e['evidence_id']:e for e in evidence}
+    assert len(parent_evidence) == len(evidence), 'duplicate parent evidence IDs'
+    reused_parent_evidence = []
+    proposals = {p['proposal_id']:copy.deepcopy(p) for p in base['proposals']['proposals']}
+    original_proposal_ids = set(proposals)
+    cohort = {d['case_id'] for d in original.values() if not d['proposal_ids']}
+    assert len(cohort) == config['cohort_count']
+    covered, changed, reviewed, ledgers, replacements, provenance = set(), set(), {}, [], {}, []
+    for group in config['groups']:
+        assert group['primary_author'] != group['reviewer'], 'self review'
+        group_rows = {}
+        for key, ref in group['inputs'].items():
+            path = artifact / ref['path']
+            assert sha(path) == ref['sha256'], ('fragment hash',group['name'],key)
+            group_rows[key] = rows(read(path), ref.get('key',key))
+        selected = set(group['case_ids'])
+        assert not selected & covered and selected <= cohort
+        ledger_ids = [x['case_id'] for x in group_rows['reassessments']]
+        assert len(ledger_ids) == len(set(ledger_ids)) and set(ledger_ids) == selected
+        covered |= selected
+        ledgers.extend(group_rows['reassessments'])
+        peer = group['review']
+        assert sha(artifact / peer['path']) == peer['sha256'], 'peer hash'
+        peer_cases = set(group['reviewed_case_ids'])
+        assert selected <= peer_cases <= set(original)
+        eid = 'w08-1201-peer-'+group['name']
+        evidence.append(dict(evidence_id=eid,kind='independent_review',
+            capture=dict(root='artifact',path=peer['path'],sha256=peer['sha256']),url=None,
+            locator='Exact fragment hashes, complete reassessment scope, changed-case and payload reviews, finding dispositions',
+            supports_or_contradicts=f"Authorship-separated skeptical review by {group['reviewer']} of {group['primary_author']}; no whole-owner, role, source-hold or export approval.",
+            case_ids=sorted(peer_cases)))
+        for case_id in peer_cases:
+            reviewed.setdefault(case_id,[]).append(eid)
+        for d in group_rows['decisions']:
+            cid = d['case_id']
+            assert cid in peer_cases and cid not in changed
+            old = original[cid]
+            for key in ['case_input_sha256','source','occurrence_ids']:
+                assert d[key] == old[key], ('frozen identity changed',cid,key)
+            decisions[cid] = copy.deepcopy(d)
+            changed.add(cid)
+        for e in group_rows['evidence']:
+            if e['evidence_id'] in parent_evidence:
+                assert e == parent_evidence[e['evidence_id']], ('changed parent evidence',e['evidence_id'])
+                reused_parent_evidence.append(dict(group=group['name'],evidence_id=e['evidence_id']))
+            else:
+                evidence.append(copy.deepcopy(e))
+        for p in group_rows['proposals']:
+            pid = p['proposal_id']
+            assert pid not in proposals, ('reused proposal id',pid)
+            assert set(p['case_ids']) <= peer_cases, ('unreviewed proposal case',pid)
+            old_ids = p.get('supersedes_proposal_ids',[])
+            if p.get('supersedes_proposal_id'):
+                old_ids = [p['supersedes_proposal_id'],*old_ids]
+            assert len(old_ids) == len(set(old_ids))
+            for old_id in old_ids:
+                assert old_id in original_proposal_ids and old_id not in replacements, ('unknown or duplicate supersession',old_id)
+                assert set(proposals[old_id]['case_ids']) <= set(p['case_ids']), ('lost original case links',pid)
+                replacements[old_id] = pid
+            proposals[pid] = copy.deepcopy(p)
+        provenance.append(dict(group=group['name'],primary_author=group['primary_author'],
+            reviewer=group['reviewer'],inputs=group['inputs'],review=peer,
+            cohort_case_ids=sorted(selected),reviewed_case_ids=sorted(peer_cases)))
+    assert covered == cohort, ('unaccounted no-change cohort',sorted(cohort-covered))
+    for old in replacements:
+        del proposals[old]
+    backlink_metadata_changes = []
+    for cid,d in decisions.items():
+        before = d['proposal_ids']
+        after = [replacements.get(p,p) for p in before]
+        assert len(after) == len(set(after)), ('collapsed duplicate backlinks',cid)
+        if before != after:
+            assert cid in reviewed, ('unreviewed remap',cid)
+            backlink_metadata_changes.append(dict(case_id=cid,before=before,after=after))
+            d['proposal_ids'] = after
+        if cid in reviewed:
+            d['independent_review'] = dict(status='complete',evidence_ids=reviewed[cid])
+    evidence_ids = [e['evidence_id'] for e in evidence]
+    assert len(evidence_ids) == len(set(evidence_ids)), 'duplicate evidence IDs'
+    owner_paths = [p['owner_path'] for p in proposals.values()]
+    assert len(owner_paths) == len(set(owner_paths)), 'duplicate active proposal owner paths'
+    for pid,p in proposals.items():
+        actual = {cid for cid,d in decisions.items() if pid in d['proposal_ids']}
+        assert actual == set(p['case_ids']), ('proposal backlinks',pid,actual,set(p['case_ids']))
+    for d in decisions.values():
+        assert set(d['proposal_ids']) <= set(proposals), ('dangling proposal',d['case_id'])
+        assert set(d['evidence_ids']) <= set(evidence_ids), ('dangling evidence',d['case_id'])
+    result = copy.deepcopy(base['decisions'])
+    result['decisions'] = [decisions[d['case_id']] for d in base['decisions']['decisions']]
+    return {'decisions.json':result,'evidence.json':dict(schema_version=1,evidence=evidence),
+        'proposals.json':dict(schema_version=1,proposals=list(proposals.values())),
+        'reassessments.json':dict(schema_version=1,cohort_count=len(cohort),reassessments=ledgers),
+        'assembly-provenance.json':dict(parent_commit=config['parent_commit'],parent_inputs=config['parent_inputs'],
+            groups=provenance,scientific_changed_case_ids=sorted(changed),
+            proposal_supersessions=replacements,backlink_metadata_changes=backlink_metadata_changes,
+            reused_identical_parent_evidence=reused_parent_evidence,
+            old_published_files_mutated=False,independent_reassessment_case_ids=sorted(reviewed))}
+
+def main():
+    results = assemble(read(CONFIG))
+    for name,data in results.items():
+        path = OUT / name
+        assert not path.exists(), ('immutable output already exists',str(path))
+    for name,data in results.items():
+        (OUT/name).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+    print(json.dumps({name:len(d.get(name.split('.')[0],[])) for name,d in results.items()}))
+
+if __name__ == '__main__':
+    main()

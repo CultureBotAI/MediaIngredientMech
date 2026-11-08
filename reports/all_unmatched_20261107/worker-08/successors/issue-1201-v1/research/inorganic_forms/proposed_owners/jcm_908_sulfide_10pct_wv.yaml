@@ -1,0 +1,47 @@
+identifier: kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv
+preferred_term: JCM 908 sodium sulfide nonahydrate 10% w/v stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_908_sulfide_10pct_wv
+  ontology_label: JCM 908 sodium sulfide nonahydrate 10% w/v stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=908
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses 7.5
+  ml and filter-sterilizes it before anaerobic addition. The carrier is not stated,
+  so PARTIAL records only verified solute and mass/volume basis. Raw case labels remain
+  only in evidence and case-bound proposal links, not globally resolving synonyms.
+  No occurrence count transfer, source-hold release or receiving-medium dose correction
+  is implied.
+solution_type: OTHER
+components:
+- component_name: Na2S x 9 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:76209
+  concentration_value: '10'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=908
+    source_record: '908'
+    notes: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses
+      7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not
+      stated, so PARTIAL records only verified solute and mass/volume basis.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses
+    7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not
+    stated, so PARTIAL records only verified solute and mass/volume basis.
+  new_status: MAPPED
+  llm_assisted: true

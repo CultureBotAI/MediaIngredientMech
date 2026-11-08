@@ -1,0 +1,32 @@
+identifier: kgmicrobe.ingredient:deionized_water
+preferred_term: Deionized water
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:deionized_water
+  ontology_label: Deionized water
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium533.pdf
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'DSMZ 533 names H2O (deionized) in the main medium and trace stock, each as
+  1000 ml water. The identity retains the specified deionization treatment only: no
+  resistivity, purity class, sterility or distillation claim. Water is not decomposed
+  into a molecular-water component because treatment grade is not partonomy. Raw case
+  labels remain only in evidence and case-bound proposal links, not globally resolving
+  synonyms. No occurrence count transfer, source-hold release or receiving-medium
+  dose correction is implied.'
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: 'DSMZ 533 names H2O (deionized) in the main medium and trace stock, each
+    as 1000 ml water. The identity retains the specified deionization treatment only:
+    no resistivity, purity class, sterility or distillation claim. Water is not decomposed
+    into a molecular-water component because treatment grade is not partonomy.'
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,135 @@
+{
+  "capture_policy": "Bounded factual paraphrases by the primary reviewer. Full source/tool responses are retained privately. Web tool retrieval date is 2026-11-08; a precise retrieval timestamp is not claimed. Shared raw-source hashes and actual access timestamps are bound separately in capture-retention.json.",
+  "facts": [
+    {
+      "key": "atcc474",
+      "url": "https://www.atcc.org/~/media/0f29052bb3524daebdfc48491950d569.ashx",
+      "locator": "ATCC medium 474, ingredient list",
+      "facts": [
+        "Eubacterium medium uses BD 211260 fluid thioglycollate medium at 29.5 g/L, with separate yeast extract and sodium thioglycollate.",
+        "This corroborates TOGO M148/JCM157 product identity; it does not identify a single thioglycollate salt as the whole product."
+      ]
+    },
+    {
+      "key": "atcc177",
+      "url": "https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/7/7/atcc-medium-177.pdf?rev=e1a2507d9d6d43f798cf5bc2921f0e3a",
+      "locator": "ATCC medium 177, commercial preparation and separate scratch formula",
+      "facts": [
+        "Commercial preparation names BD 211260 at 29.5 g per litre of water.",
+        "A separate scratch formula lists yeast extract, Casitone peptone, dextrose, NaCl, L-cystine, sodium thioglycollate, agar and resazurin. That alternative is not treated as a certified dry-product formulation."
+      ]
+    },
+    {
+      "key": "denger2010",
+      "url": "https://kops.uni-konstanz.de/server/api/core/bitstreams/63138443-5ddf-4e02-abfb-64c4f9cce2ad/content",
+      "locator": "Methods, page 968, Chemicals; Organisms, growth, harvesting of cells",
+      "facts": [
+        "Racemic sulfolactate was synthesized by the Roy et al. 2003 method.",
+        "Chromohalobacter salexigens DSM3043 grew aerobically at 30 C with 10 mM (R,S)-sulfolactate in Tris-buffered artificial seawater with ammonium chloride and vitamins.",
+        "The exact organism, reference and 10 mM carbon substrate match frozen MEDIADB:16/CultureMech:015430."
+      ]
+    },
+    {
+      "key": "roy2003",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC262304/",
+      "locator": "Materials and Methods, Chemicals, paragraph beginning sodium sulfolactate",
+      "facts": [
+        "Sodium sulfolactate was prepared by acidic diazotization/deamination of L-cysteic acid, using 2 M acetic acid in place of hydrochloric acid.",
+        "The paragraph does not state sodium stoichiometry or hydrate form. Its sodium-salt identification applies through the explicit Denger 2010 synthesis citation; no exact molecular formula or CAS is inferred."
+      ]
+    },
+    {
+      "key": "bd211260",
+      "url": "https://www.bd.com/en-us/products-and-solutions/products/product-page.211260",
+      "locator": "Product heading and catalog number",
+      "facts": [
+        "BD catalog 211260 names BBL fluid thioglycollate medium, 500 g."
+      ]
+    },
+    {
+      "key": "fao-tsb",
+      "url": "https://www.fao.org/4/a0691e/A0691E09.htm",
+      "locator": "Trypticase (Tryptic) Soy Broth, lines 438-445 in web view",
+      "facts": [
+        "The compendium explicitly uses Trypticase and Tryptic as names for soy broth.",
+        "Its standard broth lists trypticase peptone 17 g, Phytone peptone 3 g, NaCl 5 g, K2HPO4 2.5 g and glucose 2.5 g per litre; a glucose-free variant is separately described.",
+        "This is a generic named-broth contrast; it does not prove an unspecified BBL catalog used in NBRC957/1045 is exactly this formulation."
+      ]
+    },
+    {
+      "key": "chebi-sodium-lactate",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:75228",
+      "locator": "Definition, formula, structure and CAS xref",
+      "facts": [
+        "CHEBI:75228 is sodium lactate, formula C3H5O3.Na, with a stereochemically unspecified structure and CAS72-17-3.",
+        "The term does not encode a concentration or a pure L enantiomer."
+      ]
+    },
+    {
+      "key": "sigma-dl-lactate",
+      "url": "https://www.sigmaaldrich.com/MV/en/product/sial/71720",
+      "locator": "Product71720, identity and physical form",
+      "facts": [
+        "Sigma71720 is sodium DL-lactate, CAS72-17-3, supplied as powder.",
+        "This verifies the named racemic salt; it does not establish the supplier or concentration of MediaDive943."
+      ]
+    },
+    {
+      "key": "chebi-ferric-pyrophosphate",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:132767",
+      "locator": "Definition, formula, CAS xref",
+      "facts": [
+        "CHEBI:132767 denotes ferric pyrophosphate with Fe(III) and diphosphate in a 4:3 ratio, formula4Fe.3O7P2 and CAS10058-44-3.",
+        "Fe4(PO4)2 is not this formula; correcting the current owner label does not establish the identity intended by the malformed source string."
+      ]
+    },
+    {
+      "key": "chebi-dtmp-parent",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:15245",
+      "locator": "Parent term and incoming is_a relations",
+      "facts": [
+        "The parent thymidine5'-monophosphate has no displayed definition or molecular formula; children include neutral dTMP(CHEBI:17013) and dTMP anion(CHEBI:46960).",
+        "An unspecified parent is not used to bypass MIM's explicit protonation rule."
+      ]
+    },
+    {
+      "key": "chebi-dtmp-neutral",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:17013",
+      "locator": "Definition, chemical structure and conjugate relation",
+      "facts": [
+        "CHEBI:17013 explicitly denotes the neutral thymidine5'-monophosphate species, CAS365-07-1.",
+        "The label dTMP alone does not report the supplied salt or the medium pH in the two admitted Song-medium records."
+      ]
+    },
+    {
+      "key": "sigma-pqq",
+      "url": "https://www.sigmaaldrich.com/US/en/substance/pyrroloquinolinequinone3302172909343",
+      "locator": "Substance identity and productD7783",
+      "facts": [
+        "Pyrroloquinoline quinone, PQQ and methoxatin name the neutral acid product CAS72909-34-3, formulaC14H6N2O8.",
+        "PQQ disodium products are separately named; this is a naming convention and form contrast, not proof that NBRC1394 purchased this supplier."
+      ]
+    },
+    {
+      "key": "micro-tsb-facts",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000113",
+      "locator": "Term label, exact-synonym annotation and BBL formula annotation",
+      "facts": [
+        "The active MICRO0000113 term is tryptic soy broth. Its exact-synonym annotation includes Trypticase soy broth.",
+        "The definition identifies liquid medium containing pancreatic casein digest, papaic soybean digest, glucose, NaCl and dipotassium phosphate.",
+        "The BBL formula annotation specifies 17, 3, 2.5, 5 and 2.5 g/L respectively, with pH7.3 +/-0.2. The no-dextrose product is separately named.",
+        "These factual fields support the generic named broth and standard formulation; they do not imply all product lots or supplemented NBRC media are identical."
+      ]
+    },
+    {
+      "key": "ols-micro-0000541",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000541",
+      "locator": "Active term label, definition annotation and exact synonym annotation",
+      "facts": [
+        "MICRO:0000541 is R2A medium, with R2A broth and Reasoner's 2A as exact synonyms.",
+        "The definition explicitly describes a liquid medium containing yeast extract, proteose peptone, casamino acids, glucose, starch and pyruvate.",
+        "The separate historical source annotation includes an agar formula. That formula is not used to add agar or quantitative composition to this liquid-medium owner."
+      ]
+    }
+  ]
+}

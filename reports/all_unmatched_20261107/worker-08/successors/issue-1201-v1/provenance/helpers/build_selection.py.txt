@@ -1,0 +1,55 @@
+from pathlib import Path
+import hashlib,json
+ROOT=Path(__file__).resolve().parents[3]
+A=ROOT/'reports/all_unmatched_20261107/worker-08'
+S=A/'successors/issue-1201-v1'
+P=ROOT/'.temp/all-unmatched-worker-08/issue-1201-v1'
+def read(p): return json.loads(p.read_text())
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def digest(x):return hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+base={x['case_id']:x for x in read(A/'decisions.json')['decisions']}
+config={'parent_commit':'7efd3f8b98f9e822431dcb510c2c242a2569cfc7','cohort_count':133,
+ 'parent_inputs':{k:{'path':k+'.json','sha256':sha(A/(k+'.json'))} for k in ['decisions','evidence','proposals']},'groups':[]}
+proof=[]
+groups=[('inorganic_forms','organics-reviews-inorganics/review.json','/root/inorganics','/root/organics','cases'),
+ ('organic_products','vitamins-reviews-organics/review-v2.json','/root/organics','/root/vitamins','reassessments'),
+ ('vitamins_mixtures','inorganics-reviews-vitamins/review.json','/root/vitamins','/root/inorganics','cases')]
+for name,rp,author,reviewer,lk in groups:
+ path=S/'independent'/rp;r=read(path)
+ assert r['reviewer']==reviewer and r.get('primary_author',r.get('author_reviewed'))==author and author!=reviewer
+ assert not r.get('open_findings',[])
+ inp={}; docs={}
+ for key,prefix in [('decisions','decisions-'),('evidence','evidence-'),('proposals','proposals-'),('reassessments','reassessment-ledger-')]:
+  names=[k for k in r['input_hashes'] if k.startswith(prefix)]; assert len(names)==1
+  f=S/'research'/name/names[0];assert sha(f)==r['input_hashes'][names[0]]
+  k=lk if key=='reassessments' else key
+  inp[key]={'path':str(f.relative_to(A)),'sha256':sha(f),'key':k};docs[key]=read(f)[k]
+ cr=r.get('case_reviews',r.get('case_assessments')); pr=r.get('proposal_reviews',r.get('proposal_assessments'))
+ ds={x['case_id']:x for x in docs['decisions']}; ps={x['proposal_id']:x for x in docs['proposals']}
+ assert len({x['case_id'] for x in cr})==len(cr)
+ assert {x['proposal_id'] for x in pr}==set(ps) and len(pr)==len(ps)
+ assert set(ds)<={x['case_id'] for x in cr}
+ for x in cr:
+  d=ds.get(x['case_id'],base[x['case_id']]);assert x['case_input_sha256']==d['case_input_sha256']
+  assert x['occurrence_ids']==d['occurrence_ids']
+  if x.get('decision_sha256'):assert x['decision_sha256']==digest(d),(name,x['case_id'],'decision hash')
+  if x['case_id'] in ds:assert set(x['proposal_ids'])==set(d['proposal_ids'])
+  assert x.get('assessment',x.get('skeptical_assessment',x.get('result')))
+ for x in pr:
+  p=ps[x['proposal_id']];cap=x.get('after_capture',x.get('input_after_capture'))
+  assert cap==p['after_capture'] and sha(A/cap['path'])==cap['sha256']
+  assert x['owner_path']==p['owner_path'] and x['before_sha256']==p['before_sha256']
+  if 'case_ids' in x:assert set(x['case_ids'])==set(p['case_ids'])
+  assert x.get('assessment',x.get('challenge_and_result'))
+ cohort=[x['case_id'] for x in docs['reassessments']];assert len(cohort)==len(set(cohort))
+ assert all(not base[c]['proposal_ids'] for c in cohort)
+ config['groups'].append({'name':name,'primary_author':author,'reviewer':reviewer,'case_ids':cohort,'reviewed_case_ids':[x['case_id'] for x in cr],
+ 'inputs':inp,'review':{'path':str(path.relative_to(A)),'sha256':sha(path)}})
+ proof.append({'group':name,'primary_author':author,'reviewer':reviewer,'review_sha256':sha(path),'cohort_count':len(cohort),'reviewed_cases':len(cr),
+ 'reviewed_payloads':len(pr),'status':r.get('status',r.get('final_status')),'input_hashes_verified':True,'case_binding_fields_verified':True,'payload_bindings_verified':True,
+ 'root_read_complete_scientific_case_and_payload_appraisals':True,'review_findings':r['findings']})
+assert sum(len(g['case_ids']) for g in config['groups'])==133
+assert len(set(c for g in config['groups'] for c in g['case_ids']))==133
+for fn,data in [('final-selection.json',config),('peer-verification-preassembly.json',{'status':'PASS','groups':proof})]:
+ assert not (P/fn).exists();(P/fn).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps({x['group']:{'cases':x['reviewed_cases'],'payloads':x['reviewed_payloads']} for x in proof},indent=2))

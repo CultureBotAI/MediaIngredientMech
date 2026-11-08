@@ -1,0 +1,50 @@
+identifier: kgmicrobe.ingredient:jcm_1130_10n_naoh
+preferred_term: JCM 1130 VFA-preparation 10 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1130_10n_naoh
+  ontology_label: JCM 1130 VFA-preparation 10 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: JCM 1130 specifies 26 ml of 10 N NaOH as a separate liquid reagent in the VFA
+  mix. The acids belong to the receiving VFA preparation, not this NaOH reagent. The
+  stock carrier is not stated. DSMZ 870 crotonate and M2813 titrant occurrences retain
+  their own source scope and are not automatically the same preparation. Raw case
+  labels remain only in evidence and case-bound proposal links, not globally resolving
+  synonyms. No occurrence count transfer, source-hold release or receiving-medium
+  dose correction is implied.
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '10'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    source_record: '1130'
+    notes: JCM 1130 specifies 26 ml of 10 N NaOH as a separate liquid reagent in the
+      VFA mix. The acids belong to the receiving VFA preparation, not this NaOH reagent.
+      The stock carrier is not stated. DSMZ 870 crotonate and M2813 titrant occurrences
+      retain their own source scope and are not automatically the same preparation.
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: JCM 1130 specifies 26 ml of 10 N NaOH as a separate liquid reagent in the
+    VFA mix. The acids belong to the receiving VFA preparation, not this NaOH reagent.
+    The stock carrier is not stated. DSMZ 870 crotonate and M2813 titrant occurrences
+    retain their own source scope and are not automatically the same preparation.
+  new_status: MAPPED
+  llm_assisted: true

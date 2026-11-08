@@ -1,0 +1,56 @@
+identifier: kgmicrobe.ingredient:wolin_mineral_05n_naoh
+preferred_term: Wolin mineral-preparation 0.5 N NaOH reagent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolin_mineral_05n_naoh
+  ontology_label: Wolin mineral-preparation 0.5 N NaOH reagent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3152
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'Both source records repeat the same Wolin mineral preparation: dissolve nitrilotriacetate
+  in 10 ml 0.5 N NaOH, dilute to 500 ml, add salts and bring to 1 L. The identical
+  cited preparation supports one proposal for both occurrences. Carrier of the initial
+  NaOH reagent is not specified. Raw case labels remain only in evidence and case-bound
+  proposal links, not globally resolving synonyms. No occurrence count transfer, source-hold
+  release or receiving-medium dose correction is implied.'
+solution_type: OTHER
+components:
+- component_name: NaOH
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:32145
+  concentration_value: '0.5'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3152
+    source_record: M3152
+    notes: 'Both source records repeat the same Wolin mineral preparation: dissolve
+      nitrilotriacetate in 10 ml 0.5 N NaOH, dilute to 500 ml, add salts and bring
+      to 1 L. The identical cited preparation supports one proposal for both occurrences.
+      Carrier of the initial NaOH reagent is not specified.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3153
+    source_record: M3153
+    notes: 'Both source records repeat the same Wolin mineral preparation: dissolve
+      nitrilotriacetate in 10 ml 0.5 N NaOH, dilute to 500 ml, add salts and bring
+      to 1 L. The identical cited preparation supports one proposal for both occurrences.
+      Carrier of the initial NaOH reagent is not specified.'
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: 'Both source records repeat the same Wolin mineral preparation: dissolve
+    nitrilotriacetate in 10 ml 0.5 N NaOH, dilute to 500 ml, add salts and bring to
+    1 L. The identical cited preparation supports one proposal for both occurrences.
+    Carrier of the initial NaOH reagent is not specified.'
+  new_status: MAPPED
+  llm_assisted: true

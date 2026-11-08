@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:atcc_1942_sulfide_5pct
+preferred_term: ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc_1942_sulfide_5pct
+  ontology_label: ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/C09E6B9C6CF8494CAA69A2CA7DE40AB1.ashx
+    notes: Source-qualified preparation/material identity under MAPPING_SEMANTICS
+      sections 3 and 6; inspected bounded ontology searches found no exact supported
+      term. No exact mapping to a solute or generic water is asserted.
+notes: 'ATCC 1942 explicitly doses 10 ml of the 5% nonahydrate stock to obtain final
+  0.5 g/L: the source-linked ratio supports 5 g per 100 ml (w/v), rather than borrowing
+  a percent basis from another source. The stock is autoclaved under N2; carrier is
+  not given, so PARTIAL remains. This does not establish equivalence to other JCM
+  5% stocks. Raw case labels remain only in evidence and case-bound proposal links,
+  not globally resolving synonyms. No occurrence count transfer, source-hold release
+  or receiving-medium dose correction is implied.'
+solution_type: OTHER
+components:
+- component_name: Na2S x 9 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:76209
+  concentration_value: '5'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/C09E6B9C6CF8494CAA69A2CA7DE40AB1.ashx
+    source_record: https://www.atcc.org/~/media/C09E6B9C6CF8494CAA69A2CA7DE40AB1.ashx
+    notes: 'ATCC 1942 explicitly doses 10 ml of the 5% nonahydrate stock to obtain
+      final 0.5 g/L: the source-linked ratio supports 5 g per 100 ml (w/v), rather
+      than borrowing a percent basis from another source. The stock is autoclaved
+      under N2; carrier is not given, so PARTIAL remains. This does not establish
+      equivalence to other JCM 5% stocks.'
+curation_history:
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CREATED_SOURCE_PREPARATION_PROPOSAL
+  changes: 'ATCC 1942 explicitly doses 10 ml of the 5% nonahydrate stock to obtain
+    final 0.5 g/L: the source-linked ratio supports 5 g per 100 ml (w/v), rather than
+    borrowing a percent basis from another source. The stock is autoclaved under N2;
+    carrier is not given, so PARTIAL remains. This does not establish equivalence
+    to other JCM 5% stocks.'
+  new_status: MAPPED
+  llm_assisted: true

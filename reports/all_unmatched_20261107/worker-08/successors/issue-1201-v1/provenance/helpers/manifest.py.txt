@@ -1,0 +1,21 @@
+"""Manifest only the new successor and its newly saved native review."""
+from pathlib import Path
+import hashlib,sys
+ROOT=Path(__file__).resolve().parents[3]
+OUT=ROOT/'reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1'
+PRIVATE=ROOT/'.temp/all-unmatched-worker-08/issue-1201-v1'
+MANIFEST=OUT/'SHA256SUMS'
+review_id=(PRIVATE/'native-review-id.txt').read_text().strip()
+paths={p for p in OUT.rglob('*') if p.is_file() and p!=MANIFEST}
+paths.update(p for p in (ROOT/'reviews/structured'/review_id).rglob('*') if p.is_file())
+assert all(not p.is_symlink() for p in paths)
+assert len([p for p in paths if 'reviews/structured/' in str(p)])==2
+actual={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
+if '--write' in sys.argv:
+ assert not MANIFEST.exists(),'Immutable manifest already exists; use a new successor version after reassessment'
+ MANIFEST.write_text(''.join(f'{digest}  {path}\n' for path,digest in actual.items()))
+entries={}
+for line in MANIFEST.read_text().splitlines():
+ digest,path=line.split('  ',1);assert path not in entries;entries[path]=digest
+assert entries==actual,'Manifest membership or bytes differ'
+print(f'PASS {len(actual)} exact files; manifest SHA256 {hashlib.sha256(MANIFEST.read_bytes()).hexdigest()}')

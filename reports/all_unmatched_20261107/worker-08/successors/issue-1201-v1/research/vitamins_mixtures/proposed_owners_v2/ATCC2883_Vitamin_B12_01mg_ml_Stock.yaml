@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock
+preferred_term: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc2883_vitamin_b12_01mg_ml_stock
+  ontology_label: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx
+    notes: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC2883
+      specifies the same1ml filter-sterilized0.1mg/ml B12 stock in its separately
+      described broth and agar preparations. Registry identity preserves this documented
+      preparation; no exact molecular mapping.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC2883
+  specifies the same1ml filter-sterilized0.1mg/ml B12 stock in its separately described
+  broth and agar preparations. The carrier and any additional stock constituents are
+  unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin
+  form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence
+  and source hold release are not asserted. Both receiving recipes are explicitly
+  given in one ATCC2883 source with the same stock specification. Their separately
+  added3ml methanol is not assigned as B12 solvent. The stock is not equated to JCM1354
+  because its0.01% basis is unstated. Quantities, where present, describe the supplied
+  stock, not the finished receiving medium. Raw labels remain source-scoped in evidence;
+  no global synonym, biological role, occurrence count integration or downstream admission
+  is proposed.
+components:
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: MG_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/E4D6EB3B1C80408996E0DD53A0D258A1.ashx
+    source_record: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+    notes: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC2883
+      specifies the same1ml filter-sterilized0.1mg/ml B12 stock in its separately
+      described broth and agar preparations. The carrier and any additional stock
+      constituents are unspecified. No water, ethanol, methanol, acid, preservative
+      or molecular vitamin form is inferred. This is a PARTIAL preparation record;
+      complete-formulation equivalence and source hold release are not asserted. Both
+      receiving recipes are explicitly given in one ATCC2883 source with the same
+      stock specification. Their separately added3ml methanol is not assigned as B12
+      solvent. The stock is not equated to JCM1354 because its0.01% basis is unstated.
+curation_history:
+- timestamp: '2026-11-08T06:03:42.240586+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Resolve independent finding VM1201-F1 by representing known source preparation
+    with partial composition instead of treating unknown carrier as an absolute curation
+    blocker. Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC2883
+    specifies the same1ml filter-sterilized0.1mg/ml B12 stock in its separately described
+    broth and agar preparations.
+  new_status: MAPPED
+  llm_assisted: true

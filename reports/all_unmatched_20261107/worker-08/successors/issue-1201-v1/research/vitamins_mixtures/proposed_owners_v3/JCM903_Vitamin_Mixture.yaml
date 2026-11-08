@@ -1,0 +1,92 @@
+identifier: kgmicrobe.ingredient:jcm903_vitamin_mixture
+preferred_term: JCM 903 vitamin mixture
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: VITAMIN_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm903_vitamin_mixture
+  ontology_label: JCM 903 vitamin mixture
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=903
+    notes: JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367.
+      Registry preparation identity, not a molecular exact match.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367.
+  Eight vitamins plus water; source explicitly says DL-calcium pantothenate. Distinct
+  from JCM 1023 and existing generic Wolfe/Thauer formulas. Filter sterilize this
+  stock before adding it to the cooled receiving medium.  Raw source labels remain
+  source-scoped in the decisions; no generic label is published as a global synonym.
+  Quantified components use the literal preparation batch unless explicitly marked
+  MG_PER_L. Component names retain source specificity without inferred vitamer, hydrate
+  or stereoisomer IDs. Occurrence counts remain zero pending source-specific integration.
+  No roles or downstream hold release is proposed.
+components:
+- component_name: Thiamine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '20.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Pyridoxine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '20.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '20.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: DL-Calcium pantothenate
+  reference_scope: UNMAPPED
+  concentration_value: '20.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Vitamin B12
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=903
+    source_record: JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367.
+    notes: Complete immediate ingredient enumeration; nested carriers remain distinct
+      preparations. Eight vitamins plus water; source explicitly says DL-calcium pantothenate.
+      Distinct from JCM 1023 and existing generic Wolfe/Thauer formulas.
+curation_history:
+- timestamp: '2026-11-08T05:57:32.886931+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: SOURCE_REVIEW_PROPOSED
+  changes: Create source-qualified preparation proposal after issue1201 reassessment.
+    JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367. Eight
+    vitamins plus water; source explicitly says DL-calcium pantothenate. Distinct
+    from JCM1023 and existing generic Wolfe/Thauer formulas.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:08:38.046289+00:00'
+  curator: all-unmatched-worker08-issue1201-vitamins
+  action: PROPOSAL_PROSE_NORMALIZED
+  changes: Editorial spacing correction only. Identifiers, component names, amounts,
+    units, scientific boundaries and original curation history are preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

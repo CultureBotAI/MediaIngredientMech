@@ -1,0 +1,5549 @@
+# Worker08 issue1201: bounded review of 69 successor proposal deltas
+
+- Review: 20261108T062307Z-w08-issue1201-successor-proposals
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T05:48:23.581212Z
+- Finished UTC: 2026-11-08T06:23:07.832711Z
+- Reviewer: /root (worker08 integration reviewer) (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+69 isolated successor proposal deltas have case-specific evidence and authorship-separated skeptical review. This review supports only those bounded proposed changes. Maintained owner records, inherited roles and complete export payloads remain unapproved; source-specific holds remain in the full 188-case successor assessment.
+
+## Scope And Provenance
+
+Every new or superseding payload in the issue1201 successor index; original unchanged proposals retain their prior immutable native review, while all active proposals are revalidated together.
+
+Selection: Exact new proposal IDs relative to the published 7efd3f8 predecessor; no sampling.
+Coverage: full; 69 reviewed / 69 in the declared population.
+Source: working_tree at Git base 7efd3f8b98f9e822431dcb510c2c242a2569cfc7.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| if1201-new-deionized_water | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml | source | Deionized water |
+| if1201-new-dsmz_trace_2n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml | source | DSMZ trace-preparation 2 N NaOH reagent |
+| if1201-new-jcm_1130_10n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml | source | JCM 1130 VFA-preparation 10 N NaOH reagent |
+| if1201-new-atcc_nitrosolobus_6n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml | source | ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent |
+| if1201-new-pcr_s11_01n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml | source | PCR-S11 EDTA-preparation 0.1 N NaOH reagent |
+| if1201-new-dsmz_104_8n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml | source | DSMZ 104 pH-adjustment 8 N NaOH reagent |
+| if1201-new-jcm_221_02n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml | source | JCM 221 reducing-preparation 0.2 N NaOH reagent |
+| if1201-new-wolin_mineral_05n_naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml | source | Wolin mineral-preparation 0.5 N NaOH reagent |
+| if1201-new-atcc_1340_naoh_4g_100ml | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml | source | ATCC 1340 NaOH reagent (4 g/100 ml) |
+| if1201-new-jcm_574_1m_kh2po4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml | source | JCM 574 1 M KH2PO4 phosphate-buffer input |
+| if1201-new-jcm_574_1m_k2hpo4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml | source | JCM 574 1 M K2HPO4 phosphate-buffer input |
+| if1201-new-pbbm_1m_na2hpo4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml | source | PBBM 1 M Na2HPO4 phosphate-buffer input |
+| if1201-new-pcr_s11_50mm_nah2po4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml | source | PCR-S11 50 mM NaH2PO4 solution |
+| if1201-new-pcr_s11_50mm_na2hpo4 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml | source | PCR-S11 50 mM Na2HPO4 solution |
+| if1201-new-pcr_s11_sodium_phosphate_buffer_ph75 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml | source | PCR-S11 sodium phosphate buffer pH 7.5 |
+| if1201-new-allen_m2231_phosphate_stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml | source | Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L) |
+| if1201-new-jcm_908_sulfide_10pct_wv | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml | source | JCM 908 sodium sulfide nonahydrate 10% w/v stock |
+| if1201-new-jcm_713_sulfide_24pct | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml | source | JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock |
+| if1201-new-atcc_1943_sulfide_25pct | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml | source | ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock |
+| if1201-edit-naoh | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml | source | NaOH |
+| if1201-edit-na2moo4_x_2_h2o | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml | source | Na2MoO4 x 2 H2O |
+| if1201-edit-na2hpo4_x_12_h2o | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml | source | Na2HPO4 x 12 H2O |
+| if1201-new-atcc_1942_sulfide_5pct | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml | source | ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock |
+| if1201-new-mediadive_552_thiosulfate_5g_100ml | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml | source | MediaDive 552 source thiosulfate preparation (5 g in 100 ml water) |
+| if1201-new-jcm_941_solution_c | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml | source | JCM 941 Solution C (source Na2S2O4·2H2O) |
+| if1201-edit-kh2po4-alias-scope | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Kh2po4.yaml | source | KH2PO4 |
+| if1201-edit-nonahydrate-stock-aliases | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml | source | Na2S x 9 H2O |
+| if1201-edit-tris-alias-scope | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml | source | Tris base |
+| op1201-glycine-naoh-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml | source | JCM906 glycine-NaOH buffer, 0.5 M, pH 10.0 |
+| op1201-indicator-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml | source | TOGO M2844 bromothymol blue 0.5% in 0.2 N KOH |
+| op1201-toluene-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml | source | JCM600 water-saturated toluene stock, 5.0 mM |
+| op1201-usb-peptic-pepton | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/nbrc19_usb_peptic_pepton.yaml | source | NBRC19 USB Peptic Pepton |
+| op1201-sulfide-ore | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/sulfide_ore.yaml | source | Sulfide ore |
+| op1201-cereal-leaves | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Cereal_Leaves.yaml | source | Cereal leaves |
+| op1201-homopipes-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1938_homopipes_0_5m_ph5_4.yaml | source | MediaDive1938 HOMOPIPES stock, 0.5 M, pH 5.4 |
+| op1201-dl-asparagine-monohydrate | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/DL_Asparagine_Monohydrate.yaml | source | DL-Asparagine monohydrate |
+| op1201-beta-nad-provenance | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml | source | beta-NAD |
+| op1201-laminarin-scope | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml | source | Laminarin |
+| op1201-bbl-fluid-thioglycollate | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml | source | BBL Fluid Thioglycollate Medium, BD211260 |
+| op1201-r2a-medium | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml | source | R2A medium |
+| op1201-r2a-agar-provenance | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_agar.yaml | source | R2A agar |
+| op1201-racemic-sodium-sulfolactate | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/denger2010_racemic_sodium_sulfolactate.yaml | source | Racemic sodium 3-sulfolactate, Denger2010 preparation |
+| op1201-trypticase-soy-broth | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Trypticase_Soy_Broth.yaml | source | Trypticase soy broth |
+| op1201-sodium-lactate-alias-boundary | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Sodium_Lactate.yaml | source | Sodium lactate |
+| op1201-soy-family-source-boundary | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml | source | Soy peptone |
+| op1201-plain-flour | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Plain_Flour.yaml | source | Plain flour |
+| op1201-amphotericin-stock | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1140_amphotericin_stock_10mg_ml.yaml | source | MediaDive1140 amphotericin stock, 10 mg/mL |
+| op1201-ferric-pyrophosphate-label | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Fe4_Po42.yaml | source | Ferric pyrophosphate |
+| vm1201-prop-jcm1023-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml | source | JCM 1023 vitamin mixture |
+| vm1201-prop-jcm903-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml | source | JCM 903 vitamin mixture |
+| vm1201-prop-jcm554-sl10 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml | source | JCM 554 SL10 elements solution |
+| vm1201-prop-nbrc1356-mineral-base1 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml | source | NBRC 1356 mineral base 1 supernatant |
+| vm1201-prop-yps-basea | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml | source | TOGO M2567 mineral base A |
+| vm1201-prop-yps-baseb | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M2567_Mineral_Base_B.yaml | source | TOGO M2567 mineral base B |
+| vm1201-prop-jcm628-toplayer | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM628_Top_Layer.yaml | source | JCM 628 freshwater top layer |
+| vm1201-prop-jcm629-toplayer | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM629_Top_Layer.yaml | source | JCM 629 saltwater top layer |
+| vm1201-prop-nbrc1020-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1020_Vitamin_Solution.yaml | source | NBRC 1020 vitamin solution |
+| vm1201-prop-nbrc1226-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1226_Vitamin_Solution.yaml | source | NBRC 1226 vitamin solution |
+| vm1201-prop-nbrc903-vitamin | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC903_Vitamin_Solution.yaml | source | NBRC 903 vitamin solution |
+| vm1201-prop-nbrc-common9 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml | source | NBRC 1356 vitamin solution |
+| vm1201-prop-gibco11120-mem100x | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Gibco11120_MEM_Vitamin_Solution_100X.yaml | source | Gibco 11120 MEM vitamin solution 100X |
+| vm1201-prop-jcm510-methane-air | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM510_Methane_Air_50_50.yaml | source | JCM 510 methane-air 50:50 blend |
+| vm1201-prop-jcm515-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml | source | JCM 515 vitamin B12 20 microgram per ml stock |
+| vm1201-prop-jcm647-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml | source | JCM 647 vitamin B12 2 milligram per ml stock |
+| vm1201-prop-jcm1354-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml | source | JCM 1354 vitamin B12 0.01 percent stock |
+| vm1201-prop-atcc2883-b12-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml | source | ATCC 2883 vitamin B12 0.1 milligram per ml stock |
+| vm1201-prop-togo125-k1-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml | source | TOGO M125 vitamin K1 0.1 percent stock |
+| vm1201-prop-dsm1245-k1-partial | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml | source | DSMZ 1245 OTEB vitamin K1 1 percent stock |
+| vm1201-prop-thauers-source-comparison | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml | source | Thauer's vitamin mix |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| All active proposal payloads: guarded writer, strict schema and combined native partonomy | passed | True | if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | 113 active payloads; 2956 baseline and 3037 overlay records; zero schema/partonomy failures; 3043 maintained files unchanged. |
+| Full assigned shard accounting | passed | True | if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | All 188 frozen cases accounted; immutable source and occurrence bindings, capture hashes, original proposal links and successor references checked. |
+| Independent scientific peer receipt verification | passed | True | if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Actual peer receipts inspected for every successor case and payload; retained no-change cases also reassessed. Mechanical receipt hashing alone was not treated as scientific review. |
+| Post-application synchronization and export admission | not_applicable | False | if1201-new-deionized_water, if1201-new-dsmz_trace_2n_naoh, if1201-new-jcm_1130_10n_naoh, if1201-new-atcc_nitrosolobus_6n_naoh, if1201-new-pcr_s11_01n_naoh, if1201-new-dsmz_104_8n_naoh, if1201-new-jcm_221_02n_naoh, if1201-new-wolin_mineral_05n_naoh, if1201-new-atcc_1340_naoh_4g_100ml, if1201-new-jcm_574_1m_kh2po4, if1201-new-jcm_574_1m_k2hpo4, if1201-new-pbbm_1m_na2hpo4, if1201-new-pcr_s11_50mm_nah2po4, if1201-new-pcr_s11_50mm_na2hpo4, if1201-new-pcr_s11_sodium_phosphate_buffer_ph75, if1201-new-allen_m2231_phosphate_stock, if1201-new-jcm_908_sulfide_10pct_wv, if1201-new-jcm_713_sulfide_24pct, if1201-new-atcc_1943_sulfide_25pct, if1201-edit-naoh, if1201-edit-na2moo4_x_2_h2o, if1201-edit-na2hpo4_x_12_h2o, if1201-new-atcc_1942_sulfide_5pct, if1201-new-mediadive_552_thiosulfate_5g_100ml, if1201-new-jcm_941_solution_c, if1201-edit-kh2po4-alias-scope, if1201-edit-nonahydrate-stock-aliases, if1201-edit-tris-alias-scope, op1201-glycine-naoh-stock, op1201-indicator-stock, op1201-toluene-stock, op1201-usb-peptic-pepton, op1201-sulfide-ore, op1201-cereal-leaves, op1201-homopipes-stock, op1201-dl-asparagine-monohydrate, op1201-beta-nad-provenance, op1201-laminarin-scope, op1201-bbl-fluid-thioglycollate, op1201-r2a-medium, op1201-r2a-agar-provenance, op1201-racemic-sodium-sulfolactate, op1201-trypticase-soy-broth, op1201-sodium-lactate-alias-boundary, op1201-soy-family-source-boundary, op1201-plain-flour, op1201-amphotericin-stock, op1201-ferric-pyrophosphate-label, vm1201-prop-jcm1023-vitamin, vm1201-prop-jcm903-vitamin, vm1201-prop-jcm554-sl10, vm1201-prop-nbrc1356-mineral-base1, vm1201-prop-yps-basea, vm1201-prop-yps-baseb, vm1201-prop-jcm628-toplayer, vm1201-prop-jcm629-toplayer, vm1201-prop-nbrc1020-vitamin, vm1201-prop-nbrc1226-vitamin, vm1201-prop-nbrc903-vitamin, vm1201-prop-nbrc-common9, vm1201-prop-gibco11120-mem100x, vm1201-prop-jcm510-methane-air, vm1201-prop-jcm515-b12-partial, vm1201-prop-jcm647-b12-partial, vm1201-prop-jcm1354-b12-partial, vm1201-prop-atcc2883-b12-partial, vm1201-prop-togo125-k1-partial, vm1201-prop-dsm1245-k1-partial, vm1201-prop-thauers-source-comparison | Proposal-only work. No maintained data application, generated export, downstream rebuild, role approval or source-hold release was performed. |
+
+## Scientific And Domain Assessments
+
+### if1201-new-deionized_water — isolated successor delta
+
+identity: supported. Targets: if1201-new-deionized_water.
+
+Deionized water: DSMZ 533 names H2O (deionized) in the main medium and trace stock, each as 1000 ml water. The identity retains the specified deionization treatment only: no resistivity, purity class, sterility or distillation claim. Water is not decomposed into a molecular-water component because treatment grade is not partonomy. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8: Deionized water: DSMZ 533 names H2O (deionized) in the main medium and trace stock, each as 1000 ml water. The identity retains the specified deionization treatment only: no resistivity, purity class, sterility or distillation claim. Water is not decomposed into a molecular-water component because treatment grade is not partonomy.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-dsmz_trace_2n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-dsmz_trace_2n_naoh.
+
+DSMZ trace-preparation 2 N NaOH reagent: The named DSMZ trace recipes use 2 N NaOH to dissolve/neutralize EDTA before adding salts. Repeated exact DSMZ 1094 witnesses join the spaced/unspaced case labels; SL-11 references share its explicitly named protocol. Solvent of the NaOH stock is not stated. This is the NaOH reagent, not the resulting trace solution; unrelated M3213 pH titration is not approved as the same complete preparation. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd: DSMZ trace-preparation 2 N NaOH reagent: The named DSMZ trace recipes use 2 N NaOH to dissolve/neutralize EDTA before adding salts. Repeated exact DSMZ 1094 witnesses join the spaced/unspaced case labels; SL-11 references share its explicitly named protocol. Solvent of the NaOH stock is not stated. This is the NaOH reagent, not the resulting trace solution; unrelated M3213 pH titration is not approved as the same complete preparation.
+
+CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f: DSMZ trace-preparation 2 N NaOH reagent: The named DSMZ trace recipes use 2 N NaOH to dissolve/neutralize EDTA before adding salts. Repeated exact DSMZ 1094 witnesses join the spaced/unspaced case labels; SL-11 references share its explicitly named protocol. Solvent of the NaOH stock is not stated. This is the NaOH reagent, not the resulting trace solution; unrelated M3213 pH titration is not approved as the same complete preparation.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_1130_10n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_1130_10n_naoh.
+
+JCM 1130 VFA-preparation 10 N NaOH reagent: JCM 1130 specifies 26 ml of 10 N NaOH as a separate liquid reagent in the VFA mix. The acids belong to the receiving VFA preparation, not this NaOH reagent. The stock carrier is not stated. DSMZ 870 crotonate and M2813 titrant occurrences retain their own source scope and are not automatically the same preparation. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a: JCM 1130 VFA-preparation 10 N NaOH reagent: JCM 1130 specifies 26 ml of 10 N NaOH as a separate liquid reagent in the VFA mix. The acids belong to the receiving VFA preparation, not this NaOH reagent. The stock carrier is not stated. DSMZ 870 crotonate and M2813 titrant occurrences retain their own source scope and are not automatically the same preparation.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-atcc_nitrosolobus_6n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-atcc_nitrosolobus_6n_naoh.
+
+ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent: The phenol-red preparation uses 1 ml 6 N NaOH, 0.5 g phenol red and 99 ml deionized water. Only NaOH is a demonstrated component of the input reagent; the receiving water does not establish the NaOH stock carrier. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378: ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent: The phenol-red preparation uses 1 ml 6 N NaOH, 0.5 g phenol red and 99 ml deionized water. Only NaOH is a demonstrated component of the input reagent; the receiving water does not establish the NaOH stock carrier.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-pcr_s11_01n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-pcr_s11_01n_naoh.
+
+PCR-S11 EDTA-preparation 0.1 N NaOH reagent: The PCR-S11 Na2-EDTA preparation gradually dissolves 1.488 g Na2-EDTA in 40 ml 0.1 N NaOH. The NaOH input is a pre-existing liquid reagent; its solvent is not specified. ATCC hemin and SGP7 titration contexts in the same lexical case are not claimed as equivalent preparations. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05: PCR-S11 EDTA-preparation 0.1 N NaOH reagent: The PCR-S11 Na2-EDTA preparation gradually dissolves 1.488 g Na2-EDTA in 40 ml 0.1 N NaOH. The NaOH input is a pre-existing liquid reagent; its solvent is not specified. ATCC hemin and SGP7 titration contexts in the same lexical case are not claimed as equivalent preparations. Independent finding IF1201-R1: only the PCR-S11 source preparation is the direct anchor. The NOS VFA occurrence is retained as a conditional comparison of 0.1 N NaOH. Equal specified solute and nominal strength with unspecified carrier do not establish exact shared preparation, but different receiving recipes or source numbers also do not establish distinct material. The receiving mixture is outside this reagent identity. No automatic assignment of the comparison occurrence and no second owner is proposed.
+
+CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba: The primary NOS VFA recipe demonstrates a 0.1 N NaOH liquid reagent input, while carrier and full preparation remain unspecified. Its receiving recipe does not demonstrate a material difference from the PCR-S11 reagent. Withdraw the separate source-number-defined owner and retain one concrete PCR-S11 proposal as a conditional comparison, preserving every NOS VFA occurrence without assigning it to that owner. Neither exact equivalence nor distinct substance identity is inferred from the available facts.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-dsmz_104_8n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-dsmz_104_8n_naoh.
+
+DSMZ 104 pH-adjustment 8 N NaOH reagent: DSMZ 104 explicitly uses 8 N NaOH as a pH-adjustment reagent. This bounded partial stock retains exactly that source-defined strength and use; carrier, manufacturing recipe and supplier are not supplied. It is not the 1 N NaOH used separately in the hemin preparation. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6: DSMZ 104 pH-adjustment 8 N NaOH reagent: DSMZ 104 explicitly uses 8 N NaOH as a pH-adjustment reagent. This bounded partial stock retains exactly that source-defined strength and use; carrier, manufacturing recipe and supplier are not supplied. It is not the 1 N NaOH used separately in the hemin preparation.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_221_02n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_221_02n_naoh.
+
+JCM 221 reducing-preparation 0.2 N NaOH reagent: JCM 221 boils and cools 200 ml of 0.2 N NaOH before adding sulfide nonahydrate and cysteine hydrochloride monohydrate. Only the NaOH input is represented here; downstream solutes and gases are preparation context. Carrier of the NaOH stock is unspecified. ATCC 1190/1191 reducing solutions omit cysteine hydration and are not asserted as the same whole reducing formulation. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e: JCM 221 reducing-preparation 0.2 N NaOH reagent: JCM 221 boils and cools 200 ml of 0.2 N NaOH before adding sulfide nonahydrate and cysteine hydrochloride monohydrate. Only the NaOH input is represented here; downstream solutes and gases are preparation context. Carrier of the NaOH stock is unspecified. ATCC 1190/1191 reducing solutions omit cysteine hydration and are not asserted as the same whole reducing formulation.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-wolin_mineral_05n_naoh — isolated successor delta
+
+identity: supported. Targets: if1201-new-wolin_mineral_05n_naoh.
+
+Wolin mineral-preparation 0.5 N NaOH reagent: Both source records repeat the same Wolin mineral preparation: dissolve nitrilotriacetate in 10 ml 0.5 N NaOH, dilute to 500 ml, add salts and bring to 1 L. The identical cited preparation supports one proposal for both occurrences. Carrier of the initial NaOH reagent is not specified. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa: Wolin mineral-preparation 0.5 N NaOH reagent: Both source records repeat the same Wolin mineral preparation: dissolve nitrilotriacetate in 10 ml 0.5 N NaOH, dilute to 500 ml, add salts and bring to 1 L. The identical cited preparation supports one proposal for both occurrences. Carrier of the initial NaOH reagent is not specified.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-atcc_1340_naoh_4g_100ml — isolated successor delta
+
+identity: supported. Targets: if1201-new-atcc_1340_naoh_4g_100ml.
+
+ATCC 1340 NaOH reagent (4 g/100 ml): ATCC 1340 explicitly defines its N NaOH input as 4 g/100 ml and uses 30 ml in cysteine-sulfide reducing agent. The initial reagent solvent is not specified. This explicit mass/volume definition is confined to CultureMech:009208; the five other bare-N occurrences are not automatically assigned this strength. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5: ATCC 1340 NaOH reagent (4 g/100 ml): ATCC 1340 explicitly defines its N NaOH input as 4 g/100 ml and uses 30 ml in cysteine-sulfide reducing agent. The initial reagent solvent is not specified. This explicit mass/volume definition is confined to CultureMech:009208; the five other bare-N occurrences are not automatically assigned this strength. The direct anchor remains the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength is consistent with 1 N; it does not establish identical carrier or full preparation. Chopped-meat protocol occurrences using 1 N are conditional comparisons only. Matching receiving meat recipes establish shared use context, not a distinct NaOH substance. The other bare-N occurrences remain unassigned.
+
+CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength is consistent with 1 N; it does not establish identical carrier or full preparation. Chopped-meat protocol occurrences using 1 N are conditional comparisons only. Matching receiving meat recipes establish shared use context, not a distinct NaOH substance. The other bare-N occurrences remain unassigned.
+
+CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength is consistent with 1 N; it does not establish identical carrier or full preparation. Chopped-meat protocol occurrences using 1 N are conditional comparisons only. Matching receiving meat recipes establish shared use context, not a distinct NaOH substance. The other bare-N occurrences remain unassigned.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_574_1m_kh2po4 — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_574_1m_kh2po4.
+
+JCM 574 1 M KH2PO4 phosphate-buffer input: JCM 574 combines 16.6 ml of this 1 M KH2PO4 solution with 83.4 ml of a distinct 1 M K2HPO4 solution and then an equal volume of distilled water. Stock carrier and supplied solid hydrate are not specified; do not treat that later dilution water as the stock solvent. JCM 1181 explicitly imports this buffer. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9: JCM 574 1 M KH2PO4 phosphate-buffer input: JCM 574 combines 16.6 ml of this 1 M KH2PO4 solution with 83.4 ml of a distinct 1 M K2HPO4 solution and then an equal volume of distilled water. Stock carrier and supplied solid hydrate are not specified; do not treat that later dilution water as the stock solvent. JCM 1181 explicitly imports this buffer. Independent finding IF1201-R1: only the JCM 574 source preparation is the direct anchor. The PBBM occurrence is retained as a conditional comparison of 1 M KH2PO4. Equal specified solute and nominal strength with unspecified carrier do not establish exact shared preparation, but different receiving recipes or source numbers also do not establish distinct material. The receiving mixture is outside this reagent identity. No automatic assignment of the comparison occurrence and no second owner is proposed.
+
+CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3: The primary PBBM recipe demonstrates a 1 M KH2PO4 liquid reagent input, while carrier and full preparation remain unspecified. Its receiving recipe does not demonstrate a material difference from the JCM 574 reagent. Withdraw the separate source-number-defined owner and retain one concrete JCM 574 proposal as a conditional comparison, preserving every PBBM occurrence without assigning it to that owner. Neither exact equivalence nor distinct substance identity is inferred from the available facts.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_574_1m_k2hpo4 — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_574_1m_k2hpo4.
+
+JCM 574 1 M K2HPO4 phosphate-buffer input: JCM 574 combines 83.4 ml of this 1 M K2HPO4 solution with 16.6 ml of a distinct 1 M KH2PO4 solution and then an equal volume of distilled water. Stock carrier and supplied solid hydrate are unspecified. JCM 1181 explicitly imports this buffer; receiving-dose mismatches are not identity blockers. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9: JCM 574 1 M K2HPO4 phosphate-buffer input: JCM 574 combines 83.4 ml of this 1 M K2HPO4 solution with 16.6 ml of a distinct 1 M KH2PO4 solution and then an equal volume of distilled water. Stock carrier and supplied solid hydrate are unspecified. JCM 1181 explicitly imports this buffer; receiving-dose mismatches are not identity blockers.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-pbbm_1m_na2hpo4 — isolated successor delta
+
+identity: supported. Targets: if1201-new-pbbm_1m_na2hpo4.
+
+PBBM 1 M Na2HPO4 phosphate-buffer input: PBBM explicitly enumerates 10 ml 1 M Na2HPO4 and 10 ml 1 M KH2PO4 as its pH 7.2 phosphate buffer inputs. Solvent and supplied solid hydrate are not specified; source-qualified stock identity does not collapse to anhydrous disodium phosphate. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce: PBBM 1 M Na2HPO4 phosphate-buffer input: PBBM explicitly enumerates 10 ml 1 M Na2HPO4 and 10 ml 1 M KH2PO4 as its pH 7.2 phosphate buffer inputs. Solvent and supplied solid hydrate are not specified; source-qualified stock identity does not collapse to anhydrous disodium phosphate.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-pcr_s11_50mm_nah2po4 — isolated successor delta
+
+identity: supported. Targets: if1201-new-pcr_s11_50mm_nah2po4.
+
+PCR-S11 50 mM NaH2PO4 solution: TOGO M2262 explicitly prepares this named 50 mM stock from 6 g NaH2PO4 and 1 L distilled water. Amounts are recipe batch inputs, not guaranteed final solution-volume concentrations. Hydration of the supplied phosphate is not specified and is not inferred by dividing its mass by molarity. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7: PCR-S11 50 mM NaH2PO4 solution: TOGO M2262 explicitly prepares this named 50 mM stock from 6 g NaH2PO4 and 1 L distilled water. Amounts are recipe batch inputs, not guaranteed final solution-volume concentrations. Hydration of the supplied phosphate is not specified and is not inferred by dividing its mass by molarity.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-pcr_s11_50mm_na2hpo4 — isolated successor delta
+
+identity: supported. Targets: if1201-new-pcr_s11_50mm_na2hpo4.
+
+PCR-S11 50 mM Na2HPO4 solution: TOGO M2262 explicitly prepares this named 50 mM stock from 3.55 g Na2HPO4 and 500 ml distilled water. Amounts are recipe batch inputs; hydration of supplied phosphate is unresolved and is not inferred from molarity/mass. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a: PCR-S11 50 mM Na2HPO4 solution: TOGO M2262 explicitly prepares this named 50 mM stock from 3.55 g Na2HPO4 and 500 ml distilled water. Amounts are recipe batch inputs; hydration of supplied phosphate is unresolved and is not inferred from molarity/mass.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-pcr_s11_sodium_phosphate_buffer_ph75 — isolated successor delta
+
+identity: supported. Targets: if1201-new-pcr_s11_sodium_phosphate_buffer_ph75.
+
+PCR-S11 sodium phosphate buffer pH 7.5: The structured Na-PO4 (pH 7.5) block specifies 100 ml of each named 50 mM phosphate stock, with equimolar mixing and pH adjustment to 7.5. The adjustment reagent/quantity is unspecified, so components are PARTIAL. The later instruction to bring to 2 L belongs to the separate Na2-EDTA/FeCl3 block, not this buffer. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959: PCR-S11 sodium phosphate buffer pH 7.5: The structured Na-PO4 (pH 7.5) block specifies 100 ml of each named 50 mM phosphate stock, with equimolar mixing and pH adjustment to 7.5. The adjustment reagent/quantity is unspecified, so components are PARTIAL. The later instruction to bring to 2 L belongs to the separate Na2-EDTA/FeCl3 block, not this buffer.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-allen_m2231_phosphate_stock — isolated successor delta
+
+identity: supported. Targets: if1201-new-allen_m2231_phosphate_stock.
+
+Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L): M2231 explicitly enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized water for the stock, dosed at 5 ml into Allen medium. This resolves the stock-strength versus receiving-volume confusion, but does not verify that the literal seven-water compound is chemically correct. Its component stays UNMAPPED; original unqualified component case remains chemically held. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69: Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L): M2231 explicitly enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized water for the stock, dosed at 5 ml into Allen medium. This resolves the stock-strength versus receiving-volume confusion, but does not verify that the literal seven-water compound is chemically correct. Its component stays UNMAPPED; original unqualified component case remains chemically held.
+
+CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563: Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L): M2231 explicitly enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized water for the stock, dosed at 5 ml into Allen medium. This resolves the stock-strength versus receiving-volume confusion, but does not verify that the literal seven-water compound is chemically correct. Its component stays UNMAPPED; original unqualified component case remains chemically held.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_908_sulfide_10pct_wv — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_908_sulfide_10pct_wv.
+
+JCM 908 sodium sulfide nonahydrate 10% w/v stock: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses 7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not stated, so PARTIAL records only verified solute and mass/volume basis. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45: JCM 908 sodium sulfide nonahydrate 10% w/v stock: JCM 908 explicitly lists the nonahydrate as a 10% w/v liquid stock, doses 7.5 ml and filter-sterilizes it before anaerobic addition. The carrier is not stated, so PARTIAL records only verified solute and mass/volume basis.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_713_sulfide_24pct — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_713_sulfide_24pct.
+
+JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock: JCM 713 adds 1 ml separately filter-sterilized 24% Na2S·9H2O stock to Solution C. The percent basis and carrier are not given; preserve literal 24% in the source-qualified identity, omit invented concentration fields, and mark composition PARTIAL. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188: JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock: JCM 713 adds 1 ml separately filter-sterilized 24% Na2S·9H2O stock to Solution C. The percent basis and carrier are not given; preserve literal 24% in the source-qualified identity, omit invented concentration fields, and mark composition PARTIAL.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-atcc_1943_sulfide_25pct — isolated successor delta
+
+identity: supported. Targets: if1201-new-atcc_1943_sulfide_25pct.
+
+ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock: ATCC 1943 explicitly prepares the 2.5% Na2S·9H2O input as a stock under nitrogen and autoclaves it, then doses 10 ml before inoculation. Percent basis and carrier are unspecified; the separate cysteine stock is not a component of this sulfide stock. No identity with PBBM 2.5% stock is inferred. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793: ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock: ATCC 1943 explicitly prepares the 2.5% Na2S·9H2O input as a stock under nitrogen and autoclaves it, then doses 10 ml before inoculation. Percent basis and carrier are unspecified; the separate cysteine stock is not a component of this sulfide stock. No identity with PBBM 2.5% stock is inferred.
+
+CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf: M2760 PBBM directly lists 25 ml Na2S·9H2O (2.5%) as a solution. It gives neither percent basis nor a stock preparation/carrier. No evidence equates this to ATCC 1943 nitrogen-prepared stock merely because both labels say 2.5%. The concrete ATCC 1943 partial-stock proposal provides a conditional comparison target; PBBM applicability is explicitly withheld, rather than inventing another owner distinguished only by source number. Carrier/basis omission limits the comparison and does not erase the source solution identity. ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock: ATCC 1943 explicitly prepares the 2.5% Na2S·9H2O input as a stock under nitrogen and autoclaves it, then doses 10 ml before inoculation. Percent basis and carrier are unspecified; the separate cysteine stock is not a component of this sulfide stock. No identity with PBBM 2.5% stock is inferred.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-edit-naoh — isolated successor delta
+
+identity: supported. Targets: if1201-edit-naoh.
+
+Retype NaOH (1N) and NaOH (0.38 M) as REJECTED_LABEL on pure CHEBI:32145. Preserve exact text and original provenance; these concentration-defined solutions must not resolve globally to the pure solute. All other inherited fields and holds remain. Primary identifier and predicate retained; exact aliases/chemistry changed only as described. Source-specific and role/publication holds are preserved.
+
+CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength is consistent with 1 N; it does not establish identical carrier or full preparation. Chopped-meat protocol occurrences using 1 N are conditional comparisons only. Matching receiving meat recipes establish shared use context, not a distinct NaOH substance. The other bare-N occurrences remain unassigned.
+
+CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength is consistent with 1 N; it does not establish identical carrier or full preparation. Chopped-meat protocol occurrences using 1 N are conditional comparisons only. Matching receiving meat recipes establish shared use context, not a distinct NaOH substance. The other bare-N occurrences remain unassigned.
+
+Integration conditions: Replace inherited content-bound receipts only after complete owner/payload review; no export or hold release is approved.
+
+### if1201-edit-na2moo4_x_2_h2o — isolated successor delta
+
+identity: supported. Targets: if1201-edit-na2moo4_x_2_h2o.
+
+Preserve the assigned Na2Mo4 x 2 H2O rejection and reject ten further unsupported literal formula aliases on the same frozen sodium molybdate dihydrate owner. Independent owner-wide review extends the existing Na2Mo4 x 2 H2O rejection to ten related literal malformed or form-unspecified formula aliases: ['Na2MoSO4 x 2 H2O', 'NaMoO4 x 2 H2O', 'Na2MoSO4', 'NaMoO4', 'Na2MoO7 x 2 H2O', 'Na2MoO7O4 x 2 H2O', 'Na2MO4.2H2O', 'Na2MoO7・2H2O', 'NaMoO4 · 2H2O', 'NaMoO4.2H2O']. CHEBI:75213 denotes disodium molybdate dihydrate, 2H2O.MoO4.2Na. The listed formulas alter sodium/oxygen counts, introduce sulfur, omit hydrate specificity or omit the molybdenum element spelling. Preserve each exact source string and its original provenance as REJECTED_LABEL; do not infer a corrected chemical for any source occurrence. Historical June 16 merge claims cite Edison/MediaDive/OAK generically but do not provide a source-qualified correction witness that establishes universal alias equivalence. The September backfills preserve KG spellings, not independent formula evidence. Primary identifier, structure, roles, counts and source holds remain unchanged. Primary identifier and predicate retained; exact aliases/chemistry changed only as described. Source-specific and role/publication holds are preserved.
+
+KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49: MediaDive 736 retains literal Na2Mo4 x 2 H2O without an independently identifying CAS/structure. The exact intended chemical remains unresolved. The complete candidate-owner review supports a concrete alias-family correction without resolving that source identity. Independent owner-wide review extends the existing Na2Mo4 x 2 H2O rejection to ten related literal malformed or form-unspecified formula aliases: ['Na2MoSO4 x 2 H2O', 'NaMoO4 x 2 H2O', 'Na2MoSO4', 'NaMoO4', 'Na2MoO7 x 2 H2O', 'Na2MoO7O4 x 2 H2O', 'Na2MO4.2H2O', 'Na2MoO7・2H2O', 'NaMoO4 · 2H2O', 'NaMoO4.2H2O']. CHEBI:75213 denotes disodium molybdate dihydrate, 2H2O.MoO4.2Na. The listed formulas alter sodium/oxygen counts, introduce sulfur, omit hydrate specificity or omit the molybdenum element spelling. Preserve each exact source string and its original provenance as REJECTED_LABEL; do not infer a corrected chemical for any source occurrence. Historical June 16 merge claims cite Edison/MediaDive/OAK generically but do not provide a source-qualified correction witness that establishes universal alias equivalence. The September backfills preserve KG spellings, not independent formula evidence. Primary identifier, structure, roles, counts and source holds remain unchanged.
+
+Integration conditions: Replace inherited content-bound receipts only after complete owner/payload review; no export or hold release is approved. This is not blanket owner admission. Remaining annotation/name claims, roles and source-membership corrections require their stated native review; none of the rejected formulas is remapped to a guessed corrected source reagent.
+
+### if1201-edit-na2hpo4_x_12_h2o — isolated successor delta
+
+identity: supported. Targets: if1201-edit-na2hpo4_x_12_h2o.
+
+Replace inherited anhydrous InChI/SMILES with verified exact dodecahydrate ChEBI:91259 chemistry and accurate current source metadata. Reject three unqualified disodium-phosphate aliases and the annotation-only Role label. Preserve exact hydrate synonyms, all prior rejected siblings, CHEBI:91259 identity, history, counts and existing source/role holds. Primary identifier and predicate retained; exact aliases/chemistry changed only as described. Source-specific and role/publication holds are preserved.
+
+KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4: Replace inherited anhydrous InChI/SMILES with verified exact dodecahydrate ChEBI:91259 chemistry and accurate current source metadata. Reject three unqualified disodium-phosphate aliases and the annotation-only Role label. Preserve exact hydrate synonyms, all prior rejected siblings, CHEBI:91259 identity, history, counts and existing source/role holds.
+
+Integration conditions: Replace inherited content-bound receipts only after complete owner/payload review; no export or hold release is approved.
+
+### if1201-new-atcc_1942_sulfide_5pct — isolated successor delta
+
+identity: supported. Targets: if1201-new-atcc_1942_sulfide_5pct.
+
+ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock: ATCC 1942 explicitly doses 10 ml of the 5% nonahydrate stock to obtain final 0.5 g/L: the source-linked ratio supports 5 g per 100 ml (w/v), rather than borrowing a percent basis from another source. The stock is autoclaved under N2; carrier is not given, so PARTIAL remains. This does not establish equivalence to other JCM 5% stocks. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c: ATCC 1942 names a 5% nonahydrate stock autoclaved under N2, 10 ml to obtain final 0.5 g/L. This source supports w/v by explicit dose/final mass relation; preparation basis is source-specific and does not establish all other 5% stocks. ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock: ATCC 1942 explicitly doses 10 ml of the 5% nonahydrate stock to obtain final 0.5 g/L: the source-linked ratio supports 5 g per 100 ml (w/v), rather than borrowing a percent basis from another source. The stock is autoclaved under N2; carrier is not given, so PARTIAL remains. This does not establish equivalence to other JCM 5% stocks. The direct anchor remains ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere. These omissions do not establish a different substance. Preserve their autoclaving and source instructions as conditional comparisons; do not transfer the ATCC basis, carrier or gas treatment to them or assert exact shared preparation.
+
+CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere. These omissions do not establish a different substance. Preserve their autoclaving and source instructions as conditional comparisons; do not transfer the ATCC basis, carrier or gas treatment to them or assert exact shared preparation.
+
+CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere. These omissions do not establish a different substance. Preserve their autoclaving and source instructions as conditional comparisons; do not transfer the ATCC basis, carrier or gas treatment to them or assert exact shared preparation.
+
+CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45: The actual source stock context and preparation instructions remain established. A separate owner is withdrawn because the available material facts do not demonstrate a distinct reagent from the stronger documented anchor. The direct anchor remains ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere. These omissions do not establish a different substance. Preserve their autoclaving and source instructions as conditional comparisons; do not transfer the ATCC basis, carrier or gas treatment to them or assert exact shared preparation.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-mediadive_552_thiosulfate_5g_100ml — isolated successor delta
+
+identity: supported. Targets: if1201-new-mediadive_552_thiosulfate_5g_100ml.
+
+MediaDive 552 source thiosulfate preparation (5 g in 100 ml water): The exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100 ml H2O, dosed as 10 ml. This is a preparation recipe, not an anhydrous solid. Conflicting source CAS/formula/ChEBI fields leave the supplied thiosulfate form UNMAPPED. Water grade, final solution volume and any sterilization are unspecified. The original row is the recipe witness; the live ingredient page confirms identifier conflict, not the stock recipe. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991: The frozen exact raw source row explicitly defines a thiosulfate stock: 5.0 g in 100 ml H2O, dosed 10 ml. Live ingredient 552 still conflicts among bare formula, pentahydrate CAS/formula and PEG-related ChEBI/mass. A bounded source preparation can retain an UNMAPPED thiosulfate-form component; pure anhydrous/hydrate assignment remains blocked. MediaDive 552 source thiosulfate preparation (5 g in 100 ml water): The exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100 ml H2O, dosed as 10 ml. This is a preparation recipe, not an anhydrous solid. Conflicting source CAS/formula/ChEBI fields leave the supplied thiosulfate form UNMAPPED. Water grade, final solution volume and any sterilization are unspecified. The original row is the recipe witness; the live ingredient page confirms identifier conflict, not the stock recipe.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-new-jcm_941_solution_c — isolated successor delta
+
+identity: supported. Targets: if1201-new-jcm_941_solution_c.
+
+JCM 941 Solution C (source Na2S2O4·2H2O): JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O 5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal dihydrate chemical identity remains unverified and UNMAPPED. JCM separately autoclaves Solution C under N2. The whole preparation is proposed only as context; none of the three bare compound cases may resolve to this stock identifier. New source-qualified registry identity; no exact/broad mapping to its solute, no global raw source alias and no automatic whole-case resolution. Typed components describe only asserted parts.
+
+CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8: JCM 941 and live MediaDive solution 4957 explicitly formulate Solution C from source-labelled Na2S2O4·2H2O 5 g and distilled water 40 ml. This supports the preparation context but not exact identity of the solid compound occurrence; anhydrous dithionite must not replace the unresolved dihydrate text. JCM 941 Solution C (source Na2S2O4·2H2O): JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O 5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal dihydrate chemical identity remains unverified and UNMAPPED. JCM separately autoclaves Solution C under N2. The whole preparation is proposed only as context; none of the three bare compound cases may resolve to this stock identifier.
+
+CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020: JCM 941 supplies the same literal Na2S2O4·2H2O Solution C preparation. The case is the named solid component, so a whole-stock registry cannot be substituted for it; hydrate identity remains unresolved. JCM 941 Solution C (source Na2S2O4·2H2O): JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O 5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal dihydrate chemical identity remains unverified and UNMAPPED. JCM separately autoclaves Solution C under N2. The whole preparation is proposed only as context; none of the three bare compound cases may resolve to this stock identifier.
+
+KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45: Live JCM 941 and solution 4957 verify 5 g literal Na2S2O4·2H2O in 40 ml distilled water. This demonstrates Solution C composition but does not identify the exact solid component case as anhydrous dithionite or as the whole solution. JCM 941 Solution C (source Na2S2O4·2H2O): JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O 5 g plus distilled water 40 ml. The recipe batch is explicit, while the literal dihydrate chemical identity remains unverified and UNMAPPED. JCM separately autoclaves Solution C under N2. The whole preparation is proposed only as context; none of the three bare compound cases may resolve to this stock identifier.
+
+Integration conditions: Independent source/payload review and coordinator duplicate/preparation comparison required. All source-specific holds remain. Native schema/partonomy and full-owner review must precede maintained integration.
+
+### if1201-edit-kh2po4-alias-scope — isolated successor delta
+
+identity: supported. Targets: if1201-edit-kh2po4-alias-scope.
+
+Independent review IF1201-R2: preserve the original text and source provenance while changing three unsafe maintained identity aliases to REJECTED_LABEL. The fragment (dibasic) does not identify monobasic potassium dihydrogen phosphate. KH2PO4 (0.4 g/l) and KH2PO4 (7% w/v) encode concentration context or a preparation, not an exact pure-salt identity. This is an owner-alias correction; no claim is made that the standalone (dibasic) fragment currently resolves in a native consumer. Primary identity, chemistry, roles, counts and source holds remain unchanged. Primary identity and mapping predicate unchanged. REJECTED_LABEL preserves text/source while excluding unsafe identity resolution. No global source alias is added.
+
+KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb: Exact raw KH2PO4 is already a resolving synonym/preferred label on the live CHEBI:63036 owner; the calcium-sulfate appearance is rejected-label provenance only. No duplicate or additional same-spelling alias would change the evidence or fix an actual gap. Independent complete-owner alias review found a narrow supported repair: Independent review IF1201-R2: preserve the original text and source provenance while changing three unsafe maintained identity aliases to REJECTED_LABEL. The fragment (dibasic) does not identify monobasic potassium dihydrogen phosphate. KH2PO4 (0.4 g/l) and KH2PO4 (7% w/v) encode concentration context or a preparation, not an exact pure-salt identity. This is an owner-alias correction; no claim is made that the standalone (dibasic) fragment currently resolves in a native consumer. Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+Integration conditions: Withdraw inherited support for the changed payload; complete guarded/native owner review and coordinator integration remain required. Source-specific and role/publication holds remain.
+
+### if1201-edit-nonahydrate-stock-aliases — isolated successor delta
+
+identity: supported. Targets: if1201-edit-nonahydrate-stock-aliases.
+
+Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance, but change their types to REJECTED_LABEL. They identify concentration-qualified preparations and cannot be exact aliases for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts and source holds remain unchanged. Primary identity and mapping predicate unchanged. REJECTED_LABEL preserves text/source while excluding unsafe identity resolution. No global source alias is added.
+
+CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521: DSMZ 901a splits Na2S x 9 H2O and 3.00 g into reagent and amount columns. The pure nonahydrate owner already exists; amount-bearing concatenation is a source parser artifact, not a missing substance or global synonym. Independent complete-owner alias review found a narrow supported repair: Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance, but change their types to REJECTED_LABEL. They identify concentration-qualified preparations and cannot be exact aliases for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563: The JCM source specifies nonahydrate sulfide as a final concentration addition. That is a known solute form and receiving-medium instruction, not a specified stock recipe. No distinct concentration-stock owner can be inferred. Independent complete-owner alias review found a narrow supported repair: Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance, but change their types to REJECTED_LABEL. They identify concentration-qualified preparations and cannot be exact aliases for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc: The JCM source explicitly names nonahydrate and final concentration. Stock strength/carrier are not supplied; the existing pure hydrate must be used only for the scoped component, not the instruction-bearing full label. Independent complete-owner alias review found a narrow supported repair: Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance, but change their types to REJECTED_LABEL. They identify concentration-qualified preparations and cannot be exact aliases for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223: JCM final-concentration language names sodium sulfide nonahydrate, not the preparation concentration. The source instruction must remain occurrence-bound; no new stock recipe follows from the final dose. Independent complete-owner alias review found a narrow supported repair: Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance, but change their types to REJECTED_LABEL. They identify concentration-qualified preparations and cannot be exact aliases for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+Integration conditions: Withdraw inherited support for the changed payload; complete guarded/native owner review and coordinator integration remain required. Source-specific and role/publication holds remain.
+
+### if1201-edit-tris-alias-scope — isolated successor delta
+
+identity: supported. Targets: if1201-edit-tris-alias-scope.
+
+Independent review IF1201-R2: change Tris buffer 1M and nitrilotriacetic acid trisodium salt to REJECTED_LABEL while preserving their exact text and original kg_microbe source provenance. A 1 M buffer preparation is not pure tris, and nitrilotriacetate is a different chemical. Retain the original proposal history and all four hydrochloride/Tris-HCl label rejections. This successor replaces that original proposal once, preserving its source-case link and original before hash. Primary identity, chemistry, roles, counts and source holds remain unchanged. Primary identity and mapping predicate unchanged. REJECTED_LABEL preserves text/source while excluding unsafe identity resolution. No global source alias is added.
+
+CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9: The source explicitly names Tris hydrochloride. Sigma T3253 establishes CAS1185-53-1, formula tris·HCl and molecular weight157.60, distinct from free tris CHEBI:9754 (121.136) and Htris cation CHEBI:46097 (no chloride). Current Tris_Base active hydrochloride aliases erase this salt boundary and should be rejected as resolving base synonyms.
+
+CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757: DSMZ 1669 identifies Tris and a separate 3.00 g amount. The existing Tris owner already has the amount-free name; no owner or resolving full-row alias should be created. Independent complete-owner alias review found a narrow supported repair: Independent review IF1201-R2: change Tris buffer 1M and nitrilotriacetic acid trisodium salt to REJECTED_LABEL while preserving their exact text and original kg_microbe source provenance. A 1 M buffer preparation is not pure tris, and nitrilotriacetate is a different chemical. Retain the original proposal history and all four hydrochloride/Tris-HCl label rejections. This successor replaces that original proposal once, preserving its source-case link and original before hash. Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+Integration conditions: Withdraw inherited support for the changed payload; complete guarded/native owner review and coordinator integration remain required. Source-specific and role/publication holds remain.
+
+### op1201-glycine-naoh-stock — isolated successor delta
+
+identity: supported. Targets: op1201-glycine-naoh-stock.
+
+JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at pH 10.0. This defines a stock preparation even though its solvent and the amount of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L receiving dose is a separate normalization defect. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc: JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at pH 10.0. This defines a stock preparation even though its solvent and the amount of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L receiving dose is a separate normalization defect.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-indicator-stock — isolated successor delta
+
+identity: supported. Targets: op1201-indicator-stock.
+
+The TOGO M2844 comment identifies a 0.5% bromothymol blue solution in 0.2 N KOH, added at 5 mL per litre. A stock owner can preserve this combined preparation. The extracted 0.2NKOH fragment must not denote the whole stock or be added as a global alias. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733: The TOGO M2844 comment identifies a 0.5% bromothymol blue solution in 0.2 N KOH, added at 5 mL per litre. A stock owner can preserve this combined preparation. The extracted 0.2NKOH fragment must not denote the whole stock or be added as a global alias.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-toluene-stock — isolated successor delta
+
+identity: supported. Targets: op1201-toluene-stock.
+
+JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock described as 5.0 mM and added at 40 mL per litre. This supports a stock record separate from pure toluene and from the receiving medium. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5: JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock described as 5.0 mM and added at 40 mL per litre. This supports a stock record separate from pure toluene and from the receiving medium.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-usb-peptic-pepton — isolated successor delta
+
+identity: supported. Targets: op1201-usb-peptic-pepton.
+
+NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material can have an opaque product record without an invented substrate, digestion process or catalog number. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099: NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material can have an opaque product record without an invented substrate, digestion process or catalog number.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-sulfide-ore — isolated successor delta
+
+identity: supported. Targets: op1201-sulfide-ore.
+
+DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348. The source denotes a generic ore material rather than pure FeS2 or a fixed mineral mixture. A registry record preserves that unspecified material without requiring a mineral assay. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683: DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348. The source denotes a generic ore material rather than pure FeS2 or a fixed mineral mixture. A registry record preserves that unspecified material without requiring a mineral assay.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-cereal-leaves — isolated successor delta
+
+identity: supported. Targets: op1201-cereal-leaves.
+
+The existing Cereal_Leaves record denotes cereal leaf tissue of unspecified species, matching the material named in the CCAP recipes. Promote this existing material to a registry identity and preserve the supplier and preparation context without asserting a plant species or extract composition. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6: The existing Cereal_Leaves record denotes cereal leaf tissue of unspecified species, matching the material named in the CCAP recipes. Promote this existing material to a registry identity and preserve the supplier and preparation context without asserting a plant species or extract composition.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.; On approved integration, move this existing owner to data/ingredients/mapped/Cereal_Leaves.yaml and retire the old unmapped path in the same synchronized change. The proposal owner_path remains the exact frozen preimage; do not create a duplicate owner.
+
+### op1201-homopipes-stock — isolated successor delta
+
+identity: supported. Targets: op1201-homopipes-stock.
+
+The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the solute. A separate stock record can assert the named solute and concentration while leaving the vehicle and titrant unspecified. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30: The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the solute. A separate stock record can assert the named solute and concentration while leaving the vehicle and titrant unspecified.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-dl-asparagine-monohydrate — isolated successor delta
+
+identity: supported. Targets: op1201-dl-asparagine-monohydrate.
+
+The source explicitly specifies DL-asparagine with one water. Wako identifies DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate product, but that number also appears on generic asparagine records; it is not copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653 asparagine. The supplied form is graded NARROW_MATCH, producing skos:broadMatch to its broader ontology parent. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd: The source explicitly specifies DL-asparagine with one water. Wako identifies DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate product, but that number also appears on generic asparagine records; it is not copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653 asparagine. The narrower supplied form uses NARROW_MATCH, which emits skos:broadMatch to the ontology parent; this is not exact identity.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-beta-nad-provenance — isolated successor delta
+
+identity: supported. Targets: op1201-beta-nad-provenance.
+
+The source and existing aliases already identify beta-NAD. Maintained history distinguishes the PubChem CAS import from the later ChEBI formula, InChI and SMILES backfill. Correct the conflated chemical-property attribution without changing molecular values, identity, aliases or native holds. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75: The source and existing aliases already identify beta-NAD. Maintained history distinguishes the PubChem CAS import from the later ChEBI formula, InChI and SMILES backfill. Correct the conflated chemical-property attribution without changing molecular values, identity, aliases or native holds.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-laminarin-scope — isolated successor delta
+
+identity: supported. Targets: op1201-laminarin-scope.
+
+CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa. The current owner has this generic identity but a Laminaria digitata procurement label. Align its preferred name to Laminarin and preserve the original species detail in supplied_form and a catalog synonym. No evidence supports a distinct chemical substance requiring a second owner. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6: CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa. The current owner has this generic identity but a Laminaria digitata procurement label. Align its preferred name to Laminarin and preserve the original species detail in supplied_form and a catalog synonym. No evidence supports a distinct chemical substance requiring a second owner.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-bbl-fluid-thioglycollate — isolated successor delta
+
+identity: supported. Targets: op1201-bbl-fluid-thioglycollate.
+
+ATCC474 independently identifies the fluid thioglycollate ingredient in this Eubacterium recipe as BD211260 at 29.5 g/L. The current BD catalog names BBL fluid thioglycollate medium. This resolves the earlier missing product identification and supports a commercial named-medium owner. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394: ATCC474 independently identifies the fluid thioglycollate ingredient in this Eubacterium recipe as BD211260 at 29.5 g/L. The current BD catalog names BBL fluid thioglycollate medium. This resolves the earlier missing product identification and supports a commercial named-medium owner.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-r2a-medium — isolated successor delta
+
+identity: supported. Targets: op1201-r2a-medium.
+
+The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b: The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543 separately denotes R2A agar. A generic named-medium record can preserve this source sense without inventing a supplier or formula.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-r2a-agar-provenance — isolated successor delta
+
+identity: supported. Targets: op1201-r2a-agar-provenance.
+
+The primary TOGO M2972 component is explicitly labelled Difco R2A agar, and the preparation describes plant-stem contact with a medium surface. This supports the agar interpretation of this occurrence and a source-provenance enrichment of the existing R2A-agar owner. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f: The primary TOGO M2972 component is explicitly labelled Difco R2A agar, and the preparation describes plant-stem contact with a medium surface. This supports the agar interpretation of this occurrence and a source-provenance enrichment of the existing R2A-agar owner.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-racemic-sodium-sulfolactate — isolated successor delta
+
+identity: supported. Targets: op1201-racemic-sodium-sulfolactate.
+
+The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate preparation; sodium stoichiometry, hydration and isolated-product purity remain unspecified. The supplied form is graded NARROW_MATCH, producing skos:broadMatch to its broader ontology parent. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573: The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate preparation; sodium stoichiometry, hydration and isolated-product purity remain unspecified. The narrower supplied form uses NARROW_MATCH, which emits skos:broadMatch to the ontology parent; this is not exact identity.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-trypticase-soy-broth — isolated successor delta
+
+identity: supported. Targets: op1201-trypticase-soy-broth.
+
+MICRO:0000113 explicitly includes Trypticase soy broth and describes the standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining its history and counts. The NBRC source uses 30 g of this base with agar supplied separately. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9: MICRO:0000113 explicitly includes Trypticase soy broth and describes the standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining its history and counts. The NBRC source uses 30 g of this base with agar supplied separately.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.; On approved integration, move this existing owner to data/ingredients/mapped/Trypticase_Soy_Broth.yaml and retire the old unmapped path in the same synchronized change. The proposal owner_path remains the exact frozen preimage; do not create a duplicate owner.
+
+### op1201-sodium-lactate-alias-boundary — isolated successor delta
+
+identity: supported. Targets: op1201-sodium-lactate-alias-boundary.
+
+The current owner mixes concentration labels and an L-specific label into the alias channel of sodium lactate. Retype the 1 M stock, 1% stock and L-only label as rejected provenance, retaining their original text and source. The DL salt name and existing identifier remain unchanged; this repairs concrete alias defects without approving the withheld row. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b: The current owner mixes concentration labels and an L-specific label into the alias channel of sodium lactate. Retype the 1 M stock, 1% stock and L-only label as rejected provenance, retaining their original text and source. The DL salt name and existing identifier remain unchanged; this repairs concrete alias defects without approving the withheld row.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-soy-family-source-boundary — isolated successor delta
+
+identity: supported. Targets: op1201-soy-family-source-boundary.
+
+Primary product evidence identifies Soytone as an enzymatic soybean digest. Record that evidence and the exact scope of the four-member family on the active representative, without treating generic soy peptone, Soytone and every Phytone product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone remains rejected. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee: Primary product evidence identifies Soytone as an enzymatic soybean digest. Record that evidence and the exact scope of the four-member family on the active representative, without treating generic soy peptone, Soytone and every Phytone product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone remains rejected.
+
+KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67: Primary product evidence identifies Soytone as an enzymatic soybean digest. Record that evidence and the exact scope of the four-member family on the active representative, without treating generic soy peptone, Soytone and every Phytone product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone remains rejected.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-plain-flour — isolated successor delta
+
+identity: supported. Targets: op1201-plain-flour.
+
+FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e: FOODON:00004510 denotes flour as a powder from cereals or other starchy sources. This generic material sense matches the unqualified plain-flour ingredient; an identified grain is not required to preserve it. Promote the existing owner to the flour term without assigning wheat, bleaching, fortification or an automatic CAS cross-reference.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.; On approved integration, move this existing owner to data/ingredients/mapped/Plain_Flour.yaml and retire the old unmapped path in the same synchronized change. The proposal owner_path remains the exact frozen preimage; do not create a duplicate owner.
+
+### op1201-amphotericin-stock — isolated successor delta
+
+identity: supported. Targets: op1201-amphotericin-stock.
+
+The frozen source explicitly describes an amphotericin preparation at 10 mg/mL, added by volume. A source-qualified stock record can preserve this preparation with an unresolved amphotericin constituent. The record must not assert amphotericin B, a vehicle or a deoxycholate/lipid formulation. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0: The frozen source explicitly describes an amphotericin preparation at 10 mg/mL, added by volume. A source-qualified stock record can preserve this preparation with an unresolved amphotericin constituent. The record must not assert amphotericin B, a vehicle or a deoxycholate/lipid formulation.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### op1201-ferric-pyrophosphate-label — isolated successor delta
+
+identity: supported. Targets: op1201-ferric-pyrophosphate-label.
+
+The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3, structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its preferred label. Correct the preferred label and retain the old string as rejected provenance. This repair does not establish what the malformed source occurrence intended. Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.
+
+KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b: The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3, structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its preferred label. Correct the preferred label and retain the old string as rejected provenance. This repair does not establish what the malformed source occurrence intended.
+
+Integration conditions: Independently review the exact successor bytes.; Do not transfer earlier whole-payload approvals onto changed owners.; Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized.
+
+### vm1201-prop-jcm1023-vitamin — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm1023-vitamin.
+
+JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600. Distinct from JCM 903: pyridoxamine dihydrochloride 15 mg in a 100 ml water batch; JCM 903 uses pyridoxine hydrochloride and DL-calcium pantothenate in 1 L. JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600.
+
+CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216: Split the shared raw label into JCM 1023 and JCM 903 source-defined vitamin-stock proposals. Both full recipes identify the carrier and immediate component amounts; B6 form, batch size and pantothenate content differ. Each original occurrence links to its own stock, without a global Vitamin mixture synonym.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-jcm903-vitamin — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm903-vitamin.
+
+JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367. Eight vitamins plus water; source explicitly says DL-calcium pantothenate. Distinct from JCM 1023 and existing generic Wolfe/Thauer formulas. JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367.
+
+CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216: Split the shared raw label into JCM 1023 and JCM 903 source-defined vitamin-stock proposals. Both full recipes identify the carrier and immediate component amounts; B6 form, batch size and pantothenate content differ. Each original occurrence links to its own stock, without a global Vitamin mixture synonym.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-jcm554-sl10 — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm554-sl10.
+
+JCM 554 separately enumerated SL10 elements preparation as published. Seven metal salts and 1 L distilled water. The current DSMZ 4178 SL10 owner additionally specifies HCl and boric acid with 990 ml water. This owner denotes the JCM 554 recipe as written, without claiming JCM intended an HCl/borate-free universal SL10 standard or silently repairing possible omissions. JCM 554 separately enumerated SL10 elements preparation as published.
+
+CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e: The explicit JCM 554 seven-metal-salt/water recipe supports its own preparation owner as published. Absence of HCl/borate from that enumeration prevents equivalence to the current DSMZ 4178 SL10 owner but does not prevent source-qualified curation. Possible source omissions are retained as a limit, not repaired by guessing.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-nbrc1356-mineral-base1 — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-nbrc1356-mineral-base1.
+
+The aqueous supernatant obtained by the NBRC 1356 Mineral base 1 protocol. Preparation identity is supported despite unmeasured dissolved composition; PARTIAL assertion includes only the known aqueous carrier. The aqueous supernatant obtained by the NBRC 1356 Mineral base 1 protocol.
+
+CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df: NBRC 1356 defines the protocol and aqueous recovered phase of Mineral base1. A preparation-defined owner is now proposed with only water as a known retained component. Charged salt inputs remain in protocol notes, with no invented post-precipitation concentrations or nitrogen component.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-yps-basea — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-yps-basea.
+
+TOGO M2567 YPS medium, source-defined Mineral base A. The source gives enough carrier, constituents and protocol to identify this preparation while the ambiguous token remains unresolved. Complete molecular composition is not asserted. TOGO M2567 YPS medium, source-defined Mineral base A.
+
+CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f: TOGO M2567 Mineral baseA defines an aqueous marine-salt preparation sufficiently to curate its source-qualified identity. Propose PARTIAL components while retaining raw NaII CO3 at 0.2 g as an unresolved input in notes. No carbonate species, hydrate or generic seawater identity is guessed.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-yps-baseb — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-yps-baseb.
+
+TOGO M2567 YPS medium, source-defined Mineral base B. The source gives enough carrier, constituents and protocol to identify this preparation while the ambiguous token remains unresolved. Complete molecular composition is not asserted. TOGO M2567 YPS medium, source-defined Mineral base B.
+
+CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6: TOGO M2567 Mineral baseB has a defined aqueous NTA/trace-salt preparation and pH sequence. Propose the source-qualified stock with PARTIAL components, omitting the unresolved literal AIK(SO4)2 input and retaining KOH without a quantity. pH 6.5 then7.0 is known; no aluminium-potassium sulfate hydrate or cobalt-sulfate hydrate is inferred.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-jcm628-toplayer — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm628-toplayer.
+
+Semisolid top-layer preparation of JCM 628, used by CultureMech:010042. Nested carrier input recipe: [["NH4Cl", "1.0", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O", "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "0.1", "G_PER_SOURCE_BATCH"], ["KH2PO4", "0.05", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]]. JCM 197 trace-mineral stock input recipe: [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"], ["FeCl2·4H2O", "0.4", "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"], ["CoCl2·6H2O", "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"], ["Na2MoO4·2H2O", "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin", "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"], ["Pyridoxine·HCl", "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"], ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1", "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]]. These nested recipes document carrier identity; their water is not counted again as an immediate top-layer component. Semisolid top-layer preparation of JCM 628, used by CultureMech:010042.
+
+CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7: Propose separate JCM 628 freshwater and JCM 629 saltwater semisolid top-layer preparations. The JCM 628 recipe gives100 ml carrier, 1 ml JCM 197 trace minerals, MES0.195 g, NaHCO30.042 g, agarose0.15 g and post-autoclave1 ml JCM 197 trace vitamins. JCM 629 explicitly substitutes its artificial saltwater carrier. Nested carrier/stock recipes and exact occurrence links are retained; pH-adjustment chemistry remains partial and the bottom layer is excluded.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-jcm629-toplayer — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm629-toplayer.
+
+Semisolid top-layer preparation of JCM 629, used by CultureMech:010043. Nested carrier input recipe: [["NaCl", "27.5", "G_PER_SOURCE_BATCH"], ["MgCl2·6H2O", "5.38", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O", "6.78", "G_PER_SOURCE_BATCH"], ["KCl", "0.72", "G_PER_SOURCE_BATCH"], ["NaHCO3", "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "1.4", "G_PER_SOURCE_BATCH"], ["NH4Cl", "1.0", "G_PER_SOURCE_BATCH"], ["KH2PO4", "0.05", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]]. JCM 197 trace-mineral stock input recipe: [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"], ["FeCl2·4H2O", "0.4", "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"], ["CoCl2·6H2O", "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"], ["Na2MoO4·2H2O", "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin", "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"], ["Pyridoxine·HCl", "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"], ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1", "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]]. These nested recipes document carrier identity; their water is not counted again as an immediate top-layer component. Semisolid top-layer preparation of JCM 629, used by CultureMech:010043.
+
+CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7: Propose separate JCM 628 freshwater and JCM 629 saltwater semisolid top-layer preparations. The JCM 628 recipe gives100 ml carrier, 1 ml JCM 197 trace minerals, MES0.195 g, NaHCO30.042 g, agarose0.15 g and post-autoclave1 ml JCM 197 trace vitamins. JCM 629 explicitly substitutes its artificial saltwater carrier. Nested carrier/stock recipes and exact occurrence links are retained; pH-adjustment chemistry remains partial and the bottom layer is excluded.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-nbrc1020-vitamin — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-nbrc1020-vitamin.
+
+Identical enumerated vitamin preparation in NBRC 1020 and NBRC 824. Ten vitamins with B12 2.7 mg, biotin0.5 mg and folic acid0.9 mg per 1 L water; differs from the common nine-vitamin stock and other starred stocks. NBRC 1020 explicitly filter sterilizes the vitamin stock. NBRC 824 does not specify vitamin-stock filtration: its receiving-medium instruction dissolves all ingredients except terephthalate, sulfide and cysteine before autoclaving. The identical enumeration supports a shared input-stock formula only; the receiving-medium processing differs and processed-medium equivalence is not asserted. Identical enumerated vitamin preparation in NBRC 1020 and NBRC 824.
+
+CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2: Split by actual primary formulation: NBRC 1020/824 share the ten-vitamin2.7 mg-B12-per-L-water stock and receive one new proposal. NBRC 1169/1308 match the prior NBRC 1356 common nine-vitamin stock in every source-listed component and batch amount, and join its immutable successor proposal. No globally resolving starred alias is added. NBRC 1020 filters the vitamin stock; NBRC 824 receiving-medium instructions include vitamins before autoclaving. The common enumerated input formula does not establish equivalent processed media.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-nbrc1226-vitamin — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-nbrc1226-vitamin.
+
+NBRC 1226 separately prepared vitamin stock. Vitamin B12 5 mg and lipoic acid5 mg with pABA1 mg per 1 L water, distinct from both common nine-vitamin formula and NBRC 903. NBRC 1226 separately prepared vitamin stock.
+
+CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506: Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12 5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each receive a separate stock proposal. The generic calcium-pantothenate wording is not changed to a D-specific form.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-nbrc903-vitamin — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-nbrc903-vitamin.
+
+NBRC 903 separately prepared vitamin stock. Vitamin B12 0.1 mg, pABA5 mg and lipoic acid5 mg per 1 L water; generic Ca-pantothenate is preserved. The same literal recipe is used by JCM 197 trace vitamins, but a D-specific ATCC calcium-pantothenate formulation and the current Wolfe stock with KH2PO4 are not established identical. NBRC 903 separately prepared vitamin stock.
+
+CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506: Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12 5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each receive a separate stock proposal. The generic calcium-pantothenate wording is not changed to a D-specific form.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-nbrc-common9 — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-nbrc-common9.
+
+Exact same nine-vitamin preparation across original NBRC 1356/857/936 proposal and added NBRC 1169/1308/1050/1086/1274/925 occurrences. Source provenance enrichment only; same preparation and identifier. NBRC 1356: ***Vitamin solution; matching enumerations checked in NBRC 857 and 936
+
+CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51: NBRC 1356, 857 and 936 all supply the same nine-vitamin recipe: biotin/folate 2 mg, pyridoxine-HCl 10 mg, thiamine-HCl/riboflavin/nicotinic acid/Ca-pantothenate 5 mg, pABA 1 mg and B12 0.01 mg per L. This establishes a common source-family stock but differs from current Wolfe/Thauer owners (notably B12, pABA and lipoic acid). The starred generic label cannot serve as a universal alias. The complete immediate source formulation supports an isolated source-qualified registry stock proposal. Its bare local name is retained in scoped notes rather than exported as a global alias.
+
+CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2: Split by actual primary formulation: NBRC 1020/824 share the ten-vitamin2.7 mg-B12-per-L-water stock and receive one new proposal. NBRC 1169/1308 match the prior NBRC 1356 common nine-vitamin stock in every source-listed component and batch amount, and join its immutable successor proposal. No globally resolving starred alias is added. NBRC 1020 filters the vitamin stock; NBRC 824 receiving-medium instructions include vitamins before autoclaving. The common enumerated input formula does not establish equivalent processed media.
+
+CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506: Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12 5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each receive a separate stock proposal. The generic calcium-pantothenate wording is not changed to a D-specific form.
+
+Integration conditions: Independent skeptical review and content-bound SSSOM admission before application; this payload is not admission approval.; Reconcile cross-campaign equivalent recipe proposals before creating a registry owner; source numbers alone do not establish distinct substances.
+
+### vm1201-prop-gibco11120-mem100x — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-gibco11120-mem100x.
+
+Gibco MEM Vitamin Solution(100X), manufacturer product family11120, as requested in NBRC 1407. The official100X formula and FAQ establish nine enumerated solutes in distilled water. Concentrations are manufacturer mg/L of supplied stock, not final NBRC 1407 medium. Historical batch and package code are not asserted. No generic MEM or vitamins alias. Gibco MEM Vitamin Solution(100X), manufacturer product family11120, as requested in NBRC 1407.
+
+CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20: NBRC 1407 identifies Gibco100X MEM vitamins; the official manufacturer formula and newly recovered FAQ establish product family11120, equivalent -052/-037 formulations and distilled-water solvent. Propose the source-qualified manufacturer stock with its nine solutes and aqueous carrier. An absent historical lot/package code alone is not a scientific blocker; no lot-level claim is made.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-jcm510-methane-air — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm510-methane-air.
+
+JCM 510 declared methane-air(50:50) cultivation gas blend. The two immediate gases are explicit in the primary recipe. The ratio basis is not specified, so 50:50 is retained literally in identity/protocol notes without inventing mass, mole or volume fractions. Air is not expanded into guessed gases. This is the supplied gas blend, not the whole growth medium or a neat-methane synonym. JCM 510 declared methane-air(50:50) cultivation gas blend.
+
+CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d: JCM 510 explicitly supplies methane and air as a50:50 cultivation gas blend. Propose that source-qualified two-component preparation with unquantified components; literal ratio basis remains unspecified. No atmospheric gas is inferred from storage or autoclaving and no neat-methane identity or material role is asserted.
+
+Integration conditions: Independent skeptical review of these exact bytes and content-bound SSSOM admission under issue1165 before application.; Retain all frozen source holds and occurrence boundaries. No global alias, molecular exact mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent preparation proposals before registry admission.
+
+### vm1201-prop-jcm515-b12-partial — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm515-b12-partial.
+
+Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515 explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving the receiving medium. The carrier and any additional stock constituents are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence and source hold release are not asserted. NBRC 0.002%(w/v) and TOGO M498 2 mg/100 ml nominal strengths both convert to 20 mg/L. Their carriers and stock provenance are not shown to match JCM 515; retain them only as conditional comparisons, without merging source memberships. Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515 explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving the receiving medium.
+
+CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7: The NBRC sources document0.002%(w/v) B12 stocks, which are20 mg/L. Instead of retaining an absolute no-curation block for unknown carrier, connect this case as a conditional comparison to the concrete JCM 51520 µg/ml partial-stock proposal. No NBRC occurrence is assigned that owner: equal concentration and filtration do not establish shared preparation, and no separate owners are invented merely for different source numbers.
+
+CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c: JCM 515 directly specifies20 µg/ml filter-sterilized B12 stock added after autoclaving. That actual preparation supports a source-qualified PARTIAL owner with generic B12 at 20 mg/L and no asserted solvent. Other20 mg/L-labelled source stocks are comparison-only until their formulations/provenance are bridged.
+
+CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a: New direct TOGO M498 retrieval identifies original JCM 497 and 1 ml of B12(2 mg/100 ml) after autoclaving. This confirms named-stock context and nominal20 mg/L strength. Preserve the case as conditional comparison to the concrete JCM 515 partial-stock proposal; do not infer stock equivalence solely from the concentration or mint another source-number-only owner.
+
+Integration conditions: Independent review and content-bound registry/SSSOM admission before application.; Only anchor occurrences are directly supported; comparison-only cases/occurrences must not acquire exact identity by concentration alone.; Resolve carrier and other formulation details before complete cross-source equivalence. Preserve all source holds and avoid global raw aliases.
+
+### vm1201-prop-jcm647-b12-partial — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm647-b12-partial.
+
+Source-qualified JCM 647 vitamin B12 2 milligram per ml stock. JCM 647 explicitly adds 1 ml of 2 mg/ml B12 stock after filter sterilization and after autoclaving the receiving medium; 2 mg/ml is retained literally. The carrier and any additional stock constituents are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence and source hold release are not asserted. JCM 520, 533 and 650 also state2 mg/ml but no common stock protocol is cited. Those occurrences remain conditional comparisons; equal nominal strength is not preparation equivalence. Source-qualified JCM 647 vitamin B12 2 milligram per ml stock. JCM 647 explicitly adds 1 ml of 2 mg/ml B12 stock after filter sterilization and after autoclaving the receiving medium; 2 mg/ml is retained literally.
+
+CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41: The four JCM recipes name2 mg/ml B12 stock; JCM 647 explicitly filter sterilizes it before post-autoclave addition. Propose that concrete JCM 647 partial preparation at literal2000 mg/L generic B12. Other JCM 520/533/650 occurrences are conditional comparisons only because no common stock protocol is supplied.
+
+Integration conditions: Independent review and content-bound registry/SSSOM admission before application.; Only anchor occurrences are directly supported; comparison-only cases/occurrences must not acquire exact identity by concentration alone.; Resolve carrier and other formulation details before complete cross-source equivalence. Preserve all source holds and avoid global raw aliases.
+
+### vm1201-prop-jcm1354-b12-partial — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-jcm1354-b12-partial.
+
+Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and is retained only as the literal stock label, not converted to mass concentration. The carrier and any additional stock constituents are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence and source hold release are not asserted. The source-defined stock context is sufficient for partial preparation curation; unknown percent basis and carrier limit quantitative decomposition and comparison with other B12 stocks. Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and is retained only as the literal stock label, not converted to mass concentration.
+
+CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e: JCM 1354 explicitly uses a named0.01% B12 liquid stock. Propose its source-qualified preparation with one unquantified generic B12 component and PARTIAL assertion. Neither missing carrier nor missing percent basis prevents this bounded preparation representation; no percent-to-mass conversion is made.
+
+Integration conditions: Independent review and content-bound registry/SSSOM admission before application.; Only anchor occurrences are directly supported; comparison-only cases/occurrences must not acquire exact identity by concentration alone.; Resolve carrier and other formulation details before complete cross-source equivalence. Preserve all source holds and avoid global raw aliases.
+
+### vm1201-prop-atcc2883-b12-partial — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-atcc2883-b12-partial.
+
+Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC 2883 specifies the same 1 ml filter-sterilized0.1 mg/ml B12 stock in its separately described broth and agar preparations. The carrier and any additional stock constituents are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence and source hold release are not asserted. Both receiving recipes are explicitly given in one ATCC 2883 source with the same stock specification. Their separately added3 ml methanol is not assigned as B12 solvent. The stock is not equated to JCM 1354 because its0.01% basis is unstated. Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC 2883 specifies the same 1 ml filter-sterilized0.1 mg/ml B12 stock in its separately described broth and agar preparations.
+
+CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe: ATCC 2883 gives the same 1 ml, 0.1 mg/ml, filter-sterilized B12 stock for its agar and broth recipes. Propose one source-qualified partial stock with generic B12 at 100 mg/L, no guessed carrier. The separately added methanol is excluded from stock composition.
+
+Integration conditions: Independent review and content-bound registry/SSSOM admission before application.; Only anchor occurrences are directly supported; comparison-only cases/occurrences must not acquire exact identity by concentration alone.; Resolve carrier and other formulation details before complete cross-source equivalence. Preserve all source holds and avoid global raw aliases.
+
+### vm1201-prop-togo125-k1-partial — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-togo125-k1-partial.
+
+Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved primary TOGO M125 record identifies JCM 134 and gives0.2 ml of 0.1%Vitamin K1 solution. Percentage basis is unstated and remains a literal label, without converted amount. The carrier and any additional stock constituents are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence and source hold release are not asserted. No recipe-supported equivalence to DSMZ 125 ethanol stock or the 1% OTEB stock exists. The partial preparation preserves the source-defined stock without an invented carrier. Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved primary TOGO M125 record identifies JCM 134 and gives0.2 ml of 0.1%Vitamin K1 solution. Percentage basis is unstated and remains a literal label, without converted amount.
+
+CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e: Successful direct TOGO M125 retrieval now confirms the JCM 134 source identity and 0.2 ml of 0.1%Vitamin K1 solution. Propose that source-qualified partial preparation with generic K1 component; retain the unspecified percent basis and carrier without guesses. The original normalized0.2G_PER_L receiving row remains unvalidated.
+
+Integration conditions: Independent review and content-bound registry/SSSOM admission before application.; Only anchor occurrences are directly supported; comparison-only cases/occurrences must not acquire exact identity by concentration alone.; Resolve carrier and other formulation details before complete cross-source equivalence. Preserve all source holds and avoid global raw aliases.
+
+### vm1201-prop-dsm1245-k1-partial — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-dsm1245-k1-partial.
+
+Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution); MediaDive main2474 corroborates that row. The carrier and any additional stock constituents are unspecified. No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation equivalence and source hold release are not asserted. The source does not state percentage basis, solvent or full stock constituents. These remain explicit partial-composition limits. It is not assigned the unrelated DSMZ 125 ethanol-stock recipe. Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution); MediaDive main2474 corroborates that row.
+
+CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda: The DSMZ 1245 OTEB formula and MediaDive2474 identify a1%K1 liquid stock, so propose the source-qualified OTEB preparation with PARTIAL generic K1 component. The missing percentage basis and solvent limit decomposition, not this preparation-level curation. No ethanol recipe is borrowed from DSMZ 125.
+
+Integration conditions: Independent review and content-bound registry/SSSOM admission before application.; Only anchor occurrences are directly supported; comparison-only cases/occurrences must not acquire exact identity by concentration alone.; Resolve carrier and other formulation details before complete cross-source equivalence. Preserve all source holds and avoid global raw aliases.
+
+### vm1201-prop-thauers-source-comparison — isolated successor delta
+
+identity: supported. Targets: vm1201-prop-thauers-source-comparison.
+
+Enrich the existing Thauer stock owner with verified CultureBotHT and TOGO LS4D preparation provenance, preserving source-specific component forms and the unresolved equivalence bridge. No duplicate owner or new alias. Notes and history only; CultureBotHT component assertion remains separately supported by its actual primary sheet. TOGO LS4D is a comparison source, not proof of exact source-to-owner identity.
+
+CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97: Recovered TOGO M2809 comments explicitly define the LS4D vitamin preparation in distilled water and identify DL-pantothenic acid as calcium salt, while the structured row drops that qualifier. The actual cited CultureBotHT Mixes rows 88–98 independently confirm the existing owner's cyanocobalamin and calcium-pantothenate assertions. A generic TOGO B12 label does not invalidate that more specific primary source. Propose existing-owner notes/history enrichment with both source formulations and preparation limits; preserve components and avoid a potentially duplicate registry owner.
+
+Integration conditions: Apply only against the exact frozen before hash after independent review. Preserve every component, existing assertion, alias, count, role and source hold.; Do not treat the TOGO generic B12 wording as support for cyanocobalamin, or the note as complete formulation equivalence or source membership approval.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| peer-inorganic_forms | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/organics-reviews-inorganics/review.json; Exact final input hashes, complete per-case and per-payload assessments, findings and dispositions | supports | Authorship-separated skeptical review by /root/organics of /root/inorganics. Acceptance is limited to each supported isolated delta and the explicit source scope. |
+| peer-organic_products | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/vitamins-reviews-organics/review-v2.json; Exact final input hashes, complete per-case and per-payload assessments, findings and dispositions | supports | Authorship-separated skeptical review by /root/vitamins of /root/organics. Acceptance is limited to each supported isolated delta and the explicit source scope. |
+| peer-vitamins_mixtures | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/inorganics-reviews-vitamins/review.json; Exact final input hashes, complete per-case and per-payload assessments, findings and dispositions | supports | Authorship-separated skeptical review by /root/inorganics of /root/vitamins. Acceptance is limited to each supported isolated delta and the explicit source scope. |
+| proposal-evidence-001 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-1394663ed57400f4, if1201-water-issue470, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-002 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-64f31eb0476579a8, if1201-primary-10c3a2d31e7137ab, if1201-primary-f3aa0d56850a3c93, if1201-primary-92ffcb555abc9210, if1201-primary-54cb149eda57c032, if1201-primary-ca6f7de858c357ed, if1201-primary-fc60fa14ac19fe3a, if1201-primary-853300b2d56481cc, if1201-primary-80aea86ebd391130, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-003 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-84b42f6bfd1ad444, if1201-primary-8fe937c1ef6c1c21, if1201-primary-c82ef95827660181, if1201-primary-1ad87a1aa8fc3d24, if1201-primary-f59c3dc21ca976da, if1201-cross-shard-candidates, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-004 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-cc603fec73e91848, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-005 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-689514d53e5e1369, if1201-primary-3d311ad09131192a, if1201-primary-59db8f298dee9bfb, if1201-cross-shard-candidates, if1201-guarded-validation, if1201-primary-d282bb942d513790, if1201-primary-14a9fe7673379b44, if1201-primary-6882328e115ad987, if1201-r1-identity-remediation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-006 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-9b35c1d4f58911cf, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-007 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-ac859ea47d4d9d03, if1201-primary-53666f2f2910add2, if1201-primary-ee996b0e5902f74a, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-008 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-9fd6532d63c338f4, if1201-primary-6063631dfac52421, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-009 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-544c5e9dc0318360, if1201-primary-26894032e7d692ab, if1201-primary-50d32021fe18e1e2, if1201-primary-e47baf98c4aac903, if1201-primary-d033b76a58ae85c3, if1201-primary-0bac09f75ad2e9d6, if1201-cross-shard-candidates, if1201-guarded-validation, if1201-primary-dc2ddc346caaa34c, if1201-primary-86fe6ead53a7517a, if1201-primary-7b489d058fc51c0b, if1201-primary-51d53910aec6878a, if1201-primary-d87c8732c8e9fe09, if1201-primary-29bf2a15f30a8422, if1201-primary-9b35c1d4f58911cf, if1201-primary-e0c65da722d0c440, if1201-r2-remediation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-010 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-cbeae375ed659e86, if1201-primary-d750934e49c5d7a2, if1201-primary-a5d42287d2eb7283, if1201-primary-0c1e7fd46063ca00, if1201-guarded-validation, if1201-primary-2dca2ffb29c8ce04, if1201-r1-identity-remediation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-011 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-cbeae375ed659e86, if1201-primary-d750934e49c5d7a2, if1201-primary-a5d42287d2eb7283, if1201-primary-0c1e7fd46063ca00, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-012 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-2dca2ffb29c8ce04, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-013 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-689514d53e5e1369, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-014 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-689514d53e5e1369, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-015 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-689514d53e5e1369, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-016 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-c6b92a666534f07e, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-017 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-8ea073f0e9d75d9e, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-018 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-dd57a72ec921bd3c, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-019 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-001df4b85017801c, if1201-primary-2dca2ffb29c8ce04, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-020 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-Naoh, if1201-ontology-supplement, if1201-primary-dc2ddc346caaa34c, if1201-primary-86fe6ead53a7517a, if1201-primary-7b489d058fc51c0b, if1201-primary-51d53910aec6878a, if1201-primary-d87c8732c8e9fe09, if1201-primary-29bf2a15f30a8422, if1201-primary-9b35c1d4f58911cf, if1201-primary-e0c65da722d0c440, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-021 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-Na2moo4_X_2_H2o, if1201-ontology-supplement, if1201-primary-def9bdc591b3b96e, if1201-guarded-validation, if1201-molybdate-family-remediation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-022 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-Na2hpo4_X_12_H2o, if1201-ontology-supplement, if1201-primary-4e1b890041548188, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-023 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-83778d5874917c61, if1201-guarded-validation, if1201-primary-58ccd738538282df, if1201-primary-a95d21757d9f5e59, if1201-primary-a13248dcb275d6b7, if1201-primary-9887e1e9f99b113c, if1201-primary-e78b87bcb5bcab43, if1201-primary-634a70a4958374a3, if1201-primary-c0f5c1255e118dff, if1201-primary-19f06f111fc4fdb0, if1201-primary-f940371fa4e76949, if1201-primary-72236a4ec58b8c03, if1201-primary-0376ffacc64bf45c, if1201-primary-19dd331064a9de7b, if1201-r2-remediation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-024 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-63e0756405ba0a74, if1201-primary-bd3213e8e18bc3cf, if1201-primary-c1da6498afeeb5b9, if1201-primary-8d27c7160182c078, if-case-178, if-web-ce2b7cd909c3, if-web-aadb6a1f2501, if-web-d02383bc5fc9, if-owner-Na2s2o3, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-025 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-primary-63e0756405ba0a74, if1201-primary-bd3213e8e18bc3cf, if1201-primary-2426089aa323f0d1, if-case-088, if-recipe-6f7c1ca44726, if-recipe-2634a1d01e0c, if-web-63e0756405ba, if-web-5a677c36c3b2, if-web-3b45bf729424, if-case-095, if-recipe-7f7ac2380883, if-case-182, if1201-guarded-validation | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-026 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-r2-primary-ontology, if1201-r2-remediation, if1201-r2-owner-Kh2po4, if-case-172, if-web-b1d793f236e3, if-web-86157efbe8df, if-owner-Kh2po4, if-owner-Caso4_X_2_H2o, if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-case-67, if1201-r2-scope-qualification | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-027 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-r2-primary-ontology, if1201-r2-remediation, if1201-r2-owner-Na2s_X_9_H2o, if-case-061, if-recipe-51c179388067, if-web-509f4e8deec4, if-search-scope, if-owner-Na2s_X_9_H2o, if1201-primary-8ad02ccba6713f38, if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-case-26, if-case-122, if-recipe-a3b644fb57f4, if-recipe-a9708a2e5bc2, if-recipe-333b84d1b452, if-web-2fbb93201d7c, if-web-d02383bc5fc9, if1201-primary-6718fca434ec9e86, if1201-primary-ab5dc27db150377e, if1201-primary-2fbb93201d7c4464, if1201-case-48, if-case-123, if-recipe-9cd6331c8a16, if1201-primary-925c1b91e4cf0122, if1201-case-49, if-case-133, if-recipe-cb9be24c8a79, if1201-primary-b0bcdda4639538e0, if1201-case-52, if1201-r2-scope-qualification | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-028 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: if1201-r2-primary-ontology, if1201-r2-remediation, if-web-6322279750cf, if-web-dc07e461177a, if-web-c9217d1795e3, if-owner-Tris_Base, if1201-r2-owner-Tris_Base, if-case-062, if-recipe-60d8b3566b50, if-web-1d024b1eed84, if1201-primary-1d024b1eed847d33, if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-case-27, if1201-r2-scope-qualification | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-029 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-127, op-context-127-0, op-context-127-1, op-jcm906, op-owner-search, op1201-jcm906, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-030 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-16, op-context-16-0, op-owner-search, op-togo2844, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-031 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-27, op-context-27-0, op-jcm600, op-owner-search, op1201-jcm600, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-032 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-75, op-context-75-0, op-nbrc19, op-owner-search, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-033 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-77, op-context-77-0, op-dsm88, op-owner-search, op1201-dsm88, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-034 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-128, op-ccap-fcgm, op-ccap-ncl, op-context-128-0, op-context-128-1, op-context-128-2, op-owner-search, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-035 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-168, op-homopipes, op-owner-search, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-036 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-181, op-dl-asn, op-l-asn-hydrate, op-owner-search, op1201-chebi-asn, op1201-ols-chebi-dl-asparagine-monohydrate-cas, op1201-ols-ncit-dl-asparagine-monohydrate-cas, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention, op1201-tci-dl-asn, op1201-wako-dl-asn, op1201-peer-remediation-v2 | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-037 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-152, op-nad, op-owner-search, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-038 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-0, op-context-0-0, op-laminarin, op-owner-search, op-togo2313, op1201-chebi-laminarin, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-039 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-50, op-context-50-0, op-owner-search, op-thioglycollate, op1201-atcc177, op1201-atcc474, op1201-bd211260, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-040 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-71, op-context-71-0, op-context-71-1, op-context-71-2, op-owner-search, op-r2a-broth, op1201-ols-micro-0000541, op1201-ols-micro-r2a, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-041 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-74, op-context-74-0, op-owner-search, op-r2a-broth, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention, op1201-togo-M2972 | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-042 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-84, op-context-84-0, op-owner-search, op-search-search-targeted-final, op-sulfolactate, op1201-denger2010, op1201-ols-chebi-38023, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention, op1201-roy2003, op1201-peer-remediation-v2 | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-043 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-121, op-context-121-0, op-context-121-1, op-nbrc1045, op-owner-search, op-source-failures-final, op1201-fao-tsb, op1201-micro-tsb-facts, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-044 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-150, op-lactate, op-owner-search, op1201-chebi-sodium-lactate, op1201-ols-chebi-232798, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention, op1201-sigma-dl-lactate | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-045 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-154, op-case-159, op-owner-search, op-soy-parent, op-soytone, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-046 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-180, op-owner-search, op-plain-flour-primary, op1201-ols-foodon-00001056, op1201-ols-foodon-00004510, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-047 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-183, op-md1140, op-owner-search, op1201-ols-ncit-C124792, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-048 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: op-case-186, op-ferric, op-md583, op-owner-search, op1201-chebi-ferric-pyrophosphate, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-049 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-6546799f4054d96a, vm-source-7f2b0ce2b3712bd9, vm-fetch-d98555f5a92588b7, vm-fetch-62713f58f9b9198e, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm1023-vitamin-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-050 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-6546799f4054d96a, vm-source-7f2b0ce2b3712bd9, vm-fetch-d98555f5a92588b7, vm-fetch-62713f58f9b9198e, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm1023-vitamin-formulation, vm1201-jcm903-vitamin-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-051 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-a5e7048f578e9a94, vm-fetch-570f1b4fb1691bd7, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm554-sl10-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-052 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-1bddaeef3181377d, vm-fetch-30623db6b794d1cc, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-nbrc1356-mineral-base1-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-053 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-yps-basea-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-054 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-yps-baseb-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-055 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-a302e4c31321b1a6, vm-source-f4f6d7b236b1969c, vm-fetch-c098cecab2d758dd, vm-fetch-a131b1e4c01f3b83, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm628-toplayer-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-056 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-a302e4c31321b1a6, vm-source-f4f6d7b236b1969c, vm-fetch-c098cecab2d758dd, vm-fetch-a131b1e4c01f3b83, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm628-toplayer-formulation, vm1201-jcm629-toplayer-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-057 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-cbc0915adbc78590, vm-source-dcc1c4118516c2cf, vm-source-1745f34909d87243, vm-source-50bb0cce5319492f, vm-fetch-cebbb7959811a5e0, vm-fetch-160846f88dd2279e, vm-fetch-0fd90bae1b54ca6d, vm-fetch-b93e8d079ecc8c3a, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-nbrc1020-vitamin-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-058 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-4d03075e31f54261, vm-source-6f158428a9227cae, vm-source-9fd4ffc01aa8e17e, vm-source-efb7d0aab4aaaae6, vm-source-074b3fa4fbe1e64f, vm-source-f2dbcf8bd4878b90, vm-fetch-1962216682ccb735, vm-fetch-7d55379a5f033497, vm-fetch-ede69c87ee45106a, vm-fetch-19ea505c685bcbd1, vm-fetch-2630e40c26a0b155, vm-fetch-571507208cde7532, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-nbrc1226-vitamin-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-059 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-4d03075e31f54261, vm-source-6f158428a9227cae, vm-source-9fd4ffc01aa8e17e, vm-source-efb7d0aab4aaaae6, vm-source-074b3fa4fbe1e64f, vm-source-f2dbcf8bd4878b90, vm-fetch-1962216682ccb735, vm-fetch-7d55379a5f033497, vm-fetch-ede69c87ee45106a, vm-fetch-19ea505c685bcbd1, vm-fetch-2630e40c26a0b155, vm-fetch-571507208cde7532, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-nbrc1226-vitamin-formulation, vm1201-nbrc903-vitamin-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-060 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-1bddaeef3181377d, vm-source-0f2d908b4519424b, vm-source-8f8d8ab982de63af, vm-fetch-30623db6b794d1cc, vm-fetch-340a73a127cf12b1, vm-fetch-88d4946dae9a79f1, vm-owner-search, vm-context-review, vm1201-common9-comparison, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-nbrc1020-vitamin-formulation, vm1201-nbrc1226-vitamin-formulation, vm1201-nbrc903-vitamin-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-061 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-f2766f5b69592252, vm-fetch-ed836cecea20af6a, vm-fetch-ceb5c552701b8401, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-gibco-family, vm1201-gibco11120-mem100x-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-062 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-c0b0d4554e2834be, vm-fetch-8cb3b45ea1a0befe, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm510-methane-air-formulation, vm1201-ontology-preparation-lookup | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-063 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm1201-v2-jcm515-b12-partial, vm-source-854b6dcf861ed9b6, vm-source-67aca2e0877f97c5, vm-source-c41103e1bffce8fe, vm-source-976eb86d9b57c12c, vm-source-d808f0aa2ace6660, vm-source-75fb9fc4dfe911df, vm-source-d8b7d33ea7803346, vm-source-9dcbaea85576f429, vm-source-8ad6af434103870f, vm-source-fe6d2e8e3b1ed412, vm-fetch-8d63f5d6bf7add9c, vm-fetch-636921894a5af6e9, vm-fetch-d0a27f8fd6094838, vm-fetch-33459ff19959f0a4, vm-fetch-a00ba92069f10647, vm-fetch-aa1955658254edc2, vm-fetch-cf077bf0bdc62d35, vm-fetch-eee623b3c27f1466, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup, vm-source-160d8456abf08c80, vm-fetch-6b4b10355e90151d, vm-source-cb9be24c8a79b2de, vm-fetch-b0bcdda4639538e0, vm-fetch-40b048a68ee46539, vm1201-additional-searches, vm1201-v2-togo-M498-primary, vm1201-v2-partial-ontology | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-064 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm1201-v2-jcm647-b12-partial, vm-source-bc32cf125c689b7b, vm-source-a3b644fb57f4705f, vm-source-9cd6331c8a16ef7e, vm-source-333b84d1b452ae73, vm-fetch-49ce3003ab6d743a, vm-fetch-6718fca434ec9e86, vm-fetch-925c1b91e4cf0122, vm-fetch-2fbb93201d7c4464, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-065 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm1201-v2-jcm1354-b12-partial, vm-source-e62537af69aff032, vm-fetch-d4c64546ca9c506f, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-066 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm1201-v2-atcc2883-b12-partial, vm-source-f2f4370eca7bc102, vm-source-ecb4761f8443a59d, vm-fetch-5a1dace1effa1b4b, vm-fetch-72bf6f16f94fb84b, vm-fetch-c5526da1717d8a4e, vm-fetch-cbd3704d6abef0bc, vm-fetch-059a0153b743f1b4, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-067 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm1201-v2-togo125-k1-partial, vm-source-e01e67e4bc776801, vm-fetch-daea294b318eb5b7, vm-fetch-abf0010edf61012b, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-additional-searches, vm1201-j134-republished-dose, vm1201-v2-togo-M125-primary, vm1201-v2-partial-ontology | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-068 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm1201-v2-dsm1245-k1-partial, vm-source-de187077b5ced7b1, vm-fetch-72074c2511658c0e, vm-fetch-ed74f668f50cd885, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| proposal-evidence-069 | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json; Evidence IDs: vm-source-0da67723d980c3db, vm-fetch-3f12a5db4ed87b77, vm-fetch-1694b7b2b244a7c5, vm-fetch-38e9fbc285a50d42, vm-fetch-af319dc1132578d8, vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-additional-searches, vm1201-v3-thauers-culturebotht, vm1201-v3-thauers-togo | supports | Exact successor evidence index; nested sources retain their actual retrieval times, source locators and hashes. This timestamp is index inspection, not source recapture. |
+| structural | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json | supports | Whole-shard accounting, original case/occurrence bindings, evidence captures and proposal backlinks validated. Structural validity does not establish scientific approval. |
+| combined | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json | supports | Every active successor-index proposal passed guarded-writer replay, closed schema, exact preimage and new-owner collision checks, and the combined in-memory native partonomy overlay. Published predecessor and maintained surfaces were unchanged. |
+| peer-verification | reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json | supports | Root checked the actual peer receipts against declared author separation, complete case/payload coverage, final hashes and resolved findings. |
+
+## Limits And Additional Notes
+
+- Exact source identities and preparation details may remain partial. Unspecified solvent, amount, hydrate, vitamer or ratio basis is not invented. Source-local labels are not global aliases.
+- No source hold, role assertion, maintained-record publication or SSSOM admission is approved by this report. Issue1165 remains a separate coordinator admission dependency.
+- Cross-shard NaOH and other possible owner overlaps require coordinator reconciliation against exact candidate payloads; equal labels or strengths alone do not establish complete preparation identity.
+- Original frozen source objects, all published predecessor files and original before-owner hashes remain unchanged. No reset, rebase, amendment, merge, release or downstream rebuild was performed.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T062307Z-w08-issue1201-successor-proposals
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Worker08 issue1201: bounded review of 69 successor proposal deltas'
+started_at: '2026-11-08T05:48:23.581212Z'
+finished_at: '2026-11-08T06:23:07.832711Z'
+reviewer:
+  identity: /root (worker08 integration reviewer)
+  kind: agent
+  independence: self_review
+  independence_basis: Root coordinates research, assembles and validates this bundle.
+    Three exact scientific peer receipts identify distinct primary authors and skeptical
+    reviewers. Root does not claim independent review of its own assembly.
+skill: add-media; MAPPING_SEMANTICS sections3/6; native record-review profile
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: 69 isolated successor proposal deltas have case-specific evidence and authorship-separated
+  skeptical review. This review supports only those bounded proposed changes. Maintained
+  owner records, inherited roles and complete export payloads remain unapproved; source-specific
+  holds remain in the full 188-case successor assessment.
+source:
+  git_revision: 7efd3f8b98f9e822431dcb510c2c242a2569cfc7
+  state: working_tree
+  inputs:
+  - path: .claude/skills/add-media/SKILL.md
+    sha256: c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/curated/mapped_ingredients.yaml
+    sha256: 8d61eef218f045e26fc1f3db6755446008def7bc5d341b1da2e9b08686743e7c
+    role: context
+  - path: data/curated/unmapped_ingredients.yaml
+    sha256: ad752dc70127edd2b4d073c3ff42d136b89d605a9b5a9151922ffe01d8f873d3
+    role: context
+  - path: data/ingredients/mapped/Beta-nad.yaml
+    sha256: 0bd44bae290a7c70cac9a511ccd66088d2322ced90006f0dd02656e725c8652e
+    role: context
+  - path: data/ingredients/mapped/Fe4_Po42.yaml
+    sha256: 7753c9cc1725ebf5abcb935bdb2b6d9a96804eec5bbfb0ad8a0af3e322ebb81a
+    role: context
+  - path: data/ingredients/mapped/Kh2po4.yaml
+    sha256: e721979cb20e8dcac144900643442d9d9e1f01e4d69b2073de8266120419f1c4
+    role: context
+  - path: data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml
+    sha256: d4f28a2fcc8d41bc3e341f84984abeac74178cbf4faac578e107aa9fdd1a11e7
+    role: context
+  - path: data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml
+    sha256: cd257bc36c2fff1d5cb48b640b2146dbca2804e4b67a9e125af1029ee234ca05
+    role: context
+  - path: data/ingredients/mapped/Na2moo4_X_2_H2o.yaml
+    sha256: d8ecba6c664d94d9d0f0da89410808b99c3d6ad4cfeb55f122b5df2d7d8b5612
+    role: context
+  - path: data/ingredients/mapped/Na2s_X_9_H2o.yaml
+    sha256: e849eb5c8d5a8d977c572ee249927b7fb71b40506e23ed6fb4c30d089b5c8219
+    role: context
+  - path: data/ingredients/mapped/Naoh.yaml
+    sha256: b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31
+    role: context
+  - path: data/ingredients/mapped/R2A_agar.yaml
+    sha256: 3f30f8d570aa668cf5fcd5dbccbce6753712cc2103feacef2deee378e502ed90
+    role: context
+  - path: data/ingredients/mapped/Sodium_Lactate.yaml
+    sha256: 56bf2419bf87002c162021c48c4a2c97392a0f97243bd2013d78a4a62e5f69a6
+    role: context
+  - path: data/ingredients/mapped/Soy_Peptone.yaml
+    sha256: 54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c
+    role: context
+  - path: data/ingredients/mapped/Thauers_Vitamin_Mix.yaml
+    sha256: 6f26792c1adf5d2342d0a46faf9f65b9967167d3d5f69f83793c27752c65a90e
+    role: context
+  - path: data/ingredients/mapped/Tris_Base.yaml
+    sha256: fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1
+    role: context
+  - path: data/ingredients/unmapped/Cereal_Leaves.yaml
+    sha256: f6c3584ff828b32a718c7767070c17108388645934d3aef3515b3ff734242616
+    role: context
+  - path: data/ingredients/unmapped/Plain_Flour.yaml
+    sha256: becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e
+    role: context
+  - path: data/ingredients/unmapped/Trypticase_Soy_Broth.yaml
+    sha256: 217e88e15c71823e46aa27998777a68fa5345302fe595c638227511a2d5adc88
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/assembly-provenance.json
+    sha256: dba373c7ce0dc2d0bbbd027101c81481bcfe5ea3d71a6998579a0fc6d25db6f3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/decisions.json
+    sha256: c9eafc98151c019763071ae65eb7ba8afc9c79112e5ab85d70a2f79d4e75650c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+    sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/inorganics-reviews-vitamins/review.json
+    sha256: 42adac77cb78c97ecbe86a89e805456c886d99b85a19cb0a655f4a802b8c639d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/organics-reviews-inorganics/review.json
+    sha256: 23225192ea64d4142f4ad614afffe86aac859f65ee1b4c399a211e15c6dfbd03
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/vitamins-reviews-organics/review-v2.json
+    sha256: 114e122d9e6594ec9a3b0a26e5f5bcc0e67603b3c66ae3ab61dc5b8ba77eadc1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/proposals.json
+    sha256: 5ea5e15c5814d7d3bb4428f264895a50285eb937730c737ce19f4489a39b2bd6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/reassessments.json
+    sha256: 3f640002ee57ebcb385fc6cb5e3f90f2a5868adc4440159bd9592ce7430dfedd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/decisions-v8.json
+    sha256: 584321fba269b9ec35db65d77aa53755985ae143720df9bc9853e90861f4343d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/evidence-v6.json
+    sha256: dddd2ff4208a5d60be41a0a58e336b2793456bfddf9b6c2e9ecf398fadac67f8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposals-v5.json
+    sha256: 79cdbf5d57277feee2d0d24903300063662bed85c4b3efaae32876f26fed875b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml
+    sha256: a85b1bdcfb6e87f41878477d5e2c087671844aaab28c11db236b8072f9abeb97
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml
+    sha256: e8764ed4b0e723390eda05423315f884a30ebeebab4c6196945dbac0944887e8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml
+    sha256: 361ea1795a1bcd9c6306376fa7d18ab4bcc27d05b79f6d9fe920b90b34e2e3fa
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml
+    sha256: 8957268f2bd1f476e353ef63b235c6c17b3790e30b2997b3727932f90806a57d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml
+    sha256: 9123215c0a354e22947b3f940ec33f321a5db9b98a6a9b41f36f09f145e1c2ee
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml
+    sha256: 8b0b272de2c91fb75173d0454c01655cd211deabb23fa5fe087d9d256e50c61d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml
+    sha256: 22c0816d4a59d84a81ade186dbc28f3e5d007e1a7c8421e5926ce852246e4485
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml
+    sha256: d5bad95144efa212a063570979a8c9f2d85bf6953e7ebb407329bff90c8caff7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml
+    sha256: c84290e3a4d4bff0c05bab944a0e3e35afa57ca26b1edfc5803b4d11ea3f9358
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml
+    sha256: 5cec0aa2b6fd714e79269c13ba4d52f160846eee157a7f21b4fc3e0cbfae41ac
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml
+    sha256: c31473af8f023c6fa0f8b6bc51206cfffa1bd4d4494786b1feaa115a5707ce4c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml
+    sha256: 076e800c2850d826008d0a0baaf65fb124e4b98a3e384c21cd0287883e8e5355
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml
+    sha256: 6516d1a4e4e1023fd6002fe728ee1aa234bb553a45fa29ed3f19fb7b6164d273
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml
+    sha256: 48a4b2879ff93e444c27059cb98f94f0d7746d727533e2ca26d031d72bc534b5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml
+    sha256: 15ab83965e57361dae012d3dfba6071ec7c19f6d73f613faac2b179f84396a85
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml
+    sha256: 099914b3171ed03aa7ff129dccb239f4d7c478e852473c03291b856987bd464a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml
+    sha256: 05d113e0a34366c886293f0d9713214886973ada5f595684064353c0c25cc5b4
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml
+    sha256: 568bf840fa163364f3d00536adb9ef6b6662f4e4117d74b32a73827ee81982a3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml
+    sha256: a456e8cf2e0cc35a4caafbd847ea980ddd56072ee8f1adad3f115279e254ba1b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml
+    sha256: 71fdb715cb6de0fe66c3a566893b7fb18a38ece2eeecd1174f3d95170c967973
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml
+    sha256: 64ae342aa82a2711fd9bbc2aefda174a1edd5399c4286bce345b533845da5230
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml
+    sha256: 815ecc27eb7b84f482786459535fd079c39525d8b63980b760d73e149e752fb8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml
+    sha256: 72a67ba607fdcebb0b980ede6fa8dd983509416c749bd95aa08e070a86288008
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml
+    sha256: faeb8ee2f511c4382f39de3982af0d91951b4f4370fa543f3cc73d53e365feb3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Kh2po4.yaml
+    sha256: 3d0229f92f67f101f4af0975821cbd5ba4e26145c0d8b7f9f5d19ca395708b27
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml
+    sha256: 9fa6da94e753adc5df70a2b38831644fe7264ca604c8a6baa9a322c918f50570
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml
+    sha256: da1673baa37eeed978b5ec7bf79f606b9a3d398eb47b69fbdd805a423e1fa3df
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml
+    sha256: a81465916836d3c96601136e45f446324ff92091aeb4b9352386afe0760cee97
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/reassessment-ledger-v7.json
+    sha256: cc68b48bb31174eda28bec65a50d6db188f5076fd4f95ddf9de4e367a167893b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/decisions-v2.json
+    sha256: 4413f9f4e67fecd09287b6308c9d543d2cc33b3a9d3a25eec8a59394c7e36107
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/evidence-v2.json
+    sha256: a4f0dda95013920fdd64073fb7e262d87e7218e0a6f77b0f1c560e4df6c82d46
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2.json
+    sha256: 6127831702a4260f488d7ede65c68ef27d55080cbb4d7b12569c1f7eb538c462
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/DL_Asparagine_Monohydrate.yaml
+    sha256: 7da9966c7a23cdc62b79586bcdb59a44fd27d650f596a1d3997bdae16e9aa0b7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/denger2010_racemic_sodium_sulfolactate.yaml
+    sha256: e40ef291ff85d94cfc157d6641a82f2ddbd654ec6059ddfcce07d060e7494a47
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml
+    sha256: c3abed5996fc15ad308c159b0370460ccdaf241f1cea2c4b822b7629fc5ab103
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Cereal_Leaves.yaml
+    sha256: b1fba22ef1fa4a717e432a038707ef5fcb046e320e8803929cf8627b0cc6ba31
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Fe4_Po42.yaml
+    sha256: a882afca6a6b8b67c46e7ac6f4ef1a9cb7125319a5ac7d4ba05b7941756e5d4a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml
+    sha256: f85d2e05b36fc977caac110157f4e8e32bf2acf927cc2ff2f8ff5dd034803619
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Plain_Flour.yaml
+    sha256: 5aac8116ef12fe8bf6f39f3848440a074cbabf1cbe256ec7fee168851d70c6d3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_agar.yaml
+    sha256: 2eae39fd5af4ae11cd77d4ddeee44eff567947401f99158a7460aa358242205d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml
+    sha256: a615d98d9e8140d38244a9398d16286bc731af03df5a60e87a8e94c4ee192506
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Sodium_Lactate.yaml
+    sha256: 6d13f67992cf49693b79f411484e2f9fa2ac5aefc47e55bf78410319dae4ad6f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml
+    sha256: 4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Trypticase_Soy_Broth.yaml
+    sha256: cbc788c1a9ce7cea22a92b4360bad7c113f0e99c2cf5a1ecbbd3a0e79f99aa6c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml
+    sha256: 81b554525bf72f919ad9bf47f9ca35c94a9490a3684e52e8638eb90b3917c1b8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml
+    sha256: 6937a925973335ef57255154a68a4ae529c0204d4bed064b46066fa0a4aa8f1b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml
+    sha256: ed00735f17981421a6b69b4b158a8cec91198601c2e6f1a853955399c7e8f3dc
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1140_amphotericin_stock_10mg_ml.yaml
+    sha256: edd199d8a7cfcd99ec08c2a8920a62b996b99e996525dc15c9da1dbd3093e036
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1938_homopipes_0_5m_ph5_4.yaml
+    sha256: 36ff78d22c89f985aa00b10cf15d7125964cc405df0cea290c1a7750cebd3972
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/nbrc19_usb_peptic_pepton.yaml
+    sha256: f26ba69bf0d206321128fd85a961009e5d1ef94aded5f139ccdfa837a51d5d6a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/sulfide_ore.yaml
+    sha256: 5d359f882591dead79cc4430fc957c4f5fc54472a4c171a2332bfd3bfc607f2e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml
+    sha256: aec4adced072ccf3c148a4a10c6f4f33721b5e8084cb419647d326adaa2b9295
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/reassessment-ledger-v2.json
+    sha256: bc7b0f4b59120ddd86ac6a335d1ed8b5d0d7f11b21d3f02d5038dd14d5f87b5e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/decisions-v3.json
+    sha256: df7d929bd321a4f6cbf3e2fb5262c07ba9d8c53aaf983eb5ebc4f7a61c41bfb6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/evidence-v3.json
+    sha256: 7d946d7c919336b6fd44a0b72e3c53ce141e81c2675db55333408682d2f8253c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposals-v3.json
+    sha256: 19472e837f51117a33e6168cc066d6c3b1d92a31dc3ce79dc1d9414ad3a3b53f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml
+    sha256: df98f05e075917d533c2e21dc7d6ba8f835a7169d1b57de3dc9d3ea25e0f04e5
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml
+    sha256: fb3fa662f8c8b4a687aa0a2039c9a3ce267bfefa91e32a8fd0b492df47ca9b12
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml
+    sha256: 4f74332fe3d22bdd2c769503a428930a5a150f9331d61af4f4a4b6ce66a77271
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Gibco11120_MEM_Vitamin_Solution_100X.yaml
+    sha256: d259284376e1dd12b57b8dfa415f2ea46e5f79d1e25a1c222ca41e066377e69c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml
+    sha256: b6be1c47bc9a9247bca3dffc2409382ce89d2e55c594724332dcfb8a061e0b09
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml
+    sha256: 2161526aaf27c96824fd1cb2154f324568b41e5fb5a183487420d8121ccf8426
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM510_Methane_Air_50_50.yaml
+    sha256: 8caacd984fd65632058b6b045c609099abf8217de00d3eda3eee884ed7f120ef
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml
+    sha256: b354c025c5af2e0262c2ae5194f2d10a6adf16031e69c171e2111f405141a3cb
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml
+    sha256: 2e7d8b8084ef054cb6f7880af5558ba394033a39d0e2614ccad6d9a93e1ec0ee
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM628_Top_Layer.yaml
+    sha256: 494a731ee510d784117c9afab83e8b9c1c991c73a565dfcf77c595b57a4cd92b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM629_Top_Layer.yaml
+    sha256: 3d740c2f641e70aafb9da85386379ad6ec749a9efed22aee45d4edc59116aa95
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml
+    sha256: 77f56259a0311c636b25750ca0ea3fea236fa857d3f0a2de43a93e2082b7d840
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml
+    sha256: 098f1e4645ec33bb074296f4585c191ed8802c56f9f21efd3629048513555c8e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1020_Vitamin_Solution.yaml
+    sha256: 60ef48ad8288ee1882d9a95ce6150a6bc22ca76c92856a6548ef25f1f3f3ebf7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1226_Vitamin_Solution.yaml
+    sha256: 37de01d1130a7faa1b588da1e6ee7cdcfcc9db111753e63e0094ecddced3c056
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml
+    sha256: 0aa699c355adee9161a6778c5ee892e07d5f85b2cf90494dea6b31f9072f0256
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml
+    sha256: 649355ae72158b74531da36d9342baa19e230609083e03f6a9d0937b6543e0fe
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC903_Vitamin_Solution.yaml
+    sha256: fa908ae82f6299b49c9a0482a402949c660ab313fdd068cf65ada44c77b40006
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml
+    sha256: 39a00b197bdfea2b54061a4bf1e7dc6fbe829c4645c9ba327687ecf7f4b1d863
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M2567_Mineral_Base_B.yaml
+    sha256: 9a622201a834e2aa4ef17bbacb1744500b40958d555f33622ba78953cbb9c38d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml
+    sha256: 5884dfe7efb9e9f007d49d04b96a53e0b983260d98881ac84142c72ce71fcf01
+    role: target
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/reassessment-ledger-v3.json
+    sha256: e348266e138660794fbc5a97894f73d72046a15a1d659256a121038e7a0070d8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json
+    sha256: d40891332867db1e9c59b4f5b1252c790e02df53d21b06a19c7b85cfe43a8ee0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json
+    sha256: 410855c52584f54f2f5cac9f82e7c4051ed45a07bdae9374a0cefd277256cd07
+    role: context
+  - path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json
+    sha256: b6b136759fac181ace72773580250793999d395009e5b287250d937c53e05465
+    role: context
+  - path: reviews/structured/20261108T053536Z-w08-final-isolated-proposals/review.yaml
+    sha256: 53d10d6071588b5c2a2c1c21f4f07132c35967c1166c6c2997832392e1bf8e6e
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- target_id: if1201-new-deionized_water
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/deionized_water.yaml
+  label: Deionized water
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/deionized_water.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-dsmz_trace_2n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_trace_2n_naoh.yaml
+  label: DSMZ trace-preparation 2 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/dsmz_trace_2n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_1130_10n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_1130_10n_naoh.yaml
+  label: JCM 1130 VFA-preparation 10 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_1130_10n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-atcc_nitrosolobus_6n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_nitrosolobus_6n_naoh.yaml
+  label: ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/atcc_nitrosolobus_6n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-pcr_s11_01n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_01n_naoh.yaml
+  label: PCR-S11 EDTA-preparation 0.1 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/pcr_s11_01n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-dsmz_104_8n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/dsmz_104_8n_naoh.yaml
+  label: DSMZ 104 pH-adjustment 8 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/dsmz_104_8n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_221_02n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_221_02n_naoh.yaml
+  label: JCM 221 reducing-preparation 0.2 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_221_02n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-wolin_mineral_05n_naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/wolin_mineral_05n_naoh.yaml
+  label: Wolin mineral-preparation 0.5 N NaOH reagent
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/wolin_mineral_05n_naoh.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-atcc_1340_naoh_4g_100ml
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1340_naoh_4g_100ml.yaml
+  label: ATCC 1340 NaOH reagent (4 g/100 ml)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/atcc_1340_naoh_4g_100ml.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_574_1m_kh2po4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_kh2po4.yaml
+  label: JCM 574 1 M KH2PO4 phosphate-buffer input
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_574_1m_kh2po4.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_574_1m_k2hpo4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_574_1m_k2hpo4.yaml
+  label: JCM 574 1 M K2HPO4 phosphate-buffer input
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_574_1m_k2hpo4.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-pbbm_1m_na2hpo4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pbbm_1m_na2hpo4.yaml
+  label: PBBM 1 M Na2HPO4 phosphate-buffer input
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/pbbm_1m_na2hpo4.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-pcr_s11_50mm_nah2po4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_nah2po4.yaml
+  label: PCR-S11 50 mM NaH2PO4 solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/pcr_s11_50mm_nah2po4.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-pcr_s11_50mm_na2hpo4
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_50mm_na2hpo4.yaml
+  label: PCR-S11 50 mM Na2HPO4 solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/pcr_s11_50mm_na2hpo4.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/pcr_s11_sodium_phosphate_buffer_ph75.yaml
+  label: PCR-S11 sodium phosphate buffer pH 7.5
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/pcr_s11_sodium_phosphate_buffer_ph75.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-allen_m2231_phosphate_stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/allen_m2231_phosphate_stock.yaml
+  label: Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/allen_m2231_phosphate_stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_908_sulfide_10pct_wv
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_908_sulfide_10pct_wv.yaml
+  label: JCM 908 sodium sulfide nonahydrate 10% w/v stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_908_sulfide_10pct_wv.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_713_sulfide_24pct
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_713_sulfide_24pct.yaml
+  label: JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_713_sulfide_24pct.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-atcc_1943_sulfide_25pct
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1943_sulfide_25pct.yaml
+  label: ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/atcc_1943_sulfide_25pct.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-edit-naoh
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Naoh.yaml
+  label: NaOH
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Naoh.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:32145; coordinator synchronizes
+      only after reviewed integration
+- target_id: if1201-edit-na2moo4_x_2_h2o
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v8/Na2moo4_X_2_H2o.yaml
+  label: Na2MoO4 x 2 H2O
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2moo4_X_2_H2o.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:75213; coordinator synchronizes
+      only after reviewed integration
+- target_id: if1201-edit-na2hpo4_x_12_h2o
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/Na2hpo4_X_12_H2o.yaml
+  label: Na2HPO4 x 12 H2O
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2hpo4_X_12_H2o.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:91259; coordinator synchronizes
+      only after reviewed integration
+- target_id: if1201-new-atcc_1942_sulfide_5pct
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/atcc_1942_sulfide_5pct.yaml
+  label: ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/atcc_1942_sulfide_5pct.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-mediadive_552_thiosulfate_5g_100ml
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/mediadive_552_thiosulfate_5g_100ml.yaml
+  label: MediaDive 552 source thiosulfate preparation (5 g in 100 ml water)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/mediadive_552_thiosulfate_5g_100ml.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-new-jcm_941_solution_c
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners/jcm_941_solution_c.yaml
+  label: JCM 941 Solution C (source Na2S2O4·2H2O)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm_941_solution_c.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: if1201-edit-kh2po4-alias-scope
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Kh2po4.yaml
+  label: KH2PO4
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Kh2po4.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:63036; coordinator synchronizes
+      only after reviewed integration
+- target_id: if1201-edit-nonahydrate-stock-aliases
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Na2s_X_9_H2o.yaml
+  label: Na2S x 9 H2O
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2s_X_9_H2o.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:76209; coordinator synchronizes
+      only after reviewed integration
+- target_id: if1201-edit-tris-alias-scope
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/inorganic_forms/proposed_owners_v6/Tris_Base.yaml
+  label: Tris base
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tris_Base.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:9754; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-glycine-naoh-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml
+  label: JCM906 glycine-NaOH buffer, 0.5 M, pH 10.0
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm906_glycine_naoh_buffer_0_5m_ph10.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-indicator-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/togo_m2844_bromothymol_blue_koh_stock.yaml
+  label: TOGO M2844 bromothymol blue 0.5% in 0.2 N KOH
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/togo_m2844_bromothymol_blue_koh_stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-toluene-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/jcm600_water_saturated_toluene_stock.yaml
+  label: JCM600 water-saturated toluene stock, 5.0 mM
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/jcm600_water_saturated_toluene_stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-usb-peptic-pepton
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/nbrc19_usb_peptic_pepton.yaml
+  label: NBRC19 USB Peptic Pepton
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/nbrc19_usb_peptic_pepton.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-sulfide-ore
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/sulfide_ore.yaml
+  label: Sulfide ore
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/sulfide_ore.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-cereal-leaves
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Cereal_Leaves.yaml
+  label: Cereal leaves
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Cereal_Leaves.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=UNMAPPED_0356; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-homopipes-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1938_homopipes_0_5m_ph5_4.yaml
+  label: MediaDive1938 HOMOPIPES stock, 0.5 M, pH 5.4
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/mediadive1938_homopipes_0_5m_ph5_4.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-dl-asparagine-monohydrate
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/DL_Asparagine_Monohydrate.yaml
+  label: DL-Asparagine monohydrate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/DL_Asparagine_Monohydrate.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-beta-nad-provenance
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Beta-nad.yaml
+  label: beta-NAD
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Beta-nad.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:15846; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-laminarin-scope
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Laminarin_From_Laminaria_Digitata.yaml
+  label: Laminarin
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Laminarin_From_Laminaria_Digitata.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:6364; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-bbl-fluid-thioglycollate
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/bbl_fluid_thioglycollate_bd211260.yaml
+  label: BBL Fluid Thioglycollate Medium, BD211260
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/bbl_fluid_thioglycollate_bd211260.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-r2a-medium
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_medium.yaml
+  label: R2A medium
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/R2A_medium.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-r2a-agar-provenance
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/R2A_agar.yaml
+  label: R2A agar
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/R2A_agar.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=MICRO:0000543; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-racemic-sodium-sulfolactate
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals-v2/denger2010_racemic_sodium_sulfolactate.yaml
+  label: Racemic sodium 3-sulfolactate, Denger2010 preparation
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/denger2010_racemic_sodium_sulfolactate.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-trypticase-soy-broth
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Trypticase_Soy_Broth.yaml
+  label: Trypticase soy broth
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Trypticase_Soy_Broth.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=UNMAPPED_0252; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-sodium-lactate-alias-boundary
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Sodium_Lactate.yaml
+  label: Sodium lactate
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Lactate.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:75228; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-soy-family-source-boundary
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml
+  label: Soy peptone
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soy_Peptone.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=FOODON:03315720; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-plain-flour
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Plain_Flour.yaml
+  label: Plain flour
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Plain_Flour.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=UNMAPPED_0490; coordinator synchronizes
+      only after reviewed integration
+- target_id: op1201-amphotericin-stock
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/mediadive1140_amphotericin_stock_10mg_ml.yaml
+  label: MediaDive1140 amphotericin stock, 10 mg/mL
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/mediadive1140_amphotericin_stock_10mg_ml.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: op1201-ferric-pyrophosphate-label
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Fe4_Po42.yaml
+  label: Ferric pyrophosphate
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fe4_Po42.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=CHEBI:132767; coordinator synchronizes
+      only after reviewed integration
+- target_id: vm1201-prop-jcm1023-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1023_Vitamin_Mixture.yaml
+  label: JCM 1023 vitamin mixture
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM1023_Vitamin_Mixture.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm903-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM903_Vitamin_Mixture.yaml
+  label: JCM 903 vitamin mixture
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM903_Vitamin_Mixture.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm554-sl10
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM554_SL10_Elements_Solution.yaml
+  label: JCM 554 SL10 elements solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM554_SL10_Elements_Solution.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-nbrc1356-mineral-base1
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Mineral_Base1_Supernatant.yaml
+  label: NBRC 1356 mineral base 1 supernatant
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/NBRC1356_Mineral_Base1_Supernatant.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-yps-basea
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners/TOGO_M2567_Mineral_Base_A.yaml
+  label: TOGO M2567 mineral base A
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/TOGO_M2567_Mineral_Base_A.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-yps-baseb
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M2567_Mineral_Base_B.yaml
+  label: TOGO M2567 mineral base B
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/TOGO_M2567_Mineral_Base_B.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm628-toplayer
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM628_Top_Layer.yaml
+  label: JCM 628 freshwater top layer
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM628_Top_Layer.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm629-toplayer
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM629_Top_Layer.yaml
+  label: JCM 629 saltwater top layer
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM629_Top_Layer.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-nbrc1020-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1020_Vitamin_Solution.yaml
+  label: NBRC 1020 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/NBRC1020_Vitamin_Solution.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-nbrc1226-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1226_Vitamin_Solution.yaml
+  label: NBRC 1226 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/NBRC1226_Vitamin_Solution.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-nbrc903-vitamin
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC903_Vitamin_Solution.yaml
+  label: NBRC 903 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/NBRC903_Vitamin_Solution.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-nbrc-common9
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/NBRC1356_Vitamin_Solution.yaml
+  label: NBRC 1356 vitamin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/NBRC1356_Vitamin_Solution.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-gibco11120-mem100x
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Gibco11120_MEM_Vitamin_Solution_100X.yaml
+  label: Gibco 11120 MEM vitamin solution 100X
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/Gibco11120_MEM_Vitamin_Solution_100X.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm510-methane-air
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM510_Methane_Air_50_50.yaml
+  label: JCM 510 methane-air 50:50 blend
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM510_Methane_Air_50_50.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm515-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM515_Vitamin_B12_20ug_ml_Stock.yaml
+  label: JCM 515 vitamin B12 20 microgram per ml stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM515_Vitamin_B12_20ug_ml_Stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm647-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM647_Vitamin_B12_2mg_ml_Stock.yaml
+  label: JCM 647 vitamin B12 2 milligram per ml stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM647_Vitamin_B12_2mg_ml_Stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-jcm1354-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/JCM1354_Vitamin_B12_001percent_Stock.yaml
+  label: JCM 1354 vitamin B12 0.01 percent stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/JCM1354_Vitamin_B12_001percent_Stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-atcc2883-b12-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml
+  label: ATCC 2883 vitamin B12 0.1 milligram per ml stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/ATCC2883_Vitamin_B12_01mg_ml_Stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-togo125-k1-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/TOGO_M125_Vitamin_K1_01percent_Stock.yaml
+  label: TOGO M125 vitamin K1 0.1 percent stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/TOGO_M125_Vitamin_K1_01percent_Stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-dsm1245-k1-partial
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml
+  label: DSMZ 1245 OTEB vitamin K1 1 percent stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Proposed new owner only. Intended future maintained path data/ingredients/mapped/DSM1245_OTEB_Vitamin_K1_1percent_Stock.yaml
+    does not exist; no current owner is invented. Coordinator must reconcile duplicates,
+    source membership and publication gates.
+- target_id: vm1201-prop-thauers-source-comparison
+  path: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/vitamins_mixtures/proposed_owners_v3/Thauers_Vitamin_Mix.yaml
+  label: Thauer's vitamin mix
+  kind: source
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Thauers_Vitamin_Mix.yaml
+    role: Actual frozen maintained preimage; isolated proposed delta is not applied
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/mapped_ingredients.yaml
+    role: Aggregate preimage selector identifier=kgmicrobe.ingredient:thauers_vitamin_mix;
+      coordinator synchronizes only after reviewed integration
+scope:
+  description: Every new or superseding payload in the issue1201 successor index;
+    original unchanged proposals retain their prior immutable native review, while
+    all active proposals are revalidated together.
+  selection: Exact new proposal IDs relative to the published 7efd3f8 predecessor;
+    no sampling.
+  coverage: full
+  population_size: 69
+  reviewed_target_ids:
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  exclusions:
+  - target: Cases without a proposed owner delta
+    reason: All 133 original no-change cases are reassessed in the successor case
+      ledger and separate skeptical receipts; source-only cases do not invent native
+      maintained owners.
+  - target: Whole-owner, role and publication approval
+    reason: No maintained data changes; coordinator must reconcile owner conflicts,
+      inherited claims, source memberships and content-bound admission.
+checks:
+- check_id: guarded-schema-partonomy
+  name: 'All active proposal payloads: guarded writer, strict schema and combined
+    native partonomy'
+  status: passed
+  required: true
+  command: .temp/all-unmatched-worker-08/venv/bin/python .temp/all-unmatched-worker-08/issue-1201-v1/validate_final_bundle.py
+  exit_code: 0
+  summary: 113 active payloads; 2956 baseline and 3037 overlay records; zero schema/partonomy
+    failures; 3043 maintained files unchanged.
+  target_ids:
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - combined
+- check_id: source-accounting
+  name: Full assigned shard accounting
+  status: passed
+  required: true
+  command: audit_worker_outcomes_v1.py with exact shard08, successor decisions/evidence/proposals,
+    worker08 artifact root, preliminary-v5 source root and assigned worktree; full
+    invocation in validation receipt
+  exit_code: 0
+  summary: All 188 frozen cases accounted; immutable source and occurrence bindings,
+    capture hashes, original proposal links and successor references checked.
+  target_ids:
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - structural
+- check_id: peer-scope
+  name: Independent scientific peer receipt verification
+  status: passed
+  required: true
+  exit_code: 0
+  summary: Actual peer receipts inspected for every successor case and payload; retained
+    no-change cases also reassessed. Mechanical receipt hashing alone was not treated
+    as scientific review.
+  target_ids:
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - peer-verification
+- check_id: maintained-release-gates
+  name: Post-application synchronization and export admission
+  status: not_applicable
+  required: false
+  summary: Proposal-only work. No maintained data application, generated export, downstream
+    rebuild, role approval or source-hold release was performed.
+  target_ids:
+  - if1201-new-deionized_water
+  - if1201-new-dsmz_trace_2n_naoh
+  - if1201-new-jcm_1130_10n_naoh
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  - if1201-new-pcr_s11_01n_naoh
+  - if1201-new-dsmz_104_8n_naoh
+  - if1201-new-jcm_221_02n_naoh
+  - if1201-new-wolin_mineral_05n_naoh
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  - if1201-new-jcm_574_1m_kh2po4
+  - if1201-new-jcm_574_1m_k2hpo4
+  - if1201-new-pbbm_1m_na2hpo4
+  - if1201-new-pcr_s11_50mm_nah2po4
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  - if1201-new-allen_m2231_phosphate_stock
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  - if1201-new-jcm_713_sulfide_24pct
+  - if1201-new-atcc_1943_sulfide_25pct
+  - if1201-edit-naoh
+  - if1201-edit-na2moo4_x_2_h2o
+  - if1201-edit-na2hpo4_x_12_h2o
+  - if1201-new-atcc_1942_sulfide_5pct
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  - if1201-new-jcm_941_solution_c
+  - if1201-edit-kh2po4-alias-scope
+  - if1201-edit-nonahydrate-stock-aliases
+  - if1201-edit-tris-alias-scope
+  - op1201-glycine-naoh-stock
+  - op1201-indicator-stock
+  - op1201-toluene-stock
+  - op1201-usb-peptic-pepton
+  - op1201-sulfide-ore
+  - op1201-cereal-leaves
+  - op1201-homopipes-stock
+  - op1201-dl-asparagine-monohydrate
+  - op1201-beta-nad-provenance
+  - op1201-laminarin-scope
+  - op1201-bbl-fluid-thioglycollate
+  - op1201-r2a-medium
+  - op1201-r2a-agar-provenance
+  - op1201-racemic-sodium-sulfolactate
+  - op1201-trypticase-soy-broth
+  - op1201-sodium-lactate-alias-boundary
+  - op1201-soy-family-source-boundary
+  - op1201-plain-flour
+  - op1201-amphotericin-stock
+  - op1201-ferric-pyrophosphate-label
+  - vm1201-prop-jcm1023-vitamin
+  - vm1201-prop-jcm903-vitamin
+  - vm1201-prop-jcm554-sl10
+  - vm1201-prop-nbrc1356-mineral-base1
+  - vm1201-prop-yps-basea
+  - vm1201-prop-yps-baseb
+  - vm1201-prop-jcm628-toplayer
+  - vm1201-prop-jcm629-toplayer
+  - vm1201-prop-nbrc1020-vitamin
+  - vm1201-prop-nbrc1226-vitamin
+  - vm1201-prop-nbrc903-vitamin
+  - vm1201-prop-nbrc-common9
+  - vm1201-prop-gibco11120-mem100x
+  - vm1201-prop-jcm510-methane-air
+  - vm1201-prop-jcm515-b12-partial
+  - vm1201-prop-jcm647-b12-partial
+  - vm1201-prop-jcm1354-b12-partial
+  - vm1201-prop-atcc2883-b12-partial
+  - vm1201-prop-togo125-k1-partial
+  - vm1201-prop-dsm1245-k1-partial
+  - vm1201-prop-thauers-source-comparison
+evidence:
+- evidence_id: peer-inorganic_forms
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/organics-reviews-inorganics/review.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 23225192ea64d4142f4ad614afffe86aac859f65ee1b4c399a211e15c6dfbd03
+  locator: Exact final input hashes, complete per-case and per-payload assessments,
+    findings and dispositions
+  summary: Authorship-separated skeptical review by /root/organics of /root/inorganics.
+    Acceptance is limited to each supported isolated delta and the explicit source
+    scope.
+- evidence_id: peer-organic_products
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/vitamins-reviews-organics/review-v2.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 114e122d9e6594ec9a3b0a26e5f5bcc0e67603b3c66ae3ab61dc5b8ba77eadc1
+  locator: Exact final input hashes, complete per-case and per-payload assessments,
+    findings and dispositions
+  summary: Authorship-separated skeptical review by /root/vitamins of /root/organics.
+    Acceptance is limited to each supported isolated delta and the explicit source
+    scope.
+- evidence_id: peer-vitamins_mixtures
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/independent/inorganics-reviews-vitamins/review.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 42adac77cb78c97ecbe86a89e805456c886d99b85a19cb0a655f4a802b8c639d
+  locator: Exact final input hashes, complete per-case and per-payload assessments,
+    findings and dispositions
+  summary: Authorship-separated skeptical review by /root/inorganics of /root/vitamins.
+    Acceptance is limited to each supported isolated delta and the explicit source
+    scope.
+- evidence_id: proposal-evidence-001
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-1394663ed57400f4, if1201-water-issue470, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-002
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-64f31eb0476579a8, if1201-primary-10c3a2d31e7137ab, if1201-primary-f3aa0d56850a3c93,
+    if1201-primary-92ffcb555abc9210, if1201-primary-54cb149eda57c032, if1201-primary-ca6f7de858c357ed,
+    if1201-primary-fc60fa14ac19fe3a, if1201-primary-853300b2d56481cc, if1201-primary-80aea86ebd391130,
+    if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-003
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-84b42f6bfd1ad444, if1201-primary-8fe937c1ef6c1c21, if1201-primary-c82ef95827660181,
+    if1201-primary-1ad87a1aa8fc3d24, if1201-primary-f59c3dc21ca976da, if1201-cross-shard-candidates,
+    if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-004
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-cc603fec73e91848, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-005
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-689514d53e5e1369, if1201-primary-3d311ad09131192a, if1201-primary-59db8f298dee9bfb,
+    if1201-cross-shard-candidates, if1201-guarded-validation, if1201-primary-d282bb942d513790,
+    if1201-primary-14a9fe7673379b44, if1201-primary-6882328e115ad987, if1201-r1-identity-remediation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-006
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-9b35c1d4f58911cf, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-007
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-ac859ea47d4d9d03, if1201-primary-53666f2f2910add2, if1201-primary-ee996b0e5902f74a,
+    if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-008
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-9fd6532d63c338f4, if1201-primary-6063631dfac52421, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-009
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-544c5e9dc0318360, if1201-primary-26894032e7d692ab, if1201-primary-50d32021fe18e1e2,
+    if1201-primary-e47baf98c4aac903, if1201-primary-d033b76a58ae85c3, if1201-primary-0bac09f75ad2e9d6,
+    if1201-cross-shard-candidates, if1201-guarded-validation, if1201-primary-dc2ddc346caaa34c,
+    if1201-primary-86fe6ead53a7517a, if1201-primary-7b489d058fc51c0b, if1201-primary-51d53910aec6878a,
+    if1201-primary-d87c8732c8e9fe09, if1201-primary-29bf2a15f30a8422, if1201-primary-9b35c1d4f58911cf,
+    if1201-primary-e0c65da722d0c440, if1201-r2-remediation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-010
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-cbeae375ed659e86, if1201-primary-d750934e49c5d7a2, if1201-primary-a5d42287d2eb7283,
+    if1201-primary-0c1e7fd46063ca00, if1201-guarded-validation, if1201-primary-2dca2ffb29c8ce04,
+    if1201-r1-identity-remediation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-011
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-cbeae375ed659e86, if1201-primary-d750934e49c5d7a2, if1201-primary-a5d42287d2eb7283,
+    if1201-primary-0c1e7fd46063ca00, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-012
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-2dca2ffb29c8ce04, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-013
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-689514d53e5e1369, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-014
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-689514d53e5e1369, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-015
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-689514d53e5e1369, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-016
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-c6b92a666534f07e, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-017
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-8ea073f0e9d75d9e, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-018
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-dd57a72ec921bd3c, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-019
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-001df4b85017801c, if1201-primary-2dca2ffb29c8ce04, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-020
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-Naoh, if1201-ontology-supplement, if1201-primary-dc2ddc346caaa34c,
+    if1201-primary-86fe6ead53a7517a, if1201-primary-7b489d058fc51c0b, if1201-primary-51d53910aec6878a,
+    if1201-primary-d87c8732c8e9fe09, if1201-primary-29bf2a15f30a8422, if1201-primary-9b35c1d4f58911cf,
+    if1201-primary-e0c65da722d0c440, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-021
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-Na2moo4_X_2_H2o, if1201-ontology-supplement,
+    if1201-primary-def9bdc591b3b96e, if1201-guarded-validation, if1201-molybdate-family-remediation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-022
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-Na2hpo4_X_12_H2o, if1201-ontology-supplement,
+    if1201-primary-4e1b890041548188, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-023
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-83778d5874917c61, if1201-guarded-validation, if1201-primary-58ccd738538282df,
+    if1201-primary-a95d21757d9f5e59, if1201-primary-a13248dcb275d6b7, if1201-primary-9887e1e9f99b113c,
+    if1201-primary-e78b87bcb5bcab43, if1201-primary-634a70a4958374a3, if1201-primary-c0f5c1255e118dff,
+    if1201-primary-19f06f111fc4fdb0, if1201-primary-f940371fa4e76949, if1201-primary-72236a4ec58b8c03,
+    if1201-primary-0376ffacc64bf45c, if1201-primary-19dd331064a9de7b, if1201-r2-remediation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-024
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-63e0756405ba0a74, if1201-primary-bd3213e8e18bc3cf, if1201-primary-c1da6498afeeb5b9,
+    if1201-primary-8d27c7160182c078, if-case-178, if-web-ce2b7cd909c3, if-web-aadb6a1f2501,
+    if-web-d02383bc5fc9, if-owner-Na2s2o3, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-025
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement,
+    if1201-primary-63e0756405ba0a74, if1201-primary-bd3213e8e18bc3cf, if1201-primary-2426089aa323f0d1,
+    if-case-088, if-recipe-6f7c1ca44726, if-recipe-2634a1d01e0c, if-web-63e0756405ba,
+    if-web-5a677c36c3b2, if-web-3b45bf729424, if-case-095, if-recipe-7f7ac2380883,
+    if-case-182, if1201-guarded-validation'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-026
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-r2-primary-ontology, if1201-r2-remediation, if1201-r2-owner-Kh2po4,
+    if-case-172, if-web-b1d793f236e3, if-web-86157efbe8df, if-owner-Kh2po4, if-owner-Caso4_X_2_H2o,
+    if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-case-67,
+    if1201-r2-scope-qualification'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-027
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-r2-primary-ontology, if1201-r2-remediation, if1201-r2-owner-Na2s_X_9_H2o,
+    if-case-061, if-recipe-51c179388067, if-web-509f4e8deec4, if-search-scope, if-owner-Na2s_X_9_H2o,
+    if1201-primary-8ad02ccba6713f38, if1201-owner-search, if1201-ontology-search,
+    if1201-ontology-supplement, if1201-case-26, if-case-122, if-recipe-a3b644fb57f4,
+    if-recipe-a9708a2e5bc2, if-recipe-333b84d1b452, if-web-2fbb93201d7c, if-web-d02383bc5fc9,
+    if1201-primary-6718fca434ec9e86, if1201-primary-ab5dc27db150377e, if1201-primary-2fbb93201d7c4464,
+    if1201-case-48, if-case-123, if-recipe-9cd6331c8a16, if1201-primary-925c1b91e4cf0122,
+    if1201-case-49, if-case-133, if-recipe-cb9be24c8a79, if1201-primary-b0bcdda4639538e0,
+    if1201-case-52, if1201-r2-scope-qualification'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-028
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: if1201-r2-primary-ontology, if1201-r2-remediation, if-web-6322279750cf,
+    if-web-dc07e461177a, if-web-c9217d1795e3, if-owner-Tris_Base, if1201-r2-owner-Tris_Base,
+    if-case-062, if-recipe-60d8b3566b50, if-web-1d024b1eed84, if1201-primary-1d024b1eed847d33,
+    if1201-owner-search, if1201-ontology-search, if1201-ontology-supplement, if1201-case-27,
+    if1201-r2-scope-qualification'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-029
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-127, op-context-127-0, op-context-127-1, op-jcm906,
+    op-owner-search, op1201-jcm906, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-030
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-16, op-context-16-0, op-owner-search, op-togo2844,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-031
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-27, op-context-27-0, op-jcm600, op-owner-search,
+    op1201-jcm600, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-032
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-75, op-context-75-0, op-nbrc19, op-owner-search,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-033
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-77, op-context-77-0, op-dsm88, op-owner-search,
+    op1201-dsm88, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-034
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-128, op-ccap-fcgm, op-ccap-ncl, op-context-128-0,
+    op-context-128-1, op-context-128-2, op-owner-search, op1201-ontology-lookup, op1201-owner-lookup,
+    op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-035
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-168, op-homopipes, op-owner-search, op1201-ontology-lookup,
+    op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-036
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-181, op-dl-asn, op-l-asn-hydrate, op-owner-search,
+    op1201-chebi-asn, op1201-ols-chebi-dl-asparagine-monohydrate-cas, op1201-ols-ncit-dl-asparagine-monohydrate-cas,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention, op1201-tci-dl-asn,
+    op1201-wako-dl-asn, op1201-peer-remediation-v2'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-037
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-152, op-nad, op-owner-search, op1201-ontology-lookup,
+    op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-038
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-0, op-context-0-0, op-laminarin, op-owner-search,
+    op-togo2313, op1201-chebi-laminarin, op1201-ontology-lookup, op1201-owner-lookup,
+    op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-039
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-50, op-context-50-0, op-owner-search, op-thioglycollate,
+    op1201-atcc177, op1201-atcc474, op1201-bd211260, op1201-ontology-lookup, op1201-owner-lookup,
+    op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-040
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-71, op-context-71-0, op-context-71-1, op-context-71-2,
+    op-owner-search, op-r2a-broth, op1201-ols-micro-0000541, op1201-ols-micro-r2a,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-041
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-74, op-context-74-0, op-owner-search, op-r2a-broth,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention, op1201-togo-M2972'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-042
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-84, op-context-84-0, op-owner-search, op-search-search-targeted-final,
+    op-sulfolactate, op1201-denger2010, op1201-ols-chebi-38023, op1201-ontology-lookup,
+    op1201-owner-lookup, op1201-private-retention, op1201-roy2003, op1201-peer-remediation-v2'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-043
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-121, op-context-121-0, op-context-121-1, op-nbrc1045,
+    op-owner-search, op-source-failures-final, op1201-fao-tsb, op1201-micro-tsb-facts,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-044
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-150, op-lactate, op-owner-search, op1201-chebi-sodium-lactate,
+    op1201-ols-chebi-232798, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention,
+    op1201-sigma-dl-lactate'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-045
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-154, op-case-159, op-owner-search, op-soy-parent,
+    op-soytone, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-046
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-180, op-owner-search, op-plain-flour-primary, op1201-ols-foodon-00001056,
+    op1201-ols-foodon-00004510, op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-047
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-183, op-md1140, op-owner-search, op1201-ols-ncit-C124792,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-048
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: op-case-186, op-ferric, op-md583, op-owner-search, op1201-chebi-ferric-pyrophosphate,
+    op1201-ontology-lookup, op1201-owner-lookup, op1201-private-retention'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-049
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-6546799f4054d96a, vm-source-7f2b0ce2b3712bd9,
+    vm-fetch-d98555f5a92588b7, vm-fetch-62713f58f9b9198e, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm1023-vitamin-formulation,
+    vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-050
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-6546799f4054d96a, vm-source-7f2b0ce2b3712bd9,
+    vm-fetch-d98555f5a92588b7, vm-fetch-62713f58f9b9198e, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm1023-vitamin-formulation,
+    vm1201-jcm903-vitamin-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-051
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-a5e7048f578e9a94, vm-fetch-570f1b4fb1691bd7, vm-owner-search,
+    vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm554-sl10-formulation,
+    vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-052
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-1bddaeef3181377d, vm-fetch-30623db6b794d1cc, vm-owner-search,
+    vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-nbrc1356-mineral-base1-formulation,
+    vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-053
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e,
+    vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup,
+    vm1201-yps-basea-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-054
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-cf9c1e5decfc31a5, vm-fetch-6065a9ded913c84e, vm-fetch-9c910b435d58653e,
+    vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup,
+    vm1201-yps-baseb-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-055
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-a302e4c31321b1a6, vm-source-f4f6d7b236b1969c,
+    vm-fetch-c098cecab2d758dd, vm-fetch-a131b1e4c01f3b83, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm628-toplayer-formulation,
+    vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-056
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-a302e4c31321b1a6, vm-source-f4f6d7b236b1969c,
+    vm-fetch-c098cecab2d758dd, vm-fetch-a131b1e4c01f3b83, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm628-toplayer-formulation,
+    vm1201-jcm629-toplayer-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-057
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-cbc0915adbc78590, vm-source-dcc1c4118516c2cf,
+    vm-source-1745f34909d87243, vm-source-50bb0cce5319492f, vm-fetch-cebbb7959811a5e0,
+    vm-fetch-160846f88dd2279e, vm-fetch-0fd90bae1b54ca6d, vm-fetch-b93e8d079ecc8c3a,
+    vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup,
+    vm1201-v2-nbrc1020-vitamin-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-058
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-4d03075e31f54261, vm-source-6f158428a9227cae,
+    vm-source-9fd4ffc01aa8e17e, vm-source-efb7d0aab4aaaae6, vm-source-074b3fa4fbe1e64f,
+    vm-source-f2dbcf8bd4878b90, vm-fetch-1962216682ccb735, vm-fetch-7d55379a5f033497,
+    vm-fetch-ede69c87ee45106a, vm-fetch-19ea505c685bcbd1, vm-fetch-2630e40c26a0b155,
+    vm-fetch-571507208cde7532, vm-owner-search, vm-context-review, vm1201-frozen-reinspection,
+    vm1201-owner-lookup, vm1201-nbrc1226-vitamin-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-059
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-4d03075e31f54261, vm-source-6f158428a9227cae,
+    vm-source-9fd4ffc01aa8e17e, vm-source-efb7d0aab4aaaae6, vm-source-074b3fa4fbe1e64f,
+    vm-source-f2dbcf8bd4878b90, vm-fetch-1962216682ccb735, vm-fetch-7d55379a5f033497,
+    vm-fetch-ede69c87ee45106a, vm-fetch-19ea505c685bcbd1, vm-fetch-2630e40c26a0b155,
+    vm-fetch-571507208cde7532, vm-owner-search, vm-context-review, vm1201-frozen-reinspection,
+    vm1201-owner-lookup, vm1201-nbrc1226-vitamin-formulation, vm1201-nbrc903-vitamin-formulation,
+    vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-060
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-1bddaeef3181377d, vm-source-0f2d908b4519424b,
+    vm-source-8f8d8ab982de63af, vm-fetch-30623db6b794d1cc, vm-fetch-340a73a127cf12b1,
+    vm-fetch-88d4946dae9a79f1, vm-owner-search, vm-context-review, vm1201-common9-comparison,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-nbrc1020-vitamin-formulation,
+    vm1201-nbrc1226-vitamin-formulation, vm1201-nbrc903-vitamin-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-061
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-f2766f5b69592252, vm-fetch-ed836cecea20af6a, vm-fetch-ceb5c552701b8401,
+    vm-owner-search, vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup,
+    vm1201-gibco-family, vm1201-gibco11120-mem100x-formulation, vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-062
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-c0b0d4554e2834be, vm-fetch-8cb3b45ea1a0befe, vm-owner-search,
+    vm-context-review, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-jcm510-methane-air-formulation,
+    vm1201-ontology-preparation-lookup'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-063
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm1201-v2-jcm515-b12-partial, vm-source-854b6dcf861ed9b6,
+    vm-source-67aca2e0877f97c5, vm-source-c41103e1bffce8fe, vm-source-976eb86d9b57c12c,
+    vm-source-d808f0aa2ace6660, vm-source-75fb9fc4dfe911df, vm-source-d8b7d33ea7803346,
+    vm-source-9dcbaea85576f429, vm-source-8ad6af434103870f, vm-source-fe6d2e8e3b1ed412,
+    vm-fetch-8d63f5d6bf7add9c, vm-fetch-636921894a5af6e9, vm-fetch-d0a27f8fd6094838,
+    vm-fetch-33459ff19959f0a4, vm-fetch-a00ba92069f10647, vm-fetch-aa1955658254edc2,
+    vm-fetch-cf077bf0bdc62d35, vm-fetch-eee623b3c27f1466, vm-owner-search, vm-context-review,
+    vm-shared-0, vm-shared-1, vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup,
+    vm-source-160d8456abf08c80, vm-fetch-6b4b10355e90151d, vm-source-cb9be24c8a79b2de,
+    vm-fetch-b0bcdda4639538e0, vm-fetch-40b048a68ee46539, vm1201-additional-searches,
+    vm1201-v2-togo-M498-primary, vm1201-v2-partial-ontology'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-064
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm1201-v2-jcm647-b12-partial, vm-source-bc32cf125c689b7b,
+    vm-source-a3b644fb57f4705f, vm-source-9cd6331c8a16ef7e, vm-source-333b84d1b452ae73,
+    vm-fetch-49ce3003ab6d743a, vm-fetch-6718fca434ec9e86, vm-fetch-925c1b91e4cf0122,
+    vm-fetch-2fbb93201d7c4464, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1,
+    vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-065
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm1201-v2-jcm1354-b12-partial, vm-source-e62537af69aff032,
+    vm-fetch-d4c64546ca9c506f, vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1,
+    vm-shared-2, vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-066
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm1201-v2-atcc2883-b12-partial, vm-source-f2f4370eca7bc102,
+    vm-source-ecb4761f8443a59d, vm-fetch-5a1dace1effa1b4b, vm-fetch-72bf6f16f94fb84b,
+    vm-fetch-c5526da1717d8a4e, vm-fetch-cbd3704d6abef0bc, vm-fetch-059a0153b743f1b4,
+    vm-owner-search, vm-context-review, vm-shared-0, vm-shared-1, vm-shared-2, vm1201-frozen-reinspection,
+    vm1201-owner-lookup, vm1201-v2-partial-ontology'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-067
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm1201-v2-togo125-k1-partial, vm-source-e01e67e4bc776801,
+    vm-fetch-daea294b318eb5b7, vm-fetch-abf0010edf61012b, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-additional-searches, vm1201-j134-republished-dose,
+    vm1201-v2-togo-M125-primary, vm1201-v2-partial-ontology'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-068
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm1201-v2-dsm1245-k1-partial, vm-source-de187077b5ced7b1,
+    vm-fetch-72074c2511658c0e, vm-fetch-ed74f668f50cd885, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-v2-partial-ontology'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: proposal-evidence-069
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/evidence.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  snapshot_sha256: 1d7d38f3c4dfbc78d7722ece79b5e2487e88cc6c3c44bf451f2d5c0fc32c7b82
+  locator: 'Evidence IDs: vm-source-0da67723d980c3db, vm-fetch-3f12a5db4ed87b77, vm-fetch-1694b7b2b244a7c5,
+    vm-fetch-38e9fbc285a50d42, vm-fetch-af319dc1132578d8, vm-owner-search, vm-context-review,
+    vm1201-frozen-reinspection, vm1201-owner-lookup, vm1201-additional-searches, vm1201-v3-thauers-culturebotht,
+    vm1201-v3-thauers-togo'
+  summary: Exact successor evidence index; nested sources retain their actual retrieval
+    times, source locators and hashes. This timestamp is index inspection, not source
+    recapture.
+- evidence_id: structural
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/structural-audit.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  summary: Whole-shard accounting, original case/occurrence bindings, evidence captures
+    and proposal backlinks validated. Structural validity does not establish scientific
+    approval.
+  snapshot_sha256: d40891332867db1e9c59b4f5b1252c790e02df53d21b06a19c7b85cfe43a8ee0
+- evidence_id: combined
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/combined-validation.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  summary: Every active successor-index proposal passed guarded-writer replay, closed
+    schema, exact preimage and new-owner collision checks, and the combined in-memory
+    native partonomy overlay. Published predecessor and maintained surfaces were unchanged.
+  snapshot_sha256: 410855c52584f54f2f5cac9f82e7c4051ed45a07bdae9374a0cefd277256cd07
+- evidence_id: peer-verification
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/validation/peer-receipt-verification.json
+  accessed_at: '2026-11-08T06:23:07.832711Z'
+  support: supports
+  summary: Root checked the actual peer receipts against declared author separation,
+    complete case/payload coverage, final hashes and resolved findings.
+  snapshot_sha256: b6b136759fac181ace72773580250793999d395009e5b287250d937c53e05465
+assessments:
+- assessment_id: proposal-001
+  area: identity
+  topic: if1201-new-deionized_water — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-deionized_water
+  evidence_ids:
+  - proposal-evidence-001
+  - peer-inorganic_forms
+  summary: 'Deionized water: DSMZ 533 names H2O (deionized) in the main medium and
+    trace stock, each as 1000 ml water. The identity retains the specified deionization
+    treatment only: no resistivity, purity class, sterility or distillation claim.
+    Water is not decomposed into a molecular-water component because treatment grade
+    is not partonomy. New source-qualified registry identity; no exact/broad mapping
+    to its solute, no global raw source alias and no automatic whole-case resolution.
+    Typed components describe only asserted parts.'
+  details: 'CM_NAME:b9a945a3356d0c885eea986a2f6223e78c8e7d7163ee95629061a640294cbbe8:
+    Deionized water: DSMZ 533 names H2O (deionized) in the main medium and trace stock,
+    each as 1000 ml water. The identity retains the specified deionization treatment
+    only: no resistivity, purity class, sterility or distillation claim. Water is
+    not decomposed into a molecular-water component because treatment grade is not
+    partonomy.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-002
+  area: identity
+  topic: if1201-new-dsmz_trace_2n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-dsmz_trace_2n_naoh
+  evidence_ids:
+  - proposal-evidence-002
+  - peer-inorganic_forms
+  summary: 'DSMZ trace-preparation 2 N NaOH reagent: The named DSMZ trace recipes
+    use 2 N NaOH to dissolve/neutralize EDTA before adding salts. Repeated exact DSMZ
+    1094 witnesses join the spaced/unspaced case labels; SL-11 references share its
+    explicitly named protocol. Solvent of the NaOH stock is not stated. This is the
+    NaOH reagent, not the resulting trace solution; unrelated M3213 pH titration is
+    not approved as the same complete preparation. New source-qualified registry identity;
+    no exact/broad mapping to its solute, no global raw source alias and no automatic
+    whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:05e2dc1bfb88e0023e4943f46a1aa8df3feaf35ed1a6219294ec1f7c651d2ebd:
+    DSMZ trace-preparation 2 N NaOH reagent: The named DSMZ trace recipes use 2 N
+    NaOH to dissolve/neutralize EDTA before adding salts. Repeated exact DSMZ 1094
+    witnesses join the spaced/unspaced case labels; SL-11 references share its explicitly
+    named protocol. Solvent of the NaOH stock is not stated. This is the NaOH reagent,
+    not the resulting trace solution; unrelated M3213 pH titration is not approved
+    as the same complete preparation.
+
+
+    CM_NAME:6fb4fe759383c082e351dae17955f9259c57a1f3ed7239bf716455bb19ac605f: DSMZ
+    trace-preparation 2 N NaOH reagent: The named DSMZ trace recipes use 2 N NaOH
+    to dissolve/neutralize EDTA before adding salts. Repeated exact DSMZ 1094 witnesses
+    join the spaced/unspaced case labels; SL-11 references share its explicitly named
+    protocol. Solvent of the NaOH stock is not stated. This is the NaOH reagent, not
+    the resulting trace solution; unrelated M3213 pH titration is not approved as
+    the same complete preparation.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-003
+  area: identity
+  topic: if1201-new-jcm_1130_10n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_1130_10n_naoh
+  evidence_ids:
+  - proposal-evidence-003
+  - peer-inorganic_forms
+  summary: 'JCM 1130 VFA-preparation 10 N NaOH reagent: JCM 1130 specifies 26 ml of
+    10 N NaOH as a separate liquid reagent in the VFA mix. The acids belong to the
+    receiving VFA preparation, not this NaOH reagent. The stock carrier is not stated.
+    DSMZ 870 crotonate and M2813 titrant occurrences retain their own source scope
+    and are not automatically the same preparation. New source-qualified registry
+    identity; no exact/broad mapping to its solute, no global raw source alias and
+    no automatic whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:0666d85d251855ef8df68b7d5ea4bf3112fafd57d98e0d13dc3449e67c21df9a:
+    JCM 1130 VFA-preparation 10 N NaOH reagent: JCM 1130 specifies 26 ml of 10 N NaOH
+    as a separate liquid reagent in the VFA mix. The acids belong to the receiving
+    VFA preparation, not this NaOH reagent. The stock carrier is not stated. DSMZ
+    870 crotonate and M2813 titrant occurrences retain their own source scope and
+    are not automatically the same preparation.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-004
+  area: identity
+  topic: if1201-new-atcc_nitrosolobus_6n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-atcc_nitrosolobus_6n_naoh
+  evidence_ids:
+  - proposal-evidence-004
+  - peer-inorganic_forms
+  summary: 'ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent: The phenol-red
+    preparation uses 1 ml 6 N NaOH, 0.5 g phenol red and 99 ml deionized water. Only
+    NaOH is a demonstrated component of the input reagent; the receiving water does
+    not establish the NaOH stock carrier. New source-qualified registry identity;
+    no exact/broad mapping to its solute, no global raw source alias and no automatic
+    whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:3c90901b52e0250e1b230496b1e3e5e643147e19b5ea3bd734e26cae54e0a378:
+    ATCC Nitrosolobus phenol-red preparation 6 N NaOH reagent: The phenol-red preparation
+    uses 1 ml 6 N NaOH, 0.5 g phenol red and 99 ml deionized water. Only NaOH is a
+    demonstrated component of the input reagent; the receiving water does not establish
+    the NaOH stock carrier.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-005
+  area: identity
+  topic: if1201-new-pcr_s11_01n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-pcr_s11_01n_naoh
+  evidence_ids:
+  - proposal-evidence-005
+  - peer-inorganic_forms
+  summary: 'PCR-S11 EDTA-preparation 0.1 N NaOH reagent: The PCR-S11 Na2-EDTA preparation
+    gradually dissolves 1.488 g Na2-EDTA in 40 ml 0.1 N NaOH. The NaOH input is a
+    pre-existing liquid reagent; its solvent is not specified. ATCC hemin and SGP7
+    titration contexts in the same lexical case are not claimed as equivalent preparations.
+    New source-qualified registry identity; no exact/broad mapping to its solute,
+    no global raw source alias and no automatic whole-case resolution. Typed components
+    describe only asserted parts.'
+  details: 'CM_NAME:4e323c554f51263ca3162a639465577b74845a9f46732555c342827f83c34c05:
+    PCR-S11 EDTA-preparation 0.1 N NaOH reagent: The PCR-S11 Na2-EDTA preparation
+    gradually dissolves 1.488 g Na2-EDTA in 40 ml 0.1 N NaOH. The NaOH input is a
+    pre-existing liquid reagent; its solvent is not specified. ATCC hemin and SGP7
+    titration contexts in the same lexical case are not claimed as equivalent preparations.
+    Independent finding IF1201-R1: only the PCR-S11 source preparation is the direct
+    anchor. The NOS VFA occurrence is retained as a conditional comparison of 0.1
+    N NaOH. Equal specified solute and nominal strength with unspecified carrier do
+    not establish exact shared preparation, but different receiving recipes or source
+    numbers also do not establish distinct material. The receiving mixture is outside
+    this reagent identity. No automatic assignment of the comparison occurrence and
+    no second owner is proposed.
+
+
+    CM_NAME:9947e4750c9296a331938641c9ffdbc1682608cd196f05cbe31c0b29bee23dba: The
+    primary NOS VFA recipe demonstrates a 0.1 N NaOH liquid reagent input, while carrier
+    and full preparation remain unspecified. Its receiving recipe does not demonstrate
+    a material difference from the PCR-S11 reagent. Withdraw the separate source-number-defined
+    owner and retain one concrete PCR-S11 proposal as a conditional comparison, preserving
+    every NOS VFA occurrence without assigning it to that owner. Neither exact equivalence
+    nor distinct substance identity is inferred from the available facts.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-006
+  area: identity
+  topic: if1201-new-dsmz_104_8n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-dsmz_104_8n_naoh
+  evidence_ids:
+  - proposal-evidence-006
+  - peer-inorganic_forms
+  summary: 'DSMZ 104 pH-adjustment 8 N NaOH reagent: DSMZ 104 explicitly uses 8 N
+    NaOH as a pH-adjustment reagent. This bounded partial stock retains exactly that
+    source-defined strength and use; carrier, manufacturing recipe and supplier are
+    not supplied. It is not the 1 N NaOH used separately in the hemin preparation.
+    New source-qualified registry identity; no exact/broad mapping to its solute,
+    no global raw source alias and no automatic whole-case resolution. Typed components
+    describe only asserted parts.'
+  details: 'CM_NAME:b037a389752ad1c34dc689e55cf53921eac462dfd065c436d208fc513d53c5e6:
+    DSMZ 104 pH-adjustment 8 N NaOH reagent: DSMZ 104 explicitly uses 8 N NaOH as
+    a pH-adjustment reagent. This bounded partial stock retains exactly that source-defined
+    strength and use; carrier, manufacturing recipe and supplier are not supplied.
+    It is not the 1 N NaOH used separately in the hemin preparation.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-007
+  area: identity
+  topic: if1201-new-jcm_221_02n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_221_02n_naoh
+  evidence_ids:
+  - proposal-evidence-007
+  - peer-inorganic_forms
+  summary: 'JCM 221 reducing-preparation 0.2 N NaOH reagent: JCM 221 boils and cools
+    200 ml of 0.2 N NaOH before adding sulfide nonahydrate and cysteine hydrochloride
+    monohydrate. Only the NaOH input is represented here; downstream solutes and gases
+    are preparation context. Carrier of the NaOH stock is unspecified. ATCC 1190/1191
+    reducing solutions omit cysteine hydration and are not asserted as the same whole
+    reducing formulation. New source-qualified registry identity; no exact/broad mapping
+    to its solute, no global raw source alias and no automatic whole-case resolution.
+    Typed components describe only asserted parts.'
+  details: 'CM_NAME:b8059d038b22d06bb2b8824250598e2ddb6b9f89fae768af14cbe7633045562e:
+    JCM 221 reducing-preparation 0.2 N NaOH reagent: JCM 221 boils and cools 200 ml
+    of 0.2 N NaOH before adding sulfide nonahydrate and cysteine hydrochloride monohydrate.
+    Only the NaOH input is represented here; downstream solutes and gases are preparation
+    context. Carrier of the NaOH stock is unspecified. ATCC 1190/1191 reducing solutions
+    omit cysteine hydration and are not asserted as the same whole reducing formulation.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-008
+  area: identity
+  topic: if1201-new-wolin_mineral_05n_naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-wolin_mineral_05n_naoh
+  evidence_ids:
+  - proposal-evidence-008
+  - peer-inorganic_forms
+  summary: 'Wolin mineral-preparation 0.5 N NaOH reagent: Both source records repeat
+    the same Wolin mineral preparation: dissolve nitrilotriacetate in 10 ml 0.5 N
+    NaOH, dilute to 500 ml, add salts and bring to 1 L. The identical cited preparation
+    supports one proposal for both occurrences. Carrier of the initial NaOH reagent
+    is not specified. New source-qualified registry identity; no exact/broad mapping
+    to its solute, no global raw source alias and no automatic whole-case resolution.
+    Typed components describe only asserted parts.'
+  details: 'CM_NAME:ebe6752517026183dddbc868222f88168274b6981fea3921e25850a0bb141efa:
+    Wolin mineral-preparation 0.5 N NaOH reagent: Both source records repeat the same
+    Wolin mineral preparation: dissolve nitrilotriacetate in 10 ml 0.5 N NaOH, dilute
+    to 500 ml, add salts and bring to 1 L. The identical cited preparation supports
+    one proposal for both occurrences. Carrier of the initial NaOH reagent is not
+    specified.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-009
+  area: identity
+  topic: if1201-new-atcc_1340_naoh_4g_100ml — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-atcc_1340_naoh_4g_100ml
+  evidence_ids:
+  - proposal-evidence-009
+  - peer-inorganic_forms
+  summary: 'ATCC 1340 NaOH reagent (4 g/100 ml): ATCC 1340 explicitly defines its
+    N NaOH input as 4 g/100 ml and uses 30 ml in cysteine-sulfide reducing agent.
+    The initial reagent solvent is not specified. This explicit mass/volume definition
+    is confined to CultureMech:009208; the five other bare-N occurrences are not automatically
+    assigned this strength. New source-qualified registry identity; no exact/broad
+    mapping to its solute, no global raw source alias and no automatic whole-case
+    resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:a3d097045a1a2146dd201f8aa7f6c46a046bce1b9ea2044e433d051d44495fb5:
+    ATCC 1340 NaOH reagent (4 g/100 ml): ATCC 1340 explicitly defines its N NaOH input
+    as 4 g/100 ml and uses 30 ml in cysteine-sulfide reducing agent. The initial reagent
+    solvent is not specified. This explicit mass/volume definition is confined to
+    CultureMech:009208; the five other bare-N occurrences are not automatically assigned
+    this strength. The direct anchor remains the ATCC 1340 reagent explicitly specified
+    as 4 g NaOH per 100 ml. For NaOH acid-base neutralization this nominal strength
+    is consistent with 1 N; it does not establish identical carrier or full preparation.
+    Chopped-meat protocol occurrences using 1 N are conditional comparisons only.
+    Matching receiving meat recipes establish shared use context, not a distinct NaOH
+    substance. The other bare-N occurrences remain unassigned.
+
+
+    CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc: The
+    actual source stock context and preparation instructions remain established. A
+    separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base
+    neutralization this nominal strength is consistent with 1 N; it does not establish
+    identical carrier or full preparation. Chopped-meat protocol occurrences using
+    1 N are conditional comparisons only. Matching receiving meat recipes establish
+    shared use context, not a distinct NaOH substance. The other bare-N occurrences
+    remain unassigned.
+
+
+    CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7: The
+    actual source stock context and preparation instructions remain established. A
+    separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base
+    neutralization this nominal strength is consistent with 1 N; it does not establish
+    identical carrier or full preparation. Chopped-meat protocol occurrences using
+    1 N are conditional comparisons only. Matching receiving meat recipes establish
+    shared use context, not a distinct NaOH substance. The other bare-N occurrences
+    remain unassigned.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-010
+  area: identity
+  topic: if1201-new-jcm_574_1m_kh2po4 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_574_1m_kh2po4
+  evidence_ids:
+  - proposal-evidence-010
+  - peer-inorganic_forms
+  summary: 'JCM 574 1 M KH2PO4 phosphate-buffer input: JCM 574 combines 16.6 ml of
+    this 1 M KH2PO4 solution with 83.4 ml of a distinct 1 M K2HPO4 solution and then
+    an equal volume of distilled water. Stock carrier and supplied solid hydrate are
+    not specified; do not treat that later dilution water as the stock solvent. JCM
+    1181 explicitly imports this buffer. New source-qualified registry identity; no
+    exact/broad mapping to its solute, no global raw source alias and no automatic
+    whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:0310a4677b23924dc578df77c7557a6c9fcc14821f1494149de8cee33d2a71f9:
+    JCM 574 1 M KH2PO4 phosphate-buffer input: JCM 574 combines 16.6 ml of this 1
+    M KH2PO4 solution with 83.4 ml of a distinct 1 M K2HPO4 solution and then an equal
+    volume of distilled water. Stock carrier and supplied solid hydrate are not specified;
+    do not treat that later dilution water as the stock solvent. JCM 1181 explicitly
+    imports this buffer. Independent finding IF1201-R1: only the JCM 574 source preparation
+    is the direct anchor. The PBBM occurrence is retained as a conditional comparison
+    of 1 M KH2PO4. Equal specified solute and nominal strength with unspecified carrier
+    do not establish exact shared preparation, but different receiving recipes or
+    source numbers also do not establish distinct material. The receiving mixture
+    is outside this reagent identity. No automatic assignment of the comparison occurrence
+    and no second owner is proposed.
+
+
+    CM_NAME:925de4b31e7ef30de39291c36f12d1bbcb06f759bb68e151ec5a480789314bf3: The
+    primary PBBM recipe demonstrates a 1 M KH2PO4 liquid reagent input, while carrier
+    and full preparation remain unspecified. Its receiving recipe does not demonstrate
+    a material difference from the JCM 574 reagent. Withdraw the separate source-number-defined
+    owner and retain one concrete JCM 574 proposal as a conditional comparison, preserving
+    every PBBM occurrence without assigning it to that owner. Neither exact equivalence
+    nor distinct substance identity is inferred from the available facts.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-011
+  area: identity
+  topic: if1201-new-jcm_574_1m_k2hpo4 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_574_1m_k2hpo4
+  evidence_ids:
+  - proposal-evidence-011
+  - peer-inorganic_forms
+  summary: 'JCM 574 1 M K2HPO4 phosphate-buffer input: JCM 574 combines 83.4 ml of
+    this 1 M K2HPO4 solution with 16.6 ml of a distinct 1 M KH2PO4 solution and then
+    an equal volume of distilled water. Stock carrier and supplied solid hydrate are
+    unspecified. JCM 1181 explicitly imports this buffer; receiving-dose mismatches
+    are not identity blockers. New source-qualified registry identity; no exact/broad
+    mapping to its solute, no global raw source alias and no automatic whole-case
+    resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:5db26903394c754fc8e16fb0067ac3df52cd0d5c6ffab63f9c395f219f2160d9:
+    JCM 574 1 M K2HPO4 phosphate-buffer input: JCM 574 combines 83.4 ml of this 1
+    M K2HPO4 solution with 16.6 ml of a distinct 1 M KH2PO4 solution and then an equal
+    volume of distilled water. Stock carrier and supplied solid hydrate are unspecified.
+    JCM 1181 explicitly imports this buffer; receiving-dose mismatches are not identity
+    blockers.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-012
+  area: identity
+  topic: if1201-new-pbbm_1m_na2hpo4 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-pbbm_1m_na2hpo4
+  evidence_ids:
+  - proposal-evidence-012
+  - peer-inorganic_forms
+  summary: 'PBBM 1 M Na2HPO4 phosphate-buffer input: PBBM explicitly enumerates 10
+    ml 1 M Na2HPO4 and 10 ml 1 M KH2PO4 as its pH 7.2 phosphate buffer inputs. Solvent
+    and supplied solid hydrate are not specified; source-qualified stock identity
+    does not collapse to anhydrous disodium phosphate. New source-qualified registry
+    identity; no exact/broad mapping to its solute, no global raw source alias and
+    no automatic whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:b406684926edee44d3bad28a96a9354cf4c7a40296da350766aa0e71cce895ce:
+    PBBM 1 M Na2HPO4 phosphate-buffer input: PBBM explicitly enumerates 10 ml 1 M
+    Na2HPO4 and 10 ml 1 M KH2PO4 as its pH 7.2 phosphate buffer inputs. Solvent and
+    supplied solid hydrate are not specified; source-qualified stock identity does
+    not collapse to anhydrous disodium phosphate.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-013
+  area: identity
+  topic: if1201-new-pcr_s11_50mm_nah2po4 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-pcr_s11_50mm_nah2po4
+  evidence_ids:
+  - proposal-evidence-013
+  - peer-inorganic_forms
+  summary: 'PCR-S11 50 mM NaH2PO4 solution: TOGO M2262 explicitly prepares this named
+    50 mM stock from 6 g NaH2PO4 and 1 L distilled water. Amounts are recipe batch
+    inputs, not guaranteed final solution-volume concentrations. Hydration of the
+    supplied phosphate is not specified and is not inferred by dividing its mass by
+    molarity. New source-qualified registry identity; no exact/broad mapping to its
+    solute, no global raw source alias and no automatic whole-case resolution. Typed
+    components describe only asserted parts.'
+  details: 'CM_NAME:f6d38b9eb6fa4788666580bdf283626eb3baadbe3e70e588bdc9ffbdf329aed7:
+    PCR-S11 50 mM NaH2PO4 solution: TOGO M2262 explicitly prepares this named 50 mM
+    stock from 6 g NaH2PO4 and 1 L distilled water. Amounts are recipe batch inputs,
+    not guaranteed final solution-volume concentrations. Hydration of the supplied
+    phosphate is not specified and is not inferred by dividing its mass by molarity.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-014
+  area: identity
+  topic: if1201-new-pcr_s11_50mm_na2hpo4 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-pcr_s11_50mm_na2hpo4
+  evidence_ids:
+  - proposal-evidence-014
+  - peer-inorganic_forms
+  summary: 'PCR-S11 50 mM Na2HPO4 solution: TOGO M2262 explicitly prepares this named
+    50 mM stock from 3.55 g Na2HPO4 and 500 ml distilled water. Amounts are recipe
+    batch inputs; hydration of supplied phosphate is unresolved and is not inferred
+    from molarity/mass. New source-qualified registry identity; no exact/broad mapping
+    to its solute, no global raw source alias and no automatic whole-case resolution.
+    Typed components describe only asserted parts.'
+  details: 'CM_NAME:3ab465bd1e147f957fe71594d73d5691abbcbbc2ab83772c43d9e4e06ca92b7a:
+    PCR-S11 50 mM Na2HPO4 solution: TOGO M2262 explicitly prepares this named 50 mM
+    stock from 3.55 g Na2HPO4 and 500 ml distilled water. Amounts are recipe batch
+    inputs; hydration of supplied phosphate is unresolved and is not inferred from
+    molarity/mass.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-015
+  area: identity
+  topic: if1201-new-pcr_s11_sodium_phosphate_buffer_ph75 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-pcr_s11_sodium_phosphate_buffer_ph75
+  evidence_ids:
+  - proposal-evidence-015
+  - peer-inorganic_forms
+  summary: 'PCR-S11 sodium phosphate buffer pH 7.5: The structured Na-PO4 (pH 7.5)
+    block specifies 100 ml of each named 50 mM phosphate stock, with equimolar mixing
+    and pH adjustment to 7.5. The adjustment reagent/quantity is unspecified, so components
+    are PARTIAL. The later instruction to bring to 2 L belongs to the separate Na2-EDTA/FeCl3
+    block, not this buffer. New source-qualified registry identity; no exact/broad
+    mapping to its solute, no global raw source alias and no automatic whole-case
+    resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:88971b5ead81f9d1738629fd63433e93d8957b8927d44aa46424188153484959:
+    PCR-S11 sodium phosphate buffer pH 7.5: The structured Na-PO4 (pH 7.5) block specifies
+    100 ml of each named 50 mM phosphate stock, with equimolar mixing and pH adjustment
+    to 7.5. The adjustment reagent/quantity is unspecified, so components are PARTIAL.
+    The later instruction to bring to 2 L belongs to the separate Na2-EDTA/FeCl3 block,
+    not this buffer.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-016
+  area: identity
+  topic: if1201-new-allen_m2231_phosphate_stock — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-allen_m2231_phosphate_stock
+  evidence_ids:
+  - proposal-evidence-016
+  - peer-inorganic_forms
+  summary: 'Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L): M2231 explicitly
+    enumerates 6 g source-labelled K2HPO4·7H2O and 1 L deionized water for the stock,
+    dosed at 5 ml into Allen medium. This resolves the stock-strength versus receiving-volume
+    confusion, but does not verify that the literal seven-water compound is chemically
+    correct. Its component stays UNMAPPED; original unqualified component case remains
+    chemically held. New source-qualified registry identity; no exact/broad mapping
+    to its solute, no global raw source alias and no automatic whole-case resolution.
+    Typed components describe only asserted parts.'
+  details: 'CM_NAME:8030f95b8b27817084b83926973d15b01a1657b1d49b8e8ed3ba11c7ad811b69:
+    Allen M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L): M2231 explicitly enumerates
+    6 g source-labelled K2HPO4·7H2O and 1 L deionized water for the stock, dosed at
+    5 ml into Allen medium. This resolves the stock-strength versus receiving-volume
+    confusion, but does not verify that the literal seven-water compound is chemically
+    correct. Its component stays UNMAPPED; original unqualified component case remains
+    chemically held.
+
+
+    CM_NAME:d3443b571b89deb842f4041069ea3b7df39bac66d4f339a9ce13c6913d2bc563: Allen
+    M2231 phosphate stock (source K2HPO4·7H2O, 6 g/L): M2231 explicitly enumerates
+    6 g source-labelled K2HPO4·7H2O and 1 L deionized water for the stock, dosed at
+    5 ml into Allen medium. This resolves the stock-strength versus receiving-volume
+    confusion, but does not verify that the literal seven-water compound is chemically
+    correct. Its component stays UNMAPPED; original unqualified component case remains
+    chemically held.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-017
+  area: identity
+  topic: if1201-new-jcm_908_sulfide_10pct_wv — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_908_sulfide_10pct_wv
+  evidence_ids:
+  - proposal-evidence-017
+  - peer-inorganic_forms
+  summary: 'JCM 908 sodium sulfide nonahydrate 10% w/v stock: JCM 908 explicitly lists
+    the nonahydrate as a 10% w/v liquid stock, doses 7.5 ml and filter-sterilizes
+    it before anaerobic addition. The carrier is not stated, so PARTIAL records only
+    verified solute and mass/volume basis. New source-qualified registry identity;
+    no exact/broad mapping to its solute, no global raw source alias and no automatic
+    whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:0ddd520b9145821b2633d4783e86603969eb1f8e005c93229a443665df54ac45:
+    JCM 908 sodium sulfide nonahydrate 10% w/v stock: JCM 908 explicitly lists the
+    nonahydrate as a 10% w/v liquid stock, doses 7.5 ml and filter-sterilizes it before
+    anaerobic addition. The carrier is not stated, so PARTIAL records only verified
+    solute and mass/volume basis.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-018
+  area: identity
+  topic: if1201-new-jcm_713_sulfide_24pct — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_713_sulfide_24pct
+  evidence_ids:
+  - proposal-evidence-018
+  - peer-inorganic_forms
+  summary: 'JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock: JCM 713
+    adds 1 ml separately filter-sterilized 24% Na2S·9H2O stock to Solution C. The
+    percent basis and carrier are not given; preserve literal 24% in the source-qualified
+    identity, omit invented concentration fields, and mark composition PARTIAL. New
+    source-qualified registry identity; no exact/broad mapping to its solute, no global
+    raw source alias and no automatic whole-case resolution. Typed components describe
+    only asserted parts.'
+  details: 'CM_NAME:fcdd2c49da897b25d18b7933312be54778ddd1071bf6e84cf40deb01a9fa8188:
+    JCM 713 filter-sterilized 24% sodium sulfide nonahydrate stock: JCM 713 adds 1
+    ml separately filter-sterilized 24% Na2S·9H2O stock to Solution C. The percent
+    basis and carrier are not given; preserve literal 24% in the source-qualified
+    identity, omit invented concentration fields, and mark composition PARTIAL.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-019
+  area: identity
+  topic: if1201-new-atcc_1943_sulfide_25pct — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-atcc_1943_sulfide_25pct
+  evidence_ids:
+  - proposal-evidence-019
+  - peer-inorganic_forms
+  summary: 'ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock: ATCC 1943 explicitly
+    prepares the 2.5% Na2S·9H2O input as a stock under nitrogen and autoclaves it,
+    then doses 10 ml before inoculation. Percent basis and carrier are unspecified;
+    the separate cysteine stock is not a component of this sulfide stock. No identity
+    with PBBM 2.5% stock is inferred. New source-qualified registry identity; no exact/broad
+    mapping to its solute, no global raw source alias and no automatic whole-case
+    resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:bf15a5636e0f437d9a7179c4400b1e714dc48df0605c7c6abe71e0e55826e793:
+    ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock: ATCC 1943 explicitly
+    prepares the 2.5% Na2S·9H2O input as a stock under nitrogen and autoclaves it,
+    then doses 10 ml before inoculation. Percent basis and carrier are unspecified;
+    the separate cysteine stock is not a component of this sulfide stock. No identity
+    with PBBM 2.5% stock is inferred.
+
+
+    CM_NAME:4684e82c9f4d6652b3e924e7e3427f7a6c2bdbac647faf7d790f6c23dfe88adf: M2760
+    PBBM directly lists 25 ml Na2S·9H2O (2.5%) as a solution. It gives neither percent
+    basis nor a stock preparation/carrier. No evidence equates this to ATCC 1943 nitrogen-prepared
+    stock merely because both labels say 2.5%. The concrete ATCC 1943 partial-stock
+    proposal provides a conditional comparison target; PBBM applicability is explicitly
+    withheld, rather than inventing another owner distinguished only by source number.
+    Carrier/basis omission limits the comparison and does not erase the source solution
+    identity. ATCC 1943 anaerobic 2.5% sodium sulfide nonahydrate stock: ATCC 1943
+    explicitly prepares the 2.5% Na2S·9H2O input as a stock under nitrogen and autoclaves
+    it, then doses 10 ml before inoculation. Percent basis and carrier are unspecified;
+    the separate cysteine stock is not a component of this sulfide stock. No identity
+    with PBBM 2.5% stock is inferred.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-020
+  area: identity
+  topic: if1201-edit-naoh — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-edit-naoh
+  evidence_ids:
+  - proposal-evidence-020
+  - peer-inorganic_forms
+  summary: Retype NaOH (1N) and NaOH (0.38 M) as REJECTED_LABEL on pure CHEBI:32145.
+    Preserve exact text and original provenance; these concentration-defined solutions
+    must not resolve globally to the pure solute. All other inherited fields and holds
+    remain. Primary identifier and predicate retained; exact aliases/chemistry changed
+    only as described. Source-specific and role/publication holds are preserved.
+  details: 'CM_NAME:2e5e9c0dc5d8ed0d9ef3e4e1a0fba86a1f7e08f5956311b8acfd477b3b342ccc:
+    The actual source stock context and preparation instructions remain established.
+    A separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base
+    neutralization this nominal strength is consistent with 1 N; it does not establish
+    identical carrier or full preparation. Chopped-meat protocol occurrences using
+    1 N are conditional comparisons only. Matching receiving meat recipes establish
+    shared use context, not a distinct NaOH substance. The other bare-N occurrences
+    remain unassigned.
+
+
+    CM_NAME:6b0d745d1437574dc1ed206f2bbd37a2c3c0e5e4f3c5bc2af9624ca3499350b7: The
+    actual source stock context and preparation instructions remain established. A
+    separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    the ATCC 1340 reagent explicitly specified as 4 g NaOH per 100 ml. For NaOH acid-base
+    neutralization this nominal strength is consistent with 1 N; it does not establish
+    identical carrier or full preparation. Chopped-meat protocol occurrences using
+    1 N are conditional comparisons only. Matching receiving meat recipes establish
+    shared use context, not a distinct NaOH substance. The other bare-N occurrences
+    remain unassigned.
+
+
+    Integration conditions: Replace inherited content-bound receipts only after complete
+    owner/payload review; no export or hold release is approved.'
+- assessment_id: proposal-021
+  area: identity
+  topic: if1201-edit-na2moo4_x_2_h2o — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-edit-na2moo4_x_2_h2o
+  evidence_ids:
+  - proposal-evidence-021
+  - peer-inorganic_forms
+  summary: 'Preserve the assigned Na2Mo4 x 2 H2O rejection and reject ten further
+    unsupported literal formula aliases on the same frozen sodium molybdate dihydrate
+    owner. Independent owner-wide review extends the existing Na2Mo4 x 2 H2O rejection
+    to ten related literal malformed or form-unspecified formula aliases: [''Na2MoSO4
+    x 2 H2O'', ''NaMoO4 x 2 H2O'', ''Na2MoSO4'', ''NaMoO4'', ''Na2MoO7 x 2 H2O'',
+    ''Na2MoO7O4 x 2 H2O'', ''Na2MO4.2H2O'', ''Na2MoO7・2H2O'', ''NaMoO4 · 2H2O'', ''NaMoO4.2H2O''].
+    CHEBI:75213 denotes disodium molybdate dihydrate, 2H2O.MoO4.2Na. The listed formulas
+    alter sodium/oxygen counts, introduce sulfur, omit hydrate specificity or omit
+    the molybdenum element spelling. Preserve each exact source string and its original
+    provenance as REJECTED_LABEL; do not infer a corrected chemical for any source
+    occurrence. Historical June 16 merge claims cite Edison/MediaDive/OAK generically
+    but do not provide a source-qualified correction witness that establishes universal
+    alias equivalence. The September backfills preserve KG spellings, not independent
+    formula evidence. Primary identifier, structure, roles, counts and source holds
+    remain unchanged. Primary identifier and predicate retained; exact aliases/chemistry
+    changed only as described. Source-specific and role/publication holds are preserved.'
+  details: 'KG_CASE:b40aaa312b04204d1afd03c737d566904a7525b69913670357f0293eedf84b49:
+    MediaDive 736 retains literal Na2Mo4 x 2 H2O without an independently identifying
+    CAS/structure. The exact intended chemical remains unresolved. The complete candidate-owner
+    review supports a concrete alias-family correction without resolving that source
+    identity. Independent owner-wide review extends the existing Na2Mo4 x 2 H2O rejection
+    to ten related literal malformed or form-unspecified formula aliases: [''Na2MoSO4
+    x 2 H2O'', ''NaMoO4 x 2 H2O'', ''Na2MoSO4'', ''NaMoO4'', ''Na2MoO7 x 2 H2O'',
+    ''Na2MoO7O4 x 2 H2O'', ''Na2MO4.2H2O'', ''Na2MoO7・2H2O'', ''NaMoO4 · 2H2O'', ''NaMoO4.2H2O''].
+    CHEBI:75213 denotes disodium molybdate dihydrate, 2H2O.MoO4.2Na. The listed formulas
+    alter sodium/oxygen counts, introduce sulfur, omit hydrate specificity or omit
+    the molybdenum element spelling. Preserve each exact source string and its original
+    provenance as REJECTED_LABEL; do not infer a corrected chemical for any source
+    occurrence. Historical June 16 merge claims cite Edison/MediaDive/OAK generically
+    but do not provide a source-qualified correction witness that establishes universal
+    alias equivalence. The September backfills preserve KG spellings, not independent
+    formula evidence. Primary identifier, structure, roles, counts and source holds
+    remain unchanged.
+
+
+    Integration conditions: Replace inherited content-bound receipts only after complete
+    owner/payload review; no export or hold release is approved. This is not blanket
+    owner admission. Remaining annotation/name claims, roles and source-membership
+    corrections require their stated native review; none of the rejected formulas
+    is remapped to a guessed corrected source reagent.'
+- assessment_id: proposal-022
+  area: identity
+  topic: if1201-edit-na2hpo4_x_12_h2o — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-edit-na2hpo4_x_12_h2o
+  evidence_ids:
+  - proposal-evidence-022
+  - peer-inorganic_forms
+  summary: Replace inherited anhydrous InChI/SMILES with verified exact dodecahydrate
+    ChEBI:91259 chemistry and accurate current source metadata. Reject three unqualified
+    disodium-phosphate aliases and the annotation-only Role label. Preserve exact
+    hydrate synonyms, all prior rejected siblings, CHEBI:91259 identity, history,
+    counts and existing source/role holds. Primary identifier and predicate retained;
+    exact aliases/chemistry changed only as described. Source-specific and role/publication
+    holds are preserved.
+  details: 'KG_CASE:9009056d8b4b98a66e34f348633fba29326f0125778f62b0a2cf12e1083d6de4:
+    Replace inherited anhydrous InChI/SMILES with verified exact dodecahydrate ChEBI:91259
+    chemistry and accurate current source metadata. Reject three unqualified disodium-phosphate
+    aliases and the annotation-only Role label. Preserve exact hydrate synonyms, all
+    prior rejected siblings, CHEBI:91259 identity, history, counts and existing source/role
+    holds.
+
+
+    Integration conditions: Replace inherited content-bound receipts only after complete
+    owner/payload review; no export or hold release is approved.'
+- assessment_id: proposal-023
+  area: identity
+  topic: if1201-new-atcc_1942_sulfide_5pct — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-atcc_1942_sulfide_5pct
+  evidence_ids:
+  - proposal-evidence-023
+  - peer-inorganic_forms
+  summary: 'ATCC 1942 nitrogen-autoclaved 5% sodium sulfide nonahydrate stock: ATCC
+    1942 explicitly doses 10 ml of the 5% nonahydrate stock to obtain final 0.5 g/L:
+    the source-linked ratio supports 5 g per 100 ml (w/v), rather than borrowing a
+    percent basis from another source. The stock is autoclaved under N2; carrier is
+    not given, so PARTIAL remains. This does not establish equivalence to other JCM
+    5% stocks. New source-qualified registry identity; no exact/broad mapping to its
+    solute, no global raw source alias and no automatic whole-case resolution. Typed
+    components describe only asserted parts.'
+  details: 'CM_NAME:bc23022a3fa76e271c3eb01da34771aedbff899b205c577d8b954465ac56c73c:
+    ATCC 1942 names a 5% nonahydrate stock autoclaved under N2, 10 ml to obtain final
+    0.5 g/L. This source supports w/v by explicit dose/final mass relation; preparation
+    basis is source-specific and does not establish all other 5% stocks. ATCC 1942
+    nitrogen-autoclaved 5% sodium sulfide nonahydrate stock: ATCC 1942 explicitly
+    doses 10 ml of the 5% nonahydrate stock to obtain final 0.5 g/L: the source-linked
+    ratio supports 5 g per 100 ml (w/v), rather than borrowing a percent basis from
+    another source. The stock is autoclaved under N2; carrier is not given, so PARTIAL
+    remains. This does not establish equivalence to other JCM 5% stocks. The direct
+    anchor remains ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support
+    5% w/v and whose stock is autoclaved under nitrogen. JCM 1020 and previously linked
+    JCM cases specify 5% nonahydrate stocks but omit the percent basis and/or exact
+    stock atmosphere. These omissions do not establish a different substance. Preserve
+    their autoclaving and source instructions as conditional comparisons; do not transfer
+    the ATCC basis, carrier or gas treatment to them or assert exact shared preparation.
+
+
+    CM_NAME:87461356837f0387a7d413197155e754fc2a5605146c0b2d6aa542208a165297: The
+    actual source stock context and preparation instructions remain established. A
+    separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and
+    whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases
+    specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere.
+    These omissions do not establish a different substance. Preserve their autoclaving
+    and source instructions as conditional comparisons; do not transfer the ATCC basis,
+    carrier or gas treatment to them or assert exact shared preparation.
+
+
+    CM_NAME:4182395ab230d6bf7803dc2b6fd26704aa74830b8b2c8345cdf698ab0c7e17a6: The
+    actual source stock context and preparation instructions remain established. A
+    separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and
+    whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases
+    specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere.
+    These omissions do not establish a different substance. Preserve their autoclaving
+    and source instructions as conditional comparisons; do not transfer the ATCC basis,
+    carrier or gas treatment to them or assert exact shared preparation.
+
+
+    CM_NAME:48d3a404b83e751ecffdd61ed9e71156bb2a1e28bf10a23ae8d0e6f09e68dc45: The
+    actual source stock context and preparation instructions remain established. A
+    separate owner is withdrawn because the available material facts do not demonstrate
+    a distinct reagent from the stronger documented anchor. The direct anchor remains
+    ATCC 1942, whose 10 ml stock dose and 0.5 g/L final amount support 5% w/v and
+    whose stock is autoclaved under nitrogen. JCM 1020 and previously linked JCM cases
+    specify 5% nonahydrate stocks but omit the percent basis and/or exact stock atmosphere.
+    These omissions do not establish a different substance. Preserve their autoclaving
+    and source instructions as conditional comparisons; do not transfer the ATCC basis,
+    carrier or gas treatment to them or assert exact shared preparation.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-024
+  area: identity
+  topic: if1201-new-mediadive_552_thiosulfate_5g_100ml — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-mediadive_552_thiosulfate_5g_100ml
+  evidence_ids:
+  - proposal-evidence-024
+  - peer-inorganic_forms
+  summary: 'MediaDive 552 source thiosulfate preparation (5 g in 100 ml water): The
+    exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100 ml H2O, dosed
+    as 10 ml. This is a preparation recipe, not an anhydrous solid. Conflicting source
+    CAS/formula/ChEBI fields leave the supplied thiosulfate form UNMAPPED. Water grade,
+    final solution volume and any sterilization are unspecified. The original row
+    is the recipe witness; the live ingredient page confirms identifier conflict,
+    not the stock recipe. New source-qualified registry identity; no exact/broad mapping
+    to its solute, no global raw source alias and no automatic whole-case resolution.
+    Typed components describe only asserted parts.'
+  details: 'KG_CASE:9f45482ae25084195bb16b12f0cabebcaa50ec0ca15f266fc39a0c0455a7c991:
+    The frozen exact raw source row explicitly defines a thiosulfate stock: 5.0 g
+    in 100 ml H2O, dosed 10 ml. Live ingredient 552 still conflicts among bare formula,
+    pentahydrate CAS/formula and PEG-related ChEBI/mass. A bounded source preparation
+    can retain an UNMAPPED thiosulfate-form component; pure anhydrous/hydrate assignment
+    remains blocked. MediaDive 552 source thiosulfate preparation (5 g in 100 ml water):
+    The exact frozen MediaDive 552 source row specifies 5.0 g Na2S2O3 in 100 ml H2O,
+    dosed as 10 ml. This is a preparation recipe, not an anhydrous solid. Conflicting
+    source CAS/formula/ChEBI fields leave the supplied thiosulfate form UNMAPPED.
+    Water grade, final solution volume and any sterilization are unspecified. The
+    original row is the recipe witness; the live ingredient page confirms identifier
+    conflict, not the stock recipe.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-025
+  area: identity
+  topic: if1201-new-jcm_941_solution_c — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-new-jcm_941_solution_c
+  evidence_ids:
+  - proposal-evidence-025
+  - peer-inorganic_forms
+  summary: 'JCM 941 Solution C (source Na2S2O4·2H2O): JCM 941 and MediaDive solution
+    4957 agree on source-labelled Na2S2O4·2H2O 5 g plus distilled water 40 ml. The
+    recipe batch is explicit, while the literal dihydrate chemical identity remains
+    unverified and UNMAPPED. JCM separately autoclaves Solution C under N2. The whole
+    preparation is proposed only as context; none of the three bare compound cases
+    may resolve to this stock identifier. New source-qualified registry identity;
+    no exact/broad mapping to its solute, no global raw source alias and no automatic
+    whole-case resolution. Typed components describe only asserted parts.'
+  details: 'CM_NAME:a751d0a86d6286b4029adea3cdf918d126884d64d146a309680fb3a36ba36db8:
+    JCM 941 and live MediaDive solution 4957 explicitly formulate Solution C from
+    source-labelled Na2S2O4·2H2O 5 g and distilled water 40 ml. This supports the
+    preparation context but not exact identity of the solid compound occurrence; anhydrous
+    dithionite must not replace the unresolved dihydrate text. JCM 941 Solution C
+    (source Na2S2O4·2H2O): JCM 941 and MediaDive solution 4957 agree on source-labelled
+    Na2S2O4·2H2O 5 g plus distilled water 40 ml. The recipe batch is explicit, while
+    the literal dihydrate chemical identity remains unverified and UNMAPPED. JCM separately
+    autoclaves Solution C under N2. The whole preparation is proposed only as context;
+    none of the three bare compound cases may resolve to this stock identifier.
+
+
+    CM_NAME:b2519d46d617b9e360ea10f268ef43d4cb7ea7878b91abd878547f888c944020: JCM
+    941 supplies the same literal Na2S2O4·2H2O Solution C preparation. The case is
+    the named solid component, so a whole-stock registry cannot be substituted for
+    it; hydrate identity remains unresolved. JCM 941 Solution C (source Na2S2O4·2H2O):
+    JCM 941 and MediaDive solution 4957 agree on source-labelled Na2S2O4·2H2O 5 g
+    plus distilled water 40 ml. The recipe batch is explicit, while the literal dihydrate
+    chemical identity remains unverified and UNMAPPED. JCM separately autoclaves Solution
+    C under N2. The whole preparation is proposed only as context; none of the three
+    bare compound cases may resolve to this stock identifier.
+
+
+    KG_CASE:d1003e1dbb9c550b3ab364eb626d9ee5e6a4fb45f2c56f455c968d94be05ba45: Live
+    JCM 941 and solution 4957 verify 5 g literal Na2S2O4·2H2O in 40 ml distilled water.
+    This demonstrates Solution C composition but does not identify the exact solid
+    component case as anhydrous dithionite or as the whole solution. JCM 941 Solution
+    C (source Na2S2O4·2H2O): JCM 941 and MediaDive solution 4957 agree on source-labelled
+    Na2S2O4·2H2O 5 g plus distilled water 40 ml. The recipe batch is explicit, while
+    the literal dihydrate chemical identity remains unverified and UNMAPPED. JCM separately
+    autoclaves Solution C under N2. The whole preparation is proposed only as context;
+    none of the three bare compound cases may resolve to this stock identifier.
+
+
+    Integration conditions: Independent source/payload review and coordinator duplicate/preparation
+    comparison required. All source-specific holds remain. Native schema/partonomy
+    and full-owner review must precede maintained integration.'
+- assessment_id: proposal-026
+  area: identity
+  topic: if1201-edit-kh2po4-alias-scope — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-edit-kh2po4-alias-scope
+  evidence_ids:
+  - proposal-evidence-026
+  - peer-inorganic_forms
+  summary: 'Independent review IF1201-R2: preserve the original text and source provenance
+    while changing three unsafe maintained identity aliases to REJECTED_LABEL. The
+    fragment (dibasic) does not identify monobasic potassium dihydrogen phosphate.
+    KH2PO4 (0.4 g/l) and KH2PO4 (7% w/v) encode concentration context or a preparation,
+    not an exact pure-salt identity. This is an owner-alias correction; no claim is
+    made that the standalone (dibasic) fragment currently resolves in a native consumer.
+    Primary identity, chemistry, roles, counts and source holds remain unchanged.
+    Primary identity and mapping predicate unchanged. REJECTED_LABEL preserves text/source
+    while excluding unsafe identity resolution. No global source alias is added.'
+  details: 'KG_CASE:921d8143a7b82c53e4c238c08174cae2c51f3214f5d8b317f40a320272bcc6fb:
+    Exact raw KH2PO4 is already a resolving synonym/preferred label on the live CHEBI:63036
+    owner; the calcium-sulfate appearance is rejected-label provenance only. No duplicate
+    or additional same-spelling alias would change the evidence or fix an actual gap.
+    Independent complete-owner alias review found a narrow supported repair: Independent
+    review IF1201-R2: preserve the original text and source provenance while changing
+    three unsafe maintained identity aliases to REJECTED_LABEL. The fragment (dibasic)
+    does not identify monobasic potassium dihydrogen phosphate. KH2PO4 (0.4 g/l) and
+    KH2PO4 (7% w/v) encode concentration context or a preparation, not an exact pure-salt
+    identity. This is an owner-alias correction; no claim is made that the standalone
+    (dibasic) fragment currently resolves in a native consumer. Primary identity,
+    chemistry, roles, counts and source holds remain unchanged.
+
+
+    Integration conditions: Withdraw inherited support for the changed payload; complete
+    guarded/native owner review and coordinator integration remain required. Source-specific
+    and role/publication holds remain.'
+- assessment_id: proposal-027
+  area: identity
+  topic: if1201-edit-nonahydrate-stock-aliases — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-edit-nonahydrate-stock-aliases
+  evidence_ids:
+  - proposal-evidence-027
+  - peer-inorganic_forms
+  summary: 'Independent review IF1201-R2: preserve the exact labels Na2S x 9 H2O (3%
+    w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe source provenance,
+    but change their types to REJECTED_LABEL. They identify concentration-qualified
+    preparations and cannot be exact aliases for pure sodium sulfide nonahydrate.
+    Primary identity, chemistry, roles, counts and source holds remain unchanged.
+    Primary identity and mapping predicate unchanged. REJECTED_LABEL preserves text/source
+    while excluding unsafe identity resolution. No global source alias is added.'
+  details: 'CM_NAME:70400a44191f65081eff712c3121a61094e536783a722d3f679462d6bcbe3521:
+    DSMZ 901a splits Na2S x 9 H2O and 3.00 g into reagent and amount columns. The
+    pure nonahydrate owner already exists; amount-bearing concatenation is a source
+    parser artifact, not a missing substance or global synonym. Independent complete-owner
+    alias review found a narrow supported repair: Independent review IF1201-R2: preserve
+    the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their
+    original kg_microbe source provenance, but change their types to REJECTED_LABEL.
+    They identify concentration-qualified preparations and cannot be exact aliases
+    for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts
+    and source holds remain unchanged.
+
+
+    CM_NAME:df3cec1906738897d5ea2f167fa342c4d547cb3064341135e7aa2e4ecae64563: The
+    JCM source specifies nonahydrate sulfide as a final concentration addition. That
+    is a known solute form and receiving-medium instruction, not a specified stock
+    recipe. No distinct concentration-stock owner can be inferred. Independent complete-owner
+    alias review found a narrow supported repair: Independent review IF1201-R2: preserve
+    the exact labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their
+    original kg_microbe source provenance, but change their types to REJECTED_LABEL.
+    They identify concentration-qualified preparations and cannot be exact aliases
+    for pure sodium sulfide nonahydrate. Primary identity, chemistry, roles, counts
+    and source holds remain unchanged.
+
+
+    CM_NAME:df7bef46521da404e1e13dd58ce7d07294180d67c7c02691d04738ebfd1e37cc: The
+    JCM source explicitly names nonahydrate and final concentration. Stock strength/carrier
+    are not supplied; the existing pure hydrate must be used only for the scoped component,
+    not the instruction-bearing full label. Independent complete-owner alias review
+    found a narrow supported repair: Independent review IF1201-R2: preserve the exact
+    labels Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original
+    kg_microbe source provenance, but change their types to REJECTED_LABEL. They identify
+    concentration-qualified preparations and cannot be exact aliases for pure sodium
+    sulfide nonahydrate. Primary identity, chemistry, roles, counts and source holds
+    remain unchanged.
+
+
+    CM_NAME:f384c4de0f4a3e1f59a81dc0f00c7106c53b13d03c2fa0b60ee6a23661de9223: JCM
+    final-concentration language names sodium sulfide nonahydrate, not the preparation
+    concentration. The source instruction must remain occurrence-bound; no new stock
+    recipe follows from the final dose. Independent complete-owner alias review found
+    a narrow supported repair: Independent review IF1201-R2: preserve the exact labels
+    Na2S x 9 H2O (3% w/v) and Na2S x 9 H2O(24% w/v), including their original kg_microbe
+    source provenance, but change their types to REJECTED_LABEL. They identify concentration-qualified
+    preparations and cannot be exact aliases for pure sodium sulfide nonahydrate.
+    Primary identity, chemistry, roles, counts and source holds remain unchanged.
+
+
+    Integration conditions: Withdraw inherited support for the changed payload; complete
+    guarded/native owner review and coordinator integration remain required. Source-specific
+    and role/publication holds remain.'
+- assessment_id: proposal-028
+  area: identity
+  topic: if1201-edit-tris-alias-scope — isolated successor delta
+  outcome: supported
+  target_ids:
+  - if1201-edit-tris-alias-scope
+  evidence_ids:
+  - proposal-evidence-028
+  - peer-inorganic_forms
+  summary: 'Independent review IF1201-R2: change Tris buffer 1M and nitrilotriacetic
+    acid trisodium salt to REJECTED_LABEL while preserving their exact text and original
+    kg_microbe source provenance. A 1 M buffer preparation is not pure tris, and nitrilotriacetate
+    is a different chemical. Retain the original proposal history and all four hydrochloride/Tris-HCl
+    label rejections. This successor replaces that original proposal once, preserving
+    its source-case link and original before hash. Primary identity, chemistry, roles,
+    counts and source holds remain unchanged. Primary identity and mapping predicate
+    unchanged. REJECTED_LABEL preserves text/source while excluding unsafe identity
+    resolution. No global source alias is added.'
+  details: 'CM_NAME:fd6e4799d0a70169bb618c9475327a02a6f0737e015fc5d5985c3f026d4c05a9:
+    The source explicitly names Tris hydrochloride. Sigma T3253 establishes CAS1185-53-1,
+    formula tris·HCl and molecular weight157.60, distinct from free tris CHEBI:9754
+    (121.136) and Htris cation CHEBI:46097 (no chloride). Current Tris_Base active
+    hydrochloride aliases erase this salt boundary and should be rejected as resolving
+    base synonyms.
+
+
+    CM_NAME:74334e9fdfda1b80dbc6da5dc017152900fd55486268a84fa854d235981ba757: DSMZ
+    1669 identifies Tris and a separate 3.00 g amount. The existing Tris owner already
+    has the amount-free name; no owner or resolving full-row alias should be created.
+    Independent complete-owner alias review found a narrow supported repair: Independent
+    review IF1201-R2: change Tris buffer 1M and nitrilotriacetic acid trisodium salt
+    to REJECTED_LABEL while preserving their exact text and original kg_microbe source
+    provenance. A 1 M buffer preparation is not pure tris, and nitrilotriacetate is
+    a different chemical. Retain the original proposal history and all four hydrochloride/Tris-HCl
+    label rejections. This successor replaces that original proposal once, preserving
+    its source-case link and original before hash. Primary identity, chemistry, roles,
+    counts and source holds remain unchanged.
+
+
+    Integration conditions: Withdraw inherited support for the changed payload; complete
+    guarded/native owner review and coordinator integration remain required. Source-specific
+    and role/publication holds remain.'
+- assessment_id: proposal-029
+  area: identity
+  topic: op1201-glycine-naoh-stock — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-glycine-naoh-stock
+  evidence_ids:
+  - proposal-evidence-029
+  - peer-organic_products
+  summary: JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at
+    pH 10.0. This defines a stock preparation even though its solvent and the amount
+    of NaOH are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L
+    receiving dose is a separate normalization defect. Preserve source-specific scope
+    and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'CM_NAME:e69128522cfe555f63dd51d4a23ece86363290b3839180386b090f368b28d1cc:
+    JCM906 identifies a separately sterilized 0.5 M glycine-NaOH buffer at pH 10.0.
+    This defines a stock preparation even though its solvent and the amount of NaOH
+    are not stated. The source specifies 100 mL of stock; the frozen 100 G_PER_L receiving
+    dose is a separate normalization defect.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-030
+  area: identity
+  topic: op1201-indicator-stock — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-indicator-stock
+  evidence_ids:
+  - proposal-evidence-030
+  - peer-organic_products
+  summary: The TOGO M2844 comment identifies a 0.5% bromothymol blue solution in 0.2
+    N KOH, added at 5 mL per litre. A stock owner can preserve this combined preparation.
+    The extracted 0.2NKOH fragment must not denote the whole stock or be added as
+    a global alias. Preserve source-specific scope and inherited holds. No global
+    alias is inferred from a source-local abbreviation. Registry identities require
+    a registry row; ontology parent relations remain broadMatch. This proposal is
+    not applied and does not approve export.
+  details: 'CM_NAME:1ac4a766ac36e26680a97f9752f39e530b85b96cca583625df660cb1ae327733:
+    The TOGO M2844 comment identifies a 0.5% bromothymol blue solution in 0.2 N KOH,
+    added at 5 mL per litre. A stock owner can preserve this combined preparation.
+    The extracted 0.2NKOH fragment must not denote the whole stock or be added as
+    a global alias.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-031
+  area: identity
+  topic: op1201-toluene-stock — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-toluene-stock
+  evidence_ids:
+  - proposal-evidence-031
+  - peer-organic_products
+  summary: JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock
+    described as 5.0 mM and added at 40 mL per litre. This supports a stock record
+    separate from pure toluene and from the receiving medium. Preserve source-specific
+    scope and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'CM_NAME:2d3496e5e5db478293b2ec51685c6d620bab28189fa409aebd527153527452c5:
+    JCM600 identifies an anaerobic, autoclaved water-saturated toluene stock described
+    as 5.0 mM and added at 40 mL per litre. This supports a stock record separate
+    from pure toluene and from the receiving medium.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-032
+  area: identity
+  topic: op1201-usb-peptic-pepton — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-usb-peptic-pepton
+  evidence_ids:
+  - proposal-evidence-032
+  - peer-organic_products
+  summary: NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material
+    can have an opaque product record without an invented substrate, digestion process
+    or catalog number. Preserve source-specific scope and inherited holds. No global
+    alias is inferred from a source-local abbreviation. Registry identities require
+    a registry row; ontology parent relations remain broadMatch. This proposal is
+    not applied and does not approve export.
+  details: 'CM_NAME:915a5129055eb6a65b778c9f18b3440f3f4a1f44ce7a31c9341304cef6514099:
+    NBRC19 names Peptic Pepton from USB at 2 g/L. The named commercial material can
+    have an opaque product record without an invented substrate, digestion process
+    or catalog number.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-033
+  area: identity
+  topic: op1201-sulfide-ore — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-sulfide-ore
+  evidence_ids:
+  - proposal-evidence-033
+  - peer-organic_products
+  summary: DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348.
+    The source denotes a generic ore material rather than pure FeS2 or a fixed mineral
+    mixture. A registry record preserves that unspecified material without requiring
+    a mineral assay. Preserve source-specific scope and inherited holds. No global
+    alias is inferred from a source-local abbreviation. Registry identities require
+    a registry row; ontology parent relations remain broadMatch. This proposal is
+    not applied and does not approve export.
+  details: 'CM_NAME:9425ea458db659975a787bc024022987ff739262fc5903cf9dcaa26a65d56683:
+    DSMZ88 permits sulfide ore and gives pyrite as an example for DSM5348. The source
+    denotes a generic ore material rather than pure FeS2 or a fixed mineral mixture.
+    A registry record preserves that unspecified material without requiring a mineral
+    assay.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-034
+  area: identity
+  topic: op1201-cereal-leaves — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-cereal-leaves
+  evidence_ids:
+  - proposal-evidence-034
+  - peer-organic_products
+  summary: The existing Cereal_Leaves record denotes cereal leaf tissue of unspecified
+    species, matching the material named in the CCAP recipes. Promote this existing
+    material to a registry identity and preserve the supplier and preparation context
+    without asserting a plant species or extract composition. Preserve source-specific
+    scope and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'CM_NAME:ea6da18efec7e3f33c603d146c226b919d397349a85de210db4536d7668f5fa6:
+    The existing Cereal_Leaves record denotes cereal leaf tissue of unspecified species,
+    matching the material named in the CCAP recipes. Promote this existing material
+    to a registry identity and preserve the supplier and preparation context without
+    asserting a plant species or extract composition.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.; On approved integration, move this existing owner to
+    data/ingredients/mapped/Cereal_Leaves.yaml and retire the old unmapped path in
+    the same synchronized change. The proposal owner_path remains the exact frozen
+    preimage; do not create a duplicate owner.'
+- assessment_id: proposal-035
+  area: identity
+  topic: op1201-homopipes-stock — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-homopipes-stock
+  evidence_ids:
+  - proposal-evidence-035
+  - peer-organic_products
+  summary: The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES
+    preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the
+    solute. A separate stock record can assert the named solute and concentration
+    while leaving the vehicle and titrant unspecified. Preserve source-specific scope
+    and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'KG_CASE:79ac86d7875c33e90737f34b059f884510db9e912eca24f79752ef444659bf30:
+    The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES preparation
+    at pH 5.4, dosed by volume. The existing CAS owner identifies the solute. A separate
+    stock record can assert the named solute and concentration while leaving the vehicle
+    and titrant unspecified.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-036
+  area: identity
+  topic: op1201-dl-asparagine-monohydrate — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-dl-asparagine-monohydrate
+  evidence_ids:
+  - proposal-evidence-036
+  - peer-organic_products
+  summary: The source explicitly specifies DL-asparagine with one water. Wako identifies
+    DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate
+    product, but that number also appears on generic asparagine records; it is not
+    copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653
+    asparagine. The supplied form is graded NARROW_MATCH, producing skos:broadMatch
+    to its broader ontology parent. Preserve source-specific scope and inherited holds.
+    No global alias is inferred from a source-local abbreviation. Registry identities
+    require a registry row; ontology parent relations remain broadMatch. This proposal
+    is not applied and does not approve export.
+  details: 'KG_CASE:baf652dc5eb750c287ff9f7811ed2ded74f1505a9991af9b564878575b1b05fd:
+    The source explicitly specifies DL-asparagine with one water. Wako identifies
+    DL-asparagine monohydrate as CAS 69833-18-7. TCI uses 3130-87-8 for a hydrate
+    product, but that number also appears on generic asparagine records; it is not
+    copied. A distinct CAS 69833-18-7 owner retains a broad relation to CHEBI:22653
+    asparagine. The narrower supplied form uses NARROW_MATCH, which emits skos:broadMatch
+    to the ontology parent; this is not exact identity.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-037
+  area: identity
+  topic: op1201-beta-nad-provenance — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-beta-nad-provenance
+  evidence_ids:
+  - proposal-evidence-037
+  - peer-organic_products
+  summary: The source and existing aliases already identify beta-NAD. Maintained history
+    distinguishes the PubChem CAS import from the later ChEBI formula, InChI and SMILES
+    backfill. Correct the conflated chemical-property attribution without changing
+    molecular values, identity, aliases or native holds. Preserve source-specific
+    scope and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'KG_CASE:2dffe0a676fa75f5706e37cb9f185e586abdceac83b4d27178ec803c914b1d75:
+    The source and existing aliases already identify beta-NAD. Maintained history
+    distinguishes the PubChem CAS import from the later ChEBI formula, InChI and SMILES
+    backfill. Correct the conflated chemical-property attribution without changing
+    molecular values, identity, aliases or native holds.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-038
+  area: identity
+  topic: op1201-laminarin-scope — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-laminarin-scope
+  evidence_ids:
+  - proposal-evidence-038
+  - peer-organic_products
+  summary: CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa.
+    The current owner has this generic identity but a Laminaria digitata procurement
+    label. Align its preferred name to Laminarin and preserve the original species
+    detail in supplied_form and a catalog synonym. No evidence supports a distinct
+    chemical substance requiring a second owner. Preserve source-specific scope and
+    inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'CM_NAME:01aec69ac587f513a0efaf1009c3056899504cdd7b749da6c679d5bb81d64bc6:
+    CHEBI:6364 and CAS 9008-22-4 denote laminarin across brown-algal taxa. The current
+    owner has this generic identity but a Laminaria digitata procurement label. Align
+    its preferred name to Laminarin and preserve the original species detail in supplied_form
+    and a catalog synonym. No evidence supports a distinct chemical substance requiring
+    a second owner.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-039
+  area: identity
+  topic: op1201-bbl-fluid-thioglycollate — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-bbl-fluid-thioglycollate
+  evidence_ids:
+  - proposal-evidence-039
+  - peer-organic_products
+  summary: ATCC474 independently identifies the fluid thioglycollate ingredient in
+    this Eubacterium recipe as BD211260 at 29.5 g/L. The current BD catalog names
+    BBL fluid thioglycollate medium. This resolves the earlier missing product identification
+    and supports a commercial named-medium owner. Preserve source-specific scope and
+    inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'CM_NAME:5a8a96619d2bdf6d4b70b6b7044885623079a705d95757b832f1f55f63970394:
+    ATCC474 independently identifies the fluid thioglycollate ingredient in this Eubacterium
+    recipe as BD211260 at 29.5 g/L. The current BD catalog names BBL fluid thioglycollate
+    medium. This resolves the earlier missing product identification and supports
+    a commercial named-medium owner.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-040
+  area: identity
+  topic: op1201-r2a-medium — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-r2a-medium
+  evidence_ids:
+  - proposal-evidence-040
+  - peer-organic_products
+  summary: The three FEBA recipes use unqualified R2A at one-fold strength in liquid
+    outgrowth media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543
+    separately denotes R2A agar. A generic named-medium record can preserve this source
+    sense without inventing a supplier or formula. Preserve source-specific scope
+    and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'CM_NAME:8b35d23142f7e483b5039390cc903344d1f5ba7b9ade305d3e1e3ba05e317b9b:
+    The three FEBA recipes use unqualified R2A at one-fold strength in liquid outgrowth
+    media. MICRO:0000541 supplies the named R2A-medium concept, while MICRO:0000543
+    separately denotes R2A agar. A generic named-medium record can preserve this source
+    sense without inventing a supplier or formula.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-041
+  area: identity
+  topic: op1201-r2a-agar-provenance — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-r2a-agar-provenance
+  evidence_ids:
+  - proposal-evidence-041
+  - peer-organic_products
+  summary: The primary TOGO M2972 component is explicitly labelled Difco R2A agar,
+    and the preparation describes plant-stem contact with a medium surface. This supports
+    the agar interpretation of this occurrence and a source-provenance enrichment
+    of the existing R2A-agar owner. Preserve source-specific scope and inherited holds.
+    No global alias is inferred from a source-local abbreviation. Registry identities
+    require a registry row; ontology parent relations remain broadMatch. This proposal
+    is not applied and does not approve export.
+  details: 'CM_NAME:8f5f29a3e275b3b3444981009e1406a3f7da7014667630ee3ef6cad62716aa5f:
+    The primary TOGO M2972 component is explicitly labelled Difco R2A agar, and the
+    preparation describes plant-stem contact with a medium surface. This supports
+    the agar interpretation of this occurrence and a source-provenance enrichment
+    of the existing R2A-agar owner.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-042
+  area: identity
+  topic: op1201-racemic-sodium-sulfolactate — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-racemic-sodium-sulfolactate
+  evidence_ids:
+  - proposal-evidence-042
+  - peer-organic_products
+  summary: The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly
+    cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium
+    sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate
+    preparation; sodium stoichiometry, hydration and isolated-product purity remain
+    unspecified. The supplied form is graded NARROW_MATCH, producing skos:broadMatch
+    to its broader ontology parent. Preserve source-specific scope and inherited holds.
+    No global alias is inferred from a source-local abbreviation. Registry identities
+    require a registry row; ontology parent relations remain broadMatch. This proposal
+    is not applied and does not approve export.
+  details: 'CM_NAME:9ef2b461bbe5cedfbbe26d8fa72e9ff70bdb0922c206f021e9539cae8c2ca573:
+    The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly
+    cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium
+    sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate
+    preparation; sodium stoichiometry, hydration and isolated-product purity remain
+    unspecified. The narrower supplied form uses NARROW_MATCH, which emits skos:broadMatch
+    to the ontology parent; this is not exact identity.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-043
+  area: identity
+  topic: op1201-trypticase-soy-broth — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-trypticase-soy-broth
+  evidence_ids:
+  - proposal-evidence-043
+  - peer-organic_products
+  summary: 'MICRO:0000113 explicitly includes Trypticase soy broth and describes the
+    standard BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium
+    phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining
+    its history and counts. The NBRC source uses 30 g of this base with agar supplied
+    separately. Preserve source-specific scope and inherited holds. No global alias
+    is inferred from a source-local abbreviation. Registry identities require a registry
+    row; ontology parent relations remain broadMatch. This proposal is not applied
+    and does not approve export.'
+  details: 'CM_NAME:de92406344f88cb3037e9a5bfe6f2a1adf15a34c24660b97942492295bb8a7d9:
+    MICRO:0000113 explicitly includes Trypticase soy broth and describes the standard
+    BBL formulation: casein digest, soybean digest, dextrose, NaCl and dipotassium
+    phosphate. Promote the existing generic Trypticase-soy-broth owner, retaining
+    its history and counts. The NBRC source uses 30 g of this base with agar supplied
+    separately.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.; On approved integration, move this existing owner to
+    data/ingredients/mapped/Trypticase_Soy_Broth.yaml and retire the old unmapped
+    path in the same synchronized change. The proposal owner_path remains the exact
+    frozen preimage; do not create a duplicate owner.'
+- assessment_id: proposal-044
+  area: identity
+  topic: op1201-sodium-lactate-alias-boundary — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-sodium-lactate-alias-boundary
+  evidence_ids:
+  - proposal-evidence-044
+  - peer-organic_products
+  summary: The current owner mixes concentration labels and an L-specific label into
+    the alias channel of sodium lactate. Retype the 1 M stock, 1% stock and L-only
+    label as rejected provenance, retaining their original text and source. The DL
+    salt name and existing identifier remain unchanged; this repairs concrete alias
+    defects without approving the withheld row. Preserve source-specific scope and
+    inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'KG_CASE:1c9654d34ad35353d3941eec41a5029ebcee7e40dc7c899bf2a63c12e724d29b:
+    The current owner mixes concentration labels and an L-specific label into the
+    alias channel of sodium lactate. Retype the 1 M stock, 1% stock and L-only label
+    as rejected provenance, retaining their original text and source. The DL salt
+    name and existing identifier remain unchanged; this repairs concrete alias defects
+    without approving the withheld row.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-045
+  area: identity
+  topic: op1201-soy-family-source-boundary — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-soy-family-source-boundary
+  evidence_ids:
+  - proposal-evidence-045
+  - peer-organic_products
+  summary: Primary product evidence identifies Soytone as an enzymatic soybean digest.
+    Record that evidence and the exact scope of the four-member family on the active
+    representative, without treating generic soy peptone, Soytone and every Phytone
+    product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate
+    identifier; Bacto_Soytone remains rejected. Preserve source-specific scope and
+    inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee:
+    Primary product evidence identifies Soytone as an enzymatic soybean digest. Record
+    that evidence and the exact scope of the four-member family on the active representative,
+    without treating generic soy peptone, Soytone and every Phytone product as a reviewed
+    exact identity. Three active owners share a broad vegetable-hydrolysate identifier;
+    Bacto_Soytone remains rejected.
+
+
+    KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67: Primary
+    product evidence identifies Soytone as an enzymatic soybean digest. Record that
+    evidence and the exact scope of the four-member family on the active representative,
+    without treating generic soy peptone, Soytone and every Phytone product as a reviewed
+    exact identity. Three active owners share a broad vegetable-hydrolysate identifier;
+    Bacto_Soytone remains rejected.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-046
+  area: identity
+  topic: op1201-plain-flour — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-plain-flour
+  evidence_ids:
+  - proposal-evidence-046
+  - peer-organic_products
+  summary: FOODON:00004510 denotes flour as a powder from cereals or other starchy
+    sources. This generic material sense matches the unqualified plain-flour ingredient;
+    an identified grain is not required to preserve it. Promote the existing owner
+    to the flour term without assigning wheat, bleaching, fortification or an automatic
+    CAS cross-reference. Preserve source-specific scope and inherited holds. No global
+    alias is inferred from a source-local abbreviation. Registry identities require
+    a registry row; ontology parent relations remain broadMatch. This proposal is
+    not applied and does not approve export.
+  details: 'KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e:
+    FOODON:00004510 denotes flour as a powder from cereals or other starchy sources.
+    This generic material sense matches the unqualified plain-flour ingredient; an
+    identified grain is not required to preserve it. Promote the existing owner to
+    the flour term without assigning wheat, bleaching, fortification or an automatic
+    CAS cross-reference.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.; On approved integration, move this existing owner to
+    data/ingredients/mapped/Plain_Flour.yaml and retire the old unmapped path in the
+    same synchronized change. The proposal owner_path remains the exact frozen preimage;
+    do not create a duplicate owner.'
+- assessment_id: proposal-047
+  area: identity
+  topic: op1201-amphotericin-stock — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-amphotericin-stock
+  evidence_ids:
+  - proposal-evidence-047
+  - peer-organic_products
+  summary: The frozen source explicitly describes an amphotericin preparation at 10
+    mg/mL, added by volume. A source-qualified stock record can preserve this preparation
+    with an unresolved amphotericin constituent. The record must not assert amphotericin
+    B, a vehicle or a deoxycholate/lipid formulation. Preserve source-specific scope
+    and inherited holds. No global alias is inferred from a source-local abbreviation.
+    Registry identities require a registry row; ontology parent relations remain broadMatch.
+    This proposal is not applied and does not approve export.
+  details: 'KG_CASE:dac61155b58c92c33aecd75165fa9ad86ff742db67b6a2f04bd1067c330f88f0:
+    The frozen source explicitly describes an amphotericin preparation at 10 mg/mL,
+    added by volume. A source-qualified stock record can preserve this preparation
+    with an unresolved amphotericin constituent. The record must not assert amphotericin
+    B, a vehicle or a deoxycholate/lipid formulation.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-048
+  area: identity
+  topic: op1201-ferric-pyrophosphate-label — isolated successor delta
+  outcome: supported
+  target_ids:
+  - op1201-ferric-pyrophosphate-label
+  evidence_ids:
+  - proposal-evidence-048
+  - peer-organic_products
+  summary: The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3,
+    structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its
+    preferred label. Correct the preferred label and retain the old string as rejected
+    provenance. This repair does not establish what the malformed source occurrence
+    intended. Preserve source-specific scope and inherited holds. No global alias
+    is inferred from a source-local abbreviation. Registry identities require a registry
+    row; ontology parent relations remain broadMatch. This proposal is not applied
+    and does not approve export.
+  details: 'KG_CASE:fc7316d214f3ef4d311802ef90c7ff2859f12a4a37eeb03298c68390c8c4182b:
+    The existing owner identifies ferric pyrophosphate by CHEBI:132767, CAS10058-44-3,
+    structure and accepted synonyms, but uses the malformed Fe4(PO4)2 string as its
+    preferred label. Correct the preferred label and retain the old string as rejected
+    provenance. This repair does not establish what the malformed source occurrence
+    intended.
+
+
+    Integration conditions: Independently review the exact successor bytes.; Do not
+    transfer earlier whole-payload approvals onto changed owners.; Preserve frozen
+    source decisions, native holds and receiving-dose defects. No maintained or export
+    changes are authorized.'
+- assessment_id: proposal-049
+  area: identity
+  topic: vm1201-prop-jcm1023-vitamin — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm1023-vitamin
+  evidence_ids:
+  - proposal-evidence-049
+  - peer-vitamins_mixtures
+  summary: 'JCM 1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600.
+    Distinct from JCM 903: pyridoxamine dihydrochloride 15 mg in a 100 ml water batch;
+    JCM 903 uses pyridoxine hydrochloride and DL-calcium pantothenate in 1 L. JCM
+    1023 Vitamin mixture, the stock used by TOGO M1084 / CultureMech:007600.'
+  details: 'CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216:
+    Split the shared raw label into JCM 1023 and JCM 903 source-defined vitamin-stock
+    proposals. Both full recipes identify the carrier and immediate component amounts;
+    B6 form, batch size and pantothenate content differ. Each original occurrence
+    links to its own stock, without a global Vitamin mixture synonym.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-050
+  area: identity
+  topic: vm1201-prop-jcm903-vitamin — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm903-vitamin
+  evidence_ids:
+  - proposal-evidence-050
+  - peer-vitamins_mixtures
+  summary: JCM 903 Vitamin mixture, the stock used by TOGO M944 / CultureMech:010367.
+    Eight vitamins plus water; source explicitly says DL-calcium pantothenate. Distinct
+    from JCM 1023 and existing generic Wolfe/Thauer formulas. JCM 903 Vitamin mixture,
+    the stock used by TOGO M944 / CultureMech:010367.
+  details: 'CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216:
+    Split the shared raw label into JCM 1023 and JCM 903 source-defined vitamin-stock
+    proposals. Both full recipes identify the carrier and immediate component amounts;
+    B6 form, batch size and pantothenate content differ. Each original occurrence
+    links to its own stock, without a global Vitamin mixture synonym.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-051
+  area: identity
+  topic: vm1201-prop-jcm554-sl10 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm554-sl10
+  evidence_ids:
+  - proposal-evidence-051
+  - peer-vitamins_mixtures
+  summary: JCM 554 separately enumerated SL10 elements preparation as published. Seven
+    metal salts and 1 L distilled water. The current DSMZ 4178 SL10 owner additionally
+    specifies HCl and boric acid with 990 ml water. This owner denotes the JCM 554
+    recipe as written, without claiming JCM intended an HCl/borate-free universal
+    SL10 standard or silently repairing possible omissions. JCM 554 separately enumerated
+    SL10 elements preparation as published.
+  details: 'CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e:
+    The explicit JCM 554 seven-metal-salt/water recipe supports its own preparation
+    owner as published. Absence of HCl/borate from that enumeration prevents equivalence
+    to the current DSMZ 4178 SL10 owner but does not prevent source-qualified curation.
+    Possible source omissions are retained as a limit, not repaired by guessing.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-052
+  area: identity
+  topic: vm1201-prop-nbrc1356-mineral-base1 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-nbrc1356-mineral-base1
+  evidence_ids:
+  - proposal-evidence-052
+  - peer-vitamins_mixtures
+  summary: The aqueous supernatant obtained by the NBRC 1356 Mineral base 1 protocol.
+    Preparation identity is supported despite unmeasured dissolved composition; PARTIAL
+    assertion includes only the known aqueous carrier. The aqueous supernatant obtained
+    by the NBRC 1356 Mineral base 1 protocol.
+  details: 'CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df:
+    NBRC 1356 defines the protocol and aqueous recovered phase of Mineral base1. A
+    preparation-defined owner is now proposed with only water as a known retained
+    component. Charged salt inputs remain in protocol notes, with no invented post-precipitation
+    concentrations or nitrogen component.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-053
+  area: identity
+  topic: vm1201-prop-yps-basea — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-yps-basea
+  evidence_ids:
+  - proposal-evidence-053
+  - peer-vitamins_mixtures
+  summary: TOGO M2567 YPS medium, source-defined Mineral base A. The source gives
+    enough carrier, constituents and protocol to identify this preparation while the
+    ambiguous token remains unresolved. Complete molecular composition is not asserted.
+    TOGO M2567 YPS medium, source-defined Mineral base A.
+  details: 'CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f:
+    TOGO M2567 Mineral baseA defines an aqueous marine-salt preparation sufficiently
+    to curate its source-qualified identity. Propose PARTIAL components while retaining
+    raw NaII CO3 at 0.2 g as an unresolved input in notes. No carbonate species, hydrate
+    or generic seawater identity is guessed.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-054
+  area: identity
+  topic: vm1201-prop-yps-baseb — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-yps-baseb
+  evidence_ids:
+  - proposal-evidence-054
+  - peer-vitamins_mixtures
+  summary: TOGO M2567 YPS medium, source-defined Mineral base B. The source gives
+    enough carrier, constituents and protocol to identify this preparation while the
+    ambiguous token remains unresolved. Complete molecular composition is not asserted.
+    TOGO M2567 YPS medium, source-defined Mineral base B.
+  details: 'CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6:
+    TOGO M2567 Mineral baseB has a defined aqueous NTA/trace-salt preparation and
+    pH sequence. Propose the source-qualified stock with PARTIAL components, omitting
+    the unresolved literal AIK(SO4)2 input and retaining KOH without a quantity. pH
+    6.5 then7.0 is known; no aluminium-potassium sulfate hydrate or cobalt-sulfate
+    hydrate is inferred.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-055
+  area: identity
+  topic: vm1201-prop-jcm628-toplayer — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm628-toplayer
+  evidence_ids:
+  - proposal-evidence-055
+  - peer-vitamins_mixtures
+  summary: 'Semisolid top-layer preparation of JCM 628, used by CultureMech:010042.
+    Nested carrier input recipe: [["NH4Cl", "1.0", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O",
+    "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O", "0.1", "G_PER_SOURCE_BATCH"], ["KH2PO4",
+    "0.05", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+    JCM 197 trace-mineral stock input recipe: [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"],
+    ["FeCl2·4H2O", "0.4", "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"],
+    ["CoCl2·6H2O", "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"],
+    ["CaCl2·2H2O", "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"],
+    ["Na2MoO4·2H2O", "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"],
+    ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment
+    with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin",
+    "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"], ["Pyridoxine·HCl",
+    "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1",
+    "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+    These nested recipes document carrier identity; their water is not counted again
+    as an immediate top-layer component. Semisolid top-layer preparation of JCM 628,
+    used by CultureMech:010042.'
+  details: 'CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7:
+    Propose separate JCM 628 freshwater and JCM 629 saltwater semisolid top-layer
+    preparations. The JCM 628 recipe gives100 ml carrier, 1 ml JCM 197 trace minerals,
+    MES0.195 g, NaHCO30.042 g, agarose0.15 g and post-autoclave1 ml JCM 197 trace
+    vitamins. JCM 629 explicitly substitutes its artificial saltwater carrier. Nested
+    carrier/stock recipes and exact occurrence links are retained; pH-adjustment chemistry
+    remains partial and the bottom layer is excluded.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-056
+  area: identity
+  topic: vm1201-prop-jcm629-toplayer — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm629-toplayer
+  evidence_ids:
+  - proposal-evidence-056
+  - peer-vitamins_mixtures
+  summary: 'Semisolid top-layer preparation of JCM 629, used by CultureMech:010043.
+    Nested carrier input recipe: [["NaCl", "27.5", "G_PER_SOURCE_BATCH"], ["MgCl2·6H2O",
+    "5.38", "G_PER_SOURCE_BATCH"], ["MgSO4·7H2O", "6.78", "G_PER_SOURCE_BATCH"], ["KCl",
+    "0.72", "G_PER_SOURCE_BATCH"], ["NaHCO3", "0.2", "G_PER_SOURCE_BATCH"], ["CaCl2·2H2O",
+    "1.4", "G_PER_SOURCE_BATCH"], ["NH4Cl", "1.0", "G_PER_SOURCE_BATCH"], ["KH2PO4",
+    "0.05", "G_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+    JCM 197 trace-mineral stock input recipe: [["Nitrilotriacetic acid", "4.5", "G_PER_SOURCE_BATCH"],
+    ["FeCl2·4H2O", "0.4", "G_PER_SOURCE_BATCH"], ["MnCl2·4H2O", "0.1", "G_PER_SOURCE_BATCH"],
+    ["CoCl2·6H2O", "0.17", "G_PER_SOURCE_BATCH"], ["ZnCl2", "0.1", "G_PER_SOURCE_BATCH"],
+    ["CaCl2·2H2O", "0.02", "G_PER_SOURCE_BATCH"], ["H3BO3", "0.019", "G_PER_SOURCE_BATCH"],
+    ["Na2MoO4·2H2O", "0.01", "G_PER_SOURCE_BATCH"], ["NiCl2·6H2O", "0.03", "G_PER_SOURCE_BATCH"],
+    ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]], followed by pH 7.0 adjustment
+    with 1N KOH (amount unstated). JCM 197 trace-vitamin stock input recipe: [["Biotin",
+    "2.0", "MG_PER_SOURCE_BATCH"], ["Folic acid", "2.0", "MG_PER_SOURCE_BATCH"], ["Pyridoxine·HCl",
+    "10.0", "MG_PER_SOURCE_BATCH"], ["Thiamine·HCl", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Riboflavin", "5.0", "MG_PER_SOURCE_BATCH"], ["Nicotinic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Calcium pantothenate", "5.0", "MG_PER_SOURCE_BATCH"], ["Vitamin B12", "0.1",
+    "MG_PER_SOURCE_BATCH"], ["p-Aminobenzoic acid", "5.0", "MG_PER_SOURCE_BATCH"],
+    ["Lipoic acid", "5.0", "MG_PER_SOURCE_BATCH"], ["Distilled water", "1.0", "L_PER_SOURCE_BATCH"]].
+    These nested recipes document carrier identity; their water is not counted again
+    as an immediate top-layer component. Semisolid top-layer preparation of JCM 629,
+    used by CultureMech:010043.'
+  details: 'CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7:
+    Propose separate JCM 628 freshwater and JCM 629 saltwater semisolid top-layer
+    preparations. The JCM 628 recipe gives100 ml carrier, 1 ml JCM 197 trace minerals,
+    MES0.195 g, NaHCO30.042 g, agarose0.15 g and post-autoclave1 ml JCM 197 trace
+    vitamins. JCM 629 explicitly substitutes its artificial saltwater carrier. Nested
+    carrier/stock recipes and exact occurrence links are retained; pH-adjustment chemistry
+    remains partial and the bottom layer is excluded.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-057
+  area: identity
+  topic: vm1201-prop-nbrc1020-vitamin — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-nbrc1020-vitamin
+  evidence_ids:
+  - proposal-evidence-057
+  - peer-vitamins_mixtures
+  summary: 'Identical enumerated vitamin preparation in NBRC 1020 and NBRC 824. Ten
+    vitamins with B12 2.7 mg, biotin0.5 mg and folic acid0.9 mg per 1 L water; differs
+    from the common nine-vitamin stock and other starred stocks. NBRC 1020 explicitly
+    filter sterilizes the vitamin stock. NBRC 824 does not specify vitamin-stock filtration:
+    its receiving-medium instruction dissolves all ingredients except terephthalate,
+    sulfide and cysteine before autoclaving. The identical enumeration supports a
+    shared input-stock formula only; the receiving-medium processing differs and processed-medium
+    equivalence is not asserted. Identical enumerated vitamin preparation in NBRC
+    1020 and NBRC 824.'
+  details: 'CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2:
+    Split by actual primary formulation: NBRC 1020/824 share the ten-vitamin2.7 mg-B12-per-L-water
+    stock and receive one new proposal. NBRC 1169/1308 match the prior NBRC 1356 common
+    nine-vitamin stock in every source-listed component and batch amount, and join
+    its immutable successor proposal. No globally resolving starred alias is added.
+    NBRC 1020 filters the vitamin stock; NBRC 824 receiving-medium instructions include
+    vitamins before autoclaving. The common enumerated input formula does not establish
+    equivalent processed media.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-058
+  area: identity
+  topic: vm1201-prop-nbrc1226-vitamin — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-nbrc1226-vitamin
+  evidence_ids:
+  - proposal-evidence-058
+  - peer-vitamins_mixtures
+  summary: NBRC 1226 separately prepared vitamin stock. Vitamin B12 5 mg and lipoic
+    acid5 mg with pABA1 mg per 1 L water, distinct from both common nine-vitamin formula
+    and NBRC 903. NBRC 1226 separately prepared vitamin stock.
+  details: 'CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506:
+    Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing
+    proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12
+    5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each
+    receive a separate stock proposal. The generic calcium-pantothenate wording is
+    not changed to a D-specific form.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-059
+  area: identity
+  topic: vm1201-prop-nbrc903-vitamin — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-nbrc903-vitamin
+  evidence_ids:
+  - proposal-evidence-059
+  - peer-vitamins_mixtures
+  summary: NBRC 903 separately prepared vitamin stock. Vitamin B12 0.1 mg, pABA5 mg
+    and lipoic acid5 mg per 1 L water; generic Ca-pantothenate is preserved. The same
+    literal recipe is used by JCM 197 trace vitamins, but a D-specific ATCC calcium-pantothenate
+    formulation and the current Wolfe stock with KH2PO4 are not established identical.
+    NBRC 903 separately prepared vitamin stock.
+  details: 'CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506:
+    Split the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing
+    proposed NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12
+    5 mg, lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each
+    receive a separate stock proposal. The generic calcium-pantothenate wording is
+    not changed to a D-specific form.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-060
+  area: identity
+  topic: vm1201-prop-nbrc-common9 — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-nbrc-common9
+  evidence_ids:
+  - proposal-evidence-060
+  - peer-vitamins_mixtures
+  summary: 'Exact same nine-vitamin preparation across original NBRC 1356/857/936
+    proposal and added NBRC 1169/1308/1050/1086/1274/925 occurrences. Source provenance
+    enrichment only; same preparation and identifier. NBRC 1356: ***Vitamin solution;
+    matching enumerations checked in NBRC 857 and 936'
+  details: 'CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51:
+    NBRC 1356, 857 and 936 all supply the same nine-vitamin recipe: biotin/folate
+    2 mg, pyridoxine-HCl 10 mg, thiamine-HCl/riboflavin/nicotinic acid/Ca-pantothenate
+    5 mg, pABA 1 mg and B12 0.01 mg per L. This establishes a common source-family
+    stock but differs from current Wolfe/Thauer owners (notably B12, pABA and lipoic
+    acid). The starred generic label cannot serve as a universal alias. The complete
+    immediate source formulation supports an isolated source-qualified registry stock
+    proposal. Its bare local name is retained in scoped notes rather than exported
+    as a global alias.
+
+
+    CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2: Split
+    by actual primary formulation: NBRC 1020/824 share the ten-vitamin2.7 mg-B12-per-L-water
+    stock and receive one new proposal. NBRC 1169/1308 match the prior NBRC 1356 common
+    nine-vitamin stock in every source-listed component and batch amount, and join
+    its immutable successor proposal. No globally resolving starred alias is added.
+    NBRC 1020 filters the vitamin stock; NBRC 824 receiving-medium instructions include
+    vitamins before autoclaving. The common enumerated input formula does not establish
+    equivalent processed media.
+
+
+    CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506: Split
+    the six occurrences by formula. NBRC 1050/1086/1274/925 match the existing proposed
+    NBRC 1356 common nine-vitamin recipe and join its successor; NBRC 1226(B12 5 mg,
+    lipoic5 mg, pABA 1 mg) and NBRC 903(B12 0.1 mg, lipoic5 mg, pABA 5 mg) each receive
+    a separate stock proposal. The generic calcium-pantothenate wording is not changed
+    to a D-specific form.
+
+
+    Integration conditions: Independent skeptical review and content-bound SSSOM admission
+    before application; this payload is not admission approval.; Reconcile cross-campaign
+    equivalent recipe proposals before creating a registry owner; source numbers alone
+    do not establish distinct substances.'
+- assessment_id: proposal-061
+  area: identity
+  topic: vm1201-prop-gibco11120-mem100x — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-gibco11120-mem100x
+  evidence_ids:
+  - proposal-evidence-061
+  - peer-vitamins_mixtures
+  summary: Gibco MEM Vitamin Solution(100X), manufacturer product family11120, as
+    requested in NBRC 1407. The official100X formula and FAQ establish nine enumerated
+    solutes in distilled water. Concentrations are manufacturer mg/L of supplied stock,
+    not final NBRC 1407 medium. Historical batch and package code are not asserted.
+    No generic MEM or vitamins alias. Gibco MEM Vitamin Solution(100X), manufacturer
+    product family11120, as requested in NBRC 1407.
+  details: 'CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20:
+    NBRC 1407 identifies Gibco100X MEM vitamins; the official manufacturer formula
+    and newly recovered FAQ establish product family11120, equivalent -052/-037 formulations
+    and distilled-water solvent. Propose the source-qualified manufacturer stock with
+    its nine solutes and aqueous carrier. An absent historical lot/package code alone
+    is not a scientific blocker; no lot-level claim is made.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-062
+  area: identity
+  topic: vm1201-prop-jcm510-methane-air — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm510-methane-air
+  evidence_ids:
+  - proposal-evidence-062
+  - peer-vitamins_mixtures
+  summary: JCM 510 declared methane-air(50:50) cultivation gas blend. The two immediate
+    gases are explicit in the primary recipe. The ratio basis is not specified, so
+    50:50 is retained literally in identity/protocol notes without inventing mass,
+    mole or volume fractions. Air is not expanded into guessed gases. This is the
+    supplied gas blend, not the whole growth medium or a neat-methane synonym. JCM
+    510 declared methane-air(50:50) cultivation gas blend.
+  details: 'CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d:
+    JCM 510 explicitly supplies methane and air as a50:50 cultivation gas blend. Propose
+    that source-qualified two-component preparation with unquantified components;
+    literal ratio basis remains unspecified. No atmospheric gas is inferred from storage
+    or autoclaving and no neat-methane identity or material role is asserted.
+
+
+    Integration conditions: Independent skeptical review of these exact bytes and
+    content-bound SSSOM admission under issue1165 before application.; Retain all
+    frozen source holds and occurrence boundaries. No global alias, molecular exact
+    mapping or receiving-dose repair is implied.; Reconcile cross-shard equivalent
+    preparation proposals before registry admission.'
+- assessment_id: proposal-063
+  area: identity
+  topic: vm1201-prop-jcm515-b12-partial — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm515-b12-partial
+  evidence_ids:
+  - proposal-evidence-063
+  - peer-vitamins_mixtures
+  summary: Source-qualified JCM 515 vitamin B12 20 microgram per ml stock. JCM 515
+    explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving
+    the receiving medium. The carrier and any additional stock constituents are unspecified.
+    No water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred.
+    This is a PARTIAL preparation record; complete-formulation equivalence and source
+    hold release are not asserted. NBRC 0.002%(w/v) and TOGO M498 2 mg/100 ml nominal
+    strengths both convert to 20 mg/L. Their carriers and stock provenance are not
+    shown to match JCM 515; retain them only as conditional comparisons, without merging
+    source memberships. Source-qualified JCM 515 vitamin B12 20 microgram per ml stock.
+    JCM 515 explicitly adds 1 ml of 20 µg/ml filter-sterilized B12 stock after autoclaving
+    the receiving medium.
+  details: 'CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7:
+    The NBRC sources document0.002%(w/v) B12 stocks, which are20 mg/L. Instead of
+    retaining an absolute no-curation block for unknown carrier, connect this case
+    as a conditional comparison to the concrete JCM 51520 µg/ml partial-stock proposal.
+    No NBRC occurrence is assigned that owner: equal concentration and filtration
+    do not establish shared preparation, and no separate owners are invented merely
+    for different source numbers.
+
+
+    CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c: JCM
+    515 directly specifies20 µg/ml filter-sterilized B12 stock added after autoclaving.
+    That actual preparation supports a source-qualified PARTIAL owner with generic
+    B12 at 20 mg/L and no asserted solvent. Other20 mg/L-labelled source stocks are
+    comparison-only until their formulations/provenance are bridged.
+
+
+    CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a: New
+    direct TOGO M498 retrieval identifies original JCM 497 and 1 ml of B12(2 mg/100
+    ml) after autoclaving. This confirms named-stock context and nominal20 mg/L strength.
+    Preserve the case as conditional comparison to the concrete JCM 515 partial-stock
+    proposal; do not infer stock equivalence solely from the concentration or mint
+    another source-number-only owner.
+
+
+    Integration conditions: Independent review and content-bound registry/SSSOM admission
+    before application.; Only anchor occurrences are directly supported; comparison-only
+    cases/occurrences must not acquire exact identity by concentration alone.; Resolve
+    carrier and other formulation details before complete cross-source equivalence.
+    Preserve all source holds and avoid global raw aliases.'
+- assessment_id: proposal-064
+  area: identity
+  topic: vm1201-prop-jcm647-b12-partial — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm647-b12-partial
+  evidence_ids:
+  - proposal-evidence-064
+  - peer-vitamins_mixtures
+  summary: Source-qualified JCM 647 vitamin B12 2 milligram per ml stock. JCM 647
+    explicitly adds 1 ml of 2 mg/ml B12 stock after filter sterilization and after
+    autoclaving the receiving medium; 2 mg/ml is retained literally. The carrier and
+    any additional stock constituents are unspecified. No water, ethanol, methanol,
+    acid, preservative or molecular vitamin form is inferred. This is a PARTIAL preparation
+    record; complete-formulation equivalence and source hold release are not asserted.
+    JCM 520, 533 and 650 also state2 mg/ml but no common stock protocol is cited.
+    Those occurrences remain conditional comparisons; equal nominal strength is not
+    preparation equivalence. Source-qualified JCM 647 vitamin B12 2 milligram per
+    ml stock. JCM 647 explicitly adds 1 ml of 2 mg/ml B12 stock after filter sterilization
+    and after autoclaving the receiving medium; 2 mg/ml is retained literally.
+  details: 'CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41:
+    The four JCM recipes name2 mg/ml B12 stock; JCM 647 explicitly filter sterilizes
+    it before post-autoclave addition. Propose that concrete JCM 647 partial preparation
+    at literal2000 mg/L generic B12. Other JCM 520/533/650 occurrences are conditional
+    comparisons only because no common stock protocol is supplied.
+
+
+    Integration conditions: Independent review and content-bound registry/SSSOM admission
+    before application.; Only anchor occurrences are directly supported; comparison-only
+    cases/occurrences must not acquire exact identity by concentration alone.; Resolve
+    carrier and other formulation details before complete cross-source equivalence.
+    Preserve all source holds and avoid global raw aliases.'
+- assessment_id: proposal-065
+  area: identity
+  topic: vm1201-prop-jcm1354-b12-partial — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-jcm1354-b12-partial
+  evidence_ids:
+  - proposal-evidence-065
+  - peer-vitamins_mixtures
+  summary: Source-qualified JCM 1354 vitamin B12 0.01 percent stock. JCM 1354 explicitly
+    uses0.4 ml of a0.01% vitamin B12 solution. Percentage basis is unstated and is
+    retained only as the literal stock label, not converted to mass concentration.
+    The carrier and any additional stock constituents are unspecified. No water, ethanol,
+    methanol, acid, preservative or molecular vitamin form is inferred. This is a
+    PARTIAL preparation record; complete-formulation equivalence and source hold release
+    are not asserted. The source-defined stock context is sufficient for partial preparation
+    curation; unknown percent basis and carrier limit quantitative decomposition and
+    comparison with other B12 stocks. Source-qualified JCM 1354 vitamin B12 0.01 percent
+    stock. JCM 1354 explicitly uses0.4 ml of a0.01% vitamin B12 solution. Percentage
+    basis is unstated and is retained only as the literal stock label, not converted
+    to mass concentration.
+  details: 'CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e:
+    JCM 1354 explicitly uses a named0.01% B12 liquid stock. Propose its source-qualified
+    preparation with one unquantified generic B12 component and PARTIAL assertion.
+    Neither missing carrier nor missing percent basis prevents this bounded preparation
+    representation; no percent-to-mass conversion is made.
+
+
+    Integration conditions: Independent review and content-bound registry/SSSOM admission
+    before application.; Only anchor occurrences are directly supported; comparison-only
+    cases/occurrences must not acquire exact identity by concentration alone.; Resolve
+    carrier and other formulation details before complete cross-source equivalence.
+    Preserve all source holds and avoid global raw aliases.'
+- assessment_id: proposal-066
+  area: identity
+  topic: vm1201-prop-atcc2883-b12-partial — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-atcc2883-b12-partial
+  evidence_ids:
+  - proposal-evidence-066
+  - peer-vitamins_mixtures
+  summary: Source-qualified ATCC 2883 vitamin B12 0.1 milligram per ml stock. ATCC
+    2883 specifies the same 1 ml filter-sterilized0.1 mg/ml B12 stock in its separately
+    described broth and agar preparations. The carrier and any additional stock constituents
+    are unspecified. No water, ethanol, methanol, acid, preservative or molecular
+    vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation
+    equivalence and source hold release are not asserted. Both receiving recipes are
+    explicitly given in one ATCC 2883 source with the same stock specification. Their
+    separately added3 ml methanol is not assigned as B12 solvent. The stock is not
+    equated to JCM 1354 because its0.01% basis is unstated. Source-qualified ATCC
+    2883 vitamin B12 0.1 milligram per ml stock. ATCC 2883 specifies the same 1 ml
+    filter-sterilized0.1 mg/ml B12 stock in its separately described broth and agar
+    preparations.
+  details: 'CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe:
+    ATCC 2883 gives the same 1 ml, 0.1 mg/ml, filter-sterilized B12 stock for its
+    agar and broth recipes. Propose one source-qualified partial stock with generic
+    B12 at 100 mg/L, no guessed carrier. The separately added methanol is excluded
+    from stock composition.
+
+
+    Integration conditions: Independent review and content-bound registry/SSSOM admission
+    before application.; Only anchor occurrences are directly supported; comparison-only
+    cases/occurrences must not acquire exact identity by concentration alone.; Resolve
+    carrier and other formulation details before complete cross-source equivalence.
+    Preserve all source holds and avoid global raw aliases.'
+- assessment_id: proposal-067
+  area: identity
+  topic: vm1201-prop-togo125-k1-partial — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-togo125-k1-partial
+  evidence_ids:
+  - proposal-evidence-067
+  - peer-vitamins_mixtures
+  summary: Source-qualified TOGO M125 vitamin K1 0.1 percent stock. The newly retrieved
+    primary TOGO M125 record identifies JCM 134 and gives0.2 ml of 0.1%Vitamin K1
+    solution. Percentage basis is unstated and remains a literal label, without converted
+    amount. The carrier and any additional stock constituents are unspecified. No
+    water, ethanol, methanol, acid, preservative or molecular vitamin form is inferred.
+    This is a PARTIAL preparation record; complete-formulation equivalence and source
+    hold release are not asserted. No recipe-supported equivalence to DSMZ 125 ethanol
+    stock or the 1% OTEB stock exists. The partial preparation preserves the source-defined
+    stock without an invented carrier. Source-qualified TOGO M125 vitamin K1 0.1 percent
+    stock. The newly retrieved primary TOGO M125 record identifies JCM 134 and gives0.2
+    ml of 0.1%Vitamin K1 solution. Percentage basis is unstated and remains a literal
+    label, without converted amount.
+  details: 'CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e:
+    Successful direct TOGO M125 retrieval now confirms the JCM 134 source identity
+    and 0.2 ml of 0.1%Vitamin K1 solution. Propose that source-qualified partial preparation
+    with generic K1 component; retain the unspecified percent basis and carrier without
+    guesses. The original normalized0.2G_PER_L receiving row remains unvalidated.
+
+
+    Integration conditions: Independent review and content-bound registry/SSSOM admission
+    before application.; Only anchor occurrences are directly supported; comparison-only
+    cases/occurrences must not acquire exact identity by concentration alone.; Resolve
+    carrier and other formulation details before complete cross-source equivalence.
+    Preserve all source holds and avoid global raw aliases.'
+- assessment_id: proposal-068
+  area: identity
+  topic: vm1201-prop-dsm1245-k1-partial — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-dsm1245-k1-partial
+  evidence_ids:
+  - proposal-evidence-068
+  - peer-vitamins_mixtures
+  summary: Source-qualified DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces
+    the Anaerobe Systems AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution);
+    MediaDive main2474 corroborates that row. The carrier and any additional stock
+    constituents are unspecified. No water, ethanol, methanol, acid, preservative
+    or molecular vitamin form is inferred. This is a PARTIAL preparation record; complete-formulation
+    equivalence and source hold release are not asserted. The source does not state
+    percentage basis, solvent or full stock constituents. These remain explicit partial-composition
+    limits. It is not assigned the unrelated DSMZ 125 ethanol-stock recipe. Source-qualified
+    DSMZ 1245 OTEB vitamin K1 1 percent stock. DSMZ 1245 reproduces the Anaerobe Systems
+    AS-603 OTEB formula, including0.1 ml of Vitamin K1(1%solution); MediaDive main2474
+    corroborates that row.
+  details: 'CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda:
+    The DSMZ 1245 OTEB formula and MediaDive2474 identify a1%K1 liquid stock, so propose
+    the source-qualified OTEB preparation with PARTIAL generic K1 component. The missing
+    percentage basis and solvent limit decomposition, not this preparation-level curation.
+    No ethanol recipe is borrowed from DSMZ 125.
+
+
+    Integration conditions: Independent review and content-bound registry/SSSOM admission
+    before application.; Only anchor occurrences are directly supported; comparison-only
+    cases/occurrences must not acquire exact identity by concentration alone.; Resolve
+    carrier and other formulation details before complete cross-source equivalence.
+    Preserve all source holds and avoid global raw aliases.'
+- assessment_id: proposal-069
+  area: identity
+  topic: vm1201-prop-thauers-source-comparison — isolated successor delta
+  outcome: supported
+  target_ids:
+  - vm1201-prop-thauers-source-comparison
+  evidence_ids:
+  - proposal-evidence-069
+  - peer-vitamins_mixtures
+  summary: Enrich the existing Thauer stock owner with verified CultureBotHT and TOGO
+    LS4D preparation provenance, preserving source-specific component forms and the
+    unresolved equivalence bridge. No duplicate owner or new alias. Notes and history
+    only; CultureBotHT component assertion remains separately supported by its actual
+    primary sheet. TOGO LS4D is a comparison source, not proof of exact source-to-owner
+    identity.
+  details: 'CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97:
+    Recovered TOGO M2809 comments explicitly define the LS4D vitamin preparation in
+    distilled water and identify DL-pantothenic acid as calcium salt, while the structured
+    row drops that qualifier. The actual cited CultureBotHT Mixes rows 88–98 independently
+    confirm the existing owner''s cyanocobalamin and calcium-pantothenate assertions.
+    A generic TOGO B12 label does not invalidate that more specific primary source.
+    Propose existing-owner notes/history enrichment with both source formulations
+    and preparation limits; preserve components and avoid a potentially duplicate
+    registry owner.
+
+
+    Integration conditions: Apply only against the exact frozen before hash after
+    independent review. Preserve every component, existing assertion, alias, count,
+    role and source hold.; Do not treat the TOGO generic B12 wording as support for
+    cyanocobalamin, or the note as complete formulation equivalence or source membership
+    approval.'
+findings: []
+actions: []
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T053536Z-w08-final-isolated-proposals
+  relationship: Immutable predecessor retained. Issue1201 completes previously deferred
+    isolated proposal work; explicit proposal supersessions and original case links
+    are recorded in assembly-provenance.json.
+limitations:
+- Exact source identities and preparation details may remain partial. Unspecified
+  solvent, amount, hydrate, vitamer or ratio basis is not invented. Source-local labels
+  are not global aliases.
+- No source hold, role assertion, maintained-record publication or SSSOM admission
+  is approved by this report. Issue1165 remains a separate coordinator admission dependency.
+- Cross-shard NaOH and other possible owner overlaps require coordinator reconciliation
+  against exact candidate payloads; equal labels or strengths alone do not establish
+  complete preparation identity.
+- Original frozen source objects, all published predecessor files and original before-owner
+  hashes remain unchanged. No reset, rebase, amendment, merge, release or downstream
+  rebuild was performed.
+```

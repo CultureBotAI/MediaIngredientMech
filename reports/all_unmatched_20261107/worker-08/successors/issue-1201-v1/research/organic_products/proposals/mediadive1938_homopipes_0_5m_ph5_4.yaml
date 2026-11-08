@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:mediadive1938_homopipes_0_5m_ph5_4
+preferred_term: MediaDive1938 HOMOPIPES stock, 0.5 M, pH 5.4
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+synonyms: []
+notes: The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES
+  preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the solute.
+  A separate stock record can assert the named solute and concentration while leaving
+  the vehicle and titrant unspecified. The complete raw attribute is pH 5.4, *, 0.5
+  M, with a 0.05 mL dose. The unresolved asterisk, solvent, titrant amount and sterilization
+  method are not inferred. The bare name HOMOPIPES is not added as a global alias
+  for the stock.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive1938_homopipes_0_5m_ph5_4
+  ontology_label: MediaDive1938 HOMOPIPES stock, 0.5 M, pH 5.4
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/ingredients/1938
+    notes: The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES
+      preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the
+      solute. A separate stock record can assert the named solute and concentration
+      while leaving the vehicle and titrant unspecified.
+solution_type: BUFFER_SOLUTION
+components:
+- component_name: HOMOPIPES
+  reference_scope: MIM_CATALOG
+  component_id: cas:202185-84-0
+  concentration_value: '0.5'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/ingredients/1938
+    source_record: frozenadmitted compound1938 occurrence attribute
+    notes: The complete raw attribute is pH 5.4, *, 0.5 M, with a 0.05 mL dose. The
+      unresolved asterisk, solvent, titrant amount and sterilization method are not
+      inferred. The bare name HOMOPIPES is not added as a global alias for the stock.
+  notes: Only source-supported constituents are asserted. No whole-to-part grounding,
+    full culturing recipe or speciation claim is made.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The frozen MediaDive1938 occurrence explicitly describes a 0.5 M HOMOPIPES
+    preparation at pH 5.4, dosed by volume. The existing CAS owner identifies the
+    solute. A separate stock record can assert the named solute and concentration
+    while leaving the vehicle and titrant unspecified. Isolated proposal only; all
+    native holds remain preserved in source-case decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
