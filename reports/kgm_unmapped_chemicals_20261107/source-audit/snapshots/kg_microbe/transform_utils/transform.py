@@ -1,0 +1,341 @@
+"""Transform utility module."""
+
+import shutil
+from pathlib import Path
+from typing import List, Optional, Union
+
+import yaml
+
+from kg_microbe.transform_utils.constants import (
+    AGENT_TYPE_COLUMN,
+    CATEGORY_COLUMN,
+    DEPRECATED_COLUMN,
+    DESCRIPTION_COLUMN,
+    ID_COLUMN,
+    KNOWLEDGE_LEVEL_COLUMN,
+    NAME_COLUMN,
+    OBJECT_COLUMN,
+    PREDICATE_COLUMN,
+    PRIMARY_KNOWLEDGE_SOURCE_COLUMN,
+    PROVIDED_BY_COLUMN,
+    RELATION_COLUMN,
+    SAME_AS_COLUMN,
+    SUBJECT_COLUMN,
+    SYNONYM_COLUMN,
+    XREF_COLUMN,
+)
+
+
+class Transform:
+    """Parent class for transforms, that sets up a lot of default file info."""
+
+    DATA_DIR = Path(__file__).parent / "data"
+    DEFAULT_INPUT_DIR = DATA_DIR / "raw"
+    DEFAULT_OUTPUT_DIR = DATA_DIR / "transformed"
+
+    #: Repo-relative curation files this transform reads, beyond its own
+    #: ``data/raw/`` download.
+    #:
+    #: Declared so freshness tooling can tell that an output is stale against
+    #: its *data* rather than only its code. Without it a mapping correction
+    #: lands, every consumer keeps reporting FRESH, and a re-merge silently
+    #: ships the old groundings: #778 corrected 16 isolation-source ids and
+    #: #786 rewrote the unified chemical SSSOM, and the merged KG built
+    #: afterwards still asserted 75 organisms isolated from a "Cell Line",
+    #: because nothing re-ran the transforms that read those files (#812).
+    #:
+    #: Paths are relative to the repo root. Keep them tracked in git — the
+    #: freshness check uses commit time, not mtime, because `git checkout`
+    #: rewrites mtimes without changing content (#797).
+    #:
+    #: List **every** curation file read, not a representative one. A partial
+    #: declaration fails silently and looks identical to a complete one:
+    #: ontologies_stubs declared 1 of the 11 files it read and was reported
+    #: fresh after changes to the other ten (#839). Where the set comes from a
+    #: constant, derive this from it rather than restating it.
+    DATA_INPUTS: tuple = ()
+
+    #: Additional repo-relative Python packages/files whose behavior this producer inherits.
+    #: This is code provenance, never a dependency on another producer's graph outputs.
+    CODE_INPUTS: tuple = ()
+
+    #: Registered source names whose **output** this transform reads.
+    #:
+    #: `DATA_INPUTS` covers curation files under ``mappings/``. It does not
+    #: cover a dependency on another transform's output, which several sources
+    #: have. For example, gold reads ``ontologies/ncbitaxon_nodes.tsv`` (and
+    #: refuses to run without it) plus ``ontologies_stubs/po_nodes.tsv``, lpsn
+    #: reads ``gtdb/nodes.tsv``, lpsn_api and microbedecoder read
+    #: ``lpsn/nodes.tsv``, prego reads ``ontologies/``, and bacdive, mediadive
+    #: and metatraits reach ``ontologies/`` through the ``NCBITAXON_NODES_FILE``
+    #: / ``CHEBI_NODES_FILE`` constants (metatraits_gtdb inherits metatraits').
+    #: Those last three went undeclared for months precisely because the path
+    #: is spelled in ``constants.py`` rather than in the transform, which the
+    #: guard below could not see until #1035.
+    #:
+    #: Source finalization reads the ontologies output's declarations too, but
+    #: only for a source that lists ``ontologies`` here. gtdb, lpsn, madin_etal,
+    #: rhea_mappings and ontologies_stubs declare it for that reason alone
+    #: (#1511). ``kg transform`` refuses to start a source whose declared
+    #: upstream has no completion marker, unless the same run builds it first.
+    #:
+    #: Undeclared, re-running an upstream leaves every downstream genuinely
+    #: stale while all three freshness signals report fresh — the #812 shape,
+    #: across transforms rather than within one (#845). The ordering was
+    #: already encoded in ``DATA_SOURCES`` comments ("Run gold after
+    #: ontologies…"); this makes it machine-readable so the fingerprint can
+    #: fold the upstream in.
+    #:
+    #: `tests/test_cross_transform_inputs.py` derives the real dependency map
+    #: from the source and fails on anything undeclared, because every previous
+    #: version of this contract was opt-in and was forgotten (#812, #839, #876).
+    TRANSFORM_INPUTS: tuple = ()
+
+    #: Named generated inputs that must actually be read before fresh finalization.
+    #: Unlike DATA_INPUTS, these are checked after upstream producers have run.
+    REQUIRED_CONSUMED_INPUTS: tuple = ()
+
+    #: Producer-owned disposition reports whose emitted bytes must survive finalization/merge.
+    REQUIRED_AUDIT_FILES: tuple = ()
+
+    #: Named optional repository-relative reads; absence is evidence, never a required file.
+    #: Unlike DATA_INPUTS these locators do not relocate to input_base_dir.
+    OPTIONAL_CONSUMED_INPUTS: tuple = ()
+
+    #: Named optional reads relative to the effective input_base_dir, including explicit absence.
+    #: Kept separate so repository-relative optional inputs never silently relocate.
+    OPTIONAL_RAW_CONSUMED_INPUTS: tuple = ()
+
+    @classmethod
+    def missing_optional_input(cls, input_dir: Optional[Path] = None) -> Optional[str]:
+        """
+        Return why an optional source has nothing to transform, or None to run it.
+
+        An optional source (Bakta) has no download and is excluded from the
+        standard merge, so a machine without its data is a normal machine. The
+        default batch skips such a source instead of letting ``run`` return
+        early into a finalization error that fails the whole batch; an explicit
+        ``-s`` request still fails, because requested output was not created.
+        Required sources keep this default and always run.
+
+        :param input_dir: Effective raw input directory; ``None`` means the default.
+        """
+        return None
+
+    @classmethod
+    def missing_prerequisites(cls, input_dir: Optional[Path] = None) -> List[str]:
+        """
+        Return a message for each external prerequisite this transform needs but cannot find.
+
+        Covers what ``DATA_INPUTS`` cannot: executables, and raw downloads that
+        are not git-tracked curation. Checked before any source runs, so a
+        missing prerequisite fails in seconds instead of after hours of
+        upstream work.
+
+        :param input_dir: Effective raw input directory; ``None`` means the default.
+        """
+        return []
+
+    def __init__(
+        self,
+        source_name,
+        input_dir: Optional[Path] = None,
+        output_dir: Optional[Path] = None,
+        nlp: bool = False,
+    ):
+        """
+        Instantiate Transform object.
+
+        :param source_name: Name of resource.
+        :param input_dir: Location of input directory, defaults to None
+        :param output_dir: Location of output directory, defaults to None
+        :param nlp: Boolean for possibility of using NLP or not, defaults to False
+        """
+        # default columns, can be appended to or overwritten as necessary
+        self.source_name = source_name
+        self.begin_consumed_inputs()
+        self.begin_dependency_admission()
+        self.node_header = [
+            ID_COLUMN,
+            CATEGORY_COLUMN,
+            NAME_COLUMN,
+            DESCRIPTION_COLUMN,
+            XREF_COLUMN,
+            PROVIDED_BY_COLUMN,
+            SYNONYM_COLUMN,
+            DEPRECATED_COLUMN,
+            SAME_AS_COLUMN,
+        ]
+        self.edge_header = [
+            SUBJECT_COLUMN,
+            PREDICATE_COLUMN,  # was "edge_label",
+            OBJECT_COLUMN,
+            RELATION_COLUMN,
+            PRIMARY_KNOWLEDGE_SOURCE_COLUMN,
+            KNOWLEDGE_LEVEL_COLUMN,
+            AGENT_TYPE_COLUMN,
+        ]
+
+        # default dirs
+        self.input_base_dir = Path(input_dir) if input_dir else self.DEFAULT_INPUT_DIR
+        self.output_base_dir = Path(output_dir) if output_dir else self.DEFAULT_OUTPUT_DIR
+        self.output_dir = self.output_base_dir / source_name
+
+        # default filenames
+        self.output_node_file = self.output_dir / "nodes.tsv"
+        self.output_edge_file = self.output_dir / "edges.tsv"
+        self.output_json_file = self.output_dir / "nodes_edges.json"
+        self.subset_terms_file = self.input_base_dir / "subset_terms.tsv"
+
+        Path.mkdir(self.output_dir, exist_ok=True, parents=True)
+
+        if nlp:
+            self.nlp_dir = self.input_base_dir / "nlp"
+            self.nlp_input_dir = self.nlp_dir / "input"
+            self.nlp_output_dir = self.nlp_dir / "output"
+            self.nlp_terms_dir = self.nlp_dir / "terms"
+            self.nlp_stopwords_dir = self.nlp_dir / "stopwords"
+
+            # Delete previously developed files
+            if Path.exists(self.nlp_input_dir):
+                shutil.rmtree(self.nlp_input_dir)
+                shutil.rmtree(self.nlp_stopwords_dir)
+
+            Path.mkdir(self.nlp_dir, exist_ok=True, parents=True)
+            Path.mkdir(self.nlp_input_dir, exist_ok=True, parents=True)
+            Path.mkdir(self.nlp_output_dir, exist_ok=True, parents=True)
+            Path.mkdir(self.nlp_terms_dir, exist_ok=True, parents=True)
+            Path.mkdir(self.nlp_stopwords_dir, exist_ok=True, parents=True)
+
+            with open("stopwords.yaml", "r") as stop_list:
+                doc = yaml.safe_load(stop_list)  # , Loader=yaml.FullLoader)
+                stop_words = doc["English"]
+
+            with open(self.nlp_stopwords_dir / "stopWords.txt", "w") as stop_terms:
+                # stop_terms.write(stop_words)
+                for word in stop_words.split(" "):
+                    stop_terms.write(word + "\n")
+
+            self.output_nlp_file = self.nlp_output_dir / "nlpOutput.tsv"
+
+    def run(self, data_file: Union[Optional[Path], Optional[str]] = None):
+        """
+        Run the transform.
+
+        :param data_file: Input data file, defaults to None
+        """
+        pass
+
+    def begin_consumed_inputs(self):
+        """Start a real producer run with no inherited input-consumption claims."""
+        self._consumed_input_snapshots = {}
+        self._go_imported_restriction_guard = None
+        self._ontology_parent_input_contract = None
+        self._ontology_parent_authority = None
+        self._ontology_parent_published = False
+        self._finite_envo_po_category_guard = None
+        self._ncit_eight_category_guard = None
+        self._mesh_finite_category_guard = None
+        self._gold_declaration_guard = None
+        self._consumed_input_error = None
+        self._optional_input_states = {}
+        self._optional_input_admission = None
+        self._producer_audit_snapshots = {}
+        self._producer_audit_directory = None
+        self._producer_audit_error = None
+
+    def begin_dependency_admission(self):
+        """Bind discovered curation and inherited code before a producer loads either."""
+        discover = getattr(type(self), "discovered_data_inputs", None)
+        self._dependency_admission = None
+        if discover is None and not self.CODE_INPUTS:
+            return
+        from kg_microbe.merge_utils.source_admission import SourceAdmission
+        from kg_microbe.utils.transform_fingerprint import _repo_root
+
+        root = _repo_root()
+        admission = SourceAdmission()
+        if discover is not None:
+            for relative in admission.capture_resolution(discover, root):
+                admission.capture(root / relative)
+        for relative in self.CODE_INPUTS:
+            path = root / relative
+            if path.is_dir():
+                admission.capture_tree(path)
+            else:
+                admission.capture(path)
+        self._dependency_admission = admission
+
+    def verify_declared_dependencies(self):
+        """Refuse drift without replacing the original producer-time dependency snapshot."""
+        admission = getattr(self, "_dependency_admission", None)
+        if admission is not None:
+            admission.verify()
+
+    @property
+    def consumed_input_snapshots(self):
+        """Return copied named path/digest snapshots so callers cannot mutate recorded evidence."""
+        return {name: dict(snapshot) for name, snapshot in self._consumed_input_snapshots.items()}
+
+    def consume_input(self, name, path):
+        """Read a generated UTF-8 input from an immutable, exact-byte tracked snapshot."""
+        from kg_microbe.utils.source_finalization import snapshot_consumed_input
+
+        return snapshot_consumed_input(self, name, path)
+
+    @property
+    def producer_audit_snapshots(self):
+        """Return copied exact-byte identities recorded by the successful producer."""
+        return {name: dict(identity) for name, identity in self._producer_audit_snapshots.items()}
+
+    def record_producer_audit(self, name):
+        """Bind a mandatory sidecar after its successful write, before source finalization."""
+        from kg_microbe.utils.producer_audits import record_producer_audit
+
+        record_producer_audit(self, name)
+
+    @property
+    def optional_consumed_inputs(self):
+        """Return independent serialized state without replacing original read evidence."""
+        return {"version": 1, "inputs": {name: dict(value) for name, value in self._optional_input_states.items()}}
+
+    def consume_optional_input(self, name):
+        """Read one declared optional input immutably, retaining its locator and explicit absence."""
+        from kg_microbe.utils.optional_consumed_inputs import snapshot_optional_input
+
+        return snapshot_optional_input(self, name)
+
+    def verify_consumed_inputs(self):
+        """Reject missing required reads or changed/deleted bytes consumed by this run."""
+        from kg_microbe.utils.source_finalization import verify_consumed_inputs
+
+        verify_consumed_inputs(self)
+
+    def finalize(self, *, file_prefix="", fresh_run=False):
+        """
+        Validate and finalize produced TSVs before publication as a current source.
+
+        The CLI invokes this after ``run`` and before writing the source
+        fingerprint. Direct Python callers must invoke it explicitly after
+        ``run``; producer writes themselves are not a bundle transaction.
+        """
+        from kg_microbe.utils.source_finalization import finalize_selected_sources, finalize_source
+
+        selected = getattr(self, "finalization_output_dirs", None)
+        if selected is not None:
+            if file_prefix:
+                raise ValueError("Dataset selection and ontology file_prefix cannot be combined")
+            return finalize_selected_sources(self, selected, fresh_run=fresh_run)
+        return finalize_source(self, file_prefix=file_prefix, fresh_run=fresh_run)
+
+    def pass_through(self, nodes_file: str, edges_file: str) -> None:
+        """
+        Copy nodes and edges files to output directory.
+
+        :param nodes_file: nodes files to take from raw directory and put in transform
+                directory
+        :param edges_file: edges files to take from raw directory and put in transform
+                directory
+        """
+        for f in [nodes_file, edges_file]:
+            shutil.copy(f, self.output_dir)

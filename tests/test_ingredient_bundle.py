@@ -25,7 +25,7 @@ from mediaingredientmech.ingredient_bundle_contract import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-REVIEW = Path("reports/owned_name_deferred_669_20261103/companion-review.json")
+REVIEW = Path("reports/kgm_unmapped_chemicals_20261107/companion-review.json")
 
 
 def test_current_corpus_companion_matches_release_workflow():
