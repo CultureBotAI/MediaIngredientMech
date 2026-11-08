@@ -1,0 +1,146 @@
+identifier: kgmicrobe.ingredient:nbrc_1308_1356_trace_elements_stock
+preferred_term: NTA selenate-tungstate trace elements stock (NBRC 1308/1356)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1308_1356_trace_elements_stock
+  ontology_label: NTA selenate-tungstate trace elements stock (NBRC 1308/1356)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1308
+    notes: The full 13-solute plus water table and NTA/NaOH preparation match the other independently
+      inspected source. Registry identity denotes the whole nominal stock, not a component or a post-processing
+      endpoint.
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    notes: The full 13-solute plus water table and NTA/NaOH preparation match the other independently
+      inspected source. Registry identity denotes the whole nominal stock, not a component or a post-processing
+      endpoint.
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: G
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.35'
+  concentration_unit: G
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: G
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: G
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.004'
+  concentration_unit: G
+- component_name: Na2WO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.004'
+  concentration_unit: G
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: NaOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1308
+    source_record: NBRC 1308 **Trace elements solution
+    supports: SUPPORT
+    notes: Full table and surrounding preparation inspected. Literal 13-solute masses and 1 L water input
+      agree; NaOH is named without a quantity. No final-volume make-up or final-pH adjustment reagent/amount
+      is specified.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356
+    source_record: NBRC 1356 ****Trace elements solution
+    supports: SUPPORT
+    notes: Full table and surrounding preparation inspected. Literal 13-solute masses and 1 L water input
+      agree; NaOH is named without a quantity. No final-volume make-up or final-pH adjustment reagent/amount
+      is specified.
+  notes: 'Both complete NBRC 1308 and NBRC 1356 primary tables define this one nominal stock: the same
+    13 specified solutes, 1 L distilled-water input, and NTA-first preparation, adjusted to pH 6.5 with
+    NaOH before minerals are added, with final pH 7.0 stated. Recipe accession, footnote count and metadata
+    encoding do not define distinct substances. Quantities are literal batch inputs, not G_PER_L concentrations:
+    the sources list 1 L water, without an explicit make-up-to-final-volume instruction. NaOH amount/concentration
+    are unstated. The final pH statement does not specify whether further adjustment occurs or its reagent/amount;
+    completeness remains UNKNOWN. Unspecified hydrate forms and final equilibrium species are not inferred.
+    Occurrence context stays distinct: CultureMech:007471 ingredients/8 (NBRC 1308; raw Trace element
+    solution**) uses 1 ml and autoclaves the receiving mixture containing this stock under N2/CO2 80/20;
+    CultureMech:007474 ingredients/6 (NBRC 1356; raw Trace element solution****) uses 10 ml filter-sterile
+    stock in the separately prepared N2-handled medium. This nominal formulation identity does not assert
+    identical post-processing endpoints. Case19 NBRC 1020 and 824 occurrences remain assigned to their
+    different reviewed NTA/KOH stock, with its separate Se/W supplement excluded. Raw starred labels are
+    local occurrence provenance only, never global resolving synonyms. Proposal ancestry is preserved
+    unchanged at commit d5a7613c931d45d057eaca7b5ec15280aca76c9e: A-P-NBRC1308-TRACE by /root/research_a
+    and C-P-NBRC1356-TRACE by /root/research_c, with exact old payload/history/review bindings in successor-v2/lineage.json.
+    This successor is authored by /root; neither old uninstalled identifier is installed, merged, or turned
+    into an active alias. No source, owner or export release approval follows.'
+notes: 'Both complete NBRC 1308 and NBRC 1356 primary tables define this one nominal stock: the same 13
+  specified solutes, 1 L distilled-water input, and NTA-first preparation, adjusted to pH 6.5 with NaOH
+  before minerals are added, with final pH 7.0 stated. Recipe accession, footnote count and metadata encoding
+  do not define distinct substances. Quantities are literal batch inputs, not G_PER_L concentrations:
+  the sources list 1 L water, without an explicit make-up-to-final-volume instruction. NaOH amount/concentration
+  are unstated. The final pH statement does not specify whether further adjustment occurs or its reagent/amount;
+  completeness remains UNKNOWN. Unspecified hydrate forms and final equilibrium species are not inferred.
+  Occurrence context stays distinct: CultureMech:007471 ingredients/8 (NBRC 1308; raw Trace element solution**)
+  uses 1 ml and autoclaves the receiving mixture containing this stock under N2/CO2 80/20; CultureMech:007474
+  ingredients/6 (NBRC 1356; raw Trace element solution****) uses 10 ml filter-sterile stock in the separately
+  prepared N2-handled medium. This nominal formulation identity does not assert identical post-processing
+  endpoints. Case19 NBRC 1020 and 824 occurrences remain assigned to their different reviewed NTA/KOH
+  stock, with its separate Se/W supplement excluded. Raw starred labels are local occurrence provenance
+  only, never global resolving synonyms. Proposal ancestry is preserved unchanged at commit d5a7613c931d45d057eaca7b5ec15280aca76c9e:
+  A-P-NBRC1308-TRACE by /root/research_a and C-P-NBRC1356-TRACE by /root/research_c, with exact old payload/history/review
+  bindings in successor-v2/lineage.json. This successor is authored by /root; neither old uninstalled
+  identifier is installed, merged, or turned into an active alias. No source, owner or export release
+  approval follows.'
+curation_history:
+- timestamp: '2026-11-08T06:11:42.375998+00:00'
+  curator: all_unmatched_20261107_worker06_root
+  action: CREATED
+  changes: Propose one shared nominal stock after substantive comparison of NBRC1308 and1356, replacing
+    two uninstalled proposed identities from research_a and research_c. Original payloads, author histories,
+    source captures/timestamps and independent reviews remain immutable. Use conservative UNKNOWN completeness
+    for unspecified final-pH adjustment/additions; this is distinct from unknown NaOH quantity and does
+    not establish a difference in stock identity. Preserve water-input basis. This is proposal reconciliation,
+    not a maintained-owner merge or release.
+  new_status: MAPPED
+  llm_assisted: true

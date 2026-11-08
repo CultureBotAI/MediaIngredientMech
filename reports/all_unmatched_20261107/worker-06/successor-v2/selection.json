@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "selection_id": "worker06-successor-v2-nbrc1308-1356",
+  "created_at": "2026-11-08T06:14:12.968314+00:00",
+  "state": "current_authoritative_worker06_proposal_intake",
+  "artifact_root": "reports/all_unmatched_20261107/worker-06",
+  "source_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5",
+  "frozen_shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+  "supersedes_selection": {
+    "commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+    "path": "reports/all_unmatched_20261107/worker-06/proposals.json",
+    "sha256": "fc838985c5b79ef4cef5a502efe3242cdc1b87c8baf805e9b7f56e96de4ed61f",
+    "proposal_count": 100,
+    "status": "historical_immutable; do not integrate both superseded stock owners"
+  },
+  "current_intake": {
+    "decisions.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/decisions.json",
+      "sha256": "5cabffc9e9f99ff0fa4b069c1f9c5575649aff0ba3437d1f96f557c276290f00"
+    },
+    "evidence.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/evidence.json",
+      "sha256": "81fa2bec01e1bdbd84c04fa6e5d44c94ebd73c4d9829eadc26165eb10d165115"
+    },
+    "proposals.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/proposals.json",
+      "sha256": "11f9ded7530efcf857c7564a9f8b9685847497beb5142318f519c1a8843279d7"
+    },
+    "source-holds.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/source-holds.json",
+      "sha256": "eaddfd7ffe5ba2ba1be011696ad741e1b010db2cc9ca4678954a640484f70b77"
+    }
+  },
+  "case_count": 188,
+  "proposal_count": 99,
+  "retained_unchanged_proposal_count": 98,
+  "retained_unchanged_case_count": 186,
+  "reconciled_proposal": {
+    "proposal_id": "V2-P-NBRC1308-1356-TRACE",
+    "case_ids": [
+      "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+      "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230"
+    ],
+    "description": "Reconcile the identical NBRC1308/NBRC1356 NTA/selenate/tungstate trace-element formulation as one new nominal stock. Preserve literal source inputs, unknown NaOH and final volume, and occurrence-specific processing.",
+    "evidence_ids": [
+      "A-E-19-S00",
+      "A-E-19-S01",
+      "A-E-19-S02",
+      "A-E-CAPTURE-145",
+      "A-E-CAPTURE-149",
+      "A-E-CAPTURE-157",
+      "A-E-NATIVE-OWNER-DEDUP",
+      "C-E-133-SOURCE-1",
+      "C-E-nbrc-1356",
+      "V2-E-PRIMARY-COMPARISON",
+      "V2-E-EXISTING-OWNER-SEARCH",
+      "V2-E-LINEAGE",
+      "V2-E-SUPPLEMENT",
+      "V2-E-ISSUE1207"
+    ],
+    "owner_path": "data/ingredients/mapped/nbrc_1308_1356_trace_elements_stock.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v2/payloads/nbrc_1308_1356_trace_elements_stock.yaml",
+      "sha256": "194d39c6301961eba8719f01d02762effb19c1b4a7fdfac247210f41c038127c"
+    },
+    "before_sha256": null,
+    "applicable_occurrence_ids": [
+      "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5",
+      "CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03"
+    ],
+    "excluded_occurrence_ids": [
+      "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+      "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+    ],
+    "occurrence_scopes_by_case": {
+      "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b": {
+        "included_occurrence_ids": [
+          "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5"
+        ],
+        "excluded_occurrence_ids": [
+          "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+          "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+        ],
+        "reason": "Only NBRC1308. NBRC1020/824 stay with unchanged A-P-NBRC1020-824-TRACE."
+      },
+      "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230": {
+        "included_occurrence_ids": [
+          "CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03"
+        ],
+        "excluded_occurrence_ids": [],
+        "reason": "Single NBRC1356 occurrence; same nominal stock, separately retained filter-sterile use."
+      }
+    },
+    "source_contexts": [
+      {
+        "case_id": "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+        "occurrence_id": "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5",
+        "recipe_id": "CultureMech:007471",
+        "primary_recipe_id": "nbrc.medium:1308",
+        "component_path": "ingredients/8",
+        "raw_source_label": "Trace element solution**",
+        "source_dose": "1 ml",
+        "processing": "Autoclaved with receiving medium under N2/CO2(80/20)."
+      },
+      {
+        "case_id": "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230",
+        "occurrence_id": "CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03",
+        "recipe_id": "CultureMech:007474",
+        "primary_recipe_id": "nbrc.medium:1356",
+        "component_path": "ingredients/6",
+        "raw_source_label": "Trace element solution****",
+        "source_dose": "10 ml",
+        "processing": "Filter-sterile concentrated trace stock added to separately prepared N2-handled medium."
+      }
+    ],
+    "supersedes_uninstalled_proposals": [
+      {
+        "proposal_id": "A-P-NBRC1308-TRACE",
+        "after_capture": {
+          "root": "artifact",
+          "path": "research-a/payloads/nbrc_1308_trace_elements_solution.yaml",
+          "sha256": "6a8f4ebc4562e888207270f5fce1dfdc425c581494d9183bd6b8aed5e896a2aa"
+        },
+        "original_owner_path": "data/ingredients/mapped/nbrc_1308_trace_elements_solution.yaml"
+      },
+      {
+        "proposal_id": "C-P-NBRC1356-TRACE",
+        "after_capture": {
+          "root": "artifact",
+          "path": "research-c/after/nbrc_1356_trace_elements_stock.yaml",
+          "sha256": "5894ab52e5e649cee09bcd3d149d3723ed42cca6661848dcceaf30078bc170cb"
+        },
+        "original_owner_path": "data/ingredients/mapped/nbrc_1356_trace_elements_stock.yaml"
+      }
+    ],
+    "lineage_capture": {
+      "root": "artifact",
+      "path": "successor-v2/lineage.json",
+      "sha256": "35ebf1795329c3c64233982cf463433e57b1d9cc8af871bf3c34725f330989d8"
+    },
+    "identity_predicate_alias_consequences": "One whole-stock kgmicrobe.ingredient registry identity/self row only. No chemical-component identity mapping, no global starred/generic synonym, no alias from either superseded uninstalled identifier.",
+    "publication_review_obligations": "Separate skeptical exact-payload review and content-bound coordinator source/owner/export gates remain necessary. No maintained record or released source claim changes.",
+    "independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "V2-IR-NBRC1308-1356"
+      ]
+    }
+  },
+  "affected_case_ids": [
+    "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+    "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230"
+  ],
+  "excluded_sibling_occurrences_stay_with": "A-P-NBRC1020-824-TRACE",
+  "independent_receipt": {
+    "root": "artifact",
+    "path": "successor-v2/research-b/scientific-review.json",
+    "sha256": "f82cdd0841cf518c0e11e56c7a281f57e1e80e15f107c5f88ed6a8508710b5c2"
+  },
+  "lineage": {
+    "root": "artifact",
+    "path": "successor-v2/lineage.json",
+    "sha256": "35ebf1795329c3c64233982cf463433e57b1d9cc8af871bf3c34725f330989d8"
+  },
+  "source_holds_unchanged": true,
+  "original_evidence_unchanged": true,
+  "maintained_owner_merge": false,
+  "source_owner_export_approval": false,
+  "worker03_review_snapshot": "The published d5a7613 snapshot remains byte-identical historical evidence. Evaluate this successor separately; no claim about worker03 review conclusions."
+}

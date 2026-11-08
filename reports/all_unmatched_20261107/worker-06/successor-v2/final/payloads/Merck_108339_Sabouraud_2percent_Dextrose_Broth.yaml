@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:merck_108339_sabouraud_2percent_dextrose_broth
+preferred_term: Merck 108339 Sabouraud 2% dextrose broth
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:merck_108339_sabouraud_2percent_dextrose_broth
+  ontology_label: Merck 108339 Sabouraud 2% dextrose broth
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.sigmaaldrich.com/US/en/product/mm/108339
+    notes: Catalog-qualified dehydrated broth product. DSMZ1429 explicitly specifiesMerck108339,30g/L,withagar
+      separately. Current supplier typical composition is5g/L meatpeptone,5g/L caseinpeptone,20g/L D(+)glucose
+      afterreconstitution. Composition iscurrenttypical product evidence, not an assertionofhistorical
+      lot invariance.
+synonyms:
+- synonym_text: SABOURAUD-2% Glucose-Bouillon (Merck 108339)
+  synonym_type: EXACT_SYNONYM
+  source: DSMZ1429 and matched frozenKOMODO1429 source
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+components:
+- component_name: Peptone from meat
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_L
+- component_name: Peptone from casein
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_L
+- component_name: D-glucose
+  component_id: CHEBI:17634
+  reference_scope: MIM_CATALOG
+  concentration_value: '20.0'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.sigmaaldrich.com/US/en/product/mm/108339
+    source_record: 'Analysis Note: Typical composition (g/litre), line171 of captured page'
+    notes: Quantities are perlitreofpreparedbrothat30gdehydratedproduct/L, notg/Lofdryproduct. Supplier
+      calls this typicalcomposition, so listclosure isnotasserted. Meat/caseinpeptones remain namedunmappedhydrolysates.
+      Supplier raw wording is retained verbatim as D(+)Glucose,20.0 in the captured Typical composition
+      (g/litre) table. D-glucose is the canonical label of the already referenced CHEBI:17634. This component-name
+      correction changes neither the D-specific identity, reference scope, quantity nor prepared-broth
+      concentration basis; no anomer or hydrate is inferred.
+    supports: SUPPORT
+  notes: Product-level has-part evidence only. The15g/L agar added byDSMZ1429 is excluded from this brothproduct.
+    No full-medium or growth-role claim is imported.
+notes: Catalog108339 identifies a dehydrated/granularSabouraud2%dextrosebrothproduct. Preserve separate
+  from generic UNMAPPED0513 Sabouraud-bouillonfamily. Supplier formulation is typical/current, with historical
+  lot composition unverified.
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed catalog-qualified Merck108339 brothidentity withcurrent supplier typicalcomponents
+    and rawDSMZlabel. Generic Sabouraudowner retained; noagar included inproduct.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:17:01.078599+00:00'
+  curator: all_unmatched_20261107_worker06_root
+  action: CORRECTED
+  changes: In this isolated successor proposal only, use canonical D-glucose for the existing CHEBI:17634
+    component reference and preserve exact supplier D(+)Glucose wording in evidence. Full original100
+    and initial99 private-overlay checks both exposed the same inherited reference-label mismatch. No
+    identifier, amount, scope, product identity, historical-lot limitation or maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,193 @@
+{
+  "created_at": "2026-11-08T06:04:46.838696+00:00",
+  "reviewer": "independent coordinator subagent /root/step7d_science_c",
+  "findings": [
+    {
+      "finding_id": "NEWOWNER-DUP-001",
+      "severity": "major",
+      "status": "confirmed_in_frozen_proposals",
+      "summary": "Two proposals mint different local owners for the identical JCM852 Se/W stock.",
+      "basis": "The same primary table gives sodium selenite pentahydrate1.7mg, sodium tungstate dihydrate3.3mg and1L distilled-water input. Native component-reference resolution and batch-unit spelling differ, but neither changes the source stock. Both case/occurrence sets must survive one explicitly reconciled proposal; no source-local generic alias may become global.",
+      "entries": [
+        {
+          "entry_id": "w01:shard/proposals.json::NSV4-PROP-JCM_852_Se_W_Solution",
+          "worker": 1,
+          "state": "authoritative-current",
+          "head": "26445f23b5a905ac26d864acfbd658570c88769c",
+          "payload_sha256": "668bf61c3d226ab8051816105141caf49c82d5ec13d0436c27e34f1fd6b66fc0",
+          "snapshot": "snapshot/w01/shard/named_stocks/quantity-v4/proposals/JCM_852_Se_W_Solution.yaml",
+          "index": 21,
+          "proposal_id": "NSV4-PROP-JCM_852_Se_W_Solution",
+          "owner_path": "data/ingredients/mapped/JCM_852_Se_W_Solution.yaml",
+          "identifier": "kgmicrobe.ingredient:jcm_852_se_w_solution",
+          "case_ids": [
+            "CM_NAME:e139ae2aee89d4cbdf51ea503d6183bff1cba0738fb7cc033d8a541cef597f5f"
+          ]
+        },
+        {
+          "entry_id": "w03:proposals.json::m-jcm852_se_w_solution",
+          "worker": 3,
+          "state": "authoritative-current",
+          "head": "1196d5bc3aaba7563b829d5cbe7e54722fccc35d",
+          "payload_sha256": "1f6b1732e0f5716087d6e844834e0ed48cf8827e7829ec68d5d8e0d049a67756",
+          "snapshot": "snapshot/w03/materials/proposed-owners/jcm852_se_w_solution.yaml",
+          "index": 98,
+          "proposal_id": "m-jcm852_se_w_solution",
+          "owner_path": "data/ingredients/mapped/jcm852_se_w_solution.yaml",
+          "identifier": "kgmicrobe.ingredient:jcm852_se_w_solution",
+          "case_ids": [
+            "CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df",
+            "KG_CASE:5f2bca14ac1099323f6fd9d78e58180bd53c8b26eeb0ebc2c3c9aebf314d9e06"
+          ]
+        }
+      ],
+      "primary_evidence": [
+        {
+          "index": 21,
+          "entry_id": "w01:shard/proposals.json::NSV4-PROP-JCM_852_Se_W_Solution",
+          "evidence": {
+            "evidence_id": "NS-P-jcm-852",
+            "capture": {
+              "root": "artifact",
+              "path": "shard/named_stocks/captures/jcm-852.html",
+              "sha256": "6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458"
+            },
+            "kind": "primary_source",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852",
+            "accessed_at": "2026-11-08T04:06:20.119641+00:00",
+            "locator": "complete primary recipe; named stock table and preparation notes",
+            "supports_or_contradicts": "Preserves the exact original recipe or referenced stock, including forms, amounts, denominator and preparation instructions used in the linked per-case reasoning. Applicability is narrowed by each frozen occurrence and explicit source accession; no whole-mixture ontology equivalence is inferred.",
+            "case_ids": [
+              "CM_NAME:e139ae2aee89d4cbdf51ea503d6183bff1cba0738fb7cc033d8a541cef597f5f"
+            ]
+          },
+          "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-852.html",
+          "snapshot": "primary/6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458",
+          "sha256": "6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458"
+        },
+        {
+          "index": 98,
+          "entry_id": "w03:proposals.json::m-jcm852_se_w_solution",
+          "evidence": {
+            "evidence_id": "m-jcm-852",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "materials/jcm-852.txt",
+              "sha256": "6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458"
+            },
+            "locator": "Medium852 Se/W solution table: selenite1.7mg,tungstate3.3mg,water1L; no NaOH component.",
+            "supports_or_contradicts": "Primary source as captured. Retrieval success alone does not validate source identifiers, composition, derived concentrations or identity. Error bodies/HTML shells are retained as unsuccessful searches.",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852",
+            "accessed_at": "2026-11-08T05:07:04.515605+00:00"
+          },
+          "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/reports/all_unmatched_20261107/worker-03/materials/jcm-852.txt",
+          "snapshot": "primary/6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458",
+          "sha256": "6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458"
+        }
+      ],
+      "limitation": "Proposal-level same-substance reconciliation only. No maintained owner mutation, selection, scientific release approval or global chemical-component identity assignment."
+    },
+    {
+      "finding_id": "NEWOWNER-DUP-002",
+      "severity": "major",
+      "status": "confirmed_in_frozen_proposals",
+      "summary": "W06 proposes separate NBRC1308 and NBRC1356 owners for the same fully enumerated trace-element preparation.",
+      "basis": "Both primary tables give NTA12.8g, FeCl3\u00b76H2O1.35g, MnCl2\u00b74H2O0.1g, CoCl2\u00b76H2O0.024g, CaCl2\u00b72H2O0.1g, ZnCl2 0.1g, CuCl2\u00b72H2O0.025g, H3BO3 0.01g, Na2MoO4\u00b72H2O0.024g, NaCl1g, NiCl2\u00b76H2O0.12g, Na2SeO4 0.004g, Na2WO4 0.004g and1L distilled water. Both first dissolve NTA, adjust pH6.5 with NaOH, add minerals and state finalpH7.0. The unquantified NaOH uses different metadata encodings, not distinct chemistry. Retain unknown titrant quantity and case applicability; no winner or owner merge is chosen.",
+      "entries": [
+        {
+          "entry_id": "w06:proposals.json::A-P-NBRC1308-TRACE",
+          "worker": 6,
+          "state": "authoritative-current",
+          "head": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+          "payload_sha256": "6a8f4ebc4562e888207270f5fce1dfdc425c581494d9183bd6b8aed5e896a2aa",
+          "snapshot": "snapshot/w06/research-a/payloads/nbrc_1308_trace_elements_solution.yaml",
+          "index": 220,
+          "proposal_id": "A-P-NBRC1308-TRACE",
+          "owner_path": "data/ingredients/mapped/nbrc_1308_trace_elements_solution.yaml",
+          "identifier": "kgmicrobe.ingredient:nbrc_1308_trace_elements_solution",
+          "case_ids": [
+            "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b"
+          ],
+          "published_successor_readback": {
+            "commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+            "path": "reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_1308_trace_elements_solution.yaml",
+            "sha256": "6a8f4ebc4562e888207270f5fce1dfdc425c581494d9183bd6b8aed5e896a2aa",
+            "equal_frozen_payload": true
+          }
+        },
+        {
+          "entry_id": "w06:proposals.json::C-P-NBRC1356-TRACE",
+          "worker": 6,
+          "state": "authoritative-current",
+          "head": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+          "payload_sha256": "5894ab52e5e649cee09bcd3d149d3723ed42cca6661848dcceaf30078bc170cb",
+          "snapshot": "snapshot/w06/research-c/after/nbrc_1356_trace_elements_stock.yaml",
+          "index": 263,
+          "proposal_id": "C-P-NBRC1356-TRACE",
+          "owner_path": "data/ingredients/mapped/nbrc_1356_trace_elements_stock.yaml",
+          "identifier": "kgmicrobe.ingredient:nbrc_1356_trace_elements_stock",
+          "case_ids": [
+            "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230"
+          ],
+          "published_successor_readback": {
+            "commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+            "path": "reports/all_unmatched_20261107/worker-06/research-c/after/nbrc_1356_trace_elements_stock.yaml",
+            "sha256": "5894ab52e5e649cee09bcd3d149d3723ed42cca6661848dcceaf30078bc170cb",
+            "equal_frozen_payload": true
+          }
+        }
+      ],
+      "primary_evidence": [
+        {
+          "index": 220,
+          "entry_id": "w06:proposals.json::A-P-NBRC1308-TRACE",
+          "evidence": {
+            "evidence_id": "A-E-CAPTURE-149",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "research-a/captures/0fd90bae1b54ca6d.raw",
+              "sha256": "d00ccd979e58433b8e97aa0d84dbee50d3aa8c571e934f39dd7f261f99a7b8be"
+            },
+            "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+            "supports_or_contradicts": "case19: NBRC1020 and824 show related nitrilotriacetate stocks, whereas1308 adds a different set including sodium chloride and selenium/tungsten entries and pH6.5 preparation. The double asterisk is a footnote marker that reuses a heading across recipes.",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1308",
+            "case_ids": [
+              "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b"
+            ],
+            "accessed_at": "2026-11-08T05:07:01.897272+00:00"
+          },
+          "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/research-a/captures/0fd90bae1b54ca6d.raw",
+          "snapshot": "primary/d00ccd979e58433b8e97aa0d84dbee50d3aa8c571e934f39dd7f261f99a7b8be",
+          "sha256": "d00ccd979e58433b8e97aa0d84dbee50d3aa8c571e934f39dd7f261f99a7b8be"
+        },
+        {
+          "index": 263,
+          "entry_id": "w06:proposals.json::C-P-NBRC1356-TRACE",
+          "evidence": {
+            "evidence_id": "C-E-nbrc-1356",
+            "capture": {
+              "root": "artifact",
+              "path": "research-c/captures/nbrc-1356.txt",
+              "sha256": "87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49"
+            },
+            "locator": "nbrc-1356; exact captured source response",
+            "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+            "kind": "primary_source",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1356",
+            "accessed_at": "2026-11-08T05:07:36.621369+00:00",
+            "case_ids": [
+              "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230"
+            ]
+          },
+          "original": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/research-c/captures/nbrc-1356.txt",
+          "snapshot": "primary/87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49",
+          "sha256": "87b9e6d80867f35b31318154c798b6869c3246bb526a19dccc8e8be94019dd49"
+        }
+      ],
+      "limitation": "Proposal-level same-substance reconciliation only. No maintained owner mutation, selection, scientific release approval or global chemical-component identity assignment."
+    }
+  ],
+  "parent_scope": "All proposed new owners, exhaustive candidate enumeration in progress; this immutable supplement contains only completed findings."
+}

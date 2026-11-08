@@ -1,0 +1,91 @@
+{
+  "reason": "Required full-shard partonomy validation exposed a preexisting reference-label mismatch in an unchanged proposal. Source/ontology verification supports a bounded name-only fix in final intake, rather than weakening the checker.",
+  "original_proposal": {
+    "proposal_id": "A-P-MERCK108339",
+    "case_ids": [
+      "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+      "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e"
+    ],
+    "description": "Propose separate Merck108339 dehydrated broth product while preserving generic Sabouraud family owner.",
+    "evidence_ids": [
+      "A-E-OWNER-17",
+      "A-E-35-S00",
+      "A-E-35-S01",
+      "A-E-CAPTURE-084",
+      "A-E-EXTRA-021",
+      "A-E-MERCK108339",
+      "A-E-NATIVE-OWNER-DEDUP",
+      "R-frozen-shard",
+      "R-ingredient-1279",
+      "R-medium-1429",
+      "R-A-MERCK108339"
+    ],
+    "owner_path": "data/ingredients/mapped/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+      "sha256": "a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217"
+    },
+    "before_sha256": null,
+    "identity_predicate_alias_consequences": "Localproduct identity/exact registryrow only; no wholeproduct chemical mapping. Component amounts use supplier30g/Lreconstitutionbasis. GenericUNMAPPED0513isunchanged; rootmaybacklink KG183 onlywithsamecatalogevidence.",
+    "publication_review_obligations": "Proposal only. Withdraw inherited support for every changed owner byte; independent skeptical review and full content-bound native review are required before integration/publication. No maintained YAML/SSSOM/exports changed.",
+    "cross_shard_dependencies": "Coordinator must reconcile shared owner/case backlinks and retain original baseline before hash."
+  },
+  "original_published_commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+  "new_capture": {
+    "root": "artifact",
+    "path": "successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+    "sha256": "d6c9233bb2171f19ac51444d43581e80412a94893e0a381ab8c9acc0b72f72aa"
+  },
+  "author": "/root",
+  "original_author": "/root/research_a",
+  "affected_case_indices": [
+    35,
+    183
+  ],
+  "affected_case_ids": [
+    "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+    "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e"
+  ],
+  "source_verification": {
+    "root": "artifact",
+    "path": "successor-v2/research-a/merck-label-assessment.json",
+    "sha256": "35c7a462384c7e33d7f0e0ac28590faf281a7129161c5ed28ca79db1d8468a3d"
+  },
+  "inherited_failure": {
+    "original100": {
+      "root": "artifact",
+      "path": "successor-v2/logs/partonomy-original100.json",
+      "sha256": "0c2969a7997fc06043b14ecf816b3ad8b0baea1ba0d348fb0ea2f91af4b3481b"
+    },
+    "initial99": {
+      "root": "artifact",
+      "path": "successor-v2/logs/partonomy-successor.json",
+      "sha256": "82b56c7598f22acad9b2f252ee9a56eb7dcb7009dcdbc55558855c5be4cae6eb"
+    },
+    "maintained_baseline": {
+      "root": "artifact",
+      "path": "successor-v2/logs/partonomy-baseline.json",
+      "sha256": "8fe2e9015178d7ff783c86d241752982a2a0f2defad8d88357ff1d45bcf077cb"
+    }
+  },
+  "changed_fields": [
+    "/components/2/component_name",
+    "/component_assertion/evidence/0/notes",
+    "/curation_history/-"
+  ],
+  "unchanged_identity_quantity_scope": {
+    "component_id": "CHEBI:17634",
+    "reference_scope": "MIM_CATALOG",
+    "concentration_value": "20.0",
+    "concentration_unit": "G_PER_L"
+  },
+  "raw_supplier_spelling_preserved": "D(+)Glucose",
+  "first_successor_candidate": {
+    "path": "reports/all_unmatched_20261107/worker-06/successor-v2/proposals.json",
+    "sha256": "11f9ded7530efcf857c7564a9f8b9685847497beb5142318f519c1a8843279d7",
+    "status": "immutable historical candidate with inherited validation failure"
+  },
+  "maintained_change": false
+}

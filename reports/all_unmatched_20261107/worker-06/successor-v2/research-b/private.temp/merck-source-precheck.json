@@ -1,0 +1,142 @@
+{
+  "reviewer": "Codex /root/research_b",
+  "reviewed_at": "2026-11-08T06:16:39.998657+00:00",
+  "status": "source_precheck_complete_await_exact_delta",
+  "independence": "B did not author original A Merck payload or proposed root correction; own source/ontology/full-context reread performed.",
+  "source_evidence_reused_with_original_timestamps": [
+    {
+      "evidence_id": "A-E-MERCK108339",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/product-web-open.json",
+        "sha256": "4a2ee7ed984ccfb8a492699352b06f9e0e234bfc0d2d849b477229522170547e"
+      },
+      "locator": "Merck108339 product composition and recommended30g/L preparation",
+      "supports_or_contradicts": "Identifies dehydrated Sabouraud2%dextrose broth and its casein/meat-peptone and D-glucose components, not agar or pure glucose.",
+      "url": "https://www.sigmaaldrich.com/US/en/product/mm/108339",
+      "case_ids": [
+        "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd"
+      ],
+      "accessed_at": "2026-11-08 05:09:18 UTC"
+    },
+    {
+      "evidence_id": "A-E-EXTRA-000",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/0ed1bb20d541cf5b.raw",
+        "sha256": "6e02f3cee82012b7f630c04f122676c0029753074a4421cb005301b8bf24cedb"
+      },
+      "locator": "OLS term label, is_obsolete, synonyms, chemical annotations and source xrefs",
+      "supports_or_contradicts": "case15: The six JCM originals spell D-Glucose; the doubled source hyphen is punctuation and does not remove D stereochemistry. Current CHEBI17634 explicitly defines D-glucose and includes D(+)-glucose synonyms. Existing D-glucose is the matching D-specific owner.; case41: The successfulTogoM2287 JSON recipe explicitly names D(+)glucose22mM and labels itD-Glucose. CHEBI17634 is the current D-glucose target and the matching maintained owner isD-glucose. This supplies primary confirmation beyond punctuation matching.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_17634",
+      "case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+        "CM_NAME:4102832afa3835505e3db683a0cfa50f14daaab21c73635b74f45fba60c99ca9"
+      ],
+      "accessed_at": "2026-11-08T05:08:09.390071+00:00"
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-084",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/239842564e36f8de.raw",
+        "sha256": "a51e83d3f6618d33124b7dd278aa09445ce829b84b36c4b328532ac557bc16f3"
+      },
+      "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+      "supports_or_contradicts": "case35: DSMZ1429 names Merck108339 Sabouraud2%glucose broth and adds30g/L; the supplier confirms a dehydrated broth composed of two peptone fractions plus20g/L D(+)glucose after reconstitution. The source also adds agar separately, so the broth product itself is not agar medium or pureglucose.",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1429.pdf",
+      "case_ids": [
+        "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd"
+      ],
+      "accessed_at": "2026-11-08T05:06:54.308106+00:00"
+    },
+    {
+      "evidence_id": "R-ingredient-1279",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1279.body",
+        "sha256": "ddf97485833c4033cf50c26ce03bb973d62d0d003e6a9e2f2ef467addc2c765e"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/1279",
+      "accessed_at": "2026-11-08T05:08:45.698808+00:00",
+      "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+      "supports_or_contradicts": "Usable primary response; only the fields explicitly assessed by linked case decisions are relied on."
+    },
+    {
+      "evidence_id": "R-medium-1429",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-1429.body",
+        "sha256": "167947f7dc3044852f6626a962803d93884037f62e9f1c0ce5d9bc2561d4e733"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/1429",
+      "accessed_at": "2026-11-08T05:09:47.606103+00:00",
+      "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+      "supports_or_contradicts": "Usable primary response; only the fields explicitly assessed by linked case decisions are relied on."
+    }
+  ],
+  "full_frozen_contexts": [
+    {
+      "occurrence_id": "CM_OCC:56e56e41a414f10d2a62788eb34da604ace932d45f7e7cc7d5c9be5f00a969fc",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/sabouraud_glucose_medium.yaml",
+      "sha256": "fb21f19b59731093eb93c12e7188f86f28ceb8f3155067f78de61ae1c8ca26bf",
+      "recipe_id": "CultureMech:004154",
+      "component_path": "ingredients/0"
+    },
+    {
+      "occurrence_id": "CM_OCC:70da74da3ba85406ff0a77b058dac2ae6bea2f44cd8fd330c8b30fb538fe44b1",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/fungal/sabouraud_glucose_medium.yaml",
+      "sha256": "d9a2e8e90b1a88ff345f42509e328766df12fd1fdf503a2100823ce978663b9f",
+      "recipe_id": "CultureMech:010453",
+      "component_path": "ingredients/0"
+    }
+  ],
+  "kg_case": {
+    "case_id": "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e",
+    "source_record": {
+      "amount": 30,
+      "attribute": "Merck 108339, 2 %",
+      "compound": "SABOURAUD- Glucose-Bouillon",
+      "compound_id": 1279,
+      "g_l": 30,
+      "optional": 0,
+      "recipe_order": 1,
+      "unit": "g"
+    },
+    "downstream_holds": []
+  },
+  "original_payload": {
+    "path": "reports/all_unmatched_20261107/worker-06/research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+    "sha256": "a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217"
+  },
+  "active_target": {
+    "path": "data/ingredients/mapped/D-glucose.yaml",
+    "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914",
+    "identifier": "CHEBI:17634",
+    "ontology_label": "D-glucose"
+  },
+  "assessment": "The supplier explicitly identifies D(+)Glucose 20.0 g/litre as a current typical prepared-broth constituent. The captured defining ChEBI term17634 names D-glucose, describes D-configuration and lists D(+)-glucose. Canonicalizing the existing target label preserves D-specific identity and does not establish a hydrate, anomer, or distinct glucose substance. Both complete frozen CM recipes use catalog108339 at30g/L plus separate15g/L agar; MediaDive compound1279 is product-qualified in medium1429. A component spelling correction must preserve quantity, targetID, scope, raw wording in provenance, both peptones, UNKNOWN closure, current-typical/historical-lot limits and the generic family separation.",
+  "validator_observations": {
+    "baseline": {
+      "path": "successor-v2/logs/partonomy-baseline.log",
+      "sha256": "880b3056e99eec14b15ea8f81e72c5ec170c2ccbe83243ba809e05d3e2c31cc1",
+      "observed": "2956 records; zero violations"
+    },
+    "original100": {
+      "path": "successor-v2/logs/partonomy-original100.log",
+      "sha256": "9f0d235534ddec56ff4e5052c1b66558e74bfe5a673f1444032ea2c8ed269845",
+      "observed": "3032 records; one Merck glucose label mismatch"
+    },
+    "first99": {
+      "path": "successor-v2/logs/partonomy-successor.log",
+      "sha256": "b5090d9cab293ac2c080991d4693ac101ba700b764fa2df68ad11c5a1947be01",
+      "observed": "3031 records; same single Merck mismatch"
+    }
+  },
+  "source_owner_export_approval": false
+}

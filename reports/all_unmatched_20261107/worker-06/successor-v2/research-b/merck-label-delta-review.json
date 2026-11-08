@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex /root/research_b",
+  "author_reviewed": "Codex /root",
+  "reviewed_at": "2026-11-08T06:17:59.069777+00:00",
+  "status": "complete",
+  "open_findings": 0,
+  "input_hashes": {
+    "decisions.json": "815ea3441a231f3d2464a57089338c7c78d07ac3f9c3f77e77f4865b39c01acd",
+    "proposals.json": "2244c896a5b1cf50681da7d7f15c4ccabae916aa31cc9e40e18b95d72e0dfd14",
+    "author-evidence.json": "271ab84a619850116f449bfc81da93d9c2be9e7e33a2f8079074537fe0e3e6a8",
+    "partonomy-correction.json": "70b1fe7f4dd1b04d3d56135ba8eb201a7528b31b99d7a9cb538b258460f95766"
+  },
+  "input_root": "successor-v2/final",
+  "new_payload": {
+    "root": "artifact",
+    "path": "successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+    "sha256": "d6c9233bb2171f19ac51444d43581e80412a94893e0a381ab8c9acc0b72f72aa"
+  },
+  "original_payload": {
+    "root": "artifact",
+    "path": "research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+    "sha256": "a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217"
+  },
+  "source_precheck": {
+    "root": "artifact",
+    "path": "successor-v2/research-b/private.temp/merck-source-precheck.json",
+    "sha256": "59185bb45e34744cd63848c105709751e01c218049d02e7ef30b6a2a210e3705"
+  },
+  "prior_snapshot_preservation": {
+    "receipt_path": "successor-v2/research-b/final-binding.json",
+    "receipt_sha256": "a9493ba6e9607894cdcf2a976209b3203b3147af8c5100366a7203098839452e",
+    "all_bound_first99_inputs_unchanged": true,
+    "stock_review_sha256": "f82cdd0841cf518c0e11e56c7a281f57e1e80e15f107c5f88ed6a8508710b5c2",
+    "stock_payload_and_two_outcomes_unchanged": true
+  },
+  "scientific_assessment": "The full captured supplier composition explicitly states D(+)Glucose 20.0g/litre. The defining captured CHEBI17634 record labels the D-configuration substance D-glucose and lists D(+)-glucose. Using the canonical label for the already chosen CHEBI17634 reference is chemically consistent; the exact supplier spelling remains in component evidence. No hydrate, anomer, generic-glucose identity, changed amount or new global synonym is inferred. The prepared-broth quantity basis, peptone fractions, separate receiving-medium agar, UNKNOWN composition closure and historical-lot/current-typical limitations remain unchanged.",
+  "actual_delta": [
+    "/components/2/component_name: D(+)Glucose to D-glucose",
+    "/component_assertion/evidence/0/notes: original note retained and raw spelling/canonical-reference explanation appended",
+    "/curation_history: original history preserved and one actual root CORRECTED event appended"
+  ],
+  "affected_case_reviews": [
+    {
+      "case_index": 35,
+      "case_id": "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+      "decision_sha256": "7aae30fa182a9f81a96d9114a0fe1143cfadb91fe33e2a28006841e420190042",
+      "raw_source": {
+        "source": "culturemech",
+        "source_case_id": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)",
+        "source_label": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)",
+        "raw_source_label": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:56e56e41a414f10d2a62788eb34da604ace932d45f7e7cc7d5c9be5f00a969fc",
+        "CM_OCC:70da74da3ba85406ff0a77b058dac2ae6bea2f44cd8fd330c8b30fb538fe44b1"
+      ],
+      "assessment": "Both complete CM frozen recipes retain catalog108339 at30g/L and separate15g/L agar; the exact component change does not broaden either occurrence."
+    },
+    {
+      "case_index": 183,
+      "case_id": "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e",
+      "decision_sha256": "ba9108d54af5ffbcabb9f600d5e8040919dbfadd4fb1580ca510cf01402560bd",
+      "raw_source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1279",
+        "source_label": "SABOURAUD- Glucose-Bouillon",
+        "raw_source_label": "SABOURAUD- Glucose-Bouillon"
+      },
+      "occurrence_ids": [],
+      "assessment": "The complete frozen KG context and primary medium1429 explicitly qualify ingredient1279 as Merck108339,2%; raw generic label alone is not treated as an alias for the catalog product. No measured occurrence frequency or downstream approval is invented."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "V2-B-MERCK-01",
+      "status": "resolved",
+      "finding": "Full-catalog overlay exposed an inherited exact-reference-label mismatch for supplier D(+)Glucose. Baseline passed; both original100 and initial99 overlays reproduced the same single failure.",
+      "resolution": "The final isolated proposal uses the canonical label of the existing D-specific component identifier, retains the raw supplier wording and all substantive product fields, and preserves failed receipts. The focused actual-payload native check now reports zero violations."
+    }
+  ],
+  "focused_check": {
+    "module": "src/mediaingredientmech/validation/component_partonomy.py",
+    "module_sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+    "scope": "Read-only in-memory original/corrected Merck parent with actual maintained D-glucose target; not full-catalog validation",
+    "target_sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914",
+    "before_violations": [
+      {
+        "code": "REFERENCE_LABEL_MISMATCH",
+        "record_id": "kgmicrobe.ingredient:merck_108339_sabouraud_2percent_dextrose_broth",
+        "message": "component 3 (D(+)Glucose): name is not a preferred term, ontology label, or synonym of an active CHEBI:17634 record"
+      }
+    ],
+    "after_violations": []
+  },
+  "selection_check": {
+    "case_count": 188,
+    "proposal_count": 99,
+    "unchanged_decisions_vs_published": 184,
+    "unchanged_proposals_vs_published": 97,
+    "unchanged_decisions_vs_initial99": 186,
+    "unchanged_proposals_vs_initial99": 98,
+    "all_author_evidence_capture_hashes": "PASS",
+    "all_selected_payload_hashes": "PASS"
+  },
+  "independence": "Reviewer did not author either original Merck proposal or root successor correction. A source assessment was read as original-author contribution, not independent approval. B independently reread full supplier and ontology captures, both complete CM frozen recipes and complete KG context; prior B-authored science is not self-approved.",
+  "final_evidence_binding": "Pending final-binding-v2.json after this actual receipt is appended as V2-IR-MERCK-LABEL. No self-containing final evidence hash is claimed.",
+  "source_owner_export_approval": false,
+  "maintained_change_approval": false
+}

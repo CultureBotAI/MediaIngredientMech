@@ -1,0 +1,558 @@
+schema_version: 1.0.0
+review_id: 20261108T061955Z-w06-merck-component-label
+kind: category
+repository: CultureBotAI/MediaIngredientMech
+title: Preserve Merck108339 component identity while correcting its native reference
+  label
+started_at: '2026-11-08T06:08:11.314625Z'
+finished_at: '2026-11-08T06:19:55Z'
+reviewer:
+  identity: /root successor author with independent exact delta review by /root/research_b
+  kind: agent
+  independence: self_review
+  independence_basis: This native synthesis is by the correction author. B independently
+    inspected supplier/ontology/frozen sources and final exact bytes; original A author
+    contribution is source verification, not final independent approval.
+skill: .claude/skills/review-yaml-category/SKILL.md
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: A source-backed component-name correction resolves an inherited partonomy
+  failure in the isolated Merck108339 proposal. Chemical/product identity and quantities
+  are unchanged; original100 and first99 candidates remain immutable, with failed
+  receipts retained.
+source:
+  git_revision: d5a7613c931d45d057eaca7b5ec15280aca76c9e
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/ingredients/mapped/D-glucose.yaml
+    sha256: dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914
+    role: context
+  - path: docs/stock_components.md
+    sha256: 62a8a5393db91e943f6f3903bd624a00e3567f6f0a2ca2391742e97dc0c19d49
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json
+    sha256: 6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808
+    role: target
+  - path: reports/all_unmatched_20261107/worker-06/research-a/captures/0ed1bb20d541cf5b.raw
+    sha256: 6e02f3cee82012b7f630c04f122676c0029753074a4421cb005301b8bf24cedb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/research-a/captures/product-web-open.json
+    sha256: 4a2ee7ed984ccfb8a492699352b06f9e0e234bfc0d2d849b477229522170547e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/research-a/payloads/D-glucose.yaml
+    sha256: 318fb75b1beb2c2a8b1635c3a499ca6025b3fe6c863f825529498d221d178d2a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml
+    sha256: a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217
+    role: target
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/decisions.json
+    sha256: 815ea3441a231f3d2464a57089338c7c78d07ac3f9c3f77e77f4865b39c01acd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/evidence.json
+    sha256: 3abee21eb759145e210d5fa5ee3f77fcc3aba0bc0c71eccde35d9b890022fec3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/invariants.json
+    sha256: 332a8cd491c2a4dd0efc79efc185bcbb2d5c08eb35755c13832aebb07c29b8b8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/partonomy-successor.json
+    sha256: a6a742dac61fcf77d10ba5c8bf1cac80ee2db9e69f7c4fc5f9634f922fce3590
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/partonomy-successor.log
+    sha256: 2a18677e30f7e1aec501bd6a14fe7b9f83a172555fcc4df267c62ec0081bbf10
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/schema-command.json
+    sha256: e13ae747161a6c1b70825125e8c8fbdc328790388a1f7a31611c2efae557e92d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/structural-audit.json
+    sha256: 11e73d9f18d805bac208bbe9a409b70744b6c72434f3669ed67c9d19ab41093e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/partonomy-correction.json
+    sha256: 70b1fe7f4dd1b04d3d56135ba8eb201a7528b31b99d7a9cb538b258460f95766
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml
+    sha256: d6c9233bb2171f19ac51444d43581e80412a94893e0a381ab8c9acc0b72f72aa
+    role: target
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/proposals.json
+    sha256: 2244c896a5b1cf50681da7d7f15c4ccabae916aa31cc9e40e18b95d72e0dfd14
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/selection.json
+    sha256: 4d716bee7fafb8fe081e1604da305d8ecfd0c05fc3e40bcdf3aa6ba0cd0d157a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/final/source-holds.json
+    sha256: eaddfd7ffe5ba2ba1be011696ad741e1b010db2cc9ca4678954a640484f70b77
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/logs/partonomy-original100.json
+    sha256: 0c2969a7997fc06043b14ecf816b3ad8b0baea1ba0d348fb0ea2f91af4b3481b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/logs/partonomy-successor.json
+    sha256: 82b56c7598f22acad9b2f252ee9a56eb7dcb7009dcdbc55558855c5be4cae6eb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/research-a/merck-label-assessment.json
+    sha256: 35c7a462384c7e33d7f0e0ac28590faf281a7129161c5ed28ca79db1d8468a3d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/research-b/final-binding-v2.json
+    sha256: 7c1259804b8f07a12628a5013da60b52a43053b834fb2a9410b552add0909a43
+    role: context
+  - path: reports/all_unmatched_20261107/worker-06/successor-v2/research-b/merck-label-delta-review.json
+    sha256: 1cc8b3643bcd93f6d29b14e7eb8207593f24979486a36644c541e7daf63e13a1
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: 'One catalog-qualified product reference-label cohort: historical payload,currentpayload,andbothcomplete
+    affected source cases.'
+  selection: The Merck108339 proposal and all its source-case backlinks; only its
+    existing glucose component name/provenance/audit event change.
+  coverage: full
+  population_size: 4
+  reviewed_target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  exclusions:
+  - target: Other nominal ingredient identities and unrelated inherited D-glucose
+      owner claims
+    reason: A canonical reference label does not approve whole-owner mechanisms, chemistry
+      properties or roles.
+  - target: Maintained owner installation and source/owner/export release
+    reason: Coordinator-owned and outside this proposal correction.
+targets:
+- target_id: MERCK108339-PUBLISHED
+  path: reports/all_unmatched_20261107/worker-06/research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml
+  label: Historical Merck108339 proposal with nonresolving component label
+  kind: source
+  ownership_note: Catalog-qualified Merck108339 whole-product owner is proposed and
+    uninstalled. The existing D-glucose child and generic Sabouraud family are not
+    owners of this product.
+- target_id: MERCK108339-SUCCESSOR
+  path: reports/all_unmatched_20261107/worker-06/successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml
+  label: Merck108339 successor with canonical component reference label
+  kind: source
+  ownership_note: Catalog-qualified Merck108339 whole-product owner is proposed and
+    uninstalled. The existing D-glucose child and generic Sabouraud family are not
+    owners of this product.
+- target_id: CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  path: reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json
+  selector: cases[case_id=CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd]
+  label: SABOURAUD-2% Glucose-Bouillon (Merck 108339)
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/SABOURAUD-_Glucose-Bouillon.yaml
+    role: Frozen candidate owner context; does not establish generic family as the
+      catalog-qualified product
+- target_id: KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  path: reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json
+  selector: cases[case_id=KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e]
+  label: SABOURAUD- Glucose-Bouillon
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/SABOURAUD-_Glucose-Bouillon.yaml
+    role: Frozen candidate owner context; does not establish generic family as the
+      catalog-qualified product
+checks:
+- check_id: schema
+  name: SCHEMA full final intake check
+  status: passed
+  required: true
+  summary: Exact final command and input hashes in reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/schema-command.json
+  target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python
+    scripts/validate_strict.py reports/all_unmatched_20261107/worker-06/research-a/payloads/Calcium_Pantothenate.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/Calcium_DL-Pantothenate.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/D-glucose.yaml reports/all_unmatched_20261107/worker-06/research-a/payloads/Lanthanum_III_Chloride_Heptahydrate.yaml
+    reports/all_unmatched_20261107/worker-06/successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_1407_boiled_bakers_yeast_extract.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/dsmz_29_40_sodium_carbonate_1m_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/atcc_1249_component_i.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_167_sl6_trace_elements.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/atcc_1257_sodium_carbonate_4_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_933_rst_trace_elements.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_340_sl4_trace_elements.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/atcc_md_tms_formulation_20261108.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_1088_trace_vitamins.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_1344_yeast_extract_1_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_1353_phosphate_buffered_trace_vitamins.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_1050_trace_elements_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_1086_trace_elements_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_925_trace_elements_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_1274_trace_elements_solution.yaml
+    reports/all_unmatched_20261107/worker-06/successor-v2/payloads/nbrc_1308_1356_trace_elements_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/nbrc_1020_824_trace_element_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/jcm_576_sl12_trace_metals.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/togo_2665_koh_solution_unspecified_strength.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/roscoff_pcrs11_fecl3_na2edta_stock_2019.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/dried_yeast_material.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/pressed_yeast_material.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/porphyra_thalli_material.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/Rye_Grass.yaml reports/all_unmatched_20261107/worker-06/research-a/payloads/wako_hipolypepton_casein_hydrolysate.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/Polypeptone.yaml
+    reports/all_unmatched_20261107/worker-06/research-a/payloads/bd_difco_yeast_carbon_base_family.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/Yeast_Extract.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/Alpha-d-glucose.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/3-_N-morpholinopropanesulfonic_Acid.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/Chromium_Iii_Chloride_Hexahydrate.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_1257_1321_trace_element_mixture.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_1117_sl7_trace_element_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_268_trace_salts_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/atcc_1464_trace_metals.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/jcm_301_growth_stimulating_factors.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/mediadive_124_haemin_0p05_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/dsmz_1033_ferric_chloride_0p17_mm_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/jcm_977_glucose_20_percent_wv_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/togo_2601_a5_cobalt_trace_metal_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/atcc_957_a5_trace_metals.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/atcc_461_castenholz_salts_2x.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/togo_2788_vogel_bonner_salts_50x.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/dsmz_135_339a_sodium_carbonate_5_percent_wv_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/jcm_273_nitsch_trace_elements.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_1226_trace_element_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/nbrc_392_trace_element_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/jcm_1435_trace_element_solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/togo_3181_rm_trace_vitamins.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/atcc_1612_sodium_carbonate_5_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/Proteose_Yeastolate.yaml
+    reports/all_unmatched_20261107/worker-06/research-b/proposed-owners/bd_difco_ynb_without_amino_acids_and_ammonium_sulfate_family.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/N-Z-Amine_A.yaml reports/all_unmatched_20261107/worker-06/research-c/after/Sulfur.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/L-ornithine_Monohydrochloride.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/Trace_Element_Solution_See_Medium_No_187.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/Trace_Minerals_See_Medium_No_151.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/Trace_Vitamins_Solution_See_Medium_No_284.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/JCM_197_Trace_Vitamins.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/Alginic_Acid.yaml reports/all_unmatched_20261107/worker-06/research-c/after/JCM_899_Trace_Element_Solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/JCM_1355_Modified_Trace_Minerals.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/JCM_1079_Trace_Element_Solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/JCM_284_Trace_Element_Solution.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/togo_2809_ticl3_20_percent_wv_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/jcm_1375_1435_825_glucose_10_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/togo_2231_sodium_carbonate_4g_per_l_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/togo_2790_glucose_20_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/togo_2568_glucose_10_percent_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/nbrc_1169_trace_elements_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/nbrc_857_936_trace_elements_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/jcm_1389_acc8_conditioned_supernatant.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/bd_difco_tc_yeastolate.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/bd_difco_ynb_without_amino_acids_family.yaml
+    reports/all_unmatched_20261107/worker-06/research-c/after/roscoff_pcrs11_2019_gaffron_se_stock.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-ALPHA-GLUCOSE-MONOHYDRATE.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-JCM243-STOCK.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-MODIFIED-VITAMINS.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-NEODYMIUM-FORM.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-YEAST-CELL-PASTE.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-XANTHOCIDIN-EVIDENCE.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-JCM209-STOCK.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-GYP-BROTH.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-VIRIDOGRISEIN-EVIDENCE.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-ARDACIN-C.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-JCM1167-TRACE-STOCK.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-JCM1211-TRACE-STOCK.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-JCM820-TRACE-STOCK.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-DSMZ1566-GLUCOSE10.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-SIGMA-C7290.yaml
+    reports/all_unmatched_20261107/worker-06/research-root/proposed-owners/R-P-PYGS-SOURCE-EVIDENCE.yaml
+    --out reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/schema.tsv
+    --workers 1
+  exit_code: 0
+  evidence_ids:
+  - SCHEMA
+- check_id: partonomy
+  name: PARTONOMY full final intake check
+  status: passed
+  required: true
+  summary: Exact final command and input hashes in reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/partonomy-successor.json
+  target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python
+    scripts/validate_component_partonomy.py --curated-dir .temp/all-unmatched-worker-06/successor-v2/final-validation/partonomy-overlay
+  exit_code: 0
+  evidence_ids:
+  - PARTONOMY
+- check_id: structure
+  name: STRUCTURE full final intake check
+  status: passed
+  required: true
+  summary: Exact final command and input hashes in reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/structural-command.json
+  target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py
+    --shard /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-06.json
+    --decisions /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v2/final/decisions.json
+    --evidence /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v2/final/evidence.json
+    --proposals /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v2/final/proposals.json
+    --artifact-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06
+    --source-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5
+    --mim-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree
+    --output /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/structural-audit.json
+  exit_code: 0
+  evidence_ids:
+  - STRUCTURE
+evidence:
+- evidence_id: A-E-MERCK108339
+  kind: primary_source
+  reference: https://www.sigmaaldrich.com/US/en/product/mm/108339
+  locator: Merck108339 product composition and recommended30g/L preparation
+  accessed_at: '2026-11-08T05:09:18Z'
+  support: supports
+  summary: Identifies dehydrated Sabouraud2%dextrose broth and its casein/meat-peptone
+    and D-glucose components, not agar or pure glucose. Original exact capture and
+    external timestamp preserved.
+  snapshot_sha256: 4a2ee7ed984ccfb8a492699352b06f9e0e234bfc0d2d849b477229522170547e
+- evidence_id: V2-E-MERCK-TERM
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_17634
+  locator: CHEBI17634 canonical label D-glucose, nonobsolete state, D-configuration
+    definition and D(+)-glucose synonyms; original captured OLS response
+  accessed_at: '2026-11-08T05:08:09.390071Z'
+  support: supports
+  summary: For the two catalog-qualified Merck108339 cases, this confirms the canonical
+    label of the already chosen D-specific component identifier. No generic-glucose,
+    anomer, hydrate or whole-product identity is inferred; original capture and retrieval
+    time retained. Original exact capture and external timestamp preserved.
+  snapshot_sha256: 6e02f3cee82012b7f630c04f122676c0029753074a4421cb005301b8bf24cedb
+- evidence_id: TARGET
+  kind: record_content
+  reference: data/ingredients/mapped/D-glucose.yaml
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Existing active CHEBI17634 owner carries canonical ontology label D-glucose;
+    unrelated inherited owner claims are excluded.
+  snapshot_sha256: dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914
+- evidence_id: REVIEW
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/research-b/merck-label-delta-review.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Independent exact review of root-authored three-field label/provenance/history
+    delta and both full affected cases.
+  snapshot_sha256: 1cc8b3643bcd93f6d29b14e7eb8207593f24979486a36644c541e7daf63e13a1
+- evidence_id: BIND
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/research-b/final-binding-v2.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Final successor case/evidence/payload binding and unchanged trace reconciliation
+    verified.
+  snapshot_sha256: 7c1259804b8f07a12628a5013da60b52a43053b834fb2a9410b552add0909a43
+- evidence_id: DELTA
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/final/partonomy-correction.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Original and corrected payloads differ only in component label, raw-source
+    explanation and appended root audit event.
+  snapshot_sha256: 70b1fe7f4dd1b04d3d56135ba8eb201a7528b31b99d7a9cb538b258460f95766
+- evidence_id: ORIGINAL100
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/logs/partonomy-original100.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Original100-overlay reproduces the same single mismatch; the trace-stock
+    reconciliation did not introduce it.
+  snapshot_sha256: 0c2969a7997fc06043b14ecf816b3ad8b0baea1ba0d348fb0ea2f91af4b3481b
+- evidence_id: PARTONOMY
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/partonomy-successor.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Full3031-record isolated successor overlay passes native partonomy; no
+    maintained installation.
+  snapshot_sha256: a6a742dac61fcf77d10ba5c8bf1cac80ee2db9e69f7c4fc5f9634f922fce3590
+- evidence_id: SCHEMA
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/schema-command.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: All99selected payloads pass strict schema.
+  snapshot_sha256: e13ae747161a6c1b70825125e8c8fbdc328790388a1f7a31611c2efae557e92d
+- evidence_id: STRUCTURE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/structural-command.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: Full188source cases and their exact evidence/proposal binding pass.
+  snapshot_sha256: 9eb09a7351480b66df97e03ed81a6c791361a9d989dea381c76fbcea618ffadd
+- evidence_id: INVARIANTS
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-06/successor-v2/final/logs/invariants.json
+  accessed_at: '2026-11-08T06:19:55Z'
+  support: supports
+  summary: All original published evidence, sourceholds and unchanged source/identity/quantity
+    fields are retained.
+  snapshot_sha256: 332a8cd491c2a4dd0efc79efc185bcbb2d5c08eb35755c13832aebb07c29b8b8
+assessments:
+- assessment_id: same-chemical-reference
+  area: nomenclature
+  topic: Canonical name for the already selected D-glucose child
+  outcome: supported
+  summary: Supplier D(+)Glucose20.0g/litre refers to the D-glucose component already
+    identified asCHEBI17634. The active native target/ontology label D-glucose resolves;
+    changing component_name to that canonical label preserves D identity, MIM_CATALOG
+    scope, quantity/unit and product identity.
+  target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  evidence_ids:
+  - A-E-MERCK108339
+  - V2-E-MERCK-TERM
+  - TARGET
+  - REVIEW
+  - BIND
+  - DELTA
+  details: Exact raw supplier spelling remains in component_assertion evidence. No
+    anomer or hydrate is inferred.
+- assessment_id: bounded-validation-fix
+  area: consistency
+  topic: Original failure retained; final full-overlay pass
+  outcome: supported
+  summary: The unchanged maintained baseline has no violations; both original100 and
+    initial99 overlays have the same Merck reference-label mismatch. The final99 selection
+    includes the independently reviewed label correction, and its full overlay passes.
+    Native validation was not weakened.
+  target_ids:
+  - MERCK108339-SUCCESSOR
+  evidence_ids:
+  - ORIGINAL100
+  - PARTONOMY
+  - SCHEMA
+  - DELTA
+  - REVIEW
+  details: Exact final payload SHA256 d6c9233bb2171f19ac51444d43581e80412a94893e0a381ab8c9acc0b72f72aa
+- assessment_id: case-35
+  area: scope
+  topic: Unchanged product/source scope after label correction
+  outcome: supported
+  summary: DSMZ1429 names Merck108339 Sabouraud2%glucose broth and adds30g/L; the
+    supplier confirms a dehydrated broth composed of two peptone fractions plus20g/L
+    D(+)glucose after reconstitution. The source also adds agar separately, so the
+    broth product itself is not agar medium or pureglucose.
+  details: 'Both frozen DSMZ/KOMODO1429 occurrences point to the same catalog-qualified
+    broth. Existing UNMAPPED0513 records a broader Sabouraud-bouillon family and deliberately
+    defers product-level curation; product identification now narrows these occurrences
+    without proving all historical family usage identical. Exact frozen scopes: CultureMech:004154:ingredients/0;
+    CultureMech:010453:ingredients/0 The product proposal now names its already referenced
+    CHEBI:17634 component D-glucose, with exact supplier D(+)Glucose retained in evidence.
+    Ingredient identity,20.0G_PER_L,source scope, separate agar and current-typical/historical-lot
+    limitations are unchanged. Current Merck108339 typical formulation is verified.
+    Historical lot/formulation concordance remains unverified; keep generic Sabouraud
+    family owner separate and require version-specific source review before release.'
+  target_ids:
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  evidence_ids:
+  - A-E-MERCK108339
+  - V2-E-MERCK-TERM
+  - TARGET
+  - REVIEW
+  - BIND
+  - INVARIANTS
+- assessment_id: case-183
+  area: scope
+  topic: Unchanged product/source scope after label correction
+  outcome: supported
+  summary: The raw source specifies Merck108339,2%glucose broth in DSMZ1429. Official
+    supplier composition now verifies the catalog-qualified dehydrated broth, with5g/L
+    meatpeptone,5g/L caseinpeptone and20g/L D(+)glucose at30g product/L. This supports
+    the separate Merckproduct proposal; the receiving recipe adds agar separately.
+    Current typicalcomposition does not establish historicallot invariance or genericSabouraudfamily
+    identity.
+  details: 'Assigned shard index183; source mediadive.ingredient:1279; exact frozen
+    source_record={"amount": 30, "attribute": "Merck 108339, 2 %", "compound": "SABOURAUD-
+    Glucose-Bouillon", "compound_id": 1279, "g_l": 30, "optional": 0, "recipe_order":
+    1, "unit": "g"}. Assessed all 0 embedded downstream holds without changing them.
+    The case digest preserves full nested provenance; KG helper occurrence counts
+    are not measured recipe frequencies. Shared isolated proposal A-P-MERCK108339
+    applies only to the substance/formulation established by this case; it does not
+    approve source-case, owner or export release. The product proposal now names its
+    already referenced CHEBI:17634 component D-glucose, with exact supplier D(+)Glucose
+    retained in evidence. Ingredient identity,20.0G_PER_L,source scope, separate agar
+    and current-typical/historical-lot limitations are unchanged. Current Merck108339
+    typical formulation is verified. Historical lot/formulation concordance remains
+    unverified; keep generic Sabouraud family owner separate and require version-specific
+    source review before release.'
+  target_ids:
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  evidence_ids:
+  - A-E-MERCK108339
+  - V2-E-MERCK-TERM
+  - TARGET
+  - REVIEW
+  - BIND
+  - INVARIANTS
+findings: []
+actions:
+- action_id: integrate-exact-revision
+  description: Use only the final selected Merck payload through coordinator guarded
+    integration; retain raw supplier wording and original history, with all existing
+    product/source limits.
+  finding_ids: []
+  target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  ownership_note: Catalog-qualified Merck108339 whole-product owner is proposed and
+    uninstalled. The existing D-glucose child and generic Sabouraud family are not
+    owners of this product.
+  acceptance_checks:
+  - Keep CHEBI17634, MIM_CATALOG,20.0G_PER_L and the product registry identifier unchanged.
+  - Preserve separate agar, current typical formulation versus historical lot uncertainty,
+    and unknown anomer/hydrate.
+  - Require separate full-owner/source/export review after any maintained integration.
+boundary_decisions:
+- action: retain
+  target_ids:
+  - MERCK108339-PUBLISHED
+  - MERCK108339-SUCCESSOR
+  - CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd
+  - KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e
+  rationale: The same catalog-qualified product and D-glucose child identities persist
+    across the label revision; do not merge the whole mixture with the child, infer
+    a specific form, or conflate generic Sabouraud family.
+  evidence_ids:
+  - A-E-MERCK108339
+  - V2-E-MERCK-TERM
+  - TARGET
+  - REVIEW
+  - BIND
+  - DELTA
+limitations:
+- The current supplier typical formula does not establish historical lot invariance.
+- Supplier spelling is retained as evidence; no global synonym is added and no unstated
+  anomer/hydrate is inferred.
+- Original validator failures remain as immutable evidence. Current validation and
+  source identity support do not authorize publication or full-owner release.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T055544Z-w06-source-shard
+  relationship: Preserves original product assessment; corrects only its isolated
+    proposed reference label with new evidence and re-review.
+tags:
+- worker06
+- component-label
+- proposal-only

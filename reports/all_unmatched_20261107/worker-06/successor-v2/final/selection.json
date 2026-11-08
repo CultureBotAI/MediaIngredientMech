@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "selection_id": "worker06-successor-v2-final",
+  "created_at": "2026-11-08T06:18:15.353850+00:00",
+  "state": "current_authoritative_worker06_intake",
+  "artifact_root": "reports/all_unmatched_20261107/worker-06",
+  "source_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5",
+  "frozen_shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+  "supersedes_selections": [
+    {
+      "commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+      "path": "reports/all_unmatched_20261107/worker-06/proposals.json",
+      "sha256": "fc838985c5b79ef4cef5a502efe3242cdc1b87c8baf805e9b7f56e96de4ed61f",
+      "proposal_count": 100,
+      "status": "immutable historical published ledger; do not install both superseded trace owners"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/selection.json",
+      "sha256": "b4f413cc9ccaf144cd3c6f92d857a0afeae227836b2ee17466dd705665f06c41",
+      "proposal_ledger_path": "reports/all_unmatched_20261107/worker-06/successor-v2/proposals.json",
+      "proposal_ledger_sha256": "11f9ded7530efcf857c7564a9f8b9685847497beb5142318f519c1a8843279d7",
+      "proposal_count": 99,
+      "status": "immutable historical first successor candidate; independently accepted stock reconciliation but inherited Merck reference-label validation failure"
+    }
+  ],
+  "current_intake": {
+    "decisions.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/decisions.json",
+      "sha256": "815ea3441a231f3d2464a57089338c7c78d07ac3f9c3f77e77f4865b39c01acd"
+    },
+    "evidence.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/evidence.json",
+      "sha256": "3abee21eb759145e210d5fa5ee3f77fcc3aba0bc0c71eccde35d9b890022fec3"
+    },
+    "proposals.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/proposals.json",
+      "sha256": "2244c896a5b1cf50681da7d7f15c4ccabae916aa31cc9e40e18b95d72e0dfd14"
+    },
+    "source-holds.json": {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/source-holds.json",
+      "sha256": "eaddfd7ffe5ba2ba1be011696ad741e1b010db2cc9ca4678954a640484f70b77"
+    }
+  },
+  "case_count": 188,
+  "proposal_count": 99,
+  "retained_unchanged_proposal_count": 97,
+  "retained_unchanged_case_count": 184,
+  "trace_reconciliation": {
+    "proposal_id": "V2-P-NBRC1308-1356-TRACE",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v2/payloads/nbrc_1308_1356_trace_elements_stock.yaml",
+      "sha256": "194d39c6301961eba8719f01d02762effb19c1b4a7fdfac247210f41c038127c"
+    },
+    "lineage": {
+      "root": "artifact",
+      "path": "successor-v2/lineage.json",
+      "sha256": "35ebf1795329c3c64233982cf463433e57b1d9cc8af871bf3c34725f330989d8"
+    },
+    "independent_receipt": {
+      "root": "artifact",
+      "path": "successor-v2/research-b/scientific-review.json",
+      "sha256": "f82cdd0841cf518c0e11e56c7a281f57e1e80e15f107c5f88ed6a8508710b5c2"
+    },
+    "case_ids": [
+      "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+      "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230"
+    ],
+    "occurrence_scopes_by_case": {
+      "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b": {
+        "included_occurrence_ids": [
+          "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5"
+        ],
+        "excluded_occurrence_ids": [
+          "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+          "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+        ],
+        "reason": "Only NBRC1308. NBRC1020/824 stay with unchanged A-P-NBRC1020-824-TRACE."
+      },
+      "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230": {
+        "included_occurrence_ids": [
+          "CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03"
+        ],
+        "excluded_occurrence_ids": [],
+        "reason": "Single NBRC1356 occurrence; same nominal stock, separately retained filter-sterile use."
+      }
+    }
+  },
+  "necessary_validation_correction": {
+    "proposal_id": "A-P-MERCK108339",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+      "sha256": "d6c9233bb2171f19ac51444d43581e80412a94893e0a381ab8c9acc0b72f72aa"
+    },
+    "exact_delta": {
+      "root": "artifact",
+      "path": "successor-v2/final/partonomy-correction.json",
+      "sha256": "70b1fe7f4dd1b04d3d56135ba8eb201a7528b31b99d7a9cb538b258460f95766"
+    },
+    "independent_receipt": {
+      "root": "artifact",
+      "path": "successor-v2/research-b/merck-label-delta-review.json",
+      "sha256": "1cc8b3643bcd93f6d29b14e7eb8207593f24979486a36644c541e7daf63e13a1"
+    },
+    "case_ids": [
+      "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+      "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e"
+    ],
+    "scope": "Component reference label, explicit raw supplier spelling and audit event only; identity/id/quantity/scope/product unchanged."
+  },
+  "original_evidence_unchanged": true,
+  "source_holds_unchanged": true,
+  "maintained_owner_merge": false,
+  "source_owner_export_approval": false,
+  "worker03_snapshot": "All files from d5a7613 remain exact historical bytes; worker03 read-only snapshot stays valid historically. Coordinator evaluates this distinct final intake."
+}
