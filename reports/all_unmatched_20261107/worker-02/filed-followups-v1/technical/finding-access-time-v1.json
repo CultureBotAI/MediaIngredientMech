@@ -1,0 +1,16 @@
+{
+  "finding_id": "W02-FOLLOWUP-TECH-ACCESS-TIME-001",
+  "reviewer": "/root/research_b",
+  "reviewed_at": "2026-11-08T08:51:08.630411+00:00",
+  "status": "needs_revision_or_explicit_qualification",
+  "scope": "Administrative evidence timestamp provenance only; no scientific assessment",
+  "input": {
+    "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/build_successor.py",
+    "sha256": "cbcd3fbeb46254437da30fb62d7d06db86cb15adbbc767a893e291b7d902b56c"
+  },
+  "exact_expression": "datetime.fromtimestamp(comment_path.stat().st_mtime,timezone.utc).isoformat()",
+  "finding": "The helper places filesystem modification time into accessed_at for a GitHub comment source. Filesystem modification time is not intrinsically a recorded HTTP retrieval time. The comment itself records publication/updated timestamps, which are also not retrieval time.",
+  "proposed_fix": "Use an actual recorded retrieval receipt if available; otherwise omit accessed_at for this local administrative capture or explicitly qualify local filesystem capture metadata without presenting it as verified retrieval time.",
+  "reproduction": "Read exact source expression and saved comment JSON; no input modified, no publication invoked.",
+  "limitations": "No claim that the actual mtime differs numerically from retrieval time; finding concerns unjustified timestamp semantics."
+}

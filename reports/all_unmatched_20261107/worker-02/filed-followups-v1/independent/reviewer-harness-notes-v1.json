@@ -1,0 +1,65 @@
+{
+  "reviewer": "/root/final_reviewer",
+  "recorded_at": "2026-11-08T08:58:56.751578+00:00",
+  "scope": "Reviewer-only audit trail; no candidate or source correction",
+  "events": [
+    {
+      "stage": "Initial native-content harness",
+      "result": "Refused before any report output",
+      "cause": "Erroneously required original serialized YAML bytes and native roundtrip serialization to have equal hashes. Ten older candidates have formatting differences; actual source and roundtrip each match their respective recorded hashes.",
+      "successor": "Preserved immutable v2 builder checks both exact hashes plus full parsed equality; all117 passed."
+    },
+    {
+      "stage": "Native-content-v2",
+      "result": "Native validator exit1",
+      "cause": "Finished time advanced for the source metadata bridge but review_id retained earlier timestamp.",
+      "successor": "V3 changed only review_id and provenance note."
+    },
+    {
+      "stage": "Native-content-v3",
+      "result": "Native validator exit1",
+      "cause": "V2 recorded completion immediately before recording local access time for its added binding evidence.",
+      "successor": "V4 uses actual completion after all reads with matching ID; source/evidence timestamps and all scientific judgments remain unchanged. Native validation exit0."
+    }
+  ],
+  "private_runtime_state_preserved": true,
+  "inputs_or_candidates_mutated": false,
+  "input_hash_manifest": [
+    {
+      "path": ".temp/w02-filed-followups-v1/independent/native-builder-harness-failure-v1.json",
+      "sha256": "21c442b3edc4a17ee229fcc49406ad4be4b2701076178d5500ad3224495ece81"
+    },
+    {
+      "path": ".temp/w02-filed-followups-v1/independent/build_native_review_v1.py",
+      "sha256": "fe871f3b32ca75c85079a2a2a38f480352653cc69bf29f6cc4fb796f63b43889"
+    },
+    {
+      "path": ".temp/w02-filed-followups-v1/independent/build_native_review_v2.py",
+      "sha256": "1ca4a515537ab60c8de7e97126e21232bd7cb1f9f1dd2ce1b03deb3c2702f544"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/native-content-validate-v2.json",
+      "sha256": "a7d10bc98d5bfb573151798fa11a3460c56391f7cadd1522256395cc0e166a4e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/native-content-validate-v2.log",
+      "sha256": "3c7e67c4c4c88de1a166d7eeee24a05e6b27068c39c47270c8e0d3517ac53414"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/native-content-validate-v3.json",
+      "sha256": "ca390821ba4134513df1f184addc8b8242c5c536a5c8709fb0c6ae0a365866d0"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/native-content-validate-v3.log",
+      "sha256": "40903e8be423f3ddc64a07115bbe4155adec35eaf4acadc651c1279eea25d4f2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/native-content-validate-v4.json",
+      "sha256": "a9ff8667ab5d7970bbd50dcfeb591e07d50ec36d352400894e79a373646caeee"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/native-content-validate-v4.log",
+      "sha256": "9cb58ebb2f7364cf1f9099155a4edc053a18a9e379e33e31981b32bf8fbcbd1c"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "finding_id": "W02-FOLLOWUP-TECH-BINDER-RAW-PIN-002",
+  "reviewer": "/root/research_b",
+  "reported_at": "2026-11-08T08:57:59.523789+00:00",
+  "status": "needs_exact_byte_guard_revision",
+  "scope": "Private technical binder claim only; no actual selected scientific or data defect",
+  "helper": {
+    "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/bind_review_v2.py",
+    "sha256": "15da8a352e78bdfc5d2ab4c7824fc3e4ff7ff5cd22748c3c1d0f510e5ad93452"
+  },
+  "proof": {
+    "path": "reports/all_unmatched_20261107/worker-02/filed-followups-v1/independent/scientific-review-v2.json",
+    "sha256": "f55c30dd5faedaf5be2d811f8e729a0cb00b04e839da1265d09499e5a1a96161"
+  },
+  "finding": "validate hashes encode(parsed decisions/proposals), and main delegates those pins without directly comparing held[0]/held[1].content to the proof. Formatting-only raw-file changes evade the stated exact full-file input pin. Whole parsed semantic context is pinned; evidence already uses raw captured bytes.",
+  "reproduction": [
+    {
+      "ledger": "decisions",
+      "actual_original_sha256": "9eb2b6e76e38d43f87fe59c5b029bdaf7aa7f0c3c3b754d37251409e69bd1d15",
+      "changed_raw_sha256": "5f19fcc92f3638ae5b34705bad3df00b94e5ed9ecf2b57416fe47687e735e0b0",
+      "change": "Append one newline in memory only",
+      "full_raw_pin_mismatch": true,
+      "validate_parsed_accepts": true,
+      "original_input_untouched": true
+    },
+    {
+      "ledger": "proposals",
+      "actual_original_sha256": "caedf6ece7d6f1618315c3722d8b9ad317c7a097dc24f5cccb70b9980342219c",
+      "changed_raw_sha256": "5481b5b1142825d59a12bb12ee2cb3c1f22bb2e290551e749503a0f19c08edfc",
+      "change": "Append one newline in memory only",
+      "full_raw_pin_mismatch": true,
+      "validate_parsed_accepts": true,
+      "original_input_untouched": true
+    }
+  ],
+  "no_publication_attempted": true,
+  "no_source_or_selected_files_modified": true,
+  "actual_selected_v1_v2_core_files_identical": true,
+  "proposed_fix": "In main, check all three original held ledger .content byte hashes against their exact proof pins before edits/publication, preserving parsed-object validation. Preserve v2 and create an immutable helper/output successor. Add actual raw decisions/proposals whitespace-negative controls alongside evidence."
+}

@@ -1,0 +1,82 @@
+identifier: kgmicrobe.ingredient:sodium_resazurin_01_percent_wv_jcm363_1023
+preferred_term: 0.1% w/v sodium resazurin stock (JCM363/1023)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sodium_resazurin_01_percent_wv_jcm363_1023
+  ontology_label: 0.1% w/v sodium resazurin stock (JCM363/1023)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=363; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M357
+    notes: JCM363 and1023 explicitly specify sodium resazurin0.1%w/v stock,1mL addition.
+      The doubled hyphen in one frozen label is typographic; neither stock is free-acid
+      resazurin. Sodium-salt component is retained UNMAPPED because a verified active
+      exact salt target has not been established; that does not block the whole preparation.
+      Component completeness is UNKNOWN. Unstated solvent, hydration, assay and final
+      volume are not invented. This is the named preparation at the cited source scope;
+      no full-formulation equivalence with other products is asserted.
+notes: JCM363 and1023 explicitly specify sodium resazurin0.1%w/v stock,1mL addition.
+  The doubled hyphen in one frozen label is typographic; neither stock is free-acid
+  resazurin. Sodium-salt component is retained UNMAPPED because a verified active
+  exact salt target has not been established; that does not block the whole preparation.
+  Component completeness is UNKNOWN. Unstated solvent, hydration, assay and final
+  volume are not invented. This is the named preparation at the cited source scope;
+  no full-formulation equivalence with other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: JCM363 and1023 explicitly specify sodium resazurin0.1%w/v stock,1mL addition.
+    The doubled hyphen in one frozen label is typographic; neither stock is free-acid
+    resazurin. Sodium-salt component is retained UNMAPPED because a verified active
+    exact salt target has not been established; that does not block the whole preparation.
+    Component completeness is UNKNOWN. Unstated solvent, hydration, assay and final
+    volume are not invented. This is the named preparation at the cited source scope;
+    no full-formulation equivalence with other products is asserted. Isolated proposal,
+    pending independent and coordinator review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.191631+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+- timestamp: '2026-11-08T08:50:45.480506+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under filed #1241 comment6719443273 / W02-FC-D-SODIUM-RESAZURIN-TYPE,
+    change solution_type from MINERAL_STOCK to OTHER for the named 0.1% w/v sodium-resazurin
+    indicator preparation. Preserve the complete solute/component description, UNMAPPED
+    reference, 0.1 PERCENT_W_V, UNKNOWN closure, all source evidence, prior history
+    and owner/release holds. No chemistry, quantity, identity, role or release approval
+    is implied.'
+  llm_assisted: true
+solution_type: OTHER
+components:
+- component_name: Resazurin sodium salt
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=363; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M357
+    source_record: 0.1% (w/v) resazurin-Na
+    notes: JCM363 and1023 explicitly specify sodium resazurin0.1%w/v stock,1mL addition.
+      The doubled hyphen in one frozen label is typographic; neither stock is free-acid
+      resazurin. Sodium-salt component is retained UNMAPPED because a verified active
+      exact salt target has not been established; that does not block the whole preparation.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1023; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1084
+    source_record: 0.1% (w/v) resazurin--Na
+    notes: JCM363 and1023 explicitly specify sodium resazurin0.1%w/v stock,1mL addition.
+      The doubled hyphen in one frozen label is typographic; neither stock is free-acid
+      resazurin. Sodium-salt component is retained UNMAPPED because a verified active
+      exact salt target has not been established; that does not block the whole preparation.

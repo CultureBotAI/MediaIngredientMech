@@ -1,0 +1,10 @@
+{
+  "finding_id": "W02-FOLLOWUP-TECH-BINDER-CONTEXT-PIN",
+  "reported_at": "2026-11-08T08:55:36.474209+00:00",
+  "author": "worker02 /root",
+  "scope": "New private report metadata binder, not a maintained gate or scientific finding.",
+  "finding": "v1 compares the four reviewed cases and two relevant proposal objects, but does not explicitly pin all unchanged context ledger bytes to the independent proof input_hash_manifest. A hypothetical changed unrelated proposal description with unchanged denominator could evade the partial object check.",
+  "actual_selected_input_status": "Actual v1 input ledgers match the independent proof and independently verified preservation; no actual scientific or selected-input defect observed.",
+  "proposed_fix": "Require exact full decisions/proposals/evidence ledger hashes from the existing actual independent proof before binding metadata; retain v1 and generate immutable selected-v2.",
+  "before_helper_sha256": "9303fbee8caa1860eed00b57a4e4dfbdf23c4e6288d0e6aded3b1ae55e4e8d4b"
+}
