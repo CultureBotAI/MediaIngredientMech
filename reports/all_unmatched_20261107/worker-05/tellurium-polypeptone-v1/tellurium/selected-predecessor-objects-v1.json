@@ -1,0 +1,240 @@
+{
+  "proposal": {
+    "proposal_id": "CHEM-C1193-tellurium-dioxide",
+    "case_ids": [
+      "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416"
+    ],
+    "description": "CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is subscript-loss corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from elemental telluriumCHEBI30452, telluriteCHEBI30477, and tellurium monoxideTeO. BareTeO is retained as rejected provenance rather than universal dioxide alias. Concentrations at both stock levels remain source-scoped; no downstream export correction is implied.",
+    "evidence_ids": [
+      "CHEM-C1193-REINSPECTION",
+      "CHEM-C1193-WEB-1",
+      "CHEM-C1193-WEB-2",
+      "CHEM-C1193-ols-search-1",
+      "CHEM-C1193-ols2-tellurium",
+      "CHEM-C1193-ols2-tellurium-cas",
+      "CHEM-C1193-tellurium-parent",
+      "CHEM-C1193-tellurium-pubchem",
+      "CHEM-C1193-teo-nite",
+      "CHEM-CAP-2256f29f0929d107",
+      "CHEM-CAP-ea5b78eecca53ac5",
+      "CHEM-RECIPE-098-01",
+      "CHEM-RECIPE-098-02",
+      "CHEM-SRC-098"
+    ],
+    "owner_path": "data/ingredients/mapped/Tellurium_Dioxide.yaml",
+    "kind": "new_owner",
+    "before_sha256": null,
+    "after_capture": {
+      "root": "artifact",
+      "path": "final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml",
+      "sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06"
+    },
+    "publication_obligations": "Coordinator must guard exact baseline before bytes, reconcile cross-shard owners, apply via guarded writer, synchronize individual/aggregate/SSSOM, and pass native full QC. Preserve every WITHHOLD/REJECTED/source-material/export decision. These isolated proposals confer no release or full-owner approval.",
+    "identity_consequence": "CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is subscript-loss corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from elemental telluriumCHEBI30452, telluriteCHEBI30477, and tellurium monoxideTeO. BareTeO is retained as rejected provenance rather than universal dioxide alias. Concentrations at both stock levels remain source-scoped; no downstream export correction is implied.",
+    "predicate_consequence": "NARROW_MATCH emits skos:broadMatch to the stated parent, with exact CAS display and local registry identity rows; isolated projection is not export approval.",
+    "predecessor_after_capture": {
+      "root": "artifact",
+      "path": "correction-1193-v1/chemicals/proposed/Tellurium_Dioxide.yaml",
+      "sha256": "d25ae183c58c8616ecff3fd43dfb4615cb30d4df94e8a17399f09c2de3b20e98"
+    },
+    "final_correction": {
+      "author": "Codex worker05 /root/chemicals_research final report correction",
+      "timestamp": "2026-11-08T07:40:53.320531+00:00",
+      "changes": [
+        "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types.",
+        "W05-FINAL-CHEM-NEW-01, reported to the coordinator before this isolated fix: exact CAS 7446-07-3 tellurium dioxide has the broader tellurium molecular entity parent CHEBI:33305. Separate coordinator issue routing remains pending; the Tris issue does not cover this owner. Set NARROW_MATCH so the pinned native builder emits skos:broadMatch for the parent instead of the previous closeMatch. Preserve the exact CAS display and all source/identity holds. The complete native before/after projection is separately recorded; no global grade replacement is implied."
+      ],
+      "native_guarded_write": "PASS",
+      "independent_review": "pending",
+      "prior_proposal_object_sha256": "e13760924ebd23f94b0880cbb8a7f999b12b9344cb5ccd2206c45a35c7697987",
+      "predecessor_diff": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/diffs-v1/Tellurium_Dioxide.diff",
+        "sha256": "3876f5bf04349969b10f708aa0f4775c57ddf6c4223e0c6b92babbb0bcf6545a"
+      },
+      "v1_after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v1/Tellurium_Dioxide.yaml",
+        "sha256": "bd3c67ab3b8a9148e56f627525caba8b952ea0e680735e7574c59367c815ab0c"
+      },
+      "v2_diff": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/diffs-v2/Tellurium_Dioxide.diff",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "v2_after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tellurium_Dioxide.yaml",
+        "sha256": "bd3c67ab3b8a9148e56f627525caba8b952ea0e680735e7574c59367c815ab0c"
+      },
+      "v3_routing_diff": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/tellurium-routing-v3.diff",
+        "sha256": "0fca7b272dc92e20cdfe4511edecdc992a9cf6bfd1194d3007bd4cc4e58e4c57"
+      }
+    }
+  },
+  "decision": {
+    "case_id": "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416",
+    "case_input_sha256": "51c56d3afdafb18de7e9633a7b0b497f482502fd95e61e8e8b4f646d368b5d9c",
+    "source": {
+      "source": "culturemech",
+      "source_case_id": "TeO",
+      "source_label": "TeO",
+      "raw_source_label": "TeO"
+    },
+    "occurrence_ids": [
+      "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+      "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5"
+    ],
+    "disposition": "new_distinct_ingredient_proposal",
+    "reasoning": "Create CAS7446-07-3 tellurium dioxide with verified broad molecular parent. CCAPUCM sourceTeO2 supports correcting both frozen subscript-strippedTeO occurrences only; bareTeO stays rejected provenance. Existing upstream history276closed/283open remains documented.",
+    "applicability": "Create CAS7446-07-3 tellurium dioxide with verified broad molecular parent. CCAPUCM sourceTeO2 supports correcting both frozen subscript-strippedTeO occurrences only; bareTeO stays rejected provenance. Existing upstream history276closed/283open remains documented. Original occurrence_ids and frozen source holds remain the exact scope; proposed owners do not approve downstream joins.",
+    "evidence_ids": [
+      "CHEM-SRC-098",
+      "CHEM-RECIPE-098-01",
+      "CHEM-RECIPE-098-02",
+      "CHEM-CAP-2256f29f0929d107",
+      "CHEM-CAP-ea5b78eecca53ac5",
+      "CHEM-C1193-REINSPECTION",
+      "CHEM-C1193-teo-nite",
+      "CHEM-C1193-tellurium-pubchem",
+      "CHEM-C1193-tellurium-parent",
+      "CHEM-C1193-ols-search-1",
+      "CHEM-C1193-ols2-tellurium-cas",
+      "CHEM-C1193-ols2-tellurium",
+      "CHEM-C1193-WEB-1",
+      "CHEM-C1193-WEB-2",
+      "FINAL-SCIENTIFIC-REVIEW-CHEMICALS"
+    ],
+    "proposal_ids": [
+      "CHEM-C1193-tellurium-dioxide"
+    ],
+    "no_change_reason": null,
+    "missing_requirement": null,
+    "owner_records": [],
+    "issue_refs": [
+      "https://github.com/CultureBotAI/CultureMech/issues/276",
+      "https://github.com/CultureBotAI/CultureMech/issues/283",
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+    ],
+    "independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "FINAL-SCIENTIFIC-REVIEW-CHEMICALS"
+      ],
+      "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+      "reviewer": "/root/materials_research"
+    },
+    "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+    "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission.",
+    "primary_author": "/root/chemicals_research",
+    "preserved_source_holds": {
+      "policy": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+      "downstream_holds": [],
+      "consumed_name_hits": [],
+      "native_review_rows": [],
+      "owners": []
+    },
+    "correction_reassessment": {
+      "status": "complete",
+      "trigger": "#1193: reassess authorized curation rather than carrying generic holds forward",
+      "reviewed_at": "2026-11-08T05:49:52.389819+00:00",
+      "primary_author": "/root/chemicals_research",
+      "prior_proposal_ids": [],
+      "outcome": "changed: concrete guarded proposal",
+      "search_evidence_ids": [
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-teo-nite",
+        "CHEM-C1193-tellurium-pubchem",
+        "CHEM-C1193-tellurium-parent",
+        "CHEM-C1193-ols-search-1",
+        "CHEM-C1193-ols2-tellurium-cas",
+        "CHEM-C1193-ols2-tellurium",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-WEB-2"
+      ],
+      "prior_case_sha256": "9113d14e02c4b9bfc28a112c249c89770edbdd87424575645fc7424b656d2480",
+      "preserved_holds": "Original preserved_source_holds copied unchanged; no stock/identity proposal releases an observation, role, or export hold.",
+      "performed_searches": [
+        {
+          "evidence_id": "CHEM-CAP-2256f29f0929d107",
+          "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf",
+          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 98. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
+        },
+        {
+          "evidence_id": "CHEM-CAP-ea5b78eecca53ac5",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:30477",
+          "finding": "Live ontology target CHEBI:30477 is labelled tellurite; definition=[]; formula=[\"O3Te\"]. This verifies target meaning, not source-to-target equivalence. Per-case decisions explicitly assess the latter."
+        },
+        {
+          "evidence_id": "CHEM-C1193-teo-nite",
+          "url": "https://www.chem-info.nite.go.jp/chem/english/ghs/m-nite-7446-07-3e.html",
+          "finding": "NITE official entry identifies tellurium dioxide CAS7446-07-3; primary CCAP source explicitly prints TeO2."
+        },
+        {
+          "evidence_id": "CHEM-C1193-tellurium-pubchem",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/62638/JSON",
+          "finding": "PubChem CID62638 corroborates neutral O2Te dioxide, distinct from atom and tellurite."
+        },
+        {
+          "evidence_id": "CHEM-C1193-tellurium-parent",
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:33305",
+          "finding": "CHEBI33305 tellurium molecular entity is broad contextual parent, not an identity with TeO2."
+        },
+        {
+          "evidence_id": "CHEM-C1193-ols-search-1",
+          "url": "https://www.ebi.ac.uk/ols4/api/search?q=tellurium+dioxide&ontology=chebi&rows=20",
+          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
+        },
+        {
+          "evidence_id": "CHEM-C1193-ols2-tellurium-cas",
+          "url": "https://www.ebi.ac.uk/ols4/api/search?q=7446-07-3&ontology=chebi&rows=50",
+          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
+        },
+        {
+          "evidence_id": "CHEM-C1193-ols2-tellurium",
+          "url": "https://www.ebi.ac.uk/ols4/api/search?q=tellurium&ontology=chebi&rows=50",
+          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
+        }
+      ],
+      "author_field": "correction_reassessment"
+    },
+    "authored_fragment_decision_sha256": "8a024a632355b59278feb646adf4f4208b5cab17bf737d78c9f5e12d705f463e",
+    "predecessor_decision_sha256": "d278ecf7a599c43718b2d99936e01de1f366bbf39de33f4607a02de1e8b7dff8",
+    "prior_independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "C1193-INDEPENDENT-CHEMICALS"
+      ]
+    },
+    "final_correction_review": {
+      "author": "Codex worker05 /root/chemicals_research final report correction",
+      "timestamp": "2026-11-08T07:40:53.320531+00:00",
+      "prior_decision_sha256": "da5f44ff475cefcd574539816092cde8cdb383b6d05875f5ecf9a8a824c888fe",
+      "scope": "Complete assigned case and complete linked payload review; original case/occurrence/owner hashes and holds are retained. See read ledger for exact primary capture scope.",
+      "proposal_ids": [
+        "CHEM-C1193-tellurium-dioxide"
+      ],
+      "conditional_proposal_ids": [],
+      "whole_owner_approval": false
+    },
+    "final_assembly_provenance": {
+      "compiler": "/root",
+      "primary_lane": "chemicals",
+      "selected_fragment_path": ".temp/w05-final-correction-v1/chemical-supplement-v1/decisions-v2.json",
+      "selected_fragment_sha256": "06f85eefa0dbcaa70f6b5c422ff2cd824f73a467af543694bebe8990ee6caeaa",
+      "selected_decision_object_sha256": "819d773b4af50b7808a3a1925268351e5c4a8b2d6fc8a4a94aac15c85686fa94",
+      "predecessor_decision_object_sha256": "da5f44ff475cefcd574539816092cde8cdb383b6d05875f5ecf9a8a824c888fe",
+      "source_hold_policy_wording": {
+        "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+        "after": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+        "substantive_hold_objects_unchanged": true
+      },
+      "prior_review_scope": "Historical reviews do not approve successor bytes.",
+      "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+    }
+  },
+  "proposal_object_sha256": "2c5b1755421c78397cfee39d0e24c832bb995a89b2a0e552ebbbb58591ea4c5e",
+  "decision_object_sha256": "bbdba42c8a620426ca4148b6d9a4ff70600263bda769f9a60a9befaac1db09c8"
+}

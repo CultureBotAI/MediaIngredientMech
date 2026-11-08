@@ -1,0 +1,30 @@
+{
+  "findings": [
+    {
+      "finding_id": "W05-TELLURIUM-POLYPEPTONE-ASSEMBLY-001",
+      "reported_at": "2026-11-08T09:13:08.385518+00:00",
+      "reviewer": "/root/final_skeptical",
+      "severity": "minor",
+      "origin_note": "Root self-check raised the index concern; independent reviewer inspected exact ledger and canonical selection before classifying.",
+      "scope": "Report source-ledger index only; canonical scientific selection is correct.",
+      "problem": "source-ledger.primary_scopes[polypeptone].bindings enumerates original decisions/proposals/evidence.json but omits the selected -v2 files, without explicitly classifying those indexed originals as historical. Tellurium index similarly includes authoring-v1 alongside selected root files. Because these sit under reviewed primary scopes, the index alone cannot identify exact final selected fragments and could point a reader to pre-remediation evidence.",
+      "evidence": {
+        "source_ledger": {
+          "path": "reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/source-ledger.json",
+          "sha256": "d2771eb5e449f3da34c19a75a5ff13772f72ab7026cf0be0fd03fec7f1f0a288"
+        },
+        "before_copy": {
+          "path": ".temp/w05-tellurium-polypeptone-v1/final-assembly-review-v1/source-ledger-before-assembly001.json",
+          "sha256": "d2771eb5e449f3da34c19a75a5ff13772f72ab7026cf0be0fd03fec7f1f0a288"
+        },
+        "correct_canonical_selection": {
+          "path": "reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/core/assembly-receipt.json",
+          "sha256": "495a5dc74dfa2432cc1d706c533d24c58243edaded524361cb6d40972a9a2140",
+          "locator": "fragment_bindings selects correct Polypeptone decisions-v2/proposals-v2/evidence-v2 and current tellurium root files"
+        }
+      },
+      "bounded_remedy": "Preserve native-bound source-ledger and all histories. Append explicit selected-origin-bindings.json identifying canonical final six fragment paths/hashes, primary author/manifest and selected payload bindings; state the older source-ledger bindings are a historical index, not the selection rule. Include this clarification in the final handoff/manifest or supplemental finding receipt. No canonical D/P/E, native review or payload edit required.",
+      "status": "reported_before_fix"
+    }
+  ]
+}

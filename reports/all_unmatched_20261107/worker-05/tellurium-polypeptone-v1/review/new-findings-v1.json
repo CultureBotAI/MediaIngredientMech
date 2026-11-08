@@ -1,0 +1,79 @@
+{
+  "findings": [
+    {
+      "finding_id": "W05-TELLURIUM-POLYPEPTONE-REVIEW-001",
+      "reviewer": "/root/final_skeptical",
+      "reported_at": "2026-11-08T09:05:43.787272+00:00",
+      "severity": "major",
+      "scope": "Two new Polypeptone report evidence objects; no payload or scientific product conclusion defect identified.",
+      "problem": "JCM2 and JCM98 captures contain Nothing found, yet new evidence objects classify each as primary_source and attach generic positive source membership/formulation support. No recipe/product identity can be supported by these unsuccessful endpoint responses. Successful independent TOGO/MediaDive followups remain valid within their own captured scope.",
+      "reproduction": {
+        "input_path": ".temp/w05-tellurium-polypeptone-v1/polypeptone/evidence.json",
+        "input_sha256": "0f8d902584a1c8a1ae6fe8a5ebd529db04790e3648cc1c965081ac164db45bb1",
+        "before_copy": ".temp/w05-tellurium-polypeptone-v1/review/polypeptone-evidence-before-review001.json",
+        "evidence_objects": [
+          {
+            "evidence_id": "SUPPLEMENT-POLY-CAP-JCM2-HTML",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "tellurium-polypeptone-v1/polypeptone/captures/jcm2.html",
+              "sha256": "946caca20e1656b6b4ba51d18a49e0e7fe56eecd3649966b9dcd52f949b9dfaf"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=2",
+            "locator": "Complete response bytes; claim-level applicability is specified in source-assessment.json and context-ledger.json.",
+            "supports_or_contradicts": "Source membership/formulation evidence only within its named product and dated source scope; no wholesale source-case or owner approval.",
+            "case_ids": [
+              "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+              "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c"
+            ],
+            "accessed_at": "2026-11-08T08:56:04.367939+00:00",
+            "author": "/root/polypeptone_supplement",
+            "receipt": {
+              "root": "artifact",
+              "path": "tellurium-polypeptone-v1/polypeptone/captures/jcm2.html.receipt.json",
+              "sha256": "34dab6f6fc49463879532760d89265bf698c1575b310cd53f56274d1ee1eb71f"
+            }
+          },
+          {
+            "evidence_id": "SUPPLEMENT-POLY-CAP-JCM98-HTML",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "tellurium-polypeptone-v1/polypeptone/captures/jcm98.html",
+              "sha256": "c02cc440b99b89e2e1661b4dbf45cb8e36b797aadc789da0d559dc9ab3bac38a"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=98",
+            "locator": "Complete response bytes; claim-level applicability is specified in source-assessment.json and context-ledger.json.",
+            "supports_or_contradicts": "Source membership/formulation evidence only within its named product and dated source scope; no wholesale source-case or owner approval.",
+            "case_ids": [
+              "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+              "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c"
+            ],
+            "accessed_at": "2026-11-08T08:56:08.405155+00:00",
+            "author": "/root/polypeptone_supplement",
+            "receipt": {
+              "root": "artifact",
+              "path": "tellurium-polypeptone-v1/polypeptone/captures/jcm98.html.receipt.json",
+              "sha256": "b43c26f7110431e27b140f7fb2cfbedc5856490ffaac6ce5e95cd54b5931f032"
+            }
+          }
+        ],
+        "capture_checks": [
+          {
+            "path": ".temp/w05-tellurium-polypeptone-v1/polypeptone/captures/jcm2.html",
+            "sha256": "946caca20e1656b6b4ba51d18a49e0e7fe56eecd3649966b9dcd52f949b9dfaf",
+            "contains_nothing_found": true
+          },
+          {
+            "path": ".temp/w05-tellurium-polypeptone-v1/polypeptone/captures/jcm98.html",
+            "sha256": "c02cc440b99b89e2e1661b4dbf45cb8e36b797aadc789da0d559dc9ab3bac38a",
+            "contains_nothing_found": true
+          }
+        ]
+      },
+      "bounded_remedy": "Preserve original evidence bytes and captures; append successor evidence file with only these two kind values unsuccessful_search and claim text stating Nothing found/no identity evidence, with any exact needed locator adjustment. Preserve their attempt references and all independently supported follow-ons. No payload, source-case membership, or other evidence edits.",
+      "status": "reported_before_remedy"
+    }
+  ]
+}

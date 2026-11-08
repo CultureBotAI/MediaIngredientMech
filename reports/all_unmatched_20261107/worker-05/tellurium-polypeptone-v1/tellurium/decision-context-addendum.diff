@@ -1,0 +1,104 @@
+--- selected-predecessor-decision
++++ supplement-decision
+@@ -29,7 +29,11 @@
+     "CHEM-C1193-ols2-tellurium",
+     "CHEM-C1193-WEB-1",
+     "CHEM-C1193-WEB-2",
+-    "FINAL-SCIENTIFIC-REVIEW-CHEMICALS"
++    "FINAL-SCIENTIFIC-REVIEW-CHEMICALS",
++    "TELLURIUM-SUPPLEMENT-READ",
++    "TELLURIUM-SUPPLEMENT-NATIVE",
++    "TELLURIUM-SUPPLEMENT-APPLICABILITY",
++    "TELLURIUM-SUPPLEMENT-ISSUE1240"
+   ],
+   "proposal_ids": [
+     "CHEM-C1193-tellurium-dioxide"
+@@ -40,15 +44,14 @@
+   "issue_refs": [
+     "https://github.com/CultureBotAI/CultureMech/issues/276",
+     "https://github.com/CultureBotAI/CultureMech/issues/283",
+-    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
++    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
++    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1240",
++    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226"
+   ],
+   "independent_review": {
+-    "status": "complete",
+-    "evidence_ids": [
+-      "FINAL-SCIENTIFIC-REVIEW-CHEMICALS"
+-    ],
+-    "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+-    "reviewer": "/root/materials_research"
++    "status": "pending",
++    "evidence_ids": [],
++    "scope": "Fresh applicability and evidence addendum requires independent review; selected complete scientific payload is unchanged."
+   },
+   "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
+   "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission.",
+@@ -157,5 +160,66 @@
+     },
+     "prior_review_scope": "Historical reviews do not approve successor bytes.",
+     "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
++  },
++  "pre_tellurium_supplement_independent_review": {
++    "status": "complete",
++    "evidence_ids": [
++      "FINAL-SCIENTIFIC-REVIEW-CHEMICALS"
++    ],
++    "scope": "Review complete, not all scientific questions resolved or any admission approved.",
++    "reviewer": "/root/materials_research"
++  },
++  "tellurium_grade_reassessment": {
++    "author": "/root/chemicals_research",
++    "reviewed_at": "2026-11-08T08:57:15.359275+00:00",
++    "predecessor_decision_object_sha256": "bbdba42c8a620426ca4148b6d9a4ff70600263bda769f9a60a9befaac1db09c8",
++    "payload_unchanged": true,
++    "selected_payload_sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06",
++    "grade_and_mapping_evidence": "NARROW_MATCH and LLM_SUGGESTION already correct; no YAML or history change.",
++    "source_contexts": [
++      {
++        "occurrence_id": "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
++        "frozen_component_path": "ingredients/17",
++        "frozen_label": "TeO",
++        "frozen_value": "0.000034",
++        "frozen_unit": "G_PER_L",
++        "primary_context": "CCAP UCM stock 3 trace elements, x10 concentration, per litre",
++        "source_reagent": "TeO2",
++        "source_amount_g": "0.000034",
++        "denominator": "1 litre of the diluted trace-element stock",
++        "primary_locator": "MR_UCM.pdf page 1, stock 3 table; page 2 first preparation paragraph",
++        "interpretation": "This is a trace-stock contribution, not an independently established final growth-medium dose."
++      },
++      {
++        "occurrence_id": "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5",
++        "frozen_component_path": "ingredients/23",
++        "frozen_label": "TeO",
++        "frozen_value": "0.034",
++        "frozen_unit": "G_PER_L",
++        "primary_context": "CCAP UCM primary trace stock 4, per 100 ml",
++        "source_reagent": "TeO2",
++        "source_amount_g": "0.034",
++        "denominator": "100 ml of primary trace stock 4",
++        "co_input": {
++          "name": "NaOH",
++          "amount_g": "4.0",
++          "same_denominator": "100 ml"
++        },
++        "primary_locator": "MR_UCM.pdf page 1, primary stock 4 table",
++        "interpretation": "Frozen G_PER_L annotation loses the primary 100 ml denominator; retain the frozen value as provenance and do not silently treat it as a final-medium dose."
++      }
++    ],
++    "assessment_capture": {
++      "root": "artifact",
++      "path": "tellurium-polypeptone-v1/tellurium/source-applicability-assessment-v1.json",
++      "sha256": "4570f9bed93fd77950e02d87341563f9c5e6271ef606b07bd180a2737407d4ec"
++    },
++    "new_evidence_ids": [
++      "TELLURIUM-SUPPLEMENT-READ",
++      "TELLURIUM-SUPPLEMENT-NATIVE",
++      "TELLURIUM-SUPPLEMENT-APPLICABILITY",
++      "TELLURIUM-SUPPLEMENT-ISSUE1240"
++    ],
++    "original_source_case_occurrences_and_holds_unchanged": true
+   }
+ }

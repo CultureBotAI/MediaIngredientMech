@@ -1,0 +1,85 @@
+"""Verify the selected Tellurium proposal; append only report/evidence context."""
+from pathlib import Path
+import copy,datetime,hashlib,importlib.util,json,subprocess,sys,yaml,difflib
+sys.path.insert(0,str(Path('src').resolve()))
+from mediaingredientmech.validation.write_validated import validate_ingredient
+O=Path(__file__).parent;S=O.parent;R=Path('reports/all_unmatched_20261107/worker-05')
+B=R/'postseal-source-corrections-v1/core'
+C=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107')
+Q=C/'queue/preliminary-v5'; T=C/'preflight/tellurium-grade-triage-v1'
+NOW=datetime.datetime.now(datetime.timezone.utc).isoformat();AUTHOR='/root/chemicals_research'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def objsha(x):return hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+def binding(p):return {'path':str(p),'sha256':sha(p)}
+def cap(p):return {'root':'artifact','path':'tellurium-polypeptone-v1/'+str(p.relative_to(S)),'sha256':sha(p)}
+def dump(name,x):
+ p=O/name;assert not p.exists(),p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n');return p
+P=json.loads((B/'proposals.json').read_text())['proposals'];D=json.loads((B/'decisions.json').read_text())['decisions'];E=json.loads((B/'evidence.json').read_text())['evidence']
+p=next(x for x in P if x['proposal_id']=='CHEM-C1193-tellurium-dioxide')
+d=next(x for x in D if p['proposal_id'] in x['proposal_ids']);cid=d['case_id']
+payload=R/p['after_capture']['path'];assert sha(payload)==p['after_capture']['sha256']=='6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06'
+record=yaml.safe_load(payload.read_text());assert record['identifier']=='cas:7446-07-3';assert record['ontology_mapping']['mapping_quality']=='NARROW_MATCH';assert record['ontology_mapping']['evidence'][0]['evidence_type']=='LLM_SUGGESTION'
+assert sha(T/'HANDOFF.json')=='fa8ad3c1b629807eac958d6bc7077e90201c869ff54716b45f95e54ec87468c0'
+assert record['ontology_mapping']['ontology_id']=='CHEBI:33305'
+assert record['chemical_properties']['cas_rn']=='7446-07-3' and record['chemical_properties']['molecular_formula']=='O2Te'
+assert not record.get('components') and not record.get('component_assertion')
+assert any(s['synonym_text']=='TeO' and s['synonym_type']=='REJECTED_LABEL' for s in record['synonyms'])
+beforecore={n:sha(B/n) for n in ['decisions.json','proposals.json','evidence.json']}
+selected_e=[x for x in E if x['evidence_id'] in set(p['evidence_ids']+d['evidence_ids'])]
+ledger=[]
+for e in selected_e:
+ ec=e['capture'];ep=R/ec['path'] if ec['root']=='artifact' else Q/ec['path'];assert sha(ep)==ec['sha256'],e['evidence_id']
+ scope='Exact full capture byte binding; historical search/review record is context, not new primary evidence.'
+ if e['kind']=='primary_source':scope='Primary identity or recipe fields read; CCAP complete three-page text and page 1 rendering inspected. NITE identity fields and PubChem complete compound identity/property object inspected. No hazard or role assessment is inferred.'
+ if e['kind']=='ontology':scope='Complete returned term or search results inspected for canonical labels, formula/charge, definitions, synonyms and exact-form applicability; finite searches do not prove universal absence.'
+ if e['evidence_id'].startswith('CHEM-RECIPE'):scope='Complete frozen UCM recipe read with both assigned raw component nodes and original concentration annotations; source reconstruction does not alter frozen bytes.'
+ if e['evidence_id']=='CHEM-SRC-098':scope='Complete selected frozen case, both occurrences, raw source fields and holds read; unselected shard cases not reassessed.'
+ ledger.append({'original_evidence_record':e,'resolved_capture':binding(ep),'current_read_time':NOW,'read_scope':scope,'original_retrieval_time_reused_without_reauthoring':e.get('accessed_at')})
+rawcase=next(x for x in json.loads((Q/'shards/shard-05.json').read_text())['cases'] if x['case_id']==cid)
+assert [x['occurrence_id'] for x in rawcase['occurrences']]==d['occurrence_ids']
+source_read=dump('primary-read-and-source-ledger-v1.json',{'author':AUTHOR,'read_at':NOW,'selected_case_id':cid,'selected_proposal_id':p['proposal_id'],'selected_payload':p['after_capture'],'complete_selected_frozen_case':rawcase,'linked_evidence':ledger,'contracts':[binding(Path(x)) for x in ['MAPPING_SEMANTICS.md','.claude/skills/curate-yaml-record/SKILL.md','.claude/skills/curate-yaml-record/references/review-checklist.md','docs/record-reviews.md','docs/record-review-profile.md','src/mediaingredientmech/schema/mediaingredientmech.yaml']],'current_issue_inputs':[binding(S/'issues'/x) for x in ['issue1240.json','issue1240-comments.json','issue1226.json','issue1226-comments.json','capture-receipt.json']],'triage_inputs':[binding(T/x) for x in ['HANDOFF.json','ASSESSMENT.json','source-referral.json','native-reproduction.json','reviewed-proposal.yaml']],'claim_limits':['Historical searches are retained, not relabelled as new queries.','No current ontology-wide absence, organism role, chemical speciation in NaOH, or final-growth-medium dose is asserted.','Raw TeO remains rejected provenance; no global TeO normalization.','Other UCM source defects are not curated through this ingredient review.']})
+builder=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py')
+assert sha(builder)=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+spec=importlib.util.spec_from_file_location('tellurium_native_projection',builder);mod=importlib.util.module_from_spec(spec);sys.modules[spec.name]=mod;spec.loader.exec_module(mod)
+def project(r):return mod._row_from_yaml(Path(p['owner_path']),{},{},{},{},record=r,owners={})
+original=R/'correction-1193-v1/chemicals/proposed/Tellurium_Dioxide.yaml';old=yaml.safe_load(original.read_text());assert sha(original)=='d25ae183c58c8616ecff3fd43dfb4615cb30d4df94e8a17399f09c2de3b20e98'
+control=copy.deepcopy(old);control['ontology_mapping']['mapping_quality']='NARROW_MATCH'
+oldrows=project(old);controlrows=project(control);rows=project(record)
+assert len(oldrows)==2 and len(controlrows)==len(rows)==3
+assert {(r['object_id'],r['predicate_id']) for r in rows}=={('CHEBI:33305','skos:broadMatch'),('cas:7446-07-3','skos:exactMatch'),('kgmicrobe.compound:tellurium_dioxide','skos:exactMatch')}
+for r in rows:
+ tokens=r.get('other','').split('|');assert 'TeO' not in tokens
+ if r['object_id']=='CHEBI:33305':assert 'CAS:7446-07-3' not in tokens
+ else:assert 'CAS:7446-07-3' in tokens
+errors=validate_ingredient(record,target_class='IngredientRecord');assert not errors,errors
+native=dump('native-verification-v1.json',{'status':'PASS','actual_run_at':NOW,'builder':binding(builder),'unchanged_selected_payload':binding(payload),'guarded_writer_validation_api':{'function':'mediaingredientmech.validation.write_validated.validate_ingredient','target_class':'IngredientRecord','error_count':len(errors),'write_invoked':False,'reason':'Selected full record is unchanged; no duplicate YAML or no-op history is authored.'},'historical_original_payload':binding(original),'historical_original_rows':oldrows,'historical_grade_only_in_memory_control_rows':controlrows,'selected_current_rows':rows,'checks':{'current_row_count':3,'parent_broadMatch':True,'CAS_registry_identity':True,'Rule_B1_registry_identity':True,'CAS_display_registry_rows_only':True,'rejected_TeO_excluded':True},'scope':'Exact pinned native projection, not a generated-file edit, global grade change, human-review claim or export approval.'})
+contexts=[{'occurrence_id':rawcase['occurrences'][0]['occurrence_id'],'frozen_component_path':'ingredients/17','frozen_label':'TeO','frozen_value':'0.000034','frozen_unit':'G_PER_L','primary_context':'CCAP UCM stock 3 trace elements, x10 concentration, per litre','source_reagent':'TeO2','source_amount_g':'0.000034','denominator':'1 litre of the diluted trace-element stock','primary_locator':'MR_UCM.pdf page 1, stock 3 table; page 2 first preparation paragraph','interpretation':'This is a trace-stock contribution, not an independently established final growth-medium dose.'},
+ {'occurrence_id':rawcase['occurrences'][1]['occurrence_id'],'frozen_component_path':'ingredients/23','frozen_label':'TeO','frozen_value':'0.034','frozen_unit':'G_PER_L','primary_context':'CCAP UCM primary trace stock 4, per 100 ml','source_reagent':'TeO2','source_amount_g':'0.034','denominator':'100 ml of primary trace stock 4','co_input':{'name':'NaOH','amount_g':'4.0','same_denominator':'100 ml'},'primary_locator':'MR_UCM.pdf page 1, primary stock 4 table','interpretation':'Frozen G_PER_L annotation loses the primary 100 ml denominator; retain the frozen value as provenance and do not silently treat it as a final-medium dose.'}]
+assessment=dump('source-applicability-assessment-v1.json',{'author':AUTHOR,'llm_assisted':True,'assessed_at':NOW,'base_head':'76bca688b4f55e8bdf791079df8d4156cded6c4c','status':'already_correct_selected_payload','selected_payload':p['after_capture'],'payload_unchanged':True,'history_appended':False,'finding_lineage':{'id':'W05-FINAL-CHEM-NEW-01','issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1240','original_target_sha256':sha(original),'selected_current_sha256':sha(payload),'disposition':'The originally filed BROAD_MATCH and new MappingEvidence defects are already corrected in the selected v3 bytes. This is fresh verification, not a new correction or issue closure.'},'full_record_assessments':[
+ {'area':'identity','outcome':'supported_with_limits','assessment':'NITE associates tellurium dioxide with CAS 7446-07-3; PubChem 62638 identifies neutral O2Te. The selected SINGLE_INGREDIENT denotes that input reagent, not the NaOH stock or its dissolved species.','evidence_ids':['CHEM-C1193-teo-nite','CHEM-C1193-tellurium-pubchem','CHEM-CAP-2256f29f0929d107']},
+ {'area':'mapping','outcome':'supported_with_limits','assessment':'CHEBI:33305 is the broader tellurium molecular entity class. Current NARROW_MATCH is appropriate for the CAS-specific dioxide; it does not make the class exact. The finite captured searches did not identify an exact dioxide term. Current three-row output retains both exact registry identities.','evidence_ids':['CHEM-C1193-tellurium-parent','CHEM-C1193-ols-search-1','CHEM-C1193-ols2-tellurium-cas','CHEM-C1193-ols2-tellurium']},
+ {'area':'synonyms','outcome':'supported_with_limits','assessment':'TeO2 is the source formula. Raw TeO is explicitly rejected as an identity alias for this record, preserving the frozen source provenance and avoiding a global formula rewrite. CHEBI:30477 is tellurite O3Te with charge -2, not this dioxide.','evidence_ids':['CHEM-CAP-2256f29f0929d107','CHEM-CAP-ea5b78eecca53ac5']},
+ {'area':'properties_and_form','outcome':'supported','assessment':'The only asserted molecular properties are CAS 7446-07-3 and O2Te, with original database sources and retrieval date preserved. No crystal polymorph, supplier product, hydration, final-stock speciation or physical-role assertion is added.','evidence_ids':['CHEM-C1193-teo-nite','CHEM-C1193-tellurium-pubchem']},
+ {'area':'components_roles_and_optional_claims','outcome':'not_applicable','assessment':'The pure input reagent has no components, component_assertion, roles, organism-growth, environment, discussion or dataset assertions to approve; absence of those optional assertions is appropriate for this bounded source identity review.','evidence_ids':['CHEM-CAP-2256f29f0929d107']},
+ {'area':'provenance_and_history','outcome':'supported_with_limits','assessment':'The existing LLM_SUGGESTION entry accurately identifies agent interpretation. Historical creation, grade/enum correction and filed-issue routing events remain unchanged. Old pending-routing prose is within a historical event, while current notes link #1240. No new no-op event is justified.','evidence_ids':['CHEM-C1193-teo-nite']}
+ ],'nested_source_contexts':contexts,'source_transfer_instruction':'Page 2 directs 0.1 ml of each primary trace stock per litre of the final trace stock; the growth-medium table later lists 1 ml of stock 3 per litre. Those are successive preparation levels, not two final-medium reagent doses. No final-dose calculation or downstream conversion is approved.','original_case_input_sha256':d['case_input_sha256'],'occurrence_ids':d['occurrence_ids'],'holds':d['preserved_source_holds'],'no_release_approval':True,'new_scientific_findings':[]})
+newids=['TELLURIUM-SUPPLEMENT-READ','TELLURIUM-SUPPLEMENT-NATIVE','TELLURIUM-SUPPLEMENT-APPLICABILITY','TELLURIUM-SUPPLEMENT-ISSUE1240']
+evidence=[]
+for eid,kind,cp,url,locator,support in [
+ (newids[0],'local_validation',source_read,None,'Exact selected payload/case and linked capture reinspection ledger.','Original capture bytes and retrieval times are preserved; fresh local reads support bounded current applicability, not reauthored historical evidence.'),
+ (newids[1],'local_validation',native,None,'Complete historical original/control and selected-current native rows.','Current selected payload already emits broadMatch to CHEBI:33305, exact CAS 7446-07-3 and exact Rule B1 local identity; CAS display is retained only on registry rows.'),
+ (newids[2],'local_validation',assessment,None,'Full-record assessments and exact two occurrence-to-stock context bindings.','Selected payload remains unchanged; CCAP primary trace stock 4 is 0.034 g TeO2 with 4.0 g NaOH per 100 ml, while the separate diluted trace stock lists 0.000034 g/L. No final-medium dose or global TeO correction is inferred.'),
+ (newids[3],'source_snapshot',S/'issues/issue1240.json','https://github.com/CultureBotAI/MediaIngredientMech/issues/1240','Full current issue body; original targeted hash d25ae183… differs from selected corrected hash 6c82851b….','The filed defect concerns the historical proposal. Its source and nested-stock limits remain applicable; the selected corrected bytes satisfy its bounded grade and provenance requirements.')]:
+ evidence.append({'evidence_id':eid,'kind':kind,'capture':cap(cp),'url':url,'locator':locator,'supports_or_contradicts':support,'case_ids':[cid],'accessed_at':NOW,'timestamp_scope':'Current local assessment time; original primary retrieval times and root issue fetch times remain in linked receipts.','author':AUTHOR})
+after=copy.deepcopy(d);after['evidence_ids']=list(dict.fromkeys(d['evidence_ids']+newids));after['issue_refs']=list(dict.fromkeys(d['issue_refs']+['https://github.com/CultureBotAI/MediaIngredientMech/issues/1240','https://github.com/CultureBotAI/MediaIngredientMech/issues/1226']))
+after['pre_tellurium_supplement_independent_review']=after['independent_review'];after['independent_review']={'status':'pending','evidence_ids':[],'scope':'Fresh applicability and evidence addendum requires independent review; selected complete scientific payload is unchanged.'}
+after['tellurium_grade_reassessment']={'author':AUTHOR,'reviewed_at':NOW,'predecessor_decision_object_sha256':objsha(d),'payload_unchanged':True,'selected_payload_sha256':sha(payload),'grade_and_mapping_evidence':'NARROW_MATCH and LLM_SUGGESTION already correct; no YAML or history change.','source_contexts':contexts,'assessment_capture':cap(assessment),'new_evidence_ids':newids,'original_source_case_occurrences_and_holds_unchanged':True}
+for k in ['case_id','case_input_sha256','source','occurrence_ids','proposal_ids','owner_records','preserved_source_holds']:assert after[k]==d[k],k
+dump('proposals.json',{'fragment':True,'merge_key':'proposal_id','base':binding(B/'proposals.json'),'proposal_objects_unchanged':True,'proposals':[p]})
+dump('decisions.json',{'fragment':True,'merge_key':'case_id','base':binding(B/'decisions.json'),'decisions':[after]})
+dump('evidence.json',{'fragment':True,'additive_only':True,'base':binding(B/'evidence.json'),'evidence':evidence})
+dump('selected-predecessor-objects-v1.json',{'proposal':p,'decision':d,'proposal_object_sha256':objsha(p),'decision_object_sha256':objsha(d)})
+diff=O/'decision-context-addendum.diff';diff.write_text(''.join(difflib.unified_diff(json.dumps(d,indent=2,ensure_ascii=False).splitlines(True),json.dumps(after,indent=2,ensure_ascii=False).splitlines(True),fromfile='selected-predecessor-decision',tofile='supplement-decision')))
+assert sha(payload)==p['after_capture']['sha256'];assert beforecore=={n:sha(B/n) for n in beforecore}
+dump('preservation-v1.json',{'selected_payload_before_and_after':binding(payload),'selected_proposal_object_before_and_after_sha256':objsha(p),'payload_unchanged':True,'proposal_object_unchanged':True,'curation_history_unchanged':True,'base_core_hashes_unchanged':beforecore,'new_yaml_count':0,'new_owner_count':0,'changed_assigned_decision_count':1,'additive_evidence_count':4,'case_and_original_proposal_lineage_expansion':False})
+print(json.dumps({'payload_unchanged':True,'proposal_count':1,'decision_count':1,'new_evidence':4,'native_rows':len(rows),'validator_errors':len(errors)},indent=2))

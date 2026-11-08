@@ -1,0 +1,86 @@
+{
+  "fragment": true,
+  "merge_key": "proposal_id",
+  "base": {
+    "path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/core/proposals.json",
+    "sha256": "c9826f050d8ae2147bdb0e2b04b74a2c0e9efe9bf9fd92df2735f2737ceb5016"
+  },
+  "proposal_objects_unchanged": true,
+  "proposals": [
+    {
+      "proposal_id": "CHEM-C1193-tellurium-dioxide",
+      "case_ids": [
+        "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416"
+      ],
+      "description": "CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is subscript-loss corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from elemental telluriumCHEBI30452, telluriteCHEBI30477, and tellurium monoxideTeO. BareTeO is retained as rejected provenance rather than universal dioxide alias. Concentrations at both stock levels remain source-scoped; no downstream export correction is implied.",
+      "evidence_ids": [
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-WEB-2",
+        "CHEM-C1193-ols-search-1",
+        "CHEM-C1193-ols2-tellurium",
+        "CHEM-C1193-ols2-tellurium-cas",
+        "CHEM-C1193-tellurium-parent",
+        "CHEM-C1193-tellurium-pubchem",
+        "CHEM-C1193-teo-nite",
+        "CHEM-CAP-2256f29f0929d107",
+        "CHEM-CAP-ea5b78eecca53ac5",
+        "CHEM-RECIPE-098-01",
+        "CHEM-RECIPE-098-02",
+        "CHEM-SRC-098"
+      ],
+      "owner_path": "data/ingredients/mapped/Tellurium_Dioxide.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml",
+        "sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06"
+      },
+      "publication_obligations": "Coordinator must guard exact baseline before bytes, reconcile cross-shard owners, apply via guarded writer, synchronize individual/aggregate/SSSOM, and pass native full QC. Preserve every WITHHOLD/REJECTED/source-material/export decision. These isolated proposals confer no release or full-owner approval.",
+      "identity_consequence": "CCAP UCM primary trace solution4 explicitly containsTeO2; frozenTeO is subscript-loss corruption. Tellurium dioxide CAS7446-07-3/O2Te is distinct from elemental telluriumCHEBI30452, telluriteCHEBI30477, and tellurium monoxideTeO. BareTeO is retained as rejected provenance rather than universal dioxide alias. Concentrations at both stock levels remain source-scoped; no downstream export correction is implied.",
+      "predicate_consequence": "NARROW_MATCH emits skos:broadMatch to the stated parent, with exact CAS display and local registry identity rows; isolated projection is not export approval.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tellurium_Dioxide.yaml",
+        "sha256": "d25ae183c58c8616ecff3fd43dfb4615cb30d4df94e8a17399f09c2de3b20e98"
+      },
+      "final_correction": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "changes": [
+          "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types.",
+          "W05-FINAL-CHEM-NEW-01, reported to the coordinator before this isolated fix: exact CAS 7446-07-3 tellurium dioxide has the broader tellurium molecular entity parent CHEBI:33305. Separate coordinator issue routing remains pending; the Tris issue does not cover this owner. Set NARROW_MATCH so the pinned native builder emits skos:broadMatch for the parent instead of the previous closeMatch. Preserve the exact CAS display and all source/identity holds. The complete native before/after projection is separately recorded; no global grade replacement is implied."
+        ],
+        "native_guarded_write": "PASS",
+        "independent_review": "pending",
+        "prior_proposal_object_sha256": "e13760924ebd23f94b0880cbb8a7f999b12b9344cb5ccd2206c45a35c7697987",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v1/Tellurium_Dioxide.diff",
+          "sha256": "3876f5bf04349969b10f708aa0f4775c57ddf6c4223e0c6b92babbb0bcf6545a"
+        },
+        "v1_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v1/Tellurium_Dioxide.yaml",
+          "sha256": "bd3c67ab3b8a9148e56f627525caba8b952ea0e680735e7574c59367c815ab0c"
+        },
+        "v2_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v2/Tellurium_Dioxide.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "v2_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v2/Tellurium_Dioxide.yaml",
+          "sha256": "bd3c67ab3b8a9148e56f627525caba8b952ea0e680735e7574c59367c815ab0c"
+        },
+        "v3_routing_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/tellurium-routing-v3.diff",
+          "sha256": "0fca7b272dc92e20cdfe4511edecdc992a9cf6bfd1194d3007bd4cc4e58e4c57"
+        }
+      }
+    }
+  ]
+}

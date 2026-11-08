@@ -1,0 +1,119 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:m2sgc_broth_togo_m2789
+preferred_term: M2SGC broth (TOGO M2789)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:m2sgc_broth_togo_m2789
+  ontology_label: M2SGC broth (TOGO M2789)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2789
+    notes: TOGO source defines modifiedMed2 broth withoutlactate and uses bothM2SGC/M2GSC
+      spellings. Sourcecomment lists amountsper100ml; conflictingwaterblock is preserved
+      ratherthan summedwith30mlrumen. Antibiotics and gas conditions are separate.
+      Whole source-definedpreparation is supported; waterquantity detail remains unresolved.
+      Whole supplied preparation identified independently of component CURIE availability.
+      Existing owner and exact named/numbered ontology searches are captured in successor
+      evidence.
+notes: ' Correction1193: TOGO source defines modifiedMed2 broth withoutlactate and
+  uses bothM2SGC/M2GSC spellings. Sourcecomment lists amountsper100ml; conflictingwaterblock
+  is preserved ratherthan summedwith30mlrumen. Antibiotics and gas conditions are
+  separate. Whole source-definedpreparation is supported; waterquantity detail remains
+  unresolved. Isolated proposal only. All inherited source-case, owner and export
+  holds remain. Raw generic source labels are qualified to these source occurrences
+  and confer no global resolving synonym or release approval. No optional later supplement
+  or atmosphere is inferred as an ingredient. Verbatim source-only labels retained
+  as provenance, excluded from globally resolving aliases: ["M2SGC medium"].'
+components:
+- component_name: Casitone
+  reference_scope: UNMAPPED
+  source: 1gper100ml
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  source: 0.25gper100ml
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  source: 0.4gper100ml
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  source: 0.2gper100ml
+- component_name: Cellobiose
+  reference_scope: UNMAPPED
+  source: 0.2gper100ml
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  source: 0.2gper100ml
+- component_name: Clarified rumen fluid
+  reference_scope: UNMAPPED
+  source: 30mlper100ml
+- component_name: Cysteine
+  reference_scope: UNMAPPED
+  source: 0.1gper100ml
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  source: 0.045gper100ml
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  source: 0.045gper100ml
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  source: 0.09gper100ml
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 0.09gper100ml
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.009gper100ml
+- component_name: CaCl2
+  reference_scope: UNMAPPED
+  source: 0.009gper100ml
+- component_name: Resazurin
+  reference_scope: UNMAPPED
+  source: 0.1mgper100ml
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: sourcecomponentblocklists100ml; commentdefinesper100mlmedium, so exactwaterquantitynotinferred
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2789
+    source_record: M2SGC broth (TOGO M2789)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. TOGO source defines modifiedMed2
+      broth withoutlactate and uses bothM2SGC/M2GSC spellings. Sourcecomment lists
+      amountsper100ml; conflictingwaterblock is preserved ratherthan summedwith30mlrumen.
+      Antibiotics and gas conditions are separate. Whole source-definedpreparation
+      is supported; waterquantity detail remains unresolved.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation M2SGC broth
+    (TOGO M2789). TOGO source defines modifiedMed2 broth withoutlactate and uses bothM2SGC/M2GSC
+    spellings. Sourcecomment lists amountsper100ml; conflictingwaterblock is preserved
+    ratherthan summedwith30mlrumen. Antibiotics and gas conditions are separate. Whole
+    source-definedpreparation is supported; waterquantity detail remains unresolved.
+    Independent correction: Remove newly added ambiguous global aliases; preserve
+    exact raw labels in source ledger and notes. Isolated proposal only; all source
+    and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

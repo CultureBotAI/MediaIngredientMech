@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:iron_precipitate_suspension_jcm_411
+preferred_term: Poorly crystalline iron(III) oxide suspension (JCM 411)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:iron_precipitate_suspension_jcm_411
+  ontology_label: Poorly crystalline iron(III) oxide suspension (JCM 411)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=411
+    notes: Source-defined washed iron precipitate suspension from JCM411. The source
+      says resuspend in1L water and calls the suspension0.67MFe(III), with Fe assay
+      requested. This is nominal Fe-basis concentration, not formula-specific oxide
+      molarity or proof of a crystalline mineral phase. FeCl3 andNaOH are preparation
+      reagents; washing prevents asserting their full starting quantities as retained
+      stock components. No pure ferrihydrite ontology identity, hydration or phase
+      purity inferred.
+synonyms: []
+notes: Source-defined washed iron precipitate suspension from JCM411. The source says
+  resuspend in1L water and calls the suspension0.67MFe(III), with Fe assay requested.
+  This is nominal Fe-basis concentration, not formula-specific oxide molarity or proof
+  of a crystalline mineral phase. FeCl3 andNaOH are preparation reagents; washing
+  prevents asserting their full starting quantities as retained stock components.
+  No pure ferrihydrite ontology identity, hydration or phase purity inferred.
+solution_type: OTHER
+components:
+- component_name: Washed poorly crystalline iron(III) precipitate (JCM411 source designation)
+  reference_scope: UNMAPPED
+- component_name: water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=411
+    notes: Source-defined washed iron precipitate suspension from JCM411. The source
+      says resuspend in1L water and calls the suspension0.67MFe(III), with Fe assay
+      requested. This is nominal Fe-basis concentration, not formula-specific oxide
+      molarity or proof of a crystalline mineral phase. FeCl3 andNaOH are preparation
+      reagents; washing prevents asserting their full starting quantities as retained
+      stock components. No pure ferrihydrite ontology identity, hydration or phase
+      purity inferred.
+  notes: Source-defined washed iron precipitate suspension from JCM411. The source
+    says resuspend in1L water and calls the suspension0.67MFe(III), with Fe assay
+    requested. This is nominal Fe-basis concentration, not formula-specific oxide
+    molarity or proof of a crystalline mineral phase. FeCl3 andNaOH are preparation
+    reagents; washing prevents asserting their full starting quantities as retained
+    stock components. No pure ferrihydrite ontology identity, hydration or phase purity
+    inferred. Component label water follows source wording and CHEBI15377 ontology
+    label; no distilled-water purity or processing claim is added.
+curation_history:
+- timestamp: '2026-11-08T05:49:52.389819+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_DEFINED_SUSPENSION
+  changes: Source-defined washed iron precipitate suspension from JCM411. The source
+    says resuspend in1L water and calls the suspension0.67MFe(III), with Fe assay
+    requested. This is nominal Fe-basis concentration, not formula-specific oxide
+    molarity or proof of a crystalline mineral phase. FeCl3 andNaOH are preparation
+    reagents; washing prevents asserting their full starting quantities as retained
+    stock components. No pure ferrihydrite ontology identity, hydration or phase purity
+    inferred.
+  llm_assisted: true
+  llm_model: gpt-6
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

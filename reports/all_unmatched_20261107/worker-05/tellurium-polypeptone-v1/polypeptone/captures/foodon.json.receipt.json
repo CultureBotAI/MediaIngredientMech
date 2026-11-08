@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03315306",
+  "accessed_at": "2026-11-08T08:55:52.707595+00:00",
+  "completed_at": "2026-11-08T08:55:53.454482+00:00",
+  "command": [
+    "curl",
+    "-L",
+    "--retry",
+    "2",
+    "--connect-timeout",
+    "10",
+    "--max-time",
+    "45",
+    "--silent",
+    "--show-error",
+    "--output",
+    ".temp/w05-tellurium-polypeptone-v1/polypeptone/captures/foodon.json",
+    "--write-out",
+    "%{http_code}",
+    "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FFOODON_03315306"
+  ],
+  "exit_code": 0,
+  "http_status": "200",
+  "stderr": "",
+  "path": "foodon.json",
+  "sha256": "c6264c268afeadcb47631173e6a803cbf9a0b7a8c08fda990df55ee260680f28",
+  "bytes": 3095
+}

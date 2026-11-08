@@ -1,0 +1,28 @@
+{
+  "url": "https://www.ebi.ac.uk/ols4/api/search?q=polypeptone&ontology=foodon&exact=true",
+  "accessed_at": "2026-11-08T08:57:27.343502+00:00",
+  "completed_at": "2026-11-08T08:57:28.132308+00:00",
+  "command": [
+    "curl",
+    "-L",
+    "--retry",
+    "2",
+    "--connect-timeout",
+    "10",
+    "--max-time",
+    "45",
+    "--silent",
+    "--show-error",
+    "--output",
+    ".temp/w05-tellurium-polypeptone-v1/polypeptone/captures/foodon-polypeptone-search.json",
+    "--write-out",
+    "%{http_code}",
+    "https://www.ebi.ac.uk/ols4/api/search?q=polypeptone&ontology=foodon&exact=true"
+  ],
+  "exit_code": 0,
+  "http_status": "200",
+  "stderr": "",
+  "path": "foodon-polypeptone-search.json",
+  "sha256": "5eb546ff24a5e0fa1529881eefd37923578e67b7ebcfba5ebcfb9a733b852435",
+  "bytes": 268
+}

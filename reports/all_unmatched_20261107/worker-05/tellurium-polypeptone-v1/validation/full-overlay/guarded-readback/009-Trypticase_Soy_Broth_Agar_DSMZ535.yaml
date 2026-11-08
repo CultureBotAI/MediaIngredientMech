@@ -1,0 +1,84 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:trypticase_soy_broth_agar_dsmz535
+preferred_term: Trypticase soy broth agar (DSMZ535)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:trypticase_soy_broth_agar_dsmz535
+  ontology_label: Trypticase soy broth agar (DSMZ535)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium535.pdf
+    notes: DSMZ535 base combines30gtrypticasesoybroth and15gagar per1000ml water,
+      pH7.3;535a adds5%blood. Existing UNMAPPED0557 TrypticaseSoyAgar originates MediaDive1617
+      and includes currentJCM27 Nissui40g prepared-product occurrences. No exact product
+      equivalence is proven; retain existing general product and distinct DSMZ535
+      preparation. Named broth vendor alternatives remain source-defined; no molecular
+      identity assigned. Whole supplied preparation identified independently of component
+      CURIE availability. Existing owner and exact named/numbered ontology searches
+      are captured in successor evidence.
+notes: ' Correction1193: DSMZ535 base combines30gtrypticasesoybroth and15gagar per1000ml
+  water, pH7.3;535a adds5%blood. Existing UNMAPPED0557 TrypticaseSoyAgar originates
+  MediaDive1617 and includes currentJCM27 Nissui40g prepared-product occurrences.
+  No exact product equivalence is proven; retain existing general product and distinct
+  DSMZ535 preparation. Named broth vendor alternatives remain source-defined; no molecular
+  identity assigned. Isolated proposal only. All inherited source-case, owner and
+  export holds remain. Raw generic source labels are qualified to these source occurrences
+  and confer no global resolving synonym or release approval. No optional later supplement
+  or atmosphere is inferred as an ingredient. Verbatim source-only labels retained
+  as provenance, excluded from globally resolving aliases: ["Medium 535"].'
+components:
+- component_name: Trypticase soy broth
+  reference_scope: UNMAPPED
+  source: 30g; source allowsBBL11768/OxoidCM129/Merck5459
+- component_name: Agar
+  reference_scope: UNMAPPED
+  source: 15g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1000ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium535.pdf
+    source_record: Trypticase soy broth agar (DSMZ535)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. DSMZ535 base combines30gtrypticasesoybroth
+      and15gagar per1000ml water, pH7.3;535a adds5%blood. Existing UNMAPPED0557 TrypticaseSoyAgar
+      originates MediaDive1617 and includes currentJCM27 Nissui40g prepared-product
+      occurrences. No exact product equivalence is proven; retain existing general
+      product and distinct DSMZ535 preparation. Named broth vendor alternatives remain
+      source-defined; no molecular identity assigned.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Trypticase
+    soy broth agar (DSMZ535). DSMZ535 base combines30gtrypticasesoybroth and15gagar
+    per1000ml water, pH7.3;535a adds5%blood. Existing UNMAPPED0557 TrypticaseSoyAgar
+    originates MediaDive1617 and includes currentJCM27 Nissui40g prepared-product
+    occurrences. No exact product equivalence is proven; retain existing general product
+    and distinct DSMZ535 preparation. Named broth vendor alternatives remain source-defined;
+    no molecular identity assigned. Independent correction: Remove newly added ambiguous
+    global aliases; preserve exact raw labels in source ledger and notes. Isolated
+    proposal only; all source and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

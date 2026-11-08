@@ -1,0 +1,63 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T08:57:29.733011+00:00",
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "payload": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml",
+    "sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06"
+  },
+  "exact_author_projection_equal": true,
+  "native_rows": [
+    {
+      "subject_id": "MIM:Tellurium_Dioxide",
+      "subject_label": "Tellurium dioxide",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "CHEBI:33305",
+      "object_label": "tellurium molecular entity",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://www.chem-info.nite.go.jp/chem/english/ghs/m-nite-7446-07-3e.html|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "TeO2",
+      "validation_method": ""
+    },
+    {
+      "subject_id": "MIM:Tellurium_Dioxide",
+      "subject_label": "Tellurium dioxide",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "cas:7446-07-3",
+      "object_label": "Tellurium dioxide",
+      "object_source": "registry:cas",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://www.chem-info.nite.go.jp/chem/english/ghs/m-nite-7446-07-3e.html|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving cas:7446-07-3 alongside parent CHEBI:33305.",
+      "other": "CAS:7446-07-3",
+      "validation_method": ""
+    },
+    {
+      "subject_id": "MIM:Tellurium_Dioxide",
+      "subject_label": "Tellurium dioxide",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.compound:tellurium_dioxide",
+      "object_label": "Tellurium dioxide",
+      "object_source": "kgm:compound",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://www.chem-info.nite.go.jp/chem/english/ghs/m-nite-7446-07-3e.html|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:tellurium_dioxide alongside parent CHEBI:33305.",
+      "other": "CAS:7446-07-3",
+      "validation_method": ""
+    }
+  ],
+  "closed_schema_error_count": 0,
+  "scope": "Fresh independent native full3row projection with explicit empty owner index and optional source dictionaries. No generated file writes, no fullcampaign owned-alias orreleasecheck. Rootfullselectedoverlay follows separately.",
+  "scientific_assessment": "The CAS-specific neutral dioxide is narrower than tellurium molecular entity, and sourceTeO2 stays on the parent row while rejectedTeO is excluded. Both registry identities preserve exact supplied reagent identity. CASdisplay is a label only onregistryrows."
+}

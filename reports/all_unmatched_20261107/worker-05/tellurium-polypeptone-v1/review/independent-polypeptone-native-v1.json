@@ -1,0 +1,152 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "completed_at": "2026-11-08T09:06:15.683533+00:00",
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "after_payload": {
+    "path": ".temp/w05-tellurium-polypeptone-v1/polypeptone/proposed/Polypeptone.yaml",
+    "sha256": "be254d39d8edd3664f74f0ecb76dd0cfdd5d8c597930b088fba3f55e84d18525"
+  },
+  "predecessor_payload": {
+    "path": ".temp/w05-tellurium-polypeptone-v1/polypeptone/predecessor/Polypeptone.yaml",
+    "sha256": "b04efe7b9251c621fa2d4dbb6cef368c13297e8c4ebd73e53d35778be1af0a55"
+  },
+  "complete_closed_schema_errors": [],
+  "changed_fields": [
+    "curation_history",
+    "notes",
+    "synonyms"
+  ],
+  "changed_synonyms": [
+    {
+      "before": {
+        "synonym_text": "Polypepton (Nihon Pharm. Co.)",
+        "synonym_type": "CATALOG_VARIANT",
+        "source": "manual"
+      },
+      "after": {
+        "synonym_text": "Polypepton (Nihon Pharm. Co.)",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "manual; provenance-only identity hold under issue1202: retain this historical Nihon-qualified label, but do not resolve it globally to an unsettled Polypeptone owner or the dated BD blend. Wako 2001/2002 and Nihon 2007 sources support a casein-derived digest family; they do not establish the exact historical recipe product/version or equivalence to a particular Hipolypepton SKU. Current JCM181 names Hipolypepton (FUJIFILM Wako), a source-vintage conflict, not a historical equivalence bridge. This disposition does not reject the existence or chemistry of the Japanese product."
+      }
+    },
+    {
+      "before": {
+        "synonym_text": "Polypepton (Nihon Seiyaku)",
+        "synonym_type": "RAW_TEXT",
+        "source": "culturemech:output/ingredient_occurrences.tsv"
+      },
+      "after": {
+        "synonym_text": "Polypepton (Nihon Seiyaku)",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "culturemech:output/ingredient_occurrences.tsv; provenance-only identity hold under issue1202: retain this historical Nihon-qualified label, but do not resolve it globally to an unsettled Polypeptone owner or the dated BD blend. Wako 2001/2002 and Nihon 2007 sources support a casein-derived digest family; they do not establish the exact historical recipe product/version or equivalence to a particular Hipolypepton SKU. Current JCM181 names Hipolypepton (FUJIFILM Wako), a source-vintage conflict, not a historical equivalence bridge. This disposition does not reject the existence or chemistry of the Japanese product."
+      }
+    }
+  ],
+  "all_other_fields_equal": true,
+  "all_prior_history_equal": true,
+  "all_original_synonym_text_and_original_source_prefixes_retained": true,
+  "prior_rows": [
+    {
+      "subject_id": "MIM:Polypeptone",
+      "subject_label": "Polypeptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.ingredient:polypeptone",
+      "object_label": "Polypeptone",
+      "object_source": "kgm:ingredient",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "Polypepton|Polypepton (Nihon Pharm. Co.)|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypepton (Nihon Seiyaku)|Polypeptone (BBL)",
+      "validation_method": ""
+    }
+  ],
+  "selected_rows": [
+    {
+      "subject_id": "MIM:Polypeptone",
+      "subject_label": "Polypeptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.ingredient:polypeptone",
+      "object_label": "Polypeptone",
+      "object_source": "kgm:ingredient",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "Polypepton|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypeptone (BBL)",
+      "validation_method": ""
+    }
+  ],
+  "native_row_field_differences": {
+    "source": {
+      "before": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+      "after": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement"
+    },
+    "other": {
+      "before": "Polypepton|Polypepton (Nihon Pharm. Co.)|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypepton (Nihon Seiyaku)|Polypeptone (BBL)",
+      "after": "Polypepton|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypeptone (BBL)"
+    }
+  },
+  "in_memory_unselected_options": {
+    "foodon_parent_if_source_scope_settled_no_exact_term": [
+      {
+        "subject_id": "MIM:Polypeptone",
+        "subject_label": "Polypeptone",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "FOODON:03315306",
+        "object_label": "protein hydrolyzates",
+        "object_source": "obo:foodon.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "Polypepton|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypeptone (BBL)",
+        "validation_method": ""
+      },
+      {
+        "subject_id": "MIM:Polypeptone",
+        "subject_label": "Polypeptone",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:polypeptone",
+        "object_label": "Polypeptone",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "Registry/identity row preserving kgmicrobe.ingredient:polypeptone alongside parent FOODON:03315306.",
+        "other": "",
+        "validation_method": ""
+      }
+    ],
+    "micro_exact_if_BD_blend_scope_established": [
+      {
+        "subject_id": "MIM:Polypeptone",
+        "subject_label": "Polypeptone",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "MICRO:0000179",
+        "object_label": "polypeptone",
+        "object_source": "obo:micro.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Polypepton|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypeptone (BBL)",
+        "validation_method": ""
+      }
+    ]
+  },
+  "selected_mapping_status": "needs_curation; exact registry self-row is a producer consequence, not final scientific grounding approval",
+  "limitations": [
+    "Exact direct pinned producer invocation with explicit empty owner index; full catalog/ownership conflict validation remains root responsibility.",
+    "Hypothetical options are in-memory field projections, not authored or selected YAML candidates and not approved source routes. MICRO exact term has priority only for supported BD blend scope; FOODON broad parent requires a settled preparation with no applicable exact term.",
+    "No maintained files, synonym exports, SSSOM or ownership changes performed."
+  ]
+}

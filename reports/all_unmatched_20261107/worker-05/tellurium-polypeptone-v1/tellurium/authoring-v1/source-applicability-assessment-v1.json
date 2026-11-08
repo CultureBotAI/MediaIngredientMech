@@ -1,0 +1,126 @@
+{
+  "author": "/root/chemicals_research",
+  "llm_assisted": true,
+  "assessed_at": "2026-11-08T08:56:45.587276+00:00",
+  "base_head": "76bca688b4f55e8bdf791079df8d4156cded6c4c",
+  "status": "already_correct_selected_payload",
+  "selected_payload": {
+    "root": "artifact",
+    "path": "final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml",
+    "sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06"
+  },
+  "payload_unchanged": true,
+  "history_appended": false,
+  "finding_lineage": {
+    "id": "W05-FINAL-CHEM-NEW-01",
+    "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1240",
+    "original_target_sha256": "d25ae183c58c8616ecff3fd43dfb4615cb30d4df94e8a17399f09c2de3b20e98",
+    "selected_current_sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06",
+    "disposition": "The originally filed BROAD_MATCH and new MappingEvidence defects are already corrected in the selected v3 bytes. This is fresh verification, not a new correction or issue closure."
+  },
+  "full_record_assessments": [
+    {
+      "area": "identity",
+      "outcome": "supported_with_limits",
+      "assessment": "NITE associates tellurium dioxide with CAS7446-07-3; PubChem62638 identifies neutral O2Te. The selected SINGLE_INGREDIENT denotes that input reagent, not the NaOH stock or its dissolved species.",
+      "evidence_ids": [
+        "CHEM-C1193-teo-nite",
+        "CHEM-C1193-tellurium-pubchem",
+        "CHEM-CAP-2256f29f0929d107"
+      ]
+    },
+    {
+      "area": "mapping",
+      "outcome": "supported_with_limits",
+      "assessment": "CHEBI33305 is the broader tellurium molecular entity class. Current NARROW_MATCH is appropriate for the CAS-specific dioxide; it does not make the class exact. The finite captured searches did not identify an exact dioxide term. Current three-row output retains both exact registry identities.",
+      "evidence_ids": [
+        "CHEM-C1193-tellurium-parent",
+        "CHEM-C1193-ols-search-1",
+        "CHEM-C1193-ols2-tellurium-cas",
+        "CHEM-C1193-ols2-tellurium"
+      ]
+    },
+    {
+      "area": "synonyms",
+      "outcome": "supported_with_limits",
+      "assessment": "TeO2 is the source formula. Raw TeO is explicitly rejected as an identity alias for this record, preserving the frozen source provenance and avoiding a global formula rewrite. CHEBI30477 is tellurite O3Te with charge-2, not this dioxide.",
+      "evidence_ids": [
+        "CHEM-CAP-2256f29f0929d107",
+        "CHEM-CAP-ea5b78eecca53ac5"
+      ]
+    },
+    {
+      "area": "properties_and_form",
+      "outcome": "supported",
+      "assessment": "The only asserted molecular properties are CAS7446-07-3 and O2Te, with original database sources and retrieval date preserved. No crystal polymorph, supplier product, hydration, final-stock speciation or physical-role assertion is added.",
+      "evidence_ids": [
+        "CHEM-C1193-teo-nite",
+        "CHEM-C1193-tellurium-pubchem"
+      ]
+    },
+    {
+      "area": "components_roles_and_optional_claims",
+      "outcome": "not_applicable",
+      "assessment": "The pure input reagent has no components, component_assertion, roles, organism-growth, environment, discussion or dataset assertions to approve; absence of those optional assertions is appropriate for this bounded source identity review.",
+      "evidence_ids": [
+        "CHEM-CAP-2256f29f0929d107"
+      ]
+    },
+    {
+      "area": "provenance_and_history",
+      "outcome": "supported_with_limits",
+      "assessment": "The existing LLM_SUGGESTION entry accurately identifies agent interpretation. Historical creation, grade/enum correction and filed-issue routing events remain unchanged. Old pending-routing prose is within a historical event, while current notes link1240. No new no-op event is justified.",
+      "evidence_ids": [
+        "CHEM-C1193-teo-nite"
+      ]
+    }
+  ],
+  "nested_source_contexts": [
+    {
+      "occurrence_id": "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+      "frozen_component_path": "ingredients/17",
+      "frozen_label": "TeO",
+      "frozen_value": "0.000034",
+      "frozen_unit": "G_PER_L",
+      "primary_context": "CCAP UCM stock3 trace elements, x10 concentration, per litre",
+      "source_reagent": "TeO2",
+      "source_amount_g": "0.000034",
+      "denominator": "1 litre of the diluted trace-element stock",
+      "primary_locator": "MR_UCM.pdf page1, stock3 table; page2 first preparation paragraph",
+      "interpretation": "This is a trace-stock contribution, not an independently established final growth-medium dose."
+    },
+    {
+      "occurrence_id": "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5",
+      "frozen_component_path": "ingredients/23",
+      "frozen_label": "TeO",
+      "frozen_value": "0.034",
+      "frozen_unit": "G_PER_L",
+      "primary_context": "CCAP UCM primary trace stock4, per100ml",
+      "source_reagent": "TeO2",
+      "source_amount_g": "0.034",
+      "denominator": "100 ml of primary trace stock4",
+      "co_input": {
+        "name": "NaOH",
+        "amount_g": "4.0",
+        "same_denominator": "100 ml"
+      },
+      "primary_locator": "MR_UCM.pdf page1, primary stock4 table",
+      "interpretation": "Frozen G_PER_L annotation loses the primary100ml denominator; retain the frozen value as provenance and do not silently treat it as a final-medium dose."
+    }
+  ],
+  "source_transfer_instruction": "Page2 directs0.1ml of each primary trace stock per litre of the final trace stock; the growth-medium table later lists1ml of stock3 per litre. Those are successive preparation levels, not two final-medium reagent doses. No final-dose calculation or downstream conversion is approved.",
+  "original_case_input_sha256": "51c56d3afdafb18de7e9633a7b0b497f482502fd95e61e8e8b4f646d368b5d9c",
+  "occurrence_ids": [
+    "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+    "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5"
+  ],
+  "holds": {
+    "policy": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+    "downstream_holds": [],
+    "consumed_name_hits": [],
+    "native_review_rows": [],
+    "owners": []
+  },
+  "no_release_approval": true,
+  "new_scientific_findings": []
+}

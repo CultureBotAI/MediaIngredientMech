@@ -1,0 +1,11 @@
+{
+  "reviewer": "/root/final_skeptical/preservation_audit",
+  "at": "2026-11-08T09:14:44.154963+00:00",
+  "original_receipt": "preservation-readback-v1.json",
+  "original_receipt_sha256": "5b74491af4b71d31ea82f56790e06ecbf5a6b38cc7e1cc05b85b83c9c7d1e481",
+  "false_failure": "Counter(origmap) treats mapping values as counts; the values are proposal objects, not intended count1.",
+  "independent_resolution": "Original138 proposal ID list and138 predecessor lineage IDs form exact disjoint1:1 sets with no missing, extra or duplicate ID. Every138 detailed lineage test already passed.",
+  "corrected_code": "audit_preservation_v2.py",
+  "bounded_correction": "Use Counter(origmap.keys()), preserving failed receipt and original checker; no source/assembly edits.",
+  "artifact_finding": false
+}

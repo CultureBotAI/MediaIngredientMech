@@ -1,0 +1,182 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "completed_at": "2026-11-08T08:59:07.553149+00:00",
+  "primary_author": "/root/chemicals_research",
+  "scope": "Complete selected unchanged tellurium payload, one complete updated decision and four additive evidence entries, exact two frozen source occurrences.",
+  "status": "supported_report_successor_with_limits",
+  "native_verdict": "needs_curation",
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416",
+      "case_input_sha256": "51c56d3afdafb18de7e9633a7b0b497f482502fd95e61e8e8b4f646d368b5d9c",
+      "selected_decision_object_sha256": "c230d36941e869dcdefc2d1293c46444b77914f301bd237598a43661f0003ac2",
+      "occurrence_ids": [
+        "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+        "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5"
+      ],
+      "reviewer": "/root/final_skeptical",
+      "assessment": "Both frozen UCM TeO occurrences represent sourceTeO2, but their quantities belong to different preparation levels: ingredient17 is0.000034g/L in trace stock3, ingredient23 is0.034g with4gNaOH per100ml primarytrace4. FrozenG_PER_L on the latter is retained as provenance, not endorsed. The source specifies0.1ml primary perlitre trace stock and then1ml trace stock perlitre finalmedium. The addendum preserves full raw identity/hold objects and does not calculate or approve a final dose. Current1240/1226 links and independent-review reset accurately describe fresh source-context review, not a new compound edit.",
+      "conclusion": "supported_bounded_report_successor",
+      "source_and_hold_objects_exactly_preserved": true,
+      "limitations": [
+        "No correction to the read-only CultureMech source snapshot or final-dose/speciation approval.",
+        "Original selected proposal object and complete payload remain unchanged; this fresh review does not rewrite the historical findings or reviews."
+      ]
+    }
+  ],
+  "payload_reviews": [
+    {
+      "proposal_id": "CHEM-C1193-tellurium-dioxide",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml",
+        "sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06"
+      },
+      "selected_proposal_object_sha256": "2c5b1755421c78397cfee39d0e24c832bb995a89b2a0e552ebbbb58591ea4c5e",
+      "payload_change": false,
+      "complete_record_review": true,
+      "reviewer": "/root/final_skeptical",
+      "assessment": "The full selected CAS-specific tellurium dioxide record already contains the appropriate NARROW_MATCH parent and honest LLM evidence type. Primary source identity, rejectedTeO provenance, nested preparation limits and all three independently reproduced native rows support its bounded report correctness. No new payload/history event is justified and no owner/export approval follows.",
+      "field_assessments": [
+        {
+          "field": "identifier, preferred_term, ingredient_type, chemical_properties",
+          "assessment": "NITE directly names tellurium dioxide and CAS7446-07-3; complete PubChem62638 JSON supports neutral O2Te. CAS primary and SINGLE_INGREDIENT preserve the reagent independently of the NaOH preparation and dissolved species. No crystal polymorph or stock identity is inferred."
+        },
+        {
+          "field": "ontology_mapping ontology_id/label/quality and complete native output",
+          "assessment": "Captured OLS33305 denotes tellurium molecular entity, a broader class; the exact CAS reagent therefore appropriately retains NARROW_MATCH. The stored finite name/CAS/tellurium searches do not establish an exact term and are explicitly bounded. Independent native projection yields broadMatch33305, exactCAS7446-07-3 and exactkgmicrobe.compound:tellurium_dioxide. This does not grant export approval."
+        },
+        {
+          "field": "ontology_mapping.evidence and curation_history",
+          "assessment": "The current interpretation entry is LLM_SUGGESTION. Historical MANUAL/grade findings and original retrieval times remain in prior immutable evidence. Three selected history events are unchanged; historical pending-routing prose remains historical while current note links1240. No no-op correction/history event is warranted."
+        },
+        {
+          "field": "synonyms",
+          "assessment": "CCAP visibly prints TeO2 in both nested stock tables. The rawTeO candidate remains REJECTED_LABEL for this specific record and is excluded by actual native projection. This is not a universal claim that TeO denotes dioxide; tellurite30477 has O3Te/-2 and is a different supplied species."
+        },
+        {
+          "field": "notes, components, roles and source limits",
+          "assessment": "Notes correctly scope source correction and preserve holds. There are no components/roles/assay assertions in this pure-compound payload; review does not infer any. The source source-stock/solute distinction and no global alias correction remain explicit."
+        }
+      ],
+      "conclusion": "supported_existing_selected_payload_with_source_holds"
+    }
+  ],
+  "finding_dispositions": [
+    {
+      "finding_id": "W05-FINAL-CHEM-NEW-01",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1240",
+      "status": "already_correct_in_exact_selected_payload_verified",
+      "original_payload_sha256": "d25ae183c58c8616ecff3fd43dfb4615cb30d4df94e8a17399f09c2de3b20e98",
+      "current_payload_sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06",
+      "assessment": "The originalBROAD_MATCH grade error is corrected in selected6c82851b bytes; fresh complete review and native3row reproduction confirm the bounded repair. The supplement adds precise source applicability only; no issue closure or release approval."
+    },
+    {
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+      "status": "already_correct_selected_entry_verified",
+      "pointer": "/ontology_mapping/evidence/0/evidence_type",
+      "current": "LLM_SUGGESTION",
+      "assessment": "Original agent interpretation remains honest and historical objects remain intact; no new MappingEvidence authored."
+    }
+  ],
+  "nested_contexts": [
+    {
+      "occurrence_id": "CM_OCC:93ed8354b29b7e65a40d76d8c052cef376e710d36a014325e4138b90ef421e69",
+      "frozen_component_path": "ingredients/17",
+      "frozen_label": "TeO",
+      "frozen_value": "0.000034",
+      "frozen_unit": "G_PER_L",
+      "primary_context": "CCAP UCM stock 3 trace elements, x10 concentration, per litre",
+      "source_reagent": "TeO2",
+      "source_amount_g": "0.000034",
+      "denominator": "1 litre of the diluted trace-element stock",
+      "primary_locator": "MR_UCM.pdf page 1, stock 3 table; page 2 first preparation paragraph",
+      "interpretation": "This is a trace-stock contribution, not an independently established final growth-medium dose."
+    },
+    {
+      "occurrence_id": "CM_OCC:7420d05e26539260492d2253a0071a811b6134e27a35e0659a1387c255b9aeb5",
+      "frozen_component_path": "ingredients/23",
+      "frozen_label": "TeO",
+      "frozen_value": "0.034",
+      "frozen_unit": "G_PER_L",
+      "primary_context": "CCAP UCM primary trace stock 4, per 100 ml",
+      "source_reagent": "TeO2",
+      "source_amount_g": "0.034",
+      "denominator": "100 ml of primary trace stock 4",
+      "co_input": {
+        "name": "NaOH",
+        "amount_g": "4.0",
+        "same_denominator": "100 ml"
+      },
+      "primary_locator": "MR_UCM.pdf page 1, primary stock 4 table",
+      "interpretation": "Frozen G_PER_L annotation loses the primary 100 ml denominator; retain the frozen value as provenance and do not silently treat it as a final-medium dose."
+    }
+  ],
+  "preservation_checks": {
+    "unchanged_proposal_object": true,
+    "unchanged_payload_and_history": true,
+    "selected_case_identity_rawnames_occurrences_holds_equal": true,
+    "four_additive_evidence_entries_bound": true,
+    "original_linked_evidence_objects_and_acquisition_times_equal": true
+  },
+  "input_hashes": [
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/FINAL-MANIFEST-v1.json",
+      "sha256": "0835c206f257efea2ebbb94157c3f2fcbe417fb67901bead8a3fa8b100058dcd"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/decisions.json",
+      "sha256": "58e96aaf6ebe7dd8ec7c3ba5f1d9a49d89fe4f7fd4b2518811726b7f7d570a23"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/proposals.json",
+      "sha256": "88f06209e32a0c1dc65cd26af508f0df0b12543c9d8dd641ed23cc33102f3a51"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/evidence.json",
+      "sha256": "ee3b2015a9953f74458273f3b0e6eaade644722868e1b5253e6bf76efaed69be"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/source-applicability-assessment-v1.json",
+      "sha256": "4570f9bed93fd77950e02d87341563f9c5e6271ef606b07bd180a2737407d4ec"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/primary-read-and-source-ledger-v1.json",
+      "sha256": "759ec26b761fcf0164b185fa906377330e52e36be1bbe396ebb6a8c290d818f0"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/native-verification-v1.json",
+      "sha256": "f7209d73019a69e1fe504ee1bd79b21b4898dd9560e8ffad30b5d7d6e5e00f2f"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/tellurium/HANDOFF.md",
+      "sha256": "e792443da92e6f3fe07d7df68f7929ee7fca3b51935e8f9e79058d6bff5ad000"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml",
+      "sha256": "6c82851bea32baa14e650b6472a799636aa86b277154faebcdd022a48db2ef06"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/review/independent-tellurium-native-v1.json",
+      "sha256": "5a5dce9982a101ec83c3eb389acd6594fd64043e36b90bdeb7f370c2915587a6"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/review/frozen-ucm-assessment-v1.json",
+      "sha256": "fe88740971412aa31a7a4f17c202a6385a577ae9f9c9d37f8b97dd675b7484f0"
+    },
+    {
+      "path": ".temp/w05-tellurium-polypeptone-v1/review/read-ledger-preflight-v1.json",
+      "sha256": "c71bb344168e050cecd5eb69f85b26e086c8518b205b1399f0de2bef3b2f12d5"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/chemicals/capture-ea5b78eecca53ac5.json",
+      "sha256": "002589106e430d43923643568545051c648994b18e9a1f0bcfc3a27eefca12ad"
+    }
+  ],
+  "limits": [
+    "Evidence read scopes are stated in preflight/read ledger; large sources support only inspected identity/recipe pages.",
+    "Native reproduction uses explicit emptyownerindex and optionaldictionaries; rootfullowneroverlay remains separate.",
+    "No universal exactontologyabsence, sodiumtellurite speciation, biological role, currentprocurement or globalTeO identity claim."
+  ],
+  "new_findings": []
+}
