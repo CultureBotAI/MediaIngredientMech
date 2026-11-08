@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:nbrc_1378_fenaedta_stock
+preferred_term: NBRC 1378 FeNaEDTA stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1378_fenaedta_stock
+  ontology_label: NBRC 1378 FeNaEDTA stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1378
+    notes: Source-qualified stock identity with partial literal component assertion.
+      Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+      then adds5ml to medium. Proposed partial stock retains the directly stated mass
+      concentration. The mass/molarity pair must not be used to infer monohydrate;
+      source solute form and the frozen578g/L transcription remain separate unresolved
+      issues. Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship
+      remain unverified; no molarity conversion or pure-solute exact mapping.
+synonyms:
+- synonym_text: FeNaEDTA
+  synonym_type: REJECTED_LABEL
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1378
+components:
+- component_name: FeNaEDTA
+  reference_scope: UNMAPPED
+  concentration_value: '578'
+  concentration_unit: mg/L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1378
+    source_record: NBRC 1378 FeNaEDTA stock
+    notes: Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+      then adds5ml to medium. Proposed partial stock retains the directly stated mass
+      concentration. The mass/molarity pair must not be used to infer monohydrate;
+      source solute form and the frozen578g/L transcription remain separate unresolved
+      issues. Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship
+      remain unverified; no molarity conversion or pure-solute exact mapping.
+  notes: Unstated solvent and source chemical-form details remain unasserted. Concentration
+    is the stock claim, never the receiving-medium dose.
+notes: Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+  then adds5ml to medium. Proposed partial stock retains the directly stated mass
+  concentration. The mass/molarity pair must not be used to infer monohydrate; source
+  solute form and the frozen578g/L transcription remain separate unresolved issues.
+  Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship remain
+  unverified; no molarity conversion or pure-solute exact mapping.
+curation_history:
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CREATED
+  changes: Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM,
+    then adds5ml to medium. Proposed partial stock retains the directly stated mass
+    concentration. The mass/molarity pair must not be used to infer monohydrate; source
+    solute form and the frozen578g/L transcription remain separate unresolved issues.
+    Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship remain
+    unverified; no molarity conversion or pure-solute exact mapping. Isolated successor
+    proposal only; no maintained surfaces, roles, source bytes or publication holds
+    changed.
+  new_status: MAPPED
+  llm_assisted: true

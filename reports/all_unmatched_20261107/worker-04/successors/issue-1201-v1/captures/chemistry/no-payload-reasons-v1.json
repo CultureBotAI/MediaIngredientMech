@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-11-08T06:14:38.418259+00:00",
+  "status": "PASS",
+  "scope": "Exactly four explicit no-owner-payload reason fields filled from already reviewed source-specific reasoning. No reasoning, identity, proposal, evidence, source, occurrence, or hold field changed.",
+  "before_capture": {
+    "path": "captures/chemistry/no-payload-reasons-v1/chemistry-decisions.json",
+    "sha256": "8e0eb9be744d10366365148ef86eb12b631a0d533db126379eb7d8e7afe327f4"
+  },
+  "changes": [
+    {
+      "case_index": 27,
+      "case_id": "CM_NAME:2c3ab1c374c5105d3fb0440de0c4da04587d96ffa49fa9a6c5125d285434f8ae",
+      "field": "no_change_reason",
+      "before": null,
+      "after": "The original CCAP TAP recipe resolves this occurrence to the existing active Na2edta2h2o owner (CHEBI:64758). Its identity already represents disodium EDTA dihydrate, and the similarly identified Na2-edta_X_2_H2o tombstone is REJECTED. No owner edit or global alias is required; the changed source binding remains source-specific."
+    },
+    {
+      "case_index": 73,
+      "case_id": "CM_NAME:7f77665088459898a866f17f48ba456289d64028713441f3d15841cb066a539d",
+      "field": "no_change_reason",
+      "before": null,
+      "after": "The original CCAP Waris-H recipe resolves this occurrence to the existing active Na2edta2h2o owner (CHEBI:64758). Its identity already represents disodium EDTA dihydrate, and the similarly identified Na2-edta_X_2_H2o tombstone is REJECTED. No owner edit or global alias is required; the changed source binding remains source-specific."
+    },
+    {
+      "case_index": 80,
+      "case_id": "CM_NAME:8c1710a3b1ab2c26dfe03944dd5833a2c86131d36fa70440b384913199aa174d",
+      "field": "no_change_reason",
+      "before": null,
+      "after": "The original Hoshino/Satoh 1985 S-medium formula prints NaCl 0.2 g and supports the existing sodium-chloride owner (CHEBI:26710). No owner payload is needed to correct this source occurrence binding; the erroneous raw spelling NaCI remains provenance only and is not added as a global alias."
+    },
+    {
+      "case_index": 90,
+      "case_id": "CM_NAME:9bf7a43ac0481e5e38c2b325d23d1da72fe67cd5046e0fd5539d091176bb38e7",
+      "field": "no_change_reason",
+      "before": null,
+      "after": "The primary P5 recipe explicitly names myo-inositol, which is already represented by the existing owner (CHEBI:17268). No owner edit is required for this source-specific chemical binding. The misleading B7 annotation is retained only as source provenance; no B7/B8 alias or vitamin-role assertion is added."
+    }
+  ],
+  "all_four_fragments": {
+    "fragments/chemistry-reassessments.json": "dd2461113355173a6c9b4d272613fc66784648377649d11366fccc6c41f21b66",
+    "fragments/chemistry-decisions.json": "a0b650326375a312ca083c7ee251dc83c01976f12c23ded663134cec9d55ec90",
+    "fragments/chemistry-evidence.json": "a5d2064402479d2f80f9de49ad59f20b857c8067884e6881d392448b47e8ac4f",
+    "fragments/chemistry-proposals.json": "c53f40638382c6c4e27490ab3b09aa34c81a8373349e1693fd4af33f22073e3e"
+  }
+}

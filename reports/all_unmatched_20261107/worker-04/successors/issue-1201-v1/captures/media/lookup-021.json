@@ -1,0 +1,259 @@
+{
+  "searched_at": "2026-11-08T05:58:44.641143+00:00",
+  "ignored_files_included": true,
+  "method": "pathlib recursive traversal of maintained records and explicit full published63 proposal payloads/full188 frozen shard; label index full read",
+  "pattern": "Skirrow",
+  "case_index": 21,
+  "baseline_owner_count_searched": 2956,
+  "published_proposals_searched": 63,
+  "frozen_cases_searched": 188,
+  "label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "matching_label_index_rows": [
+    "Skirrow supplement,preferred_term,kgmicrobe.ingredient:skirrow_supplement,Skirrow supplement,kgmicrobe.ingredient:skirrow_supplement,MAPPED,unique"
+  ],
+  "matching_full_owners": [
+    {
+      "path": "data/ingredients/mapped/Skirrow_Supplement.yaml",
+      "sha256": "3512ccd63a365307590307b9ef795967a5577a906a049d7327578a361b3691c6",
+      "raw_yaml": "identifier: kgmicrobe.ingredient:skirrow_supplement\npreferred_term: Skirrow supplement\nsynonyms:\n- synonym_text: Skirrow supplement\n  synonym_type: RAW_TEXT\n  source: mim-queue\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 4\n  media_count: 4\ncuration_history:\n- timestamp: '2026-04-30T18:43:03.698454+00:00'\n  curator: audit_import_ingredients[mim-queue]\n  action: CREATED_AS_UNMAPPED\n  changes: Imported from mim-queue (source_id=mediadive.ingredient:1139); no CAS-RN\n    or CHEBI/NCIT match. Curator review needed.\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-05-11T19:50:00Z'\n  curator: mediaingredientmech-agentic-curation\n  action: CLASSIFIED_STOCK_SOLUTION\n  changes: Classified as a Skirrow supplement/preparation and left unmapped pending\n    component-level recipe curation.\n  previous_status: UNMAPPED\n  new_status: UNMAPPED\n  llm_assisted: true\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: issue_288_stock_solutions\n  action: PROMOTED_TO_MAPPED\n  previous_status: UNMAPPED\n  new_status: MAPPED\n  llm_assisted: true\n  changes: 'Promoted UNMAPPED_0521 -> kgmicrobe.ingredient:skirrow_supplement (FALLBACK_REGISTRY).\n    A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO\n    by label and synonym: no term denotes it, and none could -- a preparation is not\n    a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint\n    with no parent, because a multi-component mix does not narrow to any single compound\n    (#288).'\n- timestamp: '2026-08-27T03:16:39.520303+00:00'\n  curator: refresh_occurrence_statistics\n  action: CORRECTED\n  changes: 'occurrence_statistics 0/0 -> 4/4 (media_count/total_occurrences), derived\n    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values\n    came from the importer retired in #453, whose media_count counted a list truncated\n    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08\n    rows=194137 distinct_recipes=15257]'\nnotes: Imported from mim-queue (source_id=mediadive.ingredient:1139); no CAS-RN or\n  CHEBI/NCIT match. Reviewed on 2026-05-11 as a supplement/preparation pending component-level\n  recipe curation.\ningredient_type: STOCK_SOLUTION\nsolution_type: OTHER\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:skirrow_supplement\n  ontology_label: Skirrow supplement\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: MIM curation (#288)\n    notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON\n      and ENVO by label and synonym: no term denotes it, and none could -- a preparation\n      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:\n      mint with no parent, because a multi-component mix does not narrow to any single\n      compound (#288).'\n",
+      "record": {
+        "identifier": "kgmicrobe.ingredient:skirrow_supplement",
+        "preferred_term": "Skirrow supplement",
+        "synonyms": [
+          {
+            "synonym_text": "Skirrow supplement",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 4,
+          "media_count": 4
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1139); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:50:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_STOCK_SOLUTION",
+            "changes": "Classified as a Skirrow supplement/preparation and left unmapped pending component-level recipe curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "issue_288_stock_solutions",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "changes": "Promoted UNMAPPED_0521 -> kgmicrobe.ingredient:skirrow_supplement (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288)."
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.520303+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 4/4 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1139); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a supplement/preparation pending component-level recipe curation.",
+        "ingredient_type": "STOCK_SOLUTION",
+        "solution_type": "OTHER",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:skirrow_supplement",
+          "ontology_label": "Skirrow supplement",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "MIM curation (#288)",
+              "notes": "A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288)."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "matching_full_published_payloads": [],
+  "matching_full_frozen_cases": [
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:1f7a94f373b6ed7516250d4bc323527ccfc2edbcbda2f2977775479f20e1715b",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 2,
+      "occurrences": [
+        {
+          "component_path": "ingredients/5",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1305_HELICOBACTER_MEDIUM.yaml",
+          "native_name": "Skirrow supplement (Oxoid)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:899b63728811a767e8cf5e52082036e39323377069ae83a45450c86acb88449e",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "4"
+            },
+            "notes": "JCM Medium 1305 aseptically adds 0.4 ml Skirrow supplement prepared from one Oxoid vial in 2 ml sterile purified water; this row is normalized 10x to one liter.",
+            "preferred_term": "Skirrow supplement (Oxoid)",
+            "source": "JCM Medium 1305"
+          },
+          "raw_preferred_term": "Skirrow supplement (Oxoid)",
+          "recipe_id": "CultureMech:002469",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002469"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J1305"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1305_HELICOBACTER_MEDIUM.yaml",
+          "source_file_sha256": "15569836a459025c57f32f1f3d40fcb50a4ae95460285b6bb610584dad434d44",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/5",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1402_Helicobacter_Medium.yaml",
+          "native_name": "Skirrow supplement (Oxoid)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:e6f47c235c014f00c23aeb8957d5ccfbb4264d0e8d5d34a0daa39f29d940df38",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "4"
+            },
+            "notes": "JCM Medium 1305 aseptically adds 0.4 ml Skirrow supplement prepared from one Oxoid vial in 2 ml sterile purified water; this row is normalized 10x to one liter.",
+            "preferred_term": "Skirrow supplement (Oxoid)",
+            "source": "JCM Medium 1305"
+          },
+          "raw_preferred_term": "Skirrow supplement (Oxoid)",
+          "recipe_id": "CultureMech:007939",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007939"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1402"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M1402_Helicobacter_Medium.yaml",
+          "source_file_sha256": "6e467731118fea325f8a4ce5f1cc47ffa2a10f8dd2a509d78c4869734130c1ad",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 1997,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:002469; CultureMech:007939",
+        "ingredient_name": "Skirrow supplement (Oxoid)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "2",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Skirrow supplement (Oxoid)",
+      "source": "culturemech",
+      "source_case_id": "Skirrow supplement (Oxoid)",
+      "source_identity_claimed": false,
+      "source_label": "Skirrow supplement (Oxoid)"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:803ebd39439d4fe774abf7128a18312c9fe23ffbda21653ee9280e35f8fc73b2",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/skirrows_selective_medium.yaml",
+          "native_name": "Columbia Agar Base (Oxoid CM0331)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:5354bbb06f2aabe22e98b4a418858e4e319fa4d8fb1af6018f04b1a56b9fdf0d",
+          "raw_component": {
+            "concentration": {
+              "unit": "VARIABLE",
+              "value": "variable"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:005649",
+              "label": "Columbia agar base"
+            },
+            "notes": "TOGO M2935 names Columbia Agar Base, Oxoid CM0331, but does not spell out the amount or base composition.",
+            "preferred_term": "Columbia Agar Base (Oxoid CM0331)",
+            "source": "TOGO M2935"
+          },
+          "raw_preferred_term": "Columbia Agar Base (Oxoid CM0331)",
+          "recipe_id": "CultureMech:009467",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009467"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2935"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/skirrows_selective_medium.yaml",
+          "source_file_sha256": "7a9caa4d6ca00b797f072a7983f3c1da3b06d64a62deb5c601a92da90e6c119b",
+          "source_identifiers": [
+            {
+              "path": "/culturemech_term/id",
+              "value": "CultureMech:005649"
+            }
+          ]
+        }
+      ],
+      "original_unified_position": 3886,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:009467",
+        "ingredient_name": "Columbia Agar Base (Oxoid CM0331)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Columbia Agar Base (Oxoid CM0331)",
+      "source": "culturemech",
+      "source_case_id": "Columbia Agar Base (Oxoid CM0331)",
+      "source_identity_claimed": false,
+      "source_label": "Columbia Agar Base (Oxoid CM0331)"
+    }
+  ]
+}

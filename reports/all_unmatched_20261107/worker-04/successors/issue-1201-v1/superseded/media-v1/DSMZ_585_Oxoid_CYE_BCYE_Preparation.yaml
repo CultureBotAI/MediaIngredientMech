@@ -1,0 +1,98 @@
+identifier: kgmicrobe.ingredient:dsmz_585_oxoid_cye_bcye_preparation
+preferred_term: Oxoid CYE with BCYE supplement (DSMZ585 preparation)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_585_oxoid_cye_bcye_preparation
+  ontology_label: Oxoid CYE with BCYE supplement (DSMZ585 preparation)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium585.pdf
+    notes: The source ingredient2125 names Oxoid Legionella CYE-Agar base with BCYE
+      supplement, measured as1000ml. Original DSMZ585 explicitly permits this commercial
+      combined system as an alternative to its scratch recipe. The prepared CYE-plus-BCYE
+      system is a whole ingredient, distinct from dehydrated CYE base alone and from
+      the independent scratch ACES formulation. The exact two named inputs can be
+      represented with unknown amounts; no solvent dose, supplement catalog or scratch-recipe
+      quantities are borrowed.
+notes: 'The source ingredient2125 names Oxoid Legionella CYE-Agar base with BCYE supplement,
+  measured as1000ml. Original DSMZ585 explicitly permits this commercial combined
+  system as an alternative to its scratch recipe. The prepared CYE-plus-BCYE system
+  is a whole ingredient, distinct from dehydrated CYE base alone and from the independent
+  scratch ACES formulation. The exact two named inputs can be represented with unknown
+  amounts; no solvent dose, supplement catalog or scratch-recipe quantities are borrowed.
+  Raw source labels and optional/use instructions are retained in source-case evidence,
+  not installed as global resolving aliases. Existing source/owner/export holds remain;
+  no maintained or release approval. Prior labels and curation provenance: [{"synonym_text":
+  "OXOID Legionella CYE-Agar base", "synonym_type": "RAW_TEXT", "source": "mim-queue"}].
+  These historical source labels are retained here; no generic label is asserted as
+  an exact source formulation synonym.'
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2125); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as an OXOID Legionella CYE agar base preparation and left unmapped
+    pending product- or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/OXOID_Legionella_CYE-Agar_Base-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended classification:** supplier-specific,
+    dehydrated **complex culture-medium base** for preparing charcoal–yeast-extract
+    agar used with *Legionella*. It is not a single chemical, salt/hydrate, buffer,
+    or chemically defined medium. Although the current record type `DEFINED_MEDIUM`
+    usefully distinguishes a medium from an ingredient-level mixture, “defined” should
+    not be interpreted as chem No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CREATED
+  changes: The source ingredient2125 names Oxoid Legionella CYE-Agar base with BCYE
+    supplement, measured as1000ml. Original DSMZ585 explicitly permits this commercial
+    combined system as an alternative to its scratch recipe. The prepared CYE-plus-BCYE
+    system is a whole ingredient, distinct from dehydrated CYE base alone and from
+    the independent scratch ACES formulation. The exact two named inputs can be represented
+    with unknown amounts; no solvent dose, supplement catalog or scratch-recipe quantities
+    are borrowed. Isolated successor proposal only; published artifacts and maintained
+    data unchanged.
+  llm_assisted: true
+components:
+- component_name: Legionella CYE-agar base (Oxoid)
+  reference_scope: UNMAPPED
+- component_name: BCYE supplement (Oxoid)
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium585.pdf
+    notes: Two named commercial inputs; PARTIAL with no quantities because the source
+      does not give reconstitution amounts for the commercial alternative. No exact
+      identity to the separately printed scratch formulation.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0

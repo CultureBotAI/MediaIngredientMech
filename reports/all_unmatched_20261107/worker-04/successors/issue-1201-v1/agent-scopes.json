@@ -1,0 +1,68 @@
+{
+  "predecessor": "0d2c73e5aee5adb88782537755472d9ca0c5c3cd",
+  "primary_and_skeptical": [
+    {
+      "primary_author": "/root/biological",
+      "assignment": "fragments/biological-assignment.json",
+      "case_count": 38,
+      "reviewer": "/root/media",
+      "actual_changed_decision_count": 33,
+      "actual_payload_count": 26,
+      "actual_reviewer_case_count": 38,
+      "final_skeptical_receipt": {
+        "path": "independent-review/biological-reviewed-by-media-v2.json",
+        "sha256": "473a81bbaebcd0fbd65800d7b7bd7d0d2aed005b362df2a32c463c9d3652fbc8"
+      }
+    },
+    {
+      "primary_author": "/root/chemistry",
+      "assignment": "fragments/chemistry-assignment.json",
+      "case_count": 44,
+      "reviewer": "/root/biological",
+      "actual_changed_decision_count": 22,
+      "actual_payload_count": 10,
+      "actual_reviewer_case_count": 44,
+      "final_skeptical_receipt": {
+        "path": "independent-review/chemistry-reviewed-by-biological-v3.json",
+        "sha256": "584049fd0a0fec60e9c0b381ab5aaccf447974a9abfdb383e38eb51bbef2ae44"
+      }
+    },
+    {
+      "primary_author": "/root/media",
+      "assignment": "fragments/media-assignment.json",
+      "case_count": 26,
+      "reviewer": "/root/chemistry",
+      "actual_changed_decision_count": 30,
+      "actual_payload_count": 18,
+      "actual_reviewer_case_count": 30,
+      "final_skeptical_receipt": {
+        "path": "independent-review/media-reviewed-by-chemistry-v4.json",
+        "sha256": "9bbef7521a60cd955e2f36bf3089fd946ebba7865408ef33d2252bd81c273a32"
+      }
+    }
+  ],
+  "root_scope": "Cohort accounting, live contracts and issue review, duplicate/cross-shard coordination, immutable successor assembly and validation, native report, final diff review/commit/push; no maintained writes.",
+  "additional_actual_scopes": [
+    {
+      "author": "/root/biological",
+      "task": "Independent isolated negative controls of root assembler, native gate and overlay helper",
+      "receipt": "independent-review/process-negative-controls-results.json",
+      "sha256": "a4a659b5fd8540b91710f06425cd893fbb37286b54572deeda6119f5dfe87bd2",
+      "scope": "23 synthetic controls; actual whole-shard gate executions are separately retained by root."
+    },
+    {
+      "author": "/root/chemistry",
+      "task": "Independent review of root helpers, assembled source accounting and final native report; final receipt retained separately.",
+      "receipt": "independent-review/process-reviewed-by-chemistry-v2.json",
+      "sha256": "9d4028b0e30a103c5ca735c6d86ca5cbf0617d7b0758fcad0a09e17ab42ce6e5",
+      "status": "complete"
+    },
+    {
+      "author": "/root/media",
+      "task": "Independent final manifest, handoff and staged scope review; final receipt retained separately.",
+      "receipt": "independent-review/final-bundle-reviewed-by-media-v1.json",
+      "status": "final receipt produced after manifest/staging, deliberately outside manifest self-reference"
+    }
+  ],
+  "session_boundary": "Existing three in-process agents only; no additional external sessions."
+}

@@ -1,0 +1,43 @@
+{
+  "status": "findings_open_pending_final_native",
+  "reviewed_at": "2026-11-08T06:08:10.200968+00:00",
+  "reviewer": "worker04/chemistry; independent of root process author",
+  "reviewed_scripts": {
+    "scripts/assemble_successor.py": "d5b8fb9166ebc99719bb9c6c14b7afa4d7e7bad307e7b943c7ae38c4657250be",
+    "scripts/validate_overlay.py": "a26676f5621c5548a105c4dad1ded6d4bf4852f471025401bf2ed1473437c983",
+    "scripts/run_checks.py": "3f9631f4732365a13da4f5c34bbbbbbbddb8ff25c02abf73344656b2aa362ec7",
+    "scripts/build_dependencies.py": "28a6349874eaa0cf149ee5dbd8c02c5d312cae6b1818887bf1e6fada1354a025",
+    "scripts/build_native_review.py": "9a1b34ec63483ee04e4181d5f977fff99253c0f1661d1e67b88614b24d515499",
+    "scripts/guarded_replay.py": "c049565e7bae312832a60da08e08535b5a6e250187bbab0a4b46c9193ec281ce",
+    "scripts/check_predecessor.py": "57c9515ee5d5bab8be3cb13352e442e6fe17288de56baef000bfcfa1c516e19b"
+  },
+  "checks_read": [
+    "Assembler binds all four fragments to independent accepted review, exact payload hashes and complete reassessment/changed-case coverage.",
+    "Original case source/input/occurrence fields and inherited hold fields are preserved; proposal supersession retains original case backlinks and baseline owner hashes.",
+    "Full188 structural accounting remains separate from108 plus4 successor scientific scope.",
+    "Run-checks hashes exact inputs before all gates and detects mid-run mutation; source checks run read-only and guarded writer writes private scratch only.",
+    "Native builder fails closed on gate exit codes/log/output bindings; original retrieval times are reused, otherwise explicitly local artifact inspection time.",
+    "Predecessor artifact manifest is byte-checked; empty successor findings explicitly does not retire prior findings.",
+    "Cross-shard dependency scan reads frozen source/owner evidence only and does not select another worker winner."
+  ],
+  "findings": [
+    {
+      "finding_id": "PROCESS-CHEM-01",
+      "status": "open",
+      "issue": "Overlay ignores destination_owner_path, so a proposed rename/promotion can collide with an existing/different destination path while source owner paths and identifiers remain unique.",
+      "requested_fix": "Validate all destination paths against baseline and other proposals and construct path-aware overlay or separately state/path-check the semantic overlay. Negative control should inject a distinct-ID destination collision."
+    },
+    {
+      "finding_id": "PROCESS-CHEM-02",
+      "status": "resolved",
+      "issue": "Media receipt field proposal_reviews did not match assembler payload_reviews contract.",
+      "resolution": "New media-reviewed-by-chemistry-v3.json adds explicit full_payload_read/path/sha256 for every payload, preserving prior receipts."
+    }
+  ],
+  "pending": [
+    "Read corrected overlay script and negative-control receipt.",
+    "Inspect final assembly, gate receipts, exact input bindings and native review/inspection/schema validation.",
+    "Hash-bind final process acceptance after these outputs exist."
+  ],
+  "approval_scope": "No maintained owner, source, role, hold or export approval."
+}

@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:gibco_042_1545_cmrl_1066
+preferred_term: CMRL 1066 concentrate (historical Gibco042-1545)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:gibco_042_1545_cmrl_1066
+  ontology_label: CMRL 1066 concentrate (historical Gibco042-1545)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium403.pdf
+    notes: DSMZ403 specifies historicalGibco042-1545 with the exact label CMRL1066/10xGlutamin.
+      Preserve this supplier-catalog identity without guessing a modern replacement
+      or reading the ambiguous slash notation as a complete quantitative formulation.
+      Separately added0.1g L-glutamine in Solution A is not a measured ingredient
+      concentration of the purchased concentrate. The relation to the vendor-unspecified10x-with-glutamine
+      supplement in TOGOM2964 remains unverified; catalog-bound identity is supported
+      without an asserted equivalence or chemical difference.
+notes: DSMZ403 specifies historicalGibco042-1545 with the exact label CMRL1066/10xGlutamin.
+  Preserve this supplier-catalog identity without guessing a modern replacement or
+  reading the ambiguous slash notation as a complete quantitative formulation. Separately
+  added0.1g L-glutamine in Solution A is not a measured ingredient concentration of
+  the purchased concentrate. The relation to the vendor-unspecified10x-with-glutamine
+  supplement in TOGOM2964 remains unverified; catalog-bound identity is supported
+  without an asserted equivalence or chemical difference. Raw source labels and optional/use
+  instructions are retained in source-case evidence, not installed as global resolving
+  aliases. Existing source/owner/export holds remain; no maintained or release approval.
+curation_history:
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CREATED
+  changes: DSMZ403 specifies historicalGibco042-1545 with the exact label CMRL1066/10xGlutamin.
+    Preserve this supplier-catalog identity without guessing a modern replacement
+    or reading the ambiguous slash notation as a complete quantitative formulation.
+    Separately added0.1g L-glutamine in Solution A is not a measured ingredient concentration
+    of the purchased concentrate. The relation to the vendor-unspecified10x-with-glutamine
+    supplement in TOGOM2964 remains unverified; catalog-bound identity is supported
+    without an asserted equivalence or chemical difference. Isolated successor proposal
+    only; published artifacts and maintained data unchanged.
+  llm_assisted: true
+solution_type: COMPLEX_UNDEFINED
+supplied_form:
+- name: CMRL1066/10xGlutamin
+  supplier: Gibco
+  catalog_number: 042-1545
+  form: historical commercial concentrate
+  notes: Source label preserved literally; internal glutamine content and solvent
+    unasserted.
+culturemech_reference:
+  medium_id: CultureMech:008950
+  medium_name: bsk_medium
+  relationship: SIMILAR_COMPOSITION
+  source_path: inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2366_BSK-Medium.yaml
+  evidence: DSMZ403 specifies historicalGibco042-1545 with the exact label CMRL1066/10xGlutamin.
+    Preserve this supplier-catalog identity without guessing a modern replacement
+    or reading the ambiguous slash notation as a complete quantitative formulation.
+    Separately added0.1g L-glutamine in Solution A is not a measured ingredient concentration
+    of the purchased concentrate. The relation to the vendor-unspecified10x-with-glutamine
+    supplement in TOGOM2964 remains unverified; catalog-bound identity is supported
+    without an asserted equivalence or chemical difference. Exact ingredient occurrence
+    CM_OCC:108d3d6e9989dc6df7951a00cf3921ba19dd91e266b0e84bffa58ae95e38be82 at solutions/0/composition/10;
+    this is not identity to the complete receiving recipe.

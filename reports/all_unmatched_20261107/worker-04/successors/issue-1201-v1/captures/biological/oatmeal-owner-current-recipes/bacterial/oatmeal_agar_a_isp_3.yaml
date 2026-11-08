@@ -1,0 +1,106 @@
+id: CultureMech:001737
+name: oatmeal_agar_a_isp_3
+original_name: OATMEAL AGAR (A) (ISP-3)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.2
+media_term:
+  preferred_term: DSMZ Medium 609
+  term:
+    id: mediadive.medium:609
+    label: OATMEAL AGAR (A) (ISP-3)
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium609.pdf'
+ingredients:
+- preferred_term: Oatmeal
+  concentration:
+    value: '20'
+    unit: G_PER_L
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '18'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+preparation_steps:
+- step_number: 1
+  action: FILTER_STERILIZE
+  description: Adjust pH to 7.2. Cook or steam 20.0 g in 1000.0 ml distilled water
+    for 20 min. Filter through cheese cloth. Add 18.0 g agar and make up to 1000.0
+    ml. Add 1 ml of trace salts solution (see below).
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:11.723264Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 609'
+- timestamp: '2026-03-13T06:19:06.843306Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001737'
+- timestamp: '2026-03-17T06:30:40.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:19.071554+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "OATMEAL AGAR (A) (ISP-3)" to "oatmeal_agar_a_isp_3"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:40.297907+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 4 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-07T07:05:22.756616+00:00'
+  curator: apply_cocktail_nesting.py
+  action: NESTED_FLATTENED_COCKTAIL
+  notes: 'Moved 3 stock-strength component(s) out of ingredients into 1 solution(s):
+    3 -> ''Trace salt solution'' @ 1 ml/l. Each moved component matched the MediaDive
+    stock by name AND value; bulk ingredients sharing a name were left in place (#150).'
+  changes: Nested 3 ingredient(s) under 1 solution(s); ingredients 5 -> 2
+solutions:
+- preferred_term: Trace salt solution
+  composition:
+  - preferred_term: FeSO4 x 7 H2O
+    term:
+      id: CHEBI:75836
+      label: iron(2+) sulfate heptahydrate
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:75836
+      label: iron(2+) sulfate heptahydrate
+  - preferred_term: MnCl2 x 4 H2O
+    term:
+      id: CHEBI:86368
+      label: manganese(II) chloride tetrahydrate
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:86368
+      label: manganese(II) chloride tetrahydrate
+  - preferred_term: ZnSO4 x 7 H2O
+    term:
+      id: CHEBI:32312
+      label: zinc sulfate heptahydrate
+    concentration:
+      value: '1'
+      unit: G_PER_L
+    mediaingredientmech_chebi_term:
+      id: CHEBI:32312
+      label: zinc sulfate heptahydrate
+  concentration:
+    value: '1'
+    unit: ML_PER_L
+  preparation_notes: Stock prepared in 100 ml; added at 1 ml per litre of medium.
+    Composition and volume from MediaDive (#150).

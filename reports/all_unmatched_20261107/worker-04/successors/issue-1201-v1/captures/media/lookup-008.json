@@ -1,0 +1,1972 @@
+{
+  "searched_at": "2026-11-08T05:58:44.641143+00:00",
+  "ignored_files_included": true,
+  "method": "pathlib recursive traversal of maintained records and explicit full published63 proposal payloads/full188 frozen shard; label index full read",
+  "pattern": "Noble|0142",
+  "case_index": 8,
+  "baseline_owner_count_searched": 2956,
+  "published_proposals_searched": 63,
+  "frozen_cases_searched": 188,
+  "label_index_sha256": "afb09df6b5433938806646d59511fe59658a46aad9a194ad967364b89f851e16",
+  "matching_label_index_rows": [
+    "\"(4S)-5-[[(2S)-6-amino-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-4-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S,3S)-1-[[(2S,3S)-1-[[(2S)-6-amino-1-[[(2S)-1-[[2-[(2S)-2-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-1-[[(2S,3R)-1-[[(2S)-5-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1,6-diamino-1-oxohexan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-3-hydroxy-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]carbamoyl]pyrrolidin-1-yl]-2-oxoethyl]amino]-1-oxopropan-2-yl]amino]-1-oxohexan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-2-oxoethyl]amino]-3-carboxy-1-oxopropan-2-yl]amino]-5-carbamimidamido-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,4-dioxobutan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxohexan-2-yl]amino]-4-[[(2S,3S)-2-[[(2S)-6-amino-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2,6-diaminohexanoyl]amino]-3-(1H-indol-3-yl)propanoyl]amino]hexanoyl]amino]-4-methylpentanoyl]amino]-3-phenylpropanoyl]amino]hexanoyl]amino]hexanoyl]amino]-3-methylpentanoyl]amino]-5-oxopentanoic acid\",synonym,CHEBI:201428,Cecropin A,CHEBI:201428,MAPPED,unique",
+    "Cecropin A,preferred_term,CHEBI:201428,Cecropin A,CHEBI:201428,MAPPED,unique",
+    "Pactamycin,preferred_term,mesh:D010142,Pactamycin,mesh:D010142,MAPPED,unique"
+  ],
+  "matching_full_owners": [
+    {
+      "path": "data/ingredients/unmapped/3-methylacetate.yaml",
+      "sha256": "3ce45f6d8c8757b762b1d57fb5dd7c0c9907a8dd2829ab1431d2f522e98bf0aa",
+      "raw_yaml": "identifier: UNMAPPED_0736\npreferred_term: 3-methylacetate\nsynonyms:\n- synonym_text: 3-methylacetate\n  synonym_type: RAW_TEXT\n  source: microbedecoder\nmapping_status: REJECTED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\n  source_occurrences:\n  - source: microbedecoder\n    count: 1\n    source_columns: bergey:minor_end_products\ncuration_history:\n- timestamp: '2026-08-04T02:54:09.684805+00:00'\n  curator: audit_import_ingredients[microbedecoder]\n  action: CREATED_AS_UNMAPPED\n  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);\n    no CAS-RN or CHEBI/NCIT match. Curator review needed.\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: issue_213_residual_triage\n  action: FLAGGED_NEEDS_EXPERT\n  changes: 'Parse fragment: acetate has no position 3, so this is a truncation of\n    a longer name. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label\n    and synonym with normalisation, plus exact queries across all of live OLS4.'\n  previous_status: UNMAPPED\n  new_status: NEEDS_EXPERT\n  llm_assisted: true\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: edison_literature_identity\n  action: ANNOTATED\n  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/3-methylacetate-edison-literature.md\n    (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather\n    than linked). Report verdict: ## Executive recommendation \u2014 **Retain `UNMAPPED`.\n    Do not create an SSSOM row.** The string `3-methylacetate` is not adequately specified\n    as a chemical name, salt, hydrate, mixture, buffer, or named formulation. No retrieved\n    source establishes it as a standalone culture-medium ingredient. No ontology CURIE\n    was proposed. Recorded as provenance only \u2014 no grounding applied from this run.\n    Edison''s recommendations are deliberately conservative, and a plausible identifier\n    promoted by a mechanism that never decided anything is what #203 and #263 exist\n    to undo. Any CURIE above is a curator''s to accept or reject.'\n  llm_assisted: true\n- timestamp: '2026-08-15T00:00:00+00:00'\n  curator: retire_assay_labels\n  action: RETIRED_NOT_AN_INGREDIENT\n  previous_status: NEEDS_EXPERT\n  new_status: REJECTED\n  changes: 'Retired as an ingredient record (#213/#308): not a chemical name and not\n    reconstructable. It is a fragment from the same importer that produced `Formate+3-methyl\n    Mercaptopropionate`, so the likely original is `3-methyl mercaptopropionate` \u2014\n    but its partner text is absent from the corpus, and guessing it would invent a\n    compound. Not mapped, because every substrate CURIE it could be grounded to is\n    already the primary key of a live record \u2014 in MIM the identifier IS the ontology\n    CURIE, so a mapping here would mint a duplicate rather than add coverage. No synonym\n    is folded onto those records either: this label names a reaction or a splice,\n    not the substance, and asserting the synonymy would make label_index resolve it\n    to something it does not denote.'\n  llm_assisted: false\n- timestamp: '2026-11-08T02:36:20.627642+00:00'\n  curator: claude\n  action: CORRECTED_SOURCE_PROVENANCE\n  changes: 'Correct active source-origin notes only (#1151): raw database.csv SHA256=0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95,\n    record19685 canonical SHA256=f96206bc73f8fa93d7a144e6f4f586e8e464d23b31d8093a0d510bc5d272302a,\n    contains 3-methylacetate in original prose and structured minor-product field.\n    Retain unresolved identity, REJECTED status, all raw synonyms, counts and prior\n    history; add no ontology mapping, replacement identity, role or release approval.\n    The original primary paper was not independently re-read in this provenance check.'\n  previous_status: REJECTED\n  new_status: REJECTED\n  llm_assisted: true\nnotes: 'Imported from MicrobeDecoder (source_id=kgmicrobe.compound:3_methylacetate).\n  The literal 3-methylacetate is present in both the raw Bergey_Text_for_end_products\n  and Bergey_Minor_end_products fields for Telmatobacter bradus, LPSN 789679, database.csv\n  record 19685 (source citation https://doi.org/10.1002/9781118960608.gbm01426). This\n  is reported minor-product provenance, not an established chemical identity or growth-medium\n  ingredient. The prior importer-fragment explanation and proposed 3-methyl mercaptopropionate\n  reconstruction are unsupported by this source and are superseded; their original\n  wording remains in curation history and the archived preimage. Retain REJECTED status\n  and no ontology mapping until identity and ingredient/product scope are resolved.\n  No replacement compound is inferred. Evidence and exact source hashes: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/manifest.json;\n  issue #1151.'\n",
+      "record": {
+        "identifier": "UNMAPPED_0736",
+        "preferred_term": "3-methylacetate",
+        "synonyms": [
+          {
+            "synonym_text": "3-methylacetate",
+            "synonym_type": "RAW_TEXT",
+            "source": "microbedecoder"
+          }
+        ],
+        "mapping_status": "REJECTED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0,
+          "source_occurrences": [
+            {
+              "source": "microbedecoder",
+              "count": 1,
+              "source_columns": "bergey:minor_end_products"
+            }
+          ]
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-08-04T02:54:09.684805+00:00",
+            "curator": "audit_import_ingredients[microbedecoder]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "issue_213_residual_triage",
+            "action": "FLAGGED_NEEDS_EXPERT",
+            "changes": "Parse fragment: acetate has no position 3, so this is a truncation of a longer name. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact queries across all of live OLS4.",
+            "previous_status": "UNMAPPED",
+            "new_status": "NEEDS_EXPERT",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/3-methylacetate-edison-literature.md (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Executive recommendation \u2014 **Retain `UNMAPPED`. Do not create an SSSOM row.** The string `3-methylacetate` is not adequately specified as a chemical name, salt, hydrate, mixture, buffer, or named formulation. No retrieved source establishes it as a standalone culture-medium ingredient. No ontology CURIE was proposed. Recorded as provenance only \u2014 no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-15T00:00:00+00:00",
+            "curator": "retire_assay_labels",
+            "action": "RETIRED_NOT_AN_INGREDIENT",
+            "previous_status": "NEEDS_EXPERT",
+            "new_status": "REJECTED",
+            "changes": "Retired as an ingredient record (#213/#308): not a chemical name and not reconstructable. It is a fragment from the same importer that produced `Formate+3-methyl Mercaptopropionate`, so the likely original is `3-methyl mercaptopropionate` \u2014 but its partner text is absent from the corpus, and guessing it would invent a compound. Not mapped, because every substrate CURIE it could be grounded to is already the primary key of a live record \u2014 in MIM the identifier IS the ontology CURIE, so a mapping here would mint a duplicate rather than add coverage. No synonym is folded onto those records either: this label names a reaction or a splice, not the substance, and asserting the synonymy would make label_index resolve it to something it does not denote.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T02:36:20.627642+00:00",
+            "curator": "claude",
+            "action": "CORRECTED_SOURCE_PROVENANCE",
+            "changes": "Correct active source-origin notes only (#1151): raw database.csv SHA256=0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95, record19685 canonical SHA256=f96206bc73f8fa93d7a144e6f4f586e8e464d23b31d8093a0d510bc5d272302a, contains 3-methylacetate in original prose and structured minor-product field. Retain unresolved identity, REJECTED status, all raw synonyms, counts and prior history; add no ontology mapping, replacement identity, role or release approval. The original primary paper was not independently re-read in this provenance check.",
+            "previous_status": "REJECTED",
+            "new_status": "REJECTED",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from MicrobeDecoder (source_id=kgmicrobe.compound:3_methylacetate). The literal 3-methylacetate is present in both the raw Bergey_Text_for_end_products and Bergey_Minor_end_products fields for Telmatobacter bradus, LPSN 789679, database.csv record 19685 (source citation https://doi.org/10.1002/9781118960608.gbm01426). This is reported minor-product provenance, not an established chemical identity or growth-medium ingredient. The prior importer-fragment explanation and proposed 3-methyl mercaptopropionate reconstruction are unsupported by this source and are superseded; their original wording remains in curation history and the archived preimage. Retain REJECTED status and no ontology mapping until identity and ingredient/product scope are resolved. No replacement compound is inferred. Evidence and exact source hashes: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/manifest.json; issue #1151."
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/L-cysteine.yaml",
+      "sha256": "8c24e38f13a5574684dda7aae35813c6f417016f5ce47089070ccb607aed6e79",
+      "raw_yaml": "identifier: CHEBI:17561\npreferred_term: L-Cysteine\nontology_mapping:\n  ontology_id: CHEBI:17561\n  ontology_label: L-cysteine\n  ontology_source: CHEBI\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: CultureMech\n    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH\nsynonyms:\n- synonym_text: 'Cross-references: KEGG:cys-L'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: 'Role: Nitrogen source; Properties: Defined component, Organic compound,\n    Simple component'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: 'Role: Nitrogen source; Properties: Defined component, Simple component,\n    Organic compound'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: 'Role: Nitrogen source; Properties: Simple component, Defined component,\n    Organic compound'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (2R)-2-amino-3-mercaptopropanoic acid\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: (2R)-2-amino-3-sulfanylpropanoic acid\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: (2R)-2-ammonio-3-mercaptopropanoate\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: (2R)-2-ammonio-3-sulfanylpropanoate\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: (R)-2-amino-3-mercaptopropanoic acid\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: Cysteine-HCl\u2219H2O\n  synonym_type: REJECTED_LABEL\n  source: kg_microbe\n- synonym_text: E 920\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: E-920\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: E920\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: FREE CYSTEINE\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: L-2-Amino-3-mercaptopropionic acid\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: L-Cystein\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: L-Zystein\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: L-cysteine zwitterion\n  synonym_type: REJECTED_LABEL\n  source: kg_microbe\n- synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Defined component,\n    Simple component'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: CYSTEINE\n  synonym_type: EXACT_SYNONYM\n  source: chebi_synonym_review\n- synonym_text: L-cysteine (Sigma)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 129\n  media_count: 128\ncuration_history:\n- timestamp: '2026-03-09T06:54:18.022301+00:00'\n  curator: import_from_culturemech\n  action: IMPORTED\n  changes: Initial import from CultureMech pipeline\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-05T21:48:45.250016+00:00'\n  curator: fetch_cas_rn_from_culturebot_csv\n  action: ADDED_CAS_RN\n  changes: 'Added CAS-RN:52-90-4 from CultureBotHT compounds_to_cas.csv (matched:\n    L-Cysteine)'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-05T21:48:45.251906+00:00'\n  curator: fetch_cas_rn_from_culturebot_csv\n  action: ADDED_CAS_RN\n  changes: 'Added CAS-RN:52-90-4 from CultureBotHT compounds_to_cas.csv (matched:\n    L-cysteine)'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 14 synonyms from kg-microbe P4.4 enrichment: (2R)-2-amino-3-mercaptopropanoic\n    acid, (2R)-2-amino-3-sulfanylpropanoic acid, (2R)-2-ammonio-3-mercaptopropanoate,\n    (2R)-2-ammonio-3-sulfanylpropanoate, (R)-2-amino-3-mercaptopropanoic acid, ...\n    (9 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-19T07:39:23.955331+00:00'\n  curator: audit_mim_merge\n  action: MERGED_FROM_DUPLICATES\n  changes: 'Absorbed 1 duplicate MIM record(s) into this one: L-cysteine_2.yaml. Synonyms,\n    curation_history, and occurrence counts were unioned/summed; winner selected by\n    highest occurrence count with preferred_term readability tie-break.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:34.314716+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-05-01T08:08:30.320142+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_BACKFILL_CHEBI_CHEMISTRY\n  changes: molecular_formula=C3H7NO2S; inchi=InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,;\n    smiles=N[C@@H](CS)C(=O)O\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:15.467989+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))\n  llm_assisted: false\n- timestamp: '2026-05-29T23:35:36.111612+00:00'\n  curator: extract_roles_from_synonyms\n  action: ANNOTATED\n  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'\n- timestamp: '2026-06-09T05:23:46.784426+00:00'\n  curator: correct_stale_ontology_labels.py\n  action: CORRECTED\n  changes: 'ontology_label ''L-Cysteine'' -> ''L-cysteine'': synced to canonical CHEBI\n    label (preferred_term ''L-Cysteine'' unchanged).'\n- timestamp: '2026-07-20T00:00:00+00:00'\n  curator: migrate_media_roles_to_facets\n  action: ANNOTATED\n  changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->\n    nutritional_roles.NITROGEN_SOURCE'\n- timestamp: '2026-08-27T03:16:39.519123+00:00'\n  curator: refresh_occurrence_statistics\n  action: CORRECTED\n  changes: 'occurrence_statistics 51/68 -> 128/129 (media_count/total_occurrences),\n    derived from distinct CultureMech recipe ids in the #337 occurrence table. The\n    prior values came from the importer retired in #453, whose media_count counted\n    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08\n    rows=194137 distinct_recipes=15257]'\n- timestamp: '2026-08-30T04:48:06.233536+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''L-cysteine (Sigma)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\n- timestamp: '2026-09-10T06:14:55Z'\n  curator: mediaingredientmech-agentic-curation\n  action: CORRECTED\n  changes: Marked hydrate/salt synonym Cysteine-HCl\u2219H2O non-resolving for free L-cysteine;\n    the monohydrate resolves to CHEBI:91248 (#521).\n  llm_assisted: true\n- timestamp: '2026-09-24T07:48:22.690313+00:00'\n  curator: claude\n  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS\n  changes: 'Retyped REJECTED_LABEL: ''L-cysteine zwitterion'' (EXACT_SYNONYM): the\n    zwitterion CHEBI:35235 has its own record; the record is neutral L-cysteine CHEBI:17561\n    (#669). Kept as provenance only; it must not resolve, be exported, or enter the\n    SSSOM other column.'\n  previous_status: MAPPED\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: claude-fable-5-1\nchemical_properties:\n  cas_rn: 52-90-4\n  data_source: CultureBotHT compounds_to_cas.csv\n  retrieval_date: '2026-04-05T21:48:45.250014+00:00'\n  molecular_formula: C3H7NO2S\n  inchi: InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1\n  smiles: N[C@@H](CS)C(=O)O\nkg_microbe_node_id: CHEBI:17561\ningredient_type: SINGLE_INGREDIENT\nnutritional_roles:\n- role: NITROGEN_SOURCE\n  confidence: 1.0\n  evidence:\n  - reference_type: DATABASE_ENTRY\n    reference_text: Imported from CultureMech pipeline\n    curator_note: 'Original role text: Nitrogen Source'\n",
+      "record": {
+        "identifier": "CHEBI:17561",
+        "preferred_term": "L-Cysteine",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:17561",
+          "ontology_label": "L-cysteine",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Cross-references: KEGG:cys-L",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Role: Nitrogen source; Properties: Defined component, Organic compound, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Role: Nitrogen source; Properties: Defined component, Simple component, Organic compound",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Role: Nitrogen source; Properties: Simple component, Defined component, Organic compound",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(2R)-2-amino-3-mercaptopropanoic acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "(2R)-2-amino-3-sulfanylpropanoic acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "(2R)-2-ammonio-3-mercaptopropanoate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "(2R)-2-ammonio-3-sulfanylpropanoate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "(R)-2-amino-3-mercaptopropanoic acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Cysteine-HCl\u2219H2O",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "E 920",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "E-920",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "E920",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "FREE CYSTEINE",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "L-2-Amino-3-mercaptopropionic acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "L-Cystein",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "L-Zystein",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "L-cysteine zwitterion",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Role: Nitrogen source; Properties: Organic compound, Defined component, Simple component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "CYSTEINE",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          },
+          {
+            "synonym_text": "L-cysteine (Sigma)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 129,
+          "media_count": 128
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.250016+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:52-90-4 from CultureBotHT compounds_to_cas.csv (matched: L-Cysteine)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:45.251906+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:52-90-4 from CultureBotHT compounds_to_cas.csv (matched: L-cysteine)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 14 synonyms from kg-microbe P4.4 enrichment: (2R)-2-amino-3-mercaptopropanoic acid, (2R)-2-amino-3-sulfanylpropanoic acid, (2R)-2-ammonio-3-mercaptopropanoate, (2R)-2-ammonio-3-sulfanylpropanoate, (R)-2-amino-3-mercaptopropanoic acid, ... (9 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 1 duplicate MIM record(s) into this one: L-cysteine_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.314716+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:30.320142+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C3H7NO2S; inchi=InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,; smiles=N[C@@H](CS)C(=O)O",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:15.467989+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-29T23:35:36.111612+00:00",
+            "curator": "extract_roles_from_synonyms",
+            "action": "ANNOTATED",
+            "changes": "Added media role: NITROGEN_SOURCE (confidence: 1.00)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.784426+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'L-Cysteine' -> 'L-cysteine': synced to canonical CHEBI label (preferred_term 'L-Cysteine' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE -> nutritional_roles.NITROGEN_SOURCE"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.519123+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 51/68 -> 128/129 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'L-cysteine (Sigma)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-10T06:14:55Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CORRECTED",
+            "changes": "Marked hydrate/salt synonym Cysteine-HCl\u2219H2O non-resolving for free L-cysteine; the monohydrate resolves to CHEBI:91248 (#521).",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-09-24T07:48:22.690313+00:00",
+            "curator": "claude",
+            "action": "REJECTED_WRONG_SUBSTANCE_SYNONYMS",
+            "changes": "Retyped REJECTED_LABEL: 'L-cysteine zwitterion' (EXACT_SYNONYM): the zwitterion CHEBI:35235 has its own record; the record is neutral L-cysteine CHEBI:17561 (#669). Kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "claude-fable-5-1"
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "52-90-4",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-05T21:48:45.250014+00:00",
+          "molecular_formula": "C3H7NO2S",
+          "inchi": "InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1",
+          "smiles": "N[C@@H](CS)C(=O)O"
+        },
+        "kg_microbe_node_id": "CHEBI:17561",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "nutritional_roles": [
+          {
+            "role": "NITROGEN_SOURCE",
+            "confidence": 1.0,
+            "evidence": [
+              {
+                "reference_type": "DATABASE_ENTRY",
+                "reference_text": "Imported from CultureMech pipeline",
+                "curator_note": "Original role text: Nitrogen Source"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Cecropin_A.yaml",
+      "sha256": "8863702ccd4ef67214b5f595f55522621fb8bc583c8328341788665aeb592bee",
+      "raw_yaml": "identifier: CHEBI:201428\npreferred_term: Cecropin A\nontology_mapping:\n  ontology_id: CHEBI:201428\n  ontology_label: Cecropin A\n  ontology_source: CHEBI\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: CultureBotHT\n    notes: Imported from CultureBotHT.\nsynonyms:\n- synonym_text: (4S)-5-[[(2S)-6-amino-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-4-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S,3S)-1-[[(2S,3S)-1-[[(2S)-6-amino-1-[[(2S)-1-[[2-[(2S)-2-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-1-[[(2S,3R)-1-[[(2S)-5-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1,6-diamino-1-oxohexan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-3-hydroxy-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]carbamoyl]pyrrolidin-1-yl]-2-oxoethyl]amino]-1-oxopropan-2-yl]amino]-1-oxohexan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-2-oxoethyl]amino]-3-carboxy-1-oxopropan-2-yl]amino]-5-carbamimidamido-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,4-dioxobutan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxohexan-2-yl]amino]-4-[[(2S,3S)-2-[[(2S)-6-amino-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2,6-diaminohexanoyl]amino]-3-(1H-indol-3-yl)propanoyl]amino]hexanoyl]amino]-4-methylpentanoyl]amino]-3-phenylpropanoyl]amino]hexanoyl]amino]hexanoyl]amino]-3-methylpentanoyl]amino]-5-oxopentanoic\n    acid\n  synonym_type: EXACT_SYNONYM\n  source: chebi_synonym_review\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-29T06:04:17.380972+00:00'\n  curator: audit_integrate_culturebotht\n  action: CREATED_FROM_CULTUREBOTHT\n  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=80451-04-3); Imported\n    from CultureBotHT.\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:32.672726+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-05-01T08:08:28.494341+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_BACKFILL_CHEBI_CHEMISTRY\n  changes: molecular_formula=C184H313N53O46; inchi=InChI=1S/C184H313N53O46/c1-27-98(16)145(182(282)23;\n    smiles=CCC(C)C(NC(=O)CNC(=O)C(CC(=O)O)NC(=O)C(CCCNC(=N)N)\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:13.193799+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))\n  llm_assisted: false\nchemical_properties:\n  cas_rn: 80451-04-3\n  data_source: CultureBotHT compounds_to_cas.csv\n  retrieval_date: '2026-04-29T06:04:17.380972+00:00'\n  molecular_formula: C184H313N53O46\n  inchi: InChI=1S/C184H313N53O46/c1-27-98(16)145(182(282)235-149(102(20)31-5)181(281)218-115(59-39-46-76-187)159(259)206-103(21)152(252)205-92-138(246)237-82-52-65-130(237)173(273)208-106(24)154(254)228-143(96(12)13)176(276)209-107(25)155(255)229-144(97(14)15)177(277)231-142(95(10)11)175(275)204-89-135(243)211-121(66-70-131(193)239)160(260)207-105(23)156(256)236-150(108(26)238)183(283)221-123(68-72-133(195)241)168(268)232-146(99(17)28-2)178(278)210-104(22)153(253)213-114(151(197)251)58-38-45-75-186)227-137(245)91-202-158(258)129(87-140(249)250)226-163(263)120(64-51-81-200-184(198)199)219-179(279)148(101(19)30-4)234-172(272)128(86-134(196)242)225-164(264)122(67-71-132(194)240)212-136(244)90-203-174(274)141(94(8)9)230-166(266)118(62-42-49-79-190)215-165(265)124(69-73-139(247)248)220-180(280)147(100(18)29-3)233-167(267)119(63-43-50-80-191)214-161(261)116(60-40-47-77-188)216-170(270)126(84-109-53-33-32-34-54-109)224-169(269)125(83-93(6)7)223-162(262)117(61-41-48-78-189)217-171(271)127(222-157(257)112(192)56-37-44-74-185)85-110-88-201-113-57-36-35-55-111(110)113/h32-36,53-55,57,88,93-108,112,114-130,141-150,201,238H,27-31,37-52,56,58-87,89-92,185-192H2,1-26H3,(H2,193,239)(H2,194,240)(H2,195,241)(H2,196,242)(H2,197,251)(H,202,258)(H,203,274)(H,204,275)(H,205,252)(H,206,259)(H,207,260)(H,208,273)(H,209,276)(H,210,278)(H,211,243)(H,212,244)(H,213,253)(H,214,261)(H,215,265)(H,216,270)(H,217,271)(H,218,281)(H,219,279)(H,220,280)(H,221,283)(H,222,257)(H,223,262)(H,224,269)(H,225,264)(H,226,263)(H,227,245)(H,228,254)(H,229,255)(H,230,266)(H,231,277)(H,232,268)(H,233,267)(H,234,272)(H,235,282)(H,236,256)(H,247,248)(H,249,250)(H4,198,199,200)\n  smiles: CCC(C)C(NC(=O)CNC(=O)C(CC(=O)O)NC(=O)C(CCCNC(=N)N)NC(=O)C(NC(=O)C(CC(N)=O)NC(=O)C(CCC(N)=O)NC(=O)CNC(=O)C(NC(=O)C(CCCCN)NC(=O)C(CCC(=O)O)NC(=O)C(NC(=O)C(CCCCN)NC(=O)C(CCCCN)NC(=O)C(Cc1ccccc1)NC(=O)C(CC(C)C)NC(=O)C(CCCCN)NC(=O)C(Cc1cnc2ccccc12)NC(=O)C(N)CCCCN)C(C)CC)C(C)C)C(C)CC)C(=O)NC(C(=O)NC(CCCCN)C(=O)NC(C)C(=O)NCC(=O)N1CCCC1C(=O)NC(C)C(=O)NC(C(=O)NC(C)C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(CCC(N)=O)C(=O)NC(C)C(=O)NC(C(=O)NC(CCC(N)=O)C(=O)NC(C(=O)NC(C)C(=O)NC(CCCCN)C(N)=O)C(C)CC)C(C)O)C(C)C)C(C)C)C(C)C)C(C)CC\ningredient_type: SINGLE_INGREDIENT\n",
+      "record": {
+        "identifier": "CHEBI:201428",
+        "preferred_term": "Cecropin A",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:201428",
+          "ontology_label": "Cecropin A",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "(4S)-5-[[(2S)-6-amino-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-4-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S,3S)-1-[[(2S,3S)-1-[[(2S)-6-amino-1-[[(2S)-1-[[2-[(2S)-2-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[(2S)-1-[[2-[[(2S)-5-amino-1-[[(2S)-1-[[(2S,3R)-1-[[(2S)-5-amino-1-[[(2S,3S)-1-[[(2S)-1-[[(2S)-1,6-diamino-1-oxohexan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-3-hydroxy-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxopropan-2-yl]carbamoyl]pyrrolidin-1-yl]-2-oxoethyl]amino]-1-oxopropan-2-yl]amino]-1-oxohexan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-2-oxoethyl]amino]-3-carboxy-1-oxopropan-2-yl]amino]-5-carbamimidamido-1-oxopentan-2-yl]amino]-3-methyl-1-oxopentan-2-yl]amino]-1,4-dioxobutan-2-yl]amino]-1,5-dioxopentan-2-yl]amino]-2-oxoethyl]amino]-3-methyl-1-oxobutan-2-yl]amino]-1-oxohexan-2-yl]amino]-4-[[(2S,3S)-2-[[(2S)-6-amino-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2-[[(2S)-6-amino-2-[[(2S)-2-[[(2S)-2,6-diaminohexanoyl]amino]-3-(1H-indol-3-yl)propanoyl]amino]hexanoyl]amino]-4-methylpentanoyl]amino]-3-phenylpropanoyl]amino]hexanoyl]amino]hexanoyl]amino]-3-methylpentanoyl]amino]-5-oxopentanoic acid",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:04:17.380972+00:00",
+            "curator": "audit_integrate_culturebotht",
+            "action": "CREATED_FROM_CULTUREBOTHT",
+            "changes": "Created from CultureBotHT compounds_to_cas.csv (CAS=80451-04-3); Imported from CultureBotHT.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.672726+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:28.494341+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C184H313N53O46; inchi=InChI=1S/C184H313N53O46/c1-27-98(16)145(182(282)23; smiles=CCC(C)C(NC(=O)CNC(=O)C(CC(=O)O)NC(=O)C(CCCNC(=N)N)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.193799+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "80451-04-3",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:04:17.380972+00:00",
+          "molecular_formula": "C184H313N53O46",
+          "inchi": "InChI=1S/C184H313N53O46/c1-27-98(16)145(182(282)235-149(102(20)31-5)181(281)218-115(59-39-46-76-187)159(259)206-103(21)152(252)205-92-138(246)237-82-52-65-130(237)173(273)208-106(24)154(254)228-143(96(12)13)176(276)209-107(25)155(255)229-144(97(14)15)177(277)231-142(95(10)11)175(275)204-89-135(243)211-121(66-70-131(193)239)160(260)207-105(23)156(256)236-150(108(26)238)183(283)221-123(68-72-133(195)241)168(268)232-146(99(17)28-2)178(278)210-104(22)153(253)213-114(151(197)251)58-38-45-75-186)227-137(245)91-202-158(258)129(87-140(249)250)226-163(263)120(64-51-81-200-184(198)199)219-179(279)148(101(19)30-4)234-172(272)128(86-134(196)242)225-164(264)122(67-71-132(194)240)212-136(244)90-203-174(274)141(94(8)9)230-166(266)118(62-42-49-79-190)215-165(265)124(69-73-139(247)248)220-180(280)147(100(18)29-3)233-167(267)119(63-43-50-80-191)214-161(261)116(60-40-47-77-188)216-170(270)126(84-109-53-33-32-34-54-109)224-169(269)125(83-93(6)7)223-162(262)117(61-41-48-78-189)217-171(271)127(222-157(257)112(192)56-37-44-74-185)85-110-88-201-113-57-36-35-55-111(110)113/h32-36,53-55,57,88,93-108,112,114-130,141-150,201,238H,27-31,37-52,56,58-87,89-92,185-192H2,1-26H3,(H2,193,239)(H2,194,240)(H2,195,241)(H2,196,242)(H2,197,251)(H,202,258)(H,203,274)(H,204,275)(H,205,252)(H,206,259)(H,207,260)(H,208,273)(H,209,276)(H,210,278)(H,211,243)(H,212,244)(H,213,253)(H,214,261)(H,215,265)(H,216,270)(H,217,271)(H,218,281)(H,219,279)(H,220,280)(H,221,283)(H,222,257)(H,223,262)(H,224,269)(H,225,264)(H,226,263)(H,227,245)(H,228,254)(H,229,255)(H,230,266)(H,231,277)(H,232,268)(H,233,267)(H,234,272)(H,235,282)(H,236,256)(H,247,248)(H,249,250)(H4,198,199,200)",
+          "smiles": "CCC(C)C(NC(=O)CNC(=O)C(CC(=O)O)NC(=O)C(CCCNC(=N)N)NC(=O)C(NC(=O)C(CC(N)=O)NC(=O)C(CCC(N)=O)NC(=O)CNC(=O)C(NC(=O)C(CCCCN)NC(=O)C(CCC(=O)O)NC(=O)C(NC(=O)C(CCCCN)NC(=O)C(CCCCN)NC(=O)C(Cc1ccccc1)NC(=O)C(CC(C)C)NC(=O)C(CCCCN)NC(=O)C(Cc1cnc2ccccc12)NC(=O)C(N)CCCCN)C(C)CC)C(C)C)C(C)CC)C(=O)NC(C(=O)NC(CCCCN)C(=O)NC(C)C(=O)NCC(=O)N1CCCC1C(=O)NC(C)C(=O)NC(C(=O)NC(C)C(=O)NC(C(=O)NC(C(=O)NCC(=O)NC(CCC(N)=O)C(=O)NC(C)C(=O)NC(C(=O)NC(CCC(N)=O)C(=O)NC(C(=O)NC(C)C(=O)NC(CCCCN)C(N)=O)C(C)CC)C(C)O)C(C)C)C(C)C)C(C)C)C(C)CC"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Nnnn-tetrakis_2-pyridylmethylethylenediamine.yaml",
+      "sha256": "a00758e9c7597489ea792cbcb6750a9182e0ef2dc0973113645faa5382b6783e",
+      "raw_yaml": "identifier: CHEBI:88217\npreferred_term: N,N,N\u2032,N\u2032-Tetrakis(2-pyridylmethyl)ethylenediamine\nontology_mapping:\n  ontology_id: CHEBI:88217\n  ontology_label: N,N,N',N'-tetrakis(2-pyridylmethyl)ethylenediamine\n  ontology_source: CHEBI\n  mapping_quality: CAS_RN_LOOKUP\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: CultureBotHT\n    notes: 'Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI\n      sqlite (cas xref). '\nsynonyms:\n- synonym_text: N(1),N(1),N(2),N(2)-tetrakis[(pyridin-2-yl)methyl]ethane-1,2-diamine\n  synonym_type: EXACT_SYNONYM\n  source: chebi_synonym_review\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-29T06:34:31.158938+00:00'\n  curator: audit_cas_chebi_followup\n  action: CREATED_FROM_CAS_LOOKUP\n  changes: 'Created from CultureBotHT CAS-RN=16858-02-9; CHEBI resolved via OAK CHEBI\n    sqlite (cas xref); Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via\n    OAK CHEBI sqlite (cas xref). '\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:34.958875+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-05-01T08:08:31.014207+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_BACKFILL_CHEBI_CHEMISTRY\n  changes: molecular_formula=C26H28N6; inchi=InChI=1S/C26H28N6/c1-5-13-27-23(9-1)19-31(20-24-10;\n    smiles=c1ccc(CN(CCN(Cc2ccccn2)Cc2ccccn2)Cc2ccccn2)nc1\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:16.731656+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))\n  llm_assisted: false\n- timestamp: '2026-06-14T06:54:43.187029+00:00'\n  curator: infer_roles_from_chebi_ancestry\n  action: ANNOTATED\n  changes: 'Added media role: CHELATOR (confidence: 0.70)'\n- timestamp: '2026-07-20T00:00:00+00:00'\n  curator: migrate_media_roles_to_facets\n  action: ANNOTATED\n  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'\n- timestamp: '2026-08-24T00:00:00+00:00'\n  curator: regrade_synonym_matches\n  action: REGRADED_TO_CAS_RN_LOOKUP\n  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created\n    by an explicit CAS-to-ChEBI lookup and its current CAS RN 16858-02-9 uniquely\n    resolves by ChEBI xref to CHEBI:88217 \"N,N,N',N'-tetrakis(2-pyridylmethyl)ethylenediamine\".\n    CAS_RN_LOOKUP records the method that established this mapping; a lexical grade\n    would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM\n    predicate remains skos:exactMatch under Rule D (#438), independently of mapping\n    quality.\n  llm_assisted: false\nchemical_properties:\n  cas_rn: 16858-02-9\n  data_source: CultureBotHT compounds_to_cas.csv\n  retrieval_date: '2026-04-29T06:34:31.158938+00:00'\n  molecular_formula: C26H28N6\n  inchi: InChI=1S/C26H28N6/c1-5-13-27-23(9-1)19-31(20-24-10-2-6-14-28-24)17-18-32(21-25-11-3-7-15-29-25)22-26-12-4-8-16-30-26/h1-16H,17-22H2\n  smiles: c1ccc(CN(CCN(Cc2ccccn2)Cc2ccccn2)Cc2ccccn2)nc1\ningredient_type: SINGLE_INGREDIENT\nphysicochemical_roles:\n- role: CHELATOR\n  confidence: 0.7\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:38161\n      (chelator (role))'\n    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review\n      recommended.\n",
+      "record": {
+        "identifier": "CHEBI:88217",
+        "preferred_term": "N,N,N\u2032,N\u2032-Tetrakis(2-pyridylmethyl)ethylenediamine",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:88217",
+          "ontology_label": "N,N,N',N'-tetrakis(2-pyridylmethyl)ethylenediamine",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "CAS_RN_LOOKUP",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "N(1),N(1),N(2),N(2)-tetrakis[(pyridin-2-yl)methyl]ethane-1,2-diamine",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:34:31.158938+00:00",
+            "curator": "audit_cas_chebi_followup",
+            "action": "CREATED_FROM_CAS_LOOKUP",
+            "changes": "Created from CultureBotHT CAS-RN=16858-02-9; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN\u2192CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:34.958875+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:31.014207+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C26H28N6; inchi=InChI=1S/C26H28N6/c1-5-13-27-23(9-1)19-31(20-24-10; smiles=c1ccc(CN(CCN(Cc2ccccn2)Cc2ccccn2)Cc2ccccn2)nc1",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:16.731656+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-14T06:54:43.187029+00:00",
+            "curator": "infer_roles_from_chebi_ancestry",
+            "action": "ANNOTATED",
+            "changes": "Added media role: CHELATOR (confidence: 0.70)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR"
+          },
+          {
+            "timestamp": "2026-08-24T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_TO_CAS_RN_LOOKUP",
+            "changes": "mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup and its current CAS RN 16858-02-9 uniquely resolves by ChEBI xref to CHEBI:88217 \"N,N,N',N'-tetrakis(2-pyridylmethyl)ethylenediamine\". CAS_RN_LOOKUP records the method that established this mapping; a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of mapping quality.",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "16858-02-9",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+          "molecular_formula": "C26H28N6",
+          "inchi": "InChI=1S/C26H28N6/c1-5-13-27-23(9-1)19-31(20-24-10-2-6-14-28-24)17-18-32(21-25-11-3-7-15-29-25)22-26-12-4-8-16-30-26/h1-16H,17-22H2",
+          "smiles": "c1ccc(CN(CCN(Cc2ccccn2)Cc2ccccn2)Cc2ccccn2)nc1"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "CHELATOR",
+            "confidence": 0.7,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from CHEBI ancestry: subclass/has_role of CHEBI:38161 (chelator (role))",
+                "curator_note": "Provisional role inferred from CHEBI is_a/has_role closure; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Bafilomycin.yaml",
+      "sha256": "814a39a9689c6c97da65641128be5a32918c4ea61e95c8f9307aba7dfc376773",
+      "raw_yaml": "identifier: kgmicrobe.compound:bafilomycin\npreferred_term: Bafilomycin\nontology_mapping:\n  ontology_id: kgmicrobe.compound:bafilomycin\n  ontology_label: Bafilomycin\n  ontology_source: kgmicrobe.compound\n  mapping_quality: PLACEHOLDER\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: kg-microbe metatraits unmapped_compounds.tsv\n    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into\n      MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:\n      CHEBI:198365(Bafilomycin J), CHEBI:201422(Bafilomycin D), CHEBI:205456(Bafilomycin\n      H). Pending curator promotion to a CHEBI/NCIT primary identifier.'\nsynonyms: []\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-26T04:54:19.839959+00:00'\n  curator: audit_curate_unmapped_kgm_antibiotics\n  action: CREATED_FROM_KGM_PLACEHOLDER\n  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:bafilomycin;\n    OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier\n    kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:32.340977+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:12.703719+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))\n  llm_assisted: false\n- timestamp: '2026-05-10T04:42:27+00:00'\n  curator: mediaingredientmech-agentic-curation\n  action: ANNOTATED\n  changes: Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were specific\n    bafilomycin variants while the source label is family-level, so kgmicrobe.compound:bafilomycin\n    was retained without ontology promotion.\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-06-02T07:05:13.386593+00:00'\n  curator: infer_roles_from_name_lists\n  action: ANNOTATED\n  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'\n- timestamp: '2026-07-20T00:00:00+00:00'\n  curator: migrate_media_roles_to_facets\n  action: ANNOTATED\n  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->\n    physicochemical_roles.SELECTIVE_AGENT'\ningredient_type: SINGLE_INGREDIENT\nnotes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier;\n  reviewed OLS candidates were not exact identity matches for the source label.'\nphysicochemical_roles:\n- role: SELECTIVE_AGENT\n  confidence: 0.8\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n    reference_text: Inferred from curated media-role name pattern\n    curator_note: Provisional role from a curated name-pattern rule; review recommended.\n",
+      "record": {
+        "identifier": "kgmicrobe.compound:bafilomycin",
+        "preferred_term": "Bafilomycin",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.compound:bafilomycin",
+          "ontology_label": "Bafilomycin",
+          "ontology_source": "kgmicrobe.compound",
+          "mapping_quality": "PLACEHOLDER",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:198365(Bafilomycin J), CHEBI:201422(Bafilomycin D), CHEBI:205456(Bafilomycin H). Pending curator promotion to a CHEBI/NCIT primary identifier."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:bafilomycin; OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.340977+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.703719+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-10T04:42:27+00:00",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "ANNOTATED",
+            "changes": "Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were specific bafilomycin variants while the source label is family-level, so kgmicrobe.compound:bafilomycin was retained without ontology promotion.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.386593+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS candidates were not exact identity matches for the source label.",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Caffeine.yaml",
+      "sha256": "5afb2967277f972e106a12df532fcf2a526215c8157824f7ff3e66e87dc08a71",
+      "raw_yaml": "identifier: CHEBI:27732\npreferred_term: Caffeine\nontology_mapping:\n  ontology_id: CHEBI:27732\n  ontology_label: caffeine\n  ontology_source: CHEBI\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: CultureBotHT\n    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: Hans80Anti, Hans80metals.'\nsynonyms:\n- synonym_text: 1,3,7-trimethyl-3,7-dihydro-1H-purine-2,6-dione\n  synonym_type: EXACT_SYNONYM\n  source: chebi_synonym_review\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-29T06:04:17.380972+00:00'\n  curator: audit_integrate_culturebotht\n  action: CREATED_FROM_CULTUREBOTHT\n  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=58-08-2); Imported\n    from CultureBotHT. FEBA/Hans80 panels: Hans80Anti, Hans80metals.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:32.545411+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-05-01T08:08:28.368119+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_BACKFILL_CHEBI_CHEMISTRY\n  changes: molecular_formula=C8H10N4O2; inchi=InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14;\n    smiles=Cn1c(=O)c2c(ncn2C)n(C)c1=O\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:13.014235+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))\n  llm_assisted: false\nchemical_properties:\n  cas_rn: 58-08-2\n  data_source: CultureBotHT compounds_to_cas.csv\n  retrieval_date: '2026-04-29T06:04:17.380972+00:00'\n  molecular_formula: C8H10N4O2\n  inchi: InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3\n  smiles: Cn1c(=O)c2c(ncn2C)n(C)c1=O\ningredient_type: SINGLE_INGREDIENT\n",
+      "record": {
+        "identifier": "CHEBI:27732",
+        "preferred_term": "Caffeine",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:27732",
+          "ontology_label": "caffeine",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. FEBA/Hans80 panels: Hans80Anti, Hans80metals."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "1,3,7-trimethyl-3,7-dihydro-1H-purine-2,6-dione",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:04:17.380972+00:00",
+            "curator": "audit_integrate_culturebotht",
+            "action": "CREATED_FROM_CULTUREBOTHT",
+            "changes": "Created from CultureBotHT compounds_to_cas.csv (CAS=58-08-2); Imported from CultureBotHT. FEBA/Hans80 panels: Hans80Anti, Hans80metals.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.545411+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:28.368119+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C8H10N4O2; inchi=InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14; smiles=Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:13.014235+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "58-08-2",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:04:17.380972+00:00",
+          "molecular_formula": "C8H10N4O2",
+          "inchi": "InChI=1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3",
+          "smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Agar.yaml",
+      "sha256": "f39ca6f22f3d46adf5c1f84acc0398e25893387d1771b1a38761081abc3690db",
+      "raw_yaml": "identifier: CHEBI:2509\npreferred_term: Agar\nontology_mapping:\n  ontology_id: CHEBI:2509\n  ontology_label: agar\n  ontology_source: CHEBI\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: CultureMech\n    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH\n  - evidence_type: LITERATURE\n    source: PubMed search ('Agar')\n    pmid: '38905279'\n    supports: SUPPORT\n    snippet: 'The optimal medium composition was established as follows: wheat starch\n      5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71\n      g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.'\n    explanation: Auto-proposed; curator should rephrase or remove.\nsynonyms:\n- synonym_text: ( Noble)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (alternative)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (for solid medium)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (for solid medium, alternative)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: (if appropriate)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: Agar\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: Bacteriological Agar\n  synonym_type: EXACT_SYNONYM\n  source: kg_microbe\n- synonym_text: 'Role: Solidifying component'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: 'Properties: Undefined component, Complex component'\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: ( modified)\n  synonym_type: RAW_TEXT\n  source: CultureMech\n- synonym_text: Agar (if needed)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: agar (BD-Difco)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (Molecular Genetics)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar  (if needed)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (BD)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (Difco)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (Purified)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar (if needed)*\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: Agar* (if needed)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 4456\n  media_count: 4079\ncuration_history:\n- timestamp: '2026-03-09T06:54:18.022301+00:00'\n  curator: import_from_culturemech\n  action: IMPORTED\n  changes: Initial import from CultureMech pipeline\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-05T19:50:59.360851+00:00'\n  curator: fetch_cas_rn_from_pubchem\n  action: ADDED_CAS_RN\n  changes: Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-05T21:48:44.699359+00:00'\n  curator: fetch_cas_rn_from_culturebot_csv\n  action: ADDED_CAS_RN\n  changes: 'Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched:\n    agar)'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, BCYE agar, BL\n    Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar,\n    BL Agar, Bacteriological Agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar,\n    Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-18T00:00:00+00:00'\n  curator: cbclaw_kg_microbe_sweep\n  action: ADDED_SYNONYMS\n  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar,\n    Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'\n  new_status: MAPPED\n  llm_assisted: true\n- timestamp: '2026-04-19T07:39:23.955331+00:00'\n  curator: audit_mim_merge\n  action: MERGED_FROM_DUPLICATES\n  changes: 'Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml,\n    Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml,\n    R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml,\n    Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml,\n    Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml,\n    Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml.\n    Synonyms, curation_history, and occurrence counts were unioned/summed; winner\n    selected by highest occurrence count with preferred_term readability tie-break.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-04-19T07:49:33.169103+00:00'\n  curator: audit_extract_complex_media_from_agar\n  action: EXTRACTED_CONTAMINATING_SYNONYMS\n  changes: Extracted 20 complex-medium synonyms that were wrongly absorbed during\n    duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/.\n    Agar.yaml retains only pure chemical-agar synonyms.\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:32.078331+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-05-01T08:09:47.747803+00:00'\n  curator: auto_classify_ingredient_type\n  action: APPLY_EVIDENCE_PROPOSAL\n  changes: added pmid=38905279 from propose-evidence batch\n  llm_assisted: false\n- timestamp: '2026-05-02T03:12:12.332732+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)\n  llm_assisted: false\n- timestamp: '2026-06-03T02:06:01.734333+00:00'\n  curator: infer_roles_from_name_lists\n  action: ANNOTATED\n  changes: 'Added media role: SOLIDIFYING_AGENT (confidence: 0.80)'\n- timestamp: '2026-06-09T05:23:46.718919+00:00'\n  curator: correct_stale_ontology_labels.py\n  action: CORRECTED\n  changes: 'ontology_label ''Agar'' -> ''agar'': synced to canonical CHEBI label (preferred_term\n    ''Agar'' unchanged).'\n- timestamp: '2026-07-20T00:00:00+00:00'\n  curator: migrate_media_roles_to_facets\n  action: ANNOTATED\n  changes: 'Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT ->\n    physicochemical_roles.SOLIDIFYING_AGENT'\n- timestamp: '2026-08-27T03:16:39.518308+00:00'\n  curator: refresh_occurrence_statistics\n  action: CORRECTED\n  changes: 'occurrence_statistics 173/3682 -> 4079/4456 (media_count/total_occurrences),\n    derived from distinct CultureMech recipe ids in the #337 occurrence table. The\n    prior values came from the importer retired in #453, whose media_count counted\n    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08\n    rows=194137 distinct_recipes=15257]'\n- timestamp: '2026-08-30T04:48:06.233536+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''Agar (if needed)'' (x289 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\n- timestamp: '2026-08-30T04:48:06.233536+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 8 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''agar (BD-Difco)'' (x4 CultureMech mentions); ''Agar (Molecular\n    Genetics)'' (x3 CultureMech mentions); ''Agar  (if needed)'' (x2 CultureMech mentions);\n    ''Agar (BD)'' (x1 CultureMech mentions); ''Agar (Difco)'' (x1 CultureMech mentions);\n    ''Agar (Purified)'' (x1 CultureMech mentions); ''Agar (if needed)*'' (x1 CultureMech\n    mentions); ''Agar* (if needed)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\nchemical_properties:\n  cas_rn: 9002-18-0\n  data_source: PubChem API\n  retrieval_date: '2026-04-05T19:50:59.360831+00:00'\nkg_microbe_node_id: CHEBI:2509\ningredient_type: SINGLE_INGREDIENT\nphysicochemical_roles:\n- role: SOLIDIFYING_AGENT\n  confidence: 0.8\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n    reference_text: Inferred from curated media-role name pattern\n    curator_note: Provisional role from a curated name-pattern rule; review recommended.\n",
+      "record": {
+        "identifier": "CHEBI:2509",
+        "preferred_term": "Agar",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:2509",
+          "ontology_label": "agar",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "LITERATURE",
+              "source": "PubMed search ('Agar')",
+              "pmid": "38905279",
+              "supports": "SUPPORT",
+              "snippet": "The optimal medium composition was established as follows: wheat starch 5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71 g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.",
+              "explanation": "Auto-proposed; curator should rephrase or remove."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "( Noble)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium, alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(if appropriate)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Bacteriological Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Role: Solidifying component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Undefined component, Complex component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "( modified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "agar (BD-Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Molecular Genetics)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar  (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (BD)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Purified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (if needed)*",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar* (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 4456,
+          "media_count": 4079
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:50:59.360851+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:44.699359+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched: agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, BCYE agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, BL Agar, Bacteriological Agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml, Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml, R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml, Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml, Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml, Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_CONTAMINATING_SYNONYMS",
+            "changes": "Extracted 20 complex-medium synonyms that were wrongly absorbed during duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/. Agar.yaml retains only pure chemical-agar synonyms.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.078331+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:09:47.747803+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "APPLY_EVIDENCE_PROPOSAL",
+            "changes": "added pmid=38905279 from propose-evidence batch",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.332732+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-03T02:06:01.734333+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SOLIDIFYING_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.718919+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Agar' -> 'agar': synced to canonical CHEBI label (preferred_term 'Agar' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT -> physicochemical_roles.SOLIDIFYING_AGENT"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518308+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 173/3682 -> 4079/4456 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Agar (if needed)' (x289 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 8 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'agar (BD-Difco)' (x4 CultureMech mentions); 'Agar (Molecular Genetics)' (x3 CultureMech mentions); 'Agar  (if needed)' (x2 CultureMech mentions); 'Agar (BD)' (x1 CultureMech mentions); 'Agar (Difco)' (x1 CultureMech mentions); 'Agar (Purified)' (x1 CultureMech mentions); 'Agar (if needed)*' (x1 CultureMech mentions); 'Agar* (if needed)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9002-18-0",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:50:59.360831+00:00"
+        },
+        "kg_microbe_node_id": "CHEBI:2509",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SOLIDIFYING_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Cholinium_Lysinate.yaml",
+      "sha256": "297487e738595910077d94cc30883554b1821e06be3da72fff242fdf909eebf5",
+      "raw_yaml": "identifier: mesh:C000655964\npreferred_term: Cholinium lysinate\nsynonyms:\n- synonym_text: Cholinium lysinate\n  synonym_type: RAW_TEXT\n  source: culturebotht\n- synonym_text: Choline Lysine\n  synonym_type: EXACT_SYNONYM\n  source: unmapped_duplicate_review_2026_05_11\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-29T06:51:33.117170+00:00'\n  curator: audit_add_remaining_culturebotht\n  action: CREATED_AS_UNMAPPED\n  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN\n    or CHEBI mapping available; curator review needed.\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-05-02T00:41:18.388049+00:00'\n  curator: resolve_unmapped\n  action: AUTO_UPGRADE_TO_MESH\n  changes: primary UNMAPPED_0158 \u2192 mesh:C000655964 via name normalization to 'Cholinium\n    lysinate'\n  llm_assisted: false\n- timestamp: '2026-05-11T08:01:28Z'\n  curator: mediaingredientmech-agentic-curation\n  action: MERGED_FROM_UNMAPPED_DUPLICATE\n  changes: Absorbed duplicate unmapped record Choline_Lysine.yaml (UNMAPPED_0142);\n    local mesh:C000655964 Cholinium lysinate representative covers the choline lysine\n    salt identity.\n  previous_status: MAPPED\n  new_status: MAPPED\n  llm_assisted: true\nnotes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or\n  CHEBI mapping available; curator review needed.\nontology_mapping:\n  ontology_id: mesh:C000655964\n  ontology_label: cholinium lysinate\n  ontology_source: MESH\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: MESH via OLS search (resolve_unmapped)\n    notes: Auto-upgraded from UNMAPPED_0158; matched via 'Cholinium lysinate' (name\n      normalization); label-exact\n",
+      "record": {
+        "identifier": "mesh:C000655964",
+        "preferred_term": "Cholinium lysinate",
+        "synonyms": [
+          {
+            "synonym_text": "Cholinium lysinate",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturebotht"
+          },
+          {
+            "synonym_text": "Choline Lysine",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "unmapped_duplicate_review_2026_05_11"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or CHEBI mapping available; curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T00:41:18.388049+00:00",
+            "curator": "resolve_unmapped",
+            "action": "AUTO_UPGRADE_TO_MESH",
+            "changes": "primary UNMAPPED_0158 \u2192 mesh:C000655964 via name normalization to 'Cholinium lysinate'",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T08:01:28Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+            "changes": "Absorbed duplicate unmapped record Choline_Lysine.yaml (UNMAPPED_0142); local mesh:C000655964 Cholinium lysinate representative covers the choline lysine salt identity.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or CHEBI mapping available; curator review needed.",
+        "ontology_mapping": {
+          "ontology_id": "mesh:C000655964",
+          "ontology_label": "cholinium lysinate",
+          "ontology_source": "MESH",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via OLS search (resolve_unmapped)",
+              "notes": "Auto-upgraded from UNMAPPED_0158; matched via 'Cholinium lysinate' (name normalization); label-exact"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Pactamycin.yaml",
+      "sha256": "8c7b1a30c72b7edc30cc0e3cbd86ce2ba03d294e2d566c328f2a2be8a3b70afb",
+      "raw_yaml": "identifier: mesh:D010142\npreferred_term: Pactamycin\nontology_mapping:\n  ontology_id: mesh:D010142\n  ontology_label: Pactamycin\n  ontology_source: MESH\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: DATABASE_MATCH\n    source: kg-microbe metatraits unmapped_compounds.tsv\n    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into\n      MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.\n      Pending curator promotion to a CHEBI/NCIT primary identifier.'\n  - evidence_type: DATABASE_MATCH\n    source: MESH via OLS search\n    notes: Auto-upgraded from 'kgmicrobe.compound:pactamycin'; match=label-exact\nsynonyms: []\nmapping_status: MAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-26T04:54:19.839959+00:00'\n  curator: audit_curate_unmapped_kgm_antibiotics\n  action: CREATED_FROM_KGM_PLACEHOLDER\n  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:pactamycin;\n    OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept\n    as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'\n  new_status: MAPPED\n  llm_assisted: false\n- timestamp: '2026-05-01T07:35:35.678516+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_CLASSIFY_INGREDIENT_TYPE\n  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))\n  llm_assisted: false\n- timestamp: '2026-05-01T20:15:06.203428+00:00'\n  curator: auto_classify_ingredient_type\n  action: AUTO_UPGRADE_TO_MESH\n  changes: primary kgmicrobe.compound:pactamycin \u2192 mesh:D010142 (label-exact)\n  llm_assisted: false\n- timestamp: '2026-06-02T07:05:13.392316+00:00'\n  curator: infer_roles_from_name_lists\n  action: ANNOTATED\n  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'\n- timestamp: '2026-07-20T00:00:00+00:00'\n  curator: migrate_media_roles_to_facets\n  action: ANNOTATED\n  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->\n    physicochemical_roles.SELECTIVE_AGENT'\ningredient_type: SINGLE_INGREDIENT\nphysicochemical_roles:\n- role: SELECTIVE_AGENT\n  confidence: 0.8\n  evidence:\n  - reference_type: COMPUTATIONAL_PREDICTION\n    reference_text: Inferred from curated media-role name pattern\n    curator_note: Provisional role from a curated name-pattern rule; review recommended.\n",
+      "record": {
+        "identifier": "mesh:D010142",
+        "preferred_term": "Pactamycin",
+        "ontology_mapping": {
+          "ontology_id": "mesh:D010142",
+          "ontology_label": "Pactamycin",
+          "ontology_source": "MESH",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "kg-microbe metatraits unmapped_compounds.tsv",
+              "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "MESH via OLS search",
+              "notes": "Auto-upgraded from 'kgmicrobe.compound:pactamycin'; match=label-exact"
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-26T04:54:19.839959+00:00",
+            "curator": "audit_curate_unmapped_kgm_antibiotics",
+            "action": "CREATED_FROM_KGM_PLACEHOLDER",
+            "changes": "Created MIM record from kg-microbe placeholder kgmicrobe.compound:pactamycin; OLS search across CHEBI+NCIT returned NONE-confidence (no hits). Identifier kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:35.678516+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T20:15:06.203428+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_UPGRADE_TO_MESH",
+            "changes": "primary kgmicrobe.compound:pactamycin \u2192 mesh:D010142 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-02T07:05:13.392316+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+          }
+        ],
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SELECTIVE_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "matching_full_published_payloads": [
+    {
+      "proposal_id": "media-alias-optional-agar",
+      "owner_path": "data/ingredients/mapped/Agar.yaml",
+      "after_sha256": "d319886649a75f387ad38b54ff602896a9685f00325381535f364dbb1eb1ea6b",
+      "case_ids": [
+        "CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166",
+        "CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b"
+      ],
+      "payload": {
+        "identifier": "CHEBI:2509",
+        "preferred_term": "Agar",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:2509",
+          "ontology_label": "agar",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureMech",
+              "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+            },
+            {
+              "evidence_type": "LITERATURE",
+              "source": "PubMed search ('Agar')",
+              "pmid": "38905279",
+              "supports": "SUPPORT",
+              "snippet": "The optimal medium composition was established as follows: wheat starch 5 g/l, carrot powder 5 g/l, soybean powder 7.50 g/l, glucose 10 g/l, ZnSO4 0.71 g/l, NH4Cl 0.68 g/l, xanthan gum 0.5 g/l, and agar 20 g/l.",
+              "explanation": "Auto-proposed; curator should rephrase or remove."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "( Noble)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(for solid medium, alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "(if appropriate)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Bacteriological Agar",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Role: Solidifying component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Properties: Undefined component, Complex component",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "( modified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "CultureMech"
+          },
+          {
+            "synonym_text": "Agar (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "agar (BD-Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Molecular Genetics)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar  (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (BD)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (Purified)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (if needed)*",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar* (if needed)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Agar (alternative)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech frozen worker04 case CM_NAME:583088fbfd993128486509329ef3b2db974e5c758cbd0ea54dfdf5ef3b672166"
+          },
+          {
+            "synonym_text": "Agar if required",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech frozen worker04 case CM_NAME:eab2745d0c4869320d0e8bf9f4428c17d2b31f1350762843626b80d92fa77b9b"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 4456,
+          "media_count": 4079
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-03-09T06:54:18.022301+00:00",
+            "curator": "import_from_culturemech",
+            "action": "IMPORTED",
+            "changes": "Initial import from CultureMech pipeline",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T19:50:59.360851+00:00",
+            "curator": "fetch_cas_rn_from_pubchem",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-05T21:48:44.699359+00:00",
+            "curator": "fetch_cas_rn_from_culturebot_csv",
+            "action": "ADDED_CAS_RN",
+            "changes": "Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched: agar)",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, BCYE agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, BL Agar, Bacteriological Agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-18T00:00:00+00:00",
+            "curator": "cbclaw_kg_microbe_sweep",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-04-19T07:39:23.955331+00:00",
+            "curator": "audit_mim_merge",
+            "action": "MERGED_FROM_DUPLICATES",
+            "changes": "Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml, Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml, R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml, Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml, Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml, Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-04-19T07:49:33.169103+00:00",
+            "curator": "audit_extract_complex_media_from_agar",
+            "action": "EXTRACTED_CONTAMINATING_SYNONYMS",
+            "changes": "Extracted 20 complex-medium synonyms that were wrongly absorbed during duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/. Agar.yaml retains only pure chemical-agar synonyms.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.078331+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:09:47.747803+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "APPLY_EVIDENCE_PROPOSAL",
+            "changes": "added pmid=38905279 from propose-evidence batch",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.332732+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-06-03T02:06:01.734333+00:00",
+            "curator": "infer_roles_from_name_lists",
+            "action": "ANNOTATED",
+            "changes": "Added media role: SOLIDIFYING_AGENT (confidence: 0.80)"
+          },
+          {
+            "timestamp": "2026-06-09T05:23:46.718919+00:00",
+            "curator": "correct_stale_ontology_labels.py",
+            "action": "CORRECTED",
+            "changes": "ontology_label 'Agar' -> 'agar': synced to canonical CHEBI label (preferred_term 'Agar' unchanged)."
+          },
+          {
+            "timestamp": "2026-07-20T00:00:00+00:00",
+            "curator": "migrate_media_roles_to_facets",
+            "action": "ANNOTATED",
+            "changes": "Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT -> physicochemical_roles.SOLIDIFYING_AGENT"
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.518308+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 173/3682 -> 4079/4456 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Agar (if needed)' (x289 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 8 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'agar (BD-Difco)' (x4 CultureMech mentions); 'Agar (Molecular Genetics)' (x3 CultureMech mentions); 'Agar  (if needed)' (x2 CultureMech mentions); 'Agar (BD)' (x1 CultureMech mentions); 'Agar (Difco)' (x1 CultureMech mentions); 'Agar (Purified)' (x1 CultureMech mentions); 'Agar (if needed)*' (x1 CultureMech mentions); 'Agar* (if needed)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-11-08T05:18:48.447621+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Add the complete source labels ['Agar (alternative)', 'Agar if required']. Identity/formulation boundary verified only as described in the media evidence; existing unrelated payload is not newly approved. Isolated proposal only; no maintained owner was changed and no publication hold is released.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "9002-18-0",
+          "data_source": "PubChem API",
+          "retrieval_date": "2026-04-05T19:50:59.360831+00:00"
+        },
+        "kg_microbe_node_id": "CHEBI:2509",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "physicochemical_roles": [
+          {
+            "role": "SOLIDIFYING_AGENT",
+            "confidence": 0.8,
+            "evidence": [
+              {
+                "reference_type": "COMPUTATIONAL_PREDICTION",
+                "reference_text": "Inferred from curated media-role name pattern",
+                "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "proposal_id": "media-followup-duchefa_p1001_plant_agar",
+      "owner_path": "data/ingredients/mapped/Duchefa_P1001_Plant_Agar.yaml",
+      "after_sha256": "2cf1e8e5f346c574001426685ae33715842bd2f06ff89ace25768a91c4c67ca4",
+      "case_ids": [
+        "KG_CASE:84674ee04f3b22aa6bd53debe4a201140a1f9b43144270dc5ca7b711cdcbd29a"
+      ],
+      "payload": {
+        "identifier": "kgmicrobe.ingredient:duchefa_p1001_plant_agar",
+        "preferred_term": "Plant agar (Duchefa P1001)",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:duchefa_p1001_plant_agar",
+          "ontology_label": "Plant agar (Duchefa P1001)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://duchefa-biochemie.com/product/details/number/P1001",
+              "notes": "Duchefa P1001 Plant agar is a supplier-defined plant-culture gelling agar grade, not a complete growth medium. Supplier lists gel strength above1100g/cm2, crude ash below3% and acid-insoluble ash below0.5%; its generic agar CAS does not erase grade identity. Raw source9g/L is recipe dose, not product concentration."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "notes": "Duchefa P1001 Plant agar is a supplier-defined plant-culture gelling agar grade, not a complete growth medium. Supplier lists gel strength above1100g/cm2, crude ash below3% and acid-insoluble ash below0.5%; its generic agar CAS does not erase grade identity. Raw source9g/L is recipe dose, not product concentration. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T05:28:06.867869+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "CREATED",
+            "changes": "Duchefa P1001 Plant agar is a supplier-defined plant-culture gelling agar grade, not a complete growth medium. Supplier lists gel strength above1100g/cm2, crude ash below3% and acid-insoluble ash below0.5%; its generic agar CAS does not erase grade identity. Raw source9g/L is recipe dose, not product concentration. Isolated proposal; no maintained data mutation.",
+            "llm_assisted": true
+          }
+        ],
+        "supplied_form": [
+          {
+            "name": "Plant agar",
+            "supplier": "Duchefa Biochemie",
+            "catalog_number": "P1001",
+            "form": "plant-culture gelling agar grade"
+          }
+        ]
+      }
+    },
+    {
+      "proposal_id": "media-followup-bd_difco_noble_agar",
+      "owner_path": "data/ingredients/mapped/BD_Difco_Noble_Agar.yaml",
+      "after_sha256": "aad44555c02223fdd85124b1be770423ab44853d9123ff8ef05d051a9550233e",
+      "case_ids": [
+        "CM_NAME:94372f614f3b45ca293d01fb5969772dce2b0748402976f4681537d46acce5aa",
+        "CM_NAME:eb8229c7a93109958ebe2b9d6e2975596e8bb3cdff6a21fb1289c3d2e6861eec"
+      ],
+      "payload": {
+        "identifier": "kgmicrobe.ingredient:bd_difco_noble_agar",
+        "preferred_term": "Noble agar (BD-Difco)",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:bd_difco_noble_agar",
+          "ontology_label": "Noble agar (BD-Difco)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.bd.com/en-us/products-and-solutions/products/product-page.214220",
+              "notes": "BD-Difco Noble agar is a named supplier grade supported by three source occurrences and the manufacturer Noble product identity. The owner denotes the grade, not a historical package-code crosswalk; current214220 is a supporting100g presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "notes": "BD-Difco Noble agar is a named supplier grade supported by three source occurrences and the manufacturer Noble product identity. The owner denotes the grade, not a historical package-code crosswalk; current214220 is a supporting100g presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T05:28:06.867869+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "CREATED",
+            "changes": "BD-Difco Noble agar is a named supplier grade supported by three source occurrences and the manufacturer Noble product identity. The owner denotes the grade, not a historical package-code crosswalk; current214220 is a supporting100g presentation. Legacy0142 and contradictory214050 cases remain unresolved and excluded. Isolated proposal; no maintained data mutation.",
+            "llm_assisted": true
+          }
+        ],
+        "supplied_form": [
+          {
+            "name": "BD DIFCO Noble Agar",
+            "supplier": "BD Difco",
+            "catalog_number": "214220",
+            "form": "Noble-grade agar",
+            "notes": "Current100g presentation; no assertion that source recipes used this package or that legacy0142 was replaced by214220."
+          }
+        ],
+        "synonyms": [
+          {
+            "synonym_text": "Noble Agar (BD-Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "Source recipe explicitly identifies BD-Difco Noble grade"
+          },
+          {
+            "synonym_text": "Agar Noble (Difco)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "Source recipe explicitly identifies BD-Difco Noble grade"
+          }
+        ]
+      }
+    },
+    {
+      "proposal_id": "media-product-bd_difco_bacto_agar",
+      "owner_path": "data/ingredients/mapped/BD_Difco_Bacto_Agar.yaml",
+      "after_sha256": "54fbbd0609299136d06029db621fd5b36b991d3d7cf967c379f18415ef35437e",
+      "case_ids": [
+        "CM_NAME:73794c22e4b0174b2d45cf4efbc29aaad5274ab6247bc6cd6c45502eea238d25",
+        "CM_NAME:9ffa59ec060eb41a36cb7f3d173b31cda16931a8e3c81f062911d7aba4ec1c3e"
+      ],
+      "payload": {
+        "identifier": "kgmicrobe.ingredient:bd_difco_bacto_agar",
+        "preferred_term": "Bacto agar (BD-Difco)",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:bd_difco_bacto_agar",
+          "ontology_label": "Bacto agar (BD-Difco)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.bdbiosciences.com/en-ca/products/reagents/dehydrated-culture-media/agars/agar-bottle-100g.214050?tab=product_details",
+              "notes": "JCM905/906 and the source M460-derived record explicitly identify BD-Difco Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product identity as distinct from Noble214220. The owner represents the unwashed Bacto grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded."
+            }
+          ]
+        },
+        "mapping_status": "MAPPED",
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "notes": "JCM905/906 and the source M460-derived record explicitly identify BD-Difco Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product identity as distinct from Noble214220. The owner represents the unwashed Bacto grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded. Raw source labels remain in campaign case evidence; no unqualified global alias is added. This isolated proposal does not clear inherited owner publication holds.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T05:32:29.548252+00:00",
+            "curator": "worker04_media_source_review_proposal",
+            "action": "CREATED",
+            "changes": "JCM905/906 and the source M460-derived record explicitly identify BD-Difco Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product identity as distinct from Noble214220. The owner represents the unwashed Bacto grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded. Isolated proposal; no maintained data mutation.",
+            "llm_assisted": true
+          }
+        ],
+        "supplied_form": [
+          {
+            "name": "Bacto agar (BD-Difco)",
+            "supplier": "BD Difco",
+            "form": "Bacto-grade agar"
+          }
+        ]
+      }
+    }
+  ],
+  "matching_full_frozen_cases": [
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:122cecb2a1753d70ec627b254d24f4ad7dd014cdadf33b55d0ad993b5954aeb1",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/8",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mn_marine_medium_atcc_medium_957_with_20_mcg_l_of_vitamin_b12.yaml",
+          "native_name": "Agar Noble (Difco 0142) (if needed)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:ff764d79392a21e8820299791cf2aa4e7e6a0c0fb6e971a571c7bb2efddc87ef",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "10"
+            },
+            "notes": "Role: Solidifying component; Properties: Defined component",
+            "preferred_term": "Agar Noble (Difco 0142) (if needed)"
+          },
+          "raw_preferred_term": "Agar Noble (Difco 0142) (if needed)",
+          "recipe_id": "CultureMech:009056",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009056"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2482"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/mn_marine_medium_atcc_medium_957_with_20_mcg_l_of_vitamin_b12.yaml",
+          "source_file_sha256": "2974bd401ab1d5c2a146176f2cad398a0383d60226a43ae655fddadaaec596c4",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3691,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:009056",
+        "ingredient_name": "Agar Noble (Difco 0142) (if needed)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Agar Noble (Difco 0142) (if needed)",
+      "source": "culturemech",
+      "source_case_id": "Agar Noble (Difco 0142) (if needed)",
+      "source_identity_claimed": false,
+      "source_label": "Agar Noble (Difco 0142) (if needed)"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:53341e8c29e1e25c70142fa5496cf248abdd1cf1317dde61f51427982b598b74",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 2,
+      "occurrences": [
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_1054_A1-MEDIUM.yaml",
+          "native_name": "Seawater (Biomaris 089, natural or artificial)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:aab88307bcab6157faeb95b4e0a9b785b8a62700f71e8ea7bc805965579688d6",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1000"
+            },
+            "notes": "KOMODO Medium 1054 / DSMZ Medium 1054 lists 1.0 L Biomaris 089 seawater and allows natural or artificial seawater.",
+            "preferred_term": "Seawater (Biomaris 089, natural or artificial)",
+            "source": "KOMODO Medium 1054 / DSMZ Medium 1054"
+          },
+          "raw_preferred_term": "Seawater (Biomaris 089, natural or artificial)",
+          "recipe_id": "CultureMech:003630",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:003630"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:1054"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/KOMODO_1054_A1-MEDIUM.yaml",
+          "source_file_sha256": "e7f66152d048cfa34b10ec27768705e9323edc4f2f430113ca1a5c3973042101",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/a1_medium.yaml",
+          "native_name": "Seawater (Biomaris 089, natural or artificial)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:4f0529a111a773be5879b5b7bbf73a6e692169931e9eb4b4b79de931d26b32ff",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1000"
+            },
+            "notes": "DSMZ Medium 1054 lists 1.0 L Biomaris 089 seawater and allows natural or artificial seawater.",
+            "preferred_term": "Seawater (Biomaris 089, natural or artificial)",
+            "source": "DSMZ Medium 1054"
+          },
+          "raw_preferred_term": "Seawater (Biomaris 089, natural or artificial)",
+          "recipe_id": "CultureMech:000483",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000483"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1054"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/a1_medium.yaml",
+          "source_file_sha256": "310ec1279a730110d7894b4fd00567296e3c01c06a9406aa11087f17090fbefa",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 2012,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:003630; CultureMech:000483",
+        "ingredient_name": "Seawater (Biomaris 089, natural or artificial)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "2",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Seawater (Biomaris 089, natural or artificial)",
+      "source": "culturemech",
+      "source_case_id": "Seawater (Biomaris 089, natural or artificial)",
+      "source_identity_claimed": false,
+      "source_label": "Seawater (Biomaris 089, natural or artificial)"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:94372f614f3b45ca293d01fb5969772dce2b0748402976f4681537d46acce5aa",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/7",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M163_Artificial_Deep_Lake_Vitamin_Medium.yaml",
+          "native_name": "Noble Agar (BD-Difco)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:c05907340d1909ca701a7fb1c5f6c79ce2e124d33eca9b3f0286cf187657ec4e",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "20"
+            },
+            "notes": "Role: Solidifying component; Properties: Defined component",
+            "preferred_term": "Noble Agar (BD-Difco)"
+          },
+          "raw_preferred_term": "Noble Agar (BD-Difco)",
+          "recipe_id": "CultureMech:008195",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008195"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M163"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M163_Artificial_Deep_Lake_Vitamin_Medium.yaml",
+          "source_file_sha256": "380e99e4b72a3dbf1b31bd64ce32afc84dc306bfcf4e77b7f55256f1e4d610a0",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 2904,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:008195",
+        "ingredient_name": "Noble Agar (BD-Difco)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Noble Agar (BD-Difco)",
+      "source": "culturemech",
+      "source_case_id": "Noble Agar (BD-Difco)",
+      "source_identity_claimed": false,
+      "source_label": "Noble Agar (BD-Difco)"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:e91be9251b390abcefeefaf5c6043731136c2ddb4715a5be2bbfa6cf30f9b6c7",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 1,
+      "occurrences": [
+        {
+          "component_path": "ingredients/8",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/isosphaera_medium.yaml",
+          "native_name": "Agar, Noble (BD 214050), if needed",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:eec7ba93dfa1cffa7c04d63cf11be0cb0b361dd6553676601e1b66589b373690",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "15"
+            },
+            "notes": "Role: Solidifying component; Properties: Defined component",
+            "preferred_term": "Agar, Noble (BD 214050), if needed"
+          },
+          "raw_preferred_term": "Agar, Noble (BD 214050), if needed",
+          "recipe_id": "CultureMech:008891",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008891"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2305"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/isosphaera_medium.yaml",
+          "source_file_sha256": "5b2fb45d1a57bb9adc946e713133efb32fb0de28a9b95bde59dc72c6059b57fa",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 3466,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:008891",
+        "ingredient_name": "Agar, Noble (BD 214050), if needed",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "1",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Agar, Noble (BD 214050), if needed",
+      "source": "culturemech",
+      "source_case_id": "Agar, Noble (BD 214050), if needed",
+      "source_identity_claimed": false,
+      "source_label": "Agar, Noble (BD 214050), if needed"
+    },
+    {
+      "baseline_outcome": "native_no_mim_match",
+      "campaign_requirement": "complete_source_bound_review",
+      "case_id": "CM_NAME:eb8229c7a93109958ebe2b9d6e2975596e8bb3cdff6a21fb1289c3d2e6861eec",
+      "native_match_result": {
+        "effective_term_id": "",
+        "matched": false,
+        "resolved_record": null
+      },
+      "native_occurrence_count": 2,
+      "occurrences": [
+        {
+          "component_path": "ingredients/6",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1957_Benzoate_medium.yaml",
+          "native_name": "Agar Noble (Difco)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:2f0f097c9a958199f41e66d80b9c2610291da3b570b6eb69002c43e8465a4140",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "20"
+            },
+            "notes": "Role: Solidifying component; Properties: Defined component",
+            "preferred_term": "Agar Noble (Difco)"
+          },
+          "raw_preferred_term": "Agar Noble (Difco)",
+          "recipe_id": "CultureMech:008537",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008537"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1957"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/TOGO_M1957_Benzoate_medium.yaml",
+          "source_file_sha256": "55b0a07f049dee11ed076100ee4b1274cc226ce321df98d9570ae5670833ff71",
+          "source_identifiers": []
+        },
+        {
+          "component_path": "ingredients/8",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/s_medium.yaml",
+          "native_name": "Agar Noble (Difco)",
+          "native_scope": "root_component",
+          "occurrence_id": "CM_OCC:e5c62be310dd46147af81d128b3d314bbee2557f7cc743e67f4edd49a950a07f",
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "12"
+            },
+            "notes": "Role: Solidifying component; Properties: Defined component",
+            "preferred_term": "Agar Noble (Difco)"
+          },
+          "raw_preferred_term": "Agar Noble (Difco)",
+          "recipe_id": "CultureMech:009071",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009071"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2498"
+            }
+          ],
+          "record_shape": "MediaRecipe",
+          "source_file": "data/normalized_yaml/bacterial/s_medium.yaml",
+          "source_file_sha256": "a52616eafb5f839c0ca86bd3f6f363da7b395420f677a5cf66947892d80c379a",
+          "source_identifiers": []
+        }
+      ],
+      "original_unified_position": 2094,
+      "original_unified_row": {
+        "cas_rn": "",
+        "chebi_id": "",
+        "culturemech_term_id": "",
+        "example_media": "CultureMech:008537; CultureMech:009071",
+        "ingredient_name": "Agar Noble (Difco)",
+        "kg_microbe_node_id": "",
+        "mapping_status": "UNMAPPED",
+        "mim_id": "",
+        "occurrence_count": "2",
+        "synonyms": ""
+      },
+      "prior_dependency": "PR1158 candidate baseline, not merged",
+      "raw_source_label": "Agar Noble (Difco)",
+      "source": "culturemech",
+      "source_case_id": "Agar Noble (Difco)",
+      "source_identity_claimed": false,
+      "source_label": "Agar Noble (Difco)"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-08T06:10:23.034600+00:00",
+  "status": "PASS",
+  "scope": "Three narrow draft corrections after actual combined overlay failure; no maintained owner, source capture, role or publication-hold change. Prior independently reviewed bytes preserved. No remote retrieval occurred.",
+  "archived_files": [
+    {
+      "path": "fragments/chemistry-reassessments.json",
+      "archive": "captures/chemistry/overlay-corrections-v1/fragments/chemistry-reassessments.json",
+      "sha256": "dd2461113355173a6c9b4d272613fc66784648377649d11366fccc6c41f21b66"
+    },
+    {
+      "path": "fragments/chemistry-decisions.json",
+      "archive": "captures/chemistry/overlay-corrections-v1/fragments/chemistry-decisions.json",
+      "sha256": "8e0eb9be744d10366365148ef86eb12b631a0d533db126379eb7d8e7afe327f4"
+    },
+    {
+      "path": "fragments/chemistry-evidence.json",
+      "archive": "captures/chemistry/overlay-corrections-v1/fragments/chemistry-evidence.json",
+      "sha256": "a5d2064402479d2f80f9de49ad59f20b857c8067884e6881d392448b47e8ac4f"
+    },
+    {
+      "path": "fragments/chemistry-proposals.json",
+      "archive": "captures/chemistry/overlay-corrections-v1/fragments/chemistry-proposals.json",
+      "sha256": "04ddf6b71a124d69d34da7b18904ce9d46021ec83911fb0c98ecc658fbfd190e"
+    },
+    {
+      "path": "fragments/chemistry-successor.py",
+      "archive": "captures/chemistry/overlay-corrections-v1/fragments/chemistry-successor.py",
+      "sha256": "18ac897d0d130c8492fc43f01fdd809d12f2b511adb6b205f9c6cbc7e6680222"
+    },
+    {
+      "path": "captures/chemistry/integrity-final.json",
+      "archive": "captures/chemistry/overlay-corrections-v1/captures/chemistry/integrity-final.json",
+      "sha256": "eb26d8bb584fd3b9bb1375dd7eed25fa1532cf8f3300a65c18d96818909a5b6d"
+    },
+    {
+      "path": "proposals/chemistry/NBRC_1378_FeNaEDTA_stock.after.yaml",
+      "archive": "captures/chemistry/overlay-corrections-v1/proposals/chemistry/NBRC_1378_FeNaEDTA_stock.after.yaml",
+      "sha256": "80a31618b6d49dcf3a644de514f67c83e6906e2712d4a4ec80799a893b2ee2cc"
+    },
+    {
+      "path": "proposals/chemistry/Trisodium_Citrate_Pentahydrate.after.yaml",
+      "archive": "captures/chemistry/overlay-corrections-v1/proposals/chemistry/Trisodium_Citrate_Pentahydrate.after.yaml",
+      "sha256": "9aa6b80df5fd0553d3efde1d63686b6278e29c847a60db0480de2d6ad9187ff8"
+    },
+    {
+      "path": "proposals/chemistry/Trisodium_Citrate_X_3_H2o.after.yaml",
+      "archive": "captures/chemistry/overlay-corrections-v1/proposals/chemistry/Trisodium_Citrate_X_3_H2o.after.yaml",
+      "sha256": "35674c6d4b186e7d58aca75654199967e855a352dbb5ec019975afcad938ea4e"
+    }
+  ],
+  "edits": [
+    {
+      "proposal_id": "I1201-CHEM-P-nbrc_1378_fenaedta_stock",
+      "path": "proposals/chemistry/NBRC_1378_FeNaEDTA_stock.after.yaml",
+      "before_sha256": "80a31618b6d49dcf3a644de514f67c83e6906e2712d4a4ec80799a893b2ee2cc",
+      "after_sha256": "0c37444483ec8d570dc5359cf10c5c321c0a7d961f060b251c007718d45aa916",
+      "change": "Remove the rejected FeNaEDTA synonym because native partonomy treats every alias as a possible identity self-reference. Preserve the exact raw source label FeNaEDTA here and in source evidence; it is not a globally resolving alias for this stock. Component and stock concentration claims are unchanged."
+    },
+    {
+      "proposal_id": "I1201-CHEM-P-trisodium-citrate-pentahydrate",
+      "path": "proposals/chemistry/Trisodium_Citrate_Pentahydrate.after.yaml",
+      "before_sha256": "9aa6b80df5fd0553d3efde1d63686b6278e29c847a60db0480de2d6ad9187ff8",
+      "after_sha256": "ceac1d4e5eaa7a1dc3e978f2bb828c0d1dd5d9a2d75c5d9e0b30d9a39d9777f4",
+      "change": "Correct CHEBI:53258 ontology_label to the canonical local ontology label sodium citrate. The distinct hydrate identifier, supplied water count and asymmetric NARROW_MATCH mapping remain unchanged."
+    },
+    {
+      "proposal_id": "I1201-CHEM-P-trisodium-citrate-trihydrate",
+      "path": "proposals/chemistry/Trisodium_Citrate_X_3_H2o.after.yaml",
+      "before_sha256": "35674c6d4b186e7d58aca75654199967e855a352dbb5ec019975afcad938ea4e",
+      "after_sha256": "65a1e1d2a58d9e514d878c544dd4e5e35e20ea3ddb8c69126b383454a2d25051",
+      "change": "Correct CHEBI:53258 ontology_label to the canonical local ontology label sodium citrate. The distinct hydrate identifier, supplied water count and asymmetric NARROW_MATCH mapping remain unchanged."
+    }
+  ],
+  "all_four_fragments": {
+    "fragments/chemistry-reassessments.json": "dd2461113355173a6c9b4d272613fc66784648377649d11366fccc6c41f21b66",
+    "fragments/chemistry-decisions.json": "8e0eb9be744d10366365148ef86eb12b631a0d533db126379eb7d8e7afe327f4",
+    "fragments/chemistry-evidence.json": "a5d2064402479d2f80f9de49ad59f20b857c8067884e6881d392448b47e8ac4f",
+    "fragments/chemistry-proposals.json": "c53f40638382c6c4e27490ab3b09aa34c81a8373349e1693fd4af33f22073e3e"
+  },
+  "all_ten_payloads_closed_schema_pass": true
+}

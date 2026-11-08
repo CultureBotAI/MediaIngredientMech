@@ -1,0 +1,186 @@
+{
+  "reviewer": "Codex /root/biological",
+  "checked_at": "2026-11-08T06:17:50.736392+00:00",
+  "status": "PASS",
+  "scope": "Independent synthetic process guards only; this does not claim actual final worker gates ran.",
+  "production_script_hashes": {
+    "scripts/build_handoff.py": "c415fcedfc7a57706dc2f5452371efcce1d6bd8a0c18f86cf027ba9553f6034e",
+    "scripts/assemble_successor.py": "d5b8fb9166ebc99719bb9c6c14b7afa4d7e7bad307e7b943c7ae38c4657250be",
+    "scripts/build_dependencies.py": "28a6349874eaa0cf149ee5dbd8c02c5d312cae6b1818887bf1e6fada1354a025",
+    "scripts/build_native_review.py": "489fad472b0700a34aa4a3d915641c6263b30cb0206b81986320ee098bb1f23e",
+    "scripts/run_checks.py": "094cfffb62ecaafe5a980422e24720cd00707760cef90cba8a59603f6f6eb1ce",
+    "scripts/validate_overlay.py": "6979adb3b21f2ea89641aee25bb424ea5ec97ae2c281c9d1a9a05976607fb264",
+    "scripts/check_predecessor.py": "57c9515ee5d5bab8be3cb13352e442e6fe17288de56baef000bfcfa1c516e19b",
+    "scripts/guarded_replay.py": "c049565e7bae312832a60da08e08535b5a6e250187bbab0a4b46c9193ec281ce"
+  },
+  "private_fixture_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/issue-1201-v1/process-controls",
+  "real_inputs_unchanged": true,
+  "overlay_mock_scope": "Only Git diff and untracked-file baseline reads return empty in tiny synthetic fixture; actual destination, identity, partonomy and registry logic execute unchanged copied script bytes. No external ontology fetch occurs.",
+  "controls": [
+    {
+      "name": "assembly-positive-188-cases",
+      "expected_rejection": false,
+      "rejected": false,
+      "message": "accepted synthetic positive control",
+      "status": "PASS"
+    },
+    {
+      "name": "missing-payload-review-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('payload review coverage', 'biological')",
+      "status": "PASS"
+    },
+    {
+      "name": "changed-reviewed-payload-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('reviewed payload changed', 'NEW')",
+      "status": "PASS"
+    },
+    {
+      "name": "stale-primary-fragment-hash-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('fragments/biological-reassessments.json', 'c9516dd875aabfa781e41e81ead1c88f359b32e20374d02b4e8712d901705ae9', '3a4c7992070f50f39ac061c369bc9ac982849f974b977a2bf9b9341b4c95cdfe')",
+      "status": "PASS"
+    },
+    {
+      "name": "forged-predecessor-digest-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('reassessment predecessor mismatch', 'c0')",
+      "status": "PASS"
+    },
+    {
+      "name": "inherited-hold-removal-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('changed inherited hold', 'c0', 'preserved_holds')",
+      "status": "PASS"
+    },
+    {
+      "name": "complete-tag-with-unresolved-review-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('unresolved skeptical review findings', 'biological')",
+      "status": "PASS"
+    },
+    {
+      "name": "lost-superseded-case-backlink-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('lost case backlink', 'old-p-108')",
+      "status": "PASS"
+    },
+    {
+      "name": "native-positive-gate-contract",
+      "expected_rejection": false,
+      "rejected": false,
+      "message": "accepted synthetic positive control",
+      "status": "PASS"
+    },
+    {
+      "name": "native-nonzero-command-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('schema', 1)",
+      "status": "PASS"
+    },
+    {
+      "name": "native-bound-input-change-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('changed gate input/output', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/issue-1201-v1/process-controls/native-input-change/reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/input.json')",
+      "status": "PASS"
+    },
+    {
+      "name": "native-gate-output-tamper-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('changed gate input/output', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/issue-1201-v1/process-controls/native-output-change/reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/validation/proposal-overlay.json')",
+      "status": "PASS"
+    },
+    {
+      "name": "native-log-tamper-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "('changed gate log', 'schema')",
+      "status": "PASS"
+    },
+    {
+      "name": "native-structural-scientific-overclaim-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "",
+      "status": "PASS"
+    },
+    {
+      "name": "native-incomplete-188-accounting-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "",
+      "status": "PASS"
+    },
+    {
+      "name": "native-structural-command-result-path-mismatch-rejected",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "structural command/result path mismatch",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-valid-control",
+      "expected_rejection": false,
+      "rejected": false,
+      "message": "accepted synthetic positive control",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-duplicate-control",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "True",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-existing-control",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "True",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-escape-control",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "True",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-new-placeholder-control",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "True",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-inherited-placeholder-control",
+      "expected_rejection": false,
+      "rejected": false,
+      "message": "accepted synthetic positive control",
+      "status": "PASS"
+    },
+    {
+      "name": "overlay-changed-placeholder-control",
+      "expected_rejection": true,
+      "rejected": true,
+      "message": "True",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Source science is reviewed separately. Positive synthetic receipts are fixtures, not substitute final validation evidence.",
+    "Overlay semantics retain original owner dictionary keys while separately validating future integration destination uniqueness/safety; no filesystem move is exercised."
+  ]
+}

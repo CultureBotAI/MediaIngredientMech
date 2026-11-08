@@ -1,0 +1,123 @@
+{
+  "native-inspect": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "scripts/record_review.py",
+      "inspect",
+      "--targets",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/native-targets.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/decisions.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/evidence.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/proposals.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/reassessments.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/validation/assembly-bindings.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/cross-shard-dependencies.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/independent-review/review-selection.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/validation/input-bindings.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/validation/command-receipts.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/validation/proposal-overlay.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/validation/guarded-writer-replay.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/structural-audit-v3.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/independent-review/biological-reviewed-by-media-v2.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/independent-review/chemistry-reviewed-by-biological-v3.json",
+      "--input",
+      "reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/independent-review/media-reviewed-by-chemistry-v4.json",
+      "--input",
+      "MAPPING_SEMANTICS.md",
+      "--input",
+      ".claude/skills/add-media/SKILL.md",
+      "--input",
+      "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "--input",
+      "schema/record_review.yaml"
+    ],
+    "started_at": "2026-11-08T06:19:54.865316+00:00",
+    "finished_at": "2026-11-08T06:19:56.174042+00:00",
+    "exit_code": 0,
+    "stdout": "validation/native-inspection.json",
+    "stdout_sha256": "ab476524cfefb76328f5fc2ae65ae6f36d1c3a7ab9d3e20d592582b1057ab867",
+    "stderr": "validation/native-inspect.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native-content-build": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/scripts/build_native_review.py",
+      "content"
+    ],
+    "started_at": "2026-11-08T06:19:56.174535+00:00",
+    "finished_at": "2026-11-08T06:19:56.335269+00:00",
+    "exit_code": 0,
+    "stdout": "validation/native-content-build.log",
+    "stdout_sha256": "3bd57692637bb1bb8b280cd6069cf8c2125d526e6db59db4c101f2bf5bb11e84",
+    "stderr": "validation/native-content-build.stderr.log",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native-validate": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "scripts/record_review.py",
+      "validate",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/native-review-content.json"
+    ],
+    "started_at": "2026-11-08T06:19:56.335692+00:00",
+    "finished_at": "2026-11-08T06:19:57.941267+00:00",
+    "exit_code": 0,
+    "stdout": "validation/native-validate.log",
+    "stdout_sha256": "b42ee0197bdb886694684431f9da0d2fba4020263ed572ff756b9eaf0b042ba6",
+    "stderr": "validation/native-validate.stderr.log",
+    "stderr_sha256": "e2cf5a8ee56373cb7afeb23be8ac2a30d67f13afa55bb51424877fc908e2a25f"
+  },
+  "native-save": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "scripts/record_review.py",
+      "save",
+      "--content",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1201-v1/native-review-content.json"
+    ],
+    "started_at": "2026-11-08T06:19:57.941683+00:00",
+    "finished_at": "2026-11-08T06:20:00.424595+00:00",
+    "exit_code": 0,
+    "stdout": "validation/native-save.json",
+    "stdout_sha256": "3cab99017c94a3e210f1b46ac05724a5a6e1205c2e94ff3476e072d2e3913b01",
+    "stderr": "validation/native-save.stderr.log",
+    "stderr_sha256": "e2cf5a8ee56373cb7afeb23be8ac2a30d67f13afa55bb51424877fc908e2a25f"
+  },
+  "native-check": {
+    "command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+      "-B",
+      "scripts/record_review.py",
+      "check",
+      "--base",
+      "0d2c73e5aee5adb88782537755472d9ca0c5c3cd",
+      "--require-reviews"
+    ],
+    "started_at": "2026-11-08T06:20:00.425061+00:00",
+    "finished_at": "2026-11-08T06:21:51.559872+00:00",
+    "exit_code": 0,
+    "stdout": "validation/native-check.log",
+    "stdout_sha256": "8c8f3ca4e4a1483d05094b96993910c15e87444887cba886aceedb2f75fe3fc0",
+    "stderr": "validation/native-check.stderr.log",
+    "stderr_sha256": "e2cf5a8ee56373cb7afeb23be8ac2a30d67f13afa55bb51424877fc908e2a25f"
+  }
+}

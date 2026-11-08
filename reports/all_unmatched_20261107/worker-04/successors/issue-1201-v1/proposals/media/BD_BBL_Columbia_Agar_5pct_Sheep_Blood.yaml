@@ -1,0 +1,82 @@
+identifier: kgmicrobe.ingredient:bd_bbl_columbia_agar_5pct_sheep_blood
+preferred_term: Columbia agar with5% sheep blood (BD-BBL)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_bbl_columbia_agar_5pct_sheep_blood
+  ontology_label: Columbia agar with5% sheep blood (BD-BBL)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf
+    notes: DSMZ840 identifies ready Columbia agar plates with5% sheep blood, historicalBBL4354005.
+      NBRC1365 independently names ready-to-use Columbia agar with5% sheep blood,
+      BD-BBL. Both sources support the same supplier/product-family and finished blood-containing
+      plate scope. The registry owner denotes that named product family, not a claim
+      of lot-identical formula or a modern catalog crosswalk. Plain Columbia base
+      and the alternative Trypticase soy/sheep-blood plate in DSMZ840 remain separate.
+notes: 'DSMZ840 identifies ready Columbia agar plates with5% sheep blood, historicalBBL4354005.
+  NBRC1365 independently names ready-to-use Columbia agar with5% sheep blood, BD-BBL.
+  Both sources support the same supplier/product-family and finished blood-containing
+  plate scope. The registry owner denotes that named product family, not a claim of
+  lot-identical formula or a modern catalog crosswalk. Plain Columbia base and the
+  alternative Trypticase soy/sheep-blood plate in DSMZ840 remain separate. Raw source
+  labels and optional/use instructions are retained in source-case evidence, not installed
+  as global resolving aliases. Existing source/owner/export holds remain; no maintained
+  or release approval. Additional assessed recipe references: [{"medium_id": "CultureMech:008653",
+  "medium_name": "columbia_agar_with_sheep_blood", "relationship": "SIMILAR_COMPOSITION",
+  "source_path": "inputs/culturemech/data/normalized_yaml/bacterial/columbia_agar_with_sheep_blood.yaml",
+  "evidence": "DSMZ840 identifies ready Columbia agar plates with5% sheep blood, historicalBBL4354005.
+  NBRC1365 independently names ready-to-use Columbia agar with5% sheep blood, BD-BBL.
+  Both sources support the same supplier/product-family and finished blood-containing
+  plate scope. The registry owner denotes that named product family, not a claim of
+  lot-identical formula or a modern catalog crosswalk. Plain Columbia base and the
+  alternative Trypticase soy/sheep-blood plate in DSMZ840 remain separate. Exact ingredient
+  occurrence CM_OCC:99cc94ade465886e76efbb8e84fd4c38f4948fe99f671816031d07ce7c8c6a23
+  at ingredients/0; this is not identity to the complete receiving recipe."}]'
+curation_history:
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CREATED
+  changes: DSMZ840 identifies ready Columbia agar plates with5% sheep blood, historicalBBL4354005.
+    NBRC1365 independently names ready-to-use Columbia agar with5% sheep blood, BD-BBL.
+    Both sources support the same supplier/product-family and finished blood-containing
+    plate scope. The registry owner denotes that named product family, not a claim
+    of lot-identical formula or a modern catalog crosswalk. Plain Columbia base and
+    the alternative Trypticase soy/sheep-blood plate in DSMZ840 remain separate. Isolated
+    successor proposal only; published artifacts and maintained data unchanged.
+  llm_assisted: true
+supplied_form:
+- name: Columbia Agar Plates with5% sheep blood
+  supplier: BBL / BD-BBL
+  catalog_number: '4354005'
+  form: ready-to-use blood agar plates
+  notes: Catalog applies to DSMZ840 source only; NBRC1365 omits package code.
+components:
+- component_name: Sheep blood
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: percent as specified by source
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1365
+    notes: 'Partial product composition: source specifies5% sheep blood. Basal Columbia
+      formula and percentage volume/mass convention are not supplied, and no vendor
+      formula is imported.'
+culturemech_reference:
+  medium_id: CultureMech:009320
+  medium_name: serpulina_murdochii_medium
+  relationship: SIMILAR_COMPOSITION
+  source_path: inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2772_Serpulina_Murdochii_Medium.yaml
+  evidence: DSMZ840 identifies ready Columbia agar plates with5% sheep blood, historicalBBL4354005.
+    NBRC1365 independently names ready-to-use Columbia agar with5% sheep blood, BD-BBL.
+    Both sources support the same supplier/product-family and finished blood-containing
+    plate scope. The registry owner denotes that named product family, not a claim
+    of lot-identical formula or a modern catalog crosswalk. Plain Columbia base and
+    the alternative Trypticase soy/sheep-blood plate in DSMZ840 remain separate. Exact
+    ingredient occurrence CM_OCC:35d9b3d17743e49253cce31b9adfe12bf7693b1762c42310955cc520aaf1d6fe
+    at ingredients/0; this is not identity to the complete receiving recipe.
