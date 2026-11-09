@@ -14,7 +14,7 @@
 | --- | --- | ---: | --- |
 | Workflow profile validation | `/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python -m kg_microbe_workflows validate --profile workflow/mech-workflow.yaml --parent workflow/parent/mech-cycle.yaml --schema workflow/parent/workflow.yaml` | `0` | `Workflow profile valid` |
 | Native structured review validation | `.venv/bin/python scripts/record_review.py --repo-root . check` | `0` | `valid_reviews: 1015`, `coverage: "declared_scopes_only"`, `0` schema/profile errors, `0` stale `source_sha256` target hashes across all `1,015` structured review bundles (`2,030` files) |
-| Strict LinkML schema validation | `.venv/bin/python scripts/validate_strict.py data/ingredients data/curated data/collections --out /dev/null` | `0` | `files scanned: 2963`, `files with ERROR: 0`, `total ERROR rows: 0` |
+| Strict LinkML schema validation | `.venv/bin/python scripts/validate_strict.py data/ingredients data/curated --out /dev/null` | `0` | `files scanned: 2963`, `files with ERROR: 0`, `total ERROR rows: 0` |
 | Component partonomy validation | `.venv/bin/python scripts/validate_component_partonomy.py` | `0` | `component partonomy: 2956 records, 83 decompositions, 502 components, 0 violation(s)` |
 | SSSOM invariant validation | `.venv/bin/python scripts/validate_sssom_invariants.py --reject-tsv /dev/null` | `0` | `OK: ingredient_mappings.sssom.tsv passed Rules A, B1, B2, B3, B5, C, D, E, F, G, H, I, J, K, L.` (`0` rejection rows) |
 | Duplicate identifier baseline check | `.venv/bin/python scripts/audit_duplicate_identifiers.py --check` | `0` | `15 identifier(s) held by more than one record (35 records, 20 excess)` — `OK: duplicate identifiers match the tracked baseline exactly.` |
