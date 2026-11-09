@@ -1,0 +1,27 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1281",
+  "observed_at": "2026-11-09T00:30:17.152824+00:00",
+  "source_head": "9b48738b677fc2a4566733b282c861773a6f5dd9",
+  "input_sha256": {
+    "tests/test_identity_projection_graph.py": "060efdfbf6c9c09cdb2ef799539d373310aa983c87195cbe81625ce25ce34c65",
+    "src/mediaingredientmech/identity_projection_graph.py": "2ceb3d933893136c4a022e2ddbf53f16b86eccf9ef860be007b4ec95e4c8df61",
+    "src/mediaingredientmech/export/kgx.py": "f6ecea5cbbc1981159b2e816a8ca9d717c2e83833b57336ad012fbf57d7ca525"
+  },
+  "helper_sha256": "eb32ee3ecc2451702ac1397279720ce01037bff436dc22b18a335dc7d274e234",
+  "results": [
+    {
+      "case": "control",
+      "exit_code": 0,
+      "expected_result": true,
+      "log": "control.log"
+    },
+    {
+      "case": "native_export_removed",
+      "exit_code": 1,
+      "expected_result": true,
+      "log": "native_export_removed.log"
+    }
+  ],
+  "source_or_corpus_mutations": false,
+  "network_or_provider_calls": false
+}

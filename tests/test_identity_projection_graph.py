@@ -64,8 +64,44 @@ def test_current_semantic_successor_preserves_full_negative_verdict_and_holds():
     assert sum(row["resolution_status"] == "OPEN" for row in after) == len(new["blocking_assertion_ids"]) > 0
 
 
-def test_complete_graph_and_negative_review_replay_against_fixed_baseline():
-    proof = ip.prove_identity_migration(ROOT)
+def test_complete_graph_and_negative_review_replay_against_fixed_baseline(tmp_path):
+    # #1281 (2026-11-08): CI has no ignored output/mim-kgx-710-full bundle.
+    # Share only immutable Git objects, then copy the declared current inputs.
+    # Native generation and all proof/path/recheck calls run without mocks.
+    import subprocess
+
+    from mediaingredientmech.export.kgx import export_graph
+
+    root = tmp_path / "repository"
+    subprocess.run(
+        ["git", "clone", "--shared", "--no-checkout", "--quiet", str(ROOT), str(root)],
+        check=True, capture_output=True,
+    )
+    original = ip.document((ROOT / graph.OLD_REVIEW).read_bytes())
+    inputs = {
+        *ip.record_paths(ROOT), ip.MANIFEST, ip.SOURCE, ip.REGISTRY, ip.LIFECYCLE,
+        graph.OLD_REVIEW,
+        *(f"data/curated/{group}_ingredients.yaml" for group in ("mapped", "unmapped")),
+        *(graph.ARCHIVE + name + ".gz" for name in graph.GRAPH_FILES),
+        *(name for name in original["inputs"] if name.startswith("reports/")),
+        *(name for name in original["record_inputs"] if name.startswith("reports/")),
+    }
+
+    def copy_input(name):
+        target = ip.safe_path(root, name)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(ip.safe_path(ROOT, name).read_bytes())
+
+    for name in sorted(inputs):
+        copy_input(name)
+    isolated_bundle = root / graph.BUNDLE
+    assert not isolated_bundle.exists()
+    manifest = export_graph(root, isolated_bundle)
+    assert set(manifest["inputs"]) <= inputs
+    for name in manifest["implementation"]:
+        copy_input("src/mediaingredientmech/" + name)
+
+    proof = ip.prove_identity_migration(root)
     outputs = graph.products(proof)
     assert outputs[graph.REVIEW] == (ROOT / graph.REVIEW).read_bytes()
     assert outputs[graph.DISPOSITIONS] == (ROOT / graph.DISPOSITIONS).read_bytes()
