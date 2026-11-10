@@ -2757,3 +2757,69 @@ entries:
     pr_number: 1320
     status: merged
     verified_at: '2026-11-10T08:19:41.396416+00:00'
+- cycle: 17
+  goal_evidence:
+    path: reviews/workflow/mech-goal-sequence-20261019/cycle-000017/stage-06/revision-0001/evidence.yaml
+    sha256: 281aa8ffade6e181e6440b7a2fd6d93143398b7538c8295acb70bc23598572ca
+  parent_version: 1.0.0
+  receipt_sha256: d4d254649671a17de00e668fe15919d2b593d9bc705f50e6dcddc7062f5b833f
+  stage: 6
+  stage_key: infrastructure
+  verification:
+    checks:
+    - bucket: pass
+      name: roundtrip
+      state: SUCCESS
+    - bucket: pass
+      name: qc-evidence
+      state: SUCCESS
+    - bucket: pass
+      name: instruction-refs
+      state: SUCCESS
+    - bucket: pass
+      name: pytest
+      state: SUCCESS
+    - bucket: pass
+      name: id-label-gate / label-correspondence
+      state: SUCCESS
+    - bucket: pass
+      name: qc-component-partonomy
+      state: SUCCESS
+    - bucket: pass
+      name: history
+      state: SUCCESS
+    - bucket: pass
+      name: check
+      state: SUCCESS
+    - bucket: pass
+      name: qc-duplicate-ids
+      state: SUCCESS
+    - bucket: pass
+      name: qc-flat-coverage
+      state: SUCCESS
+    - bucket: pass
+      name: qc-sssom
+      state: SUCCESS
+    - bucket: pass
+      name: validate-strict
+      state: SUCCESS
+    - bucket: pass
+      name: vendored-sync
+      state: SUCCESS
+    commit_publication:
+      commits:
+      - febd3946449459f6a4297d393c60156b2ace95cd
+      - 2f3a06a7003b6e2efa37ec7256c0f5cea119e27c
+      complete: true
+      proofs:
+        2f3a06a7003b6e2efa37ec7256c0f5cea119e27c:
+          method: current_origin_branch_tip
+          tip: 2f3a06a7003b6e2efa37ec7256c0f5cea119e27c
+        febd3946449459f6a4297d393c60156b2ace95cd:
+          method: verified_merged_pr
+    head_sha: febd3946449459f6a4297d393c60156b2ace95cd
+    merge_commit_sha: 2f3a06a7003b6e2efa37ec7256c0f5cea119e27c
+    merged_at: '2026-11-10T10:05:07Z'
+    pr_number: 1329
+    status: merged
+    verified_at: '2026-11-10T10:15:07.584085+00:00'
