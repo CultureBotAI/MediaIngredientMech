@@ -17,9 +17,22 @@
 <p><a href="{{ detail_href }}">Open the ingredient record</a></p>
 {% else %}
 <p>This identifier is {{ status }}. It remains registered and will never be reused.</p>
+{% if status in ['retired', 'merged'] %}
 <p>Replacement: <a href="{{ replacement_href }}">{{ replacement }}</a>.</p>
+{% endif %}
+{% if resolution.status == 'active' %}
 {% if replacement != target %}<p>Current replacement: <a href="{{ target_href }}">{{ target }}</a>.</p>{% endif %}
 <p><a href="{{ detail_href }}">Open the current replacement record</a></p>
+{% else %}
+{% if resolution.at_id != mim_id %}<p>The replacement chain reaches <a href="{{ resolution_href }}">{{ resolution.at_id }}</a>, which is {{ resolution.status }}.</p>{% endif %}
+{% if resolution.status == 'split' %}
+<p>This historical identity was split. No single successor is selected, and these links do not assert scientific equivalence.</p>
+<ul>{% for identifier, href in successors %}<li><a href="{{ href }}">{{ identifier }}</a></li>{% endfor %}</ul>
+{% else %}
+<p>This identity is deprecated without a justified successor.</p>
+{% endif %}
+<p>Reason: {{ reason }}</p>
+{% endif %}
 {% endif %}
 </main>
 </body>

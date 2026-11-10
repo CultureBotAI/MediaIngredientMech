@@ -31,9 +31,51 @@ not part of permanent identity. Existing IDs are preserved on subsequent plans.
 `data/ids/mim_id_registry.tsv` has immutable mint rows with `mim_id`,
 `label_at_minting`, `minted_on`, `status: active` and an empty `replaced_by`.
 `data/ids/mim_id_lifecycle.tsv` appends terminal events with `mim_id`, `status`,
-`replaced_by`, `changed_at` and `reason`. A retired or merged ID stays registered;
-its replacement chain must end at an active record. IDs and events are never
-removed or reused. Mint status is independent of scientific mapping status.
+`replaced_by`, `changed_at` and `reason`. IDs and events are never removed or
+reused. Mint status is independent of scientific mapping status.
+
+[Issue #1300](https://github.com/CultureBotAI/MediaIngredientMech/issues/1300)
+extends that same five-column lifecycle format without rewriting old rows:
+
+| Terminal status | Canonical `replaced_by` cell | Address behavior |
+| --- | --- | --- |
+| `retired` or `merged` | One registered MIM ID | Follow the replacement chain, unless it reaches a split or deprecation |
+| `split` | At least two distinct registered IDs, sorted and separated by `\|` | Expose all direct successors; never choose one or infer equivalence |
+| `deprecated` | Empty | Preserve the historical address without a guessed successor |
+
+For example a split cell is `MIM:0000002|MIM:0000003`. Whitespace, duplicate,
+unsorted, unknown and self-referencing targets are rejected. Every lifecycle
+graph must be acyclic, with one terminal event per ID and chronological UTC
+events that do not predate any referenced mint. A later split/deprecation may
+block an older replacement chain; this does not erase the earlier event.
+
+`stable_ids.inspect_id` returns typed `IdResolution` with the requested
+`identifier`, the first non-redirect `at_id`, its `status`, and `successors`.
+For an active result the successor is that active ID; for split it is the exact
+direct target list; for deprecation it is empty. `inspect_ids` provides the same
+inspection for a complete registry. `resolve_id` retains its single-ID return
+contract and raises `UnresolvedIdError` (carrying that typed resolution) for a
+split or deprecation. It refuses a split even if its descendants later converge.
+
+Actual merge/split/deprecation operations require reviewed source and target
+concept decisions and provenance for every affected reference. Keep original
+record objects/history in the curation receipt before removing a terminal ID's
+record from the current inventory. Every active ID must still have exactly one
+current record; no current record may use a terminal ID. Do not turn different
+spellings into distinct substances, guess identities for held names, transfer
+rejected aliases, or confuse mapping rejection with ID deprecation. The ledger
+and its reason index the decision; they do not authenticate scientific approval.
+
+Before removing a terminal record from the current corpus, preserve its
+unambiguous historical name/registry aliases through the existing
+`mappings/mim_curie_aliases.tsv`, pointing to the **original terminal MIM ID**,
+not one split child. This preserves explicit split/deprecated lookup results.
+That table supports only one target per alias and refuses conflicting rows;
+it cannot encode a shared historical alias's several owners. Retain such an
+alias's ambiguity and provenance in the curation evidence and withhold automatic
+resolution rather than selecting a target. This lifecycle change does not add a
+multi-target alias-table format. Shared current-record aliases still yield
+`AMBIGUOUS_ALIAS`.
 
 Use `stable_ids.allocate_ids` and `stable_ids.append_lifecycle` to plan changes
 under the repository's short native write lock. These APIs validate and return
@@ -57,7 +99,9 @@ The `MIM:` prefix is
 The Pages builder emits `ingredient/MIM_0000001/index.html` and finds the active
 record from its ID at build time. A label, filename or directory change therefore
 updates the destination without changing the resolver route. Tombstone pages
-retain retired/merged IDs, their original mint labels and replacement links.
+retain terminal IDs and their original mint labels. Split pages list all direct
+successors with no automatic redirect; deprecated pages show the reason without
+a replacement. Old replacement chains reaching either state display that limit.
 Current filename-based detail pages remain available as well.
 
 Registry and lifecycle bytes are inputs to site freshness; resolver content and
@@ -75,7 +119,7 @@ requires its own approval.
 | CultureMech recipe references | Existing external/placeholder values remain aliases. Resolve them against a pinned current MIM corpus; shared aliases require explicit record context. New record references should retain the permanent MIM ID plus separately relevant mapping evidence. This PR does not rewrite CultureMech. |
 | KG-Microbe | New graph and mapping inputs join on permanent MIM IDs. Consume the changed prefix expansion and revised publication manifests, preserving old release provenance. Scoped companion consumers must support and replay the declared `identity-projection-v1` capability; older consumers must refuse it rather than drop the proof. Do not merge records or replace a specific form with a broader ontology term merely because an alias is shared. |
 | SSSOM | New subject IDs come from `mim_id`; object identifiers and predicates retain their scientific meanings. Registry/identity mapping targets remain external/local mapping values and are no longer derived from the MIM subject's suffix. Consumers that split a subject into a filename or mapping slug must migrate. |
-| Browser, Pages and CURIE lookup | Use the stable ID/URL for new links; use `CurieNormalizer.resolve()` for known unambiguous legacy aliases and lifecycle replacement chains. Unknown MIM IDs and ambiguous legacy references fail closed; syntax checks on an external CURIE do not establish ontology existence. |
+| Browser, Pages and CURIE lookup | Use the stable ID/URL for new links; use `CurieNormalizer.resolve()` for known unambiguous legacy aliases and lifecycle replacement chains. Split/deprecated references return `SPLIT_SUBJECT`/`DEPRECATED_SUBJECT`, including older chains that reach them. Unknown MIM IDs and ambiguous legacy references fail closed; syntax checks on an external CURIE do not establish ontology existence. |
 
 Land the ID migration before the adapter's revised export is considered. Review
 the regenerated SSSOM, KGX, browser and Pages artifacts against the same corpus;

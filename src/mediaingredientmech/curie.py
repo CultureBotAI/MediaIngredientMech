@@ -227,18 +227,26 @@ class CurieNormalizer:
     _records: set[str] = field(default_factory=set, repr=False)
     _alias_targets: dict[str, set[str]] = field(default_factory=dict, repr=False)
     _resolved_ids: dict[str, str] = field(default_factory=dict, repr=False)
+    _blocked_ids: dict[str, tuple[str, str]] = field(default_factory=dict, repr=False)
 
     def __post_init__(self) -> None:
-        from mediaingredientmech.stable_ids import load_registry, resolve_id, validate_records
+        from mediaingredientmech.stable_ids import inspect_ids, load_registry, validate_records
         from mediaingredientmech.utils.yaml_handler import load_yaml
 
         root = self.repo_root or REPO
         self.sssom_path = self.sssom_path or root / "mappings/ingredient_mappings.sssom.tsv"
         self.alias_path = self.alias_path or root / "mappings/mim_curie_aliases.tsv"
         self._registry = load_registry(root)
+        resolutions = inspect_ids(self._registry)
         self._resolved_ids = {
-            identifier: identifier if status == "active" else resolve_id(self._registry, identifier)
-            for identifier, (status, _) in self._registry.states.items()
+            identifier: result.at_id
+            for identifier, result in resolutions.items()
+            if result.status == "active"
+        }
+        self._blocked_ids = {
+            identifier: (result.status, result.at_id)
+            for identifier, result in resolutions.items()
+            if result.status != "active"
         }
         records = {}
         for sub in ("mapped", "unmapped"):
@@ -332,6 +340,17 @@ class CurieNormalizer:
         """Resolve a stable ID or unambiguous preserved alias to a current ID."""
         return self._resolve_reference(curie, follow_replacements=True)
 
+    def _lifecycle_problem(self, identifier: str) -> Verdict | None:
+        if identifier in self._blocked_ids:
+            status, at_id = self._blocked_ids[identifier]
+            return Verdict(
+                False,
+                curie=identifier,
+                problem=f"{status.upper()}_SUBJECT",
+                note=f"Lifecycle reaches {status} identity {at_id}; no single current record",
+            )
+        return None
+
     def _resolve_reference(self, curie: str, *, follow_replacements: bool) -> Verdict:
         """Keep address redirects separate from current mapping ownership (#1271)."""
         v = self.normalize(curie)
@@ -347,6 +366,9 @@ class CurieNormalizer:
         cur = v.curie
         if (numeric := _numeric_mim_reference(cur)) is not None:
             cur = numeric
+            problem = self._lifecycle_problem(cur)
+            if problem is not None:
+                return problem
             target = self._resolved_ids.get(cur)
             if target is None:
                 return Verdict(
@@ -369,6 +391,9 @@ class CurieNormalizer:
                 return Verdict(False, curie=cur, problem="ALIAS_CYCLE")
             visited.add(cur)
             if numeric is not None:
+                problem = self._lifecycle_problem(cur)
+                if problem is not None:
+                    return problem
                 target = self._resolved_ids.get(cur)
                 if target is None:
                     return Verdict(

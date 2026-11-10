@@ -33,12 +33,38 @@ notes below keyed by the same stable task ID.
 <!-- mech-infra-tasks:start -->
 ```yaml
 schema_version: '1.0.0'
-tasks: []
+tasks:
+  - task_id: mediaingredientmech-infra-1300
+    summary: Explicit stable-ID splits and deprecation without a successor
+    status: open
+    issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/1300
+    disposition: Implemented on the PR1279 dependency; focused checks pass, independent review and full checks pending. No data or registry changes.
 ```
 <!-- mech-infra-tasks:end -->
 
 ## Tasks
 
-No infrastructure tasks have been entered through this workflow yet. This empty
-bootstrap ledger is not an audit result or a claim that the repository has no
-infrastructure needs. Add evidence-backed entries as work exposes them.
+### mediaingredientmech-infra-1300
+
+Origin: resumed all-unmatched campaign, 2026-11-10 user requirement for persistent
+identity lifecycle. Priority: prerequisite to the next reviewed release.
+Dependency: #1265 / PR #1279, exact implementation base
+`890e46360779ffad9895896fc280cc846f97c55f`.
+
+The existing lifecycle supports one registered replacement per retired/merged
+ID. #1300 adds explicit one-to-many splits and deprecation with no successor,
+without another allocator, re-minting, arbitrary child selection or transfer of
+scientific equivalence. Preserve all existing IDs and ledgers. Source-identity
+publication and campaign migration are separate work.
+
+Evidence/design: `.temp/all-unmatched-20261107/preflight/stable-id-model-audit-20261110-v1/`
+in the campaign coordinator; maintained contract and test coverage are in
+`docs/STABLE_MIM_IDS.md` and `tests/test_stable_id_lifecycle.py`.
+Focused validation: 221 distinct passing cases and one unchanged corpus-dependent
+skip (every current SSSOM subject has an exactMatch); the new synthetic test
+explicitly checks that a broadMatch-only current owner has no equivalent term.
+The current 2,956-record trusted-base identity/history gate, focused Ruff/Black,
+two-module mypy and diff checks pass. Exact commands/output are retained in the
+owned worktree's `.temp/lifecycle1300-checks/`. These focused runs explicitly
+disable coverage; full-suite coverage/required gates are unchanged and remain
+pending with distinct review. No actual lifecycle or source operation ran.

@@ -43,8 +43,12 @@ mapping states all retain permanent record IDs.
 
 IDs come from the append-only mint registry and lifecycle ledger; a rename,
 label correction, mapping update or directory move never re-mints the record.
-Filenames are kept. Retired or merged IDs remain registered and resolve to
-an active replacement. See [stable MIM IDs](docs/STABLE_MIM_IDS.md).
+Filenames are kept. Retired or merged IDs remain registered; replacement chains
+resolve only when they reach one active record without a split or deprecation.
+A split preserves all declared successor addresses without asserting equivalence
+or choosing a child. Deprecation without a justified successor preserves the
+historical address without inventing a replacement. See
+[stable MIM IDs](docs/STABLE_MIM_IDS.md).
 
 The named MIM subjects in historical worked examples below (for example
 `MIM:Vermont_Soil`) are legacy aliases, not a current ID-allocation rule.
