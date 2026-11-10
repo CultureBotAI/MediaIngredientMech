@@ -34,6 +34,11 @@ notes below keyed by the same stable task ID.
 ```yaml
 schema_version: '1.0.0'
 tasks:
+  - task_id: mediaingredientmech-infra-1325
+    summary: Separate ordinary current reviewed exports from immutable historical projection replay
+    status: open
+    issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/1325
+    disposition: Explicit native routing in an isolated code branch; actual endpoint review selection, historical root pin and independent final review remain pending.
   - task_id: mediaingredientmech-infra-1303
     summary: Reviewed native adoption of permanent IDs into the existing campaign
     status: open
@@ -48,6 +53,17 @@ tasks:
 <!-- mech-infra-tasks:end -->
 
 ## Tasks
+
+### mediaingredientmech-infra-1325
+
+Origin: the #1303 campaign adoption prerequisite. The original projection proves
+only the immutable administrative migration, while new ordinary endpoint reviews
+must cover current science independently. The routing gate keeps the projected
+default, replays the original native checker against a separately pinned Git root
+for ordinary reviews, and verifies complete current mapping and companion inputs.
+See `docs/CURRENT_REVIEWED_EXPORTS.md` and `tests/test_reviewed_export_route.py`.
+No campaign reviews, data, IDs, historical proof scope, QC pin or production
+permission change. Future selector changes require actual reviewed artifacts.
 
 ### mediaingredientmech-infra-1303
 

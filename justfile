@@ -125,9 +125,16 @@ export-reviewed-sssom report="reports/stable_ids_1265_20261108/mapping-review.js
     uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2"
 
 qc-reviewed-sssom report="reports/stable_ids_1265_20261108/mapping-review.json" output="output/mim-reviewed-sssom":
-    uv run --frozen python -m mediaingredientmech.identity_projection --check
+    uv run --frozen python -m mediaingredientmech.validation.reviewed_export_route --route projected --review "$1"
     uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
     uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
+
+# New ordinary current reviews still replay the immutable historical proof (#1325).
+# This does not select a review, create a historical root or export products.
+qc-current-reviewed-sssom report companion historical_root historical_revision output:
+    uv run --frozen python -m mediaingredientmech.validation.reviewed_export_route --route ordinary --review "$1" --companion-review "$2" --historical-root "$3" --historical-revision "$4"
+    uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$5" --validate-only
+    uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$5"
 
 # Separate reviewed source identities; inspection is not scientific approval.
 inspect-source-bindings review:
