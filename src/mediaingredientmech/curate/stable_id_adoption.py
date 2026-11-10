@@ -314,6 +314,9 @@ class Loaded:
     index: bytes
     initial_dirty: set
     historical_after: dict | None = None
+    _review_parse_cache: dict[tuple, str] = field(
+        default_factory=dict, init=False, repr=False, compare=False
+    )
 
     def check(self, states=None, during=()):
         require(_CAPTURE is not None, "captured producer unavailable")
@@ -833,6 +836,46 @@ def inspect(root, request_path):
     }
 
 
+def _parsed_review(loaded, native, path, markdown_path):
+    """Reuse successful native parsing only within this captured context (#1347).
+
+    The cache stores immutable JSON, never a mutable report or a scientific
+    decision. Each caller gets its own object; all per-reference checks remain
+    in _reviews, and the existing complete currentness guards remain required.
+    """
+    inputs = loaded.inputs
+    raw, markdown = inputs.read(path), inputs.read(markdown_path)
+    schema_path = "schema/record_review.yaml"
+    schema = inputs.read(schema_path)
+    require(schema == _CAPTURE.files[schema_path][0], "native review schema differs")
+    schema_file = inputs.files[schema_path]
+    schema_file.verify()
+
+    def captured(name):
+        frozen = inputs.files[name]
+        return (str(frozen.path), frozen.identity, frozen.parents, frozen.content)
+
+    key = (
+        str(inputs.root),
+        path,
+        captured(path),
+        captured(markdown_path),
+        captured(schema_path),
+        str(_CAPTURE.root),
+        tuple((name, raw, identity) for name, (raw, identity) in sorted(_CAPTURE.files.items())),
+        encoded(_CAPTURE.runtime),
+    )
+    if key not in loaded._review_parse_cache:
+        report = native.parse_review_bundle(path, raw, markdown, inputs.root / schema_path)
+        # Native reports admit escaped surrogate code points. Keep JSON as
+        # text: UTF-8 encoding rejects them, while ASCII escaping can combine
+        # an adjacent surrogate pair into a different string on decoding.
+        serialized = json.dumps(report, ensure_ascii=False, allow_nan=False)
+        schema_file.verify()
+        loaded._review_parse_cache[key] = serialized
+    return document(loaded._review_parse_cache[key])
+
+
 def _reviews(loaded, references, payload, *, scientific=True):
     inputs = loaded.inputs
     native = _CAPTURE.script("scripts/record_review.py")
@@ -850,9 +893,7 @@ def _reviews(loaded, references, payload, *, scientific=True):
             path in loaded.request["review_inputs"] and md in loaded.request["review_inputs"],
             "native review pair must be pinned",
         )
-        report = native.parse_review_bundle(
-            path, inputs.read(path), inputs.read(md), inputs.root / "schema/record_review.yaml"
-        )
+        report = _parsed_review(loaded, native, path, md)
         require(
             native.source_provenance(inputs.root, report)["status"]
             not in {"invalid", "unverified"},
