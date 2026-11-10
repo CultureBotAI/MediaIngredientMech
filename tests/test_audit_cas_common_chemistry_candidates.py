@@ -15,6 +15,7 @@ from audit_cas_common_chemistry_candidates import (  # noqa: E402
     audit_cas_rows,
     has_deduplicated_component_smiles,
     normalize_cas_formula,
+    select_best_chebi_candidate,
     strip_inchikey_prefix,
     validate_output_path_is_outside_data,
 )
@@ -146,3 +147,27 @@ def test_audit_cas_rows_classifies_deduplicated_smiles_chebi_ready_and_unmapped_
         by_id["UNMAPPED_0159"]["curation_disposition"]
         == "GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR"
     )
+
+
+def test_select_best_chebi_candidate_ranks_multiple_conn14_candidates_by_label_consistency():
+    candidates = [
+        ("CHEBI:4167", "D-glucopyranose"),
+        ("CHEBI:17634", "D-glucose"),
+        ("CHEBI:42758", "aldehydo-D-glucose"),
+    ]
+    best_id, best_name, all_ids = select_best_chebi_candidate("D-Glucose", candidates)
+    assert best_id == "CHEBI:17634"
+    assert best_name == "D-glucose"
+    assert all_ids == "CHEBI:4167|CHEBI:17634|CHEBI:42758"
+
+    # Also test hydrate / stereoisomer ranking when exact match is absent
+    hydrate_candidates = [
+        ("CHEBI:10001", "raffinose"),
+        ("CHEBI:10002", "raffinose pentahydrate"),
+    ]
+    best_h_id, best_h_name, all_h_ids = select_best_chebi_candidate(
+        "D-Raffinose pentahydrate", hydrate_candidates
+    )
+    assert best_h_id == "CHEBI:10002"
+    assert best_h_name == "raffinose pentahydrate"
+    assert all_h_ids == "CHEBI:10001|CHEBI:10002"

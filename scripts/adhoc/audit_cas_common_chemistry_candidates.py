@@ -138,21 +138,67 @@ def validate_output_path_is_outside_data(output_path: Path, repo_root: Path = RE
 
 def load_chebi_lookup(
     path: Path | None,
-) -> tuple[dict[str, tuple[str, str]], dict[str, tuple[str, str]]]:
-    """Return `(exact_by_inchikey, connectivity_by_14char)` from a 3-star ChEBI TSV."""
+) -> tuple[dict[str, list[tuple[str, str]]], dict[str, list[tuple[str, str]]]]:
+    """Return `(exact_by_inchikey, connectivity_by_14char)` candidate lists from a 3-star ChEBI TSV."""
     if path is None or not path.exists():
         return {}, {}
-    exact: dict[str, tuple[str, str]] = {}
-    conn14: dict[str, tuple[str, str]] = {}
+    exact: dict[str, list[tuple[str, str]]] = {}
+    conn14: dict[str, list[tuple[str, str]]] = {}
     with path.open(newline="", encoding="utf-8") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
             ik = (row.get("standard_inchi_key") or "").strip()
             cid = (row.get("chebi_id") or "").strip()
             name = (row.get("name") or row.get("label") or "").strip()
             if ik and cid:
-                exact.setdefault(ik, (cid, name))
-                conn14.setdefault(ik[:14], (cid, name))
+                pair = (cid, name)
+                if pair not in exact.setdefault(ik, []):
+                    exact[ik].append(pair)
+                if pair not in conn14.setdefault(ik[:14], []):
+                    conn14[ik[:14]].append(pair)
     return exact, conn14
+
+
+def _coerce_candidate_list(
+    entry: list[tuple[str, str]] | tuple[str, str] | None,
+) -> list[tuple[str, str]]:
+    """Normalize either a single `(chebi_id, name)` tuple or a list of tuples into a list."""
+    if not entry:
+        return []
+    if isinstance(entry, tuple) and len(entry) == 2 and isinstance(entry[0], str):
+        return [entry]
+    return list(entry)
+
+
+def select_best_chebi_candidate(
+    preferred_term: str,
+    candidates: list[tuple[str, str]] | tuple[str, str] | None,
+) -> tuple[str, str, str]:
+    """Select `(best_chebi_id, best_name, all_candidate_ids_pipe_joined)` ranked against `preferred_term`.
+
+    Candidates whose name matches `preferred_term` case-insensitively rank first,
+    followed by candidates that pass `_label_consistency(preferred_term, name) is None`,
+    and finally the first candidate in file order.
+    """
+    cand_list = _coerce_candidate_list(candidates)
+    if not cand_list:
+        return "", "", ""
+    all_ids = "|".join(cid for cid, _ in cand_list)
+    pref_cf = (preferred_term or "").strip().casefold()
+    pref_tokens = set(re.findall(r"[a-z0-9]+", pref_cf))
+
+    def _rank_key(idx_and_pair: tuple[int, tuple[str, str]]) -> tuple[int, int, int]:
+        idx, (_cid, cname) = idx_and_pair
+        cname_cf = (cname or "").strip().casefold()
+        cand_tokens = set(re.findall(r"[a-z0-9]+", cname_cf))
+        shared_tokens = len(pref_tokens & cand_tokens)
+        if pref_cf and cname_cf == pref_cf:
+            return (0, -shared_tokens, idx)
+        if pref_cf and _label_consistency(preferred_term, cname) is None:
+            return (1, -shared_tokens, idx)
+        return (2, -shared_tokens, idx)
+
+    _, (best_id, best_name) = min(enumerate(cand_list), key=_rank_key)
+    return best_id, best_name, all_ids
 
 
 def load_ingredients_by_id(ingredients_dir: Path = INGREDIENTS_DIR) -> dict[str, dict]:
@@ -206,8 +252,8 @@ def _classify_curation_disposition(
 def audit_cas_rows(
     cas_rows: list[dict[str, str]],
     ingredients_by_id: dict[str, dict],
-    chebi_exact: dict[str, tuple[str, str]] | None = None,
-    chebi_conn14: dict[str, tuple[str, str]] | None = None,
+    chebi_exact: dict[str, list[tuple[str, str]] | tuple[str, str]] | None = None,
+    chebi_conn14: dict[str, list[tuple[str, str]] | tuple[str, str]] | None = None,
 ) -> list[dict[str, str]]:
     """Audit MediaIngredientMech CAS Common Chemistry rows with `chemical_properties_guard` and ChEBI."""
     exact_map = chebi_exact or {}
@@ -239,13 +285,17 @@ def audit_cas_rows(
         label_verdict = check_candidate_label_consistency(preferred_term, cas_name, synonyms_sample)
 
         if ik and ik in exact_map:
-            chebi_id, chebi_name = exact_map[ik]
+            chebi_id, chebi_name, all_chebi_ids = select_best_chebi_candidate(
+                preferred_term, exact_map[ik]
+            )
             chebi_match_type = "EXACT_INCHIKEY"
         elif ik and ik[:14] in conn14_map:
-            chebi_id, chebi_name = conn14_map[ik[:14]]
+            chebi_id, chebi_name, all_chebi_ids = select_best_chebi_candidate(
+                preferred_term, conn14_map[ik[:14]]
+            )
             chebi_match_type = "CONNECTIVITY_14"
         else:
-            chebi_id, chebi_name = "", ""
+            chebi_id, chebi_name, all_chebi_ids = "", "", ""
             chebi_match_type = "NONE"
 
         disposition = _classify_curation_disposition(
@@ -271,6 +321,7 @@ def audit_cas_rows(
                 "label_guard": label_verdict,
                 "candidate_chebi_id": chebi_id,
                 "candidate_chebi_name": chebi_name,
+                "all_candidate_chebi_ids": all_chebi_ids,
                 "chebi_match_type": chebi_match_type,
                 "curation_disposition": disposition,
             }
@@ -354,6 +405,7 @@ def main(argv: list[str] | None = None) -> int:
             "label_guard",
             "candidate_chebi_id",
             "candidate_chebi_name",
+            "all_candidate_chebi_ids",
             "chebi_match_type",
             "curation_disposition",
         ]
