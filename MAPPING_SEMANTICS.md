@@ -52,6 +52,36 @@ Resolve them to the record's numeric `mim_id` before constructing a new row.
 Do not rewrite earlier releases or their review receipts. Neither allocating
 an ID nor resolving an alias grants mapping or scientific-review authority.
 
+### Reviewed source identities (candidate contract #1299)
+
+The separate `reviewed-source-bindings-v1` product can assert an original
+source entity `skos:exactMatch MIM:<seven-digit-id>` only after explicit,
+independent scientific review of the complete source entity, every captured
+occurrence and the current owning record. This is a source identity assertion,
+not an ontology grounding assertion. Labels, retained aliases, a shared
+external identifier, a minted MIM ID or a supported external row alone never
+authorize it. A source ID reused across conflicting preparations cannot gain
+multiple global identities by changing labels; withhold it until its scope is
+resolved. The current contract covers all occurrences of one source ID and
+does not invent occurrence-level subjects.
+
+A reviewed MIM-only source identity may be supported while its owner's external
+mapping remains `UNMAPPED`. Do not fabricate an ontology target, change that
+status to `MAPPED`, or grant other claims approval. Preserve unresolved,
+ambiguous and held source cases, along with all original occurrence payloads,
+in the withheld accounting. Each justified external mapping remains a separate
+MIM-to-external assertion with its original predicate, full row, evidence and
+SUPPORTED/WITHHOLD disposition. The canonical SSSOM owner rules and historical
+identity-projection proofs remain unchanged.
+
+Consumer spelling `MIM.ingredient:<seven-digit-id>` expands to the same
+`https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_` URI as
+`MIM:`. Preserve original CURIEs in provenance. Never infer `subclass_of` from
+source identity or from broad/close/narrow mappings; typed form relations and
+true subsumption each need their own evidence. A supported candidate is not
+production publication permission. See [source identity candidates](docs/SOURCE_IDENTITY_CANDIDATES.md)
+for the native review, complete-accounting and consumer validation contract.
+
 ## 0. Grounding quality and identity predicates are independent
 
 `ontology_mapping.mapping_quality` records how the ontology grounding was
