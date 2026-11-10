@@ -129,6 +129,16 @@ qc-reviewed-sssom report="reports/stable_ids_1265_20261108/mapping-review.json" 
     uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
     uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
 
+# Separate reviewed source identities; inspection is not scientific approval.
+inspect-source-bindings review:
+    uv run --frozen python -m mediaingredientmech.export.source_bindings --root . --review "$1" --inspect
+
+export-source-bindings review output:
+    uv run --frozen python -m mediaingredientmech.export.source_bindings --root . --review "$1" --output "$2"
+
+qc-source-bindings review output:
+    uv run --frozen python -m mediaingredientmech.export.source_bindings --root . --review "$1" --output "$2" --validate-only
+
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up
