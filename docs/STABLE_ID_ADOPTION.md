@@ -76,6 +76,14 @@ shared external IDs, aliases, role support and prior copied report metadata are
 not substitutes for these identity decisions. An identified UNMAPPED material
 can be eligible while its ontology, role and export holds remain unchanged.
 
+Successful native review-pair parsing is reused only within one loaded context
+(#1347), bound to the exact captured pair, schema, producer and runtime. Cached
+values are immutable serialized reports; each use receives a separate object.
+Every target's scientific, source-provenance and current-input checks still run.
+Nothing persists across loads, and failures never populate the cache. This
+avoids repeated full parsing of shared reports without claiming a measured
+speedup or changing lease, operational-fit or publication requirements.
+
 ## Prepare, apply and verification
 
 Use the additive `adoption-inspect`, `adoption-prepare`, `adoption-apply` and
