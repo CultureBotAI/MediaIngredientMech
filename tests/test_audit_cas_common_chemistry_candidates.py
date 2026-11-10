@@ -13,6 +13,7 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 from audit_cas_common_chemistry_candidates import (  # noqa: E402
     audit_cas_rows,
+    has_deduplicated_component_smiles,
     normalize_cas_formula,
     strip_inchikey_prefix,
     validate_output_path_is_outside_data,
@@ -50,9 +51,17 @@ def test_normalize_cas_formula_prefers_inchi_formula_layer():
     assert strip_inchikey_prefix("InChIKey=RZQXOGQSPBYUKH-UHFFFAOYSA-N") == (
         "RZQXOGQSPBYUKH-UHFFFAOYSA-N"
     )
+    assert (
+        has_deduplicated_component_smiles(
+            "C18H32O16·5H2O",
+            "OCC1OC(OC2(CO)OC(CO)C(O)C2O)C(O)C(O)C1OCC3OC(O)C(O)C(O)C3O.O",
+            "InChI=1S/C18H32O16.5H2O/c19-1-5-9(23)12(26)15(29)17(32-5)31-4-8-11(25)14(28)16(30)18(33-8)34-7(3-21)10(24)13(27)6(22)2-20;;;;;/h5-30H,1-4H2;5*1H2",
+        )
+        is True
+    )
 
 
-def test_audit_cas_rows_catches_deduplicated_component_smiles_and_passes_valid_monomer():
+def test_audit_cas_rows_classifies_deduplicated_smiles_chebi_ready_and_unmapped_cas_rn():
     cas_rows = [
         {
             "group": "mim_cas_fallbacks",
@@ -81,6 +90,19 @@ def test_audit_cas_rows_catches_deduplicated_component_smiles_and_passes_valid_m
             "inchikey": "InChIKey=KJXSIXMJHQSKOD-UHFFFAOYSA-N",
             "synonyms_sample": "D-Raffinose pentahydrate",
         },
+        {
+            "group": "mim_unmapped_single",
+            "mech": "MediaIngredientMech",
+            "identifier": "UNMAPPED_0159",
+            "query_name": "Ethanolamine acetate",
+            "cas_rn": "54300-24-2",
+            "cas_name": "Acetic acid, compd. with 2-aminoethanol (1:1)",
+            "molecular_formula": "C2H7NO·C2H4O2",
+            "canonical_smiles": "CC(=O)O.NCCO",
+            "inchi": "InChI=1S/C2H7NO.C2H4O2/c3-1-2-4;1-2(3)4/h4H,1-3H2;1H3,(H,3,4)",
+            "inchikey": "InChIKey=VVLAIYIMMFWRFW-UHFFFAOYSA-N",
+            "synonyms_sample": "Ethanolamine acetate; 2-Aminoethanol acetate",
+        },
     ]
     ingredients_by_id = {
         "CAS-RN:68399-81-5": {
@@ -91,15 +113,36 @@ def test_audit_cas_rows_catches_deduplicated_component_smiles_and_passes_valid_m
             "identifier": "CAS-RN:17629-30-0",
             "preferred_term": "D-Raffinose pentahydrate",
         },
+        "UNMAPPED_0159": {
+            "identifier": "UNMAPPED_0159",
+            "preferred_term": "Ethanolamine acetate",
+        },
+    }
+    chebi_exact = {
+        "RZQXOGQSPBYUKH-UHFFFAOYSA-N": ("CHEBI:46761", "TAPSO"),
     }
 
-    audited = audit_cas_rows(cas_rows, ingredients_by_id)
+    audited = audit_cas_rows(cas_rows, ingredients_by_id, chebi_exact=chebi_exact)
     by_id = {r["identifier"]: r for r in audited}
 
     assert by_id["CAS-RN:68399-81-5"]["structure_guard"] == "PASS"
     assert by_id["CAS-RN:68399-81-5"]["label_guard"] == "PASS"
+    assert by_id["CAS-RN:68399-81-5"]["candidate_chebi_id"] == "CHEBI:46761"
+    assert by_id["CAS-RN:68399-81-5"]["curation_disposition"] == "SEED_FROM_CHEBI_OLS4_READY"
 
     assert (
         by_id["CAS-RN:17629-30-0"]["structure_guard"]
         == "STRUCTURE_COMPOSITION_MISMATCH"
+    )
+    assert by_id["CAS-RN:17629-30-0"]["deduplicated_component_smiles"] == "true"
+    assert (
+        by_id["CAS-RN:17629-30-0"]["curation_disposition"]
+        == "REFUSE_CAS_DEDUPLICATED_SMILES"
+    )
+
+    assert by_id["UNMAPPED_0159"]["structure_guard"] == "PASS"
+    assert by_id["UNMAPPED_0159"]["label_guard"] == "PASS"
+    assert (
+        by_id["UNMAPPED_0159"]["curation_disposition"]
+        == "GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR"
     )
