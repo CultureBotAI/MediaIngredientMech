@@ -32,6 +32,37 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Native adoption fixtures capture real transaction/lease source files.
+      # Reuse the existing immutable pin without installing Claw or its providers.
+      - name: Read immutable native Claw revision
+        id: native-claw-pin
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -I - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          pin_path = Path("scripts/.vendored_canon_ref")
+          if pin_path.is_symlink() or not pin_path.is_file():
+              raise SystemExit("Canonical pin must be a regular, non-symlink file")
+          with pin_path.open("rb") as stream:
+              pin = stream.read(64)
+          if re.fullmatch(rb"[0-9a-f]{40}\n?", pin) is None:
+              raise SystemExit("Canonical pin must contain one full lowercase commit SHA")
+          with Path(os.environ["GITHUB_OUTPUT"]).open("a", encoding="utf-8") as output:
+              output.write("ref=" + pin.decode("ascii").strip() + "\n")
+          PY
+
+      - name: Checkout pinned native Claw fixture source
+        uses: actions/checkout@v4
+        with:
+          repository: CultureBotAI/culturebotai-claw
+          ref: ${{ steps.native-claw-pin.outputs.ref }}
+          path: .temp/native-claw
+          persist-credentials: false
+
       # The worktree recipe regression test needs the real just executable.
       - uses: extractions/setup-just@v3
 
@@ -53,6 +84,8 @@ jobs:
         run: just test-record-reviews
 
       - name: Run pytest
+        env:
+          CLAW_SRC: ${{ github.workspace }}/.temp/native-claw/src
         run: uv run --with pytest --with pytest-cov pytest
 
       - name: Enforce maintained-package coverage

@@ -34,6 +34,37 @@ def _load(name):
     return yaml.safe_load((ROOT / ".github" / "workflows" / name).read_text())
 
 
+def _assert_native_adoption_dependency(document, job):
+    """#1323: pytest captures pinned source without replacing the MIM checkout."""
+    steps = job["steps"]
+    checkouts = [step for step in steps if step.get("uses", "").startswith("actions/checkout@")]
+    assert len(checkouts) == 2, "pytest needs its candidate and one native dependency"
+    dependencies = [step for step in checkouts
+                    if step.get("with", {}).get("repository") == "CultureBotAI/culturebotai-claw"]
+    assert len(dependencies) == 1, "pytest needs the real native Claw source"
+    dependency = dependencies[0]
+    candidate = next(step for step in checkouts if step is not dependency)
+    assert candidate.get("with", {}).get("path") in (None, "."), "keep the candidate at the job root"
+    assert candidate.get("with", {}).get("fetch-depth") == 0, "retain the full candidate history"
+    options = dependency["with"]
+    assert re.fullmatch(r"[0-9a-f]{40}", VALIDATOR_PIN)
+    assert options.get("ref") == "${{ steps.native-claw-pin.outputs.ref }}", "native source must read the existing pin"
+    assert options.get("path") == ".temp/native-claw", "native source must be isolated and ignored"
+    assert options.get("persist-credentials") is False
+    readers = [step for step in steps if step.get("id") == "native-claw-pin"]
+    runners = [step for step in steps if step.get("name") == "Run pytest"]
+    assert len(readers) == len(runners) == 1, "one pin reader and complete pytest invocation required"
+    reader, runner = readers[0], runners[0]
+    assert steps.index(candidate) < steps.index(reader) < steps.index(dependency) < steps.index(runner)
+    assert reader.get("shell") == "bash"
+    assert runner.get("env", {}).get("CLAW_SRC") == "${{ github.workspace }}/.temp/native-claw/src"
+    assert runner.get("run") == "uv run --with pytest --with pytest-cov pytest", "retain every native and pure test"
+    assert "CLAW_SRC" not in document.get("env", {}) and "CLAW_SRC" not in job.get("env", {})
+    assert "PYTHONPATH" not in runner.get("env", {}), "source capture must not broaden package imports"
+    for step in (candidate, reader, dependency, runner):
+        assert "if" not in step and not step.get("continue-on-error"), "native setup and tests cannot silently skip"
+
+
 def _assert_required_workflow(document, expected_jobs):
     events = document.get("on", document.get(True, {}))
     assert "pull_request" in events, "missing PR trigger"
@@ -44,10 +75,16 @@ def _assert_required_workflow(document, expected_jobs):
         assert job.get("name", job_id) == check_name, "required check renamed"
         assert "if" not in job, "required job cannot skip the candidate"
         assert not job.get("continue-on-error"), "required job must fail on errors"
+        if expected_jobs == {"pytest": "pytest"}:
+            _assert_native_adoption_dependency(document, job)
         for step in job.get("steps", []):
             if step.get("uses", "").startswith("actions/checkout@"):
                 options = step.get("with", {})
                 if options.get("repository") == "CultureBotAI/culturebotai-claw":
+                    if expected_jobs == {"pytest": "pytest"}:
+                        # This distinct layout was checked above. The evidence
+                        # validator keeps every original assertion below.
+                        continue
                     assert re.fullmatch(r"[0-9a-f]{40}", VALIDATOR_PIN)
                     assert options.get("ref") == "${{ steps.claw-pin.outputs.ref }}", "validator must read the consumer pin"
                     assert options.get("path") == "claw", "validator must be separate"
@@ -156,5 +193,80 @@ def test_evidence_pin_reader_uses_each_actual_consumer_pin(tmp_path):
 @pytest.mark.parametrize("pin", [None, b"main\n", b"A" * 40, b"a" * 40 + b"\nother=x"])
 def test_evidence_pin_reader_rejects_missing_mutable_or_malformed_pin(tmp_path, pin):
     result, output = _run_evidence_pin_reader(tmp_path, pin)
+    assert result.returncode != 0
+    assert not output.exists()
+
+
+@pytest.mark.parametrize("defect", ["dependency", "mutable", "hardcoded", "overlap", "pin-order",
+                                  "pin-reader", "source-env", "broad-path", "skip", "test-filter"])
+def test_native_adoption_dependency_cannot_drift_or_skip(defect):
+    document = _load("tests.yaml")
+    _assert_required_workflow(document, REQUIRED_JOBS["tests.yaml"])
+    broken = deepcopy(document)
+    job = broken["jobs"]["pytest"]
+    steps = job["steps"]
+    dependency = next(step for step in steps
+                      if step.get("with", {}).get("repository") == "CultureBotAI/culturebotai-claw")
+    reader = next(step for step in steps if step.get("id") == "native-claw-pin")
+    runner = next(step for step in steps if step.get("name") == "Run pytest")
+    if defect == "dependency":
+        steps.remove(dependency)
+    elif defect == "mutable":
+        dependency["with"]["ref"] = "main"
+    elif defect == "hardcoded":
+        dependency["with"]["ref"] = VALIDATOR_PIN
+    elif defect == "overlap":
+        dependency["with"]["path"] = "."
+    elif defect in {"pin-order", "pin-reader"}:
+        steps.remove(reader)
+        if defect == "pin-order":
+            steps.append(reader)
+    elif defect == "source-env":
+        del runner["env"]["CLAW_SRC"]
+    elif defect == "broad-path":
+        runner["env"]["PYTHONPATH"] = ".temp/native-claw/src"
+    elif defect == "skip":
+        dependency["if"] = "false"
+    else:
+        runner["run"] += " -k 'not stable_id_adoption'"
+    with pytest.raises(AssertionError):
+        _assert_required_workflow(broken, REQUIRED_JOBS["tests.yaml"])
+
+
+def _run_native_pin_reader(root, pin, *, symlink=False):
+    path = root / "scripts/.vendored_canon_ref"
+    path.parent.mkdir(parents=True)
+    if symlink:
+        target = root / "real-pin"
+        target.write_bytes(pin)
+        path.symlink_to(target)
+    elif pin is not None:
+        path.write_bytes(pin)
+    reader = next(step for step in _load("tests.yaml")["jobs"]["pytest"]["steps"]
+                  if step.get("id") == "native-claw-pin")
+    output = root / "github-output"
+    result = subprocess.run(
+        ["bash", "-c", reader["run"]], cwd=root, capture_output=True, text=True,
+        env={**os.environ, "GITHUB_OUTPUT": str(output)}, timeout=15,
+    )
+    return result, output
+
+
+def test_native_pin_reader_uses_each_actual_consumer_pin(tmp_path):
+    for index, pin in enumerate([b"a" * 40 + b"\n", b"b" * 40]):
+        result, output = _run_native_pin_reader(tmp_path / str(index), pin)
+        assert result.returncode == 0, result.stderr
+        assert output.read_text() == "ref=" + pin.decode().strip() + "\n"
+
+
+@pytest.mark.parametrize("pin", [None, b"main\n", b"A" * 40, b"a" * 40 + b"\nother=x"])
+def test_native_pin_reader_rejects_missing_mutable_or_malformed_pin(tmp_path, pin):
+    result, output = _run_native_pin_reader(tmp_path, pin)
+    assert result.returncode != 0
+    assert not output.exists()
+
+
+def test_native_pin_reader_refuses_symlink(tmp_path):
+    result, output = _run_native_pin_reader(tmp_path, b"a" * 40, symlink=True)
     assert result.returncode != 0
     assert not output.exists()
