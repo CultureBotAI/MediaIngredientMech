@@ -143,8 +143,8 @@ qc-source-bindings review output:
 adoption-inspect request:
     uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption inspect --root . --request "$1"
 
-adoption-prepare request stage:
-    uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption prepare --root . --request "$1" --stage "$2"
+adoption-prepare request stage operational_policy:
+    uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption prepare --root . --request "$1" --stage "$2" --operational-policy "$3"
 
 # Dry-run unless the caller explicitly supplies --apply as the final argument.
 adoption-apply stage acceptance receipt *args:

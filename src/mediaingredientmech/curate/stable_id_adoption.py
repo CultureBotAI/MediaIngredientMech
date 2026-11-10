@@ -11,14 +11,17 @@ import copy
 import hashlib
 import io
 import json
+import math
 import os
 import re
 import subprocess
 import sys
+import time
 import types
 import unicodedata
+import uuid
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, cast
 
@@ -1231,10 +1234,315 @@ def _dry_run(loaded, outputs):
     return result.as_dict()
 
 
-def prepare(root, request_path, stage):
+# Operational estimates are explicitly reviewed prerequisites, never guarantees
+# of completion or authority to extend a native lease (#1321).
+FIT_MODEL = "native-complete-guard-growth-v1"
+FIT_LIMITATIONS = (
+    "Current-state rehearsal; future target growth is an envelope, not an observed future endpoint.",
+    "Two local samples; cache, load and scheduling can change. Forecast is not a runtime guarantee.",
+    "Additional overhead is explicitly reviewed; future writes, fsyncs and final validation are not individually measured.",
+    "The mediaingredientmech lease conflicts with the native global resource and needs explicit scheduling acceptance.",
+)
+
+
+def _positive(value, name, *, above=0):
+    require(
+        type(value) in {int, float} and math.isfinite(value) and value > above,
+        "invalid operational " + name,
+    )
+    return value
+
+
+def _policy(value):
+    keys(
+        value,
+        {
+            "lease_seconds",
+            "evidence_max_age_seconds",
+            "safety_factor",
+            "additional_overhead_seconds",
+        },
+    )
+    for key in value:
+        _positive(value[key], key, above=1 if key == "safety_factor" else 0)
+    return value
+
+
+def _lease_namespace(loaded):
+    native = loaded.claw.modules["locks"]
+    workspace = native.resolve_workspace_root()
+    locks_dir = native.check_lock_setup(resource="mediaingredientmech")
+    no_alias(workspace)
+    no_alias(locks_dir)
+    return {
+        "workspace_root": str(workspace),
+        "locks_dir": str(locks_dir),
+        "resource": "mediaingredientmech",
+        "conflicting_global_resource": native.LockManager._GLOBAL_RESOURCE,
+    }
+
+
+def _operational_counts(loaded, outputs, moves):
+    states = {
+        **loaded.owners,
+        **{
+            name: loaded.inputs.files[name]
+            for name in (*AGGREGATES, str(REGISTRY_PATH), str(LIFECYCLE_PATH))
+        },
+    }
+    owners = [name for name in outputs if name.startswith("data/ingredients/")]
+    replaced = [
+        name for name in outputs if name in states and states[name].content != outputs[name]
+    ]
+    created = [name for name in outputs if name not in states]
+    count = len(owners) + 8 + 4 * len(replaced) + 2 * len(created) + 2 * len(moves)
+    # New destinations coexist with old relocation sources until retirement.
+    # Scale the complete measured scan conservatively by both file and byte
+    # growth; do not claim to have observed the future target inventory.
+    before_bytes = sum(len(f.content) for f in states.values())
+    peak_bytes = sum(
+        max(len(f.content), len(outputs.get(name, f.content))) for name, f in states.items()
+    ) + sum(len(outputs[name]) for name in created)
+    growth = max(1.0, (len(states) + len(created)) / len(states), peak_bytes / before_bytes)
+    return {
+        "owner_outputs": len(owners),
+        "existing_replacements": len(replaced),
+        "new_installations": len(created),
+        "relocations": len(moves),
+        "rechecks": count,
+        "peak_growth_factor": growth,
+    }
+
+
+def _operational_profile(loaded, staged, context_file, directory):
+    """Measure authentic guards using private recovery files, without a lease.
+
+    The current target is not changed or relabeled as its future state. Backup
+    reservations, content, receipt paths and source checks are real; future
+    target growth and unmeasured write costs remain explicit forecast terms.
+    """
+    storage = PreparationTree(loaded.inputs.root, directory)
+    states = {
+        **loaded.owners,
+        **{
+            name: loaded.inputs.files[name]
+            for name in (*AGGREGATES, str(REGISTRY_PATH), str(LIFECYCLE_PATH))
+        },
+    }
+    identity = (directory.stat().st_dev, directory.stat().st_ino)
+    moves = sum(row["stable_path"] != row["legacy_path"] for row in loaded.existing.values())
+    for index in range(moves):
+        storage.ensure(directory / f"relocation-{index:05d}")
+    log = directory / "fit.json"
+    paths = tuple(directory / f"before-{index:05d}.bin" for index in range(len(states)))
+    with reserve_receipt_outputs(log, backup_paths=paths) as handles:
+        receipt, *backups = handles
+        started = time.perf_counter()
+        for handle, frozen in zip(backups, states.values(), strict=True):
+            handle.write(frozen.content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        archives = [FrozenFile.capture(path) for path in paths]
+        require(
+            all(
+                archive.content == source.content
+                for archive, source in zip(archives, states.values(), strict=True)
+            ),
+            "operational rehearsal backup differs from captured beforeimage",
+        )
+        backup_seconds = time.perf_counter() - started
+
+        def scan():
+            storage.check()
+            no_alias(directory)
+            require(
+                (directory.stat().st_dev, directory.stat().st_ino) == identity,
+                "fit recovery directory changed",
+            )
+            for path, handle in zip((log, *paths), handles, strict=True):
+                check_reserved(handle, path)
+            for frozen in (*archives, *staged.values(), context_file):
+                frozen.verify()
+            loaded.check(states)
+
+        measured_at = datetime.now(timezone.utc).isoformat()
+        samples = []
+        for _ in range(2):
+            started = time.perf_counter()
+            scan()
+            samples.append(time.perf_counter() - started)
+        result = {
+            "model": FIT_MODEL,
+            "measured_at": measured_at,
+            "context": {
+                "path": str(context_file.path.relative_to(loaded.inputs.root)),
+                "sha256": sha(context_file.content),
+            },
+            "sample_seconds": samples,
+            "backup_seconds": backup_seconds,
+            "measured_current_owner_count": len(loaded.owners),
+            "lease_namespace": _lease_namespace(loaded),
+            "input_closure": {
+                "target": hashes(loaded.inputs.files),
+                "legacy": hashes(loaded.legacy.files),
+                "owner_states": hashes(states),
+                "staged": {
+                    str(f.path.relative_to(loaded.inputs.root)): sha(f.content)
+                    for f in staged.values()
+                },
+            },
+            "maintained_writes": False,
+            "lease_acquired": False,
+        }
+        finish_receipt(receipt, log, result, scan)
+    return result, FrozenFile.capture(log)
+
+
+def _forecast(policy, counts, measurement, startup_seconds):
+    keys(
+        measurement,
+        {
+            "model",
+            "measured_at",
+            "context",
+            "sample_seconds",
+            "backup_seconds",
+            "measured_current_owner_count",
+            "input_closure",
+            "lease_namespace",
+            "maintained_writes",
+            "lease_acquired",
+        },
+    )
+    require(
+        measurement["model"] == FIT_MODEL
+        and measurement["maintained_writes"] is False
+        and measurement["lease_acquired"] is False,
+        "invalid operational measurement scope",
+    )
+    samples = measurement["sample_seconds"]
+    require(isinstance(samples, list) and len(samples) == 2, "missing native operational samples")
+    for value in [*samples, measurement["backup_seconds"], startup_seconds]:
+        _positive(value, "measurement")
+    seconds = (
+        max(samples) * counts["peak_growth_factor"] * counts["rechecks"]
+        + startup_seconds
+        + measurement["backup_seconds"]
+    ) * policy["safety_factor"] + policy["additional_overhead_seconds"]
+    require(math.isfinite(seconds), "nonfinite operational forecast")
+    require(seconds < policy["lease_seconds"], "operational forecast does not fit reviewed lease")
+    return seconds
+
+
+def _fit_age(policy, measurement):
+    stamp = datetime.fromisoformat(measurement["measured_at"])
+    offset = stamp.utcoffset()
+    require(
+        offset is not None and offset.total_seconds() == 0,
+        "operational measurement needs UTC timestamp",
+    )
+    age = (datetime.now(timezone.utc) - stamp).total_seconds()
+    require(
+        0 <= age <= policy["evidence_max_age_seconds"], "stale or future operational measurement"
+    )
+
+
+def _prepared_budget(loaded, manifest, outputs, staged, *, fresh=False):
+    budget = manifest["operational_budget"]
+    keys(
+        budget,
+        {
+            "policy",
+            "policy_value",
+            "lease_namespace",
+            "limitations",
+            "counts",
+            "startup_seconds",
+            "measurement",
+            "forecast_seconds",
+        },
+    )
+    require(
+        budget["limitations"] == list(FIT_LIMITATIONS), "operational limitations changed or omitted"
+    )
+    policy = _policy(loaded.inputs.ref(budget["policy"]))
+    require(policy == budget["policy_value"], "operational policy changed")
+    require(
+        budget["lease_namespace"] == _lease_namespace(loaded),
+        "reviewed native lease namespace changed",
+    )
+    counts = _operational_counts(loaded, outputs, manifest["moves"])
+    require(budget["counts"] == counts, "operational phase count or growth changed")
+    ref = budget["measurement"]
+    keys(ref, {"path", "sha256"})
+    frozen = FrozenFile.capture(loaded.inputs.root / relative(ref["path"]))
+    require(sha(frozen.content) == ref["sha256"], "operational measurement changed")
+    measurement = document(frozen.content)
+    context = measurement["context"]
+    keys(context, {"path", "sha256"})
+    context_file = FrozenFile.capture(loaded.inputs.root / relative(context["path"]))
+    base = {key: value for key, value in manifest.items() if key != "operational_budget"}
+    require(
+        context_file.content == encoded(base) and sha(context_file.content) == context["sha256"],
+        "operational measurement names another prepared set",
+    )
+    require(
+        measurement["measured_current_owner_count"] == len(loaded.owners),
+        "operational baseline count changed",
+    )
+    require(
+        measurement["lease_namespace"] == budget["lease_namespace"],
+        "operational measurement namespace differs",
+    )
+    expected_states = {
+        **manifest["before_inventory"],
+        **{
+            name: manifest["inputs"][name]
+            for name in (*AGGREGATES, str(REGISTRY_PATH), str(LIFECYCLE_PATH))
+        },
+    }
+    expected_staged = {
+        str(
+            (context_file.path.parent / "candidate" / name).relative_to(loaded.inputs.root)
+        ): expected
+        for name, expected in manifest["outputs"].items()
+    }
+    require(
+        measurement["input_closure"]
+        == {
+            "target": manifest["inputs"],
+            "legacy": manifest["legacy_inputs"],
+            "owner_states": expected_states,
+            "staged": expected_staged,
+        },
+        "operational measurement closure differs",
+    )
+    require(
+        budget["forecast_seconds"]
+        == _forecast(policy, counts, measurement, budget["startup_seconds"]),
+        "operational forecast changed",
+    )
+    if fresh:
+        _fit_age(policy, measurement)
+    staged["__operational_measurement__"] = frozen
+    staged["__operational_context__"] = context_file
+    return budget
+
+
+def prepare(root, request_path, stage, *, operational_policy=None):
+    started = time.perf_counter()
     loaded = _load(root, request_path)
     _admitted(loaded)
+    require(operational_policy is not None, "explicit operational policy required (#1321)")
+    policy_path = (
+        str(Path(operational_policy).relative_to(loaded.inputs.root))
+        if Path(operational_policy).is_absolute()
+        else str(operational_policy)
+    )
+    policy_raw = loaded.inputs.read(policy_path)
+    policy = _policy(document(policy_raw))
     records, moves, plan = _records(loaded)
+    startup_seconds = time.perf_counter() - started
     stage = _stage_path(loaded.inputs.root, stage)
     storage = PreparationTree(loaded.inputs.root, stage)
     try:
@@ -1322,8 +1630,10 @@ def prepare(root, request_path, stage):
         )
         for name in (str(REGISTRY_PATH), str(LIFECYCLE_PATH)):
             storage.put("candidate/" + name, outputs[name])
+        started = time.perf_counter()
         dry_run = _dry_run(loaded, outputs)
         loaded.check()
+        startup_seconds += time.perf_counter() - started
         manifest = {
             "schema_version": 1,
             "capability": CAPABILITY,
@@ -1349,6 +1659,29 @@ def prepare(root, request_path, stage):
             "decisions": loaded.request["decisions"],
             "source_cases": [case["case_id"] for case in loaded.context["cases"]],
             "native_write_dry_run": dry_run,
+        }
+        storage.put("fit-context.json", encoded(manifest))
+        context_file = FrozenFile.capture(stage / "fit-context.json")
+        staged = {name: FrozenFile.capture(tree / name) for name in outputs}
+        measurement, measurement_file = _operational_profile(
+            loaded,
+            staged,
+            context_file,
+            loaded.inputs.root / ".temp" / ("adoption-fit-" + uuid.uuid4().hex),
+        )
+        counts = _operational_counts(loaded, outputs, moves)
+        manifest["operational_budget"] = {
+            "policy": {"path": policy_path, "sha256": sha(policy_raw)},
+            "policy_value": policy,
+            "lease_namespace": _lease_namespace(loaded),
+            "limitations": list(FIT_LIMITATIONS),
+            "counts": counts,
+            "startup_seconds": startup_seconds,
+            "measurement": {
+                "path": str(measurement_file.path.relative_to(loaded.inputs.root)),
+                "sha256": sha(measurement_file.content),
+            },
+            "forecast_seconds": _forecast(policy, counts, measurement, startup_seconds),
         }
         storage.put("manifest.json", encoded(manifest))
         loaded.check()
@@ -1402,6 +1735,7 @@ def _prepared(root, stage, *, before=None):
             "decisions",
             "source_cases",
             "native_write_dry_run",
+            "operational_budget",
         },
     )
     require(
@@ -1547,6 +1881,7 @@ def _prepared(root, stage, *, before=None):
     require(
         manifest["native_write_dry_run"] == expected_dry_run, "native dry-run accounting differs"
     )
+    _prepared_budget(loaded, manifest, outputs, staged)
     loaded.check()
     return loaded, manifest, manifest_file, staged, outputs
 
@@ -1639,6 +1974,29 @@ def _acceptance(loaded, manifest_file, acceptance_path):
         ),
         "explicit prepared-set acceptance required",
     )
+    budget = document(manifest_file.content)["operational_budget"]
+    require(
+        any(
+            x["target_ids"] == [tid]
+            and x["outcome"] == "supported"
+            and {y["name"]: y["value"] for y in x.get("dimensions", [])}.get("adoption_action")
+            == "apply_exact_prepared_set"
+            and {y["name"]: y["value"] for y in x.get("dimensions", [])}.get(
+                "operational_budget_sha256"
+            )
+            == digest(budget)
+            and {y["name"]: y["value"] for y in x.get("dimensions", [])}.get("lease_seconds")
+            == str(budget["policy_value"]["lease_seconds"])
+            and {y["name"]: y["value"] for y in x.get("dimensions", [])}.get(
+                "lease_namespace_sha256"
+            )
+            == digest(budget["lease_namespace"])
+            and {y["name"]: y["value"] for y in x.get("dimensions", [])}.get("lease_scheduling")
+            == "mediaingredientmech_and_global_conflict_reviewed"
+            for x in report["assessments"]
+        ),
+        "independent acceptance must explicitly bind operational budget and lease duration",
+    )
     return {"path": path, "sha256": sha(loaded.inputs.read(path))}
 
 
@@ -1659,9 +2017,11 @@ def apply(root, stage, acceptance_path, receipt_dir, *, enabled=False):
             "completed rerun names another acceptance",
         )
         return {"applied": False, "unchanged": True, "verification": verified}
+    startup_started = time.perf_counter()
     loaded, manifest, manifest_file, staged, outputs = _prepared(root, stage)
     acceptance = _acceptance(loaded, manifest_file, acceptance_path)
     receipt_dir = _stage_path(loaded.inputs.root, receipt_dir)
+    budget = _prepared_budget(loaded, manifest, outputs, staged, fresh=True)
     if not enabled:
         loaded.check()
         return {
@@ -1669,11 +2029,48 @@ def apply(root, stage, acceptance_path, receipt_dir, *, enabled=False):
             "approval": "NONE",
             "native_write_dry_run": _dry_run(loaded, outputs),
         }
+    # Rehearsal evidence is separate from the actual recovery receipt. A busy
+    # native resource still refuses without reserving that application receipt.
+    startup_seconds = max(budget["startup_seconds"], time.perf_counter() - startup_started)
+    measurement, fit_file = _operational_profile(
+        loaded,
+        staged,
+        manifest_file,
+        loaded.inputs.root / ".temp" / ("adoption-fit-" + uuid.uuid4().hex),
+    )
+    forecast = _forecast(budget["policy_value"], budget["counts"], measurement, startup_seconds)
+    _prepared_budget(loaded, manifest, outputs, staged, fresh=True)
+    _fit_age(budget["policy_value"], measurement)
+    staged["__apply_operational_fit__"] = fit_file
+    operational_fit = {
+        "path": str(fit_file.path.relative_to(loaded.inputs.root)),
+        "sha256": sha(fit_file.content),
+        "startup_seconds": startup_seconds,
+        "forecast_seconds": forecast,
+        "budget_sha256": digest(budget),
+    }
     locks = loaded.claw.modules["locks"].LockManager()
-    with locks.lock("mediaingredientmech", "reviewed campaign stable-ID adoption"):
+    _prepared_budget(loaded, manifest, outputs, staged, fresh=True)
+    _fit_age(budget["policy_value"], measurement)
+    lease_started = time.monotonic()
+    with locks.lock(
+        "mediaingredientmech",
+        "reviewed campaign stable-ID adoption",
+        timeout=budget["policy_value"]["lease_seconds"],
+    ):
+        # Observe the token actually acquired by this native manager, not a
+        # replacement owner's token that check_lock may now observe (#1321).
+        with locks._leases_guard:
+            lease_token = locks._leases.get("mediaingredientmech")
         lease = locks.check_lock("mediaingredientmech")
-        require(lease and lease.get("lease_token"), "native write lease unavailable")
-        lease_token = lease["lease_token"]
+        require(
+            lease_token and lease and lease.get("lease_token") == lease_token,
+            "native acquired write lease ownership lost",
+        )
+        lease_expires_at = lease["expires_at"]
+        deadline = datetime.fromisoformat(lease_expires_at)
+        require(deadline.utcoffset() is not None, "native lease deadline must be aware")
+        require(locks._utc_now() < deadline, "native lease already expired")
         loaded.check()
         # This is the native pure planner recheck, not a second allocator.
         _, moves, check_plan = _records(loaded)
@@ -1708,6 +2105,7 @@ def apply(root, stage, acceptance_path, receipt_dir, *, enabled=False):
             "capability": CAPABILITY,
             "state": "PREPARED",
             "scientific_approval_added": False,
+            "operational_fit": operational_fit,
             "manifest": {
                 "path": str(manifest_file.path.relative_to(loaded.inputs.root)),
                 "sha256": sha(manifest_file.content),
@@ -1723,12 +2121,28 @@ def apply(root, stage, acceptance_path, receipt_dir, *, enabled=False):
             receipt, *backups = handles
             archived: list[FrozenFile] = []
 
-            def recheck(during=()):
+            def lease_current():
+                with locks._leases_guard:
+                    require(
+                        locks._leases.get("mediaingredientmech") == lease_token,
+                        "native acquired write lease ownership lost",
+                    )
+                require(
+                    _lease_namespace(loaded) == budget["lease_namespace"],
+                    "reviewed native lease namespace changed",
+                )
                 current_lease = locks.check_lock("mediaingredientmech")
                 require(
-                    current_lease and current_lease.get("lease_token") == lease_token,
-                    "native write lease lost",
+                    current_lease
+                    and current_lease.get("lease_token") == lease_token
+                    and current_lease.get("expires_at") == lease_expires_at
+                    and locks._utc_now() < deadline
+                    and time.monotonic() - lease_started < budget["policy_value"]["lease_seconds"],
+                    "native write lease lost or reviewed deadline expired/changed",
                 )
+
+            def recheck(during=()):
+                lease_current()
                 receipt_storage.check()
                 no_alias(receipt_dir)
                 require(
@@ -1740,6 +2154,9 @@ def apply(root, stage, acceptance_path, receipt_dir, *, enabled=False):
                 for frozen in (*archived, *staged.values(), manifest_file):
                     frozen.verify()
                 loaded.check(states, during)
+                # The expensive full scan can outlive the token checked above.
+                # Refuse the following mutation if it expired during the scan.
+                lease_current()
 
             def progress():
                 check_reserved(receipt, log)
@@ -1889,6 +2306,49 @@ def verify_completed(root, stage, receipt_path):
     )
     acceptance = _acceptance(loaded, manifest_file, receipt["acceptance"]["path"])
     require(acceptance == receipt["acceptance"], "acceptance reference differs")
+    fit = receipt["operational_fit"]
+    keys(fit, {"path", "sha256", "startup_seconds", "forecast_seconds", "budget_sha256"})
+    fit_file = FrozenFile.capture(root / relative(fit["path"]))
+    require(sha(fit_file.content) == fit["sha256"], "completed operational fit receipt changed")
+    measurement = document(fit_file.content)
+    budget = manifest["operational_budget"]
+    require(
+        fit["budget_sha256"] == digest(budget)
+        and measurement["context"]
+        == {"path": str(manifest_file.path.relative_to(root)), "sha256": sha(manifest_file.content)}
+        and measurement["measured_current_owner_count"] == len(loaded.owners)
+        and fit["forecast_seconds"]
+        == _forecast(budget["policy_value"], budget["counts"], measurement, fit["startup_seconds"]),
+        "completed operational fit differs from accepted manifest",
+    )
+    require(
+        measurement["lease_namespace"] == budget["lease_namespace"],
+        "completed fit namespace differs",
+    )
+    closure = measurement["input_closure"]
+    keys(closure, {"target", "legacy", "owner_states", "staged"})
+    require(
+        all(
+            closure["target"].get(name) == expected for name, expected in manifest["inputs"].items()
+        )
+        and all(
+            name in loaded.inputs.files and sha(loaded.inputs.files[name].content) == expected
+            for name, expected in closure["target"].items()
+        )
+        and closure["legacy"] == manifest["legacy_inputs"]
+        and closure["owner_states"]
+        == {
+            **manifest["before_inventory"],
+            **{
+                name: manifest["inputs"][name]
+                for name in (*AGGREGATES, str(REGISTRY_PATH), str(LIFECYCLE_PATH))
+            },
+        }
+        and closure["staged"]
+        == {str(f.path.relative_to(root)): sha(f.content) for f in staged.values()},
+        "completed fit input closure differs",
+    )
+    fit_file.verify()
     require(
         receipt["expected_outputs"] == manifest["outputs"]
         and set(receipt["retired_sources"]) == set(manifest["moves"]),
@@ -1939,11 +2399,14 @@ def main():
     parser.add_argument("--acceptance", type=Path)
     parser.add_argument("--receipt", type=Path)
     parser.add_argument("--apply", action="store_true")
+    parser.add_argument("--operational-policy", type=Path)
     args = parser.parse_args()
     if args.operation == "inspect":
         result = inspect(args.root, args.request)
     elif args.operation == "prepare":
-        result = prepare(args.root, args.request, args.stage)
+        result = prepare(
+            args.root, args.request, args.stage, operational_policy=args.operational_policy
+        )
     elif args.operation == "apply":
         result = apply(args.root, args.stage, args.acceptance, args.receipt, enabled=args.apply)
     else:

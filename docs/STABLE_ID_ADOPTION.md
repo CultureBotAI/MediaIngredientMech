@@ -105,7 +105,8 @@ manifest bytes with `adoption_action=apply_exact_prepared_set`. It cannot supply
 missing scientific eligibility.
 
 `adoption-apply` is dry-run by default. Explicit `--apply` rechecks the prepared
-set, takes the native short write lease, rechecks currentness and reserves the
+set, verifies the operational budget, takes the explicitly reviewed native write
+lease, rechecks currentness and reserves the
 receipt, every beforeimage and each recovery directory before managed writes.
 Owners, explicit relocations, both aggregates and the append-only mint ledger
 are published in recorded phases. Every transition rechecks source/target
@@ -142,3 +143,81 @@ campaign eligibility decisions nor mint any actual campaign identifier.
 
 The unclassified-intake admission defect and residual-conclusion correction are
 tracked in [#1317](https://github.com/CultureBotAI/MediaIngredientMech/issues/1317).
+
+
+## Operational fit and native lease (#1321)
+
+`adoption-prepare REQUEST STAGE OPERATIONAL_POLICY` requires a separate JSON
+policy file. It does not change the scientific request, context or pre-ID digest.
+The closed policy has four explicit finite numeric fields:
+
+| Field | Contract |
+|---|---|
+| `lease_seconds` | Positive duration explicitly offered for technical review; never increased automatically. |
+| `evidence_max_age_seconds` | Positive maximum age measured from the start of the profiling scans. |
+| `safety_factor` | Explicit factor greater than one applied to measured/estimated work. |
+| `additional_overhead_seconds` | Positive explicit allowance for unmeasured publication, fsync, scheduling and final-validation costs. |
+
+No actual campaign values or scheduling decision are selected by this code or
+its synthetic tests. Long forecasts can remain operational blockers. The native
+resource is `mediaingredientmech`; its lease also conflicts with Claw's `global`
+resource. The effective namespace is resolved by the selected native Claw code
+from `OPENCLAW_WORKSPACE` / `OPENCLAW_ORCHESTRATION_ROOT`, then recorded with the
+resource and lock directory. The operator never chooses a private namespace to
+avoid contention. Tests use their own explicit synthetic namespace.
+
+The manifest's `operational_budget` binds the exact policy bytes, namespace,
+complete prepared output/input context, native timing receipt, measured startup
+work, future growth estimate and exact phase count. For N owner outputs, U
+changed outputs at existing paths, V new installation paths and R retirements,
+the successful full-recheck count is `N + 8 + 4U + 2V + 2R`. Unchanged owner
+outputs still retain their full phase-entry check.
+
+Profiling uses native exclusive receipt reservation and authentic copies of all
+current beforeimages in a fresh `.temp/adoption-fit-...` directory. It measures
+two complete current-state guards, including real reserved handles, backup,
+staged and context bytes, all source/target inventories and evidence, producer
+bytes, and Git checks. It acquires no lease and writes no maintained owner.
+Measurements retain exact input hashes and state their scope. They do not label
+current target bytes as the future endpoint. The forecast scales the measured
+maximum by a conservative per-file `max(before, after)` plus-created-file
+byte envelope and peak file count (so later shrinkage cannot cancel earlier
+growth), the exact callback count and the explicit
+safety factor, and includes measured startup/backup time plus explicit overhead.
+This is a forecast, not a completion guarantee or a measured whole-batch runtime.
+Prepare's own full duration is outside the apply lease and remains separate.
+
+The independent native technical assessment accepting the exact manifest must
+state all of these dimensions in the same supported prepared-set assessment:
+
+- `adoption_action=apply_exact_prepared_set`;
+- `operational_budget_sha256`: canonical-JSON digest of the complete budget;
+- `lease_seconds`: exact string representation of the policy duration;
+- `lease_namespace_sha256`: canonical-JSON digest of the namespace object;
+- `lease_scheduling=mediaingredientmech_and_global_conflict_reviewed`.
+
+Immediately before enabled apply, the operator checks policy, phase counts,
+closure and age, then performs a **fresh** full recovery rehearsal after loading
+the entire technical acceptance input closure. This uses a distinct diagnostic
+directory, preserving the application's requested receipt path if a native lease
+is busy. The fresh observed costs must also fit the same accepted duration. Age
+and namespace are rechecked before acquisition. Failed fit evidence is retained;
+no silent overwrite, longer timeout, lease renewal or partial retry is attempted.
+An explicit duration is passed to native `LockManager.lock` only after fit passes.
+
+Every original currentness/alias/reservation/identity check remains active.
+Lease ownership is checked before **and after** each expensive full scan. The
+initial token must match this manager's native acquired-token record under its
+lease guard, rather than another owner observed on disk. The acquired aware
+deadline cannot change or extend; native UTC must remain before
+it, and monotonic elapsed time must remain within the reviewed duration. Expiry
+during a scan therefore refuses the following guarded publication. This does
+not claim a filesystem-wide atomic transaction or eliminate arbitrary process
+suspension between individual system calls. Partial failures retain their native
+recovery evidence; no automatic rollback or retry is introduced.
+
+The completed application cites the fresh fit receipt and exact accepted budget.
+Historical completion verification rechecks those contents without treating an
+old, successfully used measurement as a new permission to apply. A new apply
+requires fresh evidence again. The code and tests grant no actual campaign
+concept eligibility, duration selection, scheduling authority or publication.

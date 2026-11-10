@@ -104,3 +104,12 @@ required checks must pass for the applicable target, captures have an explicit
 typed runtime contract, and complete expanded source URIs must be unique.
 These admission repairs transfer no scientific approval and preserve all prior
 holds and original source rows.
+
+
+Operational-fit follow-up [#1321](https://github.com/CultureBotAI/MediaIngredientMech/issues/1321)
+requires explicit immutable duration/age/margin/overhead policy, complete native
+recovery-guard profiling, independent namespace and resource-scheduling acceptance,
+and a fresh pre-lease fit refusal. The original full currentness guards remain;
+lease identity, unchanged aware deadline and monotonic budget are checked after
+expensive scans. No real campaign operational policy or adoption is authorized
+by this implementation. Multi-hour fits can remain blocked pending scheduling.

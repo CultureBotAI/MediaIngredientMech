@@ -374,6 +374,16 @@ class Fixture:
             "path": path,
             "sha256": api.sha((self.root / path).read_bytes()),
         }
+        self.policy = self.root / "operational-policy.json"
+        write(
+            self.policy,
+            {
+                "lease_seconds": 3600,
+                "evidence_max_age_seconds": 3600,
+                "safety_factor": 2,
+                "additional_overhead_seconds": 30,
+            },
+        )
         self.request_path = self.root / "request.json"
         self.stage = self.root / ".temp/prepare"
         self.receipt = self.root / ".temp/application"
@@ -547,7 +557,7 @@ class Fixture:
         self.save()
 
     def prepare(self):
-        return api.prepare(self.root, self.request_path, self.stage)
+        return api.prepare(self.root, self.request_path, self.stage, operational_policy=self.policy)
 
     def accept(self):
         path = self.stage / "manifest.json"
@@ -587,6 +597,39 @@ class Fixture:
                 ],
             }
         ]
+        budget = json.loads(path.read_bytes())["operational_budget"]
+        report["assessments"][0]["dimensions"].extend(
+            [
+                {
+                    "name": "operational_budget_sha256",
+                    "value": api.digest(budget),
+                    "definition": "Exact synthetic operational prerequisite",
+                    "evidence_ids": ["primary"],
+                },
+                {
+                    "name": "lease_seconds",
+                    "value": str(budget["policy_value"]["lease_seconds"]),
+                    "definition": "Explicit synthetic native lease duration",
+                    "evidence_ids": ["primary"],
+                },
+            ]
+        )
+        report["assessments"][0]["dimensions"].extend(
+            [
+                {
+                    "name": "lease_namespace_sha256",
+                    "value": api.digest(budget["lease_namespace"]),
+                    "definition": "Exact native resource namespace",
+                    "evidence_ids": ["primary"],
+                },
+                {
+                    "name": "lease_scheduling",
+                    "value": "mediaingredientmech_and_global_conflict_reviewed",
+                    "definition": "Explicit synthetic resource scheduling decision",
+                    "evidence_ids": ["primary"],
+                },
+            ]
+        )
         rp = self.save_report(report)
         self.acceptance = self.root / "acceptance.json"
         write(
@@ -966,7 +1009,7 @@ def test_1315_traversal_never_creates_an_escaped_output(f, spelling, operation):
     before = managed(f)
     if operation == "prepare":
         with pytest.raises(ValueError, match="traversal"):
-            api.prepare(f.root, f.request_path, path)
+            api.prepare(f.root, f.request_path, path, operational_policy=f.policy)
     else:
         f.prepare()
         f.accept()
@@ -1212,9 +1255,14 @@ def test_partial_phase_failures_never_claim_complete(f, monkeypatch, phase):
 
         monkeypatch.setitem(globals_, "publish_validated", changed)
     else:
+        old = globals_["finish_receipt"]
 
-        def changed(*args, **kwargs):
-            raise OSError("synthetic completion receipt failure")
+        def changed(receipt, path, *args, **kwargs):
+            # #1321 adds a separate pre-lease timing receipt. This existing
+            # test must still inject at the actual application completion.
+            if path == f.receipt / "application.json":
+                raise OSError("synthetic completion receipt failure")
+            return old(receipt, path, *args, **kwargs)
 
         monkeypatch.setitem(globals_, "finish_receipt", changed)
     with pytest.raises(OSError, match="synthetic"):
@@ -1300,7 +1348,7 @@ def test_real_mutations_demonstrate_native_admission_guards(f, mutation):
         new = "and True  # synthetic mutation removes reviewer separation"
     assert_refused_without_writes(f, message)
     mutant = mutated_api(f, old, new)
-    result = mutant.prepare(f.root, f.request_path, f.stage)
+    result = mutant.prepare(f.root, f.request_path, f.stage, operational_policy=f.policy)
     # Actual unsafe candidate admission, not an import/setup exception, is the
     # positive mutation control. Synthetic outputs are never applied.
     assert result["status"] == "PREPARED_CANDIDATE_ONLY"
@@ -1475,3 +1523,418 @@ def test_native_root_disjointness_still_refuses_both_directions(f, relation):
     f.request["legacy"]["root"] = str(path)
     f.save()
     assert_refused_without_writes(f, "roots overlap")
+
+
+# #1321: real native fixtures, explicit operational policy, and deterministic
+# clocks only where the failure being tested is a timing/lease boundary.
+def test_1321_explicit_policy_is_required_without_stage_or_owner_writes(f):
+    before = managed(f)
+    with pytest.raises(ValueError, match="explicit operational policy"):
+        api.prepare(f.root, f.request_path, f.stage)
+    assert managed(f) == before and not f.stage.exists()
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("lease_seconds", 0),
+        ("lease_seconds", True),
+        ("evidence_max_age_seconds", -1),
+        ("safety_factor", 1),
+        ("additional_overhead_seconds", 0),
+        ("extra", 1),
+    ],
+)
+def test_1321_invalid_policy_refuses_without_owner_writes(f, field, value):
+    policy = json.loads(f.policy.read_bytes())
+    policy[field] = value
+    write(f.policy, policy)
+    before = managed(f)
+    with pytest.raises(ValueError):
+        f.prepare()
+    assert managed(f) == before and not f.stage.exists()
+
+
+def test_1321_insufficient_prepared_forecast_retains_failure_without_lock(f):
+    policy = json.loads(f.policy.read_bytes())
+    policy["lease_seconds"] = 0.001
+    write(f.policy, policy)
+    before = managed(f)
+    with pytest.raises(ValueError, match="forecast does not fit"):
+        f.prepare()
+    assert managed(f) == before
+    assert json.loads((f.stage / "FAILED.json").read_bytes())["live_writes"] is False
+    assert not (Path(os.environ["OPENCLAW_WORKSPACE"]) / "locks").exists()
+
+
+def test_1321_exact_counts_and_fresh_acceptance_closure(f, monkeypatch):
+    m = f.prepare()
+    budget = m["operational_budget"]
+    counts = budget["counts"]
+    assert counts["owner_outputs"] == 3
+    assert counts["new_installations"] == 2 and counts["relocations"] == 1
+    assert counts["rechecks"] == 3 + 8 + 4 * counts["existing_replacements"] + 4 + 2
+    assert budget["forecast_seconds"] < budget["policy_value"]["lease_seconds"]
+    assert budget["lease_namespace"]["resource"] == "mediaingredientmech"
+    assert budget["lease_namespace"]["conflicting_global_resource"] == "global"
+    f.accept()
+    result = api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    fit = json.loads((f.root / result["operational_fit"]["path"]).read_bytes())
+    assert fit["input_closure"]["target"]["acceptance.json"] == api.sha(f.acceptance.read_bytes())
+    acceptance = json.loads(f.acceptance.read_bytes())
+    assert (
+        fit["input_closure"]["target"][acceptance["review"]["path"]]
+        == acceptance["review"]["sha256"]
+    )
+    assert fit["context"]["sha256"] == api.sha((f.stage / "manifest.json").read_bytes())
+    assert fit["lease_acquired"] is False and fit["maintained_writes"] is False
+    assert result["state"] == "COMPLETE"
+
+
+def test_1321_changed_policy_or_namespace_refuses_before_application_receipt(f, monkeypatch):
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    other = f.root / ".temp/other-native-namespace"
+    monkeypatch.setenv("OPENCLAW_WORKSPACE", str(other))
+    with pytest.raises(ValueError, match="namespace changed"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists() and not other.exists()
+
+
+@pytest.mark.parametrize(
+    "dimension",
+    ["operational_budget_sha256", "lease_seconds", "lease_namespace_sha256", "lease_scheduling"],
+)
+def test_1321_independent_acceptance_must_explicitly_cover_budget(f, dimension):
+    f.prepare()
+    f.accept()
+    acceptance = json.loads(f.acceptance.read_bytes())
+    path = f.root / acceptance["review"]["path"]
+    report = yaml.safe_load(path.read_bytes())
+    report["assessments"][0]["dimensions"] = [
+        d for d in report["assessments"][0]["dimensions"] if d["name"] != dimension
+    ]
+    f.save_report(report)
+    acceptance["review"]["sha256"] = api.sha(path.read_bytes())
+    acceptance["markdown_sha256"] = api.sha(path.with_name("review.md").read_bytes())
+    write(f.acceptance, acceptance)
+    before = managed(f)
+    with pytest.raises(ValueError, match="explicitly bind operational budget"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
+
+
+@pytest.mark.parametrize("change", ["phase_count", "duration", "forecast", "closure"])
+def test_1321_changed_prepared_budget_cannot_be_reapproved_into_validity(f, change):
+    m = f.prepare()
+    b = m["operational_budget"]
+    if change == "phase_count":
+        b["counts"]["rechecks"] -= 1
+    elif change == "duration":
+        b["policy_value"]["lease_seconds"] += 3600
+    elif change == "forecast":
+        b["forecast_seconds"] -= 1
+    else:
+        path = f.root / b["measurement"]["path"]
+        measurement = json.loads(path.read_bytes())
+        measurement["input_closure"]["legacy"] = {}
+        write(path, measurement)
+        b["measurement"]["sha256"] = api.sha(path.read_bytes())
+    write(f.stage / "manifest.json", m)
+    f.accept()
+    before = managed(f)
+    with pytest.raises(ValueError, match="operational"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
+
+
+def test_1321_stale_measurement_refuses_before_fresh_rehearsal(f, monkeypatch):
+    from datetime import datetime, timedelta
+
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    profiles = set((f.root / ".temp").glob("adoption-fit-*"))
+
+    class Later(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return datetime.now(tz) + timedelta(days=2)
+
+    monkeypatch.setitem(api.apply.__globals__, "datetime", Later)
+    with pytest.raises(ValueError, match="stale or future"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
+    assert set((f.root / ".temp").glob("adoption-fit-*")) == profiles
+
+
+def test_1321_fresh_slow_rehearsal_refuses_before_native_acquisition(f, monkeypatch):
+    import time
+    import types
+
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    monkeypatch.setitem(
+        api.apply.__globals__,
+        "time",
+        types.SimpleNamespace(
+            perf_counter=lambda: time.perf_counter() * 1_000_000,
+            monotonic=time.monotonic,
+        ),
+    )
+    with pytest.raises(ValueError, match="forecast does not fit"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
+    assert not (Path(os.environ["OPENCLAW_WORKSPACE"]) / "locks").exists()
+    assert len(list((f.root / ".temp").glob("adoption-fit-*/fit.json"))) == 2
+
+
+@pytest.mark.parametrize(
+    "failure",
+    ["expired_during_scan", "deadline_extended", "deadline_malformed", "monotonic_expired"],
+)
+def test_1321_final_native_lease_boundary_refuses_before_install(f, monkeypatch, failure):
+    from datetime import timedelta
+    import time
+    import types
+
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    original_init = api.Claw.__init__
+    original_check = api.Loaded.check
+    state = {"advanced": False, "manager": None}
+    duration = json.loads(f.policy.read_bytes())["lease_seconds"]
+
+    def claw_init(self, root):
+        original_init(self, root)
+        cls = self.modules["locks"].LockManager
+        native_now = cls._utc_now
+        native_init = cls.__init__
+        native_read = cls.check_lock
+        cls._utc_now = staticmethod(
+            lambda: native_now()
+            + (
+                timedelta(seconds=duration + 1)
+                if state["advanced"] and failure == "expired_during_scan"
+                else timedelta()
+            )
+        )
+
+        def initialized(manager, *args, **kwargs):
+            native_init(manager, *args, **kwargs)
+            state["manager"] = manager
+
+        def checked(manager, resource):
+            value = native_read(manager, resource)
+            if value and state["advanced"]:
+                if failure == "deadline_extended":
+                    value = {
+                        **value,
+                        "expires_at": (native_now() + timedelta(seconds=duration * 2)).isoformat(),
+                    }
+                elif failure == "deadline_malformed":
+                    value = {**value, "expires_at": "not-a-date"}
+            return value
+
+        cls.__init__ = initialized
+        cls.check_lock = checked
+
+    def complete_scan(loaded, states=None, during=()):
+        original_check(loaded, states, during)
+        manager = state["manager"]
+        if during and manager and manager._leases:
+            state["advanced"] = True
+
+    monkeypatch.setattr(api.Claw, "__init__", claw_init)
+    monkeypatch.setattr(api.Loaded, "check", complete_scan)
+    monkeypatch.setitem(
+        api.apply.__globals__,
+        "time",
+        types.SimpleNamespace(
+            perf_counter=time.perf_counter,
+            monotonic=lambda: time.monotonic()
+            + (duration + 1 if state["advanced"] and failure == "monotonic_expired" else 0),
+        ),
+    )
+    with pytest.raises(ValueError, match="lease lost"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    receipt = json.loads((f.receipt / "application.json").read_bytes())
+    assert state["advanced"] and receipt["state"] == "FAILED"
+    assert receipt["recovery_required"] and receipt["completed_operations"] == []
+    assert managed(f) == before and not (f.root / f.move).exists()
+
+
+def test_1321_changed_policy_file_refuses_before_rehearsal(f):
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    policy = json.loads(f.policy.read_bytes())
+    policy["lease_seconds"] *= 2
+    write(f.policy, policy)
+    with pytest.raises(ValueError, match="input hash differs"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
+    assert len(list((f.root / ".temp").glob("adoption-fit-*/fit.json"))) == 1
+
+
+@pytest.mark.parametrize("value", [float("inf"), float("nan")])
+def test_1321_nonfinite_policy_refuses(f, value):
+    policy = json.loads(f.policy.read_bytes())
+    policy["lease_seconds"] = value
+    f.policy.write_text(json.dumps(policy))
+    before = managed(f)
+    with pytest.raises(ValueError, match="invalid operational"):
+        f.prepare()
+    assert managed(f) == before and not f.stage.exists()
+
+
+def test_1321_age_expiring_during_fresh_rehearsal_refuses_acquisition(f, monkeypatch):
+    from datetime import datetime, timedelta
+
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    state = {"advanced": False}
+    original = api.apply.__globals__["_operational_profile"]
+
+    class Later(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return datetime.now(tz) + (timedelta(days=2) if state["advanced"] else timedelta())
+
+    def profiled(*args, **kwargs):
+        result = original(*args, **kwargs)
+        state["advanced"] = True
+        return result
+
+    monkeypatch.setitem(api.apply.__globals__, "datetime", Later)
+    monkeypatch.setitem(api.apply.__globals__, "_operational_profile", profiled)
+    with pytest.raises(ValueError, match="stale or future"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
+    assert not (Path(os.environ["OPENCLAW_WORKSPACE"]) / "locks").exists()
+    assert len(list((f.root / ".temp").glob("adoption-fit-*/fit.json"))) == 2
+
+
+def test_1321_historical_complete_verification_ignores_elapsed_fit_age(f, monkeypatch):
+    from datetime import datetime, timedelta
+
+    f.prepare()
+    f.accept()
+    api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    before = managed(f)
+    receipt = (f.receipt / "application.json").read_bytes()
+
+    class Later(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return datetime.now(tz) + timedelta(days=2)
+
+    monkeypatch.setitem(api.apply.__globals__, "datetime", Later)
+    assert (
+        api.verify_completed(f.root, f.stage, f.receipt / "application.json")["status"]
+        == "COMPLETE_CURRENT_CANDIDATE"
+    )
+    assert api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)["unchanged"]
+    assert managed(f) == before and (f.receipt / "application.json").read_bytes() == receipt
+
+
+def test_1321_peak_growth_keeps_earlier_owner_growth_before_later_shrink():
+    from types import SimpleNamespace
+
+    owner = "data/ingredients/mapped/grows.yaml"
+    states = {api.AGGREGATES[0]: SimpleNamespace(content=b"a" * 300)}
+    states.update(
+        {
+            name: SimpleNamespace(content=b"x")
+            for name in (api.AGGREGATES[1], str(api.REGISTRY_PATH), str(api.LIFECYCLE_PATH))
+        }
+    )
+    loaded = SimpleNamespace(
+        owners={owner: SimpleNamespace(content=b"o" * 100)}, inputs=SimpleNamespace(files=states)
+    )
+    outputs = {
+        owner: b"o" * 200,
+        api.AGGREGATES[0]: b"a" * 100,
+        **{name: f.content for name, f in states.items() if name != api.AGGREGATES[0]},
+    }
+    count = api._operational_counts(loaded, outputs, {})
+    assert count["peak_growth_factor"] == 503 / 403
+    assert count["peak_growth_factor"] > 1
+
+
+def test_1321_rehearsal_detects_changed_backup_bytes_before_measurement(f, monkeypatch):
+    original = api.FrozenFile.capture
+    changed = []
+
+    def capture(path):
+        path = Path(path)
+        if (
+            path.name.startswith("before-")
+            and path.parent.name.startswith("adoption-fit-")
+            and not changed
+        ):
+            path.write_bytes(path.read_bytes() + b"changed private rehearsal bytes")
+            changed.append(path)
+        return original(path)
+
+    monkeypatch.setattr(api.FrozenFile, "capture", capture)
+    before = managed(f)
+    with pytest.raises(ValueError, match="rehearsal backup differs"):
+        f.prepare()
+    assert changed and managed(f) == before
+    assert not (Path(os.environ["OPENCLAW_WORKSPACE"]) / "locks").exists()
+
+
+def test_1321_initial_binding_refuses_another_native_managers_token(f, monkeypatch):
+    f.prepare()
+    f.accept()
+    before = managed(f)
+    original = api.Claw.__init__
+    state = {"swapped": False, "contender": None}
+
+    def wrapped(self, root):
+        original(self, root)
+        cls = self.modules["locks"].LockManager
+        check = cls.check_lock
+
+        def swapped(manager, resource):
+            if resource in manager._leases and not state["swapped"]:
+                state["swapped"] = True
+                assert manager.release_lock(resource)
+                contender = cls()
+                assert contender.acquire_lock(resource, "synthetic other owner")
+                state["contender"] = contender
+            return check(manager, resource)
+
+        cls.check_lock = swapped
+
+    monkeypatch.setattr(api.Claw, "__init__", wrapped)
+    try:
+        with pytest.raises(ValueError, match="acquired write lease ownership lost"):
+            api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+        contender = state["contender"]
+        assert contender is not None
+        assert (
+            contender.check_lock("mediaingredientmech")["lease_token"]
+            == contender._leases["mediaingredientmech"]
+        )
+        assert managed(f) == before and not f.receipt.exists()
+    finally:
+        if state["contender"] is not None:
+            assert state["contender"].release_lock("mediaingredientmech")
+
+
+def test_1321_manifest_limitations_cannot_be_removed_by_acceptance(f):
+    m = f.prepare()
+    assert m["operational_budget"]["limitations"] == list(api.FIT_LIMITATIONS)
+    m["operational_budget"]["limitations"].pop()
+    write(f.stage / "manifest.json", m)
+    f.accept()
+    before = managed(f)
+    with pytest.raises(ValueError, match="operational limitations"):
+        api.apply(f.root, f.stage, f.acceptance, f.receipt, enabled=True)
+    assert managed(f) == before and not f.receipt.exists()
