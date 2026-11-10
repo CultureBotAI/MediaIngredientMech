@@ -22,14 +22,19 @@ The `MIM:` prefix expands to
 For example, `MIM:0000001` expands to
 `https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_0000001`.
 The Pages build creates a directory-index resolver at that route. It locates the
-current record by `mim_id`, and preserves pages for retired or merged IDs with
-their replacement links. Existing filename-based record pages remain available;
-filenames are not renamed by the ID migration.
+current record by `mim_id`, and preserves terminal IDs as historical pages.
+Retired/merged IDs show replacement links, split IDs list every declared successor
+without choosing one, and deprecated IDs have no guessed replacement. Existing
+filename-based record pages remain available; filenames are not renamed by the
+ID migration.
 
 `data/ids/mim_id_registry.tsv` retains immutable mint rows;
-`data/ids/mim_id_lifecycle.tsv` appends terminal retirement/merge events. Unknown
-IDs, cycles, duplicate current IDs and incomplete active-record coverage fail
-validation. An ID's lifecycle is separate from the record's mapping status.
+`data/ids/mim_id_lifecycle.tsv` appends terminal retirement/merge/split/deprecation
+events using the status-dependent target cell documented in
+[stable IDs](STABLE_MIM_IDS.md). Unknown IDs, cycles, duplicate current IDs and
+incomplete active-record coverage fail validation. An ID's lifecycle is separate
+from the record's mapping status. Single-ID lookup refuses splits/deprecations;
+inspect their typed lifecycle context instead of selecting an arbitrary child.
 
 The current generation of a site is established by its Pages build/deployment
 checks. Source changes alone do not prove a URL is live. w3id is deferred to a

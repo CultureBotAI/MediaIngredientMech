@@ -63,6 +63,7 @@ def test_installed_wheel_renders_resolver_and_validates_frozen_snapshots(tmp_pat
         sys.path.insert(0, str(installed))
         import yaml
         from mediaingredientmech import render_ingredient_pages as render
+        from mediaingredientmech import stable_ids
         from mediaingredientmech.validation import historical_snapshots as snapshots
         from mediaingredientmech.validation.write_validated import validate_ingredient
 
@@ -71,16 +72,55 @@ def test_installed_wheel_renders_resolver_and_validates_frozen_snapshots(tmp_pat
         env = render.make_env()
         for path in render.TEMPLATES_DIR.rglob("*.j2"):
             env.get_template(path.relative_to(render.TEMPLATES_DIR).as_posix())
+        assert Path(stable_ids.__file__).resolve() == installed / "mediaingredientmech/stable_ids.py"
+        mints = tuple(stable_ids.Mint(f"MIM:{n:07d}", f"Example {n}", "2026-11-08")
+                      for n in (1, 2, 3))
+
+        def lifecycle_context(events=()):
+            registry = stable_ids.Registry(mints, events)
+            resolution = stable_ids.inspect_ids(registry)["MIM:0000001"]
+            by_id = {event.mim_id: event for event in registry.events}
+            return dict(resolution=resolution,
+                        resolution_href=f"../{resolution.at_id.replace(':', '_')}/",
+                        successors=[(identifier, f"../{identifier.replace(':', '_')}/")
+                                    for identifier in resolution.successors],
+                        reason=by_id[resolution.at_id].reason if resolution.status != "active" else "")
+
         canonical = "https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_0000001"
         context = dict(mim_id="MIM:0000001", label="Example", canonical_url=canonical,
                        detail_href="../../records/mapped/Example.html", status="active")
+        context.update(lifecycle_context())
         active = env.get_template("stable_resolver.html.j2").render(**context)
         assert canonical in active
         assert "url=../../records/mapped/Example.html" in active
         context.update(status="merged", replacement="MIM:0000002", target="MIM:0000002",
                        replacement_href="../MIM_0000002/", target_href="../MIM_0000002/")
+        context.update(lifecycle_context((stable_ids.Lifecycle(
+            "MIM:0000001", "merged", "MIM:0000002", "2026-11-08T01:00:00Z", "Merged duplicate"),)))
         terminal = env.get_template("stable_resolver.html.j2").render(**context)
         assert "MIM:0000002" in terminal and "http-equiv" not in terminal
+        split_context = dict(context, status="split", replacement="MIM:0000002|MIM:0000003",
+                             target=None, target_href="", replacement_href="", detail_href="")
+        split_context.update(lifecycle_context((stable_ids.Lifecycle(
+            "MIM:0000001", "split", "MIM:0000002|MIM:0000003", "2026-11-08T01:00:00Z",
+            "Reviewed split"),)))
+        split = env.get_template("stable_resolver.html.j2").render(**split_context)
+        assert canonical in split and "http-equiv" not in split
+        assert 'href="../MIM_0000002/"' in split and 'href="../MIM_0000003/"' in split
+        assert "No single successor is selected" in split and "Reviewed split" in split
+        assert "Open the current replacement record" not in split
+        deprecated_context = dict(context, status="deprecated", replacement="", target=None,
+                                  target_href="", replacement_href="", detail_href="")
+        deprecated_context.update(lifecycle_context((stable_ids.Lifecycle(
+            "MIM:0000001", "deprecated", "", "2026-11-08T01:00:00Z",
+            "No justified successor"),)))
+        deprecated = env.get_template("stable_resolver.html.j2").render(**deprecated_context)
+        assert canonical in deprecated and "http-equiv" not in deprecated
+        assert "deprecated without a justified successor" in deprecated
+        assert "No justified successor" in deprecated
+        assert 'href="../MIM_0000002/"' not in deprecated
+        assert 'href="../MIM_0000003/"' not in deprecated
+        assert "Open the current replacement record" not in deprecated
         detail = env.get_template("ingredient.html.j2").render(
             ingredient=dict(mim_id="MIM:0000001", identifier="CHEBI:1", preferred_term="Example"),
             source_path="fixture.yaml", generated_at="2026-11-08T00:00:00Z", path_up="../")

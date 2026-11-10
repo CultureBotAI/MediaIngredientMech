@@ -4,7 +4,7 @@ description: Manage permanent MediaIngredientMech record IDs, append-only mint a
 category: workflow
 requires_database: false
 requires_internet: false
-version: 3.0.0
+version: 3.1.0
 ---
 
 # Identifier management
@@ -67,12 +67,26 @@ Before replacing `identifier`, preserve the previous value in
 An ingredient with `mapping_status: REJECTED` still has an active permanent ID;
 mapping rejection is not ID retirement.
 
-Mint rows are immutable. A reviewed merge or retirement appends one terminal
-event using `stable_ids.append_lifecycle`, with `status: merged` or `retired`,
-an already minted `replaced_by` ID, a UTC timestamp and a reason. Never edit the
-original mint row, delete an old event, reuse an ID or create a replacement
-cycle. Transfer the preserved aliases to the surviving record as appropriate.
-Every replacement chain must reach exactly one active current record.
+Mint rows are immutable. A reviewed lifecycle change appends one terminal
+event using `stable_ids.append_lifecycle`, with a UTC timestamp and a reason
+binding the actual curation evidence. Keep the five-column format:
+
+- `merged` or `retired`: one already registered `replaced_by` ID.
+- `split`: at least two distinct registered IDs, sorted and separated by `|`.
+- `deprecated`: empty `replaced_by`; do not guess a successor.
+
+Never edit the original mint row, delete an old event, reuse an ID or create a
+cycle. Whole source/target concept decisions and affected reference provenance
+must justify the event; different spellings alone do not establish a split.
+Preserve historical records and negative holds in the curation evidence. The
+current inventory contains exactly the active IDs, not terminal source IDs.
+Transfer aliases only where the scientific decision supports it.
+
+Use `inspect_id`/`inspect_ids` for typed lifecycle context. `resolve_id` raises
+`UnresolvedIdError` when a chain reaches a split or deprecation; its resolution
+exposes the exact direct successors without choosing a child. This remains true
+if split descendants later converge. Address replacement never transfers a
+mapping assertion or scientific approval.
 
 ## Resolution and checks
 
@@ -84,7 +98,8 @@ separate future change requiring approval.
 
 `CurieNormalizer.resolve()` reads the registry and current corpus, follows
 replacement chains and returns a current permanent ID for an unambiguous
-preserved alias. Shared external aliases remain stored; lookup refuses them
+preserved alias. Split/deprecated chains return `SPLIT_SUBJECT` or
+`DEPRECATED_SUBJECT`. Shared external aliases remain stored; lookup refuses them
 with `AMBIGUOUS_ALIAS`. A mapping identifier is not a unique record address.
 
 Run `just qc-stable-ids` for the current inventory. The supported validator

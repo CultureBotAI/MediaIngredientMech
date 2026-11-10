@@ -24,7 +24,7 @@ CASES = (
      'page = f"ingredient/{source.stem}/index.html"',
      "tests/test_public_ingredient_site.py::test_stable_route_survives_label_filename_and_directory_change"),
     ("no_tombstone_resolution", "scripts/build_pages_site.py",
-     'target = entry.mim_id if status == "active" else resolve_id(registry, entry.mim_id)', 'target = entry.mim_id',
+     'target = resolution.at_id if resolution.status == "active" else None', 'target = entry.mim_id',
      "tests/test_public_ingredient_site.py::test_retired_and_merged_ids_keep_tombstones_through_replacement_chain"),
     ("unbound_registry", "scripts/build_pages_site.py", '        REGISTRY_PATH.as_posix(): repo / REGISTRY_PATH,\n', '',
      "tests/test_public_ingredient_site.py::test_registry_and_lifecycle_are_bound_to_site_freshness"),

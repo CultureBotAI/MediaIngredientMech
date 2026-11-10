@@ -237,6 +237,40 @@ def test_retired_and_merged_ids_keep_tombstones_through_replacement_chain(corpus
     assert len(json.loads((output / "records/build.json").read_text())["resolvers"]) == 3
 
 
+@pytest.mark.parametrize("status", ["split", "deprecated"])
+def test_terminal_nonredirect_pages_survive_full_site_build_and_freshness(
+    corpus, builder, tmp_path, status
+):
+    repo, source = corpus
+    targets = "MIM:0000002|MIM:0000003" if status == "split" else ""
+    registry = Registry(
+        tuple(Mint(f"MIM:{n:07d}", f"Mint label {n}", "2026-11-08") for n in (1, 2, 3)),
+        (Lifecycle("MIM:0000001", status, targets, "2026-11-08T01:00:00Z", "Reviewed scope"),),
+    )
+    (repo / REGISTRY_PATH).write_bytes(dump_registry(registry))
+    (repo / LIFECYCLE_PATH).write_bytes(dump_lifecycle(registry))
+    record = yaml.safe_load(source.read_text())
+    for number in (2, 3):
+        current = {**record, "mim_id": f"MIM:{number:07d}", "preferred_term": f"Current {number}"}
+        (source.parent / f"Current_{number}.yaml").write_text(yaml.safe_dump(current))
+    source.unlink()
+    output = tmp_path / "terminal-site"
+    assert builder.build_site(repo, output) == 2
+    builder.check_site(repo, output)
+    html = (output / "ingredient/MIM_0000001/index.html").read_text()
+    assert "Mint label 1" in html and f"identifier is {status}" in html
+    assert 'http-equiv="refresh"' not in html
+    for number in (2, 3):
+        assert (f'href="../MIM_{number:07d}/"' in html) == (status == "split")
+    manifest = json.loads((output / "records/build.json").read_text())
+    assert len(manifest["resolvers"]) == 3
+    # A changed terminal policy is a real publication input, even with identical owners.
+    ledger = repo / LIFECYCLE_PATH
+    ledger.write_bytes(ledger.read_bytes().replace(b"Reviewed scope", b"Revised scope"))
+    with pytest.raises(ValueError, match="[Ss]tale"):
+        builder.check_site(repo, output)
+
+
 @pytest.mark.parametrize("relative", [REGISTRY_PATH, LIFECYCLE_PATH])
 def test_registry_and_lifecycle_are_bound_to_site_freshness(corpus, builder, tmp_path, relative):
     repo, source = corpus

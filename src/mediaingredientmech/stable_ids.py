@@ -75,6 +75,53 @@ class MintPlan:
     registry: Registry
 
 
+@dataclass(frozen=True)
+class IdResolution:
+    """First non-redirect state, without treating split successors as equivalents.
+
+    ``at_id`` may differ from ``identifier`` after a merge/retirement chain.
+    ``successors`` contains the active ID, the split's direct targets, or no
+    targets for deprecation. A split remains a split even if its targets later
+    converge; resolving it never chooses a child or infers scientific identity.
+    """
+
+    identifier: str
+    at_id: str
+    status: str
+    successors: tuple[str, ...]
+
+
+class UnresolvedIdError(StableIdError):
+    """A registered identity has no single justified current-record address."""
+
+    def __init__(self, resolution: IdResolution):
+        self.resolution = resolution
+        super().__init__(
+            f"{resolution.identifier} reaches {resolution.status} identity "
+            f"{resolution.at_id}; no single current ID"
+        )
+
+
+def _targets(status: str, replacement: str) -> tuple[str, ...]:
+    """Parse the closed, status-dependent cell without changing the TSV format."""
+    if not isinstance(status, str):
+        raise StableIdError("Lifecycle status must be text")
+    if status in {"retired", "merged"}:
+        return (validate_id(replacement),)
+    if status == "deprecated":
+        if replacement != "":
+            raise StableIdError("Deprecated identity must have no replacement")
+        return ()
+    if status == "split":
+        if not isinstance(replacement, str):
+            raise StableIdError("Split targets must be a canonical pipe-separated ID list")
+        targets = tuple(validate_id(value) for value in replacement.split("|"))
+        if len(targets) < 2 or tuple(sorted(set(targets))) != targets:
+            raise StableIdError("Split requires at least two distinct sorted registered targets")
+        return targets
+    raise StableIdError("Lifecycle status must be retired, merged, split or deprecated")
+
+
 def _text(value: Any, label: str) -> str:
     if not isinstance(value, str) or not value.strip() or any(c in value for c in "\t\r\n\x00"):
         raise StableIdError(f"{label} must be nonblank single-line text")
@@ -122,28 +169,44 @@ def validate_registry(registry: Registry) -> None:
     previous_time: datetime | None = None
     for event in registry.events:
         validate_id(event.mim_id)
-        validate_id(event.replaced_by)
-        if event.mim_id not in minted or event.replaced_by not in minted:
+        targets = _targets(event.status, event.replaced_by)
+        if event.mim_id not in minted or any(target not in minted for target in targets):
             raise StableIdError("Lifecycle references an unknown registered ID")
         if event.mim_id in seen:
             raise StableIdError("An ID already has a terminal lifecycle event; it cannot be reused")
         seen.add(event.mim_id)
-        if event.status not in {"retired", "merged"}:
-            raise StableIdError("Lifecycle status must be retired or merged")
         stamp = _time(event.changed_at)
         if previous_time and stamp < previous_time:
             raise StableIdError("Lifecycle event times cannot move backwards")
         previous_time = stamp
-        if stamp.date() < max(minted[event.mim_id], minted[event.replaced_by]):
+        if stamp.date() < max(minted[key] for key in (event.mim_id, *targets)):
             raise StableIdError("Lifecycle event predates a referenced mint")
         _text(event.reason, "Lifecycle reason")
     states = registry.states
+    # Validate every edge, including split branches. Iteration avoids a recursion
+    # limit on long historical chains and never mistakes a shared child for a cycle.
+    finished: set[str] = set()
+    visiting: set[str] = set()
     for identifier in states:
-        _resolve(states, identifier)
+        pending = [(identifier, False)]
+        while pending:
+            current, exiting = pending.pop()
+            if exiting:
+                visiting.remove(current)
+                finished.add(current)
+            elif current not in finished:
+                if current in visiting:
+                    raise StableIdError("Lifecycle replacement chain contains a cycle")
+                visiting.add(current)
+                pending.append((current, True))
+                status, replacement = states[current]
+                if status != "active":
+                    pending.extend((target, False) for target in _targets(status, replacement))
 
 
-def _resolve(states: dict[str, tuple[str, str]], identifier: str) -> str:
+def _inspect(states: dict[str, tuple[str, str]], identifier: str) -> IdResolution:
     validate_id(identifier)
+    original = identifier
     visited: set[str] = set()
     while True:
         if identifier not in states:
@@ -153,13 +216,30 @@ def _resolve(states: dict[str, tuple[str, str]], identifier: str) -> str:
         visited.add(identifier)
         status, replacement = states[identifier]
         if status == "active":
-            return identifier
+            return IdResolution(original, identifier, status, (identifier,))
+        if status in {"split", "deprecated"}:
+            return IdResolution(original, identifier, status, _targets(status, replacement))
         identifier = replacement
 
 
-def resolve_id(registry: Registry, identifier: str) -> str:
+def inspect_id(registry: Registry, identifier: str) -> IdResolution:
+    """Inspect a registered address without selecting a split successor."""
     validate_registry(registry)
-    return _resolve(registry.states, identifier)
+    return _inspect(registry.states, identifier)
+
+
+def inspect_ids(registry: Registry) -> dict[str, IdResolution]:
+    """Inspect a complete validated registry for consumers such as lookup/Pages."""
+    validate_registry(registry)
+    states = registry.states
+    return {identifier: _inspect(states, identifier) for identifier in states}
+
+
+def resolve_id(registry: Registry, identifier: str) -> str:
+    resolution = inspect_id(registry, identifier)
+    if resolution.status != "active":
+        raise UnresolvedIdError(resolution)
+    return resolution.at_id
 
 
 def _parse(raw: bytes, columns: tuple[str, ...]) -> list[dict[str, str]]:

@@ -22,8 +22,8 @@ from mediaingredientmech.schema_site import write_schema_site  # noqa: E402
 from mediaingredientmech.stable_ids import (  # noqa: E402
     LIFECYCLE_PATH,
     REGISTRY_PATH,
+    inspect_ids,
     load_registry,
-    resolve_id,
     resolver_url,
     validate_records,
 )
@@ -57,23 +57,42 @@ def resolver_documents(repo: Path) -> dict[str, str]:
     validate_records(registry, records)
     by_id = {record["mim_id"]: (repo / path, record) for path, record in records.items()}
     states = registry.states
+    resolutions = inspect_ids(registry)
+    events = {event.mim_id: event for event in registry.events}
     template = render.make_env().get_template("stable_resolver.html.j2")
     documents = {}
     for entry in registry.entries:
         status, replacement = states[entry.mim_id]
-        target = entry.mim_id if status == "active" else resolve_id(registry, entry.mim_id)
-        source, record = by_id[target]
+        resolution = resolutions[entry.mim_id]
+        target = resolution.at_id if resolution.status == "active" else None
+        detail_href = ""
+        if target is not None:
+            source, record = by_id[target]
+            detail_href = f"../../records/ingredient/{render.slug_for(record, source)}.html"
         page = f"ingredient/{entry.mim_id.replace(':', '_')}/index.html"
         documents[page] = template.render(
             mim_id=entry.mim_id,
-            label=record["preferred_term"] if status == "active" else entry.label_at_minting,
+            label=(
+                by_id[entry.mim_id][1]["preferred_term"]
+                if status == "active"
+                else entry.label_at_minting
+            ),
             status=status,
             canonical_url=resolver_url(entry.mim_id),
-            detail_href=f"../../records/ingredient/{render.slug_for(record, source)}.html",
+            detail_href=detail_href,
             replacement=replacement,
-            replacement_href=f"../{replacement.replace(':', '_')}/" if replacement else "",
+            replacement_href=(
+                f"../{replacement.replace(':', '_')}/" if status in {"merged", "retired"} else ""
+            ),
             target=target,
-            target_href=f"../{target.replace(':', '_')}/",
+            target_href=f"../{target.replace(':', '_')}/" if target else "",
+            resolution=resolution,
+            resolution_href=f"../{resolution.at_id.replace(':', '_')}/",
+            successors=[
+                (identifier, f"../{identifier.replace(':', '_')}/")
+                for identifier in resolution.successors
+            ],
+            reason=events[resolution.at_id].reason if resolution.status != "active" else "",
         )
     return documents
 
