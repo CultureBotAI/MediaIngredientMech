@@ -553,10 +553,19 @@ def test_1347_real_loaded_currentness_guards_still_refuse_after_cache_warmup(
     else:
         path = fixture.root / fixture.request["decisions"][0]["primary"]["path"]
         raw = path.read_bytes()
-        path.unlink()
         if change == "inode":
-            path.write_bytes(raw)
+            original = (path.stat().st_dev, path.stat().st_ino)
+            replacement = fixture.root / "replacement-report.yaml"
+            replacement.write_bytes(raw)
+            # Keep the original allocated until the replacement exists (#1347).
+            # Unlink/recreate can reuse the same inode on some filesystems.
+            distinct = (replacement.stat().st_dev, replacement.stat().st_ino)
+            assert distinct != original
+            replacement.replace(path)
+            assert (path.stat().st_dev, path.stat().st_ino) == distinct
+            assert path.read_bytes() == raw
         else:
+            path.unlink()
             other = fixture.root / "aliased-report.yaml"
             other.write_bytes(raw)
             if change == "hardlink":
