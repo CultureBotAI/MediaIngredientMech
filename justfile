@@ -162,6 +162,25 @@ adoption-apply stage acceptance receipt *args:
 adoption-verify stage receipt:
     uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption verify --root . --stage "$1" --receipt "$2"
 
+# Full canonical candidate installation only; ordinary supported export is separate (#1335).
+stable-sssom-generate claw kg adoption_stage adoption_receipt output:
+    uv run --frozen python -m mediaingredientmech.curate.stable_sssom_publication generate --root . --claw-root "$1" --kg-root "$2" --adoption-stage "$3" --adoption-receipt "$4" --stage "$5"
+
+stable-sssom-inspect request:
+    uv run --frozen python -m mediaingredientmech.curate.stable_sssom_publication inspect --root . --request "$1"
+
+stable-sssom-prepare request stage:
+    uv run --frozen python -m mediaingredientmech.curate.stable_sssom_publication prepare --root . --request "$1" --stage "$2"
+
+# Dry-run unless the caller explicitly supplies --apply; never copy the TSV alone.
+stable-sssom-apply stage acceptance receipt *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    uv run --frozen python -m mediaingredientmech.curate.stable_sssom_publication apply --root . --stage "$1" --acceptance "$2" --receipt "$3" "${@:4}"
+
+stable-sssom-verify stage receipt:
+    uv run --frozen python -m mediaingredientmech.curate.stable_sssom_publication verify --root . --stage "$1" --receipt "$2"
+
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up

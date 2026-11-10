@@ -1,5 +1,10 @@
 # Reviewed MIM SSSOM
 
+Stable-ID campaigns first use the [guarded stable publication workflow](STABLE_SSSOM_PUBLICATION.md)
+after verified native adoption. It installs the complete canonical candidate and
+its suppression/generation/provenance artifacts. Installation does not approve
+all rows; the supported/withheld release review below remains mandatory.
+
 The standalone release assigns every current MIM mapping row a supported or
 withheld disposition. Use the supported table for mapping. The withheld table
 preserves complete source rows for further curation; it is not an approved

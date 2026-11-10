@@ -1,0 +1,223 @@
+[project]
+name = "kg-microbe-orchestration"
+version = "0.1.0"
+description = "OpenClaw orchestration layer for the KG-Microbe Mech fleet (see src/kg_microbe_fleet/fleet.yaml)"
+readme = "README.md"
+# 3.11 floor so linkml 1.10.x can resolve. Under >=3.10 uv picks linkml 1.9.3
+# against linkml-runtime 1.10.0, an incompatible pair that fails every schema
+# check with "AttributeError: JSON". The Mechs all run 3.13 with linkml 1.10.0.
+requires-python = ">=3.11"
+authors = [
+    {name = "KG-Microbe Team"}
+]
+dependencies = [
+    # SSSOM slot names are read from the schema rather than typed (#kg_microbe_sssom).
+    "sssom-schema>=1.0",
+    "anthropic>=0.85.0",
+    "click>=8.3.1",
+    "gitpython>=3.1.46",
+    "pyyaml>=6.0.3",
+    "rich>=14.3.3",
+    "watchdog>=6.0.0",
+    "python-dotenv>=1.2.2",
+    "packaging>=24.0",
+    # Below 0.7.2, `sqlite:obo:` resolves against https://s3.amazonaws.com/bbop-sqlite,
+    # which is retired and now answers 403. Every scripts/ call that builds a
+    # `sqlite:obo:chebi` adapter aimed there, and build_mim_ingredient_sssom.py
+    # shells out to `runoak` once per chunk, so a single run put hundreds of
+    # requests on a dead bucket. 0.7.2 moved the default to the CDN at
+    # https://semanticsql.berkeleybop.io (oaklib#897, semantic-sql#110).
+    #
+    # >=0.7.3, not 0.7.2: 0.7.2 declares requires_python <3.14 while this project
+    # declares an unbounded >=3.11, so 0.7.2 names a floor that is not installable
+    # across the range we claim. 0.7.3 widened it to <3.15. Matches
+    # MediaIngredientMech, CultureMech, and TraitMech.
+    "oaklib>=0.7.3",
+    # oaklib imports eutils, which still imports pkg_resources; setuptools 82
+    # removed it. Nothing else bounds setuptools here, so without this a relock
+    # can take it to 82 and every `import oaklib` dies. <82 not <81: 81 still
+    # ships pkg_resources and is what resolves today. Matches AntibioticMech (#348).
+    "setuptools<82",
+    # linkml is a runtime dependency, not a dev one: `kg_microbe_history validate`
+    # shells out to linkml-validate, and that is a core feature of this repo's
+    # tooling. Keeping it here means a plain `uv sync` gives a working validator
+    # instead of the degraded --structural-only path.
+    #
+    # The floor is 1.10 deliberately. linkml 1.9.3 references `Format.JSON`, which
+    # linkml-runtime 1.10 removed (the enum has JSONLD and JSON_SCHEMA, no JSON).
+    # oaklib pulls runtime 1.10 transitively, so a looser pin resolves that broken
+    # pair and every schema check dies with "AttributeError: JSON" — which reads
+    # like a data problem and is not one.
+    "linkml>=1.10",
+    "linkml-runtime>=1.10",
+    "jsonschema>=4",
+    # kg_microbe_qc imports both at module scope. They are runtime dependencies
+    # because src/kg_microbe_qc is now an installed package and console tool.
+    "matplotlib>=3.8",
+    "jinja2>=3.1",
+    # The environment dashboard's default output is an ASCII table. Keeping
+    # tabulate at runtime makes the no-flag command as functional as JSON/HTML.
+    "tabulate>=0.9",
+]
+
+[project.scripts]
+openclaw-cli = "cli.main:cli"
+kg-microbe-merge-queue = "kg_microbe_merge_queue.__main__:main"
+kg-microbe-fleet = "kg_microbe_fleet.__main__:main"
+kg-microbe-workflows = "kg_microbe_workflows.__main__:main"
+kg-microbe-embeddings = "kg_microbe_embeddings.__main__:main"
+kg-microbe-consistency = "kg_microbe_consistency.__main__:main"
+kg-microbe-research = "kg_microbe_research.__main__:main"
+kg-microbe-reviews = "kg_microbe_reviews.__main__:main"
+kg-microbe-skills = "kg_microbe_skills.__main__:main"
+kg-microbe-sources = "kg_microbe_sources.__main__:main"
+kg-microbe-corpus = "kg_microbe_corpus.__main__:main"
+kg-microbe-curation = "kg_microbe_curation.__main__:main"
+kg-microbe-graph = "kg_microbe_graph.__main__:main"
+kg-microbe-evidence = "kg_microbe_evidence.__main__:main"
+kg-microbe-evidence-fetch = "kg_microbe_evidence.fetch:main"
+kg-microbe-pages = "kg_microbe_pages.__main__:main"
+kg-microbe-site = "kg_microbe_site.__main__:main"
+kg-microbe-kgx = "kg_microbe_kgx.__main__:main"
+kg-microbe-links = "kg_microbe_links.__main__:main"
+kg-microbe-source-queue = "kg_microbe_source_queue.__main__:main"
+kg-microbe-sssom = "kg_microbe_sssom.__main__:main"
+kg-microbe-writers = "kg_microbe_writers.__main__:main"
+kg-microbe-health = "kg_microbe_health.__main__:main"
+kg-microbe-governance = "kg_microbe_governance.__main__:main"
+kg-microbe-history = "kg_microbe_history.__main__:main"
+kg-microbe-kgscan = "kg_microbe_kgscan.__main__:main"
+kg-microbe-qc = "kg_microbe_qc.generator:cli"
+kg-microbe-discussions = "kg_microbe_discussions.export:main"
+
+[project.optional-dependencies]
+embeddings = [
+    "pacmap==0.9.1",
+    "numpy>=2.0,<3",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+]
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = [".", "src"]
+include = ["cli*", "plugins*", "pipelines*", "kg_microbe_*"]
+exclude = ["tests*", "scripts*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+# The fleet manifest is imported at package-import time, so it must ship in
+# the wheel; `conf/` at the repository root would not be packaged.
+kg_microbe_fleet = ["fleet.yaml", "schema/*.yaml"]
+kg_microbe_embeddings = ["rollout.yaml"]
+kg_microbe_merge_queue = ["policy.json"]
+kg_microbe_write = ["writers.yaml"]
+kg_microbe_research = ["schema/*.yaml"]
+kg_microbe_curation = ["schema/*.json"]
+kg_microbe_progress = ["schema/*.yaml"]
+kg_microbe_workflows = ["schema/*.yaml", "templates/*.yaml", "examples/**/*.yaml", "examples/**/*.md", "examples/**/*.json", "examples/README.md"]
+# The catalogue and its canonical templates are read at runtime, so an
+# installed package without them renders nothing while importing fine.
+kg_microbe_skills = ["skills.yaml", "canonical/*.md"]
+kg_microbe_governance = [
+    "vendored_artifacts.json",
+    "workflow_pins.json",
+    "releases/*.json",
+    "artifacts/**/*.py",
+    "artifacts/**/*.sh",
+    "artifacts/**/*.yaml",
+    "artifacts/**/*.yml",
+    "artifacts/**/*.md",
+]
+kg_microbe_config = ["openclaw_config.yaml"]
+kg_microbe_agents = ["definitions/**/*.yaml"]
+kg_microbe_qc = ["templates/*.j2"]
+kg_microbe_discussions = ["templates/*.html"]
+# The Biolink snapshot the KGX exporter maps to (scripts/snapshot_biolink.py).
+kg_microbe_kgx = ["data/*.json"]
+
+[tool.uv]
+package = true
+
+[tool.pytest.ini_options]
+# Keep source-checkout imports explicit even though all maintained packages are
+# installed by `uv sync`.
+pythonpath = [".", "src"]
+# Collect only the maintained assertion-based suite. Root- and scripts-level
+# `test_*.py` files are executable legacy diagnostics; many return booleans,
+# which pytest ignores, and must not be mistaken for gating tests.
+testpaths = ["tests"]
+# Only `test_*.py`. The default also matches `*_test.py`, which can sweep in
+# one-off pilot drivers.
+python_files = ["test_*.py"]
+filterwarnings = [
+    "error::pytest.PytestReturnNotNoneWarning",
+]
+norecursedirs = [".venv", "workspace", "cache", "ATTIC"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = [
+    "docs/archive",
+    "workspace",
+    "cache",
+    "ATTIC",
+    # These are canonical byte-for-byte Mech payloads. Their own behavioral
+    # suites govern them; changing bytes for claw-only style cleanup would
+    # create fleet drift. The new synchronizer/checker remains linted.
+    "src/kg_microbe_governance/artifacts/scripts/_edison_capture.py",
+    "src/kg_microbe_governance/artifacts/scripts/chem_formula.py",
+    "src/kg_microbe_governance/artifacts/scripts/validate_id_label_correspondence.py",
+    "src/kg_microbe_governance/artifacts/tests",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+ignore_missing_imports = true
+no_implicit_optional = true
+warn_unused_configs = true
+disable_error_code = ["import-untyped"]
+
+[[tool.mypy.overrides]]
+# Canonical byte-for-byte Mech payload pinned in vendored_artifacts.json;
+# dynamically patches DupCheckYamlLoader on importlib.import_module("linkml_runtime.loaders.yaml_loader").
+module = ["kg_microbe_governance.artifacts.scripts.record_review"]
+disable_error_code = ["attr-defined"]
+
+[tool.coverage.run]
+source = [
+    "src",
+    "cli.main",
+    "plugins.repository_settings",
+    "plugins.lock_manager",
+    "plugins.git_integration",
+    "plugins.just_runner",
+]
+# Byte-identical legacy payloads are executed by each Mech's own behavioral
+# contract. Counting their packaged copies as untested claw implementation
+# would both double-count them and pressure claw to change canonical bytes.
+omit = [
+    "src/kg_microbe_governance/artifacts/scripts/_edison_capture.py",
+    "src/kg_microbe_governance/artifacts/scripts/chem_formula.py",
+    "src/kg_microbe_governance/artifacts/scripts/validate_id_label_correspondence.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+omit = [
+    "src/kg_microbe_governance/artifacts/scripts/_edison_capture.py",
+    "src/kg_microbe_governance/artifacts/scripts/chem_formula.py",
+    "src/kg_microbe_governance/artifacts/scripts/validate_id_label_correspondence.py",
+]

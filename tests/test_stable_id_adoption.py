@@ -47,7 +47,7 @@ def commit(root):
 
 
 class Fixture:
-    def __init__(self, tmp, monkeypatch):
+    def __init__(self, tmp, monkeypatch, original_records=None, additional_sources=None):
         self.root, self.legacy, self.claw = (tmp / name for name in ("target", "legacy", "claw"))
         for root in (self.root, self.legacy, self.claw):
             initialize(root)
@@ -55,6 +55,10 @@ class Fixture:
             path = self.root / name
             path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / name, path)
+        for name, source in (additional_sources or {}).items():
+            path = self.root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, path)
         for name in (*api.Claw.PATHS.values(), "uv.lock", "pyproject.toml"):
             path = self.claw / name
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -76,6 +80,8 @@ class Fixture:
                 "curation_history": [],
             },
         ]
+        if original_records is not None:
+            self.original = copy.deepcopy(original_records)
         for path, record in zip(self.paths, self.original, strict=True):
             for root in (self.root, self.legacy):
                 p = root / path
