@@ -18,6 +18,7 @@ import sys
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import Callable
 
 import click
 from rich.console import Console
@@ -362,6 +363,7 @@ def export_collection_to_individual_files(
     preserved: PreservedFields | None = None,
     existing_names: FilenameIndex | None = None,
     shared_identifiers: set[str] | None = None,
+    record_sink: Callable[[Path, dict], None] | None = None,
 ) -> dict[str, int]:
     """Export a collection YAML file to individual ingredient files.
 
@@ -378,10 +380,16 @@ def export_collection_to_individual_files(
         shared_identifiers: Semantic identifiers known to be shared across the
             full incoming export. Identifier-keyed preservation and filename
             lookup are disabled for these values.
+        record_sink: Optional guarded destination for each final filename and
+            fully restored record (#1303). The native exporter performs no
+            output-directory creation, deletion or writes in this mode.
+            Cannot be combined with dry_run.
 
     Returns:
         Dictionary with statistics: 'total', 'created', 'collisions', 'renamed'.
     """
+    if record_sink is not None and dry_run:
+        raise ValueError("record_sink and dry_run are mutually exclusive")
     preserved = preserved or PreservedFields()
     existing_names = existing_names or FilenameIndex()
     stats = {"total": 0, "created": 0, "collisions": 0, "renamed": 0}
@@ -429,7 +437,7 @@ def export_collection_to_individual_files(
     # file lingers forever). The corpus is *almost* a pure projection of the
     # collection — the exception is the per-record-authored fields captured in
     # `preserved` above, which are merged back after this clear.
-    if not dry_run:
+    if not dry_run and record_sink is None:
         output_dir.mkdir(parents=True, exist_ok=True)
         for stale in output_dir.glob("*.yaml"):
             stale.unlink()
@@ -503,7 +511,10 @@ def export_collection_to_individual_files(
             console.print(f"[dim]Would create: {output_path}[/dim]")
         else:
             # Write individual file (no collection wrapper, just the IngredientRecord)
-            save_yaml(ingredient, output_path, backup=False)
+            if record_sink is None:
+                save_yaml(ingredient, output_path, backup=False)
+            else:
+                record_sink(output_path, ingredient)
             stats["created"] += 1
 
     return stats
