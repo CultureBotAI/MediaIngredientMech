@@ -901,3 +901,141 @@ else: raise AssertionError('stale compiled producer accepted')
 """,
     )
     assert "executed producer/dependency changed" in json.loads(result.stdout)["refused"]
+
+
+@pytest.mark.parametrize("role", ["primary", "skeptic"])
+@pytest.mark.parametrize("status", ["failed", "not_applicable"])
+def test_required_target_check_must_pass_before_support(fixture, role, status):
+    """#1308: a positive assessment cannot override its required native check."""
+
+    def alter(actual_role, report):
+        if actual_role == role:
+            report["verdict"] = "needs_curation"
+            report["checks"][0].update(status=status, target_ids=["source-1"])
+
+    fixture.seal(alter=alter)
+    with pytest.raises(ValueError, match="required native checks are not passed for source-1"):
+        binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
+    assert not fixture.output.exists()
+
+
+def test_required_global_check_applies_to_all_explicit_targets(fixture):
+    """#1308: a global check enumerates targets, including supported target 2."""
+
+    def alter(role, report):
+        if role == "skeptic":
+            report["verdict"] = "needs_curation"
+            report["checks"][0]["status"] = "failed"
+
+    fixture.seal(withheld={1}, alter=alter)
+    with pytest.raises(ValueError, match="required native checks are not passed for source-2"):
+        binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
+
+
+def test_required_failure_on_withheld_target_preserves_unrelated_support(fixture):
+    """#1308 preserves unrelated supported targets in a needs_curation report."""
+
+    def alter(role, report):
+        if role == "skeptic":
+            report["verdict"] = "needs_curation"
+            report["checks"][0].update(status="failed", target_ids=["source-1"])
+
+    fixture.seal(withheld={1}, alter=alter)
+    manifest = binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
+    cases = json.loads((fixture.output / "source-decisions.json").read_bytes())
+    assert manifest["counts"]["supported"] == 3 and manifest["counts"]["withheld"] == 1
+    assert [case["disposition"] for case in cases] == [
+        "WITHHOLD",
+        "SUPPORTED",
+        "SUPPORTED",
+        "SUPPORTED",
+    ]
+    assert fixture.reports[1]["checks"][0]["status"] == "failed"
+
+
+def test_optional_check_is_not_reinterpreted_as_required(fixture):
+    """#1308 uses the explicit required/scope fields rather than check prose."""
+
+    def alter(role, report):
+        if role == "skeptic":
+            report["verdict"] = "needs_curation"
+            report["checks"][0].update(status="not_applicable", required=False)
+
+    fixture.seal(alter=alter)
+    assert (
+        binding.export_candidate(fixture.root, fixture.review_path, fixture.output)["counts"][
+            "supported"
+        ]
+        == 4
+    )
+
+
+@pytest.mark.parametrize(
+    "status", ["failed", "not_applicable", "skipped", "unavailable", "pending", "blocked"]
+)
+def test_required_check_policy_never_treats_nonpass_as_success(status):
+    """#1308 remains fail-closed even for a future native status vocabulary."""
+    report = {
+        "checks": [
+            {"check_id": "required", "required": True, "target_ids": ["target"], "status": status}
+        ]
+    }
+    with pytest.raises(ValueError, match="required native checks are not passed"):
+        binding._required_checks_pass(report, "target")
+    binding._required_checks_pass(report, "unrelated")
+
+
+def test_overlapping_source_prefixes_cannot_assign_one_uri_to_distinct_owners(fixture, monkeypatch):
+    """#1310 rejects the full native-reviewed collision before any candidate write."""
+    nodes, occurrences = fixture.root / "nodes.tsv", fixture.root / "occurrences.tsv"
+    nodes.write_text(nodes.read_text().replace("SOURCE:2", "ALIAS:source/1"))
+    occurrences.write_text(occurrences.read_text().replace("SOURCE:2", "ALIAS:source/1"))
+    fixture.review["source"].update(
+        nodes_sha256=external.digest(nodes), occurrences_sha256=external.digest(occurrences)
+    )
+    fixture.review["source"]["curie_map"]["ALIAS"] = "https://example.invalid/"
+    # Construct the exact synthetic authority admitted by the old implementation.
+    # Restore the real guard before calling export; no production bypass exists.
+    with monkeypatch.context() as inspection:
+        inspection.setitem(
+            binding.inspect_candidates.__globals__, "_require_unique_source_uris", lambda *_: None
+        )
+        fixture.seal()
+    preserved = {
+        path: (fixture.root / path).read_bytes()
+        for path in ["nodes.tsv", "occurrences.tsv", *fixture.records]
+    }
+    with pytest.raises(ValueError, match="duplicate expanded URI"):
+        binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
+    assert not fixture.output.exists()
+    assert not list(fixture.root.glob(".source-candidate-*"))
+    assert all((fixture.root / path).read_bytes() == raw for path, raw in preserved.items())
+
+
+def test_distinct_source_uris_with_shared_local_suffix_remain_distinct(fixture):
+    """#1310 does not collapse two real namespaces merely because locals match."""
+    nodes, occurrences = fixture.root / "nodes.tsv", fixture.root / "occurrences.tsv"
+    nodes.write_text(nodes.read_text().replace("SOURCE:2", "OTHER:1"))
+    occurrences.write_text(occurrences.read_text().replace("SOURCE:2", "OTHER:1"))
+    fixture.review["source"].update(
+        nodes_sha256=external.digest(nodes), occurrences_sha256=external.digest(occurrences)
+    )
+    fixture.review["source"]["curie_map"]["OTHER"] = "https://other.example.invalid/source/"
+    fixture.seal()
+    binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
+    claims = binding.consumer_claims(
+        fixture.root, fixture.review_path, fixture.output, capabilities={binding.CAPABILITY}
+    )
+    assert [(claim["subject_id"], claim["original_object_id"]) for claim in claims[:2]] == [
+        ("SOURCE:1", "MIM:0000001"),
+        ("OTHER:1", "MIM:0000002"),
+    ]
+
+
+@pytest.mark.parametrize("unavailable", [None, object()])
+def test_unavailable_capture_fails_closed_before_output(fixture, monkeypatch, unavailable):
+    """#1309's explicit protocol does not turn an absent capture into a bypass."""
+    monkeypatch.setitem(binding.expected_products.__globals__, "_PRODUCER_CAPTURE", unavailable)
+    with pytest.raises(ValueError, match="captured producer is unavailable"):
+        binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
+    assert not fixture.output.exists()

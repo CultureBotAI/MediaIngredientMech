@@ -16,6 +16,7 @@ import re
 import tempfile
 import types
 from pathlib import Path
+from typing import Any, Protocol, TypedDict, runtime_checkable
 
 from mediaingredientmech.export import reviewed_sssom as external
 from mediaingredientmech.mapping_scope import _load_yaml
@@ -29,8 +30,37 @@ from mediaingredientmech.stable_ids import (
     validate_records,
 )
 
-# The captured execution loader supplies this object before compiling the module.
-_PRODUCER_CAPTURE = globals().get("_PRODUCER_CAPTURE")
+
+@runtime_checkable
+class _ProducerCapture(Protocol):
+    """The private captured-byte loader's required execution interface (#1309)."""
+
+    def start_context(self, root: Path) -> str: ...
+
+    def check_context(self, root: Path, head: str) -> None: ...
+
+    def bind(self, inputs: _Inputs) -> None: ...
+
+    def receipt(self, inputs: _Inputs) -> dict[str, Any]: ...
+
+    def validate_receipt(self, receipt: dict[str, Any], inputs: _Inputs) -> dict[str, Any]: ...
+
+
+# The loader supplies this object before compiling the private implementation.
+# A missing/incompatible capture cannot enter an inspection or export operation.
+_PRODUCER_CAPTURE: object = globals().get("_PRODUCER_CAPTURE")
+
+
+def _require_capture() -> _ProducerCapture:
+    if not isinstance(_PRODUCER_CAPTURE, _ProducerCapture):
+        raise ValueError("Source identity candidate: captured producer is unavailable")
+    return _PRODUCER_CAPTURE
+
+
+class _Occurrence(TypedDict):
+    position: int
+    row: dict[str, str]
+
 
 CAPABILITY = "reviewed-source-bindings-v1"
 REPOSITORY = "CultureBotAI/MediaIngredientMech"
@@ -120,10 +150,10 @@ def expand_mim(value):
 class _Inputs:
     def __init__(self, root):
         self.root = Path(root).resolve()
-        self.hashes = {}
-        self.bytes = {}
-        self.reports = {}
-        self.git_head = _PRODUCER_CAPTURE.start_context(self.root)
+        self.hashes: dict[str, str] = {}
+        self.bytes: dict[str, bytes] = {}
+        self.reports: dict[str, tuple[dict[str, Any], dict[str, str], dict[str, str]]] = {}
+        self.git_head = _require_capture().start_context(self.root)
 
     def read(self, name, expected=None):
         if isinstance(name, str) and name in self.hashes:
@@ -156,11 +186,11 @@ class _Inputs:
     def recheck(self):
         for name, expected in list(self.hashes.items()):
             self._fresh(name, expected)
-        _PRODUCER_CAPTURE.check_context(self.root, self.git_head)
+        _require_capture().check_context(self.root, self.git_head)
 
 
 def _inventory(root):
-    paths = []
+    paths: list[str] = []
     for category in ("mapped", "unmapped"):
         directory = root / "data/ingredients" / category
         _require(
@@ -177,6 +207,24 @@ def _native(inputs):
     module.__file__ = str(inputs.root / HELPER)
     exec(compile(raw, module.__file__, "exec"), module.__dict__)
     return module
+
+
+def _required_checks_pass(report: dict[str, Any], target_id: str) -> None:
+    """Required checks explicitly covering this target must pass (#1308).
+
+    Native global checks enumerate all targets; scope is never inferred from
+    names or prose. Non-applicable/pending/blocked results are not successful
+    required checks, including if the native status vocabulary later expands.
+    """
+    blocking = [
+        check["check_id"]
+        for check in report["checks"]
+        if check["required"] and target_id in check["target_ids"] and check["status"] != "passed"
+    ]
+    _require(
+        not blocking,
+        "required native checks are not passed for " + target_id + ": " + ", ".join(blocking),
+    )
 
 
 def _assessment(inputs, native, reference, payload, required_inputs):
@@ -249,6 +297,7 @@ def _assessment(inputs, native, reference, payload, required_inputs):
     )
     supported = conclusion == "same_material"
     if supported:
+        _required_checks_pass(report, reference["target_id"])
         _require(
             assessment["outcome"] == "supported"
             and report["verdict"] in {"pass", "pass_with_limitations", "needs_curation"},
@@ -281,6 +330,19 @@ def _assessment(inputs, native, reference, payload, required_inputs):
         "assessment": assessment,
         "provenance": provenance,
     }
+
+
+def _require_unique_source_uris(identifiers: list[str], prefixes: dict[str, str]) -> None:
+    """Reject source aliases that denote one URI without assigning an owner (#1310)."""
+    seen: dict[str, str] = {}
+    for identifier in identifiers:
+        prefix, local = identifier.split(":", 1)
+        uri = prefixes[prefix] + local
+        _require(
+            uri not in seen,
+            "source IDs have a duplicate expanded URI: " + seen.get(uri, "") + " / " + identifier,
+        )
+        seen[uri] = identifier
 
 
 def _prepare(root, review_path):
@@ -353,7 +415,8 @@ def _prepare(root, review_path):
             prefix not in source["curie_map"] or source["curie_map"][prefix] == iri,
             "conflicting reserved namespace",
         )
-    grouped = {value: [] for value in identifiers}
+    _require_unique_source_uris(identifiers, source["curie_map"])
+    grouped: dict[str, list[_Occurrence]] = {value: [] for value in identifiers}
     for position, row in enumerate(occurrences, 1):
         identifier = row[source["occurrence_id_column"]]
         _require(identifier in grouped, "occurrence has no source entity")
@@ -454,7 +517,7 @@ def inspect_candidates(root, review_path):
 
 def _load(root, review_path):
     inputs, review, payloads, records, inventory, occurrence_count = _prepare(root, review_path)
-    _PRODUCER_CAPTURE.bind(inputs)
+    _require_capture().bind(inputs)
     native = _native(inputs)
     results = []
     source = review["source"]
@@ -579,9 +642,9 @@ def expected_products(root, review_path, *, _generation_receipt=None):
         )
     products["source-decisions.json"] = _json(cases)
     producer = (
-        _PRODUCER_CAPTURE.receipt(inputs)
+        _require_capture().receipt(inputs)
         if _generation_receipt is None
-        else _PRODUCER_CAPTURE.validate_receipt(_generation_receipt, inputs)
+        else _require_capture().validate_receipt(_generation_receipt, inputs)
     )
     products["producer.json"] = _json(producer)
     counts = {

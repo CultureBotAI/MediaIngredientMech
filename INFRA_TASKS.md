@@ -71,3 +71,11 @@ only the mapping-review semantics input and the two dependent companion-review
 pins change. Native `identity_projection --replace-derived` and `--check`
 preserve all scientific decisions, historical authorities and the fixed cohort;
 no graph regeneration is required by these changes.
+Final-head follow-ups are tracked in
+[issue #1308](https://github.com/CultureBotAI/MediaIngredientMech/issues/1308),
+[issue #1309](https://github.com/CultureBotAI/MediaIngredientMech/issues/1309) and
+[issue #1310](https://github.com/CultureBotAI/MediaIngredientMech/issues/1310):
+required checks must pass for the applicable target, captures have an explicit
+typed runtime contract, and complete expanded source URIs must be unique.
+These admission repairs transfer no scientific approval and preserve all prior
+holds and original source rows.

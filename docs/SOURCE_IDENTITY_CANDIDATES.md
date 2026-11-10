@@ -42,6 +42,11 @@ IDs. Zero occurrences are allowed and explicitly represented. Prefix URIs
 must be supplied, never guessed. Reserved MIM, MIM.ingredient, SKOS and SEMAPV
 expansions cannot be overridden. These declarations are part of the reviewed
 payload, so changing a namespace or column selector withdraws prior support.
+Both raw CURIEs and their complete declared URI expansions must be unique
+(#1310). Distinct overlapping prefixes cannot give one source entity different
+owners. Such a collision refuses the candidate before artifact creation; it
+does not drop source rows, merge owners or rewrite original CURIEs. Equal local
+suffixes in genuinely different URI namespaces remain distinct.
 
 This is complete accounting of the **declared files**, not proof that the
 upstream provider supplied its entire database. Upstream extraction provenance
@@ -118,6 +123,16 @@ remaining hold, no owner, or an AMBIGUOUS/REJECTED owner cannot be supported.
 An UNMAPPED owner can support source identity only: no external mapping or
 MAPPED status is manufactured.
 
+In addition, every required native check explicitly listing a supported target
+must have `status: passed` (#1308). A global check lists every report target;
+there is no separate implicit global scope, and names or prose never determine
+applicability. A required `not_applicable` result is not a pass. Failed, skipped,
+unavailable, pending or blocked results cannot confer support either; the native
+schema/completion rules already reject some of these states. An unrelated
+target's failed check can remain in a `needs_curation` report while other targets
+are supported. A WITHHOLD case retains the failure and disposition unchanged.
+The exporter never silently changes a check's requirement, scope or status.
+
 ## Outputs and consumer contract
 
 `manifest.json` declares `REVIEWED_CANDIDATE_ONLY`, `production_authorized:
@@ -185,6 +200,9 @@ admit. Existing public Python modules are neither reused nor reloaded. In
 particular, hashing a dependency's current disk file after an older version was
 already cached is insufficient; the regression from #1195 is covered explicitly.
 The native structured-review helper also executes the exact captured bytes.
+The capture's execution interface has an explicit runtime-checked protocol
+(#1309); an absent or incompatible capture fails closed before an operation can
+produce candidate artifacts. Static typing does not replace this runtime guard.
 
 Every selected-root producer file must equal the captured bytes that execute.
 The receipt also binds `uv.lock`, `pyproject.toml`, `.python-version`, native
