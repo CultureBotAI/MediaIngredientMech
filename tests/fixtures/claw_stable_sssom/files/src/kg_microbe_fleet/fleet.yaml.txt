@@ -1,0 +1,2902 @@
+# Canonical fleet manifest.
+#
+# This file is the single source of truth for which repositories constitute the
+# Mech fleet. Before it existed, at least three independent lists disagreed:
+# `plugins/repository_settings.py` and `cli/main.py` knew three Mechs, the
+# cross-mech-sync skill knew four, and `scripts/fleet_pr_status.py` knew five.
+# Every fleet-facing component must derive its repository list from here rather
+# than re-declaring one. The manifest, agent, workflow, script, and general-skill
+# contract tests enforce the supported consumer set and check that packaged
+# configuration and `.env.example` agree. Domain-specific pipelines may name
+# scientific inputs, but those names never redefine fleet membership.
+#
+# Package, schema, and record paths below were checked against each local Mech
+# checkout on 2026-08-25. They are repository-relative POSIX paths so consumers
+# never need to infer a sibling-checkout layout.
+
+version: 1
+
+# Canonical capability catalogue. Every Mech must declare every key exactly
+# once. The loader rejects omissions and unknown keys, so an absent declaration
+# can never silently mean "off". Status is one of enabled / disabled /
+# not_applicable; the latter two require a reason.
+capability_catalogue:
+  id_label_validation: {}
+  curation_history: {}
+  record_review: {}
+  strict_validation: {}
+  schema_sync: {}
+  release_management: {}
+  build_coordination: {}
+  documentation: {}
+  testing: {}
+  refactoring: {}
+  coordination_hooks: {}
+  deep_research: {}
+  edison_key_discovery: {}
+  environment_coverage:
+    settings:
+      record_globs:
+        type: string_list
+        required_when_enabled: true
+  knowledge_gap_scan:
+    settings:
+      # Native offline adapters can require retained input instead of live API queries.
+      # Omitted preserves existing scheduling; false excludes the nightly live matrix.
+      scheduled:
+        type: boolean
+      window:
+        type: integer
+        required_when_enabled: true
+        minimum: 1
+  vendored_sync: {}
+  unmapped_inventory_input: {}
+  source_catalogue: {}
+  # Cached-source quote matching is independent of citation/field presence.
+  # Domain/source adapters must be reviewed before enabling another Mech.
+  evidence_reference_validation:
+    settings:
+      cache_dir:
+        type: string
+        required_when_enabled: true
+      reference_fields:
+        type: string_list
+      snippet_fields:
+        type: string_list
+      evidence_fields:
+        type: string_list
+      evidence_paths:
+        type: string_list
+      # Issue-owned findings that are reported but do not block (#729).
+      known_findings:
+        type: string
+  # Every slot in which a record names a taxon, read by `kg-microbe-links
+  # taxa`. Only the slots listed are read: a taxon mentioned in prose, a
+  # citation or a mixed identifier slot is not a link. Measured from the
+  # records, not the schema (scripts/adhoc/discover_taxon_slot_paths.py,
+  # 2026-11-06); a slot the schema allows but no record uses is not listed.
+  taxon_links:
+    settings:
+      slots:
+        type: string_list
+        required_when_enabled: true
+  corpus_statistics:
+    settings:
+      fields:
+        type: string_list
+        required_when_enabled: true
+  # What fraction of records carry a causal graph, which are declared not to
+  # need one, how many graphs each has, and their structure
+  # (kg-microbe-graph coverage). Applicability is never inferred: a record
+  # leaves the denominator only through an exempt_when rule declared here,
+  # because "parents and habitats need no graph" is false in several Mechs.
+  # Combinations that are invalid together are rejected by
+  # kg_microbe_graph.coverage.CoverageConfig, and a test applies it to every
+  # enabled declaration.
+  causal_graph_coverage:
+    settings:
+      # graph_list (a record holds a list of graphs), node_nested_edges (the
+      # record is one graph; each node lists its outgoing edges) or
+      # record_graph (the record is one graph: nodes in node_list_fields, one
+      # record-level edge list).
+      graph_shape:
+        type: string
+        required_when_enabled: true
+      graphs_field:
+        type: string
+      graph_id_field:
+        type: string
+      nodes_field:
+        type: string
+      edges_field:
+        type: string
+      node_id_field:
+        type: string
+      node_type_field:
+        type: string
+      node_grounding_field:
+        type: string
+      edge_subject_field:
+        type: string
+      edge_object_field:
+        type: string
+      edge_predicate_field:
+        type: string
+      edge_evidence_field:
+        type: string
+      # record_graph only: the record-level lists holding nodes, and whether
+      # the record itself is a node edges may name.
+      node_list_fields:
+        type: string_list
+      record_is_node:
+        type: boolean
+      # The record's own id, to count graphless records grounded inside
+      # another record's graph.
+      record_id_field:
+        type: string
+      # A per-graph disposition, and which of its values count as a mechanism.
+      scope_field:
+        type: string
+      mechanistic_scopes:
+        type: string_list
+      # Per-graph fields whose per-record combinations are tabulated.
+      graph_facets:
+        type: string_list
+      anchor_node_types:
+        type: string_list
+      duplicate_grounding_check:
+        type: boolean
+      # field=A|B, field~REGEX, or path:GLOB. First match is credited.
+      exempt_when:
+        type: string_list
+      # Record fields (or @directory) to break every count down by.
+      strata:
+        type: string_list
+  page_budgets:
+    settings:
+      site_path:
+        type: string
+        required_when_enabled: true
+      budgets_path:
+        type: string
+        required_when_enabled: true
+  kgx_export:
+    settings:
+      nodes_path:
+        type: string
+        required_when_enabled: true
+      edges_path:
+        type: string
+        required_when_enabled: true
+      extra_prefixes:
+        type: string_list
+      # Read by `kg-microbe-kgx export` (#276), which builds the graph from the
+      # causal_graph_coverage shape. Maps are KEY=biolink:Term pairs that extend
+      # the shared ones in kg_microbe_kgx.maps; every target must be a term of
+      # the pinned Biolink snapshot.
+      infores:
+        type: string
+      category_map:
+        type: string_list
+      predicate_map:
+        type: string_list
+      node_namespace:
+        type: string
+      node_label_field:
+        type: string
+      # Biolink KnowledgeLevelEnum / AgentTypeEnum values for every edge this
+      # Mech exports; left out, both are `not_provided`.
+      knowledge_level:
+        type: string
+      agent_type:
+        type: string
+  source_queue:
+    settings:
+      queue_path:
+        type: string
+        required_when_enabled: true
+      extensions:
+        type: string_list
+      required_when_adopted:
+        type: string_list
+  metpo_proposal:
+    settings:
+      class_glob:
+        type: string
+        required_when_enabled: true
+      property_glob:
+        type: string
+  sssom_export:
+    settings:
+      mapping_globs:
+        type: string_list
+        required_when_enabled: true
+      extensions:
+        type: string_list
+  writer_audit:
+    settings:
+      search_dirs:
+        type: string_list
+        required_when_enabled: true
+      save_helpers:
+        type: string_list
+      validators:
+        type: string_list
+      curation_markers:
+        type: string_list
+      exclude:
+        type: string_list
+  site_contract:
+    settings:
+      site_path:
+        type: string
+        required_when_enabled: true
+      # What a site-absolute reference means, and how far a relative one may
+      # climb. Defaults to site_path; they differ when a repository checks part
+      # of what it publishes (#238).
+      published_root:
+        type: string
+      allowed_hosts:
+        type: string_list
+
+# Vendored shared-file governance is deliberately modeled separately from
+# fleet membership: claw is the external authority and must never pin itself.
+# The coordinated Phase 1 migration is complete. `transition` remains a
+# validated compatibility state for older manifests, but the shipped state is
+# `authoritative`: there is no Mech hub, and every Mech is a pinned consumer of
+# claw. The loader rejects mixed authoritative state.
+vendored_governance:
+  state: authoritative
+  canonical_repository: CultureBotAI/culturebotai-claw
+  manifest_path: src/kg_microbe_governance/vendored_artifacts.json
+  pin_path: scripts/.vendored_canon_ref
+
+mechs:
+  culturemech:
+    display_name: CultureMech
+    github: CultureBotAI/CultureMech
+    environment_variable: CULTUREMECH_ROOT
+    package_path: src/culturemech
+    schema_paths:
+      - src/culturemech/schema/culturemech.yaml
+    record_globs:
+      - data/merge_yaml/merged/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - target_organisms[].term.id
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): the record_globs name the derived
+          merged layer, whose 91 quote-bearing items are stale, while the
+          authoritative normalized corpus holds 38,580, of which 37,626 (97.5%)
+          cite neither a PMID nor a DOI. Adoption needs the gate to read the
+          authoritative layer (claw#779) and a source adapter for web and
+          database citations.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: enabled
+      edison_key_discovery:
+        status: enabled
+      environment_coverage:
+        status: enabled
+        settings:
+          record_globs:
+            - data/merge_yaml/merged/*.yaml
+      knowledge_gap_scan:
+        status: enabled
+        settings:
+          window: 300
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - source_environment
+            - medium_type
+      causal_graph_coverage:
+        status: not_applicable
+        reason: >-
+          MediaRecipe records are compositions. The schema has no causal-graph
+          slot and no record carries graph-shaped content; what CultureMech's
+          own tooling calls causal-graph coverage (#468) is its review-need
+          score over recipe grounding, not a graph.
+      page_budgets:
+        status: disabled
+        reason: >-
+          Generates a site through .github/workflows/generate-pages.yaml but
+          declares no size or file-count budgets, so nothing watches it grow.
+          Adopting them applies here; the limits are the repository's to set.
+        reason_claims:
+          present:
+            - .github/workflows/generate-pages.yaml
+      writer_audit:
+        status: enabled
+        settings:
+          search_dirs: [scripts, src/culturemech]
+          save_helpers: [write_validated_recipe]
+          exclude: [scripts/audit_writers.py]
+      sssom_export:
+        status: enabled
+        settings:
+          mapping_globs: ["output/*.sssom.tsv"]
+          extensions: [mapping_method]
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          Carries .claude/commands/ground-or-propose-metpo.md, so the grounding
+          half is present, but has no proposals/ directory and has never minted
+          a METPO id. Adopting applies once a CultureMech term needs one.
+        reason_claims:
+          absent: ["proposals"]
+          present: [".claude/commands/ground-or-propose-metpo.md"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          scripts/export_kgx.py writes to output/kgx but has produced nothing
+          tracked, so there is no graph for this contract to judge. KGX export
+          applies here, as to every Mech (#503); adoption is pending
+          (CultureMech#490): run the exporter and declare its nodes and edges.
+        reason_claims:
+          present:
+            - scripts/export_kgx.py
+          absent:
+            - output/kgx
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv. AntibioticMech wrote the pattern and
+          CellStructureMech adapted it; adopting it here means ranking this
+          corpus's own candidate sources and verifying their licences, which is
+          curation work rather than a file copy.
+        reason_claims:
+          absent:
+            - curation/source_queue.tsv
+      site_contract:
+        status: disabled
+        reason: >-
+          Publishes a site built in CI, so no directory in the checkout is the
+          output the check would judge; running it on the Jekyll or template
+          sources reports missing .html files that the build creates. Adopting
+          it means running the check on the build product, which applies here
+          and is not yet wired.
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Fetches each source from its own script --
+          scripts/fetch_komodo_base_volumes.py,
+          scripts/fetch_mediadive_solution_volumes.py,
+          scripts/fetch_pubmed_abstracts.py -- with no download.yaml declaring
+          them, so there is no catalogue to validate. Adopting one would apply
+          here; it has not been written.
+        reason_claims:
+          present:
+            - scripts/fetch_komodo_base_volumes.py
+            - scripts/fetch_mediadive_solution_volumes.py
+            - scripts/fetch_pubmed_abstracts.py
+          absent:
+            - download.yaml
+      unmapped_inventory_input:
+        status: enabled
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+
+  mediaingredientmech:
+    display_name: MediaIngredientMech
+    github: CultureBotAI/MediaIngredientMech
+    environment_variable: MEDIAINGREDIENTMECH_ROOT
+    package_path: src/mediaingredientmech
+    schema_paths:
+      - src/mediaingredientmech/schema/mediaingredientmech.yaml
+    record_globs:
+      - data/ingredients/**/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: disabled
+        reason: >-
+          Measured 2026-11-06: no record slot holds an NCBITaxon CURIE. The schema's
+          causal-graph organism_scope and protein-example taxa exist, and no record
+          carries one yet. Enable, with the slots, once one does.
+      evidence_reference_validation:
+        status: enabled
+        settings:
+          cache_dir: references_cache
+          reference_fields: [pmid, doi, reference]
+          snippet_fields: [snippet, excerpt, supporting_text]
+          evidence_fields: [evidence]
+          # Preserve the existing gate's scope. The two role selectors are
+          # legacy names; current role facets need their own reviewed adapter.
+          evidence_paths:
+            - ontology_mapping.evidence
+            - role_assignments[].evidence
+            - cellular_role_assignments[].evidence
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: enabled
+      edison_key_discovery:
+        status: enabled
+      environment_coverage:
+        status: enabled
+        settings:
+          record_globs:
+            - data/ingredients/**/*.yaml
+      knowledge_gap_scan:
+        status: enabled
+        settings:
+          window: 300
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - ingredient_type
+            - ontology_mapping.mapping_quality
+      causal_graph_coverage:
+        status: disabled
+        reason: >-
+          IngredientRecord has no causal-graph slot. Its role facets and
+          components are typed assertions around one ingredient, a star with
+          nothing to connect, and scripts/score_causal_graph_readiness.py ranks
+          their readiness to seed a graph. Enable once records carry graphs.
+        reason_claims:
+          present: ["scripts/score_causal_graph_readiness.py"]
+      page_budgets:
+        status: disabled
+        reason: >-
+          Generates a site through .github/workflows/generate-pages.yaml but
+          declares no size or file-count budgets, so nothing watches it grow.
+          Adopting them applies here; the limits are the repository's to set.
+        reason_claims:
+          present:
+            - .github/workflows/generate-pages.yaml
+      writer_audit:
+        status: enabled
+        settings:
+          search_dirs: [scripts, src/mediaingredientmech]
+          save_helpers: [save_yaml, write_validated_ingredient]
+          exclude: [scripts/audit_writers.py]
+      sssom_export:
+        status: enabled
+        settings:
+          mapping_globs: ["mappings/*.sssom.tsv"]
+          extensions: [source, validation_method]
+      metpo_proposal:
+        status: not_applicable
+        reason: >-
+          MIM grounds ingredients in ChEBI and FOODON and publishes SSSOM
+          mappings; METPO models microbial phenotypes and processes, which is
+          not the axis this corpus curates.
+      kgx_export:
+        status: disabled
+        reason: >-
+          Builds a KGX ingredient graph with
+          src/mediaingredientmech/export/kgx.py. Its one KGX release,
+          mim-supported-2026-09-21, is a snapshot its own notes mark superseded,
+          with a new KGX publication pending, and it declares no nodes and
+          edges for this contract to judge. KGX export applies here, as to
+          every Mech (#503); adoption is pending (MediaIngredientMech#778).
+        reason_claims:
+          present:
+            - src/mediaingredientmech/export/kgx.py
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv. AntibioticMech wrote the pattern and
+          CellStructureMech adapted it; adopting it here means ranking this
+          corpus's own candidate sources and verifying their licences, which is
+          curation work rather than a file copy.
+        reason_claims:
+          absent:
+            - curation/source_queue.tsv
+      site_contract:
+        status: disabled
+        reason: >-
+          Publishes a site built in CI, so no directory in the checkout is the
+          output the check would judge; running it on the Jekyll or template
+          sources reports missing .html files that the build creates. Adopting
+          it means running the check on the build product, which applies here
+          and is not yet wired.
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Fetches ontologies through download_ontologies.py rather than a
+          declared catalogue, so there is no download.yaml to validate.
+          Adopting one would apply here; it has not been written.
+        reason_claims:
+          present:
+            - scripts/download_ontologies.py
+          absent:
+            - download.yaml
+      unmapped_inventory_input:
+        status: enabled
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+
+  communitymech:
+    display_name: CommunityMech
+    github: CultureBotAI/CommunityMech
+    environment_variable: COMMUNITYMECH_ROOT
+    package_path: src/communitymech
+    schema_paths:
+      - src/communitymech/schema/communitymech.yaml
+    record_globs:
+      - kb/communities/*.yaml
+      - data/isolates/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - taxonomy[].taxon_term.term.id
+            - taxonomy[].taxon_term.gtdb_classification.ncbi_source_id
+            - ecological_interactions[].participating_taxa[].term.id
+            - ecological_interactions[].participating_taxa[].gtdb_classification.ncbi_source_id
+            - ecological_interactions[].source_taxon.term.id
+            - ecological_interactions[].target_taxon.term.id
+            - ecological_interactions[].target_taxon.gtdb_classification.ncbi_source_id
+            - host.term.id
+            - engineering_design.counter_selection[].excluded_taxon.term.id
+            # Found but not declared: external_resources[].resource_id holds
+            # the ids of external resources, not taxon links.
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): of 8,360 PMID-cited quotes, 4,629 occur
+          in the cited abstract and 3,727 do not; 2,509 of those occur in the
+          Mech's tracked PMID text caches, which hold full texts and longer
+          abstract exports. The 1,232 DOI- and web-cited quotes were not compared.
+          Adoption needs a reviewed source adapter for those texts and the native
+          front-matter caches; the native evidence-repair backlog remains open.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: enabled
+      edison_key_discovery:
+        status: enabled
+      environment_coverage:
+        status: enabled
+        settings:
+          # Preserve the dashboard's original isolate-inventory scope. General
+          # CommunityMech consumers may also use kb/communities/*.yaml.
+          record_globs:
+            - data/isolates/*.yaml
+      knowledge_gap_scan:
+        status: enabled
+        settings:
+          window: 305
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - environment_term
+      causal_graph_coverage:
+        # The graph is implicit: interactions are the nodes and each lists the
+        # interactions it feeds as downstream, so a record is one graph and an
+        # interaction with no downstream edge asserts no causal link. Edges
+        # carry only a description (evidence sits on the interaction), so edge
+        # evidence is not declared and not measured. No field exempts a
+        # community, and directed cycles are intended (syntrophic loops).
+        status: enabled
+        settings:
+          graph_shape: node_nested_edges
+          nodes_field: ecological_interactions
+          node_id_field: name
+          node_type_field: interaction_type
+          edges_field: downstream
+          edge_object_field: target
+          strata:
+            - community_origin
+            - "@directory"
+      page_budgets:
+        status: disabled
+        reason: >-
+          Generates a site through .github/workflows/generate-pages.yaml but
+          declares no size or file-count budgets, so nothing watches it grow.
+          Adopting them applies here; the limits are the repository's to set.
+        reason_claims:
+          present:
+            - .github/workflows/generate-pages.yaml
+      writer_audit:
+        status: enabled
+        settings:
+          search_dirs: [scripts, src/communitymech]
+          save_helpers: [write_validated_community]
+          curation_markers: [record_curation_event]
+          exclude: [scripts/audit_writers.py]
+      sssom_export:
+        status: disabled
+        reason: >-
+          Keeps its term groundings, with SKOS predicates, in
+          mappings/community_term_grounding.tsv rather than as SSSOM, so there
+          is no SSSOM file for this contract to judge. SSSOM export applies
+          here, as to every Mech (#503); adoption is pending
+          (CommunityMech#1137).
+        reason_claims:
+          present:
+            - mappings/community_term_grounding.tsv
+      metpo_proposal:
+        status: enabled
+        settings:
+          class_glob: "proposals/*/metpo_proposal_classes_robot.tsv"
+          property_glob: "proposals/*/metpo_proposal_properties_robot.tsv"
+      kgx_export:
+        status: enabled
+        settings:
+          nodes_path: output/kgx/nodes.tsv
+          edges_path: output/kgx/edges.tsv
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv. AntibioticMech wrote the pattern and
+          CellStructureMech adapted it; adopting it here means ranking this
+          corpus's own candidate sources and verifying their licences, which is
+          curation work rather than a file copy.
+        reason_claims:
+          absent:
+            - curation/source_queue.tsv
+      site_contract:
+        status: enabled
+        settings:
+          site_path: docs
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Has no download.yaml; its inputs arrive through per-source scripts
+          rather than a declared catalogue. Adopting one would apply here;
+          it has not been written.
+        reason_claims:
+          absent:
+            - download.yaml
+      unmapped_inventory_input:
+        status: enabled
+    serialization:
+      verified: false
+      reason: >-
+        No PyYAML option set reproduces this corpus, so there is no
+        correct value to declare and writing a record back would
+        reformat it. Measured in #187.
+
+  traitmech:
+    display_name: TraitMech
+    github: CultureBotAI/TraitMech
+    environment_variable: TRAITMECH_ROOT
+    package_path: src/traitmech
+    schema_paths:
+      - src/traitmech/schema/traitmech.yaml
+    record_globs:
+      - data/traits/**/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - canonical_examples[].taxon_id
+            - causal_graphs[].nodes[].protein_examples[].taxon_id
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): of 9,775 quotes, 283 cite a PMID, 5,717
+          a DOI, 933 a journal supplement or article full text, and 2,842 a web or
+          database source (mostly model files and a wiki). Adoption needs a
+          measurement of the DOI-cited quotes, a full-text and supplement source
+          adapter, and a quote-versus-database-assertion adapter.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: enabled
+      edison_key_discovery:
+        status: enabled
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage currently compares culture media, ingredients,
+          and microbial communities; trait records are not an environment
+          inventory input.
+      knowledge_gap_scan:
+        status: enabled
+        settings:
+          window: 300
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - mapping_status
+            - trait_category
+      causal_graph_coverage:
+        # NONMECHANISTIC means "a mechanism does not apply" on REVIEWED records
+        # and "deferred" on PROPOSED genomics systems, so it is reported as its
+        # own count, and mapping_status is a stratum to tell the two apart.
+        # Habitat-like ECOLOGY traits are not exempt: they carry graphs.
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          scope_field: scope_status
+          mechanistic_scopes: [MECHANISTIC]
+          anchor_node_types: [TRAIT]
+          duplicate_grounding_check: true
+          exempt_when:
+            # README: the deprecated records "are not intended to carry
+            # mechanism graphs in TraitMech".
+            - "mapping_status=DEPRECATED"
+            # CURATION_PLAYBOOK: "Skip causal graphs entirely when" the record
+            # is a relation carrier -- "predicates, not phenotypes".
+            - "term_kind=OBJECT_PROPERTY|DATATYPE_PROPERTY"
+            # trait_priority: upper-ontology classifiers are non_mechanism.
+            - "trait_category=UPPER"
+          strata:
+            - mapping_status
+            - trait_category
+      page_budgets:
+        status: disabled
+        reason: >-
+          Serves its tracked pages under pages/ straight from main via GitHub
+          Pages -- it has no generate-pages.yaml, unlike the other four -- and
+          declares no size or file-count budgets, so nothing watches them grow.
+          Adopting them applies here; the limits are the repository's to set.
+        reason_claims:
+          present:
+            - pages
+          absent:
+            - .github/workflows/generate-pages.yaml
+      writer_audit:
+        status: enabled
+        settings:
+          search_dirs: [scripts, src/traitmech]
+          save_helpers: [write_validated_trait]
+          curation_markers: [record_curation]
+          exclude: [scripts/audit_writers.py]
+      sssom_export:
+        status: enabled
+        settings:
+          mapping_globs: ["proposals/*/metpo_proposal_mappings.sssom.tsv"]
+      metpo_proposal:
+        status: enabled
+        settings:
+          class_glob: "proposals/*/metpo_proposal_classes_robot.tsv"
+          property_glob: "proposals/*/metpo_proposal_properties_robot.tsv"
+      kgx_export:
+        status: disabled
+        reason: >-
+          Publishes trait records and METPO mapping proposals, not yet a KGX
+          graph. KGX export applies here, as to every Mech (#503); adoption is
+          pending (TraitMech#1331).
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv. AntibioticMech wrote the pattern and
+          CellStructureMech adapted it; adopting it here means ranking this
+          corpus's own candidate sources and verifying their licences, which is
+          curation work rather than a file copy.
+        reason_claims:
+          absent:
+            - curation/source_queue.tsv
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+          # GitHub Pages serves this repository from main at /, so the whole
+          # checkout is published even though only pages/ is checked. Ten trait
+          # pages link ../../../app/discussions/, which is served and would
+          # otherwise read as climbing out of the site.
+          published_root: .
+          allowed_hosts:
+            - cdn.jsdelivr.net
+      source_catalogue:
+        status: enabled
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped-ingredient inventory reads culture-media and
+          ingredient corpora; TraitMech curates traits and has no
+          ingredient records, so scripts/inventory_unmapped_ingredients.py
+          defines no loader for it.
+        reason_claims:
+          present:
+            - claw:scripts/inventory_unmapped_ingredients.py
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+
+  proteintraitsmech:
+    # The GitHub slug is lowercase while the display name is CamelCase. Code
+    # that reconstructs the identity from the display name gets a 404, so the
+    # `github` field below is authoritative.
+    display_name: ProteinTraitsMech
+    github: CultureBotAI/proteintraitsmech
+    environment_variable: PROTEINTRAITSMECH_ROOT
+    package_path: src/proteintraitsmech
+    schema_paths:
+      - src/proteintraitsmech/schema/proteintraitsmech.yaml
+    record_globs:
+      - data/traits/**/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - canonical_examples[].taxon_id
+            # Found but not declared: xrefs[] (four records) is a mixed
+            # cross-reference slot.
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): 601,978 of 647,311 quoted items cite a
+          database record rather than literature, so those snippets are database
+          assertions, not quotations. A reviewed quote-versus-database-assertion
+          adapter is required before a literature quote gate applies.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: enabled
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          ProteinTraitsMech does not use an Edison research-provider key;
+          provider integration is configured through its own supported
+          credential surfaces.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage currently compares culture media, ingredients,
+          and microbial communities; protein-trait records are not an
+          environment inventory input.
+      knowledge_gap_scan:
+        status: not_applicable
+        reason: >-
+          Record-level knowledge-gap scanning targets curated per-record
+          discussion text. This corpus is ontology-derived, so there is no
+          per-record gap surface to scan; the repository is correspondingly
+          absent from the knowledge-gap-scan workflow matrix.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - trait_axis
+            - mapping_status
+      causal_graph_coverage:
+        # Which directories carry graphs is set by source: six source
+        # directories hold every graph and the rest hold none, so @directory
+        # explains the headline. Only exclusions the Mech itself records are
+        # declared. Class-level EC numbers (EC:x.x.x.-) are NOT exempt: the EC
+        # builder skips them without saying why, and NEXT_TASKS counts all 410
+        # among the EC records that "got no graph at all" -- a gap (#470).
+        # No anchor type: a graph is anchored on the node grounded to the
+        # record, whose type depends on the source. Duplicate groundings are a
+        # modelling convention (a residue grounds to its protein), not a defect.
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          exempt_when:
+            # MappingStatusEnum.DEPRECATED: "Superseded by another
+            # ProteinTraitRecord."
+            - "mapping_status=DEPRECATED"
+            # NEXT_TASKS: these METPO records "are metabolic strategies, not
+            # protein traits, so their causal graphs belong in" TraitMech.
+            - "path:data/traits/function/enzymatic_activity/metpo/*.yaml"
+          strata:
+            - trait_axis
+            - "@directory"
+      page_budgets:
+        status: enabled
+        settings:
+          site_path: _site
+          budgets_path: conf/pages_budgets.json
+      writer_audit:
+        status: not_applicable
+        reason: >-
+          Its scripts/audit_writers.py shares the name and nothing else -- a
+          different tool built on registered editors and guard tests, ~600
+          lines apart from the other four. This audit does not describe what
+          that one checks, and consolidating them would mean choosing one
+          model over the other rather than removing a duplicate.
+        reason_claims:
+          present:
+            - scripts/audit_writers.py
+      sssom_export:
+        status: disabled
+        reason: >-
+          Keeps its equivalences as a Biolink mapping overlay under
+          data/equivalence/ and a ChEBI crosswalk in
+          data/mappings/cofactor_crosswalk.tsv rather than as SSSOM, so there
+          is no SSSOM file for this contract to judge. SSSOM export applies
+          here, as to every Mech (#503); adoption is pending
+          (proteintraitsmech#805).
+        reason_claims:
+          present:
+            - data/equivalence
+            - data/mappings/cofactor_crosswalk.tsv
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          Carries METPO-grounded records under data/traits/**/metpo/, so it
+          consumes METPO, but proposes no new terms and has no proposals/
+          directory. Adopting applies once a protein trait needs a term METPO
+          lacks.
+        reason_claims:
+          absent: ["proposals"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          Publishes protein-trait records, not yet a KGX graph. KGX export
+          applies here, as to every Mech (#503); adoption is pending
+          (proteintraitsmech#805).
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv. AntibioticMech wrote the pattern and
+          CellStructureMech adapted it; adopting it here means ranking this
+          corpus's own candidate sources and verifying their licences, which is
+          curation work rather than a file copy.
+        reason_claims:
+          absent:
+            - curation/source_queue.tsv
+      site_contract:
+        status: disabled
+        reason: >-
+          Publishes a site built in CI, so no directory in the checkout is the
+          output the check would judge; running it on the Jekyll or template
+          sources reports missing .html files that the build creates. Adopting
+          it means running the check on the build product, which applies here
+          and is not yet wired.
+      source_catalogue:
+        status: enabled
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped-ingredient inventory reads culture-media and
+          ingredient corpora; ProteinTraitsMech curates protein-trait
+          records and has no ingredient corpus, so
+          scripts/inventory_unmapped_ingredients.py defines no loader for it.
+        reason_claims:
+          present:
+            - claw:scripts/inventory_unmapped_ingredients.py
+    serialization:
+      verified: false
+      reason: >-
+        No PyYAML option set reproduces this corpus, so there is no
+        correct value to declare and writing a record back would
+        reformat it. Measured in #187.
+
+  antibioticmech:
+    # Joined 2026-09-02 (#279, AntibioticMech#29). Every capability decision
+    # below was measured against this repository's tracked files on origin/main
+    # at that date; each disabled/not_applicable status names what would flip it.
+    display_name: AntibioticMech
+    github: CultureBotAI/AntibioticMech
+    environment_variable: ANTIBIOTICMECH_ROOT
+    package_path: src/antibioticmech
+    schema_paths:
+      - src/antibioticmech/schema/antibioticmech.yaml
+    record_globs:
+      - data/antibiotics/**/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - producer_organisms[].taxon_id
+            - molecular_targets[].taxon_id
+            - molecular_targets[].protein_examples[].taxon_id
+            - causal_graphs[].nodes[].protein_examples[].taxon_id
+            - resistance_mechanisms[].taxon_id
+            - resistance_mechanisms[].strain_taxon_id
+            - activity_spectrum[].taxon_id
+            - structural_observations[].taxon_id
+            # Found but not declared: resistance_mechanisms[].evidence[].reference
+            # is a citation slot.
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): of 651 quoted items, 441 cite a database
+          or web source, 205 a DOI and 5 a PMID. A reviewed
+          quote-versus-database-assertion adapter, and a measurement of the
+          DOI-cited quotes, come before adoption.
+      # These arrive with the vendoring PR this declaration obliges
+      # (AntibioticMech#29). Enabled rather than disabled-with-an-absent-claim
+      # (#255): a claim that the files are absent is true only until that lands,
+      # and the fleet audit reports the real gap either way.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      vendored_sync:
+        status: enabled
+      # `validate-strict`, `test`, `lint`, `gen-schema` and `qc` are all
+      # recipes in this repository's justfile, and main.yaml runs qc on 3.10
+      # and 3.12.
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      testing:
+        status: enabled
+      documentation:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          Has research-antibiotic, research-entity and deep-research-canary
+          recipes and a research/ tree, but no conf/deep_research_provider.yaml
+          -- the profile every deep-research Mech declares and the contract
+          resolves. Enabled on the recipes alone this would assert a profile
+          that does not exist; the recipes are a research route, not the
+          declared provider contract.
+        reason_claims:
+          present:
+            - research
+          absent:
+            - conf/deep_research_provider.yaml
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          Research runs through this repository's own research-antibiotic and
+          research-entity recipes; it uses no Edison provider key.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage compares culture media, ingredients and
+          microbial communities. An antimicrobial-compound corpus is not an
+          environment inventory input.
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped inventory reconciles ingredient names across media
+          corpora; antimicrobial compounds are not one of its sources.
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          Records do not carry the shared Discussion section the scan reads,
+          and this repository is not in the knowledge-gap-scan workflow matrix.
+          Enable once records carry it.
+      source_catalogue:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - antimicrobial_class
+            - grounding_status
+      source_queue:
+        status: enabled
+        settings:
+          queue_path: curation/source_queue.tsv
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+      causal_graph_coverage:
+        # Structural classes and mixtures never become records, so the
+        # general-parent case does not arise.
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          scope_field: scope_status
+          mechanistic_scopes: [MECHANISTIC]
+          anchor_node_types: [COMPOUND]
+          duplicate_grounding_check: true
+          exempt_when:
+            # CurationStatusEnum.DEPRECATED: "Superseded or found out of scope;
+            # retained for traceability."
+            - "curation_status=DEPRECATED"
+          strata:
+            - antimicrobial_class
+            - curation_status
+      page_budgets:
+        status: disabled
+        reason: >-
+          Serves tracked pages under pages/ from main via GitHub Pages and
+          declares no size or file-count budgets, so nothing watches them grow
+          -- 2,956 files and 30.1 MB measured at admission (#230). Adopting them
+          applies here; the limits are this repository's to set.
+        reason_claims:
+          present:
+            - pages
+      writer_audit:
+        status: disabled
+        reason: >-
+          Has no scripts/audit_writers.py, so there is no drift between writer
+          copies to remove yet. Adopting it applies once more writers exist.
+        reason_claims:
+          absent:
+            - scripts/audit_writers.py
+      sssom_export:
+        status: disabled
+        reason: >-
+          Records carry ChEBI and ARO identifiers inline rather than through a
+          mapping file, so there is no SSSOM file for this contract to judge.
+          SSSOM export applies here, as to every Mech (#503); adoption is
+          pending (AntibioticMech#794).
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          No proposals/ directory and no METPO grounding. Antimicrobial
+          compounds are grounded in ChEBI and ARO inline; adopting applies once
+          a resistance or activity phenotype needs a METPO term.
+        reason_claims:
+          absent: ["proposals"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          No exporter and no graph product yet. KGX export applies here, as to
+          every Mech (#503); adoption is pending (AntibioticMech#794).
+    # Measured, not copied (#187): PyYAML's default width round-trips this
+    # corpus byte-for-byte over ALL 2,909 records, not a sample. Widths 100,
+    # 120 and 4096 score 8%, 8% and 7%, so the value is the corpus's, not a
+    # convention borrowed from a sibling.
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+  cellstructuremech:
+    # Joined 2026-08-30 (CellStructureMech#47). Capability decisions below were
+    # measured against the repository's tracked files at that date; every
+    # disabled/not_applicable status names the issue that would flip it.
+    display_name: CellStructureMech
+    github: CultureBotAI/CellStructureMech
+    environment_variable: CELLSTRUCTUREMECH_ROOT
+    package_path: src/cellstructuremech
+    schema_paths:
+      - src/cellstructuremech/schema/cellstructuremech.yaml
+    record_globs:
+      - data/structures/**/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - canonical_examples[].taxon_id
+            - taxonomic_distribution[].taxon_id
+            - components[].protein_examples[].taxon_id
+            - images[].taxon_id
+            - complex_compositions[].taxon_id
+            - related_records[].target_taxon_id
+            # Found but not declared: evidence[].reference is a citation slot.
+      evidence_reference_validation:
+        status: enabled
+        settings:
+          cache_dir: references_cache
+          reference_fields: [reference]
+          snippet_fields: [snippet]
+          evidence_fields: [evidence]
+          known_findings: curation/evidence_known_findings.tsv
+          # Every evidence slot is an EvidenceItem or SupportingReference whose
+          # snippet the schema defines as a verbatim quote, so all are in scope
+          # (#729). Residual findings are owned by the issue the ledger names.
+      # Enabled rather than disabled-with-an-absent-claim (#255): both arrive in
+      # CellStructureMech#53, which is open and green, so a claim that the files
+      # are absent is true only until that merges. An enabled declaration carries
+      # no claim to falsify and lets the fleet audit report the real gap, which
+      # is the same choice vendored_sync makes below.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          Has research-cell-structure, research-entity and deep-research-canary
+          recipes in the justfile and a research/ tree, but no
+          conf/deep_research_provider.yaml -- the profile every deep-research
+          Mech declares and the contract resolves. The recipes are a research
+          route, not the declared provider contract (#848).
+        reason_claims:
+          present:
+            - research
+            - justfile
+          absent:
+            - conf/deep_research_provider.yaml
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          CellStructureMech does not use an Edison research-provider key; it has
+          no research provider integration at all.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage currently compares culture media, ingredients,
+          and microbial communities; cell-structure records are not an
+          environment inventory input.
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          Records carry the shared Discussion section, so the scan applies. The
+          condition this declaration set, enabling once the first tranche of
+          records lands (CellStructureMech#12), is met; the scan matrix follows
+          this declaration, so the switch awaits review (CellStructureMech#1642,
+          CellStructureMech#404).
+      # An authoritative consumer must sync; the loader rejects anything else.
+      # CellStructureMech#48 vendors the artifact set and pin that this
+      # declaration obliges; until it lands, the fleet audit reports the gap.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - structure_category
+            - mapping_status
+      causal_graph_coverage:
+        # NONMECHANISTIC graphs here are topology, parthood or containment
+        # graphs in place of a mechanism -- a lower grade of graph, not an
+        # exemption -- and the Mech's skills set the target as a MECHANISTIC
+        # ASSEMBLY or FUNCTION graph. A record may carry one of each, hence the
+        # graph_kind facet. Is-a parents and regions are not exempt: nearly all
+        # carry graphs. Duplicate groundings are deliberate state variants.
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          scope_field: scope_status
+          mechanistic_scopes: [MECHANISTIC]
+          graph_facets: [graph_kind]
+          anchor_node_types: [STRUCTURE]
+          exempt_when:
+            # MappingStatusEnum.DEPRECATED: "Superseded by another record."
+            - "mapping_status=DEPRECATED"
+          strata:
+            - structure_category
+            - structure_kind
+      page_budgets:
+        status: disabled
+        reason: >-
+          Serves tracked pages under pages/ straight from main via GitHub Pages
+          -- it has no generate-pages.yaml -- and declares no size or
+          file-count budgets, so nothing watches them grow. Adopting them
+          applies here; the limits are the repository's to set.
+        reason_claims:
+          present:
+            - pages
+          absent:
+            - .github/workflows/generate-pages.yaml
+      writer_audit:
+        status: disabled
+        reason: >-
+          Has no scripts/audit_writers.py, so there is no drift to remove yet.
+          Adopting it applies here once the corpus grows; the settings are the
+          repository's to declare.
+        reason_claims:
+          absent:
+            - scripts/audit_writers.py
+      sssom_export:
+        status: disabled
+        reason: >-
+          Records carry GO cellular-component identifiers inline rather than
+          through a mapping file, so there is no SSSOM file for this contract
+          to judge. SSSOM export applies here, as to every Mech (#503);
+          adoption is pending (CellStructureMech#1642).
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          Structures are grounded in GO cellular-component terms inline and
+          there is no proposals/ directory. Adopting applies once a structure
+          phenotype needs a METPO term GO does not carry.
+        reason_claims:
+          absent: ["proposals"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          No exporter and no graph product yet. KGX export applies here, as to
+          every Mech (#503); adoption is pending (CellStructureMech#1642).
+      source_queue:
+        status: enabled
+        settings:
+          queue_path: curation/source_queue.tsv
+          extensions: [taxon_link, item_id, script]
+          required_when_adopted: [script]
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+          # GitHub Pages serves this repository from main at /, so the whole
+          # checkout is published even though only pages/ is checked. Five
+          # structure pages embed micrographs from ../../../data/images/,
+          # which are tracked and served and would otherwise read as climbing
+          # out of the site.
+          published_root: .
+      source_catalogue:
+        status: disabled
+        reason: >-
+          The repository keeps its ranked source list as
+          curation/source_queue.tsv, machine-checked by
+          scripts/check_source_queue.py inside its qc gate, rather than a
+          download.yaml in the fleet's catalogue shape; there is no
+          download.yaml to parse. Converging on one shape is open.
+        reason_claims:
+          present:
+            - curation/source_queue.tsv
+            - scripts/check_source_queue.py
+          absent:
+            - download.yaml
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped-ingredient inventory reads culture-media and
+          ingredient corpora; CellStructureMech curates cell structures and
+          has no ingredient records, so scripts/inventory_unmapped_ingredients.py
+          defines no loader for it.
+        reason_claims:
+          present:
+            - claw:scripts/inventory_unmapped_ingredients.py
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+  habitatmech:
+    display_name: HabitatMech
+    github: CultureBotAI/HabitatMech
+    environment_variable: HABITATMECH_ROOT
+    package_path: src/habitatmech
+    schema_paths:
+      - src/habitatmech/schema/habitatmech.yaml
+    record_globs:
+      - data/habitats/**/*.yaml
+    vendored_role: consumer
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - characteristic_taxa[].taxon_id
+            - causal_graphs[].nodes[].protein_examples[].taxon_id
+            # Found but not declared: xrefs[] is a mixed cross-reference slot.
+      evidence_reference_validation:
+        status: enabled
+        settings:
+          cache_dir: references_cache
+          reference_fields: [reference]
+          snippet_fields: [snippet]
+          evidence_fields: [evidence]
+          known_findings: curation/evidence_known_findings.tsv
+          # Every evidence slot is an EvidenceItem or SupportingReference whose
+          # snippet the schema defines as a verbatim quote, so all are in scope
+          # (#729). Residual findings are owned by the issue the ledger names.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          Has research, research-dry and deep-research-canary recipes, a
+          research/ tree and the vendored scripts/deep_research_contract.py,
+          but no conf/deep_research_provider.yaml -- the profile every
+          deep-research Mech declares and the contract resolves. Enabled on
+          the recipes alone this would assert a profile that does not exist.
+        reason_claims:
+          present:
+            - research
+            - scripts/deep_research_contract.py
+          absent:
+            - conf/deep_research_provider.yaml
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          HabitatMech does not use an Edison research-provider key; its
+          research recipes run through its own provider surface.
+      environment_coverage:
+        status: disabled
+        reason: >-
+          HabitatMech is itself an environment vocabulary: habitat records
+          grounded in ENVO, UBERON, FOODON and BTO. Environment
+          coverage compares culture media, ingredients and communities against
+          ENVO and has no loader for HabitatRecord, so it cannot yet read this
+          corpus as either an input or the reference set. Adopting it applies
+          here and is the more valuable direction: teach
+          environment_coverage_dashboard.py to treat habitat records as the
+          reference the other corpora are measured against.
+        reason_claims:
+          present:
+            - claw:scripts/environment_coverage_dashboard.py
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          Records carry the shared Discussion section, so the scan applies.
+          The workflow matrix is generated from this manifest, so enabling
+          the capability here with a settings.window is what adds the
+          repository to it. Left disabled until HabitatMech has run the scan
+          once locally and chosen its window.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - habitat_category
+            - grounding_status
+            - mapping_status
+      causal_graph_coverage:
+        # Parent classes are not exempt: most graphs sit on them, and a
+        # biome-level graph is the curation pattern. Graphs are authored as
+        # overlays and merged into records by the seeder; this reads records.
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          anchor_node_types: [HABITAT]
+          duplicate_grounding_check: true
+          exempt_when:
+            # NOT_APPLICABLE: "The source concept is not a habitat ... so
+            # grounding it as one would be wrong."
+            - "grounding_status=NOT_APPLICABLE"
+            # MappingStatusEnum.DEPRECATED: "Superseded by another
+            # HabitatRecord; see `replaces` on the successor."
+            - "mapping_status=DEPRECATED"
+          strata:
+            - grounding_status
+            - habitat_category
+      page_budgets:
+        status: disabled
+        reason: >-
+          Serves its published HTML pages under pages/ straight from main
+          via GitHub Pages -- it has no generate-pages.yaml -- and declares no
+          size or file-count budgets, so nothing watches them grow. Adopting
+          them applies here; the limits are the repository's to set.
+        reason_claims:
+          present:
+            - pages
+          absent:
+            - .github/workflows/generate-pages.yaml
+      writer_audit:
+        status: disabled
+        reason: >-
+          Has no scripts/audit_writers.py. Its writers exist
+          (write_validated_habitat and record_curation_event in the seeder)
+          and records are seeded as build products, so there is drift to
+          audit; adopting it applies here once the audit is written.
+        reason_claims:
+          absent:
+            - scripts/audit_writers.py
+      sssom_export:
+        status: disabled
+        reason: >-
+          Grounds each habitat inline on the record (ENVO, UBERON, FOODON,
+          BTO) and keeps its ontology requests as curation/term_requests.tsv
+          rather than publishing a mapping set; there is no SSSOM file for
+          this contract to judge. SSSOM export applies here, as to every Mech
+          (#503); adoption is pending (HabitatMech#852).
+        reason_claims:
+          present:
+            - curation/term_requests.tsv
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          Habitats are grounded in ENVO and the repository raises its gaps
+          through term requests rather than METPO cohorts, so it has no
+          proposals directory. Adopting applies once a habitat-associated
+          phenotype needs a METPO term.
+        reason_claims:
+          absent: ["proposals"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          Consumes kg-microbe's KGX as an input -- conf/sources.yaml names
+          the checkout that supplies ENVO, UBERON, FOODON and BTO -- and
+          publishes habitat records, not yet a graph. KGX export applies here,
+          as to every Mech (#503); adoption is pending (HabitatMech#852).
+        reason_claims:
+          present:
+            - conf/sources.yaml
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv; its sources are declared in
+          conf/sources.yaml and the raw payloads in data/raw/MANIFEST.yaml.
+          AntibioticMech wrote the pattern and CellStructureMech adapted it;
+          adopting it here means ranking candidate habitat sources and
+          verifying their licences, which is curation work rather than a
+          file copy.
+        reason_claims:
+          present:
+            - conf/sources.yaml
+            - data/raw/MANIFEST.yaml
+          absent:
+            - curation/source_queue.tsv
+      site_contract:
+        status: disabled
+        reason: >-
+          Publishes its HTML pages under pages/ straight from main, so
+          the check has a directory to judge, but it has not been measured on
+          this site yet. Enable after measuring on joining, as AntibioticMech
+          did, so the contract's numbers keep describing what it runs on.
+        reason_claims:
+          present:
+            - pages
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Declares its sources in conf/sources.yaml and the fetched payloads
+          in data/raw/MANIFEST.yaml rather than a download.yaml in the fleet's
+          catalogue shape; there is no download.yaml to parse. Converging on
+          one shape is open.
+        reason_claims:
+          present:
+            - conf/sources.yaml
+            - data/raw/MANIFEST.yaml
+          absent:
+            - download.yaml
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped-ingredient inventory reads culture-media and
+          ingredient corpora; HabitatMech curates habitats and has no
+          ingredient records, so scripts/inventory_unmapped_ingredients.py
+          defines no loader for it.
+        reason_claims:
+          present:
+            - claw:scripts/inventory_unmapped_ingredients.py
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+
+  naturalproductmech:
+    # Joined 2026-09-11. Capability reasons are refreshed against published
+    # main; native inline history and canonical sidecar CI are distinct gates.
+    display_name: NaturalProductMech
+    github: CultureBotAI/NaturalProductMech
+    environment_variable: NATURALPRODUCTMECH_ROOT
+    package_path: src/naturalproductmech
+    schema_paths:
+      - src/naturalproductmech/schema/naturalproductmech.yaml
+    record_globs:
+      - data/natural_products/**/*.yaml
+    vendored_role: consumer
+    # Measured on joining: all 3,115 records round-trip byte-identically under
+    # this option set, so dump_record may write them back without reformatting.
+    serialization:
+      verified: true
+      options:
+        default_flow_style: false
+        sort_keys: false
+        allow_unicode: true
+        width: 80
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - producer_organisms[].taxon_id
+            - biosynthetic_gene_clusters[].organism_taxon_id
+            - occurrences[].taxon_id
+            - molecular_targets[].taxon_id
+            # Mixed node ids; an ORGANISM node names a taxon.
+            - causal_graphs[].nodes[].identifier
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): none of 3,554 quoted items cites a PMID;
+          2,052 cite web or database sources and 1,502 cite DOIs. A reviewed
+          adapter for those sources, and a measurement of the DOI-cited quotes,
+          come before adoption.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: disabled
+        reason: >-
+          Native inline and component history exists, history/ contains canonical
+          sidecars, and justfile provides new-history. The scripts/run_qc.py
+          command list does not include canonical sidecar validation or
+          append-only checking. Shared curation-history adoption remains disabled
+          pending verified CI enforcement of that separate corpus; record_review
+          does not enable curation.
+        reason_claims:
+          present: ["history", "justfile", "scripts/run_qc.py"]
+      # Closed-schema validation (scripts/validate_strict.py, closed=True) and
+      # ruff both run on every PR through scripts/run_qc.py from main.yaml. The
+      # fleet convention names that workflow validate-strict.yaml; the gate is
+      # what the capability declares, and the gate is present.
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          No conf/deep_research_provider.yaml and no research recipe; sources
+          are assessed through the source queue. Adopting applies once a
+          provider profile exists under claw's contract.
+        reason_claims:
+          absent: ["conf/deep_research_provider.yaml"]
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          NaturalProductMech does not use an Edison research-provider key; it
+          has no research provider integration at all.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage compares culture media, ingredients and
+          microbial communities. A natural-product structure corpus is not one
+          of those inputs.
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          Records do not carry the shared Discussion section the scan reads,
+          and this repository is not in the knowledge-gap-scan workflow
+          matrix. Enable once records carry it.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - np_pathway
+            - np_classification
+            - grounding_status
+            - curation_status
+      causal_graph_coverage:
+        # scope says which mechanism a graph describes (BIOSYNTHESIS or
+        # BIOACTIVITY), not whether it is one, so it is a facet rather than a
+        # scope_field. Nodes ground through identifier. A fragmented graph that
+        # says it is partial passes the Mech's own test and is still reported
+        # here as FRAGMENTED_GRAPH.
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          node_grounding_field: identifier
+          graph_facets: [scope]
+          anchor_node_types: [COMPOUND]
+          duplicate_grounding_check: true
+          exempt_when:
+            # CurationStatusEnum.DEPRECATED: "Superseded or found out of scope;
+            # retained for traceability."
+            - "curation_status=DEPRECATED"
+          strata:
+            - np_pathway
+      page_budgets:
+        status: disabled
+        reason: >-
+          Serves tracked pages under pages/ straight from main via GitHub
+          Pages and declares no size or file-count budgets, so no
+          conf/pages_budgets.json exists for the audit to read.
+        reason_claims:
+          present: ["pages"]
+          absent: ["conf/pages_budgets.json"]
+      writer_audit:
+        status: disabled
+        reason: >-
+          Has no scripts/audit_writers.py, so there is no drift between
+          writer copies to remove yet. Adopting it applies here once the
+          corpus is edited by more than one writer.
+        reason_claims:
+          absent: ["scripts/audit_writers.py"]
+      sssom_export:
+        status: disabled
+        reason: >-
+          Records carry ChEBI, NPAtlas and PubChem identifiers inline rather
+          than through a mapping file, so there is no SSSOM file for this
+          contract to judge. SSSOM export applies here, as to every Mech
+          (#503); adoption is pending (NaturalProductMech#223).
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          No proposals directory and no METPO grounding; structures are
+          grounded in ChEBI. Adopting applies once a natural-product
+          phenotype needs a METPO term.
+        reason_claims:
+          absent: ["proposals"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          No exporter and no graph product yet. KGX export applies here, as to
+          every Mech (#503); adoption is pending (NaturalProductMech#223).
+      source_queue:
+        status: enabled
+        settings:
+          queue_path: curation/source_queue.tsv
+          extensions: ["structures"]
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Keeps its ranked source list as curation/source_queue.tsv and
+          fetches each adopted source through its own extract recipe; there
+          is no download.yaml for the catalogue check to read. Adopting means
+          deriving the machine-fetchable half from the queue.
+        reason_claims:
+          present: ["curation/source_queue.tsv"]
+          absent: ["download.yaml"]
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped inventory reconciles ingredient names across media
+          corpora; natural-product structures are not one of its inputs.
+
+  taxonmech:
+    # Inspected on joining, 2026-09-11, at committed main 42c8e490.
+    # Records are generated from inventories and scope: shared readers may
+    # inspect them, but writes must go through the native seeder/reproduction gate.
+    display_name: TaxonMech
+    github: CultureBotAI/TaxonMech
+    environment_variable: TAXONMECH_ROOT
+    package_path: src/taxonmech
+    schema_paths:
+      - src/taxonmech/schema/taxonmech.yaml
+    record_globs:
+      - data/taxa/**/*.yaml
+    vendored_role: consumer
+    serialization:
+      verified: false
+      reason: >-
+        Taxon records are generated from committed inventories and scope;
+        generic serialization must not bypass the native seeder and corpus
+        reproduction gate.
+    capabilities:
+      taxon_links:
+        status: not_applicable
+        reason: >-
+          TaxonMech's records are the taxa; the links point here.
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): none of the 306 evidence items carries a
+          quote, so the gate would check nothing. The native EvidenceItem allows
+          optional verbatim snippets; enable once quoted literature evidence exists.
+      id_label_validation:
+        status: enabled
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      # These declare eligibility for shared orchestration, as for the other
+      # consumers; they do not assert that local hook copies are installed.
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          Vendors scripts/deep_research_contract.py but has no
+          conf/deep_research_provider.yaml or provider recipe. Enable once a
+          research provider is configured and exercised under the shared contract.
+        reason_claims:
+          present: ["scripts/deep_research_contract.py"]
+          absent: ["conf/deep_research_provider.yaml"]
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          TaxonMech has no Edison integration or Edison research-provider key.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage compares culture media, ingredients and
+          microbial communities; taxon identity records are not one of its inputs.
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          The schema supports Discussion but no shared scan window or workflow
+          is configured. Enable after adding a durable curated overlay that the
+          generated-corpus pipeline preserves and wiring the scanner to it.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - taxon_domain
+            - rank
+            - grounding_status
+            - mapping_status
+      causal_graph_coverage:
+        # Higher taxa are never records, so the general-parent case does not
+        # arise. The seeder owns every record and writes no graph, so coverage
+        # is zero until the curator overlay the seeder would merge exists.
+        # The nine metagenome / uncultured / unidentified records (domain
+        # OTHER) are counted, not exempt: TaxonMech has not said they take no
+        # graph, and OTHER also means "lineage unavailable" (#484).
+        status: enabled
+        settings:
+          graph_shape: graph_list
+          record_id_field: identifier
+          anchor_node_types: [TAXON]
+          duplicate_grounding_check: true
+          exempt_when:
+            # MappingStatusEnum.DEPRECATED: "Superseded by another TaxonRecord;
+            # see `replaces` on the successor."
+            - "mapping_status=DEPRECATED"
+            # GroundingStatusEnum.NOT_APPLICABLE: "The source concept is not
+            # a taxon."
+            - "grounding_status=NOT_APPLICABLE"
+          strata:
+            - rank
+            - taxon_domain
+      page_budgets:
+        status: disabled
+        reason: >-
+          Publishes tracked pages under pages/ but has no
+          conf/pages_budgets.json. Enable once explicit size and file-count
+          budgets are configured and measured.
+        reason_claims:
+          present: ["pages"]
+          absent: ["conf/pages_budgets.json"]
+      writer_audit:
+        status: disabled
+        reason: >-
+          Has no scripts/audit_writers.py. Records use a native seeder and
+          validated writer, but no shared audit profile has been adopted.
+          Enable after configuring the profile and measuring its writer coverage.
+        reason_claims:
+          absent: ["scripts/audit_writers.py"]
+      sssom_export:
+        status: disabled
+        reason: >-
+          Stores taxonomy mappings and cross-references inline; no SSSOM
+          mapping product is emitted. SSSOM export applies here, as to every
+          Mech (#503); adoption is pending (TaxonMech#78).
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          The schema references METPO but there is no proposals/ directory or
+          proposal cohort. Enable once the repository produces terms under the
+          shared proposal contract.
+        reason_claims:
+          absent: ["proposals"]
+      kgx_export:
+        status: disabled
+        reason: >-
+          Consumes kg-microbe KGX as an input but does not yet emit a graph
+          product. KGX export applies here, as to every Mech (#503); adoption
+          is pending (TaxonMech#78).
+      source_queue:
+        status: disabled
+        reason: >-
+          Sources are configured in conf/sources.yaml and inventoried in
+          data/raw/MANIFEST.yaml; no curation/source_queue.tsv ranks candidate
+          sources. Enable once that review queue is adopted.
+        reason_claims:
+          present: ["conf/sources.yaml", "data/raw/MANIFEST.yaml"]
+          absent: ["curation/source_queue.tsv"]
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Uses conf/sources.yaml and data/raw/MANIFEST.yaml but has no
+          download.yaml in the shared catalogue shape. Enable after adapting
+          the source declarations to that contract.
+        reason_claims:
+          present: ["conf/sources.yaml", "data/raw/MANIFEST.yaml"]
+          absent: ["download.yaml"]
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped inventory reconciles ingredient names across media
+          corpora; taxon identity records are not one of its inputs.
+
+  pathwaymech:
+    # Inspected on joining, 2026-09-28, at committed main c9971e5f: 148
+    # curated pathway records, a closed LinkML schema validated in CI on every
+    # pull request, and a site-only Pages deploy (PathwayMech #189, #190).
+    display_name: PathwayMech
+    github: CultureBotAI/PathwayMech
+    environment_variable: PATHWAYMECH_ROOT
+    package_path: src/pathwaymech
+    schema_paths:
+      - src/pathwaymech/schema/pathwaymech.yaml
+    record_globs:
+      - data/pathways/**/*.yaml
+    vendored_role: consumer
+    serialization:
+      verified: false
+      reason: >-
+        No PyYAML option set reproduces this mixed-style corpus. The best of 48
+        measured sets round-trips 41 of 148 records, all GO-CAM records
+        already written in safe_dump's style; 79 use block scalars or
+        indented sequences that safe_dump never emits. Measured on joining.
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - taxa[].id
+            - mechanistic_edges[].evidence[].assay_taxon
+            - mechanistic_edges[].endpoint_qualifiers[].evidence[].assay_taxon
+            # Edge endpoints are mixed node ids; a taxon there is a pathway's
+            # native species (part_of edges), so it is a link.
+            - mechanistic_edges[].subject
+            - mechanistic_edges[].object
+            # Found but not declared: references[].id and
+            # mechanistic_edges[].evidence[].reference_id are citation slots.
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): 655 of 869 PMID-cited quotes are absent
+          from the cited abstract, most of them quoting the full text by
+          source_locator. Adoption needs a reviewed full-text source adapter.
+      id_label_validation:
+        status: disabled
+        reason: >-
+          Every taxon, participant and reaction pairs a CURIE with a label
+          (CHEBI, NCBITaxon, RHEA, EC, SGD and others), so the check applies.
+          The vendored scripts/validate_id_label_correspondence.py is present,
+          but nothing runs it over the records: there is no
+          conf/id_label_targets.yaml telling it which id and label slots to
+          read, and its only callers are the vendored tests, on synthetic
+          fixtures. Enable once it runs over data/pathways/ on every pull
+          request.
+        reason_claims:
+          present:
+            - "data/pathways"
+            - "scripts/validate_id_label_correspondence.py"
+          absent: ["conf/id_label_targets.yaml"]
+      record_review:
+        status: enabled
+      curation_history:
+        status: disabled
+        reason: >-
+          Pathway records carry an inline curation_history of CurationEvent, a
+          class of PathwayMech's own src/pathwaymech/schema/pathwaymech.yaml;
+          the governed src/pathwaymech/schema/history.yaml is vendored, the
+          justfile's new-history recipe scaffolds history/ records, and CI
+          validates history/ through pathwaymech-run-qc. That meets the
+          condition this declaration set for enabling (#515), where the switch
+          awaits review.
+        reason_claims:
+          present: ["history", "src/pathwaymech/schema/history.yaml", "src/pathwaymech/schema/pathwaymech.yaml", "justfile"]
+      # Closed-mode LinkML validation (pathwaymech-validate-strict) runs in
+      # `just validate` and in the "Build and test" workflow on every pull
+      # request (PathwayMech #190).
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      # These declare eligibility for shared orchestration, as for the other
+      # consumers; they do not assert that local hook copies are installed.
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          Research so far is source-discovery notes under research/; there is
+          no conf/deep_research_provider.yaml and no provider recipe. The
+          vendored scripts/deep_research_contract.py is present but nothing
+          runs it; the pathwaymech-deep-research-contract command is a
+          separate, local report-heading checker. Enable once a provider is
+          configured and exercised under the shared contract.
+        reason_claims:
+          present: ["research", "scripts/deep_research_contract.py"]
+          absent: ["conf/deep_research_provider.yaml"]
+      edison_key_discovery:
+        status: not_applicable
+        reason: >-
+          PathwayMech has no Edison integration or Edison research-provider key.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          Environment coverage compares culture media, ingredients and
+          microbial communities. Pathway mechanism records carry organism scope
+          as NCBITaxon and no environment terms, so they are not one of its
+          inputs.
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          Records have no Discussion slot: the closed schema in
+          src/pathwaymech/schema/pathwaymech.yaml declares none, so there are
+          no Discussions to index, and the block the scan appends under --apply
+          would fail strict validation. There is also no conf/kgscan_config.yaml
+          or scan recipe. The records are curated mechanisms with edge-level
+          evidence, so the scan applies; enable once the schema declares
+          Discussions and a window has been chosen.
+        reason_claims:
+          present: ["src/pathwaymech/schema/pathwaymech.yaml"]
+          absent: ["conf/kgscan_config.yaml"]
+      # An authoritative consumer must sync; the loader rejects anything else.
+      # PathwayMech vendored all 14 applicable artifacts and pinned claw in
+      # CultureBotAI/PathwayMech#204; its vendored-sync workflow checks them.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          # pathway_type is free text (48 values at admission); each record
+          # names exactly one taxon, so taxa.id is that taxon.
+          fields:
+            - pathway_type
+            - taxa.id
+      page_budgets:
+        status: disabled
+        reason: >-
+          Publishes pages/, rendered from the records (152 files, 385 KB at
+          admission), through a site-only Pages deploy, but declares no
+          size or file-count budgets, so there is no conf/pages_budgets.json for
+          the audit to read. The limits are the repository's to set.
+        reason_claims:
+          present: ["pages"]
+          absent: ["conf/pages_budgets.json"]
+      kgx_export:
+        status: enabled
+        settings:
+          nodes_path: output/kgx/nodes.tsv
+          edges_path: output/kgx/edges.tsv
+          extra_prefixes: ["pathwaymech"]
+      writer_audit:
+        status: disabled
+        reason: >-
+          Has no scripts/audit_writers.py, though a tracked script writes
+          records: scripts/backfill_source_mappings.py rewrites pathway records
+          in place. Adopting the audit applies; the settings are the
+          repository's to declare (#848).
+        reason_claims:
+          present: ["scripts/backfill_source_mappings.py"]
+          absent: ["scripts/audit_writers.py"]
+      sssom_export:
+        status: enabled
+        settings:
+          mapping_globs: ["output/sssom/*.sssom.tsv"]
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          No proposals/ directory and no METPO grounding; pathways are
+          identified by GO-CAM model, MetaCyc and WikiPathways identifiers.
+          Adopting applies once a pathway-level phenotype needs a METPO term.
+        reason_claims:
+          absent: ["proposals"]
+      source_queue:
+        status: disabled
+        reason: >-
+          Has no curation/source_queue.tsv; its source-triage skill ranks
+          candidates by priority in conf/sources.yaml, with evidence under
+          research/source_discovery/. Adopting the queue means recording each
+          source's licence verification and adoption date.
+        reason_claims:
+          present: ["conf/sources.yaml", "research/source_discovery"]
+          absent: ["curation/source_queue.tsv"]
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+      source_catalogue:
+        status: disabled
+        reason: >-
+          Declares its sources in conf/sources.yaml, whose rows carry priority,
+          ingest status, role and homepage but no per-file url or licence, and
+          imports local exports; there is no download.yaml in the fleet's
+          catalogue shape. Adopting applies once each source has its fetchable,
+          licensed half.
+        reason_claims:
+          present: ["conf/sources.yaml"]
+          absent: ["download.yaml"]
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: >-
+          The unmapped-ingredient inventory reads culture-media and ingredient
+          corpora; pathway participants are metabolites, enzymes and gene
+          products rather than medium ingredients, so
+          scripts/inventory_unmapped_ingredients.py defines no loader for it.
+        reason_claims:
+          present: ["claw:scripts/inventory_unmapped_ingredients.py"]
+      # Every record is one causal graph (#509). Its mechanism is the
+      # participants and reactions: measured at PathwayMech 71037cc, no edge in
+      # any of the 148 records names a taxon or the record itself, so those are
+      # organism scope rather than nodes, and declaring them would report every
+      # graph fragmented. An edge that does name one reads as DANGLING_EDGE.
+      causal_graph_coverage:
+        status: enabled
+        settings:
+          graph_shape: record_graph
+          node_list_fields:
+            - participants
+            - reactions
+          node_id_field: id
+          edges_field: mechanistic_edges
+          edge_subject_field: subject
+          edge_object_field: object
+          edge_predicate_field: predicate
+          edge_evidence_field: evidence
+
+  dufmech:
+    # Verified main 1dccc4ff61998e78f12448c52f37e4d370fe7299 (PR #129).
+    # Profiles describe native seed projections, not scientific completeness.
+    display_name: DUFMech
+    github: CultureBotAI/DUFMech
+    environment_variable: DUFMECH_ROOT
+    package_path: src/dufmech
+    schema_paths:
+      - src/dufmech/schema/dufmech.yaml
+    record_globs:
+      - data/families/*.yaml
+    vendored_role: consumer
+    serialization:
+      verified: false
+      reason: Generated family projections use native seeding and reproduction gates; shared writers must not reserialize them.
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - causal_graphs[].taxon
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): 1,658 of 1,893 PMID-cited quotes are
+          absent from the cited abstract; each quote is bound to a native full-text
+          excerpt (cache_path and cache_sha256). Adoption needs a reviewed adapter
+          for those native caches.
+      id_label_validation:
+        status: enabled
+        reason: >-
+          conf/id_label_targets.yaml uses genuine OAK against a verified frozen
+          Pfam reference, captured independently from family record labels by
+          src/dufmech/id_labels.py. This checks retained-source correspondence,
+          not live ontology freshness or scientific characterization.
+        reason_claims:
+          present: ["conf/id_label_targets.yaml", "src/dufmech/id_labels.py"]
+      record_review:
+        status: enabled
+      curation_history:
+        status: enabled
+      strict_validation:
+        status: enabled
+      schema_sync:
+        status: enabled
+      # General orchestration eligibility, not claims of installed hooks.
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          conf/deep_research_provider.yaml and src/dufmech/research.py support
+          offline planning and retained simulated results only. Provider
+          execution is refused; enable after reviewed provider-backed adoption.
+        reason_claims:
+          present: ["conf/deep_research_provider.yaml", "src/dufmech/research.py"]
+      edison_key_discovery:
+        status: not_applicable
+        reason: DUFMech has no Edison research-provider integration.
+      environment_coverage:
+        status: not_applicable
+        reason: >-
+          DUF/Pfam family evidence is not a culture-media, ingredient or
+          microbial-community environment inventory.
+      knowledge_gap_scan:
+        status: enabled
+        reason: >-
+          conf/kgscan_config.yaml and src/dufmech/knowledge_gaps.py use shared
+          sentence scoring over retained abstracts and emit timestamped review
+          packets. Explicit digest-bound review is required before native
+          overlay acceptance. This offline adapter is not a live scheduled scan.
+        reason_claims:
+          present: ["conf/kgscan_config.yaml", "src/dufmech/knowledge_gaps.py"]
+        settings:
+          window: 25
+          scheduled: false
+      # All 18 applicable artifacts are committed at canonical pin 59aead1.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          # Seed census only. Optional assertions/discussions remain zero in
+          # the native census, rather than implying scientific completeness.
+          fields: [id, name, seed_status, characterization_status, curation_status, provenance]
+      page_budgets:
+        status: enabled
+        settings:
+          site_path: pages
+          budgets_path: conf/pages_budgets.json
+      kgx_export:
+        status: enabled
+        settings:
+          nodes_path: exports/kgx/nodes.tsv
+          edges_path: exports/kgx/edges.tsv
+      writer_audit:
+        status: enabled
+        settings:
+          # Availability of this heuristic is not complete guarded-write proof.
+          # Native conf/writer_audit.yaml covers multiple formats. Module-based
+          # just recipes are not recognized by the shared filename heuristic.
+          search_dirs: [src/dufmech, scripts]
+          save_helpers: [write_records, new_history]
+          validators: ['validate_record\(', '_validate_record\(', '_validate_content\(']
+          # Generated projections validate existing history, not new events.
+          curation_markers: ['new_history\(']
+      sssom_export:
+        status: enabled
+        settings:
+          mapping_globs: [exports/sssom/*.sssom.tsv]
+      metpo_proposal:
+        status: disabled
+        reason: >-
+          No proposals/ directory exists. Enable when family mechanisms need
+          new METPO terms and the repository adopts the proposal contract.
+        reason_claims:
+          absent: ["proposals"]
+      source_queue:
+        status: enabled
+        settings:
+          queue_path: curation/source_queue.tsv
+          extensions: [implementation, reviewed_on, review_basis, script, artifacts, license_url]
+          required_when_adopted: [script, artifacts, license_url, review_basis]
+      site_contract:
+        status: enabled
+        settings:
+          site_path: pages
+      source_catalogue:
+        status: enabled
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: Protein-family evidence is not a culture-medium ingredient corpus.
+      causal_graph_coverage:
+        status: disabled
+        reason: >-
+          The schema supports scientific assertions, but the seeded corpus has
+          no curated mechanistic assertions or adopted causal-graph projection
+          in a supported shared coverage shape.
+
+  cmmmech:
+    # Inspected main c32d78e26a15bb67a737700668badaed7da10597 on admission.
+    # Native history verified at 905388523b6e9184783989484896e4cc20297832.
+    display_name: CMMMech
+    github: CultureBotAI/CMMMech
+    environment_variable: CMMMECH_ROOT
+    package_path: src/cmmmech
+    schema_paths:
+      - src/cmmmech/schema/cmmmech.yaml
+    record_globs:
+      - data/records/**/*.yaml
+      - data/records/**/*.yml
+    vendored_role: consumer
+    serialization:
+      verified: false
+      reason: >-
+        Material records exist, but shared round-trip options have not been
+        verified against the native validation and authoring contract.
+    capabilities:
+      taxon_links:
+        status: enabled
+        settings:
+          slots:
+            - mechanisms[].organisms[].id
+            - mechanisms[].protein_examples[].target_organism.id
+            - causal_graphs[].nodes[].protein_examples[].target_organism.id
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): none of the 3,526 evidence items carries
+          a quote; native MechanismEvidence (source_ref, supports, explanation) has
+          no verbatim-quote slot, so the gate would check nothing. Adoption needs
+          that slot filled with verbatim quotes, and either a PMID or DOI on each
+          evidence item or a reviewed adapter that resolves source_ref through the
+          record's sources list.
+      id_label_validation:
+        status: disabled
+        reason: >-
+          The native validator checks identifier syntax, not ontology correspondence.
+          No conf/id_label_targets.yaml configures the shared correspondence gate.
+        reason_claims:
+          absent: ["conf/id_label_targets.yaml"]
+      record_review:
+        status: enabled
+      curation_history:
+        status: disabled
+        reason: >-
+          Native inline events and canonical sidecars are implemented through
+          src/cmmmech/history.py and justfile, with history/ validated as append-only
+          in CI. .claude/skills/curate-yaml-record/SKILL.md and
+          .claude/skills/curate-yaml-record/references/review-checklist.md now exist,
+          added with CMMMech's canonical skill adapters (CMMMech#513), so the
+          write contract's files are present; enabling generic curation awaits
+          review (#1059). Read-only structured review has its own record_review
+          capability and does not enable curation.
+        reason_claims:
+          present:
+            - "justfile"
+            - "src/cmmmech/history.py"
+            - "history"
+            - ".claude/skills/curate-yaml-record/SKILL.md"
+            - ".claude/skills/curate-yaml-record/references/review-checklist.md"
+      strict_validation:
+        status: disabled
+        reason: >-
+          Native closed-schema validation runs through scripts/check.py and
+          justfile's check and validate recipes. The fleet validation agent's
+          validate-all, validate-schema and validate-data recipes are not yet
+          implemented or adapted; native CI passing does not establish that contract.
+        reason_claims:
+          present: ["scripts/check.py", "justfile"]
+      schema_sync:
+        status: disabled
+        reason: >-
+          src/cmmmech/schema/cmmmech.yaml is packaged and consumed at runtime
+          by src/cmmmech/validation.py. No generated-datamodel adapter or
+          schema regeneration recipes in justfile have been verified for fleet use.
+        reason_claims:
+          present: ["src/cmmmech/schema/cmmmech.yaml", "src/cmmmech/validation.py", "justfile"]
+      # General orchestration eligibility does not claim installed downstream hooks.
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: >-
+          No conf/deep_research_provider.yaml configures a provider exercising
+          the shared research contract.
+        reason_claims:
+          absent: ["conf/deep_research_provider.yaml"]
+      edison_key_discovery:
+        status: not_applicable
+        reason: CMMMech has no Edison research-provider integration.
+      environment_coverage:
+        status: not_applicable
+        reason: Materials and recovery mechanisms are not an environment inventory.
+      knowledge_gap_scan:
+        status: disabled
+        reason: >-
+          No conf/kgscan_config.yaml configures the discussion scanner;
+          the native schema does not yet model curated Discussions.
+        reason_claims:
+          absent: ["conf/kgscan_config.yaml"]
+      # Required consumer contract, enforced against the published canonical pin.
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: disabled
+        reason: >-
+          Material records exist, but no verified field selection configures
+          the shared corpus-statistics adapter.
+      causal_graph_coverage:
+        status: disabled
+        reason: Mechanism evidence is modeled without nodes or directed causal edges.
+      page_budgets:
+        status: disabled
+        reason: A pages/ tree exists, but no conf/pages_budgets.json declares its budgets.
+        reason_claims:
+          present: ["pages"]
+          absent: ["conf/pages_budgets.json"]
+      kgx_export:
+        status: disabled
+        reason: No curated graph or KGX export product exists yet.
+      source_queue:
+        status: disabled
+        reason: No curation/source_queue.tsv records ranked sources and adoption decisions.
+        reason_claims:
+          absent: ["curation/source_queue.tsv"]
+      metpo_proposal:
+        status: disabled
+        reason: No proposals/ directory exists for terms under the METPO proposal contract.
+        reason_claims:
+          absent: ["proposals"]
+      sssom_export:
+        status: disabled
+        reason: No SSSOM mapping product exists yet.
+      writer_audit:
+        status: disabled
+        reason: >-
+          The native CLI only reads records; no scripts/audit_writers.py
+          gates curated-record writers yet.
+        reason_claims:
+          absent: ["scripts/audit_writers.py"]
+      site_contract:
+        status: disabled
+        reason: >-
+          A pages/ tree exists, but no site_path and published_root have been
+          declared for it or verified against the shared HTML contract.
+        reason_claims:
+          present: ["pages"]
+      source_catalogue:
+        status: disabled
+        reason: No download.yaml declares sources in the fleet catalogue format.
+        reason_claims:
+          absent: ["download.yaml"]
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: Critical materials are not a culture-medium ingredient corpus.
+
+  aimech:
+    # Inspected main 38594d6436195e7fdb0882613e9004a0132dd4fc on admission.
+    display_name: AIMech
+    github: CultureBotAI/AIMech
+    environment_variable: AIMECH_ROOT
+    package_path: src/aimech
+    schema_paths:
+      - src/aimech/schema/aimech.yaml
+    record_globs:
+      - data/aio/*.yaml
+    vendored_role: consumer
+    serialization:
+      verified: false
+      reason: >-
+        AIO records are generated from pinned OBO JSON. Preserve native seeding
+        and reproduction; shared round-trip serialization is not an authoring
+        contract for generated records.
+    capabilities:
+      taxon_links:
+        status: not_applicable
+        reason: >-
+          AI-concept records cite no organism (measured 2026-11-06: no record slot holds
+          an NCBITaxon CURIE, and the schemas declare no biological prefix).
+      evidence_reference_validation:
+        status: disabled
+        reason: >-
+          Measured 2026-11-04 (claw#729): the AIO concept records carry no
+          evidence items, so the gate would check nothing; curated concepts cite
+          sources by source_id and locator. Adoption needs gated records whose
+          evidence carries verbatim quotes, and either a PMID or DOI on each item
+          or a reviewed adapter that resolves source_id through evidence_sources.
+      id_label_validation:
+        status: disabled
+        reason: >-
+          Native AIO snapshot validation does not establish a shared ontology
+          correspondence adapter. No conf/id_label_targets.yaml configures one.
+        reason_claims:
+          absent: ["conf/id_label_targets.yaml"]
+      record_review:
+        status: enabled
+      curation_history:
+        status: disabled
+        reason: >-
+          The native new-history recipe in justfile does not establish the shared
+          curation write contract. .claude/skills/curate-yaml-record/SKILL.md and
+          .claude/skills/curate-yaml-record/references/review-checklist.md now
+          exist (AIMech#428); enabling generic curation awaits review (#1059).
+          Structured record review is separately enabled.
+        reason_claims:
+          present:
+            - "justfile"
+            - ".claude/skills/curate-yaml-record/SKILL.md"
+            - ".claude/skills/curate-yaml-record/references/review-checklist.md"
+      strict_validation:
+        status: disabled
+        reason: >-
+          Native closed-schema validation and reproduction run through justfile's
+          check and validate recipes. The shared validation agent's validate-all,
+          validate-schema and validate-data adapters have not been verified.
+        reason_claims:
+          present: ["justfile"]
+      schema_sync:
+        status: disabled
+        reason: >-
+          src/aimech/schema/aimech.yaml defines AIConcept, but shared datamodel
+          generation and schema regeneration adapters have not been verified.
+        reason_claims:
+          present: ["src/aimech/schema/aimech.yaml"]
+      # General eligibility does not assert installed local coordination hooks.
+      release_management:
+        status: enabled
+      build_coordination:
+        status: enabled
+      documentation:
+        status: enabled
+      testing:
+        status: enabled
+      refactoring:
+        status: enabled
+      coordination_hooks:
+        status: enabled
+      deep_research:
+        status: disabled
+        reason: No conf/deep_research_provider.yaml adopts the shared research contract.
+        reason_claims:
+          absent: ["conf/deep_research_provider.yaml"]
+      edison_key_discovery:
+        status: not_applicable
+        reason: AI ontology imports do not use an Edison research-provider integration.
+      environment_coverage:
+        status: not_applicable
+        reason: AI concepts are not a microbial environment inventory.
+      knowledge_gap_scan:
+        status: disabled
+        reason: No conf/kgscan_config.yaml adopts the shared discussion scanner.
+        reason_claims:
+          absent: ["conf/kgscan_config.yaml"]
+      vendored_sync:
+        status: enabled
+      corpus_statistics:
+        status: enabled
+        settings:
+          fields:
+            - id
+            - name
+            - definition
+            - branches
+            - review_status
+            - provenance.source_commit
+            - provenance.source_sha256
+            - provenance.source_version
+            - provenance.source_node
+      causal_graph_coverage:
+        status: disabled
+        reason: >-
+          Ontology hierarchy edges alone do not establish mechanistic causal
+          graphs in a supported shared coverage shape.
+      page_budgets:
+        status: disabled
+        reason: No conf/pages_budgets.json declares budgets for a built site.
+        reason_claims:
+          absent: ["conf/pages_budgets.json"]
+      kgx_export:
+        status: disabled
+        reason: No shared KGX export adapter has been verified for the AIO corpus.
+      source_queue:
+        status: disabled
+        reason: No curation/source_queue.tsv adopts the ranked source-queue contract.
+        reason_claims:
+          absent: ["curation/source_queue.tsv"]
+      metpo_proposal:
+        status: not_applicable
+        reason: AI concepts are outside the microbial trait ontology proposal scope.
+      sssom_export:
+        status: disabled
+        reason: No shared SSSOM export adapter has been verified for AI concept mappings.
+      writer_audit:
+        status: disabled
+        reason: Native seed reproduction does not establish the shared writer-audit adapter.
+      site_contract:
+        status: disabled
+        reason: No built site has been verified against the shared HTML contract.
+      source_catalogue:
+        status: disabled
+        reason: >-
+          sources/aio/source.yaml pins the native AIO import; no download.yaml
+          adopts the shared source catalogue contract.
+        reason_claims:
+          present: ["sources/aio/source.yaml"]
+          absent: ["download.yaml"]
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: AI concepts are not a culture-medium ingredient corpus.
+
+  edgemech:
+    display_name: EdgeMech
+    github: CultureBotAI/EdgeMech
+    environment_variable: EDGEMECH_ROOT
+    package_path: src/edgemech
+    schema_paths:
+    - src/edgemech/schema/edgemech.yaml
+    record_globs:
+    - curation/packets/*.yaml
+    vendored_role: consumer
+    serialization:
+      verified: false
+      reason: >-
+        EdgeMech preserves canonical JSON bundles and immutable external ledger
+        artifacts. Shared YAML record emit options have not been verified;
+        no native scientific corpus serialization is declared.
+    capabilities:
+      id_label_validation:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      curation_history:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      record_review:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      strict_validation:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      schema_sync:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      release_management:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      build_coordination:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      documentation:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      testing:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      refactoring:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      coordination_hooks:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      deep_research:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      edison_key_discovery:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      environment_coverage:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      knowledge_gap_scan:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      vendored_sync:
+        status: enabled
+      unmapped_inventory_input:
+        status: not_applicable
+        reason: External edge accounting is not a culture-medium ingredient corpus.
+      source_catalogue:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      evidence_reference_validation:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      corpus_statistics:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      causal_graph_coverage:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      page_budgets:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      kgx_export:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      source_queue:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      metpo_proposal:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      sssom_export:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      writer_audit:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
+      taxon_links:
+        status: disabled
+        reason: >-
+          Measured 2026-11-09 against EdgeMech main e1856f61f9: curation/packets/
+          does not exist yet and src/edgemech/schema/edgemech.yaml declares no
+          taxon or organism slot. Enable, with the slots, once a packet carries
+          an NCBITaxon CURIE.
+        reason_claims:
+          present: ["src/edgemech/schema/edgemech.yaml"]
+          absent: ["curation/packets"]
+      site_contract:
+        status: disabled
+        reason: Initial integration scaffold; this fleet capability has not been verified.
