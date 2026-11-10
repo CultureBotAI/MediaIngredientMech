@@ -34,6 +34,11 @@ notes below keyed by the same stable task ID.
 ```yaml
 schema_version: '1.0.0'
 tasks:
+  - task_id: mediaingredientmech-infra-1303
+    summary: Reviewed native adoption of permanent IDs into the existing campaign
+    status: open
+    issue_url: https://github.com/CultureBotAI/MediaIngredientMech/issues/1303
+    disposition: Isolated operator implementation; actual eligibility decisions, data adoption, validation and independent release review remain pending.
   - task_id: mediaingredientmech-infra-1299
     summary: Reviewed stable-MIM source identities and MIM-only candidate exports
     status: open
@@ -43,6 +48,26 @@ tasks:
 <!-- mech-infra-tasks:end -->
 
 ## Tasks
+
+### mediaingredientmech-infra-1303
+
+Origin: the user's stable-ID priority for the existing unmatched-chemicals
+campaign; no new cycle or goal is asserted. The completed legacy construction
+requires an administrative bridge to the permanent-ID registry before a fresh
+source-identity candidate can be reviewed. Dependencies: #1265 / PR #1279,
+the separate reviewed source export #1299 and the exact original native
+plan/application/case/origin evidence. Evidence: `docs/STABLE_ID_ADOPTION.md`,
+`tests/test_stable_id_adoption.py` and the preserved implementation packet under
+`.temp/all-unmatched-20261107/`. The operator uses native allocation, schema
+serialization, synchronization, Claw dry-run and lease, and guarded filesystem
+primitives. It preserves original full source accounting and requires authored
+current concept eligibility; all actual data adoption remains pending.
+The independent filesystem finding is tracked in #1314; preparation/receipt
+traversal refusal is tracked in #1315. Literal original eligibility/hold evidence
+and nullable residual-classification review conclusions are tracked in #1317. Original failures and review evidence
+remain preserved. No source, mapping or role approval transfers through this
+administrative operation, and the historical identity-projection cohort stays
+unchanged.
 
 ### mediaingredientmech-infra-1299
 
@@ -79,3 +104,12 @@ required checks must pass for the applicable target, captures have an explicit
 typed runtime contract, and complete expanded source URIs must be unique.
 These admission repairs transfer no scientific approval and preserve all prior
 holds and original source rows.
+
+
+Operational-fit follow-up [#1321](https://github.com/CultureBotAI/MediaIngredientMech/issues/1321)
+requires explicit immutable duration/age/margin/overhead policy, complete native
+recovery-guard profiling, independent namespace and resource-scheduling acceptance,
+and a fresh pre-lease fit refusal. The original full currentness guards remain;
+lease identity, unchanged aware deadline and monotonic budget are checked after
+expensive scans. No real campaign operational policy or adoption is authorized
+by this implementation. Multi-hour fits can remain blocked pending scheduling.

@@ -139,6 +139,22 @@ export-source-bindings review output:
 qc-source-bindings review output:
     uv run --frozen python -m mediaingredientmech.export.source_bindings --root . --review "$1" --output "$2" --validate-only
 
+# Exact native administrative adoption; each earlier review gate remains required.
+adoption-inspect request:
+    uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption inspect --root . --request "$1"
+
+adoption-prepare request stage operational_policy:
+    uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption prepare --root . --request "$1" --stage "$2" --operational-policy "$3"
+
+# Dry-run unless the caller explicitly supplies --apply as the final argument.
+adoption-apply stage acceptance receipt *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption apply --root . --stage "$1" --acceptance "$2" --receipt "$3" "${@:4}"
+
+adoption-verify stage receipt:
+    uv run --frozen python -m mediaingredientmech.curate.stable_id_adoption verify --root . --stage "$1" --receipt "$2"
+
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up
