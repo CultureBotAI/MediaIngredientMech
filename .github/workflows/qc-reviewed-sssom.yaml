@@ -25,7 +25,11 @@ jobs:
       - name: Install locked runtime
         run: uv sync --frozen
       - name: Verify inherited review and the identity-only projection
-        run: uv run --frozen python -m mediaingredientmech.identity_projection --check
+        run: |
+          uv run --frozen python -m mediaingredientmech.validation.reviewed_export_route \
+            --route projected \
+            --review reports/stable_ids_1265_20261108/mapping-review.json \
+            --companion-review reports/stable_ids_1265_20261108/companion-review.json
       - name: Export and verify the supported mappings and separate backlog
         run: |
           uv run --frozen python -m mediaingredientmech.export.reviewed_sssom \
