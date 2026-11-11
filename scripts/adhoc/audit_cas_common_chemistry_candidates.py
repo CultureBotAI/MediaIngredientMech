@@ -185,17 +185,20 @@ def select_best_chebi_candidate(
     all_ids = "|".join(cid for cid, _ in cand_list)
     pref_cf = (preferred_term or "").strip().casefold()
     pref_tokens = set(re.findall(r"[a-z0-9]+", pref_cf))
+    pref_stem_tokens = {t for t in pref_tokens if len(t) >= 2 and not t.isdigit()}
 
-    def _rank_key(idx_and_pair: tuple[int, tuple[str, str]]) -> tuple[int, int, int]:
+    def _rank_key(idx_and_pair: tuple[int, tuple[str, str]]) -> tuple[int, int, int, int]:
         idx, (_cid, cname) = idx_and_pair
         cname_cf = (cname or "").strip().casefold()
         cand_tokens = set(re.findall(r"[a-z0-9]+", cname_cf))
+        cand_stem_tokens = {t for t in cand_tokens if len(t) >= 2 and not t.isdigit()}
+        shared_stems = len(pref_stem_tokens & cand_stem_tokens)
         shared_tokens = len(pref_tokens & cand_tokens)
         if pref_cf and cname_cf == pref_cf:
-            return (0, -shared_tokens, idx)
+            return (0, -shared_stems, -shared_tokens, idx)
         if pref_cf and _label_consistency(preferred_term, cname) is None:
-            return (1, -shared_tokens, idx)
-        return (2, -shared_tokens, idx)
+            return (1, -shared_stems, -shared_tokens, idx)
+        return (2, -shared_stems, -shared_tokens, idx)
 
     _, (best_id, best_name) = min(enumerate(cand_list), key=_rank_key)
     return best_id, best_name, all_ids
