@@ -186,3 +186,27 @@ def test_select_best_chebi_candidate_ranks_multiple_conn14_candidates_by_label_c
     )
     assert best_s_id == "CHEBI:20002"
     assert best_s_name == "beta-glucose"
+
+    # Guard GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR on non-empty cas_rn (#1362)
+    no_cas_rows = [
+        {
+            "mech": "MediaIngredientMech",
+            "group": "mim_unmapped_single",
+            "identifier": "UNMAPPED_9999",
+            "query_name": "Sodium beta-glycerophosphate",
+            "cas_rn": "",
+            "cas_name": "1,2,3-Propanetriol, 2-(dihydrogen phosphate), sodium salt (1:2)",
+            "synonyms_sample": "Sodium beta-glycerophosphate",
+            "molecular_formula": "C3H9O6P.2Na",
+            "canonical_smiles": "O=P(O)(O)OC(CO)CO.[Na].[Na]",
+            "inchi": "InChI=1S/C3H9O6P.2Na/c4-1-3(2-5)9-10(6,7)8;;/h3-5H,1-2H2,(H2,6,7,8);;",
+            "inchikey": "InChIKey=GCFQVJSHBJSQJc-UHFFFAOYSA-N",
+        }
+    ]
+    no_cas_audit = audit_cas_rows(
+        no_cas_rows,
+        {"UNMAPPED_9999": {"preferred_term": "Sodium beta-glycerophosphate"}},
+        {},
+        {},
+    )
+    assert no_cas_audit[0]["curation_disposition"] == "CAS_RESOLVED_NO_CHEBI_3STAR"

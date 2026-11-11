@@ -260,6 +260,7 @@ def check_candidate_label_consistency(preferred_term: str, cas_name: str, synony
 def _classify_curation_disposition(
     *,
     group: str,
+    cas_rn: str = "",
     dedup_smiles: bool,
     struct_verdict: str,
     label_verdict: str,
@@ -274,7 +275,7 @@ def _classify_curation_disposition(
         return "SEED_FROM_CHEBI_OLS4_READY"
     if chebi_match_type == "CONNECTIVITY_14":
         return "CHEBI_3STAR_CONNECTIVITY_ONLY_REVIEW_FORM"
-    if group == "mim_unmapped_single":
+    if group == "mim_unmapped_single" and cas_rn.strip():
         return "GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR"
     return "CAS_RESOLVED_NO_CHEBI_3STAR"
 
@@ -330,6 +331,7 @@ def audit_cas_rows(
 
         disposition = _classify_curation_disposition(
             group=group,
+            cas_rn=(row.get("cas_rn") or "").strip(),
             dedup_smiles=dedup_smiles,
             struct_verdict=struct_verdict,
             label_verdict=label_verdict,
