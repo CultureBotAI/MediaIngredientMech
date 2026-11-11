@@ -171,3 +171,14 @@ def test_select_best_chebi_candidate_ranks_multiple_conn14_candidates_by_label_c
     assert best_h_id == "CHEBI:10002"
     assert best_h_name == "raffinose pentahydrate"
     assert all_h_ids == "CHEBI:10001|CHEBI:10002"
+
+    # Multi-character chemical stem tokens outrank 1-character configurational/locant tokens
+    stem_vs_prefix_candidates = [
+        ("CHEBI:20001", "D-1-aminopropan-2-ol"),
+        ("CHEBI:20002", "beta-glucose"),
+    ]
+    best_s_id, best_s_name, _ = select_best_chebi_candidate(
+        "D-1-glucose hydrate", stem_vs_prefix_candidates
+    )
+    assert best_s_id == "CHEBI:20002"
+    assert best_s_name == "beta-glucose"
