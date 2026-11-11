@@ -204,14 +204,41 @@ def select_best_chebi_candidate(
     return best_id, best_name, all_ids
 
 
+_IDENTIFIER_RE = re.compile(r"^identifier:\s*(.+?)\s*$", re.MULTILINE)
+_PREFERRED_TERM_RE = re.compile(r"^preferred_term:\s*(.+?)\s*$", re.MULTILINE)
+
+
+def _strip_yaml_scalar(raw: str) -> str:
+    val = raw.strip()
+    if len(val) >= 2 and val[0] == val[-1] and val[0] in {"'", '"'}:
+        return val[1:-1]
+    return val
+
+
 def load_ingredients_by_id(ingredients_dir: Path = INGREDIENTS_DIR) -> dict[str, dict]:
     """Load MediaIngredientMech ingredient files keyed by `identifier` and file stem."""
     by_id: dict[str, dict] = {}
     if not ingredients_dir.exists():
         return by_id
     for yaml_path in sorted(ingredients_dir.rglob("*.yaml")):
-        with yaml_path.open(encoding="utf-8") as fh:
-            doc = yaml.safe_load(fh) or {}
+        head = yaml_path.read_text(encoding="utf-8")[:1024]
+        id_m = _IDENTIFIER_RE.search(head)
+        pt_m = _PREFERRED_TERM_RE.search(head)
+        if id_m and pt_m:
+            doc = {
+                "identifier": _strip_yaml_scalar(id_m.group(1)),
+                "preferred_term": _strip_yaml_scalar(pt_m.group(1)),
+                "_rel_path": yaml_path.relative_to(REPO_ROOT).as_posix()
+                if yaml_path.is_relative_to(REPO_ROOT)
+                else str(yaml_path),
+            }
+        else:
+            doc = yaml.safe_load(yaml_path.read_text(encoding="utf-8")) or {}
+            doc["_rel_path"] = (
+                yaml_path.relative_to(REPO_ROOT).as_posix()
+                if yaml_path.is_relative_to(REPO_ROOT)
+                else str(yaml_path)
+            )
         identifier = (doc.get("identifier") or "").strip()
         if identifier:
             by_id[identifier] = doc

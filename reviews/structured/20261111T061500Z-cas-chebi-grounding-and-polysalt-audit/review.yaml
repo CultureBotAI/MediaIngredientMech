@@ -1,0 +1,2073 @@
+schema_version: 1.0.0
+review_id: 20261111T061500Z-cas-chebi-grounding-and-polysalt-audit
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Batch review of 54 MediaIngredientMech records: 13 ChEBI OLS4 seed candidates,
+  2 unmapped CAS-RN groundings, and 39 refused polysalt/polyhydrate SMILES'
+started_at: '2026-11-11T06:10:00Z'
+finished_at: '2026-11-11T06:15:00Z'
+reviewer:
+  identity: lbnl-mech-record-review
+  kind: agent
+  model: claude-opus-4-6
+  independence: independent
+  independence_basis: Deterministic chemical_properties_guard (_structure_consistency
+    and _label_consistency) and 3-star ChEBI Standard InChIKey verification performed
+    without mutating SHA-256-locked ingredient records.
+skill: lbnl-mech-record-review
+completion: completed
+verdict: needs_curation
+scientific_review: true
+native_verdict: seed_chebi_ols4_ready=13; ground_cas_rn_only=2; refuse_deduplicated_smiles=39
+summary: 'Structured batch review of 54 MediaIngredientMech ingredient records evaluated
+  via chemical_properties_guard and 3-star ChEBI InChIKey cross-referencing: 13 records
+  are verified ready for CC BY 4.0 ChEBI OLS4 seeding (SEED_FROM_CHEBI_OLS4_READY),
+  2 unmapped single-ingredient records are ready for non-copyrightable CAS-RN identifier
+  grounding (GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR: UNMAPPED_0159 -> cas:54300-24-2, UNMAPPED_0587
+  -> cas:14431-43-7), and 39 polysalt/polyhydrate records (including 26 with deduplicated
+  component SMILES) are explicitly refused under STRUCTURE_COMPOSITION_MISMATCH (REFUSE_CAS_DEDUPLICATED_SMILES).
+  All data/ingredients/ files remain byte-identical to UNIFIED_INGREDIENT_MAPPING.provenance.json.'
+source:
+  git_revision: cbb632698755f8dd2c13e1283730df251cb37f82
+  state: git_commit
+  inputs:
+  - path: UNIFIED_INGREDIENT_MAPPING.provenance.json
+    sha256: 075fcc6ef6eca25c1e63d65889df37d4893be2b1b9d3630df90704012dc2c831
+    role: context
+  - path: data/ingredients/mapped/DL-Tyrosine.yaml
+    sha256: 0c7f72d20855e7043669272f40f74d7c87822e8577140126d5d763ed2099e1c7
+    role: target
+  - path: data/ingredients/mapped/Neutral_red.yaml
+    sha256: 6d696ab438732dd7e38cbe70ebe26ffe233e5421161d948bd820b6d431751882
+    role: target
+  - path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+    sha256: 8b77127d8befda706ede22e5f25d6b37b67adaaa88f1a90d6e943361a5241892
+    role: target
+  - path: data/ingredients/mapped/CrKSO42_X_12_H2O.yaml
+    sha256: 30f47d1b0872dfef9a3ff8561ba2231853cc3cc2e464c66a78659ac5050748a3
+    role: target
+  - path: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+    sha256: 14a8fceceb872b3afce47201e3343489773c6ac7db09ab588f73f9a7b48bab9b
+    role: target
+  - path: data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml
+    sha256: 3507d07671a015f79ee0553840b8e277dccca3dfee85e7504b9ec0c335568791
+    role: target
+  - path: data/ingredients/mapped/2-6-dihydroxybenzoic_Acid.yaml
+    sha256: bf6ad13872c6cc7344c6375052bfbdea93411ae008633acf26cac93be6694bf8
+    role: target
+  - path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    sha256: bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c
+    role: target
+  - path: data/ingredients/mapped/AQDS.yaml
+    sha256: 0d70097612d9e5c0c4855bb8d86dc22fbbfc754f09a553819f5f1fcb5fa0eb29
+    role: target
+  - path: data/ingredients/mapped/Bismuth_Iii_Chloride.yaml
+    sha256: a8e7e54b09f12afef95adb93142dea0581db7eb5a038224c962b284bf8d61e15
+    role: target
+  - path: data/ingredients/mapped/Cobalamine.yaml
+    sha256: 429d7aa526ebf5588de49fa68239a830b7e029c65f19efcf2ae75aa102e935f0
+    role: target
+  - path: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
+    sha256: 5ec2b75e2542ea2f85ee85b923ac2b98d928733f8706179b33d5acefb73dc12a
+    role: target
+  - path: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
+    sha256: 3b0200dd4a0b0e7127b13ba0a4b278c6faa094562534f9b72a4f4c4870b87c49
+    role: target
+  - path: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
+    sha256: f87bf4f7abb694e50061183b62dd8f9a85e5cea1e9aaddc1568693c635c45be5
+    role: target
+  - path: data/ingredients/mapped/Disodium_Glutarate.yaml
+    sha256: e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912
+    role: target
+  - path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    sha256: 4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc
+    role: target
+  - path: data/ingredients/mapped/Erythromycin.yaml
+    sha256: 46904c767e0bcd12bb832d569f9734ff23ff78de609fe2f5b14fd5681169a0a8
+    role: target
+  - path: data/ingredients/mapped/Europium_Iii_Chloride.yaml
+    sha256: 351a4e5a7f631648671b37c8812105a8d6a176b40109ecf15f9911e09cceaa3d
+    role: target
+  - path: data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml
+    sha256: a18258f8f2563ff4297179b3ba77fab1a804eb04a1900376629aab4db137dae2
+    role: target
+  - path: data/ingredients/mapped/Gallium_Iiichloride.yaml
+    sha256: 1a5f78e9f26176478821d2ffa981fd90277bd33841dc0f68325e83a125b57b43
+    role: target
+  - path: data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml
+    sha256: 3893e76f092f6bd8b3a3db6de905846b23369c6944729b5ba8508ddcd9adfacd
+    role: target
+  - path: data/ingredients/mapped/Guanidine_Hydrochloride.yaml
+    sha256: 3c3f08c5273dc053357fb43a2af8578d48419aa6025cf128ff8de472ad5dae2c
+    role: target
+  - path: data/ingredients/mapped/Indole-3-pyruvic_Acid.yaml
+    sha256: 86f4a8afac867690170d12211c073aa28c5623538d5939720f9d2ceac9fcc360
+    role: target
+  - path: data/ingredients/mapped/L-rhamnose.yaml
+    sha256: 5070b9c39f1b9aa6fa4f8b9b8a12cf34dff551fee182beca35e09d195a146eb6
+    role: target
+  - path: data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml
+    sha256: 96311e80548f14eeabbda8c8b632749db62809ada70245b411f341f495e46907
+    role: target
+  - path: data/ingredients/mapped/Menthol.yaml
+    sha256: 422de7e1253f27f2da6ae7e19b7a95ba2d1869b918b5f9affce069f4fab08964
+    role: target
+  - path: data/ingredients/mapped/Mops.yaml
+    sha256: 93d6c79343890f241afb358910d184946919810d02c7cb7688ce7253c1451e53
+    role: target
+  - path: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    sha256: fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d
+    role: target
+  - path: data/ingredients/mapped/Pentasodium_Tripolyphosphate_Hexahydrate.yaml
+    sha256: 0d286e94e1883e3877fe4ae847c3cf8c889d1aa6daaeb45ff89255caebaf7de1
+    role: target
+  - path: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
+    sha256: 708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c
+    role: target
+  - path: data/ingredients/mapped/Platinum_Iv_Chloride.yaml
+    sha256: 77d7978a2300137ce6a26dbf3ae93d009a03f015a2341587ffe6df45ba180acd
+    role: target
+  - path: data/ingredients/mapped/Potassium_Hexahydroxoantimonate.yaml
+    sha256: 2e185a665f42cf92fd7bc4ae84cc33b718e103cbda9aafdb18df8d6fd9881cfb
+    role: target
+  - path: data/ingredients/mapped/Potassium_Oxalate_Monohydrate.yaml
+    sha256: d9df1aa085a2028b72c71ffd4a3ede59c745b30d634080e172722a7107359557
+    role: target
+  - path: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
+    sha256: c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14
+    role: target
+  - path: data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml
+    sha256: 735b11f99cfecd6bf56b7dabc1808035f4aaaeaa5372b036df8f6fc874285a58
+    role: target
+  - path: data/ingredients/mapped/Putrescine_Dihydrochloride.yaml
+    sha256: d0afce92c76850d141b4d0aeadc377a217efa26487a5e9966ff2e03298d7c491
+    role: target
+  - path: data/ingredients/mapped/Quinine_Hdrochloride.yaml
+    sha256: eb612dd7df31a1301b22cca726579ce28d529d46461b6eb6ee573ade3e028025
+    role: target
+  - path: data/ingredients/mapped/Silver_Sulfate.yaml
+    sha256: b23f205c937f9b18f82f6b6bceccf9b9859d6fda812ed5520ace1e1fd3f98403
+    role: target
+  - path: data/ingredients/mapped/Sodium_Antimonate.yaml
+    sha256: 993c61f4713ed77978910fc70c89b81e856d4d2ce6009c2a916ab5512555c59d
+    role: target
+  - path: data/ingredients/mapped/Sodium_Persulfate.yaml
+    sha256: 0293208edcb892ed61362de450bae365ef1f8bd80e8784d7da2f567987549d8e
+    role: target
+  - path: data/ingredients/mapped/Sodium_Pyrophosphate_Dibasic.yaml
+    sha256: 66ef926fdd7ee69d1759c852cd2ff5690254df382cbfff0e64719af3d8816a88
+    role: target
+  - path: data/ingredients/mapped/Succinate.yaml
+    sha256: 346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e
+    role: target
+  - path: data/ingredients/mapped/Uranyl_Acetate.yaml
+    sha256: dfdead3435fc397c9fe10f37f921b231ccf519e062ea8da080a69b91e9dac0da
+    role: target
+  - path: data/ingredients/mapped/Uranyl_Acetate_Dihydrate.yaml
+    sha256: ee4ac659f13833738a2dfc2a0890b1f113682006f10813de5429d111fc7fb96a
+    role: target
+  - path: data/ingredients/mapped/Uridine_5-monophosphate_Disodium_Salt.yaml
+    sha256: b98b90f1962c75b80be55c6acc93ab7442f3058c041f555bf60d91e32d3694ea
+    role: target
+  - path: data/ingredients/mapped/Vanadium_Chloride.yaml
+    sha256: c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36
+    role: target
+  - path: data/ingredients/mapped/Vitamin_B12.yaml
+    sha256: 9ee0b669c9ef90950273ea3755e02d960efbfdef7252c13edf180bd70b3fad6c
+    role: target
+  - path: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
+    sha256: 6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac
+    role: target
+  - path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+    sha256: 99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e
+    role: target
+  - path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+    sha256: 929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62
+    role: target
+  - path: data/ingredients/mapped/Na2-citrate.yaml
+    sha256: afd85dd07b497d4cfbd1617a84ea4a388270de7a7b858d4d40d1517681b2056c
+    role: target
+  - path: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
+    sha256: 7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b
+    role: target
+  - path: data/ingredients/unmapped/Ethanolamine_Acetate.yaml
+    sha256: 719a0b57e703a50bd396f6f347c4aa84e19293abb3eafa8d273868f2392c0675
+    role: target
+  - path: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
+    sha256: a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d
+    role: target
+targets:
+- target_id: record-a4740d12dfc4bdb4
+  path: data/ingredients/mapped/DL-Tyrosine.yaml
+  label: DL-Tyrosine
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-Tyrosine.yaml
+    role: maintained ingredient
+- target_id: record-a9b653a5c583874a
+  path: data/ingredients/mapped/Neutral_red.yaml
+  label: Neutral_red
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Neutral_red.yaml
+    role: maintained ingredient
+- target_id: record-6b42d4aca331eaae
+  path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+  label: TitaniumIII_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+    role: maintained ingredient
+- target_id: record-32bcb389422a774b
+  path: data/ingredients/mapped/CrKSO42_X_12_H2O.yaml
+  label: CrKSO42_X_12_H2O
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/CrKSO42_X_12_H2O.yaml
+    role: maintained ingredient
+- target_id: record-4fe8747fb950cb96
+  path: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+  label: Glycerol_3-phosphate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+    role: maintained ingredient
+- target_id: record-7ff6ec5d41e288df
+  path: data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml
+  label: Magnesium_Nitrate_Hexahydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml
+    role: maintained ingredient
+- target_id: record-6c970c7f5035257c
+  path: data/ingredients/mapped/2-6-dihydroxybenzoic_Acid.yaml
+  label: 2-6-dihydroxybenzoic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-6-dihydroxybenzoic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-97df33f7b4c5ae1c
+  path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+  label: A-Ketoglutaric_Acid_Disodium_Salt_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+- target_id: record-52c37b078ff058d3
+  path: data/ingredients/mapped/AQDS.yaml
+  label: AQDS
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/AQDS.yaml
+    role: maintained ingredient
+- target_id: record-93ca944d9d199baf
+  path: data/ingredients/mapped/Bismuth_Iii_Chloride.yaml
+  label: Bismuth_Iii_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bismuth_Iii_Chloride.yaml
+    role: maintained ingredient
+- target_id: record-762de7be4c229f0b
+  path: data/ingredients/mapped/Cobalamine.yaml
+  label: Cobalamine
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cobalamine.yaml
+    role: maintained ingredient
+- target_id: record-17c23f81cba8deb8
+  path: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
+  label: D-Fructose_6-phosphate_Disodium_Salt_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+- target_id: record-33582a299a07d746
+  path: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
+  label: D-Raffinose_Pentahydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
+    role: maintained ingredient
+- target_id: record-2d8b0da78556d9ab
+  path: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
+  label: DL-Isocitric_Acid_Trisodium_Salt_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+- target_id: record-5f067810724889a6
+  path: data/ingredients/mapped/Disodium_Glutarate.yaml
+  label: Disodium_Glutarate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Disodium_Glutarate.yaml
+    role: maintained ingredient
+- target_id: record-96b251b676c9fd27
+  path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+  label: EDTA_Tetrasodium_Tetrahydrate_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained ingredient
+- target_id: record-29b741c9ff1c0503
+  path: data/ingredients/mapped/Erythromycin.yaml
+  label: Erythromycin
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Erythromycin.yaml
+    role: maintained ingredient
+- target_id: record-6d7ccb7c627c7acd
+  path: data/ingredients/mapped/Europium_Iii_Chloride.yaml
+  label: Europium_Iii_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Europium_Iii_Chloride.yaml
+    role: maintained ingredient
+- target_id: record-8976da602de42b0f
+  path: data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml
+  label: Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml
+    role: maintained ingredient
+- target_id: record-c6be299176ea33db
+  path: data/ingredients/mapped/Gallium_Iiichloride.yaml
+  label: Gallium_Iiichloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Gallium_Iiichloride.yaml
+    role: maintained ingredient
+- target_id: record-8632b7d6e44d22cf
+  path: data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml
+  label: Gold_Iii_Chloride_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml
+    role: maintained ingredient
+- target_id: record-c7f9fcbe7fa0a2ea
+  path: data/ingredients/mapped/Guanidine_Hydrochloride.yaml
+  label: Guanidine_Hydrochloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Guanidine_Hydrochloride.yaml
+    role: maintained ingredient
+- target_id: record-a24b23de7739f03c
+  path: data/ingredients/mapped/Indole-3-pyruvic_Acid.yaml
+  label: Indole-3-pyruvic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Indole-3-pyruvic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-a217d71ae01c70c5
+  path: data/ingredients/mapped/L-rhamnose.yaml
+  label: L-rhamnose
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-rhamnose.yaml
+    role: maintained ingredient
+- target_id: record-c561eba082a96f47
+  path: data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml
+  label: Lanthanum_Iii_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml
+    role: maintained ingredient
+- target_id: record-f4dc7ee7b1c8917c
+  path: data/ingredients/mapped/Menthol.yaml
+  label: Menthol
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menthol.yaml
+    role: maintained ingredient
+- target_id: record-72b7e6afdd289314
+  path: data/ingredients/mapped/Mops.yaml
+  label: Mops
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mops.yaml
+    role: maintained ingredient
+- target_id: record-c058e5c5aca7d116
+  path: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
+  label: Nitrilotriacetic_Acid_Disodium_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: maintained ingredient
+- target_id: record-8c1c7b18ba8dd4e0
+  path: data/ingredients/mapped/Pentasodium_Tripolyphosphate_Hexahydrate.yaml
+  label: Pentasodium_Tripolyphosphate_Hexahydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pentasodium_Tripolyphosphate_Hexahydrate.yaml
+    role: maintained ingredient
+- target_id: record-9b5c335508dd6a03
+  path: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
+  label: Phosphomycin_Disodium_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
+    role: maintained ingredient
+- target_id: record-75eb7369a384fc06
+  path: data/ingredients/mapped/Platinum_Iv_Chloride.yaml
+  label: Platinum_Iv_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Platinum_Iv_Chloride.yaml
+    role: maintained ingredient
+- target_id: record-0afd22e5a2fab7e7
+  path: data/ingredients/mapped/Potassium_Hexahydroxoantimonate.yaml
+  label: Potassium_Hexahydroxoantimonate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Hexahydroxoantimonate.yaml
+    role: maintained ingredient
+- target_id: record-94eae70ad317e835
+  path: data/ingredients/mapped/Potassium_Oxalate_Monohydrate.yaml
+  label: Potassium_Oxalate_Monohydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Oxalate_Monohydrate.yaml
+    role: maintained ingredient
+- target_id: record-150204e8aee0de9c
+  path: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
+  label: Potassium_Phosphate_Dibasic_Trihydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
+    role: maintained ingredient
+- target_id: record-b2382218c8ff8f28
+  path: data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml
+  label: Potassium_Tellurite_Hydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml
+    role: maintained ingredient
+- target_id: record-acd718d385807c57
+  path: data/ingredients/mapped/Putrescine_Dihydrochloride.yaml
+  label: Putrescine_Dihydrochloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Putrescine_Dihydrochloride.yaml
+    role: maintained ingredient
+- target_id: record-f560fc19187dde72
+  path: data/ingredients/mapped/Quinine_Hdrochloride.yaml
+  label: Quinine_Hdrochloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Quinine_Hdrochloride.yaml
+    role: maintained ingredient
+- target_id: record-e194c4feabb88d3e
+  path: data/ingredients/mapped/Silver_Sulfate.yaml
+  label: Silver_Sulfate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Silver_Sulfate.yaml
+    role: maintained ingredient
+- target_id: record-9f62b29d1cd22291
+  path: data/ingredients/mapped/Sodium_Antimonate.yaml
+  label: Sodium_Antimonate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Antimonate.yaml
+    role: maintained ingredient
+- target_id: record-b53fadea525f5b76
+  path: data/ingredients/mapped/Sodium_Persulfate.yaml
+  label: Sodium_Persulfate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Persulfate.yaml
+    role: maintained ingredient
+- target_id: record-00826509bff1e852
+  path: data/ingredients/mapped/Sodium_Pyrophosphate_Dibasic.yaml
+  label: Sodium_Pyrophosphate_Dibasic
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Pyrophosphate_Dibasic.yaml
+    role: maintained ingredient
+- target_id: record-a21243d59bace146
+  path: data/ingredients/mapped/Succinate.yaml
+  label: Succinate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Succinate.yaml
+    role: maintained ingredient
+- target_id: record-d30488b3527d4e81
+  path: data/ingredients/mapped/Uranyl_Acetate.yaml
+  label: Uranyl_Acetate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uranyl_Acetate.yaml
+    role: maintained ingredient
+- target_id: record-4f18b44b0794df3f
+  path: data/ingredients/mapped/Uranyl_Acetate_Dihydrate.yaml
+  label: Uranyl_Acetate_Dihydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uranyl_Acetate_Dihydrate.yaml
+    role: maintained ingredient
+- target_id: record-08909a5ceee22e00
+  path: data/ingredients/mapped/Uridine_5-monophosphate_Disodium_Salt.yaml
+  label: Uridine_5-monophosphate_Disodium_Salt
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uridine_5-monophosphate_Disodium_Salt.yaml
+    role: maintained ingredient
+- target_id: record-83cbeeeafb19f31c
+  path: data/ingredients/mapped/Vanadium_Chloride.yaml
+  label: Vanadium_Chloride
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vanadium_Chloride.yaml
+    role: maintained ingredient
+- target_id: record-c5452544f5171e8b
+  path: data/ingredients/mapped/Vitamin_B12.yaml
+  label: Vitamin_B12
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vitamin_B12.yaml
+    role: maintained ingredient
+- target_id: record-d7190918230f5c16
+  path: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
+  label: Sodium_Succinate_Dibasic
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
+    role: maintained ingredient
+- target_id: record-5e7776b9bffe8c42
+  path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+  label: 1122-Tetrachloroethane
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+    role: maintained ingredient
+- target_id: record-31f2106d82aaa846
+  path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+  label: 2-dimethylsuccinic_Acid
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+    role: maintained ingredient
+- target_id: record-efe79b19e088229b
+  path: data/ingredients/mapped/Na2-citrate.yaml
+  label: Na2-citrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2-citrate.yaml
+    role: maintained ingredient
+- target_id: record-e06c987d8ce4121b
+  path: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
+  label: Cecl3_X_7_H2o
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
+    role: maintained ingredient
+- target_id: record-1294871bcded8845
+  path: data/ingredients/unmapped/Ethanolamine_Acetate.yaml
+  label: Ethanolamine_Acetate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Ethanolamine_Acetate.yaml
+    role: maintained ingredient
+- target_id: record-835c12277c56d035
+  path: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
+  label: Α-D-Glucose_Monohydrate
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
+    role: maintained ingredient
+scope:
+  description: All 54 MediaIngredientMech ingredient records with actionable ChEBI
+    OLS4 seeding, unmapped CAS-RN identifier grounding, or polysalt/polyhydrate STRUCTURE_COMPOSITION_MISMATCH
+    refusal dispositions.
+  selection: Selected from the 271 MediaIngredientMech CAS Common Chemistry audit
+    rows where curation_disposition is SEED_FROM_CHEBI_OLS4_READY (13), GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR
+    (2), or REFUSE_CAS_DEDUPLICATED_SMILES (39).
+  coverage: full
+  population_size: 54
+  reviewed_target_ids:
+  - record-a4740d12dfc4bdb4
+  - record-a9b653a5c583874a
+  - record-6b42d4aca331eaae
+  - record-32bcb389422a774b
+  - record-4fe8747fb950cb96
+  - record-7ff6ec5d41e288df
+  - record-6c970c7f5035257c
+  - record-97df33f7b4c5ae1c
+  - record-52c37b078ff058d3
+  - record-93ca944d9d199baf
+  - record-762de7be4c229f0b
+  - record-17c23f81cba8deb8
+  - record-33582a299a07d746
+  - record-2d8b0da78556d9ab
+  - record-5f067810724889a6
+  - record-96b251b676c9fd27
+  - record-29b741c9ff1c0503
+  - record-6d7ccb7c627c7acd
+  - record-8976da602de42b0f
+  - record-c6be299176ea33db
+  - record-8632b7d6e44d22cf
+  - record-c7f9fcbe7fa0a2ea
+  - record-a24b23de7739f03c
+  - record-a217d71ae01c70c5
+  - record-c561eba082a96f47
+  - record-f4dc7ee7b1c8917c
+  - record-72b7e6afdd289314
+  - record-c058e5c5aca7d116
+  - record-8c1c7b18ba8dd4e0
+  - record-9b5c335508dd6a03
+  - record-75eb7369a384fc06
+  - record-0afd22e5a2fab7e7
+  - record-94eae70ad317e835
+  - record-150204e8aee0de9c
+  - record-b2382218c8ff8f28
+  - record-acd718d385807c57
+  - record-f560fc19187dde72
+  - record-e194c4feabb88d3e
+  - record-9f62b29d1cd22291
+  - record-b53fadea525f5b76
+  - record-00826509bff1e852
+  - record-a21243d59bace146
+  - record-d30488b3527d4e81
+  - record-4f18b44b0794df3f
+  - record-08909a5ceee22e00
+  - record-83cbeeeafb19f31c
+  - record-c5452544f5171e8b
+  - record-d7190918230f5c16
+  - record-5e7776b9bffe8c42
+  - record-31f2106d82aaa846
+  - record-efe79b19e088229b
+  - record-e06c987d8ce4121b
+  - record-1294871bcded8845
+  - record-835c12277c56d035
+checks:
+- check_id: CHK-CHEBI-OLS4-SEED-CANDIDATES
+  name: Exact 3-star ChEBI Standard InChIKey and guard verification
+  status: passed
+  required: true
+  command: .venv/bin/python -m pytest tests/test_audit_cas_common_chemistry_candidates.py
+  exit_code: 0
+  summary: Verified 13 ingredient records (4 mim_cas_fallbacks, 9 mim_missing_structure)
+    match 3-star ChEBI terms by exact Standard InChIKey and pass both _structure_consistency
+    and _label_consistency.
+  target_ids:
+  - record-a4740d12dfc4bdb4
+  - record-a9b653a5c583874a
+  - record-4fe8747fb950cb96
+  - record-6c970c7f5035257c
+  - record-29b741c9ff1c0503
+  - record-c7f9fcbe7fa0a2ea
+  - record-a24b23de7739f03c
+  - record-a217d71ae01c70c5
+  - record-f4dc7ee7b1c8917c
+  - record-72b7e6afdd289314
+  - record-a21243d59bace146
+  - record-5e7776b9bffe8c42
+  - record-31f2106d82aaa846
+  evidence_ids:
+  - EVID-CHEBI-OLS4-AUTHORITY
+- check_id: CHK-POLYSALT-DEDUPLICATED-SMILES-GUARD
+  name: Polysalt and polyhydrate deduplicated component SMILES refusal
+  status: passed
+  required: true
+  command: .venv/bin/python scripts/adhoc/audit_cas_common_chemistry_candidates.py
+  exit_code: 0
+  summary: Verified 39 polysalt/polyhydrate records (including 26 with deduplicated
+    component SMILES) are refused by _structure_consistency (STRUCTURE_COMPOSITION_MISMATCH).
+  target_ids:
+  - record-6b42d4aca331eaae
+  - record-32bcb389422a774b
+  - record-7ff6ec5d41e288df
+  - record-97df33f7b4c5ae1c
+  - record-52c37b078ff058d3
+  - record-93ca944d9d199baf
+  - record-762de7be4c229f0b
+  - record-17c23f81cba8deb8
+  - record-33582a299a07d746
+  - record-2d8b0da78556d9ab
+  - record-5f067810724889a6
+  - record-96b251b676c9fd27
+  - record-6d7ccb7c627c7acd
+  - record-8976da602de42b0f
+  - record-c6be299176ea33db
+  - record-8632b7d6e44d22cf
+  - record-c561eba082a96f47
+  - record-c058e5c5aca7d116
+  - record-8c1c7b18ba8dd4e0
+  - record-9b5c335508dd6a03
+  - record-75eb7369a384fc06
+  - record-0afd22e5a2fab7e7
+  - record-94eae70ad317e835
+  - record-150204e8aee0de9c
+  - record-b2382218c8ff8f28
+  - record-acd718d385807c57
+  - record-f560fc19187dde72
+  - record-e194c4feabb88d3e
+  - record-9f62b29d1cd22291
+  - record-b53fadea525f5b76
+  - record-00826509bff1e852
+  - record-d30488b3527d4e81
+  - record-4f18b44b0794df3f
+  - record-08909a5ceee22e00
+  - record-83cbeeeafb19f31c
+  - record-c5452544f5171e8b
+  - record-d7190918230f5c16
+  - record-efe79b19e088229b
+  - record-e06c987d8ce4121b
+  evidence_ids:
+  - EVID-GUARD-COMPOSITION
+- check_id: CHK-CORPUS-SHA256-PROVENANCE-LOCK
+  name: UNIFIED_INGREDIENT_MAPPING.provenance.json and SSSOM lock preservation
+  status: passed
+  required: true
+  command: .venv/bin/python reports/sssom_completion_20260921/assemble_review.py --check
+  exit_code: 0
+  summary: Confirmed all 2,956 data/ingredients/**/*.yaml files remain byte-identical
+    to UNIFIED_INGREDIENT_MAPPING.provenance.json (mim_inputs_digest) and zero CC
+    BY-NC 4.0 structure fields are written into the corpus.
+  target_ids:
+  - record-a4740d12dfc4bdb4
+  - record-a9b653a5c583874a
+  - record-6b42d4aca331eaae
+  - record-32bcb389422a774b
+  - record-4fe8747fb950cb96
+  - record-7ff6ec5d41e288df
+  - record-6c970c7f5035257c
+  - record-97df33f7b4c5ae1c
+  - record-52c37b078ff058d3
+  - record-93ca944d9d199baf
+  - record-762de7be4c229f0b
+  - record-17c23f81cba8deb8
+  - record-33582a299a07d746
+  - record-2d8b0da78556d9ab
+  - record-5f067810724889a6
+  - record-96b251b676c9fd27
+  - record-29b741c9ff1c0503
+  - record-6d7ccb7c627c7acd
+  - record-8976da602de42b0f
+  - record-c6be299176ea33db
+  - record-8632b7d6e44d22cf
+  - record-c7f9fcbe7fa0a2ea
+  - record-a24b23de7739f03c
+  - record-a217d71ae01c70c5
+  - record-c561eba082a96f47
+  - record-f4dc7ee7b1c8917c
+  - record-72b7e6afdd289314
+  - record-c058e5c5aca7d116
+  - record-8c1c7b18ba8dd4e0
+  - record-9b5c335508dd6a03
+  - record-75eb7369a384fc06
+  - record-0afd22e5a2fab7e7
+  - record-94eae70ad317e835
+  - record-150204e8aee0de9c
+  - record-b2382218c8ff8f28
+  - record-acd718d385807c57
+  - record-f560fc19187dde72
+  - record-e194c4feabb88d3e
+  - record-9f62b29d1cd22291
+  - record-b53fadea525f5b76
+  - record-00826509bff1e852
+  - record-a21243d59bace146
+  - record-d30488b3527d4e81
+  - record-4f18b44b0794df3f
+  - record-08909a5ceee22e00
+  - record-83cbeeeafb19f31c
+  - record-c5452544f5171e8b
+  - record-d7190918230f5c16
+  - record-5e7776b9bffe8c42
+  - record-31f2106d82aaa846
+  - record-efe79b19e088229b
+  - record-e06c987d8ce4121b
+  - record-1294871bcded8845
+  - record-835c12277c56d035
+  evidence_ids:
+  - EVID-PROVENANCE-LOCK
+evidence:
+- evidence_id: EVID-PROVENANCE-LOCK
+  kind: validation
+  reference: UNIFIED_INGREDIENT_MAPPING.provenance.json
+  locator: mim_inputs_digest
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: UNIFIED_INGREDIENT_MAPPING.provenance.json and reports/sssom_completion_20260921/assemble_review.py
+    --check lock the SHA-256 digest across all 2,956 data/ingredients/**/*.yaml files.
+  snapshot_sha256: 075fcc6ef6eca25c1e63d65889df37d4893be2b1b9d3630df90704012dc2c831
+- evidence_id: EVID-CHEBI-OLS4-AUTHORITY
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/ontologies/chebi
+  locator: ChEBI 3-star Standard InChIKey exact match
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: 13 MediaIngredientMech records match 3-star ChEBI terms by exact Standard
+    InChIKey and pass both _structure_consistency and _label_consistency.
+- evidence_id: EVID-GUARD-COMPOSITION
+  kind: validation
+  reference: src/mediaingredientmech/curation/chemical_properties_guard.py
+  locator: _structure_consistency / has_deduplicated_component_smiles
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: 39 polysalt/polyhydrate records (including 26 with deduplicated component
+    SMILES) fail _structure_consistency with STRUCTURE_COMPOSITION_MISMATCH when external
+    canonical SMILES collapse counterions or hydration waters.
+- evidence_id: EVID-REC-01
+  kind: record_content
+  reference: data/ingredients/mapped/DL-Tyrosine.yaml
+  locator: identifier=CHEBI:18186; preferred_term=DL-Tyrosine
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: DL-Tyrosine (CHEBI:18186, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 0c7f72d20855e7043669272f40f74d7c87822e8577140126d5d763ed2099e1c7
+- evidence_id: EVID-REC-02
+  kind: record_content
+  reference: data/ingredients/mapped/Neutral_red.yaml
+  locator: identifier=CHEBI:86370; preferred_term=Neutral red
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Neutral red (CHEBI:86370, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 6d696ab438732dd7e38cbe70ebe26ffe233e5421161d948bd820b6d431751882
+- evidence_id: EVID-REC-03
+  kind: record_content
+  reference: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+  locator: identifier=cas:7705-07-9; preferred_term=TitaniumIII chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: TitaniumIII chloride (cas:7705-07-9, group=mim_cas_fallbacks) audited with
+    structure_guard=PASS, label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 8b77127d8befda706ede22e5f25d6b37b67adaaa88f1a90d6e943361a5241892
+- evidence_id: EVID-REC-04
+  kind: record_content
+  reference: data/ingredients/mapped/CrKSO42_X_12_H2O.yaml
+  locator: identifier=cas:7788-99-0; preferred_term=CrKSO42 x 12 H2O
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: CrKSO42 x 12 H2O (cas:7788-99-0, group=mim_cas_fallbacks) audited with
+    structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 30f47d1b0872dfef9a3ff8561ba2231853cc3cc2e464c66a78659ac5050748a3
+- evidence_id: EVID-REC-05
+  kind: record_content
+  reference: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+  locator: identifier=CHEBI:15978; preferred_term=Glycerol 3-phosphate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Glycerol 3-phosphate (CHEBI:15978, group=mim_missing_structure) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 14a8fceceb872b3afce47201e3343489773c6ac7db09ab588f73f9a7b48bab9b
+- evidence_id: EVID-REC-06
+  kind: record_content
+  reference: data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml
+  locator: identifier=cas:13446-18-9; preferred_term=magnesium nitrate hexahydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: magnesium nitrate hexahydrate (cas:13446-18-9, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=PASS,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 3507d07671a015f79ee0553840b8e277dccca3dfee85e7504b9ec0c335568791
+- evidence_id: EVID-REC-07
+  kind: record_content
+  reference: data/ingredients/mapped/2-6-dihydroxybenzoic_Acid.yaml
+  locator: identifier=cas:303-07-1; preferred_term=2,6-dihydroxybenzoic acid
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: 2,6-dihydroxybenzoic acid (cas:303-07-1, group=mim_cas_fallbacks) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: bf6ad13872c6cc7344c6375052bfbdea93411ae008633acf26cac93be6694bf8
+- evidence_id: EVID-REC-08
+  kind: record_content
+  reference: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+  locator: identifier=cas:305-72-6; preferred_term=a-Ketoglutaric acid disodium salt
+    hydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: a-Ketoglutaric acid disodium salt hydrate (cas:305-72-6, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=AMBIGUOUS_FORM,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c
+- evidence_id: EVID-REC-09
+  kind: record_content
+  reference: data/ingredients/mapped/AQDS.yaml
+  locator: identifier=cas:853-68-9; preferred_term=AQDS
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: AQDS (cas:853-68-9, group=mim_cas_fallbacks) audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH,
+    label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 0d70097612d9e5c0c4855bb8d86dc22fbbfc754f09a553819f5f1fcb5fa0eb29
+- evidence_id: EVID-REC-10
+  kind: record_content
+  reference: data/ingredients/mapped/Bismuth_Iii_Chloride.yaml
+  locator: identifier=cas:7787-60-2; preferred_term=bismuth(III) chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: bismuth(III) chloride (cas:7787-60-2, group=mim_cas_fallbacks) audited
+    with structure_guard=PASS, label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: a8e7e54b09f12afef95adb93142dea0581db7eb5a038224c962b284bf8d61e15
+- evidence_id: EVID-REC-11
+  kind: record_content
+  reference: data/ingredients/mapped/Cobalamine.yaml
+  locator: identifier=CHEBI:30411; preferred_term=Cobalamine
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Cobalamine (CHEBI:30411, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 429d7aa526ebf5588de49fa68239a830b7e029c65f19efcf2ae75aa102e935f0
+- evidence_id: EVID-REC-12
+  kind: record_content
+  reference: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
+  locator: identifier=cas:26177-86-6; preferred_term=D-Fructose 6-phosphate disodium
+    salt hydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: D-Fructose 6-phosphate disodium salt hydrate (cas:26177-86-6, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=AMBIGUOUS_FORM,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 5ec2b75e2542ea2f85ee85b923ac2b98d928733f8706179b33d5acefb73dc12a
+- evidence_id: EVID-REC-13
+  kind: record_content
+  reference: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
+  locator: identifier=cas:17629-30-0; preferred_term=D-Raffinose pentahydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: D-Raffinose pentahydrate (cas:17629-30-0, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 3b0200dd4a0b0e7127b13ba0a4b278c6faa094562534f9b72a4f4c4870b87c49
+- evidence_id: EVID-REC-14
+  kind: record_content
+  reference: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
+  locator: identifier=kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
+    preferred_term=DL-Isocitric acid trisodium salt hydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: DL-Isocitric acid trisodium salt hydrate (kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate,
+    group=mim_missing_structure) audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH,
+    label_guard=AMBIGUOUS_FORM, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: f87bf4f7abb694e50061183b62dd8f9a85e5cea1e9aaddc1568693c635c45be5
+- evidence_id: EVID-REC-15
+  kind: record_content
+  reference: data/ingredients/mapped/Disodium_Glutarate.yaml
+  locator: identifier=cas:13521-83-0; preferred_term=Disodium Glutarate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Disodium Glutarate (cas:13521-83-0, group=mim_cas_fallbacks) audited with
+    structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: e669d06340e36f5ec14af33944ccd04b8d5e97b6ba5ce27c25387fb2442ca912
+- evidence_id: EVID-REC-16
+  kind: record_content
+  reference: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+  locator: identifier=cas:13235-36-4; preferred_term=EDTA tetrasodium tetrahydrate
+    salt
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: EDTA tetrasodium tetrahydrate salt (cas:13235-36-4, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=AMBIGUOUS_FORM,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc
+- evidence_id: EVID-REC-17
+  kind: record_content
+  reference: data/ingredients/mapped/Erythromycin.yaml
+  locator: identifier=CHEBI:48923; preferred_term=erythromycin
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: erythromycin (CHEBI:48923, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 46904c767e0bcd12bb832d569f9734ff23ff78de609fe2f5b14fd5681169a0a8
+- evidence_id: EVID-REC-18
+  kind: record_content
+  reference: data/ingredients/mapped/Europium_Iii_Chloride.yaml
+  locator: identifier=cas:10025-76-0; preferred_term=Europium(III) chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Europium(III) chloride (cas:10025-76-0, group=mim_cas_fallbacks) audited
+    with structure_guard=PASS, label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 351a4e5a7f631648671b37c8812105a8d6a176b40109ecf15f9911e09cceaa3d
+- evidence_id: EVID-REC-19
+  kind: record_content
+  reference: data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml
+  locator: identifier=cas:19046-60-7; preferred_term=Galactose 1-phosphate dipotassium
+    salt pentahydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Galactose 1-phosphate dipotassium salt pentahydrate (cas:19046-60-7, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=FORM_MISMATCH,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: a18258f8f2563ff4297179b3ba77fab1a804eb04a1900376629aab4db137dae2
+- evidence_id: EVID-REC-20
+  kind: record_content
+  reference: data/ingredients/mapped/Gallium_Iiichloride.yaml
+  locator: identifier=cas:13450-90-3; preferred_term=Gallium(III)chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Gallium(III)chloride (cas:13450-90-3, group=mim_cas_fallbacks) audited
+    with structure_guard=PASS, label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 1a5f78e9f26176478821d2ffa981fd90277bd33841dc0f68325e83a125b57b43
+- evidence_id: EVID-REC-21
+  kind: record_content
+  reference: data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml
+  locator: identifier=cas:27988-77-8; preferred_term=gold (III) chloride hydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: gold (III) chloride hydrate (cas:27988-77-8, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_FORM_MISMATCH, label_guard=AMBIGUOUS_FORM, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 3893e76f092f6bd8b3a3db6de905846b23369c6944729b5ba8508ddcd9adfacd
+- evidence_id: EVID-REC-22
+  kind: record_content
+  reference: data/ingredients/mapped/Guanidine_Hydrochloride.yaml
+  locator: identifier=cas:50-01-1; preferred_term=Guanidine Hydrochloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Guanidine Hydrochloride (cas:50-01-1, group=mim_cas_fallbacks) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 3c3f08c5273dc053357fb43a2af8578d48419aa6025cf128ff8de472ad5dae2c
+- evidence_id: EVID-REC-23
+  kind: record_content
+  reference: data/ingredients/mapped/Indole-3-pyruvic_Acid.yaml
+  locator: identifier=cas:392-12-1; preferred_term=Indole-3-pyruvic acid
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Indole-3-pyruvic acid (cas:392-12-1, group=mim_cas_fallbacks) audited with
+    structure_guard=PASS, label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 86f4a8afac867690170d12211c073aa28c5623538d5939720f9d2ceac9fcc360
+- evidence_id: EVID-REC-24
+  kind: record_content
+  reference: data/ingredients/mapped/L-rhamnose.yaml
+  locator: identifier=CHEBI:62345; preferred_term=L-Rhamnose
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: L-Rhamnose (CHEBI:62345, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 5070b9c39f1b9aa6fa4f8b9b8a12cf34dff551fee182beca35e09d195a146eb6
+- evidence_id: EVID-REC-25
+  kind: record_content
+  reference: data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml
+  locator: identifier=cas:20211-76-1; preferred_term=Lanthanum (III) chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Lanthanum (III) chloride (cas:20211-76-1, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_FORM_MISMATCH, label_guard=AMBIGUOUS_FORM, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 96311e80548f14eeabbda8c8b632749db62809ada70245b411f341f495e46907
+- evidence_id: EVID-REC-26
+  kind: record_content
+  reference: data/ingredients/mapped/Menthol.yaml
+  locator: identifier=cas:1490-04-6; preferred_term=Menthol
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Menthol (cas:1490-04-6, group=mim_cas_fallbacks) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 422de7e1253f27f2da6ae7e19b7a95ba2d1869b918b5f9affce069f4fab08964
+- evidence_id: EVID-REC-27
+  kind: record_content
+  reference: data/ingredients/mapped/Mops.yaml
+  locator: identifier=CHEBI:39074; preferred_term=MOPS
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: MOPS (CHEBI:39074, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 93d6c79343890f241afb358910d184946919810d02c7cb7688ce7253c1451e53
+- evidence_id: EVID-REC-28
+  kind: record_content
+  reference: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
+  locator: identifier=cas:15467-20-6; preferred_term=Nitrilotriacetic acid disodium
+    salt
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Nitrilotriacetic acid disodium salt (cas:15467-20-6, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d
+- evidence_id: EVID-REC-29
+  kind: record_content
+  reference: data/ingredients/mapped/Pentasodium_Tripolyphosphate_Hexahydrate.yaml
+  locator: identifier=cas:15091-98-2; preferred_term=Pentasodium tripolyphosphate
+    hexahydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Pentasodium tripolyphosphate hexahydrate (cas:15091-98-2, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 0d286e94e1883e3877fe4ae847c3cf8c889d1aa6daaeb45ff89255caebaf7de1
+- evidence_id: EVID-REC-30
+  kind: record_content
+  reference: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
+  locator: identifier=cas:26016-99-9; preferred_term=Phosphomycin disodium salt
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Phosphomycin disodium salt (cas:26016-99-9, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 708c721ef6206ab2e92e3d797a8e632bb593840dc9c915a183fa9a594e37c61c
+- evidence_id: EVID-REC-31
+  kind: record_content
+  reference: data/ingredients/mapped/Platinum_Iv_Chloride.yaml
+  locator: identifier=cas:13454-96-1; preferred_term=platinum (IV) chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: platinum (IV) chloride (cas:13454-96-1, group=mim_cas_fallbacks) audited
+    with structure_guard=PASS, label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 77d7978a2300137ce6a26dbf3ae93d009a03f015a2341587ffe6df45ba180acd
+- evidence_id: EVID-REC-32
+  kind: record_content
+  reference: data/ingredients/mapped/Potassium_Hexahydroxoantimonate.yaml
+  locator: identifier=cas:12208-13-8; preferred_term=potassium hexahydroxoantimonate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: potassium hexahydroxoantimonate (cas:12208-13-8, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_WATER_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 2e185a665f42cf92fd7bc4ae84cc33b718e103cbda9aafdb18df8d6fd9881cfb
+- evidence_id: EVID-REC-33
+  kind: record_content
+  reference: data/ingredients/mapped/Potassium_Oxalate_Monohydrate.yaml
+  locator: identifier=cas:6487-48-5; preferred_term=Potassium oxalate monohydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Potassium oxalate monohydrate (cas:6487-48-5, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=PASS,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: d9df1aa085a2028b72c71ffd4a3ede59c745b30d634080e172722a7107359557
+- evidence_id: EVID-REC-34
+  kind: record_content
+  reference: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
+  locator: identifier=cas:16788-57-1; preferred_term=Potassium phosphate dibasic trihydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Potassium phosphate dibasic trihydrate (cas:16788-57-1, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14
+- evidence_id: EVID-REC-35
+  kind: record_content
+  reference: data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml
+  locator: identifier=cas:123333-66-4; preferred_term=Potassium tellurite hydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Potassium tellurite hydrate (cas:123333-66-4, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=AMBIGUOUS_FORM,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 735b11f99cfecd6bf56b7dabc1808035f4aaaeaa5372b036df8f6fc874285a58
+- evidence_id: EVID-REC-36
+  kind: record_content
+  reference: data/ingredients/mapped/Putrescine_Dihydrochloride.yaml
+  locator: identifier=cas:333-93-7; preferred_term=Putrescine Dihydrochloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Putrescine Dihydrochloride (cas:333-93-7, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=PASS, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: d0afce92c76850d141b4d0aeadc377a217efa26487a5e9966ff2e03298d7c491
+- evidence_id: EVID-REC-37
+  kind: record_content
+  reference: data/ingredients/mapped/Quinine_Hdrochloride.yaml
+  locator: identifier=cas:6119-47-7; preferred_term=Quinine Hdrochloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Quinine Hdrochloride (cas:6119-47-7, group=mim_cas_fallbacks) audited with
+    structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=FORM_MISMATCH, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: eb612dd7df31a1301b22cca726579ce28d529d46461b6eb6ee573ade3e028025
+- evidence_id: EVID-REC-38
+  kind: record_content
+  reference: data/ingredients/mapped/Silver_Sulfate.yaml
+  locator: identifier=cas:10294-26-5; preferred_term=silver sulfate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: silver sulfate (cas:10294-26-5, group=mim_cas_fallbacks) audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH,
+    label_guard=PASS, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: b23f205c937f9b18f82f6b6bceccf9b9859d6fda812ed5520ace1e1fd3f98403
+- evidence_id: EVID-REC-39
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Antimonate.yaml
+  locator: identifier=cas:15432-85-6; preferred_term=Sodium antimonate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Sodium antimonate (cas:15432-85-6, group=mim_cas_fallbacks) audited with
+    structure_guard=PASS, label_guard=PASS, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 993c61f4713ed77978910fc70c89b81e856d4d2ce6009c2a916ab5512555c59d
+- evidence_id: EVID-REC-40
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Persulfate.yaml
+  locator: identifier=cas:7775-27-1; preferred_term=Sodium Persulfate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Sodium Persulfate (cas:7775-27-1, group=mim_cas_fallbacks) audited with
+    structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=PASS, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 0293208edcb892ed61362de450bae365ef1f8bd80e8784d7da2f567987549d8e
+- evidence_id: EVID-REC-41
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Pyrophosphate_Dibasic.yaml
+  locator: identifier=cas:7758-16-9; preferred_term=Sodium pyrophosphate dibasic
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Sodium pyrophosphate dibasic (cas:7758-16-9, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 66ef926fdd7ee69d1759c852cd2ff5690254df382cbfff0e64719af3d8816a88
+- evidence_id: EVID-REC-42
+  kind: record_content
+  reference: data/ingredients/mapped/Succinate.yaml
+  locator: identifier=CHEBI:26806; preferred_term=Succinate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Succinate (CHEBI:26806, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 346f46e1a132bfa853f83b0742412721982ec60b5d53107c818e21a61d10341e
+- evidence_id: EVID-REC-43
+  kind: record_content
+  reference: data/ingredients/mapped/Uranyl_Acetate.yaml
+  locator: identifier=cas:541-09-3; preferred_term=Uranyl acetate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Uranyl acetate (cas:541-09-3, group=mim_cas_fallbacks) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: dfdead3435fc397c9fe10f37f921b231ccf519e062ea8da080a69b91e9dac0da
+- evidence_id: EVID-REC-44
+  kind: record_content
+  reference: data/ingredients/mapped/Uranyl_Acetate_Dihydrate.yaml
+  locator: identifier=cas:6159-44-0; preferred_term=Uranyl Acetate Dihydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Uranyl Acetate Dihydrate (cas:6159-44-0, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: ee4ac659f13833738a2dfc2a0890b1f113682006f10813de5429d111fc7fb96a
+- evidence_id: EVID-REC-45
+  kind: record_content
+  reference: data/ingredients/mapped/Uridine_5-monophosphate_Disodium_Salt.yaml
+  locator: identifier=cas:3387-36-8; preferred_term=Uridine 5-monophosphate disodium
+    salt
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Uridine 5-monophosphate disodium salt (cas:3387-36-8, group=mim_cas_fallbacks)
+    audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: b98b90f1962c75b80be55c6acc93ab7442f3058c041f555bf60d91e32d3694ea
+- evidence_id: EVID-REC-46
+  kind: record_content
+  reference: data/ingredients/mapped/Vanadium_Chloride.yaml
+  locator: identifier=cas:7718-98-1; preferred_term=vanadium chloride
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: vanadium chloride (cas:7718-98-1, group=mim_cas_fallbacks) audited with
+    structure_guard=PASS, label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: c8aea81224aa456d3adaba2c0b09192b067bb612d45878774d3d6cab981aaa36
+- evidence_id: EVID-REC-47
+  kind: record_content
+  reference: data/ingredients/mapped/Vitamin_B12.yaml
+  locator: identifier=CHEBI:176843; preferred_term=Vitamin B12
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Vitamin B12 (CHEBI:176843, group=mim_missing_structure) audited with structure_guard=PASS,
+    label_guard=PASS, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 9ee0b669c9ef90950273ea3755e02d960efbfdef7252c13edf180bd70b3fad6c
+- evidence_id: EVID-REC-48
+  kind: record_content
+  reference: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
+  locator: identifier=cas:150-90-3; preferred_term=Sodium succinate dibasic
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Sodium succinate dibasic (cas:150-90-3, group=mim_cas_fallbacks) audited
+    with structure_guard=STRUCTURE_COMPOSITION_MISMATCH, label_guard=NAME_SCOPE_UNRESOLVED,
+    disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 6575a964dee14894c20d9f6b27630d6b14818b1ce59e7d395d5c849dc69368ac
+- evidence_id: EVID-REC-49
+  kind: record_content
+  reference: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+  locator: identifier=CHEBI:36026; preferred_term=1,1,2,2-tetrachloroethane
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: 1,1,2,2-tetrachloroethane (CHEBI:36026, group=mim_missing_structure) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 99b1b45739d34c71ab1bf0656fb1ee4d3e67728f350642e70b7b23730e97580e
+- evidence_id: EVID-REC-50
+  kind: record_content
+  reference: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+  locator: identifier=CHEBI:86537; preferred_term=2,2-dimethylsuccinic acid
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: 2,2-dimethylsuccinic acid (CHEBI:86537, group=mim_missing_structure) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=SEED_FROM_CHEBI_OLS4_READY.
+  snapshot_sha256: 929b011788ee8e749b5442164a49c2f4e2aa41edfc970a0f750586d18216ed62
+- evidence_id: EVID-REC-51
+  kind: record_content
+  reference: data/ingredients/mapped/Na2-citrate.yaml
+  locator: identifier=cas:144-33-2; preferred_term=Na2-citrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Na2-citrate (cas:144-33-2, group=mim_cas_fallbacks) audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH,
+    label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: afd85dd07b497d4cfbd1617a84ea4a388270de7a7b858d4d40d1517681b2056c
+- evidence_id: EVID-REC-52
+  kind: record_content
+  reference: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
+  locator: identifier=cas:18618-55-8; preferred_term=CeCl3 x 7 H2O
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: CeCl3 x 7 H2O (cas:18618-55-8, group=mim_cas_fallbacks) audited with structure_guard=STRUCTURE_COMPOSITION_MISMATCH,
+    label_guard=NAME_SCOPE_UNRESOLVED, disposition=REFUSE_CAS_DEDUPLICATED_SMILES.
+  snapshot_sha256: 7293aa199365ae819f15505843572a2b96cab81f1b9249fe65127d478bf5279b
+- evidence_id: EVID-REC-53
+  kind: record_content
+  reference: data/ingredients/unmapped/Ethanolamine_Acetate.yaml
+  locator: identifier=UNMAPPED_0159; preferred_term=Ethanolamine acetate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: Ethanolamine acetate (UNMAPPED_0159, group=mim_unmapped_single) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR.
+  snapshot_sha256: 719a0b57e703a50bd396f6f347c4aa84e19293abb3eafa8d273868f2392c0675
+- evidence_id: EVID-REC-54
+  kind: record_content
+  reference: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
+  locator: identifier=UNMAPPED_0587; preferred_term=α-D-Glucose monohydrate
+  accessed_at: '2026-11-11T06:15:00Z'
+  support: supports
+  summary: α-D-Glucose monohydrate (UNMAPPED_0587, group=mim_unmapped_single) audited
+    with structure_guard=PASS, label_guard=PASS, disposition=GROUND_CAS_RN_ONLY_NO_CHEBI_3STAR.
+  snapshot_sha256: a1dd8d6bb0cf00af9ebd94480ff558485b259adcb89d15987ec4b0ee013ba36d
+assessments:
+- assessment_id: ASSESS-CHEBI-OLS4-SEED-READY
+  area: grounding
+  topic: 13 MediaIngredientMech records match 3-star ChEBI by exact Standard InChIKey
+    and pass chemical_properties_guard
+  outcome: concern
+  summary: 4 CAS-fallback records (2,6-dihydroxybenzoic acid cas:303-07-1 -> CHEBI:68465,
+    Guanidine Hydrochloride cas:50-01-1 -> CHEBI:32735, Indole-3-pyruvic acid cas:392-12-1
+    -> CHEBI:29750, Menthol cas:1490-04-6 -> CHEBI:25187) and 9 structure-deficient
+    ChEBI records (DL-Tyrosine CHEBI:18186, Neutral red CHEBI:86370, Glycerol 3-phosphate
+    CHEBI:15978, erythromycin CHEBI:48923 -> CHEBI:42355, L-Rhamnose CHEBI:62345 ->
+    CHEBI:16055, MOPS CHEBI:39074 -> CHEBI:39076, Succinate CHEBI:26806 -> CHEBI:30031,
+    1,1,2,2-tetrachloroethane CHEBI:36026, 2,2-dimethylsuccinic acid CHEBI:86537)
+    are verified ready for CC BY 4.0 ChEBI OLS4 seeding during the next SSSOM/provenance
+    snapshot refresh.
+  target_ids:
+  - record-a4740d12dfc4bdb4
+  - record-a9b653a5c583874a
+  - record-4fe8747fb950cb96
+  - record-6c970c7f5035257c
+  - record-29b741c9ff1c0503
+  - record-c7f9fcbe7fa0a2ea
+  - record-a24b23de7739f03c
+  - record-a217d71ae01c70c5
+  - record-f4dc7ee7b1c8917c
+  - record-72b7e6afdd289314
+  - record-a21243d59bace146
+  - record-5e7776b9bffe8c42
+  - record-31f2106d82aaa846
+  evidence_ids:
+  - EVID-CHEBI-OLS4-AUTHORITY
+  - EVID-PROVENANCE-LOCK
+- assessment_id: ASSESS-UNMAPPED-CAS-RN-GROUNDING
+  area: grounding
+  topic: 2 unmapped single-ingredient records resolve to CAS-RN identifiers without
+    3-star ChEBI salt/hydrate forms
+  outcome: concern
+  summary: Ethanolamine acetate (UNMAPPED_0159 -> cas:54300-24-2) and alpha-D-Glucose
+    monohydrate (UNMAPPED_0587 -> cas:14431-43-7) pass structure and label guards
+    and can be grounded to their non-copyrightable CAS-RN identifier facts during
+    the next SSSOM/provenance snapshot refresh.
+  target_ids:
+  - record-1294871bcded8845
+  - record-835c12277c56d035
+  evidence_ids:
+  - EVID-PROVENANCE-LOCK
+- assessment_id: ASSESS-POLYSALT-POLYHYDRATE-GUARD-REFUSAL
+  area: consistency
+  topic: 39 polysalt/polyhydrate records fail _structure_consistency on deduplicated
+    or composition-mismatched canonical SMILES
+  outcome: supported
+  summary: 39 polysalt and polyhydrate records (26 of which exhibit CAS Common Chemistry
+    canonicalSmile counterion/hydrate deduplication) are deterministically refused
+    by _structure_consistency (STRUCTURE_COMPOSITION_MISMATCH), protecting stoichiometric
+    formula invariants across the corpus.
+  target_ids:
+  - record-6b42d4aca331eaae
+  - record-32bcb389422a774b
+  - record-7ff6ec5d41e288df
+  - record-97df33f7b4c5ae1c
+  - record-52c37b078ff058d3
+  - record-93ca944d9d199baf
+  - record-762de7be4c229f0b
+  - record-17c23f81cba8deb8
+  - record-33582a299a07d746
+  - record-2d8b0da78556d9ab
+  - record-5f067810724889a6
+  - record-96b251b676c9fd27
+  - record-6d7ccb7c627c7acd
+  - record-8976da602de42b0f
+  - record-c6be299176ea33db
+  - record-8632b7d6e44d22cf
+  - record-c561eba082a96f47
+  - record-c058e5c5aca7d116
+  - record-8c1c7b18ba8dd4e0
+  - record-9b5c335508dd6a03
+  - record-75eb7369a384fc06
+  - record-0afd22e5a2fab7e7
+  - record-94eae70ad317e835
+  - record-150204e8aee0de9c
+  - record-b2382218c8ff8f28
+  - record-acd718d385807c57
+  - record-f560fc19187dde72
+  - record-e194c4feabb88d3e
+  - record-9f62b29d1cd22291
+  - record-b53fadea525f5b76
+  - record-00826509bff1e852
+  - record-d30488b3527d4e81
+  - record-4f18b44b0794df3f
+  - record-08909a5ceee22e00
+  - record-83cbeeeafb19f31c
+  - record-c5452544f5171e8b
+  - record-d7190918230f5c16
+  - record-efe79b19e088229b
+  - record-e06c987d8ce4121b
+  evidence_ids:
+  - EVID-GUARD-COMPOSITION
+  - EVID-PROVENANCE-LOCK
+findings:
+- finding_id: FIND-CHEBI-OLS4-SEED-CANDIDATES-13
+  issue_key: mim-cas-chebi-ols4-seed-candidates-13
+  category: grounding
+  severity: minor
+  status: deferred
+  certainty: confirmed
+  title: 13 MediaIngredientMech records have verified 3-star ChEBI Standard InChIKey
+    matches ready for ChEBI OLS4 seeding on next provenance refresh
+  description: 4 CAS-fallback records (cas:303-07-1 -> CHEBI:68465, cas:50-01-1 ->
+    CHEBI:32735, cas:392-12-1 -> CHEBI:29750, cas:1490-04-6 -> CHEBI:25187) and 9
+    structure-deficient ChEBI records (CHEBI:18186, CHEBI:86370, CHEBI:15978, CHEBI:48923
+    -> CHEBI:42355, CHEBI:62345 -> CHEBI:16055, CHEBI:39074 -> CHEBI:39076, CHEBI:26806
+    -> CHEBI:30031, CHEBI:36026, CHEBI:86537) match 3-star ChEBI terms by exact Standard
+    InChIKey and pass both _structure_consistency and _label_consistency. Seeding
+    is deferred to the next coordinated UNIFIED_INGREDIENT_MAPPING.provenance.json
+    and SSSOM snapshot refresh.
+  target_ids:
+  - record-a4740d12dfc4bdb4
+  - record-a9b653a5c583874a
+  - record-4fe8747fb950cb96
+  - record-6c970c7f5035257c
+  - record-29b741c9ff1c0503
+  - record-c7f9fcbe7fa0a2ea
+  - record-a24b23de7739f03c
+  - record-a217d71ae01c70c5
+  - record-f4dc7ee7b1c8917c
+  - record-72b7e6afdd289314
+  - record-a21243d59bace146
+  - record-5e7776b9bffe8c42
+  - record-31f2106d82aaa846
+  field_paths:
+  - ontology_mapping
+  - chemical_properties
+  evidence_ids:
+  - EVID-CHEBI-OLS4-AUTHORITY
+  - EVID-PROVENANCE-LOCK
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-Tyrosine.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Neutral_red.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-6-dihydroxybenzoic_Acid.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Erythromycin.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Guanidine_Hydrochloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Indole-3-pyruvic_Acid.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-rhamnose.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menthol.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mops.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Succinate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+    role: maintained ingredient
+  disposition_reason: Deferred until the next coordinated UNIFIED_INGREDIENT_MAPPING.provenance.json
+    and reports/sssom_completion_20260921 snapshot rebuild.
+- finding_id: FIND-UNMAPPED-CAS-RN-GROUNDINGS-2
+  issue_key: mim-unmapped-cas-rn-groundings-2
+  category: grounding
+  severity: minor
+  status: deferred
+  certainty: confirmed
+  title: 2 unmapped single-ingredient records (UNMAPPED_0159, UNMAPPED_0587) resolve
+    to verified CAS-RN identifiers without 3-star ChEBI forms
+  description: Ethanolamine acetate (UNMAPPED_0159 -> cas:54300-24-2) and alpha-D-Glucose
+    monohydrate (UNMAPPED_0587 -> cas:14431-43-7) resolve to verified CAS-RN identifiers
+    and pass structure and label consistency guards, but 3-star ChEBI lacks those
+    exact salt/hydrate forms. Only the non-copyrightable CAS-RN identifier fact should
+    be grounded during the next provenance refresh.
+  target_ids:
+  - record-1294871bcded8845
+  - record-835c12277c56d035
+  field_paths:
+  - identifier
+  - mapping_status
+  - ontology_mapping
+  evidence_ids:
+  - EVID-PROVENANCE-LOCK
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Ethanolamine_Acetate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
+    role: maintained ingredient
+  disposition_reason: Deferred until the next coordinated UNIFIED_INGREDIENT_MAPPING.provenance.json
+    and reports/sssom_completion_20260921 snapshot rebuild.
+- finding_id: FIND-POLYSALT-DEDUPLICATED-SMILES-REFUSED-39
+  issue_key: mim-polysalt-deduplicated-smiles-refused-39
+  category: consistency
+  severity: informational
+  status: deferred
+  certainty: confirmed
+  title: 39 polysalt and polyhydrate records refused under STRUCTURE_COMPOSITION_MISMATCH
+    to prevent counterion/hydrate stoichiometry corruption
+  description: 39 polysalt and polyhydrate records (including 26 where CAS Common
+    Chemistry canonicalSmile collapses multiple counterions or hydration waters into
+    a single disconnected component) fail _structure_consistency with STRUCTURE_COMPOSITION_MISMATCH
+    and are explicitly refused.
+  target_ids:
+  - record-6b42d4aca331eaae
+  - record-32bcb389422a774b
+  - record-7ff6ec5d41e288df
+  - record-97df33f7b4c5ae1c
+  - record-52c37b078ff058d3
+  - record-93ca944d9d199baf
+  - record-762de7be4c229f0b
+  - record-17c23f81cba8deb8
+  - record-33582a299a07d746
+  - record-2d8b0da78556d9ab
+  - record-5f067810724889a6
+  - record-96b251b676c9fd27
+  - record-6d7ccb7c627c7acd
+  - record-8976da602de42b0f
+  - record-c6be299176ea33db
+  - record-8632b7d6e44d22cf
+  - record-c561eba082a96f47
+  - record-c058e5c5aca7d116
+  - record-8c1c7b18ba8dd4e0
+  - record-9b5c335508dd6a03
+  - record-75eb7369a384fc06
+  - record-0afd22e5a2fab7e7
+  - record-94eae70ad317e835
+  - record-150204e8aee0de9c
+  - record-b2382218c8ff8f28
+  - record-acd718d385807c57
+  - record-f560fc19187dde72
+  - record-e194c4feabb88d3e
+  - record-9f62b29d1cd22291
+  - record-b53fadea525f5b76
+  - record-00826509bff1e852
+  - record-d30488b3527d4e81
+  - record-4f18b44b0794df3f
+  - record-08909a5ceee22e00
+  - record-83cbeeeafb19f31c
+  - record-c5452544f5171e8b
+  - record-d7190918230f5c16
+  - record-efe79b19e088229b
+  - record-e06c987d8ce4121b
+  field_paths:
+  - chemical_properties
+  evidence_ids:
+  - EVID-GUARD-COMPOSITION
+  - EVID-PROVENANCE-LOCK
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/CrKSO42_X_12_H2O.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/AQDS.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bismuth_Iii_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cobalamine.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Disodium_Glutarate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Europium_Iii_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Gallium_Iiichloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pentasodium_Tripolyphosphate_Hexahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Platinum_Iv_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Hexahydroxoantimonate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Oxalate_Monohydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Putrescine_Dihydrochloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Quinine_Hdrochloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Silver_Sulfate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Antimonate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Persulfate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Pyrophosphate_Dibasic.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uranyl_Acetate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uranyl_Acetate_Dihydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uridine_5-monophosphate_Disodium_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vanadium_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vitamin_B12.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2-citrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
+    role: maintained ingredient
+  disposition_reason: Deferred until a stoichiometrically complete CC BY 4.0 ChEBI
+    OLS4 structure is available; external deduplicated component SMILES are refused.
+actions:
+- action_id: ACT-SEED-13-CHEBI-OLS4-RECORDS-ON-SNAPSHOT-REFRESH
+  description: Seed the 13 SEED_FROM_CHEBI_OLS4_READY records from CC BY 4.0 ChEBI
+    OLS4 and rebuild UNIFIED_INGREDIENT_MAPPING.provenance.json, UNIFIED_INGREDIENT_MAPPING.tsv,
+    mappings/ingredient_mappings.sssom.tsv, and data/curated/mapped_ingredients.yaml
+    in a single snapshot refresh.
+  finding_ids:
+  - FIND-CHEBI-OLS4-SEED-CANDIDATES-13
+  target_ids:
+  - record-a4740d12dfc4bdb4
+  - record-a9b653a5c583874a
+  - record-4fe8747fb950cb96
+  - record-6c970c7f5035257c
+  - record-29b741c9ff1c0503
+  - record-c7f9fcbe7fa0a2ea
+  - record-a24b23de7739f03c
+  - record-a217d71ae01c70c5
+  - record-f4dc7ee7b1c8917c
+  - record-72b7e6afdd289314
+  - record-a21243d59bace146
+  - record-5e7776b9bffe8c42
+  - record-31f2106d82aaa846
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-Tyrosine.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Neutral_red.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glycerol_3-phosphate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-6-dihydroxybenzoic_Acid.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Erythromycin.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Guanidine_Hydrochloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Indole-3-pyruvic_Acid.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-rhamnose.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menthol.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mops.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Succinate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/1122-Tetrachloroethane.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/2-dimethylsuccinic_Acid.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - pytest tests/test_chemical_properties_guard.py passes with 0 violations
+  - reports/sssom_completion_20260921/assemble_review.py --check passes
+- action_id: ACT-GROUND-2-UNMAPPED-CAS-RN-RECORDS-ON-SNAPSHOT-REFRESH
+  description: Ground UNMAPPED_0159 (Ethanolamine acetate -> cas:54300-24-2) and UNMAPPED_0587
+    (alpha-D-Glucose monohydrate -> cas:14431-43-7) to their non-copyrightable CAS-RN
+    identifiers (omitting CC BY-NC 4.0 structure fields) during the next coordinated
+    snapshot refresh.
+  finding_ids:
+  - FIND-UNMAPPED-CAS-RN-GROUNDINGS-2
+  target_ids:
+  - record-1294871bcded8845
+  - record-835c12277c56d035
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Ethanolamine_Acetate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Α-D-Glucose_Monohydrate.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - No CC BY-NC 4.0 structure fields written to data/ingredients/
+  - reports/sssom_completion_20260921/assemble_review.py --check passes
+- action_id: ACT-ENFORCE-POLYSALT-DEDUPLICATED-SMILES-REFUSAL
+  description: Retain empty chemical_properties on the 39 polysalt/polyhydrate records
+    where external canonical SMILES fail _structure_consistency (STRUCTURE_COMPOSITION_MISMATCH)
+    unless a stoichiometrically complete CC BY 4.0 ChEBI OLS4 structure is available.
+  finding_ids:
+  - FIND-POLYSALT-DEDUPLICATED-SMILES-REFUSED-39
+  target_ids:
+  - record-6b42d4aca331eaae
+  - record-32bcb389422a774b
+  - record-7ff6ec5d41e288df
+  - record-97df33f7b4c5ae1c
+  - record-52c37b078ff058d3
+  - record-93ca944d9d199baf
+  - record-762de7be4c229f0b
+  - record-17c23f81cba8deb8
+  - record-33582a299a07d746
+  - record-2d8b0da78556d9ab
+  - record-5f067810724889a6
+  - record-96b251b676c9fd27
+  - record-6d7ccb7c627c7acd
+  - record-8976da602de42b0f
+  - record-c6be299176ea33db
+  - record-8632b7d6e44d22cf
+  - record-c561eba082a96f47
+  - record-c058e5c5aca7d116
+  - record-8c1c7b18ba8dd4e0
+  - record-9b5c335508dd6a03
+  - record-75eb7369a384fc06
+  - record-0afd22e5a2fab7e7
+  - record-94eae70ad317e835
+  - record-150204e8aee0de9c
+  - record-b2382218c8ff8f28
+  - record-acd718d385807c57
+  - record-f560fc19187dde72
+  - record-e194c4feabb88d3e
+  - record-9f62b29d1cd22291
+  - record-b53fadea525f5b76
+  - record-00826509bff1e852
+  - record-d30488b3527d4e81
+  - record-4f18b44b0794df3f
+  - record-08909a5ceee22e00
+  - record-83cbeeeafb19f31c
+  - record-c5452544f5171e8b
+  - record-d7190918230f5c16
+  - record-efe79b19e088229b
+  - record-e06c987d8ce4121b
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/CrKSO42_X_12_H2O.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Magnesium_Nitrate_Hexahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/AQDS.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bismuth_Iii_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cobalamine.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/D-Raffinose_Pentahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Disodium_Glutarate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Europium_Iii_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Galactose_1-phosphate_Dipotassium_Salt_Pentahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Gallium_Iiichloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Lanthanum_Iii_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pentasodium_Tripolyphosphate_Hexahydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Phosphomycin_Disodium_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Platinum_Iv_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Hexahydroxoantimonate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Oxalate_Monohydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Putrescine_Dihydrochloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Quinine_Hdrochloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Silver_Sulfate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Antimonate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Persulfate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Pyrophosphate_Dibasic.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uranyl_Acetate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uranyl_Acetate_Dihydrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Uridine_5-monophosphate_Disodium_Salt.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vanadium_Chloride.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Vitamin_B12.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_Succinate_Dibasic.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2-citrate.yaml
+    role: maintained ingredient
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Cecl3_X_7_H2o.yaml
+    role: maintained ingredient
+  acceptance_checks:
+  - pytest tests/test_audit_cas_common_chemistry_candidates.py passes
+limitations:
+- Direct edits to data/ingredients/**/*.yaml are gated by UNIFIED_INGREDIENT_MAPPING.provenance.json
+  (mim_inputs_digest) and reports/sssom_completion_20260921/assemble_review.py --check;
+  the 13 ChEBI OLS4 seedings and 2 CAS-RN groundings are staged in this structured
+  review for the next coordinated snapshot rebuild.

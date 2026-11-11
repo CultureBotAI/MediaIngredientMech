@@ -25,6 +25,10 @@ from audit_writers import looks_like_yaml_writer  # noqa: E402
 def test_audit_script_is_not_classified_as_yaml_writer():
     script_path = REPO_ROOT / "scripts" / "adhoc" / "audit_cas_common_chemistry_candidates.py"
     assert looks_like_yaml_writer(script_path.read_text(encoding="utf-8")) is False
+    review_script_path = (
+        REPO_ROOT / "scripts" / "adhoc" / "build_cas_chebi_grounding_batch_review.py"
+    )
+    assert looks_like_yaml_writer(review_script_path.read_text(encoding="utf-8")) is False
 
 
 def test_validate_output_path_refuses_data_directory(tmp_path):
