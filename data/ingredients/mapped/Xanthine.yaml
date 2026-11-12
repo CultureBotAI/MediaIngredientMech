@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:17712
   ontology_label: 9H-xanthine
   ontology_source: CHEBI
-  mapping_quality: MANUAL_CURATION
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: CAS_RN_CROSS_REFERENCE
     source: PubChem
@@ -18,24 +18,6 @@ ontology_mapping:
       Standard InChI agreement does not establish a tautomer-pure reagent. Existing
       recipe references are retained; unqualified source observations do not acquire
       9H specificity.
-  - evidence_type: LLM_SUGGESTION
-    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1258
-    notes: Private method correction proposed by worker10 /root (Codex), with LLM
-      assistance, following direct source and contract assessment for issue 1258.
-      MANUAL_CURATION records the deliberate, nonlexical review of the existing scoped
-      ingredient representation retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760;
-      it does not assert human verification. Primary ChEBI captures https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/
-      (retrieved 2026-11-08T06:11:12.472556+00:00) and https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/
-      (retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the
-      name Xanthine. Neither the shared CAS nor the shared name uniquely selects CHEBI:17712.
-      The original PubChem CAS_RN_CROSS_REFERENCE and prior curation evidence/history
-      are preserved as historical provenance, not current proof of a unique CAS-to-target
-      resolution. Retain CHEBI:17712 / CAS 69-89-6 as the accepted ingredient representation;
-      generic xanthine trait observations retain CHEBI:15318 and the native child-to-parent
-      relation. Standard InChI agreement, retained structures and unqualified recipe
-      names do not establish a tautomer-pure reagent or confer 9H specificity on source
-      occurrences. No identifier, chemistry, alias, occurrence, role or export approval
-      changes are proposed.
 synonyms:
 - synonym_text: 2,6-dihydroxypurine
   synonym_type: EXACT_SYNONYM
@@ -114,32 +96,11 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: gpt-6
-- timestamp: '2026-11-08T12:58:09.578563+00:00'
-  curator: codex_worker10_xanthine1258
-  action: PROPOSED_MAPPING_METHOD_CORRECTION
-  changes: 'Private ancillary proposal for issue 1258: change ontology_mapping.mapping_quality
-    from CAS_RN_LOOKUP to MANUAL_CURATION after deliberate source and scope review;
-    append LLM_SUGGESTION evidence explaining the shared CAS/name and the retained
-    issue 760 ingredient representation. Both CHEBI:17712 and CHEBI:48517 carry CAS
-    69-89-6, so CAS lookup does not uniquely select the target. Preserve all original
-    evidence and seven history events, CHEBI:17712 identity, chemistry, aliases, occurrences
-    and generic-trait CHEBI:15318 scope. This is agent-authored with LLM assistance;
-    no human verification, tautomer-purity claim, maintained application or role/export
-    approval.'
-  previous_status: MAPPED
-  new_status: MAPPED
-  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002647; retained mapping identifier and
     legacy aliases.'
-  llm_assisted: true
-- timestamp: '2026-11-10T07:11:48.281331+00:00'
-  curator: stable_id_adoption
-  action: ADOPTED_CAMPAIGN_MIM_ID
-  changes: '#1303: retained MIM:0002647; adopted exact current legacy owner and preserved
-    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 notes: 'Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
 
