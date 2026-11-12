@@ -72,6 +72,18 @@ def replay(request):
         retirement = native._STABLE_PRODUCER.registry_retirement_evidence(
             root, proposal_path, proposal_raw, proposal_ref["sha256"], snapshot
         )
+    cas_ref = request.get("cas_dispositions")
+    cas_proof = None
+    if cas_ref is not None:
+        cas_path = root / cas_ref["path"]
+        cas_raw = snapshot.get(cas_path)
+        cas_paths, _ = native._STABLE_PRODUCER.cas_disposition_inputs(
+            root, cas_path, cas_raw, cas_ref["sha256"]
+        )
+        expected.update(cas_paths)
+        cas_proof = native._STABLE_PRODUCER.cas_disposition_evidence(
+            root, cas_path, cas_raw, cas_ref["sha256"], snapshot, request["source_revisions"]["mim"]
+        )
     if set(snapshot) != expected:
         raise ValueError("complete native generation input membership differs")
     records = {
@@ -91,6 +103,8 @@ def replay(request):
         digest(snapshot[contract]),
     )
     compatibility_args = {} if retirement is None else {"retirement": retirement, "root": root}
+    if cas_proof is not None:
+        compatibility_args.update(cas_dispositions=cas_proof, root=root)
     compatibility = native._STABLE_PRODUCER.compatibility_registry_objects(
         records, subjects, index, snapshot[native.MIM_PUBLISHED_SSSOM] or b"", **compatibility_args
     )
@@ -139,12 +153,19 @@ def replay(request):
         # Same native ordering and subject/object dedup as _build_candidate.
         unique = {(row["subject_id"], row["object_id"]): row for row in rows}
         final = list(unique.values())
+        if hasattr(native._STABLE_PRODUCER, "finalize_cas_dispositions"):
+            cas_proof = native._STABLE_PRODUCER.finalize_cas_dispositions(cas_proof, final)
         if not final:
             raise ValueError(
                 "native generation replay requires the separate source-binding empty path"
             )
         tsv = stage / "candidate.sssom.tsv"
-        native._write_sssom(final, tsv, mim_prefix=prefix)
+        cas_options = (
+            {"cas_dispositions": cas_proof}
+            if hasattr(native._STABLE_PRODUCER, "cas_disposition_inputs")
+            else {}
+        )
+        native._write_sssom(final, tsv, mim_prefix=prefix, **cas_options)
         candidate = tsv.read_bytes()
     sidecar = native.render_suppressed_aliases(suppressions)
     manifest = {
@@ -195,6 +216,8 @@ def replay(request):
         # Explicit absence is part of the revised producer contract. Old c1
         # replay remains byte-compatible with its original, captured manifest.
         manifest["registry_retirement_proposal"] = retirement
+    if hasattr(native._STABLE_PRODUCER, "cas_disposition_inputs"):
+        manifest["cas_dispositions"] = cas_proof
     native._check_producer_bindings()
     return {
         name: base64.b64encode(raw).decode("ascii")

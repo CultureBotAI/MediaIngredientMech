@@ -341,6 +341,134 @@ def _safe_identifiers(row: dict) -> None:
                 raise ValueError(f"Invalid CAS check digit in supported {field}: {token}")
 
 
+def _cas_backlog(root, source, metadata, rows, decisions, verified):
+    """Retain exact native diagnostic history; this never authorizes a positive claim.
+
+    Native publication separately reconstructs generation and authenticates its
+    scientific/source endpoint. This ordinary boundary carries its exact current
+    provenance and immutable inputs, and cannot strip or promote a held row.
+    The independent supported-CAS validator remains unchanged.
+    """
+    canonical = "mappings/ingredient_mappings.sssom.tsv"
+    manifest_name = "mappings/stable_sssom_generation.json"
+    publication_name = "mappings/stable_sssom_publication.json"
+    capability = metadata.get("cas_disposition_capability")
+    manifest_path = root / manifest_name
+    observed = (
+        _json_bytes(_identity_input(manifest_path)[1], manifest_name)
+        if manifest_path.exists()
+        else None
+    )
+    publication_path = root / publication_name
+    observed_publication = (
+        _json_bytes(_identity_input(publication_path)[1], publication_name)
+        if publication_path.exists()
+        else None
+    )
+    publication_selected = False
+    if observed_publication is not None:
+        publication_selected = any(
+            item.get("cas_disposition") is not None or item.get("mandatory_disposition") is not None
+            for item in observed_publication.get("selection", {}).get("rows", [])
+        )
+        generation_ref = observed_publication.get("generation")
+        if isinstance(generation_ref, dict) and isinstance(generation_ref.get("path"), str):
+            generation_path = _relative(root, generation_ref["path"])
+            if generation_path.exists():
+                raw = _identity_input(generation_path)[1]
+                observed_generation = _json_bytes(raw, generation_ref["path"])
+                if observed_generation.get("cas_dispositions") is not None:
+                    if hashlib.sha256(raw).hexdigest() != generation_ref.get("sha256"):
+                        raise ValueError("CAS backlog publication generation reference changed")
+                    publication_selected = True
+    selected = (
+        observed is not None and observed.get("cas_dispositions") is not None
+    ) or publication_selected
+    if capability is None and not selected:
+        if "cas_disposition_request" in metadata:
+            raise ValueError("CAS disposition request lacks its required capability")
+        return None
+    if (
+        capability != "reviewed-invalid-cas-dispositions-v1"
+        or not selected
+        or source != root / canonical
+        or observed is None
+        or observed.get("cas_dispositions") is None
+    ):
+        raise ValueError("CAS disposition capability/provenance missing or stripped")
+
+    def document(ref):
+        if not isinstance(ref, dict) or set(ref) != {"path", "sha256"}:
+            raise ValueError("CAS disposition reference differs")
+        raw = verified.get(ref["path"])
+        if raw is None or hashlib.sha256(raw).hexdigest() != ref["sha256"]:
+            raise ValueError("CAS disposition evidence must be pinned by the ordinary review")
+        return _json_bytes(raw, ref["path"])
+
+    if manifest_name not in verified or publication_name not in verified:
+        raise ValueError("CAS backlog requires current native generation/publication provenance")
+    manifest = _json_bytes(verified[manifest_name], manifest_name)
+    publication = _json_bytes(verified[publication_name], publication_name)
+    if (
+        manifest != observed
+        or publication != observed_publication
+        or publication.get("artifacts", {}).get(canonical) != digest(source)
+    ):
+        raise ValueError("CAS backlog current native artifacts differ")
+    generation = document(publication["generation"])
+    generation_manifest = document(generation["outputs"]["manifest"])
+    if generation_manifest != manifest:
+        raise ValueError("CAS backlog original generation proof differs")
+    proof = manifest["cas_dispositions"]
+    ref = metadata["cas_disposition_request"]
+    if (
+        generation.get("cas_dispositions") != ref
+        or proof["sha256"] != ref["sha256"]
+        or proof["path"] != str(_relative(root, ref["path"]))
+    ):
+        raise ValueError("CAS backlog request binding differs")
+    request = document(ref)
+    claims = document(request["claims"])
+    if request != proof["request"] or claims != proof["content"]:
+        raise ValueError("CAS backlog claims or paired review selection changed")
+    # The replaced canonical beforeimage remains an exact historical input, not
+    # a purported current canonical file. Require its real bytes among the
+    # ordinary review's retained evidence; no hash-only history is accepted.
+    canonical_sha = claims["canonical"]["sha256"]
+    if not any(hashlib.sha256(raw).hexdigest() == canonical_sha for raw in verified.values()):
+        raise ValueError("CAS backlog complete historical canonical bytes omitted")
+    required = {**claims["evidence_inputs"], **request["review_inputs"]}
+    required.update({r["path"]: r["sha256"] for r in request["reviews"]})
+    required.update({e["owner"]["path"]: e["owner"]["sha256"] for e in claims["entries"]})
+    if claims["source_correction"] is not None:
+        correction = claims["source_correction"]
+        required[correction["path"]] = correction["sha256"]
+    for name, expected in required.items():
+        if name == canonical and expected == canonical_sha:
+            continue  # Authenticated historical bytes were required immediately above.
+        if name not in verified or hashlib.sha256(verified[name]).hexdigest() != expected:
+            raise ValueError("CAS backlog immutable evidence changed or omitted: " + name)
+    held = {item["candidate_position"]: item for item in proof["held_rows"]}
+    selection = publication["selection"]["rows"]
+    for position, obligation in held.items():
+        candidates = [item for item in selection if item["candidate_position"] == position]
+        if len(candidates) != 1:
+            raise ValueError("CAS backlog publication row missing")
+        item = candidates[0]
+        if (
+            item.get("mandatory_disposition") != "INSTALL_WITHHOLD"
+            or item["disposition"] != "INSTALL_WITHHOLD"
+            or item.get("cas_disposition") != obligation
+            or item["candidate_row"] != obligation["candidate_row"]
+            or not any(old["row"] == obligation["historical_row"] for old in item["before_rows"])
+        ):
+            raise ValueError("CAS backlog hold/history stripped or promoted")
+        matches = [i for i, row in enumerate(rows, 1) if row == item["proposed_row"]]
+        if len(matches) != 1 or decisions[matches[0]]["disposition"] != "WITHHOLD":
+            raise ValueError("Historical invalid CAS must remain in the ordinary WITHHOLD backlog")
+    return proof
+
+
 def load_review(root: Path, review_path: Path) -> dict:
     root = root.resolve()
     review_path = review_path if review_path.is_absolute() else root / review_path
@@ -399,6 +527,7 @@ def load_review(root: Path, review_path: Path) -> dict:
             _safe_synonyms(row, records[owner])
             _safe_identifiers(row)
         indexed[position] = decision
+    cas_proof = _cas_backlog(root, source, metadata, rows, indexed, verified)
     selected = [
         rows[i - 1] for i, decision in indexed.items() if decision["disposition"] == "SUPPORTED"
     ]
@@ -448,6 +577,7 @@ def load_review(root: Path, review_path: Path) -> dict:
         "review_sha256": review_sha,
         "input_snapshot": snapshots,
         "permanent_identity": identity,
+        "cas_dispositions": cas_proof,
     }
     _check_snapshot(loaded)
     return loaded
