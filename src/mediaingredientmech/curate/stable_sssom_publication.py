@@ -62,6 +62,12 @@ SIDECAR_FIELDS = (
 )
 _CAPTURE: Any = globals().get("_PRODUCER_CAPTURE")
 _ADOPTION: Any = None
+SOURCE_HANDOFF = "native-source-publication-handoff-v1"
+# This counterpart implements the completed-endpoint branch of this exact
+# source guard. A successor revision needs a new reviewed counterpart, never
+# an inferred exemption based on a claimed version string (#1401).
+SOURCE_HANDOFF_SOURCE = "src/mediaingredientmech/curate/curation_successor.py"
+SOURCE_HANDOFF_SOURCE_SHA = "6b34ede05a681531d07715ea68a847692b90c51f25a0884d6f8a577eecd13766"
 
 
 def native():
@@ -102,6 +108,118 @@ def _successor(root, reference, files, *, before=None, publication_receipt=None)
         publication_receipt=publication_receipt,
     )
     return endpoint
+
+
+class _SourcePublicationGuard:
+    """Explicit currentness counterpart for one verified source implementation.
+
+    The original source transaction is strictly reconstructed before handoff.
+    Its unchanged checker cannot accept a newly dirty tracked canonical file;
+    this versioned publisher guard therefore owns currentness during publication.
+    It preserves every completed-source check and delegates only OUTPUTS to the
+    enclosing publisher's exact state/alias checks. It does not change the old
+    observed dirty set or claim that the old post-write checker passed (#1401).
+    """
+
+    def __init__(self, endpoint):
+        endpoint.check()
+        source = endpoint.loaded
+        self.globals = source.check.__func__.__globals__
+        self.capture = self.globals["_CAPTURE"]
+        self.api = self.globals["native"]()
+        require(source.after_inventory is not None, "source handoff needs a completed endpoint")
+        require(
+            tuple(self.globals["PUBLICATION"]) == OUTPUTS,
+            "source handoff output scope differs",
+        )
+        self.endpoint, self.source = endpoint, source
+        self.producer = self.api.document(self.api.encoded(endpoint.manifest["producer"]))
+        self._implementation()
+        self.initial_dirty = frozenset(source.initial_dirty)
+        self.head = source.head
+        self.identity = dict(source.current_identity)
+        self.owners = dict(source.after_inventory)
+        self.mutable = frozenset(
+            {*source.owners, *self.api.AGGREGATES, self.globals["MARKER"], *source.moves.values()}
+        )
+        self.inputs = dict(source.inputs.files)
+        self.ledgers = tuple(source.live_ledgers.values())
+        # The original public handoff authenticates the archived beforeimages.
+        # Strict reconstruction above also applies during completed verification,
+        # where Endpoint requires the genuine completed publication receipt.
+        endpoint.publication_guard()
+        self.archives = tuple(f for f in source.publication.values() if f is not None)
+        self.parents = dict(source.publication_parents)
+        self.held = (
+            *endpoint.held,
+            endpoint.manifest_file,
+            endpoint.receipt_file,
+            *endpoint.publication_files,
+        )
+        self.check()
+
+    def _implementation(self):
+        self.capture.verify()
+        actual = {name: self.api.sha(raw) for name, (raw, _) in self.capture.files.items()}
+        require(
+            actual.get(SOURCE_HANDOFF_SOURCE) == SOURCE_HANDOFF_SOURCE_SHA
+            and self.producer["source_sha256"] == SOURCE_HANDOFF_SOURCE_SHA
+            and self.producer["files"] == actual
+            and self.producer["runtime"] == self.capture.runtime,
+            "unsupported source handoff executable/dependency/runtime",
+        )
+
+    def check(self):
+        source, api = self.source, self.api
+        self._implementation()
+        source.claw.verify()
+        source.predecessor.check()
+        require(
+            self.globals["_identity"](source.root) == self.identity
+            and source.current_identity == self.identity
+            and source.head == self.head,
+            "source handoff Git context changed",
+        )
+        require(
+            frozenset(source.initial_dirty) == self.initial_dirty
+            and source.after_inventory == self.owners
+            and source.inputs.files == self.inputs
+            and source.publication_transaction is True,
+            "source handoff captured context changed",
+        )
+        for frozen in (*self.ledgers, *self.archives):
+            frozen.verify()
+        self.globals["_check_parents"](self.parents)
+        # Completed source owner inputs include genuine archived beforeimages.
+        # All live owners are independently immutable at the exact after set.
+        source.inputs.verify(self.mutable)
+        require(
+            api.hashes(api.inventory(source.root)) == self.owners,
+            "source handoff current owner inventory changed",
+        )
+        dirty = set(
+            api.git(source.root, "diff", "--name-only", "--no-renames", "-z", self.head)
+            .decode()
+            .split("\0")
+        ) - {""}
+        require(
+            dirty <= self.initial_dirty | self.mutable | set(OUTPUTS),
+            "source handoff unrelated tracked mutation",
+        )
+        for frozen in self.held:
+            frozen.verify()
+
+    def proof(self):
+        """Stable manifest evidence; no current approval or runtime success token."""
+        return {
+            "capability": SOURCE_HANDOFF,
+            "source_manifest": self.endpoint.reference["manifest"],
+            "source_sha256": SOURCE_HANDOFF_SOURCE_SHA,
+            "source_files": self.producer["files"],
+            "source_runtime": self.producer["runtime"],
+            "current_owner_inventory_sha256": self.api.digest(self.owners),
+            "delegated_outputs": list(OUTPUTS),
+        }
 
 
 def require(value, message):
@@ -1078,8 +1196,7 @@ class Loaded:
                 self.generation["successor_input_closure"] == self.successor.closure(),
                 "generation source-successor closure changed",
             )
-            self.successor.publication_guard()
-            self.adopted, self.adoption_files = self.successor, []
+            self.adopted, self.adoption_files = _SourcePublicationGuard(self.successor), []
         else:
             require(
                 not os.path.lexists(self.root / "data/curation_successor.json"),
@@ -1536,6 +1653,7 @@ def prepare(root, request_path, stage):
         }
         if loaded.successor is not None:
             manifest["curation_successor"] = loaded.successor.closure()
+            manifest["source_publication_handoff"] = loaded.adopted.proof()
         context = tree.put("fit-context.json", api.encoded(manifest))
         startup = time.perf_counter() - started
         measurement, frozen = _profile(
@@ -1599,8 +1717,16 @@ def _prepared(root, stage, *, before=None, historical=False, publication_receipt
             manifest.get("curation_successor") == loaded.successor.closure(),
             "prepared successor closure changed",
         )
+        require(
+            manifest.get("source_publication_handoff") == loaded.adopted.proof(),
+            "prepared source publication handoff differs",
+        )
     else:
         require("curation_successor" not in manifest, "unexpected source successor proof")
+        require(
+            "source_publication_handoff" not in manifest,
+            "unexpected source publication handoff",
+        )
     require(_ref(root, root / loaded.path) == manifest["request"], "prepared request changed")
     outputs = _outputs(loaded)
     require(
