@@ -760,6 +760,13 @@ def validate_release_holds(
 def validate(root: Path, report_path: Path) -> dict:
     root = root.resolve()
     report = json.loads(report_path.read_text())
+    if "current_semantic_graph" in report:
+        require("identity_projection" not in report, "Mixed current and historical semantic routes")
+        from mediaingredientmech.validation.current_semantic_release import (
+            validate as validate_current,
+        )
+
+        return validate_current(root, report_path)
     if "identity_projection" in report:
         from mediaingredientmech.identity_projection_graph import (
             validate as validate_identity_projection,
