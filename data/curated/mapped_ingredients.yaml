@@ -1,6 +1,6 @@
-generation_date: '2026-11-08T22:05:00.513186+00:00'
-total_count: 2681
-mapped_count: 2611
+generation_date: '2026-11-11T19:05:40.259638+00:00'
+total_count: 2683
+mapped_count: 2613
 unmapped_count: 0
 ingredients:
 - identifier: CHEBI:338412
@@ -30315,7 +30315,10 @@ ingredients:
         The head noun is arabinan, CHEBI:22590, the closest broader term (the botanical
         source stays in the preferred_term). cas:11078-27-6 identity, NARROW_MATCH
         grade and both registry rows unchanged (Section 3 step 2, #245).'
-  synonyms: []
+  synonyms:
+  - synonym_text: arabinan (sugar beet)
+    synonym_type: RAW_TEXT
+    source: https://prod-docs.megazyme.com/documents/Data_Sheet/P-ARAB_DATA.pdf
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -30356,11 +30359,26 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-fable-5-1
+  - timestamp: '2026-11-08T05:20:19.103865+00:00'
+    curator: all-unmatched-worker-03/materials
+    action: SOURCE_REVIEW_PROPOSAL
+    changes: 'Add botanical-source-preserving arabinan(sugar beet) alias. Preserve
+      CAS11078-27-6 identity and CHEBI22590 asymmetric parent from #312; no Megazyme
+      grade asserted.'
+    llm_assisted: true
+    previous_status: MAPPED
+    new_status: MAPPED
   - timestamp: '2026-11-08T22:01:42+00:00'
     curator: codex
     action: ASSIGNED_MIM_ID
     changes: '#1265: assigned permanent MIM:0000366; retained mapping identifier and
       legacy aliases.'
+    llm_assisted: true
+  - timestamp: '2026-11-10T07:11:48.281331+00:00'
+    curator: stable_id_adoption
+    action: ADOPTED_CAMPAIGN_MIM_ID
+    changes: '#1303: retained MIM:0000366; adopted exact current legacy owner and
+      preserved original mint/source history; no scientific approval transferred.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 11078-27-6
@@ -214013,6 +214031,9 @@ ingredients:
   - synonym_text: Sodium acetate·3H2O
     synonym_type: RAW_TEXT
     source: MERGED_FROM_kgmicrobe.compound:sodium_acetate3h2o
+  - synonym_text: Na acetate x 3 H2O
+    synonym_type: HYDRATE_FORM
+    source: https://mediadive.dsmz.de/download/ingredient/1315/json
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 116
@@ -214086,11 +214107,28 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-11-08T02:30:29.266291+00:00'
+    curator: claude
+    action: ADDED_SOURCE_ALIAS
+    changes: 'MediaDive ingredient 1315 explicitly pairs Na acetate x 3 H2O with CAS
+      6131-90-4; ChEBI:32138 and PubChem CID23665404 corroborate sodium acetate trihydrate.
+      Retain MediaDive''s discrepant hydrogen count in archived source evidence; do
+      not copy it into chemistry. Add only the exact source spelling, with no change
+      to identity, role, occurrence count, supplied form or prior history. #1149.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   - timestamp: '2026-11-08T22:01:42+00:00'
     curator: codex
     action: ASSIGNED_MIM_ID
     changes: '#1265: assigned permanent MIM:0002290; retained mapping identifier and
       legacy aliases.'
+    llm_assisted: true
+  - timestamp: '2026-11-10T07:11:48.281331+00:00'
+    curator: stable_id_adoption
+    action: ADOPTED_CAMPAIGN_MIM_ID
+    changes: '#1303: retained MIM:0002290; adopted exact current legacy owner and
+      preserved original mint/source history; no scientific approval transferred.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 6131-90-4
@@ -247250,7 +247288,7 @@ ingredients:
     ontology_id: CHEBI:17712
     ontology_label: 9H-xanthine
     ontology_source: CHEBI
-    mapping_quality: CAS_RN_LOOKUP
+    mapping_quality: MANUAL_CURATION
     evidence:
     - evidence_type: CAS_RN_CROSS_REFERENCE
       source: PubChem
@@ -247264,6 +247302,25 @@ ingredients:
         Standard InChI agreement does not establish a tautomer-pure reagent. Existing
         recipe references are retained; unqualified source observations do not acquire
         9H specificity.
+    - evidence_type: LLM_SUGGESTION
+      source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1258
+      notes: Private method correction proposed by worker10 /root (Codex), with LLM
+        assistance, following direct source and contract assessment for issue 1258.
+        MANUAL_CURATION records the deliberate, nonlexical review of the existing
+        scoped ingredient representation retained by https://github.com/CultureBotAI/MediaIngredientMech/issues/760;
+        it does not assert human verification. Primary ChEBI captures https://www.ebi.ac.uk/chebi/backend/api/public/compound/17712/
+        (retrieved 2026-11-08T06:11:12.472556+00:00) and https://www.ebi.ac.uk/chebi/backend/api/public/compound/48517/
+        (retrieved 2026-11-08T06:15:51.983698+00:00) both carry CAS 69-89-6 and the
+        name Xanthine. Neither the shared CAS nor the shared name uniquely selects
+        CHEBI:17712. The original PubChem CAS_RN_CROSS_REFERENCE and prior curation
+        evidence/history are preserved as historical provenance, not current proof
+        of a unique CAS-to-target resolution. Retain CHEBI:17712 / CAS 69-89-6 as
+        the accepted ingredient representation; generic xanthine trait observations
+        retain CHEBI:15318 and the native child-to-parent relation. Standard InChI
+        agreement, retained structures and unqualified recipe names do not establish
+        a tautomer-pure reagent or confer 9H specificity on source occurrences. No
+        identifier, chemistry, alias, occurrence, role or export approval changes
+        are proposed.
   synonyms:
   - synonym_text: 2,6-dihydroxypurine
     synonym_type: EXACT_SYNONYM
@@ -247343,11 +247400,32 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+  - timestamp: '2026-11-08T12:58:09.578563+00:00'
+    curator: codex_worker10_xanthine1258
+    action: PROPOSED_MAPPING_METHOD_CORRECTION
+    changes: 'Private ancillary proposal for issue 1258: change ontology_mapping.mapping_quality
+      from CAS_RN_LOOKUP to MANUAL_CURATION after deliberate source and scope review;
+      append LLM_SUGGESTION evidence explaining the shared CAS/name and the retained
+      issue 760 ingredient representation. Both CHEBI:17712 and CHEBI:48517 carry
+      CAS 69-89-6, so CAS lookup does not uniquely select the target. Preserve all
+      original evidence and seven history events, CHEBI:17712 identity, chemistry,
+      aliases, occurrences and generic-trait CHEBI:15318 scope. This is agent-authored
+      with LLM assistance; no human verification, tautomer-purity claim, maintained
+      application or role/export approval.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   - timestamp: '2026-11-08T22:01:42+00:00'
     curator: codex
     action: ASSIGNED_MIM_ID
     changes: '#1265: assigned permanent MIM:0002647; retained mapping identifier and
       legacy aliases.'
+    llm_assisted: true
+  - timestamp: '2026-11-10T07:11:48.281331+00:00'
+    curator: stable_id_adoption
+    action: ADOPTED_CAMPAIGN_MIM_ID
+    changes: '#1303: retained MIM:0002647; adopted exact current legacy owner and
+      preserved original mint/source history; no scientific approval transferred.'
     llm_assisted: true
   notes: 'Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
 
@@ -250974,3 +251052,173 @@ ingredients:
   legacy_identifiers:
   - MIM:~3911-Acid_Glycoprotein_From_Bovine_Plasma
   - cas:66455-27-4
+- identifier: CHEBI:16469
+  preferred_term: 17β-Estradiol
+  ontology_mapping:
+    ontology_id: CHEBI:16469
+    ontology_label: 17beta-estradiol
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1181;
+        https://www.ebi.ac.uk/chebi/backend/api/public/compound/16469/
+      notes: NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion
+        formulation. ChEBI16469 defines the17beta isomer, so the beta qualifier is
+        preserved rather than choosing generic estradiol or17alpha. The frozen1g/L
+        value contradicts the primary1mg input and is not imported into MIM.
+  synonyms:
+  - synonym_text: 17β-Estradiol
+    synonym_type: RAW_TEXT
+    source: CultureMech frozen case CM_NAME:bf95441dfe84a25316206b45e2b482da582422f4309fc061b7603038dfe73894
+  mapping_status: MAPPED
+  ingredient_type: SINGLE_INGREDIENT
+  curation_history:
+  - timestamp: '2026-11-08T05:17:10.503056+00:00'
+    curator: all_unmatched_worker10_source_review
+    action: CREATED_FROM_SOURCE_REVIEW
+    changes: NBRC1181 explicitly names17beta-estradiol as1mg in its brain-heart-infusion
+      formulation. ChEBI16469 defines the17beta isomer, so the beta qualifier is preserved
+      rather than choosing generic estradiol or17alpha. The frozen1g/L value contradicts
+      the primary1mg input and is not imported into MIM. Proposed only; integration
+      requires content-bound full-payload mapping review.
+    llm_assisted: true
+    llm_model: Codex
+    new_status: MAPPED
+  - timestamp: '2026-11-08T07:45:24.660791+00:00'
+    curator: Codex worker10 /root claim-specific provenance correction
+    action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+    changes: 'Issue #1226: retype only the independently audited new agent-authored
+      MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+      Exact sources, notes, quantities, scientific conclusions, unchanged historical
+      MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+      prior history and all source/role/export holds remain unchanged. This is provenance
+      correction, not renewed scientific or release approval.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-11-10T07:11:48.281331+00:00'
+    curator: stable_id_adoption
+    action: ASSIGNED_MIM_ID
+    changes: '#1303: assigned MIM:0002957 to the explicitly reviewed distinct concept;
+      mapping and role holds unchanged.'
+    llm_assisted: true
+  mim_id: MIM:0002957
+  legacy_identifiers:
+  - MIM:17beta-Estradiol
+  - CHEBI:16469
+- identifier: cas:10294-41-4
+  preferred_term: cerium(III) nitrate hexahydrate
+  synonyms:
+  - synonym_text: CeNO33 x 6 H2O
+    synonym_type: REJECTED_LABEL
+    source: mim-queue
+  - synonym_text: Ce(NO3)3 x 6 H2O
+    synonym_type: RAW_TEXT
+    source: mediadive.ingredient:1587
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1587); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:04:31Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_FORMULA_SHORTHAND
+    changes: Classified as a single inorganic salt hydrate and left unmapped because
+      the source formula appears to abbreviate cerium nitrate hexahydrate but is not
+      locally verified as an exact ontology identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CeNO33_x_6_H2O-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: ## Curation recommendation — **Recommended status:
+      `UNMAPPED`**, while normalizing the local chemical identity and populating source-backed
+      chemical properties. This is preferable to `MAPPED` because the literature verifies
+      the interpretation and formula but does not verify a stable ontology identifier
+      or CAS RN. No ontology CURIE was proposed. Recorded as provenance only — no
+      grounding applied from this run. Edison''s recommendations are deliberately
+      conservative, and a plausible identifier promoted by a mechanism that never
+      decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+      to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-11-08T05:21:11.143703+00:00'
+    curator: all_unmatched_20261107_worker02_research_c
+    action: PROMOTED_TO_MAPPED
+    changes: Resolve mediadive.ingredient:1587 Ce(NO3)3 x 6 H2O as cerium(III) nitrate
+      hexahydrate, primary cas:10294-41-4, with skos:broadMatch to mesh:M0319657 cerium
+      nitrate (Ce(+3)); preserve source spellings and all previous history. Proposal
+      only; reviewed evidence in reports/all_unmatched_20261107/worker-02/c/. Inherited
+      publication support is withdrawn for changed bytes; coordinator must re-review
+      the complete payload. Preserve flattened producer label CeNO33 x 6 H2O as non-resolving
+      REJECTED_LABEL with original source; verified provider parentheses distinguish
+      the nitrate stoichiometry.
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-11-08T22:01:42+00:00'
+    curator: codex
+    action: ASSIGNED_MIM_ID
+    changes: '#1265: assigned permanent MIM:0002742; retained mapping identifier and
+      legacy aliases.'
+    llm_assisted: true
+  - timestamp: '2026-11-10T07:11:48.281331+00:00'
+    curator: stable_id_adoption
+    action: ADOPTED_CAMPAIGN_MIM_ID
+    changes: '#1303: retained MIM:0002742; adopted exact current legacy owner and
+      preserved original mint/source history; no scientific approval transferred.'
+    llm_assisted: true
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1587); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a formula
+    shorthand for a cerium nitrate hydrate; left unmapped pending exact formula/CAS
+    evidence. The 2026-11-08 source review resolves the former formula/CAS gap with
+    independent primary evidence. The exact hydrate CAS is distinct from the broader
+    MeSH family; see campaign proposal and retained historical notes.
+  ingredient_type: SINGLE_INGREDIENT
+  ontology_mapping:
+    ontology_id: mesh:M0319657
+    ontology_label: cerium nitrate (Ce(+3))
+    ontology_source: MESH
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: https://mediadive.dsmz.de/rest/ingredient/1587
+      notes: Exact raw formula Ce(NO3)3 x 6 H2O and CAS10294-41-4 support the hexahydrate;
+        independent supplier and PubChem exact-form evidence is captured in the worker02
+        campaign.
+    - evidence_type: CURATOR_JUDGMENT
+      source: https://id.nlm.nih.gov/mesh/M0319657.json
+      notes: Closest verified eligible broader nitrate family in the captured name/CAS
+        search. NARROW_MATCH emits skos:broadMatch; descriptor is not exact hydrate
+        identity. Registry/identity row retains cas:10294-41-4. An exact SNOMED substance
+        search hit exists but SNOMED is outside the frozen schema OntologySourceEnum.
+  chemical_properties:
+    cas_rn: 10294-41-4
+    molecular_formula: CeH12N3O15
+    molecular_weight: 434.22
+    inchi: InChI=1S/Ce.3NO3.6H2O/c;3*2-1(3)4;;;;;;/h;;;;6*1H2/q+3;3*-1;;;;;;
+    data_source: PubChem CID16211466; independent Sigma-Aldrich product identity;
+      MediaDive source formula/CAS
+    retrieval_date: '2026-11-08T05:08:52.306616+00:00'
+  supplied_form:
+  - name: cerium(III) nitrate hexahydrate
+    cas_rn: 10294-41-4
+    form: hexahydrate
+    notes: 'Source-specific formula and CAS establish six waters; no supplier or catalogue
+      is attributed to the original recipe. Independent supplier comparison: Sigma-Aldrich238538.'
+  mim_id: MIM:0002742
+  legacy_identifiers:
+  - MIM:CeNO33_X_6_H2O
+  - UNMAPPED_0355
+  - cas:10294-41-4
