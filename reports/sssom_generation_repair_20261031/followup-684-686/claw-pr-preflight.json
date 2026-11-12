@@ -1,0 +1,35 @@
+{
+  "baseRefOid": "18774380e032acb6da0d195214c59368cd47594f",
+  "body": "Regenerating current MIM records produced 41 native invariant violations even though the maintained canonical SSSOM passes: 28 conflicting registry entries, 11 target-alias leaks and two header-date mismatches. The repaired candidate has 2,980 rows and zero native invariant failures.\n\n- Preserve an already-emitted curated registry identity in either local namespace when satisfying B1; do not infer a competing identity from the ontology parent's prefix.\n- Inherit target labels/KG aliases only on final exactMatch rows; retain permitted subject-owned synonyms on non-exact mappings.\n- Derive both header dates from the newest valid emitted row date and reject missing, impossible or non-ASCII dates before replacing output.\n\nCloses #679. Closes #680. Closes #681. Closes #682.\n\nValidation: 66 focused tests pass; mutation checks detect all three original regressions; repository-pinned Ruff passes. MIM `just qc` passes on the unchanged maintained surfaces. The regenerated candidate separately passes native invariants, JSON Schema/prefix/CURIE validation, configured label checks and drift reconciliation. Actual-path B4 reports no findings, with the existing BTO/MICRO coverage limits. A final-head offline replay is byte-identical to the generated candidate.\n\nIndependent adversarial review of `0d45b0c1d40bec528913e5ff39707174af0b6221` found the Unicode-date guard defect, filed as #682 before fixing. Re-review of final head `8f837d505b948a25965b0b2a001a4c7691c840fc` confirmed that finding resolved and found no new defects. Independent checks included nine date tests, malformed-date/output-preservation probes and 45 namespace/predicate cases.\n\nThe full CI-style suite passes: 6,012 passed, 377 skipped, 87.83% coverage (70% gate). Safety-module coverage is 76% (60% gate). The CI run uses the native configuration without optional sibling profiles; the earlier local run exposed sandbox process-inspection restrictions and injected sibling-import/profile configuration, retained in the local receipts.\n\n[MIM evidence companion PR #1001](https://github.com/CultureBotAI/MediaIngredientMech/pull/1001) contains exact input revisions/hashes, all 41 original diagnostics and dispositions, retained scientific holds, validation logs, mutation evidence and the independent code reviews. Independent review of its final evidence head `bb65a909e5f56b2400f64a2e363d9ad60a2996a9` found no new defects; a fresh native check passed all 978 structured review bundles.\n\nThe candidate removes exactly 14 surplus rows and changes only 17 retained `other` fields relative to the prior failed generation. No source identities, predicates, YAML records, canonical mapping, unified mapping or scientific review dispositions change. Existing scientific holds and curation work remain separate. No workflow/cycle changes are included.\n\nThis PR is draft to prevent scheduled merge-queue admission. Merge remains a user decision.\n",
+  "files": [
+    {
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "additions": 47,
+      "deletions": 14,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/test_mim_sssom_header_dates.py",
+      "additions": 102,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "tests/test_mim_synonym_scope.py",
+      "additions": 151,
+      "deletions": 0,
+      "changeType": "MODIFIED"
+    },
+    {
+      "path": "tests/test_sssom_identity_row.py",
+      "additions": 97,
+      "deletions": 1,
+      "changeType": "MODIFIED"
+    }
+  ],
+  "headRefName": "fix/mim-sssom-native-invariants-20261031",
+  "headRefOid": "8f837d505b948a25965b0b2a001a4c7691c840fc",
+  "isDraft": true,
+  "number": 683,
+  "state": "OPEN"
+}

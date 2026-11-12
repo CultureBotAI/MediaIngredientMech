@@ -1,0 +1,533 @@
+{
+  "baseRefOid": "4625afd492b6cf43e3b499d1425d2453d490009d",
+  "body": "The current-input SSSOM generation reported 41 native invariant failures despite the maintained canonical mapping passing QC. This evidence companion to [Claw PR #683](https://github.com/CultureBotAI/culturebotai-claw/pull/683) records their generator-side causes and verifies the repaired candidate: 2,980 rows, zero native invariant rejects.\n\n- Rule B5: preserve the 14 curated registry identities and remove 14 competing generated identities, resolving 28 rejected entries.\n- Rule K: remove inherited target aliases from non-exact mappings, resolving all 11 collisions while retaining permitted subject-owned synonyms.\n- Rule G: derive both header dates from the newest valid row date, resolving both mismatches. Independent review also found a Unicode-date guard defect; Claw issue #682 was filed before its fix and final-head re-review passed.\n\nThe original structured review is preserved byte-for-byte. Its successor retains the three finding keys, prior-occurrence links and all 41 diagnostic selectors. The report contains exact input revisions and hashes, per-row dispositions, mutation-test evidence, validator logs, scientific hold records and independent code-review reports. Final generator head `8f837d505b948a25965b0b2a001a4c7691c840fc` produces a byte-identical replay of the repaired candidate.\n\nValidation: MIM `just qc` passes, including `qc-sssom`, roundtrip and flat coverage. The candidate separately passes native invariants, SSSOM schema/prefix/CURIE checks, configured ID-label validation and drift reconciliation. Native structured-review validation and the 978-bundle check pass. The Claw fix passes 66 focused tests and its full CI-style suite (6,012 passed, 377 skipped, 87.83% coverage); the safety-module coverage gate passes at 76%.\n\nIndependent adversarial review of evidence head `bb65a909e5f56b2400f64a2e363d9ad60a2996a9` found no new defects. It independently checked committed bytes, hashes, all 41 dispositions, preserved scientific holds and the 978-bundle native review gate.\n\nAll changes here are review/report evidence. The canonical mapping, ingredient YAML, aggregate collections, unified mapping, pinned scientific review and cycle artifacts remain unchanged. The candidate is diagnostic and is not promoted: existing scientific holds, ontology-adapter skips and best-effort B4 coverage limits remain documented. PR #914 and the Intel Cycle 12 work are outside this change.\n\nDefect issues: [Claw #679](https://github.com/CultureBotAI/culturebotai-claw/issues/679), [#680](https://github.com/CultureBotAI/culturebotai-claw/issues/680), [#681](https://github.com/CultureBotAI/culturebotai-claw/issues/681), [#682](https://github.com/CultureBotAI/culturebotai-claw/issues/682).\n\nThis PR is draft to prevent scheduled merge-queue admission. Merge remains a user decision.\n",
+  "files": [
+    {
+      "path": "reports/sssom_generation_repair_20261031/.gitattributes",
+      "additions": 4,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/README.md",
+      "additions": 131,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/adversarial-review-round1.json",
+      "additions": 256,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/adversarial-review-round1.md",
+      "additions": 11,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/adversarial-review-round2.json",
+      "additions": 155,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/adversarial-review-round2.md",
+      "additions": 9,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/baseline-b4-actual.json",
+      "additions": 44,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/candidate-b4-actual.json",
+      "additions": 44,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/candidate-comparison.json",
+      "additions": 87,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/candidate-id-label-config.json",
+      "additions": 11,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/candidate-id-label-config.yaml",
+      "additions": 56,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/candidate-native-drift.json",
+      "additions": 7,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/code-review-supplement-r2.json",
+      "additions": 113,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/final-code-replay-r2.json",
+      "additions": 106,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/final-code-replay.json",
+      "additions": 104,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/generator-revisions.json",
+      "additions": 7,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/generator-round2.patch",
+      "additions": 55,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/historical-rule-k-holds.json",
+      "additions": 145,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/adversarial_probe.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/adversarial_probe.log",
+      "additions": 12,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_b4_actual.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_b4_actual.log",
+      "additions": 9,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_curie.json",
+      "additions": 13,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_curie.log",
+      "additions": 14,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_products.json",
+      "additions": 13,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_products.log",
+      "additions": 16,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_reconcile.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_reconcile.log",
+      "additions": 8,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_subjects.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/baseline_subjects.log",
+      "additions": 41,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_b4_actual.json",
+      "additions": 17,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_b4_actual.log",
+      "additions": 9,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_curie.json",
+      "additions": 16,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_curie.log",
+      "additions": 1,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants.json",
+      "additions": 19,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants.log",
+      "additions": 4,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants_retry.json",
+      "additions": 18,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_invariants_retry.log",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_products.json",
+      "additions": 17,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_products.log",
+      "additions": 8,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_schema.json",
+      "additions": 20,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/candidate_schema.log",
+      "additions": 3,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates.log",
+      "additions": 10,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates_retry.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/compare_candidates_retry.log",
+      "additions": 87,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay.log",
+      "additions": 5,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay_r2.json",
+      "additions": 16,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay_r2.log",
+      "additions": 144,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay_retry.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/final_code_replay_retry.log",
+      "additions": 142,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/focused_final.json",
+      "additions": 21,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/focused_final.log",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/focused_round2.json",
+      "additions": 21,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/focused_round2.log",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/full_qc.json",
+      "additions": 13,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/full_qc.log",
+      "additions": 3119,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/lint_round2.json",
+      "additions": 17,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/lint_round2.log",
+      "additions": 1,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/mutation_b5.json",
+      "additions": 19,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/mutation_b5.log",
+      "additions": 282,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/mutation_g.json",
+      "additions": 19,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/mutation_g.log",
+      "additions": 27,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/mutation_k.json",
+      "additions": 19,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/mutation_k.log",
+      "additions": 247,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/regenerated_candidate.json",
+      "additions": 15,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/regenerated_candidate.log",
+      "additions": 38,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_check.json",
+      "additions": 13,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_check.log",
+      "additions": 7,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_inspect.json",
+      "additions": 172,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_inspect.log",
+      "additions": 443,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_save.json",
+      "additions": 18,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_save.log",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_validate.json",
+      "additions": 17,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/repair_review_validate.log",
+      "additions": 2,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/unicode_date_red.json",
+      "additions": 21,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/logs/unicode_date_red.log",
+      "additions": 106,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/mutation-results.json",
+      "additions": 86,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/original-41-remediation.json",
+      "additions": 537,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/other-field-changes.json",
+      "additions": 223,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/resolved-label-values.tsv",
+      "additions": 2847,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reports/sssom_generation_repair_20261031/validation-inputs.json",
+      "additions": 17967,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reviews/structured/20261031T214143Z-sssom-current-inputs-mechanical/review.md",
+      "additions": 2212,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reviews/structured/20261031T214143Z-sssom-current-inputs-mechanical/review.yaml",
+      "additions": 1967,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reviews/structured/20261031T233012Z-sssom-native-repair-mechanical/review.md",
+      "additions": 1623,
+      "deletions": 0,
+      "changeType": "ADDED"
+    },
+    {
+      "path": "reviews/structured/20261031T233012Z-sssom-native-repair-mechanical/review.yaml",
+      "additions": 1460,
+      "deletions": 0,
+      "changeType": "ADDED"
+    }
+  ],
+  "headRefName": "fix/sssom-regeneration-evidence-20261031",
+  "headRefOid": "bb65a909e5f56b2400f64a2e363d9ad60a2996a9",
+  "isDraft": true,
+  "number": 1001,
+  "state": "OPEN"
+}

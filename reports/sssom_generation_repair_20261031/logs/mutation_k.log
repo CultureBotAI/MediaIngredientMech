@@ -1,0 +1,247 @@
+..FFFF...                                                                [100%]
+=================================== FAILURES ===================================
+_ test_nonexact_row_does_not_inherit_target_aliases[CLOSE_MATCH-skos:closeMatch] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7897/test_nonexact_row_does_not_inh0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10998bbb0>
+quality = 'CLOSE_MATCH', predicate = 'skos:closeMatch'
+
+    @pytest.mark.parametrize(
+        ("quality", "predicate"),
+        [
+            ("CLOSE_MATCH", "skos:closeMatch"),
+            ("NARROW_MATCH", "skos:broadMatch"),
+            ("CLOSE_MATCH", "skos:narrowMatch"),
+        ],
+    )
+    def test_nonexact_row_does_not_inherit_target_aliases(
+        tmp_path, monkeypatch, quality, predicate,
+    ):
+        """KG aliases describe the object, not a non-identical MIM subject (#680)."""
+        record = _write_scoped_record(
+            tmp_path,
+            identifier="kgmicrobe.compound:scoped",
+            ontology_id="CHEBI:1",
+            quality=quality,
+        )
+        residual = {}
+        if predicate == "skos:narrowMatch":
+            # Production CONSIDER_SPECIFIC decisions are now annotation-only.
+            # Inject a predicate-routing fixture to exercise the third supported
+            # nonidentity predicate through the real row builder, without changing
+            # its synonym logic or pretending current curation emits this case.
+            monkeypatch.setitem(
+                builder._PREDICATE_BY_CATEGORY, "TEST_NARROW", predicate,
+            )
+            residual[record.name] = {"category": "TEST_NARROW"}
+    
+        rows = builder._row_from_yaml(
+            record,
+            residual=residual,
+            kgm_sources={},
+            kgm_labels={
+                "CHEBI:1": (
+                    "KG target name",
+                    ["KG target synonym", "Reviewed overlap alias", "REJECTED ALIAS"],
+                ),
+            },
+            canonical_labels={"CHEBI:1": "Canonical target"},
+        )
+        target = next(row for row in rows if row["object_id"] == "CHEBI:1")
+        registry = next(
+            row for row in rows if row["object_id"] == "kgmicrobe.compound:scoped"
+        )
+    
+        assert target["predicate_id"] == predicate
+        assert target["object_label"] == "Canonical target"
+>       assert set(target["other"].split("|")) == {
+            "Curated subject alias", "Reviewed overlap alias",
+        }
+E       AssertionError: assert {'Curated sub...target alias'} == {'Curated sub...verlap alias'}
+E         
+E         Extra items in the left set:
+E         'KG target name'
+E         'KG target synonym'
+E         'Stored target alias'
+E         Use -v to get more diff
+
+tests/test_mim_synonym_scope.py:207: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Scoped.yaml; emitting an empty mapping_date (#542)
+_ test_nonexact_row_does_not_inherit_target_aliases[NARROW_MATCH-skos:broadMatch] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7897/test_nonexact_row_does_not_inh1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10994deb0>
+quality = 'NARROW_MATCH', predicate = 'skos:broadMatch'
+
+    @pytest.mark.parametrize(
+        ("quality", "predicate"),
+        [
+            ("CLOSE_MATCH", "skos:closeMatch"),
+            ("NARROW_MATCH", "skos:broadMatch"),
+            ("CLOSE_MATCH", "skos:narrowMatch"),
+        ],
+    )
+    def test_nonexact_row_does_not_inherit_target_aliases(
+        tmp_path, monkeypatch, quality, predicate,
+    ):
+        """KG aliases describe the object, not a non-identical MIM subject (#680)."""
+        record = _write_scoped_record(
+            tmp_path,
+            identifier="kgmicrobe.compound:scoped",
+            ontology_id="CHEBI:1",
+            quality=quality,
+        )
+        residual = {}
+        if predicate == "skos:narrowMatch":
+            # Production CONSIDER_SPECIFIC decisions are now annotation-only.
+            # Inject a predicate-routing fixture to exercise the third supported
+            # nonidentity predicate through the real row builder, without changing
+            # its synonym logic or pretending current curation emits this case.
+            monkeypatch.setitem(
+                builder._PREDICATE_BY_CATEGORY, "TEST_NARROW", predicate,
+            )
+            residual[record.name] = {"category": "TEST_NARROW"}
+    
+        rows = builder._row_from_yaml(
+            record,
+            residual=residual,
+            kgm_sources={},
+            kgm_labels={
+                "CHEBI:1": (
+                    "KG target name",
+                    ["KG target synonym", "Reviewed overlap alias", "REJECTED ALIAS"],
+                ),
+            },
+            canonical_labels={"CHEBI:1": "Canonical target"},
+        )
+        target = next(row for row in rows if row["object_id"] == "CHEBI:1")
+        registry = next(
+            row for row in rows if row["object_id"] == "kgmicrobe.compound:scoped"
+        )
+    
+        assert target["predicate_id"] == predicate
+        assert target["object_label"] == "Canonical target"
+>       assert set(target["other"].split("|")) == {
+            "Curated subject alias", "Reviewed overlap alias",
+        }
+E       AssertionError: assert {'Curated sub...target alias'} == {'Curated sub...verlap alias'}
+E         
+E         Extra items in the left set:
+E         'KG target name'
+E         'KG target synonym'
+E         'Stored target alias'
+E         Use -v to get more diff
+
+tests/test_mim_synonym_scope.py:207: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Scoped.yaml; emitting an empty mapping_date (#542)
+_ test_nonexact_row_does_not_inherit_target_aliases[CLOSE_MATCH-skos:narrowMatch] _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7897/test_nonexact_row_does_not_inh2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109b2ff00>
+quality = 'CLOSE_MATCH', predicate = 'skos:narrowMatch'
+
+    @pytest.mark.parametrize(
+        ("quality", "predicate"),
+        [
+            ("CLOSE_MATCH", "skos:closeMatch"),
+            ("NARROW_MATCH", "skos:broadMatch"),
+            ("CLOSE_MATCH", "skos:narrowMatch"),
+        ],
+    )
+    def test_nonexact_row_does_not_inherit_target_aliases(
+        tmp_path, monkeypatch, quality, predicate,
+    ):
+        """KG aliases describe the object, not a non-identical MIM subject (#680)."""
+        record = _write_scoped_record(
+            tmp_path,
+            identifier="kgmicrobe.compound:scoped",
+            ontology_id="CHEBI:1",
+            quality=quality,
+        )
+        residual = {}
+        if predicate == "skos:narrowMatch":
+            # Production CONSIDER_SPECIFIC decisions are now annotation-only.
+            # Inject a predicate-routing fixture to exercise the third supported
+            # nonidentity predicate through the real row builder, without changing
+            # its synonym logic or pretending current curation emits this case.
+            monkeypatch.setitem(
+                builder._PREDICATE_BY_CATEGORY, "TEST_NARROW", predicate,
+            )
+            residual[record.name] = {"category": "TEST_NARROW"}
+    
+        rows = builder._row_from_yaml(
+            record,
+            residual=residual,
+            kgm_sources={},
+            kgm_labels={
+                "CHEBI:1": (
+                    "KG target name",
+                    ["KG target synonym", "Reviewed overlap alias", "REJECTED ALIAS"],
+                ),
+            },
+            canonical_labels={"CHEBI:1": "Canonical target"},
+        )
+        target = next(row for row in rows if row["object_id"] == "CHEBI:1")
+        registry = next(
+            row for row in rows if row["object_id"] == "kgmicrobe.compound:scoped"
+        )
+    
+        assert target["predicate_id"] == predicate
+        assert target["object_label"] == "Canonical target"
+>       assert set(target["other"].split("|")) == {
+            "Curated subject alias", "Reviewed overlap alias",
+        }
+E       AssertionError: assert {'Curated sub...target alias'} == {'Curated sub...verlap alias'}
+E         
+E         Extra items in the left set:
+E         'KG target name'
+E         'KG target synonym'
+E         'Stored target alias'
+E         Use -v to get more diff
+
+tests/test_mim_synonym_scope.py:207: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Scoped.yaml; emitting an empty mapping_date (#542)
+______ test_nonexact_nonchebi_row_does_not_publish_previous_object_label _______
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-7897/test_nonexact_nonchebi_row_doe0')
+
+    def test_nonexact_nonchebi_row_does_not_publish_previous_object_label(tmp_path):
+        """ENVO canonicalization alone must not make its old label a subject name."""
+        record = _write_scoped_record(
+            tmp_path,
+            identifier="kgmicrobe.ingredient:scoped",
+            ontology_id="ENVO:00002149",
+            quality="CLOSE_MATCH",
+        )
+        rows = builder._row_from_yaml(
+            record,
+            residual={},
+            kgm_sources={},
+            kgm_labels={},
+            canonical_labels={"ENVO:00002149": "Canonical target"},
+        )
+        target = next(row for row in rows if row["object_id"] == "ENVO:00002149")
+    
+        assert target["predicate_id"] == "skos:closeMatch"
+        assert target["object_label"] == "Canonical target"
+>       assert set(target["other"].split("|")) == {
+            "Curated subject alias", "Reviewed overlap alias",
+        }
+E       AssertionError: assert {'Curated sub...target alias'} == {'Curated sub...verlap alias'}
+E         
+E         Extra items in the left set:
+E         'Stored target alias'
+E         Use -v to get more diff
+
+tests/test_mim_synonym_scope.py:232: AssertionError
+----------------------------- Captured stdout call -----------------------------
+  WARNING: no parseable curation_history timestamp in Scoped.yaml; emitting an empty mapping_date (#542)
+=========================== short test summary info ============================
+FAILED tests/test_mim_synonym_scope.py::test_nonexact_row_does_not_inherit_target_aliases[CLOSE_MATCH-skos:closeMatch]
+FAILED tests/test_mim_synonym_scope.py::test_nonexact_row_does_not_inherit_target_aliases[NARROW_MATCH-skos:broadMatch]
+FAILED tests/test_mim_synonym_scope.py::test_nonexact_row_does_not_inherit_target_aliases[CLOSE_MATCH-skos:narrowMatch]
+FAILED tests/test_mim_synonym_scope.py::test_nonexact_nonchebi_row_does_not_publish_previous_object_label
+4 failed, 5 passed in 0.06s

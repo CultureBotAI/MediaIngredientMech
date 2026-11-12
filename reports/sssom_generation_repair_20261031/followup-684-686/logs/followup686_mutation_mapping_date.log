@@ -1,0 +1,89 @@
+.....FFFFF.                                                              [100%]
+=================================== FAILURES ===================================
+_ test_invalid_history_cannot_outrank_a_valid_curation_date[\uff12\uff10\uff12\uff15-01-01] _
+
+invalid = '２０２５-01-01'
+capsys = <_pytest.capture.CaptureFixture object at 0x1073c6210>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+>       assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+E       AssertionError: assert '２０２５-01-01' == '2026-10-15'
+E         
+E         - 2026-10-15
+E         + ２０２５-01-01
+
+tests/test_mapping_date.py:80: AssertionError
+_ test_invalid_history_cannot_outrank_a_valid_curation_date[\u0662\u0660\u0662\u0665-01-01] _
+
+invalid = '٢٠٢٥-01-01'
+capsys = <_pytest.capture.CaptureFixture object at 0x1073c5d10>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+>       assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+E       AssertionError: assert '٢٠٢٥-01-01' == '2026-10-15'
+E         
+E         - 2026-10-15
+E         + ٢٠٢٥-01-01
+
+tests/test_mapping_date.py:80: AssertionError
+____ test_invalid_history_cannot_outrank_a_valid_curation_date[2026-02-30] _____
+
+invalid = '2026-02-30'
+capsys = <_pytest.capture.CaptureFixture object at 0x107387e10>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+        assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+        warning = capsys.readouterr().out
+>       assert 'Water.yaml' in warning and invalid in warning
+E       AssertionError: assert ('Water.yaml' in '')
+
+tests/test_mapping_date.py:82: AssertionError
+____ test_invalid_history_cannot_outrank_a_valid_curation_date[2026-13-01] _____
+
+invalid = '2026-13-01'
+capsys = <_pytest.capture.CaptureFixture object at 0x1073e82b0>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+>       assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+E       AssertionError: assert '2026-13-01' == '2026-10-15'
+E         
+E         - 2026-10-15
+E         ?        - -
+E         + 2026-13-01
+E         ?       ++
+
+tests/test_mapping_date.py:80: AssertionError
+____ test_invalid_history_cannot_outrank_a_valid_curation_date[2026-10-150] ____
+
+invalid = '2026-10-150'
+capsys = <_pytest.capture.CaptureFixture object at 0x1074544d0>
+
+    @pytest.mark.parametrize('invalid', ['２０２５-01-01', '٢٠٢٥-01-01', '2026-02-30',
+                                       '2026-13-01', '2026-10-150'])
+    def test_invalid_history_cannot_outrank_a_valid_curation_date(invalid, capsys):
+        history = [_event('2026-10-15T10:00:00Z'), _event(invalid)]
+        assert builder._mapping_date(Path('Water.yaml'), history) == '2026-10-15'
+        warning = capsys.readouterr().out
+>       assert 'Water.yaml' in warning and invalid in warning
+E       AssertionError: assert ('Water.yaml' in '')
+
+tests/test_mapping_date.py:82: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[\uff12\uff10\uff12\uff15-01-01]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[\u0662\u0660\u0662\u0665-01-01]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[2026-02-30]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[2026-13-01]
+FAILED tests/test_mapping_date.py::test_invalid_history_cannot_outrank_a_valid_curation_date[2026-10-150]
+5 failed, 6 passed in 0.08s

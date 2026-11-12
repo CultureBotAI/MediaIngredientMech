@@ -1,0 +1,155 @@
+{
+  "reviewer": "Codex independent agent /root/sssom_adversarial_review",
+  "independence_basis": "Reviewer and date sub-reviewer did not author or modify either repair commit. Only separate offline probes and reports were written.",
+  "recorded_at": "2026-10-31T23:34:12.554425+00:00",
+  "repository": "CultureBotAI/culturebotai-claw",
+  "base": "18774380e032acb6da0d195214c59368cd47594f",
+  "head": "8f837d505b948a25965b0b2a001a4c7691c840fc",
+  "previous_review": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-review-round1.json",
+    "sha256": "38d29abcb8bdcbdf2abc53c54a0a6d0c3b9717fdf420b4d037e20157e9e8efe3",
+    "head": "0d45b0c1d40bec528913e5ff39707174af0b6221"
+  },
+  "scope": "Exact final code head: B5/K/G repair plus issue682 Unicode-year follow-up; delta against first reviewed head and retained checks against original base.",
+  "completion": "completed",
+  "verdict": "pass",
+  "scientific_review": false,
+  "inspected_committed_files": [
+    {
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "sha256": "c339bae24e0cfc85690ad5da51356986cce2dcd5ae70526ba9ff54f32826ade2"
+    },
+    {
+      "path": "tests/test_sssom_identity_row.py",
+      "sha256": "621a01a3624bcad7dcf3c3f1ac7b6892e371debc48fb957ebb24d25a45dd6d13"
+    },
+    {
+      "path": "tests/test_mim_synonym_scope.py",
+      "sha256": "0b6930d2c778ae5743fd3e9d73bd5f18fc4515075e20e3d656327f42c6d7d3a6"
+    },
+    {
+      "path": "tests/test_mim_sssom_header_dates.py",
+      "sha256": "5d8c555fd31f1b71aeae4dcd93d9c9e232ce9d0fede3366462e1dda10e8970f3"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Exact final head and clean source tree",
+      "result": "passed",
+      "head": "8f837d505b948a25965b0b2a001a4c7691c840fc"
+    },
+    {
+      "name": "Issue682 repair delta inspection",
+      "result": "passed",
+      "summary": "Only header date digit class changed to ASCII; two native YAML-to-CLI regressions added. No registry or synonym code changed after round1."
+    },
+    {
+      "name": "Independent Unicode/date review",
+      "result": "passed",
+      "details": {
+        "started_at": "2026-10-31T23:33:35.878979+00:00",
+        "finished_at": "2026-10-31T23:33:36.089646+00:00",
+        "head": "8f837d505b948a25965b0b2a001a4c7691c840fc",
+        "status_porcelain": "",
+        "source_sha256": "c339bae24e0cfc85690ad5da51356986cce2dcd5ae70526ba9ff54f32826ade2",
+        "probes": [
+          {
+            "probe": "real YAML history to native row to guarded write",
+            "value": "２０２６-10-15",
+            "rejected_before_replacing_output": true
+          },
+          {
+            "probe": "real YAML history to native row to guarded write",
+            "value": "٢٠٢٦-10-15",
+            "rejected_before_replacing_output": true
+          },
+          {
+            "probe": "10 additional Unicode/calendar/type/whitespace cases",
+            "rejected_before_replacing_output": true
+          },
+          {
+            "probe": "Gregorian leap year, ancient date, order independence, correct header and retained row dates",
+            "passed": true
+          }
+        ],
+        "test_command": [
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/../../KG-Hub/KG-Microbe/culturebotai-claw/.venv/bin/python",
+          "-m",
+          "pytest",
+          "-q",
+          "--no-cov",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date-round2/pytest",
+          "tests/test_mim_sssom_header_dates.py"
+        ],
+        "test_exit": 0,
+        "test_log_sha256": "e08857b7fa26232c6455ef193accac9876c0069e0a7a00769ed15aea11107fd5",
+        "finding_F1_disposition": "resolved on reviewed head",
+        "new_findings": [],
+        "scope": "Header-date fix and tests only; offline probes; no source changes."
+      }
+    },
+    {
+      "name": "Complete candidate delta plus45namespace/predicate cases",
+      "result": "passed",
+      "command_receipt": {
+        "name": "adversarial_probe_round2",
+        "argv": [
+          "uv",
+          "run",
+          "python",
+          "../adversarial-probes/review_probe_round2.py"
+        ],
+        "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/claw",
+        "started_at": "2026-10-31T23:33:29.519658+00:00",
+        "environment_profile": "generation-and-native-qc",
+        "finished_at": "2026-10-31T23:33:33.881539+00:00",
+        "exit_code": 0,
+        "log": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/logs/adversarial_probe_round2.log",
+        "log_sha256": "3068dacd3cf7b75307103d3f28808de40907b3c6d861fcf4a3a3f47ef467354d"
+      },
+      "rows_before": 2994,
+      "rows_after": 2980,
+      "removed_extra_registry_rows": 14,
+      "added_rows": 0,
+      "changed_retained_fields": {
+        "other": 17
+      },
+      "native_B1_B5_G_K": "zero findings",
+      "synthetic_cases": 45
+    },
+    {
+      "name": "Committed diff whitespace check",
+      "result": "passed",
+      "command": "git diff --check 18774380e032acb6da0d195214c59368cd47594f..8f837d505b948a25965b0b2a001a4c7691c840fc"
+    }
+  ],
+  "findings": [],
+  "finding_dispositions": [
+    {
+      "finding_id": "F1",
+      "issue": "https://github.com/CultureBotAI/culturebotai-claw/issues/682",
+      "status": "resolved_on_reviewed_head",
+      "previous_review": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-review-round1.json",
+      "reason": "ASCII date shape rejects fullwidth and Arabic-Indic years before opening the output. Native YAML/row/writer probes retain the preexisting destination; nine date tests and valid calendar controls pass.",
+      "evidence": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date-round2/result.json",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/output/sssom-repair-20261031T231945Z/adversarial-probes/date-round2/pytest.log"
+      ]
+    }
+  ],
+  "remaining_scientific_decisions": [
+    "MIM669 cross-record synonym curation baseline remains; native Rule K passing is not scientific approval of all synonyms.",
+    "MIM875 Na2HPO4 x7 H2O CAS/identity decision and MIM901 hydrate parent relations remain outside this generator repair. No namespace is newly chosen by this review."
+  ],
+  "limitations": [
+    "Bounded mechanical code review; no scientific identity approval or permission to promote diagnostic output.",
+    "The full CLAW suite and remote CI are parent-owned checks and are reported separately.",
+    "Actual ontology/provider lookups were not repeated by this reviewer; all new probes were offline.",
+    "The initial final-code replay receipt predates the Unicode guard follow-up; its older hash was explicitly reported to the parent for correct final evidence binding."
+  ],
+  "source_mutations": [],
+  "remote_mutations": []
+}
