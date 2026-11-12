@@ -60,6 +60,18 @@ def replay(request):
         native.KGM_UNIFIED_TSV,
         native.MIM_PUBLISHED_SSSOM,
     }
+    proposal_ref = request.get("registry_retirement_proposal")
+    retirement = None
+    if proposal_ref is not None:
+        proposal_path = root / proposal_ref["path"]
+        proposal_raw = snapshot.get(proposal_path)
+        retirement_paths, _ = native._STABLE_PRODUCER.registry_retirement_inputs(
+            root, proposal_path, proposal_raw, proposal_ref["sha256"]
+        )
+        expected.update(retirement_paths)
+        retirement = native._STABLE_PRODUCER.registry_retirement_evidence(
+            root, proposal_path, proposal_raw, proposal_ref["sha256"], snapshot
+        )
     if set(snapshot) != expected:
         raise ValueError("complete native generation input membership differs")
     records = {
@@ -78,8 +90,9 @@ def replay(request):
         contract,
         digest(snapshot[contract]),
     )
+    compatibility_args = {} if retirement is None else {"retirement": retirement, "root": root}
     compatibility = native._STABLE_PRODUCER.compatibility_registry_objects(
-        records, subjects, index, snapshot[native.MIM_PUBLISHED_SSSOM] or b""
+        records, subjects, index, snapshot[native.MIM_PUBLISHED_SSSOM] or b"", **compatibility_args
     )
     owners = native.build_owner_index({subjects[p]: record for p, record in records.items()})
     residual_raw = snapshot[native.RESIDUAL_JSON]
@@ -178,6 +191,10 @@ def replay(request):
             )
         ],
     }
+    if hasattr(native._STABLE_PRODUCER, "registry_retirement_inputs"):
+        # Explicit absence is part of the revised producer contract. Old c1
+        # replay remains byte-compatible with its original, captured manifest.
+        manifest["registry_retirement_proposal"] = retirement
     native._check_producer_bindings()
     return {
         name: base64.b64encode(raw).decode("ascii")

@@ -88,6 +88,60 @@ provenance, including rows that no longer occur in the generator's candidate.
 An old suppression that the new table republishes is a failure requiring a
 source/generator correction; it is not silently discarded.
 
+## Explicit diagnostic compatibility-retirement proposal (Claw #1189)
+
+A historical canonical registry row may compete with the current owner's
+curated registry namespace. The default generator still refuses that conflict.
+Do not edit the canonical table to get generation through. A separately authored,
+checksum-bound `stable-registry-retirement-proposal-v1` may identify exact old
+rows to omit from the **diagnostic compatibility view**. It cannot remove a
+current curated primary, invent an identity, hide an unknown or ambiguous owner,
+or grant scientific, canonical, or release approval.
+
+Use the native module's additive options when this reviewed proposal is needed:
+
+```bash
+python -m mediaingredientmech.curate.stable_sssom_publication generate \
+  --root /absolute/mim --claw-root /absolute/reviewed-claw \
+  --kg-root /absolute/read-only/kg --adoption-stage .temp/adoption/prepared \
+  --adoption-receipt .temp/adoption/applied/application.json \
+  --stage .temp/publication/fresh-generation \
+  --registry-retirement-proposal .temp/retirement/proposal.json \
+  --registry-retirement-proposal-sha256 ACTUAL_PROPOSAL_SHA256
+```
+
+Both proposal arguments are mandatory together. Use the recorded native runtime
+spelling, not an interchangeable interpreter alias. The closed proposal contains
+`schema_version: 1`, `capability: stable-registry-retirement-proposal-v1`,
+`scope: diagnostic_candidate_only`, a nonempty `author`, and
+`scientific_approval: false`. It binds `canonical: {path, sha256}` to the complete
+original `mappings/ingredient_mappings.sssom.tsv`, nonempty `evidence_inputs`
+(relative path to SHA256), and nonempty `entries`. Each entry contains:
+
+- `row_position`: one-based data-row position, excluding comments and header;
+- `row`: every exact original column and cell, including comments, source tokens
+  and validation history;
+- `owner: {path, sha256, mim_id}`: the actual current distinct owner;
+- `reason`: the author's nonempty rationale;
+- `evidence`: a nonempty list of the declared evidence-input paths.
+
+The selected row must be an exact local-registry compatibility row in the
+opposing namespace from that owner's current curated primary. All unselected
+rows and legitimate same-namespace aliases remain inputs. The original full
+canonical bytes, proposal, owner and every evidence input are captured and
+rechecked, then replayed using the same native producer. The revised Claw
+manifest records the complete proposal or explicit null when absent. Historical
+c1 generation receipts remain replayable with their original manifest format.
+
+A valid proposal is an input to diagnosis, **not a vote**. Obtain genuine current
+primary and independent skeptical assessment before using it in a reviewed
+campaign. After generation the omitted row remains an unassessed historical row
+in the ordinary complete publication selection. It still requires
+`REMOVE_WITH_HISTORY`, the complete primary/skeptical native publication reviews,
+and independent exact-prepared technical acceptance. A rehashed proposal or a
+successful generation never supplies those decisions. The ordinary supported/
+withheld external partition and source-binding reviews remain separate.
+
 ## Scientific selection and independent acceptance
 
 Save the inspection result as an immutable selection file. Set only each row's
