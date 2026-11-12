@@ -142,8 +142,14 @@ def _generation_check(root, receipt, files, *, before=None):
             "outputs",
             "stdout",
             "stderr",
-        },
+        }
+        | (
+            {"registry_retirement_proposal"} if "registry_retirement_proposal" in receipt else set()
+        ),
     )
+    proposal_ref = receipt.get("registry_retirement_proposal")
+    if proposal_ref is not None:
+        _read_ref(files, proposal_ref)
     require(
         receipt["schema_version"] == 1
         and receipt["capability"] == GENERATION
@@ -177,6 +183,7 @@ def _generation_check(root, receipt, files, *, before=None):
             key: root / receipt["outputs"][key]["path"]
             for key in ("sssom", "suppressions", "manifest")
         },
+        proposal_ref,
     )
     require(receipt["argv"] == expected_command, "unsupported generator command")
     require(receipt["environment"] == _environment(root, claw, kg), "generator roots differ")
@@ -307,6 +314,7 @@ def _replay_generation(
             },
             **{str(path): None for path in absent},
         },
+        "registry_retirement_proposal": receipt.get("registry_retirement_proposal"),
         "canonical_label_resolution": manifest["canonical_label_resolution"],
         "source_revisions": manifest["source_revisions"],
         "outputs": {
@@ -350,8 +358,8 @@ def _replay_generation(
     _CAPTURE.verify()
 
 
-def _command(root, claw, outputs):
-    return [
+def _command(root, claw, outputs, registry_retirement_proposal=None):
+    command = [
         sys.executable,
         str(claw / "scripts/build_mim_ingredient_sssom.py"),
         "--identity-mode",
@@ -366,6 +374,17 @@ def _command(root, claw, outputs):
         "--generation-manifest-output",
         str(outputs["manifest"]),
     ]
+    if registry_retirement_proposal is not None:
+        native().keys(registry_retirement_proposal, {"path", "sha256"})
+        command.extend(
+            [
+                "--registry-retirement-proposal",
+                str(_path(root, registry_retirement_proposal["path"])),
+                "--registry-retirement-proposal-sha256",
+                registry_retirement_proposal["sha256"],
+            ]
+        )
+    return command
 
 
 def _environment(root, claw, kg):
@@ -397,7 +416,16 @@ def _adoption_capture(root, stage, receipt_path):
     ]
 
 
-def generate(root, claw_root, kg_root, adoption_stage, adoption_receipt, directory):
+def generate(
+    root,
+    claw_root,
+    kg_root,
+    adoption_stage,
+    adoption_receipt,
+    directory,
+    registry_retirement_proposal=None,
+    registry_retirement_proposal_sha256=None,
+):
     """Run the actual native Claw CLI, retain failures and all three artifacts.
 
     No provider or network policy is changed. Callers must supply already-reviewed
@@ -409,6 +437,18 @@ def generate(root, claw_root, kg_root, adoption_stage, adoption_receipt, directo
         for value, role in ((root, "target"), (claw_root, "Claw"), (kg_root, "KG input"))
     )
     _CAPTURE.bind(api.Inputs(root))
+    require(
+        bool(registry_retirement_proposal) == bool(registry_retirement_proposal_sha256),
+        "registry retirement proposal and explicit digest are required together",
+    )
+    proposal_file, proposal_ref = None, None
+    if registry_retirement_proposal is not None:
+        proposal_file = FrozenFile.capture(_path(root, registry_retirement_proposal))
+        require(
+            api.sha(proposal_file.content) == registry_retirement_proposal_sha256,
+            "registry retirement proposal digest differs",
+        )
+        proposal_ref = _ref(root, proposal_file.path, proposal_file.content)
     adoption_stage, adoption_receipt = _path(root, adoption_stage), _path(root, adoption_receipt)
     api.verify_completed(root, adoption_stage, adoption_receipt)
     adopted, adoption_files = _adoption_capture(root, adoption_stage, adoption_receipt)
@@ -436,12 +476,15 @@ def generate(root, claw_root, kg_root, adoption_stage, adoption_receipt, directo
         },
         "kg_microbe": {"root": str(kg), "head": api.git(kg, "rev-parse", "HEAD").decode().strip()},
         "runtime": _CAPTURE.runtime,
-        "argv": _command(root, claw, outputs),
+        "registry_retirement_proposal": proposal_ref,
+        "argv": _command(root, claw, outputs, proposal_ref),
         "environment": _environment(root, claw, kg),
         "started_at": datetime.now(timezone.utc).isoformat(),
     }
     tree.put("invocation.json", api.encoded(receipt))
     try:
+        if proposal_file is not None:
+            proposal_file.verify()
         process = subprocess.run(
             receipt["argv"],
             cwd=root,
@@ -476,6 +519,8 @@ def generate(root, claw_root, kg_root, adoption_stage, adoption_receipt, directo
             adopted.check()
             for frozen in (*adoption_files, *producer_files.values(), *sources.values()):
                 frozen.verify()
+            if proposal_file is not None:
+                proposal_file.verify()
             require(
                 api.hashes(api.inventory(root)) == api.hashes(owners),
                 "generation owner membership changed",
@@ -1694,8 +1739,10 @@ def main():
         "kg-root",
         "adoption-stage",
         "adoption-receipt",
+        "registry-retirement-proposal",
     ):
         parser.add_argument("--" + name, type=Path)
+    parser.add_argument("--registry-retirement-proposal-sha256")
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
     if args.operation == "generate":
@@ -1706,6 +1753,8 @@ def main():
             args.adoption_stage,
             args.adoption_receipt,
             args.stage,
+            args.registry_retirement_proposal,
+            args.registry_retirement_proposal_sha256,
         )
     elif args.operation == "inspect":
         result = inspect(args.root, args.request)
