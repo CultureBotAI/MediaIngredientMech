@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:15930
   ontology_label: atrazine
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: local kg-microbe CHEBI transform
@@ -81,28 +81,6 @@ curation_history:
   changes: '#1265: assigned permanent MIM:0000068; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-- timestamp: '2026-11-12T17:31:05.738756+00:00'
-  curator: codex_three_method_source_proposal
-  action: PROPOSED_SOURCE_CORRECTION
-  changes: '#1386: proposed method-only correction EXACT_MATCH -> SYNONYM_MATCH. Record
-    the explicit May11 ontology-synonym route from the long triazine name to atrazine
-    CHEBI:15930. Current captured ChEBI marks that chemical name as related synonym,
-    and the prior #317 ruling explicitly supports this particular identity. Preserve
-    the original source spelling, structure, merged history and rejected old CAS provenance;
-    the merge does not erase the surviving synonym route. Retain the permanent MIM
-    ID, current identity and own-identifier exact predicate, all earlier evidence/history
-    and every residual source, structural-property, role, quantity, preparation and
-    export hold. This proposal grants no scientific, source-binding or release approval;
-    later deterministic confidence is not a measured probability.
-
-
-    Proposal author: Codex /root/seven_cas_current_primary. Independent native scientific
-    review and guarded application remain pending. Exact model identifier was not
-    supplied to this proposal author.'
-  previous_status: MAPPED
-  new_status: MAPPED
-  llm_assisted: true
-  llm_model: Codex (exact model identifier was not supplied to this proposal author)
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2120); curated to CHEBI:15930
   atrazine by local CHEBI exact synonym review on 2026-05-11.
 kg_microbe_node_id: CHEBI:15930

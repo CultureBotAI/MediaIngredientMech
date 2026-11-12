@@ -1,26 +1,15 @@
-identifier: mesh:M0170179
+identifier: mesh:C061361
 preferred_term: Apidaecin IB
 ontology_mapping:
-  ontology_id: mesh:M0170179
-  ontology_label: apidaecin Ib
+  ontology_id: mesh:C061361
+  ontology_label: apidaecin
   ontology_source: MESH
-  mapping_quality: MANUAL_CURATION
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
-    source: https://id.nlm.nih.gov/mesh/M0170179
-    notes: '#1377: official NLM2026 RDF declares apidaecin Ib as Concept M0170179
-      with preferred term T200184. Generic apidaecin M0170180 is the preferred concept
-      of C061361 and explicitly has narrower Ib, Ia and II concepts. Capture SHA256
-      c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28. This resolves
-      the named Ib concept locally from the pinned official archive, not by flattening
-      all SCR terms into exact synonyms.'
-  - evidence_type: CURATOR_JUDGMENT
-    source: CultureBotHT compounds_to_cas.csv row 578; https://www.anaspec.com/en/catalog/apidaecin-ib-1-mg~cd4f5992-8c02-4a24-bac1-91b3cfbe0e96
-    notes: '#1377: original source explicitly names Apidaecin IB and AnaSpec AS-62044,
-      with no CAS. The inspected manufacturer page identifies that catalog product
-      as Apidaecin IB. Select the exact Ib concept, preserving source and preparation
-      limits; do not infer CAS, sequence, formula, quantity, lot, purity, activity
-      or source-binding approval from this mapping correction.'
+    source: OAK/OLS exact audit
+    notes: OLS audit matched Apidaecin IB to MESH:C061361 apidaecin through exact
+      synonym apidaecin Ib.
 synonyms:
 - synonym_text: Apidaecin IB
   synonym_type: RAW_TEXT
@@ -51,38 +40,11 @@ curation_history:
   changes: '#1265: assigned permanent MIM:0000359; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-- timestamp: '2026-11-12T10:58:55.163812+00:00'
-  curator: codex_postadoption_source_proposal
-  action: PROPOSED_SOURCE_CORRECTION
-  changes: '#1377: replace the false exact generic SCR identity mesh:C061361 with
-    reviewed exact subtype Concept mesh:M0170179 (apidaecin Ib), established by official
-    NLM2026 hierarchy and the explicit original Ib source/product. Mapping method
-    MANUAL_CURATION records this scope adjudication; an own-identifier SSSOM relation
-    remains exact under MAPPING_SEMANTICS section 0. Remove the stale generic kg_microbe_node_id
-    pointer without inventing a new imported KG node. Remove only the rejected generic
-    external identity from resolving legacy_identifiers under conditional reviewed
-    D2 policy; preserve MIM:0000359, MIM:Apidaecin_IB, all source synonyms, occurrences,
-    earlier events and scientific holds. Do not mint, merge, split, add CAS/sequence/chemistry/procurement/roles/subclass
-    claims, retire holds or claim native application. Not applicable until final reviewed
-    owner-rejection policy and native successor are accepted. Rejected complete original
-    assertion: {"identifier":"mesh:C061361","kg_microbe_node_id":"mesh:C061361","legacy_identifiers":["MIM:Apidaecin_IB","mesh:C061361"],"ontology_mapping":{"evidence":[{"evidence_type":"DATABASE_MATCH","notes":"OLS
-    audit matched Apidaecin IB to MESH:C061361 apidaecin through exact synonym apidaecin
-    Ib.","source":"OAK/OLS exact audit"}],"mapping_quality":"EXACT_MATCH","ontology_id":"mesh:C061361","ontology_label":"apidaecin","ontology_source":"MESH"}}.
-    NLM capture SHA256 c6b5cad8f6ad4e6abe910403647cc16bca9cbe224eed2d316cc6dd7ab0f4bb28.'
-  previous_status: MAPPED
-  new_status: MAPPED
-  llm_assisted: true
-  llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
-notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
-  CHEBI mapping available; curated to MESH:C061361 apidaecin on 2026-05-11. Current
-  private proposal #1377 corrects the former generic apidaecin exact mapping to the
-  explicitly named Ib NLM Concept mesh:M0170179. The generic mesh:C061361 association
-  is rejected only as this owner identity and remains fully preserved in history;
-  it must not remain a resolving alias or KG-node pointer. Permanent MIM:0000359 and
-  the original filename alias remain. No source binding, sequence, CAS, supplied-form,
-  role or export approval is granted. Application depends on the finally reviewed
-  native successor and explicit owner-rejection policy.'
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curated to MESH:C061361 apidaecin on 2026-05-11.
+kg_microbe_node_id: mesh:C061361
 ingredient_type: SINGLE_INGREDIENT
 mim_id: MIM:0000359
 legacy_identifiers:
 - MIM:Apidaecin_IB
+- mesh:C061361

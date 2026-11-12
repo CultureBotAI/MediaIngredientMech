@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: NCIT:C76253
   ontology_label: Acriflavine
   ontology_source: NCIT
-  mapping_quality: MANUAL_CURATION
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -73,28 +73,6 @@ curation_history:
   changes: '#1265: assigned permanent MIM:0000264; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-- timestamp: '2026-11-12T17:31:05.738756+00:00'
-  curator: codex_three_method_source_proposal
-  action: PROPOSED_SOURCE_CORRECTION
-  changes: '#1386: proposed method-only correction EXACT_MATCH -> MANUAL_CURATION.
-    Record the decisive reviewed FDA mixture and PRIMARY-versus-SUPERSEDED CAS adjudication
-    for the current exact NCIT identity; preserve the earlier label-exact parent discovery
-    as historical evidence. The current evidence explicitly supersedes that earlier
-    grounding. This is a method correction, not a new mixture identity or global CAS
-    withdrawal. Retain the permanent MIM ID, current identity and own-identifier exact
-    predicate, all earlier evidence/history and every residual source, structural-property,
-    role, quantity, preparation and export hold. This proposal grants no scientific,
-    source-binding or release approval; later deterministic confidence is not a measured
-    probability.
-
-
-    Proposal author: Codex /root/seven_cas_current_primary. Independent native scientific
-    review and guarded application remain pending. Exact model identifier was not
-    supplied to this proposal author.'
-  previous_status: MAPPED
-  new_status: MAPPED
-  llm_assisted: true
-  llm_model: Codex (exact model identifier was not supplied to this proposal author)
 chemical_properties:
   cas_rn: 65589-70-0
   data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
