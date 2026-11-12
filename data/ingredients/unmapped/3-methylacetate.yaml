@@ -59,23 +59,41 @@ curation_history:
     not the substance, and asserting the synonymy would make label_index resolve it
     to something it does not denote.'
   llm_assisted: false
+- timestamp: '2026-11-08T02:36:20.627642+00:00'
+  curator: claude
+  action: CORRECTED_SOURCE_PROVENANCE
+  changes: 'Correct active source-origin notes only (#1151): raw database.csv SHA256=0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95,
+    record19685 canonical SHA256=f96206bc73f8fa93d7a144e6f4f586e8e464d23b31d8093a0d510bc5d272302a,
+    contains 3-methylacetate in original prose and structured minor-product field.
+    Retain unresolved identity, REJECTED status, all raw synonyms, counts and prior
+    history; add no ontology mapping, replacement identity, role or release approval.
+    The original primary paper was not independently re-read in this provenance check.'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0002686; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
-notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient record
-  (#213/#308): not a chemical name and not reconstructable. It is a fragment from
-  the same importer that produced `Formate+3-methyl Mercaptopropionate`, so the likely
-  original is `3-methyl mercaptopropionate` — but its partner text is absent from
-  the corpus, and guessing it would invent a compound. Not mapped, because every substrate
-  CURIE it could be grounded to is already the primary key of a live record — in MIM
-  the identifier IS the ontology CURIE, so a mapping here would mint a duplicate rather
-  than add coverage. No synonym is folded onto those records either: this label names
-  a reaction or a splice, not the substance, and asserting the synonymy would make
-  label_index resolve it to something it does not denote.'
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0002686; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
+  llm_assisted: true
+notes: 'Imported from MicrobeDecoder (source_id=kgmicrobe.compound:3_methylacetate).
+  The literal 3-methylacetate is present in both the raw Bergey_Text_for_end_products
+  and Bergey_Minor_end_products fields for Telmatobacter bradus, LPSN 789679, database.csv
+  record 19685 (source citation https://doi.org/10.1002/9781118960608.gbm01426). This
+  is reported minor-product provenance, not an established chemical identity or growth-medium
+  ingredient. The prior importer-fragment explanation and proposed 3-methyl mercaptopropionate
+  reconstruction are unsupported by this source and are superseded; their original
+  wording remains in curation history and the archived preimage. Retain REJECTED status
+  and no ontology mapping until identity and ingredient/product scope are resolved.
+  No replacement compound is inferred. Evidence and exact source hashes: reports/kgm_unmapped_chemicals_20261107/methylacetate/sources/manifest.json;
+  issue #1151.'
 mim_id: MIM:0002686
 legacy_identifiers:
 - MIM:3-methylacetate
