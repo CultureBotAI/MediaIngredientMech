@@ -70,6 +70,18 @@ curation_history:
   changes: '#1303: retained MIM:0002742; adopted exact current legacy owner and preserved
     original mint/source history; no scientific approval transferred.'
   llm_assisted: true
+- timestamp: '2026-11-12T10:24:59.438113+00:00'
+  curator: codex_postadoption_source_proposal
+  action: PROPOSED_SOURCE_CORRECTION
+  changes: '#1367: proposed evidence-wording correction: MeSH M0319657 is an NLM Concept,
+    as explicitly typed in the captured primary JSON, rather than a descriptor. Preserve
+    cas:10294-41-4, mesh:M0319657, NARROW_MATCH/skos:broadMatch, exact hydrate chemistry,
+    all supplied-form/source evidence and all scientific holds. This wording correction
+    grants no new scientific or export approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1587); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a formula shorthand
   for a cerium nitrate hydrate; left unmapped pending exact formula/CAS evidence.
@@ -91,7 +103,7 @@ ontology_mapping:
   - evidence_type: CURATOR_JUDGMENT
     source: https://id.nlm.nih.gov/mesh/M0319657.json
     notes: Closest verified eligible broader nitrate family in the captured name/CAS
-      search. NARROW_MATCH emits skos:broadMatch; descriptor is not exact hydrate
+      search. NARROW_MATCH emits skos:broadMatch; NLM Concept is not exact hydrate
       identity. Registry/identity row retains cas:10294-41-4. An exact SNOMED substance
       search hit exists but SNOMED is outside the frozen schema OntologySourceEnum.
 chemical_properties:

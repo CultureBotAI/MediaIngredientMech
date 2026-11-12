@@ -37,10 +37,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 2,2',2'',2'''-(ethane-1,2-diyldiazaniumyl)tetraacetate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: EDTA (acid form)
   synonym_type: RAW_TEXT
@@ -152,13 +152,39 @@ curation_history:
   changes: '#1265: assigned permanent MIM:0001002; retained mapping identifier and
     legacy aliases.'
   llm_assisted: true
+- timestamp: '2026-11-12T10:39:33.268505+00:00'
+  curator: codex_postadoption_source_proposal
+  action: PROPOSED_SOURCE_CORRECTION
+  changes: '#1225: current-owner proposal reuses the independently reviewed neutral-acid
+    correction, retaining prior PR351 free-acid CHEBI:4735 identity, CAS60-00-4, SYNONYM_MATCH,
+    permanent MIM:0001002, legacy aliases and all original history. Replace only inherited
+    dianion molecular_formula/InChI/SMILES with the inspected neutral-acid values;
+    retain both explicit dianion names and original kg_microbe source as REJECTED_LABEL.
+    Formula/structures reuse the actual 2026-11-08T06:51:53.310006+00:00 ChEBI4735
+    API capture SHA2565c10db580fcabb79ebbbbf70b42a20aad95bedebe89669ff5c9506a558b8020b;
+    dianion names/structures use ChEBI64755 capture SHA256d27dd801defc6f5b5a16339d2df6d2a72911b7aa98cef1f3870237be7d743e53.
+    The old CAS PubChem acquisition date remains explicit in property-specific provenance;
+    no new CAS retrieval is claimed. The current sealed local ChEBI facts corroborate
+    these property values and do not prove source material form. The historical candidate
+    2186a74fe18d095a014f2521b2c29fe200ecf7e86ac073b5260541f4373576ea included a separate
+    Worker10 spelling proposal; do not transplant that alias or its acceptance into
+    this current-owner delta. Existing CHELATOR prediction and all source, quantity,
+    procurement, salt/form and export holds remain unchanged. No scientific/source/role/publication
+    approval or maintained application follows from this afterimage.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
 chemical_properties:
   cas_rn: 60-00-4
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:51:59.317982+00:00'
-  molecular_formula: C10H14N2O8
-  inchi: InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20)/p-2
-  smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-]
+  data_source: 'Formula, InChI and SMILES: ChEBI:4735 public API, captured 2026-11-08T06:51:53.310006+00:00
+    (sha256 5c10db580fcabb79ebbbbf70b42a20aad95bedebe89669ff5c9506a558b8020b). CAS
+    60-00-4 retained from prior PubChem API retrieval 2026-04-05T19:51:59.317982+00:00;
+    no new CAS acquisition.'
+  retrieval_date: '2026-11-08T06:51:53.310006+00:00'
+  molecular_formula: C10H16N2O8
+  inchi: InChI=1S/C10H16N2O8/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20)
+  smiles: O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CC(=O)O
 kg_microbe_node_id: CHEBI:4735
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
