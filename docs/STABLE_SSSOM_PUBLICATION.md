@@ -229,6 +229,31 @@ The four maintained outputs are:
 - `mappings/stable_sssom_generation.json`
 - `mappings/stable_sssom_publication.json`
 
+### Completed source handoff
+
+The `native-source-publication-handoff-v1` manifest proof binds an explicitly
+supported completed-source implementation, its full executable/dependency and
+runtime pins, the source manifest, the exact current owner inventory, and these
+four output paths (#1401). The source producer and its earlier receipts remain
+unchanged. The original source endpoint is strictly reconstructed before the
+handoff; completed publication verification reconstructs it again using the
+genuine completed receipt and archived beforeimages.
+
+During publication, a versioned publisher counterpart checks the full protected
+source closure: predecessor, repository/HEAD/index identity, inputs, live ID
+ledgers, publication archives and parents, all current owners and source
+outputs, and held manifests/receipts. It preserves the originally observed
+dirty set. Only the four mapping outputs are additionally allowed to become
+dirty, while the enclosing publisher still checks their exact bytes, absence,
+file identities and aliases at each write boundary. The counterpart does not
+claim that the unchanged source checker accepted those post-write paths.
+
+An unsupported source implementation is refused. Changing the publication
+producer requires fresh generation, current review, preparation and independent
+prepared-set acceptance; old acceptance does not cover changed executable bytes
+or a missing/tampered handoff proof. This mechanism grants no scientific release
+approval and does not supply a recovery or rollback command for a failed run.
+
 After installation, run repository QC and the separately reviewed ordinary
 whole-row and source-binding exports. Do not use diagnostic paths to bypass the
 ordinary canonical-path route. No KG rebuild, Git merge, scientific status
