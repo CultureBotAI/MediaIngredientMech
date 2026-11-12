@@ -38,8 +38,13 @@ Every ingredient has a required opaque `mim_id`, such as `MIM:0000001`.
 SSSOM subjects and current MIM record joins use that ID. The record's
 `identifier` remains its existing external, registry or unresolved mapping
 value; `ontology_mapping` remains a separate scientific assertion. Preserve
-former identifiers in `legacy_identifiers`. Mapped, unmapped and rejected
-mapping states all retain permanent record IDs.
+former valid identifiers in `legacy_identifiers`. An identifier disproved for
+this particular owner must not remain a resolving alias: the reviewed native
+curation-successor route (#1373) removes that assertion while retaining its exact
+beforeimage, declared delta, historical reviews and attributed curation history.
+This is no global retirement of the external term. Genuine filename/registry
+aliases remain; false raw labels retain native `REJECTED_LABEL` provenance.
+Mapped, unmapped and rejected mapping states all retain permanent record IDs.
 
 IDs come from the append-only mint registry and lifecycle ledger; a rename,
 label correction, mapping update or directory move never re-mints the record.
@@ -226,10 +231,10 @@ Do **not** use `skos:broadMatch` when:
 - A more specific ontology term exists. Find that term and use
   `skos:exactMatch` instead.
 - The MIM ingredient is a sibling of the ontology term, not a child.
-- You omit the registry row (Section 2). Every `broadMatch` from a
-  `MIM:<seven-digit-id>` subject **must** be accompanied by a registry exactMatch
-  row. This is enforced by **Rule B1**, which keys on both asymmetric
-  predicates and so was unaffected by the #390 flip.
+- The subject has no validated identity basis (Section 2). Rule B1 requires
+  either the complete active permanent-owner/mint/lifecycle proof or the
+  applicable historical filename/registry identity row. Neither branch grants
+  scientific support to the asymmetric mapping.
 
 ### `skos:narrowMatch`
 
@@ -251,8 +256,17 @@ new one is worth a second look.
 
 ## 2. Registry/identity row pattern
 
-MIM uses two **independent kinds of mapping rows** for any ingredient that
-also asserts a `broadMatch` to an OBO term:
+Permanent numeric MIM subjects have an identity independent of external
+grounding (#1371). Rule B1 accepts an exact current active MAPPED owner only
+after validating the complete owner inventory, immutable mint/lifecycle ledgers,
+subject label and permanent namespace expansion. It does not synthesize a
+filename-derived handle or claim an external exact match. A missing, ambiguous,
+inactive, mismatched or incomplete permanent proof fails closed. Legacy subjects
+retain their existing filename/registry requirement; Rule B5 and all external
+scientific gates still apply. See [the identity contract](docs/STABLE_SSSOM_IDENTITY.md).
+
+Where an actual curated registry identity exists, MIM retains two **independent
+kinds of mapping rows**:
 
 1. **Ontology row** — `MIM:<seven-digit-id> skos:broadMatch <ENVO|CHEBI|FOODON|…>:<id>`
    anchors the MIM child to its OBO parent. The object_id is an external
@@ -262,17 +276,14 @@ also asserts a `broadMatch` to an OBO term:
    has its own primary id in the kg-microbe namespace. The object_id is a
    first-class kg-microbe CURIE.
 
-The registry row is **mandatory** whenever the same MIM subject also
-asserts any broadMatch. This is enforced by **Rule B1** of the SSSOM
-validator (strict-by-default — a missing registry row makes CI
-fail). The claw SSSOM builder
-(`culturebotai-claw/scripts/build_mim_ingredient_sssom.py`,
-`_row_from_yaml`) emits the registry row automatically whenever it
-emits a narrow/broad parent row, so a curator who lets the builder
-generate the SSSOM does not need to write the registry row by hand.
-The registry row is also the **single channel** by which downstream
-consumers resolve a MIM subject to its kg-microbe primary id without
-conflating it with the OBO parent.
+The registry row remains required for the legacy B1 branch. A permanent subject
+with the complete validated identity proof does not require a made-up registry
+sibling. The native builder retains an actual curated registry primary as its
+own exact row; it must never select a competing namespace or mint a new handle
+merely to satisfy this invariant. An existing registry row remains the channel
+for that particular kg-microbe identity assertion, separate from the permanent
+MIM owner and reviewed ontology mapping. MIM-only source output is valid when
+no reviewed external match exists; ordinary source and release gates still apply.
 
 ### Historical worked example: `MIM:Vermont_Soil`
 
@@ -309,9 +320,9 @@ adversarial review #558 round 3 flagged.
 
 With the registry row present, the same consumer call resolves to the
 exactMatch row first and returns `kgmicrobe.ingredient:vermont_soil` —
-the child's own primary id. The broadMatch row is then available
-separately for subclass-of inference, but it is no longer the only path
-from the MIM subject to a CURIE.
+the child's own primary id. The broadMatch row remains separately typed.
+Subclass inference needs genuine independently reviewed is-a evidence; salts,
+hydrates, solutions and racemates are not automatically subclasses.
 
 ### Naming convention
 

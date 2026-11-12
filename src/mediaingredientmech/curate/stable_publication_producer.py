@@ -21,6 +21,7 @@ def load(root: Path, loader_bytes: bytes):
     helper.__file__ = str(path)
     exec(compile(raw, str(path), "exec"), helper.__dict__)
     helper.ENTRY, helper.LOADER = ENTRY, LOADER
+    adoption_modules = helper.MODULES
     helper.MODULES = (
         ENTRY,
         "mediaingredientmech.curate.publication_guard",
@@ -34,12 +35,16 @@ def load(root: Path, loader_bytes: bytes):
         "mediaingredientmech.synonym_policy",
         "mediaingredientmech.sssom_metadata",
         "mediaingredientmech.identity_projection",
+        "mediaingredientmech.curate.curation_successor",
     )
+    helper.MODULES = tuple(dict.fromkeys((*helper.MODULES, *adoption_modules)))
     helper.SCRIPTS = (
         *helper.SCRIPTS,
         ADOPTION_LOADER,
         "scripts/validate_sssom_invariants.py",
         "src/mediaingredientmech/curate/stable_sssom_replay.py",
+        "src/mediaingredientmech/curate/curation_successor_producer.py",
+        "docs/CURATION_SUCCESSOR.md",
     )
     capture, implementation = helper.load(root, loader_bytes)
     if capture.files[ADOPTION_LOADER][0] != raw:

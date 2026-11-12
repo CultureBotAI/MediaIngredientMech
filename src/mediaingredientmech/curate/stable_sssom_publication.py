@@ -78,6 +78,32 @@ def native():
     return _ADOPTION
 
 
+def successor_native():
+    """Keep the source successor's own producer, never substitute publication's."""
+    name = "src/mediaingredientmech/curate/curation_successor_producer.py"
+    raw = _CAPTURE.files[name][0]
+    loader = types.ModuleType("_publication_successor_loader")
+    loader.__file__ = str(_CAPTURE.root / name)
+    loader.__dict__["__builtins__"] = vars(builtins)
+    exec(compile(raw, loader.__file__, "exec"), loader.__dict__)
+    capture, implementation = loader.load(_CAPTURE.root, raw)
+    require(
+        all(_CAPTURE.files[n][0] == value[0] for n, value in capture.files.items()),
+        "successor capture differs from selected publication producer",
+    )
+    return implementation
+
+
+def _successor(root, reference, files, *, before=None, publication_receipt=None):
+    endpoint = successor_native().Endpoint(
+        root,
+        native().document(_read_ref(files, reference)),
+        publication=before if publication_receipt is not None else None,
+        publication_receipt=publication_receipt,
+    )
+    return endpoint
+
+
 def require(value, message):
     if not value:
         raise ValueError("Stable SSSOM publication: " + message)
@@ -143,10 +169,19 @@ def _generation_check(root, receipt, files, *, before=None):
             "stdout",
             "stderr",
         }
+        | ({"registry_retirement_proposal"} if "registry_retirement_proposal" in receipt else set())
         | (
-            {"registry_retirement_proposal"} if "registry_retirement_proposal" in receipt else set()
+            {"curation_successor", "successor_input_closure"}
+            if "curation_successor" in receipt
+            else set()
         ),
     )
+    if "curation_successor" in receipt:
+        require(
+            receipt["adoption"] is None and isinstance(receipt["curation_successor"], dict),
+            "conflicting or absent source-successor selection",
+        )
+        _read_ref(files, receipt["curation_successor"])
     proposal_ref = receipt.get("registry_retirement_proposal")
     if proposal_ref is not None:
         _read_ref(files, proposal_ref)
@@ -425,6 +460,8 @@ def generate(
     directory,
     registry_retirement_proposal=None,
     registry_retirement_proposal_sha256=None,
+    curation_successor=None,
+    curation_successor_sha256=None,
 ):
     """Run the actual native Claw CLI, retain failures and all three artifacts.
 
@@ -449,9 +486,38 @@ def generate(
             "registry retirement proposal digest differs",
         )
         proposal_ref = _ref(root, proposal_file.path, proposal_file.content)
-    adoption_stage, adoption_receipt = _path(root, adoption_stage), _path(root, adoption_receipt)
-    api.verify_completed(root, adoption_stage, adoption_receipt)
-    adopted, adoption_files = _adoption_capture(root, adoption_stage, adoption_receipt)
+    require(
+        bool(curation_successor) == bool(curation_successor_sha256),
+        "successor endpoint and digest are required together",
+    )
+    endpoint, endpoint_ref = None, None
+    if curation_successor is not None:
+        require(
+            adoption_stage is None and adoption_receipt is None,
+            "successor and legacy adoption arguments conflict",
+        )
+        endpoint_inputs = api.Inputs(root)
+        endpoint_ref = {
+            "path": str(_path(root, curation_successor).relative_to(root)),
+            "sha256": curation_successor_sha256,
+        }
+        endpoint = _successor(root, endpoint_ref, endpoint_inputs)
+        adopted, adoption_files = endpoint, list(endpoint_inputs.files.values())
+        adoption = None
+    else:
+        require(
+            not os.path.lexists(root / "data/curation_successor.json"),
+            "explicit successor endpoint required",
+        )
+        adoption_stage, adoption_receipt = _path(root, adoption_stage), _path(
+            root, adoption_receipt
+        )
+        api.verify_completed(root, adoption_stage, adoption_receipt)
+        adopted, adoption_files = _adoption_capture(root, adoption_stage, adoption_receipt)
+        adoption = {
+            "stage": str(adoption_stage.relative_to(root)),
+            "receipt": _ref(root, adoption_receipt),
+        }
     tree = api.PreparationTree(root, api._stage_path(root, _path(root, directory)))
     outputs = {
         "sssom": tree.stage / "candidate.sssom.tsv",
@@ -465,10 +531,7 @@ def generate(
         "state": "RUNNING",
         "root": str(root),
         "head": api.git(root, "rev-parse", "HEAD").decode().strip(),
-        "adoption": {
-            "stage": str(adoption_stage.relative_to(root)),
-            "receipt": _ref(root, adoption_receipt),
-        },
+        "adoption": adoption,
         "claw": {
             "root": str(claw),
             "head": api.git(claw, "rev-parse", "HEAD").decode().strip(),
@@ -481,6 +544,8 @@ def generate(
         "environment": _environment(root, claw, kg),
         "started_at": datetime.now(timezone.utc).isoformat(),
     }
+    if endpoint is not None:
+        receipt.update(curation_successor=endpoint_ref, successor_input_closure=endpoint.closure())
     tree.put("invocation.json", api.encoded(receipt))
     try:
         if proposal_file is not None:
@@ -544,7 +609,10 @@ def generate(
         log = tree.stage / "receipt.json"
         with reserve_receipt_outputs(log, backup_paths=()) as (handle,):
             try:
-                api.verify_completed(root, adoption_stage, adoption_receipt)
+                if endpoint is None:
+                    api.verify_completed(root, adoption_stage, adoption_receipt)
+                else:
+                    endpoint.verify_native()
                 finish_receipt(handle, log, receipt, terminal_check)
             except BaseException as error:
                 # finish_receipt removes any success-shaped bytes on drift.
@@ -741,6 +809,11 @@ def _selection(loaded):
         "before": {name: api.sha(f.content) if f else None for name, f in loaded.before.items()},
         "historical_reviews": loaded.request["historical_reviews"],
     }
+    if loaded.successor is not None:
+        context.update(
+            curation_successor=loaded.generation["curation_successor"],
+            successor_input_closure=loaded.successor.closure(),
+        )
     return {
         "schema_version": 1,
         "capability": CAPABILITY,
@@ -815,7 +888,9 @@ def _historical_reviews(loaded):
 
 
 class Loaded:
-    def __init__(self, root, request_path, *, before=None, historical=False):
+    def __init__(
+        self, root, request_path, *, before=None, historical=False, publication_receipt=None
+    ):
         api = native()
         self.inputs = api.Inputs(
             api.root_path(root, "target"),
@@ -878,19 +953,58 @@ class Loaded:
             self.records,
         ) = generation
         adoption = self.generation["adoption"]
-        api.keys(adoption, {"stage", "receipt"})
-        _read_ref(self.inputs, adoption["receipt"])
-        self.adoption_stage = _path(self.root, adoption["stage"])
-        self.adoption_receipt = _path(self.root, adoption["receipt"]["path"])
-        api.verify_completed(self.root, self.adoption_stage, self.adoption_receipt)
-        self.adopted, self.adoption_files = _adoption_capture(
-            self.root, self.adoption_stage, self.adoption_receipt
-        )
+        self.successor = None
+        if "curation_successor" in self.generation:
+            require(
+                not historical or publication_receipt is not None,
+                "historical successor requires actual native publication receipt",
+            )
+            self.successor = _successor(
+                self.root,
+                self.generation["curation_successor"],
+                self.inputs,
+                before=self.before,
+                publication_receipt=publication_receipt,
+            )
+            require(
+                self.generation["successor_input_closure"] == self.successor.closure(),
+                "generation source-successor closure changed",
+            )
+            self.successor.publication_guard()
+            self.adopted, self.adoption_files = self.successor, []
+        else:
+            require(
+                not os.path.lexists(self.root / "data/curation_successor.json"),
+                "successor cannot use legacy adoption route",
+            )
+            api.keys(adoption, {"stage", "receipt"})
+            _read_ref(self.inputs, adoption["receipt"])
+            self.adoption_stage = _path(self.root, adoption["stage"])
+            self.adoption_receipt = _path(self.root, adoption["receipt"]["path"])
+            api.verify_completed(self.root, self.adoption_stage, self.adoption_receipt)
+            self.adopted, self.adoption_files = _adoption_capture(
+                self.root, self.adoption_stage, self.adoption_receipt
+            )
         self.claw = api.Claw(self.generation["claw"]["root"])
         self.policy = api._policy(
             api.document(_read_ref(self.inputs, self.request["operational_policy"]))
         )
         self.history, self.history_files, self.history_roots = _historical_reviews(self)
+        if self.successor is not None:
+            originals = self.successor.loaded.request["predecessor"]["historical_reviews"]
+            require(
+                all(
+                    {
+                        "root": s["identity"]["root"],
+                        "head": s["identity"]["head"],
+                        "review": s["review"],
+                        "markdown_sha256": s["markdown_sha256"],
+                    }
+                    in self.request["historical_reviews"]
+                    for s in originals
+                ),
+                "source successor historical obligations omitted",
+            )
         self.parent = self.root / "mappings"
         no_alias(self.parent)
         self.parent_identity = (self.parent.stat().st_dev, self.parent.stat().st_ino)
@@ -1036,10 +1150,13 @@ def _reviews(loaded, selection):
             for name in (str(REGISTRY_PATH), str(LIFECYCLE_PATH), CONTRACT)
         },
         loaded.request["generation"]["path"]: loaded.request["generation"]["sha256"],
-        loaded.generation["adoption"]["receipt"]["path"]: loaded.generation["adoption"]["receipt"][
-            "sha256"
-        ],
     }
+    if loaded.successor is None:
+        ref = loaded.generation["adoption"]["receipt"]
+        required_inputs[ref["path"]] = ref["sha256"]
+    else:
+        ref = loaded.generation["curation_successor"]
+        required_inputs.update({ref["path"]: ref["sha256"], **loaded.successor.local_inputs()})
     for ref in loaded.request["reviews"]:
         report, source = _bundle(loaded, ref)
         require(
@@ -1259,6 +1376,8 @@ def _profile(loaded, staged, context, directory):
             "maintained_writes": False,
             "lease_acquired": False,
         }
+        if loaded.successor is not None:
+            result["input_closure"]["curation_successor"] = loaded.successor.closure()
         finish_receipt(receipt, log, result, scan)
     return result, FrozenFile.capture(log)
 
@@ -1299,6 +1418,8 @@ def prepare(root, request_path, stage):
             "producer": _CAPTURE.receipt(loaded.inputs),
             "native_validation": validation,
         }
+        if loaded.successor is not None:
+            manifest["curation_successor"] = loaded.successor.closure()
         context = tree.put("fit-context.json", api.encoded(manifest))
         startup = time.perf_counter() - started
         measurement, frozen = _profile(
@@ -1337,7 +1458,7 @@ def prepare(root, request_path, stage):
         raise
 
 
-def _prepared(root, stage, *, before=None, historical=False):
+def _prepared(root, stage, *, before=None, historical=False, publication_receipt=None):
     api = native()
     root = api.root_path(root, "target")
     stage = _path(root, stage)
@@ -1350,7 +1471,20 @@ def _prepared(root, stage, *, before=None, historical=False):
         and manifest["scientific_approval_added"] is False,
         "no prepared native publication",
     )
-    loaded = Loaded(root, manifest["request"]["path"], before=before, historical=historical)
+    loaded = Loaded(
+        root,
+        manifest["request"]["path"],
+        before=before,
+        historical=historical,
+        publication_receipt=publication_receipt,
+    )
+    if loaded.successor is not None:
+        require(
+            manifest.get("curation_successor") == loaded.successor.closure(),
+            "prepared successor closure changed",
+        )
+    else:
+        require("curation_successor" not in manifest, "unexpected source successor proof")
     require(_ref(root, root / loaded.path) == manifest["request"], "prepared request changed")
     outputs = _outputs(loaded)
     require(
@@ -1390,6 +1524,11 @@ def _prepared(root, stage, *, before=None, historical=False):
     )
     require(budget["counts"] == _counts(loaded, outputs), "operational work estimate changed")
     measurement = api.document(_read_ref(loaded.inputs, budget["measurement"]))
+    if loaded.successor is not None:
+        require(
+            measurement["input_closure"].get("curation_successor") == loaded.successor.closure(),
+            "operational fit omits successor proof",
+        )
     context_file = FrozenFile.capture(stage / "fit-context.json")
     require(
         measurement["context"] == _ref(root, context_file.path, context_file.content),
@@ -1684,7 +1823,7 @@ def verify_completed(root, stage, receipt_path):
             assert frozen is not None
             require(api.sha(frozen.content) == ref["sha256"], "archived beforeimage changed")
     loaded, manifest, manifest_file, staged, outputs = _prepared(
-        root, stage, before=before, historical=True
+        root, stage, before=before, historical=True, publication_receipt=receipt_file
     )
     require(
         receipt["manifest"] == _ref(root, manifest_file.path, manifest_file.content)
@@ -1703,6 +1842,11 @@ def verify_completed(root, stage, receipt_path):
     require(receipt["completed_operations"] == expected, "completed phase log differs")
     fit = receipt["operational_fit"]
     measurement = api.document(_read_ref(loaded.inputs, fit["receipt"]))
+    if loaded.successor is not None:
+        require(
+            measurement["input_closure"].get("curation_successor") == loaded.successor.closure(),
+            "completed fit omits successor proof",
+        )
     budget = manifest["operational_budget"]
     require(
         fit["budget_sha256"] == api.digest(budget)
@@ -1740,9 +1884,11 @@ def main():
         "adoption-stage",
         "adoption-receipt",
         "registry-retirement-proposal",
+        "curation-successor",
     ):
         parser.add_argument("--" + name, type=Path)
     parser.add_argument("--registry-retirement-proposal-sha256")
+    parser.add_argument("--curation-successor-sha256")
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
     if args.operation == "generate":
@@ -1755,6 +1901,8 @@ def main():
             args.stage,
             args.registry_retirement_proposal,
             args.registry_retirement_proposal_sha256,
+            args.curation_successor,
+            args.curation_successor_sha256,
         )
     elif args.operation == "inspect":
         result = inspect(args.root, args.request)

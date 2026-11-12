@@ -179,7 +179,7 @@ class PublicationFixture:
             "reviews": [],
             "review_inputs": {},
             "operational_policy": ref(self.root, policy_path),
-            "historical_reviews": [self.history],
+            "historical_reviews": getattr(self, "histories", [self.history]),
         }
         write(request_path, request)
         selection = pub.inspect(self.root, request_path)
@@ -236,10 +236,15 @@ class PublicationFixture:
             str(api.LIFECYCLE_PATH),
             pub.CONTRACT,
             request["generation"]["path"],
-            self.generated["adoption"]["receipt"]["path"],
             request["operational_policy"]["path"],
             *(name for name in pub.OUTPUTS if (self.root / name).exists()),
         ]
+        if self.generated["adoption"] is not None:
+            extra_inputs.append(self.generated["adoption"]["receipt"]["path"])
+        else:
+            selected = pub.Loaded(self.root, request_path).successor
+            extra_inputs.extend(selected.local_inputs())
+            extra_inputs.append(self.generated["curation_successor"]["path"])
         extra_inputs = [name for name in extra_inputs if name not in omit_review_inputs]
         for role in ("primary", "skeptic"):
             report = self.adoption.report(f"{prefix}-{role}", targets, extra_inputs)
@@ -717,12 +722,14 @@ def test_1337_historical_root_requires_physical_independence(publication, monkey
     if actual_alias:
         assert alias != f.root
         review = f.root / f.adoption.request["decisions"][0]["primary"]["path"]
-        request.request["historical_reviews"] = [{
-            "root": str(alias),
-            "head": api.git(f.root, "rev-parse", "HEAD").decode().strip(),
-            "review": ref(f.root, review),
-            "markdown_sha256": digest(review.with_name("review.md")),
-        }]
+        request.request["historical_reviews"] = [
+            {
+                "root": str(alias),
+                "head": api.git(f.root, "rev-parse", "HEAD").decode().strip(),
+                "review": ref(f.root, review),
+                "markdown_sha256": digest(review.with_name("review.md")),
+            }
+        ]
         mode = "actual case-alias directory on this filesystem"
     else:
         # Linux generally has no case-equivalent directory spelling. Keep the
@@ -739,10 +746,16 @@ def test_1337_historical_root_requires_physical_independence(publication, monkey
         monkeypatch.setattr(Path, "samefile", equivalent)
         mode = "scoped Path.samefile equivalence simulation on valid distinct roots"
     write(request.path, request.request)
-    write(request.directory / "physical-root-control.json", {
-        "issue": 1337, "mode": mode, "actual_case_alias": actual_alias,
-        "target_root": str(f.root), "history_root": request.request["historical_reviews"][0]["root"],
-    })
+    write(
+        request.directory / "physical-root-control.json",
+        {
+            "issue": 1337,
+            "mode": mode,
+            "actual_case_alias": actual_alias,
+            "target_root": str(f.root),
+            "history_root": request.request["historical_reviews"][0]["root"],
+        },
+    )
     before = current_outputs(f.root)
     with pytest.raises(ValueError, match="physical|independent|same.*root|alias"):
         pub.inspect(f.root, request.path)
@@ -768,8 +781,17 @@ def test_1338_late_kg_head_change_retains_honest_partial_failure(tmp_path, monke
         writes.append(result.path)
         if len(writes) == 1:
             subprocess.run(
-                ["git", "commit", "--allow-empty", "-m", "Synthetic late KG HEAD control for #1338"],
-                cwd=f.kg, check=True, capture_output=True, timeout=30,
+                [
+                    "git",
+                    "commit",
+                    "--allow-empty",
+                    "-m",
+                    "Synthetic late KG HEAD control for #1338",
+                ],
+                cwd=f.kg,
+                check=True,
+                capture_output=True,
+                timeout=30,
             )
         return result
 
@@ -778,9 +800,12 @@ def test_1338_late_kg_head_change_retains_honest_partial_failure(tmp_path, monke
         pub.apply(f.root, stage, acceptance, receipt, enabled=True)
     report = json.loads((receipt / "application.json").read_bytes())
     assert report["state"] == "FAILED" and report["recovery_required"] is True
-    assert report["completed_operations"] == [{
-        "path": pub.CANONICAL, "sha256": digest(f.root / pub.CANONICAL),
-    }]
+    assert report["completed_operations"] == [
+        {
+            "path": pub.CANONICAL,
+            "sha256": digest(f.root / pub.CANONICAL),
+        }
+    ]
     after = current_outputs(f.root)
     assert writes == [f.root / pub.CANONICAL] and after[pub.CANONICAL] != before[pub.CANONICAL]
     assert all(after[name] == before[name] for name in pub.OUTPUTS if name != pub.CANONICAL)
@@ -828,10 +853,12 @@ def test_1339_rehashed_generation_requires_actual_native_output(publication, cha
         elif change == "suppression_evidence":
             rows = pub._sidecar(paths["suppressions"].read_bytes())
             assert len(rows) == 1 and rows[0]["token_key"] == "new"
-            rows[0]["evidence_refs"] = json.dumps([
-                *json.loads(rows[0]["evidence_refs"]),
-                "synthetic evidence never emitted by the native producer",
-            ])
+            rows[0]["evidence_refs"] = json.dumps(
+                [
+                    *json.loads(rows[0]["evidence_refs"]),
+                    "synthetic evidence never emitted by the native producer",
+                ]
+            )
             paths["suppressions"].write_bytes(pub._tsv(pub.SIDECAR_FIELDS, rows))
         else:
             omitted = (
@@ -941,9 +968,7 @@ def test_1342_native_rule_f_warning_preserves_replay_and_publication_hold(
                 super().__init__(*args, **kwargs)
             assert api.record_curation_event is native_event
 
-    monkeypatch.setattr(
-        fixture_source, "NativeReviewAdoptionFixture", WithDatelessExistingOwner
-    )
+    monkeypatch.setattr(fixture_source, "NativeReviewAdoptionFixture", WithDatelessExistingOwner)
     f = PublicationFixture(tmp_path / "native-rule-f-diagnostic", monkeypatch, None)
     assert api.record_curation_event is native_event
     assert f.generated["state"] == "COMPLETE"
