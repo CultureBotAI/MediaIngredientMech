@@ -28,6 +28,10 @@ import csv
 from tests.stable_id_helpers import legacy_registry_slug
 from pathlib import Path
 
+import yaml
+
+from mediaingredientmech.export.reviewed_sssom import capture_permanent_identity, permanent_subject
+
 ROOT = Path(__file__).parent.parent
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 
@@ -148,12 +152,20 @@ def test_every_asymmetric_subject_has_its_registry_row():
     for r in rows:
         by_subject.setdefault(r["subject_id"], []).append(r)
 
+    stable = None
+    if any(r["predicate_id"] in ASYMMETRIC and permanent_subject(r["subject_id"]) for r in rows):
+        metadata = yaml.safe_load("".join(line[1:].removeprefix(" ") for line in _header()))
+        stable = capture_permanent_identity(ROOT, metadata)
     missing = []
     for r in rows:
         if r["predicate_id"] not in ASYMMETRIC:
             continue
         subject = r["subject_id"]
         if not subject.startswith("MIM:"):
+            continue
+        if permanent_subject(subject):
+            assert stable is not None
+            stable.require(subject, r["subject_label"])
             continue
         slug = legacy_registry_slug(subject)
         ok = any(
@@ -164,6 +176,8 @@ def test_every_asymmetric_subject_has_its_registry_row():
         )
         if not ok:
             missing.append(subject)
+    if stable is not None:
+        stable.verify()
     assert not missing, (
         f"{len(missing)} asymmetric subject(s) lack the registry exactMatch row "
         f"whose object local-part equals the subject slug: {sorted(set(missing))[:5]}. "

@@ -199,7 +199,15 @@ class Fixture:
                 "source_sssom": binding.EXTERNAL_SOURCE,
                 "source_sha256": external.digest(self.root / binding.EXTERNAL_SOURCE),
                 "inputs": {
-                    "external-evidence.json": external.digest(self.root / "external-evidence.json")
+                    "external-evidence.json": external.digest(self.root / "external-evidence.json"),
+                    **{
+                        str(path): external.digest(self.root / path)
+                        for path in (binding.REGISTRY_PATH, binding.LIFECYCLE_PATH)
+                    },
+                    **{
+                        path: external.digest(self.root / path)
+                        for path in self.records if path not in owners
+                    },
                 },
                 "record_inputs": owners,
                 "decisions": decisions,
@@ -516,6 +524,11 @@ def test_rename_and_alias_change_retains_id_after_fresh_review(fixture):
     fixture.review["record_inputs"].pop(old)
     fixture.review["record_inputs"][new] = external.digest(fixture.root / new)
     fixture.review["cases"][3]["owner_record"] = new
+    # Fresh external identity evidence must also bind the renamed full inventory.
+    fixture.make_external()
+    fixture.review["external_review"]["sha256"] = external.digest(
+        fixture.root / "external-review.json"
+    )
     fixture.seal()
     binding.export_candidate(fixture.root, fixture.review_path, fixture.output)
     claims = binding.consumer_claims(
