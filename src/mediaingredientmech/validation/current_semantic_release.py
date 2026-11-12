@@ -519,6 +519,19 @@ def current_findings(inputs, history, records, hashes, request):
     return dispositions, blocking
 
 
+def _retained_companion_implementation(inputs, companion):
+    """Bind the optional complete companion executor without changing old routes."""
+    if "retained_obligations" not in companion:
+        return
+    from mediaingredientmech.ingredient_bundle_contract import retained_implementation
+
+    for name, expected in retained_implementation()["files"].items():
+        require(
+            identity.sha(inputs.read(name)) == expected,
+            "retained companion implementation differs: " + name,
+        )
+
+
 def evaluate(root, request_path, *, hold_payload_path=None, assessed=True):
     inputs = Inputs(root)
     head = reviewed_export_route._git(inputs.root, "rev-parse", "HEAD")
@@ -585,6 +598,7 @@ def evaluate(root, request_path, *, hold_payload_path=None, assessed=True):
     for path, expected in mapping["input_snapshot"].items():
         inputs.read(str(path.relative_to(inputs.root)), expected)
     companion = inputs.document(request["companion_review"])
+    _retained_companion_implementation(inputs, companion)
     for group in ("inputs", "record_inputs"):
         for name, expected in companion[group].items():
             inputs.read(name, expected)

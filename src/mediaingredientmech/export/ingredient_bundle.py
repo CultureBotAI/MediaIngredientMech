@@ -9,12 +9,13 @@ from pathlib import Path
 
 from mediaingredientmech.export.reviewed_sssom import load_review
 from mediaingredientmech.ingredient_bundle_contract import (
-    ARTIFACTS,
     BUNDLE_VERSION,
     PROFILE_NAME,
     REQUIRED_CAPABILITIES,
     SCHEMA_NAME,
+    artifact_names,
     canonical_json,
+    captured_retained,
     content_sha256,
     contract_resource,
     read_json,
@@ -38,6 +39,11 @@ def export_bundle(root: Path, review_path: Path, output: Path) -> dict:
     )
     review_bytes = review_path.read_bytes()
     review = read_json(review_bytes)
+    if "retained_obligations" in review and globals().get("_RETAINED_CAPTURE") is None:
+        result = captured_retained("export_bundle", root, review_path, output)
+        if not isinstance(result, dict):
+            raise ValueError("Invalid retained export result")
+        return result
     # Reuse the full existing mapping review, not a checksum-only subset approval.
     base = load_review(root, Path(review["base_review"]))
     if base["review_sha256"] != review["base_review_sha256"]:
@@ -60,6 +66,8 @@ def export_bundle(root: Path, review_path: Path, output: Path) -> dict:
     required = set(REQUIRED_CAPABILITIES)
     if "identity_projection" in review:
         required.add("identity-projection-v1")
+    if "retained_obligations" in loaded:
+        required.add("retained-companion-obligations-v1")
     if loaded["products"]:
         required.add("catalog-products-v1")
     if loaded["occurrences"]:
@@ -72,7 +80,9 @@ def export_bundle(root: Path, review_path: Path, output: Path) -> dict:
         "required_capabilities": sorted(required),
         "review": "review.json",
         "source_root": "sources",
-        "artifacts": {key: name if name in artifacts else None for key, name in ARTIFACTS.items()},
+        "artifacts": {
+            key: name if name in artifacts else None for key, name in artifact_names(loaded).items()
+        },
         "provenance": {
             "review_sha256": content_sha256(review_bytes),
             "base_review_sha256": review["base_review_sha256"],
@@ -90,6 +100,11 @@ def export_bundle(root: Path, review_path: Path, output: Path) -> dict:
             for name, value in sorted(members.items())
         },
     }
+    if "retained_obligations" in loaded:
+        provenance = manifest["provenance"]
+        if not isinstance(provenance, dict):
+            raise ValueError("Invalid retained exporter provenance")
+        provenance["retained_implementation"] = loaded["retained_implementation"]
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix=".ingredient-bundle-", dir=output.parent))
     try:
