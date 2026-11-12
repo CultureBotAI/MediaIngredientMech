@@ -15,8 +15,11 @@ import json
 import math
 import re
 import shutil
+import stat
 import tempfile
 from collections import defaultdict
+from collections.abc import Mapping
+from dataclasses import dataclass
 from pathlib import Path
 
 import yaml
@@ -24,7 +27,14 @@ import yaml
 from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.review_claims import validate_review_decision
 from mediaingredientmech.sssom_metadata import subset_date_metadata
-from mediaingredientmech.stable_ids import validate_id
+from mediaingredientmech.stable_ids import (
+    LIFECYCLE_PATH,
+    MIM_PREFIX,
+    REGISTRY_PATH,
+    parse_registry,
+    validate_id,
+    validate_records,
+)
 from mediaingredientmech.synonym_policy import is_resolving_synonym_text
 
 PRODUCTS = (
@@ -151,6 +161,139 @@ def _owners(
     return owners, records
 
 
+def _identity_locations(path: Path, *, regular: bool = True) -> tuple:
+    """Bind unaliased identity inputs and their ancestors during byte snapshots."""
+    locations = []
+    for entry in (path, *path.parents):
+        info = entry.lstat()
+        if stat.S_ISLNK(info.st_mode):
+            raise ValueError(f"Permanent identity symlink refused: {entry}")
+        locations.append((info.st_dev, info.st_ino))
+    info = path.lstat()
+    if regular and (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1):
+        raise ValueError(f"Permanent identity nonregular/hardlinked input: {path}")
+    return tuple(locations)
+
+
+def _identity_input(path: Path) -> tuple[Path, bytes, tuple]:
+    """Capture exact bytes with stable file/ancestor identities on both sides."""
+    before = _identity_locations(path)
+    content = path.read_bytes()
+    if before != _identity_locations(path):
+        raise ValueError(f"Permanent identity input moved during capture: {path}")
+    return path, content, before
+
+
+def permanent_subject(subject: str) -> bool:
+    """Reserve numeric MIM spellings, including invalid case/width/Unicode."""
+    prefix, separator, local = subject.partition(":")
+    return bool(separator and prefix.casefold() == "mim" and local.isdecimal())
+
+
+class _UniqueLoader(yaml.SafeLoader):
+    """Reject duplicate keys in the exact captured owner document."""
+
+
+def _mapping(loader, node, deep=False):
+    result = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in result:
+            raise ValueError(f"Duplicate owner YAML key: {key}")
+        result[key] = loader.construct_object(value_node, deep=deep)
+    return result
+
+
+_UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _mapping)
+
+
+def _members(root: Path) -> tuple[Path, ...]:
+    paths = []
+    for kind in ("mapped", "unmapped"):
+        directory = root / "data/ingredients" / kind
+        _identity_locations(directory, regular=False)
+        if not directory.is_dir():
+            raise ValueError(f"Missing current owner directory: {kind}")
+        paths.extend(sorted(directory.glob("*.yaml")))
+    return tuple(paths)
+
+
+@dataclass(frozen=True)
+class PermanentIdentity:
+    """Retain the complete current corpus and ledger through publication."""
+
+    root: Path
+    members: tuple[Path, ...]
+    captures: tuple[tuple[Path, bytes, tuple], ...]
+    owners: Mapping[str, tuple[str, dict]]
+
+    def require(self, subject: str, label: str) -> str:
+        """Require one active owner and the current label, never an alias join."""
+        identifier = validate_id(subject)
+        if identifier not in self.owners:
+            raise ValueError(f"No active permanent owner: {subject}")
+        path, record = self.owners[identifier]
+        if record.get("mapping_status") != "MAPPED":
+            raise ValueError(f"External row owner is not MAPPED: {subject}")
+        if record.get("preferred_term") != label:
+            raise ValueError(f"Permanent subject label differs from current owner: {subject}")
+        return path
+
+    def verify(self) -> None:
+        """Reject content, inode, ancestor, or complete membership drift."""
+        if _members(self.root) != self.members:
+            raise ValueError("Permanent identity owner inventory changed")
+        for path, content, locations in self.captures:
+            if _identity_input(path) != (path, content, locations):
+                raise ValueError(f"Permanent identity input changed: {path}")
+
+    @property
+    def hashes(self) -> dict[Path, str]:
+        return {path: hashlib.sha256(content).hexdigest() for path, content, _ in self.captures}
+
+
+def capture_permanent_identity(
+    root: Path,
+    metadata: dict,
+    *,
+    reviewed_inputs: Mapping[str, bytes] | None = None,
+) -> PermanentIdentity:
+    """Validate native active ownership from captured, optionally reviewed bytes.
+
+    An ordinary mapping review must explicitly pin the entire identity closure,
+    including unmapped owners; a mutable ledger or a numeric spelling is not
+    sufficient. The standalone invariant validator uses the same native checks.
+    """
+    root = root.absolute()
+    if metadata.get("curie_map", {}).get("MIM") != MIM_PREFIX:
+        raise ValueError("Permanent MIM subjects require the permanent MIM URI prefix")
+    members = _members(root)
+    captures = tuple(
+        _identity_input(path) for path in (root / REGISTRY_PATH, root / LIFECYCLE_PATH, *members)
+    )
+    if reviewed_inputs is not None:
+        for path, content, _ in captures:
+            name = path.relative_to(root).as_posix()
+            if reviewed_inputs.get(name) != content:
+                raise ValueError(f"Permanent identity input missing or changed in review: {name}")
+    registry = parse_registry(captures[0][1], captures[1][1])
+    records = {}
+    for path, content, _ in captures[2:]:
+        record = yaml.load(content, Loader=_UniqueLoader)
+        if not isinstance(record, dict):
+            raise ValueError(f"Current owner must be a mapping: {path}")
+        records[path.relative_to(root).as_posix()] = record
+    validate_records(registry, records)
+    result = PermanentIdentity(
+        root,
+        members,
+        captures,
+        {record["mim_id"]: (path, record) for path, record in records.items()},
+    )
+    result.verify()
+    return result
+
+
 def registry_identity_candidates(record: dict, subject: str) -> set[str]:
     """Retain Rule B1's original registry identity, never invent a numeric alias."""
     aliases = record.get("legacy_identifiers", []) if "mim_id" in record else [subject]
@@ -267,8 +410,25 @@ def load_review(root: Path, review_path: Path) -> dict:
     owner_by_subject = {
         row["subject_id"]: records[owner] for row, owner in zip(rows, owners, strict=True)
     }
+    permanent_rows = [
+        row
+        for row in selected
+        if row["predicate_id"] in {"skos:narrowMatch", "skos:broadMatch"}
+        and permanent_subject(row["subject_id"])
+    ]
+    identity = (
+        capture_permanent_identity(root, metadata, reviewed_inputs=verified)
+        if permanent_rows
+        else None
+    )
+    if identity is not None:
+        snapshots.update(identity.hashes)
     for row in selected:
         if row["predicate_id"] in {"skos:narrowMatch", "skos:broadMatch"}:
+            if permanent_subject(row["subject_id"]):
+                assert identity is not None
+                identity.require(row["subject_id"], row["subject_label"])
+                continue
             if not any(
                 (row["subject_id"], candidate) in identities
                 for candidate in registry_identity_candidates(
@@ -287,12 +447,15 @@ def load_review(root: Path, review_path: Path) -> dict:
         "decisions": [indexed[i] for i in range(1, len(rows) + 1)],
         "review_sha256": review_sha,
         "input_snapshot": snapshots,
+        "permanent_identity": identity,
     }
     _check_snapshot(loaded)
     return loaded
 
 
 def _check_snapshot(loaded: dict) -> None:
+    if loaded.get("permanent_identity") is not None:
+        loaded["permanent_identity"].verify()
     for path, expected in loaded["input_snapshot"].items():
         if digest(path) != expected:
             raise ValueError(f"Input changed during review/export: {path}")

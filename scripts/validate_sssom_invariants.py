@@ -33,6 +33,10 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   consumer that walks the SSSOM by ``subject_label`` resolves the MIM
   child to its OBO parent (identity collapse).
 
+  Permanent numeric subjects instead require the complete validated active
+  owner/mint/lifecycle inventory and permanent MIM URI (#1371). This is
+  identity proof, not approval of an external mapping or a new registry alias.
+
   **Strict by default**: B1 contributes to exit-2 and the reject TSV
   on every run. The original warn-only stage shipped with PR #4 to
   let the validator land alongside the rest of Group B while the
@@ -130,6 +134,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 _SRC = REPO_ROOT / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
+
+from mediaingredientmech.export.reviewed_sssom import (  # noqa: E402
+    capture_permanent_identity, permanent_subject,
+)
 
 from mediaingredientmech.synonym_policy import (  # noqa: E402
     is_resolving_synonym_text, preferred_term_owners,
@@ -436,6 +444,7 @@ def _other_exact_match_targets(
 
 def evaluate_rule_b1(
     rows: list[dict[str, str]],
+    *, metadata: dict | None = None,
 ) -> Iterator[tuple[int, dict[str, str], str]]:
     """Yield ``(row_number, row, reason)`` for every narrowMatch /
     broadMatch row whose subject lacks a matching registry row.
@@ -447,11 +456,31 @@ def evaluate_rule_b1(
     # subject_id -> True if registry row exists; cached because we may
     # ask many times per subject.
     cache: dict[str, bool] = {}
+    identity = None
+    identity_error = None
+    if any(
+        (row.get("predicate_id") or "").strip() in ASYMMETRIC_PREDICATES
+        and permanent_subject((row.get("subject_id") or "").strip())
+        for row in rows
+    ):
+        try:
+            identity = capture_permanent_identity(INGREDIENTS_DIR.parents[2], metadata or {})
+        except (ValueError, OSError, yaml.YAMLError) as exc:
+            identity_error = str(exc)
     for idx, row in enumerate(rows, start=1):
         predicate = (row.get("predicate_id") or "").strip()
         if predicate not in ASYMMETRIC_PREDICATES:
             continue
         subject_id = (row.get("subject_id") or "").strip()
+        if permanent_subject(subject_id):
+            try:
+                if identity_error is not None:
+                    raise ValueError(identity_error)
+                assert identity is not None
+                identity.require(subject_id, row.get("subject_label") or "")
+            except ValueError as exc:
+                yield idx, row, f"Rule B1: invalid permanent identity for {subject_id}: {exc}"
+            continue
         if not subject_id.startswith("MIM:"):
             continue
         if subject_id not in cache:
@@ -476,6 +505,8 @@ def evaluate_rule_b1(
             f"the SSSOM."
         )
         yield idx, row, reason
+    if identity is not None:
+        identity.verify()
 
 
 # ---------------------------------------------------------------------------
@@ -1244,6 +1275,7 @@ def main(argv: list[str]) -> int:
         return 1
 
     prelude, fieldnames, rows = _read_sssom(args.sssom_path)
+    metadata = yaml.safe_load("\n".join(line[1:].removeprefix(" ") for line in prelude)) or {}
 
     # Aggregate rejects across rules. A row may fail multiple rules; we
     # keep one entry per (row_number, rule) so the curator sees every
@@ -1259,12 +1291,12 @@ def main(argv: list[str]) -> int:
 
     _collect("Rule A", evaluate_rule_a(rows))
     if args.strict_b1:
-        _collect("Rule B1", evaluate_rule_b1(rows))
+        _collect("Rule B1", evaluate_rule_b1(rows, metadata=metadata))
     else:
         # Lenient (diagnostic) B1: emit per-row warnings to stderr but
         # do not contribute to exit-2 or the reject TSV. Triggered only
         # by --lenient-b1; CI runs strict.
-        b1_findings = list(evaluate_rule_b1(rows))
+        b1_findings = list(evaluate_rule_b1(rows, metadata=metadata))
         if b1_findings:
             print(
                 f"WARNING: Rule B1 (lenient mode, --lenient-b1): "
