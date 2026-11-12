@@ -7,6 +7,7 @@ import hashlib
 import io
 import json
 import re
+import types
 from datetime import date
 from functools import lru_cache
 from importlib.resources import files
@@ -34,6 +35,7 @@ CAPABILITIES = frozenset(
         "ingredient-occurrences-v1",
         "catalog-products-v1",
         "identity-projection-v1",
+        "retained-companion-obligations-v1",
     }
 )
 REQUIRED_CAPABILITIES = frozenset(
@@ -318,6 +320,56 @@ ARTIFACTS = {
 }
 
 
+def captured_retained(operation: str, *args, **kwargs):
+    """Enter the opt-in implementation through freshly captured executable bytes."""
+    if operation not in {
+        "reviewed_products",
+        "validate_bundle",
+        "export_bundle",
+        "retained_implementation",
+    }:
+        raise ValueError("Unknown retained companion operation")
+    root = Path(__file__).absolute().parents[2]
+    path = root / "src/mediaingredientmech/export/companion_producer.py"
+    if any(p.is_symlink() for p in (path, *path.parents)):
+        raise ValueError("Aliased companion producer loader")
+    raw = path.read_bytes()
+    loader = types.ModuleType("_retained_companion_loader")
+    loader.__file__ = str(path)
+    exec(compile(raw, str(path), "exec"), loader.__dict__)
+    capture = loader.load(root, raw)
+    module = (
+        "mediaingredientmech.export.ingredient_bundle"
+        if operation == "export_bundle"
+        else "mediaingredientmech.ingredient_bundle_contract"
+    )
+    result = getattr(capture.load(module), operation)(*args, **kwargs)
+    capture.verify()
+    return result
+
+
+def retained_implementation() -> dict:
+    """Return the actual compiled closure, never hashes of cached public modules."""
+    capture = globals().get("_RETAINED_CAPTURE")
+    if capture is None:
+        result = captured_retained("retained_implementation")
+    else:
+        result = capture.implementation()
+    if not isinstance(result, dict):
+        raise ValueError("Invalid retained implementation result")
+    return result
+
+
+def artifact_names(loaded: dict) -> dict[str, str]:
+    """Old bundles retain their exact layout; retained obligations are opt-in."""
+    result = dict(ARTIFACTS)
+    if "retained_obligations" in loaded:
+        from mediaingredientmech.retained_companion import ARTIFACT
+
+        result["retained_obligations"] = ARTIFACT
+    return result
+
+
 def _owner_id(owner: str, record: dict | None = None) -> str:
     stem = Path(owner).stem
     safe = re.sub(r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", stem)
@@ -364,6 +416,23 @@ def reviewed_products(review: dict, sources: dict[str, bytes]) -> tuple[dict[str
     decisions use the same verifier and additionally bind the explicit owner path.
     A consumer trusts a pinned bundle/review revision, never a self-issued checksum.
     """
+    if "retained_obligations" in review:
+        capture = globals().get("_RETAINED_CAPTURE")
+        if capture is None:
+            result = captured_retained("reviewed_products", review, sources)
+            if (
+                not isinstance(result, tuple)
+                or len(result) != 2
+                or not all(isinstance(x, dict) for x in result)
+            ):
+                raise ValueError("Invalid retained product result")
+            return result[0], result[1]
+        from mediaingredientmech.retained_companion import reviewed_products as retained_products
+
+        capture.bind_review(review, sources)
+        artifacts, loaded = retained_products(review, sources)
+        loaded["retained_implementation"] = capture.implementation()
+        return artifacts, loaded
     if "identity_projection" in review:
         from mediaingredientmech.identity_projection_bundle import projected_products
 
@@ -627,6 +696,19 @@ def validate_bundle(
     if expected_manifest_sha256 is not None and fingerprint != expected_manifest_sha256:
         raise ValueError("Ingredient bundle manifest does not match its activation pin")
     manifest = read_json(manifest_bytes)
+    if (
+        "retained-companion-obligations-v1" in manifest.get("required_capabilities", [])
+        and globals().get("_RETAINED_CAPTURE") is None
+    ):
+        result = captured_retained(
+            "validate_bundle",
+            root,
+            expected_manifest_sha256=expected_manifest_sha256,
+            capabilities=capabilities,
+        )
+        if not isinstance(result, dict):
+            raise ValueError("Invalid retained validation result")
+        return result
     contents = validate_member_hashes(root, manifest, capabilities)
     if manifest.get("review") != "review.json" or manifest.get("source_root") != "sources":
         raise ValueError("Unsupported bundle review layout")
@@ -646,12 +728,18 @@ def validate_bundle(
         or provenance.get("base_review_sha256") != review["base_review_sha256"]
     ):
         raise ValueError("Bundle provenance or cohort differs from reviewed inputs")
-    declared = {key: name if name in expected else None for key, name in ARTIFACTS.items()}
+    declared = {
+        key: name if name in expected else None for key, name in artifact_names(loaded).items()
+    }
     if manifest.get("artifacts") != declared:
         raise ValueError("Missing or mismatched explicit bundle artifacts")
     required = set(REQUIRED_CAPABILITIES)
     if "identity_projection" in review:
         required.add("identity-projection-v1")
+    if "retained_obligations" in loaded:
+        required.add("retained-companion-obligations-v1")
+        if provenance.get("retained_implementation") != loaded["retained_implementation"]:
+            raise ValueError("Retained executing implementation or runtime differs")
     for key, capability in (
         ("products", "catalog-products-v1"),
         ("occurrences", "ingredient-occurrences-v1"),
