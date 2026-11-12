@@ -159,3 +159,70 @@ def test_prepared_live_application_still_refuses_a_new_commit(tmp_path, monkeypa
         successor.apply(f.target, stage, acceptance, receipt, enabled=True)
     assert not receipt.exists()
     assert maintained(f.target) == before
+
+
+def test_captured_endpoint_refuses_late_live_ledger_drift(tmp_path, monkeypatch):
+    """A retained endpoint must check current ledgers after its initial admission."""
+    f, endpoint_path = corrected(tmp_path, monkeypatch)
+    reference = json.loads(endpoint_path.read_bytes())
+    stage = f.target / reference["stage"]
+    receipt = f.target / reference["receipt"]["path"]
+    archives = receipt_evidence(f.target, stage, receipt)
+    before = maintained(f.target)
+    predecessor = maintained(f.predecessor)
+    predecessor_receipt = f.predecessor / f.endpoint["receipt"]["path"]
+    predecessor_receipt_bytes = predecessor_receipt.read_bytes()
+    endpoint_bytes = endpoint_path.read_bytes()
+    ledgers = {name: (f.target / name).read_bytes() for name in successor.LEDGERS}
+    registry_name, lifecycle_name = successor.LEDGERS
+    rows = ledgers[registry_name].decode().splitlines(keepends=True)
+    cells = rows[1].rstrip("\r\n").split("\t")
+    assert cells[0] == "MIM:0000001"
+    cells[1] = "Forbidden mint-label change after endpoint capture"
+    rows[1] = "\t".join(cells) + "\n"
+    mutations = {
+        registry_name: "".join(rows).encode(),
+        lifecycle_name: ledgers[lifecycle_name]
+        + b"MIM:0000001\tmerged\tMIM:0000002\t2026-11-12T00:00:00Z\tForbidden late transition\n",
+    }
+    endpoint = successor.Endpoint(f.target, reference)
+    endpoint.check()
+    for number, (name, changed) in enumerate(mutations.items()):
+        path = f.target / name
+        assert changed != ledgers[name]
+        endpoint.check()
+        captured_identity = (path.stat().st_dev, path.stat().st_ino)
+        path.write_bytes(changed)
+        assert (path.stat().st_dev, path.stat().st_ino) == captured_identity
+        try:
+            with pytest.raises(ValueError):
+                endpoint.check()
+            assert_exact_evidence(archives)
+            assert {
+                key: raw for key, raw in maintained(f.target).items() if key not in ledgers
+            } == {key: raw for key, raw in before.items() if key not in ledgers}
+            assert maintained(f.predecessor) == predecessor
+        finally:
+            # Restoring bytes does not authorize replacing an already captured
+            # inode. Allocate the replacement before releasing the old inode so
+            # inode reuse cannot make this check filesystem-dependent.
+            restored = tmp_path / f"restored-ledger-{number}.tsv"
+            restored.write_bytes(ledgers[name])
+            restored_identity = (restored.stat().st_dev, restored.stat().st_ino)
+            assert restored_identity[0] == captured_identity[0]
+            assert restored_identity != captured_identity
+            restored.replace(path)
+        assert path.read_bytes() == ledgers[name]
+        assert (path.stat().st_dev, path.stat().st_ino) == restored_identity
+        with pytest.raises(ValueError):
+            endpoint.check()
+        # The old capture is invalid after replacement; a fresh native
+        # reconstruction must independently admit the restored current bytes.
+        endpoint = successor.Endpoint(f.target, reference)
+        endpoint.check()
+        assert endpoint.verify_native()["status"] == "COMPLETE_CURRENT_SOURCE_SUCCESSOR"
+        assert maintained(f.target) == before
+        assert_exact_evidence(archives)
+        assert maintained(f.predecessor) == predecessor
+        assert predecessor_receipt.read_bytes() == predecessor_receipt_bytes
+        assert endpoint_path.read_bytes() == endpoint_bytes
