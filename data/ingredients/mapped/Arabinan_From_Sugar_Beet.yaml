@@ -23,7 +23,10 @@ ontology_mapping:
       The head noun is arabinan, CHEBI:22590, the closest broader term (the botanical
       source stays in the preferred_term). cas:11078-27-6 identity, NARROW_MATCH grade
       and both registry rows unchanged (Section 3 step 2, #245).'
-synonyms: []
+synonyms:
+- synonym_text: arabinan (sugar beet)
+  synonym_type: RAW_TEXT
+  source: https://prod-docs.megazyme.com/documents/Data_Sheet/P-ARAB_DATA.pdf
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -64,11 +67,25 @@ curation_history:
   new_status: MAPPED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Add botanical-source-preserving arabinan(sugar beet) alias. Preserve CAS11078-27-6
+    identity and CHEBI22590 asymmetric parent from #312; no Megazyme grade asserted.'
+  llm_assisted: true
+  previous_status: MAPPED
+  new_status: MAPPED
 - timestamp: '2026-11-08T22:01:42+00:00'
   curator: codex
   action: ASSIGNED_MIM_ID
   changes: '#1265: assigned permanent MIM:0000366; retained mapping identifier and
     legacy aliases.'
+  llm_assisted: true
+- timestamp: '2026-11-10T07:11:48.281331+00:00'
+  curator: stable_id_adoption
+  action: ADOPTED_CAMPAIGN_MIM_ID
+  changes: '#1303: retained MIM:0000366; adopted exact current legacy owner and preserved
+    original mint/source history; no scientific approval transferred.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 11078-27-6
