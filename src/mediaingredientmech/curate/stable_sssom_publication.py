@@ -170,6 +170,7 @@ def _generation_check(root, receipt, files, *, before=None):
             "stderr",
         }
         | ({"registry_retirement_proposal"} if "registry_retirement_proposal" in receipt else set())
+        | ({"cas_dispositions"} if "cas_dispositions" in receipt else set())
         | (
             {"curation_successor", "successor_input_closure"}
             if "curation_successor" in receipt
@@ -185,6 +186,9 @@ def _generation_check(root, receipt, files, *, before=None):
     proposal_ref = receipt.get("registry_retirement_proposal")
     if proposal_ref is not None:
         _read_ref(files, proposal_ref)
+    cas_ref = receipt.get("cas_dispositions")
+    if cas_ref is not None:
+        _read_ref(files, cas_ref)
     require(
         receipt["schema_version"] == 1
         and receipt["capability"] == GENERATION
@@ -207,6 +211,17 @@ def _generation_check(root, receipt, files, *, before=None):
     )
     manifest_raw = _read_ref(files, receipt["outputs"]["manifest"])
     manifest = api.document(manifest_raw)
+    cas_proof = manifest.get("cas_dispositions")
+    require(
+        (cas_ref is None and cas_proof is None)
+        or (
+            cas_ref is not None
+            and isinstance(cas_proof, dict)
+            and cas_proof.get("path") == str(_path(root, cas_ref["path"]))
+            and cas_proof.get("sha256") == cas_ref["sha256"]
+        ),
+        "CAS disposition selection/proof differs",
+    )
     candidate = _read_ref(files, receipt["outputs"]["sssom"])
     sidecar = _read_ref(files, receipt["outputs"]["suppressions"])
     _read_ref(files, receipt["stdout"])
@@ -219,6 +234,7 @@ def _generation_check(root, receipt, files, *, before=None):
             for key in ("sssom", "suppressions", "manifest")
         },
         proposal_ref,
+        cas_ref,
     )
     require(receipt["argv"] == expected_command, "unsupported generator command")
     require(receipt["environment"] == _environment(root, claw, kg), "generator roots differ")
@@ -350,6 +366,7 @@ def _replay_generation(
             **{str(path): None for path in absent},
         },
         "registry_retirement_proposal": receipt.get("registry_retirement_proposal"),
+        "cas_dispositions": receipt.get("cas_dispositions"),
         "canonical_label_resolution": manifest["canonical_label_resolution"],
         "source_revisions": manifest["source_revisions"],
         "outputs": {
@@ -393,7 +410,7 @@ def _replay_generation(
     _CAPTURE.verify()
 
 
-def _command(root, claw, outputs, registry_retirement_proposal=None):
+def _command(root, claw, outputs, registry_retirement_proposal=None, cas_dispositions=None):
     command = [
         sys.executable,
         str(claw / "scripts/build_mim_ingredient_sssom.py"),
@@ -417,6 +434,16 @@ def _command(root, claw, outputs, registry_retirement_proposal=None):
                 str(_path(root, registry_retirement_proposal["path"])),
                 "--registry-retirement-proposal-sha256",
                 registry_retirement_proposal["sha256"],
+            ]
+        )
+    if cas_dispositions is not None:
+        native().keys(cas_dispositions, {"path", "sha256"})
+        command.extend(
+            [
+                "--cas-dispositions",
+                str(_path(root, cas_dispositions["path"])),
+                "--cas-dispositions-sha256",
+                cas_dispositions["sha256"],
             ]
         )
     return command
@@ -462,6 +489,8 @@ def generate(
     registry_retirement_proposal_sha256=None,
     curation_successor=None,
     curation_successor_sha256=None,
+    cas_dispositions=None,
+    cas_dispositions_sha256=None,
 ):
     """Run the actual native Claw CLI, retain failures and all three artifacts.
 
@@ -486,6 +515,17 @@ def generate(
             "registry retirement proposal digest differs",
         )
         proposal_ref = _ref(root, proposal_file.path, proposal_file.content)
+    require(
+        bool(cas_dispositions) == bool(cas_dispositions_sha256),
+        "CAS dispositions and explicit digest are required together",
+    )
+    cas_file, cas_ref = None, None
+    if cas_dispositions is not None:
+        cas_file = FrozenFile.capture(_path(root, cas_dispositions))
+        require(
+            api.sha(cas_file.content) == cas_dispositions_sha256, "CAS disposition digest differs"
+        )
+        cas_ref = _ref(root, cas_file.path, cas_file.content)
     require(
         bool(curation_successor) == bool(curation_successor_sha256),
         "successor endpoint and digest are required together",
@@ -540,7 +580,8 @@ def generate(
         "kg_microbe": {"root": str(kg), "head": api.git(kg, "rev-parse", "HEAD").decode().strip()},
         "runtime": _CAPTURE.runtime,
         "registry_retirement_proposal": proposal_ref,
-        "argv": _command(root, claw, outputs, proposal_ref),
+        "cas_dispositions": cas_ref,
+        "argv": _command(root, claw, outputs, proposal_ref, cas_ref),
         "environment": _environment(root, claw, kg),
         "started_at": datetime.now(timezone.utc).isoformat(),
     }
@@ -550,6 +591,8 @@ def generate(
     try:
         if proposal_file is not None:
             proposal_file.verify()
+        if cas_file is not None:
+            cas_file.verify()
         process = subprocess.run(
             receipt["argv"],
             cwd=root,
@@ -574,6 +617,7 @@ def generate(
         )
         generation_inputs = api.Inputs(root)
         checked = _generation_check(root, receipt, generation_inputs)
+        _cas_source_correction(checked[0], endpoint, endpoint_ref)
         _, _, _, sources, absent, owners, _ = checked
 
         def terminal_check():
@@ -586,6 +630,8 @@ def generate(
                 frozen.verify()
             if proposal_file is not None:
                 proposal_file.verify()
+            if cas_file is not None:
+                cas_file.verify()
             require(
                 api.hashes(api.inventory(root)) == api.hashes(owners),
                 "generation owner membership changed",
@@ -664,6 +710,50 @@ def _render_candidate(raw, fields, rows):
     return prelude.encode() + _tsv(fields, rows)
 
 
+def _cas_source_correction(manifest, endpoint, endpoint_ref):
+    """Require real reviewed source withdrawal, never a diagnostic success flag (#1383)."""
+    proof = manifest.get("cas_dispositions")
+    if proof is None:
+        return
+    claims = proof["content"]
+    correction = claims["source_correction"]
+    retired = [entry for entry in claims["entries"] if entry["action"] == "RETIRE_INVALID_CAS"]
+    require(
+        not retired or (endpoint is not None and correction == endpoint_ref),
+        "CAS retirement requires the genuinely selected source-correction endpoint",
+    )
+    if correction is not None:
+        require(
+            endpoint is not None and correction == endpoint_ref,
+            "CAS source-correction proof differs",
+        )
+    if endpoint is None:
+        return
+    operations = {
+        operation["mim_id"]: operation for operation in endpoint.loaded.request["operations"]
+    }
+    for entry in claims["entries"]:
+        owner = entry["owner"]
+        if entry["action"] == "RETIRE_INVALID_CAS":
+            operation = operations.get(owner["mim_id"])
+            require(
+                operation is not None
+                and operation["after_path"] == owner["path"]
+                and operation["proposal"]["sha256"] == owner["sha256"]
+                and entry["row"]["object_id"] in operation["rejected_identifiers"],
+                "CAS retirement lacks actual reviewed corrective owner/rejection",
+            )
+        else:
+            require(
+                owner["mim_id"] not in operations, "held owner was changed by source correction"
+            )
+            original = endpoint.loaded.predecessor.owners.get(owner["path"])
+            require(
+                original is not None and native().sha(original.content) == owner["sha256"],
+                "held owner differs from preserved adoption predecessor",
+            )
+
+
 def _selection(loaded):
     """Derive every changed/retained/removed payload; decisions remain unassessed."""
     api = native()
@@ -678,6 +768,12 @@ def _selection(loaded):
         key = (subject, row["predicate_id"], row["object_id"])
         old_by_key.setdefault(key, []).append({"position": position, "row": row})
     items, seen = [], set()
+    cas_proof = loaded.manifest.get("cas_dispositions")
+    cas_held = (
+        {}
+        if cas_proof is None
+        else {item["candidate_position"]: item for item in cas_proof["held_rows"]}
+    )
     for position, row in enumerate(candidate, 1):
         key = (row["subject_id"], row["predicate_id"], row["object_id"])
         require(key not in seen, "duplicate candidate triple")
@@ -718,6 +814,18 @@ def _selection(loaded):
                 "reason": None,
             }
         )
+        if position in cas_held:
+            obligation = cas_held[position]
+            require(
+                obligation["candidate_row"] == row
+                and obligation["mandatory_disposition"] == "WITHHOLD"
+                and any(old["row"] == obligation["historical_row"] for old in before_rows),
+                "forced-held candidate/history differs",
+            )
+            items[-1].update(
+                mandatory_disposition="INSTALL_WITHHOLD",
+                cas_disposition=obligation,
+            )
     for _, before_rows in sorted(old_by_key.items()):
         first = before_rows[0]
         owner = index.lookup(first["row"]["subject_id"])
@@ -986,6 +1094,9 @@ class Loaded:
                 self.root, self.adoption_stage, self.adoption_receipt
             )
         self.claw = api.Claw(self.generation["claw"]["root"])
+        _cas_source_correction(
+            self.manifest, self.successor, self.generation.get("curation_successor")
+        )
         self.policy = api._policy(
             api.document(_read_ref(self.inputs, self.request["operational_policy"]))
         )
@@ -1251,6 +1362,11 @@ def _outputs(loaded):
             else {"REMOVE_WITH_HISTORY"}
         )
         require(row["disposition"] in allowed, "unassessed publication selection")
+        require(
+            row.get("mandatory_disposition") is None
+            or row["disposition"] == row["mandatory_disposition"],
+            "historical invalid CAS requires INSTALL_WITHHOLD regardless of review votes",
+        )
         row["disposition"], row["reason"] = None, None
     require(expected == draft, "complete derived selection differs; no arbitrary candidate edits")
     _reviews(loaded, selection)
@@ -1885,10 +2001,12 @@ def main():
         "adoption-receipt",
         "registry-retirement-proposal",
         "curation-successor",
+        "cas-dispositions",
     ):
         parser.add_argument("--" + name, type=Path)
     parser.add_argument("--registry-retirement-proposal-sha256")
     parser.add_argument("--curation-successor-sha256")
+    parser.add_argument("--cas-dispositions-sha256")
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
     if args.operation == "generate":
@@ -1903,6 +2021,8 @@ def main():
             args.registry_retirement_proposal_sha256,
             args.curation_successor,
             args.curation_successor_sha256,
+            args.cas_dispositions,
+            args.cas_dispositions_sha256,
         )
     elif args.operation == "inspect":
         result = inspect(args.root, args.request)
