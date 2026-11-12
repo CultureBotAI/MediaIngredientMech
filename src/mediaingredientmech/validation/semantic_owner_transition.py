@@ -323,9 +323,10 @@ def _adoption(request, manifest, before, get, root, schema_root):
         require(old in before_records and new in source_owners, "existing owner omitted")
         stable = before_records[old]
         require(stable["mim_id"] == identifier, "existing permanent identity retargeted")
-        candidates = [op for op in operations.values() if op["before_source_record"] == old]
+        owner_operations = [op for op in operations.values() if op["before_source_record"] == old]
         require(
-            len(candidates) <= 1 and new == (candidates[0]["source_record"] if candidates else old),
+            len(owner_operations) <= 1
+            and new == (owner_operations[0]["source_record"] if owner_operations else old),
             "existing owner move lacks source lineage",
         )
         scientific = adoption.load_yaml(source_owners[new])
@@ -542,7 +543,7 @@ def verify_owner_steps(
     schema_root = Path(schema_root)
     owners, ledgers = dict(baseline_owners), dict(baseline_ledgers)
     _records(owners, ledgers)
-    captured = {}
+    captured: dict[tuple[str, str, str], bytes] = {}
 
     def get(root, ref):
         require(
@@ -563,7 +564,8 @@ def verify_owner_steps(
         captured[key] = raw
         return raw
 
-    source_operations, retained_contexts, step_proofs = [], [], []
+    source_operations, retained_contexts = [], []
+    step_proofs: list[dict] = []
     final_operations, predecessor_owners = [], dict(owners)
     for number, step in enumerate(steps):
         adoption.keys(step, {"kind", "root", "receipt", "manifest", "request", "afterimages"})
@@ -678,7 +680,7 @@ def verify_owner_steps(
             )
             expected_owner_outputs = set(records)
             owner_order = list(records)
-            extras = (*adoption.AGGREGATES, LEDGERS[1], LEDGERS[0])
+            extras: tuple[str, ...] = (*adoption.AGGREGATES, LEDGERS[1], LEDGERS[0])
             retained_contexts.append(
                 {
                     "kind": kind,

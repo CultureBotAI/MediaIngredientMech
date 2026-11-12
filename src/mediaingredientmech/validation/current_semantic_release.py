@@ -19,7 +19,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 
 from mediaingredientmech import identity_projection as identity
 from mediaingredientmech import identity_projection_graph as historical_graph
@@ -714,7 +714,8 @@ def products(state, output, hold_payload_path):
     outputs = {
         prefix + "/assertion-dispositions.tsv": dispositions,
         prefix + "/historical-obligations.json": history,
-        prefix + "/finding-dispositions.tsv": table(
+        prefix
+        + "/finding-dispositions.tsv": table(
             state["finding_dispositions"], list(state["finding_dispositions"][0])
         ),
     }
@@ -747,7 +748,7 @@ def products(state, output, hold_payload_path):
     return outputs
 
 
-def validate(root, report_path):
+def validate(root: Path | str, report_path: Path | str) -> dict:
     root = reviewed_export_route._root(Path(root))
     report_path = Path(report_path)
     if not report_path.is_absolute():
@@ -819,9 +820,8 @@ def main():
     output.mkdir(parents=False, exist_ok=False)
     if args.command == "inspect":
         artifacts = {
-            args.output.as_posix() + "/hold-payloads.json": encoded(
-                {"schema_version": 1, "holds": state["holds"]}
-            )
+            args.output.as_posix()
+            + "/hold-payloads.json": encoded({"schema_version": 1, "holds": state["holds"]})
         }
     else:
         artifacts = products(state, args.output, args.hold_payloads)

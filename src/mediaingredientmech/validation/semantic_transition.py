@@ -14,8 +14,9 @@ import re
 import types
 from pathlib import Path, PurePosixPath
 from types import SimpleNamespace
+from typing import cast
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 
 from mediaingredientmech import identity_projection as identity
 from mediaingredientmech.curate import stable_sssom_publication as publication
@@ -78,7 +79,7 @@ class Evidence:
             and self.packet["scope"] == "semantic_reconstruction_not_transaction_reexecution",
             "unsupported evidence packet",
         )
-        self.files = {}
+        self.files: dict[tuple[str, str, str], dict] = {}
         physical = set()
         for item in self.packet["files"]:
             require(
@@ -372,7 +373,8 @@ def _cas(evidence, root, generation, manifest, before, candidate, owners, source
     # changes; original acquisition identities remain in the packet/proof.
     physical = evidence.inputs.root
     snapshot = {
-        physical / str(path.relative_to(root)): evidence.read(
+        physical
+        / str(path.relative_to(root)): evidence.read(
             root, {"path": str(path.relative_to(root)), "sha256": pin}
         )
         for path, pin in complete.items()
@@ -505,7 +507,8 @@ def verify(inputs, packet_ref, history, owners, ledgers):
     }
     require(
         before[publication.CANONICAL] is not None
-        and before[publication.CANONICAL].content == history["proof"].after[publication.CANONICAL],
+        and cast(SimpleNamespace, before[publication.CANONICAL]).content
+        == history["proof"].after[publication.CANONICAL],
         "publication is not continuous with exact historical stable endpoint",
     )
     require(
@@ -547,7 +550,7 @@ def verify(inputs, packet_ref, history, owners, ledgers):
         root,
         generation,
         diagnostic,
-        before[publication.CANONICAL].content,
+        cast(SimpleNamespace, before[publication.CANONICAL]).content,
         candidate_rows,
         owners,
         source,
@@ -688,7 +691,7 @@ def verify(inputs, packet_ref, history, owners, ledgers):
     expected_events = [
         {"path": name, "sha256": identity.sha(raw)}
         for name, raw in outputs.items()
-        if before[name] is None or before[name].content != raw
+        if before[name] is None or cast(SimpleNamespace, before[name]).content != raw
     ]
     require(
         receipt["completed_operations"] == expected_events,
@@ -838,7 +841,7 @@ def capture(root, stage, receipt_path, output):
         }
         return result, req
 
-    sources = []
+    sources: list[dict] = []
     if "curation_successor" in generation:
         endpoint = document(root, generation["curation_successor"])
         current, req = source_step(
