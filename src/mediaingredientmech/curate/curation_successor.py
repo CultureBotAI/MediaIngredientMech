@@ -396,7 +396,7 @@ class Predecessor:
             inputs.verify()
 
     def closure(self):
-        groups = {}
+        groups: dict[str, dict[str, str | None]] = {}
         for root, files in [
             (self.root, self.files.files),
             (self.loaded.inputs.root, self.loaded.inputs.files),
@@ -468,9 +468,10 @@ def _validate_change(loaded, operation, before, after):
     )
     event = history[-1]
     event_time = datetime.fromisoformat(event["timestamp"])
+    event_offset = event_time.utcoffset()
     require(
-        event_time.utcoffset() is not None
-        and event_time.utcoffset().total_seconds() == 0
+        event_offset is not None
+        and event_offset.total_seconds() == 0
         and event_time <= datetime.fromisoformat(loaded.request["timestamp"])
         and event.get("curator")
         and event.get("llm_assisted") is True
@@ -566,6 +567,8 @@ def _validate_change(loaded, operation, before, after):
 class Loaded:
     """Full immutable predecessor and exact current target closure for one request."""
 
+    operations: dict[str, dict[str, Any]]
+
     def __init__(self, root, request_path, *, before=None, after_inventory=None, publication=None):
         api = native()
         self.root = api.root_path(root, "successor")
@@ -627,10 +630,9 @@ class Loaded:
         self.head = self.identity["head"]
         self.index = api.git(self.root, "ls-files", "--stage", "-z")
         stamp = datetime.fromisoformat(req["timestamp"])
+        stamp_offset = stamp.utcoffset()
         require(
-            stamp.utcoffset() is not None
-            and stamp.utcoffset().total_seconds() == 0
-            and req["curator"],
+            stamp_offset is not None and stamp_offset.total_seconds() == 0 and req["curator"],
             "explicit UTC timestamp and curator required",
         )
         _CAPTURE.bind(self.inputs)
@@ -1338,7 +1340,7 @@ def _prepared(root, stage, *, before=None, publication=None):
         "roundtrip": _roundtrip(loaded, staged),
         "native_write_dry_run": manifest["native_validation"]["native_write_dry_run"],
     }
-    expected_dry = {
+    expected_dry: dict[str, Any] = {
         "applied": False,
         "changed": [],
         "created": [],
@@ -1613,7 +1615,7 @@ def apply(root, stage, acceptance_path, receipt_dir, *, enabled=False):
                 "budget_sha256": api.digest(budget),
             },
         }
-        archives = []
+        archives: list[FrozenFile] = []
         with reserve_receipt_outputs(log, backup_paths=tuple(backups.values())) as handles:
             receipt, *backup_handles = handles
 
