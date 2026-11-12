@@ -1,0 +1,67 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "at": "2026-11-08T02:55:20.094371+00:00",
+  "head": "cd76b3e5d3475545f68b65cd765a876ca61e0a2b",
+  "base": "0dac278466699129a083343a921c2e0ca18a9ab4",
+  "committed_scope_readback": "PASS",
+  "all_frozen_repaired_implementations_match": true,
+  "changed_file_count": 406,
+  "canonical_rows": 3014,
+  "changed_mapping_decisions": [
+    2556
+  ],
+  "mapping_disposition_counts": {
+    "SUPPORTED": 1739,
+    "WITHHOLD": 1275
+  },
+  "prior26_receipts_byte_preserved": true,
+  "new_receipt_sequence": 27,
+  "new_receipt_two_owners_one_changed_row": true,
+  "withheld_export_byte_preserved": true,
+  "reviewed_export_file_hashes": {
+    "ingredient_mappings.sssom.tsv": "204c7909ecad9762704d950693210a4e25b53fdac2fdb2e8e6689270889d64cd",
+    "mapping-dispositions.tsv": "b04cf2ad39e5f3574fcc01de87e9a789c6ecd8e9dc088327cb63368ea0b5efb2",
+    "withheld_mappings.sssom.tsv": "5817fb845c65f995fb0c78095168af1cbf0c837a991004fcd0a9d73cd0874c88"
+  },
+  "companion_owners": 20,
+  "companion_decisions": 51,
+  "companion_claims_unchanged": true,
+  "paired_selector_only_existing_test_workflow_change": true,
+  "protected_files_unchanged": true,
+  "nonmapping_disposition_changes": [
+    {
+      "before": {
+        "assertion_id": "MIM.review:3925cdc86c7e0b09f8ecd0ce8b34a5d0d2f6aeee08ba91b2f3e7182fc0242729",
+        "source_record": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+        "source_record_sha256": "f5ffd70ecf632a6dd5d777f37411b47ba2bdb0f6f6b8fcc77b378da52d214e96",
+        "assertion_type": "physicochemical_roles",
+        "source_position": "1",
+        "assertion_sha256": "d0f7bf1a8e48a5225ecce3623be4ec62352e6ad81a2941d49be8e1e3a3d0ddb9",
+        "resolution_status": "APPROVED",
+        "review_reason": "Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment.",
+        "review_evidence": "reports/semantic_review_20260921/resolution/roles/inherited-role-review.json"
+      },
+      "after": {
+        "assertion_id": "MIM.review:3925cdc86c7e0b09f8ecd0ce8b34a5d0d2f6aeee08ba91b2f3e7182fc0242729",
+        "source_record": "data/ingredients/mapped/Sodium_Acetate_Trihydrate.yaml",
+        "source_record_sha256": "77947356c8a0a2a63a4fcf2fd74c171a5c3c94b8a73892e81c41e6f5ef1a7376",
+        "assertion_type": "physicochemical_roles",
+        "source_position": "1",
+        "assertion_sha256": "d0f7bf1a8e48a5225ecce3623be4ec62352e6ad81a2941d49be8e1e3a3d0ddb9",
+        "resolution_status": "OPEN",
+        "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+        "review_evidence": ""
+      }
+    }
+  ],
+  "other_nonmapping_assertions_unchanged": true,
+  "mapping_semantic_disposition_changes": 0,
+  "completed_checks_logs_hash_match": true,
+  "required_checks_pending": [
+    "full pytest",
+    "native structured review check after fetching historical bases",
+    "GitHub CI",
+    "final committed-head independent review"
+  ],
+  "final_release_approval": false
+}

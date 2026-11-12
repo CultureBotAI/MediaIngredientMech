@@ -45,9 +45,10 @@ approval transferred to changed bytes.
 The review corrects 46 activity phrases that had been published as ingredient
 synonyms, retaining them as rejected provenance. It separates mapping evidence
 from unrelated role/component findings and withdraws earlier approvals that
-overstated source scope. All supported rows in this snapshot are `skos:exactMatch`;
-other relations remain in the backlog pending an explicit review of their
-meaning and aliases. A withheld decision can reflect missing evidence rather
+overstated source scope. Supported rows retain their explicitly reviewed predicates, including the
+form-specific `skos:broadMatch` mappings for melezitose monohydrate and sodium
+perchlorate monohydrate. Other relations remain withheld unless their meaning
+and aliases have a current positive scientific review. A withheld decision can reflect missing evidence rather
 than a false assertion.
 
 The #875 receipt replaces the Na2HPO4·7H2O parent mapping and local registry

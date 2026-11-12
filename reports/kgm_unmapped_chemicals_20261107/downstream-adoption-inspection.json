@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "status": "SKIPPED_BROADER_NATIVE_ADOPTION_MACHINERY_REQUIRED",
+  "created_at": "2026-11-08T02:56:23.065337+00:00",
+  "source_id": "mediadive.ingredient:1315",
+  "query": "Na acetate x 3 H2O",
+  "kg_revision": "f10fb3909ed32898a54176ca77e509a950d16b84",
+  "inspection": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/scripts/dump_unmapped_mediadive_ingredients.py",
+      "selector": "main: ChemicalMappingLoader() with default consolidated mapping input",
+      "fact": "The frozen queue helper has no candidate supported-MIM/unified-MIM pair argument."
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/chemical_mapping_utils.py",
+      "selector": "load_unified_mappings/_build_indices",
+      "fact": "Loads KG consolidated entity SSSOM; lexical synonyms come from kgm.name subjects and comment=synonym. It does not consume MIM other tokens as synonym rows or the maintained UNIFIED_INGREDIENT_MAPPING TSV schema."
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/scripts/consolidate_chemical_mappings.py",
+      "selector": "load_mediaingredientmech_sssom / export_unified_sssom; main reviewed-release migration guard",
+      "fact": "Legacy consolidation refuses a pinned reviewed MIM release because additive seeding can reintroduce withheld/stale claims. Its native guard requires scripts.refresh_reviewed_mim with a separate release bundle/output directory. That is a broader candidate-generation/admission workflow, not the already-inspected queue lookup."
+    }
+  ],
+  "inputs_and_code_inspected": {
+    "candidate_supported_sssom": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/ingredient_mappings.sssom.tsv",
+      "sha256": "204c7909ecad9762704d950693210a4e25b53fdac2fdb2e8e6689270889d64cd",
+      "bytes": 831758
+    },
+    "candidate_reviewed_manifest": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/candidate-reviewed-sssom/manifest.json",
+      "sha256": "86cc8cec342e5aa28373abcd59c90e428d3fcfedeef646234a323bb31142bc67",
+      "bytes": 993
+    },
+    "candidate_mim_unified_tsv": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/UNIFIED_INGREDIENT_MAPPING.tsv",
+      "sha256": "c12f09602dbb4be511c6e813b046fe5965a42134a124a2b3678deb3880591b70",
+      "bytes": 1012207
+    },
+    "candidate_mim_unified_provenance": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/UNIFIED_INGREDIENT_MAPPING.provenance.json",
+      "sha256": "7175c41748e60418b6e57a984eb8450aa20ed64b1015286a52aff4ec1c0256f4",
+      "bytes": 349
+    },
+    "frozen_kg_unified_entity_sssom": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz",
+      "sha256": "f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d",
+      "bytes": 13377975
+    },
+    "frozen_native_helper": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/scripts/dump_unmapped_mediadive_ingredients.py",
+      "sha256": "95d409829107a0c8d8310ea873bcd0efdc52a837e053831e19d19a068b6241df",
+      "bytes": 4206
+    },
+    "frozen_native_lookup": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/kg_microbe/utils/chemical_mapping_utils.py",
+      "sha256": "3ec59d6123da19eae19e997c63dd455ab25e3bbcc867ddabc82352a5c1a12c19",
+      "bytes": 45383
+    },
+    "original_readonly_guard": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/run_native_queue_readonly.py",
+      "sha256": "dbf034231a8db939296dc07c69d3eba3dda1dc29e400f60938f6264897196fb3",
+      "bytes": 5176
+    },
+    "current_native_consolidator_inspected_only": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/scripts/consolidate_chemical_mappings.py",
+      "sha256": "d31267afccaf3a12689600775a3b10d42d8828c00264b29fc67aca185273efbb",
+      "bytes": 163049
+    },
+    "current_pinned_mim_release": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mim_reviewed_release.json",
+      "sha256": "8c66be0b68dcb773a908b17de56ff34b6270dc9eebf114e759552b07c3907cd5",
+      "bytes": 1169
+    }
+  },
+  "lookup_executed": false,
+  "candidate_overlay_generated": false,
+  "scientific_or_adoption_claim": null,
+  "kg_writes": false,
+  "graph_transform_or_rebuild": false,
+  "source_policy_changes": false,
+  "network_or_provider_calls": false,
+  "next_step": "A later separately authorized KG adoption must stage and validate the coherent reviewed candidate pair with the native consolidator/admission machinery, then repeat source-scoped identity lookup and retain material policies.",
+  "supersedes_inspection_sha256": "1f81b2de5379c5381dec4aa35347050844176715b3c8dd1467c7750fedbf979c"
+}

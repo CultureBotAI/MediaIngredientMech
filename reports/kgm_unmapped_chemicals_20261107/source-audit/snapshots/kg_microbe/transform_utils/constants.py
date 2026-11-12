@@ -1,0 +1,1108 @@
+"""Constants for transform_utilities."""
+
+import re
+from pathlib import Path
+
+# Source Names
+MADIN_ETAL = "madin_etal"
+BACDIVE = "bacdive"
+MEDIADIVE = "mediadive"
+BACTOTRAITS = "bactotraits"
+GOLD = "gold"
+BAKTA = "bakta"
+COG = "cog"
+KEGG = "kegg"
+RHEAMAPPINGS = "rhea_mappings"
+ONTOLOGIES = "ontologies"
+ONTOLOGIES_STUBS = "ontologies_stubs"
+WALLEN_ETAL = "wallen_etal"
+CTD = "ctd"
+DISBIOME = "disbiome"
+UNIPROT_FUNCTIONAL_MICROBES = "uniprot_functional_microbes"
+UNIPROT_HUMAN = "uniprot_human"
+GTDB = "gtdb"
+METATRAITS = "metatraits"
+METATRAITS_GTDB = "metatraits_gtdb"
+MICROBEDECODER = "microbedecoder"
+PREGO = "prego"
+
+TRANSFORM_UTILS_DIR = Path(__file__).parent
+BACDIVE_DIR = TRANSFORM_UTILS_DIR / BACDIVE
+BACDIVE_TMP_DIR = BACDIVE_DIR / "tmp"
+BACDIVE_YAML_DIR = BACDIVE_TMP_DIR / "yaml"
+MEDIADIVE_DIR = TRANSFORM_UTILS_DIR / MEDIADIVE
+MEDIADIVE_TMP_DIR = MEDIADIVE_DIR / "tmp"
+MEDIADIVE_MEDIUM_YAML_DIR = MEDIADIVE_TMP_DIR / "medium_yaml"
+MEDIADIVE_MEDIUM_STRAIN_YAML_DIR = MEDIADIVE_TMP_DIR / "medium_strain_yaml"
+MADIN_ETAL_DIR = TRANSFORM_UTILS_DIR / MADIN_ETAL
+METATRAITS_DIR = TRANSFORM_UTILS_DIR / METATRAITS
+MICROBEDECODER_DIR = TRANSFORM_UTILS_DIR / MICROBEDECODER
+PREGO_DIR = TRANSFORM_UTILS_DIR / PREGO
+# Canonical curation hub for hand-curated label -> ontology mappings used by
+# metatraits + metatraits_gtdb. Moved from per-transform location
+# (transform_utils/metatraits/mappings/) to repo-root mappings/canonical/ in
+# the phase-4 cleanup so all canonical-schema TSVs share one grep target.
+# Loaders that walk this dir (microbial_trait_mappings, scripts/extract_metpo_proposals)
+# pick the new location up automatically.
+METATRAITS_MAPPINGS_DIR = Path(__file__).parents[2] / "mappings" / "canonical"
+RAW_DATA_DIR = Path(__file__).parents[2] / "data" / "raw"
+TRANSFORMED_DATA_DIR = Path(__file__).parents[2] / "data" / "transformed"
+RHEAMAPPINGS_DIR: Path = TRANSFORM_UTILS_DIR / RHEAMAPPINGS
+RHEAMAPPINGS_TMP_DIR = RHEAMAPPINGS_DIR / "tmp"
+BACTOTRAITS_DIR = TRANSFORM_UTILS_DIR / "bactotraits"
+BACTOTRAITS_TMP_DIR = BACTOTRAITS_DIR / "tmp"
+BAKTA_DIR = TRANSFORM_UTILS_DIR / BAKTA
+BAKTA_TMP_DIR = BAKTA_DIR / "tmp"
+BAKTA_RAW_DIR = RAW_DATA_DIR / "bakta"
+ASSAY_KITS_FILE = RAW_DATA_DIR / "assay_kits_simple.json"
+COG_DIR = TRANSFORM_UTILS_DIR / COG
+COG_RAW_DIR = RAW_DATA_DIR / COG
+KEGG_DIR = TRANSFORM_UTILS_DIR / KEGG
+KEGG_RAW_DIR = RAW_DATA_DIR / KEGG
+MICROBEDECODER_RAW_DIR = RAW_DATA_DIR / MICROBEDECODER
+MICROBEDECODER_MANUAL_ANNOTATION_FILE = MICROBEDECODER_DIR / "microbedecoder_manual_annotation.tsv"
+PREGO_RAW_DIR = RAW_DATA_DIR / PREGO
+UNIPROT_TREMBL_DIR = TRANSFORM_UTILS_DIR / "uniprot_trembl"
+UNIPROT_TREMBL_TMP_DIR = UNIPROT_TREMBL_DIR / "tmp"
+ONTOLOGIES_DIR = TRANSFORM_UTILS_DIR / ONTOLOGIES
+ONTOLOGIES_XREFS_DIR = ONTOLOGIES_DIR / "xrefs"
+ONTOLOGIES_TREES_DIR = ONTOLOGIES_DIR / "trees"
+ONTOLOGIES_TRANSFORMED_DIR = TRANSFORMED_DATA_DIR / ONTOLOGIES
+# CHEBI_XREFS_FILEPATH removed: ChEBI xrefs now in unified_chemical_mappings.tsv.gz
+MONDO_XREFS_FILEPATH = ONTOLOGIES_XREFS_DIR / "mondo_xrefs.tsv"
+MONDO_GENE_IDS_FILEPATH = ONTOLOGIES_XREFS_DIR / "mondo_gene_ids.tsv"
+CUSTOM_CURIES_YAML_FILE = TRANSFORM_UTILS_DIR / "custom_curies.yaml"
+NCBITAXON_SOURCE = RAW_DATA_DIR / "ncbitaxon.owl"
+CHEBI_SOURCE = RAW_DATA_DIR / "chebi.owl"
+GO_SOURCE = RAW_DATA_DIR / "go.owl"
+EC_SOURCE = RAW_DATA_DIR / "ec.owl"
+BIOLINK_MODEL_FILE = RAW_DATA_DIR / "biolink-model.yaml"
+# Transformed ontology output files (for category alignment across transforms)
+CHEBI_NODES_FILE = ONTOLOGIES_TRANSFORMED_DIR / "chebi_nodes.tsv"
+CHEBI_EDGES_FILE = ONTOLOGIES_TRANSFORMED_DIR / "chebi_edges.tsv"
+NCBITAXON_NODES_FILE = ONTOLOGIES_TRANSFORMED_DIR / "ncbitaxon_nodes.tsv"
+GO_NODES_FILE = ONTOLOGIES_TRANSFORMED_DIR / "go_nodes.tsv"
+METABOLITE_MAPPING_FILE = BACDIVE_DIR / "metabolite_mapping.json"
+PREFIXMAP_JSON_FILEPATH = TRANSFORM_UTILS_DIR / "prefixmap.json"  # custom prefixmap file path
+
+# KEYS FOR JSON FILE
+GENERAL = "General"
+BACDIVE_ID = "BacDive-ID"
+KEYWORDS = "keywords"
+GENERAL_DESCRIPTION = "description"
+NCBITAXON_ID = "NCBI tax id"
+MATCHING_LEVEL = "Matching level"
+SPECIES = "species"
+STRAIN = "strain"
+DOI = "doi"
+DSM_NUMBER = "DSM-Number"
+
+NAME_TAX_CLASSIFICATION = "Name and taxonomic classification"
+MORPHOLOGY = "Morphology"
+DOMAIN = "domain"
+PHYLUM = "phylum"
+CLASS = "class"
+ORDER = "order"
+FAMILY = "family"
+GENUS = "genus"
+FULL_SCIENTIFIC_NAME = "full scientific name"
+STRAIN_DESIGNATION = "strain designation"
+TYPE_STRAIN = "type strain"
+LPSN = "LPSN"  # BacDive JSON key; do not reuse for source-name registration
+LPSN_SOURCE = "lpsn"  # DATA_SOURCES key + directory name for the standalone LPSN transform
+LPSN_API_SOURCE = "lpsn_api"  # DATA_SOURCES key + directory name for the JSON-API enrichment transform
+SYNONYMS = "synonyms"
+SYNONYM = "synonym"
+
+CULTURE_AND_GROWTH_CONDITIONS = "Culture and growth conditions"
+CULTURE_MEDIUM = "culture medium"
+CULTURE_COMPOSITION = "composition"
+CULTURE_GROWTH = "growth"
+CULTURE_LINK = "link"
+CULTURE_NAME = "name"
+CULTURE_TEMP = "culture temp"
+CULTURE_TEMP_GROWTH = "growth"
+CULTURE_TEMP_TYPE = "type"
+CULTURE_TEMP_TEMP = "temperature"
+CULTURE_TEMP_RANGE = "range"
+
+PHYSIOLOGY_AND_METABOLISM = "Physiology and metabolism"
+ISOLATION_SAMPLING_ENV_INFO = "Isolation, sampling and environmental information"
+SAFETY_INFO = "Safety information"
+SEQUENCE_INFO = "Sequence information"
+RISK_ASSESSMENT = "risk assessment"
+BIOSAFETY_LEVEL = "biosafety level"
+OBSERVATION = "observation"
+MULTIMEDIA = "multimedia"
+MULTICELLULAR_MORPHOLOGY = "multicellular morphology"
+COLONY_MORPHOLOGY = "colony morphology"
+CELL_MORPHOLOGY = "cell morphology"
+PIGMENTATION = "pigmentation"
+ENZYMES = "enzymes"
+METABOLITE_UTILIZATION = "metabolite utilization"
+METABOLITE_PRODUCTION = "metabolite production"
+METABOLITE_TESTS = "metabolite tests"
+OXYGEN_TOLERANCE = "oxygen tolerance"
+SPORE_FORMATION = "spore formation"
+HALOPHILY = "halophily"
+ANTIBIOTIC_RESISTANCE = "antibiotic resistance"
+MUREIN = "murein"
+COMPOUND_PRODUCTION = "compound production"
+FATTY_ACID_PROFILE = "fatty acid profile"
+TOLERANCE = "tolerance"
+ANTIBIOGRAM = "antibiogram"
+NUTRITION_TYPE = "nutrition type"
+ISOLATION = "isolation"
+ISOLATION_SOURCE_CATEGORIES = "isolation source categories"
+
+DATA_KEY = "data"
+
+RECIPE_KEY = "recipe"
+COMPOUND_KEY = "compound"
+COMPOUND_ID_KEY = "compound_id"
+SOLUTION_KEY = "solution"
+SOLUTIONS_KEY = "solutions"
+SOLUTION_ID_KEY = "solution_id"
+INGREDIENT_KEY = "ingredient_key"
+INGREDIENT_ID_KEY = "ingredient_id_key"
+CHEBI_KEY = "ChEBI"
+CAS_RN_KEY = "CAS-RN"
+KEGG_KEY = "KEGG-Compound"
+PUBCHEM_KEY = "PubChem"
+ACTUAL_TERM_KEY = "ActualTerm"
+PREFERRED_TERM_KEY = "PreferredTerm"
+
+ACCESSIONS_KEY = "accessions"
+FILENAME_KEY = "file_name"
+
+MEDIUM_KEY = "medium"
+
+EXTERNAL_LINKS = "External links"
+EXTERNAL_LINKS_CULTURE_NUMBER = "culture collection no."
+REF = "Reference"
+NCBITAXON_PREFIX = "NCBITaxon:"
+BACDIVE_PREFIX = "bacdive:"
+STRAIN_PREFIX = "kgmicrobe.strain:"
+# Provisional taxonomic node prefixes for unmapped taxa
+PROVISIONAL_SPECIES_PREFIX = "kgmicrobe.species:"
+PROVISIONAL_GENUS_PREFIX = "kgmicrobe.genus:"
+CHEBI_PREFIX = "CHEBI:"
+CAS_RN_PREFIX = "CAS-RN:"
+PUBCHEM_PREFIX = "PubChem:"
+UBERON_PREFIX = "UBERON:"
+RO_PREFIX = "RO:"
+# MediaDive prefixes (registered in Bioregistry)
+# See: https://bioregistry.io/registry/mediadive.medium
+#      https://bioregistry.io/registry/mediadive.solution
+#      https://bioregistry.io/registry/mediadive.ingredient
+MEDIADIVE_INGREDIENT_PREFIX = "mediadive.ingredient:"
+MEDIADIVE_SOLUTION_PREFIX = "mediadive.solution:"
+MEDIADIVE_MEDIUM_PREFIX = "mediadive.medium:"
+MEDIADIVE_MEDIUM_TYPE_PREFIX = "mediadive.medium-type:"
+GO_PREFIX = "GO:"
+KEGG_PREFIX = "KEGG:"
+SHAPE_PREFIX = "cell_shape:"
+PATHWAY_PREFIX = "kgmicrobe.pathway:"
+CARBON_SUBSTRATE_PREFIX = "kgmicrobe.carbon_substrate:"
+# Placeholder CURIEs for chemical entities and phenotypic qualities that
+# don't yet resolve to CHEBI / METPO. Sections of the same name are already
+# registered in `custom_curies.yaml`; these constants let transforms mint
+# slugs without repeating the string. See the yaml header for guidance on
+# what belongs under each.
+COMPOUND_PREFIX = "kgmicrobe.compound:"
+INGREDIENT_PREFIX = "kgmicrobe.ingredient:"
+TRAIT_PREFIX = "kgmicrobe.trait:"
+# Reported source-field values, not decoded phenotypes or ontology qualities.
+SOURCE_ATTRIBUTE_PREFIX = "kgmicrobe.source_attribute:"
+# Unresolved source observation records, not organism/taxon identities.
+SOURCE_RECORD_PREFIX = "kgmicrobe.source_record:"
+ISOLATION_SOURCE_PREFIX = "bacdive.isolation_source:"
+RHEA_OLD_PREFIX = "OBO:rhea_"
+RHEA_NEW_PREFIX = "RHEA:"
+ASSAY_PREFIX = "kgmicrobe.assay:"
+RHEA_URI = "http://purl.obolibrary.org/obo/rhea_"
+DEBIO_OBO_PREFIX = "OBO:debio_"
+DEBIO_NEW_PREFIX = "debio:"
+DEBIO_URI = "http://purl.obolibrary.org/obo/debio_"
+RHEA_OBO_PREFIX = "OBO:rhea_"
+MEDIADIVE_REST_API_BASE_URL = "https://mediadive.dsmz.de/rest/"
+BACDIVE_API_BASE_URL = "https://mediadive.dsmz.de/"
+BIOSAFETY_LEVEL_PREFIX = "BSL:"
+GTDB_PREFIX = "GTDB:"
+GENBANK_PREFIX = "GenBank:"
+# NCBI Assembly accessions (GCA_* from GenBank, GCF_* from RefSeq). One
+# registered prefix covers both archives, and the accession itself says which
+# one it came from; `GenBank:GCF_...` asserted the wrong archive for 447,137
+# nodes and resolved to the nucleotide endpoint rather than the assembly one
+# (#882). Bioregistry `ncbi.assembly` ->
+# https://www.ncbi.nlm.nih.gov/datasets/genome/$1
+NCBI_ASSEMBLY_PREFIX = "ncbi.assembly:"
+# LPSN nomenclature spine (used both by the standalone `lpsn` transform and,
+# for organism identity, by MicrobeDecoder — whose row primary key is LPSN_ID).
+LPSN_PREFIX = "lpsn:"
+# Novel genome-project prefixes surfaced by MicrobeDecoder's pre-joined
+# LPSN ↔ GOLD ↔ IMG crosswalk. Registered here so cross_ref edges emit
+# well-formed CURIEs and validators (kg_model_review STANDARD_PREFIXES,
+# custom_curies.yaml loader) accept them.
+GOLD_PREFIX = "gold:"  # Same namespace as the GOLD transform's organism/project IDs.
+GOLD_ORGANISM_FOLD_FILE = "organism_folds.tsv"
+GOLD_ORGANISM_FOLD_HEADER = ("original_id", "canonical_id")
+IMG_PREFIX = "IMG:"  # JGI Integrated Microbial Genomes
+
+# Knowledge-source infores identifiers for the four curated sources
+# MicrobeDecoder pre-joins per LPSN strain. Each derived edge is tagged with
+# the InforES identifier for its original source so the merged KG can be
+# filtered / provenanced downstream.
+MICROBEDECODER_KNOWLEDGE_SOURCE = "infores:microbedecoder"
+BERGEY_KNOWLEDGE_SOURCE = "infores:bergey-manual"  # Bergey's Manual of Systematics
+VPI_KNOWLEDGE_SOURCE = "infores:vpi-anaerobe-manual"  # VPI Anaerobe Laboratory Manual
+LITERATURE_KNOWLEDGE_SOURCE = "infores:microbedecoder-literature"  # per-strain lit-curated
+FAPROTAX_KNOWLEDGE_SOURCE = "infores:faprotax"  # FAPROTAX functional labels
+PREGO_KNOWLEDGE_SOURCE = "infores:prego"  # PREGO taxon↔environment/process associations
+# PREGO edge attributes carried through as additional columns on emitted edges.
+# score, channel, direct_flag, evidence_url per JensenLab tagger convention.
+PREGO_SCORE_COLUMN = "prego_score"
+# The archive-derived channel (environmental_samples / annotated_genomes_isolates
+# / literature). PREGO's own column 6 is NOT a channel — see PREGO_EVIDENCE_COLUMN.
+PREGO_CHANNEL_COLUMN = "prego_channel"
+# PREGO column 6, verbatim. Holds different things per channel: evidence tallies,
+# resource classes, citations, habitat names. Named for what it is rather than
+# what it was assumed to be.
+PREGO_EVIDENCE_COLUMN = "prego_evidence"
+PREGO_EVIDENCE_CLASS_COLUMN = "prego_evidence_class"
+PREGO_DIRECT_FLAG_COLUMN = "prego_direct_flag"
+PREGO_EVIDENCE_URL_COLUMN = "prego_evidence_url"
+# Originating resource (MGnify / MG-RAST metagenome study / JGI IMG / ...).
+# Required for confidence calibration: the Environmental Samples channel
+# aggregates resources whose score marginals differ, so a single shared
+# cutoff would conflate them.
+PREGO_SOURCE_COLUMN = "prego_source"
+
+MEDIADIVE_MEDIUM_TYPE_COMPLEX_ID = MEDIADIVE_MEDIUM_TYPE_PREFIX + "complex"
+MEDIADIVE_MEDIUM_TYPE_COMPLEX_LABEL = "Complex Medium"
+MEDIADIVE_MEDIUM_TYPE_DEFINED_ID = MEDIADIVE_MEDIUM_TYPE_PREFIX + "defined"
+MEDIADIVE_MEDIUM_TYPE_DEFINED_LABEL = "Defined Medium"
+
+MEDIUM = "medium/"
+COMPOUND = "ingredient/"
+SOLUTION = "solution/"
+MEDIUM_STRAINS = "medium-strains/"
+
+BACDIVE_MEDIUM_DICT = {MEDIADIVE_MEDIUM_PREFIX: BACDIVE_API_BASE_URL + MEDIUM}
+
+NCBI_TO_MEDIUM_EDGE = "METPO:2000517"  # grows in (organism -> medium); METPO overrides biolink:located_in
+NCBI_TO_MEDIUM_NEGATIVE_EDGE = "METPO:2000518"  # does not grow in (organism -> medium)
+MEDIUM_TO_NCBI_EDGE = "biolink:contains_process"
+MEDIUM_TO_INGREDIENT_EDGE = "biolink:has_part"  # Could also be has_constituent/has_participant
+MEDIUM_TO_SOLUTION_EDGE = "biolink:has_part"
+NCBI_TO_SHAPE_EDGE = "biolink:has_phenotype"  # [org_name -> cell_shape, metabolism]
+NCBI_TO_CARBON_SUBSTRATE_EDGE = "METPO:2000006"  # uses as carbon source; METPO overrides biolink:consumes
+NCBI_TO_ISOLATION_SOURCE_EDGE = "biolink:location_of"  # [org -> isolation_source]
+NCBI_TO_METABOLISM_EDGE = "biolink:has_phenotype"  # [org -> metabolism]
+NCBI_TO_PATHWAY_EDGE = "METPO:2000103"  # capable of [org -> pathway]; METPO overrides biolink:capable_of
+CHEBI_TO_ROLE_EDGE = "biolink:has_chemical_role"
+NCBI_TO_ENZYME_EDGE = "METPO:2000103"  # capable of [org -> enzyme]; METPO overrides biolink:capable_of
+# DEPRECATED v2026.1 - unused constants with deprecated predicates - will be removed in future version
+# ASSAY_TO_NCBI_EDGE = "biolink:assesses"  # [org -> assay] - UNUSED
+# MEDIUM_TO_METABOLITE_EDGE = "biolink:assesses"  # [org -> assay] - UNUSED
+# NCBI_TO_ASSAY_EDGE = "biolink:is_assessed_by"  # [org -> assay] - UNUSED
+ENZYME_TO_ASSAY_EDGE = "biolink:related_to_at_instance_level"  # [enzyme -> assay] - methodological reference
+SUBSTRATE_TO_ASSAY_EDGE = "biolink:occurs_in"  # [substrate -> assay]
+ENZYME_TO_SUBSTRATE_EDGE = "biolink:has_input"  # [enzyme -> substrate]
+NCBI_TO_SUBSTRATE_EDGE = "biolink:consumes"
+# Rhea's curated rhea2ec/rhea2go tables are cross-references between reaction
+# and activity classifications, not assertions about a physical gene product.
+RHEA_TO_EC_EDGE = "biolink:close_match"
+RHEA_TO_GO_EDGE = "biolink:close_match"
+RHEA_XREF_RELATION = "oboInOwl:hasDbXref"
+
+# Assay → Entity predicates (methodological reference edges)
+ASSAY_HAS_OUTPUT_PREDICATE = "MICRO:0001206"  # is an assay for the enzymatic activity of
+ASSAY_HAS_INPUT_PREDICATE = "MICRO:0000065"  # is an assay using the chemical reagent
+ASSAY_BIOLOGICAL_PROCESS_PREDICATE = "MICRO:0001215"  # assay for the biological process of
+
+# Assay → Entity relations
+ASSAY_OUTPUT_RELATION = ASSAY_HAS_OUTPUT_PREDICATE
+ASSAY_INPUT_RELATION = ASSAY_HAS_INPUT_PREDICATE
+NCBI_TO_METABOLITE_RESISTANCE_EDGE = "biolink:associated_with_resistance_to"
+NCBI_TO_METABOLITE_SENSITIVITY_EDGE = "biolink:associated_with_sensitivity_to"
+
+# Taxonomy and organism categories
+NCBI_CATEGORY = "biolink:OrganismTaxon"
+CELLULAR_ORGANISM_CATEGORY = "biolink:CellularOrganism"
+
+# Growth media categories (Biolink Model v4.3.6)
+# Medium nodes are emitted multi-cat: the KG-Microbe extension `biolink:GrowthMedium`
+# carries the microbiology-specific semantic, and a biolink-upstream mixture category
+# (ChemicalMixture for defined media, ComplexMolecularMixture for complex media)
+# carries the composition semantic so downstream tooling can filter on either axis.
+# The same distinction propagates to the medium-type parent nodes:
+# `mediadive.medium-type:defined`  → biolink:ChemicalMixture          (known composition)
+# `mediadive.medium-type:complex`  → biolink:ComplexMolecularMixture  (undefined composition)
+MEDIUM_CATEGORY = "biolink:GrowthMedium"  # generic fallback (used by bacdive where type is unknown)
+MEDIUM_DEFINED_CATEGORY = "biolink:GrowthMedium|biolink:ChemicalMixture"
+MEDIUM_COMPLEX_CATEGORY = "biolink:GrowthMedium|biolink:ComplexMolecularMixture"
+MEDIUM_TYPE_DEFINED_CATEGORY = "biolink:ChemicalMixture"
+MEDIUM_TYPE_COMPLEX_CATEGORY = "biolink:ComplexMolecularMixture"
+# Backwards-compat alias (was the parent category before defined/complex were split).
+# Kept so external callers don't break; new code should use the specific constants.
+MEDIUM_TYPE_CATEGORY = MEDIUM_TYPE_DEFINED_CATEGORY
+SOLUTION_CATEGORY = "biolink:ChemicalMixture"  # Solutions are mixtures
+
+# Chemical entity categories (Biolink Model v4.3.6)
+# IMPORTANT: For CHEBI-mapped chemicals, use ChemicalEntity category.
+# biolink:ChemicalSubstance was removed upstream in biolink 4.x; we normalize
+# to biolink:ChemicalEntity (the supertype of SmallMolecule and others).
+# See BacDive and MediaDive transforms for examples using _get_chebi_category().
+INGREDIENT_CATEGORY = "biolink:ChemicalEntity"  # Generic chemical, use only when ontology ID unknown
+COMPLEX_INGREDIENT_CATEGORY = "biolink:ComplexMolecularMixture"  # Complex ingredients (peptone, yeast extract, etc.)
+CHEBI_CATEGORY = "biolink:ChemicalEntity"  # CHEBI default for all chemical entities
+# Deprecated: Use CHEBI_CATEGORY instead
+SMALL_MOLECULE_CATEGORY = "biolink:ChemicalEntity"  # Normalized to ChemicalEntity (ChemicalSubstance removed upstream)
+MACROMOLECULE_CATEGORY = "biolink:MacromolecularComplex"  # was biolink:Macromolecule (removed in biolink 4.x)
+# Valid in Biolink v4.3.6 (proteins, nucleic acids, polymers)
+MACROMOLECULAR_COMPLEX_CATEGORY = "biolink:MacromolecularComplex"
+ROLE_CATEGORY = "biolink:ChemicalRole"  # CHEBI functional roles (inhibitor, agonist, etc.)
+METABOLITE_CATEGORY = "biolink:ChemicalEntity"  # Generic metabolite, prefer CHEBI category if available
+SUBSTRATE_CATEGORY = "biolink:ChemicalEntity"  # Generic substrate, prefer CHEBI category if available
+CARBON_SUBSTRATE_CATEGORY = "biolink:ChemicalEntity"
+
+# Biological process and activity categories.
+# Metabolism traits (oxygen tolerance, energy source use, etc.) are biological
+# processes at the organism level. ``biolink:ActivityAndBehavior`` was used
+# previously but is deprecated-style upstream; ``biolink:BiologicalProcess``
+# is the Biolink-recommended replacement.
+METABOLISM_CATEGORY = "biolink:BiologicalProcess"
+PATHWAY_CATEGORY = "biolink:BiologicalProcess"
+# Native ontology processes are not necessarily biological (e.g. food cooking).
+ACTIVITY_CATEGORY = "biolink:Activity"
+
+# Anatomical and environmental categories
+ANATOMICAL_ENTITY_CATEGORY = "biolink:AnatomicalEntity"  # For UBERON anatomical terms
+GROSS_ANATOMICAL_STRUCTURE_CATEGORY = "biolink:GrossAnatomicalStructure"
+PATHOLOGICAL_ANATOMICAL_STRUCTURE_CATEGORY = "biolink:PathologicalAnatomicalStructure"
+LIFE_STAGE_CATEGORY = "biolink:LifeStage"
+ONTOLOGY_CLASS_CATEGORY = "biolink:OntologyClass"
+FOOD_CATEGORY = "biolink:Food"  # FOODON terms (#1015)
+ENVIRONMENT_CATEGORY = "biolink:EnvironmentalFeature"  # "ENVO:01000254"
+ENVIRONMENTAL_PROCESS_CATEGORY = "biolink:EnvironmentalProcess"
+PHYSICAL_ENTITY_CATEGORY = "biolink:PhysicalEntity"
+MATERIAL_SAMPLE_CATEGORY = "biolink:MaterialSample"
+PHENOTYPIC_FEATURE_CATEGORY = "biolink:PhenotypicFeature"
+NAMED_THING_CATEGORY = "biolink:NamedThing"
+POPULATION_CATEGORY = "biolink:PopulationOfIndividualOrganisms"
+
+# Phenotype and attribute categories
+PHENOTYPIC_CATEGORY = "biolink:PhenotypicQuality"
+ATTRIBUTE_CATEGORY = "biolink:Attribute"
+BIOSAFETY_CATEGORY = "biolink:Attribute"
+GENOME_CATEGORY = "biolink:Genome"
+
+# Procedure categories
+# biolink:Procedure is biolink's closest match for a microbial test kit / well.
+#
+# This used to be "biolink:Procedure|METPO:1001000". The METPO half was carried
+# solely so the assay node satisfied the range of METPO:2000511 "has observation",
+# on the reasoning that it avoided needing an upstream change. Upstream changed
+# anyway: METPO obsoleted both halves of that design — METPO:1001000 is now
+# "obsolete observation" and METPO:2000511 is "obsolete has observation". A range
+# that no longer exists cannot be satisfied, so the METPO half was asserting a
+# deprecated class on 503 nodes and buying nothing. See #909, and metpo#461 for
+# the upstream modelling of tests and their outcomes.
+ASSAY_CATEGORY = "biolink:Procedure"  # API kit assay tests
+
+# Deprecated categories - do not use
+# CHEMICAL_SUBSTANCE_CATEGORY = "biolink:ChemicalSubstance"  # removed from biolink; use CHEBI_CATEGORY
+
+HAS_PART = "BFO:0000051"
+HAS_PART_PREDICATE = "biolink:has_part"
+IS_GROWN_IN = "METPO:2000517"  # RO relation for grows in (organism -> growth medium), used in relation column
+DOES_NOT_GROW_IN = "METPO:2000518"  # RO relation for does not grow in, used in relation column
+USES_AS_CARBON_SOURCE = NCBI_TO_CARBON_SUBSTRATE_EDGE  # Alias for uses as carbon source
+
+TROPHICALLY_INTERACTS_WITH = "RO:0002438"  # [org_name -> 'trophically interacts with' -> carbon_substrate]
+LOCATION_OF = "RO:0001015"  # [org -> location_of -> source]
+# RO:0000086 is "has quality" — used to attach a PATO quality term to the
+# substrate / environment node it qualifies (e.g. ENVO:00001995 'rock' →
+# has_quality → PATO:0001596 'increased depth' for "rock_deep" rows in
+# Madin et al's environments.csv). Attaching the quality to the substrate
+# (rather than to the organism) avoids the family-mismatch where PATO
+# qualities ended up as organism locations.
+HAS_QUALITY_RELATION = "RO:0000086"
+HAS_QUALITY_PREDICATE = "biolink:has_attribute"
+# Generic reported attributes need not be biological qualities (e.g. a source unit).
+HAS_ATTRIBUTE_PREDICATE = "biolink:has_attribute"
+HAS_ATTRIBUTE_RELATION = "SIO:000008"
+# RO:0002434 — generic "interacts with" relation. Used by BacDive's assay
+# emission to link the metpo_predicate edge to the chemical/assay being
+# tested (organism --has_observation--> assay --interacts_with--> chebi).
+INTERACTS_WITH_RELATION = "RO:0002434"
+# METPO:2000511 — "has observation" (organism -> assay). Used by BacDive's
+# API biotype assay emission as the predicate from organism to assay node.
+BACDIVE_ASSAY_PREDICATE = "METPO:2000511"
+# METPO:1004005 — "growth medium" ontology class. Used as the parent class
+# for media references emitted from BacDive growth-medium fields.
+BACDIVE_GROWTH_MEDIUM_CLASS = "METPO:1004005"
+BIOLOGICAL_PROCESS = "RO:0002215"  # [org -> biological_process -> metabolism]
+HAS_ROLE = "RO:0000087"
+HAS_PARTICIPANT = "RO:0000057"
+PARTICIPATES_IN = "RO:0000056"
+# Additional RO relations for Bakta transform
+HAS_GENE = "RO:0002551"  # organism has gene
+MEMBER_OF = "RO:0002350"  # member of (for GO integration)
+INVOLVED_IN = "RO:0002331"  # involved in (biological process)
+ORTHOLOGOUS_TO = "RO:HOM0000017"  # orthologous to (homology)
+# Biolink-side predicates paired with the RO relations above. Bakta emits
+# (biolink_predicate, ro_relation) tuples per edge; keeping both names
+# colocated avoids the inline-literal pattern surfaced by audit-mappings v2.
+BIOLINK_HAS_GENE = "biolink:has_gene"
+BIOLINK_HAS_GENE_PRODUCT = "biolink:has_gene_product"
+BIOLINK_ENABLES = "biolink:enables"
+BIOLINK_MEMBER_OF = "biolink:member_of"
+BIOLINK_ORTHOLOGOUS_TO = "biolink:orthologous_to"
+ASSESSED_ACTIVITY_RELATIONSHIP = "NCIT:C153110"
+CLOSE_MATCH = "skos:closeMatch"
+CLOSE_MATCH_PREDICATE = "biolink:close_match"
+CLOSE_MATCH_RELATION = "skos:closeMatch"
+BROAD_MATCH = "skos:broadMatch"
+BROAD_MATCH_PREDICATE = "biolink:broad_match"
+BROAD_MATCH_RELATION = "skos:broadMatch"
+EXACT_MATCH = "skos:exactMatch"
+EXACT_MATCH_PREDICATE = "biolink:exact_match"
+ASSOCIATED_WITH = "PATO:0001668"
+
+ID_COLUMN = "id"
+NAME_COLUMN = "name"
+HAS_ATTRIBUTE_TYPE_COLUMN = "has_attribute_type"
+ATTRIBUTE_TYPE_SOURCE_COLUMN = "attribute_type_source"
+ATTRIBUTE_TYPE_EVIDENCE_COLUMN = "attribute_type_evidence"
+ATTRIBUTE_TYPE_RATIONALE_COLUMN = "attribute_type_rationale"
+CATEGORY_COLUMN = "category"
+SUBJECT_COLUMN = "subject"
+PREDICATE_COLUMN = "predicate"
+OBJECT_COLUMN = "object"
+RELATION_COLUMN = "relation"
+PROVIDED_BY_COLUMN = "provided_by"
+PRIMARY_KNOWLEDGE_SOURCE_COLUMN = "primary_knowledge_source"
+PUBLICATIONS_COLUMN = "publications"
+NOTES_COLUMN = "notes"  # Literal oboInOwl axiom annotation text, not an evidence identifier.
+OBO_SOURCE_ANNOTATION_COLUMN = "_source"  # Verbatim native axiom sources, including curator/reasoner markers.
+OBO_AXIOM_EVIDENCE_COLUMN = "obo_axiom_evidence"  # JSON array of native evidence annotation values.
+OBO_ANNOTATIONS_COLUMN = "_annotations"  # JSON array of opaque native KGX annotation strings.
+OBO_COMMENT_COLUMN = "comment"
+OBO_SEE_ALSO_COLUMN = "see_also"
+OBO_TERM_TRACKER_COLUMN = "term_tracker_item"
+SOURCE_ASSERTION_ID_COLUMN = "source_assertion_id"
+ORIGINAL_SUBJECT_COLUMN = "original_subject"
+MIM_INGREDIENTS = "mim_ingredients"
+MIM_KNOWLEDGE_SOURCE = "infores:mediaingredientmech"
+INFORMATION_CONTENT_ENTITY_CATEGORY = "biolink:InformationContentEntity"
+IS_ABOUT_RELATION = "IAO:0000136"
+INGREDIENT_PROFILE_COLUMN = "ingredient_profile"
+INGREDIENT_RECORD_KIND = "ingredient_record_kind"
+INGREDIENT_BUNDLE_SHA256 = "ingredient_bundle_sha256"
+INGREDIENT_MAPPING_JSON = "ingredient_mapping_json"
+INGREDIENT_PRODUCT_JSON = "ingredient_product_json"
+INGREDIENT_OCCURRENCE_JSON = "ingredient_occurrence_json"
+INGREDIENT_ANNOTATION_JSON = "ingredient_annotation_json"
+INGREDIENT_OCCURRENCE_ID = "ingredient_occurrence_id"
+INGREDIENT_PRODUCT_ID = "ingredient_product_id"
+SOURCE_COLUMN = "source_column"
+SOURCE_RECORD_COLUMN = "source_record"
+SOURCE_CITATION_COLUMN = "source_citation"
+SOURCE_CITATION_BYTES_COLUMN = "source_citation_base64"
+ORIGINAL_OBJECT_COLUMN = "original_object"
+GO_REFERENCE_CONTEXT_COLUMN = "go_reference_context"
+VALUE_ENCODING_COLUMN = "value_encoding"
+KNOWLEDGE_LEVEL_COLUMN = "knowledge_level"
+AGENT_TYPE_COLUMN = "agent_type"
+
+# Knowledge level values (Biolink Model KnowledgeLevelEnum)
+KNOWLEDGE_ASSERTION = "knowledge_assertion"
+LOGICAL_ENTAILMENT = "logical_entailment"
+PREDICTION = "prediction"
+STATISTICAL_ASSOCIATION = "statistical_association"
+OBSERVATION = "observation"
+KNOWLEDGE_LEVEL_NOT_PROVIDED = "not_provided"
+
+# Agent type values (Biolink Model AgentTypeEnum)
+MANUAL_AGENT = "manual_agent"
+AUTOMATED_AGENT = "automated_agent"
+DATA_ANALYSIS_PIPELINE = "data_analysis_pipeline"
+COMPUTATIONAL_MODEL = "computational_model"
+TEXT_MINING_AGENT = "text_mining_agent"
+IMAGE_PROCESSING_AGENT = "image_processing_agent"
+MANUAL_VALIDATION_OF_AUTOMATED_AGENT = "manual_validation_of_automated_agent"
+AGENT_TYPE_NOT_PROVIDED = "not_provided"
+
+DESCRIPTION_COLUMN = "description"
+XREF_COLUMN = "xref"
+SYNONYM_COLUMN = "synonym"
+IRI_COLUMN = "iri"  # DEPRECATED - No longer used in transform outputs
+SAME_AS_COLUMN = "same_as"
+SUBSETS_COLUMN = "subsets"
+DEPRECATED_COLUMN = "deprecated"
+
+# Assay node metadata fields
+ASSAY_KIT_NAME_COLUMN = "kit_name"
+ASSAY_WELL_NAME_COLUMN = "well_name"
+ASSAY_TEST_TYPE_COLUMN = "test_type"
+AMOUNT_COLUMN = "amount"
+UNIT_COLUMN = "unit"
+VALUE_COLUMN = "value"
+GRAMS_PER_LITER_COLUMN = "g_l"
+MMOL_PER_LITER_COLUMN = "mmol_l"
+RISK_ASSESSMENT_COLUMN = RISK_ASSESSMENT
+CURIE_COLUMN = "curie"
+
+BACDIVE_ID_COLUMN = "bacdive_id"
+DSM_NUMBER_COLUMN = "dsm_number"
+EXTERNAL_LINKS_CULTURE_NUMBER_COLUMN = "culture_collection_number"
+NCBITAXON_ID_COLUMN = "ncbitaxon_id"
+NCBITAXON_DESCRIPTION_COLUMN = "ncbitaxon_description"
+KEYWORDS_COLUMN = "keywords"
+MEDIUM_ID_COLUMN = "medium_id"
+MEDIUM_LABEL_COLUMN = "medium_label"
+MEDIUM_URL_COLUMN = "medium_url"
+MEDIADIVE_URL_COLUMN = "mediadive_medium_url"
+SOLUTIONS_COLUMN = "solutions"
+INGREDIENTS_COLUMN = "ingredents"
+ISOLATION_COLUMN = ISOLATION
+ISOLATION_SOURCE_CATEGORIES_COLUMN = ISOLATION_SOURCE_CATEGORIES
+# Morphology
+MORPHOLOGY_MULTIMEDIA_COLUMN = MORPHOLOGY + "_" + MULTIMEDIA
+MORPHOLOGY_MULTICELLULAR_MORPHOLOGY_COLUMN = MORPHOLOGY + "_" + MULTICELLULAR_MORPHOLOGY
+MORPHOLOGY_COLONY_MORPHOLOGY_COLUMN = MORPHOLOGY + "_" + COLONY_MORPHOLOGY
+MORPHOLOGY_CELL_MORPHOLOGY_COLUMN = MORPHOLOGY + "_" + CELL_MORPHOLOGY
+MORPHOLOGY_PIGMENTATION_COLUMN = MORPHOLOGY + "_" + PIGMENTATION
+API_X_COLUMN = "API_X"
+METABOLITE_CHEBI_KEY = "Chebi-ID"
+METABOLITE_KEY = "metabolite"
+PRODUCTION_KEY = "production"
+EC_PREFIX = "EC:"
+EC_KEY = "ec"
+EC_PYOBO_PREFIX = "eccode"
+EC_OBO_PREFIX = "OBO:eccode_"
+EC_INTENZ_URL_PREFIX = "https://www.ebi.ac.uk/intenz/query?cmd=SearchEC&ec="
+EC_EXPASY_URL_PREFIX = "https://enzyme.expasy.org/EC/"
+# Bioregistry URL form ROBOT emits for EC nodes when converting `eccode.owl`
+# → `ec.json` (raw shape, uses the lowercase full ontology name). Mapped
+# directly to the EC CURIE so compaction does not depend on the fragile
+# `EC_PYOBO_PREFIX` (`"eccode"` → `"EC"`) substring replacement — which happens
+# to reformat `.../eccode:1` to `.../EC:1` as a side effect. That side effect
+# is real today but latent: anyone removing the seemingly-redundant pyobo
+# entry would silently break EC compaction. Fixed by making the URL-form
+# match explicit. Must sit BEFORE `EC_PYOBO_PREFIX` in `SPECIAL_PREFIXES` so
+# `_replace_special_prefixes`' regex alternation prefers the longer match.
+EC_BIOREGISTRY_URL_PREFIX = "https://bioregistry.io/eccode:"
+UNIPROT_OBO_PREFIX = "OBO:uniprot_"
+CHEBI_CAS_PREFIX = "CAS:"
+ACTIVITY_KEY = "activity"
+RESISTANCE_KEY = "is resistant"
+SENSITIVITY_KEY = "is sensitive"
+UTILIZATION_TYPE_TESTED = "kind of utilization tested"
+UTILIZATION_ACTIVITY = "utilization activity"
+PLUS_SIGN = "+"
+BACDIVE_MAPPING_PSEUDO_ID_COLUMN = "pseudo_CURIE"
+BACDIVE_MAPPING_CHEBI_ID = "CHEBI_ID"
+BACDIVE_MAPPING_KEGG_ID = "KEGG_ID"
+BACDIVE_MAPPING_CAS_RN_ID = "CAS_RN_ID"
+BACDIVE_MAPPING_EC_ID = "EC_ID"
+BACDIVE_MAPPING_ENZYME_LABEL = "enzyme"
+BACDIVE_MAPPING_SUBSTRATE_LABEL = "substrate"
+BACDIVE_CULTURE_COLLECTION_NUMBER_COLUMN = "culture_collection_number"
+BACDIVE_ENVIRONMENT_CATEGORY = "Cat"
+ISOLATION_SOURCE_CATEGORY = "biolink:EnvironmentalFeature"
+# ! Primary differenec between the 2 below is the first key-value pair.
+# ! Whitespaces are fine for labels.
+TRANSLATION_TABLE_FOR_IDS = {
+    " ": "-",
+    '"': "",
+    "(": "",
+    ")": "",
+    "#": "",
+    ";": "",
+    "{": "",
+    "}": "",
+}
+TRANSLATION_TABLE_FOR_LABELS = {'"': "", "(": "", ")": "", "#": "", ";": "", "{": "", "}": ""}
+
+MEDIADIVE_ID_COLUMN = "mediadive_id"
+MEDIADIVE_COMPLEX_MEDIUM_COLUMN = "complex_medium"
+MEDIADIVE_SOURCE_COLUMN = "source"
+MEDIADIVE_LINK_COLUMN = "link"
+MEDIADIVE_MIN_PH_COLUMN = "min_pH"
+MEDIADIVE_MAX_PH_COLUMN = "max_pH"
+MEDIADIVE_REF_COLUMN = "reference"
+MEDIADIVE_DESC_COLUMN = "description"
+
+RHEA_ID_COLUMN = "id"
+RHEA_NAME_COLUMN = "name"
+RHEA_DIRECTION_COLUMN = "direction"
+RHEA_MAPPING_ID_COLUMN = "RHEA_ID"
+RHEA_MASTER_ID_COLUMN = "MASTER_ID"
+RHEA_MAPPING_OBJECT_COLUMN = "ID"
+RHEA_TARGET_ID_COLUMN = "target_id"
+RHEA_SUBJECT_ID_COLUMN = "subject_id"
+RHEA_UNDEFINED_DIRECTION = "undefined"
+RHEA_BIDIRECTIONAL_DIRECTION = "bidirectional"
+RHEA_LEFT_TO_RIGHT_DIRECTION = "left-to-right"
+RHEA_RIGHT_TO_LEFT_DIRECTION = "right-to-left"
+RHEA_CATEGORY_COLUMN = "category"
+RHEA_CATEGORY = "biolink:MolecularActivity"
+# Multi-cat: EC numbers are both molecular activities AND enzyme classifications.
+# Carrying biolink:Protein alongside MolecularActivity lets RHEA→EC
+# enables/enabled_by edges satisfy biolink's GeneProductOrComplex domain/range
+# while preserving the MolecularActivity semantics needed for grouping EC nodes
+# with GO molecular functions. biolink:Protein is biolink's recommended successor
+# to the deprecated biolink:MacromolecularMachineMixin mixin (per the upstream
+# replacement listed in DEPRECATED_CATEGORIES in kg-model-review); using Protein
+# directly also matches the convention in most KGs that treat EC as a stand-in
+# for the enzyme class.
+EC_CATEGORY = "biolink:MolecularActivity|biolink:Protein"
+GO_CATEGORY = "biolink:BiologicalProcess"
+MOLECULAR_ACTIVITY_CATEGORY = "biolink:MolecularActivity"  # For GO molecular function terms
+BIOLOGICAL_PROCESS_CATEGORY = "biolink:BiologicalProcess"  # For GO biological process terms
+CELLULAR_COMPONENT_CATEGORY = "biolink:CellularComponent"  # For GO cellular component terms
+RDFS_SUBCLASS_OF = "rdfs:subClassOf"
+# "in taxon" relation for organism → taxonomic-classification edges. Semantically
+# stronger than close_match (asserts membership), but weaker than subclass_of
+# (which would demand ontological subsumption). Used by BacDive → LPSN edges
+# where a strain is classified within an LPSN taxonomic-name record.
+IN_TAXON_PREDICATE = "biolink:in_taxon"
+IN_TAXON_RELATION = "RO:0002162"
+# Relation for inferred taxonomic relationships
+INFERRED_SUBCLASS_RELATION = "kgmicrobe:inferred_subClassOf"
+SUBCLASS_PREDICATE = "biolink:subclass_of"
+SUPERCLASS_PREDICATE = "biolink:superclass_of"
+CAPABLE_OF_PREDICATE = "biolink:capable_of"  # biolink predicate for capable of
+CAPABLE_OF = "RO:0002215"
+HAS_PHENOTYPE_PREDICATE = "biolink:has_phenotype"
+HAS_PHENOTYPE = "RO:0002200"  # [org_name -> has phenotype -> cell_shape, metabolism]
+PRODUCES_PREDICATE = "biolink:produces"
+PREDICATE_ID_COLUMN = "predicate_id"
+PREDICATE_LABEL_COLUMN = "predicate_label"
+DEBIO_MAPPER = {
+    RHEA_LEFT_TO_RIGHT_DIRECTION: "debio:0000007",
+    RHEA_RIGHT_TO_LEFT_DIRECTION: "debio:0000008",
+    RHEA_BIDIRECTIONAL_DIRECTION: "debio:0000009",
+}
+
+BIOSAFETY_LEVEL_PREDICATE = "biolink:associated_with"
+# DEBIO_PREDICATE_MAPPER = {
+#     RHEA_LEFT_TO_RIGHT_DIRECTION: "biolink:is_input_of",
+#     RHEA_RIGHT_TO_LEFT_DIRECTION: "biolink:is_output_of",
+#     RHEA_BIDIRECTIONAL_DIRECTION: "biolink:participates_in",
+# }
+RHEA_DIRECTION_CATEGORY = "biolink:Activity"
+
+# Traits
+TAX_ID_COLUMN = "tax_id"
+CARBON_SUBSTRATES_COLUMN = "carbon_substrates"
+PATHWAYS_COLUMN = "pathways"
+OBJECT_ID_COLUMN = "object_id"
+OBJECT_LABEL_COLUMN = "object_label"
+OBJECT_CATEGORIES_COLUMN = "object_categories"
+
+# METPO Phenotype Trait Mappings
+# Maps trait names to METPO IDs for common phenotypic characteristics
+METPO_PHENOTYPE_MAPPINGS = {
+    "gram positive": "METPO:1000606",  # Gram-positive
+    "gram negative": "METPO:1000607",  # Gram-negative
+    "sporulation": "METPO:1000614",  # endospore-forming
+    "obligate aerobic": "METPO:1000616",  # obligately aerobic
+    "obligate anaerobic": "METPO:1000870",  # obligately anaerobic
+    "presence of motility": "METPO:1002005",  # motile
+    "voges-proskauer test": "METPO:1005017",  # Voges-Proskauer test positive
+    "psychrophilic": "METPO:1000660",  # psychrophilic
+    "thermophilic": "METPO:1000656",  # thermophilic
+}
+OBJECT_ALIASES_COLUMN = "object_aliases"
+MATCHES_WHOLE_TEXT_COLUMN = "matches_whole_text"
+SUBJECT_LABEL_COLUMN = "subject_label"
+START_COLUMN = "subject_start"
+END_COLUMN = "subject_end"
+TRAITS_DATASET_LABEL_COLUMN = "traits_dataset_term"
+ORG_NAME_COLUMN = "org_name"
+METABOLISM_COLUMN = "metabolism"
+PATHWAYS_COLUMN = "pathways"
+SHAPE_COLUMN = "shape"
+CELL_SHAPE_COLUMN = "cell_shape"
+RANGE_SALINITY_COLUMN = "range_salinity"
+RANGE_TMP_COLUMN = "range_tmp"
+MOTILITY_COLUMN = "motility"
+GRAM_STAIN_COLUMN = "gram_stain"
+SPORULATION_COLUMN = "sporulation"
+ISOLATION_SOURCE_COLUMN = "isolation_source"
+TYPE_COLUMN = "Type"
+ENVO_TERMS_COLUMN = "ENVO_terms"
+ENVO_ID_COLUMN = "ENVO_ids"
+ACTION_COLUMN = "action"
+REPLACEMENT = "REPLACE"
+SUPPLEMENT = "SUPPLEMENT"
+
+CHEBI_MANUAL_ANNOTATION_PATH = MADIN_ETAL_DIR / "chebi_manual_annotation.tsv"
+
+# ROBOT
+ROBOT_REMOVED_SUFFIX = "_removed_subset"
+ROBOT_EXTRACT_SUFFIX = "_extract_subset"
+EXCLUSION_TERMS_FILE = "exclusion_branches.tsv"
+
+# Uniprot
+UNIPROT_FUNCTIONAL_MICROBES_DIR = TRANSFORM_UTILS_DIR / UNIPROT_FUNCTIONAL_MICROBES
+UNIPROT_FUNCTIONAL_MICROBES_TMP_DIR = UNIPROT_FUNCTIONAL_MICROBES_DIR / "tmp"
+UNIPROT_FUNCTIONAL_MICROBES_RELEVANT_FILE_LIST = UNIPROT_FUNCTIONAL_MICROBES_TMP_DIR / "relevant_files.tsv"
+UNIPROT_FUNCTIONAL_MICROBES_TMP_NE_DIR = UNIPROT_FUNCTIONAL_MICROBES_TMP_DIR / "nodes_and_edges"
+
+# UniprotHuman
+UNIPROT_HUMAN_DIR = TRANSFORM_UTILS_DIR / "uniprot_human"
+UNIPROT_HUMAN_TMP_DIR = UNIPROT_HUMAN_DIR / "tmp"
+UNIPROT_HUMAN_RELEVANT_FILE_LIST = UNIPROT_HUMAN_TMP_DIR / "relevant_files.tsv"
+UNIPROT_HUMAN_TMP_NE_DIR = UNIPROT_HUMAN_TMP_DIR / "nodes_and_edges"
+
+# GTDB-specific paths
+GTDB_DIR: Path = TRANSFORM_UTILS_DIR / GTDB
+GTDB_TMP_DIR = GTDB_DIR / "tmp"
+GTDB_RAW_DIR = RAW_DATA_DIR / GTDB
+
+# GTDB files
+GTDB_BAC120_TAXONOMY = "bac120_taxonomy.tsv"
+GTDB_AR53_TAXONOMY = "ar53_taxonomy.tsv"
+GTDB_BAC120_METADATA = "bac120_metadata.tsv.gz"
+#: Report of NCBI taxa that several GTDB taxa map onto (#883). Written on
+#: every gtdb run, empty or not.
+GTDB_NCBI_POOLING_REPORT = "gtdb_ncbi_pooling_report.tsv"
+GTDB_AR53_METADATA = "ar53_metadata.tsv.gz"
+
+# Metatraits-specific paths
+METATRAITS_DIR = TRANSFORM_UTILS_DIR / METATRAITS
+METATRAITS_RAW_DIR = RAW_DATA_DIR / METATRAITS
+
+# Metatraits files
+METATRAITS_DATA_FILE = "metatraits.tsv"
+
+# All Uniprot
+UNIPROT_PROTEOMES_FILE = "uniprot_proteomes.tar.gz"
+UNIPROT_HUMAN_FILE = "uniprot_human.tar.gz"
+UNIPROT_S3_DIRECTORY = "s3"
+GO_CATEGORY_TREES_FILE = ONTOLOGIES_TREES_DIR / "go_category_trees.tsv"
+
+PROTEIN_CATEGORY = "biolink:Enzyme"
+UNIPROT_FUNCTIONAL_MICROBES = "uniprot_functional_microbes"
+UNIPROT_HUMAN = "uniprot_human"
+ORGANISM_ID_MIXED_CASE = "Organism_ID"
+TAXONOMY_ID_UNIPROT_PREFIX = "taxonomy_id:"
+TAXONOMY_ID_UNIPROT_COLUMN = "taxonomy_id"
+UNIPROT_ORG_ID_COLUMN_NAME = "Organism (ID)"
+UNIPROT_PROTEIN_ID_COLUMN_NAME = "Entry"
+UNIPROT_PROTEIN_NAME_COLUMN_NAME = "Protein names"
+UNIPROT_EC_ID_COLUMN_NAME = "EC number"
+UNIPROT_BINDING_SITE_COLUMN_NAME = "Binding site"
+UNIPROT_GO_COLUMN_NAME = "Gene Ontology (GO)"
+UNIPROT_RHEA_ID_COLUMN_NAME = "Rhea ID"
+UNIPROT_PROTEOME_COLUMN_NAME = "Proteomes"
+UNIPROT_DISEASE_COLUMN_NAME = "Involvement in disease"
+UNIPROT_GENE_PRIMARY_COLUMN_NAME = "Gene Names (primary)"
+UNIPROT_PREFIX = "UniprotKB:"
+TREMBL_PREFIX = "TrEMBL:"
+# Bioregistry URL form ROBOT emits for `uniprot:*` xrefs when converting
+# `eccode.owl` → `ec.json`. Compacted to UNIPROT_PREFIX so the "remove
+# UniProt/TrEMBL nodes since accounted for elsewhere" filter in the ontologies
+# transform actually matches these entries; without the compaction 236 K
+# URI-form UniProt nodes slipped past the filter into `ec_nodes.tsv`.
+UNIPROT_BIOREGISTRY_URL_PREFIX = "https://bioregistry.io/uniprot:"
+CHEMICAL_TO_PROTEIN_EDGE = "biolink:binds"
+# PROTEIN_TO_GO_EDGE = "biolink:enables"
+PROTEIN_TO_ORGANISM_EDGE = "biolink:derives_from"
+ORGANISM_TO_PROTEIN_EDGE = "biolink:expresses"
+PROTEIN_TO_EC_EDGE = "biolink:enables"
+PROTEIN_TO_RHEA_EDGE = "biolink:participates_in"
+RHEA_KEY = "rhea"
+CHEMICAL_CATEGORY = "biolink:ChemicalEntity"
+CHEMICAL_TO_EC_EDGE = "biolink:participates_in"
+GO_CELLULAR_COMPONENT_ID = "GO:0005575"
+GO_MOLECULAR_FUNCTION_ID = "GO:0003674"
+GO_BIOLOGICAL_PROCESS_ID = "GO:0008150"
+GO_CELLULAR_COMPONENT_LABEL = "biolink:CellularComponent"
+GO_MOLECULAR_FUNCTION_LABEL = "biolink:MolecularActivity"
+GO_BIOLOGICAL_PROCESS_LABEL = "biolink:BiologicalProcess"
+PROTEIN_TO_GO_CELLULAR_COMPONENT_EDGE = "biolink:located_in"
+PROTEIN_TO_GO_MOLECULAR_FUNCTION_EDGE = "biolink:participates_in"
+PROTEIN_TO_GO_BIOLOGICAL_PROCESS_EDGE = "biolink:participates_in"
+DERIVES_FROM = "RO:0001000"
+ENABLES = "RO:0002327"
+MOLECULARLY_INTERACTS_WITH = "RO:0002436"
+LOCATED_IN = "RO:0001025"
+OMIM_PREFIX = "OMIM:"
+DISEASE_CATEGORY = "biolink:Disease"
+PROTEIN_TO_DISEASE_EDGE = "biolink:contributes_to"
+CONTRIBUTES_TO = "RO:0002326"
+GENE_TO_PROTEIN_EDGE = "biolink:has_gene_product"
+HAS_GENE_PRODUCT = "RO:0002205"
+GENE_CATEGORY = "biolink:Gene"
+
+PROTEOME_ID_COLUMN = "proteome_id"
+UNIPROT_DATA_LIST = [
+    "archaea",
+    "bacteria",
+]
+
+BACDIVE_MAPPING_FILE = "bacdive_mappings.tsv"
+
+# The METPO release every METPO artifact in this repo is pinned to: the ontology
+# (metpo.owl / metpo.json) and the two ROBOT templates built from it. They must move
+# together — tracking the ontology from `main` while the templates sat on an older tag
+# is how an obsoleted predicate reached 706,765 shipped edges unnoticed (#900, #909).
+# `download.yaml` repeats these URLs and cannot import them; a test asserts they agree.
+METPO_VERSION = "2026-06-12"
+_METPO_RAW = f"https://raw.githubusercontent.com/berkeleybop/metpo/refs/tags/{METPO_VERSION}"
+METPO_OWL_URL = f"{_METPO_RAW}/metpo.owl"
+METPO_JSON_URL = f"{_METPO_RAW}/metpo.json"
+METPO_CLASSES_ROBOT_TEMPLATE_URL = f"{_METPO_RAW}/src/templates/metpo_sheet.tsv"
+METPO_PROPERTIES_ROBOT_TEMPLATE_URL = f"{_METPO_RAW}/src/templates/metpo-properties.tsv"
+
+# MicrO has no releases: `master` is its only channel, and MicrO.owl imports 20
+# modules from that same branch by IRI, so ROBOT fetched them over the network on
+# every ontologies_stubs run and the stub hierarchy could change with no change
+# here. The ontology and every module are pinned to one commit and downloaded;
+# ontologies_stubs resolves the imports through a local catalog and refuses to
+# run if one is missing. `download.yaml` repeats the URLs and cannot import them;
+# a test asserts they agree. MicrO's master has not moved since this commit
+# (2018-06-14), so pinning changed no content.
+MICRO_COMMIT = "73963269d9a681157d710f272f8e65e4f7e8897e"
+MICRO_RAW_URL = f"https://raw.githubusercontent.com/carrineblank/MicrO/{MICRO_COMMIT}/MicrOandImportModules"
+MICRO_IMPORTS_DIR = "micro_imports"
+MICRO_IMPORT_MODULES = tuple(
+    f"{name}_imports.owl"
+    for name in (
+        "BFO",
+        "BSPO",
+        "ChEBI",
+        "CHMO",
+        "CL",
+        "DRON",
+        "ENVO",
+        "FMA",
+        "GO",
+        "IAO",
+        "IDO",
+        "NCBITax",
+        "NDF-RT",
+        "OBI",
+        "PATO",
+        "PO",
+        "PR",
+        "REO",
+        "RO",
+        "Uberon",
+    )
+)
+
+# PO publishes dated releases, so it is pinned to one. The unversioned po.owl
+# PURL serves po.owl from PO's master branch (the latest release only because PO
+# commits it when releasing), and po.owl imports two modules by unversioned IRI,
+# which ROBOT also fetched from master on every run. The ontology and both
+# modules are downloaded from the commit the release tag points at, since a tag
+# can be moved and a commit cannot; ontologies_stubs resolves the imports
+# through a local catalog, and preflight checks that po.owl names the release.
+# `mappings/finite_envo_po_category_dispositions.json` was reviewed against the
+# same release (its versionIRI and sha256), and a test asserts the two agree,
+# so a PO bump re-opens that review. Pinning changed no content: the release is
+# byte-identical to the po.owl master served at the time.
+PO_RELEASE = "2026-01-09"
+PO_VERSION_IRI = f"http://purl.obolibrary.org/obo/po/releases/{PO_RELEASE}/po.owl"
+# PO names its release tags by hand (V2023-07-13, v2019-06-5), so the tag is
+# recorded rather than derived. PO_COMMIT is the commit it points at; an
+# integration test resolves the tag and checks. CI does not run it, so a PO
+# bump must: KG_MICROBE_RUN_INTEGRATION=1 poetry run pytest -m integration
+# tests/test_po_version_pin.py
+PO_RELEASE_TAG = "v2026-01-09"
+PO_COMMIT = "fb1d146b95d6bfe141992d6a219b891fdef2dc54"
+PO_RAW_URL = f"https://raw.githubusercontent.com/Planteome/plant-ontology/{PO_COMMIT}"
+PO_IMPORTS_DIR = "po_imports"
+PO_IMPORT_MODULES = ("ncbitaxon_import.owl", "ro_import.owl")
+
+# Report of every culture-collection deposit number claimed by more than one
+# BacDive record with a different parent taxon, and what became of it: `collapsed`
+# rows were given the ancestor every claimant entails, `suppressed` rows were given
+# no subclass_of edge at all. Named for the claims, not the conflicts, because a
+# resolved claim is in here too (#892, #898).
+BACDIVE_DEPOSIT_CLAIMS_FILE = "bacdive_strain_deposit_claims.tsv"
+MICROMEDIAPARAM_COMPOUND_MAPPINGS_FILE = "compound_mappings_strict.tsv"
+MICROMEDIAPARAM_HYDRATE_MAPPINGS_FILE = "compound_mappings_strict_hydrate.tsv"
+
+# not used anywhere except in DO_NOT_CHANGE_PREFIXES list below
+METPO_PREFIX = "METPO:"
+
+DO_NOT_CHANGE_PREFIXES = [
+    NCBITAXON_PREFIX,
+    CAS_RN_PREFIX,
+    CHEBI_PREFIX,
+    PUBCHEM_PREFIX,
+    GO_PREFIX,
+    KEGG_PREFIX,
+    EC_PREFIX,
+    UBERON_PREFIX,
+    ASSAY_PREFIX,
+    RHEA_NEW_PREFIX,
+    GO_PREFIX,
+    MEDIADIVE_MEDIUM_PREFIX,
+    STRAIN_PREFIX,
+    BIOSAFETY_LEVEL_PREFIX,
+    METPO_PREFIX,
+]
+
+HAS_PARTICIPANT_PREDICATE = "biolink:has_participant"
+ENABLED_BY_PREDICATE = "biolink:enabled_by"
+HAS_INPUT_PREDICATE = "biolink:has_input"
+HAS_OUTPUT_PREDICATE = "biolink:has_output"
+OCCURS_IN_PREDICATE = "biolink:occurs_in"
+IS_INPUT_OF_PREDICATE = "biolink:is_input_of"
+IS_OUTPUT_OF_PREDICATE = "biolink:is_output_of"
+HAS_INPUT_RELATION = "RO:0002233"
+HAS_OUTPUT_RELATION = "RO:0002234"
+PRODUCES_RELATION = HAS_OUTPUT_RELATION  # has_output for metabolic production
+PARTICIPATES_IN_PREDICATE = "biolink:participates_in"
+SAME_AS_PREDICATE = "biolink:same_as"
+# CAN_BE_CARRIED_OUT_BY_PREDICATE = "biolink:can_be_carried_out_by" # Replacing with enables
+RHEA_PREDICATE_MAPPER = {
+    "has participant": HAS_PARTICIPANT_PREDICATE,
+    "enabled by": ENABLED_BY_PREDICATE,
+    "reaction enabled by molecular function": RHEA_TO_GO_EDGE,  # CAN_BE_CARRIED_OUT_BY_PREDICATE,
+    "has input": HAS_INPUT_PREDICATE,
+    "has output": HAS_OUTPUT_PREDICATE,
+}
+
+# RHEA Pyobo
+ENABLED_BY_RELATION = "RO:0002333"
+RHEA_PYOBO_RELATIONS_MAPPER = {
+    ENABLED_BY_RELATION: ENABLED_BY_PREDICATE,
+    RDFS_SUBCLASS_OF: SUBCLASS_PREDICATE,
+    HAS_INPUT_RELATION: HAS_INPUT_PREDICATE,
+    HAS_OUTPUT_RELATION: HAS_OUTPUT_PREDICATE,
+    HAS_PARTICIPANT: HAS_PARTICIPANT_PREDICATE,
+    # "debio:0000007" : SUPERCLASS_PREDICATE, # This is being ignored in RheaMapperTransform
+    # "debio:0000008" : SUPERCLASS_PREDICATE, # This is being ignored in RheaMapperTransform
+    # "debio:0000009" : SUPERCLASS_PREDICATE, # This is being ignored in RheaMapperTransform
+    "debio:0000047": RHEA_TO_GO_EDGE,
+}
+
+RHEA_PYOBO_PREFIXES_MAPPER = {
+    "chebi": CHEBI_PREFIX,
+    RHEA_KEY: RHEA_NEW_PREFIX,
+    EC_PYOBO_PREFIX: EC_PREFIX,
+    "ec": EC_PREFIX,  # Alias for raw Rhea data that uses "ec" instead of "eccode"
+    "uniprot": UNIPROT_PREFIX,
+    "go": GO_PREFIX,
+}
+
+# Columns desired for the Uniprot data (from .dat files)
+UNIPROT_TREMBL_COLUMNS = [
+    "taxonomy_id",
+    "entry_name",
+    "accessions",
+    "description",
+    "comments",
+    "cross_references",
+    "proteome_id",
+    "data_class",
+]
+
+
+# BactoTraits
+COMBO_KEY = "combo"
+
+# Unipathways
+UNIPATHWAYS_XREFS_FILEPATH = ONTOLOGIES_XREFS_DIR / "unipathways_xrefs.tsv"
+UNIPATHWAYS_SHORT_PREFIX = "UPa"
+UNIPATHWAYS_COMPOUND_PREFIX = "OBO:UPa_UPC"
+UNIPATHWAYS_ENZYMATIC_REACTION_PREFIX = "OBO:UPa_UER"
+UNIPATHWAYS_REACTION_PREFIX = "OBO:UPa_UCR"
+UNIPATHWAYS_LINEAR_SUB_PATHWAY_PREFIX = "OBO:UPa_ULS"
+UNIPATHWAYS_PATHWAY_PREFIX = "OBO:UPa_UPA"
+UNIPATHWAYS_CATEGORIES_DICT = {
+    UNIPATHWAYS_COMPOUND_PREFIX: MEDIUM_CATEGORY,
+    UNIPATHWAYS_ENZYMATIC_REACTION_PREFIX: EC_CATEGORY,
+    UNIPATHWAYS_REACTION_PREFIX: RHEA_CATEGORY,
+    UNIPATHWAYS_LINEAR_SUB_PATHWAY_PREFIX: PATHWAY_CATEGORY,
+    UNIPATHWAYS_PATHWAY_PREFIX: PATHWAY_CATEGORY,
+}
+
+PART_OF_RELATION = "BFO:0000050"
+PART_OF_PREDICATE = "biolink:part_of"
+RELATED_TO_RELATION = "RO:0000052"
+RELATED_TO_PREDICATE = "biolink:related_to"
+HAS_ALTERNATE_ENZYMATIC_REACTION_RELATION = "OBO:upa#has_alternate_enzymatic_reaction"  # TODO explore other relation
+UNIPATHWAYS_RELATIONS_DICT = {
+    HAS_INPUT_PREDICATE: HAS_INPUT_RELATION,
+    HAS_OUTPUT_PREDICATE: HAS_OUTPUT_RELATION,
+    PART_OF_PREDICATE: PART_OF_RELATION,
+    RELATED_TO_PREDICATE: RELATED_TO_RELATION,
+}
+
+METACYC_PREFIX = "METACYC:"
+UNIPATHWAYS_IGNORE_PREFIXES = [
+    KEGG_PREFIX,
+    METACYC_PREFIX,
+    UNIPATHWAYS_COMPOUND_PREFIX,
+    UNIPATHWAYS_ENZYMATIC_REACTION_PREFIX,
+    UNIPATHWAYS_LINEAR_SUB_PATHWAY_PREFIX,
+]
+
+UNIPATHWAYS_INCLUDE_PAIRS = [
+    [UNIPATHWAYS_REACTION_PREFIX, UNIPATHWAYS_ENZYMATIC_REACTION_PREFIX],
+    [UNIPATHWAYS_ENZYMATIC_REACTION_PREFIX, UNIPATHWAYS_LINEAR_SUB_PATHWAY_PREFIX],
+    [UNIPATHWAYS_LINEAR_SUB_PATHWAY_PREFIX, UNIPATHWAYS_PATHWAY_PREFIX],
+]
+
+HGNC_OLD_PREFIX = "http://identifiers.org/hgnc/"
+HGNC_NEW_PREFIX = "HGNC:"
+
+# Create a mapping for special cases
+SPECIAL_PREFIXES = {
+    # URL forms placed first so the regex alternation prefers the longer,
+    # more specific match over the bare `"eccode"` substring below.
+    EC_BIOREGISTRY_URL_PREFIX: EC_PREFIX,  # Compact `https://bioregistry.io/eccode:` → EC:
+    EC_INTENZ_URL_PREFIX: EC_PREFIX,  # Convert IntEnz URLs to EC: CURIEs
+    EC_PYOBO_PREFIX: EC_PREFIX.rstrip(":"),
+    EC_OBO_PREFIX: EC_PREFIX,
+    UNIPROT_OBO_PREFIX: UNIPROT_PREFIX,
+    # Compact ROBOT-emitted URI form so the ec-branch UniProt filter matches.
+    UNIPROT_BIOREGISTRY_URL_PREFIX: UNIPROT_PREFIX,
+    RHEA_NEW_PREFIX.lower().rstrip(":"): RHEA_NEW_PREFIX.rstrip(":"),
+    RHEA_OBO_PREFIX: RHEA_NEW_PREFIX,
+    # UNIPROT_OBO_PREFIX: UNIPROT_PREFIX + ":",  # comment for now since we do not need obo-db-ingest for uniprot
+    DEBIO_OBO_PREFIX: DEBIO_NEW_PREFIX,
+    CHEBI_CAS_PREFIX: CAS_RN_PREFIX,
+    UNIPATHWAYS_REACTION_PREFIX: re.sub(r"OBO:UPa_(\w{3})", r"UPA:\1", UNIPATHWAYS_REACTION_PREFIX),
+    UNIPATHWAYS_PATHWAY_PREFIX: re.sub(r"OBO:UPa_(\w{3})", r"UPA:\1", UNIPATHWAYS_PATHWAY_PREFIX),
+    HGNC_OLD_PREFIX: HGNC_NEW_PREFIX,
+}
+
+# CTD
+CTD_CAS_RN_COLUMN = "CasRN"
+CTD_CHEMICAL_MESH_COLUMN = "ChemicalID"
+CTD_DISEASE_MESH_COLUMN = "DiseaseID"
+CTD_DISEASE_OMIM_COLUMN = "OmimIDs"
+CHEMICAL_TO_DISEASE_EDGE = "biolink:associated_with"
+MESH_PREFIX = "MESH:"
+NODE_NORMALIZER_URL = "https://nodenormalization-sri.renci.org/1.4/get_normalized_nodes?curie="
+MONDO_PREFIX = "MONDO:"
+
+# Disbiome
+DISBIOME_DIR: Path = TRANSFORM_UTILS_DIR / "disbiome"
+DISBIOME_TMP_DIR = DISBIOME_DIR / "tmp"
+DISBIOME_DISEASE_NAME = "disease_name"
+DISBIOME_ORGANISM_ID = "organism_ncbi_id"
+DISBIOME_ORGANISM_NAME = "organism_name"
+DISIOME_QUALITATIVE_OUTCOME = "qualitative_outcome"
+DISBIOME_ELEVATED = "Elevated"
+DISBIOME_REDUCED = "Reduced"
+ASSOCIATED_WITH_INCREASED_LIKELIHOOD_OF_PREDICATE = "biolink:associated_with_increased_likelihood_of"
+ASSOCIATED_WITH_DECREASED_LIKELIHOOD_OF_PREDICATE = "biolink:associated_with_decreased_likelihood_of"
+ASSOCIATED_WITH_INCREASED_LIKELIHOOD_OF = ASSOCIATED_WITH
+ASSOCIATED_WITH_DECREASED_LIKELIHOOD_OF = ASSOCIATED_WITH
+
+# Wallen etal
+WALLEN_ETAL_DIR: Path = TRANSFORM_UTILS_DIR / WALLEN_ETAL
+WALLEN_ETAL_TMP_DIR = WALLEN_ETAL_DIR / "tmp"

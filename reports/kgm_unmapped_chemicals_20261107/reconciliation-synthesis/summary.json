@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "scientific_review": false,
+  "ledger_sha256": "9c21f4a226b0e27a08857584a5ec675e57d6439a1ea38a16fc8ea3b20f7f2339",
+  "input_candidates": 549,
+  "diagnostic_partition_counts": {
+    "CONSUMED_SUPPORTED_NAME_ONLY": 91,
+    "CURRENT_UNMAPPED_RECORD": 138,
+    "CURRENT_WITHHELD_MAPPING": 221,
+    "DOWNSTREAM_MATERIAL_HOLD": 26,
+    "EMPTY_SOURCE_LABEL": 1,
+    "MULTIPLE_LEXICAL_OWNERS": 6,
+    "NO_EXACT_NAME_MATCH": 49,
+    "REJECTED_OR_NONRESOLVING_HISTORY": 17
+  },
+  "partition_precedence": [
+    [
+      "BLANK_SOURCE_LABEL",
+      "EMPTY_SOURCE_LABEL"
+    ],
+    [
+      "DOWNSTREAM_MATERIAL_HOLD",
+      "DOWNSTREAM_MATERIAL_HOLD"
+    ],
+    [
+      "AMBIGUOUS_MULTIPLE_OWNERS",
+      "MULTIPLE_LEXICAL_OWNERS"
+    ],
+    [
+      "NON_RESOLVING_OR_REJECTED_LABEL_ONLY",
+      "REJECTED_OR_NONRESOLVING_HISTORY"
+    ],
+    [
+      "MATCHED_AMBIGUOUS_OWNER",
+      "AMBIGUOUS_CURRENT_RECORD"
+    ],
+    [
+      "NO_EXACT_CASEFOLD_NAME_MATCH",
+      "NO_EXACT_NAME_MATCH"
+    ],
+    [
+      "MATCHED_UNMAPPED_OWNER",
+      "CURRENT_UNMAPPED_RECORD"
+    ],
+    [
+      "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+      "CURRENT_WITHHELD_MAPPING"
+    ],
+    [
+      "CONSUMED_SUPPORTED_LEXICAL_COVERAGE",
+      "CONSUMED_SUPPORTED_NAME_ONLY"
+    ]
+  ],
+  "overlapping_native_flags_preserved": true,
+  "nonhit_count": 61,
+  "nonhit_review_counts": {
+    "ABBREVIATION_REQUIRES_SOURCE_IDENTITY": 1,
+    "BIOLOGICAL_MATERIAL_OR_PREPARATION": 10,
+    "EMPTY_LABEL_WITH_MISPLACED_SOURCE_TEXT": 1,
+    "EXISTING_SOURCE_SCOPED_JOINT_CONDITION": 1,
+    "EXPLICIT_ALTERNATIVE_MATERIALS": 1,
+    "FORM_OR_FORMULA_REQUIRES_SOURCE_VERIFICATION": 25,
+    "RECIPE_STOCK_OR_COMMERCIAL_MEDIUM": 21,
+    "SOURCE_ALIAS_REVIEWED_SEPARATELY_IN_1149": 1
+  },
+  "raw_transformed_differences": 44,
+  "normalization_is_not_identity_approval": true,
+  "source_specific_scientific_decisions_delegated_to_review": true
+}

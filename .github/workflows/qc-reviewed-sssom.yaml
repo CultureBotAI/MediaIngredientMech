@@ -37,7 +37,7 @@ jobs:
       - name: Export and replay the opt-in scoped ingredient cohort
         run: |
           uv run --frozen python -m mediaingredientmech.export.ingredient_bundle export \
-            --review reports/owned_name_deferred_669_20261103/companion-review.json \
+            --review reports/kgm_unmapped_chemicals_20261107/companion-review.json \
             --output output/mim-reviewed-ingredient-bundle
       - name: Upload scoped cohort candidate for consumer acceptance
         uses: actions/upload-artifact@v4

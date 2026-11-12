@@ -1,0 +1,2755 @@
+{
+  "schema": "bounded-source-form-triage-v1",
+  "created_at": "2026-11-08T02:41:48.652343+00:00",
+  "author": "/root/step7d_science_c",
+  "scope": "Five selected MediaDive source-label/form candidates beyond the separately reviewed sodium acetate pilot. Read-only bounded triage, not a full scientific review of all claims in the nearby owners.",
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/source-audit/queues/mediadive-all415-source-bound.tsv",
+      "sha256": "0201d1f66e3ee16ba842cbfdedd66ee490ec26cabcc0ec857c03583741b4360d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/source-audit/reconciliation-before-v2/ledger.json",
+      "sha256": "343541077bad46a91938e533de9da58d0af16c84efa27f42cf7a79567de9712b"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    }
+  ],
+  "targets": [
+    {
+      "source_id": "mediadive.ingredient:331",
+      "source_queue_row": {
+        "source_id": "mediadive.ingredient:331",
+        "source_label": "Trishydroxymethylmethylamine",
+        "native_identity_target": "",
+        "queue_disposition": "STILL_UNMAPPED",
+        "raw_compound_label": "Tris(hydroxymethyl)methylamine",
+        "raw_compound_id": "331",
+        "raw_record_found": "True",
+        "raw_source_sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+        "raw_record_json": "{\"amount\": 6, \"compound\": \"Tris(hydroxymethyl)methylamine\", \"compound_id\": 331, \"g_l\": 6, \"mmol_l\": 49.5295, \"optional\": 0, \"recipe_order\": 4, \"unit\": \"g\"}"
+      },
+      "current_source_json": [
+        {
+          "id": 331,
+          "name": "Tris(hydroxymethyl)methylamine",
+          "group": "Tris",
+          "chebi_id": 9754,
+          "cas": "77-86-1",
+          "kegg_id": null,
+          "mass": 121.14,
+          "formula": "C4H11NO3",
+          "density": 0.6181,
+          "biological roles": null
+        }
+      ],
+      "primary_evidence": {
+        "name": "mediadive-331.json",
+        "url": "https://mediadive.dsmz.de/download/ingredient/331/json",
+        "accessed_at": "2026-11-08T02:31:10.475608+00:00",
+        "status": 200,
+        "sha256": "b6ea249d20dd601749b45f057de21bd3fc2504ce0506cdc0ad0ceabfe8fd2c18",
+        "bytes": 301,
+        "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-captures-v1/mediadive-331.json"
+      },
+      "owners": [
+        {
+          "path": "data/ingredients/mapped/Tris_Base.yaml",
+          "sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Tris_Base.yaml",
+          "identifier": "CHEBI:9754",
+          "preferred_term": "Tris base",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "CHEBI:9754",
+            "preferred_term": "Tris base",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:9754",
+              "ontology_label": "tris",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureMech",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+                }
+              ]
+            },
+            "synonyms": [
+              {
+                "synonym_text": "Role: Buffer; Properties: Defined component, Organic compound, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Buffer; Properties: Defined component, Simple component, Organic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Buffer; Properties: Organic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Buffer; Properties: Organic compound, Simple component, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "1,1,1-tris(hydroxymethyl)methanamine",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "2-Amino-2-(hydroxymethyl)-1,3-propanediol",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "2-amino-2-(hydroxymethyl)propane-1,3-diol",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "THAM",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris (hydroxymethyl aminomethane)",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris [tris(hydroxymethyl)aminomethane]",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris amino",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris buffer",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris buffer 1M",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris hydrochloride",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris(hydroxymethyl)aminomethane",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris-base",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris [tris(hydroxymethyl)aminomethane]",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trizma",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trizma Base pH",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trometamol",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tromethamine",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "aminotris(hydroxymethyl)methane",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "nitrilotriacetic acid trisodium salt",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Tris",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "merged_from_duplicate_mim_record"
+              },
+              {
+                "synonym_text": "Tris(hydroxymethyl)methylamine",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "merged_from_duplicate_mim_record"
+              },
+              {
+                "synonym_text": "Role: Buffer; Properties: Simple component, Organic compound, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Tris-HCl buffer",
+                "synonym_type": "EXACT",
+                "source": "manual"
+              },
+              {
+                "synonym_text": "Tris HCl",
+                "synonym_type": "EXACT",
+                "source": "manual"
+              },
+              {
+                "synonym_text": "Role: Buffer; Properties: Defined component, Complex component, Solution",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Buffer; Properties: Complex component, Defined component, Solution",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Trizma Base pH 8.2",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Tris base (buffer)",
+                "synonym_type": "RAW_TEXT",
+                "source": "merged_from_unmapped_duplicate_review_2026_05_11"
+              },
+              {
+                "synonym_text": "Tris (hydroxymethyl) aminomethane",
+                "synonym_type": "RAW_TEXT",
+                "source": "culturemech:output/ingredient_occurrences.tsv"
+              },
+              {
+                "synonym_text": "Tris・HCl",
+                "synonym_type": "RAW_TEXT",
+                "source": "culturemech:output/ingredient_occurrences.tsv"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 212,
+              "media_count": 210
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-03-09T06:54:18.022301+00:00",
+                "curator": "import_from_culturemech",
+                "action": "IMPORTED",
+                "changes": "Initial import from CultureMech pipeline",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T19:54:09.046241+00:00",
+                "curator": "fetch_cas_rn_from_pubchem",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:77-86-1 from PubChem API via name lookup (Tris)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.909752+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: TRIS)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.913904+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: Tris buffer 1M)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.915929+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: Tris(hydroxymethyl)aminomethane)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-09T00:32:50.689620+00:00",
+                "curator": "enrich_mim_cas_rn_batch",
+                "action": "CAS_RN_ADDED",
+                "changes": "Added CAS-RN 77-86-1 from PubChem (via CHEBI:9754)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-17T12:00:00+00:00",
+                "curator": "synonym_expansion_cbclaw",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 2 synonyms for unmapped CultureMech surface forms",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 19 synonyms from kg-microbe P4.4 enrichment: 1,1,1-tris(hydroxymethyl)methanamine, 2-Amino-2-(hydroxymethyl)-1,3-propanediol, 2-amino-2-(hydroxymethyl)propane-1,3-diol, THAM, Tris (hydroxymethyl aminomethane), ... (14 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 20 synonyms from kg-microbe P4.4 enrichment: 1,1,1-tris(hydroxymethyl)methanamine, 2-Amino-2-(hydroxymethyl)-1,3-propanediol, 2-amino-2-(hydroxymethyl)propane-1,3-diol, THAM, Tris (hydroxymethyl aminomethane), ... (15 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-19T07:39:23.955331+00:00",
+                "curator": "audit_mim_merge",
+                "action": "MERGED_FROM_DUPLICATES",
+                "changes": "Absorbed 6 duplicate MIM record(s) into this one: Tris.yaml, Tris_Hydroxymethylaminomethane.yaml, Tris_Buffer.yaml, Tris_Hydroxymethylmethylamine.yaml, Tris_Buffer_1m.yaml, Tris_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T07:35:36.731808+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T08:08:32.817475+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                "changes": "molecular_formula=C4H11NO3; inchi=InChI=1S/C4H11NO3/c5-4(1-6,2-7)3-8/h6-8H,1-3,5H2; smiles=NC(CO)(CO)CO",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T03:12:19.013086+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-05T00:00:00+00:00",
+                "curator": "ingredient_mapping_review_2026_05_05",
+                "action": "MERGED",
+                "changes": "Absorbed duplicate record Trizma_Base_Ph.yaml (UNMAPPED_0090) into Tris_Base.yaml; source occurrence counts and synonyms were merged. Trizma Base pH text is preparation context; identity is Tris base CHEBI:9754.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-11T06:02:00Z",
+                "curator": "mediaingredientmech-agentic-curation",
+                "action": "ABSORBED_UNMAPPED_DUPLICATE",
+                "changes": "Absorbed duplicate unmapped record Tris_Base_(buffer).yaml (UNMAPPED_0620); buffer is usage context and the identity is Tris base CHEBI:9754.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-05-29T23:35:36.113237+00:00",
+                "curator": "extract_roles_from_synonyms",
+                "action": "ANNOTATED",
+                "changes": "Added media role: BUFFER (confidence: 1.00)"
+              },
+              {
+                "timestamp": "2026-06-09T05:23:46.846733+00:00",
+                "curator": "correct_stale_ontology_labels.py",
+                "action": "CORRECTED",
+                "changes": "ontology_label 'Tris base' -> 'tris': synced to canonical CHEBI label (preferred_term 'Tris base' unchanged)."
+              },
+              {
+                "timestamp": "2026-07-20T00:00:00+00:00",
+                "curator": "migrate_media_roles_to_facets",
+                "action": "ANNOTATED",
+                "changes": "Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER"
+              },
+              {
+                "timestamp": "2026-08-27T03:16:39.520015+00:00",
+                "curator": "refresh_occurrence_statistics",
+                "action": "CORRECTED",
+                "changes": "occurrence_statistics 61/61 -> 210/212 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+              },
+              {
+                "timestamp": "2026-08-30T04:48:06.233536+00:00",
+                "curator": "claude_culturemech_alias_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 2 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Tris (hydroxymethyl) aminomethane' (x4 CultureMech mentions); 'Tris・HCl' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+                "llm_assisted": false
+              }
+            ],
+            "kg_microbe_node_id": "CHEBI:9754",
+            "chemical_properties": {
+              "cas_rn": "77-86-1",
+              "data_source": "PubChem (via CHEBI:9754)",
+              "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+              "molecular_formula": "C4H11NO3",
+              "inchi": "InChI=1S/C4H11NO3/c5-4(1-6,2-7)3-8/h6-8H,1-3,5H2",
+              "smiles": "NC(CO)(CO)CO"
+            },
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "physicochemical_roles": [
+              {
+                "role": "BUFFER",
+                "confidence": 1.0,
+                "evidence": [
+                  {
+                    "reference_type": "DATABASE_ENTRY",
+                    "reference_text": "Imported from CultureMech pipeline",
+                    "curator_note": "Original role text: Buffer"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "disposition": "UPSTREAM_LABEL_NORMALIZATION_AND_EXISTING_OWNER_REVIEW",
+      "scientific_identity_approved": false,
+      "new_alias_operations": [],
+      "rationale": "The admitted raw name Tris(hydroxymethyl)methylamine already occurs as an accepted EXACT_SYNONYM on Tris_Base; the transformed label removes parentheses. MediaDive identifies CHEBI9754/CAS77-86-1. That supports retaining the exact raw source spelling, not adding the damaged transformed form or approving this owner's whole row. The owner also carries Tris hydrochloride, Tris HCl, Tris buffer1M and nitrilotriacetic acid trisodium salt as accepted aliases: their salt/preparation/substance scopes require separate review before any full-payload approval.",
+      "recommended_followup": "Preserve source-to-transformed provenance and the current native release hold. Review the existing Tris alias payload as a separate bounded curation; do not promote an entire row from this one raw-label agreement.",
+      "existing_related_issues": [],
+      "existing_issue_scope": "Related historical or broader form/label-index issues only; this report does not close them or assert every targeted case already has its own exact issue.",
+      "current_reconciliation": {
+        "candidate_id": "3bef9a6f0e3901c3db7a69b2c6cb9cb9c040316056f9fcde773445471e50ca35",
+        "category": "biolink:ChemicalEntity",
+        "consumed_name_hits": [
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "other",
+            "matched_label": "Tris(hydroxymethyl)methylamine",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "2858",
+                "object_id": "CHEBI:9754",
+                "owner_record": "data/ingredients/mapped/Tris_Base.yaml",
+                "owner_record_sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: salt, concentration-qualified, pH-qualified, and wrong-compound labels leak into final SSSOM other.",
+                "row_sha256": "61b84d7b3de2b3da146679ade43ed469b359235792dd81e6b263062b944050ee",
+                "source_position": "2858",
+                "subject_id": "MIM:Tris_Base"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-08-30",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:9754",
+              "object_label": "tris",
+              "object_source": "obo:chebi.owl",
+              "other": "1,1,1-tris(hydroxymethyl)methanamine|2-Amino-2-(hydroxymethyl)-1,3-propanediol|2-amino-2-(hydroxymethyl)propane-1,3-diol|THAM|Tris (hydroxymethyl aminomethane)|Tris [tris(hydroxymethyl)aminomethane]|Tris amino|Tris buffer|Tris buffer 1M|Tris hydrochloride|Tris(hydroxymethyl)aminomethane|Tris-base|Tris [tris(hydroxymethyl)aminomethane]|Trizma|Trizma Base pH|Trometamol|Tromethamine|aminotris(hydroxymethyl)methane|nitrilotriacetic acid trisodium salt|Tris(hydroxymethyl)methylamine|Tris-HCl buffer|Tris HCl|Trizma Base pH 8.2|Tris base (buffer)|Tris (hydroxymethyl) aminomethane|Tris・HCl|CAS:77-86-1",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=ingredient_mapping_review_2026_05_05]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+              "subject_id": "MIM:Tris_Base",
+              "subject_label": "Tris base",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "61b84d7b3de2b3da146679ade43ed469b359235792dd81e6b263062b944050ee"
+          }
+        ],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "Tris(hydroxymethyl)methylamine",
+            "owner": "data/ingredients/mapped/Tris_Base.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "merged_from_duplicate_mim_record",
+              "synonym_text": "Tris(hydroxymethyl)methylamine",
+              "synonym_type": "EXACT_SYNONYM"
+            },
+            "synonym_type": "EXACT_SYNONYM"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "CHEBI:9754",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "2858",
+                  "owner_record": "data/ingredients/mapped/Tris_Base.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: salt, concentration-qualified, pH-qualified, and wrong-compound labels leak into final SSSOM other.",
+                  "row_sha256": "61b84d7b3de2b3da146679ade43ed469b359235792dd81e6b263062b944050ee",
+                  "source_position": 2858
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-08-30",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:9754",
+                  "object_label": "tris",
+                  "object_source": "obo:chebi.owl",
+                  "other": "1,1,1-tris(hydroxymethyl)methanamine|2-Amino-2-(hydroxymethyl)-1,3-propanediol|2-amino-2-(hydroxymethyl)propane-1,3-diol|THAM|Tris (hydroxymethyl aminomethane)|Tris [tris(hydroxymethyl)aminomethane]|Tris amino|Tris buffer|Tris buffer 1M|Tris hydrochloride|Tris(hydroxymethyl)aminomethane|Tris-base|Tris [tris(hydroxymethyl)aminomethane]|Trizma|Trizma Base pH|Trometamol|Tromethamine|aminotris(hydroxymethyl)methane|nitrilotriacetic acid trisodium salt|Tris(hydroxymethyl)methylamine|Tris-HCl buffer|Tris HCl|Trizma Base pH 8.2|Tris base (buffer)|Tris (hydroxymethyl) aminomethane|Tris・HCl|CAS:77-86-1",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=ingredient_mapping_review_2026_05_05]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]",
+                  "subject_id": "MIM:Tris_Base",
+                  "subject_label": "Tris base",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                }
+              ],
+              "mapping_quality": "EXACT_MATCH",
+              "ontology_id": "CHEBI:9754",
+              "ontology_label": "tris",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Tris_Base.yaml",
+            "preferred_term": "Tris base",
+            "sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+            "subject_id": "MIM:Tris_Base"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Tris(hydroxymethyl)methylamine",
+        "resolving_owner_paths": [
+          "data/ingredients/mapped/Tris_Base.yaml"
+        ],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:331",
+        "source_label": "Trishydroxymethylmethylamine",
+        "source_record": {
+          "amount": 6,
+          "compound": "Tris(hydroxymethyl)methylamine",
+          "compound_id": 331,
+          "g_l": 6,
+          "mmol_l": 49.5295,
+          "optional": 0,
+          "recipe_order": 4,
+          "unit": "g"
+        },
+        "triage_flags": [
+          "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+          "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+        ]
+      }
+    },
+    {
+      "source_id": "mediadive.ingredient:1512",
+      "source_queue_row": {
+        "source_id": "mediadive.ingredient:1512",
+        "source_label": "Calcium D-+-pantothenate",
+        "native_identity_target": "",
+        "queue_disposition": "STILL_UNMAPPED",
+        "raw_compound_label": "Calcium D-(+)-pantothenate",
+        "raw_compound_id": "1512",
+        "raw_record_found": "True",
+        "raw_source_sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+        "raw_record_json": "{\"amount\": 50, \"compound\": \"Calcium D-(+)-pantothenate\", \"compound_id\": 1512, \"g_l\": 0.05, \"mmol_l\": 0.209846, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"mg\"}"
+      },
+      "current_source_json": [
+        {
+          "id": 1512,
+          "name": "Calcium D-(+)-pantothenate",
+          "group": "Ca-pantothenate",
+          "chebi_id": 1687714,
+          "cas": "137-08-6",
+          "kegg_id": null,
+          "mass": 238.27,
+          "formula": "C9H17NO5.1/2Ca",
+          "density": null,
+          "biological roles": null
+        }
+      ],
+      "primary_evidence": {
+        "name": "mediadive-1512.json",
+        "url": "https://mediadive.dsmz.de/download/ingredient/1512/json",
+        "accessed_at": "2026-11-08T02:31:11.444199+00:00",
+        "status": 200,
+        "sha256": "d697390049df7dc59b32987c9cdf4417da693ac37c77ec937e2e5560052688c2",
+        "bytes": 317,
+        "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-captures-v1/mediadive-1512.json"
+      },
+      "owners": [
+        {
+          "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+          "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Calcium_Pantothenate.yaml",
+          "identifier": "CHEBI:31345",
+          "preferred_term": "Calcium pantothenate",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "CHEBI:31345",
+            "preferred_term": "Calcium pantothenate",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:31345",
+              "ontology_label": "Calcium pantothenate",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureMech",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+                },
+                {
+                  "evidence_type": "LITERATURE",
+                  "source": "PubMed search ('Calcium pantothenate')",
+                  "pmid": "37634211",
+                  "supports": "SUPPORT",
+                  "snippet": "S. thermophilus 937 also required calcium pantothenate, niacin, pyridoxine, riboflavin, and thiamine hydrochloride as essential nutrients for growth.",
+                  "explanation": "Auto-proposed; curator should rephrase or remove."
+                }
+              ]
+            },
+            "synonyms": [
+              {
+                "synonym_text": "Role: Vitamin; Properties: Organic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Calcium D-(+)-pantothenate",
+                "synonym_type": "EXACT",
+                "source": "manual"
+              },
+              {
+                "synonym_text": "D-Ca-pantothenate",
+                "synonym_type": "EXACT",
+                "source": "manual"
+              },
+              {
+                "synonym_text": "D Calcium Panthothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "D-Calcium pantothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "DL-Calcium pantothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Hemicalcium D-(+)- pantothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "calcium D,L-pantothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Role: Vitamin; Properties: Defined component, Organic compound, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Calcium pantothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Role: Vitamin; Properties: Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Hemicalcium D-+-pantothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "unmapped_duplicate_review_2026_05_07"
+              },
+              {
+                "synonym_text": "Calcium panthothenate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "unmapped_duplicate_review_2026_05_11"
+              },
+              {
+                "synonym_text": "Calcium D-Pantothenate",
+                "synonym_type": "RAW_TEXT",
+                "source": "merged_record"
+              },
+              {
+                "synonym_text": "Ca-pantothenate",
+                "synonym_type": "RAW_TEXT",
+                "source": "MERGED_FROM_CHEBI:29032"
+              },
+              {
+                "synonym_text": "(E)-8-Methyl-N-vanillyl-6-nonenamide",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              },
+              {
+                "synonym_text": "Isodecenoic acid vanillylamide",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              },
+              {
+                "synonym_text": "Zostrix",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              },
+              {
+                "synonym_text": "trans-8-Methyl-N-vanillyl-6-nonenamide",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 2375,
+              "media_count": 2348
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-03-09T06:54:18.022301+00:00",
+                "curator": "import_from_culturemech",
+                "action": "IMPORTED",
+                "changes": "Initial import from CultureMech pipeline",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T19:51:19.547755+00:00",
+                "curator": "fetch_cas_rn_from_pubchem",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:137-08-6 from PubChem API via name lookup (Calcium pantothenate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:44.814011+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched: Calcium Pantothenate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:44.946782+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched: D-Calcium pantothenate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:44.948571+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched: D-calcium pantothenate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.022304+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched: DL-calcium pantothenate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-09T00:32:50.689620+00:00",
+                "curator": "enrich_mim_cas_rn_batch",
+                "action": "CAS_RN_ADDED",
+                "changes": "Added CAS-RN 137-08-6 from PubChem (via CHEBI:31345)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-17T12:00:00+00:00",
+                "curator": "synonym_expansion_cbclaw",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 2 synonyms for unmapped CultureMech surface forms",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-17T12:00:00+00:00",
+                "curator": "synonym_expansion_cbclaw",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 1 synonym for unmapped CultureMech surface form",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 5 synonyms from kg-microbe P4.4 enrichment: D Calcium Panthothenate, D-Calcium pantothenate, DL-Calcium pantothenate, Hemicalcium D-(+)- pantothenate, calcium D,L-pantothenate",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 5 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate, D Calcium Panthothenate, DL-Calcium pantothenate, Hemicalcium D-(+)- pantothenate, calcium D,L-pantothenate",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 7 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate, Calcium pantothenate, D Calcium Panthothenate, D-Ca-Pantothenate, D-Calcium pantothenate, ... (2 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 6 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate, D Calcium Panthothenate, D-Ca-Pantothenate, D-Calcium pantothenate, Hemicalcium D-(+)- pantothenate, ... (1 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 6 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate, D Calcium Panthothenate, D-Ca-Pantothenate, DL-Calcium pantothenate, Hemicalcium D-(+)- pantothenate, ... (1 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 7 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate, D Calcium Panthothenate, D-Ca-Pantothenate, D-Calcium pantothenate, DL-Calcium pantothenate, ... (2 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-19T07:39:23.955331+00:00",
+                "curator": "audit_mim_merge",
+                "action": "MERGED_FROM_DUPLICATES",
+                "changes": "Absorbed 5 duplicate MIM record(s) into this one: D-calcium_Pantothenate.yaml, Dl-calcium_Pantothenate.yaml, Dl-calcium_Pantothenate_2.yaml, D-calcium_Pantothenate_2.yaml, Calcium_Pantothenate_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T07:35:32.561834+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T08:08:28.384826+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                "changes": "molecular_formula=2C9H16NO5.Ca; inchi=InChI=1S/2C9H17NO5.Ca/c2*1-9(2,5-11)7(14)8(15)10-4; smiles=CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-].CC(C)(CO)[C@@H",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T08:09:47.785218+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "APPLY_EVIDENCE_PROPOSAL",
+                "changes": "added pmid=37634211 from propose-evidence batch",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T03:12:13.038576+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-07T00:00:00+00:00",
+                "curator": "unmapped_duplicate_review_2026_05_07",
+                "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+                "changes": "Absorbed duplicate unmapped record Hemicalcium_D--pantothenate.yaml (UNMAPPED_0400); local mapped record already carries hemicalcium D-(+)-pantothenate synonym evidence for CHEBI:31345.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-11T04:08:29Z",
+                "curator": "mediaingredientmech-agentic-curation",
+                "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+                "changes": "Absorbed duplicate unmapped record Calcium_Panthothenate.yaml (UNMAPPED_0351); local mapped CHEBI:31345 record already represents calcium pantothenate and carries panthothenate spelling variants.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-05-29T23:35:36.110378+00:00",
+                "curator": "extract_roles_from_synonyms",
+                "action": "ANNOTATED",
+                "changes": "Added media role: VITAMIN_SOURCE (confidence: 1.00)"
+              },
+              {
+                "timestamp": "2026-07-20T00:00:00+00:00",
+                "curator": "migrate_media_roles_to_facets",
+                "action": "ANNOTATED",
+                "changes": "Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE"
+              },
+              {
+                "timestamp": "2026-08-05T06:57:01.219805+00:00",
+                "curator": "merge-same-substance-batch",
+                "action": "MERGED_FROM_MAPPED_RECORD",
+                "changes": "Absorbed CHEBI:31345 'Calcium D-Pantothenate': 1 synonym(s), occurrences +0/0, role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv (#226). Source: mediadive.ingredient:1585.",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-08-10T00:00:00+00:00",
+                "curator": "merge_salt_label_duplicates",
+                "action": "MERGED_FROM",
+                "changes": "Absorbed CHEBI:29032 'Ca-pantothenate' (#315). Same substance under an abbreviated-counterion name; the loser was grounded to the bare anion. occurrences 945/153 + 137/50 -> 1082/203. Raw label kept as a RAW_TEXT synonym. 2 anion-derived synonym(s) deliberately NOT transferred (enriched from the loser's wrong term; they name the anion, not this salt): 3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate, Ca pantotenate",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-08-27T03:16:39.518492+00:00",
+                "curator": "refresh_occurrence_statistics",
+                "action": "CORRECTED",
+                "changes": "occurrence_statistics 203/1082 -> 2348/2375 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+              },
+              {
+                "timestamp": "2026-09-02T22:41:49.137449+00:00",
+                "curator": "claude_sssom_surface_form_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Recovered 4 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: '(E)-8-Methyl-N-vanillyl-6-nonenamide'; 'Isodecenoic acid vanillylamide'; 'Zostrix'; 'trans-8-Methyl-N-vanillyl-6-nonenamide'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+                "llm_assisted": false
+              }
+            ],
+            "chemical_properties": {
+              "cas_rn": "137-08-6",
+              "data_source": "PubChem API",
+              "retrieval_date": "2026-04-05T19:51:19.547740+00:00",
+              "molecular_formula": "2C9H16NO5.Ca",
+              "inchi": "InChI=1S/2C9H17NO5.Ca/c2*1-9(2,5-11)7(14)8(15)10-4-3-6(12)13;/h2*7,11,14H,3-5H2,1-2H3,(H,10,15)(H,12,13);/q;;+2/p-2/t2*7-;/m00./s1",
+              "smiles": "CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-].CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-].[Ca+2]"
+            },
+            "kg_microbe_node_id": "CHEBI:31345",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "nutritional_roles": [
+              {
+                "role": "VITAMIN_SOURCE",
+                "confidence": 1.0,
+                "evidence": [
+                  {
+                    "reference_text": "CultureMech database (945 occurrences as 'Vitamin')",
+                    "reference_type": "DATABASE_ENTRY",
+                    "url": "https://github.com/CultureBotAI/CultureMech",
+                    "excerpt": "Role: Vitamin; Properties: Organic compound, Defined component, Simple component",
+                    "curator_note": "Widespread use in media formulations (945 occurrences). High confidence based on 'Defined component' property."
+                  }
+                ]
+              },
+              {
+                "role": "VITAMIN_SOURCE",
+                "confidence": 0.8,
+                "evidence": [
+                  {
+                    "reference_type": "COMPUTATIONAL_PREDICTION",
+                    "reference_text": "Inferred from curated media-role name pattern",
+                    "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "disposition": "UPSTREAM_LABEL_NORMALIZATION_AND_STEREOCHEMISTRY_HOLD",
+      "scientific_identity_approved": false,
+      "new_alias_operations": [],
+      "rationale": "The raw Calcium D-(+)-pantothenate spelling already exists as accepted EXACT on Calcium_Pantothenate; the transformed spelling drops parentheses. MediaDive gives CAS137-08-6. The current owner mixes D and DL aliases and also carries unrelated-looking vanillylamide aliases recovered from SSSOM. This bounded source spelling comparison does not settle all those alias identities or permit a complete-row release.",
+      "recommended_followup": "Keep the raw spelling and source CAS witness. Audit D versus DL and unrelated alias provenance before considering this owner's row; do not turn punctuation normalization into identity approval.",
+      "existing_related_issues": [],
+      "existing_issue_scope": "Related historical or broader form/label-index issues only; this report does not close them or assert every targeted case already has its own exact issue.",
+      "current_reconciliation": {
+        "candidate_id": "5d2b66b49c3347a03b3fbf848843da8fcea89a6d3fd0df5d10a7d6e8de00fbfd",
+        "category": "biolink:ChemicalEntity",
+        "consumed_name_hits": [
+          {
+            "candidate_field": "raw_source_label",
+            "disposition": "WITHHOLD",
+            "matched_field": "other",
+            "matched_label": "Calcium D-(+)-pantothenate",
+            "review_dispositions": [
+              {
+                "disposition": "WITHHOLD",
+                "evidence_key": "624",
+                "object_id": "CHEBI:31345",
+                "owner_record": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+                "owner_record_sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+                "predicate_id": "skos:exactMatch",
+                "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: four capsaicin/Zostrix aliases remain published as calcium pantothenate synonyms.",
+                "row_sha256": "de0abac9ce880d6a18b4f1ce6e2749b2cc82a35c98a68335a882a0d52d9d3dc7",
+                "source_position": "624",
+                "subject_id": "MIM:Calcium_Pantothenate"
+              }
+            ],
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-09-02",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "CHEBI:31345",
+              "object_label": "Calcium pantothenate",
+              "object_source": "obo:chebi.owl",
+              "other": "Calcium D-(+)-pantothenate|D-Ca-pantothenate|D Calcium Panthothenate|D-Calcium pantothenate|DL-Calcium pantothenate|Hemicalcium D-(+)- pantothenate|calcium D,L-pantothenate|Calcium pantothenate|Hemicalcium D-+-pantothenate|Calcium panthothenate|Calcium D-Pantothenate|Ca-pantothenate|(E)-8-Methyl-N-vanillyl-6-nonenamide|Isodecenoic acid vanillylamide|Zostrix|trans-8-Methyl-N-vanillyl-6-nonenamide|CAS:137-08-6",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:CultureMech|MIM:PubMed search ('Calcium pantothenate')|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=merge_salt_label_duplicates]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped]|kgm:primary_mappings[kegg_compound]",
+              "subject_id": "MIM:Calcium_Pantothenate",
+              "subject_label": "Calcium pantothenate",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            },
+            "row_sha256": "de0abac9ce880d6a18b4f1ce6e2749b2cc82a35c98a68335a882a0d52d9d3dc7"
+          }
+        ],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "Calcium D-(+)-pantothenate",
+            "owner": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+            "resolving": true,
+            "synonym": {
+              "source": "manual",
+              "synonym_text": "Calcium D-(+)-pantothenate",
+              "synonym_type": "EXACT"
+            },
+            "synonym_type": "EXACT"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "CHEBI:31345",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "624",
+                  "owner_record": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: four capsaicin/Zostrix aliases remain published as calcium pantothenate synonyms.",
+                  "row_sha256": "de0abac9ce880d6a18b4f1ce6e2749b2cc82a35c98a68335a882a0d52d9d3dc7",
+                  "source_position": 624
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-02",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:31345",
+                  "object_label": "Calcium pantothenate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "Calcium D-(+)-pantothenate|D-Ca-pantothenate|D Calcium Panthothenate|D-Calcium pantothenate|DL-Calcium pantothenate|Hemicalcium D-(+)- pantothenate|calcium D,L-pantothenate|Calcium pantothenate|Hemicalcium D-+-pantothenate|Calcium panthothenate|Calcium D-Pantothenate|Ca-pantothenate|(E)-8-Methyl-N-vanillyl-6-nonenamide|Isodecenoic acid vanillylamide|Zostrix|trans-8-Methyl-N-vanillyl-6-nonenamide|CAS:137-08-6",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:PubMed search ('Calcium pantothenate')|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=merge_salt_label_duplicates]|kgm:mediaingredientmech_reviewed[curator=resolve_unmapped]|kgm:primary_mappings[kegg_compound]",
+                  "subject_id": "MIM:Calcium_Pantothenate",
+                  "subject_label": "Calcium pantothenate",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                },
+                {
+                  "evidence_type": "LITERATURE",
+                  "explanation": "Auto-proposed; curator should rephrase or remove.",
+                  "pmid": "37634211",
+                  "snippet": "S. thermophilus 937 also required calcium pantothenate, niacin, pyridoxine, riboflavin, and thiamine hydrochloride as essential nutrients for growth.",
+                  "source": "PubMed search ('Calcium pantothenate')",
+                  "supports": "SUPPORT"
+                }
+              ],
+              "mapping_quality": "EXACT_MATCH",
+              "ontology_id": "CHEBI:31345",
+              "ontology_label": "Calcium pantothenate",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Calcium_Pantothenate.yaml",
+            "preferred_term": "Calcium pantothenate",
+            "sha256": "b5a2eb0063046ecb71d2e9a97285aaebbf5780075f0fb0b7b069b4362bf57121",
+            "subject_id": "MIM:Calcium_Pantothenate"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Calcium D-(+)-pantothenate",
+        "resolving_owner_paths": [
+          "data/ingredients/mapped/Calcium_Pantothenate.yaml"
+        ],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:1512",
+        "source_label": "Calcium D-+-pantothenate",
+        "source_record": {
+          "amount": 50,
+          "compound": "Calcium D-(+)-pantothenate",
+          "compound_id": 1512,
+          "g_l": 0.05,
+          "mmol_l": 0.209846,
+          "optional": 0,
+          "recipe_order": 7,
+          "unit": "mg"
+        },
+        "triage_flags": [
+          "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+          "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+        ]
+      }
+    },
+    {
+      "source_id": "mediadive.ingredient:1930",
+      "source_queue_row": {
+        "source_id": "mediadive.ingredient:1930",
+        "source_label": "Nitrilotriacetic acid trisodium salt monohydrate",
+        "native_identity_target": "",
+        "queue_disposition": "STILL_UNMAPPED",
+        "raw_compound_label": "Nitrilotriacetic acid trisodium salt monohydrate",
+        "raw_compound_id": "1930",
+        "raw_record_found": "True",
+        "raw_source_sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+        "raw_record_json": "{\"amount\": 2.75, \"compound\": \"Nitrilotriacetic acid trisodium salt monohydrate\", \"compound_id\": 1930, \"optional\": 0, \"recipe_order\": 2, \"unit\": \"g\"}"
+      },
+      "current_source_json": [
+        {
+          "id": 1930,
+          "name": "Nitrilotriacetic acid trisodium salt monohydrate",
+          "group": "Nitrilotriacetic acid trisodium salt monohydrate",
+          "chebi_id": null,
+          "cas": "18662-53-8",
+          "kegg_id": null,
+          "mass": null,
+          "formula": "C6H9NO6.H2O.3Na",
+          "density": null,
+          "biological roles": null
+        }
+      ],
+      "primary_evidence": {
+        "name": "mediadive-1930.json",
+        "url": "https://mediadive.dsmz.de/download/ingredient/1930/json",
+        "accessed_at": "2026-11-08T02:31:12.265541+00:00",
+        "status": 200,
+        "sha256": "11288c275bf1cfcc181036e9142a43eddbffc15a438c78d633274d3f07d1abfc",
+        "bytes": 370,
+        "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-captures-v1/mediadive-1930.json"
+      },
+      "owners": [
+        {
+          "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+          "sha256": "c68bf8109946d2a5ccd474860657d19663520960f962b9845de82b269940a137",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+          "identifier": "CHEBI:132766",
+          "preferred_term": "Nitrilotriacetic acid, trisodium salt",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "CHEBI:132766",
+            "preferred_term": "Nitrilotriacetic acid, trisodium salt",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:132766",
+              "ontology_label": "sodium nitrilotriacetate",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "MANUAL_CURATION",
+                  "source": "https://www.ebi.ac.uk/chebi/CHEBI:132766",
+                  "notes": "ChEBI explicitly specifies 3:1 sodium:nitrilotriacetate; restored after a disodium-stock/trisodium-substance merge."
+                }
+              ]
+            },
+            "chemical_properties": {
+              "cas_rn": "5064-31-3",
+              "data_source": "OAK/CHEBI xref",
+              "retrieval_date": "2026-04-19T07:39:40.088267+00:00",
+              "molecular_formula": "C6H6NO6.3Na",
+              "inchi": "InChI=1S/C6H9NO6.3Na/c8-4(9)1-7(2-5(10)11)3-6(12)13;;;/h1-3H2,(H,8,9)(H,10,11)(H,12,13);;;/q;3*+1/p-3",
+              "smiles": "O=C([O-])CN(CC(=O)[O-])CC(=O)[O-].[Na+].[Na+].[Na+]"
+            },
+            "synonyms": [
+              {
+                "synonym_text": "N,N-Bis(carboxymethyl)glycine, trisodium salt",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "NTA Trisodium salt",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Nitrilotriacetic acid sodium salt",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Nitrilotriacetic acid, trisodium salt",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trisodium N,N-bis(carboxymethyl)glycinate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trisodium NTA",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trisodium aminotriacetate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Trisodium nitrilotriacetate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "trisodium 2,2',2''-nitrilotriacetate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              }
+            ],
+            "occurrence_statistics": {
+              "total_occurrences": 1,
+              "media_count": 1
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-09-21T21:33:25.379198+00:00",
+                "curator": "mim_semantic_review_20260921",
+                "action": "RESTORED_DISTINCT_SUBSTANCE",
+                "changes": "Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source occurrence rows explicitly name one of each. Restore the trisodium substance as its own record, carrying its chemistry and valid synonyms; withdraw those synonyms on the stock. The stock is a local preparation with a named disodium solute, no pure-substance formula or CAS. Solvent and complete recipe are not established. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:132766 ; https://www.ncbi.nlm.nih.gov/books/NBK519184/ ; ../CultureMech/output/ingredient_occurrences.tsv",
+                "new_status": "MAPPED",
+                "llm_assisted": true,
+                "llm_model": "gpt-6"
+              }
+            ]
+          }
+        }
+      ],
+      "disposition": "DISTINCT_HYDRATE_REQUIRES_SEPARATE_IDENTITY_REVIEW",
+      "scientific_identity_approved": false,
+      "new_alias_operations": [],
+      "rationale": "MediaDive explicitly names nitrilotriacetic acid trisodium salt monohydrate and CAS18662-53-8. The nearby maintained trisodium nitrilotriacetate owner is CHEBI132766/CAS5064-31-3 with anhydrous structure. Section3 forbids treating the supplied hydrate as an exact alias of that different form; source hydration must remain explicit.",
+      "recommended_followup": "Keep unresolved in this batch. A future exact-form review must resolve a hydrate-specific ontology identity locally or establish the documented CAS/local identity plus asymmetric parent. Do not guess hydration or import the source formula uncritically.",
+      "existing_related_issues": [],
+      "existing_issue_scope": "Related historical or broader form/label-index issues only; this report does not close them or assert every targeted case already has its own exact issue.",
+      "current_reconciliation": {
+        "candidate_id": "47b7f98c62ad014d1cdf0b3c0b0a1646970033968322d292e6c4a6948fde76a8",
+        "category": "biolink:ChemicalEntity",
+        "consumed_name_hits": [],
+        "downstream_holds": [],
+        "name_hits": [],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Nitrilotriacetic acid trisodium salt monohydrate",
+        "resolving_owner_paths": [],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:1930",
+        "source_label": "Nitrilotriacetic acid trisodium salt monohydrate",
+        "source_record": {
+          "amount": 2.75,
+          "compound": "Nitrilotriacetic acid trisodium salt monohydrate",
+          "compound_id": 1930,
+          "optional": 0,
+          "recipe_order": 2,
+          "unit": "g"
+        },
+        "triage_flags": [
+          "NO_EXACT_CASEFOLD_NAME_MATCH"
+        ]
+      }
+    },
+    {
+      "source_id": "mediadive.ingredient:2160",
+      "source_queue_row": {
+        "source_id": "mediadive.ingredient:2160",
+        "source_label": "Na2SiO3 x 5 H2O",
+        "native_identity_target": "",
+        "queue_disposition": "STILL_UNMAPPED",
+        "raw_compound_label": "Na2SiO3 x 5 H2O",
+        "raw_compound_id": "2160",
+        "raw_record_found": "True",
+        "raw_source_sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+        "raw_record_json": "{\"amount\": 1, \"attribute\": \"21.2 g/l stock solution\", \"compound\": \"Na2SiO3 x 5 H2O\", \"compound_id\": 2160, \"optional\": 0, \"recipe_order\": 7, \"unit\": \"ml\"}"
+      },
+      "current_source_json": [
+        {
+          "id": 2160,
+          "name": "Na2SiO3 x 5 H2O",
+          "group": null,
+          "chebi_id": null,
+          "cas": "10213-79-3",
+          "kegg_id": null,
+          "mass": null,
+          "formula": null,
+          "density": null,
+          "biological roles": null
+        }
+      ],
+      "primary_evidence": {
+        "name": "mediadive-2160.json",
+        "url": "https://mediadive.dsmz.de/download/ingredient/2160/json",
+        "accessed_at": "2026-11-08T02:31:12.980777+00:00",
+        "status": 200,
+        "sha256": "c8961f85cb7ffbbb66006e10423d97f1ba322f5ef5f43eef22612abdc0f28076",
+        "bytes": 278,
+        "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-captures-v1/mediadive-2160.json"
+      },
+      "owners": [
+        {
+          "path": "data/ingredients/mapped/Na-silicate.yaml",
+          "sha256": "5655d72545f3b5e0d55759fcada4bf9e516fa3a66287590f4f6fc2cc1e91c2e2",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Na-silicate.yaml",
+          "identifier": "CHEBI:60720",
+          "preferred_term": "Na-silicate",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "CHEBI:60720",
+            "preferred_term": "Na-silicate",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:60720",
+              "ontology_label": "sodium silicate",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureMech",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+                }
+              ]
+            },
+            "synonyms": [
+              {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "(5)  Sodium metasilicate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Na silicate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Sodium Silicate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Sodium polysilicate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Sodium sesquisilicate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Sodium silicate glass",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Sodium siliconate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "disodium oxosilanediolate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Na2SiO3 x 5 H2O",
+                "synonym_type": "REJECTED_LABEL",
+                "source": "sssom_other_backfill"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 218,
+              "media_count": 218
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-03-09T06:54:18.022301+00:00",
+                "curator": "import_from_culturemech",
+                "action": "IMPORTED",
+                "changes": "Initial import from CultureMech pipeline",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.809928+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:6834-92-0 from CultureBotHT compounds_to_cas.csv (matched: Sodium silicate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.811640+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:6834-92-0 from CultureBotHT compounds_to_cas.csv (matched: sodium silicate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T21:48:45.813342+00:00",
+                "curator": "fetch_cas_rn_from_culturebot_csv",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:6834-92-0 from CultureBotHT compounds_to_cas.csv (matched: Sodium Silicate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-05T23:45:43.245929+00:00",
+                "curator": "fetch_cas_rn_with_preprocessing",
+                "action": "ADDED_CAS_RN",
+                "changes": "Added CAS-RN:215-687-4 from PubChem API (preprocessed) via name preprocessing (Na-silicate)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-09T00:32:50.689620+00:00",
+                "curator": "enrich_mim_cas_rn_batch",
+                "action": "CAS_RN_ADDED",
+                "changes": "Added CAS-RN 1344-09-8 from PubChem (via CHEBI:60720)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 8 synonyms from kg-microbe P4.4 enrichment: (5)  Sodium metasilicate, Na silicate, Sodium Silicate, Sodium polysilicate, Sodium sesquisilicate, ... (3 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 8 synonyms from kg-microbe P4.4 enrichment: (5)  Sodium metasilicate, Na silicate, Na-silicate, Sodium polysilicate, Sodium sesquisilicate, ... (3 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 8 synonyms from kg-microbe P4.4 enrichment: (5)  Sodium metasilicate, Na-silicate, Sodium Silicate, Sodium polysilicate, Sodium sesquisilicate, ... (3 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-19T07:39:40.088622+00:00",
+                "curator": "audit_mim_merge",
+                "action": "MERGED_FROM_DUPLICATES",
+                "changes": "Absorbed 4 duplicate MIM record(s) into this one: Sodium_Silicate.yaml, Sodium_Silicate_2.yaml, Sodium_Silicate_3.yaml, Na_Silicate.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-19T07:39:40.088267+00:00",
+                "curator": "audit_resolve_risky_cas_rn",
+                "action": "RESOLVED_CAS_RN_CONFLICT",
+                "changes": "CAS-RN conflict across merged group (1344-09-8|6834-92-0) resolved via OAK canonical xref: 1344-09-8 (match)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T07:35:35.063309+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T08:08:31.126688+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                "changes": "molecular_formula=2Na.O3Si; inchi=InChI=1S/2Na.O3Si/c;;1-4(2)3/q2*+1;-2; smiles=O=[Si]([O-])[O-].[Na+].[Na+]",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T03:12:16.853874+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-29T23:35:36.112082+00:00",
+                "curator": "extract_roles_from_synonyms",
+                "action": "ANNOTATED",
+                "changes": "Added media role: MINERAL (confidence: 1.00)"
+              },
+              {
+                "timestamp": "2026-06-09T05:23:46.804715+00:00",
+                "curator": "correct_stale_ontology_labels.py",
+                "action": "CORRECTED",
+                "changes": "ontology_label 'Na-silicate' -> 'sodium silicate': synced to canonical CHEBI label (preferred_term 'Na-silicate' unchanged)."
+              },
+              {
+                "timestamp": "2026-07-20T00:00:00+00:00",
+                "curator": "migrate_media_roles_to_facets",
+                "action": "ANNOTATED",
+                "changes": "Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE"
+              },
+              {
+                "timestamp": "2026-08-27T03:16:39.519422+00:00",
+                "curator": "refresh_occurrence_statistics",
+                "action": "CORRECTED",
+                "changes": "occurrence_statistics 66/197 -> 218/218 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+              },
+              {
+                "timestamp": "2026-09-02T17:40:44.716277+00:00",
+                "curator": "claude_sssom_surface_form_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Na2SiO3 x 5 H2O'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-09-12T00:00:00+00:00",
+                "curator": "reject_hidden_hydrate_synonym_collapses",
+                "action": "REJECTED_HIDDEN_HYDRATE_SYNONYMS",
+                "changes": "Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer resolves sibling hydrate identities (#251): 'Na2SiO3 x 5 H2O'.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              }
+            ],
+            "chemical_properties": {
+              "cas_rn": "1344-09-8",
+              "data_source": "PubChem (via CHEBI:60720)",
+              "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+              "molecular_formula": "2Na.O3Si",
+              "inchi": "InChI=1S/2Na.O3Si/c;;1-4(2)3/q2*+1;-2",
+              "smiles": "O=[Si]([O-])[O-].[Na+].[Na+]"
+            },
+            "kg_microbe_node_id": "CHEBI:60720",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "nutritional_roles": [
+              {
+                "role": "MINERAL_SOURCE",
+                "confidence": 1.0,
+                "evidence": [
+                  {
+                    "reference_text": "CultureMech database (197 occurrences as 'Mineral source')",
+                    "reference_type": "DATABASE_ENTRY",
+                    "url": "https://github.com/CultureBotAI/CultureMech",
+                    "excerpt": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+                    "curator_note": "Widespread use in media formulations (197 occurrences). High confidence based on 'Defined component' property."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "path": "data/ingredients/mapped/Na2sio3_X_9_H2o.yaml",
+          "sha256": "f4d860dd443582074583a911491db43130dd92efe57488228012c85da842798b",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Na2sio3_X_9_H2o.yaml",
+          "identifier": "CHEBI:132108",
+          "preferred_term": "Na2SiO3 x 9 H2O",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "CHEBI:132108",
+            "preferred_term": "Na2SiO3 x 9 H2O",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:132108",
+              "ontology_label": "sodium silicate nonahydrate",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureMech",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+                }
+              ]
+            },
+            "synonyms": [
+              {
+                "synonym_text": "Na2SiO3.9H2O",
+                "synonym_type": "HYDRATE_FORM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Na2SiO3·9H2O",
+                "synonym_type": "HYDRATE_FORM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Na2SiO3・9H2O",
+                "synonym_type": "HYDRATE_FORM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Na2SiO3∙9H2O",
+                "synonym_type": "HYDRATE_FORM",
+                "source": "kg_microbe_via_hydration_routing"
+              },
+              {
+                "synonym_text": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Na2SiO3•9H2O",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Na2SiO3•9H2O(CAS: 13517-24-3)",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Na2SiO3•9H2O(Sigma 307815)",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "sodium oxosilanebis(olate)--water (1/9)",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "chebi_synonym_review"
+              },
+              {
+                "synonym_text": "Na2SiO3",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              },
+              {
+                "synonym_text": "Na2SiO3 x 9 H20",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 36,
+              "media_count": 36
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-03-09T06:54:18.022301+00:00",
+                "curator": "import_from_culturemech",
+                "action": "IMPORTED",
+                "changes": "Initial import from CultureMech pipeline",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-09T00:32:50.689620+00:00",
+                "curator": "enrich_mim_cas_rn_batch",
+                "action": "CAS_RN_ADDED",
+                "changes": "Added CAS-RN 13517-24-3 from PubChem (via CHEBI:132108)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 3 synonyms from kg-microbe P4.4 enrichment: Na2SiO3.9H2O, Na2SiO3·9H2O, Na2SiO3・9H2O",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 3 synonyms from kg-microbe P4.4 enrichment: Na2SiO3 x 9 H2O, Na2SiO3.9H2O, Na2SiO3・9H2O",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-19T06:30:07.230267+00:00",
+                "curator": "audit_p44_hydration_routing",
+                "action": "ADDED_SYNONYMS_VIA_HYDRATION_ROUTING",
+                "changes": "Added 1 synonyms re-routed from anhydrous/hydrate sibling records (Na2sio39h2o.yaml): Na2SiO3∙9H2O",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-19T06:30:07.230267+00:00",
+                "curator": "audit_p44_hydration_routing",
+                "action": "ADDED_SYNONYMS_VIA_HYDRATION_ROUTING",
+                "changes": "Added 1 synonyms re-routed from anhydrous/hydrate sibling records (Na2sio3_X_9_H2o.yaml): Na2SiO3∙9H2O",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-19T07:23:20.785693+00:00",
+                "curator": "audit_mim_merge",
+                "action": "MERGED_FROM_DUPLICATES",
+                "changes": "Absorbed 1 duplicate MIM record(s) into this one: Na2sio39h2o.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T07:35:35.282472+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T08:08:31.355819+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                "changes": "molecular_formula=9H2O.2Na.O3Si; inchi=InChI=1S/2Na.O3Si.9H2O/c;;1-4(2)3;;;;;;;;;/h;;;9*1; smiles=O.O.O.O.O.O.O.O.O.O=[Si]([O-])[O-].[Na+].[Na+]",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T03:12:17.103968+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-05T00:00:00+00:00",
+                "curator": "ingredient_mapping_review_2026_05_05",
+                "action": "MERGED",
+                "changes": "Absorbed duplicate record Na2sio39h2o.yaml (UNMAPPED_0016) into Na2sio3_X_9_H2o.yaml; source occurrence counts and synonyms were merged. Exact local sodium metasilicate nonahydrate mapping CHEBI:132108; source CAS synonym matches local record.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-29T23:35:36.112239+00:00",
+                "curator": "extract_roles_from_synonyms",
+                "action": "ANNOTATED",
+                "changes": "Added media role: MINERAL (confidence: 1.00)"
+              },
+              {
+                "timestamp": "2026-06-09T05:23:46.808025+00:00",
+                "curator": "correct_stale_ontology_labels.py",
+                "action": "CORRECTED",
+                "changes": "ontology_label 'Na2SiO3 x 9 H2O' -> 'sodium silicate nonahydrate': synced to canonical CHEBI label (preferred_term 'Na2SiO3 x 9 H2O' unchanged)."
+              },
+              {
+                "timestamp": "2026-07-20T00:00:00+00:00",
+                "curator": "migrate_media_roles_to_facets",
+                "action": "ANNOTATED",
+                "changes": "Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE"
+              },
+              {
+                "timestamp": "2026-08-27T03:16:39.519502+00:00",
+                "curator": "refresh_occurrence_statistics",
+                "action": "CORRECTED",
+                "changes": "occurrence_statistics 28/28 -> 36/36 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+              },
+              {
+                "timestamp": "2026-09-02T17:40:44.716277+00:00",
+                "curator": "claude_sssom_surface_form_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Na2SiO3'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-09-02T22:41:49.137449+00:00",
+                "curator": "claude_sssom_surface_form_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Na2SiO3 x 9 H20'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+                "llm_assisted": false
+              }
+            ],
+            "kg_microbe_node_id": "CHEBI:132108",
+            "chemical_properties": {
+              "cas_rn": "13517-24-3",
+              "data_source": "PubChem (via CHEBI:132108)",
+              "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+              "molecular_formula": "9H2O.2Na.O3Si",
+              "inchi": "InChI=1S/2Na.O3Si.9H2O/c;;1-4(2)3;;;;;;;;;/h;;;9*1H2/q2*+1;-2;;;;;;;;;",
+              "smiles": "O.O.O.O.O.O.O.O.O.O=[Si]([O-])[O-].[Na+].[Na+]"
+            },
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "nutritional_roles": [
+              {
+                "role": "MINERAL_SOURCE",
+                "confidence": 1.0,
+                "evidence": [
+                  {
+                    "reference_type": "DATABASE_ENTRY",
+                    "reference_text": "Imported from CultureMech pipeline",
+                    "curator_note": "Original role text: Mineral"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "disposition": "REJECTED_HYDRATE_ALIAS_AND_STOCK_CONTEXT_HOLD",
+      "scientific_identity_approved": false,
+      "new_alias_operations": [],
+      "rationale": "MediaDive2160 names Na2SiO3 x5H2O and CAS10213-79-3. Its admitted raw occurrence says21.2g/l stock solution,1ml. The exact pentahydrate label is REJECTED_LABEL on Na-silicate; neither that generic/anhydrous scope nor the separate nonahydrate is the exact supplied hydrate. The source solution attribute also must survive.",
+      "recommended_followup": "Preserve the rejected label and preparation context. Review the pentahydrate substance and the named stock separately if later curation is authorized; do not resurrect this alias on a different hydrate or generic owner.",
+      "existing_related_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/251",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+      ],
+      "existing_issue_scope": "Related historical or broader form/label-index issues only; this report does not close them or assert every targeted case already has its own exact issue.",
+      "current_reconciliation": {
+        "candidate_id": "ee007a0d70e088ab96b3b7099f19b465d879bce4c31d7fec54afb5417d6f02fd",
+        "category": "biolink:ChemicalEntity",
+        "consumed_name_hits": [],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "source_label",
+            "kind": "synonym",
+            "label": "Na2SiO3 x 5 H2O",
+            "owner": "data/ingredients/mapped/Na-silicate.yaml",
+            "resolving": false,
+            "synonym": {
+              "source": "sssom_other_backfill",
+              "synonym_text": "Na2SiO3 x 5 H2O",
+              "synonym_type": "REJECTED_LABEL"
+            },
+            "synonym_type": "REJECTED_LABEL"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "Na2SiO3 x 5 H2O",
+            "owner": "data/ingredients/mapped/Na-silicate.yaml",
+            "resolving": false,
+            "synonym": {
+              "source": "sssom_other_backfill",
+              "synonym_text": "Na2SiO3 x 5 H2O",
+              "synonym_type": "REJECTED_LABEL"
+            },
+            "synonym_type": "REJECTED_LABEL"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "CHEBI:60720",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "1998",
+                  "owner_record": "data/ingredients/mapped/Na-silicate.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: final SSSOM publishes a numbered source artifact.",
+                  "row_sha256": "fa6996e0cbebba70b39f5e6175b48e33e7fffdff8c8a9c61832918ffa984333b",
+                  "source_position": 1998
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-02",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:60720",
+                  "object_label": "sodium silicate",
+                  "object_source": "obo:chebi.owl",
+                  "other": "(5)  Sodium metasilicate|Na silicate|Sodium polysilicate|Sodium sesquisilicate|Sodium silicate glass|Sodium siliconate|disodium oxosilanediolate|CAS:1344-09-8",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
+                  "subject_id": "MIM:Na-silicate",
+                  "subject_label": "Na-silicate",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                }
+              ],
+              "mapping_quality": "EXACT_MATCH",
+              "ontology_id": "CHEBI:60720",
+              "ontology_label": "sodium silicate",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Na-silicate.yaml",
+            "preferred_term": "Na-silicate",
+            "sha256": "5655d72545f3b5e0d55759fcada4bf9e516fa3a66287590f4f6fc2cc1e91c2e2",
+            "subject_id": "MIM:Na-silicate"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Na2SiO3 x 5 H2O",
+        "resolving_owner_paths": [],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:2160",
+        "source_label": "Na2SiO3 x 5 H2O",
+        "source_record": {
+          "amount": 1,
+          "attribute": "21.2 g/l stock solution",
+          "compound": "Na2SiO3 x 5 H2O",
+          "compound_id": 2160,
+          "optional": 0,
+          "recipe_order": 7,
+          "unit": "ml"
+        },
+        "triage_flags": [
+          "NON_RESOLVING_OR_REJECTED_LABEL_ONLY"
+        ]
+      }
+    },
+    {
+      "source_id": "mediadive.ingredient:776",
+      "source_queue_row": {
+        "source_id": "mediadive.ingredient:776",
+        "source_label": "Maltose x H2O",
+        "native_identity_target": "",
+        "queue_disposition": "STILL_UNMAPPED",
+        "raw_compound_label": "Maltose x H2O",
+        "raw_compound_id": "776",
+        "raw_record_found": "True",
+        "raw_source_sha256": "5401db0bc697249c9b2b0ad0b950fd3c2b7629f0cdd10c7feaf1e40b0a3a4729",
+        "raw_record_json": "{\"amount\": 60, \"compound\": \"Maltose x H2O\", \"compound_id\": 776, \"g_l\": 60, \"mmol_l\": 175.287, \"optional\": 0, \"recipe_order\": 3, \"unit\": \"g\"}"
+      },
+      "current_source_json": [
+        {
+          "id": 776,
+          "name": "Maltose x H2O",
+          "group": "Maltose",
+          "chebi_id": 17306,
+          "cas": "69-79-4",
+          "kegg_id": "C00208",
+          "mass": 342.296,
+          "formula": "C12H22O11",
+          "density": null,
+          "biological roles": null
+        }
+      ],
+      "primary_evidence": {
+        "name": "mediadive-776.json",
+        "url": "https://mediadive.dsmz.de/download/ingredient/776/json",
+        "accessed_at": "2026-11-08T02:31:13.540533+00:00",
+        "status": 200,
+        "sha256": "87a2ae8bf44049b33a392575de4c883a1a9e67e055a886942278e3dbda888793",
+        "bytes": 292,
+        "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-captures-v1/mediadive-776.json"
+      },
+      "owners": [
+        {
+          "path": "data/ingredients/mapped/Maltose.yaml",
+          "sha256": "d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Maltose.yaml",
+          "identifier": "CHEBI:17306",
+          "preferred_term": "Maltose",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "CHEBI:17306",
+            "preferred_term": "Maltose",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:17306",
+              "ontology_label": "maltose",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureMech",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+                }
+              ]
+            },
+            "synonyms": [
+              {
+                "synonym_text": "Cross-references: KEGG:malt",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Carbon source; Properties: Defined component, Simple component, Organic compound",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "Role: Carbon source; Properties: Organic compound, Simple component, Defined component",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech"
+              },
+              {
+                "synonym_text": "1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "4-(alpha-D-glucosido)-D-glucose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "4-O-alpha-D-glucopyranosyl-D-glucopyranose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Cextromaltose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "D-(+)-maltose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "D-maltose (maltose)",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Glca1-4Glca",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Glcalpha1-4Glca",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Glcalpha1-4Glcalpha",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Malt sugar",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Malzzucker",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "alpha-D-Glcp-(1->4)-D-Glcp",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "alpha-D-Glcp-(1->4)-alpha-D-Glcp",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "alpha-D-Glucopyranosyl-(1->4)-D-glucopyranose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "alpha-D-glucopyranosyl-(1->4)-D-glucose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "kg_microbe"
+              },
+              {
+                "synonym_text": "Maltose x H2O",
+                "synonym_type": "REJECTED_LABEL",
+                "source": "merged_from_duplicate_mim_record"
+              },
+              {
+                "synonym_text": "D-Maltose",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "merged_from_duplicate_mim_record"
+              },
+              {
+                "synonym_text": "maltose",
+                "synonym_type": "RAW_TEXT",
+                "source": "MERGED_FROM_CHEBI:18167"
+              },
+              {
+                "synonym_text": "Alpha-maltose",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              },
+              {
+                "synonym_text": "alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose",
+                "synonym_type": "RAW_TEXT",
+                "source": "sssom_other_backfill"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 189,
+              "media_count": 188
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-03-09T06:54:18.022301+00:00",
+                "curator": "import_from_culturemech",
+                "action": "IMPORTED",
+                "changes": "Initial import from CultureMech pipeline",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-09T00:32:50.689620+00:00",
+                "curator": "enrich_mim_cas_rn_batch",
+                "action": "CAS_RN_ADDED",
+                "changes": "Added CAS-RN 69-79-4 from PubChem (via CHEBI:17306)",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 16 synonyms from kg-microbe P4.4 enrichment: 1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose, 4-(alpha-D-glucosido)-D-glucose, 4-O-alpha-D-glucopyranosyl-D-glucopyranose, 4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose, Cextromaltose, ... (11 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-18T00:00:00+00:00",
+                "curator": "cbclaw_kg_microbe_sweep",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Added 15 synonyms from kg-microbe P4.4 enrichment: 1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose, 4-(alpha-D-glucosido)-D-glucose, 4-O-alpha-D-glucopyranosyl-D-glucopyranose, 4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose, Cextromaltose, ... (10 more)",
+                "new_status": "MAPPED",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-04-19T07:39:23.955331+00:00",
+                "curator": "audit_mim_merge",
+                "action": "MERGED_FROM_DUPLICATES",
+                "changes": "Absorbed 2 duplicate MIM record(s) into this one: Maltose_X_H2o.yaml, D-maltose.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term readability tie-break.",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T07:35:34.613175+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T08:08:30.645817+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                "changes": "molecular_formula=C12H22O11; inchi=InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3); smiles=OC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O)C(O)O[C@@H]",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T03:12:16.214755+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-29T23:35:36.111771+00:00",
+                "curator": "extract_roles_from_synonyms",
+                "action": "ANNOTATED",
+                "changes": "Added media role: CARBON_SOURCE (confidence: 1.00)"
+              },
+              {
+                "timestamp": "2026-06-04T05:38:59.201003+00:00",
+                "curator": "infer_energy_source",
+                "action": "ANNOTATED",
+                "changes": "Added media role: ENERGY_SOURCE (confidence: 0.70)"
+              },
+              {
+                "timestamp": "2026-06-09T05:23:46.792627+00:00",
+                "curator": "correct_stale_ontology_labels.py",
+                "action": "CORRECTED",
+                "changes": "ontology_label 'Maltose' -> 'maltose': synced to canonical CHEBI label (preferred_term 'Maltose' unchanged)."
+              },
+              {
+                "timestamp": "2026-07-20T00:00:00+00:00",
+                "curator": "migrate_media_roles_to_facets",
+                "action": "ANNOTATED",
+                "changes": "Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE"
+              },
+              {
+                "timestamp": "2026-08-13T00:00:00+00:00",
+                "curator": "merge_cas_conflict_duplicates",
+                "action": "MERGED_FROM",
+                "changes": "Absorbed 'maltose' (#320), which sat on CHEBI:18167 ('alpha-maltose'). Merged because differs from the winning record only in the case of its first letter, and was grounded to the alpha anomer while the winner holds the anomer-agnostic term its CAS 69-79-4 points at. The CAS-vs-CURIE conflict #320 flagged on that record was a symptom of the duplicate, not of a bad mapping. Occurrences 139/58 + 2/2 -> 141/60. Raw label kept as a RAW_TEXT synonym.",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-08-27T03:16:39.519255+00:00",
+                "curator": "refresh_occurrence_statistics",
+                "action": "CORRECTED",
+                "changes": "occurrence_statistics 60/141 -> 188/189 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+              },
+              {
+                "timestamp": "2026-09-02T17:40:44.716277+00:00",
+                "curator": "claude_sssom_surface_form_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Alpha-maltose'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-09-02T22:41:49.137449+00:00",
+                "curator": "claude_sssom_surface_form_backfill",
+                "action": "ADDED_SYNONYMS",
+                "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-09-12T00:00:00+00:00",
+                "curator": "reject_hidden_hydrate_synonym_collapses",
+                "action": "REJECTED_HIDDEN_HYDRATE_SYNONYMS",
+                "changes": "Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer resolves sibling hydrate identities (#251): 'Maltose x H2O'.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              }
+            ],
+            "chemical_properties": {
+              "cas_rn": "69-79-4",
+              "data_source": "PubChem (via CHEBI:17306)",
+              "retrieval_date": "2026-04-09T00:32:50.689620+00:00",
+              "molecular_formula": "C12H22O11",
+              "inchi": "InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5-,6+,7-,8-,9-,10-,11?,12-/m1/s1",
+              "smiles": "OC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O)C(O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@@H]1O"
+            },
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "nutritional_roles": [
+              {
+                "role": "CARBON_SOURCE",
+                "confidence": 1.0,
+                "evidence": [
+                  {
+                    "reference_type": "DATABASE_ENTRY",
+                    "reference_text": "Imported from CultureMech pipeline",
+                    "curator_note": "Original role text: Carbon Source"
+                  }
+                ]
+              },
+              {
+                "role": "ENERGY_SOURCE",
+                "confidence": 0.7,
+                "evidence": [
+                  {
+                    "reference_type": "COMPUTATIONAL_PREDICTION",
+                    "reference_text": "Canonical energy substrate (catabolised for energy)",
+                    "curator_note": "Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "path": "data/ingredients/mapped/Maltose_Hydrate.yaml",
+          "sha256": "10ed0793214169c21830c519dce6f3e5b16c57c44260cf222be83cbc4491d040",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/Maltose_Hydrate.yaml",
+          "identifier": "kgmicrobe.compound:maltose_hydrate",
+          "preferred_term": "Maltose Hydrate",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "kgmicrobe.compound:maltose_hydrate",
+            "preferred_term": "Maltose Hydrate",
+            "synonyms": [
+              {
+                "synonym_text": "Maltose Hydrate",
+                "synonym_type": "RAW_TEXT",
+                "source": "microbedecoder"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 0,
+              "media_count": 0,
+              "source_occurrences": [
+                {
+                  "source": "microbedecoder",
+                  "count": 8,
+                  "source_columns": "BacDive_Metabolite_utilization"
+                }
+              ]
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-08-04T02:54:09.684805+00:00",
+                "curator": "audit_import_ingredients[microbedecoder]",
+                "action": "CREATED_AS_UNMAPPED",
+                "changes": "Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+                "new_status": "UNMAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-08-06T00:00:00+00:00",
+                "curator": "promote_resolved_unmapped",
+                "action": "PROMOTED_TO_MAPPED",
+                "previous_status": "UNMAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": false,
+                "changes": "Promoted UNMAPPED_0676 -> kgmicrobe.compound:maltose_hydrate \"maltose\" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+              },
+              {
+                "timestamp": "2026-08-13T00:00:00+00:00",
+                "curator": "regrade_hydrate_to_close_match",
+                "action": "REGRADED_HYDRATE_TO_CLOSE_MATCH",
+                "changes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed by its anhydrous form, and ChEBI does not model it as such.",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-11-03T06:07:03.766598+00:00",
+                "curator": "claude",
+                "action": "CORRECTED",
+                "changes": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"NARROW_MATCH\"}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-c/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": true,
+                "llm_model": "gpt-6"
+              }
+            ],
+            "notes": "Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:17306",
+              "ontology_label": "maltose",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "NARROW_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "MIM curation (#213)",
+                  "notes": "Maltose hydrate is the hydrated form of maltose. CHEBI has anhydrous maltose CHEBI:17306 but no hydrate term; Section 3 mint + narrowMatch, per the hydrate convention in #242 (#213)."
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "MIM curation (#342)",
+                  "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:17306 ('maltose') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+                },
+                {
+                  "evidence_type": "MANUAL_CURATION",
+                  "source": "MIM Step7d scientific review (#901)",
+                  "notes": "The source table explicitly names maltose hydrate and8BacDive-metabolite-utilization observations. Preserve its distinct local identity without assigning the separate D-maltose-monohydrate CAS or an anomer. See the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-c/assessments-v2.json; owner selector data/ingredients/mapped/Maltose_Hydrate.yaml. Primary source references: https://www.ebi.ac.uk/chebi/backend/api/public/compound/17306/; https://www.ebi.ac.uk/ols4/api/search?q=Maltose%20Hydrate&ontology=chebi,ncit&rows=100; https://github.com/CultureBotAI/MediaIngredientMech/blob/467aa319a06ef992035f509f66fe251082b44ae1/data/custom/microbedecoder/unmapped_labels.tsv. Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json. This curation adds no scientific, mapping-release or role approval; changed owner bytes withdraw inherited support."
+                }
+              ]
+            }
+          }
+        },
+        {
+          "path": "data/ingredients/mapped/D-Maltose_Monohydrate.yaml",
+          "sha256": "b188ec71ed2df3319a96143eff91ee7589587aa655b6c77490db9a6df4f3b9c3",
+          "capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/science/targeted-holds-owner-captures-v1/D-Maltose_Monohydrate.yaml",
+          "identifier": "NCIT:C80300",
+          "preferred_term": "D-Maltose monohydrate",
+          "mapping_status": "MAPPED",
+          "record": {
+            "identifier": "NCIT:C80300",
+            "preferred_term": "D-Maltose monohydrate",
+            "ontology_mapping": {
+              "ontology_id": "NCIT:C80300",
+              "ontology_label": "Maltose Monohydrate",
+              "ontology_source": "NCIT",
+              "mapping_quality": "CAS_RN_LOOKUP",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureBotHT",
+                  "notes": "Imported from CultureBotHT. CAS-RN 6363-53-7 present, but no CHEBI entry exists for the monohydrate specifically (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: FEBA_carbon. Used in 9 CultureBot media; samples: Mega, ZMB Gut, SGW Northen Exometabolite mix 5x…. Curator can promote to a CHEBI primary if/when CHEBI adds D-maltose monohydrate."
+                },
+                {
+                  "evidence_type": "MANUAL_REVIEW",
+                  "source": "family_mismatch_fix",
+                  "notes": "fix(family-mismatch): was CHEBI:233428 (5-(N-ethyl-N-isopropyl) amiloride) from a stale pubchem-xref hit on PubChem CID 23615261; the bogus CHEBI was removed from the published SSSOM in PR #2 / commit 887ee9f and the ontology_mapping is now retargeted at CHEBI:17306 (maltose) as the correct narrowMatch parent. D-Maltose monohydrate is a hydrate of D-maltose, which has no separate CHEBI; maltose (CHEBI:17306) is the closest available parent."
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "MIM curation (#342)",
+                  "notes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning* than CHEBI:17306 ('maltose') — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 'hydrate', never under the anhydrous compound, which is not an ancestor even transitively. A hydrate is a distinct substance containing the anhydrous form, not a specialization of it. closeMatch claims similarity without subsumption. The ontology_id and the record's own identifier are unchanged."
+                },
+                {
+                  "evidence_type": "MANUAL_CURATION",
+                  "source": "MIM Step7d scientific review (#901)",
+                  "notes": "Resolve #1117 for this owner to NCIT:C80300, Maltose Monohydrate, using CAS_RN_LOOKUP as method provenance. The archived catalogue explicitly selects SigmaM5885/CAS6363-53-7/360.31; the inspected official M5885 specification confirms CAS and C12H22O11·H2O. NCIt links this CAS to UNIIDM477EE40D; the GSRS PRIMARY record explicitly cross-links C80300, CAS6363-53-7, D-(+)-MALTOSE MONOHYDRATE and beta naming, and PubChem23615261. The open-chain representation and beta synonym occur in that same registry identity; §3 readability/orderability supports the readable monohydrate node, without choosing a different anomer from lexical resemblance. Keep generic Maltose_Hydrate separate. See the complete identity, mapping, chemistry and synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json; owner selector data/ingredients/mapped/D-Maltose_Monohydrate.yaml. Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C80300?include=full; https://gsrs.ncats.nih.gov/api/v1/substances/DM477EE40D?view=full; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/23615261/property/MolecularFormula,InChI,InChIKey/JSON; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/6363-53-7/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON; https://www.sigmaaldrich.com/specification-sheets/677/787/M5885-BULK________SIAL_____.pdf. Captures, exact input hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json. This curation adds no scientific, mapping-release or role approval; changed owner bytes withdraw inherited support."
+                }
+              ]
+            },
+            "synonyms": [
+              {
+                "synonym_text": "Maltose monohydrate",
+                "synonym_type": "EXACT_SYNONYM",
+                "source": "culturebotht"
+              },
+              {
+                "synonym_text": "alpha-D-glucopyranosyl-(1->4)-D-glucopyranose",
+                "synonym_type": "REJECTED_LABEL",
+                "source": "chebi_synonym_review"
+              },
+              {
+                "synonym_text": "alpha-D-glucopyranosyl-(1->4)-D-glucose",
+                "synonym_type": "REJECTED_LABEL",
+                "source": "chebi_synonym_review"
+              }
+            ],
+            "mapping_status": "MAPPED",
+            "occurrence_statistics": {
+              "total_occurrences": 20,
+              "media_count": 20
+            },
+            "curation_history": [
+              {
+                "timestamp": "2026-04-29T06:51:33.117170+00:00",
+                "curator": "audit_add_remaining_culturebotht",
+                "action": "CREATED_FROM_CAS_FALLBACK",
+                "changes": "Created with cas:6363-53-7 as primary identifier; no CHEBI entry exists for this compound.",
+                "new_status": "MAPPED",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-01T07:35:33.092139+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T02:52:36.774724+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+                "changes": "molecular_formula=C12H24O12; smiles=C(C1C(C(C(C(O1)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.O; inchi=InChI=1S/C12H22O11.H2O/c13-1-4(16)7(18)11(5(17)2-1",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T03:12:13.781876+00:00",
+                "curator": "auto_classify_ingredient_type",
+                "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+                "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-05-02T04:45:13.113507+00:00",
+                "curator": "backfill_parent_terms",
+                "action": "BACKFILL_PARENT_CHEBI",
+                "changes": "set ontology_mapping parent=CHEBI:233428 (pubchem-xref)",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-06-03T02:06:01.738635+00:00",
+                "curator": "infer_roles_from_name_lists",
+                "action": "ANNOTATED",
+                "changes": "Added media role: CARBON_SOURCE (confidence: 0.80)"
+              },
+              {
+                "timestamp": "2026-06-04T05:38:59.200618+00:00",
+                "curator": "infer_energy_source",
+                "action": "ANNOTATED",
+                "changes": "Added media role: ENERGY_SOURCE (confidence: 0.70)"
+              },
+              {
+                "timestamp": "2026-07-20T00:00:00+00:00",
+                "curator": "migrate_media_roles_to_facets",
+                "action": "ANNOTATED",
+                "changes": "Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE"
+              },
+              {
+                "timestamp": "2026-08-13T00:00:00+00:00",
+                "curator": "regrade_hydrate_to_close_match",
+                "action": "REGRADED_HYDRATE_TO_CLOSE_MATCH",
+                "changes": "mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed by its anhydrous form, and ChEBI does not model it as such.",
+                "llm_assisted": false
+              },
+              {
+                "timestamp": "2026-08-27T03:16:39.518685+00:00",
+                "curator": "refresh_occurrence_statistics",
+                "action": "CORRECTED",
+                "changes": "occurrence_statistics 9/9 -> 20/20 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+              },
+              {
+                "timestamp": "2026-09-22T20:41:14.285965+00:00",
+                "curator": "claude",
+                "action": "REJECTED_PARENT_NAME_SYNONYMS",
+                "changes": "Retyped names of the parent compound or of a different hydrate as provenance-only REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form and the label index resolved the parent's name here (#232): 'alpha-D-glucopyranosyl-(1->4)-D-glucopyranose'; 'alpha-D-glucopyranosyl-(1->4)-D-glucose'. Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.",
+                "llm_assisted": true
+              },
+              {
+                "timestamp": "2026-11-03T06:07:03.766598+00:00",
+                "curator": "claude",
+                "action": "CORRECTED",
+                "changes": "Step 7d (#901; #1117 where applicable): applied only the reviewed field changes [{\"op\":\"set\",\"path\":[\"identifier\"],\"before\":\"cas:6363-53-7\",\"after\":\"NCIT:C80300\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_id\"],\"before\":\"CHEBI:17306\",\"after\":\"NCIT:C80300\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_label\"],\"before\":\"maltose\",\"after\":\"Maltose Monohydrate\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"ontology_source\"],\"before\":\"CHEBI\",\"after\":\"NCIT\"},{\"op\":\"set\",\"path\":[\"ontology_mapping\",\"mapping_quality\"],\"before\":\"CLOSE_MATCH\",\"after\":\"CAS_RN_LOOKUP\"},{\"op\":\"set\",\"path\":[\"supplied_form\"],\"before\":null,\"after\":[{\"name\":\"D-Maltose monohydrate\",\"cas_rn\":\"6363-53-7\",\"form\":\"monohydrate\",\"supplier\":\"Sigma-Aldrich\",\"catalog_number\":\"M5885\",\"notes\":\"Original CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7, FW360.31. Official M5885 specification independently confirms the one-water formula. This preserves source procurement context; no generic Maltose_Hydrate owner is merged.\"}]}]. Original values are preserved here and in the immutable source preimages. Appended scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior history, roles, status and occurrence counts; no owner merge or new scientific approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.",
+                "previous_status": "MAPPED",
+                "new_status": "MAPPED",
+                "llm_assisted": true,
+                "llm_model": "gpt-6"
+              }
+            ],
+            "chemical_properties": {
+              "cas_rn": "6363-53-7",
+              "data_source": "CultureBotHT compounds_to_cas.csv",
+              "retrieval_date": "2026-04-29T06:51:33.117170+00:00",
+              "molecular_formula": "C12H24O12",
+              "smiles": "C(C1C(C(C(C(O1)OC(C(CO)O)C(C(C=O)O)O)O)O)O)O.O",
+              "inchi": "InChI=1S/C12H22O11.H2O/c13-1-4(16)7(18)11(5(17)2-14)23-12-10(21)9(20)8(19)6(3-15)22-12;/h1,4-12,14-21H,2-3H2;1H2/t4-,5+,6+,7+,8+,9-,10+,11+,12+;/m0./s1",
+              "pubchem_cid": 23615261
+            },
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "nutritional_roles": [
+              {
+                "role": "CARBON_SOURCE",
+                "confidence": 0.8,
+                "evidence": [
+                  {
+                    "reference_type": "COMPUTATIONAL_PREDICTION",
+                    "reference_text": "Inferred from curated media-role name pattern",
+                    "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+                  }
+                ]
+              },
+              {
+                "role": "ENERGY_SOURCE",
+                "confidence": 0.7,
+                "evidence": [
+                  {
+                    "reference_type": "COMPUTATIONAL_PREDICTION",
+                    "reference_text": "Canonical energy substrate (catabolised for energy)",
+                    "curator_note": "Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended."
+                  }
+                ]
+              }
+            ],
+            "supplied_form": [
+              {
+                "name": "D-Maltose monohydrate",
+                "cas_rn": "6363-53-7",
+                "form": "monohydrate",
+                "supplier": "Sigma-Aldrich",
+                "catalog_number": "M5885",
+                "notes": "Original CultureBotHT catalogue line148 specifies Sigma M5885, CAS6363-53-7, FW360.31. Official M5885 specification independently confirms the one-water formula. This preserves source procurement context; no generic Maltose_Hydrate owner is merged."
+              }
+            ]
+          }
+        }
+      ],
+      "disposition": "CONTRADICTORY_SOURCE_HYDRATION_HOLD",
+      "scientific_identity_approved": false,
+      "new_alias_operations": [],
+      "rationale": "The source label Maltose xH2O names a hydrate, but live MediaDive metadata gives anhydrous CAS69-79-4, CHEBI17306 and formulaC12H22O11. The exact label is already REJECTED_LABEL on Maltose. The general Maltose Hydrate local owner does not establish water number/anomer; the separate D-Maltose Monohydrate NCITC80300/CAS6363-53-7 owner cannot be selected from this conflicting source label alone.",
+      "recommended_followup": "Retain the unresolved source label and its contradictory metadata; obtain original recipe/product evidence to decide hydrate and stereochemistry. No alias addition to anhydrous maltose and no automatic choice of the known monohydrate owner.",
+      "existing_related_issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/251"
+      ],
+      "existing_issue_scope": "Related historical or broader form/label-index issues only; this report does not close them or assert every targeted case already has its own exact issue.",
+      "current_reconciliation": {
+        "candidate_id": "8c0e728513c5acc0c015c0332dbcb5ec89751cc5b18348e4056780d4d35dddae",
+        "category": "biolink:ChemicalEntity",
+        "consumed_name_hits": [],
+        "downstream_holds": [],
+        "name_hits": [
+          {
+            "candidate_field": "source_label",
+            "kind": "synonym",
+            "label": "Maltose x H2O",
+            "owner": "data/ingredients/mapped/Maltose.yaml",
+            "resolving": false,
+            "synonym": {
+              "source": "merged_from_duplicate_mim_record",
+              "synonym_text": "Maltose x H2O",
+              "synonym_type": "REJECTED_LABEL"
+            },
+            "synonym_type": "REJECTED_LABEL"
+          },
+          {
+            "candidate_field": "raw_source_label",
+            "kind": "synonym",
+            "label": "Maltose x H2O",
+            "owner": "data/ingredients/mapped/Maltose.yaml",
+            "resolving": false,
+            "synonym": {
+              "source": "merged_from_duplicate_mim_record",
+              "synonym_text": "Maltose x H2O",
+              "synonym_type": "REJECTED_LABEL"
+            },
+            "synonym_type": "REJECTED_LABEL"
+          }
+        ],
+        "native_identity_target": "",
+        "native_queue_state": "STILL_UNMAPPED",
+        "occurrences": 1,
+        "occurrences_definition": "helper constant; not measured recipe frequency",
+        "owners": [
+          {
+            "identifier": "CHEBI:17306",
+            "mapping_status": "MAPPED",
+            "native_review_rows": [
+              {
+                "decision": {
+                  "disposition": "WITHHOLD",
+                  "evidence_key": "1786",
+                  "owner_record": "data/ingredients/mapped/Maltose.yaml",
+                  "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+                  "review_reason": "Cross-record baseline is an unresolved review obligation, not proof of false identity. Native related-form aliases and ontology synonyms must be judged in their actual row predicate/object context; no blanket approval. Different-substance chemistry conflict remains in label index; mapping row target/predicate and each alias source require per-record review before any equivalence approval.",
+                  "row_sha256": "ed15952ac6470b455dc84bb341360512c1d331744a047c7a778b42a0950c53cc",
+                  "source_position": 1786
+                },
+                "row": {
+                  "comment": "",
+                  "confidence": "0.99",
+                  "mapping_date": "2026-09-02",
+                  "mapping_justification": "semapv:LexicalMatching",
+                  "object_id": "CHEBI:17306",
+                  "object_label": "maltose",
+                  "object_source": "obo:chebi.owl",
+                  "other": "1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose|4-(alpha-D-glucosido)-D-glucose|4-O-alpha-D-glucopyranosyl-D-glucopyranose|4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose|Cextromaltose|D-(+)-maltose|D-maltose (maltose)|Glca1-4Glca|Glcalpha1-4Glca|Glcalpha1-4Glcalpha|Malt sugar|Malzzucker|alpha-D-Glcp-(1->4)-D-Glcp|alpha-D-Glcp-(1->4)-alpha-D-Glcp|alpha-D-Glucopyranosyl-(1->4)-D-glucopyranose|alpha-D-glucopyranosyl-(1->4)-D-glucose|D-Maltose|Alpha-maltose|alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose|CAS:69-79-4",
+                  "predicate_id": "skos:exactMatch",
+                  "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_mim_merge]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=infer_energy_source]|kgm:mediaingredientmech_reviewed[curator=merge_cas_conflict_duplicates]|kgm:metatraits_chemical_synonyms[manual_2026-04-07]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]|kgm:primary_mappings[kegg_compound]",
+                  "subject_id": "MIM:Maltose",
+                  "subject_label": "Maltose",
+                  "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+                }
+              }
+            ],
+            "ontology_mapping": {
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH",
+                  "source": "CultureMech"
+                }
+              ],
+              "mapping_quality": "EXACT_MATCH",
+              "ontology_id": "CHEBI:17306",
+              "ontology_label": "maltose",
+              "ontology_source": "CHEBI"
+            },
+            "path": "data/ingredients/mapped/Maltose.yaml",
+            "preferred_term": "Maltose",
+            "sha256": "d57baa8b44a5e79c14f2f31e9571a9d51fda170e95dce58ab46d1e0114b783d1",
+            "subject_id": "MIM:Maltose"
+          }
+        ],
+        "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+        "raw_source_label": "Maltose x H2O",
+        "resolving_owner_paths": [],
+        "scientific_identity_approved_by_reconciliation": false,
+        "source": "mediadive",
+        "source_columns": "compound",
+        "source_id": "mediadive.ingredient:776",
+        "source_label": "Maltose x H2O",
+        "source_record": {
+          "amount": 60,
+          "compound": "Maltose x H2O",
+          "compound_id": 776,
+          "g_l": 60,
+          "mmol_l": 175.287,
+          "optional": 0,
+          "recipe_order": 3,
+          "unit": "g"
+        },
+        "triage_flags": [
+          "NON_RESOLVING_OR_REJECTED_LABEL_ONLY"
+        ]
+      }
+    }
+  ],
+  "conclusion": "No additional alias curation or mapping approval is justified for this bounded batch.",
+  "limitations": [
+    "Primary captures are current source database metadata, not new primary experiments or original product certificates.",
+    "All owner bytes were captured; only source identity/form, conflicting aliases and prior decisions relevant to the disposition were assessed. No full-owner pass, role approval, occurrence update or completeness claim is made.",
+    "No claims that a missing source label has no owner anywhere are made here; preserved exact reconciliation includes ignored-inclusive corpus search and accepted/rejected separation.",
+    "Related issue251 is closed historical evidence;811 and868 remain broader open work in captured GET responses. No issue closure or exact duplicate assertion is proposed.",
+    "The five-target shortlist is not exhaustive over every unresolved source label. The separate deterministic reconciliation ledger covers the full selected queues."
+  ]
+}

@@ -1,0 +1,518 @@
+schema_version: 1.0.0
+review_id: 20261108T024658Z-kgm-source-writer-boundary-findings
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: Independent source-writer boundary and release-guide findings
+started_at: '2026-11-08T02:46:58.403675Z'
+finished_at: '2026-11-08T02:46:58.403675Z'
+reviewer:
+  identity: /root/step7d_independent_review
+  kind: agent
+  model: gpt-6
+  independence: independent
+  independence_basis: Reviewer authored no production implementation. It independently
+    fault-injected two writers; separate child /root/step7d_independent_review/queue_adversarial
+    reviewed and fault-injected reconciliation. Exact child artifact is preserved.
+skill: review-sssom-output
+completion: completed
+verdict: needs_curation
+native_verdict: Three confirmed bounded implementation findings and one release-guide
+  correction require remediation.
+scientific_review: false
+summary: Immutable observations of initial writer/reconciliation bytes and stale guide.
+  No actual scientific-input corruption occurred in the maintained worktree; all attacks
+  used reviewer-owned fixtures. Final scientific/head approval remains separate.
+source:
+  git_revision: 0dac278466699129a083343a921c2e0ca18a9ab4
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: docs/SSSOM_RELEASE.md
+    sha256: 976b474a5c0d9bd6eba7541964f459eb46fcadc333aaf0140076e135e28605c2
+    role: target
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-contract-audit-v1.json
+    sha256: dc1ac887c54ae13d00800b8941c281c88d5ac08015ec424ad002ab7a3e5f7ac6
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/curate_mediadive_acetate_alias.py
+    sha256: 3c0087a02c42c4555fb64191ab609a3464b797d991919883667a271a027f1f0e
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/probe_publication_boundaries_v1.py
+    sha256: 8a62b4f4b8ff35a3cde442a9d24a4b58cca3ce4af09e4b6b118908d9833d5684
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publication-boundaries-v1-result.json
+    sha256: cca6832aab0edc3db9633af4fd0ba5e99c3c6126915e0ef1220075cf00ff351d
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publish_mediadive_acetate_alias.py
+    sha256: 624aaa31aaa203cbe79ab14dca398a6212c39267ff14a213706165eaf6d9a776
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-parent-swap-result-v1.json
+    sha256: 5a9c1bd1cdf53f8086be136980bd0ff068ba4b3e73bcaee3560f3e5ce83e5e71
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-probe_output_parent_swap_v1.py
+    sha256: ff6fa18d2ff4b71acd3b8f6ba9bec639e0d928a652f43ca5b133ace785666480
+    role: context
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/reconcile_kgm_chemical_queue.py
+    sha256: 3a044cb9d991a07e521090d0daa925b18b7749414db1172a42dc1ccd1c929750
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/refresh_kgm_source_policy_manifest.py
+    sha256: ad41326679ed00aaad7f26a8c8c1c3343535aab4f5e54fa6cd1427145a64e505
+    role: target
+  - path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/writer-findings-v1.json
+    sha256: aae054088218843c7c58d2e843fb16fbdef1cd57494032ec1d19e30eddc314dc
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+scope:
+  description: Exact archived code and diagnostic evidence for issues1153-1156.
+  selection: Seven exact source/proof targets, with all relevant primary fault-injection
+    results.
+  coverage: full
+  population_size: 7
+  reviewed_target_ids:
+  - alias-writer-original
+  - canonical-publisher-original
+  - policy-writer-original
+  - queue-writer-original
+  - publication-boundary-proof
+  - queue-parent-swap-proof
+  - release-guide
+  exclusions:
+  - target: Final repaired source/exports and unified rebuild
+    reason: Authors are implementing corrections; final frozen-head review remains
+      required.
+targets:
+- target_id: alias-writer-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/curate_mediadive_acetate_alias.py
+  label: alias-writer-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: canonical-publisher-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publish_mediadive_acetate_alias.py
+  label: canonical-publisher-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: policy-writer-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/refresh_kgm_source_policy_manifest.py
+  label: policy-writer-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: queue-writer-original
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/reconcile_kgm_chemical_queue.py
+  label: queue-writer-original
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: publication-boundary-proof
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publication-boundaries-v1-result.json
+  label: publication-boundary-proof
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: queue-parent-swap-proof
+  path: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-parent-swap-result-v1.json
+  label: queue-parent-swap-proof
+  kind: source
+  ownership_note: Immutable observed implementation/proof; production owner is separately
+    named in finding owner_paths.
+- target_id: release-guide
+  path: docs/SSSOM_RELEASE.md
+  label: Supported predicate release guidance
+  kind: source
+  ownership_note: Maintained release guidance; documentation observation confers no
+    scientific approval and changes no mapping.
+evidence:
+- evidence_id: boundary-probe
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publication-boundaries-v1-result.json
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Actual private reproductions show two successful out-of-scope hard-link
+    writes and successful attribution to a late failed manifest.
+  snapshot_sha256: cca6832aab0edc3db9633af4fd0ba5e99c3c6126915e0ef1220075cf00ff351d
+- evidence_id: queue-probe
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/queue-adversarial-parent-swap-result-v1.json
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Independent child reviewer actual private reproduction redirects four queue
+    reports into the fixture upstream after initial output-path validation.
+  snapshot_sha256: 5a9c1bd1cdf53f8086be136980bd0ff068ba4b3e73bcaee3560f3e5ce83e5e71
+- evidence_id: alias-code
+  kind: record_content
+  reference: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/curate_mediadive_acetate_alias.py
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Frozen exact implementation used by owner hard-link probe.
+  snapshot_sha256: 3c0087a02c42c4555fb64191ab609a3464b797d991919883667a271a027f1f0e
+- evidence_id: publisher-code
+  kind: record_content
+  reference: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/publish_mediadive_acetate_alias.py
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Frozen exact implementation used by canonical hard-link and late manifest
+    probes.
+  snapshot_sha256: 624aaa31aaa203cbe79ab14dca398a6212c39267ff14a213706165eaf6d9a776
+- evidence_id: policy-code
+  kind: record_content
+  reference: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/refresh_kgm_source_policy_manifest.py
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Inspected the same direct mutation pattern; independent hard-link execution
+    was on owner/canonical writers, not this script.
+  snapshot_sha256: ad41326679ed00aaad7f26a8c8c1c3343535aab4f5e54fa6cd1427145a64e505
+- evidence_id: queue-code
+  kind: record_content
+  reference: reports/kgm_unmapped_chemicals_20261107/writer-findings-v1/reconcile_kgm_chemical_queue.py
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Frozen reconciliation implementation used by delegated independent parent-swap
+    reproduction.
+  snapshot_sha256: 3a044cb9d991a07e521090d0daa925b18b7749414db1172a42dc1ccd1c929750
+- evidence_id: release-guide
+  kind: record_content
+  reference: docs/SSSOM_RELEASE.md
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Baseline release guide says all supported rows are exact.
+  snapshot_sha256: 976b474a5c0d9bd6eba7541964f459eb46fcadc333aaf0140076e135e28605c2
+- evidence_id: baseline-export
+  kind: validation
+  reference: reports/kgm_unmapped_chemicals_20261107/baseline-independent/baseline-contract-audit-v1.json
+  accessed_at: '2026-11-08T02:46:58.403675Z'
+  support: supports
+  summary: Independent baseline native export counted1737exact and2broad supported
+    rows; guide contradicts actual product.
+  snapshot_sha256: dc1ac887c54ae13d00800b8941c281c88d5ac08015ec424ad002ab7a3e5f7ac6
+assessments:
+- assessment_id: assess-alias-writer-original
+  area: consistency
+  topic: alias-writer-original
+  outcome: concern
+  summary: Actual owner and canonical private fixtures complete successfully and overwrite
+    a second hard-linked unrelated path. Symlink-only checks and native YAML validation
+    do not protect write scope. The policy writer has the same unchecked direct-write
+    pattern and needs the same bounded assessment.
+  target_ids:
+  - alias-writer-original
+  evidence_ids:
+  - alias-code
+  - boundary-probe
+  - policy-code
+  - publisher-code
+- assessment_id: assess-canonical-publisher-original
+  area: consistency
+  topic: canonical-publisher-original
+  outcome: concern
+  summary: Actual owner and canonical private fixtures complete successfully and overwrite
+    a second hard-linked unrelated path. Symlink-only checks and native YAML validation
+    do not protect write scope. The policy writer has the same unchecked direct-write
+    pattern and needs the same bounded assessment. The publisher checks manifest once,
+    reserves outputs, and rechecks only canonical/owner. A real private reservation
+    callback replaced manifest with a zero producer and FAILED validation; publication
+    still returned success and the receipt hashes the replacement manifest.
+  target_ids:
+  - canonical-publisher-original
+  evidence_ids:
+  - alias-code
+  - boundary-probe
+  - policy-code
+  - publisher-code
+- assessment_id: assess-policy-writer-original
+  area: consistency
+  topic: policy-writer-original
+  outcome: concern
+  summary: Actual owner and canonical private fixtures complete successfully and overwrite
+    a second hard-linked unrelated path. Symlink-only checks and native YAML validation
+    do not protect write scope. The policy writer has the same unchecked direct-write
+    pattern and needs the same bounded assessment.
+  target_ids:
+  - policy-writer-original
+  evidence_ids:
+  - alias-code
+  - boundary-probe
+  - policy-code
+  - publisher-code
+- assessment_id: assess-queue-writer-original
+  area: consistency
+  topic: queue-writer-original
+  outcome: concern
+  summary: Delegated independent reviewer swapped initially safe output parent to
+    a symlink during load_review. run() returned success and created ledger.json,ledger.tsv,receipt.json,summary.json
+    inside the private upstream fixture. Real KG-Microbe and MIM inputs were untouched.
+  target_ids:
+  - queue-writer-original
+  evidence_ids:
+  - queue-code
+  - queue-probe
+- assessment_id: assess-publication-boundary-proof
+  area: consistency
+  topic: publication-boundary-proof
+  outcome: concern
+  summary: Actual owner and canonical private fixtures complete successfully and overwrite
+    a second hard-linked unrelated path. Symlink-only checks and native YAML validation
+    do not protect write scope. The policy writer has the same unchecked direct-write
+    pattern and needs the same bounded assessment. The publisher checks manifest once,
+    reserves outputs, and rechecks only canonical/owner. A real private reservation
+    callback replaced manifest with a zero producer and FAILED validation; publication
+    still returned success and the receipt hashes the replacement manifest.
+  target_ids:
+  - publication-boundary-proof
+  evidence_ids:
+  - alias-code
+  - boundary-probe
+  - policy-code
+  - publisher-code
+- assessment_id: assess-queue-parent-swap-proof
+  area: consistency
+  topic: queue-parent-swap-proof
+  outcome: concern
+  summary: Delegated independent reviewer swapped initially safe output parent to
+    a symlink during load_review. run() returned success and created ledger.json,ledger.tsv,receipt.json,summary.json
+    inside the private upstream fixture. Real KG-Microbe and MIM inputs were untouched.
+  target_ids:
+  - queue-parent-swap-proof
+  evidence_ids:
+  - queue-code
+  - queue-probe
+- assessment_id: assess-release-guide
+  area: consistency
+  topic: Supported predicate release guidance
+  outcome: concern
+  summary: Actual baseline native export contains two supported broad mappings while
+    guide says all supported rows in the snapshot are skos:exactMatch. This is documentation
+    drift, not a reason to narrow or change approved predicates.
+  target_ids:
+  - release-guide
+  evidence_ids:
+  - baseline-export
+  - release-guide
+findings:
+- finding_id: source-alias-writers-hardlink-side-effects
+  issue_key: mim-source-alias-writer-hardlink-scope
+  category: consistency
+  severity: major
+  native_severity: P2 correctness/write scope
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: open
+  certainty: confirmed
+  title: Hard-linked mutation targets allow unrelated file writes
+  description: Actual owner and canonical private fixtures complete successfully and
+    overwrite a second hard-linked unrelated path. Symlink-only checks and native
+    YAML validation do not protect write scope. The policy writer has the same unchecked
+    direct-write pattern and needs the same bounded assessment.
+  target_ids:
+  - alias-writer-original
+  - canonical-publisher-original
+  - policy-writer-original
+  - publication-boundary-proof
+  evidence_ids:
+  - boundary-probe
+  - alias-code
+  - publisher-code
+  - policy-code
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/curate_mediadive_acetate_alias.py
+    role: Maintained implementation or guide requiring bounded correction
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/publish_mediadive_acetate_alias.py
+    role: Maintained implementation or guide requiring bounded correction
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/refresh_kgm_source_policy_manifest.py
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1153
+- finding_id: source-alias-publisher-unverified-late-manifest
+  issue_key: mim-source-alias-publisher-late-manifest
+  category: provenance
+  severity: major
+  native_severity: P2 correctness/write scope
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: open
+  certainty: confirmed
+  title: Late manifest replacement is attributed without validation
+  description: The publisher checks manifest once, reserves outputs, and rechecks
+    only canonical/owner. A real private reservation callback replaced manifest with
+    a zero producer and FAILED validation; publication still returned success and
+    the receipt hashes the replacement manifest.
+  target_ids:
+  - canonical-publisher-original
+  - publication-boundary-proof
+  evidence_ids:
+  - boundary-probe
+  - publisher-code
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/publish_mediadive_acetate_alias.py
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1154
+- finding_id: queue-output-parent-swap
+  issue_key: mim-chemical-queue-output-parent-swap
+  category: consistency
+  severity: minor
+  native_severity: P3 bounded safeguard/documentation
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: open
+  certainty: confirmed
+  title: Queue output can be redirected into protected upstream after preflight
+  description: Delegated independent reviewer swapped initially safe output parent
+    to a symlink during load_review. run() returned success and created ledger.json,ledger.tsv,receipt.json,summary.json
+    inside the private upstream fixture. Real KG-Microbe and MIM inputs were untouched.
+  target_ids:
+  - queue-writer-original
+  - queue-parent-swap-proof
+  evidence_ids:
+  - queue-probe
+  - queue-code
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: scripts/reconcile_kgm_chemical_queue.py
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1155
+- finding_id: release-guide-supported-predicate-scope
+  issue_key: mim-release-guide-supported-broad-predicates
+  category: provenance
+  severity: minor
+  native_severity: P3 bounded safeguard/documentation
+  normalization_reason: Confirmed bounded implementation defect; scientific mapping
+    remains independently reviewable.
+  status: open
+  certainty: confirmed
+  title: Release guide incorrectly describes supported mappings as exact only
+  description: Actual baseline native export contains two supported broad mappings
+    while guide says all supported rows in the snapshot are skos:exactMatch. This
+    is documentation drift, not a reason to narrow or change approved predicates.
+  target_ids:
+  - release-guide
+  evidence_ids:
+  - release-guide
+  - baseline-export
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: docs/SSSOM_RELEASE.md
+    role: Maintained implementation or guide requiring bounded correction
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1156
+actions:
+- action_id: repair-1153
+  description: Reject nonregular, hard-linked and aliased mutation targets and recheck
+    their identities at the write boundary.
+  finding_ids:
+  - source-alias-writers-hardlink-side-effects
+  target_ids:
+  - alias-writer-original
+  - canonical-publisher-original
+  - policy-writer-original
+  - publication-boundary-proof
+  ownership_note: Root/source authors fix only filed in-scope issue; this reviewer
+    authors no implementation.
+  acceptance_checks:
+  - Positive legitimate writes still succeed; initial and late hard-link/symlink targets
+    refuse without unrelated writes.
+  - Preserve original failed implementation/proofs and independently re-review final
+    actual bytes.
+- action_id: repair-1154
+  description: Pin and recheck candidate/manifest bytes and identity around publication,
+    and record exactly validated bytes.
+  finding_ids:
+  - source-alias-publisher-unverified-late-manifest
+  target_ids:
+  - canonical-publisher-original
+  - publication-boundary-proof
+  ownership_note: Root/source authors fix only filed in-scope issue; this reviewer
+    authors no implementation.
+  acceptance_checks:
+  - Late manifest/candidate substitutions and aliases refuse; successful receipt exactly
+    binds the validated immutable inputs.
+  - Preserve original failed implementation/proofs and independently re-review final
+    actual bytes.
+- action_id: repair-1155
+  description: Revalidate and reserve output topology at publication, preserving read-only
+    input boundaries.
+  finding_ids:
+  - queue-output-parent-swap
+  target_ids:
+  - queue-writer-original
+  - queue-parent-swap-proof
+  ownership_note: Root/source authors fix only filed in-scope issue; this reviewer
+    authors no implementation.
+  acceptance_checks:
+  - Reproduce post-preflight parent swap and prove no writes reach protected upstream;
+    keep all existing source inventory and approval guards.
+  - Preserve original failed implementation/proofs and independently re-review final
+    actual bytes.
+- action_id: repair-1156
+  description: Describe actual supported predicate scope without changing mappings
+    or scientific approvals.
+  finding_ids:
+  - release-guide-supported-predicate-scope
+  target_ids:
+  - release-guide
+  ownership_note: Root/source authors fix only filed in-scope issue; this reviewer
+    authors no implementation.
+  acceptance_checks:
+  - Documentation reflects intentional exact/broad supported contract and preserves
+    broader-mapping identity caution.
+  - Preserve original failed implementation/proofs and independently re-review final
+    actual bytes.
+checks:
+- check_id: private-writer-fault-injection
+  name: Native writer fixture fault injection
+  status: passed
+  required: true
+  command: python -B reviewer/probe_publication_boundaries_v1.py
+  exit_code: 0
+  summary: Diagnostic completed and confirmed unsafe successes; this is not a publication-safety
+    PASS.
+  target_ids:
+  - alias-writer-original
+  - canonical-publisher-original
+  - publication-boundary-proof
+  evidence_ids:
+  - boundary-probe
+- check_id: private-queue-fault-injection
+  name: Independent delegated parent swap probe
+  status: passed
+  required: true
+  summary: Diagnostic confirmed four redirected outputs; only private fixture was
+    modified.
+  target_ids:
+  - queue-writer-original
+  - queue-parent-swap-proof
+  evidence_ids:
+  - queue-probe
+limitations:
+- Truthful private overlay has durable baseline HEAD0dac2784 and exact staged archived
+  observations; no feature-head identity is invented.
+- The policy-writer concern is source inspection of the same direct-write pattern;
+  actual hard-link execution was reproduced against owner/canonical writers.
+- The live downstream checkout was never mutated; candidate adoption and its release
+  holds are outside scope.
+- Current science was assessed separately and is not conferred by this infrastructure
+  finding review.
