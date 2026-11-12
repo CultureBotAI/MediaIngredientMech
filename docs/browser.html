@@ -305,6 +305,27 @@
             margin-top: 3rem;
         }
 
+        footer a {
+            color: #7E5BC4;
+        }
+
+        footer .licence {
+            margin-top: 0.5rem;
+        }
+
+        /* First tab stop: hidden until focused. */
+        .skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -4rem;
+            z-index: 3000;
+            margin-top: 0;
+        }
+
+        .skip-link:focus {
+            top: 0.5rem;
+        }
+
         /* ---- Reduced-motion guard ---- */
         @media (prefers-reduced-motion: reduce){
           *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
@@ -328,6 +349,7 @@
           :root:not([data-theme="light"]) .synonyms-label,
           :root:not([data-theme="light"]) .no-results,
           :root:not([data-theme="light"]) footer{color:#a39db8;}
+          :root:not([data-theme="light"]) footer a{color:#b499f0;}
           :root:not([data-theme="light"]) .search-box,
           :root:not([data-theme="light"]) .filter-group select{background:#14121c;color:#ece9f4;border-color:#302b40;}
           :root:not([data-theme="light"]) .search-box:focus{border-color:#b499f0;}
@@ -357,6 +379,7 @@
         :root[data-theme="dark"] .synonyms-label,
         :root[data-theme="dark"] .no-results,
         :root[data-theme="dark"] footer{color:#a39db8;}
+        :root[data-theme="dark"] footer a{color:#b499f0;}
         :root[data-theme="dark"] .search-box,
         :root[data-theme="dark"] .filter-group select{background:#14121c;color:#ece9f4;border-color:#302b40;}
         :root[data-theme="dark"] .search-box:focus{border-color:#b499f0;}
@@ -375,6 +398,7 @@
     </style>
 </head>
 <body>
+    <a class="nav-link skip-link" href="#main-content">Skip to main content</a>
     <header class="header">
         <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
@@ -384,6 +408,7 @@
         <a href="ingredient_umap.html" class="nav-link">KG PaCMAP</a>
         <a href="ingredient_graph.html" class="nav-link">Graph Layout</a>
         <a href="records/index.html" class="nav-link">Record Index</a>
+        <a href="app/discussions/index.html" class="nav-link">Discussions</a>
         <a href="schema/index.html" class="nav-link">Schema</a>
         <a href="index.html#downloads" class="nav-link">Downloads</a>
         <a href="https://github.com/CultureBotAI/MediaIngredientMech" class="nav-link">GitHub</a>
@@ -449,7 +474,7 @@
             </div>
         </aside>
 
-        <main class="results-main">
+        <main class="results-main" id="main-content">
             <div class="stats" id="stats">
                 <div class="stat">
                     <div class="stat-value" id="total-count">-</div>
@@ -469,6 +494,7 @@
                 </div>
             </div>
 
+            <noscript><p class="no-results">Searching and filtering need JavaScript. The <a href="records/index.html">Record Index</a> lists every ingredient record as a static page.</p></noscript>
             <p id="status-summary"></p>
             <p id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading ingredients…</p>
             <div class="ingredient-list" id="ingredient-list" aria-busy="true">
@@ -479,6 +505,7 @@
 
     <footer>
         <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="schema/index.html">Schema Documentation</a> | <a href="index.html#downloads">Data Downloads</a> | <a href="records/build.json">Build Manifest</a></p>
+        <p class="licence">Project data: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-DATA">CC BY 4.0</a>. Code: <a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE-CODE">BSD-3-Clause</a>. Third-party source material keeps its own terms (<a href="https://github.com/CultureBotAI/MediaIngredientMech/blob/main/LICENSE">licence scope</a>).</p>
     </footer>
 
     <script>
@@ -486,23 +513,24 @@
         let filteredIngredients = [];
         let dataReady = false;
 
+        // Search, filters and sort live in the query string. Older landing links
+        // put the status in the hash (#status=MAPPED): it is read only when the
+        // query string names no status, and applyFilters() then rewrites the URL
+        // without it, so it can never override a later choice on reload.
+        const STATE_KEYS = ['q', 'status', 'source', 'quality', 'sort'];
+
         function applyHashFilters() {
-            const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-            const status = params.get('status') || '';
+            const queryParams = new URLSearchParams((window.location && window.location.search) || '');
+            const hashParams = new URLSearchParams(String(window.location.hash || '').replace(/^#/, ''));
+            const status = queryParams.has('status') ? queryParams.get('status') : (hashParams.get('status') || '');
             const statusControl = document.getElementById('filter-status');
             const supported = Array.from(statusControl.options)
                 .some(option => option.value === status);
             statusControl.value = supported ? status : '';
-            const queryParams = new URLSearchParams((window.location && window.location.search) || '');
             const qVal = queryParams.get('q');
             if (qVal !== null) {
                 const searchControl = document.getElementById('search');
                 if (searchControl) searchControl.value = qVal;
-            }
-            const statusQ = queryParams.get('status');
-            if (statusQ && !status) {
-                const statusSup = Array.from(statusControl.options).some(opt => opt.value === statusQ);
-                if (statusSup) statusControl.value = statusQ;
             }
             for (const [paramKey, controlId] of [['source', 'filter-source'], ['quality', 'filter-quality'], ['sort', 'sort-by']]) {
                 const val = queryParams.get(paramKey);
@@ -513,6 +541,17 @@
                     }
                 }
             }
+        }
+
+        // Whatever the hash holds besides filter state is kept as it was.
+        function remainingHash() {
+            const raw = String(window.location.hash || '').replace(/^#/, '');
+            if (!raw) return '';
+            const params = new URLSearchParams(raw);
+            if (!STATE_KEYS.some(key => params.has(key))) return '#' + raw;
+            STATE_KEYS.forEach(key => params.delete(key));
+            const rest = params.toString();
+            return rest ? '#' + rest : '';
         }
 
         applyHashFilters();
@@ -611,7 +650,7 @@
                 if (qualityFilter) qParams.set('quality', qualityFilter); else qParams.delete('quality');
                 if (sortBy) qParams.set('sort', sortBy); else qParams.delete('sort');
                 const qs = qParams.toString();
-                history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + (window.location.hash || ''));
+                history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + remainingHash());
             }
 
             filteredIngredients = allIngredients.filter(ing => {
