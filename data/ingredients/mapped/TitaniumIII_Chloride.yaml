@@ -63,6 +63,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0541 -> cas:7705-07-9 "TitaniumIII chloride" (FALLBACK_REGISTRY);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002512; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to TiCl3 without exact source
   normalization evidence.
@@ -83,3 +89,7 @@ ontology_mapping:
       solid polymorphs, so this is a defined compound rather than a mixture or formulation.
       Parentless: the local CHEBI build carries titanium OXIDES and elemental titanium
       but no titanium chloride at any oxidation state, so there is no term to narrowMatch.'
+mim_id: MIM:0002512
+legacy_identifiers:
+- MIM:TitaniumIII_Chloride
+- cas:7705-07-9

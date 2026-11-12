@@ -40,6 +40,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001526; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 8068-05-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C18H15N3O8S2.2Na/c1-10(22)19-13-7-8-14(30(24,25)26)12-9-15(31(27,28)29)17(18(23)16(12)13)21-20-11-5-3-2-4-6-11;;/h2-9,23H,1H3,(H,19,22)(H,24,25,26)(H,27,28,29);;/q;2*+1/p-2
   pubchem_cid: 175586
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001526
+legacy_identifiers:
+- MIM:Lignin_Alkali
+- cas:8068-05-1

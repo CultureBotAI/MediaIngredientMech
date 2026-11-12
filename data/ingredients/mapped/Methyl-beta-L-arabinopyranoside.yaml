@@ -39,6 +39,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001643; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 1825-00-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +54,7 @@ chemical_properties:
   inchi: InChI=1S/C6H12O5/c1-10-6-5(9)4(8)3(7)2-11-6/h3-9H,2H2,1H3/t3-,4-,5+,6-/m0/s1
   pubchem_cid: 102169
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001643
+legacy_identifiers:
+- MIM:Methyl-beta-L-arabinopyranoside
+- cas:1825-00-9

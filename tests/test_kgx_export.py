@@ -65,11 +65,11 @@ def test_complete_graph_preserves_scope_and_annotations(corpus, tmp_path):
     assert result["counts"]["active_ingredients"] == 4
     assert result["counts"]["excluded_rejected_records"] == 1
     assert "CHEBI:78018" not in nodes
-    assert "MIM.unmapped:UNMAPPED_0001" in nodes
-    assert {e["object"] for e in edges if e["subject"] == "MIM:opaque_water_b"} == {"CHEBI:15377"}
+    assert "MIM:0000005" in nodes
+    assert {e["object"] for e in edges if e["subject"] == "MIM:0000002"} == {"CHEBI:15377"}
     roles = [e for e in edges if e["predicate"] == "biolink:has_chemical_role"]
     assert len(roles) == 2
-    assert all(e["subject"] == "MIM:opaque_water_a" for e in roles)
+    assert all(e["subject"] == "MIM:0000001" for e in roles)
     role = next(e for e in roles if e["metabolic_context"])
     assert role["metabolic_context"] == "fixture organism only"
     assert role["confidence"] == "0.5" and role["publications"] == "doi:10.1234/test"
@@ -93,7 +93,7 @@ def test_complete_graph_preserves_scope_and_annotations(corpus, tmp_path):
     assert all(nodes[e["object"]]["name"] == "unknown fraction" for e in unresolved)
     broad = next(e for e in edges if e["predicate"] == "biolink:broad_match")
     assert (broad["subject"], broad["object"], broad["relation"]) == (
-        "MIM:fixture_mix",
+        "MIM:0000003",
         "FOODON:00000001",
         "skos:broadMatch",
     )
@@ -103,7 +103,7 @@ def test_complete_graph_preserves_scope_and_annotations(corpus, tmp_path):
     assert candidate["predicate"] == "MIM.vocab:recipe_candidate_unverified"
     assert all(e["subject"] in nodes and e["object"] in nodes for e in edges)
     original = yaml.safe_load((corpus / "data/ingredients/mapped/Water_A.yaml").read_text())
-    assert json.loads(nodes["MIM:opaque_water_a"]["record_json"]) == original
+    assert json.loads(nodes["MIM:0000001"]["record_json"]) == original
 
 
 def test_deterministic_archive_and_all_manifest_members(corpus, tmp_path):
@@ -145,7 +145,7 @@ def test_inverse_mapping_projects_child_to_parent_and_retains_original_row(corpu
     path = corpus / "mappings/ingredient_mappings.sssom.tsv"
     path.write_text(
         path.read_text()
-        + "MIM:opaque_water_a\tWater A\tskos:narrowMatch\tFOODON:00000002\tfixture child\t0.9\n"
+        + "MIM:0000001\tWater A\tskos:narrowMatch\tFOODON:00000002\tfixture child\t0.9\n"
     )
     output = tmp_path / "release"
     kgx.export_graph(corpus, output)
@@ -157,12 +157,12 @@ def test_inverse_mapping_projects_child_to_parent_and_retains_original_row(corpu
     assert (inverse["subject"], inverse["predicate"], inverse["object"]) == (
         "FOODON:00000002",
         "biolink:broad_match",
-        "MIM:opaque_water_a",
+        "MIM:0000001",
     )
     original = json.loads(inverse["assertion_json"])
     assert inverse["relation"] == "skos:broadMatch"
     assert (original["subject_id"], original["object_id"]) == (
-        "MIM:opaque_water_a",
+        "MIM:0000001",
         "FOODON:00000002",
     )
 
@@ -235,7 +235,7 @@ def test_review_findings_remain_visible(corpus, tmp_path):
     output = tmp_path / "release"
     manifest = kgx.export_graph(corpus, output, path)
     nodes = {r["id"]: r for r in read_rows(output / "mim_nodes.tsv")}
-    assert nodes["MIM:opaque_water_a"]["review_status"] == "needs_curation"
+    assert nodes["MIM:0000001"]["review_status"] == "needs_curation"
     assert manifest["counts"]["ingredient_review_status"] == {
         "needs_curation": 1,
         "not_reviewed": 3,
@@ -256,7 +256,7 @@ def test_positive_review_requires_current_record_hash(corpus, tmp_path, binding)
     output = tmp_path / "release"
     kgx.export_graph(corpus, output, path)
     nodes = {r["id"]: r for r in read_rows(output / "mim_nodes.tsv")}
-    node = nodes["MIM:opaque_water_a"]
+    node = nodes["MIM:0000001"]
     assert node["review_status"] == (
         "pass" if binding == "current" else "historical_review_unverified"
     )
@@ -280,8 +280,8 @@ def test_broader_mapping_cycles_through_primary_identity_are_rejected(corpus, tm
     columns = header.split("\t")
     # These broader links cycle after exact identities are resolved.
     for subject, label, obj in [
-        ("MIM:opaque_water_a", "Water A", "kgmicrobe.ingredient:fixture_mix"),
-        ("MIM:fixture_mix", "Fixture mixture", "CHEBI:15377"),
+        ("MIM:0000001", "Water A", "kgmicrobe.ingredient:fixture_mix"),
+        ("MIM:0000003", "Fixture mixture", "CHEBI:15377"),
     ]:
         row = dict.fromkeys(columns, "")
         row.update(
@@ -317,7 +317,7 @@ def test_ambiguous_source_survives_without_identity_mapping(corpus, tmp_path):
     output = tmp_path / "ambiguous"
     kgx.export_graph(corpus, output)
     nodes = {r["id"]: r for r in read_rows(output / "mim_nodes.tsv")}
-    source = "MIM.unmapped:UNMAPPED_0001"
+    source = "MIM:0000005"
     assert nodes[source]["mapping_status"] == "AMBIGUOUS"
     assert json.loads(nodes[source]["record_json"])["mapping_status"] == "AMBIGUOUS"
     assert not any(

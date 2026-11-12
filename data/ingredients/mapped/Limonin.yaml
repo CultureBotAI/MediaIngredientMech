@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001528; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 1180-71-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C26H30O8/c1-22(2)15-9-16(27)24(4)14(25(15)12-31-18(28)10-17(25)33-22)5-7-23(3)19(13-6-8-30-11-13)32-21(29)20-26(23,24)34-20/h6,8,11,14-15,17,19-20H,5,7,9-10,12H2,1-4H3/t14-,15-,17-,19-,20+,23-,24-,25+,26+/m0/s1
   smiles: '[H][C@]12CC[C@@]3(C)[C@H](c4ccoc4)OC(=O)[C@H]4O[C@]43[C@]1(C)C(=O)C[C@@]1([H])C(C)(C)O[C@@]3([H])CC(=O)OC[C@@]213'
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001528
+legacy_identifiers:
+- MIM:Limonin
+- CHEBI:16226

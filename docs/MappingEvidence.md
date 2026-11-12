@@ -1,6 +1,6 @@
 
 
-# Class: MappingEvidence 
+# Class: MappingEvidence
 
 
 _Evidence for an ontology mapping_
@@ -20,44 +20,55 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
     class MappingEvidence
     click MappingEvidence href "../MappingEvidence/"
       MappingEvidence : cas_rn
-        
+
       MappingEvidence : confidence_score
-        
+
       MappingEvidence : doi
-        
+
+      MappingEvidence : evidence_source
+
+
+
+
+
+        MappingEvidence --> "0..1" EvidenceSourceEnum : evidence_source
+        click EvidenceSourceEnum href "../EvidenceSourceEnum/"
+
+
+
       MappingEvidence : evidence_type
-        
-          
-    
-        
-        
+
+
+
+
+
         MappingEvidence --> "1" EvidenceTypeEnum : evidence_type
         click EvidenceTypeEnum href "../EvidenceTypeEnum/"
-    
 
-        
+
+
       MappingEvidence : explanation
-        
+
       MappingEvidence : notes
-        
+
       MappingEvidence : pmid
-        
+
       MappingEvidence : snippet
-        
+
       MappingEvidence : source
-        
+
       MappingEvidence : supports
-        
-          
-    
-        
-        
+
+
+
+
+
         MappingEvidence --> "0..1" EvidenceSupportEnum : supports
         click EvidenceSupportEnum href "../EvidenceSupportEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -70,6 +81,7 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+| [evidence_source](evidence_source.md) | 0..1 <br/> [EvidenceSourceEnum](EvidenceSourceEnum.md) | Study or data-source type behind the cited evidence, not the curation method ... | direct |
 | [evidence_type](evidence_type.md) | 1 <br/> [EvidenceTypeEnum](EvidenceTypeEnum.md) | Type of evidence | direct |
 | [source](source.md) | 0..1 <br/> [String](String.md) | Source of evidence (e | direct |
 | [confidence_score](confidence_score.md) | 0..1 <br/> [Float](Float.md) | Confidence score (0 | direct |
@@ -136,6 +148,18 @@ name: MappingEvidence
 description: Evidence for an ontology mapping
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
+  evidence_source:
+    name: evidence_source
+    description: Study or data-source type behind the cited evidence, not the curation
+      method or the location of a quote. Omit when unknown; never infer from a PMID,
+      DOI, or whether an LLM assisted curation.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - MappingEvidence
+    - ComponentEvidence
+    - SupportingReference
+    range: EvidenceSourceEnum
   evidence_type:
     name: evidence_type
     description: Type of evidence
@@ -247,6 +271,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingEvidence
+    - ComponentEvidence
     - SupportingReference
     range: EvidenceSupportEnum
   explanation:
@@ -275,6 +300,20 @@ name: MappingEvidence
 description: Evidence for an ontology mapping
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
+  evidence_source:
+    name: evidence_source
+    description: Study or data-source type behind the cited evidence, not the curation
+      method or the location of a quote. Omit when unknown; never infer from a PMID,
+      DOI, or whether an LLM assisted curation.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: evidence_source
+    owner: MappingEvidence
+    domain_of:
+    - MappingEvidence
+    - ComponentEvidence
+    - SupportingReference
+    range: EvidenceSourceEnum
   evidence_type:
     name: evidence_type
     description: Type of evidence
@@ -410,6 +449,7 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - MappingEvidence
+    - ComponentEvidence
     - SupportingReference
     range: EvidenceSupportEnum
   explanation:

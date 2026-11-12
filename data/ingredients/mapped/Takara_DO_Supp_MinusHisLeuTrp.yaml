@@ -42,6 +42,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002447; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   4 CultureBot media; samples: Xantho MME glucose dropout LTH, MMX dropout, MMX_dropout….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a commercial dropout
@@ -62,3 +68,7 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+mim_id: MIM:0002447
+legacy_identifiers:
+- MIM:Takara_DO_Supp_MinusHisLeuTrp
+- kgmicrobe.ingredient:takara_do_supp_minushisleutrp

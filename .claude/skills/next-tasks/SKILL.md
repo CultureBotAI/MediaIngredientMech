@@ -87,10 +87,11 @@ MIM-specific traps when judging "done":
   have pointed at unrelated compounds (a PubChem CID wearing a `CHEBI:` prefix;
   `CHEBI:86457` for "MnCl .4H O", which is 2-hydroxybenzoyl-AMP). Before marking
   a mapping item DONE, resolve the id's real label — `just curie-check <CURIE>`.
-- **`MIM:<name>` is not rename-stable.** It derives from the YAML filename and
-  205 renames have already retired CURIEs. If an item cites one, resolve it
-  through `mappings/mim_curie_aliases.tsv` before concluding it's missing. See
-  `docs/CURIE_STANDARD.md`.
+- **Permanent `MIM:<seven-digit-id>` values survive renames.** Older issues
+  may cite filename-derived `MIM:<name>` aliases. Resolve those through the
+  registry/current-corpus lookup and `mappings/mim_curie_aliases.tsv` before
+  concluding a record is missing. An ambiguous alias needs investigation;
+  never select one of its records silently. See `docs/CURIE_STANDARD.md`.
 
 ### Step 2 — Present the menu
 

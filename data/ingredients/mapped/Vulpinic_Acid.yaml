@@ -38,6 +38,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002635; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 521-52-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +52,7 @@ chemical_properties:
   inchi: InChI=1S/C19H14O5/c1-23-18(21)15(13-10-6-3-7-11-13)17-16(20)14(19(22)24-17)12-8-4-2-5-9-12/h2-11,20H,1H3/b17-15+
   smiles: COC(=O)/C(=C1/OC(=O)C(c2ccccc2)=C1O)c1ccccc1
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002635
+legacy_identifiers:
+- MIM:Vulpinic_Acid
+- CHEBI:144250

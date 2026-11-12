@@ -9,6 +9,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.stable_id_helpers import current_subject, legacy_registry_slug
+
 REPO = Path(__file__).resolve().parents[1]
 
 CAS_REGROUNDINGS = {
@@ -86,7 +88,7 @@ def test_salt_forms_publish_parent_cas_and_kgm_identity_rows(
         assert cas_row["object_source"] == "registry:cas"
         assert identifier in _other_tokens(cas_row)
 
-        subject_slug = parent_row["subject_id"].removeprefix("MIM:")
+        subject_slug = legacy_registry_slug(parent_row["subject_id"])
         kgm_row = by_label[label][f"kgmicrobe.compound:{subject_slug.lower()}"]
         assert kgm_row["predicate_id"] == "skos:exactMatch"
         assert kgm_row["object_source"] == "kgm:compound"
@@ -157,7 +159,7 @@ def test_potassium_tellurite_subject_matches_renamed_file(
     rows = [row for row in sssom_rows if row["subject_label"] == "potassium tellurite"]
 
     assert len(rows) == 1
-    assert rows[0]["subject_id"] == "MIM:Potassium_Tellurite"
+    assert rows[0]["subject_id"] == current_subject("MIM:Potassium_Tellurite")
     assert rows[0]["predicate_id"] == "skos:exactMatch"
     assert rows[0]["object_id"] == "CHEBI:75248"
     assert "cas:7790-58-1" in _other_tokens(rows[0])

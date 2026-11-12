@@ -1,0 +1,78 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_complete_graph_and_negative_review_replay_against_fixed_baseline _____
+
+tmp_path = PosixPath('<repo>/.temp/hermetic-graph-1281-mutation/native_export_removed/pytest/test_complete_graph_and_negati0')
+
+    def test_complete_graph_and_negative_review_replay_against_fixed_baseline(tmp_path):
+        # #1281 (2026-11-08): CI has no ignored output/mim-kgx-710-full bundle.
+        # Share only immutable Git objects, then copy the declared current inputs.
+        # Native generation and all proof/path/recheck calls run without mocks.
+        import subprocess
+    
+        from mediaingredientmech.export.kgx import export_graph
+    
+        root = tmp_path / "repository"
+        subprocess.run(
+            ["git", "clone", "--shared", "--no-checkout", "--quiet", str(ROOT), str(root)],
+            check=True, capture_output=True,
+        )
+        original = ip.document((ROOT / graph.OLD_REVIEW).read_bytes())
+        inputs = {
+            *ip.record_paths(ROOT), ip.MANIFEST, ip.SOURCE, ip.REGISTRY, ip.LIFECYCLE,
+            graph.OLD_REVIEW,
+            *(f"data/curated/{group}_ingredients.yaml" for group in ("mapped", "unmapped")),
+            *(graph.ARCHIVE + name + ".gz" for name in graph.GRAPH_FILES),
+            *(name for name in original["inputs"] if name.startswith("reports/")),
+            *(name for name in original["record_inputs"] if name.startswith("reports/")),
+        }
+    
+        def copy_input(name):
+            target = ip.safe_path(root, name)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(ip.safe_path(ROOT, name).read_bytes())
+    
+        for name in sorted(inputs):
+            copy_input(name)
+        isolated_bundle = root / graph.BUNDLE
+        assert not isolated_bundle.exists()
+    
+        proof = ip.prove_identity_migration(root)
+>       outputs = graph.products(proof)
+                  ^^^^^^^^^^^^^^^^^^^^^
+
+test_graph.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../src/mediaingredientmech/identity_projection_graph.py:239: in products
+    name: safe_path(proof.root, BUNDLE + "/" + name).read_bytes() for name in GRAPH_FILES
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<home>/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<repo>/.temp/hermetic-graph-1281-mutation/native_export_removed/pytest/test_complete_graph_and_negati0/repository/output/mim-kgx-710-full/manifest.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<repo>/.temp/hermetic-graph-1281-mutation/native_export_removed/pytest/test_complete_graph_and_negati0/repository/output/mim-kgx-710-full/manifest.json'
+
+<home>/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+=============================== warnings summary ===============================
+: 12 warnings
+  <repo>/.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../../../../../../../../dev::test_complete_graph_and_negative_review_replay_against_fixed_baseline
+1 failed, 12 warnings in 4.67s

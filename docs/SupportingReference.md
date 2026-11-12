@@ -142,6 +142,7 @@ attributes:
     from_schema: https://w3id.org/kg-microbe/mech-shared
     domain_of:
     - MappingEvidence
+    - ComponentEvidence
     - SupportingReference
     range: SupportLevelEnum
   evidence_source:
@@ -149,8 +150,9 @@ attributes:
     description: How the snippet was obtained (e.g. abstract, full_text, figure, supplement,
       database). Free-form to stay self-contained.
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     domain_of:
+    - MappingEvidence
+    - ComponentEvidence
     - SupportingReference
   snippet:
     name: snippet
@@ -229,6 +231,7 @@ attributes:
     owner: SupportingReference
     domain_of:
     - MappingEvidence
+    - ComponentEvidence
     - SupportingReference
     range: SupportLevelEnum
   evidence_source:
@@ -236,10 +239,11 @@ attributes:
     description: How the snippet was obtained (e.g. abstract, full_text, figure, supplement,
       database). Free-form to stay self-contained.
     from_schema: https://w3id.org/kg-microbe/mech-shared
-    rank: 1000
     alias: evidence_source
     owner: SupportingReference
     domain_of:
+    - MappingEvidence
+    - ComponentEvidence
     - SupportingReference
     range: string
   snippet:

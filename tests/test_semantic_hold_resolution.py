@@ -11,7 +11,10 @@ from pathlib import Path
 import pytest
 import yaml
 
-from mediaingredientmech.export.kgx import build_graph
+from types import SimpleNamespace
+from mediaingredientmech.identity_projection import record_paths, sha
+from mediaingredientmech.identity_projection_graph import old_graph, read_table, OLD_REVIEW, OLD_REVIEW_SHA
+from tests.pre_mint_state import fixed_base_reads
 from mediaingredientmech.validation import mapping_change_receipts as receipts
 from mediaingredientmech.validation import semantic_release as gate
 
@@ -31,12 +34,18 @@ def load_module(name, path):
 builder = load_module("hold_resolution_builder", BUILDER_PATH)
 
 
+@pytest.fixture(scope="module", autouse=True)
+def historical_inputs():
+    with fixed_base_reads(ROOT, record_paths(ROOT, historical=True) + ["mappings/ingredient_mappings.sssom.tsv"]):
+        yield
+
+
 @cache
 def current_hold_projection():
-    """Recompute the production projection and receipt lineage from tracked inputs.
+    """Replay the exact pre-mint graph and independently recompute receipt lineage.
 
-    Cache the read-only corpus work, then copy mutable test cases below. Neither
-    ignored graph exports nor the report's saved lineage are fixture authority.
+    The original report pins the retained graph bytes; no ignored export or saved
+    lineage grants authority. Tests copy mutable cases after this bounded replay.
     """
     document = json.loads((BUILDER_PATH.parent / "release-holds.json").read_text())
     resolution = next(r for r in document["resolutions"] if r["hold_id"] == HOLD_ID)
@@ -49,7 +58,18 @@ def current_hold_projection():
         )
     hashes = {owner: gate.sha(ROOT / owner)}
     current = gate.current_assertions({owner: record}, mappings, hashes, gate.sha(source))
-    graph, _, _ = build_graph(ROOT)
+    # The original negative-review contract applies to its exact pre-mint graph.
+    # Replay the retained bytes bound by that unchanged scientific authority.
+    original_raw = (ROOT / OLD_REVIEW).read_bytes()
+    assert sha(original_raw) == OLD_REVIEW_SHA
+    original = json.loads(original_raw)
+    frozen, _ = old_graph(SimpleNamespace(root=ROOT))
+    assert sha(frozen["manifest.json"]) == original["inputs"][original["bundle"] + "/manifest.json"]
+    manifest = json.loads(frozen["manifest.json"])
+    for name in ("mim_nodes.tsv", "mim_edges.tsv"):
+        assert sha(frozen[name]) == manifest["members"][name]["sha256"]
+    graph = SimpleNamespace(nodes={row["id"]: row for row in read_table(frozen["mim_nodes.tsv"])},
+                            edges=read_table(frozen["mim_edges.tsv"]))
     owners = {
         node["id"]: node["source_record"]
         for node in graph.nodes.values()

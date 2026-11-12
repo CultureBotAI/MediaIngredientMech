@@ -191,7 +191,7 @@ def load_original(module):
 
 
 @pytest.mark.parametrize("module", [LABELS, CORRECTION])
-def test_restored_fixture_still_rejects_subsequent_anchor_corruption(tmp_path, module):
+def test_restored_fixture_still_rejects_subsequent_anchor_corruption(tmp_path, module, pre_mint_schema_case):
     original = load_original(module)
     if module == LABELS:
         case = original.case.__wrapped__(tmp_path, original.writer.frozen_owners())
@@ -225,3 +225,42 @@ def test_original_test_module_identity_is_required_before_fixture_access(tmp_pat
     )
     with pytest.raises(ValueError, match="Historical test.*changed|module is aliased"):
         anchors.restore_requested_case(request, repository_root=repository)
+
+
+@pytest.mark.parametrize("module", [LABELS, CORRECTION])
+def test_historical_schema_is_only_requested_for_exact_hash_bound_modules(module):
+    called = []
+    request = SimpleNamespace(path=ROOT / module, getfixturevalue=called.append)
+    assert anchors.use_historical_schema(request)
+    assert called == ["pre_mint_schema"]
+
+
+def test_current_modules_never_request_historical_schema():
+    request = SimpleNamespace(
+        path=ROOT / "tests/test_stable_ids.py",
+        getfixturevalue=lambda _: pytest.fail("Current schema was redirected"),
+    )
+    assert not anchors.use_historical_schema(request)
+
+
+def test_modified_historical_module_cannot_select_old_schema(tmp_path):
+    path = tmp_path / CORRECTION
+    path.parent.mkdir(parents=True)
+    path.write_bytes((ROOT / CORRECTION).read_bytes() + b"\n# changed test\n")
+    request = SimpleNamespace(
+        path=path,
+        getfixturevalue=lambda _: pytest.fail("Schema selected before content check"),
+    )
+    with pytest.raises(ValueError, match="Historical test changed"):
+        anchors.use_historical_schema(request, repository_root=tmp_path)
+
+
+def test_frozen_schema_context_does_not_relax_current_required_identity():
+    from mediaingredientmech.validation.write_validated import validate_ingredient
+    from tests.pre_mint_schema import historical_schema
+
+    old_record = {"identifier": "CHEBI:15377", "preferred_term": "Water", "mapping_status": "MAPPED"}
+    assert any("mim_id" in error.message for error in validate_ingredient(old_record))
+    with historical_schema():
+        assert validate_ingredient(old_record) == []
+    assert any("mim_id" in error.message for error in validate_ingredient(old_record))

@@ -8,6 +8,10 @@ from copy import deepcopy
 from pathlib import Path
 
 import pytest
+
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
 import yaml
 
 from mediaingredientmech import ingredient_bundle_refresh as refresh
@@ -1283,6 +1287,8 @@ def test_issue1133_real_six_rows_replay_immutable_prefix_without_feature_history
         (directory / "proposed/ingredient_mappings.sssom.tsv").read_bytes(),
     )
     proof = policy.verify_mapping_chain(root)
+    from tests.historical_review_root import historical_review_bytes
+    historical = historical_review_bytes()
     for item in examples:
         policy._continued_form_evidence(
             item["before"],
@@ -1290,7 +1296,7 @@ def test_issue1133_real_six_rows_replay_immutable_prefix_without_feature_history
             item["position"],
             item["before"]["owner_record_sha256"],
             proof,
-            lambda p: (ROOT / p).read_bytes(),
+            lambda p: historical[p],
         )
         assert item["before"]["disposition"] == item["after"]["disposition"] == "SUPPORTED"
 

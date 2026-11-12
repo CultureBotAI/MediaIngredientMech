@@ -31,6 +31,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0075 -> kgmicrobe.ingredient:boron_stock "Boron Stock"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000517; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 9; reviewed on 2026-05-11 as a named boron stock
   solution pending component-level recipe curation.'
 ingredient_type: STOCK_SOLUTION
@@ -49,3 +55,7 @@ ontology_mapping:
       substance. Takes the STOCK_SOLUTION convention used by the existing mapped records:
       a kgmicrobe.ingredient: mint, with no parent because a multi-component mix does
       not narrow to any single compound (#114).'
+mim_id: MIM:0000517
+legacy_identifiers:
+- MIM:Boron_Stock
+- kgmicrobe.ingredient:boron_stock

@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002372; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 334-50-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C7H19N3.3ClH/c8-4-1-2-6-10-7-3-5-9;;;/h10H,1-9H2;3*1H
   smiles: Cl.Cl.Cl.NCCCCNCCCN
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002372
+legacy_identifiers:
+- MIM:Spermidine_Trihydrochloride
+- CHEBI:233088

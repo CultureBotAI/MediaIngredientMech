@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from functools import lru_cache
 import os
 import re
 import sys
@@ -70,6 +71,11 @@ def infer_target_class(instance: dict) -> str:
 # Per-worker singleton — built lazily after fork so the schema parses once per
 # worker process, not once per file.
 _VALIDATOR: Validator | None = None
+
+
+@lru_cache(maxsize=1)
+def _snapshot_validator(schema: Path) -> Validator:
+    return Validator(schema=str(schema), validation_plugins=[JsonschemaValidationPlugin(closed=True)])
 
 
 def _get_validator() -> Validator:
@@ -115,7 +121,14 @@ def classify(message: str) -> tuple[str, str]:
 
 def validate_one(path: Path) -> list[dict]:
     """Validate a single YAML file. Returns one dict per ERROR result."""
-    validator = _get_validator()
+    sys.path.insert(0, str(_REPO_ROOT / "src"))
+    from mediaingredientmech.validation.historical_snapshots import historical_schema
+    try:
+        historical = historical_schema(path, _REPO_ROOT)
+    except (ValueError, OSError) as exc:
+        return [{"file": str(path), "layer": "schema", "category": "historical_snapshot_changed",
+                 "detail": "", "path": "", "message": str(exc)}]
+    validator = _snapshot_validator(historical) if historical else _get_validator()
     try:
         with path.open() as f:
             instance = yaml.safe_load(f)

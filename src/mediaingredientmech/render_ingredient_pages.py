@@ -26,6 +26,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup
 
 from mediaingredientmech.micro_source import source_term
+from mediaingredientmech.stable_ids import resolver_url
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INGREDIENTS = REPO_ROOT / "data" / "ingredients"
@@ -55,6 +56,11 @@ def curie_to_url(curie: str | None) -> str:
     if not curie or ":" not in curie:
         return ""
     prefix, local = curie.split(":", 1)
+    if prefix == "MIM":
+        try:
+            return resolver_url(curie)
+        except ValueError:
+            return ""
     if prefix == "MICRO" and (term := source_term(curie)):
         return "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/" + quote(
             quote(term.iri, safe=""), safe=""

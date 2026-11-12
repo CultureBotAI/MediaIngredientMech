@@ -52,6 +52,7 @@ def generate_json_index(
     for record in records:
         entry = {
             'identifier': record.get('identifier'),
+            'mim_id': record.get('mim_id'),
             'preferred_term': record.get('preferred_term'),
             'mapping_status': record.get('mapping_status'),
             'occurrences': _total_occurrences(record, counts_by_id),
@@ -92,6 +93,7 @@ def generate_csv_index(
             'ontology_source',
             'mapping_quality',
             'occurrences',
+            'mim_id',
         ])
 
         # Rows
@@ -105,6 +107,7 @@ def generate_csv_index(
                 om.get('ontology_source', ''),
                 om.get('mapping_quality', ''),
                 _total_occurrences(record, counts_by_id),
+                record.get('mim_id', ''),
             ])
 
     print(f"✓ Created {output_path} ({len(records)} records)")

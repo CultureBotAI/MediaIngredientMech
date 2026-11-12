@@ -203,7 +203,7 @@ class IngredientUMAPGenerator:
                     if ingredient.get('mapping_status') == 'REJECTED':
                         continue
                     ingredient_id = ingredient.get('identifier', '')
-                    record_key = mim_curie_for_stem(yaml_file.stem)
+                    record_key = ingredient.get("mim_id") or mim_curie_for_stem(yaml_file.stem)
                     found_embedding = False
 
                     # Strategy 1: Try direct identifier match
@@ -380,7 +380,7 @@ def build_visualization_data(
                 continue
             if ing.get('mapping_status') == 'REJECTED':
                 continue
-            record_key = mim_curie_for_stem(candidate.stem)
+            record_key = ing.get("mim_id") or mim_curie_for_stem(candidate.stem)
             if record_key in records_by_key:
                 raise ValueError(f"Duplicate visualization record key: {record_key}")
             records_by_key[record_key] = (ing, category, candidate)

@@ -58,6 +58,8 @@ def export_bundle(root: Path, review_path: Path, output: Path) -> dict:
         **{"sources/" + name: value for name, value in sources.items()},
     }
     required = set(REQUIRED_CAPABILITIES)
+    if "identity_projection" in review:
+        required.add("identity-projection-v1")
     if loaded["products"]:
         required.add("catalog-products-v1")
     if loaded["occurrences"]:

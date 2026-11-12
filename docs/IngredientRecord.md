@@ -1,6 +1,6 @@
 
 
-# Class: IngredientRecord 
+# Class: IngredientRecord
 
 
 _Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with a primary ontology, registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier, awaits curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
@@ -20,238 +20,242 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
     class IngredientRecord
     click IngredientRecord href "../IngredientRecord/"
       IngredientRecord : causal_graphs
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CausalGraph : causal_graphs
         click CausalGraph href "../CausalGraph/"
-    
 
-        
+
+
       IngredientRecord : cellular_metabolic_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CellularMetabolicRoleAssignment : cellular_metabolic_roles
         click CellularMetabolicRoleAssignment href "../CellularMetabolicRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : chemical_properties
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" ChemicalProperties : chemical_properties
         click ChemicalProperties href "../ChemicalProperties/"
-    
 
-        
+
+
       IngredientRecord : community_organism_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CommunityOrganismRoleAssignment : community_organism_roles
         click CommunityOrganismRoleAssignment href "../CommunityOrganismRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : component_assertion
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" ComponentAssertion : component_assertion
         click ComponentAssertion href "../ComponentAssertion/"
-    
 
-        
+
+
       IngredientRecord : components
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" StockComponent : components
         click StockComponent href "../StockComponent/"
-    
 
-        
+
+
       IngredientRecord : culturemech_reference
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" CultureMechReference : culturemech_reference
         click CultureMechReference href "../CultureMechReference/"
-    
 
-        
+
+
       IngredientRecord : curation_history
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CurationEvent : curation_history
         click CurationEvent href "../CurationEvent/"
-    
 
-        
+
+
       IngredientRecord : datasets
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" Dataset : datasets
         click Dataset href "../Dataset/"
-    
 
-        
+
+
       IngredientRecord : discussions
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" Discussion : discussions
         click Discussion href "../Discussion/"
-    
 
-        
+
+
       IngredientRecord : environmental_context
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" EnvironmentContext : environmental_context
         click EnvironmentContext href "../EnvironmentContext/"
-    
 
-        
+
+
       IngredientRecord : identifier
-        
+
       IngredientRecord : ingredient_type
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" IngredientTypeEnum : ingredient_type
         click IngredientTypeEnum href "../IngredientTypeEnum/"
-    
 
-        
+
+
       IngredientRecord : kg_microbe_node_id
-        
+
+      IngredientRecord : legacy_identifiers
+
       IngredientRecord : mapping_status
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "1" MappingStatusEnum : mapping_status
         click MappingStatusEnum href "../MappingStatusEnum/"
-    
 
-        
+
+
       IngredientRecord : merged
-        
+
+      IngredientRecord : mim_id
+
       IngredientRecord : notes
-        
+
       IngredientRecord : nutritional_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" NutritionalRoleAssignment : nutritional_roles
         click NutritionalRoleAssignment href "../NutritionalRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : occurrence_statistics
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" OccurrenceStats : occurrence_statistics
         click OccurrenceStats href "../OccurrenceStats/"
-    
 
-        
+
+
       IngredientRecord : ontology_mapping
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" OntologyMapping : ontology_mapping
         click OntologyMapping href "../OntologyMapping/"
-    
 
-        
+
+
       IngredientRecord : physicochemical_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" PhysicochemicalRoleAssignment : physicochemical_roles
         click PhysicochemicalRoleAssignment href "../PhysicochemicalRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : preferred_term
-        
+
       IngredientRecord : representative
-        
+
       IngredientRecord : solution_type
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" SolutionTypeEnum : solution_type
         click SolutionTypeEnum href "../SolutionTypeEnum/"
-    
 
-        
+
+
       IngredientRecord : supplied_form
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" SuppliedForm : supplied_form
         click SuppliedForm href "../SuppliedForm/"
-    
 
-        
+
+
       IngredientRecord : synonyms
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" IngredientSynonym : synonyms
         click IngredientSynonym href "../IngredientSynonym/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -264,7 +268,9 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [identifier](identifier.md) | 1 <br/> [String](String.md) | Semantic identifier for the record and its LinkML identifier slot, but not a ... | direct |
+| [mim_id](mim_id.md) | 1 <br/> [String](String.md) | Permanent opaque record identifier from the append-only MIM registry | direct |
+| [legacy_identifiers](legacy_identifiers.md) | * <br/> [String](String.md) | Preserved former identifiers and slug-based aliases | direct |
+| [identifier](identifier.md) | 1 <br/> [String](String.md) | Chemical/material mapping identifier retained independently of the permanent ... | direct |
 | [preferred_term](preferred_term.md) | 1 <br/> [String](String.md) | Canonical name for this ingredient | direct |
 | [ontology_mapping](ontology_mapping.md) | 0..1 <br/> [OntologyMapping](OntologyMapping.md) | Ontology term mapping (CHEBI/FOODON) | direct |
 | [synonyms](synonyms.md) | * <br/> [IngredientSynonym](IngredientSynonym.md) | Alternative names and raw text variants | direct |
@@ -307,7 +313,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 ## Rules
 
 
-### 
+###
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -315,7 +321,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-### 
+###
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -323,7 +329,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-### 
+###
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -331,7 +337,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-### 
+###
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -386,20 +392,38 @@ description: Core record for a media ingredient with ontology mapping, synonyms,
   in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
-  identifier:
-    name: identifier
-    description: 'Semantic identifier for the record and its LinkML identifier slot,
-      but not a guaranteed unique document address: reviewed duplicate families may
-      share a CURIE. For mapped ingredients this is the primary ontology, registry,
-      or local identity (e.g. `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
-      for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The
-      nested `ontology_mapping.ontology_id` is a grounding target: it equals `identifier`
-      when the identifier itself names the grounded ontology term, but registry or
-      local identities may legitimately differ from the ontology target at any evidence-backed
-      mapping quality.'
+  mim_id:
+    name: mim_id
+    description: Permanent opaque record identifier from the append-only MIM registry.
+      Preserved through name, filename, mapping and status changes; never reused.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
+    domain_of:
+    - IngredientRecord
+    required: true
+    pattern: ^MIM:(?!0000000)[0-9]{7}(?![\s\S])
+  legacy_identifiers:
+    name: legacy_identifiers
+    description: Preserved former identifiers and slug-based aliases. Aliases may
+      be shared by distinct records and must not be used as unique record keys.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    multivalued: true
+  identifier:
+    name: identifier
+    description: 'Chemical/material mapping identifier retained independently of the
+      permanent mim_id. Reviewed duplicate families may share this CURIE. For mapped
+      ingredients this is the primary ontology, registry, or local identity (e.g.
+      `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped
+      ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested `ontology_mapping.ontology_id`
+      is a grounding target: it equals `identifier` when the identifier itself names
+      the grounded ontology term, but registry or local identities may legitimately
+      differ from the ontology target at any evidence-backed mapping quality.'
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     domain_of:
     - IngredientRecord
     - CrossCorpusLink
@@ -792,20 +816,44 @@ description: Core record for a media ingredient with ontology mapping, synonyms,
   in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
-  identifier:
-    name: identifier
-    description: 'Semantic identifier for the record and its LinkML identifier slot,
-      but not a guaranteed unique document address: reviewed duplicate families may
-      share a CURIE. For mapped ingredients this is the primary ontology, registry,
-      or local identity (e.g. `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
-      for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The
-      nested `ontology_mapping.ontology_id` is a grounding target: it equals `identifier`
-      when the identifier itself names the grounded ontology term, but registry or
-      local identities may legitimately differ from the ontology target at any evidence-backed
-      mapping quality.'
+  mim_id:
+    name: mim_id
+    description: Permanent opaque record identifier from the append-only MIM registry.
+      Preserved through name, filename, mapping and status changes; never reused.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
+    alias: mim_id
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: string
+    required: true
+    pattern: ^MIM:(?!0000000)[0-9]{7}(?![\s\S])
+  legacy_identifiers:
+    name: legacy_identifiers
+    description: Preserved former identifiers and slug-based aliases. Aliases may
+      be shared by distinct records and must not be used as unique record keys.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: legacy_identifiers
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: string
+    multivalued: true
+  identifier:
+    name: identifier
+    description: 'Chemical/material mapping identifier retained independently of the
+      permanent mim_id. Reviewed duplicate families may share this CURIE. For mapped
+      ingredients this is the primary ontology, registry, or local identity (e.g.
+      `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped
+      ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested `ontology_mapping.ontology_id`
+      is a grounding target: it equals `identifier` when the identifier itself names
+      the grounded ontology term, but registry or local identities may legitimately
+      differ from the ontology target at any evidence-backed mapping quality.'
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     alias: identifier
     owner: IngredientRecord
     domain_of:

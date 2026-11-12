@@ -75,6 +75,12 @@ curation_history:
     review independently identified that same expanded reagent. Preserved the raw
     and Sigma catalog labels as synonyms; no new SSSOM row is required.
   llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001262; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 202185-84-0
   data_source: CultureBotHT compounds_to_cas.csv
@@ -91,3 +97,7 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+mim_id: MIM:0001262
+legacy_identifiers:
+- MIM:HOMOPIPES
+- cas:202185-84-0

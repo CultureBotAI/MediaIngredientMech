@@ -121,11 +121,11 @@ qc-supported-kgx report output="output/mim-supported-kgx":
     uv run --frozen python -m mediaingredientmech.export.supported_kgx --root . --report "$1" --output "$2" --validate-only
 
 # Standalone reviewed mappings with complete dispositions and a separate backlog.
-export-reviewed-sssom report="reports/sssom_completion_20260921/review.json" output="output/mim-reviewed-sssom":
+export-reviewed-sssom report="reports/stable_ids_1265_20261108/mapping-review.json" output="output/mim-reviewed-sssom":
     uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2"
 
-qc-reviewed-sssom report="reports/sssom_completion_20260921/review.json" output="output/mim-reviewed-sssom":
-    uv run --frozen python reports/sssom_completion_20260921/assemble_review.py --check
+qc-reviewed-sssom report="reports/stable_ids_1265_20261108/mapping-review.json" output="output/mim-reviewed-sssom":
+    uv run --frozen python -m mediaingredientmech.identity_projection --check
     uv run --frozen python -m mediaingredientmech.export.reviewed_sssom --root . --review "$1" --output "$2" --validate-only
     uv run --frozen python scripts/validate_reviewed_sssom_schema.py "$2"
 
@@ -177,6 +177,10 @@ rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="..
 # Fail if a raw label MIM knows is unresolvable from docs/data/
 qc-flat-coverage:
     uv run --frozen python scripts/check_flat_export_coverage.py
+
+# Read-only stable identity inventory; supply a full trusted base for history.
+qc-stable-ids base="":
+    uv run python scripts/validate_stable_ids.py {{if base != "" { "--require-history --base " + quote(base) } else { "" }}}
 
 # `identifier` is a semantic identity, not a unique record address. Reviewed
 # families may share one, but a new or changed family still needs an explicit
@@ -293,7 +297,7 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-kg-microbe-node-ids qc-component-partonomy qc-flat-coverage check-instruction-refs check-curation-targets
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-stable-ids qc-kg-microbe-node-ids qc-component-partonomy qc-flat-coverage check-instruction-refs check-curation-targets
 
 # Section 3 makes a hydration state a distinct substance, but the id-label gate
 # cannot see violations: its plausible waiver compares ontology_id against the

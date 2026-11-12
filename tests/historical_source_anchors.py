@@ -70,6 +70,24 @@ def frozen_anchors(archive=ARCHIVE):
     return result
 
 
+def use_historical_schema(request, *, repository_root=ROOT):
+    """Use pre-mint validation only for the exact two immutable replay modules.
+
+    Registering the fixture does not change current validation. This explicit
+    path-and-content gate avoids editing these modules, themselves review inputs.
+    """
+    module_path = Path(request.path)
+    matching = [
+        info for name, info in MODULES.items() if module_path == repository_root / name
+    ]
+    if not matching:
+        return False
+    require(module_path == module_path.resolve(), "Historical test module is aliased")
+    require(digest(module_path.read_bytes()) == matching[0]["sha256"], "Historical test changed")
+    request.getfixturevalue("pre_mint_schema")
+    return True
+
+
 def restore_requested_case(request, *, repository_root=ROOT, archive=ARCHIVE):
     """Restore only hash-bound modules' requested cases in their own tmp_path."""
     if "case" not in request.fixturenames:

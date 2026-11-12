@@ -68,8 +68,10 @@ def test_verified_micro_id_passes(n):
 def test_renamed_mim_curie_still_resolves(n):
     """The exact case from issue #119: a case-only rename retired a CURIE."""
     v = n.resolve("MIM:1-Naphtylacetic_Acid")
-    assert v and v.curie == "MIM:1-naphtylacetic_Acid"
-    assert "renamed" in v.note
+    current = n.resolve("MIM:1-naphtylacetic_Acid")
+    assert v and current and v.curie == current.curie
+    assert v.curie in n._records
+    assert "legacy" in v.note
 
 
 def test_unknown_mim_subject_is_rejected(n):
@@ -85,7 +87,7 @@ def test_alias_map_targets_are_all_live(n):
     an SSSOM subject.
     """
     dangling = [(old, new) for old, new in n._aliases.items()
-                if new not in n._records]
+                if not n.resolve(new) and n.resolve(new).problem != "AMBIGUOUS_ALIAS"]
     assert not dangling, f"alias map points at missing records: {dangling[:5]}"
 
 

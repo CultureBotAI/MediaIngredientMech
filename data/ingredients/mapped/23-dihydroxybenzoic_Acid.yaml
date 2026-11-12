@@ -78,6 +78,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000097; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 2 FEBA media formulations.
 chemical_properties:
   cas_rn: 303-38-8
@@ -94,3 +100,7 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+mim_id: MIM:0000097
+legacy_identifiers:
+- MIM:23-dihydroxybenzoic_Acid
+- CHEBI:18026

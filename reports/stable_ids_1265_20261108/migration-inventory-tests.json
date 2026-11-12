@@ -1,0 +1,19 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1277",
+  "checked_at": "2026-11-08T23:00:07.640608+00:00",
+  "purpose": "Reject incomplete or changed initial-mint inventories without altering migration data or date semantics",
+  "command": "uv run --frozen python -m pytest tests/test_stable_id_migration.py tests/test_sssom_subset_dates.py -q --no-cov --disable-warnings",
+  "result": "23 passed",
+  "output_sha256": "4ccd5760c6213185eff58aec4008f0a8d76e48724fb908006798fbe8a38103c1",
+  "ruff": "all four changed Python files pass",
+  "current_inventory_records": 2956,
+  "migration_record_sssom_registry_and_lifecycle_postimage_hashes": "all unchanged",
+  "source_sha256": {
+    "scripts/adhoc/mint_stable_ids_1265.py": "e0c8a397ab7fc81a9db91c375d4d11c21fc8ad31f7769c72b6f1661c3ac49160",
+    "scripts/adhoc/check_migration_inventory_mutations_1277.py": "847fe76622b9f053a8a695c39385e1f75b763e46b5d6e561fad54b417b0367e1",
+    "tests/test_stable_id_migration.py": "462a2d0ca6a097456f7443384a40fb45d55d51021b10e57d674860f4038d88b1",
+    "tests/test_sssom_subset_dates.py": "1030001c61101c0e29079ca5d25e21aebf2e454aea023c35b22601576c5fa139"
+  },
+  "mutation_evidence": "reports/stable_ids_1265_20261108/migration-inventory-mutations.json",
+  "independent_review": "requested; final applied head pending"
+}

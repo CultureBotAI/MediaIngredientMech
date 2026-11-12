@@ -143,7 +143,8 @@ def stamp(artifact: Path, provenance: Path, inputs: Path) -> dict:
     return record
 
 
-def drift_since(rev: str, inputs: Path, repo: Path = _REPO) -> int | None:
+def drift_since(rev: str, inputs: Path, repo: Path = _REPO, *,
+                stamped_digest: str | None = None, stamped_count: int | None = None) -> int | None:
     """
     Return how many record files changed since `rev`, or None if unmeasurable.
 
@@ -181,7 +182,15 @@ def drift_since(rev: str, inputs: Path, repo: Path = _REPO) -> int | None:
     # is the commonest curation action -- thirty new records read as zero drift
     # without this (#657).
     untracked = _git("ls-files", "--others", "--exclude-standard", "--", str(relative))
-    return len(set(changed) | set(untracked or []))
+    candidates = set(changed) | set(untracked or [])
+    # Only the proved #1265 administrative address change is exempt. Existing
+    # scientific drift and later edits remain counted; the snapshot is not stamped.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+    from mediaingredientmech.identity_projection_frozen import eligible_identity_paths
+    exempt = (eligible_identity_paths(repo, sorted(candidates),
+              stamped_digest=stamped_digest, stamped_count=stamped_count)
+              if stamped_digest is not None and stamped_count is not None else set())
+    return len(candidates - exempt)
 
 
 def check(
@@ -232,7 +241,9 @@ def check(
     if digest == recorded.get("mim_inputs_digest"):
         return problems
 
-    drift = drift_since(str(recorded.get("mim_rev") or ""), inputs, repo)
+    drift = drift_since(str(recorded.get("mim_rev") or ""), inputs, repo,
+                        stamped_digest=recorded.get("mim_inputs_digest"),
+                        stamped_count=recorded.get("mim_record_count"))
     if drift is None:
         print(
             f"NOTE: data/ingredients has moved since the snapshot was stamped, and "

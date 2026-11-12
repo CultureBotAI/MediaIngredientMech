@@ -10,6 +10,10 @@ import sys
 
 import pytest
 
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
+
 from scripts import apply_owned_name_policy as w
 from scripts import promote_owned_name_policy as p
 

@@ -9,6 +9,10 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
+
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
 import yaml
 
 from mediaingredientmech import ingredient_bundle_refresh as refresh
@@ -61,10 +65,11 @@ def advance_unselected_generation(review, sources, new_date):
 
 
 @pytest.fixture(scope="module")
-def cohort():
+def cohort(pre_mint_schema):
     """Synthetic base review; no dependency on the live canonical header/date."""
     prior = read_json((ROOT / HISTORICAL).read_bytes())
-    before = {p: (ROOT / p).read_bytes() for p in refresh.source_names(prior)}
+    from tests.pre_mint_state import historical_bytes
+    before = dict(historical_bytes(ROOT, tuple(sorted(refresh.source_names(prior)))))
     archived = read_json(
         (ROOT / "reports/ingredient_bundle_20261101/dependency-refresh.json").read_bytes()
     )

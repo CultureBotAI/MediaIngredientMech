@@ -19,8 +19,18 @@ import browser_export  # noqa: E402
 
 from mediaingredientmech import render_ingredient_pages as render  # noqa: E402
 from mediaingredientmech.schema_site import write_schema_site  # noqa: E402
+from mediaingredientmech.stable_ids import (  # noqa: E402
+    LIFECYCLE_PATH,
+    REGISTRY_PATH,
+    load_registry,
+    resolve_id,
+    resolver_url,
+    validate_records,
+)
+from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 PACKAGE_ROOT = Path(render.__file__).resolve().parent
+VISUALIZATION_ASSETS = ("data/ingredient_umap.json", "data/ingredient_graph.json")
 
 
 def digest(path: Path) -> str:
@@ -35,11 +45,46 @@ def source_files(repo: Path) -> list[Path]:
     )
 
 
+def resolver_documents(repo: Path) -> dict[str, str]:
+    """Render one stable route per registered ID from the current corpus.
+
+    Source paths are looked up by immutable ID at every build. The registry's
+    original label and append-only lifecycle remain visible for retired IDs.
+    Existing filename routes are separately rendered without renaming them.
+    """
+    registry = load_registry(repo)
+    records = {path.relative_to(repo).as_posix(): load_yaml(path) for path in source_files(repo)}
+    validate_records(registry, records)
+    by_id = {record["mim_id"]: (repo / path, record) for path, record in records.items()}
+    states = registry.states
+    template = render.make_env().get_template("stable_resolver.html.j2")
+    documents = {}
+    for entry in registry.entries:
+        status, replacement = states[entry.mim_id]
+        target = entry.mim_id if status == "active" else resolve_id(registry, entry.mim_id)
+        source, record = by_id[target]
+        page = f"ingredient/{entry.mim_id.replace(':', '_')}/index.html"
+        documents[page] = template.render(
+            mim_id=entry.mim_id,
+            label=record["preferred_term"] if status == "active" else entry.label_at_minting,
+            status=status,
+            canonical_url=resolver_url(entry.mim_id),
+            detail_href=f"../../records/ingredient/{render.slug_for(record, source)}.html",
+            replacement=replacement,
+            replacement_href=f"../{replacement.replace(':', '_')}/" if replacement else "",
+            target=target,
+            target_href=f"../{target.replace(':', '_')}/",
+        )
+    return documents
+
+
 def build_inputs(repo: Path) -> dict[str, str]:
     files = {
         "builder": Path(__file__),
         "renderer": Path(render.__file__),
         "exporter": Path(browser_export.__file__),
+        REGISTRY_PATH.as_posix(): repo / REGISTRY_PATH,
+        LIFECYCLE_PATH.as_posix(): repo / LIFECYCLE_PATH,
     }
     files.update(
         {
@@ -67,6 +112,7 @@ def build_inputs(repo: Path) -> dict[str, str]:
                 "map-record-navigation.js",
                 "ingredient_umap.html",
                 "ingredient_graph.html",
+                *VISUALIZATION_ASSETS,
             )
         }
     )
@@ -86,6 +132,21 @@ def check_site(repo: Path, output: Path) -> None:
     receipt = json.loads((output / "records" / "build.json").read_text())
     if receipt["build_inputs"] != build_inputs(repo):
         raise ValueError("Site templates or build inputs are stale")
+    expected_resolvers = resolver_documents(repo)
+    if receipt.get("resolvers") != {
+        page: hashlib.sha256(html.encode("utf-8")).hexdigest()
+        for page, html in expected_resolvers.items()
+    }:
+        raise ValueError("Stable MIM resolver manifest is missing or stale")
+    actual_resolvers = {
+        path.relative_to(output).as_posix()
+        for path in (output / "ingredient").rglob("*.html")
+    }
+    if actual_resolvers != set(expected_resolvers):
+        raise ValueError("Missing or orphaned stable MIM resolver pages")
+    for page, checksum in receipt["resolvers"].items():
+        if digest(output / page) != checksum:
+            raise ValueError(f"Changed stable MIM resolver page: {page}")
     catalog = json.loads((output / "data" / "ingredients.json").read_text())
     catalog_rows = catalog["ingredients"]
     if len(catalog_rows) != len(sources) or {r["source_file"] for r in catalog_rows} != set(
@@ -98,6 +159,9 @@ def check_site(repo: Path, output: Path) -> None:
     expected_pages = set()
     for row in catalog_rows:
         source = sources[row["source_file"]]
+        ingredient = load_yaml(source)
+        if row.get("record_id") != ingredient["mim_id"] or row.get("stable_url") != resolver_url(ingredient["mim_id"]):
+            raise ValueError(f"Incorrect stable MIM identity: {row['source_file']}")
         expected = f"records/ingredient/{render.slug_for({}, source)}.html"
         if row.get("detail_page") != expected or expected in expected_pages:
             raise ValueError(f"Non-unique or incorrect detail URL: {row['source_file']}")
@@ -117,6 +181,7 @@ def check_site(repo: Path, output: Path) -> None:
         raise ValueError("Missing or orphaned ingredient pages")
     required_assets = {
         "data/ingredients.json",
+        *VISUALIZATION_ASSETS,
         "records/index.html",
         "records/style.css",
         "index.html",
@@ -149,6 +214,7 @@ def build_site(repo: Path, output: Path) -> int:
     urls = [render.slug_for({}, p) for p in files]
     if len(set(urls)) != len(urls):
         raise ValueError("Ingredient source names collide after slug normalization")
+    resolvers = resolver_documents(repo)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".mim-site-", dir=output.parent) as temporary:
         stage = Path(temporary) / "site"
@@ -156,6 +222,12 @@ def build_site(repo: Path, output: Path) -> int:
         # Never carry previously generated record pages forward into a fresh build.
         if (stage / "records").exists():
             raise ValueError("docs/records must not contain generated site output")
+        if (stage / "ingredient").exists():
+            raise ValueError("docs/ingredient must not contain generated stable resolver output")
+        for page, html in resolvers.items():
+            target = stage / page
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(html, encoding="utf-8")
         browser_export.export_ingredients_to_json(
             repo / "data" / "ingredients", stage / "data" / "ingredients.json"
         )
@@ -188,6 +260,7 @@ def build_site(repo: Path, output: Path) -> int:
         )
         asset_names = (
             "data/ingredients.json",
+            *VISUALIZATION_ASSETS,
             "records/index.html",
             "records/style.css",
             "index.html",
@@ -198,6 +271,7 @@ def build_site(repo: Path, output: Path) -> int:
         receipt = {
             "build_inputs": build_inputs(repo),
             "records": records,
+            "resolvers": {page: digest(stage / page) for page in resolvers},
             "assets": {
                 name: digest(stage / name)
                 for name in (*asset_names, "map-record-navigation.js", *schema_assets)

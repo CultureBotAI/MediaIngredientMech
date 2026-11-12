@@ -8,16 +8,17 @@ each of which had a wrong-but-plausible default (see issue #119):
    identifier, and a foreign identifier wearing an OBO prefix (a PubChem CID as
    ``CHEBI:10716816``) must not pass as a real term.
 
-2. **Has this MIM CURIE been renamed?** ``MIM:<name>`` is derived from the
-   ingredient YAML's filename, and filenames move — 205 renames to date. A
-   consumer holding an old CURIE needs it to still resolve.
+2. **Which permanent MIM ID does this reference identify?** Numeric IDs resolve
+   through the append-only registry and current corpus. Historical filename and
+   placeholder aliases remain usable only when they identify one record.
 
 3. **Which ontology term does a MIM ingredient "mean"?** 180 of 1,876 subjects
    carry more than one mapping (typically CHEBI + cas + kgmicrobe.compound), so
    this is a selection rule, not a lookup — and only ``skos:exactMatch`` rows are
    safe to treat as equivalences at all.
 
-Nothing here does network I/O; it reads the published SSSOM and alias map.
+Nothing here does network I/O; it reads the registry, current corpus, SSSOM and
+historical alias map. Shared ontology mappings do not choose between records.
 """
 
 from __future__ import annotations
@@ -100,11 +101,18 @@ EQUIVALENT_PREDICATES = {"skos:exactMatch"}
 _CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9_.]*):([A-Za-z0-9_.~%\-]+)$")
 
 
+def _numeric_mim_reference(value: str) -> str | None:
+    """Reserve all decimal MIM spellings for registry lookup, never aliases."""
+    prefix, separator, local = value.strip().partition(":")
+    if separator and prefix.casefold() == "mim" and local.isdecimal():
+        return f"MIM:{local}"
+    return None
+
+
 def mim_curie_for_stem(stem: str) -> str:
     """`MIM:<stem>` with non-URL-safe characters ~HEX escaped.
 
-    Must stay identical to build_mim_ingredient_sssom._mim_curie, or records on
-    disk will not line up with the CURIEs the SSSOM publishes.
+    This is a historical alias spelling, never a new permanent record ID.
     """
     safe = re.sub(r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", stem)
     return f"MIM:{safe}"
@@ -210,26 +218,50 @@ class Verdict:
 class CurieNormalizer:
     """Validate, canonicalise and resolve MIM-facing CURIEs."""
 
-    sssom_path: Path = SSSOM
-    alias_path: Path = ALIASES
+    sssom_path: Path | None = None
+    alias_path: Path | None = None
+    repo_root: Path | None = None
     _aliases: dict[str, str] = field(default_factory=dict, repr=False)
     _mappings: dict[str, list[tuple[str, str]]] = field(default_factory=dict, repr=False)
     _subjects: set[str] = field(default_factory=set, repr=False)
     _records: set[str] = field(default_factory=set, repr=False)
+    _alias_targets: dict[str, set[str]] = field(default_factory=dict, repr=False)
+    _resolved_ids: dict[str, str] = field(default_factory=dict, repr=False)
 
     def __post_init__(self) -> None:
-        # Known MIM CURIEs are the RECORDS on disk, not just the SSSOM subjects:
-        # unmapped records are legitimate ingredients that carry no mapping yet,
-        # so validating against the SSSOM alone would reject them.
+        from mediaingredientmech.stable_ids import load_registry, resolve_id, validate_records
+        from mediaingredientmech.utils.yaml_handler import load_yaml
+
+        root = self.repo_root or REPO
+        self.sssom_path = self.sssom_path or root / "mappings/ingredient_mappings.sssom.tsv"
+        self.alias_path = self.alias_path or root / "mappings/mim_curie_aliases.tsv"
+        self._registry = load_registry(root)
+        self._resolved_ids = {
+            identifier: identifier if status == "active" else resolve_id(self._registry, identifier)
+            for identifier, (status, _) in self._registry.states.items()
+        }
+        records = {}
         for sub in ("mapped", "unmapped"):
-            d = REPO / "data" / "ingredients" / sub
+            d = root / "data" / "ingredients" / sub
             if d.is_dir():
-                self._records |= {mim_curie_for_stem(p.stem) for p in d.glob("*.yaml")}
+                for path in sorted(d.glob("*.yaml")):
+                    records[path.relative_to(root).as_posix()] = load_yaml(path)
+        validate_records(self._registry, records)
+        for relative, record in records.items():
+            mim_id = record["mim_id"]
+            self._records.add(mim_id)
+            for alias in [
+                mim_curie_for_stem(Path(relative).stem),
+                *record.get("legacy_identifiers", []),
+            ]:
+                self._alias_targets.setdefault(alias, set()).add(mim_id)
         if self.alias_path.exists():
             with self.alias_path.open() as f:
-                self._aliases = {
-                    r["old_curie"]: r["current_curie"] for r in csv.DictReader(f, delimiter="\t")
-                }
+                for row in csv.DictReader(f, delimiter="\t"):
+                    old, target = row["old_curie"], row["current_curie"]
+                    if old in self._aliases and self._aliases[old] != target:
+                        raise ValueError(f"Conflicting historical MIM alias: {old}")
+                    self._aliases[old] = target
         if self.sssom_path.exists():
             with self.sssom_path.open() as f:
                 rows = csv.DictReader(
@@ -240,6 +272,13 @@ class CurieNormalizer:
                     o = (r.get("object_id") or "").strip()
                     p = (r.get("predicate_id") or "").strip()
                     if s and o:
+                        # A lifecycle redirect locates a replacement record; it
+                        # does not transfer the old record's mapping evidence.
+                        resolved = self._resolve_reference(s, follow_replacements=False)
+                        if not resolved:
+                            continue
+                        if resolved.curie.startswith("MIM:"):
+                            s = resolved.curie
                         self._mappings.setdefault(s, []).append((o, p))
                         self._subjects.add(s)
 
@@ -290,31 +329,86 @@ class CurieNormalizer:
     # ---- MIM identity ---------------------------------------------------
 
     def resolve(self, curie: str) -> Verdict:
-        """Normalise, then follow any MIM rename to the CURIE in use today."""
+        """Resolve a stable ID or unambiguous preserved alias to a current ID."""
+        return self._resolve_reference(curie, follow_replacements=True)
+
+    def _resolve_reference(self, curie: str, *, follow_replacements: bool) -> Verdict:
+        """Keep address redirects separate from current mapping ownership (#1271)."""
         v = self.normalize(curie)
         if not v:
-            return v
+            raw = (curie or "").strip()
+            # Even a retained spelling cannot turn malformed numeric identity
+            # into an alias (including Unicode decimal digits, #1276).
+            if _numeric_mim_reference(raw) is not None:
+                return v
+            if raw not in self._alias_targets and raw not in self._aliases:
+                return v
+            v = Verdict(True, curie=raw)
         cur = v.curie
-        if not cur.startswith("MIM:"):
-            return v
-        hops = 0
-        while cur in self._aliases and hops < 10:
-            cur = self._aliases[cur]
-            hops += 1
-        if hops:
+        if (numeric := _numeric_mim_reference(cur)) is not None:
+            cur = numeric
+            target = self._resolved_ids.get(cur)
+            if target is None:
+                return Verdict(
+                    False, curie=cur, problem="UNKNOWN_SUBJECT", note="Unregistered stable MIM ID"
+                )
+            if not follow_replacements and target != cur:
+                return Verdict(False, curie=cur, problem="RETIRED_SUBJECT")
             return Verdict(
                 True,
-                curie=cur,
-                note=f"renamed from {v.curie} ({hops} hop(s)); "
-                "MIM:<name> is filename-derived and not rename-stable",
+                curie=target,
+                note=(v.note if target == cur else f"replaced retired or merged ID {cur}"),
             )
-        known = self._records or self._subjects
-        if known and cur not in known:
+        targets: set[str] = set()
+        visited: set[str] = set()
+        while True:
+            numeric = _numeric_mim_reference(cur)
+            if numeric is not None:
+                cur = numeric
+            if cur in visited:
+                return Verdict(False, curie=cur, problem="ALIAS_CYCLE")
+            visited.add(cur)
+            if numeric is not None:
+                target = self._resolved_ids.get(cur)
+                if target is None:
+                    return Verdict(
+                        False,
+                        curie=cur,
+                        problem="UNKNOWN_SUBJECT",
+                        note="Unregistered stable MIM ID",
+                    )
+                if not follow_replacements and target != cur:
+                    return Verdict(False, curie=cur, problem="RETIRED_SUBJECT")
+                targets.add(target)
+                # Permanent IDs terminate aliases; an alias keyed by the same
+                # numeric spelling cannot redirect registered identity.
+                break
+            targets.update(self._alias_targets.get(cur, set()))
+            if cur not in self._aliases:
+                break
+            cur = self._aliases[cur]
+        if len(targets) > 1:
             return Verdict(
                 False,
-                curie=cur,
+                curie=v.curie,
+                problem="AMBIGUOUS_ALIAS",
+                note="Reference belongs to multiple MIM records",
+            )
+        if targets:
+            target = next(iter(targets))
+            return Verdict(
+                True,
+                curie=target,
+                note=(
+                    "" if target == v.curie else f"resolved legacy or retired reference {v.curie}"
+                ),
+            )
+        if v.curie.startswith("MIM:"):
+            return Verdict(
+                False,
+                curie=v.curie,
                 problem="UNKNOWN_SUBJECT",
-                note="not a subject in the published SSSOM, and no alias " "maps it to one",
+                note="No registered current record or preserved alias resolves this reference",
             )
         return v
 
@@ -326,9 +420,9 @@ class CurieNormalizer:
         Only ``skos:exactMatch`` rows qualify; among those the highest-ranked
         prefix wins. Returns a problem verdict — never a guess — when the subject
         has no exact match, so a caller cannot mistake a ``broadMatch`` for an
-        equivalence.
+        equivalence. Lifecycle redirects provide no scientific equivalence.
         """
-        r = self.resolve(mim_curie)
+        r = self._resolve_reference(mim_curie, follow_replacements=False)
         if not r:
             return r
         rows = self._mappings.get(r.curie, [])

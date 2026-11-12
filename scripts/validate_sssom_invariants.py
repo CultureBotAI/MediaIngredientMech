@@ -219,7 +219,11 @@ def _subject_to_path() -> dict[str, Path]:
     index: dict[str, Path] = {}
     for path in INGREDIENTS_DIR.glob("*.yaml"):
         escaped = _STEM_UNSAFE_RE.sub(lambda m: f"~{ord(m.group(0)):02X}", path.stem)
-        index[f"MIM:{escaped}"] = path
+        record = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        subject = record.get("mim_id") or f"MIM:{escaped}"
+        if subject in index:
+            raise ValueError(f"Duplicate record identity: {subject}")
+        index[subject] = path
     return index
 
 
@@ -374,6 +378,17 @@ def _registry_slug_for(subject_id: str) -> str | None:
     """``MIM:Vermont_Soil`` -> ``vermont_soil``. None if not a MIM CURIE."""
     if not subject_id.startswith("MIM:"):
         return None
+    if re.fullmatch(r"MIM:[0-9]{7}", subject_id):
+        path = _yaml_path_for_subject(subject_id)
+        if not path.is_file():
+            return None
+        record = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        mapping = _REGISTRY_OBJECT_RE.fullmatch(str(record.get("identifier", "")))
+        if mapping:
+            return mapping.group(2)
+        aliases = [alias[4:].lower() for alias in record.get("legacy_identifiers", [])
+                   if alias.startswith("MIM:") and not re.fullmatch(r"MIM:[0-9]{7}", alias)]
+        return aliases[0] if len(aliases) == 1 else None
     return subject_id[4:].lower()
 
 
@@ -1004,9 +1019,16 @@ def _other_baseline() -> frozenset[tuple[str, str]]:
     """
     if not OTHER_BASELINE.exists():
         return frozenset()
+    aliases = {}
+    for subject, path in _subject_to_path().items():
+        record = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        for alias in record.get("legacy_identifiers", []):
+            if alias.startswith("MIM:"):
+                aliases.setdefault(alias, set()).add(subject)
     with OTHER_BASELINE.open(encoding="utf-8", newline="") as handle:
         return frozenset(
-            (row["subject_id"], row["token"].casefold())
+            (next(iter(aliases[row["subject_id"]])) if len(aliases.get(row["subject_id"], ())) == 1
+             else row["subject_id"], row["token"].casefold())
             for row in csv.DictReader(handle, delimiter="\t")
             if row.get("subject_id") and row.get("token")
         )

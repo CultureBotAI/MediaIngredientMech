@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ ingredient.preferred_term }} — MIM</title>
+{% if ingredient.mim_id %}<link rel="canonical" href="{{ curie_to_url(ingredient.mim_id) }}">{% endif %}
 <link rel="stylesheet" href="{{ path_up }}style.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
   <a href="{{ path_up }}../index.html#downloads">Downloads</a> &middot;
   <a href="https://culturebotai.github.io/mechs/">All Mech projects</a> &middot;
   <a href="{{ path_up }}index.html">MIM</a> &rsaquo;
-  <span>{{ ingredient.identifier }}</span>
+  <span>{{ ingredient.mim_id or ingredient.identifier }}</span>
 </nav>
 
 <header>
@@ -29,7 +30,8 @@
   </form>
   <h1>{{ ingredient.preferred_term }}</h1>
   <div class="meta">
-    <span class="curie">{{ ingredient.identifier }}</span>
+    {% if ingredient.mim_id %}<a class="curie" href="{{ curie_to_url(ingredient.mim_id) }}">{{ ingredient.mim_id }}</a>{% endif %}
+    <span class="curie">{% if ingredient.mim_id %}Mapping: {% endif %}{{ ingredient.identifier }}</span>
     {% if ingredient.ingredient_type %}
       {% set t = ingredient.ingredient_type %}
       {% if t == 'SINGLE_INGREDIENT' %}

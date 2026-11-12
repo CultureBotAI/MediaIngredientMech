@@ -53,6 +53,14 @@ def test_micro_curie_has_an_ols_resolver():
     assert "MICRO_0000520" in render.curie_to_url("MICRO:0000520")
 
 
+def test_stable_mim_curie_uses_permanent_prefix_only():
+    assert render.curie_to_url("MIM:0000001") == (
+        "https://culturebotai.github.io/MediaIngredientMech/ingredient/MIM_0000001"
+    )
+    assert render.curie_to_url("MIM:legacy_slug") == ""
+    assert render.curie_to_url("MIM:0000000") == ""
+
+
 def test_rejected_labels_are_not_rendered_as_synonyms(tmp_path, monkeypatch):
     monkeypatch.setattr(render, "REPO_ROOT", tmp_path)
     source = tmp_path / "data" / "ingredients" / "mapped" / "Reviewed.yaml"

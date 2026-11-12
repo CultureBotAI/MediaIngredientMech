@@ -68,11 +68,11 @@ def test_restored_identity_rows_and_recipe_memberships_agree():
         record = yaml.safe_load((root / f"data/ingredients/mapped/{slug}.yaml").read_text())
         assert record["identifier"] == record["ontology_mapping"]["ontology_id"] == curie
         assert record["ontology_mapping"]["ontology_label"] == source_term(curie).label
-        mapped = [row for row in rows if row["subject_id"] == f"MIM:{slug}"]
+        mapped = [row for row in rows if row["subject_id"] == record["mim_id"]]
         assert len(mapped) == 1
         assert mapped[0]["object_id"] == curie
         assert mapped[0]["predicate_id"] == "skos:exactMatch"
-        assert normalizer.equivalent_term(f"MIM:{slug}").curie == curie
+        assert normalizer.equivalent_term(record["mim_id"]).curie == curie
         assert len([row for row in memberships if row["mim_identifier"] == curie]) == count
         assert not (record.get("chemical_properties") or {}).get("cas_rn")
         assert not (record.get("supplied_form") or {}).get("cas_rn")

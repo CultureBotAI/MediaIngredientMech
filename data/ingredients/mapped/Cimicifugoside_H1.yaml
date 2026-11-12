@@ -40,6 +40,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000701; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 163046-73-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C35H52O9/c1-17(12-18(36)28-31(4,5)44-28)25-19(37)13-32(6)22-9-8-21-30(2,3)24(43-29-27(41)26(40)20(38)15-42-29)10-11-34(21)16-35(22,34)23(39)14-33(25,32)7/h9,17,20-21,23-29,38-41H,8,10-16H2,1-7H3/t17-,20-,21+,23+,24+,25+,26+,27-,28+,29+,32+,33-,34-,35+/m1/s1
   pubchem_cid: 15241163
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000701
+legacy_identifiers:
+- MIM:Cimicifugoside_H1
+- cas:163046-73-9

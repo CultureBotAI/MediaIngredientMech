@@ -51,8 +51,21 @@ Do not copy an older example when it conflicts with a higher-authority source.
 
 ## Identity and mapping safety
 
-One ingredient record denotes one distinct substance. Its `identifier` must be
-the most specific stable identifier for that substance. Hydrates, anhydrous
+Every ingredient has a required permanent `mim_id` (`MIM:0000001`, seven digits).
+It is independent of mapping status, label, filename and storage directory.
+Keep existing filenames and preserve previous mapping/placeholder identifiers
+and filename CURIEs in `legacy_identifiers`. A shared alias is ambiguous; do not
+choose a record without additional evidence. Numeric IDs resolve through the
+append-only registry and current corpus, never by stripping a filename suffix.
+Use the native `stable_ids.allocate_ids` planner under the repository write
+lock; stage the ledger and native validated record changes together. Mint rows
+and terminal lifecycle events never change or disappear. Retired/merged IDs
+point to a registered replacement, and `mapping_status: REJECTED` does not
+retire a record ID. Read [stable IDs](docs/STABLE_MIM_IDS.md) and
+[manage identifiers](.claude/skills/manage-identifiers/SKILL.md).
+
+One ingredient record denotes one distinct substance. Its mapping `identifier`
+must be the most specific supported identifier for that substance. Hydrates, anhydrous
 forms, salts, and stereoisomers are not interchangeable: never map a hydrate to
 the anhydrous or generic parent as an exact identity. Follow the decision
 procedure in `MAPPING_SEMANTICS.md`: use a form-specific ontology term when one
@@ -95,6 +108,9 @@ hand-wave a failing invariant or invent an identity row.
 
 1. Run `git status --short` before editing and preserve unrelated changes.
 2. Run the narrowest relevant test or validator while iterating.
+   For identity changes, run `just qc-stable-ids`; use the validator's explicit
+   `--base <trusted-full-ancestor-SHA> --require-history` mode to check that both
+   ID ledgers only grow. A pure allocation plan is not an atomic writer.
 3. Synchronize the two data surfaces in the correct direction and inspect the
    resulting diff for unexpected bulk rewrites.
 4. For data changes, run `just validate-all`, `just qc-sssom`,

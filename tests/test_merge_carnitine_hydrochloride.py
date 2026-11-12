@@ -11,7 +11,13 @@ from contextlib import contextmanager
 from pathlib import Path
 
 import pytest
+
 import yaml
+
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound sources under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("carnitine_writer", ROOT / "scripts/merge_carnitine_hydrochloride.py")
@@ -26,7 +32,7 @@ def before():
 
 
 @pytest.fixture(scope="module")
-def proposal(before):
+def proposal(before, pre_mint_schema):
     return writer.propose_sources({p: before[p] for p in writer.OWNERS}, before[writer.LEDGER],
                                   before[writer.MEMBERSHIP], timestamp=STAMP)
 

@@ -9,6 +9,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.stable_id_helpers import current_subject, legacy_registry_slug
+
 REPO = Path(__file__).resolve().parents[1]
 
 CAS_REGROUNDINGS = {
@@ -182,7 +184,7 @@ def test_narrow_stereochemical_forms_publish_registry_rows(
         assert cas_row["object_source"] == "registry:cas"
         assert f"cas:{cas_rn}" in _other_tokens(cas_row)
 
-        subject_slug = parent_row["subject_id"].removeprefix("MIM:")
+        subject_slug = legacy_registry_slug(parent_row["subject_id"])
         kgm_row = by_label[label][f"kgmicrobe.compound:{subject_slug.lower()}"]
         assert kgm_row["predicate_id"] == "skos:exactMatch"
         assert kgm_row["object_source"] == "kgm:compound"

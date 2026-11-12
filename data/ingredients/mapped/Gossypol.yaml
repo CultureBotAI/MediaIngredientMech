@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001232; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 303-45-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C30H30O8/c1-11(2)19-15-7-13(5)21(27(35)23(15)17(9-31)25(33)29(19)37)22-14(6)8-16-20(12(3)4)30(38)26(34)18(10-32)24(16)28(22)36/h7-12,33-38H,1-6H3
   smiles: '[H]C(=O)c1c(O)c(O)c(C(C)C)c2cc(C)c(-c3c(C)cc4c(C(C)C)c(O)c(O)c(C([H])=O)c4c3O)c(O)c12'
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001232
+legacy_identifiers:
+- MIM:Gossypol
+- CHEBI:28584

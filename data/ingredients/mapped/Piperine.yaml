@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002060; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 94-62-2
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C17H19NO3/c19-17(18-10-4-1-5-11-18)7-3-2-6-14-8-9-15-16(12-14)21-13-20-15/h2-3,6-9,12H,1,4-5,10-11,13H2/b6-2+,7-3+
   smiles: O=C(/C=C/C=C/c1ccc2c(c1)OCO2)N1CCCCC1
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002060
+legacy_identifiers:
+- MIM:Piperine
+- CHEBI:28821

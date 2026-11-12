@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ mim_id }} — {{ label }} — MIM</title>
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="stylesheet" href="../../records/style.css">
+{% if status == 'active' %}<meta http-equiv="refresh" content="0; url={{ detail_href }}">{% endif %}
+</head>
+<body>
+<nav aria-label="Site navigation"><a href="../../index.html">Home</a> · <a href="../../browser.html">Browse ingredients</a></nav>
+<main id="main-content">
+<h1>{{ mim_id }}: {{ label }}</h1>
+{% if status == 'active' %}
+<p>This permanent ingredient ID resolves to its current record.</p>
+<p><a href="{{ detail_href }}">Open the ingredient record</a></p>
+{% else %}
+<p>This identifier is {{ status }}. It remains registered and will never be reused.</p>
+<p>Replacement: <a href="{{ replacement_href }}">{{ replacement }}</a>.</p>
+{% if replacement != target %}<p>Current replacement: <a href="{{ target_href }}">{{ target }}</a>.</p>{% endif %}
+<p><a href="{{ detail_href }}">Open the current replacement record</a></p>
+{% endif %}
+</main>
+</body>
+</html>

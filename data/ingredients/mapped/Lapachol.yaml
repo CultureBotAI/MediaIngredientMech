@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001506; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 84-79-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C15H14O3/c1-9(2)7-8-12-13(16)10-5-3-4-6-11(10)14(17)15(12)18/h3-7,18H,8H2,1-2H3
   smiles: CC(C)=CCC1=C(O)C(=O)c2ccccc2C1=O
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001506
+legacy_identifiers:
+- MIM:Lapachol
+- CHEBI:6377

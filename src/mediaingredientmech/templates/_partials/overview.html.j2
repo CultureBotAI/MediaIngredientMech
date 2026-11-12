@@ -2,10 +2,18 @@
 <h2>Ontology mapping</h2>
 {% set om = ingredient.ontology_mapping or {} %}
 <dl class="kv">
-  <dt>Primary identifier</dt>
+  {% if ingredient.mim_id %}
+  <dt>Permanent record ID</dt>
+  <dd><code>{{ ingredient.mim_id|linked_text }}</code></dd>
+  {% endif %}
+  <dt>{{ 'Mapping identifier' if ingredient.mim_id else 'Primary identifier' }}</dt>
   <dd>
     <code>{{ ingredient.identifier|linked_text }}</code>
   </dd>
+  {% if ingredient.legacy_identifiers %}
+  <dt>Legacy identifiers</dt>
+  <dd>{{ ingredient.legacy_identifiers|structured }}</dd>
+  {% endif %}
   {% if om.ontology_id and om.ontology_id != ingredient.identifier %}
   <dt>Ontology term</dt>
   <dd>

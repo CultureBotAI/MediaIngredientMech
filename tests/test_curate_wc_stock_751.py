@@ -16,6 +16,11 @@ from mediaingredientmech.utils.culturemech_occurrences import (
     mim_identifier_for_occurrence,
 )
 
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound source operations under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
+
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("curate_wc_stock", ROOT / "scripts/curate_wc_stock_751.py")
 mod = importlib.util.module_from_spec(SPEC)

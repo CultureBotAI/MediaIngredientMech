@@ -15,6 +15,11 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound sources under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
+
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
     "stock_promoter", ROOT / "scripts/promote_stock_cas_removal.py"
@@ -37,8 +42,8 @@ def anchors():
     return {p: frozen(p) for p in mod.source.ANCHORS}
 
 
-@pytest.fixture(scope="session")
-def proposals():
+@pytest.fixture(scope="module")
+def proposals(pre_mint_schema):
     return mod.source.propose_sources(
         {p: mod.source.frozen(p) for p in mod.source.OWNERS}, timestamp=STAMP
     )

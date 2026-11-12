@@ -150,9 +150,9 @@ def test_supported_kgx_dates_use_only_its_selected_rows(tmp_path, selected_dates
     assert source.read_bytes() == before and selected == selected_before
 
 
-def test_companion_date_is_stable_when_unselected_source_date_advances(tmp_path):
+def test_companion_date_is_stable_when_unselected_source_date_advances(tmp_path, pre_mint_schema_case):
     module = _test_module("test_ingredient_bundle_dependency_refresh")
-    fixture = module.cohort.__wrapped__()
+    fixture = module.cohort.__wrapped__(pre_mint_schema_case)
     prior, before, current, _ = fixture
     before_copy, current_copy, review_copy = (
         copy.deepcopy(before),
@@ -201,11 +201,11 @@ def test_supported_manifest_attributes_subset_date_implementation(tmp_path):
     assert manifest["implementation"]["sssom_metadata.py"] == content_sha256(helper.read_bytes())
 
 
-def test_registry_refresh_binds_date_helper_and_rejects_late_change(tmp_path, monkeypatch):
+def test_registry_refresh_binds_date_helper_and_rejects_late_change(tmp_path, monkeypatch, pre_mint_schema_case):
     from mediaingredientmech import ingredient_bundle_refresh as refresh
 
     module = _test_module("test_ingredient_bundle_dependency_refresh")
-    fixture = module.registry_correction.__wrapped__(module.cohort.__wrapped__(), tmp_path)
+    fixture = module.registry_correction.__wrapped__(module.cohort.__wrapped__(pre_mint_schema_case), tmp_path)
     _, audit = module.verify_registry(fixture)
     name = "src/mediaingredientmech/sssom_metadata.py"
     helper = tmp_path / name
