@@ -138,6 +138,43 @@ def test_invalid_lifecycle_history_fails(events):
         validate_registry(Registry(minted().entries, events))
 
 
+@pytest.mark.parametrize("route", ["planner", "persisted-ledger"])
+def test_concept_split_status_is_not_a_supported_lifecycle(route):
+    registry = minted()
+    original = (dump_registry(registry), dump_lifecycle(registry))
+    proposal = event(status="split")
+    with pytest.raises(StableIdError, match="Lifecycle status must be retired or merged"):
+        if route == "planner":
+            append_lifecycle(registry, **proposal.__dict__)
+        else:
+            raw_event = "\t".join(proposal.__dict__.values()).encode() + b"\n"
+            parse_registry(original[0], original[1] + raw_event)
+    assert (dump_registry(registry), dump_lifecycle(registry)) == original
+
+
+@pytest.mark.parametrize(
+    "replacements",
+    [
+        ["MIM:0000002", "MIM:0000003"],
+        ("MIM:0000002", "MIM:0000003"),
+        "MIM:0000002|MIM:0000003",
+        "MIM:0000002,MIM:0000003",
+        "MIM:0000002 MIM:0000003",
+    ],
+)
+def test_concept_split_cannot_hide_multiple_replacements_in_retirement(replacements):
+    registry = minted()
+    original = (dump_registry(registry), dump_lifecycle(registry))
+    proposal = event(status="retired", replacement=replacements)
+    with pytest.raises(StableIdError, match="Expected a positive seven-digit MIM identifier"):
+        append_lifecycle(registry, **proposal.__dict__)
+    if isinstance(replacements, str):
+        raw_event = "\t".join(proposal.__dict__.values()).encode() + b"\n"
+        with pytest.raises(StableIdError, match="Expected a positive seven-digit MIM identifier"):
+            parse_registry(original[0], original[1] + raw_event)
+    assert (dump_registry(registry), dump_lifecycle(registry)) == original
+
+
 def test_replacement_chain_retains_old_mints_and_resolves_active_target():
     first = append_lifecycle(minted(), **event().__dict__)
     second = append_lifecycle(
