@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -169,19 +170,21 @@ def drift_since(rev: str, inputs: Path, repo: Path = _REPO, *,
         try:
             result = subprocess.run(
                 ["git", "-C", str(repo), *args],
-                capture_output=True, text=True, check=True, timeout=60,
+                capture_output=True, check=True, timeout=60,
             )
         except (subprocess.SubprocessError, OSError):
             return None
-        return [line for line in result.stdout.splitlines() if line.strip()]
+        # -z gives literal paths, including Unicode and embedded newlines.
+        # Filesystem decoding also preserves non-UTF-8 bytes without quoting.
+        return [os.fsdecode(path) for path in result.stdout.split(b"\0") if path]
 
-    changed = _git("diff", "--name-only", rev, "--", str(relative))
+    changed = _git("diff", "--name-only", "-z", rev, "--", str(relative))
     if changed is None:
         return None
     # `git diff` cannot see a file git does not know about, and adding a record
     # is the commonest curation action -- thirty new records read as zero drift
     # without this (#657).
-    untracked = _git("ls-files", "--others", "--exclude-standard", "--", str(relative))
+    untracked = _git("ls-files", "--others", "--exclude-standard", "-z", "--", str(relative))
     candidates = set(changed) | set(untracked or [])
     # Only the proved #1265 administrative address change is exempt. Existing
     # scientific drift and later edits remain counted; the snapshot is not stamped.
