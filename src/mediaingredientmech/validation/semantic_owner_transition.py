@@ -8,6 +8,7 @@ lease, profiling, allocation authority, or scientific acquisition environments.
 from __future__ import annotations
 
 import copy
+import subprocess
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -89,8 +90,62 @@ def _aggregate_check(outputs, records, schema_root):
         )
 
 
+def _git_baseline_owners(root, revision):
+    """Capture the complete immutable MIM owner corpus, with literal Git paths."""
+    require(
+        isinstance(revision, str)
+        and len(revision) == 40
+        and all(c in "0123456789abcdef" for c in revision)
+        and adoption.git(root, "rev-parse", "--verify", revision + "^{commit}").decode().strip()
+        == revision,
+        "full genuine baseline commit required",
+    )
+    entries = {}
+    for raw in adoption.git(
+        root,
+        "ls-tree",
+        "-rz",
+        "--full-tree",
+        revision,
+        "--",
+        "data/ingredients/mapped",
+        "data/ingredients/unmapped",
+    ).split(b"\0"):
+        if not raw:
+            continue
+        metadata, name = raw.split(b"\t", 1)
+        mode, kind, oid = metadata.decode().split()
+        name = name.decode()
+        owner_path(name)
+        require(
+            mode in {"100644", "100755"} and kind == "blob" and name not in entries,
+            "unexpected baseline owner entry",
+        )
+        entries[name] = oid
+    require(entries, "empty baseline owner inventory")
+    process = subprocess.run(
+        ["git", "--no-optional-locks", "cat-file", "--batch"],
+        cwd=root,
+        input=("\n".join(entries.values()) + "\n").encode(),
+        capture_output=True,
+        timeout=60,
+    )
+    require(process.returncode == 0, "baseline blob capture failed")
+    raw, offset, result = process.stdout, 0, {}
+    for name, oid in entries.items():
+        end = raw.index(b"\n", offset)
+        actual_oid, kind, size = raw[offset:end].decode().split()
+        require(actual_oid == oid and kind == "blob", "baseline blob response differs")
+        start, stop = end + 1, end + 1 + int(size)
+        require(raw[stop : stop + 1] == b"\n", "truncated baseline blob")
+        result[name] = raw[start:stop]
+        offset = stop + 1
+    require(offset == len(raw), "extra baseline blob response")
+    return result
+
+
 def _legacy_inventory(
-    request, manifest, stable_before, plan, application, source_owners, get, root
+    request, manifest, stable_before, plan, application, source_owners, get, root, schema_root
 ):
     """#1392 reconstruct selected operations and the unchanged source complement."""
     legacy_root = request["legacy"]["root"]
@@ -107,10 +162,25 @@ def _legacy_inventory(
     require(
         len(minted) == len(migration["records"])
         and set(minted) == set(stable_before)
-        and before == {n: r["before_sha256"] for n, r in minted.items()}
+        and set(before) == set(minted)
         and hashes(stable_before) == {n: r["after_sha256"] for n, r in minted.items()},
         "source baseline differs from verified pre-ID science",
     )
+    parser = adoption._CAPTURE.script("scripts/record_review.py")
+    require(
+        parser.repository_identity(schema_root).lower() == adoption.REPOSITORY.lower(),
+        "review Git authority is not MIM",
+    )
+    # The initial mint and the later source campaign may have distinct reviewed
+    # scientific baselines. Authenticate both complete corpora, never equate
+    # their hashes or excuse an unselected source mutation (#1392).
+    mint_before = _git_baseline_owners(schema_root, migration["source_commit"])
+    require(
+        hashes(mint_before) == {n: r["before_sha256"] for n, r in minted.items()},
+        "original mint Git baseline differs",
+    )
+    legacy_before = _git_baseline_owners(schema_root, plan["baseline_commit"])
+    require(hashes(legacy_before) == before, "corrected legacy Git baseline differs")
     operations = {row["operation_id"]: row for row in plan["records"]}
     applied = {row["operation_id"]: row for row in application["records"]}
     require(
@@ -172,14 +242,17 @@ def _legacy_inventory(
             raw is not None and adoption.sha(raw) == expected,
             "unselected legacy owner bytes changed",
         )
-        old, stable = adoption.load_yaml(raw), adoption.load_yaml(stable_before[name])
+        old = adoption.load_yaml(mint_before[name])
+        scientific, stable = adoption.load_yaml(raw), adoption.load_yaml(stable_before[name])
         require(
-            "mim_id" not in old and "legacy_identifiers" not in old, "pre-ID source already minted"
+            all("mim_id" not in r and "legacy_identifiers" not in r for r in (old, scientific)),
+            "pre-ID source already minted",
         )
         history, prior = stable.get("curation_history", []), old.get("curation_history", [])
         suffix = history[len(prior) :]
         require(
             history[: len(prior)] == prior
+            and scientific.get("curation_history", [])[: len(prior)] == prior
             and suffix
             and stable["mim_id"] == minted[name]["mim_id"]
             and all(
@@ -301,7 +374,7 @@ def _adoption(request, manifest, before, get, root, schema_root):
         owner_path(name)
         require(manifest["legacy_inputs"].get(name) == adoption.sha(raw), "unbound legacy owner")
     operations = _legacy_inventory(
-        request, manifest, before, plan, application, source_owners, get, root
+        request, manifest, before, plan, application, source_owners, get, root, schema_root
     )
     for op in operations.values():
         require(
