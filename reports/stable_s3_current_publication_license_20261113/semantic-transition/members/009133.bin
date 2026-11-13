@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-08T08:17:30.672638+00:00",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1246",
+  "finding": "W03-PROV-GUARD-001",
+  "disposition": "Repaired in immutable private helper v2; final exact-successor independent review still pending at this checkpoint.",
+  "original_helper_sha256": "d15001850b076f124770cf470904c2044790899299a2ba8d1ac5014ac6e01c90",
+  "repaired_helper_sha256": "3b15bce56791af306b5db44f44b73d489f5203a23f36f4959084e10a402fc66a",
+  "guard": "prepared.old_bytes must equal freshly read and validated source bytes before destination check/native write; receipt hashes those validated bytes",
+  "native_campaign_operator_modified": false,
+  "all_36_original_controls_retained": true,
+  "additional_control": "native writer not called and destination directory empty on mismatch",
+  "old_failure_runs_preserved": [
+    23,
+    36
+  ],
+  "scope": "Private single-author report producer only; no hostile-concurrency/atomicity guarantee."
+}

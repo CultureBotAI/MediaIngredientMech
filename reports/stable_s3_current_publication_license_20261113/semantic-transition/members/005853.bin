@@ -1,0 +1,96 @@
+id: CultureMech:000641
+name: vero_b4_medium
+original_name: Vero B4 Medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: DSMZ Medium 1198
+  term:
+    id: mediadive.medium:1198
+    label: Vero B4 Medium
+notes: DSMZ Medium 1198 prepares a 50.5 ml Vero B4 cell-culture medium from 45.0 ml
+  IMDM, 5.0 ml fetal bovine serum, and 0.5 ml 100x amino-acid stock, then filter-sterilizes
+  it before Rickettsia cultivation at 28 C.
+ingredients:
+- preferred_term: IMDM-Medium
+  concentration:
+    value: '891.089109'
+    unit: ML_PER_L
+  source: DSMZ Medium 1198
+  notes: DSMZ Medium 1198 lists 45.0 ml IMDM-Medium in a 50.5 ml Vero B4 cell-culture
+    medium batch.
+  term:
+    id: mediadive.compound:1069
+    label: IMDM-Medium
+- preferred_term: Fetal bovine serum
+  concentration:
+    value: '99.009901'
+    unit: ML_PER_L
+  source: DSMZ Medium 1198
+  notes: DSMZ Medium 1198 lists 5.0 ml fetal bovine serum in a 50.5 ml Vero B4 cell-culture
+    medium batch.
+  term:
+    id: mediadive.compound:954
+    label: Fetal bovine serum
+- preferred_term: Aminoacids (100 x)
+  concentration:
+    value: '9.90099'
+    unit: ML_PER_L
+  source: DSMZ Medium 1198
+  notes: DSMZ Medium 1198 lists 0.5 ml 100x amino-acid stock in a 50.5 ml Vero B4
+    cell-culture medium batch.
+  term:
+    id: mediadive.compound:1070
+    label: Aminoacids
+  chebi_term:
+    id: CHEBI:33709
+    label: amino acid
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Combine 45.0 ml IMDM-Medium, 5.0 ml fetal bovine serum, and 0.5 ml
+    100x amino acids.
+- step_number: 2
+  action: FILTER_STERILIZE
+  description: Filter sterilize through a 0.2 um membrane.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:13.652052Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1198'
+- timestamp: '2026-03-13T06:18:56.999999Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000641'
+- timestamp: '2026-03-17T19:45:08.153869+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Vero B4 Medium" to "vero_b4_medium" for consistent
+    matching
+- timestamp: '2026-09-09T00:00:00-07:00'
+  curator: repair_dsmz_host_cell_score25.py
+  action: RESOLVED_DSMZ_HOST_CELL_SCORE25_GRAPH
+  changes: Resolved DSMZ Medium 1198 host-cell recipe
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1198.pdf
+  notes: DSMZ Medium 1198 prepares a 50.5 ml Vero B4 cell-culture medium from 45.0
+    ml IMDM, 5.0 ml fetal bovine serum, and 0.5 ml 100x amino-acid stock, then filter-sterilizes
+    it before Rickettsia cultivation at 28 C.
+variant_children:
+- path: data/normalized_yaml/bacterial/cultivation_medium_for_chlamydiae.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:000636
+  name: cultivation_medium_for_chlamydiae
+  notes: Same ingredient and concentration signature; review as possible duplicate
+    source record.
+temperature_value: 28.0
+sterilization:
+  method: FILTER
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1198.pdf

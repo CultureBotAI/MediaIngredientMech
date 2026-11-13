@@ -1,0 +1,58 @@
+{
+  "empty_targets": [],
+  "finished_utc": "2026-11-12T10:30:55.274870+00:00",
+  "input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/ROWS.json",
+    "sha256": "5451e99b3af9eac5c74c76c00efe90e7344cea1e6481648c6aab28d97838af15"
+  },
+  "kind": "read-only-official-ontology-database-capture/v1",
+  "limits": [
+    "Local official ChEBI database version is recorded, not claimed current upstream.",
+    "Database statements do not prove the source material has target identity.",
+    "No native approval, generation, or product/owner edits."
+  ],
+  "products": {
+    "facts.json": {
+      "bytes": 72987431,
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/facts.json",
+      "sha256": "bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9"
+    },
+    "ontology-metadata.json": {
+      "bytes": 3134,
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/ontology-metadata.json",
+      "sha256": "649db8a675208cd9dfcfb601d280e24c334ef0323a589a62066e249f6aae6b47"
+    },
+    "prefixes.json": {
+      "bytes": 107777,
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/prefixes.json",
+      "sha256": "9943ce1dc73c5c5d40d734b95d90b48f2204601cff922820288d3ce2761d1f01"
+    },
+    "selected-targets.json": {
+      "bytes": 32240,
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/selected-targets.json",
+      "sha256": "f8c7f3730bca344797ec7d08d7ac03c2e0c9e57441ccd3a5af8985506d63b76e"
+    }
+  },
+  "queries": {
+    "annotation_statements": "SELECT * FROM statements WHERE subject = ? ORDER BY predicate, object, value, datatype, language, graph, stanza",
+    "annotation_subjects": "SELECT DISTINCT subject FROM statements WHERE predicate='owl:annotatedSource' AND object=? ORDER BY subject",
+    "direct_statements": "SELECT * FROM statements WHERE subject = ? ORDER BY predicate, object, value, datatype, language, graph, stanza",
+    "metadata": "SELECT * FROM statements WHERE subject='obo:chebi.owl' ORDER BY predicate, object, value",
+    "prefixes": "SELECT * FROM prefix"
+  },
+  "script": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/capture_chebi_database.py",
+    "sha256": "8994fae12503d03898f8af14fbd6051d1cd6ff8512a6dccc9052cecb86d7b654"
+  },
+  "source": {
+    "bytes": 4137340928,
+    "hash_identical_before_after": true,
+    "mtime_ns": 1791961401274785795,
+    "path": "/Users/marcin/.data/oaklib/chebi.db",
+    "read_only_uri": "file:///Users/marcin/.data/oaklib/chebi.db?mode=ro",
+    "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+    "wal_present_before_or_after": false
+  },
+  "started_utc": "2026-11-12T10:12:35.317835+00:00",
+  "target_count": 1893
+}

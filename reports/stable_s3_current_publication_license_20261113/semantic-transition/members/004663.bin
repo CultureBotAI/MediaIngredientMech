@@ -1,0 +1,78 @@
+id: CultureMech:009320
+name: serpulina_murdochii_medium
+original_name: Serpulina Murdochii Medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: Columbia Agar Plates with 5% sheep blood (BBL 4354005)
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: TOGO M2772
+  notes: TOGO M2772 lists a BBL 4354005 Columbia Agar Plate with 5% sheep blood as
+    an opaque ready-to-use product.
+  culturemech_term:
+    id: CultureMech:008653
+    label: Columbia agar with sheep blood
+media_term:
+  preferred_term: TOGO Medium M2772
+  term:
+    id: TOGO:M2772
+    label: Serpulina Murdochii Medium
+notes: TOGO M2772 records the DSMZ 840 Columbia agar plate option as a ready-to-use
+  BBL 4354005 Columbia Agar Plate with 5% sheep blood.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.275189Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: TOGO, ID: M2772'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Columbia Agar Plates with 5%
+    sheep blood (BBL 4354005)'
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-03-13T06:20:05.603360Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009320'
+- timestamp: '2026-03-17T19:46:24.511988+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Serpulina Murdochii Medium" to "serpulina_murdochii_medium"
+    for consistent matching
+- timestamp: '2026-05-16T09:03:15.989022+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-09-08T00:00:00-07:00'
+  curator: repair_togo_columbia_tpgy_score40.py
+  action: RESOLVED_TOGO_COLUMBIA_TPGY_SCORE40
+  changes: Resolved cached score-40 TOGO Columbia/Serpulina/TPGY graph
+  source: https://togomedium.org/medium/M2772; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf
+  notes: TOGO M2772 records the DSMZ 840 Columbia agar plate option as a ready-to-use
+    BBL 4354005 Columbia Agar Plate with 5% sheep blood.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Use BBL 4354005 Columbia Agar Plates with 5% sheep blood.
+parent_media:
+  path: data/normalized_yaml/bacterial/columbia_agar_with_sheep_blood.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:008653
+  name: columbia_agar_with_sheep_blood
+  notes: Both records are BBL/BD-BBL Columbia agar with 5% sheep blood solid products;
+    TOGO M2772 stores the same ready-to-use plate as an opaque product.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same BBL/BD-BBL Columbia agar with 5% sheep blood product represented by two source
+  records.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+references:
+- reference: https://togomedium.org/medium/M2772
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf

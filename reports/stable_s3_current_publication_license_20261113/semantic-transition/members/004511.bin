@@ -1,0 +1,141 @@
+id: CultureMech:007702
+name: anaerobic_natural_seawater_medium
+original_name: Anaerobic Natural Seawater Medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: SEMI_DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Tryptone
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  source: JCM Medium 1102
+  notes: JCM Medium 1102 lists 5.0 g/L Tryptone.
+- preferred_term: Yeast extract
+  concentration:
+    value: '1.0'
+    unit: G_PER_L
+  source: JCM Medium 1102
+  notes: JCM Medium 1102 lists 1.0 g/L Yeast extract.
+- preferred_term: Natural seawater (filtrated)
+  concentration:
+    value: '750.0'
+    unit: ML_PER_L
+  source: JCM Medium 1102
+  notes: JCM Medium 1102 lists 750.0 ml/L Natural seawater (filtrated).
+- preferred_term: Distilled water
+  concentration:
+    value: '250.0'
+    unit: ML_PER_L
+  source: JCM Medium 1102
+  notes: JCM Medium 1102 lists 250.0 ml/L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: N2
+  concentration:
+    value: variable
+    unit: VARIABLE
+  source: JCM Medium 1102
+  notes: JCM Medium 1102 cools the boiled base, distributes the medium, and stores
+    reducing stocks under an N2 gas atmosphere.
+  term:
+    id: CHEBI:17997
+    label: dinitrogen
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17997
+    label: dinitrogen
+media_term:
+  preferred_term: TOGO Medium M1177
+  term:
+    id: TOGO:M1177
+    label: Anaerobic Natural Seawater Medium
+notes: TOGO M1177 records JCM Medium 1102 as an anaerobic natural seawater base containing
+  tryptone, yeast extract, filtered natural seawater, distilled water, and an N2 atmosphere;
+  the source adjusts the base to pH 7.0. For strain JCM 33129, the source omits resazurin
+  and the L-Cysteine HCl H2O and Na2S x 9H2O reducing agents. JCM 33129 variant omitting
+  resazurin and reducing agents.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:54.070137Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M1177'
+- timestamp: '2026-01-28T19:48:25.024504Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: N2'
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-03-13T06:19:50.754000Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007702'
+- timestamp: '2026-03-17T06:30:18.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:09.158221+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Anaerobic Natural Seawater Medium" to "anaerobic_natural_seawater_medium"
+    for consistent matching
+- timestamp: '2026-05-16T09:03:08.193555+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:40:31.083014+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_togo_m1176_m1178_score15.py
+  action: RESOLVED_TOGO_M1176_M1178_SCORE15
+  source: https://togomedium.org/medium/M1177; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1102
+  notes: TOGO M1177 records JCM Medium 1102 as an anaerobic natural seawater base
+    containing tryptone, yeast extract, filtered natural seawater, distilled water,
+    and an N2 atmosphere; the source adjusts the base to pH 7.0. For strain JCM 33129,
+    the source omits resazurin and the L-Cysteine HCl H2O and Na2S x 9H2O reducing
+    agents. JCM 33129 variant omitting resazurin and reducing agents.
+ph_value: 7.0
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Mix tryptone, yeast extract, natural seawater, and distilled water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust to pH 7.0.
+- step_number: 3
+  action: COOL
+  description: Bring the medium to a boil and cool under an N2 gas atmosphere.
+- step_number: 4
+  action: ALIQUOT
+  description: Distribute the medium in culture vessels under N2 and seal with butyl
+    rubber stoppers.
+- step_number: 5
+  action: AUTOCLAVE
+  description: Autoclave at 121 degrees C for 15 min.
+sterilization:
+  method: AUTOCLAVE
+  temperature:
+    value: 121.0
+    unit: CELSIUS
+  duration: 15 min
+  notes: JCM's default sterilization is autoclaving at 121 degrees C for 15 min; JCM
+    Medium 1102 autoclaves the anaerobic base after distribution under N2.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1177
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1102

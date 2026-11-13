@@ -1,0 +1,59 @@
+{
+  "index": 63,
+  "case_id": "CM_NAME:71aca4e1340b9152c4b7a71db0b7b47cff7f80d20c043de07b54adc46fd2f11a",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "ketoglut",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "ketoglut",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "reports/all_unmatched_20261107/worker-04/proposals/chemistry/2-Oxoglutarate.after.yaml:11:    notes: The label2-Oxoglutarate names an anion, and live CHEBI:16810 defines the dianion from both carboxyl-group deprotonations. Under the repository's bare-anion protonation rule, this is the appropriate neutral-medium species; it is not exact identity to alpha-ketoglutaric acid30915. The14.6g stock amount may derive from weighed acid, so that supplied-form and stock context remains separate and unresolved. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json. This proposed delta does not approve complete owner/export payload or remove inherited holds.\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:2:preferred_term: Cholinium alpha ketoglutarate\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:4:- synonym_text: Cholinium alpha ketoglutarate\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:23:    no exact local ontology term for cholinium alpha-ketoglutarate was verified; component\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:24:    mappings to choline or alpha-ketoglutarate would not preserve salt identity.\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:31:  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Cholinium_alpha_ketoglutarate-edison-literature.md\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:36:    it **choline α-ketoglutarate**, abbreviates it **[Ch][α-Kg]**, and prepares it\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:37:    by mixing aqueous choline hydroxide with aqueous α-ketoglutaric acid. It was then\ndata/ingredients/unmapped/Cholinium_Alpha_Ketoglutarate.yaml:46:  alpha-ketoglutarate salt; not identity-mapped to component parents.\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:2:preferred_term: alpha-ketoglutaric acid\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:13:- synonym_text: 2-Ketoglutaric acid\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:25:- synonym_text: a-Ketoglutaric acid\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:28:- synonym_text: alpha-ketoglutamate\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:31:- synonym_text: alpha-ketoglutaric acid (100 mM).\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:48:  changes: Added CAS-RN:328-50-7 from PubChem API via name lookup (alpha-ketoglutaric\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:55:  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: 2-Ketoglutaric acid,\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:78:  changes: Absorbed duplicate unmapped record A-Ketoglutaric_Acid.yaml (UNMAPPED_0266);\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:79:    local mapped CHEBI:30915 record represents alpha-ketoglutaric acid and the unmapped\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:87:  changes: Absorbed duplicate UNMAPPED_0323 \"alpha-ketoglutamate\". Edison deep research\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:88:    (9 citations) resolved it as a misspelling of alpha-ketoglutarate = 2-oxoglutarate\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:106:  changes: 'ontology_label ''alpha-ketoglutaric acid'' -> ''2-oxoglutaric acid'':\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:107:    synced to canonical CHEBI label (preferred_term ''alpha-ketoglutaric acid'' unchanged).'\ndata/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml:126:    not resolve them: ''alpha-ketoglutaric acid (100 mM).'' (x1 CultureMech mentions).\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:1:identifier: kgmicrobe.compound:na2_alpha-ketoglutarate\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:2:preferred_term: Na2 alpha-ketoglutarate\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:16:      CHEBI:30915 is the ChEBI acid parent. No exact local ChEBI term for 'Na2 alpha-ketoglutarate'\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:20:- synonym_text: Na2 α-ketoglutarate\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:29:- synonym_text: alpha-ketoglutarate\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:35:- synonym_text: α-Ketoglutarate\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:65:    Na2 α-ketoglutarate, alpha-ketoglutarate'\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:72:    Na2 alpha-ketoglutarate, Na2 α-ketoglutarate, alpha-ketoglutarate'\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:117:  changes: 'ontology_label ''Na2 alpha-ketoglutarate'' -> ''2-oxoglutarate(2-)'':\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:118:    synced to canonical CHEBI label (preferred_term ''Na2 alpha-ketoglutarate'' unchanged).'\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:147:    not resolve them: ''α-Ketoglutarate'' (x3 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:152:  changes: identifier CHEBI:16810 -> kgmicrobe.compound:na2_alpha-ketoglutarate; mapping_quality\ndata/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml:165:kg_microbe_node_id: kgmicrobe.compound:na2_alpha-ketoglutarate\ndata/ingredients/mapped/NLDM_metabolites.yaml:136:- component_name: a-Ketoglutaric acid disodium salt hydrate\ndata/ingredients/mapped/Sea_Salts.yaml:19:    22 CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,\ndata/ingredients/mapped/Sea_Salts.yaml:63:  CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:2:preferred_term: a-Ketoglutaric acid disodium salt hydrate\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:14:      DinoMM alphaKetoGlutAcid NoNitrogen…. Curator can promote to a CHEBI primary\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:18:    notes: a-Ketoglutaric acid disodium salt hydrate is a hydrate/salt with its own\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:33:- synonym_text: a-Ketoglutaric acid\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:81:    and registry kgmicrobe.compound:a-ketoglutaric_acid_disodium_salt_hydrate. identifier\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:102:  changes: 'Retyped REJECTED_LABEL: ''a-Ketoglutaric acid'' (EXACT_SYNONYM): names\ndata/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml:103:    the free acid (Alpha-ketoglutaric_Acid holds it), not the disodium salt hydrate\n",
+  "label_index_stdout": "846:2-Ketoglutaric acid,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n909:2-oxoglutaric acid,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n910:2-oxopentanedioic acid,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n1507:a-Ketoglutaric acid,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n1508:a-Ketoglutaric acid disodium salt hydrate,preferred_term,cas:305-72-6,a-Ketoglutaric acid disodium salt hydrate,CHEBI:30915,MAPPED,unique\n1751:alpha-ketoglutamate,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n1752:alpha-ketoglutaric acid,preferred_term,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n1753:alpha-ketoglutaric acid (100 mM).,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n2889:Cholinium alpha ketoglutarate,preferred_term,UNMAPPED_0164,Cholinium alpha ketoglutarate,,UNMAPPED,unique\n6288:Na2 alpha-ketoglutarate,preferred_term,kgmicrobe.compound:na2_alpha-ketoglutarate,Na2 alpha-ketoglutarate,CHEBI:30915,MAPPED,unique\n6292:Na2 α-ketoglutarate,synonym,kgmicrobe.compound:na2_alpha-ketoglutarate,Na2 alpha-ketoglutarate,CHEBI:30915,MAPPED,unique\n6870:Oxoglutaric acid,synonym,CHEBI:30915,alpha-ketoglutaric acid,CHEBI:30915,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [
+    {
+      "proposal_id": "w04-chem-proposal-2-oxoglutarate",
+      "owner_path": "data/ingredients/mapped/2-Oxoglutarate.yaml",
+      "case_ids": [
+        "CM_NAME:fb48edc526c860e30f643c29615e9fadc306e6a8c588c536b74829ccc5fa1f75"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/chemistry/2-Oxoglutarate.after.yaml",
+        "sha256": "1fb91d22b8c33fb4c386f4c694c8b5a3b58fe9c0bd68df9866d90c5603b5136a"
+      }
+    }
+  ],
+  "related_original_cases": [
+    {
+      "case_id": "CM_NAME:71aca4e1340b9152c4b7a71db0b7b47cff7f80d20c043de07b54adc46fd2f11a",
+      "label": "Sodium alpha-ketoglutamate",
+      "proposal_ids": []
+    },
+    {
+      "case_id": "KG_CASE:a5572a040ef9f9d939294b09b2eaf3c34700d51ea42a5f458ec93b4e99025619",
+      "label": "alpha-ketoglutamate",
+      "proposal_ids": []
+    }
+  ]
+}

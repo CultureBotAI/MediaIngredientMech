@@ -1,0 +1,80 @@
+identifier: kgmicrobe.ingredient:leptospira_enrichment_emjh_dsmz1113
+preferred_term: Leptospira Enrichment EMJH (DSMZ1113)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: Leptospira Enrichment EMJH
+  synonym_type: REJECTED_LABEL
+  source: DSMZ1113; unqualified product-family label retained without global equivalence
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:leptospira_enrichment_emjh_dsmz1113
+  ontology_label: Leptospira Enrichment EMJH (DSMZ1113)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1113.pdf
+    notes: DSMZ1113 adds 100 mL named Leptospira Enrichment EMJH to separately prepared
+      Difco medium base. This is the enrichment supplement, not the base or complete
+      culture medium. The Difco/BBL manufacturer manual describes the named enrichment
+      as albumin, polysorbate80 and unspecified additional growth factors, consistent
+      with the source preparation. Only albumin and polysorbate80 are transcribed,
+      with PARTIAL completeness because growth factors are explicitly unspecified.
+      No albumin species, component quantities, solvent, catalogue/version equivalence
+      or whole-medium identity is invented.
+notes: ' Issue1201 successor scope: DSMZ1113 adds 100 mL named Leptospira Enrichment
+  EMJH to separately prepared Difco medium base. This is the enrichment supplement,
+  not the base or complete culture medium. The Difco/BBL manufacturer manual describes
+  the named enrichment as albumin, polysorbate80 and unspecified additional growth
+  factors, consistent with the source preparation. Only albumin and polysorbate80
+  are transcribed, with PARTIAL completeness because growth factors are explicitly
+  unspecified. No albumin species, component quantities, solvent, catalogue/version
+  equivalence or whole-medium identity is invented.'
+components:
+- component_name: albumin
+  reference_scope: UNMAPPED
+- component_name: Tween 80
+  component_id: CHEBI:53426
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1113.pdf
+    notes: Named enrichment separate from medium base; receiving addition100mL is
+      not constituent concentration.
+  - evidence_type: PUBLICATION
+    source: https://www.seco.us/ASSETS/DOCUMENTS/ITEMS/EN/279410.pdf
+    source_record: 'Difco & BBL Manual, 2nd Edition: Leptospira Enrichment EMJH'
+    notes: Manufacturer-authored manual preserved on distributor site; albumin and
+      polysorbate80 named, additional growth factors explicitly unspecified. This
+      supports named-enrichment partial composition only, not exact supplier-version
+      equivalence.
+curation_history:
+- timestamp: '2026-11-08T05:59:42+00:00'
+  curator: worker-02 issue1201 source review /root/research_c
+  action: CREATED
+  changes: DSMZ1113 adds 100 mL named Leptospira Enrichment EMJH to separately prepared
+    Difco medium base. This is the enrichment supplement, not the base or complete
+    culture medium. The Difco/BBL manufacturer manual describes the named enrichment
+    as albumin, polysorbate80 and unspecified additional growth factors, consistent
+    with the source preparation. Only albumin and polysorbate80 are transcribed, with
+    PARTIAL completeness because growth factors are explicitly unspecified. No albumin
+    species, component quantities, solvent, catalogue/version equivalence or whole-medium
+    identity is invented. All prior source, native-owner, SSSOM and downstream holds
+    remain in force; this isolated proposal is not publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T08:19:50.292054+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true

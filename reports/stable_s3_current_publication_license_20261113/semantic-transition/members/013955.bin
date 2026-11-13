@@ -1,0 +1,49 @@
+identifier: cas:16399-77-2
+preferred_term: Iron(II) chloride dihydrate
+synonyms:
+- synonym_text: FeCl2·2H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech:008622 / TOGO:M2033 / NBRC1326
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:30812
+  ontology_label: iron dichloride
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://hpvchemicals.oecd.org/ui/handler.axd?id=677e770c-e12b-4e7d-ad59-341c8ed74fb2
+    notes: 'Distinct iron dichloride dihydrate, CAS16399-77-2; source NBRC1326 explicitly requests FeCl2·2H2O.
+      No exact ChEBI term returned by captured bounded name/CAS searches. MAPPING_SEMANTICS section3 step2:
+      preserve CAS identity and publish asymmetric broadMatch to the anhydrous parent with mandatory registry
+      row; never exact-match the hydrate to CHEBI:30812.'
+chemical_properties:
+  cas_rn: 16399-77-2
+  molecular_formula: Cl2Fe.2H2O
+  data_source: https://hpvchemicals.oecd.org/ui/handler.axd?id=677e770c-e12b-4e7d-ad59-341c8ed74fb2; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/168436557/property/Title,MolecularFormula,IUPACName,InChI,InChIKey/JSON
+  retrieval_date: '2026-11-08T05:09:51.148083+00:00'
+curation_history:
+- timestamp: '2026-11-08T05:18:40.490477+00:00'
+  curator: codex_worker09_source_review
+  action: CREATED
+  changes: Proposed distinct FeCl2 dihydrate from NBRC1326 and primary registry/form evidence. Exact frozen
+    source occurrence and captured responses are in worker09 salts decisions/evidence. No inherited review
+    approval; native review, registry rows and coordinator integration required.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:55:57.876916+00:00'
+  curator: Codex worker09
+  action: CORRECTED_MAPPING_EVIDENCE_ATTRIBUTION
+  changes: 'Issue #1226 provenance-only correction for sa-proposal-iron-ii-chloride-dihydrate, audit flag
+    566: changed ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION to LLM_SUGGESTION. The
+    complete assertion was newly supplied by the worker09 agent, not a MIM human reviewer; the cited source
+    author is distinct from the author of this curation judgment. Preserved the complete source, notes
+    and claim content, all other mapping evidence (including the ambiguous historical Casamino wrapper
+    where present), component evidence, scientific fields and prior history. No identity, source applicability,
+    outcome, role, coalescence or export approval change. Audit: https://github.com/CultureBotAI/MediaIngredientMech/issues/1226#issuecomment-6718717543;
+    complete original evidence-object SHA256 f1544adb415e64467abdacf42f40a4e64cfb98374c363e769c582e55a1764041.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

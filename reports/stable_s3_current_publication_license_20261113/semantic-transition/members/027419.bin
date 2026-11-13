@@ -1,0 +1,182 @@
+{
+  "at": "2026-11-13T00:13:09.811081+00:00",
+  "state": "CONFIRMED_CURRENT_DATA_LICENSE_METADATA_REGRESSION",
+  "heads": {
+    "MIM": "eeb586afd00af70997b0f46e76c08e8cfa074665",
+    "Claw": "4287dce16ee8b5f897bf70f915bdca9aa1484bb6"
+  },
+  "policy_commit": {
+    "sha": "7a65c4e9173efc435b77c300b5f1fedc71bc5297",
+    "title": "License project data under CC BY 4.0 and code under BSD-3-Clause (#788)",
+    "date": "2026-10-02",
+    "diff_sha256": "18d4f0daf82a8919e79e676ef950f409273a70dc207c5a40cf0f513cb009de54",
+    "ancestor_of_current_MIM": true
+  },
+  "headers": {
+    "original": {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s3-prepared-canonical-row-class-audit-v1/original.sssom.tsv",
+      "full_artifact_sha256": "3d9f1ac412209266034319542f225918b78b4e6a8e0658b53ee0689b4fb4dafe",
+      "header_sha256": "5b1cdf6abd3384a2774a01f6a676a356824c8623215c1c6a11eb934cd99fa42d",
+      "license_line": "# license: \"https://creativecommons.org/licenses/by/4.0/\""
+    },
+    "diagnostic": {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/.temp/cumulative-source-generated-s3-requalified1401-v1/candidate.sssom.tsv",
+      "full_artifact_sha256": "c5278f8662eb0e4a4a1cf980805672802b8727517800139ea665f596c36dfd53",
+      "header_sha256": "a6843e906f4f14339f1d08f07e2ae7b5c5bb91a44619f1067ff397bab1bf02b9",
+      "license_line": "# license: \"https://creativecommons.org/publicdomain/zero/1.0/\""
+    },
+    "prepared": {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s3-prepared-canonical-row-class-audit-v1/prepared.sssom.tsv",
+      "full_artifact_sha256": "49b0996eef20a134daf5af259dfcfb5bbe5d1969d1a8ef6b3d2b449d3725bf25",
+      "header_sha256": "a6843e906f4f14339f1d08f07e2ae7b5c5bb91a44619f1067ff397bab1bf02b9",
+      "license_line": "# license: \"https://creativecommons.org/publicdomain/zero/1.0/\""
+    }
+  },
+  "authority": [
+    {
+      "path": "LICENSE",
+      "lines": "4-6",
+      "scope": "Project-authored records, annotations, mappings and data exports explicitly CC-BY-4.0."
+    },
+    {
+      "path": "LICENSE-DATA",
+      "lines": "1,57-62",
+      "scope": "Creative Commons Attribution 4.0 International data license."
+    },
+    {
+      "path": "README.md",
+      "lines": "173-179",
+      "scope": "Current data/documentation CC-BY-4.0; software separately BSD; historical releases retain original licenses."
+    }
+  ],
+  "root_cause": [
+    {
+      "root": "Claw",
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "line": 238,
+      "fact": "Hardcoded LICENSE is CC0 URI."
+    },
+    {
+      "root": "Claw",
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "line": 1242,
+      "fact": "HEADER_YAML emits that constant into every MIM diagnostic."
+    },
+    {
+      "root": "MIM",
+      "path": "src/mediaingredientmech/curate/stable_sssom_publication.py",
+      "lines": "825-828,1495",
+      "fact": "Publisher preserves the diagnostic header while rendering the reviewed complete rows; it does not restore or compare the current MIM data-license metadata."
+    },
+    {
+      "root": "MIM",
+      "path": "src/mediaingredientmech/export/reviewed_sssom.py",
+      "lines": "104-137",
+      "fact": "Native parser checks mapping_set_id, predicate_semantics and table structure; it does not bind an allowed data license."
+    }
+  ],
+  "prior_decisions_reconciliation": {
+    "627": "Earlier closed issue body proposes fleet data CC0; this is historical context, not a later authorization to reverse #788.",
+    "776": "Earlier schema/package mismatch report refers to September state and #627 proposal; distinguishes vendored schema notices from project data licensing.",
+    "787": "Closed follow-up requires fresh review source bindings after canonical license-header update; current live readback has no comments.",
+    "788": "Actual current ancestor commit deliberately changes canonical CC0 to CC-BY-4.0 and adds the current data-specific scope. This is the applicable maintained decision found in the inspected history."
+  },
+  "bounded_authority_search": {
+    "files": [
+      "MAPPING_SEMANTICS.md",
+      "docs/SSSOM_RELEASE.md",
+      "docs/STABLE_SSSOM_PUBLICATION.md",
+      "LICENSE",
+      "LICENSE-DATA",
+      "README.md"
+    ],
+    "ignored_files_included": true,
+    "method": "Explicit file reads plus rg --no-ignore --hidden; actual Git policy diff and parent-supplied live all-state issue bodies.",
+    "conclusion": "No explicit authority to relabel this current candidate CC0 was found in the inspected current contract/docs or reconciled prior issue material. Current maintained data authority says CC-BY-4.0. No inference from the BSD software license, generator default, or older release licensing is used.",
+    "limitation": "This is a repository metadata/authority consistency audit, not a claim about all third-party rights or a new license determination."
+  },
+  "recommended_next": "Keep canonical application held. File the concrete generator/publisher metadata regression before any code fix; correct through reviewed native producers/guards and fresh artifact qualification, never hand-edit generated TSV/receipts. Preserve all scientific row decisions and historical evidence.",
+  "inputs": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/LICENSE": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "LICENSE",
+      "sha256": "a970da11ab082b80c07834961b408d679d9bf82b45e2d6436fd49c6e0a9249e5",
+      "copy": "MIM-LICENSE.txt"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/LICENSE-DATA": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "LICENSE-DATA",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "copy": "MIM-LICENSE-DATA.txt"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/README.md": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "README.md",
+      "sha256": "81aa5fdccbdc251d00e8df5708aac20c66a4e980a90320e827116e931fe41aef",
+      "copy": "MIM-README.md"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/MAPPING_SEMANTICS.md": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3",
+      "copy": "MAPPING_SEMANTICS.md"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/docs/SSSOM_RELEASE.md": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "docs/SSSOM_RELEASE.md",
+      "sha256": "dd49acc052d8716c719980d73af41f1e59180a98d3102ec3209e4eb0c0e179aa",
+      "copy": "SSSOM_RELEASE.md"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/docs/STABLE_SSSOM_PUBLICATION.md": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "docs/STABLE_SSSOM_PUBLICATION.md",
+      "sha256": "ad54e060f114d87528cec80a483ab542801b3e79f009758ad1e027b33d3d8d70",
+      "copy": "STABLE_SSSOM_PUBLICATION.md"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/src/mediaingredientmech/curate/stable_sssom_publication.py": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "src/mediaingredientmech/curate/stable_sssom_publication.py",
+      "sha256": "bfdb3a52d2974f232900e51098104a4b6b877d9f7e74a595482e86e0f65c03d0",
+      "copy": "native-publisher.py.txt"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/src/mediaingredientmech/export/reviewed_sssom.py": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "src/mediaingredientmech/export/reviewed_sssom.py",
+      "sha256": "6729f1412650d30e0ab6dde7100edc6fa3db0eeca362c644af98b114e153f399",
+      "copy": "native-reviewed-parser.py.txt"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/scripts/validate_sssom_invariants.py": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": "scripts/validate_sssom_invariants.py",
+      "sha256": "d115d63896bff44a94457bb9b3b1de58f51f09d61124763a10d803018d45e5ed",
+      "copy": "native-invariants.py.txt"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cas-disposition-claw-ci-worktree/scripts/build_mim_ingredient_sssom.py": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cas-disposition-claw-ci-worktree",
+      "path": "scripts/build_mim_ingredient_sssom.py",
+      "sha256": "609cc565712f3b1cd643b98841b59a4c2ca2d3171fdf45a185225229b6018510",
+      "copy": "claw-builder.py.txt"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/.temp/cumulative-source-generated-s3-requalified1401-v1/generation.json": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target",
+      "path": ".temp/cumulative-source-generated-s3-requalified1401-v1/generation.json",
+      "sha256": "9b3bb7c4c5bae256dcfb1fc9de4bafd5c1522857c9ed03312a9d2782c06a8a63",
+      "copy": "generation.json"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s3-publication-license-issue-dedup-v1/RESULT.json": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107",
+      "path": "preflight/s3-publication-license-issue-dedup-v1/RESULT.json",
+      "sha256": "3f065d3c1b2e0b51235b3587dde571d8d9415f2aaf1b74c794e35f30464606d4",
+      "copy": "prior-issue-bodies.json"
+    },
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s3-publication-license-787-readback-v1/RESULT.json": {
+      "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107",
+      "path": "preflight/s3-publication-license-787-readback-v1/RESULT.json",
+      "sha256": "fda83d71afbf360226ec07c3165f7b2ffcad7e1ab2feaa7470420f4416adc8f8",
+      "copy": "issue787-current-readback.json"
+    }
+  },
+  "source_or_code_changed": false,
+  "native_phase_run": false,
+  "scientific_votes_added": 0
+}

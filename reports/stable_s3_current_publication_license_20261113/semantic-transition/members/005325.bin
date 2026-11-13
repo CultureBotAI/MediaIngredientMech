@@ -1,0 +1,487 @@
+id: CultureMech:013555
+preferred_term: Solution A
+term:
+  id: mediadive.solution:4591
+  label: Solution A
+composition:
+- preferred_term: NaCl
+  concentration:
+    value: '9.99001'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:43
+    label: NaCl
+  chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 1,
+                      "compound": "NaCl",
+                      "compound_id": 43,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 10,
+                      "unit": "g",
+                      "g_l": 9.99001,
+                      "mmol_l": 170.945,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[0].concentration (NaCl) in
+      MediaDive solution 4591; locator=$.data.recipe[0] (compound_id=43). Provider
+      explicitly reports g_l=9.99001. Arithmetic check: 10 g * 1 g/g / (1001 ml /
+      1000 ml per L) = 9.990009990009990009990009990 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: Yeast extract
+  concentration:
+    value: '1.998'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:16
+    label: Yeast extract
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 2,
+                      "compound": "Yeast extract",
+                      "compound_id": 16,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 2,
+                      "unit": "g",
+                      "g_l": 1.998,
+                      "mmol_l": null,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[1].concentration (Yeast extract)
+      in MediaDive solution 4591; locator=$.data.recipe[1] (compound_id=16). Provider
+      explicitly reports g_l=1.998. Arithmetic check: 2 g * 1 g/g / (1001 ml / 1000
+      ml per L) = 1.998001998001998001998001998 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: Trypticase peptone
+  concentration:
+    value: '1.998'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:124
+    label: Trypticase peptone
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 3,
+                      "compound": "Trypticase peptone",
+                      "compound_id": 124,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 2,
+                      "unit": "g",
+                      "g_l": 1.998,
+                      "mmol_l": null,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[2].concentration (Trypticase
+      peptone) in MediaDive solution 4591; locator=$.data.recipe[2] (compound_id=124).
+      Provider explicitly reports g_l=1.998. Arithmetic check: 2 g * 1 g/g / (1001
+      ml / 1000 ml per L) = 1.998001998001998001998001998 g/L, consistent with the
+      reported value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: NH4Cl
+  concentration:
+    value: '0.999001'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:42
+    label: NH4Cl
+  chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 4,
+                      "compound": "NH4Cl",
+                      "compound_id": 42,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 1,
+                      "unit": "g",
+                      "g_l": 0.999001,
+                      "mmol_l": 18.6764,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[3].concentration (NH4Cl)
+      in MediaDive solution 4591; locator=$.data.recipe[3] (compound_id=42). Provider
+      explicitly reports g_l=0.999001. Arithmetic check: 1 g * 1 g/g / (1001 ml /
+      1000 ml per L) = 0.9990009990009990009990009990 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: MgCl2 x 6 H2O
+  concentration:
+    value: '0.999001'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:79
+    label: MgCl2 x 6 H2O
+  chebi_term:
+    id: CHEBI:86345
+    label: magnesium dichloride hexahydrate
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 5,
+                      "compound": "MgCl2 x 6 H2O",
+                      "compound_id": 79,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 1,
+                      "unit": "g",
+                      "g_l": 0.999001,
+                      "mmol_l": 4.91385,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[4].concentration (MgCl2 x
+      6 H2O) in MediaDive solution 4591; locator=$.data.recipe[4] (compound_id=79).
+      Provider explicitly reports g_l=0.999001. Arithmetic check: 1 g * 1 g/g / (1001
+      ml / 1000 ml per L) = 0.9990009990009990009990009990 g/L, consistent with the
+      reported value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: KCl
+  concentration:
+    value: '0.499501'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:61
+    label: KCl
+  chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: CaCl2 x 2 H2O
+  concentration:
+    value: '0.3996'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:7
+    label: CaCl2 x 2 H2O
+  chebi_term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 7,
+                      "compound": "CaCl2 x 2 H2O",
+                      "compound_id": 7,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.4,
+                      "unit": "g",
+                      "g_l": 0.3996,
+                      "mmol_l": 2.71809,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[6].concentration (CaCl2 x
+      2 H2O) in MediaDive solution 4591; locator=$.data.recipe[6] (compound_id=7).
+      Provider explicitly reports g_l=0.3996. Arithmetic check: 0.4 g * 1 g/g / (1001
+      ml / 1000 ml per L) = 0.3996003996003996003996003996 g/L, consistent with the
+      reported value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: K2HPO4
+  concentration:
+    value: '0.3996'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:10
+    label: K2HPO4
+  chebi_term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 8,
+                      "compound": "K2HPO4",
+                      "compound_id": 10,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.4,
+                      "unit": "g",
+                      "g_l": 0.3996,
+                      "mmol_l": 2.29423,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[7].concentration (K2HPO4)
+      in MediaDive solution 4591; locator=$.data.recipe[7] (compound_id=10). Provider
+      explicitly reports g_l=0.3996. Arithmetic check: 0.4 g * 1 g/g / (1001 ml /
+      1000 ml per L) = 0.3996003996003996003996003996 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: Resazurin
+  concentration:
+    value: '0.0004995'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:25
+    label: Resazurin
+  chebi_term:
+    id: CHEBI:8806
+    label: Resazurin
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 9,
+                      "compound": "Resazurin",
+                      "compound_id": 25,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.5,
+                      "unit": "mg",
+                      "g_l": 0.0004995,
+                      "mmol_l": 0.00217942,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[8].concentration (Resazurin)
+      in MediaDive solution 4591; locator=$.data.recipe[8] (compound_id=25). Provider
+      explicitly reports g_l=0.0004995. Arithmetic check: 0.5 mg * 0.001 g/mg / (1001
+      ml / 1000 ml per L) = 0.0004995004995004995004995004995 g/L, consistent with
+      the reported value at its precision. Evidence supports the provider-declared
+      concentration within this solution, not a concentration in a receiving medium
+      or an independently measured final volume. Water addition alone is not used
+      to infer a final volume. Additional exact excerpt at $.data.volume: "volume":
+      1001. Retrieved 2026-10-07T09:45:23.715103+00:00; response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: NaHCO3
+  concentration:
+    value: '3.996'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:55
+    label: NaHCO3
+  chebi_term:
+    id: CHEBI:32139
+    label: sodium hydrogencarbonate
+    confidence: 1.0
+    match_type: exact_match
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/4591
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 12,
+                      "compound": "NaHCO3",
+                      "compound_id": 55,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 4,
+                      "unit": "g",
+                      "g_l": 3.996,
+                      "mmol_l": 47.5675,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[9].concentration (NaHCO3)
+      in MediaDive solution 4591; locator=$.data.recipe[11] (compound_id=55). Provider
+      explicitly reports g_l=3.996. Arithmetic check: 4 g * 1 g/g / (1001 ml / 1000
+      ml per L) = 3.996003996003996003996003996 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 1001. Retrieved 2026-10-07T09:45:23.715103+00:00;
+      response SHA256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791.'
+- preferred_term: Distilled water
+  concentration:
+    value: '919.0809190809191'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Methanol solution (see below)
+  concentration:
+    value: '49.95004995004995'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1863
+    label: Methanol solution (see below)
+- preferred_term: Trace vitamins (see Medium No. 197)
+  concentration:
+    value: '9.990009990009991'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1784
+    label: Trace vitamins (see Medium No. 197)
+- preferred_term: L-Cysteine HCl x H2O
+  concentration:
+    value: '4.9950049950049955'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:770
+    label: L-Cysteine HCl x H2O
+  chebi_term:
+    id: CHEBI:91248
+    label: L-cysteine hydrochloride hydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Na2S x 9 H2O
+  concentration:
+    value: '4.9950049950049955'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:54
+    label: Na2S x 9 H2O
+  chebi_term:
+    id: CHEBI:76209
+    label: sodium sulfide nonahydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: "Mix components except NaHCO3, bring to a boil for several seconds\
+  \ and cool down under a stream of N2-CO2 (80:20). Add NaHCO3, mix thoroughly and\
+  \ distribute the medium into culture vessels under the same gas mixture. Seal with\
+  \ butyl rubber stoppers and autoclave. Finally, add per liter the following sterile\
+  \ solutions (autoclaved or *filter-sterilized): \n\nOriginal volume: 1001 mL"
+curation_history:
+- timestamp: '2026-03-13T06:20:32.004375Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:013555'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:37.148866'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:15.169378'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:59.803039+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:32.953448+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 4 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:48:42.601752+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-06-10T06:56:20.628265+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '4 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+- timestamp: '2026-10-07T09:46:43.027838+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/4591
+  changes: 'composition[0].concentration: {"unit": "G_PER_L", "value": "9.99001"}
+    -> {"unit": "G_PER_L", "value": "9.99001"} (evidence_only); composition[1].concentration:
+    {"unit": "G_PER_L", "value": "1.998"} -> {"unit": "G_PER_L", "value": "1.998"}
+    (evidence_only); composition[2].concentration: {"unit": "G_PER_L", "value": "1.998"}
+    -> {"unit": "G_PER_L", "value": "1.998"} (evidence_only); composition[3].concentration:
+    {"unit": "G_PER_L", "value": "0.999001"} -> {"unit": "G_PER_L", "value": "0.999001"}
+    (evidence_only); composition[4].concentration: {"unit": "G_PER_L", "value": "0.999001"}
+    -> {"unit": "G_PER_L", "value": "0.999001"} (evidence_only); composition[6].concentration:
+    {"unit": "G_PER_L", "value": "0.3996"} -> {"unit": "G_PER_L", "value": "0.3996"}
+    (evidence_only); composition[7].concentration: {"unit": "G_PER_L", "value": "0.3996"}
+    -> {"unit": "G_PER_L", "value": "0.3996"} (evidence_only); composition[8].concentration:
+    {"unit": "G_PER_L", "value": "0.0004995"} -> {"unit": "G_PER_L", "value": "0.0004995"}
+    (evidence_only); composition[9].concentration: {"unit": "G_PER_L", "value": "3.996"}
+    -> {"unit": "G_PER_L", "value": "3.996"} (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/4591
+  title: 'MediaDive solution 4591: Solution A'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=f21800eaa40abacd2298add132656d89dfb6fd387c1d5e30e89ca9de1353a791;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

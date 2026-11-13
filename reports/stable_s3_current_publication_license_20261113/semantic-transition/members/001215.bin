@@ -1,0 +1,56 @@
+identifier: CHEBI:29987
+preferred_term: Glutamate
+synonyms:
+- synonym_text: Glutamate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 465
+    source_columns: BacDive_Metabolite_production|BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0624 -> CHEBI:29987 "glutamate(2-)" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:29987
+  ontology_label: glutamate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
+      PR #201) + local CHEBI verification'
+    notes: Glutamate synonym of CHEBI:29987 glutamate(2-).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C5H7NO4
+  smiles: NC(CCC(=O)[O-])C(=O)[O-]
+  inchi: InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)/p-2
+  molecular_weight: 145.114
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:48.195538+00:00'

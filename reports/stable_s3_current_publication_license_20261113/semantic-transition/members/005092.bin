@@ -1,0 +1,201 @@
+id: CultureMech:002799
+name: gyps_medium
+original_name: GYPS MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 6.0
+media_term:
+  preferred_term: JCM Medium J449
+  term:
+    id: mediadive.medium:J449
+    label: GYPS MEDIUM
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=449'
+ingredients:
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/medium/J449
+    supports: SUPPORT
+    snippet: |-
+      {
+                              "recipe_order": 1,
+                              "compound": "Glucose",
+                              "compound_id": 5,
+                              "amount": 5,
+                              "unit": "g",
+                              "g_l": 5,
+                              "mmol_l": 27.7531,
+                              "optional": 0
+                          }
+    explanation: 'Concentration evidence for ingredients[0].concentration (Glucose)
+      in MediaDive medium J449; locator=$.data.solutions[0].recipe[0]. Provider explicitly
+      reports g_l=5; check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L. This
+      supports the provider-declared main-recipe concentration, not an independently
+      measured final volume, a stock composition, or a downstream assay dilution.
+      Water alone does not establish final volume. Exact source ingredient labels/forms
+      are matched; secondary ontology mappings are not validated by this evidence.
+      Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:06:46.167943+00:00;
+      response SHA256=ee7c7ce6a3f98d6ec69fd5053ae23a517330218df446d766fd1893b101199492.'
+- preferred_term: Yeast extract
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/medium/J449
+    supports: SUPPORT
+    snippet: |-
+      {
+                              "recipe_order": 2,
+                              "compound": "Yeast extract",
+                              "compound_id": 16,
+                              "amount": 0.5,
+                              "unit": "g",
+                              "g_l": 0.5,
+                              "optional": 0
+                          }
+    explanation: 'Concentration evidence for ingredients[1].concentration (Yeast extract)
+      in MediaDive medium J449; locator=$.data.solutions[0].recipe[1]. Provider explicitly
+      reports g_l=0.5; check: 0.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.5 g/L.
+      This supports the provider-declared main-recipe concentration, not an independently
+      measured final volume, a stock composition, or a downstream assay dilution.
+      Water alone does not establish final volume. Exact source ingredient labels/forms
+      are matched; secondary ontology mappings are not validated by this evidence.
+      Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:06:46.167943+00:00;
+      response SHA256=ee7c7ce6a3f98d6ec69fd5053ae23a517330218df446d766fd1893b101199492.'
+- preferred_term: Peptone
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: MICRO:0000178
+    label: Peptone
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/medium/J449
+    supports: SUPPORT
+    snippet: |-
+      {
+                              "recipe_order": 3,
+                              "compound": "Peptone",
+                              "compound_id": 1,
+                              "amount": 1,
+                              "unit": "g",
+                              "g_l": 1,
+                              "optional": 0
+                          }
+    explanation: 'Concentration evidence for ingredients[2].concentration (Peptone)
+      in MediaDive medium J449; locator=$.data.solutions[0].recipe[2]. Provider explicitly
+      reports g_l=1; check: 1 g * 1 g/g / (1000 ml / 1000 ml per L) = 1 g/L. This
+      supports the provider-declared main-recipe concentration, not an independently
+      measured final volume, a stock composition, or a downstream assay dilution.
+      Water alone does not establish final volume. Exact source ingredient labels/forms
+      are matched; secondary ontology mappings are not validated by this evidence.
+      Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:06:46.167943+00:00;
+      response SHA256=ee7c7ce6a3f98d6ec69fd5053ae23a517330218df446d766fd1893b101199492.'
+- preferred_term: Sea Salt
+  concentration:
+    value: '30'
+    unit: G_PER_L
+- preferred_term: MES
+  term:
+    id: CHEBI:39010
+    label: MES
+  concentration:
+    value: '3.9'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:39010
+    label: MES
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/medium/J449
+    supports: SUPPORT
+    snippet: |-
+      {
+                              "recipe_order": 5,
+                              "compound": "MES",
+                              "compound_id": 824,
+                              "amount": 3.9,
+                              "unit": "g",
+                              "g_l": 3.9,
+                              "mmol_l": 19.9754,
+                              "optional": 0
+                          }
+    explanation: 'Concentration evidence for ingredients[4].concentration (MES) in
+      MediaDive medium J449; locator=$.data.solutions[0].recipe[4]. Provider explicitly
+      reports g_l=3.9; check: 3.9 g * 1 g/g / (1000 ml / 1000 ml per L) = 3.9 g/L.
+      This supports the provider-declared main-recipe concentration, not an independently
+      measured final volume, a stock composition, or a downstream assay dilution.
+      Water alone does not establish final volume. Exact source ingredient labels/forms
+      are matched; secondary ontology mappings are not validated by this evidence.
+      Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:06:46.167943+00:00;
+      response SHA256=ee7c7ce6a3f98d6ec69fd5053ae23a517330218df446d766fd1893b101199492.'
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust pH to 6.0. Replace gas phase with N2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:16.648733Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J449'
+- timestamp: '2026-03-13T06:19:15.802434Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002799'
+- timestamp: '2026-03-17T06:29:47.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:29.245379+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "GYPS MEDIUM" to "gyps_medium" for consistent matching
+- timestamp: '2026-06-05T07:41:06.935261+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_bacterial_score10_exact_terms_batch3.py
+  action: GROUNDED_BACTERIAL_SCORE10_EXACT_TERMS_BATCH3
+  changes: Grounded exact bacterial score-10 ingredients
+  source: src/culturemech/data/mediaingredientmech/label_index.csv
+  notes: Applied local mappings for Peptone, Yeast extract.
+- timestamp: '2026-10-07T14:33:27.670564+00:00'
+  curator: codex
+  action: CURATED_MEDIUM_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Exact medium/source membership, ingredient inventory/forms, physical-state
+    conditions, literal snippets, and arithmetic checked. Stock boundaries, source-only
+    rows, preparation context, and variants remain explicit follow-up tasks; secondary
+    chemical mappings unchanged.
+  source: https://mediadive.dsmz.de/rest/medium/J449
+  changes: 'ingredients[0].concentration: {"unit": "G_PER_L", "value": "5"} -> {"unit":
+    "G_PER_L", "value": "5"} (evidence_only); ingredients[1].concentration: {"unit":
+    "G_PER_L", "value": "0.5"} -> {"unit": "G_PER_L", "value": "0.5"} (evidence_only);
+    ingredients[2].concentration: {"unit": "G_PER_L", "value": "1"} -> {"unit": "G_PER_L",
+    "value": "1"} (evidence_only); ingredients[4].concentration: {"unit": "G_PER_L",
+    "value": "3.9"} -> {"unit": "G_PER_L", "value": "3.9"} (evidence_only)'
+references:
+- reference: https://mediadive.dsmz.de/rest/medium/J449
+  title: 'MediaDive medium J449: GYPS MEDIUM'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; source_organization=DSMZ;
+    accessed_on=2026-10-07; locator=$.data.solutions[0]; response_sha256=ee7c7ce6a3f98d6ec69fd5053ae23a517330218df446d766fd1893b101199492;
+    original_recipe=https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=449; individual
+    authors and publication year not supplied. Provider-declared main-recipe amounts
+    only. Original recipe collection=JCM; GRMD accession=449; DSMZ is the MediaDive
+    dataset provider, not the original recipe collection.

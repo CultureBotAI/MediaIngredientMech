@@ -1,0 +1,40 @@
+from pathlib import Path
+from collections import defaultdict, Counter
+import json,hashlib,subprocess,datetime
+C=Path(__file__).resolve().parents[2];D=Path(__file__).resolve().parent
+P=C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json'
+I=P.parent/'materialization-index.draft.json'
+plan=json.loads(P.read_bytes());index=json.loads(I.read_bytes());im={x['destination']:x for x in index['files']}
+def sha(b):return hashlib.sha256(b).hexdigest()
+def save(n,x):
+ with (D/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+def texts(x,p=''):
+ if isinstance(x,str):yield p,x
+ elif isinstance(x,dict):
+  for k,v in x.items():yield from texts(v,p+'/'+k)
+ elif isinstance(x,list):
+  for k,v in enumerate(x):yield from texts(v,p+'/'+str(k))
+selected=defaultdict(list)
+for r in plan['records']:
+ for o in r['origins']:selected[(o['worker_slot'],o['proposal_id'])].append({'operation_id':r['operation_id'],'kind':r['kind'],'source_record':r['source_record'],'after_capture':r['after_capture'],'origin':o})
+cores=[];rows=[];groups=defaultdict(list)
+skip={'proposal_id','case_ids','evidence_ids','owner_path','after_capture','before_sha256','predecessor_after_capture','authentic_before_capture','selected_predecessor_capture','prior_mapping_payload'}
+for b in plan['bindings']:
+ if b['role']!='proposal':continue
+ capture=im[b['path']];raw=Path(capture['source']).read_bytes();assert sha(raw)==b['sha256']==capture['sha256']
+ slot='worker-'+b['binding_id'][1:3];repo=C/'workers'/b['binding_id'][:3]/'worktree'
+ blob=subprocess.run(['git','--no-optional-locks','-C',str(repo),'show',b['published_head']+':'+b['published_path']],capture_output=True,check=True).stdout
+ assert blob==raw
+ x=json.loads(raw);ps=x if isinstance(x,list) else x['proposals']
+ cores.append({'binding':b,'capture':capture,'proposals':len(ps),'published_git_blob_matches':True})
+ for j,p in enumerate(ps):
+  key=(slot,p['proposal_id']);fields={k:v for k,v in p.items() if k not in skip}
+  row={'worker_slot':slot,'proposal_id':p['proposal_id'],'proposal_core':capture,'published_head':b['published_head'],'published_path':b['published_path'],'selector':('/'+str(j) if isinstance(x,list) else '/proposals/'+str(j)),'proposal_object_sha256':sha(json.dumps(p,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()),'case_ids':p['case_ids'],'selected_operations':selected.get(key,[]),'complete_proposal':p,'condition_fields':fields}
+  rows.append(row)
+  for f,t in texts(fields):
+   if len(t)>40:groups[(f,t)].append({'worker_slot':slot,'proposal_id':p['proposal_id'],'selected_operations':[r['operation_id'] for r in selected.get(key,[])]})
+assert len(rows)==1022 and len({(r['worker_slot'],r['proposal_id']) for r in rows})==1022
+assert sum(bool(r['selected_operations']) for r in rows)==1018
+save('ORIGINAL-PROPOSAL-INVENTORY.json',{'scope':'All frozen original proposal objects; text leads are not automatic application blockers','plan':{'path':str(P),'sha256':sha(P.read_bytes())},'index':{'path':str(I),'sha256':sha(I.read_bytes())},'cores':cores,'counts':dict(Counter(r['worker_slot'] for r in rows)),'original_proposals':1022,'selected_originals':1018,'records':rows})
+save('CONDITION-TEXT-GROUPS.json',[{'field':f,'text':t,'origins':v} for (f,t),v in groups.items()])
+print(json.dumps({'originals':len(rows),'selected':sum(bool(r['selected_operations']) for r in rows),'unique_field_texts':len(groups),'cores':len(cores),'at':datetime.datetime.now(datetime.timezone.utc).isoformat()}))

@@ -1,0 +1,136 @@
+identifier: CHEBI:32918
+preferred_term: 1-Naphthylacetic acid
+ontology_mapping:
+  ontology_id: CHEBI:32918
+  ontology_label: 1-naphthaleneacetic acid
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison/PaperQA3 deep research + local CHEBI verification
+    notes: Source label "1-Naphtylacetic Acid" resolved to 1-naphthaleneacetic acid
+      (NAA), CAS-RN 86-87-3; exact match to CHEBI:32918 verified in local chebi.db.
+      Misspelling of "naphthyl".
+synonyms:
+- synonym_text: 1-Naphtylacetic Acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: 1-naphthylacetic acid
+  synonym_type: EXACT_SYNONYM
+  source: edison_deep_research
+- synonym_text: NAA
+  synonym_type: ABBREVIATION
+  source: edison_deep_research
+- synonym_text: naphthalen-1-ylacetic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2436); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-06-14T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  changes: 'Edison/PaperQA3 deep research resolved the source spelling: "1-Naphtylacetic
+    Acid" is 1-naphthaleneacetic acid (NAA), CAS-RN 86-87-3 (CHEBI:32918).'
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-15T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  changes: Promoted UNMAPPED_0316 → CHEBI:32918 "1-naphthaleneacetic acid" (EXACT_MATCH)
+    after deep-research identity resolution; primary identifier updated, mapping_status
+    UNMAPPED → MAPPED, SSSOM row added.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label '1-naphthaleneacetic acid'; it matches
+    the ChEBI synonym 'NAA' on CHEBI:32918. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: fix_naphthyl_spelling
+  action: CORRECTED_PREFERRED_TERM_SPELLING
+  changes: 'Corrected the misspelling ''Naphtyl'' -> ''Naphthyl'' in preferred_term.
+    This is not a regrounding: the record stays on CHEBI:32918 and denotes the same
+    substance, and the record already carried ''1-naphthylacetic acid'' as a synonym,
+    so the correct spelling was never in doubt. It matters now because kg-microbe
+    overwrites an ontology term''s canonical name from a symmetric SSSOM row, so this
+    typo was published as the KG''s name for CHEBI:32918 ''1-naphthaleneacetic acid''.
+    The raw misspelling is kept as a RAW_TEXT synonym so any source string still resolves
+    — MAPPING_SEMANTICS warns that renaming a record removes the raw label downstream
+    consumers match on, and keeping it as a synonym is what avoids that.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000021; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 86-87-3
+  data_source: Edison/PaperQA3 deep research (janikova2020; henneberger; donnelly1990)
+  retrieval_date: '2026-06-14T00:00:00+00:00'
+  molecular_formula: C12H10O2
+  smiles: O=C(O)Cc1cccc2ccccc12
+  inchi: InChI=1S/C12H10O2/c13-12(14)8-10-6-3-5-9-4-1-2-7-11(9)10/h1-7H,8H2,(H,13,14)
+  molecular_weight: 186.21
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2436). Identity resolved
+  2026-06-14 to 1-naphthaleneacetic acid (NAA, CAS 86-87-3, CHEBI:32918) via Edison
+  deep research; promoted to MAPPED 2026-06-15.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000021
+legacy_identifiers:
+- MIM:1-naphtylacetic_Acid
+- CHEBI:32918
+discussions:
+- discussion_id: kgscan-546f113a807c
+  prompt: 'Knowledge gap for 1-Naphtylacetic Acid: Despite their commercial popularity,
+    numerous research gaps have limited the expansion of fundamental research and
+    dogwood breeding programs.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: explicit_gap,
+    future_work, limitations_barriers, unclear_unknown). Curator review required:
+    set attaches_to, refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:41695534
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Despite their commercial popularity, numerous research gaps have limited
+      the expansion of fundamental research and dogwood breeding programs.
+    explanation: Gap-signal sentence (explicit_gap) from the cited abstract.
+  - reference: PMID:40634860
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Due to their heterogeneity and polygenic nature, the metabolic pathways
+      and biological mechanisms underlying these conditions remain elusive.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:40587842
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: However, the specific mechanisms by which gut bacteria and their metabolites
+      exert therapeutic effects in melanoma remain poorly understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:40110012
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Despite extensive research, the exact causes and optimal treatment approaches
+      for depression remain unclear.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  posed_by: kg-microbe-kgscan

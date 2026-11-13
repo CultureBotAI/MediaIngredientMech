@@ -1,0 +1,220 @@
+"""Append exact three successor review bindings; never author acceptance."""
+import collections
+import copy
+import csv
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+
+D = Path(__file__).resolve().parent
+C = D.parents[1]
+OLD = C / 'integration/final-operation-admissibility-v2'
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_bytes())
+
+
+def write(path, value):
+    with path.open('x') as handle:
+        json.dump(value, handle, indent=2, ensure_ascii=False)
+        handle.write('\n')
+
+
+def ref(path):
+    return {'path': str(path), 'sha256': sha(path)}
+
+
+assert sha(OLD / 'MANIFEST.json') == 'aa0aea138c35fd9d7b1df08ed3a00115b0c1c9b17280a352f43981fbb7e1fa53'
+old_manifest = read(OLD / 'MANIFEST.json')
+old_members = old_manifest.get('files', old_manifest.get('members'))
+assert old_members is not None
+for item in old_members:
+    assert sha(OLD / item['path']) == item['sha256'], item['path']
+
+reviews = {
+    'marine_completeness_final': {
+        'root': C / 'workers/w10/worktree/.temp/marine-completeness-successor-independent-v1',
+        'manifest': '7c0e6c9d380be29701893026c0d45c365127d7350142dfe11e2f084dfe707371',
+        'handoff': 'fd5e8ccab3b3910064d72d060e0088f345da7a8c28256fb9c8ac5fe5e3890573',
+        'root_collection': C / 'preflight/marine-successor-root-collection-v1/receipt.json',
+        'actions': {'ORIGINAL-w04::FREV-MEDIA-P-media-alias-marine2216': '355f0f593c84cabc8c10fbf3e72af8415725b94602dd6e660f1b82985703cfcc'},
+        'reviewer': 'External worker10 complete science, lineage, technical and distinct final skeptic; no candidate authorship.',
+    },
+    'toplayer_parent_successors_final': {
+        'root': C / 'workers/w07/worktree/.temp/toplayer-parent-successor-independent-v1',
+        'manifest': '8fb89a4bf99fa0af622d31f6d5e6b994174c6180979dc0e43b2e995387c91e3f',
+        'handoff': '32ad52bbc9695c4066d56efeb25de905266db049ff1390c7ce732d54c426469c',
+        'root_collection': C / 'preflight/toplayer-successor-root-collection-v1/receipt.json',
+        'actions': {
+            'ORIGINAL-w08::vm1201-prop-jcm628-toplayer': '601d8e0cd0699f407b58755a26da3362e0823cb1c011bce04e246523472abb76',
+            'ORIGINAL-w08::vm1201-prop-jcm629-toplayer': '65375652cc7b0ca4e6e9fa82430b68ceb8fa50699e0b923deb4f7e3ff1688305',
+        },
+        'reviewer': 'External worker07 fresh complete successor science, technical and skeptic lanes; prior parent recommendation and adjacent unconsumed MES-acid authorship explicitly disclosed; current candidate author is coordinator C.',
+    },
+}
+verification = []
+copied = []
+register = read(OLD / 'whole-candidate-review-register.json')
+for key, config in reviews.items():
+    root = config['root']
+    assert sha(root / 'MANIFEST.json') == config['manifest']
+    assert sha(root / 'HANDOFF.json') == config['handoff']
+    manifest = read(root / 'MANIFEST.json')
+    entries = manifest.get('files', manifest.get('regular_files'))
+    for entry in entries:
+        path = root / entry['path']
+        assert path.is_file() and not path.is_symlink(), path
+        assert sha(path) == entry['sha256'], path
+    links = manifest.get('symlinks', manifest.get('literal_control_symlinks', []))
+    for entry in links:
+        path = root / entry['path']
+        assert path.is_symlink() and os.readlink(path) == entry['target'], path
+        if 'literal_target_sha256' in entry:
+            assert hashlib.sha256(os.readlink(path).encode()).hexdigest() == entry['literal_target_sha256']
+    handoff = read(root / 'HANDOFF.json')
+    collection = read(config['root_collection'])
+    assert collection['manifest_sha256'] == config['manifest']
+    assert collection['handoff_sha256'] == config['handoff']
+    verification.append({'review_key': key, 'manifest': ref(root / 'MANIFEST.json'),
+                         'handoff': ref(root / 'HANDOFF.json'), 'regular_files_rehashed': len(entries),
+                         'literal_links_verified_not_followed': len(links),
+                         'root_collection': ref(config['root_collection'])})
+    if key == 'marine_completeness_final':
+        assert handoff['candidate_sha256'] == next(iter(config['actions'].values()))
+        pair = [C / 'workers/w10/worktree' / x['path'] for x in handoff['native_pair']]
+        for p, advertised in zip(pair, handoff['native_pair'], strict=True):
+            assert sha(p) == advertised['sha256']
+        limits = handoff['conditions']
+        scopes = [root / 'per-target-outcomes.json', root / 'findings.json', root / 'reviewer-scopes.json']
+    else:
+        assert {x['sha256'] for x in handoff['candidate_pins']} == set(config['actions'].values())
+        pair = [root / v['path'] for v in handoff['native_review']['pair'].values()]
+        for p, advertised in zip(pair, handoff['native_review']['pair'].values(), strict=True):
+            assert sha(p) == advertised['sha256']
+        limits = handoff['retained_limits']
+        scopes = [root / 'per-target-outcomes-v3.json', root / 'finding-disposition-v3.json',
+                  root / 'review/science/MES-CONTEXT-CLARIFICATION-v3.json']
+    register[key] = {'handoff': ref(root / 'HANDOFF.json'), 'manifest': ref(root / 'MANIFEST.json'),
+                     'native_pair': [ref(p) for p in pair], 'root_collection': ref(config['root_collection']),
+                     'reviewer': config['reviewer'], 'primary_author': '/root/step7d_science_c',
+                     'review_scope': 'Exact complete successor payloads only; source/history/component/quantity and all retained holds inspected. No whole-campaign or application/export approval.',
+                     'actual_status': handoff['status'], 'candidate_actions': config['actions'],
+                     'limits': limits, 'per_target_dispositions': [ref(p) for p in scopes]}
+    for source in [root / 'HANDOFF.json', root / 'MANIFEST.json', *pair, *scopes, config['root_collection']]:
+        rel = source.relative_to(root) if source.is_relative_to(root) else Path('root-collection.json')
+        target = D / 'new-review-evidence' / key / rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open('xb') as handle:
+            handle.write(source.read_bytes())
+        assert sha(target) == sha(source)
+        copied.append({'original': ref(source), 'copy': str(target.relative_to(D))})
+
+old_rows = read(OLD / 'per-operation-admissibility.json')
+rows = copy.deepcopy(old_rows)
+global_conditions = list(rows[0]['general_preconditions'])
+global_conditions[1] = 'Rebind the concrete conditional934 native plan to the final independently reviewed source/publisher code and actual clean K baseline. K advanced to7a990 for1255;1256 mutation-time HEAD repair/re-review remains pending. No I/J/K application acceptance here.'
+changed = []
+for row, prior in zip(rows, old_rows, strict=True):
+    row['general_preconditions'] = global_conditions
+    assert not row['apply_now']
+    if row['payload'] is not None:
+        assert sha(Path(row['payload']['path'])) == row['payload']['sha256'], row['action_id']
+    for key, config in reviews.items():
+        if row['action_id'] not in config['actions']:
+            continue
+        assert row['scientific_readiness'] == 'PENDING_DISTINCT_COMPLETE_SUCCESSOR_REVIEW'
+        assert row['payload']['sha256'] == config['actions'][row['action_id']]
+        row['scientific_readiness'] = 'COMPOSED_COMPLETE_PAYLOAD_INDEPENDENT_REVIEW_BOUND'
+        row['independent_whole_candidate_review_keys'] = [key]
+        row['operation_specific_preconditions'] = list(register[key]['limits'])
+        if key == 'marine_completeness_final':
+            row['operation_specific_preconditions'].append('Required generic Peptone complete candidate remains c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7 in the same final overlay.')
+        resolved = row.pop('pending_findings')
+        for finding in resolved:
+            finding['independent_review'] = register[key]['handoff']
+            finding['status'] = 'RESOLVED_IN_EXACT_COMPLETE_SUCCESSOR_ONLY_NOT_ISSUE_CLOSURE'
+        row['resolved_successor_findings'] = resolved
+        row['prior_pending_findings'] = copy.deepcopy(prior['pending_findings'])
+        row['review_binding_successor'] = {'predecessor': ref(OLD / 'per-operation-admissibility.json'),
+                                           'key': key, 'no_payload_or_origin_change': True}
+        changed.append({'action_id': row['action_id'], 'payload': row['payload'],
+                        'old_state': prior['scientific_readiness'], 'new_state': row['scientific_readiness'],
+                        'review_key': key})
+    for field in ['action_id','kind','destination_path','before_path','before_sha256','payload','origin_ids','origin_review_binding_ids','case_count','retained_scientific_scope']:
+        assert row[field] == prior[field], (row['action_id'], field)
+assert len(changed) == 3
+assert len(rows) == 936 and sum(r['payload'] is not None for r in rows) == 935
+counts = dict(collections.Counter(r['scientific_readiness'] for r in rows))
+assert counts == {'COMPOSED_COMPLETE_PAYLOAD_INDEPENDENT_REVIEW_BOUND': 68,
+                  'REPORT_ONLY_NO_OWNER_INSTALLATION': 1,
+                  'EXACT_SOURCE_COMPLETE_PAYLOAD_REVIEW_CHAIN_BOUND': 866,
+                  'SCIENTIFICALLY_DEFERRED': 1}
+for name in ['candidate-binding-proposal.json', 'per-origin-scientific-review-chains.json', 'normalization-bridges.json']:
+    with (D / name).open('xb') as handle:
+        handle.write((OLD / name).read_bytes())
+    assert sha(D / name) == sha(OLD / name)
+write(D / 'per-operation-admissibility.json', rows)
+write(D / 'whole-candidate-review-register.json', register)
+write(D / 'review-binding-delta.json', {'predecessor': ref(OLD / 'HANDOFF.json'), 'changes': changed,
+                                     'all935_payload_hashes_rechecked_unchanged': True,
+                                     'all1022_origin_chains_exact_predecessor_bytes': True,
+                                     'all1879_case_bindings_exact_predecessor_bytes': True})
+write(D / 'new-review-manifest-verification.json', verification)
+write(D / 'new-review-copy-index.json', copied)
+write(D / 'input-pins.json', {'predecessor_manifest': ref(OLD / 'MANIFEST.json'),
+                            'predecessor_members_rehashed': len(old_members),
+                            'new_review_manifests': verification,
+                            'native_conditional_plan': ref(C / 'integration/final-native-intake-v2/HANDOFF.json'),
+                            '1256_contract_assessment': ref(C / 'preflight/late-head-transaction-independent-v1/HANDOFF.json')})
+outstanding = read(OLD / 'OUTSTANDING.json')
+outstanding['at'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+outstanding['specific_operations'] = [x for x in outstanding['specific_operations'] if x['evidence_state'] != 'PENDING_DISTINCT_COMPLETE_SUCCESSOR_REVIEW']
+outstanding['global_native_plan_preconditions'] = global_conditions
+outstanding['fresh_builder_needed'] = 'Concrete final-native-intake-v2 conditional934 plan exists with actual native record/chain/read-only preflight PASS at16c. Preserve it; rebind final reviewed code/clean K baseline and these three review bindings, supply genuine demotion tuple acceptance and final reviewed crosswalk before full prepare/application. No acceptance file is authored by this assembly.'
+write(D / 'OUTSTANDING.json', outstanding)
+summary = read(OLD / 'SUMMARY.json')
+summary.update(at=datetime.datetime.now(datetime.timezone.utc).isoformat(), counts=counts,
+               review_chain_bound_operations=934, pending_scientific_successors=0,
+               candidate_binding_proposal=ref(D / 'candidate-binding-proposal.json'))
+summary['remaining'] = global_conditions
+write(D / 'SUMMARY.json', summary)
+with (D / 'READINESS.tsv').open('x', newline='') as handle:
+    writer = csv.writer(handle, delimiter='\t', lineterminator='\n')
+    writer.writerow(['action_id','destination','payload_sha256','scientific_evidence_state','distinct_whole_candidate_review_keys','origin_ids','apply_now'])
+    for row in rows:
+        writer.writerow([row['action_id'],row['destination_path'],(row['payload'] or {}).get('sha256',''),
+                         row['scientific_readiness'],'|'.join(row['independent_whole_candidate_review_keys']),
+                         '|'.join(row['origin_ids']),'false'])
+write(D / 'HANDOFF.json', {
+    'sealed_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    'status': 'COMPLETE_REVIEW_CHAIN_ASSEMBLY_NOT_APPLICATION_ACCEPTANCE',
+    'counts': counts, 'actions':936,'payloads':935,'origins':1022,'source_cases':1879,
+    'review_chain_bound_operations':934,'pending_scientific_successors':0,
+    'normalization_current':155,'all_payloads_and_origin_case_bindings_unchanged':True,
+    'predecessor':ref(OLD/'HANDOFF.json'),
+    'candidate_binding_proposal':ref(D/'candidate-binding-proposal.json'),
+    'operation_ledger':ref(D/'per-operation-admissibility.json'),
+    'review_register':ref(D/'whole-candidate-review-register.json'),
+    'new_reviews_verified':verification,
+    'scope':'Assembly by candidate author C; distinct whole-payload review attribution retained. Not a scientific vote, native acceptance, code/helper approval, source-edge/role/export approval or source application.',
+    'all_apply_now_false':True,'no_maintained_writes':True,
+})
+with (D / 'README.md').open('x') as handle:
+    handle.write('# Final operation evidence, immutable v3\n\n'
+                 'The exact Marine355f and top-layer601d/6537 whole-candidate independent reviews are now bound. All935 payload hashes and all original/case bindings are unchanged from v2. The934 selected operations have concrete scoped review chains; TSB remains scientifically deferred and nominal ten-vitamin remains report-only. This is author-side evidence assembly, not an application acceptance.\n\n'
+                 'Both new review manifests were rehashed in full:2537 top-layer files and3887 Marine files plus one literal negative-control link. Complete review limits and required couplings remain in each row. All apply_now values remain false.\n\n'
+                 'The conditional16c native934 plan is preserved. Final reviewed1256 source/publisher freshness code, current clean K baseline, reviewed crosswalk successor, genuine relocation acceptance, full prepare and final canonical/companion/semantic/unified/export gates remain required. No future code/helper/plan acceptance is inferred.\n')
+for item in old_members:
+    assert sha(OLD / item['path']) == item['sha256']
+members = [{'path':str(p.relative_to(D)), 'sha256':sha(p), 'bytes':p.stat().st_size}
+           for p in sorted(D.rglob('*')) if p.is_file() and p.name != 'MANIFEST.json']
+write(D / 'MANIFEST.json', {'schema_version':1, 'files':members})
+print(json.dumps({'handoff':sha(D/'HANDOFF.json'),'manifest':sha(D/'MANIFEST.json'),
+                  'ledger':sha(D/'per-operation-admissibility.json'),'members':len(members),'counts':counts},indent=2))

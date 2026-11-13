@@ -1,0 +1,183 @@
+identifier: CHEBI:49976
+preferred_term: ZnCl2
+ontology_mapping:
+  ontology_id: CHEBI:49976
+  ontology_label: zinc dichloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('ZnCl2')
+    pmid: '38922505'
+    supports: SUPPORT
+    snippet: In the present manuscript, novel macrocyclic Schiff base complexes [Zn(N4MacL1)Cl2-Zn(N4MacL3)Cl2]
+      were synthesized by the reaction of ZnCl2 and macrocyclic ligands (N4MacL1-N4MacL3)
+      derived from diketone and diamines under microwave irradiation method and conventional
+      method.
+    explanation: Auto-proposed; curator should rephrase or remove.
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Simple component,
+    Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Simple component, Defined component,
+    Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Zinc Chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Zinkchlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ZnCl
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ZnCl 2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: butter of zinc
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: chlorure de zinc
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dichlorozinc
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: zinc dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: zinc(2+) chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: zinc(II) chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ZnCl .6H O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1839
+  media_count: 1839
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:54:17.349092+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-592-0 from PubChem API via name lookup (ZnCl2)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7646-85-7 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: Zinc Chloride, Zinkchlorid,
+    ZnCl, ZnCl 2, butter of zinc, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.956613+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:33.046115+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2Cl.Zn; inchi=InChI=1S/2ClH.Zn/h2*1H;/q;;+2/p-2; smiles=[Cl-].[Cl-].[Zn+2]
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.156767+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=38922505 from propose-evidence batch
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.329920+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113408+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.852105+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''ZnCl2'' -> ''zinc dichloride'': synced to canonical CHEBI
+    label (preferred_term ''ZnCl2'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-27T03:16:39.520178+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/1579 -> 1839/1839 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''ZnCl .6H
+    O''. Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002673; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 7646-85-7
+  data_source: CultureBotHT/compounds_to_cas.csv
+  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
+  molecular_formula: 2Cl.Zn
+  inchi: InChI=1S/2ClH.Zn/h2*1H;/q;;+2/p-2
+  smiles: '[Cl-].[Cl-].[Zn+2]'
+kg_microbe_node_id: CHEBI:49976
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1579 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (1579 occurrences). High confidence
+      based on 'Defined component' property.
+mim_id: MIM:0002673
+legacy_identifiers:
+- MIM:Zncl2
+- CHEBI:49976

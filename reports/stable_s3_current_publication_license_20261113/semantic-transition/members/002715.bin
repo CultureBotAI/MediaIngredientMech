@@ -1,0 +1,54 @@
+identifier: UNMAPPED_0189
+preferred_term: 7,4'-Dimethoxyisoflavone
+synonyms:
+- synonym_text: 7,4'-Dimethoxyisoflavone
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:17:20Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SPECIALTY_SMALL_MOLECULE
+  changes: Classified as a single natural-product-like small molecule and left unmapped
+    because the local OLS exact audit found no exact ontology hit.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison/PaperQA3 deep research: a specific isoflavone positional isomer
+    (7,4''-dimethoxyisoflavone); no source-backed CAS/CHEBI identifier found. Kept
+    UNMAPPED pending a validated identifier.'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/74-dimethoxyisoflavone-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **single, discrete
+    isoflavone**, specifically the 7- and 4′-O-methylated derivative of daidzein.
+    It is not a hydrate, salt, buffer, extract, medium family, or named multicomponent
+    formulation. The literature uses both substituent orderings—**7,4′-dimethoxyisoflavone**
+    and **4′,7-dimethoxyisoflavone**—and the abbreviation **4′,7-D**. A cell-biology
+    paper explicitly No ontology CURIE was proposed. Recorded as provenance only —
+    no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11; retained
+  as unmapped pending exact source-backed identity.
+ingredient_type: SINGLE_INGREDIENT

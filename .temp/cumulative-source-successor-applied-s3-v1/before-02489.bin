@@ -1,0 +1,145 @@
+identifier: CHEBI:132751
+preferred_term: Thiamine-HCl x 2 H2O
+ontology_mapping:
+  ontology_id: CHEBI:132751
+  ontology_label: thiamine hydrochloride dihydrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Thiamine-HCl·2H2O
+  synonym_type: HYDRATE_FORM
+  source: kg_microbe
+- synonym_text: thiamine chloride hydrochloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: thiamine dichloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: thiamine hydrochloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: thiamine(2+) dichloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium
+    chloride hydrochloride--water (1/2)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 3-[(4-azaniumyl-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium
+    chloride--water (1/2)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: Thiamine・HCl・2H2O
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Thiamine·HCl·2H2O
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 441
+  media_count: 441
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:47:06.145100+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:13465-05-9 from PubChem API (preprocessed) via name preprocessing
+    (Thiamine-HCl x 2 H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Thiamine-HCl·2H2O, thiamine
+    chloride hydrochloride dihydrate, thiamine dichloride dihydrate, thiamine hydrochloride
+    dihydrate, thiamine(2+) dichloride dihydrate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.594590+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.668072+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H18N4OS.2Cl.2H2O; inchi=InChI=1S/C12H17N4OS.2ClH.2H2O/c1-8-11(3-4-17)18-7-;
+    smiles=Cc1ncc(C[n+]2csc(CCO)c2C)c([NH3+])n1.O.O.[Cl-].[Cl
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.822644+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113146+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.843119+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Thiamine-HCl x 2 H2O'' -> ''thiamine hydrochloride dihydrate'':
+    synced to canonical CHEBI label (preferred_term ''Thiamine-HCl x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519956+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/579 -> 441/441 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Thiamine・HCl・2H2O'' (x8 CultureMech mentions); ''Thiamine·HCl·2H2O''
+    (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002488; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 13465-05-9
+  data_source: PubChem API (preprocessed)
+  retrieval_date: '2026-04-05T23:47:06.145091+00:00'
+  molecular_formula: C12H18N4OS.2Cl.2H2O
+  inchi: InChI=1S/C12H17N4OS.2ClH.2H2O/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13;;;;/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15);2*1H;2*1H2/q+1;;;;/p-1
+  smiles: Cc1ncc(C[n+]2csc(CCO)c2C)c([NH3+])n1.O.O.[Cl-].[Cl-]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (579 occurrences as 'Vitamin')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+      component'
+    curator_note: Widespread use in media formulations (579 occurrences). High confidence
+      based on 'Defined component' property.
+mim_id: MIM:0002488
+legacy_identifiers:
+- MIM:Thiamine-hcl_X_2_H2o
+- CHEBI:132751

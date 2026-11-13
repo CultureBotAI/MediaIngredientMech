@@ -1,0 +1,92 @@
+identifier: MICRO:0002393
+preferred_term: Proteose peptone no. 2
+synonyms:
+- synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
+  synonym_type: CATALOG_VARIANT
+  source: manual
+ontology_mapping:
+  ontology_id: MICRO:0002393
+  ontology_label: Proteose Peptone No. 2
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: fix_micro_malformed_iris
+    notes: 'SUPERSEDED by source-backed review #759: MICRO:0002393 is an OLS4 non-defining
+      MicrO.owl IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone,
+      so this record keeps a local identity and anchors to the well-formed generic
+      Proteose peptone parent.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+    notes: 'Restore MICRO:0002393 ''Proteose Peptone No. 2'' from the pinned KG-Microbe
+      MICRO KGX (#759). Both node snapshots contain this exact class label; current
+      KGX parent(s): MICRO:0000180. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'
+mapping_status: MAPPED
+curation_history:
+- timestamp: '2026-05-01T19:55:09.678923+00:00'
+  curator: foodon_pass
+  action: AUTO_CREATE_FROM_MICRO
+  changes: created with primary MICRO:0002393
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.926549+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.748347+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-08T23:23:58.335582+00:00'
+  curator: audit_occurrence_stats
+  action: CORRECTED
+  changes: 'Backfilled missing occurrence_statistics (0/0): ontology-derived record
+    with no tracked media occurrences.'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519753+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 7/7 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T11:28:59.951056+00:00'
+  curator: fix_micro_malformed_iris
+  action: CORRECTED
+  changes: 'Re-grounded MICRO:0002393 ''Proteose Peptone No. 2'' -> kgmicrobe.ingredient:proteose_peptone_no_2
+    ''proteose peptone'' (NARROW_MATCH). MICRO:0002393 is an OLS4 non-defining MicrO.owl
+    IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone, so this keeps
+    a local identity and anchors it to the well-formed generic Proteose peptone parent.
+    See #137.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-09-23T17:09:55.758900+00:00'
+  curator: restore_micro_source_identities
+  action: CORRECTED
+  changes: 'Restore MICRO:0002393 ''Proteose Peptone No. 2'' from the pinned KG-Microbe
+    MICRO KGX (#759). Both node snapshots contain this exact class label; current
+    KGX parent(s): MICRO:0000180. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393.
+    This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS defining-ontology
+    status. No verified CAS RN is supplied for this material.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: UNDEFINED_MIXTURE
+occurrence_statistics:
+  total_occurrences: 7
+  media_count: 7
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-08T09:22:31.379771+00:00",
+  "author": "/root/buffer_hepes",
+  "status": "PASS",
+  "selected_payloads": [
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1221",
+      "selected_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"
+      },
+      "guarded_readback": {
+        "path": "validation/guarded-readback/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"
+      },
+      "closed_schema": "PASS",
+      "parsed_readback_equal": true,
+      "selected_payload_unchanged": true
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1474",
+      "selected_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"
+      },
+      "guarded_readback": {
+        "path": "validation/guarded-readback/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"
+      },
+      "closed_schema": "PASS",
+      "parsed_readback_equal": true,
+      "selected_payload_unchanged": true
+    }
+  ],
+  "strict_command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python",
+    "scripts/validate_strict.py",
+    "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml",
+    "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml",
+    "--workers",
+    "1",
+    "--out",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/hepes/validation/strict-failures.tsv"
+  ],
+  "strict_exit_code": 0,
+  "native_component_partonomy_violations": [],
+  "scope": "Two complete unchanged selected source proposal payloads; no maintained writes. Full selected142-proposal baseline overlay and native projection remain root-owned.",
+  "implementations": [
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/component_partonomy.py",
+      "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696"
+    },
+    {
+      "path": "scripts/validate_strict.py",
+      "sha256": "5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a"
+    }
+  ]
+}

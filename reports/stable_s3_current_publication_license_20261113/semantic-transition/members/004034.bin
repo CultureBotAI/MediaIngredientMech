@@ -1,0 +1,78 @@
+from pathlib import Path
+import hashlib, io, json, os, stat, subprocess, sys, tarfile
+sys.dont_write_bytecode=True
+D=Path(__file__).absolute().parent;C=D.parents[1];A=C/'integration/ancillary1258-worktree';T=C.parent/'kgm-unmapped-20261107'
+sys.path[:0]=[str(A/'src'),str(T/'claw/src')]
+import yaml
+from mediaingredientmech.validation.write_validated import validate_ingredient
+BASE='84241993a278a7a413422ef89a52c0b47dc57831'
+def sha(b):return hashlib.sha256(b).hexdigest()
+pins={};copies=[]
+def read(p,expected=None):
+ p=Path(p).absolute();s=p.lstat();assert stat.S_ISREG(s.st_mode) and not p.is_symlink()
+ b=p.read_bytes();h=sha(b)
+ if expected:assert h==expected,(p,h,expected)
+ pins[str(p)]={'path':str(p),'sha256':h,'bytes':len(b)};return b
+def save(n,x):
+ p=D/n;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+def capture(p,n,expected=None):
+ b=read(p,expected);q=D/'inputs'/n;q.parent.mkdir(parents=True,exist_ok=True)
+ with q.open('xb') as f:f.write(b)
+ copies.append({'original_path':str(Path(p).absolute()),'capture_path':str(q.relative_to(D)),'sha256':sha(b),'bytes':len(b),'scope':'Existing exact bytes transported; original acquisition/source context retained.'})
+ return b
+def git(root,*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+assert git(A,'rev-parse','HEAD').decode().strip()==BASE
+Q=C/'integration/final-native-intake-after-ancillary-v1'
+plan=json.loads(read(Q/'owner-plan.draft.json','cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'))
+ix=json.loads(read(Q/'materialization-index.draft.json'));files={x['destination']:x for x in ix['files']}
+W=C/'workers/w01/worktree/.temp/conditional-full-row-review-v1'
+root=json.loads(read(W/'root_rows_000_218_final_v3.json','7d83ea66b54a6b48ac8af771f00619a89765136b8eb3fa0dd920ad9ba4ee2f16'))
+capture(W/'FINDINGS-v2.json','w01-preliminary-FINDINGS-v2.json')
+for name in ['MAPPING_SEMANTICS.md','src/mediaingredientmech/schema/mediaingredientmech.yaml','scripts/record_review.py','schema/record_review.yaml','docs/record-reviews.md','docs/record-review-profile.md','conf/record_review.yaml']:
+ capture(A/name,'native/'+name)
+capture(T/'claw/scripts/build_mim_ingredient_sssom.py','native/build_mim_ingredient_sssom.py','38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc')
+for n in [321,342]:capture(C/f'preflight/inherited-predicate-live-context-v1/issue-{n}.json',f'issue-{n}.json')
+targets=[];sourcejoins=[];seen=set()
+for idx,slug in [(98,'cysteine-stock'),(155,'phosphate-dihydrate')]:
+ o=root['owners'][idx];op=next(r for r in plan['records'] if r['operation_id']==o['operation_id']);entry=files[op['after_capture']['path']]
+ raw=capture(entry['source'],slug+'.yaml',op['after_capture']['sha256']);record=yaml.safe_load(raw);assert not validate_ingredient(record)
+ before=git(A,'show',BASE+':'+op['source_record']);assert sha(before)==op['before_yaml_sha256']
+ with (D/'inputs'/f'{slug}-before.yaml').open('xb') as f:f.write(before)
+ targets.append({'index':idx,'slug':slug,'operation':op,'selected_source':entry,'owner_evidence_context':o,'before_blob':{'root':str(A),'commit':BASE,'path':op['source_record'],'sha256':sha(before)}})
+ for e in o['actual_reviewed_primary_bindings']:
+  for r in e['captures']:
+   if r['path'] not in seen:capture(r['path'],'primary/'+Path(r['path']).name,r['sha256']);seen.add(r['path'])
+ for r in o['manual_judgment'].get('additional_primary_bindings',[]):capture(r['path'],'w01-context/'+Path(r['path']).name,r['sha256'])
+ for origin in o['origin_refs']:
+  slot=origin['origin']['worker_slot'].replace('worker-','w');worker=C/'workers'/slot/'worktree'
+  for key in ['proposal_ref','evidence_core_ref']:
+   r=origin[key];raw=read(r['path'],r['sha256']);blob=git(worker,'show',r['published_head']+':'+r['published_path']);assert raw==blob
+   sourcejoins.append({'kind':key,'published_root':str(worker),'head':r['published_head'],'published_path':r['published_path'],'capture':r['path'],'sha256':sha(blob)})
+save('TARGETS.json',targets);save('PUBLISHED-JOINS.json',sourcejoins)
+# Read complete immutable A tree and original selected proposed overlay; no partial B access.
+baseline={};inventory=[]
+with tarfile.open(fileobj=io.BytesIO(git(A,'archive',BASE,'data/ingredients'))) as tar:
+ for m in tar.getmembers():
+  if m.isfile() and m.name.endswith('.yaml'):
+   b=tar.extractfile(m).read();baseline[m.name]=yaml.safe_load(b);inventory.append({'path':m.name,'sha256':sha(b)})
+overlay=dict(baseline);selected=[]
+for op in plan['records']:
+ e=files[op['after_capture']['path']];b=Path(e['source']).read_bytes();assert sha(b)==op['after_capture']['sha256']
+ selected.append({'operation_id':op['operation_id'],'source_record':op['source_record'],'path':e['source'],'sha256':sha(b)})
+ if op.get('before_source_record')!=op['source_record']:overlay.pop(op.get('before_source_record'),None)
+ overlay[op['source_record']]=yaml.safe_load(b)
+need={'kgmicrobe.compound:nah2po4_x_2_h2o','NCIT:C66551','kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution'}
+def matches(x,path=''):
+ if isinstance(x,dict):
+  for k,v in x.items():yield from matches(v,path+'/'+k)
+ elif isinstance(x,list):
+  for i,v in enumerate(x):yield from matches(v,path+'/'+str(i))
+ elif isinstance(x,str) and x in need:yield {'field':path,'value':x}
+scan={}
+for label,records in [('maintained_A842',baseline),('original_cdff_proposed_overlay',overlay)]:
+ scan[label]={'records':len(records),'matches':[{'owner':p,**v} for p,r in records.items() for v in matches(r)]}
+save('IDENTIFIER-REFERENCE-SCAN.json',{'scope':'Complete Git-tree inventory, independent of ignores; complete 934 original planned payloads overlaid by explicit before/source paths. Includes exact structured string matches only, not spelling inference. Not current applied B/B2 state or final revised selection.','inventory':inventory,'selected_payloads':selected,'results':scan})
+save('CAPTURE-MAP.json',copies)
+save('INPUT-PINS.json',list(pins.values()))
+print(json.dumps({'targets':[(t['slug'],t['operation']['after_capture']['sha256']) for t in targets],'captured':len(copies),'source_joins':len(sourcejoins),'scan':scan},indent=2))

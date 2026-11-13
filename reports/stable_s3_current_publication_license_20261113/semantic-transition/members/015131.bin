@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "verdict": "pass_with_limitations",
+  "findings": [],
+  "reviewer": "Codex /root/buffers_research",
+  "scientific_review": false,
+  "scope": "Exhaustive author-core/full-cohort retention, exact permitted field deltas, source-capture metadata preservation and narrow validation receipt inspection. No independent primary-science approval.",
+  "prior_involvement": "I authored the original four successor-v1 buffer/HCl proposals and later serum corrections, and performed broad retention/integration reviews. I did not author bio_research successor-v3 HCl/Difco corrections or this root successor-v6 candidate. This review does not claim historically uninvolved independence or renew any source/identity/owner science.",
+  "actual_reading_start_exact": null,
+  "timing_note": "Payload/metadata reading preceded this mechanical checker; exact reading start was not recorded. Script timing measures only this audit execution.",
+  "script_started_at": "2026-11-08T08:48:37.053983+00:00",
+  "script_completed_at": "2026-11-08T08:48:39.921676+00:00",
+  "script_runtime_seconds": 2.8674505832605064,
+  "review_completed_at": "2026-11-08T08:48:39.921685+00:00",
+  "head_observed": "3e190a0f6c5a978ca8ed7e3bc7b6a2d66935548b",
+  "input_bindings": {
+    "author_freeze": {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-freeze.json",
+      "sha256": "c8e44ee61f052751f7c77205d3ca52b33ae98c7f85cc04fb814f0cbd1280955b",
+      "bytes": 2662
+    },
+    "core": {
+      "decisions": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-core/decisions.json",
+        "sha256": "0eaf5e96d30cedacf27b231ef061f3458add76479b2ccaa33284d3eec576fc1c",
+        "bytes": 1159585
+      },
+      "evidence": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-core/evidence.json",
+        "sha256": "9b73980af88bd8b0742215e74505e4353fc95ff1d1733dd65a34bdc50c7b6f53",
+        "bytes": 1008021
+      },
+      "proposals": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/author-core/proposals.json",
+        "sha256": "f2df74777c066799dfdc9776f2facfeb1288f997f969eafb6db1c66055b3a4f7",
+        "bytes": 456678
+      }
+    },
+    "proof": {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/payload-change-proof.json",
+      "sha256": "3df28f1e71574d519da875f6eda2de6ee354a59da1af8b4728d8977ddd72912d",
+      "bytes": 69722
+    },
+    "source_assessment": {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/source-assessment.json",
+      "sha256": "c2e910fcb164396882f99f175a68dc231d7f1551d14cf1460f077d843bfde280",
+      "bytes": 50462
+    },
+    "validation": {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/validation/narrow-native.json",
+      "sha256": "656e0bf65bcbecdccdf9e711aa5cf58e3a320e134fcb682699ad3034f4b71172",
+      "bytes": 6955
+    },
+    "validation_command": {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v6/validation/command.json",
+      "sha256": "e1316a45f16b6583670d5c3bed63943873135be8e6194df70232275a679252db",
+      "bytes": 283
+    }
+  },
+  "counts": {
+    "selected_proposals": 127,
+    "cases": 188,
+    "unique_occurrences": 304,
+    "target_payloads": 5,
+    "target_cases": 6,
+    "target_cm_occurrences": 12,
+    "unchanged_other_proposals_and_payloads": 122,
+    "unchanged_other_complete_decisions": 182,
+    "original_evidence_exact": 1212,
+    "new_scoped_evidence": 3,
+    "current_evidence_capture_checks": 1215,
+    "primary_capture_metadata_checks": 13,
+    "old_artifact_files": 2705,
+    "old_s4_files": 147,
+    "old_s5_files": 82,
+    "maintained_owner_files": 2956,
+    "existing_canonical_review_files": 2054,
+    "source_snapshot_files": 244,
+    "triage_context_files": 65,
+    "checks": 10078
+  },
+  "exact_target_payloads": [
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "before": {
+        "root": "artifact",
+        "path": "successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "ca674da3144e40e09c43e001d5a15e3ee3c911ff1cda19b2bbf674564b43245e"
+      },
+      "after": {
+        "root": "artifact",
+        "path": "successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "6330cf4d79ef4809ff27b6efd6b5577dfff8e40cb4d82319c843651596d7c8f1"
+      },
+      "allowed_existing_fields": [
+        "component_assertion.completeness",
+        "component_assertion.notes"
+      ],
+      "history_prefix_length": 3,
+      "components_canonical_sha256": "0d62e52f8d0a1f15e410c622c7df6908f0cc2b95fc05901d6239c1548ccf1dad",
+      "original_assertion_evidence_sha256": "8f68e74be1a18787174024f25851c7df276714fdff7c8b8fccbbe7e655812531",
+      "original_other_fields_sha256": "ded8ab16743f032f5b2638fad2377f6c60e36acdabb9b3499ab96ab50681abcc",
+      "selected_other_fields_sha256": "ded8ab16743f032f5b2638fad2377f6c60e36acdabb9b3499ab96ab50681abcc"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "before": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"
+      },
+      "after": {
+        "root": "artifact",
+        "path": "successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "c8034c07ddd1d103ec871f3cdd0bfae1b8e26a1d1d7fe8cc49d2c9a0a084bc17"
+      },
+      "allowed_existing_fields": [
+        "component_assertion.completeness",
+        "component_assertion.notes"
+      ],
+      "history_prefix_length": 2,
+      "components_canonical_sha256": "027dcbafaa98bd2751f32692d35ac8337c4da1558ed336774c0d220b9f3088ad",
+      "original_assertion_evidence_sha256": "23952802243b2542531ebdb124dc1f685916f9096262b3b2f0bcb2969d81754d",
+      "original_other_fields_sha256": "ce04dc45f7236e14a46e8108ae7ef992b33be6775ff461dec178d177025a9cbe",
+      "selected_other_fields_sha256": "ce04dc45f7236e14a46e8108ae7ef992b33be6775ff461dec178d177025a9cbe"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "before": {
+        "root": "artifact",
+        "path": "successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+        "sha256": "ed2406640e1c8af8909d7ee2e6f74154f058404054531d52310e4d7665a82d53"
+      },
+      "after": {
+        "root": "artifact",
+        "path": "successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+        "sha256": "f36656a1a3e2d979ae59c787cbe27bd70c967699c9fa95bcaa5a0a3ee6db8155"
+      },
+      "allowed_existing_fields": [
+        "component_assertion.completeness",
+        "component_assertion.notes"
+      ],
+      "history_prefix_length": 3,
+      "components_canonical_sha256": "6289e283622848cd93806d29210224f571336f8e45638412964f2581ed26b968",
+      "original_assertion_evidence_sha256": "759e0c43952568048c7fe610dd5a6b92218f67637a02ebca72a5bcded1a23bff",
+      "original_other_fields_sha256": "c01596c405dcbb92045914363ed2c2f444b50ad72377a8cc8f189d70ad58ea29",
+      "selected_other_fields_sha256": "c01596c405dcbb92045914363ed2c2f444b50ad72377a8cc8f189d70ad58ea29"
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "before": {
+        "root": "artifact",
+        "path": "successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "6b15570540ba19364f82042d6181dbea68d098282d6fa9d5616e348539cf4c1d"
+      },
+      "after": {
+        "root": "artifact",
+        "path": "successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "0cff593a94e9e563e08db52d9af3f2e87a0f43f0c086b7c09debaaf594e07aa6"
+      },
+      "allowed_existing_fields": [
+        "component_assertion.completeness",
+        "component_assertion.notes"
+      ],
+      "history_prefix_length": 3,
+      "components_canonical_sha256": "c69498146e3d425618e7cfb128f0f8dfa8d7a1748f2e88cd99a82654a7537b8b",
+      "original_assertion_evidence_sha256": "12a4c960c2f540ddcab4ea22e187d4f01de7cd807fe861e1c70545dd5d890af8",
+      "original_other_fields_sha256": "c831661ef7b70451594359258e8eb43c696b037ccc6766b6e7e303ade1269877",
+      "selected_other_fields_sha256": "c831661ef7b70451594359258e8eb43c696b037ccc6766b6e7e303ade1269877"
+    },
+    {
+      "proposal_id": "sv3-hm-difco-columbia1270",
+      "before": {
+        "root": "artifact",
+        "path": "successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml",
+        "sha256": "b9b6d6679fdafd46c3400f9fec807ad71b17494adcce181d0fb464a0ea08f18c"
+      },
+      "after": {
+        "root": "artifact",
+        "path": "successor-v6/proposed/sv3-hm-difco-columbia1270.yaml",
+        "sha256": "e35684c8a476aeb0fd9048a3fefa0ffa3522147c6c7c00b85e6f42534ff9e871"
+      },
+      "allowed_existing_fields": [
+        "component_assertion.completeness",
+        "component_assertion.method",
+        "component_assertion.notes"
+      ],
+      "history_prefix_length": 3,
+      "components_canonical_sha256": "a8a376d8468b27c17fddbd6e5272ec10f5d8b8766385288c249b1c655d1a9154",
+      "original_assertion_evidence_sha256": "9864c2056799a7fec561836237b8a705655d0fb67689151eb7d4f795d75e5c06",
+      "original_other_fields_sha256": "9f5cc1ef60f74aa5b987b7266258984abe3d336e865a5b8067c8cacfec82d065",
+      "selected_other_fields_sha256": "9f5cc1ef60f74aa5b987b7266258984abe3d336e865a5b8067c8cacfec82d065"
+    }
+  ],
+  "metadata_delta_pointers": {
+    "proposals": {
+      "sv3-hm-hcl_nominal35percent_togo_m3216": [
+        "/after_capture/path",
+        "/after_capture/sha256",
+        "/component_assertion_successor",
+        "/description",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/publication_holds",
+        "/review_status_explanation"
+      ],
+      "sv3-hm-hcl_nominal32percent_jcm770": [
+        "/after_capture/path",
+        "/after_capture/sha256",
+        "/component_assertion_successor",
+        "/description",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/publication_holds",
+        "/review_status_explanation"
+      ],
+      "sv3-hm-difco-columbia1270": [
+        "/after_capture/path",
+        "/after_capture/sha256",
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/review_status_explanation"
+      ],
+      "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent": [
+        "/after_capture/path",
+        "/after_capture/sha256",
+        "/component_assertion_successor",
+        "/description",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/publication_holds",
+        "/review_status_explanation"
+      ],
+      "sv3-hm-hcl_nominal25percent_jcm431_899": [
+        "/after_capture/path",
+        "/after_capture/sha256",
+        "/component_assertion_successor",
+        "/description",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/publication_holds",
+        "/review_status_explanation"
+      ]
+    },
+    "decisions": {
+      "CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd": [
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/issue_refs"
+      ],
+      "CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0": [
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/issue_refs"
+      ],
+      "KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905": [
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/issue_refs",
+        "/reasoning"
+      ],
+      "CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd": [
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/issue_refs"
+      ],
+      "CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d": [
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/issue_refs"
+      ],
+      "CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f": [
+        "/component_assertion_successor",
+        "/evidence_ids",
+        "/independent_review/evidence_ids",
+        "/independent_review/status",
+        "/issue_refs"
+      ]
+    }
+  },
+  "manual_metadata_assessments": [
+    {
+      "topic": "Four HCl current assertion scope",
+      "assessment": "The complete payload diff retains all component objects, assertion evidence and original fields except completeness/notes and appended history. Active proposal phrasing now states unknown list completeness; one closure-dependent publication-hold sentence is updated with identical substantive limits. Original percentages, basis/carrier/grade uncertainty, unresolved relations and receiving-dose conflicts remain unchanged."
+    },
+    {
+      "topic": "Difco qualified scope",
+      "assessment": "The exact new assertion says CURATED_INTERPRETATION and COMPLETE only for the already declared nominal2009 seven-immediate-name list. It expressly excludes molecular composition, historical JCM lot closure, quantitative recipe or dry-mass ratio inference; adjustment/supplementation and mixed-owner partition limits remain. No component or quantity was added. This is a metadata/allowed-delta conclusion, not this reviewer’s fresh scientific endorsement."
+    },
+    {
+      "topic": "Historical HCl reassessment",
+      "assessment": "All five HCl source cases already contain successor_v3_reassessment.old_completion_reassessment_is_historical=true at frozen S5. S6 preserves those entire reassessments and adds an explicit current UNKNOWN marker. Earlier PARTIAL text is historical; it is not the selected current ComponentAssertion completeness."
+    },
+    {
+      "topic": "Attribution and review reset",
+      "assessment": "Five proposals and six cases reset only the changed scope to pending exact review while preserving prior independent_review objects inside the new lineage marker. No earlier source/owner/role/export review is treated as acceptance of this correction."
+    }
+  ],
+  "retained_sentinels": [
+    {
+      "proposal_id": "sv2-isp4-jcm58-complete-formulation",
+      "proposal_object_sha256": "d8864000db5cbfc11b837c7ef4718121fbbcef634ba46e7e5ce23ad8fb110777",
+      "case_ids": [
+        "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188"
+      ],
+      "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+        "sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2"
+      },
+      "target": false,
+      "frozen_payload": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+        "sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2",
+        "bytes": 9509,
+        "private_copy": ".temp/all-unmatched-worker-10/successor-v6/retention/frozen/payloads/successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml"
+      }
+    },
+    {
+      "proposal_id": "sv1-bio-calf_blood_togo_m2854",
+      "proposal_object_sha256": "43fee8558aa87a0a3688c882ab5933b9746a0c692e8501a48a85ae756736df0c",
+      "case_ids": [
+        "CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258"
+      ],
+      "owner_path": "data/ingredients/mapped/Calf_Blood_TOGO_M2854.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v5/proposed/Calf_Blood_TOGO_M2854.yaml",
+        "sha256": "7a54c5bb03008949dec5ced0fbb8da9deee348fd4ad2473e66d41655db975b9d"
+      },
+      "target": false,
+      "frozen_payload": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v5/proposed/Calf_Blood_TOGO_M2854.yaml",
+        "sha256": "7a54c5bb03008949dec5ced0fbb8da9deee348fd4ad2473e66d41655db975b9d",
+        "bytes": 4040,
+        "private_copy": ".temp/all-unmatched-worker-10/successor-v6/retention/frozen/payloads/successor-v5/proposed/Calf_Blood_TOGO_M2854.yaml"
+      }
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "proposal_object_sha256": "b3a1232b2caad2a10991eba6e7e6e598a2b82edfe7b43072bc58c58adf703958",
+      "case_ids": [
+        "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+        "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4"
+      ],
+      "owner_path": "data/ingredients/mapped/carbonate_co2_nominal4percent_togo_m202.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v4/proposed/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "135788bfd2a511671a90ff9b912092df789c9209995f88d11b4aa6134eca0625"
+      },
+      "target": false,
+      "frozen_payload": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v4/proposed/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "135788bfd2a511671a90ff9b912092df789c9209995f88d11b4aa6134eca0625",
+        "bytes": 5520,
+        "private_copy": ".temp/all-unmatched-worker-10/successor-v6/retention/frozen/payloads/successor-v4/proposed/carbonate_co2_nominal4percent_togo_m202.yaml"
+      }
+    }
+  ],
+  "validation_disposition": "Inspected completed native receipt for the five exact hashes: closed schema zero errors, guarded byte roundtrip exact; predecessor/successor3037-record overlays have no violations. Did not rerun broad tests or conduct new source science.",
+  "support_copies": [
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/baseline-v1.json",
+        "sha256": "44c1bc99238a5afa4d93404f790c9d7ac0a92f5c1c08612de0cdb01963dd1cdc",
+        "bytes": 5104376
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/baseline-v1.json",
+        "sha256": "44c1bc99238a5afa4d93404f790c9d7ac0a92f5c1c08612de0cdb01963dd1cdc",
+        "bytes": 5104376
+      },
+      "byte_exact": true
+    },
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/preservation-baseline-v1.json",
+        "sha256": "d7771336d90621c022d5e031faf573d4f5af22b64317279b118b80c9dcd24875",
+        "bytes": 1706167
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/preservation-baseline-v1.json",
+        "sha256": "d7771336d90621c022d5e031faf573d4f5af22b64317279b118b80c9dcd24875",
+        "bytes": 1706167
+      },
+      "byte_exact": true
+    },
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/target-inventory-v1.json",
+        "sha256": "bf2b219947d232e8a3621806aaa904d4bb2ea564af9363ee45e8ea1907a0eff2",
+        "bytes": 107595
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/target-inventory-v1.json",
+        "sha256": "bf2b219947d232e8a3621806aaa904d4bb2ea564af9363ee45e8ea1907a0eff2",
+        "bytes": 107595
+      },
+      "byte_exact": true
+    },
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/commands-v1.json",
+        "sha256": "8e17823c814f615d7386a179a3513a3e1dd0f5ec22a298759a45b1870cdd617e",
+        "bytes": 1905
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/commands-v1.json",
+        "sha256": "8e17823c814f615d7386a179a3513a3e1dd0f5ec22a298759a45b1870cdd617e",
+        "bytes": 1905
+      },
+      "byte_exact": true
+    },
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/freeze_baseline_v1.py",
+        "sha256": "8fef33107318201250b2129fcf974e6974a9f4c43e2902b378a9205c291c5d77",
+        "bytes": 11556
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/freeze_baseline_v1.py",
+        "sha256": "8fef33107318201250b2129fcf974e6974a9f4c43e2902b378a9205c291c5d77",
+        "bytes": 11556
+      },
+      "byte_exact": true
+    },
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/check_author_core_v1.py",
+        "sha256": "144261ed71b1c5d2f5f2b7f4578bb65acbc230593456675827b510eb2090dd69",
+        "bytes": 22589
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/check_author_core_v1.py",
+        "sha256": "144261ed71b1c5d2f5f2b7f4578bb65acbc230593456675827b510eb2090dd69",
+        "bytes": 22589
+      },
+      "byte_exact": true
+    },
+    {
+      "original": {
+        "path": ".temp/all-unmatched-worker-10/successor-v6/retention/author-core-checks-v1.json",
+        "sha256": "5998fda178c6cb9a724212fa5ec95f78c6588609f897f8906a8412491c913593",
+        "bytes": 5008260
+      },
+      "copy": {
+        "path": "reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/support/author-core-checks-v1.json",
+        "sha256": "5998fda178c6cb9a724212fa5ec95f78c6588609f897f8906a8412491c913593",
+        "bytes": 5008260
+      },
+      "byte_exact": true
+    }
+  ],
+  "limitations": [
+    "The changed assertion science requires separate exact author-independent assessment; this reviewer authored the original four successor-v1 HCl proposals.",
+    "Author-core correctly leaves five proposal/six-case changed scopes pending. Final-core, native wrapper, handoff and publication metadata require a later exact binding review.",
+    "No maintained application, source/owner/role/export approval, future-head acceptance, Git or GitHub mutation."
+  ],
+  "approval": {
+    "fresh_science": false,
+    "whole_owner": false,
+    "role": false,
+    "export": false,
+    "application": false,
+    "future_published_head": false
+  }
+}

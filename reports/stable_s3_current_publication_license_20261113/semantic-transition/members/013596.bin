@@ -1,0 +1,171 @@
+identifier: CHEBI:32145
+preferred_term: NaOH
+ontology_mapping:
+  ontology_id: CHEBI:32145
+  ontology_label: sodium hydroxide
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('NaOH')
+    pmid: '37817899'
+    supports: SUPPORT
+    snippet: Key features • Production and extraction of EPS from submerged cultures
+      of mycelial forms of macrofungi. • Modification of the method described by Fariña
+      et al. (2001), extending its application to submerged cultures of mycelial forms
+      of the macrofungi. • Determination of EPS production parameters in submerged
+      cultures of mycelial forms of macrofungi. • EPS solubilization using NaOH (0.1
+      N).
+    explanation: Auto-proposed; curator should rephrase or remove.
+synonyms:
+- synonym_text: (adjust if required)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Inorganic compound, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Inorganic compound, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Simple component, Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Solution, Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Aetznatron
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Natriumhydroxid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodium Hydroxide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: caustic soda
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: hydroxyde de sodium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: soda lye
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: soude caustique
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: NaOH (1N)
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: NaOH (0.38 M)
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1210
+  media_count: 1209
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:29.270880+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:1310-73-2 from PubChem API via name lookup (NaOH)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:19:59.554215+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:32145
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Aetznatron, Natriumhydroxid,
+    Sodium Hydroxide, caustic soda, hydroxyde de sodium, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Aetznatron, NaOH, Natriumhydroxid,
+    caustic soda, hydroxyde de sodium, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sodium_Hydroxide.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.409415+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.491516+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=HO.Na; inchi=InChI=1S/Na.H2O/h;1H2/q+1;/p-1; smiles=[Na+].[OH-]
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.042303+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=37817899 from propose-evidence batch
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.260660+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.810191+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''NaOH'' -> ''sodium hydroxide'': synced to canonical CHEBI
+    label (preferred_term ''NaOH'' unchanged).'
+- timestamp: '2026-08-27T03:16:39.519559+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 51/1184 -> 1209/1210 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''NaOH (1N)'' (x2 CultureMech mentions); ''NaOH (0.38 M)'' (x1
+    CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:01:12.922209+00:00'
+  curator: worker-08/inorganics/issue-1201
+  action: CORRECTED_SOURCE_SCOPE_PROPOSAL
+  changes: Retype NaOH (1N) and NaOH (0.38 M) as REJECTED_LABEL on pure CHEBI:32145.
+    Preserve exact text and original provenance; these concentration-defined solutions
+    must not resolve globally to the pure solute. All other inherited fields and holds
+    remain.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1310-73-2
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:53:29.270857+00:00'
+  molecular_formula: HO.Na
+  inchi: InChI=1S/Na.H2O/h;1H2/q+1;/p-1
+  smiles: '[Na+].[OH-]'
+kg_microbe_node_id: CHEBI:32145
+ingredient_type: SINGLE_INGREDIENT

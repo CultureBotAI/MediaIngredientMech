@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:phosphate_1m_ph7_2_pbbm_togo_m2760
+preferred_term: Nominal 1 M phosphate buffer, pH 7.2 (PBBM; TOGO M2760)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:phosphate_1m_ph7_2_pbbm_togo_m2760
+  ontology_label: Nominal 1 M phosphate buffer, pH 7.2 (PBBM; TOGO M2760)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2760
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. TOGO
+      M2760 PBBM defines its nominal 1 M phosphate buffer at pH 7.2 from 10 mL of
+      1 M KH2PO4 and 10 mL of 1 M Na2HPO4 solutions. The receiving medium adds 10
+      mL of the mixed stock. The input solutions remain parts, not pure-salt identity
+      aliases. Equal input proportions resemble JCM 822 but do not prove common preparation
+      identity or pH; no merge with the previous JCM 822 proposal is made.
+components:
+- component_name: 1 M KH2PO4 solution
+  reference_scope: UNMAPPED
+  source: Source uses 10 mL of this input stock.
+- component_name: 1 M Na2HPO4 solution
+  reference_scope: UNMAPPED
+  source: Source uses 10 mL of this input stock; supplied salt hydration unspecified.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2760
+    source_record: Nominal 1 M phosphate buffer, pH 7.2 (PBBM; TOGO M2760)
+    notes: TOGO M2760 PBBM defines its nominal 1 M phosphate buffer at pH 7.2 from
+      10 mL of 1 M KH2PO4 and 10 mL of 1 M Na2HPO4 solutions. The receiving medium
+      adds 10 mL of the mixed stock. The input solutions remain parts, not pure-salt
+      identity aliases. Equal input proportions resemble JCM 822 but do not prove
+      common preparation identity or pH; no merge with the previous JCM 822 proposal
+      is made.
+  notes: Input-stock solvent, salt hydration and pH adjustment details are absent.
+    The cited primary paper full text was not obtained, but the captured primary TOGO
+    formulation establishes the bounded preparation. Source-named parts remain UNMAPPED
+    where supplied form or stock identity is not established. MIM_CATALOG references
+    identify only the supported constituent, not approval of that complete owner.
+notes: TOGO M2760 PBBM defines its nominal 1 M phosphate buffer at pH 7.2 from 10
+  mL of 1 M KH2PO4 and 10 mL of 1 M Na2HPO4 solutions. The receiving medium adds 10
+  mL of the mixed stock. The input solutions remain parts, not pure-salt identity
+  aliases. Equal input proportions resemble JCM 822 but do not prove common preparation
+  identity or pH; no merge with the previous JCM 822 proposal is made. Input-stock
+  solvent, salt hydration and pH adjustment details are absent. The cited primary
+  paper full text was not obtained, but the captured primary TOGO formulation establishes
+  the bounded preparation. Provenance-only source text 'Phosphate buffer (1 M, pH
+  7.2)' (case CM_NAME:9a0bcb1be7b9fb2ddc124ee4cccd91d41c2b78bb63f6f4db3e3f52276a1daeb5).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.020801+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

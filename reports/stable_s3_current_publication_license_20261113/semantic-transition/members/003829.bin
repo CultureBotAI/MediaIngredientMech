@@ -1,0 +1,128 @@
+identifier: kgmicrobe.ingredient:nbrc_1020_se_w_solution
+preferred_term: NBRC 1020 Se/W solution
+synonyms:
+- synonym_text: Se/W solution***
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:1020;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1020_se_w_solution
+  ontology_label: NBRC 1020 Se/W solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  concentration_value: '4'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2WO4
+  reference_scope: UNMAPPED
+  concentration_value: '4'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+    source_record: NBRC 1020 Se/W solution; complete named stock table and preparation
+      notes
+    notes: Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts
+      but no water/preparation denominator; its occurrence is not mapped to this quantified
+      stock. Printed formulas are retained literally; omitted hydration is unresolved,
+      not an anhydrous assignment. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with
+      1 L distilled water; the missing hydrate qualifiers do not establish anhydrous
+      reagents. JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1
+      L distilled water. The shared nominal amounts and omitted NBRC hydrate do not
+      establish either identical or distinct supplied preparations. Retain both source-bound
+      partial proposals without merging or co-installing them as proved-distinct owners
+      until supplied-form/applicability evidence or an explicitly reviewed common
+      nominal scope resolves the overlap. The water amounts are added-water batch
+      quantities, not instructions to make up a final litre. Literal printed masses
+      and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+      describes a recipe batch containing1L added water, not a final1L solution or
+      final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1 L distilled
+    water; the missing hydrate qualifiers do not establish anhydrous reagents. JCM317
+    explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water.
+    The shared nominal amounts and omitted NBRC hydrate do not establish either identical
+    or distinct supplied preparations. Retain both source-bound partial proposals
+    without merging or co-installing them as proved-distinct owners until supplied-form/applicability
+    evidence or an explicitly reviewed common nominal scope resolves the overlap.
+    The water amounts are added-water batch quantities, not instructions to make up
+    a final litre.'
+notes: 'Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts
+  but no water/preparation denominator; its occurrence is not mapped to this quantified
+  stock. Printed formulas are retained literally; omitted hydration is unresolved,
+  not an anhydrous assignment. NBRC1020 prints Na2SeO3 4 mg and Na2WO4 4 mg with 1
+  L distilled water; the missing hydrate qualifiers do not establish anhydrous reagents.
+  JCM317 explicitly prints Na2WO4·2H2O 4 mg with Na2SeO3 4 mg and 1 L distilled water.
+  The shared nominal amounts and omitted NBRC hydrate do not establish either identical
+  or distinct supplied preparations. Retain both source-bound partial proposals without
+  merging or co-installing them as proved-distinct owners until supplied-form/applicability
+  evidence or an explicitly reviewed common nominal scope resolves the overlap. The
+  water amounts are added-water batch quantities, not instructions to make up a final
+  litre. Literal printed masses and added distilled-water volume per source preparation.
+  G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+  water, not a final1L solution or final concentration. Source-local raw labels are
+  REJECTED_LABEL: they are preserved for provenance and occurrence-specific decisions
+  but native resolution must not expose them as global synonyms. The source-qualified
+  preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+  vendor, grade or release approval are asserted. Any UNMAPPED part retains its literal
+  source identity; component grounding is separate from established whole-stock recipe
+  identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.802481+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 86. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.552013+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:58:44.001528+00:00'
+  curator: Codex /root/primary_context (worker01)
+  action: CORRECTED_PROPOSAL
+  changes: 'Correct CHEM-COMP-002 (#1237): replace inferred unhydrated NBRC wording
+    with literal formulas and unresolved supplied hydration; retain NBRC824 missing-denominator
+    hold, literal batch quantities, and merge/co-installation hold against JCM317.
+    Correct 1 individually allowlisted MappingEvidence type(s) to LLM_SUGGESTION under
+    #1226; all other evidence-object fields remain unchanged. Isolated successor only;
+    no maintained owner, merge, or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

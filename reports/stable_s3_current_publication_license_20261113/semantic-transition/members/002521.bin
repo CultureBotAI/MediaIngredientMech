@@ -1,0 +1,94 @@
+identifier: CHEBI:26986
+preferred_term: Threonine
+ontology_mapping:
+  ontology_id: CHEBI:26986
+  ontology_label: threonine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:threonine; '
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''DL-threonine'' as a RELATED_SYNONYM (#260): the racemate under
+      the stereo-unspecified parent — the same treatment `DL-Tyrosine` gets in this
+      batch, except that CHEBI:26986 is already held by this record, so it is a synonym
+      rather than a new one. RELATED rather than EXACT because the racemate is narrower
+      than the parent. NOT CHEBI:16857 L-threonine, which CultureMech asserts (CultureMech#276).
+      CultureMech uses this surface form and label_index did not contain it, so the
+      lookup missed. No new record: CHEBI:26986 is this record''s identifier, and
+      in MIM the identifier IS the ontology CURIE, so a second record on it would
+      be a duplicate primary key rather than added coverage.'
+synonyms:
+- synonym_text: DL-threonine
+  synonym_type: RELATED_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 22
+  media_count: 22
+  source_occurrences:
+  - source: microbedecoder
+    count: 31
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:threonine; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''DL-threonine'' as a RELATED_SYNONYM (#260): the racemate under
+    the stereo-unspecified parent — the same treatment `DL-Tyrosine` gets in this
+    batch, except that CHEBI:26986 is already held by this record, so it is a synonym
+    rather than a new one. RELATED rather than EXACT because the racemate is narrower
+    than the parent. NOT CHEBI:16857 L-threonine, which CultureMech asserts (CultureMech#276).
+    CultureMech uses this surface form and label_index did not contain it, so the
+    lookup missed. No new record: CHEBI:26986 is this record''s identifier, and in
+    MIM the identifier IS the ontology CURIE, so a second record on it would be a
+    duplicate primary key rather than added coverage.'
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.520267+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 22/22 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C4H9NO3
+  inchi: InChI=1S/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,1H3,(H,7,8)/t2-,3+/m1/s1
+  molecular_weight: 119.119
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:30:41.806324+00:00'

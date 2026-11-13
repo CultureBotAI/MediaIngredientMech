@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:ferrous_sulfate_heptahydrate_02_percent_wv_togo_m2649
+preferred_term: 0.2% w/v ferrous sulfate heptahydrate stock (TOGO M2649)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ferrous_sulfate_heptahydrate_02_percent_wv_togo_m2649
+  ontology_label: 0.2% w/v ferrous sulfate heptahydrate stock (TOGO M2649)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium503.pdf; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2649
+    notes: TOGO M2649 explicitly specifies sterile anoxic FeSO4x7H2O0.2%w/v stock,10mL
+      addition. Current DSMZ503 states0.1%; retain that source-version conflict and
+      qualify this proposal to the captured M2649 formulation. Component completeness
+      is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+      This is the named preparation at the cited source scope; no full-formulation
+      equivalence with other products is asserted.
+notes: TOGO M2649 explicitly specifies sterile anoxic FeSO4x7H2O0.2%w/v stock,10mL
+  addition. Current DSMZ503 states0.1%; retain that source-version conflict and qualify
+  this proposal to the captured M2649 formulation. Component completeness is UNKNOWN.
+  Unstated solvent, hydration, assay and final volume are not invented. This is the
+  named preparation at the cited source scope; no full-formulation equivalence with
+  other products is asserted.
+curation_history:
+- timestamp: '2026-11-08T06:01:16Z'
+  curator: codex_worker02_issue1201_source_review
+  action: CREATED
+  changes: TOGO M2649 explicitly specifies sterile anoxic FeSO4x7H2O0.2%w/v stock,10mL
+    addition. Current DSMZ503 states0.1%; retain that source-version conflict and
+    qualify this proposal to the captured M2649 formulation. Component completeness
+    is UNKNOWN. Unstated solvent, hydration, assay and final volume are not invented.
+    This is the named preparation at the cited source scope; no full-formulation equivalence
+    with other products is asserted. Isolated proposal, pending independent and coordinator
+    review.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:19:50.174994+00:00'
+  curator: worker02 /root
+  action: CORRECTED
+  changes: 'Under #1226, retype only the explicitly bound newly agent-authored ontology
+    mapping evidence entries 0 from human-supplied MANUAL_CURATION to LLM_SUGGESTION.
+    Exact citations, scientific notes, prior history, component evidence and all source/owner/role/export
+    holds remain unchanged. This records authorship, not scientific approval.'
+  llm_assisted: true
+solution_type: MINERAL_STOCK
+components:
+- component_name: FeSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:75836
+  concentration_value: '0.2'
+  concentration_unit: PERCENT_W_V
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium503.pdf; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2649
+    source_record: FeSO4 x 7 H2O (0.2% w/v)
+    notes: TOGO M2649 explicitly specifies sterile anoxic FeSO4x7H2O0.2%w/v stock,10mL
+      addition. Current DSMZ503 states0.1%; retain that source-version conflict and
+      qualify this proposal to the captured M2649 formulation.

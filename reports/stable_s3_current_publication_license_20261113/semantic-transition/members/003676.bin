@@ -1,0 +1,56 @@
+--- selected72881247/Na2seo3.yaml
++++ private-successor/Na2seo3.yaml
+@@ -9,6 +9,23 @@
+   - evidence_type: DATABASE_MATCH
+     source: CultureMech
+     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
++  - evidence_type: LLM_SUGGESTION
++    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724233754
++    notes: 'Claim-specific applicability assessment by Codex /root/next23_context:
++      Na2Se2O3 is retained as a source literal, not an identity-bearing synonym of
++      this Na2SeO3 owner. The official DSMZ Medium 863 PDF prints Na2Se2O3 0.100 g
++      (SHA256 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912); official
++      MediaDive ingredient804 preserves that name without CAS/formula/ChEBI (SHA256
++      fd2c8ff3c3ada95ad48962f98a9e86935372b39f1a897571a729d68061406839). The captured
++      official CHEBI:48843 record identifies disodium selenite with formula 2Na.O3Se
++      (SHA256 cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872). Those
++      source facts do not substantiate the earlier merge''s inferred spelling correction.
++      Preserve the exact literal, merge_from_UNMAPPED_0473 source and historical event;
++      make only this label non-resolving. The original DSMZ863/MediaDive804 reagent
++      identity remains unresolved under W01 case169/#718; no corrected reagent is
++      inferred. The supported Na2SeO3 (anhydrous) alias and its four source occurrences
++      remain unchanged. This evidence assesses alias applicability only, not a new
++      ontology match, role or release approval.'
+ synonyms:
+ - synonym_text: 'Role: Mineral source; Properties: Defined component, Simple component,
+     Inorganic compound'
+@@ -51,7 +68,7 @@
+   synonym_type: EXACT_SYNONYM
+   source: kg_microbe
+ - synonym_text: Na2Se2O3
+-  synonym_type: RAW_TEXT
++  synonym_type: REJECTED_LABEL
+   source: merge_from_UNMAPPED_0473
+ - synonym_text: Na2SeO·5H2O
+   synonym_type: REJECTED_LABEL
+@@ -174,6 +191,20 @@
+     identity and all other claims. Publication support requires fresh content-bound
+     review.
+   llm_assisted: true
++- timestamp: '2026-11-08T16:50:23.398092+00:00'
++  curator: Codex coordinator /root/next23_context
++  action: REJECTED_UNSUPPORTED_SOURCE_ALIAS
++  changes: Under https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6724233754,
++    change only Na2Se2O3 synonym_type from RAW_TEXT to REJECTED_LABEL; preserve its
++    literal and merge_from_UNMAPPED_0473 provenance, all old history and evidence,
++    valid Na2SeO3 (anhydrous) addition, identity and all unrelated fields. Append
++    the claim-specific primary-source assessment. DSMZ863/MediaDive804 original-reagent
++    hold remains; no inferred correction, role or release approval. Private candidate
++    successor to selected72881247, not a maintained owner write or alteration of the
++    original worker proposal.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ chemical_properties:
+   cas_rn: 10102-18-8
+   data_source: CultureBotHT compounds_to_cas.csv

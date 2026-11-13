@@ -1,0 +1,64 @@
+identifier: cas:55566-30-8
+preferred_term: Tetrakis(hydroxymethyl)phosphonium sulfate
+ontology_mapping:
+  ontology_id: cas:55566-30-8
+  ontology_label: Tetrakis(hydroxymethyl)phosphonium sulfate
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 55566-30-8 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+synonyms:
+- synonym_text: THPS
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:55566-30-8 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.570253+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:55:43.662762+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C8H24O12P2S; smiles=C(O)[P+](CO)(CO)CO.C(O)[P+](CO)(CO)CO.[O-]S(=O)(=O;
+    inchi=InChI=1S/2C4H12O4P.H2O4S/c2*5-1-9(2-6,3-7)4-8;1-5(
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.786551+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002470; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 55566-30-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C8H24O12P2S
+  smiles: C(O)[P+](CO)(CO)CO.C(O)[P+](CO)(CO)CO.[O-]S(=O)(=O)[O-]
+  inchi: InChI=1S/2C4H12O4P.H2O4S/c2*5-1-9(2-6,3-7)4-8;1-5(2,3)4/h2*5-8H,1-4H2;(H2,1,2,3,4)/q2*+1;/p-2
+  pubchem_cid: 41478
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002470
+legacy_identifiers:
+- MIM:Tetrakis_Hydroxymethylphosphonium_Sulfate
+- cas:55566-30-8

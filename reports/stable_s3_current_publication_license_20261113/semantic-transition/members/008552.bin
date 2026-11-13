@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      class="h-100" lang="ja">
+<head>
+    <!-- meta -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="application-name" content="NBRC" />
+
+    <!-- title -->
+    
+    <title>Catalogue Detail Medium | NITE - NBRC Culture Catalogue</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&amp;display=swap&amp;subset=japanese" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;display=swap" />
+    <link rel="stylesheet" href="/nbrc/catalogue/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="/nbrc/catalogue/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/nbrc/catalogue/css/base.css" />
+    <link rel="stylesheet" href="/nbrc/catalogue/css/index.css" />
+    <link rel="stylesheet" href="/nbrc/catalogue/css/style.css" />
+    <link rel="stylesheet" href="/nbrc/catalogue/css/layout.css" />
+
+    <!-- js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6PNT8EB9Q"></script>
+    <script language="JavaScript" src="/nbrc/catalogue/js/ga.js"></script>
+    <script language="JavaScript" src="/nbrc/catalogue/js/jquery-3.6.1.min.js"></script>
+    <script language="JavaScript" src="/nbrc/catalogue/js/layout.js"></script>
+
+    <!-- icon -->
+    <link rel="icon" href="/nbrc/catalogue/images/favicon.ico" type="image/x-icon" />
+    
+    <script type="text/javascript" src="/nbrc/catalogue/js/catalogue_medium.js"></script>
+</head>
+<body class="open d-flex flex-column h-100">
+    <div>
+            <header>
+                <!-- Fixed navbar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-nbrc fixed-top">
+                    <div class="container-xl">
+                        <div>
+                            <a class="navbar-brand d-inline-block" href="/nbrc/catalogue/">
+                                <img src="/nbrc/catalogue/images/logo_l.png">
+                            </a>
+                            <a class="navbar-brand d-inline-block" href="https://www.nite.go.jp/nbrc/cultures/iso9001/iso9001.html" target="_blank">
+                                <img src="/nbrc/catalogue/images/logo_iso.png">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="/nbrc/catalogue/">
+                            <span class="h6 text-white">NBRC</span><br/>
+                            <span class="h6 text-white">オンラインカタログ</span>
+                            </a>
+                        </div>
+                        <button class="navbar-toggler ml-auto collapsed" type="button" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"> </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="bs-navi">
+                            <ul class="nav navbar-nav m-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-search"></i><span>検索条件</span></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/nbrc/catalogue/">カタログ検索</a>
+                                        <a class="dropdown-item" href="/nbrc/catalogue/HomologyDispSearchServlet">ホモロジー検索</a>
+                                        <a class="dropdown-item" href="/nbrc/catalogue/SequenceDispSearchServlet">シーケンス検索</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item nav-cart">
+                                    <a id="linkCartNormal" href="/nbrc/catalogue/login">
+                                        <button type="button" class="btn btn-cart1 btn-sm" value="Cart" disabled="disabled">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>カート</span>
+                                            <span id="addCartNormalMsg" data-toggle="popover" data-content="追加しました" data-placement="bottom"></span>
+                                            <span id="overCartNormalMsg" data-toggle="popover" data-content="一度にご依頼いただける数量は100本です。" data-placement="bottom"></span>
+                                            <span id="numCartNormal" class="badge badge-light">0</span>
+                                        </button>
+                                    </a>
+                                </li>
+                                <li class="nav-item nav-cart">
+                                    <a id="linkCartOther" href="/nbrc/catalogue/login">
+                                        <button type="button" class="btn btn-cart2 btn-sm" value="Cart" disabled="disabled">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>カート(復元培養)</span>
+                                            <span id="addCartOtherMsg" data-toggle="popover" data-content="追加しました" data-placement="bottom"></span>
+                                            <span id="overCartOtherMsg" data-toggle="popover" data-content="一度にご依頼いただける数量は5本です。" data-placement="bottom"></span>
+                                            <span id="numCartOther" class="badge badge-light">0</span>
+                                        </button>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/nbrc/catalogue/login"><i class="fas fa-sign-out-alt"></i>
+                                        <span>ログイン</span></a>
+                                </li>
+                                
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-question-circle"></i><span>ヘルプ</span></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                                        <a class="dropdown-item" href="/nbrc/catalogue/help/orderflow">注文の流れ</a>
+                                        <a class="dropdown-item" href="https://www.nite.go.jp/nbrc/cultures/faq/faq.html" target="_blank">FAQ</a>
+                                        
+                                        <a href="https://www.nite.go.jp/nbrc/cultures/support/ampoule.html"
+                                           class="dropdown-item" target="_blank">動画で見る微生物取り扱いのコツ</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/nbrc/catalogue/?lang=en">
+                                        <i class="fas fa-globe-americas"></i> <span class="d-xl-inline-block">English</span></a>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    <main role="main" class="flex-shrink-0 mt-0">
+            <div class="container pt-4 pb-5">
+                <h2><span>カタログ検索結果</span>
+                    <small class="text-muted">詳細情報</small></h2>
+                <h3>Medium Detail Information</h3>
+                <table border="1" width="600">
+                    <tbody>
+                        <tr>
+                            <th class="w-30" width="20%">
+                                <div align="left">Medium No.</div>
+                            </th>
+                            <td width="80%">339</td>
+                        </tr>
+                        <tr>
+                            <th class="w-30" width="20%">
+                                <div align="left">Medium</div>
+                            </th>
+                            <td width="80%">Marine Broth 2216</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">
+                                <div align="left">Composition</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="medium-comp"><table width='600' border='0'><tr height='1px'><td width='5%'>&nbsp;</td><td width='60%' align='left' colspan='4'>Bacto Marine Broth 2216 (Difco)</td><td width='20%' align='right'>37.4</td><td width='15%' align='left'>g</td></tr><tr height='1px'><td width='5%'>&nbsp;</td><td width='60%' align='left' colspan='4'>Distilled water</td><td width='20%' align='right'>1</td><td width='15%' align='left'>L</td></tr><tr height='1px'><td width='5%'>&nbsp;</td><td width='80%' colspan='5' align='right'>pH unadjusted</td><td width='15%'>&nbsp;</td></tr></table></td>
+                        </tr>
+                        <tr>
+                            <th class="w-30">
+                                <div align="left">Comment</div>
+                            </th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="edit text-right"></p>
+            </div>
+        </main>
+    <div>
+            <footer class="footer mt-auto py-3 small">
+                <div class="container">
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <div class="text-left">
+                                <h3>About Us</h3>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nite/aboutus/gyoumu.html">組織概要</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nbrc/index.html">ＮＢＲＣについて</a>
+                                    </li>
+                                    <li><a href="/nbrc/catalogue/help/about" target="_blank">当サイトについて</a></li>
+                                    <li><a href="/nbrc/catalogue/help/termsofuse" target="_blank">利用規約</a></li>
+                                    <li>
+                                        <a href="/nbrc/catalogue/help/termsofuse" target="_blank">個人情報の取扱いについて</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="/nbrc/catalogue/help/tokutei" target="_blank">特定商取引法に基づく表示</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="text-left">
+                                <h3>Contact</h3>
+                                <ul>
+                                    <li>
+                                        独立行政法人製品評価技術基盤機構（NITE）<br />
+                                        バイオテクノロジーセンター（NBRC）<br />
+                                        <span>生物資源利用促進課</span><br />
+                                        〒292-0818<br />
+                                        千葉県木更津市かずさ鎌足2-5-8<br />
+                                        TEL：0438-20-5763<br />
+                                        10:00 - 17:00（土日祝を除く）
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/cgi-bin/contact/index.php?cid=00000148&amp;lang=0">お問い合わせフォーム</a>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="text-left">
+                                <h3>Related Website</h3>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nbrc/cultures/support/ampoule.html" target="_blank">動画で見る微生物取り扱いのコツ</a><br/>
+                                         - L-乾燥標品（ガラスアンプル）の開封と復元方法<br/>
+                                         - 凍結・解凍標品の復元方法（糸状菌編）等を動画でご紹介<br/>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nbrc/cultures/iso9001/iso9001.html" target="_blank">品質管理（ISO）について</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nbrc/dbrp/top" target="_blank">生物資源データプラットフォーム(DBRP)</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nbrc/mrinda/" target="_blank">微生物有害情報データベース(M-RINDA)</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.nite.go.jp/nbrc/mifup/" target="_blank">微生物遺伝子機能検索データベース(MiFuP)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <a href="https://www.nite.go.jp/">
+                                <img src="/nbrc/catalogue/images/logo_nite.png" width="300px" alt="NITE"></a><br />
+                            Copyright &copy; National Institute of Technology and Evaluation. All rights reserved.<br />
+                        </div>
+
+                    </div>
+                </div>
+            </footer>        
+            <div>
+                <a href="#" class="back-top btn"><i class="fas fa-chevron-up"></i></a>
+            </div>
+
+
+            <!-- js -->
+            <script src="/nbrc/catalogue/js/popper.js" ></script>
+            <script src="/nbrc/catalogue/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="/nbrc/catalogue/js/functions.js"></script>
+            <script src="/nbrc/catalogue/js/functions2.js"></script>
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "purpose": "Preserve a private packet-assembly implementation error, not a native validation or scientific result",
+  "command": "stable-campaign-adoption-worktree/.venv/bin/python3 -B preflight/d-limonene-invalid-cas-primary-v1/assemble_finding.py",
+  "exit_status": 1,
+  "error": "AttributeError: 'list' object has no attribute 'get'",
+  "location": "assemble_finding.py cached all-state GitHub inventory extraction",
+  "cause": "Historical cache contains nested page lists, not a flat list of issue dictionaries",
+  "preservation": "Already written exact owner/source/hold captures remain unchanged. Retry only verifies existing identical captures and recursively reads the nested inventory. No native call or maintained edit occurred."
+}

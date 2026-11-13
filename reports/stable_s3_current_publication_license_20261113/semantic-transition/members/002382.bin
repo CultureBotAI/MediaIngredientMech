@@ -1,0 +1,51 @@
+identifier: CHEBI:61117
+preferred_term: Sorgoleone
+ontology_mapping:
+  ontology_id: CHEBI:61117
+  ontology_label: sorgoleone
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 2-hydroxy-5-methoxy-3-[(8Z,11Z)-pentadeca-8,11,14-trien-1-yl]cyclohexa-2,5-diene-1,4-dione
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=105018-76-6); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.396512+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.477597+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C22H30O4; inchi=InChI=1S/C22H30O4/c1-3-4-5-6-7-8-9-10-11-12-13-14-;
+    smiles=C=CC/C=CC/C=CCCCCCCCC1=C(O)C(=O)C=C(OC)C1=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.554589+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 105018-76-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C22H30O4
+  inchi: InChI=1S/C22H30O4/c1-3-4-5-6-7-8-9-10-11-12-13-14-15-16-18-21(24)19(23)17-20(26-2)22(18)25/h3,5-6,8-9,17,24H,1,4,7,10-16H2,2H3/b6-5-,9-8-
+  smiles: C=CC/C=CC/C=CCCCCCCCC1=C(O)C(=O)C=C(OC)C1=O
+ingredient_type: SINGLE_INGREDIENT

@@ -1,0 +1,58 @@
+identifier: kgmicrobe.ingredient:silicate_pentahydrate_212gl_stock
+preferred_term: Na2SiO3·5H2O 21.2 g/L stock (MediaDive2160)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:silicate_pentahydrate_212gl_stock
+  ontology_label: Na2SiO3·5H2O 21.2 g/L stock (MediaDive2160)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: Source-bound worker03 review
+    notes: Distinct concentration-qualified stock; component identity is not whole-stock
+      grounding.
+components:
+- component_name: sodium metasilicate pentahydrate
+  reference_scope: UNMAPPED
+  concentration_value: '21.2'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: mediadive
+    source_record: mediadive.ingredient:2160
+    notes: Primary source stock identity and strength. Solvent not inferred.
+notes: Source-qualified stock proposal. The source input dose belongs to its recipe
+  occurrence, not to stock composition. Solvent omitted because not specified; component
+  completeness is PARTIAL.
+curation_history:
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: CREATED_SOURCE_STOCK_PROPOSAL
+  changes: 'Propose distinct stock with explicit source concentration and typed has-part;
+    no exact or broad mapping to solute. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[184] case_id=KG_CASE:ee007a0d70e088ab96b3b7099f19b465d879bce4c31d7fec54afb5417d6f02fd;
+    source=mediadive; source_case_id=mediadive.ingredient:2160; Primary evidence:
+    https://mediadive.dsmz.de/finder/Na2SiO3+x+5+H2O///; Primary evidence: https://mediadive.dsmz.de/ingredients/2160;
+    Primary evidence: https://mediadive.dsmz.de/medium/1828; Primary evidence: https://mediadive.dsmz.de/medium/C59;
+    Primary evidence: https://mediadive.dsmz.de/solution-finder/Na2SiO3+x+5+H2O///?mainsol=1&optional=1;
+    Primary evidence: https://www.ccap.ac.uk/wp-content/uploads/MR_MWC.pdf; Primary
+    evidence: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1828.pdf'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.522631+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-160. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

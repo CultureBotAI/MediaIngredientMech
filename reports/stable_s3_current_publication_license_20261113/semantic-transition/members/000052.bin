@@ -1,0 +1,118 @@
+identifier: CHEBI:41189
+preferred_term: 1,4-Butanediol
+ontology_mapping:
+  ontology_id: CHEBI:41189
+  ontology_label: butane-1,4-diol
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718
+    notes: 'Original MicrobeDecoder CSV line 18953, BacDive 134317, utilization field
+      gives the intact butane-1,4-diol label; Butane-1 and 4-diol are comma-split
+      fragments, not names of a substance. Preserve the full Butane-1,4-diol alias,
+      identity, chemistry and counts. Source: https://bacdive.dsmz.de/strain/134317
+      . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+synonyms:
+- synonym_text: Butane-1,4-diol
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:41189 (#308/#370)
+- synonym_text: Butane-1
+  synonym_type: REJECTED_LABEL
+  source: MERGED_FROM_CHEBI:41189 (#308/#370)
+- synonym_text: 4-diol
+  synonym_type: REJECTED_LABEL
+  source: MERGED_FROM_CHEBI:41189 (#308/#370)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=110-63-4; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.685168+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.482087+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C4H10O2; inchi=InChI=1S/C4H10O2/c5-3-1-2-4-6/h5-6H,1-4H2;
+    smiles=OCCCCO
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.794500+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'butane-1,4-diol'; it matches the ChEBI
+    synonym '1,4-BUTANEDIOL' on CHEBI:41189. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_butanediol_duplicate
+  action: MERGED_FROM
+  changes: 'Absorbed ''Butane-1,4-diol''. `Butane-1,4-diol` was created by the #308
+    comma-split repair, which rejoined the fragments `Butane-1` and `4-diol` and grounded
+    them to CHEBI:41189 — without checking whether MIM already held that term. It
+    did: `1,4-Butanediol`. So the repair produced a second live record for one compound,
+    which is the duplicate-shadowing defect this session has been fixing elsewhere
+    (#334/#347). Merged into the pre-existing record; the two fragment labels are
+    kept as RAW_TEXT synonyms so the comma-split provenance survives.'
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 110-63-4 uniquely resolves
+    by ChEBI xref to CHEBI:41189 'butane-1,4-diol'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-02T21:05:51.410555+00:00'
+  curator: Codex
+  action: REJECTED_SOURCE_LABEL_FRAGMENTS
+  changes: 'Retyped only ["Butane-1", "4-diol"] as provenance-only REJECTED_LABEL.
+    Original MicrobeDecoder CSV line 18953, BacDive 134317, utilization field gives
+    the intact butane-1,4-diol label; Butane-1 and 4-diol are comma-split fragments,
+    not names of a substance. Preserve the full Butane-1,4-diol alias, identity, chemistry
+    and counts. Source: https://bacdive.dsmz.de/strain/134317 . https://github.com/CultureBotAI/MediaIngredientMech/issues/313#issuecomment-6588292718.
+    Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+    counts are not recipe occurrences or positive experimental outcomes. Preserved
+    superseded source assertions and history. No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 110-63-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C4H10O2
+  inchi: InChI=1S/C4H10O2/c5-3-1-2-4-6/h5-6H,1-4H2
+  smiles: OCCCCO
+ingredient_type: SINGLE_INGREDIENT

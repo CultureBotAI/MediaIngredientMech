@@ -1,0 +1,41 @@
+{
+  "index": 10,
+  "case_id": "CM_NAME:12ed67f2b438c1ffd831a0bfc424611ed2d86a91726eb96bd99e334cd2c93516",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "quinic",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "quinic",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/Quinic_Acid.yaml:2:preferred_term: Quinic acid\ndata/ingredients/mapped/Quinic_Acid.yaml:5:  ontology_label: quinic acid\ndata/ingredients/mapped/Quinic_Acid.yaml:39:  changes: Added CAS-RN:7729-33-1 from PubChem API via name lookup (Quinic acid)\ndata/ingredients/mapped/Quinic_Acid.yaml:59:  changes: 'ontology_label ''Quinic acid'' -> ''quinic acid'': synced to canonical\ndata/ingredients/mapped/Quinic_Acid.yaml:60:    CHEBI label (preferred_term ''Quinic acid'' unchanged).'\ndata/ingredients/mapped/(-)-quinic_Acid.yaml:2:preferred_term: (-)-quinic Acid\ndata/ingredients/mapped/(-)-quinic_Acid.yaml:5:  ontology_label: (-)-quinic acid\ndata/ingredients/mapped/(-)-quinic_Acid.yaml:11:    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:quinic_acid; '\ndata/ingredients/mapped/(-)-quinic_Acid.yaml:25:  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:quinic_acid; '\n",
+  "label_index_stdout": "51:(-)-quinic Acid,preferred_term,CHEBI:17521,(-)-quinic Acid,CHEBI:17521,MAPPED,unique\n7454:Quinic acid,preferred_term,CHEBI:26493,Quinic acid,CHEBI:26493,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "CM_NAME:12ed67f2b438c1ffd831a0bfc424611ed2d86a91726eb96bd99e334cd2c93516",
+      "label": "5 mM Quinic acid",
+      "proposal_ids": []
+    }
+  ]
+}

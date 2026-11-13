@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:jcm_443_lb_agar
+preferred_term: LB agar (JCM443 formulation)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_443_lb_agar
+  ontology_label: LB agar (JCM443 formulation)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=443
+    notes: JCM443 defines LB agar from BD-Difco tryptone10g, BD-Difco yeast extract5g,
+      NaCl10g, agar15g and distilled water1L. This named preparation is separate from
+      JCM1500 additional NaCl and other LB variants.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: JCM443 defines LB agar from BD-Difco tryptone10g, BD-Difco yeast extract5g,
+  NaCl10g, agar15g and distilled water1L. This named preparation is separate from
+  JCM1500 additional NaCl and other LB variants. Raw source labels remain in campaign
+  case evidence; no unqualified global alias is added. This isolated proposal does
+  not clear inherited owner publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:28:06.867869+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: JCM443 defines LB agar from BD-Difco tryptone10g, BD-Difco yeast extract5g,
+    NaCl10g, agar15g and distilled water1L. This named preparation is separate from
+    JCM1500 additional NaCl and other LB variants. Isolated proposal; no maintained
+    data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.428016+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+components:
+- component_name: Tryptone (BD-Difco)
+  reference_scope: UNMAPPED
+- component_name: Yeast extract (BD-Difco)
+  reference_scope: UNMAPPED
+- component_name: NaCl
+  reference_scope: UNMAPPED
+- component_name: Agar
+  reference_scope: UNMAPPED
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=443
+    notes: 'Source batch amounts: tryptone10g; yeast extract5g; NaCl10g; agar15g;
+      water1L input. pH7.0 adjustment agent unspecified; no final-volume concentration
+      or pH reagent is invented.'
+  notes: 'Source batch amounts: tryptone10g; yeast extract5g; NaCl10g; agar15g; water1L
+    input. pH7.0 adjustment agent unspecified; no final-volume concentration or pH
+    reagent is invented.'

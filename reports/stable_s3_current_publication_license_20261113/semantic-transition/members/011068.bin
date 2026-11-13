@@ -1,0 +1,95 @@
+identifier: kgmicrobe.ingredient:complan
+preferred_term: Complan
+synonyms:
+- synonym_text: Complan
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2363); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a named nutritional product/preparation and left unmapped
+    pending source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Complan-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report reached no single bolded verdict; see the report. No ontology
+    CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:54:23.559393+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: PROMOTED_SOURCE_NAMED_COMPLEX_PRODUCT
+  changes: Source-named Complan nutritional product family used as a complex medium
+    ingredient. Primary CCAP PER identifies HJ Heinz, Hayes Park, Hayes, Middlesex
+    UB4 8AL; assigned MediaDive2363 agrees. Current CCAP UM names Complan but not
+    supplier. This registry preserves the existing source product handle, without
+    equating every formulation/flavour/lot or asserting the current Complan Original
+    ingredient list as historical composition. Historical variant, concentrations
+    and individual constituent identities remain unknown; no source/export hold is
+    released.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2363); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named nutritional product/preparation
+  pending product-specific composition curation. Source-named Complan nutritional
+  product family used as a complex medium ingredient. Primary CCAP PER identifies
+  HJ Heinz, Hayes Park, Hayes, Middlesex UB4 8AL; assigned MediaDive2363 agrees. Current
+  CCAP UM names Complan but not supplier. This registry preserves the existing source
+  product handle, without equating every formulation/flavour/lot or asserting the
+  current Complan Original ingredient list as historical composition. Historical variant,
+  concentrations and individual constituent identities remain unknown; no source/export
+  hold is released.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:complan
+  ontology_label: Complan
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ccap.ac.uk/wp-content/uploads/MR_PER.pdf
+    notes: Source-named Complan nutritional product family used as a complex medium
+      ingredient. Primary CCAP PER identifies HJ Heinz, Hayes Park, Hayes, Middlesex
+      UB4 8AL; assigned MediaDive2363 agrees. Current CCAP UM names Complan but not
+      supplier. This registry preserves the existing source product handle, without
+      equating every formulation/flavour/lot or asserting the current Complan Original
+      ingredient list as historical composition. Historical variant, concentrations
+      and individual constituent identities remain unknown; no source/export hold
+      is released.
+supplied_form:
+- name: Complan (Heinz UK source product)
+  supplier: HJ Heinz Co Ltd, Hayes Park, Hayes, Middlesex UB4 8AL
+  notes: Explicit supplier in CCAP PER and assigned MediaDive2363 only. No flavour/catalog/formulation
+    supplied; not attributed to all UM occurrences.

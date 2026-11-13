@@ -1,0 +1,74 @@
+{
+  "source_path": "/Users/marcin/Documents/VIMSS/ontology/repo-research-writer/.worktrees/culturebot-manuscript-20261002/dist/archive_replay_final/culturebot_manuscript_20261002/CultureBotHT/data/manuscript_handoffs/20260914_artifact_followup/inputs/consolidated_media_current.json",
+  "source_sha256": "943713af62b74593a7a9777682ba79ef50629ae2c2a7dfd8ef1f39822bac0468",
+  "selection": "All full media objects containing exact Infusion from Potatoes label",
+  "rows": {
+    "Potato Dextrose Broth": {
+      "media_id": "culturebot:Potato_Dextrose_Broth",
+      "name": "Potato Dextrose Broth",
+      "media_type": "COMPLEX",
+      "ingredients": [
+        {
+          "name": "Infusion from Potatoes",
+          "ontology_id": null,
+          "concentration": 4.0,
+          "unit": "G_PER_L",
+          "cas_number": null,
+          "source": "existing_yaml",
+          "mapping_source": null
+        },
+        {
+          "name": "D-Glucose",
+          "ontology_id": "CHEBI:17634",
+          "concentration": 20.0,
+          "unit": "G_PER_L",
+          "cas_number": null,
+          "source": "existing_yaml",
+          "mapping_source": "sssom:skos:exactMatch"
+        }
+      ],
+      "metadata": {},
+      "sources": [
+        "existing_yaml"
+      ],
+      "conflicts": []
+    },
+    "Potato_Dextrose_Broth": {
+      "media_id": "culturebot:Potato_Dextrose_Broth",
+      "name": "Potato_Dextrose_Broth",
+      "media_type": "COMPLEX",
+      "ingredients": [
+        {
+          "name": "Infusion from Potatoes",
+          "ontology_id": null,
+          "concentration": 4.0,
+          "unit": null,
+          "cas_number": null,
+          "source": "google_sheets",
+          "mapping_source": null
+        },
+        {
+          "name": "D-Glucose",
+          "ontology_id": null,
+          "concentration": 20.0,
+          "unit": null,
+          "cas_number": null,
+          "source": "google_sheets",
+          "mapping_source": null
+        }
+      ],
+      "metadata": {
+        "source": "google_sheets",
+        "source_file": "data/raw/google_sheets/media_definitions/Medias.csv",
+        "first_raw_concentration_sample": "4",
+        "description": "Growth media for for yeasts, for bacteria, for molds",
+        "minimal": false,
+        "controlled_vocabulary": "Concentration"
+      },
+      "sources": [
+        "google_sheets"
+      ],
+      "conflicts": []
+    }
+  }
+}

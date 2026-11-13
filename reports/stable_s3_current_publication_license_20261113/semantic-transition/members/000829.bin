@@ -1,0 +1,119 @@
+identifier: cas:26177-86-6
+preferred_term: D-Fructose 6-phosphate disodium salt hydrate
+ontology_mapping:
+  ontology_id: CHEBI:190546
+  ontology_label: D-Fructose 6-Phosphate-Disodium Salt
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 26177-86-6 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 22812950'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:190546 (''D-Fructose 6-Phosphate-Disodium Salt'') — a subsumption
+      ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+      under the anhydrous compound, which is not an ancestor even transitively. A
+      hydrate is a distinct substance containing the anhydrous form, not a specialization
+      of it. closeMatch claims similarity without subsumption. The ontology_id and
+      the record''s own identifier are unchanged.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM Step7d scientific review (#901)
+    notes: 'Catalogue line1360 names the disodium D-fructose6-phosphate hydrate and
+      CAS26177-86-6. Inspected supplier F3627 independently uses that CAS and C6H11Na2O9P·xH2O.
+      No fixed water count is justified. The ChEBI parent is the two-sodium water-free
+      moiety; retain the CAS identity and use a form-of broadMatch, never an exact
+      hydrate-to-parent assertion. See the complete identity, mapping, chemistry and
+      synonym assessment in reports/step7d_mapping_901_20261103/authors/science-b/full-assessments.json;
+      owner selector data/ingredients/mapped/D-Fructose_6-phosphate_Disodium_Salt_Hydrate.yaml.
+      Primary source references: https://github.com/CultureBotAI/CultureBotHT; https://www.ebi.ac.uk/chebi/backend/api/public/compound/190546/;
+      https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/26177-86-6/property/MolecularFormula,MolecularWeight,InChI,InChIKey,IUPACName/JSON;
+      https://www.sigmaaldrich.com/US/en/product/sigma/f3627. Captures, exact input
+      hashes and scope limits: reports/step7d_mapping_901_20261103/evidence-manifest.json.
+      This curation adds no scientific, mapping-release or role approval; changed
+      owner bytes withdraw inherited support.'
+synonyms:
+- synonym_text: disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:26177-86-6 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.067906+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:52:29.199208+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C6H11Na2O9P; smiles=C(C(C(C(C(=O)CO)O)O)O)OP(=O)([O-])[O-].[Na+].[Na+];
+    inchi=InChI=1S/C6H13O9P.2Na/c7-1-3(8)5(10)6(11)4(9)2-15-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.744496+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:44:50.355010+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:190546 (pubchem-xref)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.738391+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-11-03T06:07:03.766598+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'Step 7d (#901; #1117 where applicable): applied only the reviewed field
+    changes [{"op":"set","path":["ontology_mapping","mapping_quality"],"before":"CLOSE_MATCH","after":"NARROW_MATCH"},{"op":"remove","path":["chemical_properties","molecular_formula"],"before":"C6H11Na2O9P","after":null},{"op":"remove","path":["chemical_properties","inchi"],"before":"InChI=1S/C6H13O9P.2Na/c7-1-3(8)5(10)6(11)4(9)2-15-16(12,13)14;;/h4-7,9-11H,1-2H2,(H2,12,13,14);;/q;2*+1/p-2/t4-,5-,6-;;/m1../s1","after":null},{"op":"remove","path":["chemical_properties","smiles"],"before":"C(C(C(C(C(=O)CO)O)O)O)OP(=O)([O-])[O-].[Na+].[Na+]","after":null},{"op":"remove","path":["chemical_properties","pubchem_cid"],"before":22812950,"after":null},{"op":"set","path":["synonyms",0,"synonym_type"],"before":"EXACT_SYNONYM","after":"REJECTED_LABEL"}].
+    Original values are preserved here and in the immutable source preimages. Appended
+    scoped mapping evidence. NARROW_MATCH serializes skos:broadMatch; CAS_RN_LOOKUP
+    on the form-specific NCIt identity serializes skos:exactMatch. Preserved prior
+    history, roles, status and occurrence counts; no owner merge or new scientific
+    approval. Review: reports/step7d_mapping_901_20261103/authors/science-b/; primary
+    captures: reports/step7d_mapping_901_20261103/evidence-manifest.json.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 26177-86-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

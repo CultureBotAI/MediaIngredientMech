@@ -1,0 +1,114 @@
+identifier: kgmicrobe.ingredient:nbrc_392_trace_element_solution
+preferred_term: NBRC 392 trace element solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_392_trace_element_solution
+  ontology_label: NBRC 392 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=392
+    notes: Source-specific stock identity; no exact identity with a constituent or every generic trace-element
+      label.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: G
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G
+- component_name: MnSO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: CoSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.18'
+  concentration_unit: G
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.18'
+  concentration_unit: G
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: KAl(SO4)2·12H2O
+  reference_scope: UNMAPPED
+  concentration_value: '4'
+  concentration_unit: MG
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G
+- component_name: Na2SeO3·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.8'
+  concentration_unit: MG
+- component_name: Na2WO4·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.8'
+  concentration_unit: MG
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: as needed for pH adjustments
+  concentration_unit: VARIABLE
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=392
+    source_record: Trace element solution
+    notes: All listed stock inputs, water and named KOH preparation reagent are retained. Child identities
+      remain UNMAPPED; source formula text is not silently normalized. Source batch amounts do not denote
+      receiving-medium concentrations.
+  notes: NBRC392 first dissolves NTA and adjusts pH6.5 with KOH before minerals; final pH7.0 is also adjusted
+    with KOH. Source-literal MnSO4·2H2O and Na2WO4·H2O are retained, with no substitution of common hydrates
+    or child identifiers. KOH amount/strength and resulting speciation are unspecified; closure is UNKNOWN.
+    The parent medium uses10ml. This differs from JCM151 by explicit hydration and cobalt/zinc/alum/nickel/selenium/tungsten
+    quantities.
+notes: NBRC392 first dissolves NTA and adjusts pH6.5 with KOH before minerals; final pH7.0 is also adjusted
+  with KOH. Source-literal MnSO4·2H2O and Na2WO4·H2O are retained, with no substitution of common hydrates
+  or child identifiers. KOH amount/strength and resulting speciation are unspecified; closure is UNKNOWN.
+  The parent medium uses10ml. This differs from JCM151 by explicit hydration and cobalt/zinc/alum/nickel/selenium/tungsten
+  quantities. Applies only to CultureMech:007492 ingredients/11 (CM_OCC:3ea4bc5dffea8aa44c9fa2b79b358a24abf5c35a0032e87df3408e02e5428752).
+  Raw label "Trace element solution*" is retained as provenance, not a globally resolving synonym. Other
+  occurrences sharing this raw label require their own formulation identities.
+curation_history:
+- timestamp: '2026-11-08T05:32:38+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create occurrence-scoped source-defined stock proposal with primary recipe inputs and explicit
+    preparation limitations. No chemical child mapping or generic-label identity inferred.
+  new_status: MAPPED
+  llm_assisted: true

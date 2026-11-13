@@ -1,0 +1,61 @@
+identifier: CHEBI:8630
+preferred_term: Pterostilbene
+ontology_mapping:
+  ontology_id: CHEBI:8630
+  ontology_label: pterostilbene
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: 4-[(E)-2-(3,5-dimethoxyphenyl)ethenyl]phenol
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=537-42-8); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.933140+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.024457+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C16H16O3; inchi=InChI=1S/C16H16O3/c1-18-15-9-13(10-16(11-15)19-2)4;
+    smiles=COc1cc(/C=C/c2ccc(O)cc2)cc(OC)c1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.941909+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002137; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 537-42-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C16H16O3
+  inchi: InChI=1S/C16H16O3/c1-18-15-9-13(10-16(11-15)19-2)4-3-12-5-7-14(17)8-6-12/h3-11,17H,1-2H3/b4-3+
+  smiles: COc1cc(/C=C/c2ccc(O)cc2)cc(OC)c1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002137
+legacy_identifiers:
+- MIM:Pterostilbene
+- CHEBI:8630

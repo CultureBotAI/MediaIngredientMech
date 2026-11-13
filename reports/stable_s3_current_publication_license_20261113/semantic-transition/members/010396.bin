@@ -1,0 +1,104 @@
+{
+  "at": "2026-11-08T09:23:34.465501+00:00",
+  "scientist": "/root/buffer_tris",
+  "base": "0bac12cabfd1f67f212631d8eef9aa46379f6b41",
+  "scope": {
+    "proposals": [
+      "CHEM-C1193-DSMZ_394_1137-Tris",
+      "CHEM-C1193-JCM_1061-Tris"
+    ],
+    "source_case": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+    "full_selected_payloads": 2,
+    "full_source_decisions": 1,
+    "stock_occurrences": 8,
+    "whole_case_occurrences_retained": 16,
+    "primary_tris_recipes": [
+      "DSMZ394",
+      "DSMZ1137",
+      "JCM1061"
+    ],
+    "context_only_primary_recipes": [
+      "NBRC1221",
+      "NBRC1474"
+    ]
+  },
+  "conclusion": "The two exact current Tris stock payloads already satisfy the filed NEW-03 bounded material-partonomy correction and remain unchanged. Their nominal whole-stock concentrations and pH are supported. No preparation-input/material-component list is supported by these three complete primary recipes.",
+  "source_assessments": [
+    {
+      "source": "DSMZ394",
+      "capture": "captures/dsm394.pdf",
+      "captured_at": "2026-11-08T07:42:47.928021+00:00",
+      "literal": "1M Tris-HCl (pH 7.5)",
+      "source_amount": "20.0 ml in the receiving recipe",
+      "assessment": "The source explicitly identifies a 1 M, pH 7.5 Tris-HCl stock additive. Distilled water belongs to the receiving recipe; no stock solvent, free HCl, Tris-base input or acid/base ratio is supplied."
+    },
+    {
+      "source": "DSMZ1137",
+      "capture": "captures/dsm1137.pdf",
+      "captured_at": "2026-11-08T07:42:47.966270+00:00",
+      "literal": "Tris-HCl (1M, pH 7.5)",
+      "source_amount": "5.0 ml in the receiving recipe",
+      "assessment": "The source explicitly identifies the nominal 1 M, pH 7.5 stock description also used in DSMZ394. Different receiving doses do not establish a different stock. Hutner/Metals44/artificial-seawater inputs and pH-adjustment instructions belong to their own named preparation contexts and cannot populate Tris stock components. Shared nominal strength/pH does not prove every unreported formulation detail equal."
+    },
+    {
+      "source": "JCM1061",
+      "capture": "captures/jcm1061.html",
+      "captured_at": "2026-11-08T07:42:47.665897+00:00",
+      "literal": "0.5 M Tris-HCl solution (pH 8.0)",
+      "source_amount": "100.0 ml in the receiving recipe",
+      "assessment": "Explicit 0.5 M, pH 8.0 supplied stock differs in nominal strength and source pH from the 1 M, pH 7.5 specification. The instruction to bring the medium to 1.0 L with distilled water is for the receiving medium; it supplies no stock solvent or preparation-input list."
+    }
+  ],
+  "mapping_and_identity": "Retain existing stock identifiers and FALLBACK_REGISTRY mappings as source proposal continuity. No dry Tris hydrochloride substitution, new owner, union, CAS, ion bridge or mapping-grade change. The separately filed solid-salt #1238 change is outside this scope.",
+  "material_partonomy": "MAPPING_SEMANTICS section6 distinguishes material parts from ionic/speciation descriptions. Total Tris moiety and chloride species were unsupported material components; changing only RECIPE_TRANSCRIPTION would not fix them. Both components and paired assertion are already absent. Unknown material composition remains explicit in notes and source decision; no unknown-completeness orphan assertion is added.",
+  "history": "Complete historical creation and correction events retained byte-for-byte. Original before payloads and finding retain withdrawn component/evidence objects. New MappingEvidence is already LLM_SUGGESTION; historical process/component enums are not rewritten.",
+  "source_and_release_limits": "Frozen case/source occurrence routing, units, raw labels and holds remain exact. No receiving-medium dose, source/material/role/organism admission, owner union or export approval. Existing evidence for the eight other case occurrences is retained with original attribution and is not newly approved.",
+  "payload_bindings": [
+    {
+      "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+      "current_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"
+      },
+      "historical_before_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "0f8cf263079c547959a4b82831900988b2e07df24eb59c51e62e97fb675733ac"
+      },
+      "proposal_object_sha256": "87e5487ea868793a2771a59a6623f02279567d0904c2c23e60696c14f2c5331b",
+      "current_payload_unchanged": true,
+      "proposal_object_unchanged": true,
+      "history_unchanged": true,
+      "no_new_event": true,
+      "components_absent": true,
+      "component_assertion_absent": true,
+      "recorded_prior_correction_time": "2026-11-08T07:40:53.320531+00:00",
+      "first_commit": "5156d92bec6bd885ca8bae3c5e18bfdce0069176 2026-11-08T00:25:04-08:00 2026-11-08T00:25:04-08:00"
+    },
+    {
+      "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+      "current_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"
+      },
+      "historical_before_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "9009b7dc6651004a025591c4e9376e117d4978bc7049b91e2001352bcf83561b"
+      },
+      "proposal_object_sha256": "d6dd1f8fd1d3d19adf51de1d6a0e1655ae68e4a54d38ad4b16d9248377a60e3f",
+      "current_payload_unchanged": true,
+      "proposal_object_unchanged": true,
+      "history_unchanged": true,
+      "no_new_event": true,
+      "components_absent": true,
+      "component_assertion_absent": true,
+      "recorded_prior_correction_time": "2026-11-08T07:40:53.320531+00:00",
+      "first_commit": "5156d92bec6bd885ca8bae3c5e18bfdce0069176 2026-11-08T00:25:04-08:00 2026-11-08T00:25:04-08:00"
+    }
+  ],
+  "remaining_prerequisite": "Only explicit stock preparation/formulation evidence could support actual constituent entries, acid/base proportions or solvent. Its absence does not prevent retaining the named whole stock.",
+  "new_findings": []
+}

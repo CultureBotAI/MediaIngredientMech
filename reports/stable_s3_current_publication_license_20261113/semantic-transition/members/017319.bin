@@ -1,0 +1,77 @@
+identifier: CHEBI:75248
+preferred_term: potassium tellurite
+ontology_mapping:
+  ontology_id: CHEBI:75248
+  ontology_label: potassium tellurite
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#455)
+    notes: CultureBotHT imported the label as 'potassium tellurate', but CAS 7790-58-1
+      and CHEBI:75248 both denote potassium tellurite. The record label was corrected
+      to match the exact substance; the identifier and ontology_id were already correct.
+synonyms:
+- synonym_text: dipotassium tellurite
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=7790-58-1; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.885803+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.978634+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2K.O3Te; inchi=InChI=1S/2K.H2O3Te/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;;
+    smiles=O=[Te]([O-])[O-].[K+].[K+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.873168+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_counterion_identity_conflicts
+  action: CORRECTED_SOURCE_LABEL
+  changes: preferred_term 'potassium tellurate' -> 'potassium tellurite'. CAS 7790-58-1
+    and CHEBI:75248 both denote potassium tellurite, so the previous CultureBotHT
+    label was a typo (#455).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002111; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 7790-58-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: 2K.O3Te
+  inchi: InChI=1S/2K.H2O3Te/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
+  smiles: O=[Te]([O-])[O-].[K+].[K+]
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002111
+legacy_identifiers:
+- MIM:Potassium_Tellurite
+- CHEBI:75248

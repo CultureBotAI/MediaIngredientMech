@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:denger2010_racemic_sodium_sulfolactate
+preferred_term: Racemic sodium 3-sulfolactate, Denger2010 preparation
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+synonyms: []
+notes: 'The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly
+  cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium sulfolactate.
+  The chain supports a source-defined racemic sodium-sulfolactate preparation; sodium
+  stoichiometry, hydration and isolated-product purity remain unspecified. This is
+  the source-defined salt preparation. No exact formula, sodium count, hydrate, purity,
+  or constituent concentration is asserted. Raw source label: 3-Sulfolactate. Source-local
+  identity must not become a global alias.'
+ontology_mapping:
+  ontology_id: CHEBI:38023
+  ontology_label: 3-sulfolactic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LITERATURE
+    source: https://doi.org/10.1099/mic.0.034736-0
+    notes: The preparation is a racemic sodium-salt form of the generic acid. This
+      is an asymmetric parent anchor, not chemical identity; the source-defined preparation
+      keeps its own registry identity. The full Denger2010 methods identify 10 mM
+      racemic sulfolactate and explicitly cite the Roy2003 synthesis. Roy identifies
+      the synthesized material as sodium sulfolactate. The chain supports a source-defined
+      racemic sodium-sulfolactate preparation; sodium stoichiometry, hydration and
+      isolated-product purity remain unspecified.
+curation_history:
+- timestamp: '2026-11-08T06:08:53.266256+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: The full Denger2010 methods identify 10 mM racemic sulfolactate and explicitly
+    cite the Roy2003 synthesis. Roy identifies the synthesized material as sodium
+    sulfolactate. The chain supports a source-defined racemic sodium-sulfolactate
+    preparation; sodium stoichiometry, hydration and isolated-product purity remain
+    unspecified. Isolated proposal only; all native holds remain preserved in source-case
+    decisions.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T06:15:47.962006+00:00'
+  curator: all-unmatched-worker-08 issue1201 /root/organics
+  action: PEER_REVIEW_CORRECTION
+  changes: 'Resolve independent finding OP1201-F1: the supplied form is narrower than
+    its ontology parent, so mapping_quality is NARROW_MATCH and the intended predicate
+    is skos:broadMatch. Preserve the distinct identity and all source boundaries.
+    This remains an isolated unapplied proposal.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6
+- timestamp: '2026-11-08T07:24:47.312939+00:00'
+  curator: worker08 /root/organics issue1227 bounded correction
+  action: REVIEW_CORRECTION
+  changes: 'Correct ontology_mapping.evidence[0] from MANUAL_CURATION to LITERATURE:
+    The exact Denger2010-to-Roy2003 methods citation chain supports the racemic sodium-salt
+    preparation. LLM assistance is preserved in history. Isolated successor proposal
+    only; all inherited source, role and export holds remain. Historical evidence
+    and predecessor files are immutable.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: GPT-6

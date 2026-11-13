@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:calf_blood_togo_m2854
+preferred_term: Calf blood (TOGO M2854)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: UBERON:0000178
+  ontology_label: blood
+  ontology_source: UBERON
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2854
+    notes: The TOGO M2854 source names calf blood, a blood material rather than serum;
+      calf specifies developmental origin. The source does not explicitly say whole
+      or establish defibrination, lysis, supplier or the basis of its literal 10%
+      receiving dose. Those processing and percentage-basis details remain unknown.
+      The known source material scope can be represented without inferring those details.
+      Broader material parent only; distinct local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.570117+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes
+    it from serum; no defibrination, lysis, supplier or percentage basis is inferred.
+    The known material scope can be represented despite those unspecified processing
+    details. Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.865033+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:35:09.393695+00:00'
+  curator: Codex worker10 /root
+  action: CORRECTED_CALF_BLOOD_EXPLANATION
+  changes: 'Issue #1237, W10-SV3-SKEPTIC-CALF-BLOOD-WORDING: corrected only current
+    record and mapping-evidence notes. The source names calf blood, a blood material
+    rather than serum; calf describes developmental origin, not the blood-versus-serum
+    distinction. Removed the assertion that the source explicitly identifies whole
+    blood. It states a literal 10% receiving dose without establishing its basis.
+    Original history remains verbatim. Identifier, broader blood mapping, LLM_SUGGESTION
+    provenance, source-specific applicability, unknown processing and percentage basis,
+    nonresolving generic label and all role/export holds remain unchanged. No product,
+    fraction-processing protocol, alias or identity change is inferred. Filed finding:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719103915'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'The TOGO M2854 source names calf blood, a blood material rather than serum;
+  calf specifies developmental origin. The source does not explicitly say whole or
+  establish defibrination, lysis, supplier or the basis of its literal 10% receiving
+  dose. Those processing and percentage-basis details remain unknown. The known source
+  material scope can be represented without inferring those details. Source labels
+  retained as nonresolving provenance: [{"case_id": "CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258",
+  "raw_label": "calf blood"}]. No global generic alias, supplier equivalence, role
+  approval or complete publication approval is conferred. Receiving-medium dose and
+  unit repairs remain separate. Existing native holds and rejected labels are preserved.'

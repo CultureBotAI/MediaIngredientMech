@@ -1,0 +1,209 @@
+[project]
+name = "mediaingredientmech"
+version = "0.1.0"
+description = "LLM-assisted curation system for media ingredient ontology mappings"
+authors = [
+    {name = "MediaIngredientMech Contributors"}
+]
+readme = "README.md"
+license = {text = "BSD-3-Clause"}
+requires-python = ">=3.10"
+keywords = [
+    "microbiology",
+    "growth media",
+    "ontology mapping",
+    "curation",
+    "knowledge graph",
+    "linkml"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "linkml>=1.7.0,<1.10",
+    # Pinned <1.10: linkml 1.9.x imports `Format.JSON` at module load,
+    # and linkml-runtime 1.10 dropped that enum value, breaking
+    # `linkml-validate` startup with `AttributeError: Format has no attribute 'JSON'`.
+    # Lift this cap when bumping linkml past 1.9.x.
+    "linkml-runtime>=1.7.0,<1.10",
+    # Drives the id↔label gate: `linkml-term-validator validate-data --labels`
+    # checks that ontology_label is the canonical OBO label for ontology_id.
+    "linkml-term-validator>=0.1.0",
+    # >=0.7.3, not the 0.7.2 that introduced the CDN default: 0.7.2 declares
+    # requires_python <3.14 while this project declares an unbounded >=3.10,
+    # so 0.7.2 names a floor that is not installable across the range we claim.
+    # 0.7.3 widened it to <3.15. Matches CultureMech and TraitMech (#488).
+    "oaklib>=0.7.3",
+    "pyyaml>=6.0",
+    "jsonschema>=4.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    # Used directly by chemical_properties_client, doi_resolver,
+    # ingredient_reviewer, and the OLS4 backfill/download scripts.
+    # Was previously pulled in transitively (e.g. via oaklib); make the
+    # dependency explicit so a fresh `pip install .` doesn't break.
+    "requests>=2.28.0",
+    # Loaded by culturebotai-claw's shared evidence validator, which the base
+    # qc-evidence workflow invokes through scripts/run_shared_evidence_validator.py.
+    "python-dotenv>=1.0.0",
+    # Used by scripts/generate_ingredient_umap.py to project KG-Microbe
+    # ingredient embeddings into 2D for the docs/ingredient_umap.html viewer.
+    "umap-learn>=0.5.0",
+    # Default 2D reducer for the ingredient projection (PCA-init, fixed seed);
+    # UMAP remains selectable via --method umap. scikit-learn (normalize/PCA)
+    # is a transitive dep of umap-learn but pinned here explicitly so the
+    # pacmap branch's `from sklearn.preprocessing import normalize` never breaks.
+    "pacmap>=0.7",
+    "scikit-learn>=1.0",
+    "matplotlib>=3.7",  # kg_microbe_qc dashboard chart (shared generator in claw)
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "deep-research-client[cyberian]>=0.2.10; python_version >= '3.12'",
+    # Used by scripts/research_ingredient_edison.py — drives the Edison
+    # Scientific SDK directly (PaperQA is not a registered DRC provider).
+    "edison-client>=0.11.0; python_version >= '3.12'",
+]
+
+[project.urls]
+Homepage = "https://github.com/CultureBotAI/MediaIngredientMech"
+Repository = "https://github.com/CultureBotAI/MediaIngredientMech"
+
+[tool.mediaingredientmech.edge-curation]
+# Load only the shared contract source from this verified checkout. Installing
+# the full orchestration distribution conflicts with MIM's LinkML minor pin.
+repository = "CultureBotAI/culturebotai-claw"
+commit = "1b5391d083ba85ac94e5279c3cba25ac4fde243c"
+contract = "kg-microbe-native-assertion/v1"
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mediaingredientmech = ["schema/*.yaml", "schema/historical/*.yaml", "schema/historical/*.json", "templates/*.j2", "templates/*.css", "templates/*.html", "templates/_partials/*.j2", "profiles/*.yaml", "profiles/*.json", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+# Measure both maintained package code and the legacy scripts surface in one
+# run. The package floor and advisory script report are applied separately by
+# `just test`, so adding a historical script cannot lower the package gate.
+addopts = [
+    "--strict-markers",
+    "--cov=mediaingredientmech",
+    "--cov=scripts",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+
+[tool.black]
+force-exclude = '/(scripts/record_review|tests/test_record_review_contract)\.py$'
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+include = '\.pyi?$'
+extend-exclude = 'src/mediaingredientmech/schema/mapped_ingredients_schema.py'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+force-exclude = true
+line-length = 100
+target-version = "py310"
+exclude = [
+    "scripts/record_review.py",
+    "tests/test_record_review_contract.py",
+    "src/mediaingredientmech/schema/mapped_ingredients_schema.py",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.mypy]
+python_version = "3.10"
+exclude = [
+    "^src/mediaingredientmech/datamodel/",
+    "^src/mediaingredientmech/schema/mapped_ingredients_schema\\.py$",
+]
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "mediaingredientmech.curation.ingredient_curator",
+    "mediaingredientmech.export.report_generator",
+    "mediaingredientmech.export.kgx",
+    "mediaingredientmech.export.supported_kgx",
+    "mediaingredientmech.export.reviewed_sssom",
+    "mediaingredientmech.export.edge_curation",
+    "mediaingredientmech.mapping_scope",
+    "mediaingredientmech.ingredient_bundle_contract",
+    "mediaingredientmech.record_refresh",
+    "mediaingredientmech.render_ingredient_pages",
+    "mediaingredientmech.utils.chemical_properties_client",
+    "mediaingredientmech.utils.doi_resolver",
+    "mediaingredientmech.utils.kg_microbe_searcher",
+    "mediaingredientmech.utils.llm_curator",
+    "mediaingredientmech.utils.ontology_client",
+    "mediaingredientmech.utils.yaml_handler",
+    "mediaingredientmech.validation.component_partonomy",
+    "mediaingredientmech.validation.ingredient_reviewer",
+    "mediaingredientmech.validation.schema_validator",
+    "mediaingredientmech.validation.semantic_release",
+    "mediaingredientmech.validation.write_validated",
+]
+disable_error_code = ["import-not-found", "import-untyped"]
+
+[tool.coverage.run]
+omit = [
+    "src/mediaingredientmech/datamodel/*",
+    "src/mediaingredientmech/schema/mapped_ingredients_schema.py",
+]

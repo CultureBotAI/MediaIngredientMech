@@ -1,0 +1,82 @@
+"""Actual task-input selection only; never calls configuration/construct/prepare."""
+from pathlib import Path
+import copy,datetime,hashlib,importlib.util,json,os,sys
+D=Path(__file__).absolute().parent;C=D.parents[1];V=C/'preflight/corrected-evidence-closure-inventory-v2';N=C/'integration/selenite718-alias-successor-v1';M=C/'integration/w09-method-successors-v1';P=C/'preflight/corrected-four-owner-successors-independent-v1'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def ref(p):return {'path':str(Path(p).absolute()),'sha256':sha(p)}
+def save(name,value):
+ with (D/name).open('x') as f:json.dump(value,f,indent=2,ensure_ascii=False,allow_nan=False);f.write('\n')
+code=C/'integration/campaign-corrected-construction-preparation-v2/construct_corrected_b.py';codehash='8f5ff2b4828c638c9e97c0d6c19c48893c8f0cb58792ba12ec79fd717208259f';assert sha(code)==codehash
+spec=importlib.util.spec_from_file_location('corrected_task_input_reader',code);native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;spec.loader.exec_module(native)
+assert sha(V/'HANDOFF.json')=='e1e627034752bb4e9fbca8325850ec65e875624edbaf0f95f39657e2dad3dc11'
+assert sha(V/'TRANSPORT-REPRESENTATIVES.json')=='688f1bc985f376ce5dd8c466c11932a9e70ae0806c7a91a82fc738bf828f4f7d'
+manifest=json.loads((V/'MANIFEST.json').read_text())
+for f in manifest['files']:assert sha(V/f['path'])==f['sha256']
+pair=json.loads((P/'NATIVE-REVIEW-RECEIPT.json').read_text());judgment=ref(pair['yaml']);assert judgment['sha256']=='98c0ce6fb510432ca9714992e59c29992392fbdbe40fd151fb2090c686235b76'
+methodsel=json.loads((M/'SELECTOR.json').read_text());nalineage=json.loads((N/'candidate-lineage.json').read_text())
+author_na=[N/n for n in ['HANDOFF.json','MANIFEST.json','candidate-lineage.json','primary-evidence-locators.json','checks.json','input-pins.json']]
+author_methods=[M/n for n in ['HANDOFF.json','MANIFEST.json','SELECTOR.json','field-deltas.json','origin-proof.json','primary-index.json','verification.json','NATIVE-AUTHOR-RECEIPT.json']]
+rows=[{'operation_id':nalineage['original_operation_exact']['operation_id'],'previous_payload_sha256':nalineage['original_operation_exact']['after_capture']['sha256'],'payload':ref(N/'candidates/Na2seo3.yaml'),'author_evidence':[ref(p) for p in author_na],'independent_reviews':[judgment]}]
+for g in methodsel['groups']:
+ rows.append({'operation_id':g['operation_id'],'previous_payload_sha256':g['previous_payload']['sha256'],'payload':ref(M/g['payload']['path']),'author_evidence':[ref(p) for p in author_methods],'independent_reviews':[judgment]})
+bridge=ref(N/'stock-deferral-bridge.json');assert bridge['sha256']=='d40347035a6ff8c2ada6f6098e570f1f7f433dfba1295072d62d00477c1def1e'
+capture=json.loads((D/'EXTERNAL-CAPTURE-RECEIPT.json').read_text());external={r['original']['path']:r for r in capture['rows']};assert len(external)==21
+groups={};changes=[]
+def add(physical,logical,reason):
+ p=Path(physical['path']);assert p.is_relative_to(C);assert sha(p)==physical['sha256'] and p.stat().st_size==physical['bytes']
+ key=(physical['sha256'],p.name)
+ if key not in groups:groups[key]={**physical,'logical_sources':[],'reasons':[]}
+ else:
+  # Equal content/basename may meet through the explicit renamed historical capture.
+  assert groups[key]['bytes']==physical['bytes']
+  if groups[key]['path']!=str(p):
+   choices=sorted([groups[key]['path'],str(p)],key=lambda s:(len(s),s));groups[key]['path']=choices[0]
+ for edge in logical:
+  if edge not in groups[key]['logical_sources']:groups[key]['logical_sources'].append(edge)
+ groups[key]['reasons'].append(reason)
+for r in json.loads((V/'TRANSPORT-REPRESENTATIVES.json').read_text())['representatives']:
+ original=r['physical'];physical=copy.deepcopy(original)
+ if original['path'] in external:
+  proof=external[original['path']];physical=proof['selected_physical'];assert proof['original_logical_sources']==r['logical_sources']
+  changes.append({'from':original,'to':physical,'reason':proof['mode'],'historical_native_path_rewrite':False,'source_context':'All original logical paths/packet/native source/acquisition edges retained.'})
+ add(physical,r['logical_sources'],'sealed five-packet representative')
+
+# Include the complete small inventory seal/maps as transport evidence, not new votes.
+context=ref(V/'HANDOFF.json')
+for p in [V/f['path'] for f in manifest['files']]+[V/'HANDOFF.json',V/'MANIFEST.json']:
+ physical={**ref(p),'bytes':p.stat().st_size};edge={**physical,'packet_origin':context,'attribution':{'identity':'Codex /root/step7d_science_c','role':'mechanical evidence-closure inventory author; no scientific judgment or application selection'},'locator':'Complete closure-v2 metadata member; original five science-packet identities and maps preserved.'};add(physical,[edge],'complete closure-v2 metadata')
+capture_ref=ref(D/'EXTERNAL-CAPTURE-RECEIPT.json')
+for name in ['capture_external.py','capture.stdout','capture.stderr','EXTERNAL-CAPTURE-RECEIPT.json']:
+ p=D/name;physical={**ref(p),'bytes':p.stat().st_size};edge={**physical,'packet_origin':capture_ref,'attribution':{'identity':'Codex /root/step7d_science_c','role':'authorized private byte-capture transport; not new research acquisition, native review source or scientific judgment'},'locator':'14new+6same-basename+1explicitrenamedC capture; complete before/after source stat/hash and independent inode proof.'};add(physical,[edge],'actual external-capture receipt/context')
+
+# Actual selected artifact paths take precedence solely to satisfy unchanged source-entry collision checks.
+reserved=[r['payload'] for r in rows]+[bridge,judgment]+[r for row in rows for r in row['author_evidence']]
+for r in reserved:
+ key=(r['sha256'],Path(r['path']).name);assert key in groups
+ if groups[key]['path']!=r['path']:
+  changes.append({'from':{k:groups[key][k] for k in ['path','sha256','bytes']},'to':{**r,'bytes':Path(r['path']).stat().st_size},'reason':'Reserve genuine selected payload/author/judgment source path; exact byte-identical physical choice only','historical_native_path_rewrite':False});groups[key]['path']=r['path']
+support=[{k:r[k] for k in ['path','sha256','bytes','logical_sources']} for _,r in sorted(groups.items())]
+selection={'schema_version':2,'original_plan_sha256':'cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2','replacements':rows,'deferral_bridge':bridge,'deferral_independent_reviews':[judgment],'supporting_evidence':support}
+encoded=native.encoded(selection);assert native.task_inputs(encoded)==selection
+reads={}
+def read(path,expected):
+ p=Path(path);raw=native.plain(p);assert native.digest(raw)==expected
+ key=(str(p),expected)
+ if key in reads:assert reads[key]['bytes']==len(raw)
+ reads[key]={'path':str(p),'sha256':expected,'bytes':len(raw)};return raw
+for item in support:native.verify_support(item,read)
+for r in reserved:assert read(Path(r['path']),r['sha256'])
+assert len({(r['path'],r['sha256']) for row in rows for r in row['independent_reviews']})==1
+assert selection['deferral_independent_reviews']==[judgment]
+selected_suffixes={}
+for r in reserved+[{'path':s['path'],'sha256':s['sha256']} for s in support]:
+ p=Path(r['path']);key=r['sha256'][:20]+'-'+p.name
+ if key in selected_suffixes:assert selected_suffixes[key]==(str(p),r['sha256'])
+ selected_suffixes[key]=(str(p),r['sha256'])
+for e in external.values():assert sha(e['original']['path'])==e['original']['sha256'] and sha(e['selected_physical']['path'])==e['original']['sha256']
+assert sha(code)==codehash
+with (D/'successor-inputs.json').open('xb') as f:f.write(encoded)
+save('SELECTED-TRANSPORT-MAP.json',{'status':'CANDIDATE_TASK_INPUT_TRANSPORT_NOT_ROOT_ACCEPTANCE','inventory':ref(V/'HANDOFF.json'),'external_capture_receipt':capture_ref,'representative_changes':changes,'all_original_logical_paths_retained':True,'same_basename_reuses':6,'renamed_equal_byte_reuses':1,'new_independent_regular_captures':14,'physical_supports':len(support),'logical_source_edges':sum(len(r['logical_sources']) for r in support),'materialized_paths_created':False})
+save('INPUT-READBACK.json',{'source_constructor':{'path':str(code),'sha256':codehash},'pure_APIs_invoked':['task_inputs','verify_support','plain'],'current_verified_inputs':list(reads.values()),'support_artifacts':len(support),'logical_source_edges':sum(len(r['logical_sources']) for r in support),'selected_scientific_judgment_documents':1,'selected_judgment':judgment,'replacements':4,'deferrals':3,'constructor_or_configuration_invoked':False,'native_prepare':False,'selection_sha256':sha(D/'successor-inputs.json')})
+save('AUTHORITY-SCOPE.json',{'status':'PREPARED_FOR_ROOT_INSPECTION_AND_DISTINCT_PEER_REVIEW','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'root_intent':'B whole-four native YAML98c0ce6f is the sole selected independent scientific judgment for all4correctedowners+3deferrals. Its MD/handoff/manifests/raw evidence and CNa/Aqualifiedmethod pairs are corroborating evidence; Cmethodauthor pair evidence only.','not_final_application_approval':True,'selection_author':'Codex /root/step7d_science_c; authored3methodsuccessors and mechanical assembly; no self-approval','root_final_selection':None,'owner_plan':None,'acceptance':None,'materialization':False,'source_application':False,'corroborating_reviews_are_not_extra_votes':True})
+print(json.dumps({'selection_sha256':sha(D/'successor-inputs.json'),'supports':len(support),'logical_edges':sum(len(r['logical_sources']) for r in support),'distinct_read_paths':len(reads),'selected_judgment_count':1,'representative_changes':len(changes)}))

@@ -1,0 +1,50 @@
+"""Append neutral native and filing context; never construct a source plan."""
+from pathlib import Path
+import json,hashlib,importlib.util,stat,datetime
+D=Path(__file__).absolute().parent;C=D.parents[1]
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def load(p):return json.loads(Path(p).read_text())
+def ref(p):return {'path':str(Path(p).absolute()),'sha256':sha(p)}
+def save(n,v):
+ with (D/n).open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+reps=load(D/'TRANSPORT-REPRESENTATIVES.json');groups={(r['physical']['sha256'],Path(r['physical']['path']).name):r for r in reps};reads=[]
+def add(p,h,origin,identity,role,locator):
+ p=Path(p).absolute();s=p.lstat();assert stat.S_ISREG(s.st_mode) and not p.is_symlink() and sha(p)==h,p
+ physical={'path':str(p),'sha256':h,'bytes':s.st_size};reads.append(physical)
+ key=(h,p.name)
+ if key not in groups:groups[key]={'physical':physical,'logical_sources':[],'destination_suffix':h[:20]+'-'+p.name,'existing_index_destinations':[],'actual_new_destination':None}
+ edge={**physical,'packet_origin':origin,'attribution':{'identity':identity,'role':role},'locator':locator}
+ if edge not in groups[key]['logical_sources']:groups[key]['logical_sources'].append(edge)
+ if not Path(groups[key]['physical']['path']).is_relative_to(C) and p.is_relative_to(C):groups[key]['physical']=physical
+ return physical
+rp=C/'integration/curation-worktree/scripts/record_review.py';s=importlib.util.spec_from_file_location('native_closure_complete',rp);rr=importlib.util.module_from_spec(s);s.loader.exec_module(rr)
+p=C/'preflight/inherited-form-predicate-triage-v1';receipt=load(p/'PHOSPHATE-NATIVE-RECEIPT.json');pair=receipt['pair'];root=Path(receipt['source_root']);origin=ref(p/'HANDOFF.json')
+doc=rr.load_document(Path(pair['yaml']).read_bytes());rr.validate_review(doc);assert rr.parse_review_bundle('reviews/structured/'+doc['review_id']+'/review.yaml',Path(pair['yaml']).read_bytes(),Path(pair['markdown']).read_bytes())==doc;rr.assert_current_source(root,doc)
+native=[];captures=[]
+for e in doc['source']['inputs']:
+ loc={'native_root':str(root),'native_revision':doc['source']['git_revision'],'declared_path':e['path'],'native_role':e['role'],'review_document':pair['yaml']}
+ add(root/e['path'],e['sha256'],origin,'Codex /root/step7d_science_c','author-side coupling triage; not selected scientific judgment',json.dumps(loc,sort_keys=True));native.append(loc|{'sha256':e['sha256']})
+declared={e['path']:e['sha256'] for e in doc['source']['inputs']}
+for e in load(p/'PHOSPHATE-NATIVE-INPUT-TRANSPORT.json'):
+ assert declared[e['fixture_path']]==e['sha256'];add(e['original_path'],e['sha256'],origin,'Codex /root/step7d_science_c','original source of author-side coupling triage; no new vote','Original native acquisition/transport: '+json.dumps(e,sort_keys=True));captures.append(e)
+oldpairs=[]
+for e in load(C/'preflight/corrected-evidence-closure-inventory-v2/NATIVE-PAIR-READBACK.json')['pairs']:
+ pp=e['pair'];r=Path(e['source_root']);d=rr.parse_review_bundle('reviews/structured/'+Path(pp['yaml']).parent.name+'/review.yaml',Path(pp['yaml']).read_bytes(),Path(pp['markdown']).read_bytes());rr.assert_current_source(r,d)
+ oldpairs.append({'packet':e['packet'],'pair':pp,'source_root':str(r),'input_count':len(d['source']['inputs']),'reviewer':d['reviewer'],'verdict':d['verdict'],'scope':d['scope'],'selected_judgment':e['packet']=='whole-four-independent','support_role':'evidence'})
+# Actual KG bytes already have an independent in-C historical source-audit capture.
+external=load(D/'OUTSIDE-C-REPRESENTATIVES.json');assert len(external)==1
+e=external[0]['physical'];q=C/'integration/ancillary1258-worktree/reports/kgm_unmapped_chemicals_20261107/source-audit/snapshots/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz';assert sha(q)==e['sha256']
+origin=ref(C/'integration/cysteine-stock-predicate-successor-v1/HANDOFF-v2.json')
+inside=add(q,e['sha256'],origin,'Original source-audit capture; reused mechanically by Codex /root/step7d_science_c','existing equal-byte capture, not new acquisition or rewritten original native path','Actual external KG input remains named in original Cys input-pins; physical transport uses this exact historical source-audit capture.')
+assert q.stat().st_nlink==1 and q.stat().st_ino!=Path(e['path']).stat().st_ino
+filings=[]
+for rel in ['preflight/ten-source-precondition-deferrals-publication-v1','preflight/cysteine-author-transport-finding-publication-v1','preflight/cysteine-stock-form-finding-publication-v1','preflight/menadione-hemodal-finding-publication-v1']:
+ r=C/rel;m=r/'verified-manifest.json';data=load(m);o=ref(m)
+ for f in data['files']:add(r/f['path'],f['sha256'],o,'Codex /root coordinator','issue-first publication/readback evidence; not a scientific judgment','Exact filed finding/authorization context')
+ add(m,sha(m),o,'Codex /root coordinator','issue-first publication/readback evidence','verified filing manifest');filings.append(o)
+r=C/'preflight/phosphate758-cancelled-root-status-correction-v1/receipt.json';o=ref(r);add(r,o['sha256'],o,'Codex /root coordinator','corrected historical cancelled-root status; no state inference','TARGET023 actually among cancelled B first27; B2 remains distinct original baseline.')
+filings.append(o)
+save('TRANSPORT-REPRESENTATIVES-COMPLETE.json',[v for _,v in sorted(groups.items())]);save('ADDITIONAL-CONTEXT-READBACK.json',{'current_native':{'pair':pair,'source_root':str(root),'source':doc['source'],'reviewer':doc['reviewer'],'scope':doc['scope'],'selected_judgment':False},'native_edges':native,'capture_edges':captures,'prior_four_pairs_reverified':oldpairs,'filings':filings,'read_paths':reads,'external_representative_substitution':{'original':e,'selected':inside,'new_copy':False,'original_source_acquisition_identity_unchanged':True}})
+assert all(Path(v['physical']['path']).is_relative_to(C) for v in groups.values())
+save('COMPLETION.json',{'status':'COMPLETE_NEUTRAL_CLOSURE_PENDING_EXACT_V3_INPUT_SELECTION','at':datetime.datetime.now(datetime.UTC).isoformat(),'physical_representatives':len(groups),'logical_source_edges':sum(len(v['logical_sources']) for v in groups.values()),'selected_judgments_intended':3,'old_selection_exact':ref(C/'integration/corrected-successor-input-selection-preparation-v1/successor-inputs.json'),'additional_current_pair_count':1,'predecessor_pairs_reverified':len(oldpairs),'no_new_external_capture_required':True,'historical_empty_log_contexts_preserved':2,'all_physical_support_inside_C':True,'science_vote':False,'configuration':False,'construction':False,'native_prepare':False,'application':False})
+print(json.dumps(load(D/'COMPLETION.json'),indent=2))

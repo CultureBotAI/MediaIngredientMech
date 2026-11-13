@@ -1,0 +1,135 @@
+identifier: CHEBI:6770
+preferred_term: Meropenem
+ontology_mapping:
+  ontology_id: CHEBI:6770
+  ontology_label: meropenem trihydrate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:43968 (''meropenem'') -> CHEBI:6770 (''meropenem
+      trihydrate''). The record''s own cas_rn 119478-56-7 is registered by ChEBI against
+      CHEBI:6770, which is the trihydrate of the term the record previously carried.
+      Curation decision on #320: where the CAS names a more specific FORM than the
+      label, the CAS governs — the recipe is taken to mean the substance actually
+      weighed out. These surfaced as ''unrelated'' in the ancestry triage only because
+      ChEBI does not model salt-of / hydrate-of / racemate-of as subsumption, the
+      same gap #342 recorded for hydrates.'
+synonyms:
+- synonym_text: (6S)-2-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]sulfanyl}-6-[(1R)-1-hydroxyethyl]-1beta-methyl-2,3-didehydro-1-carbapenam-3-carboxylic
+    acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: (1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC
+    ACID
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: (4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic
+    acid
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Antibiotic SM 7338
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MEM
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MEPM
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: meropenem anhydrous
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: meropenemum
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=119478-56-7); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.666531+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.702479+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C17H25N3O5S; inchi=InChI=1S/C17H25N3O5S/c1-7-12-11(8(2)21)16(23)20(12;
+    smiles=[H][C@]12[C@@H](C)C(S[C@@H]3CN[C@H](C(=O)N(C)C)C3)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.295257+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.391043+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:43968 -> CHEBI:6770 'meropenem trihydrate'
+    (#320); the record's CAS 119478-56-7 denotes the trihydrate. mapping_quality ->
+    SYNONYM_MATCH.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC
+    ACID''. Tokens already present on the kg-microbe ontology node were left out as
+    redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic
+    acid''; ''Antibiotic SM 7338''; ''MEM''; ''MEPM''; ''meropenem anhydrous''; ''meropenemum''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001628; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 119478-56-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C17H25N3O5S
+  inchi: InChI=1S/C17H25N3O5S/c1-7-12-11(8(2)21)16(23)20(12)13(17(24)25)14(7)26-9-5-10(18-6-9)15(22)19(3)4/h7-12,18,21H,5-6H2,1-4H3,(H,24,25)/t7-,8-,9+,10+,11-,12-/m1/s1
+  smiles: '[H][C@]12[C@@H](C)C(S[C@@H]3CN[C@H](C(=O)N(C)C)C3)=C(C(=O)O)N1C(=O)[C@]2([H])[C@@H](C)O'
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0001628
+legacy_identifiers:
+- MIM:Meropenem
+- CHEBI:6770

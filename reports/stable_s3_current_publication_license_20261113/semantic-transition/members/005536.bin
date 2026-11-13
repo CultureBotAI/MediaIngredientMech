@@ -1,0 +1,224 @@
+id: CultureMech:007179
+name: mmb_klein_et_al
+original_name: MMB; Klein et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: NAD+
+  concentration:
+    value: '0.00603'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:15846
+    label: NAD(+)
+  notes: Restored from MediaDB compound row C00003; the archived leading compound
+    labels are corrupt, while the row sequence preserves the KEGG identity.
+- preferred_term: Glutathione
+  term:
+    id: CHEBI:16856
+    label: glutathione
+  concentration:
+    value: '0.65079'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:gthrd'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:16856
+    label: glutathione
+- preferred_term: L-Arginine
+  term:
+    id: CHEBI:16467
+    label: L-arginine
+  concentration:
+    value: '1.72216'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:arg-L'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:16467
+    label: L-arginine
+- preferred_term: Uracil
+  term:
+    id: CHEBI:17568
+    label: uracil
+  concentration:
+    value: '0.89216'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:ura'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17568
+    label: uracil
+- preferred_term: D-Glutamate
+  concentration:
+    value: '8.83572'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:glu-D'
+- preferred_term: Inosine
+  concentration:
+    value: '5.74373'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:ins'
+  term:
+    id: CHEBI:17596
+    label: inosine
+- preferred_term: Magnesium chloride
+  concentration:
+    value: '4.51628'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:86345
+    label: magnesium dichloride hexahydrate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86345
+    label: magnesium dichloride hexahydrate
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.01982'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Potassium dibasic phosphate
+  concentration:
+    value: '25.719'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Sodium chloride
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '99.2471'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Thiamine HCl
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  concentration:
+    value: '0.0133'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+- preferred_term: Potassium dihydrogen phosphate
+  concentration:
+    value: '15.4994'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Hemin
+  term:
+    id: CHEBI:50385
+    label: hemin
+  concentration:
+    value: '0.01534'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:50385
+    label: hemin
+- preferred_term: Sodium Pantothenate
+  concentration:
+    value: '0.01825'
+    unit: MILLIMOLAR
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:45.183528Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 279, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-01-28T19:48:37.279203Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:46.612354Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007179'
+- timestamp: '2026-03-17T06:30:44.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:04.786003+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "MMB; Klein et al" to "mmb_klein_et_al" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:35.365176+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-25T00:00:00-07:00'
+  curator: fix_mediadb_leading_compounds.py
+  action: RESTORED_CORRUPT_SOURCE_COMPOUND
+  notes: Restored C00003 as NAD+ (CHEBI:15846) from the MediaDB row sequence; resolves
+    the 2026-08-24 EMPTY_INGREDIENT_NAME review finding.
+- timestamp: '2026-10-14T00:09:58.559887+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATIONS_WITH_SCOPED_NOTES
+  notes: Added or enriched bibliographic metadata, archived source/Markdown links,
+    title/group excerpts and qualified NCBI taxonomy notes. Non-operational identity
+    review only; no experimental, formulation, variant, growth or concentration curation.
+    Preserved all original recipe fields, history and reference identifiers.
+  source: PMID:315998
+media_term:
+  preferred_term: MediaDB Medium 279
+  term:
+    id: MEDIADB:279
+    label: MMB; Klein et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:315998
+  title: Simplified media for the growth of Haemophilus influenzae from clinical and
+    normal flora sources.
+  authors: Klein RD; Luginbuhl GH
+  year: 1979
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-14; source_access=archived_PubMed_abstract; review_scope=Bibliographic
+    title and taxonomic identity only; archived abstract is not approval of any experiment
+    or formulation.; owner=MEDIADB:279; discovery_sourceID=92; source_url=https://doi.org/10.1099/00221287-113-2-409;
+    alternate_identifier=doi:10.1099/00221287-113-2-409; Historical MediaDB metadata
+    retained for comparison: title="Simplified media for the growth of haemophilus
+    influenze from clinical and normal flora sources"; first_author="Kelin"; year=1979.
+    Publication identity is separate from historical spelling and dating differences.
+    raw=references_cache/papers/PMID_315998.xml; markdown=references_cache/papers/PMID_315998.md;
+    Bibliographic title; exact excerpt="Haemophilus influenzae". Reported organism/group=Haemophilus
+    influenzae; canonical scientific name=Haemophilus influenzae; NCBITaxon:727; actual
+    rank=species; taxonomy_match=exact_species; role=bibliographic-title mention only;
+    no strain, formulation, growth or experimental-outcome assertion. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=727&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/growth-next-nonoperational-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/growth-next-nonoperational-20261013.md.
+    Review is limited to publication identity, title-level organism mentions and taxonomy.
+    Abstract content is archived but not used here to assert experimental findings.
+    This is not an exhaustive abstract or whole-paper organism inventory. The pinned
+    MediaDB source-to-owner join establishes a historical bibliographic lead only,
+    not exact recipe equivalence. Formulation identity, study-specific differences
+    and variant destination remain unassessed in this non-operational citation task.
+    No cultivation conditions, optimization, virulence, growth associations or ingredient
+    amounts are extracted or curated. Correction/retraction coverage is limited to
+    archived metadata. Original ingredients, amounts, preparation, history, evidence
+    and links are preserved, not newly certified. No new native growth assertion,
+    resolved variant or concentration evidence.'

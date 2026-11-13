@@ -1,0 +1,78 @@
+identifier: CHEBI:24750
+preferred_term: Hydroxystreptomycin
+synonyms:
+- synonym_text: Hydroxystreptomycin
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0819 -> CHEBI:24750 "5'-hydroxystreptomycin" (CLOSE_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-09-22T23:25:50.998756+00:00'
+  curator: claude
+  action: REGRADED_MAPPING_QUALITY
+  changes: mapping_quality CLOSE_MATCH -> SYNONYM_MATCH (#312). 'Hydroxystreptomycin'
+    is a verbatim ChEBI related synonym of CHEBI:24750 and of no other term, and the
+    term carries xref cas:6835-00-3. The earlier CLOSE_MATCH note ('the term names
+    the position and the label does not') understated a unique synonym resolution,
+    which Section 0 grades SYNONYM_MATCH. Identifier unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001319; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:24750
+  ontology_label: 5'-hydroxystreptomycin
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Hydroxystreptomycin conventionally denotes 5'-hydroxystreptomycin; CLOSE_MATCH
+      because the term names the position and the label does not (#213).
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: mapping_quality CLOSE_MATCH -> SYNONYM_MATCH. 'Hydroxystreptomycin' is
+      a verbatim ChEBI related synonym of CHEBI:24750 and of no other term, and the
+      term carries xref cas:6835-00-3. The earlier CLOSE_MATCH note ('the term names
+      the position and the label does not') understated a unique synonym resolution,
+      which Section 0 grades SYNONYM_MATCH. Identifier unchanged.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001319
+legacy_identifiers:
+- MIM:Hydroxystreptomycin
+- CHEBI:24750

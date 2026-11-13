@@ -1,0 +1,67 @@
+identifier: cas:10102-23-5
+preferred_term: Sodium selenate decahydrate
+synonyms:
+- synonym_text: Na2SeO4 x 10 H2O
+  synonym_type: RAW_TEXT
+  source: mediadive.ingredient:1325
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo
+  specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography
+  DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name query
+  returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0 and is
+  only a broader form anchor.
+curation_history:
+- timestamp: '2026-11-08T04:34:34.038014+00:00'
+  curator: worker01_add_media_identity
+  action: CREATED
+  changes: Isolated source-bound owner proposal. Original DSMZ1493/1685 explicitly
+    use Na2SeO4·10H2O. Current official Thermo specification identifies CAS10102-23-5
+    and H20Na2O14Se; original crystallography DOI10.1107/S1600536814011799 confirms
+    the decahydrate. Current OLS exact-name query returned no term; CHEBI77775 has
+    anhydrous formula2Na.O4Se/CAS13410-01-0 and is only a broader form anchor.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:41:05.705361+00:00'
+  curator: worker01_add_media_identity
+  action: CORRECTED
+  changes: 'Artifactproposalv2: correct mapping_quality fromBROAD_MATCH toNARROW_MATCH,
+    the maintained native grade that emits skos:broadMatch for a more-specific suppliedhydrate.
+    Coordinator findingMIM1164 reproduced the formergradeascloseMatch. Primary cas10102-23-5
+    decahydrateidentity and CHEBI77775parent areunchanged. The oldproposedbytesandnativeauthorreviewremainpreserved.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.196102+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+chemical_properties:
+  cas_rn: 10102-23-5
+  molecular_formula: H20Na2O14Se
+  data_source: https://www.fishersci.com/shop/products/sodium-selenate-decahydrate-99-9-metals-basis-thermo-scientific/AA1423922
+ontology_mapping:
+  ontology_id: CHEBI:77775
+  ontology_label: sodium selenate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.fishersci.com/shop/products/sodium-selenate-decahydrate-99-9-metals-basis-thermo-scientific/AA1423922
+    notes: Original DSMZ1493/1685 explicitly use Na2SeO4·10H2O. Current official Thermo
+      specification identifies CAS10102-23-5 and H20Na2O14Se; original crystallography
+      DOI10.1107/S1600536814011799 confirms the decahydrate. Current OLS exact-name
+      query returned no term; CHEBI77775 has anhydrous formula2Na.O4Se/CAS13410-01-0
+      and is only a broader form anchor.

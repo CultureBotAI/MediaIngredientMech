@@ -1,0 +1,84 @@
+identifier: CHEBI:2769
+preferred_term: Apigenin Dimethyl Ether
+ontology_mapping:
+  ontology_id: CHEBI:2769
+  ontology_label: apigenin 7,4'-dimethyl ether
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601
+    notes: Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG
+      synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs
+      from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw
+      methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular
+      formula, structure and CID from ChEBI and PubChem.
+synonyms:
+- synonym_text: Methoxymethane
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:5728-44-9 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.219979+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:54.587899+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C14H9NO2; smiles=C1=CC=C(C(=C1)C#N)C2=CC=C(C=C2)C(=O)O;
+    inchi=InChI=1S/C14H9NO2/c15-9-12-3-1-2-4-13(12)10-5-7-11
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.531432+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:40:32.156808+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:28887 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG
+    synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from
+    imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw
+    methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular
+    formula, structure and CID from ChEBI and PubChem. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:2769
+    ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000361; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 5128-44-9
+  molecular_formula: C17H14O5
+  smiles: COc1ccc(-c2cc(=O)c3c(O)cc(OC)cc3o2)cc1
+  inchi: InChI=1S/C17H14O5/c1-20-11-5-3-10(4-6-11)15-9-14(19)17-13(18)7-12(21-2)8-16(17)22-15/h3-9,18H,1-2H3
+  pubchem_cid: 5281601
+  data_source: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601
+  retrieval_date: '2026-09-21T21:33:25.379198+00:00'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000361
+legacy_identifiers:
+- MIM:Apigenin_Dimethyl_Ether
+- CHEBI:2769

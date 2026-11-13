@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:jcm_1305_reconstituted_vitox
+preferred_term: JCM1305 reconstituted Oxoid Vitox
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COMPLEX_UNDEFINED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1305_reconstituted_vitox
+  ontology_label: JCM1305 reconstituted Oxoid Vitox
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1305
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: Oxoid Vitox supplement
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: VIAL_PER_SOURCE_BATCH
+- component_name: Rehydration fluid
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1305
+    source_record: JCM1305 reconstituted Oxoid Vitox
+    notes: JCM1305 specifies one Oxoid Vitox vial reconstituted in10ml rehydrationfluid,
+      then2ml added per100ml medium. Product catalog and proprietary constituent identities
+      remain unreported; complete preparation-input list does not establish a complete
+      molecular composition.
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'JCM1305 specifies one Oxoid Vitox vial reconstituted in10ml rehydrationfluid,
+  then2ml added per100ml medium. Product catalog and proprietary constituent identities
+  remain unreported; complete preparation-input list does not establish a complete
+  molecular composition. Raw source labels retained in linked frozen cases: [''Vitox
+  (Oxoid)'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD
+  or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.234291+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

@@ -1,0 +1,291 @@
+{
+  "created_at": "2026-11-08T12:02:20.693515Z",
+  "status": "COMPLETE_PROJECTED_NATIVE_STRUCTURAL_DIAGNOSTIC_WITH_LIMITATIONS",
+  "scientific_review": false,
+  "scope": "All exact plannedowner bytes and full nativecandidate/suppressedaliases/generationmanifest. Not application, actualplanacceptance or source-shard scienceapproval.",
+  "plan": {
+    "path": "inputs/owner-plan.conditional.json",
+    "sha256": "83f1f17c2fc9fd0a504cd533dd0c83612a950210c7b600de68fc386e53f17308"
+  },
+  "author_manifest": {
+    "path": "inputs/author-MANIFEST.json",
+    "sha256": "388fb9003cbf7f848e6c42e6359ad6fbe6a55dd8faa7f6c0af345b9b8ec77e76"
+  },
+  "materialization_index": {
+    "path": "inputs/materialization-index.json",
+    "sha256": "e720911214d6e0ebdfb0feb6efb2298c79921e4b118bfda25b1abeeeac4ba3e2"
+  },
+  "counts": {
+    "operations": 934,
+    "operation_kinds": {
+      "edit": 272,
+      "promote": 67,
+      "create": 594,
+      "demote": 1
+    },
+    "before_owners": 2956,
+    "after_owners": 3550,
+    "unchanged_baseline_owners": 2616,
+    "removed_paths": 68,
+    "added_paths": 662,
+    "guarded_exact_candidate_renders": 934,
+    "historical_mapping_receipts_preserved": 27,
+    "protected_inputs_preserved": 34,
+    "mapped_inputs": 3341,
+    "emitted_rows": 3750,
+    "subjects": 3271,
+    "suppression_rows": 21,
+    "native_rule_functions": 16,
+    "native_rejects": 0
+  },
+  "latest_selected_payloads": {
+    "data/ingredients/mapped/Marine_agar_2216.yaml": "355f0f593c84cabc8c10fbf3e72af8415725b94602dd6e660f1b82985703cfcc",
+    "data/ingredients/mapped/Marine_Broth_2216.yaml": "3c39226836dffe82029e54e579f3796b46b6b07a997aa99a4f9dc296f784601e",
+    "data/ingredients/mapped/JCM628_Top_Layer.yaml": "601d8e0cd0699f407b58755a26da3362e0823cb1c011bce04e246523472abb76",
+    "data/ingredients/mapped/JCM629_Top_Layer.yaml": "65375652cc7b0ca4e6e9fa82430b68ceb8fa50699e0b923deb4f7e3ff1688305"
+  },
+  "source_boundaries": {
+    "TSB": "Exact originalunmappedbytes retained; standalonepromotion excluded.",
+    "ten_vitamin": "Report-only scopes remain outside appliedselection; no ownerchoice invented.",
+    "Angustmycin": "Exact frozenplandemotion route projected only; no nativeacceptance or relocationapproval."
+  },
+  "native_outputs": {
+    "generation/candidate.sssom.tsv": {
+      "path": "generation/candidate.sssom.tsv",
+      "sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de"
+    },
+    "generation/suppressed-aliases.tsv": {
+      "path": "generation/suppressed-aliases.tsv",
+      "sha256": "c47c62a7aced3c503180928373f5df13610a7ba8fa75705d89c134753ca2950a"
+    },
+    "generation/generation-manifest.json": {
+      "path": "generation/generation-manifest.json",
+      "sha256": "4be70b978976662bbb78ca6e852f6dba48c5e3e5e9b6eb60d95b865a9a4695e6"
+    }
+  },
+  "predicate_counts": {
+    "skos:exactMatch": 3448,
+    "skos:broadMatch": 249,
+    "skos:closeMatch": 53
+  },
+  "native_results": {
+    "closed_schema": "3550records pass",
+    "guarded_render": "All934 actualwriter outputs byte-identical to selectedpayloads",
+    "full_partonomy": "3550owners,0errors",
+    "external_sssom_validation": {
+      "path": "validation/generation-external-receipt.json",
+      "sha256": "04029283f6e9544ef18a028c5730e1913738712de503e96e8cef55436013e42b"
+    },
+    "all_rules": {
+      "path": "validation/invariants-receipt.json",
+      "sha256": "31ade3c9f18ece640c5ba74dba576f36231bbca7d5c991d3bc51d8a03ff8dcc0"
+    },
+    "exact_field_row_comparisons": {
+      "path": "review/skeptical/complete-row-comparison.json",
+      "sha256": "5ba4574e1619a4ff9169b69fabf75312fe8c01a09b731c858abca4f3b7a4a066"
+    },
+    "native_reconcile": {
+      "path": "review/skeptical/native-reconcile-readback.json",
+      "sha256": "5508dc68ba94e85722c4931ac8e8e8e39ec541c4eb1562035957dc427cc62f55"
+    },
+    "current_reconcile_counts": {
+      "GAP": 0,
+      "ORPHAN": 0,
+      "STALE": 0,
+      "PREDICATE": 0,
+      "GRADE": 0
+    },
+    "native_curie_and_subject_report": {
+      "path": "review/skeptical/native-extra-checks.json",
+      "sha256": "f202808821eecd77a7ae32bf7960529f1334d23e179bf8fda0f65c6a86e6a7f7"
+    },
+    "negative_controls": "2record/schema/partonomy plus3independentnativeB1/B4/L controls rejected; no gatechange."
+  },
+  "B4": {
+    "counts": {
+      "evaluated_canonical_match": 2103,
+      "outside_B4_prefix": 1552,
+      "missing_transform": 94,
+      "term_absent_from_present_transform": 1
+    },
+    "missing_prefixes": [
+      "BTO",
+      "MICRO"
+    ],
+    "outside_prefixes": [
+      "NCIT",
+      "cas",
+      "kgmicrobe.compound",
+      "kgmicrobe.ingredient",
+      "mesh"
+    ],
+    "no_emitted_rows_prefixes": [
+      "PATO"
+    ],
+    "coverage": {
+      "path": "validation/invariants-B4-row-coverage.json",
+      "sha256": "08a6e9295c2a38accdbb2b1780254d1e418ef02930fbc160bb41c9e434af52ec"
+    },
+    "location_adaptation": "Only actualnative KGM_TRANSFORMS_DIR rebound to privateexactcopiesofcurrentKG data/transformed/ontologies. Rule source/flags/thresholds unchanged.",
+    "unverified_labels_are_not_approved": true
+  },
+  "comparisons": {
+    "canonical_rows": 3014,
+    "prior_diagnostic_rows": 3748,
+    "current_rows": 3750,
+    "row_delta_counts": {
+      "canonical": {
+        "added_triples": 789,
+        "removed_triples": 53,
+        "changed_common_triples": 2415,
+        "unchanged_common_triples": 546
+      },
+      "prior_diagnostic": {
+        "added_triples": 2,
+        "removed_triples": 0,
+        "changed_common_triples": 3,
+        "unchanged_common_triples": 3745
+      }
+    },
+    "prior_delta_detail": "2newMICRO1408broadMatch rows;2existingtoplayerregistryrows have nativeconfidence0.9->0.99, comment/sourcechanges;1Marineagarregistryrow curator-sourcechange;3745priorrows exact.",
+    "canonical_limit": "Allcomparison/reconcile numbers use currentprojectedownercollection; not a claim that oldcanonical had these defects againstits originalcorpus."
+  },
+  "known_failure_and_provenance_limits": {
+    "supplemental_J_owner_operator": "Actual _validate_records FAIL; three same-path alreadyREJECTED owners. Existing#1252 later16c lifecyclebranch read fromexactGitblob only, notexecuted. RemainingJoperatorchecksnotreached. Nofullprepare/applicationpass.",
+    "failure_evidence": {
+      "path": "review/technical/native-operator-version-boundary.json",
+      "sha256": "9a59aab1f1c74a7dec9437bfe672f1b163ca8af6965239f017d283e310f5f0e5"
+    },
+    "mutable_K_binding": "One11910indexsourcepath toKcode drifted as expected; authenticfrozen16cGitblob retained. Exact934payloads/afterownersunaffected. No I/Kexecution.",
+    "native_manifest_revision": "Native copiedMIM/KG roots report enclosingW07HEAD090b unedited. This is not actualappliedsourcecommit; exactJ baseline/code and actualKGinputs are independentlypinned.",
+    "legacy_subject_report": "19literal escapedstem mismatches under nongating#236; all3750actualforwardbindingsresolve,7500CURIEcells pass.",
+    "other_product_gate": "Full docsCSV/JSON validate-products notrun outside thisprojection.",
+    "initial_attempts": "Privateuv.lock importfailure and unsupportedartifact targetenum in unsavedrootreport retained; recovered by exactJdependencycopy andappend-onlygenerated-target v2. Technicalhistoricalinputprobe failures also preserved."
+  },
+  "input_context": {
+    "heads": {
+      "Claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+      "J": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+      "KG": "f10fb3909ed32898a54176ca77e509a950d16b84",
+      "W07": "090b8933175271a3daf1e1b4483a10dc367ec32c"
+    },
+    "runtime": {
+      "path": "generation-runtime/input-capture.json",
+      "sha256": "834cfb472f7060cb100ff928ed6d5051e5d4ef6fcf846165ee0785d9aef4b01c"
+    },
+    "executed_generation": {
+      "path": "generation-runtime/SUMMARY.json",
+      "sha256": "ee721292e1c64eb3cb5c897c118d345ebfbde5c799ba3342fbba6806c0a1b984"
+    },
+    "generation_manifest": {
+      "path": "generation-runtime/MANIFEST.json",
+      "sha256": "303fd23678686c5e08b9b0c74d19038c37dc869003f0590369e570ad2e322097"
+    },
+    "code": {
+      "path": "inputs/native-code-index.json",
+      "sha256": "7127139858b0078b6f320b5de977b5eab0bd68fb211ce589fbda6b4e78c11fc0"
+    },
+    "native_review_context": {
+      "path": "validation/native-review-context.json",
+      "sha256": "187ff0ed467d70541bafb0376d3bdeddb8f2fe3532fc7a444a956ae1ca68215b"
+    },
+    "no_mutable_I_or_K_execution": true,
+    "private_OPENCLAW_WORKSPACE": true
+  },
+  "independent_reviewers": [
+    {
+      "identity": "/root/projection_technical",
+      "scope": "All1881manifest members,11910materialization sources/10973bindings/9000Gitblobs; every934operation/3550owner/render and all27receipts; completegeneration source/triple/rules plus3negativecontrols. Structuralonly.",
+      "report": {
+        "path": "review/technical/TECHNICAL-REVIEW.json",
+        "sha256": "8884076e804b4da6edb4dfe2702f9c111ff0adf2f491bd347a96a8b7ee34eb9b"
+      },
+      "handoff": {
+        "path": "review/technical/HANDOFF.json",
+        "sha256": "0ee851c79faa66d120d5e949411c489975126abb177e97d443c35b61113823dd"
+      },
+      "manifest": {
+        "path": "review/technical/MANIFEST.json",
+        "sha256": "4f293ed164be0c13a213e80a4832d7239b26485ea4e46aa0bda4aac98f59b2d3"
+      }
+    },
+    {
+      "identity": "/root/projection_skeptic",
+      "scope": "Independent complete3750row/21suppression readback, all16nativefunctions, B4coverage, prior/canonical wholecomparisons, nativeCURIE/reconcile/subjectbinding, provenance/limits and finalnativepair/assembly.",
+      "preassembly": {
+        "path": "review/skeptical/ASSESSMENT-v1.json",
+        "sha256": "91e45ecacafc0b27fba0b108792301f1bf789b893396bf59ebc9fd0607fd11c8"
+      },
+      "structural_report": {
+        "path": "review/skeptical/GENERATION-STRUCTURAL-ASSESSMENT.json",
+        "sha256": "9a270c3251ca19975813ecda7477983292ad91b4bf6961df7169384db0b504ee"
+      },
+      "final_assembly": "review/skeptical/final-assembly.json; exact final hash bound by root MANIFEST after independent readback"
+    }
+  ],
+  "diagnostic_authors": [
+    "W07 /root: projection and report assembly",
+    "/root/projection_generation: unchanged generator execution only"
+  ],
+  "native_review": {
+    "active_input": {
+      "path": "native-review-v2.json",
+      "sha256": "9dff807a48f110a2e5736e5926ee8c4d5ad8bdfbe0a3c8319afd4fa635452dd8"
+    },
+    "review_id": "20261108T120016Z-w07-final-projected-native-independent",
+    "pair": {
+      "review": {
+        "path": "native-fixture/reviews/structured/20261108T120016Z-w07-final-projected-native-independent/review.yaml",
+        "sha256": "7f82ae050beefbd203f4645ebe9f1ebe95e4179c529a273ad88a9441c5db5c6f"
+      },
+      "markdown": {
+        "path": "native-fixture/reviews/structured/20261108T120016Z-w07-final-projected-native-independent/review.md",
+        "sha256": "cb980debc8382f34ba841734bc96fa99aecd897d7eeff168e2c43c6ef2769813"
+      }
+    },
+    "scientific_review": false,
+    "independence": "Root self_review ofdiagnosticassembly; separate technical/skeptical fullstructuralreviews actual and bound. No sourceauthorship laundering.",
+    "validation_receipts": [
+      {
+        "path": "validation/native-validate-v2-receipt.json",
+        "sha256": "56e837cf7e778d2eaa6540f31c2925367415a1792b5efb5191600b3d85ceed47"
+      },
+      {
+        "path": "validation/native-save-v2-receipt.json",
+        "sha256": "976d705bda31778805e00cab31a4559a3ad3f4e1827a1551d379b63c3bcc973c"
+      },
+      {
+        "path": "validation/native-check-v2-receipt.json",
+        "sha256": "539b2a4fc87140614ddf83cd54ce7025cc2add51726a217c4cfdcba4e1b79e2e"
+      }
+    ]
+  },
+  "new_findings": [],
+  "dedup_recommendation": "Keep known#1252 operatorcompatibility reproduction with the existingissue; no newsource-science defect filed or fixed. Root handles anyissue action. B4/inputcoverage remain explicit limits.",
+  "findings_and_limits": {
+    "path": "findings-and-limits.json",
+    "sha256": "41590e5869b6ad1fddeff6c1618ecea423f811635b291270382de2b8c0cf3b11"
+  },
+  "retained_limits": [
+    "Structural generation diagnostic only; scientific_review=false. No sourcecase, wholeowner, role, export, semanticrelease, planacceptance or realapplication approval. W07 authored some includedsourceproposals and doesnot approve thosebytes scientifically.",
+    "Allcandidate bytes remainexact; no source disposition, component, identity, alias or suppliedform was curated by thisdiagnostic. TSBheld, tenvitreportonly, Angustdemotion is onlythe frozenproposedroute.",
+    "B4localcoverage ispartial:2103canonicalmatches,94missingBTO/MICROtransformrows,1termabsentfrompresentFOODONtransform,1552outsideprefix. No inference ofontologyabsence orscientificwrongness frommissingtransform.",
+    "Supplemental pinnedJ _validate_records failed exactly asrecorded on3existingREJECTEDtombstone edits; later16c #1252branch wasread only. Itwasnotexecuted orapproved. No fullcampaignprepare/applicationcheck passed orwaived.",
+    "One11910materializationsourcebinding points into mutableKcodeanddrifted; frozen16cGitblob verifiedhistorically. Actual934payloadsandownersremainexact; executionusesJ/eac andClaw76c only.",
+    "NativegenerationmanifestreportsactualenclosingW07GitancestryforprivateMIM/KGcopies; itisnotappliedsourceproof. ExactJcode/baseline, planoperations andactualKGinputhashes areseparatelybound. Header/provenancewerenotrewritten.",
+    "Unchangedproducer replayedhistoricalvalidationstamps undernativepolicy; these areinheritedobject-level observations, notnewscientificendorsements. OLSresolved0withstored-label fallback; no newsource research ornetworkescalation.",
+    "No docsCSV/JSON/sharedCM/KG generationorwhole-corpusproductrelease wasattempted. CurrentKG haspre-existingtrackedstatsdifference, recordedbefore/after andnotchangedhere.",
+    "Legacy19literalstem reports are#236nongatingescapeobservations; allactualnativeforwardrowownerbindingsresolve. Suppression/rulechecksdo not constitute exhaustive scientificsynonymreview.",
+    "This immutableprojection cannot substitutefor regenerationfromactuallyappliedacceptedK withits then-current reviewednativecode and requiredapplication/export gates. NoGit/GitHub/source/sharedlockwrites."
+  ],
+  "source_head_unchanged": "090b8933175271a3daf1e1b4483a10dc367ec32c",
+  "tracked_status": "",
+  "preserved_prior_toplayer_packets": [
+    ".temp/toplayer-parent-decision-independent-v1",
+    ".temp/toplayer-parent-successor-independent-v1"
+  ],
+  "no_git_github_source_shared_writes": true,
+  "actual_application_or_acceptance": false,
+  "later_required": "Generate again from actually applied and acceptedK under its reviewedcurrentcode andfullnativeapplication/release/exportgates. Thisprojection never substitutes.",
+  "final_seal": "Root MANIFEST.json binds finalskepticalreceipt after fixedhandoffreadback; SEAL.json bindsmanifest without hashcycle."
+}

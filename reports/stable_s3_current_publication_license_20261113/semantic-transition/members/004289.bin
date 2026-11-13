@@ -1,0 +1,104 @@
+id: CultureMech:002908
+name: 1_10_potato_carrot_agar
+original_name: 1/10 POTATO-CARROT AGAR
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: JCM Medium J55
+  term:
+    id: mediadive.medium:J55
+    label: 1/10 POTATO-CARROT AGAR
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=55'
+ingredients:
+- preferred_term: Potato, peeled and cut
+  concentration:
+    value: '30'
+    unit: G_PER_L
+  source: JCM Medium 55
+  notes: JCM Medium 55 lists Potato, peeled and cut in the potato-carrot decoction
+    before boiling and cheesecloth filtration.
+- preferred_term: Carrot, peeled and cut
+  concentration:
+    value: '2.5'
+    unit: G_PER_L
+  source: JCM Medium 55
+  notes: JCM Medium 55 lists Carrot, peeled and cut in the potato-carrot decoction
+    before boiling and cheesecloth filtration.
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: JCM Medium 55
+  notes: JCM Medium 55 lists agar as the solidifying component.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: JCM Medium 55
+  notes: JCM Medium 55 lists 1.0 L distilled water to bring the recipe to volume.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: See the footnote for Medium No. 54.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.654066Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J55'
+- timestamp: '2026-03-13T06:19:16.491668Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002908'
+- timestamp: '2026-03-17T06:29:48.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:30.051234+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "1/10 POTATO-CARROT AGAR" to "1_10_potato_carrot_agar"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:15.391168+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_potato_carrot_agar_family_score15.py
+  action: RESOLVED_POTATO_CARROT_AGAR_FAMILY
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=55; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=54
+  notes: JCM Medium 55 lists 30 g potato, 2.5 g carrot, 15 g agar, and 1.0 L distilled
+    water, and delegates the preparation footnote to JCM Medium 54.
+kg_microbe_match: mediadive.medium:12
+parent_media:
+  path: data/normalized_yaml/bacterial/JCM_J54_POTATO-CARROT_AGAR.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:002897
+  name: potato_carrot_agar
+variant_relationship: CONCENTRATION_VARIANT
+variant_modifications:
+- Same ingredient identity signature but concentration signature differs from parent.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=55
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=54

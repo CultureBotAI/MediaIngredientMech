@@ -1,0 +1,119 @@
+{
+  "assessed_at": "2026-11-08T06:16:09.524487+00:00",
+  "assessor": "/root/research_a",
+  "role": "Source verification of original own-authored Merck proposal; root authors correction and B supplies distinct skeptical final review.",
+  "published_base": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+  "verdict": "source-backed component-name correction supported",
+  "original_proposal_id": "A-P-MERCK108339",
+  "original_proposal_capture": {
+    "root": "artifact",
+    "path": "research-a/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+    "sha256": "a72a6231d7d2a54491df60d91746ddfa4696cd61f76a1465ba62672a2edc5217"
+  },
+  "source_case_ids": [
+    "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+    "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e"
+  ],
+  "component_index_zero_based": 2,
+  "source_evidence": [
+    {
+      "evidence_id": "A-E-MERCK108339",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/product-web-open.json",
+        "sha256": "4a2ee7ed984ccfb8a492699352b06f9e0e234bfc0d2d849b477229522170547e"
+      },
+      "locator": "Merck108339 product composition and recommended30g/L preparation",
+      "supports_or_contradicts": "Identifies dehydrated Sabouraud2%dextrose broth and its casein/meat-peptone and D-glucose components, not agar or pure glucose.",
+      "url": "https://www.sigmaaldrich.com/US/en/product/mm/108339",
+      "case_ids": [
+        "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd"
+      ],
+      "accessed_at": "2026-11-08 05:09:18 UTC"
+    },
+    {
+      "evidence_id": "A-E-EXTRA-000",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/0ed1bb20d541cf5b.raw",
+        "sha256": "6e02f3cee82012b7f630c04f122676c0029753074a4421cb005301b8bf24cedb"
+      },
+      "locator": "OLS term label, is_obsolete, synonyms, chemical annotations and source xrefs",
+      "supports_or_contradicts": "case15: The six JCM originals spell D-Glucose; the doubled source hyphen is punctuation and does not remove D stereochemistry. Current CHEBI17634 explicitly defines D-glucose and includes D(+)-glucose synonyms. Existing D-glucose is the matching D-specific owner.; case41: The successfulTogoM2287 JSON recipe explicitly names D(+)glucose22mM and labels itD-Glucose. CHEBI17634 is the current D-glucose target and the matching maintained owner isD-glucose. This supplies primary confirmation beyond punctuation matching.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_17634",
+      "case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+        "CM_NAME:4102832afa3835505e3db683a0cfa50f14daaab21c73635b74f45fba60c99ca9"
+      ],
+      "accessed_at": "2026-11-08T05:08:09.390071+00:00"
+    }
+  ],
+  "supplier_observation": {
+    "raw_label": "D(+)Glucose",
+    "value": "20.0",
+    "unit": "g/litre",
+    "basis": "Supplier typical composition of prepared broth, retained from the original proposal; not a new claim about dry product concentration or historical lots",
+    "locator": "Captured supplier page Analysis Note, line171"
+  },
+  "target": {
+    "path": "data/ingredients/mapped/D-glucose.yaml",
+    "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914",
+    "identifier": "CHEBI:17634",
+    "preferred_term": "D-Glucose",
+    "ontology_label": "D-glucose",
+    "ontology_is_obsolete": false,
+    "ontology_definition": [
+      "A glucose with <small>D</small>-configuration."
+    ],
+    "relevant_ontology_synonyms": [
+      "D(+)-glucose",
+      "D-(+)-glucose"
+    ]
+  },
+  "reasoning": "The supplier explicitly specifies D glucose; the positive-rotation spelling is consistent with the captured ChEBID-glucose term and its D(+)-glucose naming. The proposed target was already CHEBI:17634, and the current owner uses D-Glucose with canonical ontologylabel D-glucose. Changing only component_name to D-glucose therefore expresses the existing identity using an accepted label. The native partonomy validator normalizes Unicode, case and whitespace but does not remove punctuation; D(+)Glucose lacks the hyphen of the stored supplier-style synonym, so it fails the exact normalized label set. The canonical label resolves without broadening to generic glucose or narrowing to an unstated anomer/hydrate.",
+  "recommended_scientific_delta": {
+    "/components/2/component_name": {
+      "before": "D(+)Glucose",
+      "after": "D-glucose"
+    },
+    "/component_assertion/evidence/0/notes": {
+      "action": "Append explicit raw supplier wording and canonical-label explanation; preserve all existing notes",
+      "suggested_append": "Supplier wording is retained verbatim as D(+)Glucose in the captured Typical composition (g/litre) statement, 20.0. The component name D-glucose is the canonical label of the already referenced CHEBI:17634; this spelling correction changes neither the D-specific identity, reference scope, quantity nor prepared-broth concentration basis."
+    }
+  },
+  "invariants_to_preserve": {
+    "component_id": "CHEBI:17634",
+    "reference_scope": "MIM_CATALOG",
+    "concentration_value": "20.0",
+    "concentration_unit": "G_PER_L",
+    "ingredient_identifier": "kgmicrobe.ingredient:merck_108339_sabouraud_2percent_dextrose_broth",
+    "other_components": "unchanged",
+    "component_assertion_completeness": "UNKNOWN",
+    "source_case_scope": "both original catalog-qualified cases only",
+    "historical_lot_and_generic_owner_limits": "unchanged"
+  },
+  "focused_native_check": {
+    "module": "src/mediaingredientmech/validation/component_partonomy.py",
+    "module_sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+    "method": "Read-only in-memory comparison of active target plus original/proposed parent; no YAML written",
+    "original_violations": [
+      {
+        "code": "REFERENCE_LABEL_MISMATCH",
+        "record_id": "kgmicrobe.ingredient:merck_108339_sabouraud_2percent_dextrose_broth",
+        "message": "component 3 (D(+)Glucose): name is not a preferred term, ontology label, or synonym of an active CHEBI:17634 record"
+      }
+    ],
+    "canonical_name_only_violations": [],
+    "scope": "This two-record check reproduces the label issue and demonstrates the bounded fix; it is not the full3031-record overlay audit, which root runs separately."
+  },
+  "release_limitations": [
+    "No chemical identity, component identifier, D/L stereochemistry, quantity, quantity unit or reference scope changes are justified or proposed.",
+    "No hydrate/anomer is inferred from this spelling, and inherited unrelated D-glucose owner claims are not reapproved.",
+    "Raw supplier spelling must remain explicitly in component evidence; no new global synonym is necessary.",
+    "Final corrected successor bytes require the root-authored audit trail, B skeptical review and full overlay validation. No published or maintained file is changed by this assessment."
+  ],
+  "old_files_changed": false,
+  "external_retrievals_started": 0
+}

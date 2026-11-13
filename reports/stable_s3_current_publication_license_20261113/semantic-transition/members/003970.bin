@@ -1,0 +1,73 @@
+from pathlib import Path
+import copy,datetime,hashlib,importlib.util,io,json,os,subprocess,sys,tarfile
+import yaml
+D=Path(__file__).resolve().parent;C=D.parents[1];M=C.parents[1];A=C/'integration/ancillary1258-worktree';P=C/'integration/w09-method-successors-v1';T=M/'.temp/kgm-unmapped-20261107'
+sys.path.insert(0,str(A/'src'))
+from mediaingredientmech.validation.write_validated import validate_ingredient,write_validated_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.curate.publication_guard import FrozenFile
+h=lambda raw:hashlib.sha256(raw).hexdigest()
+def save(n,o):
+ with (D/n).open('x') as f:json.dump(o,f,indent=2,ensure_ascii=False);f.write('\n')
+def git(root,*a):return subprocess.check_output(['git','--no-optional-locks','-C',str(root),*a],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+def collect(o,key):
+ if isinstance(o,list):return o
+ return o[key]
+selector=json.loads((P/'SELECTOR.json').read_text());assert h((P/'SELECTOR.json').read_bytes())=='4bccf43e1fc5b78b534155da6d8ca67e8addeb54880cd6f36aa5b3761d090b52'
+plan=json.loads((C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json').read_text());ops={r['operation_id']:r for r in plan['records']};proof=json.loads((P/'origin-proof.json').read_text())
+inspection=json.loads((D/'native-inspection-v1.json').read_text());snap={x['path']:x['sha256'] for x in inspection['source']['inputs']};inputs=dict(snap)
+def pin(p,expected=None):
+ raw=p.read_bytes();digest=h(raw)
+ if expected:assert digest==expected,str(p)
+ if p.is_relative_to(M):inputs[str(p.relative_to(M))]=digest
+ return raw
+head=git(A,'rev-parse','HEAD');index_path=Path(git(A,'rev-parse','--git-path','index').decode().strip());idx=h(index_path.read_bytes());status=git(A,'status','--porcelain=v1','-z','--untracked-files=no')
+protected={str(p.relative_to(A)):h(p.read_bytes()) for p in (A/'data/ingredients').glob('*/*.yaml')}
+checks=[];deltas=[];origin_checks=[];old={};new={};(D/'native-roundtrip').mkdir()
+for g in selector['groups']:
+ op=ops[g['operation_id']];assert op==g['unchanged_original_operation'];assert op['origins']==g['origins'];p=P/g['payload']['path'];raw=pin(p,g['payload']['sha256']);previous=pin(Path(g['previous_payload']['path']),g['previous_payload']['sha256']);b=yaml.safe_load(previous);n=yaml.safe_load(raw)
+ assert not validate_ingredient(n);r=D/'native-roundtrip'/p.name;write_validated_ingredient(n,r);assert r.read_bytes()==raw
+ assert n['ontology_mapping']['mapping_quality']=='MANUAL_CURATION';assert b['ontology_mapping']['mapping_quality']=='EXACT_MATCH'
+ assert len(n['ontology_mapping']['evidence'])==len(b['ontology_mapping']['evidence'])+1;assert len(n['curation_history'])==len(b['curation_history'])+1
+ clone=copy.deepcopy(n);clone['ontology_mapping']['mapping_quality']=b['ontology_mapping']['mapping_quality'];ev=clone['ontology_mapping']['evidence'].pop();history=clone['curation_history'].pop();assert clone==b;assert ev['evidence_type']=='LLM_SUGGESTION';assert history['llm_assisted'] is True and history['curator']=='Codex /root/step7d_science_c';assert '#1201' in ev['notes'] and '6724230173' in history['changes']
+ if op['before_source_record']:
+  blob=git(A,'show',plan['baseline_commit']+':'+op['before_source_record']);assert h(blob)==op['before_yaml_sha256']
+ else:assert op['kind']=='create' and op['before_yaml_sha256'] is None
+ old[g['source_record']]=b;new[g['source_record']]=n
+ deltas.append({'operation_id':g['operation_id'],'before':g['previous_payload'],'after':g['payload'],'reversible_exact':True,'unchanged_all_other_fields':True,'preserved_history_events':len(b['curation_history']),'preserved_evidence':len(b['ontology_mapping']['evidence']),'appended_evidence':ev,'appended_history':history,'authorship_limit':'Reviewer authored earlier Sulfur union; only new method delta and preservation independently assessed.' if p.name=='Sulfur.yaml' else 'Reviewer did not author this source proposal or successor.'})
+ for origin in g['origins']:
+  pr=next(x for x in proof if x['operation_id']==g['operation_id'] and x['origin']==origin);worker=C/'workers'/origin['worker_slot'].replace('worker-','w')/'worktree'
+  bp={x['role']:x for x in pr['binding_proofs']}
+  rawprops=git(worker,'show',origin['head_sha']+':'+bp['proposal']['published_path']);assert h(rawprops)==bp['proposal']['sha256'];props=collect(json.loads(rawprops),'proposals');prop=next(x for x in props if x['proposal_id']==origin['proposal_id']);assert prop==pr['proposal']
+  rawpayload=git(worker,'show',origin['head_sha']+':'+bp['evidence']['published_path']);assert h(rawpayload)==bp['evidence']['sha256']==prop['after_capture']['sha256']
+  rawdec=git(worker,'show',origin['head_sha']+':'+bp['decision']['published_path']);assert h(rawdec)==bp['decision']['sha256'];dec=collect(json.loads(rawdec),'decisions')
+  for d in pr['decisions']:
+   assert d==next(x for x in dec if x['case_id']==d['case_id']);assert origin['case_hashes'][d['case_id']]==d['case_input_sha256']
+  assert set(origin['case_hashes'])=={d['case_id'] for d in pr['decisions']};origin_checks.append({'operation_id':g['operation_id'],'origin':origin,'committed_proposal_payload_decisions_exact':True})
+ checks.append(p.name+' schema/native byte-roundtrip/inverse exact delta/published origins')
+# Authentic committed context; never read the partially applied B owner tree.
+records={}
+with tarfile.open(fileobj=io.BytesIO(git(A,'archive',plan['baseline_commit'],'data/ingredients'))) as tar:
+ for m in tar.getmembers():
+  if m.isfile() and m.name.endswith('.yaml'):records[m.name]=yaml.safe_load(tar.extractfile(m).read())
+assert len(records)==2956
+before={**records,**old};after={**records,**new};v1=list(validate_component_partonomy(before.values()));v2=list(validate_component_partonomy(after.values()));assert v1==v2 and len(v1)==3 and all(x.code=='UNRESOLVED_MIM_REFERENCE' and 'CHEBI:131366' in x.message for x in v1)
+coupled=json.loads(pin(P/'coupled-dependencies.json'))
+for dep in coupled['exact_prior_planned_dependencies']:
+ op=dep['unchanged_original_operation'];assert op==ops[op['operation_id']];raw=pin(P/dep['private_capture'],op['after_capture']['sha256']);assert raw==Path(dep['materialization']['source']).read_bytes();before[op['source_record']]=yaml.safe_load(raw);after[op['source_record']]=yaml.safe_load(raw)
+assert len(coupled['exact_prior_planned_dependencies'])==3;assert list(validate_component_partonomy(before.values()))==list(validate_component_partonomy(after.values()))==[]
+checks.append('Exact prior three UW dependencies resolve the same three pre-existing Borax incoming references; no new partonomy')
+# Separate actual native per-owner differential; actual read-only KG, cached official labels, no provider and no full generation.
+authdiag=json.loads(pin(P/'native-row-diagnostic.json'));kg=FrozenFile.capture(Path(authdiag['kg_input']['path']));assert h(kg.content)==authdiag['kg_input']['sha256'];claw=Path(authdiag['producer']['path']);raw=pin(claw,authdiag['producer']['sha256']);os.environ.update({'KGMICROBE_ROOT':str(kg.path.parent.parent),'MEDIAINGREDIENTMECH_ROOT':str(A),'OPENCLAW_WORKSPACE':str(D/'diagnostic-workspace')})
+sp=importlib.util.spec_from_file_location('independent_three_method_native_projection',claw);native=importlib.util.module_from_spec(sp);sys.modules[sp.name]=native;exec(compile(raw,str(claw),'exec'),native.__dict__)
+for p,b in native._IMPORTED_PRODUCER_BYTES.items():pin(Path(p),h(b))
+labels=authdiag['cached_labels'];kg_sources=native.load_kgm_source_index(kg.path);kg_labels=native.load_kgm_labels(kg.path)
+ob=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in before.items() if '/mapped/' in p});nb=native.build_owner_index({native._mim_curie(Path(p).name):v for p,v in after.items() if '/mapped/' in p});assert ob==nb
+rows=[]
+for g in selector['groups']:
+ p=g['source_record'];bs=[];ns=[];br=native._row_from_yaml(A/p,{},kg_sources,kg_labels,labels,record=old[p],owners=ob,suppressions=bs);nr=native._row_from_yaml(A/p,{},kg_sources,kg_labels,labels,record=new[p],owners=nb,suppressions=ns);assert len(br)==len(nr)==1;assert bs==ns==[]
+ x,y=br[0],nr[0];assert set(x)==set(y) and len(x)==13;changed=[k for k in x if x[k]!=y[k]];assert set(changed)=={'mapping_justification','confidence','source'};assert x['mapping_justification']=='semapv:LexicalMatching' and y['mapping_justification']=='semapv:ManualMappingCuration';assert x['confidence']=='0.99' and y['confidence']=='0.9';assert y['predicate_id']=='skos:exactMatch';auth=next(z for z in authdiag['rows'] if z['operation_id']==g['operation_id']);assert auth['before']==x and auth['after']==y
+ rows.append({'operation_id':g['operation_id'],'before':x,'after':y,'changed_columns':changed,'suppression_events_before':[],'suppression_events_after':[]})
+native._check_producer_bindings();kg.verify();assert git(A,'rev-parse','HEAD')==head;assert h(index_path.read_bytes())==idx;assert git(A,'status','--porcelain=v1','-z','--untracked-files=no')==status;assert protected=={str(p.relative_to(A)):h(p.read_bytes()) for p in (A/'data/ingredients').glob('*/*.yaml')}
+for p,digest in inputs.items():assert h((M/p).read_bytes())==digest,p
+save('audit-inputs.json',[{'path':p,'sha256':v} for p,v in sorted(inputs.items())]);save('exact-deltas.json',deltas);save('origin-checks.json',origin_checks);save('projection.json',{'scope':'Native per-owner diagnostic with authentic A842 catalog plus six exact proposal payloads (three method targets and three existing UW dependencies), actual KG and cached official labels. No complete campaign generation or release.','owner_count':len(after),'kg_input':authdiag['kg_input'],'producer':authdiag['producer'],'rows':rows});save('AUDIT.json',{'status':'PASS_WITH_SCOPE_LIMITS','completed_at':datetime.datetime.now(datetime.UTC).isoformat(),'checks':checks,'targets':len(new),'origins':len(origin_checks),'cases':len({c for x in origin_checks for c in x['origin']['case_hashes']}),'input_count':len(inputs),'native_partonomy_violations_without_known_dependencies':len(v1),'native_partonomy_violations_with_dependencies':0,'A_head':head.decode().strip(),'A_index_sha256':idx,'A_owner_inventory_count':len(protected),'A_owner_inventory_unchanged':True,'partial_B_read':False,'maintained_writes':False,'full_owner_approval':False,'Sulfur_author_conflict_disclosed':True});print('PASS',len(new),'targets',len(origin_checks),'origins',len(inputs),'inputs')

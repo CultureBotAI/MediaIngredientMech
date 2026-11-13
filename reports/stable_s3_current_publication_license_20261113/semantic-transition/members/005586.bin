@@ -1,0 +1,235 @@
+id: CultureMech:007207
+name: mogensen_minimal_medium_glucose
+original_name: Mogensen Minimal Medium (Glucose)
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '55.51'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Tromethamine
+  concentration:
+    value: '49.7'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:9754
+    label: tris
+- preferred_term: Ammonium chloride
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '138.3'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: Sodium molybdate
+  concentration:
+    value: '0.006199'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75215
+    label: sodium molybdate (anhydrous)
+- preferred_term: Cupric sulfate
+  concentration:
+    value: '0.006408'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:23414
+    label: copper(II) sulfate
+- preferred_term: 4-Aminobenzoate
+  term:
+    id: CHEBI:17836
+    label: 4-aminobenzoate
+  concentration:
+    value: '0.07292'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:4abz'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17836
+    label: 4-aminobenzoate
+- preferred_term: Sodium EDTA
+  concentration:
+    value: '0.1315'
+    unit: MILLIMOLAR
+- preferred_term: Cobalt chloride
+  concentration:
+    value: '0.007145'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:35696
+    label: cobalt dichloride
+- preferred_term: Ferrous sulfate
+  concentration:
+    value: '0.01798'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75832
+    label: iron(2+) sulfate (anhydrous)
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '2.16'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Potassium chloride
+  concentration:
+    value: '6.975'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: Manganese chloride
+  concentration:
+    value: '0.02526'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63041
+    label: manganese(II) chloride
+- preferred_term: Boric acid
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  concentration:
+    value: '0.1779'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33118
+    label: boric acid
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.07651'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Potassium dihydrogen phosphate
+  concentration:
+    value: '11.17'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:45.410605Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 309, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-01-28T19:48:23.672058Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:46.874564Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007207'
+- timestamp: '2026-03-17T06:30:15.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:05.057561+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "'Mogensen Minimal Medium (Glucose" to "mogensen_minimal_medium_glucose"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:38.110089+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-31T06:18:17.920734+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored the medium's own name in media_term.term.label, original_name. The
+    MediaDB SQL parser truncated every value containing a parenthesis at that parenthesis;
+    recovered from media_database.07Oct2015.sql.
+- timestamp: '2026-10-13T15:16:39.365769+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified paper bibliography with archived primary source and Markdown,
+    exact excerpts, scientific names and qualified NCBI taxonomy. Preserved recipe
+    differences and access/formulation limits; all prior quantities, links, preparation
+    and history unchanged. No new native growth or resolved variant.
+  source: PMID:16698295
+media_term:
+  preferred_term: MediaDB Medium 309
+  term:
+    id: MEDIADB:309
+    label: Mogensen Minimal Medium (Glucose)
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:16698295
+  title: Transcription analysis using high-density micro-arrays of Aspergillus nidulans
+    wild-type and creA mutant during growth on glucose or ethanol.
+  authors: Mogensen J; Nielsen HB; Hofmann G; Nielsen J
+  year: 2006
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; source_access=PubMed_abstract_only; alternate_identifier=doi:10.1016/j.fgb.2006.03.003.
+    owner=MEDIADB:309; discovery_sourceID=116; source_url=https://pubmed.ncbi.nlm.nih.gov/16698295/;
+    raw_abstract=references_cache/papers/PMID_16698295.xml; source_markdown=references_cache/papers/PMID_16698295.md.
+    PubMed abstract; exact excerpt="Aspergillus nidulans". PubMed abstract; exact
+    excerpt="glucose or ethanol as the sole carbon source". The glucose and ethanol
+    formulations are separate imported owners, not interchangeable assays. Their full
+    fifteen-component composition is absent from this abstract. The abstract compares
+    a reference strain and a creA-deleted strain; historical MediaDB joins name A187
+    and creA, without establishing their exact strain identity from the paper. Reported
+    organism=Aspergillus nidulans; canonical scientific name=Aspergillus nidulans;
+    NCBITaxon:162425; actual rank=species; taxonomy_match=exact species; role=study
+    species; exact local formulation unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=162425&retmode=xml.
+    Reported organism=Aspergillus nidulans A187 and creA (historical MediaDB labels);
+    canonical scientific name=Aspergillus nidulans; NCBITaxon:162425; actual rank=species;
+    taxonomy_match=parent_rank_only; role=species parent only; bounded strain lookup
+    did not resolve an exact node. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=162425&retmode=xml.
+    Reported organism=A. fumigatus / Aspergillus fumigatus; canonical scientific name=Aspergillus
+    fumigatus; NCBITaxon:746128; actual rank=species; taxonomy_match=exact species;
+    role=background genome comparison, not a tested medium target. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=746128&retmode=xml.
+    Reported organism=A. oryzae / Aspergillus oryzae; canonical scientific name=Aspergillus
+    oryzae; NCBITaxon:5062; actual rank=species; taxonomy_match=exact species; role=background
+    genome comparison, not a tested medium target. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=5062&retmode=xml.
+    Gene expression and repression do not establish quantitative growth metrics. The
+    attempted CiteSeer/Wayback full-text route returned HTML rather than a PDF; no
+    full paper was archived or used as evidence. Taxonomy archives=references_cache/papers/taxonomy/fungal-studies-20261013.*
+    and lu-sfm-additional-20261013.*. Bounded taxonomy lookup failures are not proof
+    of taxon absence. Organism inventory covers inspected medium-relevant passages,
+    not inaccessible full text. Correction/retraction coverage is limited to inspected
+    publication metadata. All prior recipe fields and history preserved, not newly
+    certified. No new ingredient-concentration evidence, resolved variant, native
+    growth association or quantitative metric. '

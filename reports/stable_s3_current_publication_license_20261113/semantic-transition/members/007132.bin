@@ -1,0 +1,115 @@
+identifier: kgmicrobe.ingredient:nbrc_323_solution_a
+preferred_term: NBRC 323 Solution A
+synonyms:
+- synonym_text: Solution A*
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:323;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COMPLEX_UNDEFINED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_323_solution_a
+  ontology_label: NBRC 323 Solution A
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=323
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_PREPARATION_WITH_500_ML_WATER
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_PREPARATION_WITH_500_ML_WATER
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_500_ML_WATER
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: G_PER_PREPARATION_WITH_500_ML_WATER
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.6'
+  concentration_unit: G_PER_PREPARATION_WITH_500_ML_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '500'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=323
+    source_record: NBRC 323 Solution A; complete named stock table and preparation
+      notes
+    notes: 'Printed original batch: yeast extract1g, ammonium sulfate0.2g, magnesium
+      sulfate heptahydrate0.5g, calcium chloride dihydrate0.25g, KH2PO4 0.6g and water500mL.
+      pH3–4; no adjustment reagent specified. Formula defines a source stock with
+      undefined yeast-extract component; it is distinct from NBRC971 Solution A. The
+      raw generic alias is excluded from global resolution. Literal source batch contains500mL
+      added distilled water; solute masses retain the original unscaled values. No
+      final solution volume or final g/L concentration is inferred.'
+  notes: 'Literal source batch contains500mL added distilled water; solute masses
+    retain the original unscaled values. No final solution volume or final g/L concentration
+    is inferred. Source-local raw labels are REJECTED_LABEL: they are preserved for
+    provenance and occurrence-specific decisions but native resolution must not expose
+    them as global synonyms. The source-qualified preferred term denotes this exact
+    preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+    are asserted. Any UNMAPPED part retains its literal source identity; component
+    grounding is separate from established whole-stock recipe identity.'
+notes: 'Printed original batch: yeast extract1g, ammonium sulfate0.2g, magnesium sulfate
+  heptahydrate0.5g, calcium chloride dihydrate0.25g, KH2PO4 0.6g and water500mL. pH3–4;
+  no adjustment reagent specified. Formula defines a source stock with undefined yeast-extract
+  component; it is distinct from NBRC971 Solution A. The raw generic alias is excluded
+  from global resolution. Literal source batch contains500mL added distilled water;
+  solute masses retain the original unscaled values. No final solution volume or final
+  g/L concentration is inferred. Source-local raw labels are REJECTED_LABEL: they
+  are preserved for provenance and occurrence-specific decisions but native resolution
+  must not expose them as global synonyms. The source-qualified preferred term denotes
+  this exact preparation. No unsupported roles, mechanisms, vendor, grade or release
+  approval are asserted. Any UNMAPPED part retains its literal source identity; component
+  grounding is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.811809+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 99. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.562233+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal source batch
+    contains500mL added distilled water; solute masses retain the original unscaled
+    values. No final solution volume or final g/L concentration is inferred.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.528806+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

@@ -1,0 +1,128 @@
+identifier: kgmicrobe.ingredient:nbrc_943_modified_hutner_solution
+preferred_term: NBRC 943 modified Hutner solution
+synonyms:
+- synonym_text: Modified Hutner's solution
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: nbrc.medium:943;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_943_modified_hutner_solution
+  ontology_label: NBRC 943 modified Hutner solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: '7.3'
+  concentration_unit: G_PER_L
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '29.7'
+  concentration_unit: G_PER_L
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.34'
+  concentration_unit: G_PER_L
+- component_name: (NH4)6Mo7O24·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_L
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99'
+  concentration_unit: MG_PER_L
+- component_name: NBRC943 Metal salt solution44
+  reference_scope: MIM_CATALOG
+  component_id: kgmicrobe.ingredient:nbrc943_metal_salt_44_stock
+  concentration_value: '50'
+  concentration_unit: ML_PER_L
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    source_record: NBRC 943 modified Hutner solution; complete named stock table and
+      preparation notes
+    notes: Source total preparation1L includes50mL Metal salt44, which is separately
+      proposed with its entire printed composition. NTA neutralized using7.3gKOH to
+      pH6.6–6.8. Solvent amount is not forced to1L in addition to the50mL nested stock.
+      Printed molybdate dihydrate retained without substituting tetrahydrate. NBRC943
+      explicitly makes the preparation up to a final1L with distilled water. Printed
+      masses and50mL Metal44 aliquot therefore retain final G/MG/ML_PER_L units; water
+      amount is q.s. and unquantified. Metal44 uses the shared canonical CS proposal
+      with literal100mL-water batch; it is a component, not the whole Hutner identity.
+  notes: 'NBRC943 explicitly makes the preparation up to a final1L with distilled
+    water. Printed masses and50mL Metal44 aliquot therefore retain final G/MG/ML_PER_L
+    units; water amount is q.s. and unquantified. Metal44 uses the shared canonical
+    CS proposal with literal100mL-water batch; it is a component, not the whole Hutner
+    identity. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance
+    and occurrence-specific decisions but native resolution must not expose them as
+    global synonyms. The source-qualified preferred term denotes this exact preparation.
+    No unsupported roles, mechanisms, vendor, grade or release approval are asserted.
+    Any UNMAPPED part retains its literal source identity; component grounding is
+    separate from established whole-stock recipe identity.'
+notes: 'Source total preparation1L includes50mL Metal salt44, which is separately
+  proposed with its entire printed composition. NTA neutralized using7.3gKOH to pH6.6–6.8.
+  Solvent amount is not forced to1L in addition to the50mL nested stock. Printed molybdate
+  dihydrate retained without substituting tetrahydrate. NBRC943 explicitly makes the
+  preparation up to a final1L with distilled water. Printed masses and50mL Metal44
+  aliquot therefore retain final G/MG/ML_PER_L units; water amount is q.s. and unquantified.
+  Metal44 uses the shared canonical CS proposal with literal100mL-water batch; it
+  is a component, not the whole Hutner identity. Source-local raw labels are REJECTED_LABEL:
+  they are preserved for provenance and occurrence-specific decisions but native resolution
+  must not expose them as global synonyms. The source-qualified preferred term denotes
+  this exact preparation. No unsupported roles, mechanisms, vendor, grade or release
+  approval are asserted. Any UNMAPPED part retains its literal source identity; component
+  grounding is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.833902+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 116. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.579122+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. NBRC943 explicitly
+    makes the preparation up to a final1L with distilled water. Printed masses and50mL
+    Metal44 aliquot therefore retain final G/MG/ML_PER_L units; water amount is q.s.
+    and unquantified. Metal44 uses the shared canonical CS proposal with literal100mL-water
+    batch; it is a component, not the whole Hutner identity.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.576872+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

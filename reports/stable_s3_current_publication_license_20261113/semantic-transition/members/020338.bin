@@ -1,0 +1,236 @@
+identifier: CHEBI:30961
+preferred_term: Pyridoxine hydrochloride
+ontology_mapping:
+  ontology_id: CHEBI:30961
+  ontology_label: pyridoxine hydrochloride
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Pyridoxine hydrochloride')
+    pmid: '6257871'
+    supports: SUPPORT
+    snippet: Male rats about 100 days old were fed a B-6 deficient diet supplemented
+      with 4'-deoxypyridoxine (1 g/kg diet) and/or pyridoxine hydrochloride (22 mg/kg
+      diet) for 30 to 35 days.
+    explanation: Auto-proposed; curator should rephrase or remove.
+synonyms:
+- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 2-methyl-3-hydroxy-4,5-bis(hydroxymethyl)pyridine hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3-hydroxy-4,5-dimethylol-alpha-picoline hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4,5-bis(hydroxymethyl)-2-methylpyridin-3-ol hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 5-hydroxy-6-methyl-3,4-pyridinedimethanol hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: pyridoxol hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Pyridoxine-HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Pyridoxine HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Pyridoxine·HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Vitamin; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Pyridoxine・HCl
+  synonym_type: EXACT
+  source: manual
+- synonym_text: Pyridoxine-HCl (VitaminB6)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Pyridoxine-HCl (Vitamin B6)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Pyridoxine . HCl
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Pyridoxine.HCL
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Pyridoxine-hydrochloride
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2029
+  media_count: 2027
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:45.006015+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:58-56-0 from PubChem API via name lookup (Pyridoxine hydrochloride)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.678087+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine-HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.680067+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    pyridoxine-HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.683366+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.686389+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine Hydrochloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.688158+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine·HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-17T12:00:00+00:00'
+  curator: synonym_expansion_cbclaw
+  action: ADDED_SYNONYMS
+  changes: Added 2 synonyms (unicode dot variants) for unmapped CultureMech surface
+    forms
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: 2-methyl-3-hydroxy-4,5-bis(hydroxymethyl)pyridine
+    hydrochloride, 3-hydroxy-4,5-dimethylol-alpha-picoline hydrochloride, 4,5-bis(hydroxymethyl)-2-methylpyridin-3-ol
+    hydrochloride, 5-hydroxy-6-methyl-3,4-pyridinedimethanol hydrochloride, pyridoxol
+    hydrochloride'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 5 duplicate MIM record(s) into this one: Pyridoxine-hcl.yaml,
+    Pyridoxine_Hcl.yaml, Pyridoxinehcl.yaml, Pyridoxine_Hydrochloride_2.yaml, Pyridoxine-hcl_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.991191+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.082376+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C8H11NO3.HCl; inchi=InChI=1S/C8H11NO3.ClH/c1-5-8(12)7(4-11)6(3-10)2-9-;
+    smiles=Cc1ncc(CO)c(CO)c1O.Cl
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.106384+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=6257871 from propose-evidence batch
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.012444+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112698+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.825203+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Pyridoxine hydrochloride'' -> ''pyridoxine hydrochloride'':
+    synced to canonical CHEBI label (preferred_term ''Pyridoxine hydrochloride'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519778+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 156/1942 -> 2027/2029 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Pyridoxine-HCl (VitaminB6)'' (x4 CultureMech mentions); ''Pyridoxine-HCl
+    (Vitamin B6)'' (x2 CultureMech mentions); ''Pyridoxine . HCl'' (x1 CultureMech
+    mentions); ''Pyridoxine.HCL'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Pyridoxine-hydrochloride''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002155; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 58-56-0
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:53:45.005975+00:00'
+  molecular_formula: C8H11NO3.HCl
+  inchi: InChI=1S/C8H11NO3.ClH/c1-5-8(12)7(4-11)6(3-10)2-9-5;/h2,10-12H,3-4H2,1H3;1H
+  smiles: Cc1ncc(CO)c(CO)c1O.Cl
+kg_microbe_node_id: CHEBI:30961
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1942 occurrences as 'Vitamin')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+      component'
+    curator_note: Widespread use in media formulations (1942 occurrences). High confidence
+      based on 'Defined component' property.
+mim_id: MIM:0002155
+legacy_identifiers:
+- MIM:Pyridoxine_Hydrochloride
+- CHEBI:30961

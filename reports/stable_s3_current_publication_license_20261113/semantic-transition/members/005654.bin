@@ -1,0 +1,107 @@
+id: CultureMech:001233
+name: potato_carrot_agar
+original_name: Potato Carrot Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.0
+media_term:
+  preferred_term: DSMZ Medium 1765
+  term:
+    id: mediadive.medium:1765
+    label: Potato Carrot Agar
+notes: 'Source: DSMZ'
+ingredients:
+- preferred_term: Potato
+  concentration:
+    value: '150'
+    unit: G_PER_L
+  source: MediaDive Medium 1765
+  notes: MediaDive Medium 1765 lists this ingredient in the potato-carrot decoction
+    before the boil, cheesecloth filtration, volume adjustment, and agar addition.
+- preferred_term: Carrot
+  concentration:
+    value: '30'
+    unit: G_PER_L
+  source: MediaDive Medium 1765
+  notes: MediaDive Medium 1765 lists this ingredient in the potato-carrot decoction
+    before the boil, cheesecloth filtration, volume adjustment, and agar addition.
+- preferred_term: Agar
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  source: MediaDive Medium 1765
+  notes: MediaDive Medium 1765 lists agar as the solidifying component.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: MediaDive Medium 1765
+  notes: MediaDive Medium 1765 lists 1.0 L distilled water to bring the recipe to
+    volume.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: FILTER_STERILIZE
+  description: Boil the peeled and chopped potatoes and carrots for 45 minutes, then
+    filter through cheesecloth and complete the volume to 1000 ml using distilled
+    water and add agar.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.449111Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1765'
+- timestamp: '2026-03-13T06:19:02.449218Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001233'
+- timestamp: '2026-03-17T06:30:49.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:14.276603+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Potato Carrot Agar" to "potato_carrot_agar" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:42.371060+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_potato_carrot_agar_family_score15.py
+  action: RESOLVED_POTATO_CARROT_AGAR_FAMILY
+  source: https://www.bacmedia.dsmz.de/medium/1765
+  notes: MediaDive Medium 1765 lists 150 g potato, 30 g carrot, 20 g agar, 1000 mL
+    distilled water, and final pH 7.0.
+kg_microbe_match: mediadive.medium:12
+parent_media:
+  path: data/normalized_yaml/bacterial/JCM_J54_POTATO-CARROT_AGAR.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:002897
+  name: potato_carrot_agar
+variant_relationship: CONCENTRATION_VARIANT
+variant_modifications:
+- Same ingredient identity signature but concentration signature differs from parent.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://www.bacmedia.dsmz.de/medium/1765

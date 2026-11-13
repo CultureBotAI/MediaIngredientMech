@@ -1,0 +1,146 @@
+id: CultureMech:007463
+name: '1197'
+original_name: '1197'
+category: bacterial
+description: 1197. NBRC 1196.
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: NBRC Medium 1196
+  term:
+    id: nbrc.medium:1196
+    label: NBRC Medium 1196
+ingredients:
+- preferred_term: Substrates*
+  concentration:
+    value: '10'
+    unit: MILLIMOLAR
+- preferred_term: KH2PO4
+  concentration:
+    value: '0.85'
+    unit: G_PER_L
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Na2HPO4·7H2O
+  concentration:
+    value: '4.9'
+    unit: G_PER_L
+- preferred_term: (NH4)2SO4
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:62946
+    label: ammonium sulfate
+- preferred_term: MgSO4·7H2O
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+- preferred_term: FeSO4·7H2O
+  concentration:
+    value: '9.5'
+    unit: MG_PER_L
+- preferred_term: MgO
+  concentration:
+    value: '10.75'
+    unit: MG_PER_L
+- preferred_term: CaCO3
+  concentration:
+    value: '2'
+    unit: MG_PER_L
+  term:
+    id: CHEBI:3311
+    label: calcium carbonate
+- preferred_term: ZnSO4·7H2O
+  concentration:
+    value: '1.44'
+    unit: MG_PER_L
+- preferred_term: MnSO4·4H2O
+  concentration:
+    value: '1.12'
+    unit: MG_PER_L
+- preferred_term: CuSO4·5H2O
+  concentration:
+    value: '0.25'
+    unit: MG_PER_L
+- preferred_term: CoSO4·7H2O
+  concentration:
+    value: '0.28'
+    unit: MG_PER_L
+- preferred_term: H3BO4
+  concentration:
+    value: '0.06'
+    unit: MG_PER_L
+- preferred_term: Concentrated HCl
+  concentration:
+    value: '0.0513'
+    unit: ML_PER_L
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Agar (if needed)
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  term:
+    id: CHEBI:2509
+    label: Agar
+preparation_steps: []
+curation_history:
+- timestamp: '2026-02-20T00:22:36.035486Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 1196, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=1196.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-13T03:09:06.729391Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 17 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.162145Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007463'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Substrates*10mMKH2PO40.85gNa2HPO4·7H2O4.9g(NH4)2SO40.5gMgSO4·7H2O0.1gFeSO4·7H2O9.5mgMgO10.75mgCaCO32mgZnSO4·7H2O1.44mgMnSO4·4H2O1.12mgCuSO4·5H2O0.25mgCoSO4·7H2O0.28mgH3BO40.06mgConcentrated
+    HCl51.3μlDistilled water1LAgar (if needed)15g*Vanillic acid and syringic acid
+    etc.'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.600996+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:22.656698+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 1196 composition table from the preserved scrape;
+    16 ingredient(s) restored, 0 stock solution(s) nested rather than flattened, 0
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:15.808276+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 4 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_nbrc_partial_score25.py
+  action: RESOLVED_NBRC_PARTIAL_SCORE25
+  changes: Added source metadata to recovered NBRC score-25 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196
+  notes: Preserved the recovered NBRC Medium 1196 composition table.
+notes: 'Source: NBRC Medium 1196 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196
+
+
+  The NBRC Modified W-medium table lists agar as optional and describes the 10 mM
+  substrates row as vanillic acid, syringic acid, etc.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196

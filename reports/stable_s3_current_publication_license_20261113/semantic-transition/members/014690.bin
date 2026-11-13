@@ -1,0 +1,81 @@
+identifier: cas:853-68-9
+preferred_term: AQDS
+ontology_mapping:
+  ontology_id: cas:853-68-9
+  ontology_label: AQDS
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 853-68-9 present, but no CHEBI entry exists (checked
+      OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels: Hans80metals. Curator can
+      promote to a CHEBI primary if/when CHEBI adds the term.'
+synonyms:
+- synonym_text: anthraquinone-2,6-disulfonate
+  synonym_type: REJECTED_LABEL
+  source: culturebotht
+- synonym_text: Na2-9,10-anthraquinone-2,6-disulfonate
+  synonym_type: EXACT_SYNONYM
+  source: merge
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 23
+  media_count: 23
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:853-68-9 as primary identifier; no CHEBI entry exists for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.993601+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:40.503967+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C14H6Na2O8S2; smiles=C1=CC2=C(C=C1S(=O)(=O)[O-])C(=O)C3=C(C2=O)C=C(C=C3;
+    inchi=InChI=1S/C14H8O8S2.2Na/c15-13-9-3-1-7(23(17,18)19)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.221466+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-07-21T18:49:55.309338+00:00'
+  curator: merge-ingredients
+  action: MERGED
+  changes: 'Merged duplicate record CHEBI:85112 (''Na2-9,10-anthraquinone-2,6-disulfonate'',
+    origin UNMAPPED_0466, source mediadive.ingredient:521) into this record. Same substance:
+    AQDS = anthraquinone-2,6-disulfonate disodium salt. Kept cas:853-68-9 as the more precise
+    disodium-salt identity (full chemistry, PubChem CID 70070); CHEBI:85112 is the related dianion
+    (a closeMatch/parent, not the exact salt), so it is recorded here as a note rather than
+    a primary. Surface form kept as a synonym.'
+- timestamp: '2026-08-27T03:16:39.518287+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 23/23 (media_count/total_occurrences), derived from
+    distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from
+    the importer retired in #453, whose media_count counted a list truncated to 50 examples
+    (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:16:29.124027+00:00'
+  curator: all_unmatched_worker_10_source_review
+  action: CORRECTED
+  changes: Retype anthraquinone-2,6-disulfonate exact synonym as REJECTED_LABEL because source521
+    and CAS853-68-9 identify the disodium salt; retain qualified Na2 alias and supplied salt
+    identity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 853-68-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C14H6Na2O8S2
+  smiles: C1=CC2=C(C=C1S(=O)(=O)[O-])C(=O)C3=C(C2=O)C=C(C=C3)S(=O)(=O)[O-].[Na+].[Na+]
+  inchi: InChI=1S/C14H8O8S2.2Na/c15-13-9-3-1-7(23(17,18)19)5-11(9)14(16)10-4-2-8(6-12(10)13)24(20,21)22;;/h1-6H,(H,17,18,19)(H,20,21,22);;/q;2*+1/p-2
+  pubchem_cid: 70070
+ingredient_type: SINGLE_INGREDIENT

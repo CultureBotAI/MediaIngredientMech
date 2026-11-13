@@ -1,0 +1,137 @@
+identifier: CHEBI:18397
+preferred_term: 2-phenylethylamine
+ontology_mapping:
+  ontology_id: CHEBI:18397
+  ontology_label: 2-phenylethylamine
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361
+    notes: 'CHEBI:18397 / PubChem CID 1001 / CAS 64-04-0 denote free-base C8H11N;
+      Phenethylamine hydrochloride is distinct CID 9075 / CAS 156-28-5 / C8H12ClN.
+      Preserve #234''s free-base identity, Beta-phenylethylamine alias and chemistry;
+      reject only the incompatible salt alias. CultureBotHT''s tracked correction
+      overlay explicitly corrects the original source pair, but does not identify
+      the original supplier or physical bottle. Separate salt-record re-ingestion
+      remains open on #235; no direct CAS Registry check is claimed. Sources: https://www.ebi.ac.uk/chebi/CHEBI:18397
+      ; https://pubchem.ncbi.nlm.nih.gov/compound/1001 ; https://pubchem.ncbi.nlm.nih.gov/compound/9075
+      ; https://webprod.hc-sc.gc.ca/nhpid-bdipsn/ingredReq?id=11491 ; https://github.com/CultureBotAI/CultureBotHT/pull/38
+      . https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361.
+      Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+      (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+      counts are not recipe occurrences or positive experimental outcomes. Preserved
+      superseded source assertions and history. No scientific/release approval is
+      asserted.'
+synonyms:
+- synonym_text: 2-phenylethanamine
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: Phenethylamine Hydrochloride
+  synonym_type: REJECTED_LABEL
+  source: relabelled
+- synonym_text: Beta-phenylethylamine
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=64-04-0; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.752056+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.863474+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C8H11N; inchi=InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2;
+    smiles=NCCc1ccccc1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.709012+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-05T04:22:55.108064+00:00'
+  curator: salt-hydrate-identity-fix
+  action: RELABELLED
+  changes: 'preferred_term ''Phenethylamine Hydrochloride'' -> ''2-phenylethylamine'';
+    old name kept as a RAW_TEXT synonym. ChEBI has no phenethylamine hydrochloride
+    term (the only C8H11N.HCl is CHEBI:191064, N-methylbenzylamine HCl). The record
+    carries cas 64-04-0 from CultureBotHT, which is the free base and is ChEBI''s
+    own xref for CHEBI:18397. Renaming keeps the exactMatch honest; the salt name
+    survives as a synonym. Note the CultureBotHT pairing could equally be a CAS-lookup
+    error on a salt catalogue name — recorded in #235.'
+  llm_assisted: true
+- timestamp: '2026-08-05T04:25:55.473460+00:00'
+  curator: salt-hydrate-identity-fix
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0707 ''Beta-phenylethylamine'' as a RAW_TEXT synonym
+    -- ''beta-Phenylethylamine'' and ''beta-phenethylamine'' are ChEBI synonyms of
+    CHEBI:18397; held back from #227 until the record stopped claiming to be the hydrochloride.
+    No new SSSOM row; CHEBI:18397 is already mapped. Source: kgmicrobe.trait:beta_phenylethylamine.'
+  llm_assisted: true
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 64-04-0 uniquely resolves
+    by ChEBI xref to CHEBI:18397 '2-phenylethylamine'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-02T21:05:51.410555+00:00'
+  curator: Codex
+  action: REJECTED_WRONG_FORM_SYNONYM
+  changes: 'Retyped only ["Phenethylamine Hydrochloride"] as provenance-only REJECTED_LABEL.
+    CHEBI:18397 / PubChem CID 1001 / CAS 64-04-0 denote free-base C8H11N; Phenethylamine
+    hydrochloride is distinct CID 9075 / CAS 156-28-5 / C8H12ClN. Preserve #234''s
+    free-base identity, Beta-phenylethylamine alias and chemistry; reject only the
+    incompatible salt alias. CultureBotHT''s tracked correction overlay explicitly
+    corrects the original source pair, but does not identify the original supplier
+    or physical bottle. Separate salt-record re-ingestion remains open on #235; no
+    direct CAS Registry check is claimed. Sources: https://www.ebi.ac.uk/chebi/CHEBI:18397
+    ; https://pubchem.ncbi.nlm.nih.gov/compound/1001 ; https://pubchem.ncbi.nlm.nih.gov/compound/9075
+    ; https://webprod.hc-sc.gc.ca/nhpid-bdipsn/ingredReq?id=11491 ; https://github.com/CultureBotAI/CultureBotHT/pull/38
+    . https://github.com/CultureBotAI/MediaIngredientMech/issues/235#issuecomment-6588291361.
+    Hash-bound source captures: reports/step7c_source_labels_313_235_20261102/source-evidence.json
+    (sha256 1a7185b74de90578fe5f42d3d44cf7c798dccb5e5fd56fc3c1c01885499b85d0). Source-field
+    counts are not recipe occurrences or positive experimental outcomes. Preserved
+    superseded source assertions and history. No scientific/release approval is asserted.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002027; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 64-04-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C8H11N
+  inchi: InChI=1S/C8H11N/c9-7-6-8-4-2-1-3-5-8/h1-5H,6-7,9H2
+  smiles: NCCc1ccccc1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002027
+legacy_identifiers:
+- MIM:Phenethylamine_Hydrochloride
+- CHEBI:18397

@@ -1,0 +1,271 @@
+id: CultureMech:007152
+name: hmm_with_1_g_l_junlon_pw_110_hobbs_et_al
+original_name: HMM with 1 g/L Junlon PW 110; Hobbs et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: D-Glucose
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  concentration:
+    value: '11.1012'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:glc_D'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17634
+    label: D-glucose
+- preferred_term: Propenoate
+  concentration:
+    value: '13.8773'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:acryl'
+- preferred_term: Tromethamine
+  concentration:
+    value: '9.90589'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:9754
+    label: tris
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.00108626'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Boric acid
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  concentration:
+    value: '0.00501375'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33118
+    label: boric acid
+- preferred_term: Potassium dibasic phosphate
+  concentration:
+    value: '11.4811'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Sodium sulfate
+  concentration:
+    value: '35.2014'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32149
+    label: sodium sulfate
+  term:
+    id: CHEBI:32149
+    label: sodium sulfate
+- preferred_term: Sodium molybdate
+  concentration:
+    value: '0.0010002'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75215
+    label: sodium molybdate (anhydrous)
+- preferred_term: Sodium chloride
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '85.5578'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '4.05729'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.061931'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Manganese chloride
+  concentration:
+    value: '0.00455014'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63041
+    label: manganese(II) chloride
+- preferred_term: Cupric chloride
+  concentration:
+    value: '0.00249296'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:49553
+    label: copper(II) chloride
+- preferred_term: Iron(III) chloride
+  concentration:
+    value: '0.0540999'
+    unit: MILLIMOLAR
+- preferred_term: Zinc Chloride
+  concentration:
+    value: '0.0149653'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:49976
+    label: zinc dichloride
+- preferred_term: Sodium iodide
+  concentration:
+    value: '0.0027687'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:33167
+    label: sodium iodide
+- preferred_term: Sodium nitrate
+  term:
+    id: CHEBI:63005
+    label: sodium nitrate
+  concentration:
+    value: '52.9445'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63005
+    label: sodium nitrate
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:44.941889Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 254, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-03-13T06:19:46.473381Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007152'
+- timestamp: '2026-03-17T06:29:58.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:04.634949+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "HMM with 1 g/L Junlon PW 110; Hobbs et al" to "hmm_with_1_g_l_junlon_pw_110_hobbs_et_al"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:08.638034+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-20T19:01:51.841692+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-08-31T04:06:22.651053+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:254's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-10-13T14:29:43.219181+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified bibliography with archived primary abstract and Markdown,
+    exact abstract excerpts, scientific names and qualified taxonomy. Kept OCR/body
+    observations provisional and recipe differences unresolved; preserved all amounts,
+    links, preparation and history. No new native growth, concentration evidence or
+    resolved variant.
+  source: doi:10.1007/BF00258408
+media_term:
+  preferred_term: MediaDB Medium 254
+  term:
+    id: MEDIADB:254
+    label: HMM with 1 g/L Junlon PW 110; Hobbs et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+high_metal: true
+variant_children:
+- path: data/normalized_yaml/bacterial/hmm_with_0_5_g_l_junlon_pw_110_hobbs_et_al.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:007151
+  name: hmm_with_0_5_g_l_junlon_pw_110_hobbs_et_al
+  notes: Junlon PW 110 dose changes from 1 g/L parent to 0.5 g/L child; parsed Propenoate
+    concentration changes from 13.8773 mM to 6.93866 mM while all other parsed ingredient
+    concentrations match the parent.
+- path: data/normalized_yaml/bacterial/hmm_with_1_5_g_l_junlon_pw_110_hobbs_et_al.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:007153
+  name: hmm_with_1_5_g_l_junlon_pw_110_hobbs_et_al
+  notes: Junlon PW 110 dose changes from 1 g/L parent to 1.5 g/L child; parsed Propenoate
+    concentration changes from 13.8773 mM to 20.816 mM while all other parsed ingredient
+    concentrations match the parent.
+- path: data/normalized_yaml/bacterial/hmm_with_2_g_l_junlon_pw_110_hobbs_et_al.yaml
+  relationship: CONCENTRATION_VARIANT
+  id: CultureMech:007154
+  name: hmm_with_2_g_l_junlon_pw_110_hobbs_et_al
+  notes: Junlon PW 110 dose changes from 1 g/L parent to 2 g/L child; parsed Propenoate
+    concentration changes from 13.8773 mM to 27.7546 mM while all other parsed ingredient
+    concentrations match the parent.
+references:
+- reference: doi:10.1007/BF00258408
+  title: Dispersed growth of Streptomyces in liquid culture
+  authors: Glyn Hobbs; Catherine M. Frazer; David C J Gardner; John A. Cullum; Stephen
+    G. Oliver
+  year: 1989
+  notes: source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; owner=MEDIADB:254; discovery_sourceID=88; source_access=author_institution_abstract_only.
+    This owner is the existing parent of CultureMech:007151, CultureMech:007153 and
+    CultureMech:007154. The imported Junlon PW 110 dose label and parsed Propenoate
+    molarity are not newly certified. Each child receives its own citation; existing
+    links remain unchanged. Author-institution abstract; exact excerpt='Streptomyces'.
+    Author-institution abstract; exact excerpt='Junlon-containing media'. Author-institution
+    abstract; exact excerpt='defined growth medium'. Author-institution abstract;
+    exact excerpt='polyanions such as agar, Carbopol and Junlon'. Reported organism=Streptomyces;
+    canonical scientific name=Streptomyces; NCBITaxon:1883; actual rank=genus; taxonomy_match=exact
+    reported genus; role=genus-only abstract mention; not a genus-wide cultivation
+    assertion. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1883&retmode=xml.
+    The historical source join names Streptomyces coelicolor J802, but that strain
+    is not established by this abstract. Reported organism=Streptomyces coelicolor
+    J802 (historical source join only); canonical scientific name=Streptomyces coelicolor
+    A3(2); NCBITaxon:100226; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=candidate A3(2) parent from separate Hodgson provenance; not a Hobbs abstract
+    strain identification. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=100226&retmode=xml.
+    The abstract does not enumerate the four HMM recipes or Junlon PW 110 doses. Polymer
+    identity is not established by monomer Propenoate molarity. Optical-density measurement,
+    dispersed growth, biomass and actinorhodin output are distinct study observations;
+    no quantitative metric is inferred. An existing citation mention in the separate
+    mannitol-soya-flour record does not make that solid complex formulation identical
+    to these defined liquid HMM owners. raw_abstract=references_cache/papers/primary_html/hobbs-1989-manchester-abstract.html;
+    source_markdown=references_cache/papers/primary_html/hobbs-1989-manchester-abstract.md.
+    PMID was not resolved by bounded lookup, not established absent. Correction/retraction
+    coverage is limited to inspected metadata, not an exhaustive audit. All original
+    ingredients, amounts, preparation, links and history preserved, not newly certified.
+    No new concentration evidence, native growth association, quantitative metric
+    or resolved variant. Organism inventory is limited to inspected medium-relevant
+    passages; source-extraction uncertainty is retained. Taxonomy archives=references_cache/papers/taxonomy/hodgson-streptomyces-20261013.*
+    and hobbs-streptomyces-genus-20261013.*.

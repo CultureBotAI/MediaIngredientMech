@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:horse_serum_56c_30min_atcc243
+preferred_term: Horse serum heated at 56 C for 30 min (ATCC 243)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0001235
+  ontology_label: horse serum
+  ontology_source: MICRO
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/98B9A2419DDE432EBF35ED01CD98A88E.ashx
+    notes: ATCC243 explicitly instructs heating equine serum56C30min. TOGO M2467/M2177
+      are source variants of that same instruction. The explicit heat-inactivated
+      state is retained and differs from an explicitly active state. Filtration alone
+      and missing heat schedules do not establish non-heat treatment or a different
+      preparation; those relationships remain unresolved. Broader material parent
+      only; distinct local preparation identity remains.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.582346+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: ATCC243 explicitly instructs heating equine serum56C30min. TOGO M2467/M2177
+    are source variants of that same instruction. This treatment-specific preparation
+    is distinct from active/filter-only equine serum and from unknown-schedule products.
+    Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:43:39.451262+00:00'
+  curator: worker10_successor_v3_serums_Codex_root_buffers_research
+  action: CORRECTED
+  changes: 'BIO-F04 source-bound successor correction: ATCC243 explicitly instructs
+    heating equine serum56C30min. TOGO M2467/M2177 are source variants of that same
+    instruction. The explicit heat-inactivated state is retained and differs from
+    an explicitly active state. Filtration alone and missing heat schedules do not
+    establish non-heat treatment or a different preparation; those relationships remain
+    unresolved. Prior isolated proposal sv1-bio-horse_serum_56c_30min_atcc243 remains
+    immutable; this event records proposal authorship only. Earlier history is retained
+    verbatim, including superseded wording.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'ATCC243 explicitly instructs heating equine serum56C30min. TOGO M2467/M2177
+  are source variants of that same instruction. The explicit heat-inactivated state
+  is retained and differs from an explicitly active state. Filtration alone and missing
+  heat schedules do not establish non-heat treatment or a different preparation; those
+  relationships remain unresolved. Source labels retained as nonresolving provenance:
+  [{"case_id": "CM_NAME:c52e3ad142b7474e945d3d890858da53f903c9d105909d53f5b6c91295b38447",
+  "raw_label": "Horse serum (heat-inactivated)"}]. No global generic alias, supplier
+  equivalence, role approval or complete publication approval is conferred. Receiving-medium
+  dose and unit repairs remain separate. Existing native holds and rejected labels
+  are preserved. Source-qualified naming is not proof of a distinct preparation. Preserve
+  unresolved cross-source relationships and evaluate a common named partial scope
+  or exact product/protocol bridge before simultaneous installation. No role/export
+  or whole-owner approval; all inherited holds remain.'

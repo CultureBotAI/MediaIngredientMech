@@ -1,0 +1,82 @@
+--- original-TC/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml
++++ private-proposed/data/ingredients/mapped/S-adenosyl_Homocysteine.yaml
+@@ -1,16 +1,28 @@
+-identifier: cas:9789-92-0
++identifier: CHEBI:16680
+ preferred_term: S-adenosyl Homocysteine
+ ontology_mapping:
+-  ontology_id: cas:9789-92-0
+-  ontology_label: S-adenosyl Homocysteine
+-  ontology_source: CAS
+-  mapping_quality: FALLBACK_REGISTRY
++  ontology_id: CHEBI:16680
++  ontology_label: S-adenosyl-L-homocysteine
++  ontology_source: CHEBI
++  mapping_quality: MANUAL_CURATION
+   evidence:
+   - evidence_type: DATABASE_MATCH
+-    source: CultureBotHT
+-    notes: Imported from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry
+-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+-      to a CHEBI primary if/when CHEBI adds the term.
++    source: https://www.ebi.ac.uk/chebi/CHEBI:16680
++    notes: '#1382: released three-star ChEBI S-adenosyl-L-homocysteine explicitly
++      defines the L-homocysteine derivative and records CAS 979-92-0. Its exact S-(5''-adenosyl)-L-homocysteine
++      synonym and stereochemical structure match the named source/catalog material.
++      Official API capture SHA256 c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82.
++      No role or optional structure/property bundle is imported.'
++  - evidence_type: CURATOR_JUDGMENT
++    source: CultureBotHT compounds_to_cas.csv line 696; https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/320/327/a9384pis.pdf
++    notes: '#1382: the original row explicitly records Company Sigma, CatalogNumber
++      A9384 and S-(5′-Adenosyl)-L-homocysteine. The inspected official A9384 sheet
++      gives that L material and CAS 979-92-0, corroborating the ontology. Supplier
++      text capture SHA256 aa7d3fae930a6962f6464939d71cd21e6abb128a2cfeb6c29d2b24cabea27bdb.
++      L configuration is supported by the explicit source synonym/catalog; S- is a
++      sulfur locant, not stereochemical evidence. No actual purchased lot, purity,
++      hydrate, salt, solution concentration, occurrence or source-binding approval
++      is inferred. All existing release/source/role holds remain.'
+ synonyms:
+ - synonym_text: S-(5′-Adenosyl)-L-homocysteine
+   synonym_type: EXACT_SYNONYM
+@@ -43,12 +55,37 @@
+   changes: '#1265: assigned permanent MIM:0002227; retained mapping identifier and
+     legacy aliases.'
+   llm_assisted: true
++- timestamp: '2026-11-12T14:12:07.820445+00:00'
++  curator: codex_two_invalid_cas_source_proposals
++  action: PROPOSED_SOURCE_CORRECTION
++  changes: '#1382: private exact source-correction proposal. The original source explicitly
++    supplies Sigma A9384 and the L synonym; the manufacturer product sheet and official
++    ChEBI16680 establish the same L material and CAS979-92-0. Do not infer L configuration
++    from the sulfur S locant or arithmetic checksum repair. Replace the invalid active
++    primary/grounding/CAS property with CHEBI:16680 and sourced CAS 979-92-0; mapping
++    quality MANUAL_CURATION records explicit source/form adjudication. Remove only
++    the disproved cas:9789-92-0 resolving alias under the reviewed native owner-rejection
++    policy. Preserve MIM:0002227, filename, genuine MIM slug, preferred term, all
++    raw source synonyms, occurrences, original history, and all release/source/role
++    holds. Do not mint, merge, split, import roles/components/structures, approve
++    source bindings or declare publication. This proposal is not native application
++    or scientific release approval. Exact rejected original assertion and original
++    chemical-property provenance: {"chemical_properties":{"cas_rn":"9789-92-0","data_source":"CultureBotHT
++    compounds_to_cas.csv","retrieval_date":"2026-04-29T06:51:33.117170+00:00"},"identifier":"cas:9789-92-0","legacy_identifiers":["MIM:S-adenosyl_Homocysteine","cas:9789-92-0"],"ontology_mapping":{"evidence":[{"evidence_type":"DATABASE_MATCH","notes":"Imported
++    from CultureBotHT. CAS-RN 9789-92-0 present, but no CHEBI entry exists (checked
++    OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary
++    if/when CHEBI adds the term.","source":"CultureBotHT"}],"mapping_quality":"FALLBACK_REGISTRY","ontology_id":"cas:9789-92-0","ontology_label":"S-adenosyl
++    Homocysteine","ontology_source":"CAS"}}.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: Codex (exact model identifier was not recorded in the proposal receipt)
+ chemical_properties:
+-  cas_rn: 9789-92-0
+-  data_source: CultureBotHT compounds_to_cas.csv
+-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
++  cas_rn: 979-92-0
++  data_source: ChEBI:16680 official compound API; Sigma A9384 product information;
++    c2b512c1babb3435fa548d704aae973545a3805bd333527712fa68f11f881c82
++  retrieval_date: '2026-11-12T14:05:02.326588+00:00'
+ ingredient_type: SINGLE_INGREDIENT
+ mim_id: MIM:0002227
+ legacy_identifiers:
+ - MIM:S-adenosyl_Homocysteine
+-- cas:9789-92-0

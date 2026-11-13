@@ -1,0 +1,142 @@
+identifier: CHEBI:17045
+preferred_term: nitrous oxide
+ontology_mapping:
+  ontology_id: CHEBI:17045
+  ontology_label: dinitrogen oxide
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: N2O
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: '#N2O'
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: oxidodinitrogen(N--N)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=10024-97-2; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.597945+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.701480+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=N2O; inchi=InChI=1S/N2O/c1-2-3; smiles=N#[N+][O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.495928+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-11T04:17:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record N2O.yaml (UNMAPPED_0296); CultureBotHT
+    surface form '#N2O' denotes nitrous oxide in N2O/argon media names, and local
+    CHEBI plus SSSOM review confirms CHEBI:17045 as dinitrogen oxide.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-06-09T04:56:30.248125+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR ->
+    cellular_metabolic_roles.ELECTRON_ACCEPTOR'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'dinitrogen oxide'; it matches the ChEBI
+    synonym 'N2O' on CHEBI:17045. The schema defines EXACT_MATCH as a direct match
+    to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+    overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 10024-97-2 uniquely
+    resolves by ChEBI xref to CHEBI:17045 'dinitrogen oxide'. CAS_RN_LOOKUP records
+    the method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519641+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001908; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 10024-97-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: N2O
+  inchi: InChI=1S/N2O/c1-2-3
+  smiles: N#[N+][O-]
+ingredient_type: SINGLE_INGREDIENT
+cellular_metabolic_roles:
+- role: ELECTRON_ACCEPTOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1128/AEM.00409-16
+    pmid: '27084012'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4907195/
+    reference_text: Yoon et al. (2016). Nitrous oxide reduction kinetics distinguish
+      bacteria harboring clade I NosZ from those harboring clade II NosZ.
+    curator_note: Growth and N2O consumption were measured together in the named isolates
+      with acetate supplying electrons. The role is confined to these tested nitrous-oxide-respiring
+      cultures.
+  metabolic_context: Terminal electron acceptor during anoxic, acetate-fed growth
+    of Dechloromonas aromatica RCB, Anaeromyxobacter dehalogenans 2CP-C, Pseudomonas
+    stutzeri DCP-Ps1, and Shewanella loihica PV-4 at 30 degrees C.
+mim_id: MIM:0001908
+legacy_identifiers:
+- MIM:Nitrous_Oxide
+- CHEBI:17045

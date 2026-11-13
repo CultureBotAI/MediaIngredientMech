@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:togo_2568_glucose_10_percent_stock
+preferred_term: TOGO M2568 ETSA glucose 10% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2568_glucose_10_percent_stock
+  ontology_label: TOGO M2568 ETSA glucose 10% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2568
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2568
+    source_record: TOGO M2568 ETSA glucose 10% stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized
+    solutions after cooling the base to 55 C. The percent basis, glucose form and
+    stock volume are unstated; the stock solvent is not identified. Water is omitted
+    from components and closure remains UNKNOWN. The filter-sterilized fresh preparation
+    is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen
+    mass-style quantity is not approved.
+notes: 'The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized
+  solutions after cooling the base to 55 C. The percent basis, glucose form and stock
+  volume are unstated; the stock solvent is not identified. Water is omitted from
+  components and closure remains UNKNOWN. The filter-sterilized fresh preparation
+  is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen
+  mass-style quantity is not approved. Raw labels retained only in this source context:
+  ["10% Glucose"]. No global resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed TOGO M2568 ETSA glucose 10% stock with source-bound components
+    and retained preparation limits. Isolated proposal; no maintained owner edit or
+    support/release approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:39:29.038626+00:00'
+  curator: codex_all_unmatched_w06_successor_v3_research_c
+  action: CORRECTED
+  changes: 'W06-IR-004/005: omit untranscribed Water from the stock components; correct
+    solvent provenance in notes while preserving the stated solute concentration,
+    UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated
+    proposal only; no maintained mutation or release approval.'
+  llm_assisted: true

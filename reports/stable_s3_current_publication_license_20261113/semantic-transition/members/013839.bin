@@ -1,0 +1,84 @@
+identifier: CHEBI:202873
+preferred_term: Aburamycin A
+ontology_mapping:
+  ontology_id: CHEBI:202873
+  ontology_label: Chromomycin A2
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into MIM''s pipeline;
+      confidence=LOW; rationale=5 candidates; top OLS candidates: CHEBI:199303(A83094A), CHEBI:199353(A-90289
+      A), CHEBI:199611(A32390A). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: LITERATURE
+    source: https://www.bioaustralis.com/product_pdfs/override/BIA-C1518_product_sheet.pdf
+    notes: 'Propose CHEBI:202873 Chromomycin A2 from BioAustralis explicit Aburamycin A synonym and matching
+      C59H86O26 formula. Reject OLS raw-query hits Chromomycin A3: the source A is a historical name,
+      not permission to choose an A3 congener. Preserve source preferred name. Exact primary-source capture
+      and live ontology record are in worker09 antibiotic evidence; this proposal does not clear publication
+      holds.'
+synonyms:
+- synonym_text: Chromomycin A2
+  synonym_type: EXACT_SYNONYM
+  source: https://www.bioaustralis.com/product_pdfs/override/BIA-C1518_product_sheet.pdf
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:aburamycin_a; OLS search
+    across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until
+    upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.999469+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.230852+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-10T04:42:27+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Reviewed UNKNOWN_TERM manual candidate artifact; OLS candidates were not exact label/synonym
+    identity matches, so kgmicrobe.compound:aburamycin_a was retained without ontology promotion.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-06-02T07:05:13.385834+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T05:16:00.872078+00:00'
+  curator: codex_worker09_antibiotics_primary
+  action: PROPOSED_MAPPING_CORRECTION
+  changes: Promote existing distinct source owner to CHEBI:202873 Chromomycin A2. Proposal only; original
+    mapping evidence preserved in before capture. No role, whole-record, hold-removal or downstream approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+notes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier; reviewed OLS
+  candidates were not exact identity matches for the source label.
+
+  2026-11-08 proposal: Promote existing distinct source owner to CHEBI:202873 Chromomycin A2. Prior no-hit
+  statements are historical search results; original history is preserved. Fresh complete-payload review
+  is required before publication.'
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

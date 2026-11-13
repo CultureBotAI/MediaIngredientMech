@@ -1,0 +1,98 @@
+identifier: cas:2922-28-3
+preferred_term: Adenine hydrochloride hydrate
+ontology_mapping:
+  ontology_id: CHEBI:16708
+  ontology_label: adenine
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 2922-28-3 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
+      FEBA_carbon, FEBA_nitrogen. Used in 31 CultureBot media; samples: ZMB ALS GHP,
+      ZMB ALS GLCMD, NLDM_defined_no_iron…. Curator can promote to a CHEBI primary
+      if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: Adenine hydrochloride hydrate is a hydrate/salt with its own CAS and no
+      exact ChEBI term; anchored to the parent CHEBI:16708 'adenine' by narrowMatch
+      per MAPPING_SEMANTICS.md Section 3 step 2. hydrochloride hydrate of adenine
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:16708 (''adenine'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 22
+  media_count: 22
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:2922-28-3 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.058224+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:43.214915+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C5H6ClN5; smiles=C1=NC2=NC=NC(=C2N1)N.Cl; inchi=InChI=1S/C5H5N5.ClH/c6-4-3-5(9-1-7-3)10-2-8-4;/h1-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.309402+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:16708 ''adenine'' and registry
+    kgmicrobe.compound:adenine_hydrochloride_hydrate. identifier cas:2922-28-3 unchanged;
+    mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrochloride hydrate of adenine'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518305+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 31/31 -> 22/22 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000274; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 2922-28-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C5H6ClN5
+  smiles: C1=NC2=NC=NC(=C2N1)N.Cl
+  inchi: InChI=1S/C5H5N5.ClH/c6-4-3-5(9-1-7-3)10-2-8-4;/h1-2H,(H3,6,7,8,9,10);1H
+  pubchem_cid: 76219
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000274
+legacy_identifiers:
+- MIM:Adenine_Hydrochloride_Hydrate
+- cas:2922-28-3

@@ -1,0 +1,78 @@
+identifier: CHEBI:30621
+preferred_term: diarsenic trioxide
+ontology_mapping:
+  ontology_id: CHEBI:30621
+  ontology_label: diarsenic trioxide
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/backend/api/public/compound/30621/
+    notes: Definition covers arsenic/oxygen2:3 ratio and includesAs2O3 synonym. The
+      structural depictionAs4O6 is a molecular representation of that ratio; no molecular-weight,
+      polymorph or actual reagent-lot claim is imported.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/chebi/backend/api/public/compound/30621/
+    notes: 'Method correction under #1201 comment6724230173. The actual OLS exact
+      As2O3 query (captured SHA256 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d)
+      returns the defining CHEBI:30621 target and remains valid synonym evidence;
+      no missing-search claim is made. The recorded final proposal nevertheless depended
+      on resolving the empirical As2O3 versus molecular As4O6 depiction using the
+      ChEBI 2:3 definition and PubChem formula. MANUAL_CURATION records that decisive
+      representation judgment, without weakening the exact oxide identity. This LLM-authored
+      note does not certify a human review, polymorph, vendor, lot, molecular weight,
+      alkaline stock or resulting arsenite identity; CCAP quantity/stock holds remain
+      unchanged.'
+synonyms:
+- synonym_text: As2O3
+  synonym_type: EXACT_SYNONYM
+  source: https://www.ccap.ac.uk/wp-content/uploads/MR_UCM.pdf
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+notes: Primary CCAP UCM usesAs2O3 as the weighed input to an alkaline trace preparation.
+  This owner denotes the oxide reagent, not the NaOH-containing stock or the resulting
+  arsenite species. No role, formula-weight, polymorph, vendor or lot assertion. Exact
+  stock-level quantity correction remains CultureMech#283.
+curation_history:
+- timestamp: '2026-11-08T04:35:21.165319+00:00'
+  curator: codex-worker01
+  action: CREATED
+  changes: Create source-supported diarsenic trioxide identity with exact empirical-formula
+    source alias; distinguish molecular representation from the source-owned alkaline
+    preparation.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:16.057305+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T16:54:22.000658+00:00'
+  curator: Codex /root/step7d_science_c
+  action: CORRECTED_MAPPING_METHOD
+  changes: 'Private successor for #1201 comment6724230173: change ontology_mapping.mapping_quality
+    from EXACT_MATCH to MANUAL_CURATION to describe the recorded identity adjudication,
+    and append one truthful LLM_SUGGESTION method note. Method correction under #1201
+    comment6724230173. The actual OLS exact As2O3 query (captured SHA256 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d)
+    returns the defining CHEBI:30621 target and remains valid synonym evidence; no
+    missing-search claim is made. The recorded final proposal nevertheless depended
+    on resolving the empirical As2O3 versus molecular As4O6 depiction using the ChEBI
+    2:3 definition and PubChem formula. MANUAL_CURATION records that decisive representation
+    judgment, without weakening the exact oxide identity. This LLM-authored note does
+    not certify a human review, polymorph, vendor, lot, molecular weight, alkaline
+    stock or resulting arsenite identity; CCAP quantity/stock holds remain unchanged.
+    Preserve every original history event, evidence object and all other fields. No
+    maintained application or independent successor approval; distinct full-payload
+    and complete-row review remains required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

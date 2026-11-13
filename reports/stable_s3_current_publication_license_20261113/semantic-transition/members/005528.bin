@@ -1,0 +1,239 @@
+id: CultureMech:007229
+name: minimal_medium_lostroh_et_al
+original_name: Minimal Medium; Lostroh et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Succinate
+  term:
+    id: CHEBI:26806
+    label: succinate
+  concentration:
+    value: '10.0'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:succ'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26806
+    label: succinate
+- preferred_term: EDTA
+  term:
+    id: CHEBI:4735
+    label: ethylenediaminetetraacetic acid
+  concentration:
+    value: '0.008554'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:4735
+    label: ethylenediaminetetraacetic acid
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.603712'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Potassium dibasic phosphate
+  concentration:
+    value: '50.0'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Dibasic sodium phosphate
+  concentration:
+    value: '50.0'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: Nitrilotriacetic acid
+  term:
+    id: CHEBI:44557
+    label: nitrilotriacetic acid
+  concentration:
+    value: '1.151'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:44557
+    label: nitrilotriacetic acid
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '4.8186'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Manganese sulfate
+  term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+  concentration:
+    value: '0.009111'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+- preferred_term: Ferrous sulfate
+  concentration:
+    value: '0.03114'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75832
+    label: iron(2+) sulfate (anhydrous)
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.038082'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Ammonium sulfate
+  term:
+    id: CHEBI:62946
+    label: ammonium sulfate
+  concentration:
+    value: '7.5677'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:62946
+    label: ammonium sulfate
+- preferred_term: Cupric sulfate
+  concentration:
+    value: '0.0015698'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:23414
+    label: copper(II) sulfate
+- preferred_term: Sodium borate
+  concentration:
+    value: '0.0004641'
+    unit: MILLIMOLAR
+- preferred_term: Molybdic acid ammonium salt tetrahydrate
+  concentration:
+    value: '0.00016183'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:91249
+    label: ammonium molybdate
+- preferred_term: Cobalt nitrate
+  concentration:
+    value: '0.000852146'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:86209
+    label: cobalt dinitrate
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:42.800303Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 32, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-03-13T06:19:47.035957Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007229'
+- timestamp: '2026-03-17T06:29:56.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:05.225347+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Minimal Medium; Lostroh et al" to "minimal_medium_lostroh_et_al"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:34.692221+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 7 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-10-13T17:38:49.917565+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified paper bibliography, raw/Markdown source provenance, exact
+    excerpts and qualified scientific-name/NCBI mappings. Preserved recipe, assay
+    and taxonomy conflicts. Existing fields, variant links and history unchanged;
+    no new native growth, concentration evidence or resolved variant.
+  source: PMID:20511417
+media_term:
+  preferred_term: MediaDB Medium 32
+  term:
+    id: MEDIADB:32
+    label: Minimal Medium; Lostroh et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:20511417
+  title: Acinetobacter baylyi starvation-induced genes identified through incubation
+    in long-term stationary phase.
+  authors: Lostroh CP; Voyles BA
+  year: 2010
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; source_access=PMC_full_HTML_selected_medium_relevant_passages;
+    owner=MEDIADB:32; discovery_sourceID=8; source_url=https://doi.org/10.1128/AEM.01806-09;
+    alternate_identifier=doi:10.1128/AEM.01806-09; alternate_identifier=PMC2901722;
+    raw=references_cache/papers/PMID_20511417.xml; markdown=references_cache/papers/PMID_20511417.md;
+    full_raw=references_cache/papers/primary_html/pmid-20511417-20261013.html; full_markdown=references_cache/papers/primary_html/pmid-20511417-20261013.md;
+    PubMed Abstract, population observation; exact excerpt="remain dynamic for 6 weeks
+    in batch culture". PubMed Abstract, reporter context; exact excerpt="lacZ reporters
+    inserted into SalI sites". Growth of Acinetobacter baylyi; exact excerpt="minimal
+    succinate (0.01 M) broth". Formulation_unresolved: Primary growth experiment cites
+    a minimal succinate broth base, reference 7. A separate null-mutant survival experiment
+    uses commercial Davis minimal broth with succinate. Do not combine those media
+    or inherit all 15 local amounts from one shared carbon-source value. Reporter
+    substrate measurements and cell survival are distinct from recipe concentration
+    and a universal growth rate. The recovered HTML contains the short article body
+    despite the archive helper''s initial preview heuristic. Base reference 7 remains
+    a reference-list lead; full formula and supplements have not been verified. Reported
+    organism=Acinetobacter baylyi ADP1; canonical scientific name=Acinetobacter baylyi
+    ADP1; NCBITaxon:62977; actual rank=strain; taxonomy_match=exact_strain; role=study
+    background, exact local assay formulation unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=62977&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/environmental-study-candidates-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/environmental-study-candidates-20261013.md.
+    Reported organism=A. baylyi AGCV1 through AGCV30 and separate null-mutant strains;
+    canonical scientific name=Acinetobacter baylyi; NCBITaxon:202950; actual rank=species;
+    taxonomy_match=parent_rank_only; role=species parent for distinct derivatives;
+    exact derivative nodes unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=202950&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/environmental-study-candidates-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/environmental-study-candidates-20261013.md.
+    Reported organism=Acinetobacter species; canonical scientific name=Acinetobacter;
+    NCBITaxon:469; actual rank=genus; taxonomy_match=parent_rank_only; role=genus-only
+    background mention, not positive genus-wide growth. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=469&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/environmental-study-candidates-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/environmental-study-candidates-20261013.md.
+    Reported organism=Escherichia coli; canonical scientific name=Escherichia coli;
+    NCBITaxon:562; actual rank=species; taxonomy_match=species_name; role=background
+    long-term-stationary-phase comparison, not target on this owner. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/environmental-study-candidates-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/environmental-study-candidates-20261013.md.
+    Six-week population dynamics and reporter measurements are not a universal growth
+    rate or requirement. Bounded lookup misses do not prove taxon absence. Organism
+    inventory covers inspected medium-relevant passages, not the entire paper. Images
+    and supplements have not been verified. Correction/retraction coverage is limited
+    to inspected publication metadata. Related-media candidates were searched without
+    asserting exact formulation equivalence. All prior ingredients, quantities, preparation,
+    variant links and history remain unchanged and uncertified by this citation. No
+    new native growth assertion, concentration evidence or resolved variant.'

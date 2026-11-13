@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:cysteine_hydrochloride_sterile_anoxic_strength_unspecified
+preferred_term: Sterile anoxic cysteine hydrochloride preparation (strength unspecified)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:cysteine_hydrochloride_sterile_anoxic_strength_unspecified
+  ontology_label: Sterile anoxic cysteine hydrochloride preparation (strength unspecified)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium375.pdf
+    notes: DSMZ375 administers cysteine from a sterile anoxic stock prepared under100%N2.
+      Its table specifies source-literal Cystein-HCl x2H2O0.30g as receiving solute
+      amount, not stock strength. Solvent, strength, intended two-water form, stereochemistry
+      and sterilization method remain unknown; filtration is stated for DTT and vitamins
+      only. This is a preparation at the known unspecified-strength scope, not a proven
+      chemically disjoint recipe-specific product. It may overlap the DSMZ1107 5%w/v
+      preparation, but375 does not establish that concentration or filtration. Existing
+      L/monohydrate solutions and W07 scoped stocks do not resolve the unusual stated
+      form. No whole-formulation equality, merge or source-number-only disjointness
+      is asserted; retain overlap dependency. N2 describes atmosphere, not a material
+      component. No exact whole-preparation identity is established by inspected named
+      chemical/catalogue owners. Registry scope denotes the preparation, not a pure
+      solute or a fully characterized formulation.
+synonyms: []
+notes: DSMZ375 administers cysteine from a sterile anoxic stock prepared under100%N2.
+  Its table specifies source-literal Cystein-HCl x2H2O0.30g as receiving solute amount,
+  not stock strength. Solvent, strength, intended two-water form, stereochemistry
+  and sterilization method remain unknown; filtration is stated for DTT and vitamins
+  only. This is a preparation at the known unspecified-strength scope, not a proven
+  chemically disjoint recipe-specific product. It may overlap the DSMZ1107 5%w/v preparation,
+  but375 does not establish that concentration or filtration. Existing L/monohydrate
+  solutions and W07 scoped stocks do not resolve the unusual stated form. No whole-formulation
+  equality, merge or source-number-only disjointness is asserted; retain overlap dependency.
+  N2 describes atmosphere, not a material component. Raw source labels remain non-resolving
+  provenance in the frozen cases and decision ledger. No exact full-medium formulation
+  relationship, role or release approval.
+components:
+- component_name: source-literal Cystein-HCl x 2 H2O
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium375.pdf
+    notes: DSMZ375 administers cysteine from a sterile anoxic stock prepared under100%N2.
+      Its table specifies source-literal Cystein-HCl x2H2O0.30g as receiving solute
+      amount, not stock strength. Solvent, strength, intended two-water form, stereochemistry
+      and sterilization method remain unknown; filtration is stated for DTT and vitamins
+      only. This is a preparation at the known unspecified-strength scope, not a proven
+      chemically disjoint recipe-specific product. It may overlap the DSMZ1107 5%w/v
+      preparation, but375 does not establish that concentration or filtration. Existing
+      L/monohydrate solutions and W07 scoped stocks do not resolve the unusual stated
+      form. No whole-formulation equality, merge or source-number-only disjointness
+      is asserted; retain overlap dependency. N2 describes atmosphere, not a material
+      component.
+  notes: Only the source-named solute is established. Carrier and full constituent
+    closure are unknown, so no water or other constituent is inferred.
+curation_history:
+- timestamp: '2026-11-08T08:06:25.214576+00:00'
+  curator: codex_worker02_final_corrections_research_c
+  action: CREATED
+  changes: Issue1201 bounded preparation proposal after actual primary-source and
+    owner-overlap comparison. DSMZ375 administers cysteine from a sterile anoxic stock
+    prepared under100%N2. Its table specifies source-literal Cystein-HCl x2H2O0.30g
+    as receiving solute amount, not stock strength. Solvent, strength, intended two-water
+    form, stereochemistry and sterilization method remain unknown; filtration is stated
+    for DTT and vitamins only. This is a preparation at the known unspecified-strength
+    scope, not a proven chemically disjoint recipe-specific product. It may overlap
+    the DSMZ1107 5%w/v preparation, but375 does not establish that concentration or
+    filtration. Existing L/monohydrate solutions and W07 scoped stocks do not resolve
+    the unusual stated form. No whole-formulation equality, merge or source-number-only
+    disjointness is asserted; retain overlap dependency. N2 describes atmosphere,
+    not a material component.
+  new_status: MAPPED
+  llm_assisted: true

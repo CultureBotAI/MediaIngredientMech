@@ -1,0 +1,70 @@
+identifier: CHEBI:112
+preferred_term: Salsoline
+ontology_mapping:
+  ontology_id: CHEBI:112
+  ontology_label: (-)-Salsoline
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=89-31-6; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.121933+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.213480+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C11H15NO2; inchi=InChI=1S/C11H15NO2/c1-7-9-6-11(14-2)10(13)5-8(9)3-;
+    smiles=COc1cc2c(cc1O)CCN[C@H]2C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.184422+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 89-31-6 uniquely resolves
+    by ChEBI xref to CHEBI:112 '(-)-Salsoline'. CAS_RN_LOOKUP records the method that
+    established this mapping; a lexical grade would discard that provenance. ontology_id
+    is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under
+    Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002237; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 89-31-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C11H15NO2
+  inchi: InChI=1S/C11H15NO2/c1-7-9-6-11(14-2)10(13)5-8(9)3-4-12-7/h5-7,12-13H,3-4H2,1-2H3/t7-/m0/s1
+  smiles: COc1cc2c(cc1O)CCN[C@H]2C
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002237
+legacy_identifiers:
+- MIM:Salsoline
+- CHEBI:112

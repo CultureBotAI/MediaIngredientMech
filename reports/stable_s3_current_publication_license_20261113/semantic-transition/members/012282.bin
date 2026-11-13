@@ -1,0 +1,67 @@
+identifier: cas:95935-23-2
+preferred_term: Ardacin C
+ontology_mapping:
+  ontology_id: CHEBI:24396
+  ontology_label: glycopeptide
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: https://gsrs.ncats.nih.gov/api/v1/substances/313e963b-59ac-445c-8e4d-640e99f1d30a/codes
+    notes: Exact ArdacinC/AridicinC names and CAS95935-23-2, structureC83H86Cl4N8O30. Specific component
+      distinct from generic Ardacin target.
+  - evidence_type: LITERATURE
+    source: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf
+    notes: Primary biosynthesis paper distinguishes glycopeptide aridicin/ardacin A,B,C components. CurrentCHEBI24396
+      structuralglycopeptideclass is a broader scope; obsolete24395 is excluded.
+synonyms:
+- synonym_text: Aridicin C
+  synonym_type: EXACT_SYNONYM
+  source: NCATS GSRS P211231K6P names; primary1986 biosynthesis publication
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:ardacin_c; OLS search across
+    CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream
+    curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.245302+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.564427+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:09:06.303354+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C169786 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-11-08T05:22:16.179836+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Promote exact ArdacinC registry identity toCAS95935-23-2; replace ambiguous genericArdacin
+    parent with current structuralglycopeptideclassCHEBI24396. Preserve old unsupported parent history
+    as provenance. Proposal only; coordinator fresh native review and guarded integration required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 95935-23-2
+  molecular_formula: C83H86Cl4N8O30
+  data_source: NCATS GSRS P211231K6P structure/codes
+  retrieval_date: '2026-11-08T05:22:16.179836+00:00'
+notes: Source case names theC component. Preserve distinct CAS95935-23-2; do not equate to a generic ardacin
+  preparation/aglycone or infer activity from other components. Exact external ontology grounding was
+  not found in boundedCHEBI/NCIT name/CAS searches. New changed bytes receive no inherited source or export
+  approval.

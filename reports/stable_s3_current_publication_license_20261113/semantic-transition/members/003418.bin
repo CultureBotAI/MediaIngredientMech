@@ -1,0 +1,134 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "at": "2026-11-08T16:56:06.563484+00:00",
+  "controls": [
+    {
+      "name": "Sulfur.yaml exact closed-schema/native-serialization/delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Sulfur.yaml prior evidence rewrite",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Sulfur.yaml unrelated identity change",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Sulfur.yaml historical authorship rewrite",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Na2b4o7_X_10_H2o.yaml exact closed-schema/native-serialization/delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Na2b4o7_X_10_H2o.yaml prior evidence rewrite",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Na2b4o7_X_10_H2o.yaml unrelated identity change",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Na2b4o7_X_10_H2o.yaml historical authorship rewrite",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Diarsenic_Trioxide.yaml exact closed-schema/native-serialization/delta",
+      "status": "PASS"
+    },
+    {
+      "name": "Diarsenic_Trioxide.yaml prior evidence rewrite",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Diarsenic_Trioxide.yaml unrelated identity change",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "Diarsenic_Trioxide.yaml historical authorship rewrite",
+      "status": "expected_refusal",
+      "exception": "AssertionError",
+      "detail": ""
+    },
+    {
+      "name": "invalid native mapping grade",
+      "status": "expected_refusal",
+      "exception": "ValidationFailedError",
+      "detail": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/w09-method-successors-v1/controls-v2/invalid-enum.yaml\n  - 'INVENTED' is not one of ['EXACT_MATCH', 'SYNONYM_MATCH', 'CLOSE_MATCH', 'MANUAL_CURATION', 'LLM_ASSISTED', 'PROVISIONAL', 'NARROW_MATCH', 'BROAD_MATCH', 'LEXICAL_MATCH', 'CAS_RN_LOOKUP', 'FALLBACK_RE"
+    },
+    {
+      "name": "closed schema approval field",
+      "status": "expected_refusal",
+      "exception": "ValidationFailedError",
+      "detail": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/w09-method-successors-v1/controls-v2/invalid-field.yaml\n  - Additional properties are not allowed ('invented_approval' was unexpected) in /"
+    },
+    {
+      "name": "exclusive native publication",
+      "status": "expected_refusal",
+      "exception": "FileExistsError",
+      "detail": "[Errno 17] File exists: 'occupied'"
+    },
+    {
+      "name": "known three UW closure; method delta leaves partonomy unchanged",
+      "status": "PASS",
+      "owner_count": 2957,
+      "partial_without_UW": "three known unresolved CHEBI131366 references",
+      "coupled_with_original_UW": "zero violations"
+    },
+    {
+      "name": "Sulfur.yaml native complete-row differential",
+      "status": "PASS",
+      "changed_columns": [
+        "confidence",
+        "mapping_justification",
+        "source"
+      ]
+    },
+    {
+      "name": "Na2b4o7_X_10_H2o.yaml native complete-row differential",
+      "status": "PASS",
+      "changed_columns": [
+        "confidence",
+        "mapping_justification",
+        "source"
+      ]
+    },
+    {
+      "name": "Diarsenic_Trioxide.yaml native complete-row differential",
+      "status": "PASS",
+      "changed_columns": [
+        "confidence",
+        "mapping_justification",
+        "source"
+      ]
+    }
+  ],
+  "candidate_count": 3,
+  "origin_count": 6,
+  "case_count": 8,
+  "source_inputs_unchanged": true,
+  "no_partial_B_reads": true,
+  "independent_review": false,
+  "full_campaign_generation": false,
+  "application_authorized": false,
+  "verification_first_attempt": "verify.py correctly failed an overbroad empty-partonomy assertion on the isolated three-record overlay. Exact three known UW dependencies are now explicitly bound unchanged; original failure retained.",
+  "original_attempt": "compose.py refused at native publication because its private candidate parent directory did not exist. No candidate was published. Original script/log/render remain; compose-v2 creates the parent and reuses only byte-identical frozen inputs."
+}

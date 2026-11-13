@@ -1,0 +1,104 @@
+id: CultureMech:000483
+name: a1_medium
+original_name: A1-MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: DSMZ Medium 1054
+  term:
+    id: mediadive.medium:1054
+    label: A1-MEDIUM
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1054.pdf'
+ingredients:
+- preferred_term: Yeast extract
+  concentration:
+    value: '4'
+    unit: G_PER_L
+  source: DSMZ Medium 1054
+  notes: DSMZ Medium 1054 lists 4 g generic yeast extract.
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+- preferred_term: Bacto peptone
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  source: DSMZ Medium 1054
+  notes: DSMZ Medium 1054 lists Bacto peptone; the product is source-disclosed but
+    not reducible to one ChEBI molecule.
+- preferred_term: Starch
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  source: DSMZ Medium 1054
+  notes: DSMZ Medium 1054 lists 10 g starch.
+  term:
+    id: CHEBI:28017
+    label: starch
+  mediaingredientmech_chebi_term:
+    id: CHEBI:28017
+    label: starch
+- preferred_term: Seawater (Biomaris 089, natural or artificial)
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: DSMZ Medium 1054
+  notes: DSMZ Medium 1054 lists 1.0 L Biomaris 089 seawater and allows natural or
+    artificial seawater.
+- preferred_term: Agar
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  source: DSMZ Medium 1054
+  notes: DSMZ Medium 1054 lists 20 g agar.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:13.226747Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1054'
+- timestamp: '2026-03-13T06:18:55.707559Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000483'
+- timestamp: '2026-03-17T06:30:40.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:06.718934+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "A1-MEDIUM" to "a1_medium" for consistent matching
+- timestamp: '2026-06-05T07:40:46.429036+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_tcg_a1_seawater_score15.py
+  action: RESOLVED_TCG_A1_SEAWATER_SCORE15
+  source: http://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1054.pdf
+  notes: DSMZ Medium 1054 lists 4 g yeast extract, 2 g Bacto peptone, 10 g starch,
+    1 L Biomaris 089 seawater, and 20 g agar.
+variant_children:
+- path: data/normalized_yaml/bacterial/KOMODO_1054_A1-MEDIUM.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:003630
+  name: a1_medium
+  notes: KOMODO Medium 1054 points to the same DSMZ Medium 1054 formulation.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: http://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1054.pdf

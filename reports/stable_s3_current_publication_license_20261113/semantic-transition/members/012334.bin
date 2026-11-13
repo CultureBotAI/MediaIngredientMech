@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:oxoid_c_difficile_supplement_bhi_togo_m2811
+preferred_term: Oxoid C. difficile supplement for BHI (TOGO M2811)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:oxoid_c_difficile_supplement_bhi_togo_m2811
+  ontology_label: Oxoid C. difficile supplement for BHI (TOGO M2811)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2811
+    notes: TOGO M2811 BHI branch, comment1; supplement table paragraph6. Bounded source-defined
+      preparation identity, not an exact identity to an individual constituent or
+      an unqualified generic product.
+synonyms:
+- synonym_text: C. difficile supplement
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2811
+supplied_form:
+- name: C. difficile supplement in the TOGO M2811 BHI branch
+  supplier: Oxoid, Basingstoke, Hampshire, UK
+  notes: Catalogue, physical form, dose and lot are not established for this historical
+    branch. Do not assign current SR0096E freeze-dried vial or500mL yield retrospectively.
+components:
+- component_name: D-cycloserine
+  reference_scope: UNMAPPED
+- component_name: Cefoxitin
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2811
+    source_record: BHI branch comment1 and C. difficile supplement table paragraph6
+    notes: Source associates the BHI broth supplement with Oxoid and enumerates D-cycloserine
+      plus cefoxitin, without amounts, supplied salt/hydrate forms or complete excipients.
+  notes: Two named antimicrobial constituents are supported, without chemical-form
+    groundings or quantities. No completeness, cefoxitin-sodium equivalence or catalogue-dose
+    inference.
+notes: Source-specific Oxoid preparation in the BHI branch of TOGO M2811. The separate
+  Braziers-agar branch names Bioconnections and is excluded. Current Oxoid SR0096E
+  supplier capture is related-product context only; catalogue number, freeze-dried
+  form and one-vial/500mL instructions are not projected onto this source. The0.04%
+  cysteine, BHI broth and anaerobic gases are receiving-medium conditions, not supplement
+  components. Generic C. difficile supplement is provenance-only, not a resolving
+  synonym.
+curation_history:
+- timestamp: '2026-11-08T06:40:36.183483+00:00'
+  curator: codex_w06_successor_v3_research_b
+  action: CREATED
+  changes: Create the source-qualified Oxoid BHI supplement family with two named
+    antimicrobial constituents; preserve unspecified dosage, supplied chemical forms,
+    catalogue and excipients, and exclude the Bioconnections agar branch.
+  llm_assisted: true
+  new_status: MAPPED

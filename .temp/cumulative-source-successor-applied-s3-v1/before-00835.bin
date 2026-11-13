@@ -1,0 +1,118 @@
+identifier: CHEBI:62318
+preferred_term: D-(-)-lyxose
+ontology_mapping:
+  ontology_id: CHEBI:62318
+  ontology_label: D-lyxose
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: D-Lyxose
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: D-lyxo-pentose
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=1114-34-7; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.056150+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.973649+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H10O5; inchi=InChI=1S/C5H10O5/c6-1-3(8)5(10)4(9)2-7/h1,3-5,7-10;
+    smiles=O=C[C@@H](O)[C@@H](O)[C@H](O)CO
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.726374+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.352748+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'aldehydo-D-lyxose'; it matches the ChEBI
+    synonym 'D-lyxose' on CHEBI:16789. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:62318 ''D-lyxose''; occurrences transferred. Absorbed
+    ''D-(-)-lyxose'' (CHEBI:16789 aldehydo- form) into CHEBI:62318 (#398). Both records
+    name the same substance — the muramic pair carry an identical CAS and formula
+    — split across a ChEBI class term and its open-chain aldehydo- form. The class
+    term wins because the identifier optimises for how the node READS in the knowledge
+    graph: no catalogue sells an ''aldehydo-'' tautomer, and MIM is kg-microbe''s
+    naming authority, so grounding here would rename the ChEBI node after a minor
+    solution-equilibrium component. ChEBI does hang the commercial CAS (1114-34-7)
+    on the aldehydo- term, which is why the earlier reading of the orderability rule
+    pointed the other way; that CAS is now carried in supplied_form and republished
+    as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED
+    so a lookup on this label still resolves, SSSOM rows dropped.'
+  llm_assisted: false
+- timestamp: '2026-10-05T04:09:33.941715+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:16789 -> CHEBI:62318 (#799). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''D-lyxose''. Provenance is unaffected: what
+    the record used to assert is in this history.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000834; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 1114-34-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C5H10O5
+  inchi: InChI=1S/C5H10O5/c6-1-3(8)5(10)4(9)2-7/h1,3-5,7-10H,2H2/t3-,4-,5-/m1/s1
+  smiles: O=C[C@@H](O)[C@@H](O)[C@H](O)CO
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
+mim_id: MIM:0000834
+legacy_identifiers:
+- MIM:D-_-lyxose
+- CHEBI:62318

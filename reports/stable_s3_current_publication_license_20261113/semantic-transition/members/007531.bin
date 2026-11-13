@@ -1,0 +1,72 @@
+{
+  "baseline_outcome": "native_no_mim_match",
+  "campaign_requirement": "complete_source_bound_review",
+  "case_id": "CM_NAME:8bf0c6851ed47d10bea51b1b9249c734bfee6c2a7e8e122314bb75d63fd28414",
+  "native_match_result": {
+    "effective_term_id": "",
+    "matched": false,
+    "resolved_record": null
+  },
+  "native_occurrence_count": 1,
+  "occurrences": [
+    {
+      "component_path": "solutions/21/composition/0",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/rs_medium_non_nutrient_medium_nnm_component.yaml",
+      "native_name": "AgNO3",
+      "native_scope": "inline_stock",
+      "occurrence_id": "CM_OCC:05a90c071f6e35008fa3d2983b5a1adadad179f4d52d2546f75931841a089169",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "1"
+        },
+        "evidence": [
+          {
+            "explanation": "ingredients[30].concentration -> solutions[21].composition[0].concentration: Restore the stock stage: 1 mg / 1 ml = 1 g/L stock. Source addition 0.0020 μl/l = 0.000002 ml/L. The previous final contribution 0.000000002 g/L matches 1 * 0.000002 / 1000; it was not a wrong numeric value but must not remain a duplicate direct ingredient. Exact excerpt: \"AgNO3 (Stock solution 1mg/mL. Heavy metal. Store in the dark) 0.0020 μl/l - -\"; locator=sol-0 / recipe-31; table headings=['Compound', 'Amount', 'Unit', 'Conc. [g/L]', 'Conc. [mM]']. Exact excerpt: \"prepare stock solutions in H2O at the specified concentration\"; locator=sol-0 preparation step 2. Exact excerpt: \"Fill to a total volume of 1 liter with purified H2O.\"; locator=sol-0 preparation step 4. User-contributed MediaDive P4 page, accessed 2026-10-07; source_type=user_contributed_dataset_page; page_sha256=c1b66217611ac37036f1550d0c3ade9bb6b4a9ef733f0547494547e574668a4b; figure_sha256=245e477ae6e3c0f514270e7e62fc4c000110c022ae18c153c7ec8ceb9f03e4a2. Numeric evidence is the page text, not OCR of the inspected diagram. No journal validation or growth claim is implied.",
+            "reference": "https://mediadive.dsmz.de/medium/P4",
+            "snippet": "AgNO3 (Stock solution 1mg/mL. Heavy metal. Store in the dark) 0.0020 μl/l - -",
+            "supports": "SUPPORT"
+          }
+        ],
+        "notes": "Restore the stock stage: 1 mg / 1 ml = 1 g/L stock. Source addition 0.0020 μl/l = 0.000002 ml/L. The previous final contribution 0.000000002 g/L matches 1 * 0.000002 / 1000; it was not a wrong numeric value but must not remain a duplicate direct ingredient.",
+        "preferred_term": "AgNO3",
+        "source": "MediaDive public Medium P4"
+      },
+      "raw_preferred_term": "AgNO3",
+      "recipe_id": "CultureMech:010434",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:010434"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "mediadive.medium:P4"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/rs_medium_non_nutrient_medium_nnm_component.yaml",
+      "source_file_sha256": "f751bf318cda4d4053f650ffb7df842b38d3e94b7cc1f4516dc8562e2d86c941",
+      "source_identifiers": []
+    }
+  ],
+  "original_unified_position": 4145,
+  "original_unified_row": {
+    "cas_rn": "",
+    "chebi_id": "",
+    "culturemech_term_id": "",
+    "example_media": "CultureMech:010434",
+    "ingredient_name": "AgNO3",
+    "kg_microbe_node_id": "",
+    "mapping_status": "UNMAPPED",
+    "mim_id": "",
+    "occurrence_count": "1",
+    "synonyms": ""
+  },
+  "prior_dependency": "PR1158 candidate baseline, not merged",
+  "raw_source_label": "AgNO3",
+  "source": "culturemech",
+  "source_case_id": "AgNO3",
+  "source_identity_claimed": false,
+  "source_label": "AgNO3"
+}

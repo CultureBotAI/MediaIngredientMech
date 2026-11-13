@@ -1,0 +1,31 @@
+{
+  "id": "W07-TOPLAYER-MES-ONTOLOGY-CONTEXT-v3",
+  "reviewer": "/root/successor_science",
+  "recorded_at": "2026-11-08T11:44:02.994962Z",
+  "trigger": "Root requested expansion of CHEBI39010 restriction and morpholines parent to ensure generic chemical interpretation was grounded in ontology semantics rather than its MES label alone.",
+  "primary_readback": {
+    "path": "mes-primary-ontology-expanded-v3.json",
+    "sha256": "0a6b1d9b7df5f5d2dbd4d8daee123d61a95e2c61265a6f186b4f2bf64b041a9b"
+  },
+  "interpretation": [
+    "CHEBI39010 has no direct molecular-form fields or direct definition in this pinned database. It is a generic MES chemical class under CHEBI38785 morpholines, whose definition is Any compound containing morpholine as part of its structure.",
+    "The additional restriction _:riog00799327 is has_role (RO0000087) some CHEBI39011 Good's buffer substance. It is not a has-part assertion, solvent assertion, concentration assertion or equivalence to a prepared buffer stock.",
+    "The direct children acid CHEBI39005, anion CHEBI39006 and zwitterion CHEBI39408 all remain distinct classes. Expanded acid/anion/zwitterion restrictions preserve conjugate-acid/base and tautomer relationships rather than identity equality.",
+    "The general Good's buffer substance definition mentions zwitterionic buffer substances. The role restriction and that wording do not select zwitterion CHEBI39408 for the JCM bare MES input: the chemical hierarchy includes the acid and anion below the generic MES class.",
+    "JCM628 prints MES 0.195 g; JCM629 inherits that immediate input while replacing the carrier. The actual candidates retain the generic CHEBI39010 reference and explicit unknown form. This bounded chemical-class interpretation is supported; acid, anion, zwitterion, sodium salt, buffer-stock preparation, solvent, strength, molecular conversion and supplied-product details are not inferred.",
+    "The earlier shorthand compound entity denotes this generic chemical class, not a fully specified single molecular form and not a proof of equality among its members. Absence of a stock assertion alone is not proof that every possible MES product is dry or pure.",
+    "Ontology role semantics are described as source facts only. No ingredient role, experiment role, release approval or current whole Mes.yaml owner approval is granted.",
+    "Actual selected Mes.yaml CHEBI39010 remains separate from adjacent W07-authored MES acid CHEBI39005. This clarification does not approve the adjacent original source scope or cross-shard union."
+  ],
+  "scientific_outcome": "No candidate defect identified. Both complete successor assessments remain pass with limitations; all form/source/quantity/role/export/application holds remain.",
+  "candidate_or_source_changes": false,
+  "original_seals_preserved": {
+    "MANIFEST.json": "bf3ee139906ba84a8dabf81b636b1986b807a44fb07f325623d4b5861a6174ee",
+    "HANDOFF.json": "a0e56a7133b5b8829d39401c62054af805f9e160ff94f6d85389224ef8c2129e",
+    "science.json": "ea4187603a7ea5d8fc2128da3ea74edf374109f388f700688347eda678714f1e",
+    "MANIFEST-v2.json": "a78017e32bae5b5080d627bbba2d3eb6e03ad50fd9461513d2f882be90a0e046",
+    "HANDOFF-v2.json": "118879555e9831aca526a67eaf917819fd65254136aa12c69d83ebfe2dfc0a13",
+    "science-v2.json": "db1795b4701281e824ebc0ad63a6ac65121f78dd3529ab0ec323dc8027289d8e"
+  },
+  "native_scope": "No additional native schema, partonomy or projection execution is claimed; this is a bounded scientific ontology-evidence clarification."
+}

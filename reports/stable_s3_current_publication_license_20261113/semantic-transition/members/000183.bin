@@ -1,0 +1,74 @@
+identifier: cas:4502-00-5
+preferred_term: 4-Methyl-2-oxopentanoic acid sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:48430
+  ontology_label: 4-methyl-2-oxopentanoic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 4502-00-5 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='4-Methyl-2-oxopentanoic
+      acid sodium salt'
+synonyms:
+- synonym_text: Sodium 4-methyl-2-oxovalerate
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: 4-Methyl-2-oxopentanoate
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:4502-00-5 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.898912+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:27.546910+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C6H9NaO3; smiles=CC(C)CC(=O)C(=O)[O-].[Na+]; inchi=InChI=1S/C6H10O3.Na/c1-4(2)3-5(7)6(8)9;/h4H,3H2,1-
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.087065+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:38:11.845176+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:48430 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''4-Methyl-2-oxopentanoate''.
+    Preserved original text and source metadata. No identity, mapping, role, or remaining-synonym
+    claim was adjudicated.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 4502-00-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C6H9NaO3
+  smiles: CC(C)CC(=O)C(=O)[O-].[Na+]
+  inchi: InChI=1S/C6H10O3.Na/c1-4(2)3-5(7)6(8)9;/h4H,3H2,1-2H3,(H,8,9);/q;+1/p-1
+  pubchem_cid: 4137900
+ingredient_type: SINGLE_INGREDIENT

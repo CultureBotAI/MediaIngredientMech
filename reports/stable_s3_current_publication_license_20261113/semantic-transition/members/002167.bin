@@ -1,0 +1,60 @@
+identifier: CHEBI:221765
+preferred_term: Pyridomycin
+ontology_mapping:
+  ontology_id: CHEBI:221765
+  ontology_label: Pyridomycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:pyridomycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:pyridomycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C27H32N4O8
+  smiles: CC/C(C)=C1OC(=O)[C@H](C)[C@@H](O)[C@H](Cc2cccnc2)NC(=O)[C@@H](NC(=O)c2ncccc2O)[C@@H](C)OC1=O
+  inchi: InChI=1S/C27H32N4O8/c1-5-14(2)23-27(37)38-16(4)20(31-25(35)21-19(32)9-7-11-29-21)24(34)30-18(12-17-8-6-10-28-13-17)22(33)15(3)26(36)39-23/h6-11,13,15-16,18,20,22,32-33H,5,12H2,1-4H3,(H,30,34)(H,31,35)/b23-14-/t15-,16-,18+,20+,22-/m1/s1
+  molecular_weight: 540.573
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:29:44.960785+00:00'

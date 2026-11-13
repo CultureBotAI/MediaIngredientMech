@@ -1,0 +1,75 @@
+identifier: CHEBI:30612
+preferred_term: D-glucarate
+synonyms:
+- synonym_text: D-glucarate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: D-saccharate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+  source_occurrences:
+  - source: microbedecoder
+    count: 25
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucarate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0644 -> CHEBI:30612 "D-glucarate(2-)" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-06T04:51:35.608637+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0657 ''D-saccharate'' as a RAW_TEXT synonym -- D-saccharate
+    is D-glucarate; the existing record holds CHEBI:30612 D-glucarate(2-), the fully
+    deprotonated species per this issue''s anion convention (#213). No new SSSOM row;
+    CHEBI:30612 is already mapped. Source: kgmicrobe.trait:d_saccharate.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518202+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucarate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:30612
+  ontology_label: D-glucarate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
+      PR #201) + local CHEBI verification'
+    notes: D-glucarate synonym of CHEBI:30612 D-glucarate(2-).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C6H8O8
+  smiles: O=C([O-])[C@@H](O)[C@@H](O)[C@H](O)[C@@H](O)C(=O)[O-]
+  inchi: InChI=1S/C6H10O8/c7-1(3(9)5(11)12)2(8)4(10)6(13)14/h1-4,7-10H,(H,11,12)(H,13,14)/p-2/t1-,2-,3-,4+/m0/s1
+  molecular_weight: 208.122
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:49.377322+00:00'

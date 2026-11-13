@@ -1,0 +1,106 @@
+"""Append the bounded author packet seal; do not mutate any source input."""
+from pathlib import Path
+import datetime
+import hashlib
+import importlib.util
+import json
+import stat
+import sys
+
+sys.dont_write_bytecode = True
+D = Path(__file__).absolute().parent
+
+
+def sha(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+
+def save(name, value):
+    with (D / name).open('x') as stream:
+        json.dump(value, stream, indent=2, ensure_ascii=False)
+        stream.write('\n')
+
+
+def ref(name):
+    p = D / name
+    return {'path': name, 'sha256': sha(p), 'bytes': p.stat().st_size}
+
+
+sel = json.loads((D / 'SELECTOR.json').read_text())
+assert sha(sel['payload']['path']) == sel['payload']['sha256']
+inputs = json.loads((D / 'input-pins.json').read_text())
+for item in inputs:
+    p = Path(item['path'])
+    assert stat.S_ISREG(p.lstat().st_mode) and not p.is_symlink(), p
+    assert sha(p) == item['sha256'] and p.stat().st_size == item['bytes'], p
+receipt = json.loads((D / 'NATIVE-AUTHOR-RECEIPT.json').read_text())
+F = Path(receipt['source_root'])
+spec = importlib.util.spec_from_file_location('menadione_seal_review', F / 'scripts/record_review.py')
+rr = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rr)
+pair = receipt['pair']
+review = rr.read_review(F, str(Path(pair['yaml']).relative_to(F)))
+rr.assert_current_source(F, review)
+assert sha(pair['yaml']) == pair['yaml_sha256']
+assert sha(pair['markdown']) == pair['markdown_sha256']
+assert review['reviewer']['independence'] == 'self_review'
+assert review['scientific_review'] is False
+assert len(review['source']['inputs']) == 64
+save('FINAL-READBACK.json', {
+    'status': 'EXACT_INPUTS_CANDIDATE_AND_NATIVE_SELF_REVIEW_RECHECKED',
+    'input_pin_count': len(inputs), 'native_input_count': 64,
+    'candidate_sha256': sel['payload']['sha256'],
+    'native_pair': pair, 'independent_approval': False,
+    'application_authorized': False,
+})
+members = []
+for p in sorted(D.rglob('*')):
+    rel = p.relative_to(D)
+    if '.git' in rel.parts or p.is_dir():
+        continue
+    assert stat.S_ISREG(p.lstat().st_mode) and not p.is_symlink(), p
+    assert p.stat().st_nlink == 1, p
+    assert rel.as_posix() not in {'MANIFEST.json', 'HANDOFF.json'}
+    members.append(ref(rel.as_posix()))
+save('MANIFEST.json', {
+    'schema_version': 1,
+    'scope': 'All regular files except private fixture .git internals and outer MANIFEST/HANDOFF; no recursive upstream packet copies.',
+    'excluded': ['MANIFEST.json', 'HANDOFF.json', 'native-author-fixture/.git/**'],
+    'members': members,
+})
+handoff = {
+    'created_at': datetime.datetime.now(datetime.UTC).isoformat(),
+    'status': 'PRIVATE_MENADIONE_SUCCESSOR_SEALED_AWAIT_DISTINCT_REVIEW',
+    'author': 'Codex /root/step7d_science_c',
+    'operation_id': sel['operation_id'],
+    'candidate': ref('candidates/Menadione.yaml'),
+    'selector': ref('SELECTOR.json'),
+    'field_delta': ref('field-delta.json'),
+    'origin_proof': ref('origin-proof.json'),
+    'capture_map': ref('CAPTURE-MAP.json'),
+    'verification': ref('verification.json'),
+    'native_row_diagnostic': ref('native-row-diagnostic.json'),
+    'native_author_receipt': ref('NATIVE-AUTHOR-RECEIPT.json'),
+    'native_author_pair': pair,
+    'native_source_root': receipt['source_root'],
+    'native_author_inputs': 64,
+    'checks': 15,
+    'manifest': ref('MANIFEST.json'),
+    'manifest_members': len(members),
+    'manifest_bytes': sum(x['bytes'] for x in members),
+    'issue': sel['issue'],
+    'limitations': [
+        'Author self-review only; distinct full-owner review and final batch selection remain separate.',
+        'Original source/proposal/case and old evidence/history prefix retained; no replacement origin.',
+        'First native author-review metadata attempt refused invalid area before save; immutable failed attempt retained.',
+        'No source application, canonical publication, final row admission or role/quantity hold clearance.',
+        'Original four-only input configuration is unchanged and is not final application authority.',
+    ],
+    'independent_review': None,
+    'application_authorized': False,
+}
+save('HANDOFF.json', handoff)
+for member in members:
+    assert sha(D / member['path']) == member['sha256']
+print(json.dumps({'handoff': ref('HANDOFF.json'), 'manifest': ref('MANIFEST.json'),
+                  'members': len(members), 'candidate': handoff['candidate']}, indent=2))

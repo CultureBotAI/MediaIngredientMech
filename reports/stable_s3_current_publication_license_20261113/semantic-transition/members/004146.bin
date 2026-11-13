@@ -1,0 +1,107 @@
+id: CultureMech:000067
+name: e31
+category: algae
+sources:
+- database: CCAP
+  database_id: E31
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for saltwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf
+salinity: marine (natural seawater or artificial seawater)
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- curator: ccap-import
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: E31, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf'
+  timestamp: '2026-01-28T00:00:00+00:00'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-02-03T11:26:43.496829'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.071555Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000067'
+- timestamp: '2026-03-17T19:45:04.026488+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "E31" to "e31" for consistent matching
+- timestamp: '2026-04-04T20:18:55.107940'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  changes: Replaced placeholder with 3 curated ingredients from CCAP
+  source: CCAP Medium MR_E31.pdf
+- timestamp: '2026-05-16T08:57:02.300723+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:56.489979+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2; references.reference_id->reference=2;
+    category->lowercase=1
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:E31; https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:E31
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf
+ingredients:
+- preferred_term: KNO
+  term:
+    id: CHEBI:63043
+    label: potassium nitrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T20:18:55.107927'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31.pdf
+  notes: From CCAP Medium MR_E31.pdf; Curated from CCAP Medium MR_E31.pdf specification
+- preferred_term: K2HPO4
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T20:18:55.107934'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31.pdf
+  notes: From CCAP Medium MR_E31.pdf; Curated from CCAP Medium MR_E31.pdf specification
+- preferred_term: MgSO .7H 0
+  notes: Ontology mapping not yet available; From CCAP Medium MR_E31.pdf; Curated
+    from CCAP Medium MR_E31.pdf specification
+  concentration:
+    value: '0.01'
+    unit: G_PER_L
+  source: CCAP Medium MR_E31.pdf
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: E31

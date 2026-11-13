@@ -1,0 +1,155 @@
+id: CultureMech:002601
+name: tssy_medium
+original_name: TSSY MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 8.0
+media_term:
+  preferred_term: JCM Medium J240
+  term:
+    id: mediadive.medium:J240
+    label: TSSY MEDIUM
+notes: 'Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=240'
+ingredients:
+- preferred_term: Trypticase peptone
+  concentration:
+    value: '17'
+    unit: G_PER_L
+  term:
+    id: MICRO:0000175
+    label: Trypticase peptone
+- preferred_term: Phytone peptone
+  concentration:
+    value: '3'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315720
+    label: Soy peptone
+- preferred_term: Yeast Nitrogen Base
+  concentration:
+    value: '1'
+    unit: G_PER_L
+- preferred_term: NaCl
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '30'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/medium/J240
+    supports: SUPPORT
+    snippet: |-
+      {
+                              "recipe_order": 4,
+                              "compound": "NaCl",
+                              "compound_id": 43,
+                              "amount": 30,
+                              "unit": "g",
+                              "g_l": 30,
+                              "mmol_l": 513.347,
+                              "optional": 0
+                          }
+    explanation: 'Concentration evidence for ingredients[3].concentration (NaCl) in
+      MediaDive medium J240; locator=$.data.solutions[0].recipe[3]. Provider explicitly
+      reports g_l=30; check: 30 g * 1 g/g / (1000 ml / 1000 ml per L) = 30 g/L. This
+      supports the provider-declared main-recipe concentration, not an independently
+      measured final volume, a stock composition, or a downstream assay dilution.
+      Water alone does not establish final volume. Exact source ingredient labels/forms
+      are matched; secondary ontology mappings are not validated by this evidence.
+      Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:03:51.364037+00:00;
+      response SHA256=a59c9a368c6ed11e3f7b81d9c16433b1e47f20951c90f46eea72b59286e3564f.'
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/medium/J240
+    supports: SUPPORT
+    snippet: |-
+      {
+                              "recipe_order": 5,
+                              "compound": "Agar",
+                              "compound_id": 3,
+                              "amount": 2,
+                              "unit": "g",
+                              "g_l": 2,
+                              "mmol_l": 5.94654,
+                              "optional": 0
+                          }
+    explanation: 'Concentration evidence for ingredients[4].concentration (Agar) in
+      MediaDive medium J240; locator=$.data.solutions[0].recipe[4]. Provider explicitly
+      reports g_l=2; check: 2 g * 1 g/g / (1000 ml / 1000 ml per L) = 2 g/L. This
+      supports the provider-declared main-recipe concentration, not an independently
+      measured final volume, a stock composition, or a downstream assay dilution.
+      Water alone does not establish final volume. Exact source ingredient labels/forms
+      are matched; secondary ontology mappings are not validated by this evidence.
+      Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T14:03:51.364037+00:00;
+      response SHA256=a59c9a368c6ed11e3f7b81d9c16433b1e47f20951c90f46eea72b59286e3564f.'
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust pH to 8.0.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:16.059567Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J240'
+- timestamp: '2026-03-13T06:19:14.465250Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002601'
+- timestamp: '2026-03-17T06:30:47.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:27.735069+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "TSSY MEDIUM" to "tssy_medium" for consistent matching
+- timestamp: '2026-06-05T07:41:54.700653+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_bacterial_score10_exact_terms_batch7.py
+  action: GROUNDED_BACTERIAL_SCORE10_EXACT_TERMS_BATCH7
+  changes: Grounded bacterial score-10 exact ingredients
+  source: src/culturemech/data/mediaingredientmech/label_index.csv
+  notes: Applied local mappings for Phytone peptone, Trypticase peptone.
+- timestamp: '2026-10-07T14:33:27.670564+00:00'
+  curator: codex
+  action: CURATED_MEDIUM_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Exact medium/source membership, ingredient inventory/forms, physical-state
+    conditions, literal snippets, and arithmetic checked. Stock boundaries, source-only
+    rows, preparation context, and variants remain explicit follow-up tasks; secondary
+    chemical mappings unchanged.
+  source: https://mediadive.dsmz.de/rest/medium/J240
+  changes: 'ingredients[3].concentration: {"unit": "G_PER_L", "value": "30"} -> {"unit":
+    "G_PER_L", "value": "30"} (evidence_only); ingredients[4].concentration: {"unit":
+    "G_PER_L", "value": "2"} -> {"unit": "G_PER_L", "value": "2"} (evidence_only)'
+kg_microbe_match: mediadive.medium:101
+references:
+- reference: https://mediadive.dsmz.de/rest/medium/J240
+  title: 'MediaDive medium J240: TSSY MEDIUM'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; source_organization=DSMZ;
+    accessed_on=2026-10-07; locator=$.data.solutions[0]; response_sha256=a59c9a368c6ed11e3f7b81d9c16433b1e47f20951c90f46eea72b59286e3564f;
+    original_recipe=https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=240; individual
+    authors and publication year not supplied. Provider-declared main-recipe amounts
+    only. Original recipe collection=JCM; GRMD accession=240; DSMZ is the MediaDive
+    dataset provider, not the original recipe collection.

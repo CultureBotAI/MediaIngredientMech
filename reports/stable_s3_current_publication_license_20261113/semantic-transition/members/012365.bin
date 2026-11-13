@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:jcm_1344_yeast_extract_1_percent_stock
+preferred_term: JCM 1344 yeast extract 1% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1344_yeast_extract_1_percent_stock
+  ontology_label: JCM 1344 yeast extract 1% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344
+    source_record: JCM 1344 yeast extract 1% stock
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: JCM 1344 adds 1 ml of separately autoclaved 1% yeast-extract solution after
+    cooling the basal medium. Percent basis, commercial extract, stock carrier and
+    preparation volume are unspecified. PERCENT preserves the literal source without
+    conversion to 10 g/L. The basal 935 ml distilled water does not identify the stock
+    carrier. This stock is not the NBRC 1407 boiled-biomass extract or dry commercial
+    yeast extract.
+notes: 'JCM 1344 adds 1 ml of separately autoclaved 1% yeast-extract solution after
+  cooling the basal medium. Percent basis, commercial extract, stock carrier and preparation
+  volume are unspecified. PERCENT preserves the literal source without conversion
+  to 10 g/L. The basal 935 ml distilled water does not identify the stock carrier.
+  This stock is not the NBRC 1407 boiled-biomass extract or dry commercial yeast extract.
+  Raw source label retained for this occurrence only: ''1% Yeast extract solution''.
+  Generic wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:03:06.967987+00:00'
+  curator: Codex worker06 /root
+  action: REMOVED_UNSUPPORTED_COMPONENT
+  changes: 'Issue 1217 W09 residual 001: removed unsupported Water component and current
+    water-inference notes after stock-specific primary-source review. Retained the
+    exact printed solute/strength, UNKNOWN completeness, source scope and all prior
+    history. Report-only proposal; no owner or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

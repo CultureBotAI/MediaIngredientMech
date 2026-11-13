@@ -1,0 +1,65 @@
+"""Bounded actual-KG native function diagnostics; no generator main or provider calls."""
+from pathlib import Path
+import copy, hashlib, importlib.util, io, json, os, subprocess, sys, tarfile
+sys.dont_write_bytecode=True
+D=Path(__file__).absolute().parent;C=D.parents[1];A=C/'integration/ancillary1258-worktree';T=C.parent/'kgm-unmapped-20261107';CLAW=T/'claw'
+sys.path[:0]=[str(A/'src'),str(CLAW/'src')]
+import yaml
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.curate.publication_guard import FrozenFile
+from mediaingredientmech.ingredient_bundle_refresh import publish_new_files
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+def sha(b):return hashlib.sha256(b).hexdigest()
+def save(n,x):
+ with(D/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+def git(*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(A),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+sel=json.loads((D/'SELECTOR.json').read_text());op=sel['original_operation_exact']
+old=yaml.safe_load((D/'inputs/research/inputs/selected-owner.yaml').read_bytes())
+candidate=Path(sel['payload']['path']);assert sha(candidate.read_bytes())==sel['payload']['sha256']=='4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591'
+new=yaml.safe_load(candidate.read_bytes());records={};inventory={}
+with tarfile.open(fileobj=io.BytesIO(git('archive','84241993a278a7a413422ef89a52c0b47dc57831','data/ingredients'))) as tar:
+ for member in tar.getmembers():
+  if member.isfile() and member.name.endswith('.yaml'):
+   raw=tar.extractfile(member).read();records[member.name]=yaml.safe_load(raw);inventory[member.name]=sha(raw)
+assert len(records)==2956
+before=copy.deepcopy(records);after=copy.deepcopy(records);before[op['source_record']]=old;after[op['source_record']]=new
+prior_violations=list(validate_component_partonomy(before.values()));new_violations=list(validate_component_partonomy(after.values()))
+assert prior_violations==new_violations==[]
+KG=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107')
+kgpath=KG/'mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz';kg=FrozenFile.capture(kgpath);assert sha(kg.content)=='f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d'
+os.environ.update({'KGMICROBE_ROOT':str(KG),'MEDIAINGREDIENTMECH_ROOT':str(A),'OPENCLAW_WORKSPACE':str(D/'diagnostic-workspace')})
+builder=CLAW/'scripts/build_mim_ingredient_sssom.py';assert sha(builder.read_bytes())=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+spec=importlib.util.spec_from_file_location('menadione_native_projection',builder);native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;exec(compile(builder.read_bytes(),str(builder),'exec'),native.__dict__)
+kg_sources=native.load_kgm_source_index(kgpath);kg_labels=native.load_kgm_labels(kgpath)
+labels={'CHEBI:28869':new['ontology_mapping']['ontology_label']}
+owners_before=native.build_owner_index({native._mim_curie(Path(p).name):r for p,r in before.items() if '/mapped/' in p})
+owners_after=native.build_owner_index({native._mim_curie(Path(p).name):r for p,r in after.items() if '/mapped/' in p})
+assert owners_before==owners_after
+def project(record,feed):
+ suppressions=[];rows=native._row_from_yaml(A/op['source_record'],{},kg_sources,feed,labels,record=record,owners=owners_after,suppressions=suppressions)
+ return rows,[vars(x) for x in suppressions]
+oldrows,olds=project(old,kg_labels);newrows,news=project(new,kg_labels)
+assert len(oldrows)==len(newrows)==1 and olds==news
+a,b=oldrows[0],newrows[0];oldtokens=a['other'].split('|');newtokens=b['other'].split('|')
+assert 'Hemodal' in oldtokens and 'Hemodal' not in newtokens
+assert [x for x in oldtokens if x!='Hemodal']==newtokens
+assert all(x in newtokens for x in ['Aquakay','Aquinone','Kappaxin'])
+diff={k:{'before':a.get(k),'after':b.get(k)} for k in set(a)|set(b) if a.get(k)!=b.get(k)}
+assert set(diff)<={'source','other','mapping_date'}
+for key in ['subject_id','subject_label','predicate_id','object_id','object_label','object_source','mapping_justification','confidence','comment']:assert a[key]==b[key],key
+counterfactual=copy.deepcopy(kg_labels);canonical,aliases=counterfactual.get('CHEBI:28869',('menadione',[]));counterfactual['CHEBI:28869']=(canonical,[*aliases,'Hemodal','HEMODAL'])
+mutantrows,mutants=project(new,counterfactual);assert mutantrows==newrows and mutants==news
+restored=copy.deepcopy(new);next(x for x in restored['synonyms'] if x['synonym_text']=='Hemodal')['synonym_type']='EXACT_SYNONYM'
+restoredrows,_=project(restored,kg_labels);assert 'Hemodal' in restoredrows[0]['other'].split('|')
+assert not is_resolving_synonym(next(x for x in new['synonyms'] if x['synonym_text']=='Hemodal'))
+controls=D/'controls';controls.mkdir();occupied=controls/'occupied.capture';occupied.write_bytes(b'original')
+try:publish_new_files([(occupied,b'changed')],lambda:None)
+except (ValueError,OSError):pass
+else:raise AssertionError('Occupied destination unexpectedly replaced')
+assert occupied.read_bytes()==b'original'
+native._check_producer_bindings();kg.verify()
+for pin in json.loads((D/'input-pins.json').read_text()):assert sha(Path(pin['path']).read_bytes())==pin['sha256'],pin['path']
+save('baseline-inventory.json',inventory)
+save('native-row-diagnostic.json',{'scope':'Pinned native per-owner projection over authentic A842 whole-catalog context plus selected/current Menadione and actual KG gzip. Cached official menadione label, no providers, no main generation, no residual/stamp processing; not final corrected-campaign rows or export admission.','before':a,'after':b,'changed_cells':diff,'all_unrelated_cells_exact':True,'removed_token':'Hemodal','three_supported_tokens_retained':['Aquakay','Aquinone','Kappaxin'],'suppression_before':olds,'suppression_after':news,'forced_KG_reintroduction':{'test_tokens':['Hemodal','HEMODAL'],'rows_exact_to_candidate':mutantrows==newrows},'restoring_resolving_type_reintroduces_token':True,'producer':{'path':str(builder),'sha256':sha(builder.read_bytes())},'producer_graph':{str(p):sha(raw) for p,raw in native._IMPORTED_PRODUCER_BYTES.items()},'kg_input':{'path':str(kgpath),'sha256':sha(kg.content)},'native_owner_count':len(after),'cached_labels':labels})
+save('verification.json',{'status':'PASS_BOUNDED_AUTHOR_CONTROLS_INDEPENDENT_REVIEW_PENDING','candidate_sha256':sel['payload']['sha256'],'author_checks':json.loads((D/'author-checks.json').read_text()),'additional_checks':['full2956-catalog partonomy zero before/after','unchanged preferred-name owner index','native full13-field comparison only source/other changes','only Hemodal token removed and three supported names retained','forced actualKG Hemodal/HEMODAL reintroduction blocked','restoring resolving type demonstrates positive route','occupied native publication destination refused','all captured author/source/producer inputs unchanged'],'partonomy_violations_before':len(prior_violations),'partonomy_violations_after':len(new_violations),'actual_full_generation':False,'source_application':False,'independent_approval':False})
+print(json.dumps({'candidate':sel['payload'],'changed_cells':sorted(diff),'native_rows':1,'owners':len(after),'partonomy':0,'checks':15,'independent_review_pending':True},indent=2))

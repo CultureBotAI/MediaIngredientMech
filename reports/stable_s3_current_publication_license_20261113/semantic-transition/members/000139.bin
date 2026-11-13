@@ -1,0 +1,67 @@
+identifier: CHEBI:28647
+preferred_term: 3-O-methylgallate
+ontology_mapping:
+  ontology_id: CHEBI:28647
+  ontology_label: 3-O-methylgallic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgm-metatraits
+    notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:3-O-methylgallate; '
+synonyms:
+- synonym_text: 3,4-dihydroxy-5-methoxybenzoic acid
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+- synonym_text: 'reduction: 3-O-methylgallate'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T20:14:01.918670+00:00'
+  curator: audit_import_ingredients[kgm-metatraits]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:3-O-methylgallate; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.829297+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.640862+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C8H8O5; inchi=InChI=1S/C8H8O5/c1-13-6-3-4(8(11)12)2-5(9)7(6)10/h;
+    smiles=COc1cc(C(=O)O)cc(O)c1O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.984353+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''reduction:
+    3-O-methylgallate''. Tokens already present on the kg-microbe ontology node were
+    left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''reduction:
+    3-O-methylgallate''. Preserved original text and source metadata. No identity,
+    mapping, role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C8H8O5
+  inchi: InChI=1S/C8H8O5/c1-13-6-3-4(8(11)12)2-5(9)7(6)10/h2-3,9-10H,1H3,(H,11,12)
+  smiles: COc1cc(C(=O)O)cc(O)c1O
+  data_source: CHEBI sqlite (oaklib)

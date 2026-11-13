@@ -1,0 +1,58 @@
+identifier: CHEBI:144215
+preferred_term: Rhodocladonic Acid
+ontology_mapping:
+  ontology_id: CHEBI:144215
+  ontology_label: Rhodocladonic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=26984-15-6); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.060375+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.152354+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C15H10O8; inchi=InChI=1S/C15H10O8/c1-4(16)14-12(20)8-6(23-14)3-5-7;
+    smiles=COC1=C(O)C(=O)c2c(cc3oc(C(C)=O)c(O)c3c2O)C1=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.104062+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002192; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 26984-15-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C15H10O8
+  inchi: InChI=1S/C15H10O8/c1-4(16)14-12(20)8-6(23-14)3-5-7(10(8)18)11(19)13(21)15(22-2)9(5)17/h3,18,20-21H,1-2H3
+  smiles: COC1=C(O)C(=O)c2c(cc3oc(C(C)=O)c(O)c3c2O)C1=O
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002192
+legacy_identifiers:
+- MIM:Rhodocladonic_Acid
+- CHEBI:144215

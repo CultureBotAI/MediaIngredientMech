@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:dsmz_1033_ferric_chloride_0p17_mm_stock
+preferred_term: DSMZ 1033 ferric chloride hexahydrate 0.17 mM stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_1033_ferric_chloride_0p17_mm_stock
+  ontology_label: DSMZ 1033 ferric chloride hexahydrate 0.17 mM stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1033.pdf
+    notes: Source-defined preparation with retained formulation boundary; registry
+      identity denotes the whole stock, not any component.
+components:
+- component_name: FeCl3 x 6 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.17'
+  concentration_unit: MM
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1033.pdf
+    source_record: DSMZ 1033 ferric chloride hexahydrate 0.17 mM stock
+    notes: Printed solute identity and stock strength are retained; no stock-specific
+      carrier is stated. Child reference_scope UNMAPPED means no exact child identifier
+      was independently established.
+  notes: DSMZ 1033 lists a 0.17 mM FeCl3·6H2O stock and a 10 ml receiving-medium addition.
+    The hydrate spelling and strength are retained. Basal-medium water and the separately
+    defined trace-element stock water do not establish this ferric-stock carrier,
+    nor do the six hydrate waters. Stock carrier, acidification, purity and preparation
+    method remain unknown. No exact ontology mapping to the solid hydrate is asserted.
+notes: 'DSMZ 1033 lists a 0.17 mM FeCl3·6H2O stock and a 10 ml receiving-medium addition.
+  The hydrate spelling and strength are retained. Basal-medium water and the separately
+  defined trace-element stock water do not establish this ferric-stock carrier, nor
+  do the six hydrate waters. Stock carrier, acidification, purity and preparation
+  method remain unknown. No exact ontology mapping to the solid hydrate is asserted.
+  Raw source labels retained without global resolving aliases: ["0.17 mM FeCl3 x 6
+  H2O"]. Occurrence-specific linkage is required; identical generic words in other
+  recipes do not imply the same formulation.'
+curation_history:
+- timestamp: '2026-11-08T05:16:28.256341+00:00'
+  curator: codex_all_unmatched_w06_research_b
+  action: CREATED
+  changes: Create source-defined stock proposal with explicit components and primary
+    recipe evidence; no exact mapping to a solute or generic stock.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:03:06.967987+00:00'
+  curator: Codex worker06 /root
+  action: REMOVED_UNSUPPORTED_COMPONENT
+  changes: 'Issue 1217 W09 residual 001: removed unsupported Water component and current
+    water-inference notes after stock-specific primary-source review. Retained the
+    exact printed solute/strength, UNKNOWN completeness, source scope and all prior
+    history. Report-only proposal; no owner or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

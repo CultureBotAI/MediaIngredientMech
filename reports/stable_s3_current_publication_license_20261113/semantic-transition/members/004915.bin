@@ -1,0 +1,123 @@
+id: CultureMech:001155
+name: bme_ctvm2_cell_line_medium_occidentia_massiliensis
+original_name: BME/CTVM2 cell line medium (Occidentia massiliensis)
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: DSMZ Medium 1670
+  term:
+    id: mediadive.medium:1670
+    label: BME/CTVM2 cell line medium (Occidentia massiliensis)
+notes: DSMZ Medium 1670 prepares a 101 ml BME/CTVM2 tick-cell medium for Occidentia
+  massiliensis cultivation from 70 ml L-15 (Leibovitz) medium, 10 ml tryptose phosphate
+  broth, 20 ml foetal calf serum, and 1 ml 200 mM L-glutamine stock.
+ingredients:
+- preferred_term: L-15 (Leibovitz) medium
+  concentration:
+    value: '693.069307'
+    unit: ML_PER_L
+  source: DSMZ Medium 1670
+  notes: DSMZ Medium 1670 lists 70 ml L-15 (Leibovitz) medium in a 101 ml BME/CTVM2
+    cell-culture medium batch.
+  term:
+    id: mediadive.compound:1504
+    label: L-15 medium
+- preferred_term: Tryptose phosphate broth
+  concentration:
+    value: '99.009901'
+    unit: ML_PER_L
+  source: DSMZ Medium 1670
+  notes: DSMZ Medium 1670 lists 10 ml tryptose phosphate broth in a 101 ml BME/CTVM2
+    cell-culture medium batch.
+  term:
+    id: mediadive.compound:1165
+    label: Tryptose-phosphate
+- preferred_term: Foetal calf serum
+  concentration:
+    value: '198.019802'
+    unit: ML_PER_L
+  source: DSMZ Medium 1670
+  notes: DSMZ Medium 1670 lists 20 ml foetal calf serum in a 101 ml BME/CTVM2 cell-culture
+    medium batch.
+  term:
+    id: mediadive.compound:954
+    label: Fetal bovine serum
+solutions:
+- preferred_term: 200 mM L-glutamine stock
+  concentration:
+    value: '9.90099'
+    unit: ML_PER_L
+  source: DSMZ Medium 1670
+  notes: DSMZ Medium 1670 lists 1 ml 200 mM L-glutamine stock in a 101 ml BME/CTVM2
+    cell-culture medium batch.
+  composition:
+  - preferred_term: L-Glutamine
+    concentration:
+      value: '200.0'
+      unit: MILLIMOLAR
+    source: DSMZ Medium 1670
+    notes: DSMZ Medium 1670 discloses this stock as 200 mM L-glutamine.
+    term:
+      id: CHEBI:18050
+      label: L-glutamine
+    mediaingredientmech_chebi_term:
+      id: CHEBI:18050
+      label: L-glutamine
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Prepare the BME/CTVM2 cell-culture medium from 70 ml L-15 (Leibovitz)
+    medium, 10 ml tryptose phosphate broth, 20 ml foetal calf serum, and 1 ml 200
+    mM L-glutamine.
+- step_number: 2
+  action: MIX
+  description: Use the medium for BME/CTVM2 cells incubated in ordinary air in sealed
+    flasks or flat-sided tubes in dry incubators.
+- step_number: 3
+  action: MIX
+  description: For Occidentia massiliensis infection, add 3 ml fresh medium and 1
+    ml thawed Occidentia strain to a 25 cm2 flask with 5 ml residual medium, then
+    incubate at 28 C with the lid closed and without CO2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:15.195367Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1670'
+- timestamp: '2026-03-13T06:19:01.719194Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001155'
+- timestamp: '2026-03-17T06:30:33.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:13.472217+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "BME/CTVM2 cell line medium (Occidentia massiliensis)"
+    to "bme_ctvm2_cell_line_medium_occidentia_massiliensis" for consistent matching
+- timestamp: '2026-06-05T07:40:51.251646+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_dsmz_1670_bme_score15.py
+  action: RESOLVED_DSMZ_1670_BME_SCORE15
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1670.pdf; https://mediadive.dsmz.de/medium/1670
+  notes: Corrected DSMZ Medium 1670 liquid batch volumes, retained the opaque L-15,
+    tryptose phosphate, and serum products with MediaDive source identities, and represented
+    the 200 mM L-glutamine stock as a measured stock addition.
+kg_microbe_match: mediadive.medium:1670
+temperature_value: 28.0
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1670.pdf
+- reference: https://mediadive.dsmz.de/medium/1670

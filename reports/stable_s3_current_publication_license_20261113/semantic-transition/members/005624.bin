@@ -1,0 +1,135 @@
+id: CultureMech:008239
+name: nutrient_broth_0_5_w_v_na2co3
+original_name: Nutrient Broth + 0.5%(w/v) Na2CO3
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 10.5
+ingredients:
+- preferred_term: Bacto Nutrient Broth (Difco)
+  concentration:
+    value: '8.0'
+    unit: G_PER_L
+  source: TOGO M1680 / NBRC Medium 885
+  notes: TOGO M1680 and NBRC Medium 885 list 8.0 g/L Bacto Nutrient Broth from Difco;
+    the commercial product is retained without an ontology grounding.
+- preferred_term: Na2CO3
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  source: TOGO M1680 / NBRC Medium 885
+  notes: TOGO M1680 and NBRC Medium 885 list 5.0 g/L Na2CO3 for a 0.5% w/v alkaline
+    supplement.
+  term:
+    id: CHEBI:29377
+    label: sodium carbonate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:29377
+    label: sodium carbonate
+- preferred_term: Agar (if needed)
+  concentration:
+    value: '15.0'
+    unit: G_PER_L
+  source: TOGO M1680 / NBRC Medium 885
+  notes: TOGO M1680 and NBRC Medium 885 list 15.0 g/L Agar if needed for solid medium.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+  physicochemical_roles:
+  - SOLIDIFYING_AGENT
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.0'
+    unit: ML_PER_L
+  source: TOGO M1680 / NBRC Medium 885
+  notes: TOGO M1680 and NBRC Medium 885 list 1 L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M1680
+  term:
+    id: TOGO:M1680
+    label: Nutrient Broth + 0.5%(w/v) Na2CO3
+notes: 'TOGO M1680 imports NBRC Medium 885: 8 g Bacto Nutrient Broth from Difco, 5
+  g Na2CO3, 15 g agar if needed, and 1 L distilled water; the final pH is 10.5.'
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Suspend Bacto Nutrient Broth (Difco) and optional agar in distilled
+    water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave the nutrient-broth agar base.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Sterilize the Na2CO3 stock separately.
+- step_number: 4
+  action: MIX
+  description: Aseptically add the sterile Na2CO3 stock to the sterile base.
+sterilization:
+  method: AUTOCLAVE
+  notes: Autoclave the complex nutrient-broth base and sterilize the alkaline carbonate
+    stock separately before aseptic addition.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:58.128226Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1680'
+- timestamp: '2026-01-28T19:48:24.755398Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:04:40.959269+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T06:19:54.798989Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008239'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:17.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:13.414564+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Nutrient Broth + 0.5%(w/v) Na2CO3" to "nutrient_broth_0_5_w_v_na2co3"
+    for consistent matching
+- timestamp: '2026-05-16T09:04:27.921393+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:41:40.161474+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_nutrient_broths_score15.py
+  action: RESOLVED_TOGO_M1680_NBRC_885
+  source: https://togomedium.org/medium/M1680; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=885
+  notes: 'TOGO M1680 imports NBRC Medium 885: 8 g Bacto Nutrient Broth from Difco,
+    5 g Na2CO3, 15 g agar if needed, and 1 L distilled water; the final pH is 10.5.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M1680
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=885

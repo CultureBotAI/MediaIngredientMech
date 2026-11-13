@@ -1,0 +1,74 @@
+identifier: kgmicrobe.compound:alpha-toxicarol_dl
+preferred_term: Alpha-Toxicarol (Dl)
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:alpha-toxicarol_dl
+  ontology_label: Alpha-Toxicarol (Dl)
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a sibling stereochemical
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#456)
+    notes: The CultureBotHT label names the DL/racemic form, while CHEBI:9643 and
+      CAS 82-09-7 denote a fixed stereoisomer. No exact local ChEBI term, CAS number,
+      or broader ontology parent was verified for the racemate. The record now keeps
+      kgmicrobe.compound:alpha-toxicarol_dl as a local fallback identity without an
+      ontology row.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=82-09-7; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.136349+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.960252+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C23H22O7; inchi=InChI=1S/C23H22O7/c1-23(2)6-5-11-15(30-23)8-13(24);
+    smiles=[H][C@@]12COc3cc(OC)c(OC)cc3[C@]1([H])C(=O)c1c(O)c
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.414876+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_stereochemical_identity_conflicts
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: identifier CHEBI:9643 -> kgmicrobe.compound:alpha-toxicarol_dl; removed
+    the sibling ChEBI stereoisomer mapping. Replaced target-derived chemistry and
+    marked 0 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000310; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  data_source: CHEBI:9643 formula only
+  retrieval_date: '2026-09-12T00:00:00+00:00'
+  molecular_formula: C23H22O7
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000310
+legacy_identifiers:
+- MIM:Alpha-toxicarol_Dl
+- kgmicrobe.compound:alpha-toxicarol_dl

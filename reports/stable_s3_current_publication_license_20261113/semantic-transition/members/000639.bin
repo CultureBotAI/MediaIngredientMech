@@ -1,0 +1,51 @@
+identifier: CHEBI:197237
+preferred_term: Cedrelone
+ontology_mapping:
+  ontology_id: CHEBI:197237
+  ontology_label: CEDRELONE
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: (1R,2R,4R,6S,7S,10R,11R)-6-(uran-3-yl)-17-hydroxy-1,7,11,15,15-pentamethyl-3-oxapentacyclo[8.8.0.02,4.02,7.011,16]octadeca-12,16-diene-14,18-dione
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=1254-85-9); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.676349+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.501176+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C26H30O5; inchi=InChI=1S/C26H30O5/c1-22(2)17(27)7-9-23(3)16-6-10-2;
+    smiles=[H][C@]12CC[C@@]3(C)[C@H](c4ccoc4)C[C@@]4([H])O[C@
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.203524+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 1254-85-9
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C26H30O5
+  inchi: InChI=1S/C26H30O5/c1-22(2)17(27)7-9-23(3)16-6-10-24(4)15(14-8-11-30-13-14)12-18-26(24,31-18)25(16,5)21(29)19(28)20(22)23/h7-9,11,13,15-16,18,28H,6,10,12H2,1-5H3/t15-,16+,18+,23+,24-,25-,26+/m0/s1
+  smiles: '[H][C@]12CC[C@@]3(C)[C@H](c4ccoc4)C[C@@]4([H])O[C@]43[C@]1(C)C(=O)C(O)=C1C(C)(C)C(=O)C=C[C@@]12C'
+ingredient_type: SINGLE_INGREDIENT

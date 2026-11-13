@@ -1,0 +1,64 @@
+identifier: CHEBI:86431
+preferred_term: Sodium Fluorophosphate
+ontology_mapping:
+  ontology_id: CHEBI:86431
+  ontology_label: sodium fluorophosphate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
+synonyms:
+- synonym_text: Sodium monofluorophosphate
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: disodium phosphorofluoridate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=7631-97-2); Imported
+    from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.261103+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.352590+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=FO3P.2Na; inchi=InChI=1S/FH2O3P.2Na/c1-5(2,3)4;;/h(H2,2,3,4);;/q;2;
+    smiles=O=P([O-])([O-])F.[Na+].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.386069+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002313; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 7631-97-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: FO3P.2Na
+  inchi: InChI=1S/FH2O3P.2Na/c1-5(2,3)4;;/h(H2,2,3,4);;/q;2*+1/p-2
+  smiles: O=P([O-])([O-])F.[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002313
+legacy_identifiers:
+- MIM:Sodium_Fluorophosphate
+- CHEBI:86431

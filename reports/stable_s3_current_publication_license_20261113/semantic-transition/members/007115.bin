@@ -1,0 +1,138 @@
+identifier: kgmicrobe.ingredient:jcm_1353_mineral_solution_a
+preferred_term: JCM 1353 mineral solution A
+synonyms:
+- synonym_text: Mineral solution A (see Medium No. 1353 )
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1353,
+    jcm.grmd:1366; retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+- synonym_text: Mineral solution A (see below)
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1353,
+    jcm.grmd:1366; retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1353_mineral_solution_a
+  ontology_label: JCM 1353 mineral solution A
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: '2.2'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.1'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '98.4'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '28.8'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '23.8'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '17.2'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24.2'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '31'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+- component_name: HCl
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353
+    source_record: JCM 1353 mineral solution A; complete named stock table and preparation
+      notes
+    notes: Printed JCM1353 stock with pH6.5 adjustment using HCl. Titrant amount is
+      unquantified. EDTA salt/protonation form is not silently supplied. Explicit1353
+      references and local see-below label resolve to same source stock. Literal printed
+      masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+      describes a recipe batch containing1L added water, not a final1L solution or
+      final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'Printed JCM1353 stock with pH6.5 adjustment using HCl. Titrant amount is unquantified.
+  EDTA salt/protonation form is not silently supplied. Explicit1353 references and
+  local see-below label resolve to same source stock. Literal printed masses and added
+  distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+  describes a recipe batch containing1L added water, not a final1L solution or final
+  concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.798564+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 69, case 70. No maintained owner created. Component grounding
+    limitations retained; all original case/occurrence objects remain in applicability
+    artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.548021+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:57:15.478961+00:00'
+  curator: Codex /root/issue_context (worker01)
+  action: CORRECTED
+  changes: '#1226 authorized provenance-only successor: change ontology_mapping.evidence[0]
+    from MANUAL_CURATION to LLM_SUGGESTION because these exact new-agent MappingEvidence
+    judgments were LLM-authored. Preserve all evidence sources, citations, notes,
+    scientific assertions, component evidence, aliases, case applicability, status
+    and prior history. Isolated proposal only; no maintained integration or new scientific
+    approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

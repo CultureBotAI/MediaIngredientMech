@@ -1,0 +1,60 @@
+identifier: CHEBI:15782
+preferred_term: Viomycin
+ontology_mapping:
+  ontology_id: CHEBI:15782
+  ontology_label: viomycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:viomycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:viomycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C25H43N13O10
+  smiles: '[H][C@]1([C@]2([H])NC(=O)/C(=C/NC(N)=O)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@@H](NC(=O)C[C@@H](N)CCCN)CNC2=O)C[C@H](O)NC(=N)N1'
+  inchi: InChI=1S/C25H43N13O10/c26-3-1-2-10(27)4-16(41)32-12-6-30-23(47)18(11-5-17(42)37-24(28)36-11)38-20(44)13(7-31-25(29)48)33-21(45)14(8-39)35-22(46)15(9-40)34-19(12)43/h7,10-12,14-15,17-18,39-40,42H,1-6,8-9,26-27H2,(H,30,47)(H,32,41)(H,33,45)(H,34,43)(H,35,46)(H,38,44)(H3,28,36,37)(H3,29,31,48)/b13-7-/t10-,11+,12-,14-,15-,17-,18-/m0/s1
+  molecular_weight: 685.7
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:30:57.256400+00:00'

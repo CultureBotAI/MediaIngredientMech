@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/research_c",
+  "reviewed_at": "2026-11-08T05:35:10.465773+00:00",
+  "independence": "C authored none of the A/B source aliases or root composition payloads reviewed here. Exact root-composed bytes and baseline bytes were independently compared; both contributing source contexts were checked.",
+  "input_hash_manifest": [
+    {
+      "root": "artifact",
+      "path": "integration/shared-proposal-composition.json",
+      "sha256": "b5b9f4f10de2c1c0989a45132041611d3911d086698da914b61d65ffa72d587b"
+    },
+    {
+      "root": "artifact",
+      "path": "a/decisions.json",
+      "sha256": "e0ac0ef32206be2032cbeff3184b5ffa6aa83858b0356a34689d5d267490ff57"
+    },
+    {
+      "root": "artifact",
+      "path": "a/proposals.json",
+      "sha256": "063efb9c76053852734f1540dee3d8f7be68ac126c26af8d8594ad1511471990"
+    },
+    {
+      "root": "artifact",
+      "path": "a/evidence.json",
+      "sha256": "2c6624404c33d78e2198de4470d8bebc42bbb005ad47962393eda3f9c58719a4"
+    },
+    {
+      "root": "artifact",
+      "path": "b/decisions.json",
+      "sha256": "cfffff00c461ab437f518b0a9da375c6cd038561e68ef8cbfa8c7e1d90852e45"
+    },
+    {
+      "root": "artifact",
+      "path": "b/proposals.json",
+      "sha256": "808462e147b22ae0dc7642173b2c0dd0a7923d39ef04ec7afcc7a6d2c9ba62b4"
+    },
+    {
+      "root": "artifact",
+      "path": "b/evidence.json",
+      "sha256": "4b6b2e57c823117de318467e4f9bd61d388cd3270be87e7a4ea2821adeafdacd"
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "w02-proposal-mohr-hexahydrate",
+      "fragment_proposal_ids": [
+        "a-proposal-mohr-hexahydrate",
+        "b-proposal-mohr"
+      ],
+      "owner_path": "data/ingredients/mapped/Fe_Nh42_So42_X_6_H2o.yaml",
+      "before_sha256": "ba589668a7e9ed687122766204f51e531d64c54b2177759b555f97be6d7a916f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "integration/after/Fe_Nh42_So42_X_6_H2o.yaml",
+        "sha256": "82abcc67d1a33a019952509cbfbc6ab3ee5a962a5af614adae700b030deb6db0"
+      },
+      "status": "approve",
+      "reasoning": "All six added formulas contain one Fe, two ammonium ions, two sulfate groups and six waters. Direct TOGO M2716/M1094/M940/M3164/M2560/M3118 and JCM950/966 contexts corroborate the same ferrous ammonium sulfate hexahydrate as CHEBI76181. M940 dissolves this solute in HCl first; that preparation does not make the whole acidic stock a synonym. The composition preserves both authors' source attributions and histories without replacing the frozen identifier, mapping, properties, occurrence statistics or roles. Existing unqualified/stock synonyms and full-owner holds remain.",
+      "exact_semantic_diff": {
+        "curation_history": {
+          "added": [
+            {
+              "timestamp": "2026-11-08T05:18:37.555660+00:00",
+              "curator": "codex_worker02_research_a",
+              "action": "PROPOSED_SOURCE_ALIAS",
+              "changes": "Add source-backed same-substance aliases: ['Fe(SO4)2(NH4)2 . 6H2O', '(NH4)2Fe(SO4)2·6H2O', 'Fe(SO4)2(NH4)2·6H2O'].",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "notes": "Source-review proposal only; no maintained record or downstream data changed; coordinator integration and independent review required."
+            },
+            {
+              "timestamp": "2026-11-08T05:23:20.450045+00:00",
+              "curator": "codex_worker02_source_review",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Add source-bound exact alias(es) 'FeSO4(NH4)2SO4.6H2O', '(NH4)2SO4FeSO4 × 6H2O', '(NH4)2Fe(SO4)2・6H2O'. Isolated proposal only; coordinator must re-review changed owner and synchronize native outputs before application.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ]
+        },
+        "synonyms": {
+          "added": [
+            {
+              "synonym_text": "Fe(SO4)2(NH4)2 . 6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "source_review_worker02:CM_NAME:04fc9a1465f3d659efe08a5ae5dad64549020bcf412b8f9ccb55584876555c2c"
+            },
+            {
+              "synonym_text": "(NH4)2Fe(SO4)2·6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "source_review_worker02:CM_NAME:1bd8d675450108231a5a447707552676245f24c975891b217f1caa5f8170262b"
+            },
+            {
+              "synonym_text": "Fe(SO4)2(NH4)2·6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "source_review_worker02:CM_NAME:664ea49b4baffce477446f17556f93e233f5535d0abfdec29fbb8f7384caf80c"
+            },
+            {
+              "synonym_text": "FeSO4(NH4)2SO4.6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "CultureMech frozen source case CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097"
+            },
+            {
+              "synonym_text": "(NH4)2SO4FeSO4 × 6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "CultureMech frozen source case CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c"
+            },
+            {
+              "synonym_text": "(NH4)2Fe(SO4)2・6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "CultureMech frozen source case CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7"
+            }
+          ]
+        },
+        "ontology_mapping": {
+          "added_evidence": [
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "worker02 source review",
+              "notes": "Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json and captured primary/ontology evidence. Existing stock, form and evidence-quality concerns remain held."
+            },
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "reports/all_unmatched_20261107/worker-02/b/evidence.json",
+              "notes": "Add source-bound exact alias(es) 'FeSO4(NH4)2SO4.6H2O', '(NH4)2SO4FeSO4 × 6H2O', '(NH4)2Fe(SO4)2・6H2O'. Sources: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2560; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_76181; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3118; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=950; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=966; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M997; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1016"
+            }
+          ]
+        }
+      },
+      "case_ids": [
+        "CM_NAME:04fc9a1465f3d659efe08a5ae5dad64549020bcf412b8f9ccb55584876555c2c",
+        "CM_NAME:1bd8d675450108231a5a447707552676245f24c975891b217f1caa5f8170262b",
+        "CM_NAME:664ea49b4baffce477446f17556f93e233f5535d0abfdec29fbb8f7384caf80c",
+        "CM_NAME:904d8b9b6ef754a946575436e8d68a149ec7891b40a2e40eb24351912f196097",
+        "CM_NAME:a0904f210b0689887db38c10d22989b237ba0a2a60d27f2801a85077d9ee6b6c",
+        "CM_NAME:ae541eb6dc54dff13a0406bbea554e9ed353683fe05493deb6192a5da62596f7"
+      ],
+      "evidence_ids_checked": [
+        "a-case-05-input",
+        "a-case-05-occ-00",
+        "a-primary-togo-M2716",
+        "a-ontology-76181",
+        "a-owner-Fe_Nh42_So42_X_6_H2o",
+        "a-case-20-input",
+        "a-case-20-occ-00",
+        "a-case-20-occ-01",
+        "a-primary-primary-209b330041a2793e",
+        "a-primary-togo-M1094",
+        "a-primary-togo-M940",
+        "a-primary-primary-a95d21757d9f5e59",
+        "a-case-20-source-unit-review",
+        "a-case-62-input",
+        "a-case-62-occ-00",
+        "a-primary-togo-M3164",
+        "b-case-82",
+        "b-recipe-82-0",
+        "b-togo-5c4d0caab0af798c",
+        "b-reference-351c65c3e3af54a7",
+        "b-owner-678cb5ecb2e4d79c",
+        "b-case-89",
+        "b-recipe-89-0",
+        "b-togo-1fdc0893cb11518e",
+        "b-case-96",
+        "b-recipe-96-0",
+        "b-recipe-96-1",
+        "b-source-51b504f992baa9fd",
+        "b-source-21fcdd4ef87d360a",
+        "b-togo-2d0ed411fea8dc70",
+        "b-togo-6d50028ab51b523d"
+      ],
+      "limits": "Bounded additive source-alias/history/evidence approval only. No full-owner, mapping export, stock collapse, fixed biological composition or release approval."
+    },
+    {
+      "proposal_id": "w02-proposal-ammonium-nickel-hexahydrate",
+      "fragment_proposal_ids": [
+        "a-proposal-ammonium-nickel-hexahydrate",
+        "b-proposal-nickel_double"
+      ],
+      "owner_path": "data/ingredients/mapped/Nh42ni_So42_X_6_H2o.yaml",
+      "before_sha256": "95a9c8fd17541611183de192078aebab13e1d6ebdb9e77808d2800da711a7b47",
+      "after_capture": {
+        "root": "artifact",
+        "path": "integration/after/Nh42ni_So42_X_6_H2o.yaml",
+        "sha256": "ab355eaf8e8bac73a14023a8e543a6e5b41c4fc79b82ea17044674aeafbde852"
+      },
+      "status": "approve",
+      "reasoning": "The three added formulas each retain one nickel, two ammonium, two sulfate and six waters, matching CHEBI86149. The SAG19 Z-medium PDF, JCM1353 mineral solution B and TOGO M3118 independently place the salt in their trace stocks. The malformed single-ammonium UTEX formula is not among the new resolving aliases. The exact six-water owner is retained without merging a second same-ID owner whose label lacks hydration. All prior stock, duplicate-owner and publication concerns remain.",
+      "exact_semantic_diff": {
+        "curation_history": {
+          "added": [
+            {
+              "timestamp": "2026-11-08T05:18:37.555660+00:00",
+              "curator": "codex_worker02_research_a",
+              "action": "PROPOSED_SOURCE_ALIAS",
+              "changes": "Add source-backed same-substance aliases: ['NiSO4(NH4)2SO4 x 6 H2O', 'Ni(NH4)2(SO4)2·6H2O'].",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "notes": "Source-review proposal only; no maintained record or downstream data changed; coordinator integration and independent review required."
+            },
+            {
+              "timestamp": "2026-11-08T05:23:20.450045+00:00",
+              "curator": "codex_worker02_source_review",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Add source-bound exact alias(es) '(NH4)2SO4NiSO4 × 6H2O'. Isolated proposal only; coordinator must re-review changed owner and synchronize native outputs before application.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ]
+        },
+        "synonyms": {
+          "added": [
+            {
+              "synonym_text": "NiSO4(NH4)2SO4 x 6 H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "source_review_worker02:CM_NAME:386ad6a1209397024bd0f83a21c1fa635efb1d8d98f57c449a1eadc848cd294d"
+            },
+            {
+              "synonym_text": "Ni(NH4)2(SO4)2·6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "source_review_worker02:CM_NAME:3cee1442982803dc3925aad8a6fa8633e4ebd572656a0e9c9c1528fb729535b8"
+            },
+            {
+              "synonym_text": "(NH4)2SO4NiSO4 × 6H2O",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "CultureMech frozen source case CM_NAME:f09006d24ce28aee7f142c53b7463039cde081a6af192ee03e33f80bff44567c"
+            }
+          ]
+        },
+        "ontology_mapping": {
+          "added_evidence": [
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "worker02 source review",
+              "notes": "Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json and captured primary/ontology evidence. Existing stock, form and evidence-quality concerns remain held."
+            },
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "reports/all_unmatched_20261107/worker-02/b/evidence.json",
+              "notes": "Add source-bound exact alias(es) '(NH4)2SO4NiSO4 × 6H2O'. Sources: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3118; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_86149"
+            }
+          ]
+        }
+      },
+      "case_ids": [
+        "CM_NAME:386ad6a1209397024bd0f83a21c1fa635efb1d8d98f57c449a1eadc848cd294d",
+        "CM_NAME:3cee1442982803dc3925aad8a6fa8633e4ebd572656a0e9c9c1528fb729535b8",
+        "CM_NAME:f09006d24ce28aee7f142c53b7463039cde081a6af192ee03e33f80bff44567c"
+      ],
+      "evidence_ids_checked": [
+        "a-case-37-input",
+        "a-case-37-occ-00",
+        "a-primary-primary-92979935679e1a4f",
+        "a-ontology-86149",
+        "a-owner-Nh42ni_So42_X_6_H2o",
+        "a-case-40-input",
+        "a-case-40-occ-00",
+        "a-primary-primary-c464e732b34c9c65",
+        "b-case-123",
+        "b-recipe-123-0",
+        "b-togo-1fdc0893cb11518e",
+        "b-reference-d9a013a5b930dc1c",
+        "b-owner-3e71b213b68d6716",
+        "b-owner-a5a4a1ff290df2c1"
+      ],
+      "limits": "Bounded additive source-alias/history/evidence approval only. No full-owner, mapping export, stock collapse, fixed biological composition or release approval."
+    },
+    {
+      "proposal_id": "w02-proposal-clarified-rumen-fluid",
+      "fragment_proposal_ids": [
+        "a-proposal-clarified-rumen-fluid",
+        "b-proposal-rumen"
+      ],
+      "owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+      "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+      "after_capture": {
+        "root": "artifact",
+        "path": "integration/after/Clarified_rumen_fluid.yaml",
+        "sha256": "4615123793858c281d56159afc0f524b0e32ec224da609add17b41548b115315"
+      },
+      "status": "approve",
+      "reasoning": "Both additions denote clarified rumen fluid. DSMZ322/213/275 explicitly prepare it by filtration, heating and centrifugation; JCM355/1201/1330 explicitly resolve the see-below pointer to heat-treated, centrifuged rumen fluid. DSMZ uses 121 C/27000 g/20 min and JCM uses 120 C/25000 g/15 min, so the common material-class label does not establish identical batches or formulations. The source-qualified see-below alias is approved only for these traced contexts. The existing MICRO grounding is unchanged and still requires its independent native/full-owner gate.",
+      "exact_semantic_diff": {
+        "ontology_mapping": {
+          "added_evidence": [
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "worker02 source review",
+              "notes": "Exact formula/preparation scope established in reports/all_unmatched_20261107/worker-02/a/decisions.json and captured primary/ontology evidence. Existing stock, form and evidence-quality concerns remain held."
+            },
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "reports/all_unmatched_20261107/worker-02/b/evidence.json",
+              "notes": "Add source-bound exact alias(es) 'Rumen fluid, clarified (see below)'. Sources: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1201; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1330; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=355; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3005; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M349; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1287"
+            }
+          ]
+        },
+        "curation_history": {
+          "added": [
+            {
+              "timestamp": "2026-11-08T05:18:37.555660+00:00",
+              "curator": "codex_worker02_research_a",
+              "action": "PROPOSED_SOURCE_ALIAS",
+              "changes": "Add source-backed same-substance aliases: ['Rumen fluid, clarified'].",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "notes": "Source-review proposal only; no maintained record or downstream data changed; coordinator integration and independent review required."
+            },
+            {
+              "timestamp": "2026-11-08T05:23:20.450045+00:00",
+              "curator": "codex_worker02_source_review",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Add source-bound exact alias(es) 'Rumen fluid, clarified (see below)'. Isolated proposal only; coordinator must re-review changed owner and synchronize native outputs before application.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ]
+        },
+        "synonyms": {
+          "added": [
+            {
+              "synonym_text": "Rumen fluid, clarified",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "source_review_worker02:CM_NAME:5b9a01c18f694309117620b29aee602b98ff2996301cb28f5c61fdbb347389c2"
+            },
+            {
+              "synonym_text": "Rumen fluid, clarified (see below)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "CultureMech frozen source case CM_NAME:d08c9e0edf98199867289615e953de26f3665566101d8d43ca0d93da6e07aedc"
+            }
+          ]
+        }
+      },
+      "case_ids": [
+        "CM_NAME:5b9a01c18f694309117620b29aee602b98ff2996301cb28f5c61fdbb347389c2",
+        "CM_NAME:d08c9e0edf98199867289615e953de26f3665566101d8d43ca0d93da6e07aedc"
+      ],
+      "evidence_ids_checked": [
+        "a-case-55-input",
+        "a-case-55-occ-00",
+        "a-case-55-occ-01",
+        "a-case-55-occ-02",
+        "a-case-55-occ-03",
+        "a-case-55-occ-04",
+        "a-case-55-occ-05",
+        "a-case-55-occ-06",
+        "a-primary-togo-M2658",
+        "a-primary-primary-09719ef2226161b4",
+        "a-primary-togo-M2695",
+        "a-primary-primary-9eb4fdfa2a9bf02c",
+        "a-primary-togo-M2765",
+        "a-primary-primary-0aa1a5073f210a7d",
+        "a-owner-Clarified_rumen_fluid",
+        "b-case-108",
+        "b-recipe-108-0",
+        "b-recipe-108-1",
+        "b-recipe-108-2",
+        "b-source-fd6eacfc99e77cbb",
+        "b-source-e34d15ca6b66deab",
+        "b-source-45e521f4052e6969",
+        "b-togo-ead07188c87a630b",
+        "b-togo-229497dbaf13fe0f",
+        "b-togo-3ff05f9770c07ae7",
+        "b-owner-78414ca9862272cd"
+      ],
+      "limits": "Bounded additive source-alias/history/evidence approval only. No full-owner, mapping export, stock collapse, fixed biological composition or release approval."
+    }
+  ],
+  "findings": [],
+  "open_findings": [],
+  "supersedes_review": {
+    "root": "artifact",
+    "path": "c/independent-review-shared-v1.json",
+    "sha256": "f27a56cbb7a7724b0233cf58ec73f1a69802cf3c0a038a32231837cf3398700b"
+  },
+  "recomposition_assessment": "Compared to preserved integration-v1: identifiers, preferred labels, synonym unions, mapping target/predicate and chemical properties are unchanged. Changes are repaired direct TOGO citations and B proposal history timestamp. Rechecked baseline-to-final additive semantics and primary source support.",
+  "preserved_prior_payloads": [
+    {
+      "original": {
+        "root": "artifact",
+        "path": "integration/after/Fe_Nh42_So42_X_6_H2o.yaml",
+        "sha256": "3d390b26af9ca02c3a3fa52a9820e328ab1152a2ab3ec3aef835af0faaf0b9e4"
+      },
+      "archived": {
+        "root": "artifact",
+        "path": "integration-v1/after/Fe_Nh42_So42_X_6_H2o.yaml",
+        "sha256": "3d390b26af9ca02c3a3fa52a9820e328ab1152a2ab3ec3aef835af0faaf0b9e4"
+      }
+    },
+    {
+      "original": {
+        "root": "artifact",
+        "path": "integration/after/Nh42ni_So42_X_6_H2o.yaml",
+        "sha256": "fc0b08a21e0cd92e00bf5943c633adcd2b5154ce0d0b9a12d01181387e857407"
+      },
+      "archived": {
+        "root": "artifact",
+        "path": "integration-v1/after/Nh42ni_So42_X_6_H2o.yaml",
+        "sha256": "fc0b08a21e0cd92e00bf5943c633adcd2b5154ce0d0b9a12d01181387e857407"
+      }
+    },
+    {
+      "original": {
+        "root": "artifact",
+        "path": "integration/after/Clarified_rumen_fluid.yaml",
+        "sha256": "24a1bc19a55dc21eaa9d5fccba2bdd306ab305233cd6ef99a6d96970ca845a0f"
+      },
+      "archived": {
+        "root": "artifact",
+        "path": "integration-v1/after/Clarified_rumen_fluid.yaml",
+        "sha256": "24a1bc19a55dc21eaa9d5fccba2bdd306ab305233cd6ef99a6d96970ca845a0f"
+      }
+    }
+  ]
+}

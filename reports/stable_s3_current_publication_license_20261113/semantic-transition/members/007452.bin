@@ -1,0 +1,153 @@
+{
+  "reviewed_at": "2026-11-08T05:32:44.760271+00:00",
+  "withdrawals": [
+    {
+      "proposal_id": "a-proposal-gdp",
+      "case_id": "CM_NAME:14d59d34f852ad492b70c79bdcc4d59fca9f029ce48bca03c61e4e6a7367f311",
+      "prior_proposal": {
+        "proposal_id": "a-proposal-gdp",
+        "case_ids": [
+          "CM_NAME:14d59d34f852ad492b70c79bdcc4d59fca9f029ce48bca03c61e4e6a7367f311"
+        ],
+        "description": "Source MediaDB compound35 explicitly identifies GDP (KEGG C00035; CHEBI17552; C10H15N5O11P2), corroborated by ChEBI. No counterion, supplied salt or assay is inferred;10mM recipe correctness has not been experimentally revalidated. Evidence: a-primary-mediadb-gdp and a-ontology-17552.",
+        "evidence_ids": [
+          "a-case-16-input",
+          "a-case-16-occ-00",
+          "a-mediadb-raw-compounds",
+          "a-new-owner-duplicate-check",
+          "a-ontology-17552",
+          "a-primary-mediadb-gdp"
+        ],
+        "owner_path": "data/ingredients/mapped/GDP.yaml",
+        "kind": "new_owner",
+        "after_capture": {
+          "root": "artifact",
+          "path": "a/proposed-owners/GDP.yaml",
+          "sha256": "35fd3b50040309a81f7dece0636da74c53ee6490cb0d770b5261161bdd3e1be8"
+        },
+        "before_sha256": null,
+        "publication_authorization": "None. All inherited source, ingredient, and downstream holds remain; these bytes are a reviewable proposal only.",
+        "mapping_consequence": "Generate and review synchronized YAML/SSSOM at integration; never replace a form with its parent. No downstream rebuild is included."
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:14d59d34f852ad492b70c79bdcc4d59fca9f029ce48bca03c61e4e6a7367f311",
+        "case_input_sha256": "46f5453df1746b7fb0f96a92b29561e4b0bcf133b7f7d5c49cb3ed7436ce3009",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "GDP",
+          "source_label": "GDP",
+          "raw_source_label": "GDP"
+        },
+        "occurrence_ids": [
+          "CM_OCC:4c5762adaa09927f7150886382d3d7e81619e1a15e0b75d0d3a198c749282e7b"
+        ],
+        "disposition": "new_distinct_ingredient_proposal",
+        "reasoning": "MediaDB compound35 explicitly identifies GDP as guanosine 5-prime-diphosphate, KEGG C00035, CHEBI17552, formula C10H15N5O11P2 and links it to Pjc with glucose. The frozen occurrence is 10 mM GDP; OLS CHEBI:17552 agrees with that molecule. Propose a distinct GDP record without claiming a counterion, commercial salt, mechanism, or independently verified correctness of the 10 mM experimental recipe.",
+        "applicability": "All 1 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'GDP'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-16-input",
+          "a-case-16-occ-00",
+          "a-primary-mediadb-gdp",
+          "a-mediadb-raw-compounds",
+          "a-ontology-17552",
+          "a-new-owner-duplicate-check"
+        ],
+        "proposal_ids": [
+          "a-proposal-gdp"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        }
+      },
+      "archived_payload": {
+        "root": "artifact",
+        "path": "a/review-revisions/withdrawn/GDP.yaml",
+        "sha256": "35fd3b50040309a81f7dece0636da74c53ee6490cb0d770b5261161bdd3e1be8"
+      },
+      "status": "withdrawn_not_actionable",
+      "reviewer_reference": "Root supplied-form challenge and independent B source re-review,2026-11-08; source molecules are not sufficient proof of historical supplied reagent.",
+      "withdrawal_reason": "MediaDB compound35 identifies its GDP database entity as CHEBI17552/KEGGC00035, but that normalized biochemical identity does not establish the ingredient actually supplied in MediaDB85 PJC with glucose. The frozen full-recipe reference already flags the glucose-title/GDP-component contradiction. Original Sanchez1989 PMID2647149 abstract confirms publication identity but contains no complete PJC formulation; current publisher article/PDF requests returned403, and bounded exact-title/DOI searches did not retrieve original formulation bytes. GDP versus glucose therefore remains unresolved, and even a confirmed GDP component would require supplied counterion/hydrate information before an exact reagent mapping. The earlier neutral-GDP draft is withdrawn and preserved in the review archive; raw GDP, original occurrence and all holds remain unchanged."
+    },
+    {
+      "proposal_id": "a-proposal-zinc-2plus",
+      "case_id": "CM_NAME:3f81e2e3f6f257d163cf9d1469ac285027572847f6889300ff50f6e3f4b90253",
+      "prior_proposal": {
+        "proposal_id": "a-proposal-zinc-2plus",
+        "case_ids": [
+          "CM_NAME:3f81e2e3f6f257d163cf9d1469ac285027572847f6889300ff50f6e3f4b90253"
+        ],
+        "description": "MediaDB compound38 uses the raw label Zinc but explicitly identifies BiGG zn2, CHEBI29105 and Zn2+/Zn(II). This record represents the ionic source concept; the raw source label Zinc is retained here as source-scoped provenance only and is deliberately excluded from globally resolving synonyms. It does not specify a purchasable zinc salt. Evidence: a-primary-mediadb-zinc and a-ontology-29105.",
+        "evidence_ids": [
+          "a-case-42-input",
+          "a-case-42-occ-00",
+          "a-case-42-occ-01",
+          "a-mediadb-raw-compounds",
+          "a-new-owner-duplicate-check",
+          "a-ontology-29105",
+          "a-primary-mediadb-zinc"
+        ],
+        "owner_path": "data/ingredients/mapped/Zinc_2plus.yaml",
+        "kind": "new_owner",
+        "after_capture": {
+          "root": "artifact",
+          "path": "a/proposed-owners/Zinc_2plus.yaml",
+          "sha256": "ead8968c266897a5b5cfe36f64fb422eb5614d05fbed9f9cbf1e393755ba863f"
+        },
+        "before_sha256": null,
+        "publication_authorization": "None. All inherited source, ingredient, and downstream holds remain; these bytes are a reviewable proposal only.",
+        "mapping_consequence": "Generate and review synchronized YAML/SSSOM at integration; never replace a form with its parent. No downstream rebuild is included."
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:3f81e2e3f6f257d163cf9d1469ac285027572847f6889300ff50f6e3f4b90253",
+        "case_input_sha256": "60da57a05dbc82d817b0b9439d2f1f67a491c52bc9b10bfbc61457e98d5a033d",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Zinc",
+          "source_label": "Zinc",
+          "raw_source_label": "Zinc"
+        },
+        "occurrence_ids": [
+          "CM_OCC:07b63a088a12f6c68c826248c9b90704667d70bed35a3ff9af9a77300d50bc8c",
+          "CM_OCC:d66e3c695983f9a6e9cf7a26e440ccb6dd35445b485c90e27f4d94df14f2a554"
+        ],
+        "disposition": "new_distinct_ingredient_proposal",
+        "reasoning": "MediaDB compound38 explicitly gives BiGG zn2, ChEBI29105 and alternate names Zn2+ and Zn(II); its two linked TAP recipes report 0.0765 mM Zinc. OLS CHEBI:29105 verifies zinc(2+). This supports an ion-level source concept, not metallic zinc or a particular zinc salt. A proposed zinc(2+) record records Zinc only in source-scoped notes, not as an unrestricted synonym.",
+        "applicability": "All 2 original occurrences were reviewed in their complete frozen recipe contexts. Evidence applies to the exact preserved source label 'Zinc'; source component, stock, salt, hydration and charge scopes are interpreted only as stated in the case reasoning. No inherited hold or downstream identity authorization is removed.",
+        "evidence_ids": [
+          "a-case-42-input",
+          "a-case-42-occ-00",
+          "a-case-42-occ-01",
+          "a-primary-mediadb-zinc",
+          "a-mediadb-raw-compounds",
+          "a-ontology-29105",
+          "a-new-owner-duplicate-check"
+        ],
+        "proposal_ids": [
+          "a-proposal-zinc-2plus"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        }
+      },
+      "archived_payload": {
+        "root": "artifact",
+        "path": "a/review-revisions/withdrawn/Zinc_2plus.yaml",
+        "sha256": "ead8968c266897a5b5cfe36f64fb422eb5614d05fbed9f9cbf1e393755ba863f"
+      },
+      "status": "withdrawn_not_actionable",
+      "reviewer_reference": "Root supplied-form challenge and independent B source re-review,2026-11-08; source molecules are not sufficient proof of historical supplied reagent.",
+      "withdrawal_reason": "MediaDB compound38 explicitly represents Zinc as BiGGzn2, CHEBI29105, Zn2+/Zn(II), and the two complete TAP recipes are expressed as ionic nutrient components. This establishes the source database nutrient concept, not a physically supplied isolated zinc ion, metallic zinc, zinc salt or chelate. Original Boyle/Morgan2009 culture methods state TAP for heterotrophic/mixotrophic growth and similar medium without acetic acid for autotrophy, citing Harris1989; the article section does not specify the zinc reagent. The prior Zn2+ owner draft did preserve this conceptual distinction, but it is withdrawn from actionable ingredient proposals because the historical supplied-form bridge remains unestablished. Retain all existing ionic source identifiers and both occurrences; do not reconstruct a salt from the nutrient count or generic TAP conventions."
+    }
+  ],
+  "maintained_data_changed": false
+}

@@ -1,0 +1,248 @@
+{
+  "baseline_outcome": "current_source_placeholder_preserved",
+  "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+  "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+  "original_kg_entry": {
+    "candidate_id": "ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+    "category": "biolink:ChemicalEntity",
+    "consumed_name_hits": [
+      {
+        "candidate_field": "source_label",
+        "disposition": "WITHHOLD",
+        "matched_field": "other",
+        "matched_label": "Peptones",
+        "review_dispositions": [
+          {
+            "disposition": "WITHHOLD",
+            "evidence_key": "2241",
+            "object_id": "MICRO:0000178",
+            "owner_record": "data/ingredients/mapped/Peptone.yaml",
+            "owner_record_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+            "predicate_id": "skos:exactMatch",
+            "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+            "review_reason": "Preparation/concentration/instruction tokens remain in the synonym channel and need individual same-subject review: Peptone (0.01 %. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: PROTEIN_SOURCE is provisional and final other exports truncated concentration text.",
+            "row_sha256": "be615fd181734935699620b572ac9a24f73fcfc74101874cfa6e9aae2ffc6018",
+            "source_position": "2241",
+            "subject_id": "MIM:Peptone"
+          }
+        ],
+        "row": {
+          "comment": "",
+          "confidence": "0.99",
+          "mapping_date": "2026-08-27",
+          "mapping_justification": "semapv:LexicalMatching",
+          "object_id": "MICRO:0000178",
+          "object_label": "peptone",
+          "object_source": "obo:micro.owl",
+          "other": "Peptones|Peptone (0.01 %",
+          "predicate_id": "skos:exactMatch",
+          "source": "MIM:MICRO via OLS search|MIM:curator=refresh_occurrence_statistics",
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+        },
+        "row_sha256": "be615fd181734935699620b572ac9a24f73fcfc74101874cfa6e9aae2ffc6018"
+      },
+      {
+        "candidate_field": "raw_source_label",
+        "disposition": "WITHHOLD",
+        "matched_field": "other",
+        "matched_label": "Peptones",
+        "review_dispositions": [
+          {
+            "disposition": "WITHHOLD",
+            "evidence_key": "2241",
+            "object_id": "MICRO:0000178",
+            "owner_record": "data/ingredients/mapped/Peptone.yaml",
+            "owner_record_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+            "predicate_id": "skos:exactMatch",
+            "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+            "review_reason": "Preparation/concentration/instruction tokens remain in the synonym channel and need individual same-subject review: Peptone (0.01 %. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: PROTEIN_SOURCE is provisional and final other exports truncated concentration text.",
+            "row_sha256": "be615fd181734935699620b572ac9a24f73fcfc74101874cfa6e9aae2ffc6018",
+            "source_position": "2241",
+            "subject_id": "MIM:Peptone"
+          }
+        ],
+        "row": {
+          "comment": "",
+          "confidence": "0.99",
+          "mapping_date": "2026-08-27",
+          "mapping_justification": "semapv:LexicalMatching",
+          "object_id": "MICRO:0000178",
+          "object_label": "peptone",
+          "object_source": "obo:micro.owl",
+          "other": "Peptones|Peptone (0.01 %",
+          "predicate_id": "skos:exactMatch",
+          "source": "MIM:MICRO via OLS search|MIM:curator=refresh_occurrence_statistics",
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+        },
+        "row_sha256": "be615fd181734935699620b572ac9a24f73fcfc74101874cfa6e9aae2ffc6018"
+      }
+    ],
+    "downstream_holds": [
+      {
+        "row": {
+          "agent_type": "manual_agent",
+          "curation_rationale": "Records 19576/14009 support unspecified protein-digest material; no mammalian origin established, so MICRO:0000178 is not an exact target; broader classification requires an explicit nonidentity route. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+          "disposition": "reported_undefined_protein_digest",
+          "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm00716|https://purl.obolibrary.org/obo/MICRO_0000178|https://purl.obolibrary.org/obo/MICRO_0000172",
+          "identity_approved": "false",
+          "identity_status": "unresolved",
+          "knowledge_level": "knowledge_assertion",
+          "object_curie": "kgmicrobe.compound:peptones",
+          "predicate": "biolink:consumes",
+          "primary_knowledge_source": "infores:bergey-manual",
+          "raw_record_sha256": "718cc5791809b1e4ce981a911419818091ad614b895fdbcff4bad32ac1b551fc",
+          "relation": "RO:0002438",
+          "source_citation": "https://doi.org/10.1002/9781118960608.gbm00716",
+          "source_column": "Bergey_Substrates_for_end_products",
+          "source_literal": "peptones",
+          "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=14009",
+          "subject": "lpsn:785693",
+          "value_encoding": "backslash"
+        },
+        "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+      },
+      {
+        "row": {
+          "agent_type": "manual_agent",
+          "curation_rationale": "Records 19576/14009 support unspecified protein-digest material; no mammalian origin established, so MICRO:0000178 is not an exact target; broader classification requires an explicit nonidentity route. Chemical identity remains unresolved; this disposition neither redirects the existing object nor changes the source assertion.",
+          "disposition": "reported_undefined_protein_digest",
+          "evidence_uri": "https://doi.org/10.1002/9781118960608.gbm01250|https://purl.obolibrary.org/obo/MICRO_0000178|https://purl.obolibrary.org/obo/MICRO_0000172",
+          "identity_approved": "false",
+          "identity_status": "unresolved",
+          "knowledge_level": "knowledge_assertion",
+          "object_curie": "kgmicrobe.compound:peptones",
+          "predicate": "biolink:consumes",
+          "primary_knowledge_source": "infores:bergey-manual",
+          "raw_record_sha256": "dcf930a86894cbe628a398423af00b4025e641e604f96412479a8534ff75d62b",
+          "relation": "RO:0002438",
+          "source_citation": "https://doi.org/10.1002/9781118960608.gbm01250",
+          "source_column": "Bergey_Substrates_for_end_products",
+          "source_literal": "peptones",
+          "source_record": "sha256:0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95#record=19576",
+          "subject": "lpsn:785041",
+          "value_encoding": "backslash"
+        },
+        "table": "snapshots/mappings/canonical/microbedecoder_material_dispositions.tsv"
+      }
+    ],
+    "name_hits": [
+      {
+        "candidate_field": "source_label",
+        "kind": "synonym",
+        "label": "Peptones",
+        "owner": "data/ingredients/mapped/Peptone.yaml",
+        "resolving": true,
+        "synonym": {
+          "source": "microbedecoder",
+          "synonym_text": "Peptones",
+          "synonym_type": "RAW_TEXT"
+        },
+        "synonym_type": "RAW_TEXT"
+      },
+      {
+        "candidate_field": "raw_source_label",
+        "kind": "synonym",
+        "label": "Peptones",
+        "owner": "data/ingredients/mapped/Peptone.yaml",
+        "resolving": true,
+        "synonym": {
+          "source": "microbedecoder",
+          "synonym_text": "Peptones",
+          "synonym_type": "RAW_TEXT"
+        },
+        "synonym_type": "RAW_TEXT"
+      }
+    ],
+    "native_identity_target": "",
+    "native_queue_state": "NATIVE_COMPOUND_PLACEHOLDER",
+    "occurrences": 2,
+    "occurrences_definition": "native per-run placeholder occurrences; helper threshold0",
+    "owners": [
+      {
+        "identifier": "MICRO:0000178",
+        "mapping_status": "MAPPED",
+        "native_review_rows": [
+          {
+            "decision": {
+              "disposition": "WITHHOLD",
+              "evidence_key": "2241",
+              "owner_record": "data/ingredients/mapped/Peptone.yaml",
+              "review_evidence": "reports/sssom_completion_20260921/mapping-evidence.json",
+              "review_reason": "Preparation/concentration/instruction tokens remain in the synonym channel and need individual same-subject review: Peptone (0.01 %. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: PROTEIN_SOURCE is provisional and final other exports truncated concentration text.",
+              "row_sha256": "be615fd181734935699620b572ac9a24f73fcfc74101874cfa6e9aae2ffc6018",
+              "source_position": 2241
+            },
+            "row": {
+              "comment": "",
+              "confidence": "0.99",
+              "mapping_date": "2026-08-27",
+              "mapping_justification": "semapv:LexicalMatching",
+              "object_id": "MICRO:0000178",
+              "object_label": "peptone",
+              "object_source": "obo:micro.owl",
+              "other": "Peptones|Peptone (0.01 %",
+              "predicate_id": "skos:exactMatch",
+              "source": "MIM:MICRO via OLS search|MIM:curator=refresh_occurrence_statistics",
+              "subject_id": "MIM:Peptone",
+              "subject_label": "Peptone",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            }
+          }
+        ],
+        "ontology_mapping": {
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "notes": "Auto-created from foodon_pass; label-exact (micro)",
+              "source": "MICRO via OLS search"
+            }
+          ],
+          "mapping_quality": "EXACT_MATCH",
+          "ontology_id": "MICRO:0000178",
+          "ontology_label": "peptone",
+          "ontology_source": "MICRO"
+        },
+        "path": "data/ingredients/mapped/Peptone.yaml",
+        "preferred_term": "Peptone",
+        "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "subject_id": "MIM:Peptone"
+      }
+    ],
+    "raw_label_provenance": "native unmapped_labels.tsv label, not a new source normalization",
+    "raw_source_label": "peptones",
+    "resolving_owner_paths": [
+      "data/ingredients/mapped/Peptone.yaml"
+    ],
+    "scientific_identity_approved_by_reconciliation": false,
+    "source": "microbedecoder",
+    "source_columns": "bergey:substrates",
+    "source_id": "kgmicrobe.compound:peptones",
+    "source_label": "peptones",
+    "source_record": {
+      "category": "biolink:ChemicalEntity",
+      "curator_notes": "",
+      "label": "peptones",
+      "mapping_status": "UNMAPPED",
+      "occurrences": "2",
+      "placeholder_curie": "kgmicrobe.compound:peptones",
+      "source_columns": "bergey:substrates",
+      "target_curie": "",
+      "target_label": ""
+    },
+    "triage_flags": [
+      "DOWNSTREAM_MATERIAL_HOLD",
+      "MATCHED_OWNER_HAS_WITHHELD_MAPPINGS",
+      "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+    ]
+  },
+  "prior_dependency": "PR1158 candidate baseline, not merged",
+  "raw_source_label": "peptones",
+  "source": "microbedecoder",
+  "source_case_id": "kgmicrobe.compound:peptones",
+  "source_identity_claimed": false,
+  "source_label": "peptones"
+}

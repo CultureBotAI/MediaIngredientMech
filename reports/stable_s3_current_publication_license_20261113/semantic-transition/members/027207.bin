@@ -1,0 +1,728 @@
+{
+  "schema_version": 1,
+  "state": "PRE_PUBLICATION_METHOD_FINDINGS_NOT_NATIVE_APPROVAL",
+  "reviewer": "Codex /root/seven_cas_current_primary",
+  "head": "d6053822669d38d3b5dced6173a811948ec5c900",
+  "finished_at": "2026-11-12T17:18:54.711341+00:00",
+  "source_inputs": [
+    {
+      "path": ".temp/cumulative-source-publication-inspect-s2-v1/UNASSESSED-SELECTION.json",
+      "sha256": "f22db186c88fe5e558fa3b8bbcce3331a3b27991fcc36ac25d5204e31570b007"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "ba63481d6d61e011cdc1ae02885c3cf239de5d5932162003165126c0141926d3"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "77a57aaaa1a968dec077b13851b28350701b0952d672417f26e514bebfd0f392"
+    },
+    {
+      "path": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/source-records.json",
+      "sha256": "93777a551761d68f52b542798c9ddbb6286f1190924944ad3a39e4e3ac1068f9"
+    },
+    {
+      "path": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+      "sha256": "e4bd4d79f81294606439007d1c8d6be56c61f41b0adfdb26f727cf1264e5a157"
+    },
+    {
+      "path": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/fda-gsrs.json",
+      "sha256": "157f6fee0e7131f8bee16c695650405f87b6583add87dc6f576531c8ffe38057"
+    },
+    {
+      "path": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/native-authorities.json",
+      "sha256": "af3b0fc5ef0200eff82694d1811b9444b56f1751a2e5b956e0edf50a78afc76e"
+    },
+    {
+      "path": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/pubchem-structures.json",
+      "sha256": "f75a76d5fff99f4ec9ff1d15702badaa393d483845d97624628d0bf9a277c7c5"
+    },
+    {
+      "path": ".temp/publication-chebi-capture-s2-v1/capture/facts.json",
+      "sha256": "bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-cas-disposition-claw-ci-worktree/scripts/build_mim_ingredient_sssom.py",
+      "sha256": "609cc565712f3b1cd643b98841b59a4c2ca2d3171fdf45a185225229b6018510"
+    }
+  ],
+  "findings": [
+    {
+      "entry_id": "row-000300",
+      "subject_id": "MIM:0000264",
+      "status": "CONFIRMED_BOUNDED_METHOD_METADATA_DEFECT",
+      "severity": "minor",
+      "severity_basis": "Bounded method/grade provenance defect; no newly alleged wrong chemical identity. It prevents calling this exact full publication row fully reviewed until resolved.",
+      "owner": {
+        "path": "data/ingredients/mapped/Acriflavine.yaml",
+        "sha256": "a3ea2a7c241a05e65aa8b8d08d1697be424e18d0a69c8d51ec8b90c09eb269bb"
+      },
+      "complete_owner": {
+        "identifier": "NCIT:C76253",
+        "preferred_term": "Acriflavine",
+        "ontology_mapping": {
+          "ontology_id": "NCIT:C76253",
+          "ontology_label": "Acriflavine",
+          "ontology_source": "NCIT",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Imported from CultureBotHT. CAS-RN 8048-52-0 present, but no CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds the term."
+            },
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "NCIT via OLS (label-exact)",
+              "notes": "Historical source assertion; grounding superseded by #762/#753 review: Parent class identified via label-exact; matched_via='Acriflavine'"
+            },
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md",
+              "notes": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted."
+            }
+          ]
+        },
+        "synonyms": [],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:8048-52-0 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.040076+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:51:41.741053+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=C27H25ClN6; smiles=C[N+]1=C2C=C(C=CC2=CC3=C1C=C(C=C3)N)N.C1=CC(=CC2=N; inchi=InChI=1S/C14H13N3.C13H11N3.ClH/c1-17-13-7-11(15)4-",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.285009+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:39:25.235044+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_NCIT",
+            "changes": "set ontology_mapping parent=NCIT:C76253 (label-exact)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-24T07:10:47.685884+00:00",
+            "curator": "kgmicrobe_identity_review_20260924",
+            "action": "CORRECTED",
+            "changes": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0000264; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "65589-70-0",
+          "data_source": "reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md; original source claim preserved in source-records.json",
+          "retrieval_date": "2026-09-24T00:00:00Z",
+          "molecular_formula": "C27H25ClN6",
+          "smiles": "C[N+]1=C2C=C(C=CC2=CC3=C1C=C(C=C3)N)N.C1=CC(=CC2=NC3=C(C=CC(=C3)N)C=C21)N.[Cl-]",
+          "inchi": "InChI=1S/C14H13N3.C13H11N3.ClH/c1-17-13-7-11(15)4-2-9(13)6-10-3-5-12(16)8-14(10)17;14-10-3-1-8-5-9-2-4-11(15)7-13(9)16-12(8)6-10;/h2-8H,1H3,(H3,15,16);1-7H,14-15H2;1H",
+          "pubchem_cid": 443101
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "notes": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+        "mim_id": "MIM:0000264",
+        "legacy_identifiers": [
+          "MIM:Acriflavine",
+          "NCIT:C76253"
+        ]
+      },
+      "exact_selection_entry": {
+        "entry_id": "row-000300",
+        "candidate_position": 300,
+        "owner": "data/ingredients/mapped/Acriflavine.yaml",
+        "owner_sha256": "a3ea2a7c241a05e65aa8b8d08d1697be424e18d0a69c8d51ec8b90c09eb269bb",
+        "before_rows": [
+          {
+            "position": 297,
+            "row": {
+              "subject_id": "MIM:0000264",
+              "subject_label": "Acriflavine",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "NCIT:C76253",
+              "object_label": "Acriflavine",
+              "object_source": "obo:ncit.owl",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924",
+              "mapping_date": "2026-09-24",
+              "confidence": "0.99",
+              "comment": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+              "other": "",
+              "validation_method": "manual:kgmicrobe_identity_review_20260924|IDENTITY_REVIEW|2026-09-24"
+            }
+          }
+        ],
+        "candidate_row": {
+          "subject_id": "MIM:0000264",
+          "subject_label": "Acriflavine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "NCIT:C76253",
+          "object_label": "Acriflavine",
+          "object_source": "obo:ncit.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "",
+          "other": "CAS:65589-70-0",
+          "validation_method": ""
+        },
+        "proposed_row": {
+          "subject_id": "MIM:0000264",
+          "subject_label": "Acriflavine",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "NCIT:C76253",
+          "object_label": "Acriflavine",
+          "object_source": "obo:ncit.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms|MIM:curator=kgmicrobe_identity_review_20260924|MIM:reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md|MIM:curator=codex",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "FDA GSRS 1T3A50395T establishes the mixture and NCIT identity. Use its PRIMARY CAS 65589-70-0. The original 8048-52-0 is SUPERSEDED in that FDA record; retain source-qualified history, not an active CAS synonym or exact mapping. No global CAS withdrawal is asserted.",
+          "other": "CAS:65589-70-0",
+          "validation_method": ""
+        },
+        "disposition": null,
+        "reason": null
+      },
+      "reason": "The current owner explicitly marks both prior source assertions, including NCIT label-exact parent discovery, as grounding superseded by the identity review. That review establishes the exact mixture through FDA GSRS component and PRIMARY versus SUPERSEDED registry-code adjudication, concordant NCIT xrefs and retained multicomponent chemistry. The original archive shows a CAS primary and a NARROW_MATCH parent; the present exact identity is not established by the bare label coincidence alone. Preserve original lexical discovery as historical provenance, while recording the decisive reviewed route for the current grounding. This is specific to the explicit supersession and source-identity correction, not a blanket later-manual-review rule.",
+      "minimal_source_fix": {
+        "field": "ontology_mapping.mapping_quality",
+        "from": "EXACT_MATCH",
+        "to": "MANUAL_CURATION",
+        "append_history": true,
+        "preserve_identity_predicate": true,
+        "regenerate_required": true,
+        "fresh_current_review_required": true
+      },
+      "limitations": "Acriflavine chemistry-field and other inherited scientific holds remain independent; this method recommendation does not clear them. FDA source-qualified SUPERSEDED is not a global CAS withdrawal. The same ontology target was originally found lexically; that discovery must remain in evidence/history even after the current method is corrected."
+    },
+    {
+      "entry_id": "row-000409",
+      "subject_id": "MIM:0000361",
+      "status": "CONFIRMED_GROUNDING_GRADE_DEFECT",
+      "severity": "minor",
+      "severity_basis": "Bounded method/grade provenance defect; no newly alleged wrong chemical identity. It prevents calling this exact full publication row fully reviewed until resolved.",
+      "owner": {
+        "path": "data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml",
+        "sha256": "b208d1c432744d274f4405e17f9c4cede4fdd56f31a63edb8046880a2865ba28"
+      },
+      "complete_owner": {
+        "identifier": "CHEBI:2769",
+        "preferred_term": "Apigenin Dimethyl Ether",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:2769",
+          "ontology_label": "apigenin 7,4'-dimethyl ether",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601",
+              "notes": "Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular formula, structure and CID from ChEBI and PubChem."
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "Methoxymethane",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "chebi_synonym_review"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:51:33.117170+00:00",
+            "curator": "audit_add_remaining_culturebotht",
+            "action": "CREATED_FROM_CAS_FALLBACK",
+            "changes": "Created with cas:5728-44-9 as primary identifier; no CHEBI entry exists for this compound.",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:32.219979+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T02:51:54.587899+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
+            "changes": "molecular_formula=C14H9NO2; smiles=C1=CC=C(C(=C1)C#N)C2=CC=C(C=C2)C(=O)O; inchi=InChI=1S/C14H9NO2/c15-9-12-3-1-2-4-13(12)10-5-7-11",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.531432+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T04:40:32.156808+00:00",
+            "curator": "backfill_parent_terms",
+            "action": "BACKFILL_PARENT_CHEBI",
+            "changes": "set ontology_mapping parent=CHEBI:28887 (stem-substring)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "CORRECTED",
+            "changes": "Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular formula, structure and CID from ChEBI and PubChem. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601",
+            "previous_status": "MAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0000361; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "5128-44-9",
+          "molecular_formula": "C17H14O5",
+          "smiles": "COc1ccc(-c2cc(=O)c3c(O)cc(OC)cc3o2)cc1",
+          "inchi": "InChI=1S/C17H14O5/c1-20-11-5-3-10(4-6-11)15-9-14(19)17-13(18)7-12(21-2)8-16(17)22-15/h3-9,18H,1-2H3",
+          "pubchem_cid": 5281601,
+          "data_source": "https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601",
+          "retrieval_date": "2026-09-21T21:33:25.379198+00:00"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "mim_id": "MIM:0000361",
+        "legacy_identifiers": [
+          "MIM:Apigenin_Dimethyl_Ether",
+          "CHEBI:2769"
+        ]
+      },
+      "exact_selection_entry": {
+        "entry_id": "row-000409",
+        "candidate_position": 409,
+        "owner": "data/ingredients/mapped/Apigenin_Dimethyl_Ether.yaml",
+        "owner_sha256": "b208d1c432744d274f4405e17f9c4cede4fdd56f31a63edb8046880a2865ba28",
+        "before_rows": [
+          {
+            "position": 405,
+            "row": {
+              "subject_id": "MIM:0000361",
+              "subject_label": "Apigenin Dimethyl Ether",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "CHEBI:2769",
+              "object_label": "apigenin 7,4'-dimethyl ether",
+              "object_source": "obo:chebi.owl",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "source": "MIM:curator=mim_semantic_review_20260921",
+              "mapping_date": "2026-09-21",
+              "confidence": "0.99",
+              "comment": "Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular formula, structure and CID from ChEBI and PubChem. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601",
+              "other": "CAS:5128-44-9",
+              "validation_method": "manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"
+            }
+          }
+        ],
+        "candidate_row": {
+          "subject_id": "MIM:0000361",
+          "subject_label": "Apigenin Dimethyl Ether",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:2769",
+          "object_label": "apigenin 7,4'-dimethyl ether",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "",
+          "other": "CAS:5128-44-9",
+          "validation_method": ""
+        },
+        "proposed_row": {
+          "subject_id": "MIM:0000361",
+          "subject_label": "Apigenin Dimethyl Ether",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:2769",
+          "object_label": "apigenin 7,4'-dimethyl ether",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:curator=mim_semantic_review_20260921|MIM:https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Resolve the stated Apigenin Dimethyl Ether name to the explicit ChEBI/KEGG synonym of apigenin 7,4-prime-dimethyl ether. Correct CAS 5128-44-9 differs from imported 5728-44-9, which produced unrelated benzoic-acid chemistry. Withdraw methoxymethane CHEBI:28887 and reject its synonym; replace the wrong molecular formula, structure and CID from ChEBI and PubChem. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:2769 ; https://pubchem.ncbi.nlm.nih.gov/compound/5281601",
+          "other": "CAS:5128-44-9",
+          "validation_method": ""
+        },
+        "disposition": null,
+        "reason": null
+      },
+      "reason": "Current complete evidence/history explicitly establishes CHEBI:2769 through the ChEBI/KEGG synonym Apigenin dimethyl ether after withdrawing the different CHEBI:28887 stem-substring target and erroneous imported CAS. Captured ChEBI label is apigenin 7,4-prime-dimethyl ether and the recorded related synonym is Apigenin dimethylether. MAPPING_SEMANTICS section 0 prescribes SYNONYM_MATCH for a unique ontology-synonym route, not primary-label EXACT_MATCH. The CAS correction was consequent to that identity review; there is no recorded explicit CAS-to-ontology lookup establishing this target.",
+      "minimal_source_fix": {
+        "field": "ontology_mapping.mapping_quality",
+        "from": "EXACT_MATCH",
+        "to": "SYNONYM_MATCH",
+        "append_history": true,
+        "preserve_identity_predicate": true,
+        "regenerate_required": true,
+        "fresh_current_review_required": true
+      },
+      "limitations": "Do not regrade to CAS_RN_LOOKUP merely because the corrected CAS is now a target xref. A local selected-target ChEBI capture is not a claim of exhaustive present-upstream uniqueness; the pre-existing explicit reviewed resolution and current target synonym are the evidence. Keep the existing exact identity predicate, structures, rejected Methoxymethane, stable ID and all unrelated holds unchanged."
+    },
+    {
+      "entry_id": "row-002139",
+      "subject_id": "MIM:0001903",
+      "status": "MANDATORY_MANUAL_REGRADING_NOT_JUSTIFIED",
+      "severity": "informational",
+      "owner": {
+        "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+        "sha256": "0a9fe5ec673e933bfa61d8b9fe201f0a4b0ec0c0f4858edd4036509e8de74208"
+      },
+      "complete_owner": {
+        "identifier": "CHEBI:132766",
+        "preferred_term": "Nitrilotriacetic acid, trisodium salt",
+        "mapping_status": "MAPPED",
+        "ingredient_type": "SINGLE_INGREDIENT",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:132766",
+          "ontology_label": "sodium nitrilotriacetate",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "EXACT_MATCH",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.ebi.ac.uk/chebi/CHEBI:132766",
+              "notes": "ChEBI explicitly specifies 3:1 sodium:nitrilotriacetate; restored after a disodium-stock/trisodium-substance merge."
+            }
+          ]
+        },
+        "chemical_properties": {
+          "cas_rn": "5064-31-3",
+          "data_source": "OAK/CHEBI xref",
+          "retrieval_date": "2026-04-19T07:39:40.088267+00:00",
+          "molecular_formula": "C6H6NO6.3Na",
+          "inchi": "InChI=1S/C6H9NO6.3Na/c8-4(9)1-7(2-5(10)11)3-6(12)13;;;/h1-3H2,(H,8,9)(H,10,11)(H,12,13);;;/q;3*+1/p-3",
+          "smiles": "O=C([O-])CN(CC(=O)[O-])CC(=O)[O-].[Na+].[Na+].[Na+]"
+        },
+        "synonyms": [
+          {
+            "synonym_text": "N,N-Bis(carboxymethyl)glycine, trisodium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "NTA Trisodium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Nitrilotriacetic acid sodium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Nitrilotriacetic acid, trisodium salt",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Trisodium N,N-bis(carboxymethyl)glycinate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Trisodium NTA",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Trisodium aminotriacetate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "Trisodium nitrilotriacetate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          },
+          {
+            "synonym_text": "trisodium 2,2',2''-nitrilotriacetate",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          }
+        ],
+        "occurrence_statistics": {
+          "total_occurrences": 1,
+          "media_count": 1
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-09-21T21:33:25.379198+00:00",
+            "curator": "mim_semantic_review_20260921",
+            "action": "RESTORED_DISTINCT_SUBSTANCE",
+            "changes": "Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source occurrence rows explicitly name one of each. Restore the trisodium substance as its own record, carrying its chemistry and valid synonyms; withdraw those synonyms on the stock. The stock is a local preparation with a named disodium solute, no pure-substance formula or CAS. Solvent and complete recipe are not established. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:132766 ; https://www.ncbi.nlm.nih.gov/books/NBK519184/ ; ../CultureMech/output/ingredient_occurrences.tsv",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "llm_model": "gpt-6"
+          },
+          {
+            "timestamp": "2026-11-08T22:01:42+00:00",
+            "curator": "codex",
+            "action": "ASSIGNED_MIM_ID",
+            "changes": "#1265: assigned permanent MIM:0001903; retained mapping identifier and legacy aliases.",
+            "llm_assisted": true
+          }
+        ],
+        "mim_id": "MIM:0001903",
+        "legacy_identifiers": [
+          "MIM:Nitrilotriacetic_Acid_Trisodium_Salt",
+          "CHEBI:132766"
+        ]
+      },
+      "exact_selection_entry": {
+        "entry_id": "row-002139",
+        "candidate_position": 2139,
+        "owner": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+        "owner_sha256": "0a9fe5ec673e933bfa61d8b9fe201f0a4b0ec0c0f4858edd4036509e8de74208",
+        "before_rows": [
+          {
+            "position": 2997,
+            "row": {
+              "subject_id": "MIM:0001903",
+              "subject_label": "Nitrilotriacetic acid, trisodium salt",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "CHEBI:132766",
+              "object_label": "sodium nitrilotriacetate",
+              "object_source": "obo:chebi.owl",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "source": "MIM:curator=mim_semantic_review_20260921",
+              "mapping_date": "2026-09-21",
+              "confidence": "0.99",
+              "comment": "Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source occurrence rows explicitly name one of each. Restore the trisodium substance as its own record, carrying its chemistry and valid synonyms; withdraw those synonyms on the stock. The stock is a local preparation with a named disodium solute, no pure-substance formula or CAS. Solvent and complete recipe are not established. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:132766 ; https://www.ncbi.nlm.nih.gov/books/NBK519184/ ; ../CultureMech/output/ingredient_occurrences.tsv",
+              "other": "N,N-Bis(carboxymethyl)glycine, trisodium salt|Nitrilotriacetic acid sodium salt|Nitrilotriacetic acid, trisodium salt|NTA Trisodium salt|trisodium 2,2',2''-nitrilotriacetate|Trisodium aminotriacetate|Trisodium N,N-bis(carboxymethyl)glycinate|Trisodium nitrilotriacetate|Trisodium NTA|CAS:5064-31-3",
+              "validation_method": "manual:semantic_identity_review|IDENTITY_REVIEWED|2026-09-21"
+            }
+          }
+        ],
+        "candidate_row": {
+          "subject_id": "MIM:0001903",
+          "subject_label": "Nitrilotriacetic acid, trisodium salt",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:132766",
+          "object_label": "sodium nitrilotriacetate",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:https://www.ebi.ac.uk/chebi/CHEBI:132766|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "",
+          "other": "N,N-Bis(carboxymethyl)glycine, trisodium salt|NTA Trisodium salt|Nitrilotriacetic acid sodium salt|Trisodium N,N-bis(carboxymethyl)glycinate|Trisodium NTA|Trisodium aminotriacetate|Trisodium nitrilotriacetate|trisodium 2,2',2''-nitrilotriacetate|CAS:5064-31-3",
+          "validation_method": ""
+        },
+        "proposed_row": {
+          "subject_id": "MIM:0001903",
+          "subject_label": "Nitrilotriacetic acid, trisodium salt",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "CHEBI:132766",
+          "object_label": "sodium nitrilotriacetate",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:curator=mim_semantic_review_20260921|MIM:https://www.ebi.ac.uk/chebi/CHEBI:132766|MIM:curator=codex|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Separate the 0.5 M disodium stock from trisodium nitrilotriacetate. Source occurrence rows explicitly name one of each. Restore the trisodium substance as its own record, carrying its chemistry and valid synonyms; withdraw those synonyms on the stock. The stock is a local preparation with a named disodium solute, no pure-substance formula or CAS. Solvent and complete recipe are not established. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:132766 ; https://www.ncbi.nlm.nih.gov/books/NBK519184/ ; ../CultureMech/output/ingredient_occurrences.tsv",
+          "other": "N,N-Bis(carboxymethyl)glycine, trisodium salt|NTA Trisodium salt|Nitrilotriacetic acid sodium salt|Trisodium N,N-bis(carboxymethyl)glycinate|Trisodium NTA|Trisodium aminotriacetate|Trisodium nitrilotriacetate|trisodium 2,2',2''-nitrilotriacetate|CAS:5064-31-3",
+          "validation_method": ""
+        },
+        "disposition": null,
+        "reason": null
+      },
+      "historical_source": {
+        "commit": "9b77fb6e2454c066b5eb157b1972288632f6fba6",
+        "blob": "cdb9d1d0109e205d7f02a54a2048ad9e9b0b1013",
+        "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+        "sha256": "1459133180470fe082e8d3be03c885a6aa09cd974aa79e5c0182b39a3ce4994c",
+        "exact_capture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-primary-method-provenance-review-v1/NTA-original-owner.yaml"
+      },
+      "reason": "The exact pre-merge owner records CHEBI:132766 and EXACT_MATCH with CultureMech quality=DIRECT_MATCH before later CAS annotations. Later manual separation restores that same trisodium substance; a shortened restored history cannot establish that all earlier lexical provenance disappeared. Withdraw the restoration-only mandatory-MANUAL_CURATION argument; no source fix follows from this concern. Preserve separate disodium-stock scope and every inherited hold.",
+      "prior_concern": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/s2-publication-skeptic-current-scrutiny-v2/method-provenance-nta-finding.json",
+        "sha256": "ea20ed0b54fd78fc9ea448984d76e8536d9c117623ce81e98d28aecb0837727c"
+      }
+    }
+  ],
+  "evidence_copy_checks": [
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/ROWS.json",
+      "destination": ".temp/publication-chebi-capture-s2-v1/original-inputs/ROWS.json",
+      "sha256": "5451e99b3af9eac5c74c76c00efe90e7344cea1e6481648c6aab28d97838af15",
+      "bytes": 22581978,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/capture_chebi_database.py",
+      "destination": ".temp/publication-chebi-capture-s2-v1/original-inputs/capture_chebi_database.py",
+      "sha256": "8994fae12503d03898f8af14fbd6051d1cd6ff8512a6dccc9052cecb86d7b654",
+      "bytes": 4745,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/RECEIPT.json",
+      "destination": ".temp/publication-chebi-capture-s2-v1/capture/RECEIPT.json",
+      "sha256": "738a975f3191e8ad060f4f6c2a98b36959dedc7f363a2444887a80f6ce7565ae",
+      "bytes": 3352,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/facts.json",
+      "destination": ".temp/publication-chebi-capture-s2-v1/capture/facts.json",
+      "sha256": "bf81e2ade7155f293aa1b2f72c974e27cf6998d0bb36b0a779e760769ff33cf9",
+      "bytes": 72987431,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/ontology-metadata.json",
+      "destination": ".temp/publication-chebi-capture-s2-v1/capture/ontology-metadata.json",
+      "sha256": "649db8a675208cd9dfcfb601d280e24c334ef0323a589a62066e249f6aae6b47",
+      "bytes": 3134,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/prefixes.json",
+      "destination": ".temp/publication-chebi-capture-s2-v1/capture/prefixes.json",
+      "sha256": "9943ce1dc73c5c5d40d734b95d90b48f2204601cff922820288d3ce2761d1f01",
+      "bytes": 107777,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/actual-candidate-science-primary-v1/chebi-database-capture-v1/selected-targets.json",
+      "destination": ".temp/publication-chebi-capture-s2-v1/capture/selected-targets.json",
+      "sha256": "f8c7f3730bca344797ec7d08d7ac03c2e0c9e57441ccd3a5af8985506d63b76e",
+      "bytes": 32240,
+      "copy_receipt": {
+        "path": ".temp/publication-chebi-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "0a0c4d5d109af7d56714266c3c87173c8679355856ef05ea5921e8ad32de6365"
+      },
+      "actual_copier": "Codex /root",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/mediadive-1587.json",
+      "destination": ".temp/publication-cerium-capture-s2-v1/mediadive-1587.json",
+      "sha256": "b92df3f1aedce5ed217cba4602fca7b156946d04db6f0ca479069f51255c60ba",
+      "bytes": 584,
+      "copy_receipt": {
+        "path": ".temp/publication-cerium-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "a186e654cbefc8f0446360b3f410916ea55bf91026b7782bb889509d1e460001"
+      },
+      "actual_copier": "Codex /root/source_successor_prepared_technical_review",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/sigma-cerium.json",
+      "destination": ".temp/publication-cerium-capture-s2-v1/sigma-cerium.json",
+      "sha256": "ac546b35b48419fcefbe5d3571777c92d018bb0c50e75aea9ed8de3761ab2810",
+      "bytes": 13155,
+      "copy_receipt": {
+        "path": ".temp/publication-cerium-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "a186e654cbefc8f0446360b3f410916ea55bf91026b7782bb889509d1e460001"
+      },
+      "actual_copier": "Codex /root/source_successor_prepared_technical_review",
+      "verified_byte_equal": true
+    },
+    {
+      "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/c/captures/retrieval-log.json",
+      "destination": ".temp/publication-cerium-capture-s2-v1/retrieval-log.json",
+      "sha256": "9db1c3c2e641565fc1cc8c1b9cc1baca2882c8ab910c354c880996c09381892c",
+      "bytes": 25307,
+      "copy_receipt": {
+        "path": ".temp/publication-cerium-capture-s2-v1/COPY-RECEIPT.json",
+        "sha256": "a186e654cbefc8f0446360b3f410916ea55bf91026b7782bb889509d1e460001"
+      },
+      "actual_copier": "Codex /root/source_successor_prepared_technical_review",
+      "verified_byte_equal": true
+    }
+  ],
+  "other_cohort_state": "Ten other NCIT/FoodOn source/form-confirmation cases remain separately scrutinized; these findings do not authorize a blanket manual grade. Genuine retained lexical routes in Rifamycin SV, Polymyxin B and Na2hpo4 are not erased by later scope/alias review.",
+  "original_scope": {
+    "source_cases": 1879,
+    "origins": 1022,
+    "scientific_holds_preserved": true
+  },
+  "limits": [
+    "No current publication dispositions or approval authored.",
+    "No native review phase, source edit, Git mutation, validator/test rerun, provider acquisition or issue mutation performed.",
+    "Final publication review must bind the successor full payload after any native source correction; no inherited approval on changed bytes."
+  ]
+}

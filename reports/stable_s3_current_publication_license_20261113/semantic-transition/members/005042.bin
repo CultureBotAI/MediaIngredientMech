@@ -1,0 +1,217 @@
+id: CultureMech:007177
+name: ecoli_bl21_medium_park_et_al
+original_name: Ecoli bl21 medium; park et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Citrate
+  concentration:
+    value: '8.8485'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:cit'
+  term:
+    id: CHEBI:16947
+    label: citrate(3-)
+- preferred_term: beta-D-Glucose
+  concentration:
+    value: '27.753'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:15903
+    label: beta-D-glucose
+- preferred_term: Fe(III)dicitrate
+  concentration:
+    value: '0.24496'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:fe3dcit'
+- preferred_term: Boric acid
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  concentration:
+    value: '0.04852'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33118
+    label: boric acid
+- preferred_term: Sodium molybdate
+  concentration:
+    value: '0.10333'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75215
+    label: sodium molybdate (anhydrous)
+- preferred_term: Thiamine HCl
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  concentration:
+    value: '0.01491'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+- preferred_term: Potassium dihydrogen phosphate
+  concentration:
+    value: '97.7323'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '4.86874'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Cobalt chloride
+  concentration:
+    value: '0.019254'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:35696
+    label: cobalt dichloride
+- preferred_term: Manganese chloride
+  concentration:
+    value: '0.08875'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63041
+    label: manganese(II) chloride
+- preferred_term: Cupric chloride
+  concentration:
+    value: '0.008799'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:49553
+    label: copper(II) chloride
+- preferred_term: Ammonium phosphate
+  concentration:
+    value: '30.287'
+    unit: MILLIMOLAR
+- preferred_term: Sodium EDTA
+  concentration:
+    value: '0.02257'
+    unit: MILLIMOLAR
+- preferred_term: Zinc Acetate
+  concentration:
+    value: '0.03645'
+    unit: MILLIMOLAR
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:45.166875Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 277, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-03-13T06:19:46.601639Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007177'
+- timestamp: '2026-03-17T06:29:51.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:04.774438+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Ecoli bl21 medium; park et al" to "ecoli_bl21_medium_park_et_al"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:59.296413+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-20T19:01:43.517032+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-08-31T04:06:16.221557+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:277's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-10-13T22:34:41.350925+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATIONS_WITH_SCOPED_NOTES
+  notes: Added verified bibliography, raw/Markdown archive links, excerpts and qualified
+    scientific-name/NCBI taxonomy notes. Preserved prior recipe values and history.
+    Study differences, import discrepancies and unresolved strain/formulation scope
+    remain explicit; no new native growth or concentration assertion.
+  source: PMID:15459799
+media_term:
+  preferred_term: MediaDB Medium 277
+  term:
+    id: MEDIADB:277
+    label: Ecoli bl21 medium; park et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:15459799
+  title: Batch and fed-batch production of coenzyme Q10 in recombinant Escherichia
+    coli containing the decaprenyl diphosphate synthase gene from Gluconobacter suboxydans.
+  authors: Park YC; Kim SJ; Choi JH; Lee WH; Park KM; Kawamukai M; Ryu YW; Seo JH
+  year: 2005
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; source_access=archived_PubMed_abstract; owner=MEDIADB:277;
+    discovery_sourceID=70; source_url=https://doi.org/10.1007/s00253-004-1743-y; alternate_identifier=doi:10.1007/s00253-004-1743-y;
+    raw=references_cache/papers/PMID_15459799.xml; markdown=references_cache/papers/PMID_15459799.md;
+    PubMed abstract, gene-donor sentence; exact excerpt="ddsA gene coding for DPS
+    from Gluconobacter suboxydans". Reported organism=Escherichia coli (E. coli);
+    canonical scientific name=Escherichia coli; NCBITaxon:562; actual rank=species;
+    taxonomy_match=exact_species_not_strain; role=experimental species; local formulation
+    unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli BL21/pACDdsA; canonical scientific name=Escherichia
+    coli BL21; NCBITaxon:511693; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=experimental recombinant; BL21 node does not identify its plasmid-bearing
+    clone. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=511693&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Gluconobacter suboxydans; canonical scientific name=Gluconobacter
+    oxydans; NCBITaxon:442; actual rank=species; taxonomy_match=verified_synonym;
+    role=ddsA gene donor, not a demonstrated medium-growth target. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=442&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli KO229; canonical scientific name=Escherichia
+    coli; NCBITaxon:562; actual rank=species; taxonomy_match=parent_rank_only; role=secondary
+    MediaDB lead; exact node and experimental role unresolved. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    Reported organism=Escherichia coli BL21[pACYC184]; canonical scientific name=Escherichia
+    coli BL21; NCBITaxon:511693; actual rank=strain; taxonomy_match=parent_rank_only;
+    role=secondary control-strain lead; exact clone not verified. Lookup_on=2026-10-13;
+    https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=511693&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/osmotic-flux-20261013.xml; taxonomy_markdown=references_cache/papers/taxonomy/osmotic-flux-20261013.md.
+    NCBI lists Gluconobacter suboxydans as a synonym of Gluconobacter oxydans. Keep
+    batch and fed-batch outcomes separate: the abstract does not provide the basal
+    recipe, feed composition, antibiotics or strain-specific conditions. Local comparison:
+    Fourteen native entries include 27.753 mM beta-D-glucose, citrate, ferric dicitrate,
+    trace salts and generically named ammonium phosphate. The abstract cannot establish
+    whether this is the batch basal medium, fed-batch medium or feed. Inventory covers
+    inspected medium-relevant passages, not the whole paper or bibliography. Correction/retraction
+    coverage is limited to inspected metadata; bounded taxonomy misses do not prove
+    absence. Original ingredients, amounts, preparation, history and links are preserved,
+    not newly certified. No new native growth assertion, resolved variant or concentration
+    evidence.'

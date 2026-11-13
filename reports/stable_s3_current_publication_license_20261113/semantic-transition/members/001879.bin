@@ -1,0 +1,60 @@
+identifier: CHEBI:215310
+preferred_term: Neoantimycin
+ontology_mapping:
+  ontology_id: CHEBI:215310
+  ontology_label: Neoantimycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:neoantimycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:neoantimycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C36H46N2O12
+  smiles: CC[C@H](C)[C@@H]1OC(=O)C(C)(C)[C@@H](O)[C@@H](Cc2ccccc2)OC(=O)[C@H](C(C)C)OC(=O)[C@@H](NC(=O)c2cccc(NC=O)c2O)[C@H](C)OC1=O
+  inchi: InChI=1S/C36H46N2O12/c1-8-20(4)29-34(45)47-21(5)26(38-31(42)23-15-12-16-24(27(23)40)37-18-39)32(43)49-28(19(2)3)33(44)48-25(17-22-13-10-9-11-14-22)30(41)36(6,7)35(46)50-29/h9-16,18-21,25-26,28-30,40-41H,8,17H2,1-7H3,(H,37,39)(H,38,42)/t20-,21-,25+,26-,28-,29-,30-/m0/s1
+  molecular_weight: 698.766
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:28:58.186833+00:00'

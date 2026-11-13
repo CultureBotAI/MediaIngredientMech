@@ -1,0 +1,58 @@
+identifier: CHEBI:234594
+preferred_term: Sodium iodoacetate
+ontology_mapping:
+  ontology_id: CHEBI:234594
+  ontology_label: Sodium iodoacetate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=305-53-3); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.279475+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.374010+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C2H2IO2.Na; inchi=InChI=1S/C2H3IO2.Na/c3-1-2(4)5;/h1H2,(H,4,5);/q;+1;
+    smiles=O=C([O-])CI.[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.412126+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002320; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 305-53-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C2H2IO2.Na
+  inchi: InChI=1S/C2H3IO2.Na/c3-1-2(4)5;/h1H2,(H,4,5);/q;+1/p-1
+  smiles: O=C([O-])CI.[Na+]
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002320
+legacy_identifiers:
+- MIM:Sodium_Iodoacetate
+- CHEBI:234594

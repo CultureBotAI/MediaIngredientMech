@@ -1,0 +1,67 @@
+identifier: NCIT:C166659
+preferred_term: Carbomycin
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:carbomycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:02:12.084870+00:00'
+  curator: microbedecoder-import-review
+  action: DEMOTED_TO_UNMAPPED
+  changes: removed ontology_mapping CHEBI:756054
+  notes: CHEBI:756054 exceeds the CHEBI accession ceiling and does not resolve; validate-products
+    reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted CHEBI:756054 -> NCIT:C166659 "Carbomycin" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: curator_ruling_2026_08_07
+  action: CURATOR_RULING
+  changes: Ruling recorded; no mapping changed. NCIT:C166659 'Carbomycin' is an exact
+    label match and resolves locally.
+  new_status: MAPPED
+  llm_assisted: false
+  notes: 'Curator ruling (#207): this grounding is FINAL, not a stopgap. CHEBI:756054
+    is a valid live ChEBI accession that is absent from the local semsql build (252
+    vs ChEBI 253), and it does exist in kg-microbe''s own ChEBI — so a future sync
+    against the consumer''s ontology may look like an invitation to restore it. It
+    is not. A term this repo can resolve and label-check is the better published mapping,
+    and that judgement does not expire when the build catches up. Do not re-ground
+    to CHEBI:756054 without a new curator decision.'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000587; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: NCIT:C166659
+  ontology_label: Carbomycin
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Exact NCIT label match; CHEBI:756054 is live upstream but absent from
+      the local build (#249, #213).'
+mim_id: MIM:0000587
+legacy_identifiers:
+- MIM:Carbomycin
+- NCIT:C166659

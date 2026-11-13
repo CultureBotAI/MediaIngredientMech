@@ -1,0 +1,122 @@
+identifier: kgmicrobe.ingredient:horikoshi_i_medium
+preferred_term: Horikoshi-I medium (JCM 181)
+synonyms:
+- synonym_text: Horikoshi-I medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1740); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Horikoshi-I medium/formulation and left unmapped pending recipe-level
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Horikoshi-I_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: | Recommend retaining as an unmapped named medium/formulation unless mapped to a source-specific
+    recipe entity; avoid unsupported exact ontology mapping and avoid generic parent as exact identity.
+    | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier promoted by a
+    mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:07.408483+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote source-defined JCM181 preparation and transcribe one-level inputs. JCM181 printed recipe
+    includes agar15g and a separately added100ml10%Na2CO3 stock; do not flatten stock to pure carbonate
+    or substitute the extra NaCl of receiving recipes345,406,409,1028. Amounts are source-batch inputs,
+    not an inferred measured final volume. Isolated proposal only; whole-owner/source/export holds remain
+    and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
+    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
+    report-only successor; maintained data and all original source, owner, role, cross-shard and export
+    holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1740); no CAS-RN or CHEBI/NCIT match.
+  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193 source
+  clarification: JCM181 printed recipe includes agar15g and a separately added100ml10%Na2CO3 stock; do
+  not flatten stock to pure carbonate or substitute the extra NaCl of receiving recipes345,406,409,1028.
+  Amounts are source-batch inputs, not an inferred measured final volume.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:horikoshi_i_medium
+  ontology_label: Horikoshi-I medium (JCM 181)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=181
+    notes: All exact current owner occurrences trace to JCM181. JCM181 printed recipe includes agar15g
+      and a separately added100ml10%Na2CO3 stock; do not flatten stock to pure carbonate or substitute
+      the extra NaCl of receiving recipes345,406,409,1028. Amounts are source-batch inputs, not an inferred
+      measured final volume.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Hipolypepton (FUJIFILM Wako)
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '15.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '900.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Sterile10% Na2CO3 solution
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=181
+    source_record: JCM181
+    notes: JCM181 printed recipe includes agar15g and a separately added100ml10%Na2CO3 stock; do not flatten
+      stock to pure carbonate or substitute the extra NaCl of receiving recipes345,406,409,1028. Amounts
+      are source-batch inputs, not an inferred measured final volume.

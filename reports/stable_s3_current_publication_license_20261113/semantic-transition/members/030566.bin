@@ -1,0 +1,57 @@
+identifier: UNMAPPED_0493
+preferred_term: poly-ß-hydroxybutyric acid
+synonyms:
+- synonym_text: poly-ß-hydroxybutyric acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2121); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:14:56Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_POLYMER
+  changes: Classified as a single polymer ingredient and left unmapped because the
+    surface form lacks CAS/stereochemistry support for safe merge to the existing
+    poly(3-hydroxybutyric acid) mapped record.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Poly-ß-hydroxybutyric_acid-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an ambiguous legacy
+    polymer label, most likely intended to denote **polyhydroxybutyrate (PHB), P(3HB),
+    or poly(3-hydroxybutyrate)**. Reviews use PHB, P(3HB), and poly(3-hydroxybutyrate)
+    for a bacterial intracellular storage homopolyester and distinguish it from the
+    broader polyhydroxyalkanoate family. However, the submitted form does not explicitly
+    state the hydroxy No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002881; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2121); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a PHB-like polymer
+  surface form; not merged without exact CAS/stereochemistry evidence.
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002881
+legacy_identifiers:
+- MIM:Poly-~DF-hydroxybutyric_Acid
+- UNMAPPED_0493

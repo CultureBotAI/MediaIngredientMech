@@ -1,0 +1,108 @@
+identifier: kgmicrobe.ingredient:jcm_243_trace_element_solution
+preferred_term: JCM 243 trace element solution
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+synonyms:
+- synonym_text: Trace minerals
+  synonym_type: REJECTED_LABEL
+  source: Source-context label only; must not match without the recipe reference
+curation_history:
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: PROPOSED_SOURCE_DEFINED_STOCK
+  changes: Source-bound NTA trace-element stock of JCM243, referenced by MediaDive ingredient1031 in J1328.
+    Generic Trace minerals owner is not globally equivalent. Proposal only; no occurrence/source/export
+    release approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:36:24.206519+00:00'
+  curator: all_unmatched_20261107_worker06_successor_v3_research_a
+  action: CORRECTED
+  changes: 'W06-IR-002 / issue1217: retain the exact non-identifying raw labels and their original sources
+    as REJECTED_LABEL; The exact J1328-to-JCM243 source reference identifies the NTA/selenite stock. Trace
+    minerals alone denotes many different formulations and cannot globally resolve to this one even when
+    a source comment requests context. Preserve all13 inputs, KOH uncertainty and source-specific routing.
+    Components, identifiers, mapping predicates and release holds are unchanged. Source definition: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=243'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Source-bound NTA trace-element stock of JCM243, referenced by MediaDive ingredient1031 in J1328.
+  Generic Trace minerals owner is not globally equivalent.
+
+  Dissolve NTA in200ml water; adjust pH6.5 with KOH. Add remaining salts, adjust volume1L and pH7.0 with
+  KOH. Water is final batch volume, not additive1L plus200ml.'
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '12.8'
+  concentration_unit: g
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.35'
+  concentration_unit: g
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: g
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.024'
+  concentration_unit: g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: g
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: g
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: g
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: g
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: g
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: g
+- component_name: Na2SeO3·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.026'
+  concentration_unit: g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L
+- component_name: KOH
+  reference_scope: UNMAPPED
+  source: 'Preparation: pH adjustment to6.5 before salts, then7.0; amount unspecified.'
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=243
+    source_record: JCM243 / Trace element solution table
+    supports: SUPPORT
+    notes: Source lists12 batch ingredients; preparation additionally specifies KOH titration, whose unknown
+      quantity is preserved in notes.
+  notes: Amounts are source batch quantities, not computed medium concentrations. Component identifiers
+    remain unassigned; named has-part constituents are not whole-mixture identity mappings.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_243_trace_element_solution
+  ontology_label: JCM 243 trace element solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: all-unmatched-20261107-worker-06
+    notes: Source-bound NTA trace-element stock of JCM243, referenced by MediaDive ingredient1031 in J1328.
+      Generic Trace minerals owner is not globally equivalent. Formulation registry identity; no ontology
+      mapping to any individual component.

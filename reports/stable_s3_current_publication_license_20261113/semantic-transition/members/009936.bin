@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:nbrc14_corn_fish_feed
+preferred_term: NBRC 14 corn and fish meal bird feed
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc14_corn_fish_feed
+  ontology_label: NBRC 14 corn and fish meal bird feed
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=14
+    notes: NBRC 14 identifies a corn and fish meal mixture sold as bird feed.20 g
+      is boiled in approximately 1 L water for 1 h, filtered, and the liquid restored
+      to 1 L before agar addition. This record denotes the feed input, not its aqueous
+      extract. Named corn and fish meal components are recorded as a partial qualitative
+      enumeration with no ratios. Neither commercial feed brand nor exact formulation
+      is inferred.
+components:
+- component_name: Corn material
+  reference_scope: UNMAPPED
+- component_name: Fish meal
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=14
+    source_record: NBRC14 feed ingredient
+    notes: Source names corn and fish meal; proportions and any other feed ingredients
+      are not given.
+  notes: Qualitative components of feed input only. Starting feed mass is not retained
+    extract composition.
+notes: '#1201 isolated proposal: NBRC 14 identifies a corn and fish meal mixture sold
+  as bird feed.20 g is boiled in approximately 1 L water for 1 h, filtered, and the
+  liquid restored to 1 L before agar addition. This record denotes the feed input,
+  not its aqueous extract. Named corn and fish meal components are recorded as a partial
+  qualitative enumeration with no ratios. Neither commercial feed brand nor exact
+  formulation is inferred. Feed ratios, brand and further ingredients are unknown;
+  qualitative composition is explicitly partial. Raw source spellings are retained
+  in case evidence and this source scope; no new globally resolving source-local alias
+  is added. Full-owner publication approval and all source-specific holds remain pending.'
+curation_history:
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: NBRC 14 identifies a corn and fish meal mixture sold as bird feed.20 g
+    is boiled in approximately 1 L water for 1 h, filtered, and the liquid restored
+    to 1 L before agar addition. This record denotes the feed input, not its aqueous
+    extract. Named corn and fish meal components are recorded as a partial qualitative
+    enumeration with no ratios. Neither commercial feed brand nor exact formulation
+    is inferred.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:08.085504+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,51 @@
+identifier: CHEBI:172687
+preferred_term: Allura Red AC
+ontology_mapping:
+  ontology_id: CHEBI:172687
+  ontology_label: Allura red AC
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: disodium;6-hydroxy-5-[(2-methoxy-5-methyl-4-sulonatophenyl)diazenyl]naphthalene-2-sulonate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=25956-17-6); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.129859+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.952323+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C18H14N2O8S2.2Na; inchi=InChI=1S/C18H16N2O8S2.2Na/c1-10-7-14(16(28-2)9-17(;
+    smiles=COc1cc(S(=O)(=O)[O-])c(C)cc1/N=N/c1c(O)ccc2cc(S(=O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.405887+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 25956-17-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C18H14N2O8S2.2Na
+  inchi: InChI=1S/C18H16N2O8S2.2Na/c1-10-7-14(16(28-2)9-17(10)30(25,26)27)19-20-18-13-5-4-12(29(22,23)24)8-11(13)3-6-15(18)21;;/h3-9,21H,1-2H3,(H,22,23,24)(H,25,26,27);;/q;2*+1/p-2/b20-19+;;
+  smiles: COc1cc(S(=O)(=O)[O-])c(C)cc1/N=N/c1c(O)ccc2cc(S(=O)(=O)[O-])ccc12.[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT

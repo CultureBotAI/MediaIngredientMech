@@ -1,0 +1,121 @@
+id: CultureMech:008201
+name: bl_agar
+original_name: BL Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: BL Agar*
+  concentration:
+    value: '58.0'
+    unit: G_PER_L
+  source: TOGO M1645 / NBRC Medium 848
+  notes: NBRC Medium 848 lists 58 g/L BL Agar and notes that the asterisk marks Nissui
+    Pharmaceutical Co. Ltd.; this commercial BL Agar product is retained as an opaque
+    base/solidifying component.
+- preferred_term: Defibrinated horse blood
+  concentration:
+    value: '50.0'
+    unit: ML_PER_L
+  source: TOGO M1645 / NBRC Medium 848
+  notes: NBRC Medium 848 lists 50 ml/L sterile defibrinated horse blood added aseptically
+    to a final 5% v/v.
+  term:
+    id: UBERON:0000178
+    label: blood
+- preferred_term: Distilled water
+  concentration:
+    value: '950.0'
+    unit: ML_PER_L
+  source: TOGO M1645 / NBRC Medium 848
+  notes: NBRC Medium 848 lists 950 ml/L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M1645
+  term:
+    id: TOGO:M1645
+    label: BL Agar
+notes: TOGO M1645 imports NBRC Medium 848 as BL Agar. NBRC 848 lists 58 g BL Agar
+  from Nissui Pharmaceutical, 50 ml defibrinated horse blood, 950 ml distilled water,
+  and no pH. NBRC 848 instructs autoclaving the base without horse blood, cooling
+  to about 50 C, aseptically adding sterile defibrinated horse blood to 5% final,
+  then quickly dispensing into sterile test tubes or Petri dishes.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:58.040809Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1645'
+- timestamp: '2026-01-28T19:48:13.928216Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:04:23.098341+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T06:19:54.397311Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008201'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:29:55.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:12.988144+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "BL Agar" to "bl_agar" for consistent matching
+- timestamp: '2026-05-16T09:03:25.819919+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:40:51.008094+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_togo_m1645_bl_agar_score15.py
+  action: RESOLVED_TOGO_M1645_SCORE15
+  source: https://togomedium.org/medium/M1645; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=848
+  notes: TOGO M1645 imports NBRC Medium 848 as BL Agar. NBRC 848 lists 58 g BL Agar
+    from Nissui Pharmaceutical, 50 ml defibrinated horse blood, 950 ml distilled water,
+    and no pH. NBRC 848 instructs autoclaving the base without horse blood, cooling
+    to about 50 C, aseptically adding sterile defibrinated horse blood to 5% final,
+    then quickly dispensing into sterile test tubes or Petri dishes. Moved the Nissui
+    BL Agar product out of an empty solution wrapper, corrected water and horse blood
+    liquid units, and marked the NBRC formula as curated.
+preparation_steps:
+- step_number: 1
+  action: AUTOCLAVE
+  description: Autoclave the BL Agar base without horse blood.
+- step_number: 2
+  action: COOL
+  description: Cool to about 50 C.
+- step_number: 3
+  action: MIX
+  description: Aseptically add sterile defibrinated horse blood to 5% v/v final and
+    mix.
+- step_number: 4
+  action: POUR_PLATES
+  description: Quickly dispense into sterile test tubes or Petri dishes.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1645
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=848

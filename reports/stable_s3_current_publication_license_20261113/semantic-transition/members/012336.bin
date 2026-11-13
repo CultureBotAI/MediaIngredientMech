@@ -1,0 +1,2775 @@
+{
+  "reviewer": "Codex /root/research_b",
+  "author_reviewed": "Codex /root/research_a",
+  "at": "2026-11-08T06:45:09.955720+00:00",
+  "status": "complete",
+  "scope": "Independent skeptical review of all11 A-authored exact payload deltas and24 case amendments limited to their alias claims. Read full selected after payloads and all full primary recipe/supplier JSON or visible HTML bodies named in the11 author receipts. No new approval of unchanged components, all188 cases, source releases or reviewer B original formulations.",
+  "inputs": {
+    "successor-v3/research-a/proposals.json": "84de0ea0cca3edf6bad3b02494f86fa896f040eb1720f88ac98af29d543db4da",
+    "successor-v3/research-a/evidence.json": "37647607180ba9d124a11cd796786470303cd42828becb9df49bbbd5e2dea633",
+    "successor-v3/research-a/case-amendments.json": "44316bb2add80950acb8387387d7e58e442f59afbc4dfb7b10ef90434aeebe27",
+    "successor-v3/research-a/author-scope.json": "2da425ee46a466dc500c152f2e6e44dac334ceaddb17bf30a7f7734b240e76ef",
+    "successor-v3/research-a/validation-receipt.json": "b57f82491065e8e516647ae1f6950fd3eae3c29595417ddc75f51354244eee57",
+    "successor-v2/final/decisions.json": "815ea3441a231f3d2464a57089338c7c78d07ac3f9c3f77e77f4865b39c01acd",
+    "successor-v2/final/proposals.json": "2244c896a5b1cf50681da7d7f15c4ccabae916aa31cc9e40e18b95d72e0dfd14",
+    "successor-v3/review-provenance/findings.json": "4626520a16f0b5e3729f6ffc630fba623e579742b3361cd68667de9c2598dd27",
+    "successor-v3/review-provenance/assessment.json": "ea688186e9507893bf98720bcaeaf3f86112600c18a390b411499db9c06c0a9c"
+  },
+  "native_policy": {
+    "path": "src/mediaingredientmech/synonym_policy.py",
+    "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+  },
+  "payload_reviews": [
+    {
+      "proposal_id": "B-P-NBRC1257-1321",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/nbrc_1257_1321_trace_element_mixture.yaml",
+        "sha256": "48f5246ec04d8d5f44682958927f68831b0e332d52920c4379a52a45c7bbc948"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/nbrc_1257_1321_trace_element_mixture.yaml",
+        "sha256": "cbd33be7c715b2f5480da12743f2eca38fd2b8ac2bf5ce65ae574e393a5bfa97"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/1",
+        "/synonyms/0/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-439",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-439.txt",
+            "sha256": "2a71115d17d54beb8454d4106e93dd60364885a914eee9d1c434ee15f510ceda"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=439",
+          "original_accessed_at": "2026-11-08T05:07:32.737875+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "B-http-cea6a91a0c986292",
+          "capture": {
+            "root": "artifact",
+            "path": "research-b/captures/http-38c9efc39c575e1d691b.txt",
+            "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06"
+          },
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+          "original_accessed_at": "2026-11-08T05:06:57.561446+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "B-http-93af0b491a06a026",
+          "capture": {
+            "root": "artifact",
+            "path": "research-b/captures/http-2caf4cd3f91d0ec555eb.txt",
+            "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+          },
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+          "original_accessed_at": "2026-11-08T05:06:57.575679+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "Read complete NBRC1257/1321 and JCM439 tables: acidified FeSO4 stock and the common seven trace-salt quantities establish the qualified preparation; the bare439 pointer requires a collection and receiving context. Reject that pointer as a global label. JCM prints HCl25% whereas7.7M is specified in NBRC; no new equality of unreported processing is asserted by this alias correction.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace element solution (see Medium No. 439 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM439 primary stock reference; CultureMech case CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": "For B-P-NBRC1257-1321 reviewer B authored earlier formulation. This is review of A-authored alias restriction only; B does not approve its own prior formulation."
+    },
+    {
+      "proposal_id": "C-P-JCM1079",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_1079_Trace_Element_Solution.yaml",
+        "sha256": "5311d8446ce0a803a6ae9aed985ada233c82825925ca5ffff9c08c01b19d2f9d"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/JCM_1079_Trace_Element_Solution.yaml",
+        "sha256": "2920621407bdf1903faffcc1c9c48972960d07759b77128c6824fd20b9fd5951"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/1",
+        "/synonyms/0/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-1079",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1079.txt",
+            "sha256": "3d3f371da67ec5dd1afe16890bf36795950e1cf239dccd93e7f74c4ad6bcad57"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1079",
+          "original_accessed_at": "2026-11-08T05:07:28.440841+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1404",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1404.txt",
+            "sha256": "07280677f9b7fda8b67ac25fa7a7f49bd371d263f24c3b695bc47c049a0908c0"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404",
+          "original_accessed_at": "2026-11-08T05:07:30.485092+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "JCM1404 explicitly refers to1079 and its full definition includes EDTA5g and FeSO4·7H2O2g with other trace salts. A providerless1079 pointer lacks that recipe chain. The correction preserves the qualified preferred name and existing unknown titrant/closure; no new component claim.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace element solution (see Medium No. 1079 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM1079 named stock reference; frozen CultureMech shard06"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Minerals_See_Medium_No_151.yaml",
+        "sha256": "b954f1bba678038122676027fec9642ba08cb7797f04c13e6722c2232b518ce3"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/Trace_Minerals_See_Medium_No_151.yaml",
+        "sha256": "83d24b0f28e89e47e9e19ee633e5fe2d489615b3d2cecb24913164f1b5a72273"
+      },
+      "before_maintained_owner_sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18",
+      "exact_changed_paths": [
+        "/curation_history/7",
+        "/ontology_mapping/ontology_label",
+        "/preferred_term",
+        "/synonyms/0/synonym_type",
+        "/synonyms/1/synonym_type",
+        "/synonyms/3/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-151",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-151.txt",
+            "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+          "original_accessed_at": "2026-11-08T05:07:31.546662+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "A-E-CAPTURE-103",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/7d572de85c9e1564.raw",
+            "sha256": "6fac275389567ae2274bc32d329d69e9f5abd7fe047d6edb2d540e854e73527c"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1347",
+          "original_accessed_at": "2026-11-08T05:06:57.180999+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-806",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-806.txt",
+            "sha256": "45ddb685647b7c03509004e294cf81c7e0866befaa98c5049977cc1ccb695b4a"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=806",
+          "original_accessed_at": "2026-11-08T05:07:33.712487+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-262",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-262.txt",
+            "sha256": "fcb6c19b354bfee56f843748753d428744c4b9e132e43c31b29b657ca592a00f"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=262",
+          "original_accessed_at": "2026-11-08T05:07:32.192169+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-265",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-265.txt",
+            "sha256": "9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265",
+          "original_accessed_at": "2026-11-08T05:07:32.200346+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "The complete JCM151 table and1347 reproduction identify NTA/sulfate minerals; the806→262→265 chain uses this as a nested input to a different Wolfe mixture. Keep the explicit JCM Medium151 alias resolving, while rejecting the three bare151 variants. The new preferred/self-registry labels identify the source; they do not equate this with ATCC products or its Wolfe parent.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace minerals see Medium No. 151",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "mim-queue"
+        },
+        {
+          "raw_label": "Trace minerals (see Medium No. 151",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "raw_label": "Trace minerals (see Medium No. 151 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM151 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "C-P-JCM187",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Element_Solution_See_Medium_No_187.yaml",
+        "sha256": "5e66d1346b2c9b5ca3f1e8f13494bb7286b450b469ac45f38df2bdc433bfb25e"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/Trace_Element_Solution_See_Medium_No_187.yaml",
+        "sha256": "e0cdf155a67f5463c2b57f5e44a01d6a35b5e279b443365f2788a9c5befb46eb"
+      },
+      "before_maintained_owner_sha256": "eea23f3c73fe8d5993d5292436d12776dde1308bcedf2a4916d1ca553b6cf40d",
+      "exact_changed_paths": [
+        "/curation_history/7",
+        "/preferred_term",
+        "/synonyms/0/synonym_type",
+        "/synonyms/1/synonym_type",
+        "/synonyms/2/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-187",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-187.txt",
+            "sha256": "e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=187",
+          "original_accessed_at": "2026-11-08T05:07:31.959853+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1351",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1351.txt",
+            "sha256": "fc46c2da2652f972403fcd46d9fb82e0e2e692b09bc49e72f1abc0953112cb46"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1351",
+          "original_accessed_at": "2026-11-08T05:07:29.345378+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1456",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1456.txt",
+            "sha256": "e4b00e471e369b05c05f85b95d60a8042a7e9f8d1871e059b2fdc79e6d1080e6"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1456",
+          "original_accessed_at": "2026-11-08T05:07:31.267830+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "The full187 source distinguishes the seven-salt trace-element table from its separate iron/HCl solution.1351 and1456 refer to both independently. Three bare187 labels must not resolve globally; JCM-qualified preferred name is supported. NCIT:C896 Trace Element stays its canonical external CLOSE_MATCH label. Missing ingredient1886 linkage is not cured by changing a label and is outside this acceptance.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace element solution see Medium No. 187",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "mim-queue"
+        },
+        {
+          "raw_label": "Trace element solution (see Medium No. 187",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "culturemech:output/ingredient_occurrences.tsv"
+        },
+        {
+          "raw_label": "Trace element solution (see Medium No. 187 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM187 stock reference; CultureMech frozen shard06"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_197_Trace_Vitamins.yaml",
+        "sha256": "de17dee3c912e05f2ac460ef85d296a8f6d0a20a175de173233a41cb522b8063"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/JCM_197_Trace_Vitamins.yaml",
+        "sha256": "df39fbd897b0f0d38c952fae7788fc3be433d142234fd3a095cac50204db06c1"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/3",
+        "/synonyms/0/synonym_type",
+        "/synonyms/1/synonym_type",
+        "/synonyms/2/synonym_type",
+        "/synonyms/3/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-197",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-197.txt",
+            "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+          "original_accessed_at": "2026-11-08T05:07:31.962895+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-nbrc-837",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/nbrc-837.txt",
+            "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc"
+          },
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=837",
+          "original_accessed_at": "2026-11-08T05:07:37.113945+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "A-E-CAPTURE-104",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/c464e732b34c9c65.raw",
+            "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+          "original_accessed_at": "2026-11-08T05:06:57.211128+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "A-E-CAPTURE-107",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/ea7a1ace8904d63b.raw",
+            "sha256": "a42c0ee8511fa98972e1660199908c92b985aef9e59ea92c02bdc7d1911afd97"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362",
+          "original_accessed_at": "2026-11-08T05:06:57.450560+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "Read197 andNBRC837 complete formulations and1353/1362 contexts.197 is the ten-vitamin stock;1353 adds phosphates to it and is not the same whole stock. Reject all four bare197 variants, including starred/singular forms, because they still need source context. Stock gassing differences remain in the payload. This review does not certify all receiving-page claims or infer calcium-pantothenate stereochemistry.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace vitamins (see Medium No. 197)",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM197 stock reference; CultureMech frozen shard06"
+        },
+        {
+          "raw_label": "Trace vitamin (see Medium No. 197 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM197 stock reference; CultureMech frozen shard06"
+        },
+        {
+          "raw_label": "Trace vitamins (see Medium No. 197 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+        },
+        {
+          "raw_label": "Trace vitamins* (see Medium No. 197 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+        "sha256": "529f1d564e4abadc2b2b775b0341d196038e9ad3011da0f6727ba0d4b28b2d17"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+        "sha256": "fbd3069fd4e3614afe0dcfadd2b52922c43defb494801fbb01602d59ec2bbf91"
+      },
+      "before_maintained_owner_sha256": "f14f409a04b1e113f11473f3d7846cd8bc0a85ac19bb4d8fba5a20eaea31f08a",
+      "exact_changed_paths": [
+        "/curation_history/6",
+        "/ontology_mapping/ontology_label",
+        "/preferred_term",
+        "/synonyms/0/synonym_type",
+        "/synonyms/1/synonym_type",
+        "/synonyms/2/synonym_type",
+        "/synonyms/3/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-284",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-284.txt",
+            "sha256": "6566ba45030bfac8958271e24e81e63f62ee15deecf119495f03f649797f34d7"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284",
+          "original_accessed_at": "2026-11-08T05:07:32.228337+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1375",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1375.txt",
+            "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+          "original_accessed_at": "2026-11-08T05:07:29.753368+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "B-http-d50ed9514d6b22ce",
+          "capture": {
+            "root": "artifact",
+            "path": "research-b/captures/http-8e40932321962923b816.txt",
+            "sha256": "dc35417cfc4b253af3792cec0dc2bf5b12bf0d9fc45192b6437436b3942dc633"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1188",
+          "original_accessed_at": "2026-11-08T05:07:00.339143+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "Full284 contains distinct vitamins, minerals andSe/W tables. Its vitamins include DL-calcium pantothenate9.5mg andB12 27.1mg;1375 and1188 point to that table. The four providerless284 variants require that context. Preferred/self-registry qualification corrects global naming without changing table quantities or dose holds.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace vitamins solution see Medium No. 284",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "mim-queue"
+        },
+        {
+          "raw_label": "Trace vitamins solution* (see Medium No. 284 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM284 stock reference; CultureMech frozen shard06"
+        },
+        {
+          "raw_label": "Trace vitamins solution (see Medium No. 284)",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM284 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+        },
+        {
+          "raw_label": "Trace vitamins solution (see Medium No.284)",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM284 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "C-P-JCM284-MINERALS",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_284_Trace_Element_Solution.yaml",
+        "sha256": "ce63147153e11371cfb5545ccb93798c45f0fd141f3224241a842c54f2555ec0"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/JCM_284_Trace_Element_Solution.yaml",
+        "sha256": "cd1d51c860fc2db38863b07673169764408a821a6e3836780201a7d87e87ebe5"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/1",
+        "/synonyms/0/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-284",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-284.txt",
+            "sha256": "6566ba45030bfac8958271e24e81e63f62ee15deecf119495f03f649797f34d7"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284",
+          "original_accessed_at": "2026-11-08T05:07:32.228337+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1375",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1375.txt",
+            "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+          "original_accessed_at": "2026-11-08T05:07:29.753368+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "The284 mineral table is the NTA12.8g/FeCl3·6H2O1.35g stock with initial200ml water, make-up to1L and KOH.1375 explicitly selects it separately from vitamins. Reject the bare284 element pointer; the qualified name and all preparation caveats are retained. Water semantics are reviewed separately by C and are not repaired or approved anew here.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace element solution (see Medium No. 284 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM284 named stock reference; frozen CultureMech shard06"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "C-P-JCM899",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/JCM_899_Trace_Element_Solution.yaml",
+        "sha256": "ef20198ebab15776c5ce5cf982f963b2c69f5f223217c5d2eb7afe6af89b8b7a"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/JCM_899_Trace_Element_Solution.yaml",
+        "sha256": "0d04c66f354c8c070506546406b1e409fec0025a3451d2fdab4154bcac7fcbb7"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/1",
+        "/synonyms/0/synonym_type",
+        "/synonyms/1/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "C-E-jcm-899",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-899.txt",
+            "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899",
+          "original_accessed_at": "2026-11-08T05:07:34.261627+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1393",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1393.txt",
+            "sha256": "1349ce249d44773fc831558e9f44c78859e779a3694272bb657b58ddbd28f0a3"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1393",
+          "original_accessed_at": "2026-11-08T05:07:30.088817+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1395",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1395.txt",
+            "sha256": "5e0d34df46e27a1683c925afba580b2d3deb6ae9faa4a37a3d8888e3287e4953"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1395",
+          "original_accessed_at": "2026-11-08T05:07:30.102282+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "C-E-jcm-1341",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1341.txt",
+            "sha256": "464993257dfafd7e560fafbdd4a52f0a4b034aa4adbcabda1f0047d515f5ecf0"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1341",
+          "original_accessed_at": "2026-11-08T05:07:29.166795+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "Read899 and1393/1395/1341 complete recipes.899 contains ammonium ferrous/nickel sulfates, selenate and25%HCl5ml; these distinguish it from187 and439. The starred1341 input is filter-sterilized, while1393/1395 include stock before autoclaving. Reject both bare899 strings, retain exact provenance and source-specific processing distinctions.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace element solution (see Medium No. 899 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM899 named stock reference; frozen CultureMech shard06"
+        },
+        {
+          "raw_label": "Trace element solution* (see Medium No. 899 )",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "JCM899 named stock reference; frozen CultureMech shard06"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "R-P-JCM209-STOCK",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM209-STOCK.yaml",
+        "sha256": "05e31d8617dcdbe12c6ecea50a221d0060a7947ab27d9c59de9b7602ef888844"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/R-P-JCM209-STOCK.yaml",
+        "sha256": "bbc55503cf10a81557006d11594eafd73bcd405675d21861797f2981adbdd183"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/1",
+        "/synonyms/0/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "R-medium-J209",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/medium-J209.body",
+            "sha256": "8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050"
+          },
+          "url": "https://mediadive.dsmz.de/rest/medium/J209",
+          "original_accessed_at": "2026-11-08T05:09:46.016221+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "R-ingredient-1684",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/ingredient-1684.body",
+            "sha256": "8d868ac826c016b1ff0af18a82dc13e511cd1c03c31586b16c50fc012769aaf7"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1684",
+          "original_accessed_at": "2026-11-08T05:08:45.707529+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "MediaDiveJ209 has a distinct Salts solution heading beginning recipe_order16; its six salts and100ml water are separate from the parent1092ml aggregate. Generic Salts solution cannot encode that partition. RELATED_SYNONYM was resolving despite its cautionary source note; REJECTED_LABEL provides the necessary machine-readable restriction. Existing pH-step scope is not resolved by alias typing.",
+      "alias_tests": [
+        {
+          "raw_label": "Salts solution",
+          "before_type": "RELATED_SYNONYM",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "Source-context label only; must not match without the recipe reference"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "R-P-JCM243-STOCK",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-JCM243-STOCK.yaml",
+        "sha256": "f5e46b2009bd8db8768dc82c4fd6ee5aadbc485e5590570e2fe46326a385de14"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/R-P-JCM243-STOCK.yaml",
+        "sha256": "5cfacd983c0ac6fcde0ac8b234b672e62f1e8d226720a035744fad3143fd0912"
+      },
+      "before_maintained_owner_sha256": null,
+      "exact_changed_paths": [
+        "/curation_history/1",
+        "/synonyms/0/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "R-jcm-final-243",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/jcm-final-243.body",
+            "sha256": "bf40fe2d1711468c6b053599408514bde93b2d0699ee808a51ffcfd7e7b1eff6"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=243",
+          "original_accessed_at": "2026-11-08T05:11:02.181341+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "R-medium-J1328",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/medium-J1328.body",
+            "sha256": "e329454ef6b83c86a226a3d37a2885d0744ba705571951d057e572d069706a60"
+          },
+          "url": "https://mediadive.dsmz.de/rest/medium/J1328",
+          "original_accessed_at": "2026-11-08T05:09:44.770871+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "R-ingredient-1031",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/ingredient-1031.body",
+            "sha256": "0d5b6a4cef588f83354c1194d4bc346a69e90b3c24a87fcd40dc94d600a19c7f"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1031",
+          "original_accessed_at": "2026-11-08T05:08:43.021939+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "Read fullJCM243 andJ1328/ingredient1031 JSON. The explicit243 attribute selects the NTA/selenite preparation; unqualified Trace minerals does not. Reject the generic alias without modifying component amounts or turning the receiving stock dose into a component concentration. Final-volume component corrections are independently handled by C.",
+      "alias_tests": [
+        {
+          "raw_label": "Trace minerals",
+          "before_type": "RELATED_SYNONYM",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "Source-context label only; must not match without the recipe reference"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-root/proposed-owners/R-P-MODIFIED-VITAMINS.yaml",
+        "sha256": "ee25e3cc8c5849c63e08d32a5abcc0644e625561168f97651ec2928765de6141"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-a/payloads/R-P-MODIFIED-VITAMINS.yaml",
+        "sha256": "89aa1bb6656afd6e7c6cb53d7b68f43fce6813ba69d7e55b93f317365bc1eb81"
+      },
+      "before_maintained_owner_sha256": "4eedaddb0efbc29c6dead6ef2bd378ec59070ecea3146b66e77bcea55a204a2c",
+      "exact_changed_paths": [
+        "/curation_history/6",
+        "/ontology_mapping/ontology_label",
+        "/preferred_term",
+        "/synonyms/0/synonym_type",
+        "/synonyms/1/synonym_type"
+      ],
+      "source_evidence": [
+        {
+          "evidence_id": "R-jcm-final-1158",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/jcm-final-1158.body",
+            "sha256": "a6b4bbb782d46582f3ea17fdcce391e9822d5d28efecf68ff218b949182d411e"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1158",
+          "original_accessed_at": "2026-11-08T05:11:03.284978+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "R-medium-J1158",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/medium-J1158.body",
+            "sha256": "0458eb90158b40b2e1061a5591ba564c4668c139452795641b28c328bca8b94f"
+          },
+          "url": "https://mediadive.dsmz.de/rest/medium/J1158",
+          "original_accessed_at": "2026-11-08T05:09:44.783493+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "R-ingredient-2017",
+          "capture": {
+            "root": "artifact",
+            "path": "research-root/captures/ingredient-2017.body",
+            "sha256": "03b6c295170bc2bb18f8befaef4f8524d2b35b3163211c66e023fe7a262b120d"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2017",
+          "original_accessed_at": "2026-11-08T05:08:43.539722+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        },
+        {
+          "evidence_id": "A-E-CAPTURE-104",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/c464e732b34c9c65.raw",
+            "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+          "original_accessed_at": "2026-11-08T05:06:57.211128+00:00",
+          "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+        }
+      ],
+      "independent_scientific_reasoning": "Read fullJCM1158 andMediaDive2017/J1158, plusJCM1353.1158 includes ten vitamins, DL-calcium pantothenate andKH2PO4;1353 instead addsNaH2PO4/Na2HPO4 to197. Both Modified trace vitamins strings need their local recipe, so reject them and qualify preferred/self-registry labels asJCM1158. Preserve all inherited history, including historical evidence classifications; no whole-owner equivalence follows.",
+      "alias_tests": [
+        {
+          "raw_label": "Modified trace vitamins",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "mim-queue"
+        },
+        {
+          "raw_label": "Modified trace vitamins (see below)",
+          "before_type": "RAW_TEXT",
+          "after_type": "REJECTED_LABEL",
+          "native_before_admitted": true,
+          "native_after_admitted": false,
+          "negative_control_restoring_old_type_admitted": true,
+          "source_preserved": "culturemech:output/ingredient_occurrences.tsv"
+        }
+      ],
+      "verdict": "accept exact alias/qualifying-label delta only; no release or fresh approval of unchanged science",
+      "original_author_boundary": null
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_index": 21,
+      "case_id": "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+      "case_input_sha256": "7b878e02533cda2a1f92b5e6c62f4fbf3c271209435719102d516d5043d6ff4f",
+      "occurrence_ids": [
+        "CM_OCC:3ca1791901995a6909f961f4f23d63e30fa0e3c2ba0a7a9f990b45da1f84463f",
+        "CM_OCC:742362b1e2dbbe5b8486e43e20698ee1240b98525bb2ac54e90bf28304d97f49",
+        "CM_OCC:634219ee71e89fb0e86e6c8a9d4a6c1a16e382a517d47d26b1b9a11e4d82a180",
+        "CM_OCC:792d34dd500778b4573e3613aeee6d6af82623503a43331b40476efbe6066889",
+        "CM_OCC:9a0fbc59fd9e6b4e784f29c4a71c5ff03a9c6bcee765d4bf8f0602ee1e6b6a62",
+        "CM_OCC:7d9186d2aa1e8577e2d6db2535c603377ac61645c2e49b37aa481e1ca666a56e",
+        "CM_OCC:419c2ea12761cacf4568815c315fcfbda53d6b25cbaf1de8cba1e4f50979d68c"
+      ],
+      "amendment_sha256_canonical": "89b3d5c30230dd6eadf668cb5ea47f5ab350c8b89516933cef1ac15d182132be",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 21,
+        "case_id": "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+        "case_input_sha256": "7b878e02533cda2a1f92b5e6c62f4fbf3c271209435719102d516d5043d6ff4f",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins (see Medium No. 197 )",
+          "source_label": "Trace vitamins (see Medium No. 197 )",
+          "raw_source_label": "Trace vitamins (see Medium No. 197 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:3ca1791901995a6909f961f4f23d63e30fa0e3c2ba0a7a9f990b45da1f84463f",
+          "CM_OCC:742362b1e2dbbe5b8486e43e20698ee1240b98525bb2ac54e90bf28304d97f49",
+          "CM_OCC:634219ee71e89fb0e86e6c8a9d4a6c1a16e382a517d47d26b1b9a11e4d82a180",
+          "CM_OCC:792d34dd500778b4573e3613aeee6d6af82623503a43331b40476efbe6066889",
+          "CM_OCC:9a0fbc59fd9e6b4e784f29c4a71c5ff03a9c6bcee765d4bf8f0602ee1e6b6a62",
+          "CM_OCC:7d9186d2aa1e8577e2d6db2535c603377ac61645c2e49b37aa481e1ca666a56e",
+          "CM_OCC:419c2ea12761cacf4568815c315fcfbda53d6b25cbaf1de8cba1e4f50979d68c"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": "The JCM197 stock backlink and independent review are complete. Resolve unspecified child forms, including calcium-pantothenate stereochemistry, before exact child grounding; do not conflate the separately phosphate-buffered JCM1353 parent.",
+        "reviewer": "/root/w06_review_a",
+        "review_receipt": "a/assessment.json",
+        "review_receipt_sha256": "3a3acd53b94d819f46576763989a6a7a3b60f8976ae51716f1971eaa6d6144b9",
+        "review_verdict": "source_assessment_supported_payload_or_evidence_correction_required",
+        "independent_reasoning": "Seven JCM references establish the197 vitamin stock; the JCM1353 occurrence nests it in a phosphate-buffered parent. Ten printed vitamin inputs are supported without assigning D-calcium form. Providerless numbered RAW_TEXT labels on C-P-JCM197 are resolving globally and require correction.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 22,
+      "case_id": "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+      "case_input_sha256": "7059be33e376b8c64513cfd58cc8a43060838225e51a138793d6bd6d18ae1351",
+      "occurrence_ids": [
+        "CM_OCC:e2416d805f8a46242ddec6080d33aadc45bf038852f6d1cae2f7674e2e860575"
+      ],
+      "amendment_sha256_canonical": "63ae713ecd2ceead1344e0a566220a875d9f8878e6ef2e2821a72726d37b2c48",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 22,
+        "case_id": "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+        "case_input_sha256": "7059be33e376b8c64513cfd58cc8a43060838225e51a138793d6bd6d18ae1351",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace minerals (see Medium No. 151 )",
+          "source_label": "Trace minerals (see Medium No. 151 )",
+          "raw_source_label": "Trace minerals (see Medium No. 151 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:e2416d805f8a46242ddec6080d33aadc45bf038852f6d1cae2f7674e2e860575"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": "Integrate the single independently reviewed C-P-JCM151 source-defined local registry proposal using the original unmapped-owner before hash; retain exact formulation, migration obligations and separate source/owner/export review.",
+        "reviewer": "/root/w06_review_a",
+        "review_receipt": "a/assessment.json",
+        "review_receipt_sha256": "3a3acd53b94d819f46576763989a6a7a3b60f8976ae51716f1971eaa6d6144b9",
+        "review_verdict": "source_assessment_supported_payload_or_evidence_correction_required",
+        "independent_reasoning": "JCM1347 points to151's NTA mineral stock; ATCC MD-TMS is not interchangeable. The recipe is supported, but the inherited providerless preferred/ontology label and RAW_TEXT aliases on C-P-JCM151 are globally resolving. Qualify the canonical name and preserve pointers as non-resolving provenance.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM151"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 52,
+      "case_id": "CM_NAME:5a6a64dd3c8441d7132e42bb195aedac764e54ea5bf512ed61957272a8b62696",
+      "case_input_sha256": "73de0d76b3b4a2e8e6b2e74f2739537613f78760536de12e288421d5c053d414",
+      "occurrence_ids": [
+        "CM_OCC:c01ab85cb0b60f7528ee000a3686faeae6c2920e51ee1dfdb240da478ed7439a",
+        "CM_OCC:0590f9254c81fe570e74bc6e62ccd61083e4e8844a92f6e01affb15a36c50c30"
+      ],
+      "amendment_sha256_canonical": "bd3953f5df1c957d4d632c0a37d055d5f01864e95508263c062a84e2b6ddf41a",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 52,
+        "case_id": "CM_NAME:5a6a64dd3c8441d7132e42bb195aedac764e54ea5bf512ed61957272a8b62696",
+        "case_input_sha256": "73de0d76b3b4a2e8e6b2e74f2739537613f78760536de12e288421d5c053d414",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element mixture*",
+          "source_label": "Trace element mixture*",
+          "raw_source_label": "Trace element mixture*"
+        },
+        "occurrence_ids": [
+          "CM_OCC:c01ab85cb0b60f7528ee000a3686faeae6c2920e51ee1dfdb240da478ed7439a",
+          "CM_OCC:0590f9254c81fe570e74bc6e62ccd61083e4e8844a92f6e01affb15a36c50c30"
+        ],
+        "published_disposition": "new_distinct_ingredient_proposal",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_a",
+        "review_receipt": "a/assessment.json",
+        "review_receipt_sha256": "3a3acd53b94d819f46576763989a6a7a3b60f8976ae51716f1971eaa6d6144b9",
+        "review_verdict": "source_assessment_supported_payload_or_evidence_correction_required",
+        "independent_reasoning": "NBRC1257/1321 and JCM439 give the same acidifiedFeSO4 batch, including12.5ml25%(7.7M)HCl,2.1gFeSO4·7H2O and987ml water. The formulation is supported without inferring final1L. Its generic providerless439 pointer is an active alias and needs non-resolving preservation.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "B-P-NBRC1257-1321"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 57,
+      "case_id": "CM_NAME:660f936f7c6bb76f04a43dbae6c6000b0bcea0dee9909eb04f07db0cf50d01a5",
+      "case_input_sha256": "08ee880fcf605e6c881eb18acdb77aa74deb8d25dbf4cc2c75a91ea644c94faf",
+      "occurrence_ids": [
+        "CM_OCC:67283a4dbb5d2c0a8442f39bfb22e5e5212ad88a1e409a4ca5a5deea8754ce79",
+        "CM_OCC:00a1c2956029e5c56ffb57cebacaebafdfd642ed1c3ea3f2be1693c9b380295f",
+        "CM_OCC:ba749bb350032015ba552507b5c60f1be633eb70bb4fe7b798689fcfd78b5348",
+        "CM_OCC:46ffe94a0e667f1b7fef87a9c6e78b85f981d35c0fd83bb7a42c04e24e98a3d9"
+      ],
+      "amendment_sha256_canonical": "fed4ef116945c6e6f47be6ce1016c8abfe67af3df9bcccdb587a24f41f1ddee5",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 57,
+        "case_id": "CM_NAME:660f936f7c6bb76f04a43dbae6c6000b0bcea0dee9909eb04f07db0cf50d01a5",
+        "case_input_sha256": "08ee880fcf605e6c881eb18acdb77aa74deb8d25dbf4cc2c75a91ea644c94faf",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins",
+          "source_label": "Trace vitamins",
+          "raw_source_label": "Trace vitamins"
+        },
+        "occurrence_ids": [
+          "CM_OCC:67283a4dbb5d2c0a8442f39bfb22e5e5212ad88a1e409a4ca5a5deea8754ce79",
+          "CM_OCC:00a1c2956029e5c56ffb57cebacaebafdfd642ed1c3ea3f2be1693c9b380295f",
+          "CM_OCC:ba749bb350032015ba552507b5c60f1be633eb70bb4fe7b798689fcfd78b5348",
+          "CM_OCC:46ffe94a0e667f1b7fef87a9c6e78b85f981d35c0fd83bb7a42c04e24e98a3d9"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": "Apply exact occurrence scopes: RM is the three-vitamin stock; the other three occurrences use JCM197. Any future thiamine salt/hydrate or biotin stereochemistry mapping requires reagent evidence; historical-paper equivalence is not asserted.",
+        "reviewer": "/root/w06_review_a",
+        "review_receipt": "a/assessment.json",
+        "review_receipt_sha256": "3a3acd53b94d819f46576763989a6a7a3b60f8976ae51716f1971eaa6d6144b9",
+        "review_verdict": "source_assessment_supported_payload_or_evidence_correction_required",
+        "independent_reasoning": "JCM825/837/1009 use197; TOGOM3181 RM uses biotin0.1g,pABA1g andthiamine1g/L. These are distinct vitamin stocks. Both can be represented under exact occurrence routing; generic197 pointer alias needs correction and no unspecified vitamin stereochemistry/salt is inferred.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "B-P-TOGO3181-RM-VITAMINS",
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 65,
+      "case_id": "CM_NAME:6d6ebd68cac4ad55515d9c4606112ed3713710431fa05569bc7bd23849fc67c6",
+      "case_input_sha256": "2c493f0fe93484fc9b8612fd7eb4d80a19a18541bd99dec06c86810e4e8b3351",
+      "occurrence_ids": [
+        "CM_OCC:fd1bf128e35cad2b993c6384c457a930f9d10404477438aec458e01ae9686b66"
+      ],
+      "amendment_sha256_canonical": "6b5bc30b2f3b695932be61f727149c03298fd5f94cfdc8b7ff82a0c64a1ac809",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 65,
+        "case_id": "CM_NAME:6d6ebd68cac4ad55515d9c4606112ed3713710431fa05569bc7bd23849fc67c6",
+        "case_input_sha256": "2c493f0fe93484fc9b8612fd7eb4d80a19a18541bd99dec06c86810e4e8b3351",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins solution (see Medium No.284)",
+          "source_label": "Trace vitamins solution (see Medium No.284)",
+          "raw_source_label": "Trace vitamins solution (see Medium No.284)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:fd1bf128e35cad2b993c6384c457a930f9d10404477438aec458e01ae9686b66"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "JCM1188 specifies 2 ml of JCM284 vitamins. JCM284 is the ten-vitamin recipe with 9.5 mg DL-calcium pantothenate and 27.1 mg B12 per L, unlike JCM197. The formula is supported, but source-local numbered pointer synonyms remain globally resolving RAW_TEXT. Preserve provenance with REJECTED_LABEL and route by occurrence.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM284"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 76,
+      "case_id": "CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3",
+      "case_input_sha256": "1621681510e7afc994846abbb85223870cfcf29d0541c92dc636e67ef0f1083d",
+      "occurrence_ids": [
+        "CM_OCC:4f7bc80a7349742374d33262f5fb157a0a2483208ef79009e1f4bf6ee45c212c",
+        "CM_OCC:ebb54795d8a1b796df68526c1e68c2bcb36f98d372549f8db79fe5c95c08b96d",
+        "CM_OCC:d290b8424fd5c911f6d6062d5b79be492caa066b9dde5ea6b6b4bc1a59b8bded",
+        "CM_OCC:a7959e7185d2ccd34a3651dd4ebd8044d4f0cbbfed3265b7f49da90fe7369892",
+        "CM_OCC:947a4fa0d3f3e41ec02e6b4cfcd19f033acab23eec8763303f062db1f4b08166",
+        "CM_OCC:ce9ac19c3728bca2d34a70b8ca1c4954b2082716119892c2a97093936d326edb",
+        "CM_OCC:16b2f625c7b9d2f6068fbbdb12bb3e75ddc288cd50da945c72ac67d2a23e266b",
+        "CM_OCC:7e96ec69acea0b9955a73b8b211ab7eaa5aee934c78ef0d7be13cfcd2458f7f9",
+        "CM_OCC:e2091224d6eef32e88815cf05347ffe11016eef419a1c8411bbdd2e910bae876",
+        "CM_OCC:c230c38fd5adbcd78371389ec5e087941da8c4721652bc6395b5319b7102646a",
+        "CM_OCC:c69e6fed645020c688345c507b57a7016e70ec222a803d753a4da0ba8942ca3e",
+        "CM_OCC:f5078500e2ffdec943cfeda1244071ee1b007fcfc8876142db30dc038256a746"
+      ],
+      "amendment_sha256_canonical": "c7b28263b3b6672046394c8befec8588f142933e5f23ef2d0736474df6394e91",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 76,
+        "case_id": "CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3",
+        "case_input_sha256": "1621681510e7afc994846abbb85223870cfcf29d0541c92dc636e67ef0f1083d",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins* (see Medium No. 197 )",
+          "source_label": "Trace vitamins* (see Medium No. 197 )",
+          "raw_source_label": "Trace vitamins* (see Medium No. 197 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:4f7bc80a7349742374d33262f5fb157a0a2483208ef79009e1f4bf6ee45c212c",
+          "CM_OCC:ebb54795d8a1b796df68526c1e68c2bcb36f98d372549f8db79fe5c95c08b96d",
+          "CM_OCC:d290b8424fd5c911f6d6062d5b79be492caa066b9dde5ea6b6b4bc1a59b8bded",
+          "CM_OCC:a7959e7185d2ccd34a3651dd4ebd8044d4f0cbbfed3265b7f49da90fe7369892",
+          "CM_OCC:947a4fa0d3f3e41ec02e6b4cfcd19f033acab23eec8763303f062db1f4b08166",
+          "CM_OCC:ce9ac19c3728bca2d34a70b8ca1c4954b2082716119892c2a97093936d326edb",
+          "CM_OCC:16b2f625c7b9d2f6068fbbdb12bb3e75ddc288cd50da945c72ac67d2a23e266b",
+          "CM_OCC:7e96ec69acea0b9955a73b8b211ab7eaa5aee934c78ef0d7be13cfcd2458f7f9",
+          "CM_OCC:e2091224d6eef32e88815cf05347ffe11016eef419a1c8411bbdd2e910bae876",
+          "CM_OCC:c230c38fd5adbcd78371389ec5e087941da8c4721652bc6395b5319b7102646a",
+          "CM_OCC:c69e6fed645020c688345c507b57a7016e70ec222a803d753a4da0ba8942ca3e",
+          "CM_OCC:f5078500e2ffdec943cfeda1244071ee1b007fcfc8876142db30dc038256a746"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "All twelve JCM contexts point to 197, including 1463 through 1462. Doses differ: mostly 10 ml, 2 ml for 1388/1389 and 1 ml for 1404. The ten-vitamin stock recipe is supported, but bare numbered pointers remain active global aliases. Preserve individual preparation and dose, and route occurrences after rejecting pointer synonyms.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 85,
+      "case_id": "CM_NAME:85e975201016d92df32666f4d249c9efbd68de8641d88c73fc0d38b1ade328ab",
+      "case_input_sha256": "92da2209835d103d1a7c72e13d5c54f73160d6fab22153b9a1dabaef4dfe43ee",
+      "occurrence_ids": [
+        "CM_OCC:8da8150c002f2e012264c86c0b90e6fb3acc829f6f68325496aede23c94d6df9"
+      ],
+      "amendment_sha256_canonical": "4aade2ff7ecaf49ee72d7a42f6fdf887fef1ccf4468ccb0395e85aa47d1ff20d",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 85,
+        "case_id": "CM_NAME:85e975201016d92df32666f4d249c9efbd68de8641d88c73fc0d38b1ade328ab",
+        "case_input_sha256": "92da2209835d103d1a7c72e13d5c54f73160d6fab22153b9a1dabaef4dfe43ee",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins solution (see Medium No. 284)",
+          "source_label": "Trace vitamins solution (see Medium No. 284)",
+          "raw_source_label": "Trace vitamins solution (see Medium No. 284)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:8da8150c002f2e012264c86c0b90e6fb3acc829f6f68325496aede23c94d6df9"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "MediaDive5112's one-ml JCM284 dose in a 1004-ml recipe gives about 0.0996%, not the frozen 0.9960%. The JCM284 stock formula is independently supported. The quantity discrepancy stays held, and globally resolving numbered-pointer synonyms need rejection rather than global use of the stock name.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM284"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 95,
+      "case_id": "CM_NAME:947dc2dc2ee1922fcddb0ac1f991c44e28eedcc8bfcf3973d5ec6652cf17c861",
+      "case_input_sha256": "b5b61a89ffd8c9eab0d184b873cec400bb295160728fada5d038f9d682b50596",
+      "occurrence_ids": [
+        "CM_OCC:89865ddaa7dfe43ce9bae55a01c577d62126cc8625a3ca988207ea024557c900",
+        "CM_OCC:c0bc75d9b926d4791cfff49377cbfb9ef03e9693788dbbc2914ac2ec52e62a8d",
+        "CM_OCC:82c4c386c2db246448039bc0c43740b2fb5b7f7c6f04d5021412b9fd91e41530"
+      ],
+      "amendment_sha256_canonical": "62b997b0df07b2e724933bfe3d8838d26ce649d81c40178a1b2aaa30e7267cc8",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 95,
+        "case_id": "CM_NAME:947dc2dc2ee1922fcddb0ac1f991c44e28eedcc8bfcf3973d5ec6652cf17c861",
+        "case_input_sha256": "b5b61a89ffd8c9eab0d184b873cec400bb295160728fada5d038f9d682b50596",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution (see Medium No. 899 )",
+          "source_label": "Trace element solution (see Medium No. 899 )",
+          "raw_source_label": "Trace element solution (see Medium No. 899 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:89865ddaa7dfe43ce9bae55a01c577d62126cc8625a3ca988207ea024557c900",
+          "CM_OCC:c0bc75d9b926d4791cfff49377cbfb9ef03e9693788dbbc2914ac2ec52e62a8d",
+          "CM_OCC:82c4c386c2db246448039bc0c43740b2fb5b7f7c6f04d5021412b9fd91e41530"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "JCM1393/1395/1415 explicitly reference JCM899. The selected twelve preparation inputs match the acidified JCM899 table, including ammonium iron/nickel sulfates, Na2SeO4 and 25% HCl 5 ml plus water 995 ml. Unknown percent basis is preserved. Two bare numbered-pointer RAW_TEXT aliases still resolve globally and need rejection; source-qualified formulation itself remains supported.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM899"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 101,
+      "case_id": "CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9",
+      "case_input_sha256": "9d02be728d17741265a8e4af304f2fbe2cf0075e67b53dcfd4a20ce21eb01f63",
+      "occurrence_ids": [
+        "CM_OCC:815db1ca655dac57a20f09632c8e1991c8bb3a1e2e05c1ed051a2633444607be"
+      ],
+      "amendment_sha256_canonical": "f3cfd54fb6219e045a6c71507f084a6fa001675aebf02be3bc0b6ab542904933",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 101,
+        "case_id": "CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9",
+        "case_input_sha256": "9d02be728d17741265a8e4af304f2fbe2cf0075e67b53dcfd4a20ce21eb01f63",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins***",
+          "source_label": "Trace vitamins***",
+          "raw_source_label": "Trace vitamins***"
+        },
+        "occurrence_ids": [
+          "CM_OCC:815db1ca655dac57a20f09632c8e1991c8bb3a1e2e05c1ed051a2633444607be"
+        ],
+        "published_disposition": "new_distinct_ingredient_proposal",
+        "published_missing_requirement": "Concrete occurrence-specific link is proposed to the fully compared JCM197 vitamin formulation. Preserve local NBRC837 source label and filter-sterile preparation; do not add Trace vitamins*** globally.",
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "NBRC837's ten-vitamin recipe matches JCM197 quantities and literal forms, but source-specific gassing remains part of preparation provenance. Hipolypepton in the receiving medium is not Polypeptone or generic casein by this review. The vitamin-stock formula can be proposed; source-local 197 resolving aliases still need rejection.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 106,
+      "case_id": "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+      "case_input_sha256": "d4e1fdb436fae8b2c1ec2933e0aa2cab5588b06cde7effaf8ea49a6ab6215a53",
+      "occurrence_ids": [
+        "CM_OCC:8464ccd53e89eb195e3d55433c261694b19087232032481ed115052ae0f035e3",
+        "CM_OCC:a6c0795c04323b8a97807c767a2e56c439c81800058bb9a8754be110a69d2bac",
+        "CM_OCC:7c875a13e7521811d54f82be7f5a104396c8d15d3a18e270286f4ed382623e5d",
+        "CM_OCC:3abe225cb48084137d1d40a92143559fb728304be324e674752995c950897272",
+        "CM_OCC:23aad33db0d616293d7f35fc51941994f6def9ddc0134498737aa73cacd6068d",
+        "CM_OCC:4d246864f149d9a6fb115957ad8ca5d6bc86274e72800002ae4307351057f0a9",
+        "CM_OCC:bd9e088d92d1cc2ff1c6c8251d50df6c16c8867d455627f96c3f52fa8ddaf7f7",
+        "CM_OCC:d46c2a176fea6a10b576397ac5fb7b57303263844dc495ee8dc96de1aaa06a73",
+        "CM_OCC:024059a08d090abebd8b00f9e5159a69c8160ef277d9b7ff0edfeb0458adeb9e",
+        "CM_OCC:768180bdb4042c29b2104f787e11fec06e2f2e46ca8439e6406c87f1cd714bef",
+        "CM_OCC:f49548b342ccdcacad1cf51fb13c3dded6cddbb6d1ddb23c07f7e43fdcb1bea8"
+      ],
+      "amendment_sha256_canonical": "c39a924a766ff4c25de9359807861c20bc5e663d09060bb27f00ce69dc587c3a",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 106,
+        "case_id": "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+        "case_input_sha256": "d4e1fdb436fae8b2c1ec2933e0aa2cab5588b06cde7effaf8ea49a6ab6215a53",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution (see Medium No. 187 )",
+          "source_label": "Trace element solution (see Medium No. 187 )",
+          "raw_source_label": "Trace element solution (see Medium No. 187 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:8464ccd53e89eb195e3d55433c261694b19087232032481ed115052ae0f035e3",
+          "CM_OCC:a6c0795c04323b8a97807c767a2e56c439c81800058bb9a8754be110a69d2bac",
+          "CM_OCC:7c875a13e7521811d54f82be7f5a104396c8d15d3a18e270286f4ed382623e5d",
+          "CM_OCC:3abe225cb48084137d1d40a92143559fb728304be324e674752995c950897272",
+          "CM_OCC:23aad33db0d616293d7f35fc51941994f6def9ddc0134498737aa73cacd6068d",
+          "CM_OCC:4d246864f149d9a6fb115957ad8ca5d6bc86274e72800002ae4307351057f0a9",
+          "CM_OCC:bd9e088d92d1cc2ff1c6c8251d50df6c16c8867d455627f96c3f52fa8ddaf7f7",
+          "CM_OCC:d46c2a176fea6a10b576397ac5fb7b57303263844dc495ee8dc96de1aaa06a73",
+          "CM_OCC:024059a08d090abebd8b00f9e5159a69c8160ef277d9b7ff0edfeb0458adeb9e",
+          "CM_OCC:768180bdb4042c29b2104f787e11fec06e2f2e46ca8439e6406c87f1cd714bef",
+          "CM_OCC:f49548b342ccdcacad1cf51fb13c3dded6cddbb6d1ddb23c07f7e43fdcb1bea8"
+        ],
+        "published_disposition": "existing_identity_or_alias",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "Eleven JCM receiving contexts cite the JCM187 trace recipe, with 10 ml in JCM1456 and mostly 1 ml elsewhere. Seven salts plus water are preserved, and separately added FeCl2 is not silently folded into this stock. The inherited generic NCIT relation is not newly approved. Three bare187 pointers still resolve globally and require source-qualified labels/rejected raw provenance.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM187"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "C may correct KG1886 applicability separately; this CM106 label correction does not cover case152."
+    },
+    {
+      "case_index": 110,
+      "case_id": "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+      "case_input_sha256": "dc44cff4b55aa1027ee46d444e843a6d2295b59db3c3c33f6dd677c1f3ad82f7",
+      "occurrence_ids": [
+        "CM_OCC:3de907ce0ae367f52adfe148d8135b2eafc227c810a591ff4be8ef45ddce1320"
+      ],
+      "amendment_sha256_canonical": "e3b3f3df23a7f6a093fcf262b09085abbe328e34f31a07533beb1458f4901e5b",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 110,
+        "case_id": "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+        "case_input_sha256": "dc44cff4b55aa1027ee46d444e843a6d2295b59db3c3c33f6dd677c1f3ad82f7",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace minerals (JCM Medium 151)",
+          "source_label": "Trace minerals (JCM Medium 151)",
+          "raw_source_label": "Trace minerals (JCM Medium 151)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:3de907ce0ae367f52adfe148d8135b2eafc227c810a591ff4be8ef45ddce1320"
+        ],
+        "published_disposition": "existing_identity_or_alias",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "JCM806 routes through 262/265 to JCM151 trace minerals; 1 L belongs to the nested Wolfe preparation, not a one-litre culture dose. Literal variable Mn sulfate hydration and unknown KOH amount are correctly retained. Bare151 pointer aliases remain active and should be rejected; the explicitly JCM-qualified Trace minerals (JCM Medium151) alias is a separate, potentially valid label.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM151"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 111,
+      "case_id": "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+      "case_input_sha256": "3c4698cf655763a9c3d10f5c4af96e852efef018ac3863f9c05238ab3cfd7013",
+      "occurrence_ids": [
+        "CM_OCC:7cf6646cfbd9fcdb467aaa52bdabf71ecb6c65ef13e5919089a339b3fd72cb48",
+        "CM_OCC:992865f5e9bccb64207197828d28160694e977951d21dc044151ac10ac137e12",
+        "CM_OCC:85b2e4f2a50dedb11b43aa917a11b11123447190ee74a9d24c7ddac92a35f682",
+        "CM_OCC:f8b05950750b253bcd34aaf4ab7e1faa1aa60ab64c430f4744a5472ec759cf65",
+        "CM_OCC:c79a5bc17f9f52a1c41620ba744c659969a806f5b1a575abf573fcb6e12fd312",
+        "CM_OCC:be3e54e315007df6316730b8bda43b7a4fd04f32a3297ee4cd81c4f53166e864",
+        "CM_OCC:6a7d092e672d882a74e535ad4f04f0952c6757061b94a8391c15c11e36190f30",
+        "CM_OCC:e892944385fb38cdcf951ccd64d3496ea3511a3a30d2e614c397cb070b34d22d",
+        "CM_OCC:d4a90e55f1557b4153099c546cefdb035b85c65b396d129e8bcd6330a9028337",
+        "CM_OCC:4270af0e7ce52f98234c7a3480de7cabf94ce2aa1008b062bfa0e2038b10fe33",
+        "CM_OCC:70d3b3e1b7472f9c478a6d31301e9e70e68c59844e0ed9161a54229650ce57e9",
+        "CM_OCC:08d3e402f8e05dac2f83c8a19dd6554d931cf029f691726b36e5d86ae540c013",
+        "CM_OCC:128c8e577874050168df27461c80a4ed595b5dcb80a5fd47f86d092ffbd78e0a",
+        "CM_OCC:c7da431767e878853d409f5936e2fe1cc9a54871e8d63a3ccf409da93033bc9c",
+        "CM_OCC:6d928eb348b4bb10af2e9dd65d0cdf329cb8d5b01c3e33e1a3a0ca1bb301d032",
+        "CM_OCC:6c7ddb3d5798fdd5373b57c58fb0433067a5c0f22b82d2a123bf3822dc45b924",
+        "CM_OCC:60402e4ecc174fe98354601d5e1c161fbce4f8f907ab8cb59587666bfc9e5836",
+        "CM_OCC:53e72e8ea65445ee4a82af6ddb3a9c80b20fb1636798d6ba10c4a15f8c396732",
+        "CM_OCC:ad9c9fa1c9b5f5f40cdfa32ae35cd07a0c3b3dc226e5ac5de59d3929396ad9db",
+        "CM_OCC:91d73b0cd4f77d19279dcbcf95ff06b154b4028550705348d01c698711a58835",
+        "CM_OCC:6d00742f09173012d84b75c4428ceeb71dc6312732fc5d7cb11cfffd500fdb5c",
+        "CM_OCC:ccbc3359b18917894b1ce3809cd4b0a8a667f0ee72a66c59918be16f9ca7f2fc",
+        "CM_OCC:5da91329fa5608e438c0b4178bae9d494aa3d93a13604034fdb06b73112b4db4",
+        "CM_OCC:5c85694e6b475d5f122c56a85ca8bccfdff0484550fc9f4f56d7492ba8d44ab1",
+        "CM_OCC:23dbd7dc64504eb7358dfc3cbface5fcd95f63188623b2fa01cff2e1df565cba",
+        "CM_OCC:e8c02da3b4da62414805631cfda75826cf2bab842a8fbcde9f9bafe4873fefc3",
+        "CM_OCC:77398dcfdf49f787aa30520f5e8b072cde8d69dc302e309ee8d5e9f76b18130e",
+        "CM_OCC:da7d9ef38f8bf33ef3841aca29c357702b58b75c14608973696f670d1b2ad10d",
+        "CM_OCC:0061ddab59d07b41955e79d358fd5330c21bf077778169b4f26f04366f4716bf",
+        "CM_OCC:bdd802e19b639d5d1391c611d9a6f6fc5381ef8b1a4893684ed2b10b84ea9f96",
+        "CM_OCC:849657b0d788529e752b2e529e202f091a851a2ebf4c6cbafddb275385fa7f72",
+        "CM_OCC:4340aa356e41888c26d195779325e6b23931a8d5d35e87336cf80fc946eca755",
+        "CM_OCC:f27d0c87f0491b083a50d482a14e9c5e8de3f6f652d9d9389708e423c9111c37",
+        "CM_OCC:37439ae608e0b28888955d4d8e45e858913bdd8027c34c18e9e97b984f89a8b6",
+        "CM_OCC:657b0a9690c6226d03dbebd090769fa1fef15693811a1ac3ed8875fbe7b5c049",
+        "CM_OCC:4a47f70d67ff720d4954445f314709fd5b9073b8110b58bea787ac80622795fd",
+        "CM_OCC:e66080153b48e098f15b7694893f45d898e379bd4c2510f59b48a32f1f185b52",
+        "CM_OCC:acfe6595b77254d420f4a0a559faa5fe510a5e7b5c3cd4579daf46aab1a3ed6d",
+        "CM_OCC:00b266d2fc266381a306013b1f7dc717651b3474a5ec0a42fc5ceb30b90b8a60",
+        "CM_OCC:19dd005e2656e18dfda3597a30d23d5925e198d0cf555e1a11a1202deee08cc3"
+      ],
+      "amendment_sha256_canonical": "7dd8306f35979cf806abe7876092e73d04d23c68238a228ce988f646fd9121d8",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 111,
+        "case_id": "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+        "case_input_sha256": "3c4698cf655763a9c3d10f5c4af96e852efef018ac3863f9c05238ab3cfd7013",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins (see Medium No. 197)",
+          "source_label": "Trace vitamins (see Medium No. 197)",
+          "raw_source_label": "Trace vitamins (see Medium No. 197)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:7cf6646cfbd9fcdb467aaa52bdabf71ecb6c65ef13e5919089a339b3fd72cb48",
+          "CM_OCC:992865f5e9bccb64207197828d28160694e977951d21dc044151ac10ac137e12",
+          "CM_OCC:85b2e4f2a50dedb11b43aa917a11b11123447190ee74a9d24c7ddac92a35f682",
+          "CM_OCC:f8b05950750b253bcd34aaf4ab7e1faa1aa60ab64c430f4744a5472ec759cf65",
+          "CM_OCC:c79a5bc17f9f52a1c41620ba744c659969a806f5b1a575abf573fcb6e12fd312",
+          "CM_OCC:be3e54e315007df6316730b8bda43b7a4fd04f32a3297ee4cd81c4f53166e864",
+          "CM_OCC:6a7d092e672d882a74e535ad4f04f0952c6757061b94a8391c15c11e36190f30",
+          "CM_OCC:e892944385fb38cdcf951ccd64d3496ea3511a3a30d2e614c397cb070b34d22d",
+          "CM_OCC:d4a90e55f1557b4153099c546cefdb035b85c65b396d129e8bcd6330a9028337",
+          "CM_OCC:4270af0e7ce52f98234c7a3480de7cabf94ce2aa1008b062bfa0e2038b10fe33",
+          "CM_OCC:70d3b3e1b7472f9c478a6d31301e9e70e68c59844e0ed9161a54229650ce57e9",
+          "CM_OCC:08d3e402f8e05dac2f83c8a19dd6554d931cf029f691726b36e5d86ae540c013",
+          "CM_OCC:128c8e577874050168df27461c80a4ed595b5dcb80a5fd47f86d092ffbd78e0a",
+          "CM_OCC:c7da431767e878853d409f5936e2fe1cc9a54871e8d63a3ccf409da93033bc9c",
+          "CM_OCC:6d928eb348b4bb10af2e9dd65d0cdf329cb8d5b01c3e33e1a3a0ca1bb301d032",
+          "CM_OCC:6c7ddb3d5798fdd5373b57c58fb0433067a5c0f22b82d2a123bf3822dc45b924",
+          "CM_OCC:60402e4ecc174fe98354601d5e1c161fbce4f8f907ab8cb59587666bfc9e5836",
+          "CM_OCC:53e72e8ea65445ee4a82af6ddb3a9c80b20fb1636798d6ba10c4a15f8c396732",
+          "CM_OCC:ad9c9fa1c9b5f5f40cdfa32ae35cd07a0c3b3dc226e5ac5de59d3929396ad9db",
+          "CM_OCC:91d73b0cd4f77d19279dcbcf95ff06b154b4028550705348d01c698711a58835",
+          "CM_OCC:6d00742f09173012d84b75c4428ceeb71dc6312732fc5d7cb11cfffd500fdb5c",
+          "CM_OCC:ccbc3359b18917894b1ce3809cd4b0a8a667f0ee72a66c59918be16f9ca7f2fc",
+          "CM_OCC:5da91329fa5608e438c0b4178bae9d494aa3d93a13604034fdb06b73112b4db4",
+          "CM_OCC:5c85694e6b475d5f122c56a85ca8bccfdff0484550fc9f4f56d7492ba8d44ab1",
+          "CM_OCC:23dbd7dc64504eb7358dfc3cbface5fcd95f63188623b2fa01cff2e1df565cba",
+          "CM_OCC:e8c02da3b4da62414805631cfda75826cf2bab842a8fbcde9f9bafe4873fefc3",
+          "CM_OCC:77398dcfdf49f787aa30520f5e8b072cde8d69dc302e309ee8d5e9f76b18130e",
+          "CM_OCC:da7d9ef38f8bf33ef3841aca29c357702b58b75c14608973696f670d1b2ad10d",
+          "CM_OCC:0061ddab59d07b41955e79d358fd5330c21bf077778169b4f26f04366f4716bf",
+          "CM_OCC:bdd802e19b639d5d1391c611d9a6f6fc5381ef8b1a4893684ed2b10b84ea9f96",
+          "CM_OCC:849657b0d788529e752b2e529e202f091a851a2ebf4c6cbafddb275385fa7f72",
+          "CM_OCC:4340aa356e41888c26d195779325e6b23931a8d5d35e87336cf80fc946eca755",
+          "CM_OCC:f27d0c87f0491b083a50d482a14e9c5e8de3f6f652d9d9389708e423c9111c37",
+          "CM_OCC:37439ae608e0b28888955d4d8e45e858913bdd8027c34c18e9e97b984f89a8b6",
+          "CM_OCC:657b0a9690c6226d03dbebd090769fa1fef15693811a1ac3ed8875fbe7b5c049",
+          "CM_OCC:4a47f70d67ff720d4954445f314709fd5b9073b8110b58bea787ac80622795fd",
+          "CM_OCC:e66080153b48e098f15b7694893f45d898e379bd4c2510f59b48a32f1f185b52",
+          "CM_OCC:acfe6595b77254d420f4a0a559faa5fe510a5e7b5c3cd4579daf46aab1a3ed6d",
+          "CM_OCC:00b266d2fc266381a306013b1f7dc717651b3474a5ec0a42fc5ceb30b90b8a60",
+          "CM_OCC:19dd005e2656e18dfda3597a30d23d5925e198d0cf555e1a11a1202deee08cc3"
+        ],
+        "published_disposition": "new_distinct_ingredient_proposal",
+        "published_missing_requirement": "Integration must withdraw inherited support, check collision with other workers’197 proposals and run native stock-partonomy validation.",
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_evidence_classification_and_alias",
+        "independent_reasoning": "All forty frozen occurrences retain numbered197 context, but four archived JCM receiving captures (737/876/887/955) say Nothing found. They must be unsuccessful_search rather than primary_source, with explicit occurrence-level frozen-only applicability limits. The actual JCM197 stock definition and successful receiving captures remain valid. No claim that the author fabricated forty primary reads is made. Bare197 pointer aliases also require rejection; dose anomalies stay held.",
+        "integration_planning_disposition": "requires_source_outcome_or_evidence_correction",
+        "direct_source_findings": [
+          "W06-IR-008"
+        ],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Use C corrected source applicability over prior all40 text; add only A alias clause."
+    },
+    {
+      "case_index": 117,
+      "case_id": "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+      "case_input_sha256": "6e28aba31c592e960670e00b432258311db67d0ffb9867f055c0ac04c845daa6",
+      "occurrence_ids": [
+        "CM_OCC:ab3e28b29d6689943fd20ef058c7f6ac6fde229e95d67ca1e92541a58b390509"
+      ],
+      "amendment_sha256_canonical": "0b058523c761a03000d3275cba06a84c06d7dfb151d89ad80dcc1d61d7000ba8",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 117,
+        "case_id": "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+        "case_input_sha256": "6e28aba31c592e960670e00b432258311db67d0ffb9867f055c0ac04c845daa6",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamin (see Medium No. 197 )",
+          "source_label": "Trace vitamin (see Medium No. 197 )",
+          "raw_source_label": "Trace vitamin (see Medium No. 197 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:ab3e28b29d6689943fd20ef058c7f6ac6fde229e95d67ca1e92541a58b390509"
+        ],
+        "published_disposition": "new_distinct_ingredient_proposal",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "JCM1456's singular Trace vitamin pointer explicitly calls JCM197 at 10 ml. This is a source-local numbered stock reference; singular/plural does not alter the ten-vitamin formula. The source link is supported, but the raw pointer must not become a global resolving alias.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 123,
+      "case_id": "CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2",
+      "case_input_sha256": "70136669b310c177ea7e29e6eda640cfa28e8be740db11d773bec66d480912e6",
+      "occurrence_ids": [
+        "CM_OCC:b1c3a197aa6b8b5a9d8ef31af7058928134086d9bb15f35fa6aab336c0b90f74"
+      ],
+      "amendment_sha256_canonical": "39a5afe47e14a9c54fa06d73b6d9635de4d6a5cefb1a39a9a4fd25449a3fea42",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 123,
+        "case_id": "CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2",
+        "case_input_sha256": "70136669b310c177ea7e29e6eda640cfa28e8be740db11d773bec66d480912e6",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace vitamins solution* (see Medium No. 284 )",
+          "source_label": "Trace vitamins solution* (see Medium No. 284 )",
+          "raw_source_label": "Trace vitamins solution* (see Medium No. 284 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:b1c3a197aa6b8b5a9d8ef31af7058928134086d9bb15f35fa6aab336c0b90f74"
+        ],
+        "published_disposition": "existing_identity_or_alias",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_b",
+        "review_receipt": "b/assessment.json",
+        "review_receipt_sha256": "cac54e2425ecce64062218eaaecaf7ebd77fdb9c4c138d5f3c6ee6afd0a1e74b",
+        "review_verdict": "fix_alias_boundary",
+        "independent_reasoning": "JCM1375's 2 ml vitamin addition explicitly refers to JCM284, whose formulation differs from JCM197 in pantothenate form/quantity and B12 amount. The source-local stock is supported but bare numbered-pointer resolving aliases need rejection. This assessment does not alter the source's separate glucose preparation.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM284"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 131,
+      "case_id": "CM_NAME:dafcc305d38e480df087be418af0a7e4fda32dc46baff6af5ef163c47c111785",
+      "case_input_sha256": "43c18f2ccbf5938b62b357a90960aab9738b3186b4500d8cb4b6b700aa22d38d",
+      "occurrence_ids": [
+        "CM_OCC:541896adde313adc62d358456cbd9dbd118971e3518b1325fa0b142f031a1890"
+      ],
+      "amendment_sha256_canonical": "bded6eb2b3c57da92a5b098ed9f3b61a6dbd6a86481e81c9e9aa30d3d7a1e2f9",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 131,
+        "case_id": "CM_NAME:dafcc305d38e480df087be418af0a7e4fda32dc46baff6af5ef163c47c111785",
+        "case_input_sha256": "43c18f2ccbf5938b62b357a90960aab9738b3186b4500d8cb4b6b700aa22d38d",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution (see Medium No. 1079 )",
+          "source_label": "Trace element solution (see Medium No. 1079 )",
+          "raw_source_label": "Trace element solution (see Medium No. 1079 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:541896adde313adc62d358456cbd9dbd118971e3518b1325fa0b142f031a1890"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": "The source requires pH3.6 but does not identify the titrant; the named constituent assertion is UNKNOWN and no titrant is invented.",
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "JCM1404 explicitly points to JCM1079. The latter supplies the acidic EDTA trace-element stock and pH 3.6; no titrant or EDTA salt form is invented. UNKNOWN closure is justified. The numbered resolving synonym nevertheless escapes the source boundary (C-01).",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM1079"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 134,
+      "case_id": "CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938",
+      "case_input_sha256": "060d2a231f9ff8f21c5f4ea648a9257acbc1d1a945e664d0faaff891c5bce25e",
+      "occurrence_ids": [
+        "CM_OCC:8abf124d1eeef1737452c6180ba7c7600eb698874945eec3c05d266f0b7d57c6",
+        "CM_OCC:c8cc2eae4c29c8300ce43a0a87084d7ccca7ca926cbed81b84378323e868f5f3",
+        "CM_OCC:20641c917ae5ad2c375a26de1d7ecd1b452f927e44839586e85c53b7e6448d98",
+        "CM_OCC:1dde8681ba57b9dc88372687cb6fba33835a49be01d83ba11a09f4548d4b9ab9"
+      ],
+      "amendment_sha256_canonical": "8d34ec004a29aaf868d13335d897688f12218bc7dddffdee4aba8dc3e829940e",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 134,
+        "case_id": "CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938",
+        "case_input_sha256": "060d2a231f9ff8f21c5f4ea648a9257acbc1d1a945e664d0faaff891c5bce25e",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution (see Medium No. 439 )",
+          "source_label": "Trace element solution (see Medium No. 439 )",
+          "raw_source_label": "Trace element solution (see Medium No. 439 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:8abf124d1eeef1737452c6180ba7c7600eb698874945eec3c05d266f0b7d57c6",
+          "CM_OCC:c8cc2eae4c29c8300ce43a0a87084d7ccca7ca926cbed81b84378323e868f5f3",
+          "CM_OCC:20641c917ae5ad2c375a26de1d7ecd1b452f927e44839586e85c53b7e6448d98",
+          "CM_OCC:1dde8681ba57b9dc88372687cb6fba33835a49be01d83ba11a09f4548d4b9ab9"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "JCM1363/1364/1400/1444 explicitly route to JCM439. The stock table matches the NBRC1257/1321 formulation, including FeCl2 tetrahydrate 2.1 g = 2100 mg. Preserve source-specific HCl strength representation and stock water amount; the bare 439 pointer remains resolving and requires C-01 correction. Qualified recipe linkage itself is supported.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "B-P-NBRC1257-1321"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 139,
+      "case_id": "CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88",
+      "case_input_sha256": "8126e9bf38cfa4a2eca2c4cc401256bc6c73ea9072bb3d50a0b89785269ce096",
+      "occurrence_ids": [
+        "CM_OCC:a5b741f907d70191c654662f410ef9501517d62b9e510d93734c79c5f1e0e321"
+      ],
+      "amendment_sha256_canonical": "7316b47088a7798ca3bc2f020a9ff9bfc7015d39f3970acfa51d28d1250c9b22",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 139,
+        "case_id": "CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88",
+        "case_input_sha256": "8126e9bf38cfa4a2eca2c4cc401256bc6c73ea9072bb3d50a0b89785269ce096",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution (see Medium No. 284 )",
+          "source_label": "Trace element solution (see Medium No. 284 )",
+          "raw_source_label": "Trace element solution (see Medium No. 284 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:a5b741f907d70191c654662f410ef9501517d62b9e510d93734c79c5f1e0e321"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "JCM1375 explicitly refers to JCM284 minerals. Primary preparation dissolves NTA initially in200 mL, uses variable KOH, and makes stock to1 L at pH7; these are not additive1.2 L water. Literal salts and unknown KOH amount are retained. Bare284 synonym remains unsafe (C-01).",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM284-MINERALS"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 143,
+      "case_id": "CM_NAME:f76ab08b98796bcd6405bdbfa93dc50018d21ca3b2386aac9a37783818d24ba5",
+      "case_input_sha256": "1078fe957075b0a1556b0ec7a06dd9aa2d3c0859eadf80caca62ba0546e7010d",
+      "occurrence_ids": [
+        "CM_OCC:d8812635e6df6ba00d5ae632087531fa1935c70fed054c9f9b54275f33f4564e"
+      ],
+      "amendment_sha256_canonical": "71ff495f52eee59820c4209929e5423c841ec7b7610e6f695c30d82eed1a5dcf",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 143,
+        "case_id": "CM_NAME:f76ab08b98796bcd6405bdbfa93dc50018d21ca3b2386aac9a37783818d24ba5",
+        "case_input_sha256": "1078fe957075b0a1556b0ec7a06dd9aa2d3c0859eadf80caca62ba0546e7010d",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution* (see Medium No. 899 )",
+          "source_label": "Trace element solution* (see Medium No. 899 )",
+          "raw_source_label": "Trace element solution* (see Medium No. 899 )"
+        },
+        "occurrence_ids": [
+          "CM_OCC:d8812635e6df6ba00d5ae632087531fa1935c70fed054c9f9b54275f33f4564e"
+        ],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "JCM1341 explicitly routes its starred trace-element solution toJCM899. The899 table supports the twelve listed preparation inputs, ammonium iron/nickel salts and25%HCl with995 mL water. It is distinct from similar-looking439/187 stocks. The unqualified899 pointer still resolves globally (C-01).",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM899"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 147,
+      "case_id": "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289",
+      "case_input_sha256": "e50586a07e7d9b86f5c11aa6088ebb9635edb1e8b78ad8944803472683230af3",
+      "occurrence_ids": [],
+      "amendment_sha256_canonical": "36c6aba15aaf9b949bf14cf6b9c75838334d431fdc0c24b5ea1afe54b10ebf90",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 147,
+        "case_id": "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289",
+        "case_input_sha256": "e50586a07e7d9b86f5c11aa6088ebb9635edb1e8b78ad8944803472683230af3",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1031",
+          "source_label": "Trace minerals",
+          "raw_source_label": "Trace minerals"
+        },
+        "occurrence_ids": [],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "MediaDive ingredient1031 is tied throughJ1328's explicit243 attribute to JCM243 stock; NTA/salts/water and variable KOH are supported by the actual243 table. The RELATED_SYNONYM Trace minerals still participates in native resolution despite source-limiting prose, requiring C-01.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "R-P-JCM243-STOCK"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 153,
+      "case_id": "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f",
+      "case_input_sha256": "f1969ab47cd17483f82c1ef2f7287723072cd211f7e1731d64fc460b0cb737f4",
+      "occurrence_ids": [],
+      "amendment_sha256_canonical": "f3540b672702f5c5ed9aff1297ce22b8490ce1917e8f2254af71dd5bdc4629ff",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 153,
+        "case_id": "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f",
+        "case_input_sha256": "f1969ab47cd17483f82c1ef2f7287723072cd211f7e1731d64fc460b0cb737f4",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:2017",
+          "source_label": "Modified trace vitamins",
+          "raw_source_label": "Modified trace vitamins"
+        },
+        "occurrence_ids": [],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "J1158 supports the modified vitamin table including DL-calcium pantothenate and KH2PO4. It does not establish universal identity of every Modified trace vitamins owner use. Receiving1 mL stock is not a2002 mL concentration denominator. Inherited see-below alias resolves (C-01); whole-owner and other-context holds remain.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "R-P-MODIFIED-VITAMINS"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 165,
+      "case_id": "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470",
+      "case_input_sha256": "fbac26ea1b0950392fc2e2845f322b3b4dcfd498b0bc62da74360f7af8358cd9",
+      "occurrence_ids": [],
+      "amendment_sha256_canonical": "dd530a40118cfabeee4d6a3dc5d8c87e439d827cab401549efa664bb922c580d",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 165,
+        "case_id": "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470",
+        "case_input_sha256": "fbac26ea1b0950392fc2e2845f322b3b4dcfd498b0bc62da74360f7af8358cd9",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1982",
+          "source_label": "Trace vitamins solution see Medium No. 284",
+          "raw_source_label": "Trace vitamins solution (see Medium No. 284)"
+        },
+        "occurrence_ids": [],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "Ingredient1982 is tied via primaryJ1051 context to JCM284 vitamin stock, which differs from the mineral stock. Literal vitamin forms and source scope are supported, but the shared payload's unqualified284 pointer aliases require C-01 correction.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM284"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 177,
+      "case_id": "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+      "case_input_sha256": "42fd0c11b00b13b74e4ee36eb1578c1470bb970c729bb38fd5c668ff9cfe3c4b",
+      "occurrence_ids": [],
+      "amendment_sha256_canonical": "e2530643e506f52e439ff9eddca3988b258705ac5879ddb91d20a1f7b1ed90c1",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 177,
+        "case_id": "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+        "case_input_sha256": "42fd0c11b00b13b74e4ee36eb1578c1470bb970c729bb38fd5c668ff9cfe3c4b",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1784",
+          "source_label": "Trace vitamins see Medium No. 197",
+          "raw_source_label": "Trace vitamins (see Medium No. 197)"
+        },
+        "occurrence_ids": [],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "All17 archivedJCM receiving recipes explicitly name trace vitamins197 undercompound1784, and actualJCM197 vitamin table supports the ten vitamins plus water separately from its mineral table. The84 frozen downstream quarantine rows concern wrong numericCHEBI1784 claims and remain intact. Bare pointer aliases still need C-01; no hold removal or source-toCHEBI1784 equivalence.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM197"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 182,
+      "case_id": "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee",
+      "case_input_sha256": "210ade2c612dbc5f60dc65912b1dbbe4d53b47c1b01ce4039a900b0477a4ae8d",
+      "occurrence_ids": [],
+      "amendment_sha256_canonical": "25b759ba1691fa1d92644f417d3b8137ccc994332495614c7ab06cf1fae42be1",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 182,
+        "case_id": "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee",
+        "case_input_sha256": "210ade2c612dbc5f60dc65912b1dbbe4d53b47c1b01ce4039a900b0477a4ae8d",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1883",
+          "source_label": "Trace minerals see Medium No. 151",
+          "raw_source_label": "Trace minerals (see Medium No. 151"
+        },
+        "occurrence_ids": [],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": null,
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "Ingredient1883 throughJ744 explicitly binds JCM151. The primary151 table supports fourteen inputs including variableKOH; aluminium andx-hydrate forms are not expanded beyond source. Unqualified151 pointer aliases still require C-01.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "C-P-JCM151"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    },
+    {
+      "case_index": 184,
+      "case_id": "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308",
+      "case_input_sha256": "fa3b4a27f35ff99ceb9a3c4cbe53ccfba0f914ca717a4bc8f9456fb65f784cea",
+      "occurrence_ids": [],
+      "amendment_sha256_canonical": "b4e6ae26c04d8614e69ab6da7622387d4ca9bff147c8b456da70e4c79e9c09d1",
+      "review_scope": "Exact nonresolving-alias assertion and unchanged source-routing partitions only; prior receiving-source assessment is identified, not newly certified.",
+      "prior_W03_assessment": {
+        "index": 184,
+        "case_id": "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308",
+        "case_input_sha256": "fa3b4a27f35ff99ceb9a3c4cbe53ccfba0f914ca717a4bc8f9456fb65f784cea",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1684",
+          "source_label": "Salts solution",
+          "raw_source_label": "Salts solution"
+        },
+        "occurrence_ids": [],
+        "published_disposition": "stock_product_mixture_context",
+        "published_missing_requirement": "Use the exact MediaDiveJ209 subsection and preserve source version; do not equate other salts stocks or remove the generic starred-alias hold.",
+        "reviewer": "/root/w06_review_c",
+        "review_receipt": "c/assessment.json",
+        "review_receipt_sha256": "1ab124e34f4da5d03637826e5d36ccb910ef19237626c7fc307ac2026957b309",
+        "review_verdict": "accept_bounded_source_assessment_with_holds",
+        "independent_reasoning": "MediaDiveJ209 partitions salts stock at recipe_order16–22: six salts and100 mL water, used at50 mL, rather than treating the flattened parent1092 mL as stockvolume. Bare Salts solutionRELATED_SYNONYM resolves despite source-bound prose (C-01). The bare pH6.7–6.8 step lacks reliable stock/parent scope in available rendering; no titrant identity is inferred, and this limitation should remain explicit.",
+        "integration_planning_disposition": "source_assessment_accepted_payload_corrections_pending",
+        "direct_source_findings": [],
+        "linked_payload_findings": [
+          "W06-IR-002"
+        ],
+        "proposal_ids": [
+          "R-P-JCM209-STOCK"
+        ],
+        "source_holds_preserved": true,
+        "source_mapping_release_approved": false,
+        "whole_owner_role_supported_export_approved": false
+      },
+      "verdict": "accepted for alias-claim scope",
+      "integration_condition": "Do not change inherited source/dose/owner/export holds."
+    }
+  ],
+  "native_negative_controls": [
+    {
+      "proposal_id": "B-P-NBRC1257-1321",
+      "raw_label": "Trace element solution (see Medium No. 439 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM439 primary stock reference; CultureMech case CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938"
+    },
+    {
+      "proposal_id": "C-P-JCM1079",
+      "raw_label": "Trace element solution (see Medium No. 1079 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM1079 named stock reference; frozen CultureMech shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "raw_label": "Trace minerals see Medium No. 151",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "mim-queue"
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "raw_label": "Trace minerals (see Medium No. 151",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "culturemech:output/ingredient_occurrences.tsv"
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "raw_label": "Trace minerals (see Medium No. 151 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM151 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+    },
+    {
+      "proposal_id": "C-P-JCM187",
+      "raw_label": "Trace element solution see Medium No. 187",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "mim-queue"
+    },
+    {
+      "proposal_id": "C-P-JCM187",
+      "raw_label": "Trace element solution (see Medium No. 187",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "culturemech:output/ingredient_occurrences.tsv"
+    },
+    {
+      "proposal_id": "C-P-JCM187",
+      "raw_label": "Trace element solution (see Medium No. 187 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM187 stock reference; CultureMech frozen shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "raw_label": "Trace vitamins (see Medium No. 197)",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM197 stock reference; CultureMech frozen shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "raw_label": "Trace vitamin (see Medium No. 197 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM197 stock reference; CultureMech frozen shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "raw_label": "Trace vitamins (see Medium No. 197 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "raw_label": "Trace vitamins* (see Medium No. 197 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "raw_label": "Trace vitamins solution see Medium No. 284",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "mim-queue"
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "raw_label": "Trace vitamins solution* (see Medium No. 284 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM284 stock reference; CultureMech frozen shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "raw_label": "Trace vitamins solution (see Medium No. 284)",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM284 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+    },
+    {
+      "proposal_id": "C-P-JCM284",
+      "raw_label": "Trace vitamins solution (see Medium No.284)",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM284 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+    },
+    {
+      "proposal_id": "C-P-JCM284-MINERALS",
+      "raw_label": "Trace element solution (see Medium No. 284 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM284 named stock reference; frozen CultureMech shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM899",
+      "raw_label": "Trace element solution (see Medium No. 899 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM899 named stock reference; frozen CultureMech shard06"
+    },
+    {
+      "proposal_id": "C-P-JCM899",
+      "raw_label": "Trace element solution* (see Medium No. 899 )",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "JCM899 named stock reference; frozen CultureMech shard06"
+    },
+    {
+      "proposal_id": "R-P-JCM209-STOCK",
+      "raw_label": "Salts solution",
+      "before_type": "RELATED_SYNONYM",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "Source-context label only; must not match without the recipe reference"
+    },
+    {
+      "proposal_id": "R-P-JCM243-STOCK",
+      "raw_label": "Trace minerals",
+      "before_type": "RELATED_SYNONYM",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "Source-context label only; must not match without the recipe reference"
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "raw_label": "Modified trace vitamins",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "mim-queue"
+    },
+    {
+      "proposal_id": "R-P-MODIFIED-VITAMINS",
+      "raw_label": "Modified trace vitamins (see below)",
+      "before_type": "RAW_TEXT",
+      "after_type": "REJECTED_LABEL",
+      "native_before_admitted": true,
+      "native_after_admitted": false,
+      "negative_control_restoring_old_type_admitted": true,
+      "source_preserved": "culturemech:output/ingredient_occurrences.tsv"
+    }
+  ],
+  "positive_controls": [
+    {
+      "proposal_id": "A-P-JCM167-SL6",
+      "unchanged_after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_167_sl6_trace_elements.yaml",
+        "sha256": "4503cbdfc784f03126d8023125894299ed4d1e4aeca15bf51c9093f602d809f9"
+      },
+      "native_resolving_aliases": [
+        {
+          "synonym_text": "SL-6 Trace element solution (see Medium No. 167 )",
+          "synonym_type": "RAW_TEXT",
+          "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=167"
+        }
+      ],
+      "why": "Established SL6/RST/SL4 preparation name retained; no blanket rejection solely because text also contains a numbered source reference."
+    },
+    {
+      "proposal_id": "A-P-JCM933-RST",
+      "unchanged_after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_933_rst_trace_elements.yaml",
+        "sha256": "ad37039d69d79482d2896190adcd0935674a823dcb37b97520c41bf75eb6a5a8"
+      },
+      "native_resolving_aliases": [
+        {
+          "synonym_text": "RST trace elements (see Medium No. 933 )",
+          "synonym_type": "RAW_TEXT",
+          "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=933"
+        }
+      ],
+      "why": "Established SL6/RST/SL4 preparation name retained; no blanket rejection solely because text also contains a numbered source reference."
+    },
+    {
+      "proposal_id": "A-P-JCM340-SL4",
+      "unchanged_after_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_340_sl4_trace_elements.yaml",
+        "sha256": "a95940f70c74f6c6b69ecc41aa2ce4fe20b8ee2c328f4199f7ae5ecc0b862f11"
+      },
+      "native_resolving_aliases": [
+        {
+          "synonym_text": "Trace element solution SL-4",
+          "synonym_type": "RAW_TEXT",
+          "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=340"
+        }
+      ],
+      "why": "Established SL6/RST/SL4 preparation name retained; no blanket rejection solely because text also contains a numbered source reference."
+    },
+    {
+      "proposal_id": "C-P-JCM151",
+      "native_resolving_alias": {
+        "synonym_text": "Trace minerals (JCM Medium 151)",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM151 stock reference; CultureMech frozen shard06"
+      },
+      "why": "JCM provider explicitly identifies the151 stock."
+    }
+  ],
+  "native_closed_schema_checked": [
+    "B-P-NBRC1257-1321",
+    "C-P-JCM1079",
+    "C-P-JCM151",
+    "C-P-JCM187",
+    "C-P-JCM197",
+    "C-P-JCM284",
+    "C-P-JCM284-MINERALS",
+    "C-P-JCM899",
+    "R-P-JCM209-STOCK",
+    "R-P-JCM243-STOCK",
+    "R-P-MODIFIED-VITAMINS"
+  ],
+  "reviewed_primary_capture_count": 32,
+  "reviewed_primary_captures": [
+    {
+      "evidence_id": "C-E-jcm-439",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-439.txt",
+        "sha256": "2a71115d17d54beb8454d4106e93dd60364885a914eee9d1c434ee15f510ceda"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=439",
+      "original_accessed_at": "2026-11-08T05:07:32.737875+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "B-http-cea6a91a0c986292",
+      "capture": {
+        "root": "artifact",
+        "path": "research-b/captures/http-38c9efc39c575e1d691b.txt",
+        "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+      "original_accessed_at": "2026-11-08T05:06:57.561446+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "B-http-93af0b491a06a026",
+      "capture": {
+        "root": "artifact",
+        "path": "research-b/captures/http-2caf4cd3f91d0ec555eb.txt",
+        "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+      "original_accessed_at": "2026-11-08T05:06:57.575679+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1079",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1079.txt",
+        "sha256": "3d3f371da67ec5dd1afe16890bf36795950e1cf239dccd93e7f74c4ad6bcad57"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1079",
+      "original_accessed_at": "2026-11-08T05:07:28.440841+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1404",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1404.txt",
+        "sha256": "07280677f9b7fda8b67ac25fa7a7f49bd371d263f24c3b695bc47c049a0908c0"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404",
+      "original_accessed_at": "2026-11-08T05:07:30.485092+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-151",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-151.txt",
+        "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+      "original_accessed_at": "2026-11-08T05:07:31.546662+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-103",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/7d572de85c9e1564.raw",
+        "sha256": "6fac275389567ae2274bc32d329d69e9f5abd7fe047d6edb2d540e854e73527c"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1347",
+      "original_accessed_at": "2026-11-08T05:06:57.180999+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-806",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-806.txt",
+        "sha256": "45ddb685647b7c03509004e294cf81c7e0866befaa98c5049977cc1ccb695b4a"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=806",
+      "original_accessed_at": "2026-11-08T05:07:33.712487+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-262",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-262.txt",
+        "sha256": "fcb6c19b354bfee56f843748753d428744c4b9e132e43c31b29b657ca592a00f"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=262",
+      "original_accessed_at": "2026-11-08T05:07:32.192169+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-265",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-265.txt",
+        "sha256": "9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265",
+      "original_accessed_at": "2026-11-08T05:07:32.200346+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-187",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-187.txt",
+        "sha256": "e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=187",
+      "original_accessed_at": "2026-11-08T05:07:31.959853+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1351",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1351.txt",
+        "sha256": "fc46c2da2652f972403fcd46d9fb82e0e2e692b09bc49e72f1abc0953112cb46"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1351",
+      "original_accessed_at": "2026-11-08T05:07:29.345378+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1456",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1456.txt",
+        "sha256": "e4b00e471e369b05c05f85b95d60a8042a7e9f8d1871e059b2fdc79e6d1080e6"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1456",
+      "original_accessed_at": "2026-11-08T05:07:31.267830+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-197",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-197.txt",
+        "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+      "original_accessed_at": "2026-11-08T05:07:31.962895+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-nbrc-837",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/nbrc-837.txt",
+        "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=837",
+      "original_accessed_at": "2026-11-08T05:07:37.113945+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-104",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/c464e732b34c9c65.raw",
+        "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+      "original_accessed_at": "2026-11-08T05:06:57.211128+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-107",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/ea7a1ace8904d63b.raw",
+        "sha256": "a42c0ee8511fa98972e1660199908c92b985aef9e59ea92c02bdc7d1911afd97"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362",
+      "original_accessed_at": "2026-11-08T05:06:57.450560+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-284",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-284.txt",
+        "sha256": "6566ba45030bfac8958271e24e81e63f62ee15deecf119495f03f649797f34d7"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284",
+      "original_accessed_at": "2026-11-08T05:07:32.228337+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1375",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1375.txt",
+        "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+      "original_accessed_at": "2026-11-08T05:07:29.753368+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "B-http-d50ed9514d6b22ce",
+      "capture": {
+        "root": "artifact",
+        "path": "research-b/captures/http-8e40932321962923b816.txt",
+        "sha256": "dc35417cfc4b253af3792cec0dc2bf5b12bf0d9fc45192b6437436b3942dc633"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1188",
+      "original_accessed_at": "2026-11-08T05:07:00.339143+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-899",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-899.txt",
+        "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899",
+      "original_accessed_at": "2026-11-08T05:07:34.261627+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1393",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1393.txt",
+        "sha256": "1349ce249d44773fc831558e9f44c78859e779a3694272bb657b58ddbd28f0a3"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1393",
+      "original_accessed_at": "2026-11-08T05:07:30.088817+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1395",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1395.txt",
+        "sha256": "5e0d34df46e27a1683c925afba580b2d3deb6ae9faa4a37a3d8888e3287e4953"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1395",
+      "original_accessed_at": "2026-11-08T05:07:30.102282+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1341",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1341.txt",
+        "sha256": "464993257dfafd7e560fafbdd4a52f0a4b034aa4adbcabda1f0047d515f5ecf0"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1341",
+      "original_accessed_at": "2026-11-08T05:07:29.166795+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-medium-J209",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J209.body",
+        "sha256": "8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J209",
+      "original_accessed_at": "2026-11-08T05:09:46.016221+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-ingredient-1684",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1684.body",
+        "sha256": "8d868ac826c016b1ff0af18a82dc13e511cd1c03c31586b16c50fc012769aaf7"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/1684",
+      "original_accessed_at": "2026-11-08T05:08:45.707529+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-jcm-final-243",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-243.body",
+        "sha256": "bf40fe2d1711468c6b053599408514bde93b2d0699ee808a51ffcfd7e7b1eff6"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=243",
+      "original_accessed_at": "2026-11-08T05:11:02.181341+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-medium-J1328",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1328.body",
+        "sha256": "e329454ef6b83c86a226a3d37a2885d0744ba705571951d057e572d069706a60"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J1328",
+      "original_accessed_at": "2026-11-08T05:09:44.770871+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-ingredient-1031",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1031.body",
+        "sha256": "0d5b6a4cef588f83354c1194d4bc346a69e90b3c24a87fcd40dc94d600a19c7f"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/1031",
+      "original_accessed_at": "2026-11-08T05:08:43.021939+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-jcm-final-1158",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/jcm-final-1158.body",
+        "sha256": "a6b4bbb782d46582f3ea17fdcce391e9822d5d28efecf68ff218b949182d411e"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1158",
+      "original_accessed_at": "2026-11-08T05:11:03.284978+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-medium-J1158",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J1158.body",
+        "sha256": "0458eb90158b40b2e1061a5591ba564c4668c139452795641b28c328bca8b94f"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J1158",
+      "original_accessed_at": "2026-11-08T05:09:44.783493+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-ingredient-2017",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-2017.body",
+        "sha256": "03b6c295170bc2bb18f8befaef4f8524d2b35b3163211c66e023fe7a262b120d"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/2017",
+      "original_accessed_at": "2026-11-08T05:08:43.539722+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    }
+  ],
+  "findings": [
+    {
+      "id": "V3-B-A-BOUNDARY-1",
+      "status": "resolved_by_scoped_acceptance",
+      "finding": "JCM187 label correction must not imply ingredient1886-to-JCM187 continuity.",
+      "evidence": "Canonical NCIT:C896 label preserved; author history explicitly excludes missing bridge and case152 excluded from A amendments. C/root owns010."
+    },
+    {
+      "id": "V3-B-A-BOUNDARY-2",
+      "status": "integration_constraint_not_new_source_defect",
+      "finding": "Case111 amendment carries old all40 wording before the appended alias correction.",
+      "resolution": "Root confirmed assembly will use C corrected full applicability plus only A alias sentence. This review approves the alias sentence, not the superseded receiving-source claim. Case76 named pages were not the four failed pages; no new failure alleged."
+    }
+  ],
+  "open_alias_or_payload_delta_findings": 0,
+  "central_final_bindings": "Pending final aggregate; exact final24 case outcome hash addendum required.",
+  "source_owner_export_release": false,
+  "maintained_edits": false,
+  "other_author_payloads_edited": false
+}

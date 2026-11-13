@@ -1,0 +1,176 @@
+[
+  {
+    "finding_id": "W09-ROW-BICARBONATE-CONTINUITY-001",
+    "status": "CONFIRMED_UNSUPPORTED_POSITIVE_DISTINCTNESS",
+    "request_ids": [
+      "B-CONDITIONAL-ROW-0637"
+    ],
+    "related_boundary_request_ids": [
+      "B-CONDITIONAL-ROW-0004",
+      "B-CONDITIONAL-ROW-0005"
+    ],
+    "owner_sha256": "f7aca68cf65299a813290c8831a568126f3f18eb4ecf50dec60c8f178246a61a",
+    "reproduction": "Read candidate notes, ontology_mapping.evidence[0].notes andcuration_history[0].changes: absenceofidenticalJ451finalvolume/priorCO2saturation is explicitlyused toconclude distinct source-defined operationalidentity. CompareexactNBRC1257/1321footnotes withJ451named84gLstock/autoclavedunderCO2. Omissionisnotpositivecontraryformulationevidence.",
+    "evidence": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J451.json",
+        "sha256": "7e4712df36431b233a73fd33c2800fb361518bb369aeab7df227f254d2981c9a",
+        "locator": "J451mainrecipe named84g/LNaHCO3stock30mL/autoclavedunderCO2"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html",
+        "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b",
+        "locator": "NBRC1321bicarbonate***footnote8.4g+100mLwater;saturatedCO2;sealedCO2autoclaving"
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html",
+        "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+        "locator": "NBRC1257samebicarbonate***footnote"
+      }
+    ],
+    "proposed_bounded_fix": "Rootfiles/deduplicatesfirst. Removeunsupportedpositivedistinctness claim fromtheaccountableproposal successor andadjudicatenominal-versus-preparation ownercontinuity whilepreservingallsourceprofiles/history. Do notforceidentity/mergeorinstallbothasproveddistinct. RetainnominalNBRCrecipeand1257/1321union; holdonlyaffectedinstallation/routing untilgenuinecontinuityresolution orpositivecontrarysourceevidence.",
+    "relation_to_prior_issue": "CHEM-COMP-006/#1237per-stringbicarbonatepointeraliasdisposition isseparate; it didnotsettlethegeneric84gLownerboundary.",
+    "reported_to_root_before_fix": true,
+    "fixes_performed": false
+  },
+  {
+    "finding_id": "W09-ROW-SELENITE-UNSAFE-ALIAS-001",
+    "status": "CONFIRMED_AND_INDEPENDENTLY_REPRODUCED",
+    "request_ids": [
+      "B-CONDITIONAL-ROW-0182"
+    ],
+    "field": "other",
+    "token": "Na2Se2O3",
+    "reason": "Official disodium selenite is2Na.O3Se/CAS10102-18-8, and ATCC1191 positively names anhydrous Na2SeO3. DSMZ863 and MediaDive804 instead literally print Na2Se2O3, with no authoritative correction. W01case169 expressly preserves that malformed-token hold. The inherited resolving Na2Se2O3 token in both complete rows is unsafe; valid new anhydrous evidence does not repair it.",
+    "prior_context": "Issue718andcurrentW01case169hold; do not fileasnewidentitydiscoverywithoutdeduplication.",
+    "evidence_refs": [
+      {
+        "evidence_id": "RS-009-PRIMARY-007",
+        "primary_author_scope": "materials",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/890225ce506d2f3b0969.json",
+        "sha256": "cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872",
+        "bytes": 9861,
+        "url": "https://www.ebi.ac.uk/chebi/backend/api/public/compound/48843/",
+        "original_accessed_at": "2026-11-08T04:10:35.868820+00:00",
+        "locator": "Original body; relevant named component, stock section, formula/name or Methods passage identified in the decision.",
+        "skeptic_content_inspection": "DIRECT_RELEVANT_PRIMARY_CONTENT_READ",
+        "native_author_evidence_index": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/science/materials/primary-evidence.json"
+      },
+      {
+        "evidence_id": "Na2Se2O3-DSMZ863",
+        "primary_author_scope": "materials",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8f78720d273001286b58.pdf",
+        "sha256": "312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912",
+        "bytes": 98674,
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf",
+        "original_accessed_at": null,
+        "locator": "Trace elements table literal Na2Se2O3 0.100g; no correction",
+        "skeptic_content_inspection": "DIRECT_RELEVANT_PRIMARY_CONTENT_READ",
+        "native_author_evidence_index": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/science/materials/primary-evidence.json"
+      },
+      {
+        "evidence_id": "Na2Se2O3-MD804",
+        "primary_author_scope": "materials",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1b55b6b33ceb08fe51eb.json",
+        "sha256": "fd2c8ff3c3ada95ad48962f98a9e86935372b39f1a897571a729d68061406839",
+        "bytes": 268,
+        "url": "https://mediadive.dsmz.de/download/ingredient/804/json",
+        "original_accessed_at": null,
+        "locator": "name/group Na2Se2O3; CAS/formula/ChEBI/mass null",
+        "skeptic_content_inspection": "EXACT_HASHED_CONTEXT_REFERENCE_NOT_CLAIMED_FRESH_CONTENT_READ",
+        "native_author_evidence_index": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/science/materials/primary-evidence.json"
+      },
+      {
+        "evidence_id": "W01-final-case169",
+        "primary_author_scope": "materials",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w01/reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/cores/final/decisions.json",
+        "sha256": "1df4da5d9de82ce6da563455c00f7ef63ae53ff379236272310cdb9047595d8a",
+        "bytes": 957715,
+        "url": null,
+        "original_accessed_at": null,
+        "locator": "allocation_index169, malformed_or_nonchemical_token; separate RS009 anhydrous alias and CM4081 quantity hold",
+        "skeptic_content_inspection": "DIRECT_RELEVANT_PRIMARY_CONTENT_READ",
+        "native_author_evidence_index": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/science/materials/primary-evidence.json"
+      }
+    ],
+    "bounded_acceptance": "Preserveliteralsourceandcasehold; onlyauthoritativecorrection/originalreagentwitness canresolveMD804/DSMZ863token. Correctresolvingexportaliasthroughaccountableowner/projectionandnewwholerowreview, notrowhandpatch.",
+    "reported_to_root_before_fix": true,
+    "fixes_performed": false
+  },
+  {
+    "finding_id": "W09-ROW-BORAX-METHOD-001",
+    "request_id": "B-CONDITIONAL-ROW-0171",
+    "status": "CONFIRMED_METHOD_PROVENANCE_DEFECT_IDENTITY_RETAINED",
+    "independent_skeptic_agreement": true,
+    "own_reason": "The IUCr borax paper explicitly identifies conventional decahydrate as Na2[B4O5(OH)4]·8H2O, agreeing with CHEBI38888 and supplierS9640 mass/CAS. Structural water accounting supports the identity despite target octahydrate wording; it contradicts the old131366 target. The actual corrective route was this structural judgment, so unqualified LexicalMatching is not evidenced as performed. Identity remains exact; the method and whole row need correction/review.",
+    "focused_adjudication_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/skeptical-methods/ADJUDICATION.json",
+    "focused_adjudication_sha256": "f2cf18e77c4aca586eded1f41706ccb03063dff9685a19a758dfdd5bfb3f01cf",
+    "scope": "Focusedmethod/aliasadjudication; notadditional83-rowvote.",
+    "bounded_acceptance_conditions": [
+      "Root files/deduplicates the bounded method finding before correction. Accountable author records the actual performed judgment using supported native method grade/evidence; retains exactCHEBI38888 identity, formula/CAS and original history.",
+      "Regenerate under the authorized mechanism and independently review the exact resulting full row; do not hand-patch SSSOM or downgrade its own-identifier exact predicate simply to match a method enum."
+    ],
+    "fixes_performed": false
+  },
+  {
+    "finding_id": "W09-ROW-SULFUR-METHOD-001",
+    "request_id": "B-CONDITIONAL-ROW-0264",
+    "status": "CONFIRMED_METHOD_PROVENANCE_DEFECT_BOTH_NATIVE_AND_ALTERNATIVE",
+    "independent_skeptic_agreement": true,
+    "own_reason": "Primary powders/ground/precipitated inputs denote weighable elemental sulfur, not atomic sulfur or a defined polysulfur allotrope. Current owner retains explicit CURATOR_JUDGMENT and the#368 atom-to-material correction. The sixteen names remain supported in that context; LexicalMatching does not truthfully describe this documented selection route. The historical comment remains useful but does not fix the method.",
+    "focused_adjudication_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/skeptical-methods/ADJUDICATION.json",
+    "focused_adjudication_sha256": "f2cf18e77c4aca586eded1f41706ccb03063dff9685a19a758dfdd5bfb3f01cf",
+    "scope": "Focusedmethod/aliasadjudication; notadditional83-rowvote.",
+    "bounded_acceptance_conditions": [
+      "Preserve elemental-sulfur identity, original rejected labels, complete histories and source preparation holds; correct method provenance through authorized owner/native derivation and re-review exact complete row.",
+      "Prefer retaining the historical #368 explanation as an unselected complete-row alternative once method corrected: it truthfully explains material/atom scope. Selection still belongs to coordinator."
+    ],
+    "fixes_performed": false
+  },
+  {
+    "finding_id": "W09-ROW-OLEIC-BROAD-ALIASES-001",
+    "request_id": "B-CONDITIONAL-ROW-0207",
+    "status": "PROVISIONAL_DROP_CONCERN_NOT_CONFIRMED_KEEP_WITH_SCOPED_LIMIT",
+    "independent_skeptic_agreement": true,
+    "own_reason": "The actual OADC source links SigmaO1008, whose primary capture identifies cis oleic acid/CAS112-80-1; CHEBI16196 agrees. FA18:1 and Octadec-9-enoic acid are genuinely recorded ontology synonyms. Their underqualified strings alone do not invalidate an otherwise identified owner under§3. Keep owner-scoped shared names; do not make them globally unique identifiers or resolve future unspecified fatty acids by this review.",
+    "focused_adjudication_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/skeptical-methods/ADJUDICATION.json",
+    "focused_adjudication_sha256": "f2cf18e77c4aca586eded1f41706ccb03063dff9685a19a758dfdd5bfb3f01cf",
+    "scope": "Focusedmethod/aliasadjudication; notadditional83-rowvote.",
+    "bounded_acceptance_conditions": [
+      "Preserve official synonym-source context and all source-specific identity/lot limits. Do not file a confirmed scientific DROP based only on missing qualifiers.",
+      "Any distinct owned-name exclusivity SUPPRESS decision needs its own actual preferred-owner/sidecar evidence; this bounded adjudication does not decide it."
+    ],
+    "fixes_performed": false
+  },
+  {
+    "finding_id": "W09-ROW-BENZENETRIOL-METHOD-TRACE-OBSERVATION",
+    "request_id": "B-CONDITIONAL-ROW-0336",
+    "status": "METHOD_TRACE_LIMITATION_NOT_CONFIRMED_DEFECT",
+    "independent_skeptic_agreement": true,
+    "own_reason": "DSMZ799 literal1,2,4-trihydroxybenzene and officialCHEBI16971 substitution pattern establish benzene-1,2,4-triol. Current primary-label equality is compatible with a lexical route, but the preserved decision shows pattern interpretation without the actual resolution trace. This is a method-evidence gap, not proof of wrong identity or necessarily wrong method; whole-row affirmation must await truthful route evidence.",
+    "focused_adjudication_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/skeptical-methods/ADJUDICATION.json",
+    "focused_adjudication_sha256": "f2cf18e77c4aca586eded1f41706ccb03063dff9685a19a758dfdd5bfb3f01cf",
+    "scope": "Focusedmethod/aliasadjudication; notadditional83-rowvote.",
+    "bounded_acceptance_conditions": [
+      "Before affirming the method field without limitation, accountable source author should provide the actual name-resolution trace or a truthfully performed current primary-label resolution event while preserving the historical source-synonym path.",
+      "Identity and source substitution-pattern support remain valid; method evidence gap must remain visible in complete-row admission decision."
+    ],
+    "fixes_performed": false
+  },
+  {
+    "finding_id": "W09-ROW-DIARSENIC-METHOD-001",
+    "request_id": "B-CONDITIONAL-ROW-0407",
+    "status": "CONFIRMED_DOCUMENTED_JUDGMENT_VS_LEXICAL_METHOD",
+    "independent_skeptic_agreement": true,
+    "own_reason": "CCAPUCM weighsAs2O3 separately from its alkaline prepared stock. CHEBI30621 definitionAs:O2:3 and molecular depictionAs4O6 support the oxide reagent. The original decision explicitly reconciles these representations and rejects arsenite, a documented judgment route; equal adopted primarylabel does not alone establish performed LexicalMatching. Preserve identity and quantity/polymorph holds while correcting method provenance.",
+    "focused_adjudication_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/conditional-full-row-review-v1/skeptical-methods/ADJUDICATION.json",
+    "focused_adjudication_sha256": "f2cf18e77c4aca586eded1f41706ccb03063dff9685a19a758dfdd5bfb3f01cf",
+    "scope": "Focusedmethod/aliasadjudication; notadditional83-rowvote.",
+    "bounded_acceptance_conditions": [
+      "Root files/deduplicates before remediation; preserve minimalCHEBI30621 identity, original empirical-formula alias and complete judgment history. Correct actual method provenance under native contracts and re-review exact whole row.",
+      "Keep molecular-weight/polymorph/lot claims absent and the alkaline stock/preparation-level quantity correction hold distinct. Do not substitute a synonym grade based on unperformed uniqueness lookup.",
+      "If an accountable author actually performs and records a separate current primary-label resolution consistent with §0, independently assess those new bytes; preserve the original ratio/representation judgment without fabricating a historical lookup."
+    ],
+    "fixes_performed": false
+  }
+]

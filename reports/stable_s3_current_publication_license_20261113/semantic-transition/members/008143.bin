@@ -1,0 +1,58 @@
+identifier: NCIT:C72000
+preferred_term: Carrot
+ontology_mapping:
+  ontology_id: NCIT:C72000
+  ontology_label: Carrot
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: mim-queue
+    notes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:1612; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 7
+  media_count: 7
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from mim-queue via ols-label-exact-ncit. source_id=mediadive.ingredient:1612; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.624394+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.125435+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518513+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 7/7 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T06:05:22.132705+00:00'
+  curator: codex_worker02_research_a_continuation1201
+  action: PROPOSED_CURATION
+  changes: Document source-specific peeled/cut carrot tissue on the existing Carrot
+    owner; preserve NCIT identity and distinguish the starting tissue from the derived
+    carrot-potato extract. No global source-local alias is added.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Carrot, peeled and cut
+  form: peeled and cut carrot tissue
+  notes: JCM54 and JCM55 identify this tissue as an input for preparation of carrot-potato
+    extract. This source-specific form does not assert that the resulting boiled and
+    filtered extract is unchanged carrot tissue, and does not redefine all existing
+    carrot occurrences.

@@ -1,0 +1,115 @@
+id: CultureMech:009536
+name: modified_gam_agar_with_5_horse_blood
+original_name: Modified GAM Agar With 5% Horse Blood
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ingredients:
+- preferred_term: Distilled water
+  concentration:
+    value: '1.0'
+    unit: L
+  source: TOGO M3025 / JCM Medium 1370
+  notes: TOGO M3025 / JCM Medium 1370 lists 1 L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: GAM agar, modified (Nissui)
+  concentration:
+    value: '56.7'
+    unit: G_PER_L
+  source: TOGO M3025 / JCM Medium 1370
+  notes: TOGO M3025 / JCM Medium 1370 lists 56.7 g/L GAM agar, modified (Nissui);
+    this commercial product remains intentionally unmapped.
+- preferred_term: Defibrinated horse blood
+  concentration:
+    value: '5.0'
+    unit: PERCENT_V_V
+  source: TOGO M3025 / JCM Medium 1370
+  notes: JCM Medium 1370 adds 5% final sterile defibrinated horse blood aseptically
+    after Modified GAM Agar is autoclaved and cooled.
+  term:
+    id: MICRO:0001572
+    label: Defibrinated horse blood
+media_term:
+  preferred_term: TOGO Medium M3025
+  term:
+    id: TOGO:M3025
+    label: Modified GAM Agar With 5% Horse Blood
+notes: TOGO M3025 imports JCM Medium 1370 as Modified GAM Agar With 5% Horse Blood.
+  JCM 1370 prepares JCM Medium 655, cools it to about 45 C, and aseptically adds 5%
+  final sterile defibrinated horse blood.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:53.693984Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M3025'
+- timestamp: '2026-01-28T19:48:08.487855Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Defibrinated horse blood'
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-03-13T06:20:06.678447Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009536'
+- timestamp: '2026-03-17T06:29:42.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:25.696823+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Modified GAM Agar With 5% Horse Blood" to "modified_gam_agar_with_5_horse_blood"
+    for consistent matching
+- timestamp: '2026-05-16T09:04:25.344539+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:41:36.599647+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_togo_m3025_modified_gam_blood_score15.py
+  action: RESOLVED_TOGO_M3025_SCORE15
+  source: https://togomedium.org/medium/M3025; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1370
+  notes: TOGO M3025 imports JCM Medium 1370 as Modified GAM Agar With 5% Horse Blood.
+    JCM 1370 prepares JCM Medium 655, cools it to about 45 C, and aseptically adds
+    5% final sterile defibrinated horse blood. Corrected the imported Distilled water
+    unit, restored the 5% final horse-blood concentration, grounded Defibrinated horse
+    blood, and retained GAM agar, modified (Nissui), as intentionally unmapped.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Suspend 56.7 g GAM agar, modified (Nissui), in 1.0 L distilled water.
+- step_number: 2
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min unless otherwise stated.
+- step_number: 3
+  action: COOL
+  description: Cool sterilized Modified GAM Agar to about 45 C.
+- step_number: 4
+  action: MIX
+  description: Aseptically add sterile defibrinated horse blood to 5% final and dispense
+    quickly into sterile tubes or petri dishes.
+sterilization:
+  method: AUTOCLAVE
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M3025
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1370

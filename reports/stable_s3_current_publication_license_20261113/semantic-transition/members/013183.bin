@@ -1,0 +1,58 @@
+identifier: kgmicrobe.ingredient:jcm_825_l_cysteine_hcl_monohydrate_3_percent
+preferred_term: JCM825 L-cysteineHClmonohydrate3% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_825_l_cysteine_hcl_monohydrate_3_percent
+  ontology_label: JCM825 L-cysteineHClmonohydrate3% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: L-Cysteine HCl x H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825
+    source_record: JCM825 L-cysteineHClmonohydrate3% stock
+    notes: Nominal source-qualified stock only. Original JCM825 and matching MediaDive4784
+      both specify3% monohydrate stock,10ml added; solvent,percentagebasis and stockpH
+      unreported. The source does not establish a complete constituent list; no omitted
+      solvent or titrant is invented.
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'Nominal source-qualified stock only. Original JCM825 and matching MediaDive4784
+  both specify3% monohydrate stock,10ml added; solvent,percentagebasis and stockpH
+  unreported. The source does not establish a complete constituent list; no omitted
+  solvent or titrant is invented. Raw source labels retained in linked frozen cases:
+  [''3% L-Cysteine HCl x H2O solution'']. Generic labels are not global resolving
+  synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.249965+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

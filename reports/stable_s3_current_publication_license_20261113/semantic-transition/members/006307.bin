@@ -1,0 +1,343 @@
+{
+  "checked_at": "2026-11-08T04:59:57.889808+00:00",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1167",
+  "scope": "Three exact isolated successor payloads; only unsupported atmosphere-material edges removed. No shared fragments or maintained inputs edited.",
+  "coordinator_finding_sha256": "34b1123989cef7421dc05cf926f2001c18d0fac12a43463da83eabba8dc48d71",
+  "proposals": [
+    {
+      "proposal_id": "CS-PROP-NBRC361_NEUTRALIZED_SULFIDE_STOCK",
+      "lane": "concentration_stocks",
+      "proposal_patch": {
+        "proposal_id": "CS-PROP-NBRC361_NEUTRALIZED_SULFIDE_STOCK",
+        "kind": "new_owner",
+        "case_ids": [
+          "CM_NAME:4d65b2536822dfcd6269c60bc115da17c44137987f1f0caf1d911c1e8fd3f6ec"
+        ],
+        "description": "This operational source-qualified stock is defined by explicit precursor amount,water,acidandpHendpoint. It does not assert a stoichiometric neutralizedsulfide compound or exact final dissolvedspeciation. CurrentTOGO Disodiopersulfidenonahydrate annotation remains rejected as identitysupport. MIM1167 successor removes Nitrogen as a material component while retaining source atmosphere conditions in notes/evidence.",
+        "evidence_ids": [
+          "CS-047-O01",
+          "CS-P-NBRC-361",
+          "CS-P-TOGO-M1560",
+          "CS-broad-owner-candidate-search",
+          "CS-exact-name-owner-searches",
+          "CS-COMP-stock-proposal-guards-v1",
+          "CS-COMP-NATIVE-STOCK-V3",
+          "ATM1167-REMEDIATION",
+          "ATM1167-NATIVE"
+        ],
+        "owner_path": "data/ingredients/mapped/NBRC361_Neutralized_Sulfide_Stock.yaml",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml",
+          "sha256": "62d320a5f1bda3dcda7dc5d9cf05ffe95e7cfefb2d87d782c8791b757fe1e57e"
+        },
+        "identity_predicate_consequence": "Exactregistryidentityforthiswhole source-qualifiedstock. Noexactsolutemappingandnoglobalresolutionofbarecontextlabels.",
+        "integration_requirements": "Coordinator mustapplyafterindependentreviewwithsource-occurrenceassignment, then synchronizeallmaintainedsurfacesandSSSOM/nativepublicationchecks. Proposed registry doesnotauthorizeunqualifiedglobalaliaslookup.",
+        "applied": false,
+        "superseded_atmosphere_after_capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/proposals/NBRC361_Neutralized_Sulfide_Stock.yaml",
+          "sha256": "943d43b7e7018bcb23d184b89825f25abd98a938f8b981b10fdd4f3e09f47b8a"
+        }
+      },
+      "old_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC361_Neutralized_Sulfide_Stock.yaml",
+        "sha256": "943d43b7e7018bcb23d184b89825f25abd98a938f8b981b10fdd4f3e09f47b8a"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml",
+        "sha256": "62d320a5f1bda3dcda7dc5d9cf05ffe95e7cfefb2d87d782c8791b757fe1e57e"
+      },
+      "removed_component": {
+        "component_name": "Nitrogen",
+        "reference_scope": "UNMAPPED",
+        "source": "Autoclaved underN2 and keptsealed; gasamountunspecified."
+      },
+      "unchanged_material_components": [
+        {
+          "component_name": "Na2S·9H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_100_ML_PREPARATION_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "ML_PREPARATION_WATER"
+        },
+        {
+          "component_name": "Sulfuric acid solution,2N",
+          "reference_scope": "UNMAPPED",
+          "source": "Sterile2N acid added dropwise aftercoolingtoapproximatelypH7.3; actualvolumeisendpointdefined."
+        }
+      ],
+      "source_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/captures/primary/NBRC-361.html",
+        "sha256": "0de83dadbbc223d877c7fb48401f12329e4ae07b520a1bf548437debbc3d9b6a"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=361",
+      "accessed_at": "2026-11-08T04:06:28.980188+00:00",
+      "source_locator": "Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution paragraph",
+      "scientific_reason": "NBRC361 neutralized sulfide:1.5g Na2S·9H2O plus100mL distilled water; sterile2N H2SO4 is added dropwise to approximatelypH7.3 after cooling. Autoclaving at121°C for15minutes underN2 in a sealed vessel is a preparation condition, not a specified nitrogen material constituent.",
+      "case_ids": [
+        "CM_NAME:4d65b2536822dfcd6269c60bc115da17c44137987f1f0caf1d911c1e8fd3f6ec"
+      ],
+      "additional_case_backlinks": []
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_SULFIDE_STOCK",
+      "lane": "concentration_stocks",
+      "proposal_patch": {
+        "proposal_id": "CS-PROP-NBRC1321_SULFIDE_STOCK",
+        "kind": "new_owner",
+        "case_ids": [
+          "CM_NAME:be907c95d1757e8248331771aea41181491ad29a1bd5b7a09850ef8e31a4a00a"
+        ],
+        "description": "Footnote*******states24gNa2S·9H2O and100mLdistilledwater,filtersterilizedandstoredunderN2; sourcecallsit1M. Preservewateraddedbasisandnominalmolaritywithoutasserting24gperfinal100mL. Receivingdoseis1.5mL; different5%andneutralizedsulfidestocksremainseparate. NBRC1257 uses 12 g Na2S·9H2O plus 50 mL distilled water; NBRC1321 uses 24 g plus 100 mL. Both give the same precursor-to-added-water ratio, call the preparation 1.0 M, specify filtration and storage under N2. This is formulation equivalence at scaled batch size, not a claim that either is made up to a final volume. MIM1167 successor removes Nitrogen as a material component while retaining source atmosphere conditions in notes/evidence.",
+        "evidence_ids": [
+          "CS-113-O01",
+          "CS-P-NBRC-1321",
+          "CS-broad-owner-candidate-search",
+          "CS-exact-name-owner-searches",
+          "CS-COMP-stock-proposal-guards-v1",
+          "CS-XL-NS-P-nbrc-1257",
+          "CS-XL-NS-P-nbrc-1321",
+          "CS-XL-CONSOLIDATION-V2",
+          "CS-COMP-NATIVE-STOCK-V3",
+          "ATM1167-REMEDIATION",
+          "ATM1167-NATIVE"
+        ],
+        "owner_path": "data/ingredients/mapped/NBRC1321_Sulfide_Stock.yaml",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml",
+          "sha256": "2bf8bedbb48db7d1196df4f978f1015ae08ee0c5be49598556d04c273f1a6455"
+        },
+        "identity_predicate_consequence": "Exactregistryidentityforthiswhole source-qualifiedstock. Noexactsolutemappingandnoglobalresolutionofbarecontextlabels.",
+        "integration_requirements": "Coordinator mustapplyafterindependentreviewwithsource-occurrenceassignment, then synchronizeallmaintainedsurfacesandSSSOM/nativepublicationchecks. Proposed registry doesnotauthorizeunqualifiedglobalaliaslookup.",
+        "applied": false,
+        "superseded_after_capture": {
+          "root": "artifact",
+          "path": "proposals/NBRC1321_Sulfide_Stock.yaml",
+          "sha256": "352593f699f121e5c8feb3b66529ac2206afcd11b70ba41ddc66a6ca74ad3817"
+        },
+        "additional_case_backlinks": [
+          "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+        ],
+        "crosslane_bindings": [
+          {
+            "occurrence_id": "CM_OCC:5363a3ab2202806c37b285d87d656a7172751c8fe3242e5823133ce37f65d297",
+            "source_file": "data/normalized_yaml/bacterial/NBRC_1261.yaml",
+            "component_path": "ingredients/13",
+            "recipe_id": "CultureMech:007467",
+            "recipe_primary_identifier": "nbrc.medium:1257",
+            "raw_preferred_term": "Sulfide solution****",
+            "raw_component": {
+              "concentration": {
+                "unit": "ML_PER_L",
+                "value": "1.5"
+              },
+              "preferred_term": "Sulfide solution****"
+            }
+          }
+        ],
+        "crosslane_relation": "same_whole_stock",
+        "superseded_atmosphere_after_capture": {
+          "root": "artifact",
+          "path": "shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml",
+          "sha256": "12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5"
+        }
+      },
+      "old_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml",
+        "sha256": "12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml",
+        "sha256": "2bf8bedbb48db7d1196df4f978f1015ae08ee0c5be49598556d04c273f1a6455"
+      },
+      "removed_component": {
+        "component_name": "Nitrogen",
+        "reference_scope": "UNMAPPED",
+        "source": "Stored underN2afterfiltersterilization; gasamountunspecified."
+      },
+      "unchanged_material_components": [
+        {
+          "component_name": "Na2S·9H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "24",
+          "concentration_unit": "G_PER_100_ML_PREPARATION_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "ML_PREPARATION_WATER"
+        }
+      ],
+      "source_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/captures/primary/NBRC-1321.html",
+        "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+      "accessed_at": "2026-11-08T04:06:28.356376+00:00",
+      "source_locator": "Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution paragraph",
+      "scientific_reason": "NBRC1321 sulfide:24g Na2S·9H2O plus100mL distilled water, filtered then stored underN2. NBRC1257 equivalent scaled preparation is12g plus50mL water with the same handling. N2 is a storage atmosphere; no dissolved-gas material claim is established. Source nominal1M and literal added-water quantities remain separate.",
+      "case_ids": [
+        "CM_NAME:be907c95d1757e8248331771aea41181491ad29a1bd5b7a09850ef8e31a4a00a"
+      ],
+      "additional_case_backlinks": [
+        "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+      ]
+    },
+    {
+      "proposal_id": "KG26-PROP-186-IDENTITY",
+      "lane": "root_substances/kg26",
+      "proposal_patch": {
+        "proposal_id": "KG26-PROP-186-IDENTITY",
+        "case_ids": [
+          "KG_CASE:eb8f1bfbbe829604d0da8587ca93232ce865488e13f55fcefaafb8cd3f1639ff"
+        ],
+        "description": "Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified stock has its own registry identity. Existing CHEBI29377 stock-labelled owner has1751 historical membership and mixed dry/buffer aliases; this proposal neither repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution requires this exact occurrence context and is retained as non-resolving source text on the new owner. MIM1167 successor removes Carbon dioxide as a material component while retaining source atmosphere conditions in notes/evidence.",
+        "evidence_ids": [
+          "KG26-C186",
+          "KG26-K186",
+          "KG26-F186-863",
+          "KG26-P-347cd4e7cf06edc870e0",
+          "KG26-P-8f78720d273001286b58",
+          "KG26-P-ad7fb94a130056f1bbf4",
+          "KG26-CONTEXT-LEDGER",
+          "KG26-COMP-completeness-owner-preflight-v1",
+          "KG26-COMP-identity-proposal-guards-v1",
+          "KG26-COMP-NATIVE-IDENTITY-V3",
+          "ATM1167-REMEDIATION",
+          "ATM1167-NATIVE"
+        ],
+        "owner_path": "data/ingredients/mapped/DSMZ863_Sodium_Carbonate_Stock.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml",
+          "sha256": "becc99cf874aa7f4dc528c9ab9653ba8151d186825940e336c3344e94e3e6b9b"
+        },
+        "identity_predicate_consequence": "Exact registry identity for this source-qualified whole stock; no global generic-label redirect and no exact neat-carbonate mapping.",
+        "applied": false,
+        "superseded_atmosphere_after_capture": {
+          "root": "artifact",
+          "path": "shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml",
+          "sha256": "9d3619e9eee30553bd509f082fc99c3576252a8af9c473e3ab583135bc193baa"
+        }
+      },
+      "old_capture": {
+        "root": "artifact",
+        "path": "shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml",
+        "sha256": "9d3619e9eee30553bd509f082fc99c3576252a8af9c473e3ab583135bc193baa"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml",
+        "sha256": "becc99cf874aa7f4dc528c9ab9653ba8151d186825940e336c3344e94e3e6b9b"
+      },
+      "removed_component": {
+        "component_name": "Carbon dioxide",
+        "reference_scope": "UNMAPPED",
+        "source": "Autoclaved in sealed vessel underCO2; gas amount unspecified."
+      },
+      "unchanged_material_components": [
+        {
+          "component_name": "Na2CO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "106",
+          "concentration_unit": "G_PER_L_PREPARATION_WATER"
+        },
+        {
+          "component_name": "Degassed water",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "L_PREPARATION_WATER"
+        }
+      ],
+      "source_capture": {
+        "root": "artifact",
+        "path": "shard/root_substances/captures/primary/8f78720d273001286b58.pdf",
+        "sha256": "312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912"
+      },
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf",
+      "accessed_at": "2026-11-08T04:09:21.594634+00:00",
+      "source_locator": "Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution paragraph",
+      "scientific_reason": "DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved in sealed serum bottles underCO2. This describes the autoclaving atmosphere, without stating CO2 saturation or addition to the liquid. The material ingredient enumeration contains Na2CO3 and degassed water; no numerical final concentration, dissolved gas amount or final speciation is inferred.",
+      "case_ids": [
+        "KG_CASE:eb8f1bfbbe829604d0da8587ca93232ce865488e13f55fcefaafb8cd3f1639ff"
+      ],
+      "additional_case_backlinks": []
+    }
+  ],
+  "validation": {
+    "guarded_writer_passed": 3,
+    "strict_command": [
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/all-unmatched-worker-01/shard-venv/bin/python",
+      "scripts/validate_strict.py",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml",
+      "--out",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/strict.tsv",
+      "--workers",
+      "2"
+    ],
+    "strict_exit_code": 0,
+    "stdout": "",
+    "stderr": "Validating 3 files with 2 workers; schema=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\n=== validate-strict summary ===\n  files scanned:      3\n  files with ERROR:   0\n  total ERROR rows:   0\n  TSV:                /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/strict.tsv\n",
+    "proposed_partonomy_violations": [],
+    "all_other_material_component_rows_unchanged": true,
+    "all_original_history_preserved": true,
+    "all_raw_synonyms_still_nonresolving": true
+  },
+  "issue1166_verification": {
+    "assembled_proposals_sha256": "f7427f04e6dcfb482d8636dfa1884bbe49c6a442dd960935abd433e87c5f0689",
+    "assembled_decisions_sha256": "9eeeb1bdadec0631011731d11e7f2b30143d4e3d4a4a29cca5e2f54249dc84da",
+    "canonical_pairs": [
+      {
+        "canonical": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+        "retired_absent": "NSC-PROP-NBRC_1257_Bicarbonate_Solution",
+        "union_case_ids": [
+          "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3",
+          "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a"
+        ],
+        "named_backlink_verified": "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a"
+      },
+      {
+        "canonical": "CS-PROP-NBRC1321_SULFIDE_STOCK",
+        "retired_absent": "NSC-PROP-NBRC_1257_Sulfide_Solution",
+        "union_case_ids": [
+          "CM_NAME:be907c95d1757e8248331771aea41181491ad29a1bd5b7a09850ef8e31a4a00a",
+          "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+        ],
+        "named_backlink_verified": "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+      }
+    ],
+    "scope": "Only crosssourceNBRC1257/1321bicarbonate/sulfide. Prior same-sourcephenanthrene/Metal44reconciliation is distinct. Literal12g+50mL versus24g+100mL sourcebatches and original receiving doses remain preserved."
+  },
+  "positive_bicarbonate_distinction": {
+    "path": "shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+    "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c",
+    "unchanged_material_gas_rows": [
+      {
+        "component_name": "Carbon dioxide",
+        "reference_scope": "UNMAPPED",
+        "source": "Saturatewater/solutionwithCO2,sealunderCO2,thenautoclave; dissolvedgasamountnotquantified."
+      }
+    ],
+    "primary_basis": "NBRC1321 bicarbonate footnote explicitly says Saturated withCO2gas, separately from sealedCO2bottles/autoclaving. That asserted material inclusion is supported; no gas concentration is invented."
+  }
+}

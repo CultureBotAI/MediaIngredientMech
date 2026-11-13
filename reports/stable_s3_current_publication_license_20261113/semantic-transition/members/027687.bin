@@ -1,0 +1,147 @@
+identifier: cas:143314-17-4
+preferred_term: 1-ethyl-3-methylimidazolium acetate
+ontology_mapping:
+  ontology_id: CHEBI:63895
+  ontology_label: ionic liquid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 143314-17-4 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
+      FEBA_stress. Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via=''1-ethyl-3-methylimidazolium
+      acetate'''
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:61326 (''1-ethyl-3-methylimidazolium'') -> CHEBI:63895 (''ionic
+      liquid''). The record is the neutral salt (CAS 143314-17-4, two-fragment SMILES).
+      CHEBI:61326 ''1-ethyl-3-methylimidazolium'' is the bare cation, C6H11N2 charge
+      +1: a component of the salt, not a broader term for it (Section 6). ChEBI has
+      no term for the acetate salt, so the closest broader class is CHEBI:63895 ''ionic
+      liquid'', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine already
+      uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged (Section
+      3 step 2).'
+synonyms:
+- synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+- synonym_text: 1-ethyl-3-methylimidazolium lysine
+  synonym_type: REJECTED_LABEL
+  source: mappings/ingredient_mappings.sssom.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:143314-17-4 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.659196+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:51:03.001057+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C8H14N2O2; smiles=CCN1C=C[N+](=C1)C.CC(=O)[O-]; inchi=InChI=1S/C6H11N2.C2H4O2/c1-3-8-5-4-7(2)6-8;1-2(3)4
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.759811+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:35:53.785633+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:61326 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-09-11T06:31:23.789310+00:00'
+  curator: fix_salt_ion_identity_overclaims
+  action: REJECTED_ION_SYNONYMS
+  changes: 'Marked cation/other-salt synonym(s) as REJECTED_LABEL so they cannot leak
+    through SSSOM `other`: ''1-ethyl-3-methyl-1H-imidazol-3-ium'', ''1-ethyl-3-methylimidazolium
+    lysine'' (#315).'
+  llm_assisted: false
+- timestamp: '2026-09-22T23:25:51.013985+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:61326 (''1-ethyl-3-methylimidazolium'') -> CHEBI:63895
+    (''ionic liquid'') (#312). The record is the neutral salt (CAS 143314-17-4, two-fragment
+    SMILES). CHEBI:61326 ''1-ethyl-3-methylimidazolium'' is the bare cation, C6H11N2
+    charge +1: a component of the salt, not a broader term for it (Section 6). ChEBI
+    has no term for the acetate salt, so the closest broader class is CHEBI:63895
+    ''ionic liquid'', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine
+    already uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged
+    (Section 3 step 2).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000017; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 143314-17-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C8H14N2O2
+  smiles: CCN1C=C[N+](=C1)C.CC(=O)[O-]
+  inchi: InChI=1S/C6H11N2.C2H4O2/c1-3-8-5-4-7(2)6-8;1-2(3)4/h4-6H,3H2,1-2H3;1H3,(H,3,4)/q+1;/p-1
+  pubchem_cid: 11658353
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000017
+legacy_identifiers:
+- MIM:1-ethyl-3-methylimidazolium_Acetate
+- cas:143314-17-4
+discussions:
+- discussion_id: kgscan-7872af433046
+  prompt: 'Knowledge gap for 1-ethyl-3-methylimidazolium acetate: Ionic liquids (ILs)
+    have been used to replace organic solvents, thereby causing challenges for wastewater
+    treatment.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: future_work,
+    limitations_barriers, unclear_unknown). Curator review required: set attaches_to,
+    refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:41015306
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Ionic liquids (ILs) have been used to replace organic solvents, thereby
+      causing challenges for wastewater treatment.
+    explanation: Gap-signal sentence (limitations_barriers) from the cited abstract.
+  - reference: PMID:40666722
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: By focusing on the deconstruction and reassembly of nonedible agro-wastes,
+      these methods address critical challenges such as resource competition, plastic
+      pollution, and greenhouse gas emissions.
+    explanation: Gap-signal sentence (limitations_barriers) from the cited abstract.
+  - reference: PMID:42195639
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: These inherent structural complexities present significant challenges
+      for its efficient isolation and precise transformation.
+    explanation: Gap-signal sentence (limitations_barriers) from the cited abstract.
+  - reference: PMID:40649189
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: However, challenges related to large-scale production, functionalization,
+      regulatory frameworks, and safety concerns persist, necessitating further research
+      and innovation.
+    explanation: Gap-signal sentence (future_work, limitations_barriers) from the
+      cited abstract.
+  posed_by: kg-microbe-kgscan

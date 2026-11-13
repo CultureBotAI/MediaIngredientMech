@@ -1,0 +1,1657 @@
+# W09 actual eight-row scientific follow-up; scoped recommendations only
+
+- Review: 20261110T020248Z-w09-eight-row-native-persistence
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-10T01:44:02.417380Z
+- Finished UTC: 2026-11-10T02:02:48Z
+- Reviewer: W09 /root primary; distinct /root/row_skeptic complete-eight-row challenge (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+All8 actual complete rows across7 exact current owners assessed:104cells and62orderedother tokens. Seven native rows recommended unchanged; Sulfur exact old #368 comment recommended on the otherwise identical actual row. Both documents remain recommendations for root selection. No new confirmed source defect, source acceptance, owner/role/export/companion/suppression/publication approval.
+
+## Scope And Provenance
+
+Only the exact eight frozen actual native rows plus their complete proposed retained-cell recommendations, all fields/tokens, current whole-owner context and preserved holds.
+
+Selection: Frozen assignment fbcc57336f878c360687e058960841dff14a728ca2362b36ff7a052f1e132fb3; actual candidate13a061af2cc700794b86f89e08d3de4cc15aa15f983651ad951c20e93414fcb5; original case/proposal identity bound, not historical e99e diagnostic masquerading as actual.
+Coverage: full; 8 reviewed / 8 in the declared population.
+Source: working_tree at Git base bf75ca9a93579e50140a63b4426dbdf8913afe11.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| B-CONDITIONAL-ROW-0116 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/0/native_row | snapshot_row | MIM:L-Cysteine_X_HCl_X_H2O_Solution -&gt; CHEBI:91248 |
+| B-CONDITIONAL-ROW-0117 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/1/native_row | snapshot_row | MIM:L-Cysteine_X_HCl_X_H2O_Solution -&gt; kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution |
+| B-CONDITIONAL-ROW-0145 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/2/native_row | snapshot_row | MIM:Menadione -&gt; CHEBI:28869 |
+| B-CONDITIONAL-ROW-0257 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/3/native_row | snapshot_row | MIM:Sodium_phosphate_monobasic_monohydrate -&gt; CHEBI:114249 |
+| B-CONDITIONAL-ROW-0171 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/4/native_row | snapshot_row | MIM:Na2b4o7_X_10_H2o -&gt; CHEBI:38888 |
+| B-CONDITIONAL-ROW-0182 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/5/native_row | snapshot_row | MIM:Na2seo3 -&gt; CHEBI:48843 |
+| B-CONDITIONAL-ROW-0264 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/6/native_row | snapshot_row | MIM:Sulfur -&gt; CHEBI:33403 |
+| B-CONDITIONAL-ROW-0407 | .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json # /targets/7/native_row | snapshot_row | MIM:Diarsenic_Trioxide -&gt; CHEBI:30621 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Actual native inspect at genuine stable W09 root | passed | True | B-CONDITIONAL-ROW-0116, B-CONDITIONAL-ROW-0117, B-CONDITIONAL-ROW-0145, B-CONDITIONAL-ROW-0257, B-CONDITIONAL-ROW-0171, B-CONDITIONAL-ROW-0182, B-CONDITIONAL-ROW-0264, B-CONDITIONAL-ROW-0407 | CLI inspect succeeded for every final declared input; original/captured bytes rechecked separately. |
+| Complete primary and distinct skeptical scientific scope | passed | True | B-CONDITIONAL-ROW-0116, B-CONDITIONAL-ROW-0117, B-CONDITIONAL-ROW-0145, B-CONDITIONAL-ROW-0257, B-CONDITIONAL-ROW-0171, B-CONDITIONAL-ROW-0182, B-CONDITIONAL-ROW-0264, B-CONDITIONAL-ROW-0407 | Eight full rows, seven owners,104cells and62orderedalias tokens independently assessed; copied rows alone are not votes. |
+| Original proposals/cases/current owner/native slot trace | passed | True | B-CONDITIONAL-ROW-0116, B-CONDITIONAL-ROW-0117, B-CONDITIONAL-ROW-0145, B-CONDITIONAL-ROW-0257, B-CONDITIONAL-ROW-0171, B-CONDITIONAL-ROW-0182, B-CONDITIONAL-ROW-0264, B-CONDITIONAL-ROW-0407 | Independent technical receipt joins8rows/7owners/10proposals/12cases; source holds remain scientific limits. |
+| Historical private-only persistence checkpoint | not_applicable | False | B-CONDITIONAL-ROW-0116, B-CONDITIONAL-ROW-0117, B-CONDITIONAL-ROW-0145, B-CONDITIONAL-ROW-0257, B-CONDITIONAL-ROW-0171, B-CONDITIONAL-ROW-0182, B-CONDITIONAL-ROW-0264, B-CONDITIONAL-ROW-0407 | At the original scientific assessment checkpoint, save_review was not invoked; the sealed private pair used native serialization/renderer primitives. That checkpoint did not fulfill mandatory canonical persistence. The later authorized native CLI inspect/validate/save outcome is separately recorded in .temp/actual-eight-row-native-persistence-addendum-v1; it is not a new scientific vote. |
+
+## Scientific And Domain Assessments
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0116.
+
+The complete owner denotes the named L-cysteine hydrochloride hydrate solution, not the pure CHEBI:91248 reagent. Original JCM680 names this exact solution and adds 10 mL after the basal medium. Its unspecified concentration, solvent and preparation do not defeat the bounded solution-of relation. Under section 3, NARROW_MATCH generates broadMatch to the solute, paired with the distinct local identity row. This is not exact stock-to-solute equivalence. ManualMappingCuration truthfully records the original stock/form adjudication and current predicate correction; the last LLM-assisted event is openly attributed to C. No historical primary-label match is invented.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/0", "recommended_full_row_pointer": "/decisions/0/recommended_row", "owner_sha256": "1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2", "native_row_sha256": "c91beb9ef33d54ed6f6c76ed16c322b5d7e0a425a8dfc41e1b13115809acc542", "recommended_row_sha256": "c91beb9ef33d54ed6f6c76ed16c322b5d7e0a425a8dfc41e1b13115809acc542", "preserve_fields": [], "retention_selected": false, "retention_reason": "No stale source/date or former QSY9 token is retained. The native parent comment and validation cells are intentionally empty; no missing approval is inferred.", "old_finding_scope_disposition": "Fresh assessment accepts the actual broadMatch successor; it does not reapprove the former closeMatch diagnostic. W07 original rejected-label proposal and C predicate successor retain distinct authorship.", "holds": ["Unknown concentration, solvent, pH, formulation and full stock preparation remain unknown.", "No exact global MD1860 occurrence redirect or quantitative recipe assertion follows from this row.", "QSY9 is a different xanthene quencher (CHEBI:52891; Thermo Q20131), and the add-to-make-anoxic instruction is not a substance name; both remain rejected.", "The local sibling is required. Roles and counts are inherited, not independently approved."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0117.
+
+The exact local registry row preserves the same named, incompletely characterized cysteine stock as its own MIM identity. It is paired with the asymmetric CHEBI:91248 parent row; exactMatch here is the local registration, not exact identity with dry hydrate or an arbitrary formulation. ManualMappingCuration and the generated 0.99 registry confidence are structural registration conventions, not measured certainty about concentration, product or source occurrence.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/1", "recommended_full_row_pointer": "/decisions/1/recommended_row", "owner_sha256": "1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2", "native_row_sha256": "373257b4ee00f9cc75a941e7ed0dc79fba88e7a0364dda083615193dab2c34d6", "recommended_row_sha256": "373257b4ee00f9cc75a941e7ed0dc79fba88e7a0364dda083615193dab2c34d6", "preserve_fields": [], "retention_selected": false, "retention_reason": "The native registry explanation already preserves the old comment verbatim. No historical-cell override is needed.", "old_finding_scope_disposition": "The same local identity is newly assessed in the actual current full owner context; the parent relation changed independently. The local label is not a claim of an exact proprietary stock formulation.", "holds": ["Every unknown stock/concentration/solvent/pH/preparation and source-routing hold in 0116 applies.", "The historical none&#124;UNKNOWN_TERM&#124;2026-09-02 stamp is disclosed failure/coverage metadata, not a new ontology validation or blocker to a valid scoped local identity.", "No owner-wide role/export admission is supplied."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0145.
+
+Neutral menadione CHEBI:28869, CAS58-27-5 and the current C11H8O2/structure are coherent. ATCC1257 specifies Menadione (Vitamin K3), 50 mg as solute of a separately prepared stock (50 mL 95% ethanol plus 50 mL water), of which 2 mL is added. This supports the source compound alias only. NIST and SCBT neutral-product captures support the remaining neutral names. SCBT also uses Hemodal for a chemically distinct bisulfite product, so bare Hemodal remains rejected rather than universally false. LexicalMatching reflects the preserved neutral menadione DIRECT_MATCH/EXACT_MATCH identity method. The new alias rejection has separate truthful history/evidence; it is not represented as a newly performed original lexical lookup.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/2", "recommended_full_row_pointer": "/decisions/2/recommended_row", "owner_sha256": "4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591", "native_row_sha256": "e2709a977eb159da08feb8da6346a431ad8d647f5796519a21c8bcbad8c2d2aa", "recommended_row_sha256": "e2709a977eb159da08feb8da6346a431ad8d647f5796519a21c8bcbad8c2d2aa", "preserve_fields": [], "retention_selected": false, "retention_reason": "Use current provenance and empty native comment. Do not restore Hemodal or stale source tokens via a retention choice.", "old_finding_scope_disposition": "Actual full row no longer emits Hemodal; positive neutral-name evidence and the original source quantities remain visible. Earlier independent Menadione judgments are context, not an automatic new vote.", "holds": ["Frozen ETSA/CM009136 50 G_PER_L is not validated; stock amount and receiving-medium dose stay distinct.", "No sodium bisulfite/derivative identity, generic commercial vitamin K3 preparation, vendor lot or solution equivalence is inferred.", "Vitamin role, 107 count and historic validation/review tokens do not grant current export approval."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0257.
+
+CHEBI:114249 explicitly denotes sodium dihydrogenphosphate monohydrate, with CAS10049-21-5 and one water. TOGO M2237 names Sodium dihydrogen orthophosphate monohydrate, 20 g, separately from 1 L distilled-water input and the other formulation inputs. The current 6555960f payload is the genuine W07 residual, typed-identical to its published b58c payload, not the former W07/W08 alias union. ManualMappingCuration is consistent with inherited CAS_RN_LOOKUP and the documented #312 hydrate adjudication; it is not a newly claimed primary-label lookup. The manual:apply_312_batch4&#124;OTHER&#124;2026-09-22 stamp retains its historical scope.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/3", "recommended_full_row_pointer": "/decisions/3/recommended_row", "owner_sha256": "6555960fab227438878110a401a843e9e9ba03ad40bde86c8cba6ebd83013b96", "native_row_sha256": "95d23d7bc61a98a9551b9805f9657574a7ceb6277cb4e3bd408cb47d5f16f7ae", "recommended_row_sha256": "95d23d7bc61a98a9551b9805f9657574a7ceb6277cb4e3bd408cb47d5f16f7ae", "preserve_fields": [], "retention_selected": false, "retention_reason": "No retention recommended. The old #403/#312 CAS-token boilerplate is true historical explanation but adds no necessary restriction beyond the current exact hydrated identity, documented CAS and preserved history. The separate W01 alternative remains unselected.", "old_finding_scope_disposition": "The old conditional 11-token union is not carried as equal approval; the actual 8-token W07-only row is freshly reviewed against its complete owner and source.", "holds": ["Only the genuine W07 source alias and one actual source case/occurrence are assessed here.", "Both W08 #758 transfer fragments remain deferred; none of their additional aliases or ownership transfers is admitted.", "No 20 g/L final-volume assertion, common dose, role/count or preparation approval is inferred from the source input vector.", "NaH2PO4•H2O(MCIB 742) is an inherited contextual literal formula, not an independently validated culture accession or new source routing."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0171.
+
+Conventional borax Na2B4O7·10H2O and the structural formula Na2[B4O5(OH)4]·8H2O have the same total Na2B4H20O17 composition. Gainsford et al. 2008 DOI10.1107/S1600536808010441 directly identifies this borax structure; supplier CAS1303-96-4/MW381.37 and CHEBI:38888 formula 8H2O.H4B4O9.2Na/MW381.371 corroborate it. The official octahydrate label counts eight free waters after hydroxylation; it does not assert conventional Na2B4O7·8H2O. This exact identity therefore does not collapse different hydrates. Current MANUAL_CURATION produces ManualMappingCuration and 0.9, accurately replacing an unsupported lexical establishing-method claim. The structural adjudication and original evidence/history are preserved, including explicit LLM authorship.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/4", "recommended_full_row_pointer": "/decisions/4/recommended_row", "owner_sha256": "6f82c79419773eaa0cc6b8961892761b9ec8003f83f764eff2af252c571a9f2f", "native_row_sha256": "783fd3abf3d27d8369f1b247bd8eb0f2f48b9abe39d4bbd1c2120f846cec2ec6", "recommended_row_sha256": "783fd3abf3d27d8369f1b247bd8eb0f2f48b9abe39d4bbd1c2120f846cec2ec6", "preserve_fields": [], "retention_selected": false, "retention_reason": "Use the current complete native row. Repeated IUCr source URL represents two owner evidence entries, not independent corroborating votes. No old misgrounded row fields are retained.", "old_finding_scope_disposition": "W09-ROW-BORAX-METHOD-001 is satisfied for this exact current method cell/row by the new owner event and actual native projection. Historical finding artifacts remain immutable; issue disposition is root-owned.", "holds": ["Explicitly weighed decahydrate contexts only; DSMZ770 0.1% w/v stock remains distinct and globally redirecting MD ingredient196 is not approved.", "CHEBI131366/86222 are not globally redirected by this owner correction.", "The three UW child dependencies and source-specific formulation/quantity holds remain mandatory.", "No supplier purchase/lot, global form inference, role or export admission follows."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0182.
+
+CHEBI:48843 defines the disodium salt of selenious acid and agrees with Na2SeO3, CAS10102-18-8 and the current structure. Captured ATCC modified Wolfe mineral elixir explicitly says Na2SeO3 (anhydrous), 1 mg in its 1 L stock. The actual row excludes rejected Na2Se2O3; the latter remains literally present in MD804 and DSMZ863 rather than silently being corrected to Na2SeO3. The original DIRECT_MATCH/EXACT_MATCH establishes the inherited LexicalMatching field; the latest change is a documented alias rejection, not a new assertion that an original primary-label search was performed. Retain the historical SYNONYM_ENRICH validation stamp as history, not fresh source approval.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/5", "recommended_full_row_pointer": "/decisions/5/recommended_row", "owner_sha256": "56b2ec00c5508f974e07baee393685f8886d5bae30d82988441755187e86b3ba", "native_row_sha256": "703171b5c95b565e87b51b950e98a01be4056e6b85ffae6e454a5826e6d23104", "recommended_row_sha256": "703171b5c95b565e87b51b950e98a01be4056e6b85ffae6e454a5826e6d23104", "preserve_fields": [], "retention_selected": false, "retention_reason": "No old Na2Se2O3 resolving token or stale metadata is retained. Current source and empty comment preserve the bounded correction without guessing the reagent.", "old_finding_scope_disposition": "W09-ROW-SELENITE-ALIAS-001 resolving exposure is removed in these exact current bytes by REJECTED_LABEL and actual absence from other. The genuine source identity uncertainty is explicitly retained.", "holds": ["DSMZ863/MD804 exact reagent remains unresolved; source typo is not guessed.", "Anhydrous reagent and its pentahydrate/selenite-tungstate preparations are not interchangeable.", "All four flattened occurrence quantities/nesting and their source roles remain separately held; no new source or role/export approval.", "Older incorrect CAS metadata remains traceable in history; current source-specific alias review is not retrospective cleanup authority."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0264.
+
+CHEBI:33403 is the elemental sulfur material class; bulk powder/precipitated/spelling forms do not justify sulfur atom, polysulfur-only or a particular allotrope. DSMZ1092/854/897/88/670 specify weighed powder with different source-specific amounts/preparations. TOGO M2553 explicitly says So(Sulfur Powder) 5 g; M3129 says ground sulfur powder 20 g/L and distinguishes sulfide reduction and preparation order. Frozen MMJS says Elemental sulfer at 3 G_PER_L; live retrieval failure is preserved, not described as a successful original primary lookup. The literal material misspelling supports nominal identity without certifying its flattened dose. ManualMappingCuration truthfully records the material-versus-atom judgment documented in #368 and the new explanatory LLM event. Generic preferred label Sulfur alone is not claimed to have established the mapping by primary-label match.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/6", "recommended_full_row_pointer": "/decisions/6/recommended_row", "owner_sha256": "77f91533abf4c4e13aa1a52b77208b23150d365cc44476d0930165f9da914104", "native_row_sha256": "771480961db0524c7ffa76772067a30564555ef2c1a4f6ef71715f07b1edd85e", "recommended_row_sha256": "6eb3bfe45dfd4d0f68a6f106f09f24a98ac83908adf9625a99558f54d4ff7d95", "preserve_fields": ["comment"], "retention_selected": false, "retention_reason": "Recommend retain only the exact prior comment: Corrected from sulfur atom to weighable elemental sulfur and merged spelling/form duplicates (#368). The current #368 history and present primary material evidence support every clause. Its omission loses a useful material-versus-atom restriction. This is a proposed complete row, not selected/publication authority.", "old_finding_scope_disposition": "W09-ROW-SULFUR-METHOD-001 is satisfied for these exact corrected method bytes. The original needs_curation packet and its unselected old alternative remain unchanged; this is a distinct actual-row recommendation.", "holds": ["No S8-only, polymer-only, atomic, isotope, allotrope, particle-size, brand or lot identity is inferred.", "Different source sulfur doses, sterilization instructions and nested preparations remain separate; no global dose or treatment transfer.", "Original W01/W05/W06/W07 proposals, source failures, aliases, rejected labels and histories all remain accounted.", "No role/count477 certification, source-wide routing or export approval."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+### Complete actual13-cell row and all ordered aliases/provenance, within the exact current whole owner
+
+identity: supported. Targets: B-CONDITIONAL-ROW-0407.
+
+CHEBI:30621 defines the arsenic/oxygen 2:3 oxide. The real exact As2O3 OLS query capture returns the defining term, with the formula as a related synonym; its existence is not denied. ChEBI depicts As4O6 while PubChem14888 gives empirical As2O3. These are representation differences relevant to the recorded identity judgment, not evidence for doubling source masses or mapping alkaline arsenite solution to the weighed oxide. CCAP UCM explicitly adds As2O3 with NaOH in a separate primary stock. MANUAL_CURATION accurately records the decisive empirical/molecular representation adjudication even though genuine synonym-query evidence exists. The current preferred-label equality is not substituted for that performed judgment.
+
+{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json", "complete_scientific_assessment_pointer": "/decisions/7", "recommended_full_row_pointer": "/decisions/7/recommended_row", "owner_sha256": "aa045024f5c010ba7f827a5f8c6428929dc50503cbcb3ee106a3a6ae7bea751c", "native_row_sha256": "7fc8393f7fb2098c3ba39c26ab825e5225c05bbd87ba123f79390bc5ac4722f8", "recommended_row_sha256": "7fc8393f7fb2098c3ba39c26ab825e5225c05bbd87ba123f79390bc5ac4722f8", "preserve_fields": [], "retention_selected": false, "retention_reason": "This is an added row with no canonical beforeimage. Retention is unavailable; use the full native row without inventing a prior comment.", "old_finding_scope_disposition": "W09-ROW-DIARSENIC-METHOD-001 is satisfied for the actual ManualMappingCuration row while retaining the truthful qualification that the old As2O3 exact query was performed. This does not retrospectively change old evidence.", "holds": ["No molecular weight, CAS, polymorph, vendor, lot or exact molecule population was added to the minimal oxide owner.", "CCAP primary stock (0.093 g As2O3 plus4 g NaOH per100 mL), trace and receiving-medium quantities remain distinct; both flattened source occurrences retain CM#283 holds.", "No resulting arsenite-stock identity, role or export approval."], "native_admission_limits": {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection": false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion binding and publication. This fresh eight-row vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| E-PRIMARY | .temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json | supports | Actual W09 primary whole-eight-row assessment,104cells/62other tokens, complete recommended rows and primary hashes. Authorship is distinct from source candidates. |
+| E-SKEPTIC | .temp/actual-eight-row-followup-review-v1/skeptic/RECOMMENDATIONS.json | supports | Genuinely separate, newly completed /root/row_skeptic whole-eight-row judgments; not a copied author recommendation or inherited approval. |
+| E-JOINS | .temp/actual-eight-row-followup-review-v1/technical/ROW-JOINS.json | context_only | Exact actual row/owner, original proposals and full source case bindings. Mechanical equality is not scientific evidence. |
+| E-TECH | .temp/actual-eight-row-followup-review-v1/technical/NATIVE-PERSISTENCE-ASSESSMENT.json | context_only | Actual native strict/negative checks and unchanged APIs; public saver is not redirected to private output. |
+| E-P01 | .temp/actual-eight-row-followup-review-v1/inputs/114-00-c36559e9f6ebb54ad2f3.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P02 | .temp/actual-eight-row-followup-review-v1/inputs/115-01-b8aa55a60f527be120b7.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P03 | .temp/actual-eight-row-followup-review-v1/inputs/116-02-8827fef4367bb179adc8.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P04 | .temp/actual-eight-row-followup-review-v1/inputs/117-03-a16643fddb8b91a9d74d.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P05 | .temp/actual-eight-row-followup-review-v1/inputs/118-04-borate175-supplier-web-v1.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P06 | .temp/actual-eight-row-followup-review-v1/inputs/119-05-borate175-structure-web-v1.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P07 | .temp/actual-eight-row-followup-review-v1/inputs/120-06-borate175-ols-38888-v1.json | supports | Direct primary identity/definition/formula/synonym and source-versus-material passages read; complete bytes bound. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P08 | .temp/actual-eight-row-followup-review-v1/inputs/121-c-jcm-680.html | supports | Complete original JCM680 recipe and asterisk autoclaving note; 10 mL stock, no stock concentration or solvent specification. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P09 | .temp/actual-eight-row-followup-review-v1/inputs/122-chebi-91248.json | supports | Full OLS defining term: L-cysteine hydrochloride hydrate, formula, CAS and structure. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P10 | .temp/actual-eight-row-followup-review-v1/inputs/123-c-chebi-52891.json | supports | Distinct QSY9 dye identity and Thermo Q20131 product primary negative evidence; not the cysteine stock. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P11 | .temp/actual-eight-row-followup-review-v1/inputs/124-c-web-qsy.json | supports | Distinct QSY9 dye identity and Thermo Q20131 product primary negative evidence; not the cysteine stock. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P12 | .temp/actual-eight-row-followup-review-v1/inputs/125-atcc1257-original-capture.txt | supports | Complete captured ATCC1257 recipe, stock quantities, ethanol/water inputs and 2 mL dose. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P13 | .temp/actual-eight-row-followup-review-v1/inputs/126-ontology-capture.json | supports | OLS28869 identity/structure and complete synonyms inspected. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P14 | .temp/actual-eight-row-followup-review-v1/inputs/127-search-07.json | supports | SCBT neutral sc205990 sections1/3 versus bisulfite sc215295 sections1/3; Hemodal not unique. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P15 | .temp/actual-eight-row-followup-review-v1/inputs/128-nist-menadione.body | supports | NIST menadione identity, CAS58-27-5, InChI and other names; neutral historical names only. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P16 | .temp/actual-eight-row-followup-review-v1/inputs/129-890225ce506d2f3b0969.json | supports | Direct official ingredient/ontology definition and literal label fields inspected. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P17 | .temp/actual-eight-row-followup-review-v1/inputs/130-1b55b6b33ceb08fe51eb.json | supports | Direct official ingredient/ontology definition and literal label fields inspected. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P18 | .temp/actual-eight-row-followup-review-v1/inputs/131-8f78720d273001286b58.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P19 | .temp/actual-eight-row-followup-review-v1/inputs/132-53666f2f2910add2defe.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P20 | .temp/actual-eight-row-followup-review-v1/inputs/133-5dada06913515377f52a.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P21 | .temp/actual-eight-row-followup-review-v1/inputs/134-e24466123dc7455046b5.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P22 | .temp/actual-eight-row-followup-review-v1/inputs/135-8b42d7dd41b46727e94c.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P23 | .temp/actual-eight-row-followup-review-v1/inputs/136-b-primary-3f90be81b6fd7f2b.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P24 | .temp/actual-eight-row-followup-review-v1/inputs/137-b-primary-d41661756b13ed36.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P25 | .temp/actual-eight-row-followup-review-v1/inputs/138-2256f29f0929d1070cfc.pdf | supports | Direct relevant primary content inspected; PDF source text extracted with retained original PDF hash and extraction receipt. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P26 | .temp/actual-eight-row-followup-review-v1/inputs/139-b-primary-77a6bc96916200e7.json | supports | Exact original source ingredient name, full formulation vector and preparation comments inspected; no source quantity/role transfer. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P27 | .temp/actual-eight-row-followup-review-v1/inputs/140-b-ontology-CHEBI-114249.json | supports | Exact original source ingredient name, full formulation vector and preparation comments inspected; no source quantity/role transfer. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P28 | .temp/actual-eight-row-followup-review-v1/inputs/141-capture-c7ce4af92ddac4f6.json | supports | Exact original source ingredient name, full formulation vector and preparation comments inspected; no source quantity/role transfer. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P29 | .temp/actual-eight-row-followup-review-v1/inputs/142-capture-2219370bc9ce67b6.json | supports | Exact original source ingredient name, full formulation vector and preparation comments inspected; no source quantity/role transfer. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+| E-P30 | .temp/actual-eight-row-followup-review-v1/inputs/143-TOGO_M3127_MMJS_medium.yaml | supports | Exact original source ingredient name, full formulation vector and preparation comments inspected; no source quantity/role transfer. This access timestamp is review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE and capture maps. |
+
+## Limits And Additional Notes
+
+- Both old aggregate needs_curation verdicts remain unchanged.
+- All40 inherited W01 holds and three older positive-review conflicts remain; no new judgment on their rows.
+- All15 deferred historical requests remain distinct; deferral is not row-deletion authority.
+- Provisional benzene-triol method trace observation remains unresolved and outside this task.
+- Old17 W01 and1 W09 comment alternatives remain unselected; this current Sulfur recommendation is distinct and still unselected.
+- No1039-row blanket approval, role/export/companion/source-acceptance or suppression-transition approval.
+- B4 missing BTO/MICRO, FOODON mirror exception and unsupported prefixes/fallback limits remain. V1 lost validator exit remains unavailable.
+- These are scientific recommendations on an actual generated candidate, not canonical publication or source acceptance. The reviewed source receipt itself is actual complete, not provisional; this review does not reexecute it.
+- Native currentness binds genuine W09 working_tree source inputs at bf75ca9a. The copied inputs retain actual B and historical source-root identities via complete capture maps; W09 is not relabeled as the generating root.
+- Existing captured sources were reinspected; no fresh provider retrieval. Unknown vendor/lot/allotrope/form/preparation/stock quantities remain unknown where stated.
+- The original sealed private assessment did not invoke save_review and was not a canonical fleet review. This metadata-only persistence successor retains that assessment and uses the unchanged canonical native saver at the actual W09 root; exact command outcome and strict saved-byte readback are recorded separately in .temp/actual-eight-row-native-persistence-addendum-v1. Native persistence confers no source acceptance, supported-products, role, export, or publication approval.
+- Four original W09 row defects have evidence-scoped corrected-byte assessments; original artifacts and root issue statuses are not changed. No whole-family finding retirement is implied.
+- Actual final strict saved-byte parse/schema/currentness/native-render checks are recorded in validation/actual-saved-pair.json after persistence, avoiding fabricated pre-save completion claims.
+- The complete separate primary and skeptical recommendation objects, including full before/native/recommended rows and publisher hashes, are inputs. Root must bind both exact documents if selecting a retained cell.
+- Completed current probes and preserved historical or failed probes remain separate; no absent old exit status is invented.
+- Persistence-only successor of 20261110T015632Z-w09-actual-eight-row-followup. Original scientific interval 2026-11-10T01:44:02.417380Z through 2026-11-10T01:56:32Z is unchanged. This document's finished_at records preparation for the later actual native save, not a new scientific assessment or acquisition. All original reviewer identities, source/target/evidence/assessment/decision bytes and scientific limitations remain; only persistence metadata changes are enumerated in the addendum's TYPED-DELTA.json. Original private and canonical successor are one scientific assessment, not two votes.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261110T020248Z-w09-eight-row-native-persistence
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: W09 actual eight-row scientific follow-up; scoped recommendations only
+started_at: '2026-11-10T01:44:02.417380Z'
+finished_at: '2026-11-10T02:02:48Z'
+reviewer:
+  identity: W09 /root primary; distinct /root/row_skeptic complete-eight-row challenge
+  kind: agent
+  independence: independent
+  independence_basis: Actual resumed existing /root/row_skeptic identity/context and
+    activity verified. W09 reviewed prior source/method findings but authored none
+    of these W01/W05/W06/W07/W08 source operations or A/C successor payloads. Separate
+    primary/skeptical documents preserve actual recommendations. Copied input bytes
+    are evidence transport, not a new author or vote.
+skill: review-sssom-output and map-media-ingredients; native record-review contract
+completion: completed
+verdict: pass_with_limitations
+native_verdict: SCOPED_EIGHT_ACTUAL_ROW_SCIENCE_SUPPORTED_WITH_HOLDS; prior aggregate
+  NEEDS_CURATION unchanged
+scientific_review: true
+summary: 'All8 actual complete rows across7 exact current owners assessed:104cells
+  and62orderedother tokens. Seven native rows recommended unchanged; Sulfur exact
+  old #368 comment recommended on the otherwise identical actual row. Both documents
+  remain recommendations for root selection. No new confirmed source defect, source
+  acceptance, owner/role/export/companion/suppression/publication approval.'
+source:
+  git_revision: bf75ca9a93579e50140a63b4426dbdf8913afe11
+  state: working_tree
+  inputs:
+  - path: .claude/skills/map-media-ingredients/SKILL.md
+    sha256: 9431c262e190cd57ce05692487a0bc639859c9e877648d3af7612922221f6a1b
+    role: context
+  - path: .claude/skills/review-sssom-output/SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/ACKNOWLEDGMENT.json
+    sha256: 03c1fa2d26d87dd3a7db4a5a4379dfec84fb0ba532b48240ca981997690972bb
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/FINAL-INPUT-CAPTURE-MAP.json
+    sha256: 2a5d8d654a2b99bff2198120390c998e8c503eecfe94076b5135d9eb697d31de
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json
+    sha256: b0491222b1ddee4dba98099084598445a9091cfb1618345fee984d5f098b44d2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/PRIMARY-EVIDENCE.json
+    sha256: 491d6a33693010632b52a1d28188b4cada923540d24f40836d56e9479a44f703
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/evidence/FAILED-PROBE-002.json
+    sha256: 4e5b11f9ea1674f53a034be918cd8e99e473018b9bb03eb0e82ade183678e508
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/evidence/final-dependent-input-readback.json
+    sha256: ece791af89777495be2151fc01448e46b22744b11e903b42b0f20fd4626c05a4
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/evidence/primary-skeptic-comparison.json
+    sha256: 497656abbeb69e1897eeed76e22480737d2ee474c56927d9f4272039b988d650
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/evidence/scientific-input-transport-readback.json
+    sha256: 4398434dc61fd8965b9cfa8111151c93bb8aa8e225b70ccb6825d49e57849347
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/000-SKILL.md
+    sha256: 2e05b30eefce620fbb78196386e476c330b81e36738f2461b4be64391a61ecd5
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/001-HANDOFF.json
+    sha256: 0e9e04b2ef005a310559a562dc2edc59bb52d63ab4929dc02258b5d32cac59df
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/002-USAGE.md
+    sha256: 52f746e68e5636ed646458263d63d9d64874511cfd0670b19b3d95ba35ad958e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/003-reconcile_actual_rows.py
+    sha256: 917aba4a805342eb5a825235b0eb8d09c34571cb0d924f1b72091e0a34860a79
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/004-MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/005-record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/006-record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/007-record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/008-record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/009-campaign_publication.py
+    sha256: 1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/010-RESULT.json
+    sha256: bbed957989f9f32c3accdd6be28a518fe8263acd73fad658ca8e4c383d48299b
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/011-source-completion-before.json
+    sha256: 5ea4f053448b945c3ed14c9f1997ebd3b11e6da1602b558af4dc5f170e985614
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/012-prepare_stage1.py
+    sha256: bb84874f51943d777a1e014ffb64afbbb6ae5d910bf06a10abf7bd39edd3659a
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/013-Diarsenic_Trioxide.yaml
+    sha256: aa045024f5c010ba7f827a5f8c6428929dc50503cbcb3ee106a3a6ae7bea751c
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/014-L-Cysteine_X_HCl_X_H2O_Solution.yaml
+    sha256: 1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/015-Menadione.yaml
+    sha256: 4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/016-Na2b4o7_X_10_H2o.yaml
+    sha256: 6f82c79419773eaa0cc6b8961892761b9ec8003f83f764eff2af252c571a9f2f
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/017-Na2seo3.yaml
+    sha256: 56b2ec00c5508f974e07baee393685f8886d5bae30d82988441755187e86b3ba
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/018-Sodium_phosphate_monobasic_monohydrate.yaml
+    sha256: 6555960fab227438878110a401a843e9e9ba03ad40bde86c8cba6ebd83013b96
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/019-Sulfur.yaml
+    sha256: 77f91533abf4c4e13aa1a52b77208b23150d365cc44476d0930165f9da914104
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/020-ingredient_mappings.sssom.tsv
+    sha256: d50988d274c040481c4090c369dce3a270ed2e84109fa90530080bcd91bfd49e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/021-candidate.sssom.tsv
+    sha256: 13a061af2cc700794b86f89e08d3de4cc15aa15f983651ad951c20e93414fcb5
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/022-generation-manifest.json
+    sha256: f36bf68d1a42ca5016af504d2abe2bdda7039c434c3de1976ecc246249bcb0eb
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/023-suppressed-aliases.tsv
+    sha256: 0f799800d698932641566cddf5de0985fdc277cf86bfbee3f743b629ac1fb3bc
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/024-owner-plan.json
+    sha256: 985f30ebb8fb7eda983624b334bb708cb1f64f6370bf71daa9b130a39fda37d7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/025-application.json
+    sha256: 05ffd7cad9bfec28e46d7d3d777484bf441be760567ed359099333115fd6c68e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/026-successor-inputs.json
+    sha256: 6604d64d60198ff7c5a46ff9b5f4aa8e7e58896a5431d7b1a331a14a057fd5b8
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/027-HANDOFF-v2.json
+    sha256: c69cb45634889f54f08ba7a75d259c4a951cd17d164f7a89cf589b0edc3083c0
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/028-MANIFEST-v2.json
+    sha256: f8d8ef2473f2714d55d72fc4a783388083aca276df9833f07dab232d38cd79f7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/029-NATIVE-AUTHOR-RECEIPT-v2.json
+    sha256: 97e1d3f1166ef848150875739e2c715bc31fb72bb36eaec62708dee2f6f4e130
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/030-NATIVE-INPUT-TRANSPORT-v2.json
+    sha256: dfc5aaeb7dedd501f952faf2d20e6453fa4a7ae831666181e17cf31562753055
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/031-SELECTOR.json
+    sha256: 2ed88470c89b08f104adc6436ba27d69decbfbb8af577e88eef2708b7c14288c
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/032-TRANSPORT-QUALIFICATION-v2.json
+    sha256: 1045c99d2a002ad3f28d50b9e980fffb26270b1538f4d8ae2463d330563772ed
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/033-field-delta.json
+    sha256: daf68cac5e30697d8a28292889690a0dd03f34661572e45d0419c82a991021c2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/034-origin-proof.json
+    sha256: d371d36371de5c4e8bc5db0410ea1521554077ed35522e8ebbc2925a699687bd
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/035-owner-plan.draft.json
+    sha256: 985f30ebb8fb7eda983624b334bb708cb1f64f6370bf71daa9b130a39fda37d7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/036-CAPTURE-MAP.json
+    sha256: 16854f7ef0d4e56e44d87094e4af3fd748ef80f3f8666750f40d3f4ef12aa223
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/037-HANDOFF.json
+    sha256: 4617a1ecbb18c5aa3a998c8c829b00d4f6fdc39c20c16166ce2cfff02cf46c3f
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/038-MANIFEST.json
+    sha256: 7ee0133a2504d16effe7877bd831f5ac83227a7f6902281897ea6b116b5d48c6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/039-NATIVE-AUTHOR-RECEIPT.json
+    sha256: d1b2d2b33c9ba7f48d40933afdca394603d6ab6581ba97f43ca82c72c5fcb9dc
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/040-SELECTOR.json
+    sha256: f0fa5d7e888d80fb979ebd62a8d70387d4cfe5ee03bde39d04828d6e6735f824
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/041-field-delta.json
+    sha256: 9180ffea8992bfd69ce9c81ce1e20cfb8e6b9bd0f928fd4c12c57863606a408b
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/042-origin-proof.json
+    sha256: 2da80e088e77ff3aa378e371078ef4894a96f082fe14ec0f95a95d5639a0e1da
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/043-verification.json
+    sha256: d0c564a8a09cd9dfae35817fd1b7afb24872227fc11fdbd6f967f443a10d7872
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/044-HANDOFF.json
+    sha256: 695d72332fc4a3760d6f2303d702f946b2aeefb2f10f47d701e9a076a7be05df
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/045-MANIFEST.json
+    sha256: 61e14ce23084a2b160f336fb0fe3d4d964d8861553b528be0dd8ee1504b35f22
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/046-candidate-lineage.json
+    sha256: f37b86ce0bd184f441b340fbc1c6fa14a0d040fd231f9ea5bcf3bff4ad28ba58
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/047-checks.json
+    sha256: fbdf6de3cb498ce459a6fe2664ff7d481a82ac09273a00d4403fef644b796097
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/048-input-pins.json
+    sha256: 24e9f155642927cd2c4d8bae23dc4bde9b77c15ea693b334e32cb2bfdc6b2ed2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/049-primary-evidence-locators.json
+    sha256: 410f1ca585be3765a6a5ab89155f8194b1a8c7e26dd695c2b259868367e62a55
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/050-HANDOFF.json
+    sha256: 1d477d699a231175dedc11edaac1994a6b059eeb978eec316457968d064c3c55
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/051-MANIFEST.json
+    sha256: c203f6ebd27196a6f04bbc6679b014c051389ccce966e99f252bc2884dd85792
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/052-SERIALIZATION-BRIDGE.json
+    sha256: de143bfbeaca1ee669e52196edfe7bd2b9c585d543ca9493003fef6fef3f86d4
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/053-HANDOFF.json
+    sha256: be29c1a7a0deb53f729eb373f06ec2b2769e443f0f0222e8348110d8f427d986
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/054-MANIFEST.json
+    sha256: d8d973a9814aa3c0ad6cead73bb418a83f51e354ee3e8cd6f426397ba1db3069
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/055-NATIVE-AUTHOR-RECEIPT.json
+    sha256: 1c1c08da20e7057ecefd59e28d0bda441042a70a1c0c2f598417df12ac7d46bc
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/056-SELECTOR.json
+    sha256: 4bccf43e1fc5b78b534155da6d8ca67e8addeb54880cd6f36aa5b3761d090b52
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/057-field-deltas.json
+    sha256: d119d01d32db0472b235ee1093ec54b157bad97a76482afda956c2ef84bbcd21
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/058-origin-proof.json
+    sha256: 70eb9921cd6dd60413ed61e641a20a71d0c2afc699ceed72de4c5921a0d673e4
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/059-primary-index.json
+    sha256: bc13d8872762608c58f1de0c6e9347677bc389084c22d3d174731d02b659814a
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/060-verification.json
+    sha256: 72d9f8772095aad98c4ff94b066632cebf2faee1f58c9c5c3ccac8b0efe27951
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/061-command.json
+    sha256: 8664ee24aa619d8898759e391a559325063be15f71ed53d348d2a21a63adff52
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/062-rejected.tsv
+    sha256: 2633165ff38f0a8717d50465891de984d584251737a7cde2d9c83ecf0876f6a7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/063-stderr.log
+    sha256: b91ee06ecf38c4b8fd59025d712a6f4193f9af659fa609f8f752cd32d9826a6f
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/064-stdout.log
+    sha256: ec420d744cf485285b4124376ec1c05e8ce44273abee90b63b1fef6a2658084e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/065-tool-result.json
+    sha256: a4bdced7326628c2044dfd84dc47b42b363ec6af9b01cedb076acdc15a67b638
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/066-HANDOFF.json
+    sha256: d707677b050b1f9d43cf6f7ea7bf43e1bc608771011e6bbb558f224758828a9a
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/067-actual-native-row-operations.json
+    sha256: 79ec425cdb2b9da478e2179d848cc13fc7371b8044fb71052daa93403a0908e1
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/068-native-cell-trace.json
+    sha256: 37d1c7644ba6502a63c9d3c88f8df335c7c85f6a2aca1beee18cfd4894cc16ca
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/069-native-zero-retention-audit.json
+    sha256: 5337021e927138cf8efaa5bf80c54d6d01c7a210f9fa6e12bcd384b200ff8e03
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/070-original-review-context.json
+    sha256: 7b593782b4e07d14c0a2d6fc7dd35bc52321a849026aacc3eaa3fd58274da65e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/071-row-reconciliation.json
+    sha256: d6e53ea28413c0b9572f7643a2c7ba42c62390522502443db0a3a9cc8bee583f
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/072-unselected-physical-rows.json
+    sha256: 242af1cfdd521ddda9de9995084f5b1ef2657f156d34490adf8d4e52141ae168
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/073-zero-retention-projection.tsv
+    sha256: 325493f21bdbf56b9d555517ea5d41a7ae298b0c352a9f2ecc6c94182564ca32
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/074-EXACT-REFERENCES.json
+    sha256: 7bc27fabe16b9c0f6541df1f8434db90eea76ed0211ca8f0d7e617b5551fdcaf
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/075-HANDOFF.json
+    sha256: b09245a2abfe10ffb1f9d7dd093b0d20459a1a4095582f7bc3abbf42e99de935
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+    sha256: a44fd95ab202be9f2a13f821685f405f68da742c631154c934b91a165444e9b8
+    role: target
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/077-ASSIGNMENT.md
+    sha256: fbcc57336f878c360687e058960841dff14a728ca2362b36ff7a052f1e132fb3
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/078-DRAFT.md
+    sha256: 1187157b1707b2c22edd80a74dacf4d543895bc2e4a0ffdcbaf13f225193aea6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/079-FINAL-INPUTS.json
+    sha256: 931aa9d113154852a25bddd623d52195b85fc95a9de797e1b6f9be4f75d96799
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/080-HANDOFF.json
+    sha256: 3e791c7a7032aaa3a306e1f04a8857374304460192bde003eed6c99e8b92a416
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/081-KNOWN-INPUTS.json
+    sha256: cc5aab912403a6e18b4e9582e78d62663efcb21b77962da2e9f7b0057305af1e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/082-MANIFEST.json
+    sha256: f95f8f1c66b442f16cb5494b85f3873400b8b5042bdfb6508f293bb7c7db46c3
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/083-READBACK.json
+    sha256: 02071ac2f658002df5ca72a67adbe1323ded5103a98bef3b98c7b17a24c66c68
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/084-B4-FOODON-COVERAGE-EXCEPTION.json
+    sha256: 83bc100144951b6953acc480acfc3df29b97a539137d5a57bc2f3e477ab3d218
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/085-HANDOFF.json
+    sha256: fcd9de03e64243be596497786efe7a543ee0e80a293f344fde96db6132c0b9be
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/086-REPORT.md
+    sha256: ca7ed4c5f8d72eaa805c77c83f9dd648340d67fdcf43d3d2f6f3912b8b390cc4
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/087-RESULT.json
+    sha256: 1a7035cc05ab20e05bfd54864ca14b6d80e0b2909c3bb101e4409056f325245e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/088-ASSESSMENT.md
+    sha256: e788a38a6c45ac3823d999dd02e732e6523fc651861fa450ddc76a5ed98bca70
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/089-HANDOFF.json
+    sha256: 3a5d7b4c56f6153792c56019ee2ea2009f59e5c516ea2886db4387a88468583b
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/090-NATIVE-PAIR-READBACK.json
+    sha256: 7988cb79aa33f4a878c34915aad2e4ed97581e397f778c22372512ac2c504c30
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/091-RETAINED-ADJUDICATIONS.json
+    sha256: c801ed2e59c8531c6d9e72fb9b508b62214e6e83d10f967e6e22d02b8fa7a4b8
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/092-ROW-OBLIGATION-INDEX.json
+    sha256: c41fb0b1e5211bb50d938d9fcfac0c599453b329479b06c0aedf109149e713cd
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/093-SUPPLEMENTAL-ROW-CONTEXT.json
+    sha256: 7f94c92d9034392e6fb1ef619d1081b2c2c0e1e7d0120c2a9977cc11b97cbeb5
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/094-W01-45-OBLIGATIONS.json
+    sha256: 6a87fd3bbd5482903bf8a4ede09b95524a6f1d4e38c816e77aaeaaebf348d0d1
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/095-W09-SIX-FINDINGS.json
+    sha256: a5cce4017a33f47c6650c4c5b07c87556beb3b4304788d960c19562b60d0b188
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/096-HANDOFF.json
+    sha256: 3815f01e42cdb5d8708f34dca7bcdfab4341625beb1b33445bbd522226af8989
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/097-THREE-OLDER-POSITIVE-QUALIFICATIONS.json
+    sha256: 4d5e9655e980f9d08a1991817a97837a6c5d714631ad857c8f24196b50995852
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/098-review.md
+    sha256: b7ba8788b8e5fe1668cc3cc4e491b642b5288129bd7b9ef777d4743c62fcab49
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/099-review.yaml
+    sha256: b83367f853028277814d058eb453375d67a9984030a2c3c95280c56f8ce4f8ee
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/114-00-c36559e9f6ebb54ad2f3.json
+    sha256: 807c96cb31d7b2faebd5667df44cc727071a7ebf1e1fe07c34b603dfbabdc69f
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/115-01-b8aa55a60f527be120b7.json
+    sha256: 7c89e6618d5cc6980c09cc4b1ab7d6184e1655b816ff487ffcfe1c72f94a2b1e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/116-02-8827fef4367bb179adc8.json
+    sha256: 2000d6d05dbe1c793f30e0a31603dc769ecd64087cec7f9af1672c6a5785f0b8
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/117-03-a16643fddb8b91a9d74d.json
+    sha256: 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/118-04-borate175-supplier-web-v1.json
+    sha256: da1665a28301040081c5babe497aa0a093022ee83cd4cfbaaa358084e4d51ae3
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/119-05-borate175-structure-web-v1.json
+    sha256: e23bf55ef6dcc3b75354d692f0c4d8c2aceacd920cdaa1a0b56a2c98e118fae7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/120-06-borate175-ols-38888-v1.json
+    sha256: 6933410e4ae1d55f63500c3a537f617d0f910fe2e2a8af5be5c21e2ee0825bf2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/121-c-jcm-680.html
+    sha256: 16525b97d468855002dda4489f4b2030d28a9a1d332828cc27a0f2e15b5b07f0
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/122-chebi-91248.json
+    sha256: 7ef9e26cec1a5833d216a01df066c0b6a0bfba77bad16db354c690a7a814a683
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/123-c-chebi-52891.json
+    sha256: 2b32913d5ab8bbc296bb5fbdc0340190cf6212655819134b99b0581ed06c0b70
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/124-c-web-qsy.json
+    sha256: e79053b4e527b7cdd8c6c9908de92731733f236be58ef3411d6717b499d080e6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/125-atcc1257-original-capture.txt
+    sha256: 71c677cd21f359b3a1bbc900bd32810aec74bcf5b4c451ac4450a7313a0453b8
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/126-ontology-capture.json
+    sha256: 5ee4af948f5e11b4456bcb7d2858883e5c7dae55870f457d996ff788001468a2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/127-search-07.json
+    sha256: b8cedde9a020c9fd21a5649c67f720261998e52c77dfa58bc0c5478d496f3887
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/128-nist-menadione.body
+    sha256: 21ac6cad78ef08af5d4a5009d70393bd1157c2715cbdd7d8eca1914e74a843d6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/129-890225ce506d2f3b0969.json
+    sha256: cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/130-1b55b6b33ceb08fe51eb.json
+    sha256: fd2c8ff3c3ada95ad48962f98a9e86935372b39f1a897571a729d68061406839
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/131-8f78720d273001286b58.pdf
+    sha256: 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/132-53666f2f2910add2defe.pdf
+    sha256: 3226509b558f3fa90e1466ed5a9be5d0fc05db2156dcdec37301890246ef00f3
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/133-5dada06913515377f52a.pdf
+    sha256: 8b4c6b813b38b7d11e631a1fddde2001a24b44b00e30b2a3821be48b8d3dfbc0
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/134-e24466123dc7455046b5.pdf
+    sha256: a295f871d91df15e1f418090bcd9d08ac5d647daf5d29599d633f4555b369092
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/135-8b42d7dd41b46727e94c.pdf
+    sha256: 68264077ad1c5a4a030a9badcee4480eb1f849a1c7306efd6beff2043b4ddee6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/136-b-primary-3f90be81b6fd7f2b.pdf
+    sha256: 25a7f9223c62438713a52e22653b1cb9eb3a3aaf37ce3407389f1a2d5db2e6b6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/137-b-primary-d41661756b13ed36.pdf
+    sha256: e21dbc3f7c16cf301001aaa5ca4ca7aa57fb486cbccba0995c46e094946917ab
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/138-2256f29f0929d1070cfc.pdf
+    sha256: 29ffa5707345821ccd91e72e7e633652e5364ed04283b42a63b683f09c0006a9
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/139-b-primary-77a6bc96916200e7.json
+    sha256: 7fd156598d78fc1fe1ddede3ae60d75c66823634f4268cbc81f9bf25cc3ab702
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/140-b-ontology-CHEBI-114249.json
+    sha256: b3325690f552c15c937a179b9a9acff4e1615aa86214965d855547eb85df11e1
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/141-capture-c7ce4af92ddac4f6.json
+    sha256: d993240b2e04220e53b5d8698cc684c5c06940de6f1dbf0b8a4ea62f6f709528
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/142-capture-2219370bc9ce67b6.json
+    sha256: ab50973fd6085385067576c2f11d3b1835512b0db0f9cb8451708c485567d181
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/143-TOGO_M3127_MMJS_medium.yaml
+    sha256: 4f56ed45ac07f3819f29e8848b9b9eb3f44dacc7552201819707da35ef9e23f2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/144-atcc1257-original-capture.pdf
+    sha256: d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/145-review.yaml
+    sha256: 98c0ce6fb510432ca9714992e59c29992392fbdbe40fd151fb2090c686235b76
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/146-review.md
+    sha256: e92f61548c4f360bbef5512d0ac74821f82105c72dbadf64787237523a10df02
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/147-review.yaml
+    sha256: f0a9962ea73d63f7c7431cbd7da2c2db307a2680bd4b7d1b7ba940dccea1c870
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/148-review.md
+    sha256: a649e09a4cdddc51bfa2c64c89c0e62c66f6d836665b4e04a05f85067101d9f4
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/149-review.yaml
+    sha256: 1a8f3fe3ea58fa1da6cba6cd56f0fed45238801c5795b85dbe0c930948792d39
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/inputs/150-review.md
+    sha256: 1cdf716a1f985312de963e7dd3a642a408a2ac40dc87e80ef087b240176fa5db
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/skeptic/ACTUAL-ROW-BINDING-READBACK.json
+    sha256: 994470f1b56faa08974d11ecd65a767ae7c3fdddec1a2a0e8ef6455a8b75b03e
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/skeptic/DISPATCH-ACCEPTANCE.json
+    sha256: b3ebb77a7783e181ae5d247ca50b5ce6ab96bd665c7e8700bbfbda22e1aecb54
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/skeptic/EVIDENCE-READBACK.json
+    sha256: e3631f4cb29e0b2b3c53bb633e3a03a5bfcda48b173b06745d57c132528c6a10
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/skeptic/ORIGINAL-ORIGIN-READBACK.json
+    sha256: 5cb9807b1dbe0cf768973c5898e232088491f4ef1da44c17f5103dd171aca5d6
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/skeptic/RECOMMENDATIONS.json
+    sha256: ff579e71453233923a74767b0268cc9165e5a5adc8ad877560121abf84a0e2a0
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/CHECKS.json
+    sha256: dad989265a03b016de1d67243384a9eaea700aeb08d29833143d0ed68bf0dee2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/FAILED-PROBES-NOTES.json
+    sha256: 6d57ac5b1d8d25827437b102421c2ebf7078acd2581f6783a5d240b3a5d5d3d7
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/HANDOFF.json
+    sha256: 7125dce91c49da3526ddb08dadef597509db181095733d2856351d8153046331
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/INPUTS.json
+    sha256: 12f1d9d8d404f678a93f05ab5ed277353e5d9119b5d984fb477876258e8b7f34
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/MANIFEST.sha256
+    sha256: daf7c94436ae83f34c5f69a5d91a72857cbc5289676aaab2e27796c7940caed5
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/NATIVE-PERSISTENCE-ASSESSMENT.json
+    sha256: 159f0dd649b04a0121ace43cc9af6b6a325dde01fed1357f598700f945121958
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/PRIMARY-CAPTURE-LOCATORS.json
+    sha256: 277eab3b6592ad8a1e623597e2baa615f1cc2c6d4c3dbdeeb5eb073e7a346e99
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/REPORT.md
+    sha256: cbb08547082403ab834ae1d93550d3b041396f5a394f0247f063c3eb5438dfec
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/ROW-JOINS.json
+    sha256: a5d97ec9ddc7409d9c966e1f1f3bdbde408cb82927f3d5b0f3cd87eb8ba62438
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/SEAL.json
+    sha256: 616832d9226bc348e26ee6cc38d0f305a11d9988493db74be0401dae01e441b2
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/technical/TRACE-SLOT-READBACK.json
+    sha256: 67df0140bd1ac6f2033871e7df8e8ba5fa58a5985f161e26a5c8702b14b10feb
+    role: context
+  - path: .temp/actual-eight-row-followup-review-v1/tools/persist_native_review.py
+    sha256: 759b7e581e65c97713457e321062763121bd55f20ab93d82ead8411ac3fcb412
+    role: context
+  - path: .temp/conditional-full-row-review-v1/DECISIONS.json
+    sha256: c2d964f6243b611a9c34c05761348a2b0f96b7f6b2478f403144e1a70b99f6b2
+    role: context
+  - path: .temp/conditional-full-row-review-v1/FINDINGS.json
+    sha256: 8b0f66bc89372b091d132abe542625db68444c3171e0cda22f9bb511e6ab8110
+    role: context
+  - path: .temp/conditional-full-row-review-v1/HANDOFF.json
+    sha256: 2af3005fbc22e853d452c4c25bc758f73aecaa332829b0c17e6e8813e8bde196
+    role: context
+  - path: .temp/conditional-full-row-review-v1/native/review.yaml
+    sha256: 25551d57539e93f906f6c0a2290e7b31fc6dc31a726b050264ba319a86c14dce
+    role: context
+  - path: .temp/conditional-full-row-review-v2/reviews/structured/20261108T163519Z-w09-conditional-full-row-v1/review.md
+    sha256: 5ca714663f3bf999b5c442efaf876690214a64b0ae4f45d2095753dd764344e7
+    role: context
+  - path: .temp/conditional-full-row-review-v2/reviews/structured/20261108T163519Z-w09-conditional-full-row-v1/review.yaml
+    sha256: 178379b28e2a9ce0f1a1c4d3bb7ab892bb231763a7932c5d90e6d378f85bdac1
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+scope:
+  description: Only the exact eight frozen actual native rows plus their complete
+    proposed retained-cell recommendations, all fields/tokens, current whole-owner
+    context and preserved holds.
+  selection: Frozen assignment fbcc57336f878c360687e058960841dff14a728ca2362b36ff7a052f1e132fb3;
+    actual candidate13a061af2cc700794b86f89e08d3de4cc15aa15f983651ad951c20e93414fcb5;
+    original case/proposal identity bound, not historical e99e diagnostic masquerading
+    as actual.
+  coverage: full
+  population_size: 8
+  reviewed_target_ids:
+  - B-CONDITIONAL-ROW-0116
+  - B-CONDITIONAL-ROW-0117
+  - B-CONDITIONAL-ROW-0145
+  - B-CONDITIONAL-ROW-0257
+  - B-CONDITIONAL-ROW-0171
+  - B-CONDITIONAL-ROW-0182
+  - B-CONDITIONAL-ROW-0264
+  - B-CONDITIONAL-ROW-0407
+  exclusions:
+  - target: 1039 unchanged row requests,15 deferred historical requests and unrelated
+      old findings
+    reason: No scientific approval or deletion authority is transferred by mechanical
+      equality/deferral.
+  - target: Actual acceptance, retained-cell selection, whole-owner roles, suppression
+      transitions, companion and export publication
+    reason: Coordinator and separate native workflows own these authorities.
+targets:
+- target_id: B-CONDITIONAL-ROW-0116
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/0/native_row
+  label: MIM:L-Cysteine_X_HCl_X_H2O_Solution -> CHEBI:91248
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0117
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/1/native_row
+  label: MIM:L-Cysteine_X_HCl_X_H2O_Solution -> kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/L-Cysteine_X_HCl_X_H2O_Solution.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0145
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/2/native_row
+  label: MIM:Menadione -> CHEBI:28869
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Menadione.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0257
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/3/native_row
+  label: MIM:Sodium_phosphate_monobasic_monohydrate -> CHEBI:114249
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0171
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/4/native_row
+  label: MIM:Na2b4o7_X_10_H2o -> CHEBI:38888
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0182
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/5/native_row
+  label: MIM:Na2seo3 -> CHEBI:48843
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2seo3.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0264
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/6/native_row
+  label: MIM:Sulfur -> CHEBI:33403
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sulfur.yaml
+    role: maintained_owner
+- target_id: B-CONDITIONAL-ROW-0407
+  path: .temp/actual-eight-row-followup-review-v1/inputs/076-ACTUAL-TARGETS.json
+  selector: /targets/7/native_row
+  label: MIM:Diarsenic_Trioxide -> CHEBI:30621
+  kind: snapshot_row
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Diarsenic_Trioxide.yaml
+    role: maintained_owner
+checks:
+- check_id: ACTUAL-INPUTS
+  name: Actual native inspect at genuine stable W09 root
+  status: passed
+  required: true
+  summary: CLI inspect succeeded for every final declared input; original/captured
+    bytes rechecked separately.
+  target_ids:
+  - B-CONDITIONAL-ROW-0116
+  - B-CONDITIONAL-ROW-0117
+  - B-CONDITIONAL-ROW-0145
+  - B-CONDITIONAL-ROW-0257
+  - B-CONDITIONAL-ROW-0171
+  - B-CONDITIONAL-ROW-0182
+  - B-CONDITIONAL-ROW-0264
+  - B-CONDITIONAL-ROW-0407
+  evidence_ids:
+  - E-JOINS
+- check_id: WHOLE-SCOPE
+  name: Complete primary and distinct skeptical scientific scope
+  status: passed
+  required: true
+  summary: Eight full rows, seven owners,104cells and62orderedalias tokens independently
+    assessed; copied rows alone are not votes.
+  target_ids:
+  - B-CONDITIONAL-ROW-0116
+  - B-CONDITIONAL-ROW-0117
+  - B-CONDITIONAL-ROW-0145
+  - B-CONDITIONAL-ROW-0257
+  - B-CONDITIONAL-ROW-0171
+  - B-CONDITIONAL-ROW-0182
+  - B-CONDITIONAL-ROW-0264
+  - B-CONDITIONAL-ROW-0407
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+- check_id: SOURCE-JOINS
+  name: Original proposals/cases/current owner/native slot trace
+  status: passed
+  required: true
+  summary: Independent technical receipt joins8rows/7owners/10proposals/12cases; source
+    holds remain scientific limits.
+  target_ids:
+  - B-CONDITIONAL-ROW-0116
+  - B-CONDITIONAL-ROW-0117
+  - B-CONDITIONAL-ROW-0145
+  - B-CONDITIONAL-ROW-0257
+  - B-CONDITIONAL-ROW-0171
+  - B-CONDITIONAL-ROW-0182
+  - B-CONDITIONAL-ROW-0264
+  - B-CONDITIONAL-ROW-0407
+  evidence_ids:
+  - E-JOINS
+  - E-TECH
+- check_id: PUBLIC-SAVER
+  name: Historical private-only persistence checkpoint
+  status: not_applicable
+  required: false
+  summary: At the original scientific assessment checkpoint, save_review was not invoked;
+    the sealed private pair used native serialization/renderer primitives. That checkpoint
+    did not fulfill mandatory canonical persistence. The later authorized native CLI
+    inspect/validate/save outcome is separately recorded in .temp/actual-eight-row-native-persistence-addendum-v1;
+    it is not a new scientific vote.
+  target_ids:
+  - B-CONDITIONAL-ROW-0116
+  - B-CONDITIONAL-ROW-0117
+  - B-CONDITIONAL-ROW-0145
+  - B-CONDITIONAL-ROW-0257
+  - B-CONDITIONAL-ROW-0171
+  - B-CONDITIONAL-ROW-0182
+  - B-CONDITIONAL-ROW-0264
+  - B-CONDITIONAL-ROW-0407
+  evidence_ids:
+  - E-TECH
+evidence:
+- evidence_id: E-PRIMARY
+  kind: record_content
+  reference: .temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json
+  snapshot_sha256: b0491222b1ddee4dba98099084598445a9091cfb1618345fee984d5f098b44d2
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Actual W09 primary whole-eight-row assessment,104cells/62other tokens,
+    complete recommended rows and primary hashes. Authorship is distinct from source
+    candidates.
+- evidence_id: E-SKEPTIC
+  kind: prior_review
+  reference: .temp/actual-eight-row-followup-review-v1/skeptic/RECOMMENDATIONS.json
+  snapshot_sha256: ff579e71453233923a74767b0268cc9165e5a5adc8ad877560121abf84a0e2a0
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Genuinely separate, newly completed /root/row_skeptic whole-eight-row judgments;
+    not a copied author recommendation or inherited approval.
+- evidence_id: E-JOINS
+  kind: validation
+  reference: .temp/actual-eight-row-followup-review-v1/technical/ROW-JOINS.json
+  snapshot_sha256: a5d97ec9ddc7409d9c966e1f1f3bdbde408cb82927f3d5b0f3cd87eb8ba62438
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: context_only
+  summary: Exact actual row/owner, original proposals and full source case bindings.
+    Mechanical equality is not scientific evidence.
+- evidence_id: E-TECH
+  kind: validation
+  reference: .temp/actual-eight-row-followup-review-v1/technical/NATIVE-PERSISTENCE-ASSESSMENT.json
+  snapshot_sha256: 159f0dd649b04a0121ace43cc9af6b6a325dde01fed1357f598700f945121958
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: context_only
+  summary: Actual native strict/negative checks and unchanged APIs; public saver is
+    not redirected to private output.
+- evidence_id: E-P01
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/114-00-c36559e9f6ebb54ad2f3.json
+  snapshot_sha256: 807c96cb31d7b2faebd5667df44cc727071a7ebf1e1fe07c34b603dfbabdc69f
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P02
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/115-01-b8aa55a60f527be120b7.json
+  snapshot_sha256: 7c89e6618d5cc6980c09cc4b1ab7d6184e1655b816ff487ffcfe1c72f94a2b1e
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P03
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/116-02-8827fef4367bb179adc8.json
+  snapshot_sha256: 2000d6d05dbe1c793f30e0a31603dc769ecd64087cec7f9af1672c6a5785f0b8
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P04
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/117-03-a16643fddb8b91a9d74d.json
+  snapshot_sha256: 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P05
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/118-04-borate175-supplier-web-v1.json
+  snapshot_sha256: da1665a28301040081c5babe497aa0a093022ee83cd4cfbaaa358084e4d51ae3
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P06
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/119-05-borate175-structure-web-v1.json
+  snapshot_sha256: e23bf55ef6dcc3b75354d692f0c4d8c2aceacd920cdaa1a0b56a2c98e118fae7
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P07
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/120-06-borate175-ols-38888-v1.json
+  snapshot_sha256: 6933410e4ae1d55f63500c3a537f617d0f910fe2e2a8af5be5c21e2ee0825bf2
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct primary identity/definition/formula/synonym and source-versus-material
+    passages read; complete bytes bound. This access timestamp is review access, not
+    original acquisition; original path/time context stays in PRIMARY-EVIDENCE and
+    capture maps.
+- evidence_id: E-P08
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/121-c-jcm-680.html
+  snapshot_sha256: 16525b97d468855002dda4489f4b2030d28a9a1d332828cc27a0f2e15b5b07f0
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Complete original JCM680 recipe and asterisk autoclaving note; 10 mL stock,
+    no stock concentration or solvent specification. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P09
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/122-chebi-91248.json
+  snapshot_sha256: 7ef9e26cec1a5833d216a01df066c0b6a0bfba77bad16db354c690a7a814a683
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: 'Full OLS defining term: L-cysteine hydrochloride hydrate, formula, CAS
+    and structure. This access timestamp is review access, not original acquisition;
+    original path/time context stays in PRIMARY-EVIDENCE and capture maps.'
+- evidence_id: E-P10
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/123-c-chebi-52891.json
+  snapshot_sha256: 2b32913d5ab8bbc296bb5fbdc0340190cf6212655819134b99b0581ed06c0b70
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Distinct QSY9 dye identity and Thermo Q20131 product primary negative evidence;
+    not the cysteine stock. This access timestamp is review access, not original acquisition;
+    original path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P11
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/124-c-web-qsy.json
+  snapshot_sha256: e79053b4e527b7cdd8c6c9908de92731733f236be58ef3411d6717b499d080e6
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Distinct QSY9 dye identity and Thermo Q20131 product primary negative evidence;
+    not the cysteine stock. This access timestamp is review access, not original acquisition;
+    original path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P12
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/125-atcc1257-original-capture.txt
+  snapshot_sha256: 71c677cd21f359b3a1bbc900bd32810aec74bcf5b4c451ac4450a7313a0453b8
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Complete captured ATCC1257 recipe, stock quantities, ethanol/water inputs
+    and 2 mL dose. This access timestamp is review access, not original acquisition;
+    original path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P13
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/126-ontology-capture.json
+  snapshot_sha256: 5ee4af948f5e11b4456bcb7d2858883e5c7dae55870f457d996ff788001468a2
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: OLS28869 identity/structure and complete synonyms inspected. This access
+    timestamp is review access, not original acquisition; original path/time context
+    stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P14
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/127-search-07.json
+  snapshot_sha256: b8cedde9a020c9fd21a5649c67f720261998e52c77dfa58bc0c5478d496f3887
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: SCBT neutral sc205990 sections1/3 versus bisulfite sc215295 sections1/3;
+    Hemodal not unique. This access timestamp is review access, not original acquisition;
+    original path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P15
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/128-nist-menadione.body
+  snapshot_sha256: 21ac6cad78ef08af5d4a5009d70393bd1157c2715cbdd7d8eca1914e74a843d6
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: NIST menadione identity, CAS58-27-5, InChI and other names; neutral historical
+    names only. This access timestamp is review access, not original acquisition;
+    original path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P16
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/129-890225ce506d2f3b0969.json
+  snapshot_sha256: cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct official ingredient/ontology definition and literal label fields
+    inspected. This access timestamp is review access, not original acquisition; original
+    path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P17
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/130-1b55b6b33ceb08fe51eb.json
+  snapshot_sha256: fd2c8ff3c3ada95ad48962f98a9e86935372b39f1a897571a729d68061406839
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct official ingredient/ontology definition and literal label fields
+    inspected. This access timestamp is review access, not original acquisition; original
+    path/time context stays in PRIMARY-EVIDENCE and capture maps.
+- evidence_id: E-P18
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/131-8f78720d273001286b58.pdf
+  snapshot_sha256: 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P19
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/132-53666f2f2910add2defe.pdf
+  snapshot_sha256: 3226509b558f3fa90e1466ed5a9be5d0fc05db2156dcdec37301890246ef00f3
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P20
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/133-5dada06913515377f52a.pdf
+  snapshot_sha256: 8b4c6b813b38b7d11e631a1fddde2001a24b44b00e30b2a3821be48b8d3dfbc0
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P21
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/134-e24466123dc7455046b5.pdf
+  snapshot_sha256: a295f871d91df15e1f418090bcd9d08ac5d647daf5d29599d633f4555b369092
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P22
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/135-8b42d7dd41b46727e94c.pdf
+  snapshot_sha256: 68264077ad1c5a4a030a9badcee4480eb1f849a1c7306efd6beff2043b4ddee6
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P23
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/136-b-primary-3f90be81b6fd7f2b.pdf
+  snapshot_sha256: 25a7f9223c62438713a52e22653b1cb9eb3a3aaf37ce3407389f1a2d5db2e6b6
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P24
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/137-b-primary-d41661756b13ed36.pdf
+  snapshot_sha256: e21dbc3f7c16cf301001aaa5ca4ca7aa57fb486cbccba0995c46e094946917ab
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P25
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/138-2256f29f0929d1070cfc.pdf
+  snapshot_sha256: 29ffa5707345821ccd91e72e7e633652e5364ed04283b42a63b683f09c0006a9
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Direct relevant primary content inspected; PDF source text extracted with
+    retained original PDF hash and extraction receipt. This access timestamp is review
+    access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P26
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/139-b-primary-77a6bc96916200e7.json
+  snapshot_sha256: 7fd156598d78fc1fe1ddede3ae60d75c66823634f4268cbc81f9bf25cc3ab702
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Exact original source ingredient name, full formulation vector and preparation
+    comments inspected; no source quantity/role transfer. This access timestamp is
+    review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P27
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/140-b-ontology-CHEBI-114249.json
+  snapshot_sha256: b3325690f552c15c937a179b9a9acff4e1615aa86214965d855547eb85df11e1
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Exact original source ingredient name, full formulation vector and preparation
+    comments inspected; no source quantity/role transfer. This access timestamp is
+    review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P28
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/141-capture-c7ce4af92ddac4f6.json
+  snapshot_sha256: d993240b2e04220e53b5d8698cc684c5c06940de6f1dbf0b8a4ea62f6f709528
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Exact original source ingredient name, full formulation vector and preparation
+    comments inspected; no source quantity/role transfer. This access timestamp is
+    review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P29
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/142-capture-2219370bc9ce67b6.json
+  snapshot_sha256: ab50973fd6085385067576c2f11d3b1835512b0db0f9cb8451708c485567d181
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Exact original source ingredient name, full formulation vector and preparation
+    comments inspected; no source quantity/role transfer. This access timestamp is
+    review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+- evidence_id: E-P30
+  kind: primary_source
+  reference: .temp/actual-eight-row-followup-review-v1/inputs/143-TOGO_M3127_MMJS_medium.yaml
+  snapshot_sha256: 4f56ed45ac07f3819f29e8848b9b9eb3f44dacc7552201819707da35ef9e23f2
+  accessed_at: '2026-11-10T01:56:32Z'
+  support: supports
+  summary: Exact original source ingredient name, full formulation vector and preparation
+    comments inspected; no source quantity/role transfer. This access timestamp is
+    review access, not original acquisition; original path/time context stays in PRIMARY-EVIDENCE
+    and capture maps.
+assessments:
+- assessment_id: A-B-CONDITIONAL-ROW-0116
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: The complete owner denotes the named L-cysteine hydrochloride hydrate solution,
+    not the pure CHEBI:91248 reagent. Original JCM680 names this exact solution and
+    adds 10 mL after the basal medium. Its unspecified concentration, solvent and
+    preparation do not defeat the bounded solution-of relation. Under section 3, NARROW_MATCH
+    generates broadMatch to the solute, paired with the distinct local identity row.
+    This is not exact stock-to-solute equivalence. ManualMappingCuration truthfully
+    records the original stock/form adjudication and current predicate correction;
+    the last LLM-assisted event is openly attributed to C. No historical primary-label
+    match is invented.
+  target_ids:
+  - B-CONDITIONAL-ROW-0116
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P08
+  - E-P09
+  - E-P10
+  - E-P11
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/0", "recommended_full_row_pointer":
+    "/decisions/0/recommended_row", "owner_sha256": "1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2",
+    "native_row_sha256": "c91beb9ef33d54ed6f6c76ed16c322b5d7e0a425a8dfc41e1b13115809acc542",
+    "recommended_row_sha256": "c91beb9ef33d54ed6f6c76ed16c322b5d7e0a425a8dfc41e1b13115809acc542",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "No stale
+    source/date or former QSY9 token is retained. The native parent comment and validation
+    cells are intentionally empty; no missing approval is inferred.", "old_finding_scope_disposition":
+    "Fresh assessment accepts the actual broadMatch successor; it does not reapprove
+    the former closeMatch diagnostic. W07 original rejected-label proposal and C predicate
+    successor retain distinct authorship.", "holds": ["Unknown concentration, solvent,
+    pH, formulation and full stock preparation remain unknown.", "No exact global
+    MD1860 occurrence redirect or quantitative recipe assertion follows from this
+    row.", "QSY9 is a different xanthene quencher (CHEBI:52891; Thermo Q20131), and
+    the add-to-make-anoxic instruction is not a substance name; both remain rejected.",
+    "The local sibling is required. Roles and counts are inherited, not independently
+    approved."], "native_admission_limits": {"scientific_mapping_scope_only": true,
+    "positive_owner_role_export_proof_issued": false, "source_acceptance_issued":
+    false, "canonical_retention_or_publication_selection": false, "explanation": "Root
+    owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion
+    binding and publication. This fresh eight-row vote neither changes old aggregate
+    needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0117
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: The exact local registry row preserves the same named, incompletely characterized
+    cysteine stock as its own MIM identity. It is paired with the asymmetric CHEBI:91248
+    parent row; exactMatch here is the local registration, not exact identity with
+    dry hydrate or an arbitrary formulation. ManualMappingCuration and the generated
+    0.99 registry confidence are structural registration conventions, not measured
+    certainty about concentration, product or source occurrence.
+  target_ids:
+  - B-CONDITIONAL-ROW-0117
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P08
+  - E-P09
+  - E-P10
+  - E-P11
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/1", "recommended_full_row_pointer":
+    "/decisions/1/recommended_row", "owner_sha256": "1e82d7a805865aa5344759d9598813a29dbe09a0ccf761873e9f26ac79bc78c2",
+    "native_row_sha256": "373257b4ee00f9cc75a941e7ed0dc79fba88e7a0364dda083615193dab2c34d6",
+    "recommended_row_sha256": "373257b4ee00f9cc75a941e7ed0dc79fba88e7a0364dda083615193dab2c34d6",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "The native
+    registry explanation already preserves the old comment verbatim. No historical-cell
+    override is needed.", "old_finding_scope_disposition": "The same local identity
+    is newly assessed in the actual current full owner context; the parent relation
+    changed independently. The local label is not a claim of an exact proprietary
+    stock formulation.", "holds": ["Every unknown stock/concentration/solvent/pH/preparation
+    and source-routing hold in 0116 applies.", "The historical none|UNKNOWN_TERM|2026-09-02
+    stamp is disclosed failure/coverage metadata, not a new ontology validation or
+    blocker to a valid scoped local identity.", "No owner-wide role/export admission
+    is supplied."], "native_admission_limits": {"scientific_mapping_scope_only": true,
+    "positive_owner_role_export_proof_issued": false, "source_acceptance_issued":
+    false, "canonical_retention_or_publication_selection": false, "explanation": "Root
+    owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion
+    binding and publication. This fresh eight-row vote neither changes old aggregate
+    needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0145
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: Neutral menadione CHEBI:28869, CAS58-27-5 and the current C11H8O2/structure
+    are coherent. ATCC1257 specifies Menadione (Vitamin K3), 50 mg as solute of a
+    separately prepared stock (50 mL 95% ethanol plus 50 mL water), of which 2 mL
+    is added. This supports the source compound alias only. NIST and SCBT neutral-product
+    captures support the remaining neutral names. SCBT also uses Hemodal for a chemically
+    distinct bisulfite product, so bare Hemodal remains rejected rather than universally
+    false. LexicalMatching reflects the preserved neutral menadione DIRECT_MATCH/EXACT_MATCH
+    identity method. The new alias rejection has separate truthful history/evidence;
+    it is not represented as a newly performed original lexical lookup.
+  target_ids:
+  - B-CONDITIONAL-ROW-0145
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P12
+  - E-P13
+  - E-P14
+  - E-P15
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/2", "recommended_full_row_pointer":
+    "/decisions/2/recommended_row", "owner_sha256": "4fe793abcf278200df7d1f2572922e410e81a8220dd8ebb6c25b3d88c66de591",
+    "native_row_sha256": "e2709a977eb159da08feb8da6346a431ad8d647f5796519a21c8bcbad8c2d2aa",
+    "recommended_row_sha256": "e2709a977eb159da08feb8da6346a431ad8d647f5796519a21c8bcbad8c2d2aa",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "Use current
+    provenance and empty native comment. Do not restore Hemodal or stale source tokens
+    via a retention choice.", "old_finding_scope_disposition": "Actual full row no
+    longer emits Hemodal; positive neutral-name evidence and the original source quantities
+    remain visible. Earlier independent Menadione judgments are context, not an automatic
+    new vote.", "holds": ["Frozen ETSA/CM009136 50 G_PER_L is not validated; stock
+    amount and receiving-medium dose stay distinct.", "No sodium bisulfite/derivative
+    identity, generic commercial vitamin K3 preparation, vendor lot or solution equivalence
+    is inferred.", "Vitamin role, 107 count and historic validation/review tokens
+    do not grant current export approval."], "native_admission_limits": {"scientific_mapping_scope_only":
+    true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued":
+    false, "canonical_retention_or_publication_selection": false, "explanation": "Root
+    owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion
+    binding and publication. This fresh eight-row vote neither changes old aggregate
+    needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0257
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: 'CHEBI:114249 explicitly denotes sodium dihydrogenphosphate monohydrate,
+    with CAS10049-21-5 and one water. TOGO M2237 names Sodium dihydrogen orthophosphate
+    monohydrate, 20 g, separately from 1 L distilled-water input and the other formulation
+    inputs. The current 6555960f payload is the genuine W07 residual, typed-identical
+    to its published b58c payload, not the former W07/W08 alias union. ManualMappingCuration
+    is consistent with inherited CAS_RN_LOOKUP and the documented #312 hydrate adjudication;
+    it is not a newly claimed primary-label lookup. The manual:apply_312_batch4|OTHER|2026-09-22
+    stamp retains its historical scope.'
+  target_ids:
+  - B-CONDITIONAL-ROW-0257
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P26
+  - E-P27
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/3", "recommended_full_row_pointer":
+    "/decisions/3/recommended_row", "owner_sha256": "6555960fab227438878110a401a843e9e9ba03ad40bde86c8cba6ebd83013b96",
+    "native_row_sha256": "95d23d7bc61a98a9551b9805f9657574a7ceb6277cb4e3bd408cb47d5f16f7ae",
+    "recommended_row_sha256": "95d23d7bc61a98a9551b9805f9657574a7ceb6277cb4e3bd408cb47d5f16f7ae",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "No retention
+    recommended. The old #403/#312 CAS-token boilerplate is true historical explanation
+    but adds no necessary restriction beyond the current exact hydrated identity,
+    documented CAS and preserved history. The separate W01 alternative remains unselected.",
+    "old_finding_scope_disposition": "The old conditional 11-token union is not carried
+    as equal approval; the actual 8-token W07-only row is freshly reviewed against
+    its complete owner and source.", "holds": ["Only the genuine W07 source alias
+    and one actual source case/occurrence are assessed here.", "Both W08 #758 transfer
+    fragments remain deferred; none of their additional aliases or ownership transfers
+    is admitted.", "No 20 g/L final-volume assertion, common dose, role/count or preparation
+    approval is inferred from the source input vector.", "NaH2PO4•H2O(MCIB 742) is
+    an inherited contextual literal formula, not an independently validated culture
+    accession or new source routing."], "native_admission_limits": {"scientific_mapping_scope_only":
+    true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued":
+    false, "canonical_retention_or_publication_selection": false, "explanation": "Root
+    owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion
+    binding and publication. This fresh eight-row vote neither changes old aggregate
+    needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0171
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: Conventional borax Na2B4O7·10H2O and the structural formula Na2[B4O5(OH)4]·8H2O
+    have the same total Na2B4H20O17 composition. Gainsford et al. 2008 DOI10.1107/S1600536808010441
+    directly identifies this borax structure; supplier CAS1303-96-4/MW381.37 and CHEBI:38888
+    formula 8H2O.H4B4O9.2Na/MW381.371 corroborate it. The official octahydrate label
+    counts eight free waters after hydroxylation; it does not assert conventional
+    Na2B4O7·8H2O. This exact identity therefore does not collapse different hydrates.
+    Current MANUAL_CURATION produces ManualMappingCuration and 0.9, accurately replacing
+    an unsupported lexical establishing-method claim. The structural adjudication
+    and original evidence/history are preserved, including explicit LLM authorship.
+  target_ids:
+  - B-CONDITIONAL-ROW-0171
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P05
+  - E-P06
+  - E-P07
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/4", "recommended_full_row_pointer":
+    "/decisions/4/recommended_row", "owner_sha256": "6f82c79419773eaa0cc6b8961892761b9ec8003f83f764eff2af252c571a9f2f",
+    "native_row_sha256": "783fd3abf3d27d8369f1b247bd8eb0f2f48b9abe39d4bbd1c2120f846cec2ec6",
+    "recommended_row_sha256": "783fd3abf3d27d8369f1b247bd8eb0f2f48b9abe39d4bbd1c2120f846cec2ec6",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "Use the
+    current complete native row. Repeated IUCr source URL represents two owner evidence
+    entries, not independent corroborating votes. No old misgrounded row fields are
+    retained.", "old_finding_scope_disposition": "W09-ROW-BORAX-METHOD-001 is satisfied
+    for this exact current method cell/row by the new owner event and actual native
+    projection. Historical finding artifacts remain immutable; issue disposition is
+    root-owned.", "holds": ["Explicitly weighed decahydrate contexts only; DSMZ770
+    0.1% w/v stock remains distinct and globally redirecting MD ingredient196 is not
+    approved.", "CHEBI131366/86222 are not globally redirected by this owner correction.",
+    "The three UW child dependencies and source-specific formulation/quantity holds
+    remain mandatory.", "No supplier purchase/lot, global form inference, role or
+    export admission follows."], "native_admission_limits": {"scientific_mapping_scope_only":
+    true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued":
+    false, "canonical_retention_or_publication_selection": false, "explanation": "Root
+    owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion
+    binding and publication. This fresh eight-row vote neither changes old aggregate
+    needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0182
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: CHEBI:48843 defines the disodium salt of selenious acid and agrees with
+    Na2SeO3, CAS10102-18-8 and the current structure. Captured ATCC modified Wolfe
+    mineral elixir explicitly says Na2SeO3 (anhydrous), 1 mg in its 1 L stock. The
+    actual row excludes rejected Na2Se2O3; the latter remains literally present in
+    MD804 and DSMZ863 rather than silently being corrected to Na2SeO3. The original
+    DIRECT_MATCH/EXACT_MATCH establishes the inherited LexicalMatching field; the
+    latest change is a documented alias rejection, not a new assertion that an original
+    primary-label search was performed. Retain the historical SYNONYM_ENRICH validation
+    stamp as history, not fresh source approval.
+  target_ids:
+  - B-CONDITIONAL-ROW-0182
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P16
+  - E-P17
+  - E-P18
+  - E-P19
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/5", "recommended_full_row_pointer":
+    "/decisions/5/recommended_row", "owner_sha256": "56b2ec00c5508f974e07baee393685f8886d5bae30d82988441755187e86b3ba",
+    "native_row_sha256": "703171b5c95b565e87b51b950e98a01be4056e6b85ffae6e454a5826e6d23104",
+    "recommended_row_sha256": "703171b5c95b565e87b51b950e98a01be4056e6b85ffae6e454a5826e6d23104",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "No old
+    Na2Se2O3 resolving token or stale metadata is retained. Current source and empty
+    comment preserve the bounded correction without guessing the reagent.", "old_finding_scope_disposition":
+    "W09-ROW-SELENITE-ALIAS-001 resolving exposure is removed in these exact current
+    bytes by REJECTED_LABEL and actual absence from other. The genuine source identity
+    uncertainty is explicitly retained.", "holds": ["DSMZ863/MD804 exact reagent remains
+    unresolved; source typo is not guessed.", "Anhydrous reagent and its pentahydrate/selenite-tungstate
+    preparations are not interchangeable.", "All four flattened occurrence quantities/nesting
+    and their source roles remain separately held; no new source or role/export approval.",
+    "Older incorrect CAS metadata remains traceable in history; current source-specific
+    alias review is not retrospective cleanup authority."], "native_admission_limits":
+    {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued":
+    false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection":
+    false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression
+    transitions, whole-campaign/companion binding and publication. This fresh eight-row
+    vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0264
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: 'CHEBI:33403 is the elemental sulfur material class; bulk powder/precipitated/spelling
+    forms do not justify sulfur atom, polysulfur-only or a particular allotrope. DSMZ1092/854/897/88/670
+    specify weighed powder with different source-specific amounts/preparations. TOGO
+    M2553 explicitly says So(Sulfur Powder) 5 g; M3129 says ground sulfur powder 20
+    g/L and distinguishes sulfide reduction and preparation order. Frozen MMJS says
+    Elemental sulfer at 3 G_PER_L; live retrieval failure is preserved, not described
+    as a successful original primary lookup. The literal material misspelling supports
+    nominal identity without certifying its flattened dose. ManualMappingCuration
+    truthfully records the material-versus-atom judgment documented in #368 and the
+    new explanatory LLM event. Generic preferred label Sulfur alone is not claimed
+    to have established the mapping by primary-label match.'
+  target_ids:
+  - B-CONDITIONAL-ROW-0264
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P01
+  - E-P20
+  - E-P21
+  - E-P22
+  - E-P23
+  - E-P24
+  - E-P28
+  - E-P29
+  - E-P30
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/6", "recommended_full_row_pointer":
+    "/decisions/6/recommended_row", "owner_sha256": "77f91533abf4c4e13aa1a52b77208b23150d365cc44476d0930165f9da914104",
+    "native_row_sha256": "771480961db0524c7ffa76772067a30564555ef2c1a4f6ef71715f07b1edd85e",
+    "recommended_row_sha256": "6eb3bfe45dfd4d0f68a6f106f09f24a98ac83908adf9625a99558f54d4ff7d95",
+    "preserve_fields": ["comment"], "retention_selected": false, "retention_reason":
+    "Recommend retain only the exact prior comment: Corrected from sulfur atom to
+    weighable elemental sulfur and merged spelling/form duplicates (#368). The current
+    #368 history and present primary material evidence support every clause. Its omission
+    loses a useful material-versus-atom restriction. This is a proposed complete row,
+    not selected/publication authority.", "old_finding_scope_disposition": "W09-ROW-SULFUR-METHOD-001
+    is satisfied for these exact corrected method bytes. The original needs_curation
+    packet and its unselected old alternative remain unchanged; this is a distinct
+    actual-row recommendation.", "holds": ["No S8-only, polymer-only, atomic, isotope,
+    allotrope, particle-size, brand or lot identity is inferred.", "Different source
+    sulfur doses, sterilization instructions and nested preparations remain separate;
+    no global dose or treatment transfer.", "Original W01/W05/W06/W07 proposals, source
+    failures, aliases, rejected labels and histories all remain accounted.", "No role/count477
+    certification, source-wide routing or export approval."], "native_admission_limits":
+    {"scientific_mapping_scope_only": true, "positive_owner_role_export_proof_issued":
+    false, "source_acceptance_issued": false, "canonical_retention_or_publication_selection":
+    false, "explanation": "Root owns actual acceptance, retained-cell selection, suppression
+    transitions, whole-campaign/companion binding and publication. This fresh eight-row
+    vote neither changes old aggregate needs_curation nor approves1039 unchanged rows."}}'
+- assessment_id: A-B-CONDITIONAL-ROW-0407
+  area: identity
+  topic: Complete actual13-cell row and all ordered aliases/provenance, within the
+    exact current whole owner
+  outcome: supported
+  summary: CHEBI:30621 defines the arsenic/oxygen 2:3 oxide. The real exact As2O3
+    OLS query capture returns the defining term, with the formula as a related synonym;
+    its existence is not denied. ChEBI depicts As4O6 while PubChem14888 gives empirical
+    As2O3. These are representation differences relevant to the recorded identity
+    judgment, not evidence for doubling source masses or mapping alkaline arsenite
+    solution to the weighed oxide. CCAP UCM explicitly adds As2O3 with NaOH in a separate
+    primary stock. MANUAL_CURATION accurately records the decisive empirical/molecular
+    representation adjudication even though genuine synonym-query evidence exists.
+    The current preferred-label equality is not substituted for that performed judgment.
+  target_ids:
+  - B-CONDITIONAL-ROW-0407
+  evidence_ids:
+  - E-PRIMARY
+  - E-SKEPTIC
+  - E-JOINS
+  - E-P02
+  - E-P03
+  - E-P04
+  - E-P25
+  details: '{"primary_document": ".temp/actual-eight-row-followup-review-v1/PRIMARY-DECISIONS.json",
+    "complete_scientific_assessment_pointer": "/decisions/7", "recommended_full_row_pointer":
+    "/decisions/7/recommended_row", "owner_sha256": "aa045024f5c010ba7f827a5f8c6428929dc50503cbcb3ee106a3a6ae7bea751c",
+    "native_row_sha256": "7fc8393f7fb2098c3ba39c26ab825e5225c05bbd87ba123f79390bc5ac4722f8",
+    "recommended_row_sha256": "7fc8393f7fb2098c3ba39c26ab825e5225c05bbd87ba123f79390bc5ac4722f8",
+    "preserve_fields": [], "retention_selected": false, "retention_reason": "This
+    is an added row with no canonical beforeimage. Retention is unavailable; use the
+    full native row without inventing a prior comment.", "old_finding_scope_disposition":
+    "W09-ROW-DIARSENIC-METHOD-001 is satisfied for the actual ManualMappingCuration
+    row while retaining the truthful qualification that the old As2O3 exact query
+    was performed. This does not retrospectively change old evidence.", "holds": ["No
+    molecular weight, CAS, polymorph, vendor, lot or exact molecule population was
+    added to the minimal oxide owner.", "CCAP primary stock (0.093 g As2O3 plus4 g
+    NaOH per100 mL), trace and receiving-medium quantities remain distinct; both flattened
+    source occurrences retain CM#283 holds.", "No resulting arsenite-stock identity,
+    role or export approval."], "native_admission_limits": {"scientific_mapping_scope_only":
+    true, "positive_owner_role_export_proof_issued": false, "source_acceptance_issued":
+    false, "canonical_retention_or_publication_selection": false, "explanation": "Root
+    owns actual acceptance, retained-cell selection, suppression transitions, whole-campaign/companion
+    binding and publication. This fresh eight-row vote neither changes old aggregate
+    needs_curation nor approves1039 unchanged rows."}}'
+findings: []
+actions: []
+limitations:
+- Both old aggregate needs_curation verdicts remain unchanged.
+- All40 inherited W01 holds and three older positive-review conflicts remain; no new
+  judgment on their rows.
+- All15 deferred historical requests remain distinct; deferral is not row-deletion
+  authority.
+- Provisional benzene-triol method trace observation remains unresolved and outside
+  this task.
+- Old17 W01 and1 W09 comment alternatives remain unselected; this current Sulfur recommendation
+  is distinct and still unselected.
+- No1039-row blanket approval, role/export/companion/source-acceptance or suppression-transition
+  approval.
+- B4 missing BTO/MICRO, FOODON mirror exception and unsupported prefixes/fallback
+  limits remain. V1 lost validator exit remains unavailable.
+- These are scientific recommendations on an actual generated candidate, not canonical
+  publication or source acceptance. The reviewed source receipt itself is actual complete,
+  not provisional; this review does not reexecute it.
+- Native currentness binds genuine W09 working_tree source inputs at bf75ca9a. The
+  copied inputs retain actual B and historical source-root identities via complete
+  capture maps; W09 is not relabeled as the generating root.
+- Existing captured sources were reinspected; no fresh provider retrieval. Unknown
+  vendor/lot/allotrope/form/preparation/stock quantities remain unknown where stated.
+- The original sealed private assessment did not invoke save_review and was not a
+  canonical fleet review. This metadata-only persistence successor retains that assessment
+  and uses the unchanged canonical native saver at the actual W09 root; exact command
+  outcome and strict saved-byte readback are recorded separately in .temp/actual-eight-row-native-persistence-addendum-v1.
+  Native persistence confers no source acceptance, supported-products, role, export,
+  or publication approval.
+- Four original W09 row defects have evidence-scoped corrected-byte assessments; original
+  artifacts and root issue statuses are not changed. No whole-family finding retirement
+  is implied.
+notes:
+- Actual final strict saved-byte parse/schema/currentness/native-render checks are
+  recorded in validation/actual-saved-pair.json after persistence, avoiding fabricated
+  pre-save completion claims.
+- The complete separate primary and skeptical recommendation objects, including full
+  before/native/recommended rows and publisher hashes, are inputs. Root must bind
+  both exact documents if selecting a retained cell.
+- Completed current probes and preserved historical or failed probes remain separate;
+  no absent old exit status is invented.
+- Persistence-only successor of 20261110T015632Z-w09-actual-eight-row-followup. Original
+  scientific interval 2026-11-10T01:44:02.417380Z through 2026-11-10T01:56:32Z is
+  unchanged. This document's finished_at records preparation for the later actual
+  native save, not a new scientific assessment or acquisition. All original reviewer
+  identities, source/target/evidence/assessment/decision bytes and scientific limitations
+  remain; only persistence metadata changes are enumerated in the addendum's TYPED-DELTA.json.
+  Original private and canonical successor are one scientific assessment, not two
+  votes.
+```

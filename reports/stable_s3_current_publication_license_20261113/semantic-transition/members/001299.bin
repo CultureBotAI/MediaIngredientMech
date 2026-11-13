@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa
+preferred_term: Heparin sodium salt from porcine intestinal mucosa
+ontology_mapping:
+  ontology_id: CHEBI:230519
+  ontology_label: heparin sodium
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:230519 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Heparin sodium salt from porcine intestinal mucosa' does not equal the term
+      label 'heparin sodium'. EXACT_MATCH therefore asserted an identity the pair
+      does not have. Re-graded because source-qualified.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=9041-08-1; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.956739+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.946765+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_registry_for_narrow_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: identifier CHEBI:230519 -> kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa.
+    The record is narrower than CHEBI:230519 (source-, form- or scope-qualified),
+    and §3 forbids expressing a more specific thing by sharing a broader term's identifier.
+    Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+    to narrow/broad.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 9041-08-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+ingredient_type: SINGLE_INGREDIENT

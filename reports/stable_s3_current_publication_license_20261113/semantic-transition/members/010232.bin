@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-11-08T06:04:20.089567+00:00",
+  "frozen_shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-07.json",
+  "frozen_shard_sha256": "db9acb54fc821c0ec691d82bf91a05a831be9ad3e491e3a243f941eab84b7c61",
+  "foreign_case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:87a3023cb2b6523988122d33d722774edb88942f02c97e21dd816a7954a0e850",
+    "original_kg_entry": {
+      "candidate_id": "87a3023cb2b6523988122d33d722774edb88942f02c97e21dd816a7954a0e850",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "CMRL 1066",
+          "owner": "data/ingredients/unmapped/CMRL_1066.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "CMRL 1066",
+          "owner": "data/ingredients/unmapped/CMRL_1066.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "CMRL 1066",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "preferred_term",
+          "label": "CMRL 1066",
+          "owner": "data/ingredients/unmapped/CMRL_1066.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "synonym",
+          "label": "CMRL 1066",
+          "owner": "data/ingredients/unmapped/CMRL_1066.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "CMRL 1066",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [
+        {
+          "identifier": "UNMAPPED_0359",
+          "mapping_status": "UNMAPPED",
+          "native_review_rows": [],
+          "ontology_mapping": null,
+          "path": "data/ingredients/unmapped/CMRL_1066.yaml",
+          "preferred_term": "CMRL 1066",
+          "sha256": "5ec81ababe3130834fa8e46faebf4b4c321bbbbb65e340685e5e597dbe2342b0",
+          "subject_id": "MIM:CMRL_1066"
+        }
+      ],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "CMRL 1066",
+      "resolving_owner_paths": [
+        "data/ingredients/unmapped/CMRL_1066.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:1680",
+      "source_label": "CMRL 1066",
+      "source_record": {
+        "amount": 100,
+        "attribute": "GIBCO 042-1545, glutamin 10 x",
+        "compound": "CMRL 1066",
+        "compound_id": 1680,
+        "optional": 0,
+        "recipe_order": 1,
+        "unit": "ml"
+      },
+      "triage_flags": [
+        "MATCHED_UNMAPPED_OWNER",
+        "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "CMRL 1066",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1680",
+    "source_identity_claimed": false,
+    "source_label": "CMRL 1066"
+  },
+  "existing_owner_path": "data/ingredients/unmapped/CMRL_1066.yaml",
+  "existing_owner_sha256": "5ec81ababe3130834fa8e46faebf4b4c321bbbbb65e340685e5e597dbe2342b0",
+  "existing_owner_full_yaml": "identifier: UNMAPPED_0359\npreferred_term: CMRL 1066\nsynonyms:\n- synonym_text: CMRL 1066\n  synonym_type: RAW_TEXT\n  source: mim-queue\n- synonym_text: CMRL 1066 (Gibco 330--1540)\n  synonym_type: CATALOG_VARIANT\n  source: culturemech:output/ingredient_occurrences.tsv\n- synonym_text: CMRL-1066 (ATCC 20-2206)\n  synonym_type: RAW_TEXT\n  source: culturemech:output/ingredient_occurrences.tsv\nmapping_status: UNMAPPED\ningredient_type: NAMED_MEDIUM\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-30T18:43:03.698454+00:00'\n  curator: audit_import_ingredients[mim-queue]\n  action: CREATED_AS_UNMAPPED\n  changes: Imported from mim-queue (source_id=mediadive.ingredient:1680); no CAS-RN\n    or CHEBI/NCIT match. Curator review needed.\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-05-11T10:05:00Z'\n  curator: mediaingredientmech-agentic-curation\n  action: CLASSIFIED_DEFINED_MEDIUM\n  changes: Set ingredient_type=DEFINED_MEDIUM because CMRL 1066 names a medium formulation,\n    not a single chemical ingredient.\n  previous_status: UNMAPPED\n  new_status: UNMAPPED\n  llm_assisted: true\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: edison_literature_identity\n  action: ANNOTATED\n  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CMRL_1066-edison-literature.md\n    (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather\n    than linked). Report verdict: | Recommendation | No ontology CURIE was proposed.\n    Recorded as provenance only \u2014 no grounding applied from this run. Edison''s recommendations\n    are deliberately conservative, and a plausible identifier promoted by a mechanism\n    that never decided anything is what #203 and #263 exist to undo. Any CURIE above\n    is a curator''s to accept or reject.'\n  llm_assisted: true\n- timestamp: '2026-08-30T06:20:04.233651+00:00'\n  curator: claude_culturemech_alias_backfill\n  action: ADDED_SYNONYMS\n  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s\n    published label but were absent from MIM''s label index, so CultureMech could\n    not resolve them: ''CMRL 1066 (Gibco 330--1540)'' (x1 CultureMech mentions); ''CMRL-1066\n    (ATCC 20-2206)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'\n  llm_assisted: false\nnotes: Imported from mim-queue (source_id=mediadive.ingredient:1680); no CAS-RN or\n  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped as a named medium formulation.\n",
+  "scope": "Cross-shard dependency only. This review does not adopt worker07 payload or choose a winner. Both shards must reconcile one active owner against the original baseline hash."
+}

@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:nissui_trypto_soya_agar
+preferred_term: Trypto-Soya Agar (Nissui)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nissui_trypto_soya_agar
+  ontology_label: Trypto-Soya Agar (Nissui)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.diagnostics-eu.shimadzu.com/wp-content/uploads/2024/08/culture-media-catalogue.pdf
+    notes: JCM27 identifies Nissui Trypto-soya agar40g/L; the KG raw supplier also
+      says Nissui40g/L despite Trypticase spelling. Successor supplier catalogue p15
+      confirms this named product and four-input formula. It is separated from BD
+      Trypticase and generic Trypticase_Soy_Agar; generic source spelling is not installed
+      as an alias.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: JCM27 identifies Nissui Trypto-soya agar40g/L; the KG raw supplier also says
+  Nissui40g/L despite Trypticase spelling. Successor supplier catalogue p15 confirms
+  this named product and four-input formula. It is separated from BD Trypticase and
+  generic Trypticase_Soy_Agar; generic source spelling is not installed as an alias.
+  Raw source labels remain in campaign case evidence; no unqualified global alias
+  is added. This isolated proposal does not clear inherited owner publication holds.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: JCM27 identifies Nissui Trypto-soya agar40g/L; the KG raw supplier also
+    says Nissui40g/L despite Trypticase spelling. Successor supplier catalogue p15
+    confirms this named product and four-input formula. It is separated from BD Trypticase
+    and generic Trypticase_Soy_Agar; generic source spelling is not installed as an
+    alias. Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.492201+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: Trypto-Soya Agar (Nissui)
+  supplier: Nissui / Shimadzu Diagnostics
+  form: dehydrated soybean-casein digest agar
+components:
+- component_name: Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '15'
+  concentration_unit: G_PER_L
+- component_name: Soya Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Sodium Chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '15'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.diagnostics-eu.shimadzu.com/wp-content/uploads/2024/08/culture-media-catalogue.pdf
+    notes: Current supplier nominal four-input composition at40g/L reconstitution,
+      not a claim that every historical lot is identical. Product label Trypto-Soya
+      Agar and supplier lineage corroborate the primary source. No exact ontology
+      mapping is inferred from soybean-casein terminology.
+  notes: Current supplier nominal four-input composition at40g/L reconstitution, not
+    a claim that every historical lot is identical. Product label Trypto-Soya Agar
+    and supplier lineage corroborate the primary source. No exact ontology mapping
+    is inferred from soybean-casein terminology.

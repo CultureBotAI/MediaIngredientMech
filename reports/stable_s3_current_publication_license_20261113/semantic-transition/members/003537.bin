@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "author": "Codex /root/primary_context (worker01)",
+  "case_updates": [
+    {
+      "case_id": "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a",
+      "allocation_index": 11,
+      "finding_id": "CHEM-COMP-006",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+        "file_sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+        "row_sha256_canonical_json": "f2e0362077795d73aa6b57c613ed7fbe42dbb5f6c7aadfcf79575894c6f76bbe"
+      },
+      "updates": {
+        "reasoning": "NBRC1257 and NBRC1321 positively specify the same stock: 8.4 g NaHCO3 plus 100 mL distilled water, saturated with CO2 and autoclaved in tightly sealed CO2-filled bottles. Preserve their coalesced proposal and both exact source occurrences (30 mL receiving dose each). The 100 mL is added water, not an instruction to make up final volume; 1.0 M is the source-reported nominal strength, and dissolved CO2 amount/speciation is unquantified. Explicit saturation supports retaining CO2 as a material input; headspace alone would not do so. Bicarbonate solution*** is a source-local footnote pointer with no strength, sodium specification or CO2 preparation in the token. It is not a standalone identity-bearing name for this particular stock, so preserve its exact REJECTED_LABEL/source entry and its positive occurrence-level assignment. This is a per-string applicability judgment, not export convenience or rejection of bicarbonate as a material.",
+        "completeness_revision": "successor-1226-1237-v1: CHEM-COMP-006 individual bicarbonate pointer assessment; cross-source stock union and literal quantity/CO2 scope retained."
+      }
+    },
+    {
+      "case_id": "CM_NAME:5d9e2026ac8ea68a5e50d234ffa4d2b73bea306b5a9bb33353d17aeb26f713d0",
+      "allocation_index": 55,
+      "finding_id": "CHEM-COMP-006",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+        "file_sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+        "row_sha256_canonical_json": "b5c9a0c1317b37a327452728b23dbb325da41c349792b54ef81f96b5c8d6e947"
+      },
+      "updates": {
+        "reasoning": "JCM1430 and JCM1431 directly print 0.01 M FeSO4·7H2O solution (in 0.02 N HCl), each at a 3.0 mL receiving dose after cooling to 50 C. The complete name states the reagent hydrate, strength and acid carrier and is an identity-bearing stock name under MAPPING_SEMANTICS section 3. Change only that exact active label from REJECTED_LABEL to EXACT_SYNONYM; preserve its old negative object/source/history in the immutable predecessor and qualifier-negative audit lineage. The scoped native preferred-owner check found no competing owner of that token, so no SUPPRESS sidecar entry is justified. Receiving dose is not stock concentration; normality is preserved. No solid-ferrous-sulfate identity, shortened-label equivalence or molecular speciation is inferred."
+      }
+    },
+    {
+      "case_id": "CM_NAME:8f4f818454b45cde5b8fac36155fb028ce405d508d1c62d696f00675a673e89b",
+      "allocation_index": 86,
+      "finding_id": "CHEM-COMP-002",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+        "file_sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+        "row_sha256_canonical_json": "5fb5dfaebf64f69b5c121cf330b0f30e49f9c24995573a4b42409b1771fa6eb8"
+      },
+      "updates": {
+        "reasoning": "NBRC1020 and NBRC824 both print Na2SeO3 4 mg and Na2WO4 4 mg; the hydrate forms are unspecified. NBRC1020 supplies 1 L distilled water; NBRC824 omits the Se/W solvent/preparation denominator. Both receiving media use 1 mL. The NBRC824 denominator cannot be borrowed from NBRC1020 or the receiving medium. NBRC1020 and JCM317 have the same nominal listed masses (4 mg sodium selenite and 4 mg tungstate reagent) plus 1 L distilled water, but NBRC1020 omits hydrate qualifiers while JCM317 explicitly states Na2WO4·2H2O. Omission establishes neither anhydrous identity nor equality/difference. Keep these source-bound partial proposals; do not merge or co-install them as proved-distinct owners without source-applicable supplied-reagent evidence or an explicitly reviewed common nominal scope. The 1 L is added water, not a demonstrated final solution volume.",
+        "missing_requirement": "NBRC824 still requires its stock solvent/preparation denominator before assignment to the quantified NBRC1020 proposal. Resolve the NBRC tungstate supplied hydrate/form and its applicability relative to JCM317, or independently review a common nominal preparation scope, before merging or co-installing these as proved-distinct owners. No hydrate, anhydrous state or final-volume concentration may be inferred from omission.",
+        "candidate_assessment": "Supported source-defined partial NBRC1020 stock; relationship to JCM317 remains unresolved and must not be declared distinct from omitted hydration. NBRC824 remains outside the quantified applicability.",
+        "completeness_revision": "successor-1226-1237-v1: CHEM-COMP-002 hydration/overlap correction; original quantity/alias review retained only for unchanged scope."
+      }
+    },
+    {
+      "case_id": "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3",
+      "allocation_index": 106,
+      "finding_id": "CHEM-COMP-006",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+        "file_sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+        "row_sha256_canonical_json": "f7ea149f2f2cd69cf9d3806111fdfe0fdcdfdd5d77fbf8975cb6ee9d4e515793"
+      },
+      "updates": {
+        "reasoning": "NBRC1257 and NBRC1321 positively specify the same stock: 8.4 g NaHCO3 plus 100 mL distilled water, saturated with CO2 and autoclaved in tightly sealed CO2-filled bottles. Preserve their coalesced proposal and both exact source occurrences (30 mL receiving dose each). The 100 mL is added water, not an instruction to make up final volume; 1.0 M is the source-reported nominal strength, and dissolved CO2 amount/speciation is unquantified. Explicit saturation supports retaining CO2 as a material input; headspace alone would not do so. Bicarbonate solution (1.0 M)*** states a nominal strength but still requires the *** footnote to identify the sodium salt, added-water preparation and CO2 saturation. Preserve its exact REJECTED_LABEL/source entry as a non-name for this specific owner and retain its positive source-occurrence assignment. Nominal strength alone is not full formulation. Neither bicarbonate token has an established competing preferred owner in the checked scope; no SUPPRESS action is justified."
+      }
+    },
+    {
+      "case_id": "CM_NAME:bb437f3399b9bb25eecebdf8961226f0e498c508494f893b21186a8974484bbd",
+      "allocation_index": 110,
+      "finding_id": "CHEM-COMP-002",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/decisions.json",
+        "file_sha256": "facb64dcf55d00f3b97e032997b085cc4636f815526fc6ffd2adcfb9bc000438",
+        "row_sha256_canonical_json": "cd1d33081c1fc02a9cb14ee6413381dedaf5906342e5f3d3bd0ba45c2e5c9766"
+      },
+      "updates": {
+        "reasoning": "JCM1425 explicitly references JCM317 Se/W solution and uses a 1.0 mL receiving dose. JCM317 specifies Na2SeO3 4 mg, Na2WO4·2H2O 4 mg and 1 L distilled water. NBRC1020 and JCM317 have the same nominal listed masses (4 mg sodium selenite and 4 mg tungstate reagent) plus 1 L distilled water, but NBRC1020 omits hydrate qualifiers while JCM317 explicitly states Na2WO4·2H2O. Omission establishes neither anhydrous identity nor equality/difference. Keep these source-bound partial proposals; do not merge or co-install them as proved-distinct owners without source-applicable supplied-reagent evidence or an explicitly reviewed common nominal scope. The 1 L is added water, not a demonstrated final solution volume. The retained new_distinct_ingredient_proposal disposition is the historical proposal-workflow category, not evidence of chemical disjointness; current merge and proved-distinct co-installation are withheld. Previously recorded JCM852 lower amounts/hydrated selenite and JCM431 alkaline-formula comparisons are unchanged; they do not establish a difference from the NBRC preparation.",
+        "missing_requirement": "Resolve the NBRC tungstate supplied hydrate/form and its applicability relative to JCM317, or independently review a common nominal preparation scope, before merging or co-installing these as proved-distinct owners. No hydrate, anhydrous state or final-volume concentration may be inferred from omission.",
+        "candidate_assessment": "Supported source-bound partial JCM317 recipe with explicit tungstate dihydrate; no proved-distinct classification versus NBRC1020/824 follows from missing hydration.",
+        "completeness_revision": "successor-1226-1237-v1: CHEM-COMP-002 hydration/overlap correction; original quantity/alias review retained only for unchanged scope."
+      }
+    }
+  ],
+  "proposal_updates": [
+    {
+      "proposal_id": "NSV4-PROP-NBRC_1020_Se_W_Solution",
+      "finding_id": "CHEM-COMP-002",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/proposals.json",
+        "file_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+        "row_sha256_canonical_json": "95bcdd88aacb97988991b1d201a394cd2b03947c6acffc8c0ce601b6e1932802"
+      },
+      "updates": {
+        "description": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. NBRC1020 and JCM317 have the same nominal listed masses (4 mg sodium selenite and 4 mg tungstate reagent) plus 1 L distilled water, but NBRC1020 omits hydrate qualifiers while JCM317 explicitly states Na2WO4·2H2O. Omission establishes neither anhydrous identity nor equality/difference. Keep these source-bound partial proposals; do not merge or co-install them as proved-distinct owners without source-applicable supplied-reagent evidence or an explicitly reviewed common nominal scope. The 1 L is added water, not a demonstrated final solution volume.",
+        "scope": "Literal source-bound partial preparation and exact original occurrence applicability; supplied-form overlap with the other Se/W proposal is unresolved. Source-local pointer dispositions are unchanged.",
+        "integration_obligations": [
+          "Own-identifier identity row MIM:NBRC_1020_Se_W_Solution skos:exactMatch kgmicrobe.ingredient:nbrc_1020_se_w_solution; no broadMatch to a component.",
+          "Synchronize maintained surfaces and validate exact proposed partonomy against integrated owners; no implicit whole-record release approval.",
+          "Resolve the NBRC tungstate supplied hydrate/form and its applicability relative to JCM317, or independently review a common nominal preparation scope, before merging or co-installing these as proved-distinct owners. No hydrate, anhydrous state or final-volume concentration may be inferred from omission."
+        ]
+      }
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_317_Se_W_Solution",
+      "finding_id": "CHEM-COMP-002",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/proposals.json",
+        "file_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+        "row_sha256_canonical_json": "64e76c1ea50e8b237ce05b2acd277d6dc9bf30ac767b08df49f250f577c37e25"
+      },
+      "updates": {
+        "description": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration. NBRC1020 and JCM317 have the same nominal listed masses (4 mg sodium selenite and 4 mg tungstate reagent) plus 1 L distilled water, but NBRC1020 omits hydrate qualifiers while JCM317 explicitly states Na2WO4·2H2O. Omission establishes neither anhydrous identity nor equality/difference. Keep these source-bound partial proposals; do not merge or co-install them as proved-distinct owners without source-applicable supplied-reagent evidence or an explicitly reviewed common nominal scope. The 1 L is added water, not a demonstrated final solution volume.",
+        "scope": "Literal source-bound partial preparation and exact original occurrence applicability; supplied-form overlap with the other Se/W proposal is unresolved. Source-local pointer dispositions are unchanged.",
+        "integration_obligations": [
+          "Own-identifier identity row MIM:JCM_317_Se_W_Solution skos:exactMatch kgmicrobe.ingredient:jcm_317_se_w_solution; no broadMatch to a component.",
+          "Synchronize maintained surfaces and validate exact proposed partonomy against integrated owners; no implicit whole-record release approval.",
+          "Resolve the NBRC tungstate supplied hydrate/form and its applicability relative to JCM317, or independently review a common nominal preparation scope, before merging or co-installing these as proved-distinct owners. No hydrate, anhydrous state or final-volume concentration may be inferred from omission."
+        ]
+      }
+    },
+    {
+      "proposal_id": "CS-PROP-JCM1430_FERROUS_SULFATE_HCL_STOCK",
+      "finding_id": "CHEM-COMP-006",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/proposals.json",
+        "file_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+        "row_sha256_canonical_json": "e23bb6cbb14bd00bd7c8dea54a44ad73a7aec969447617b14d40bab44a0f6f6d"
+      },
+      "updates": {
+        "description": "JCM1430 and JCM1431 directly print 0.01 M FeSO4·7H2O solution (in 0.02 N HCl), each at a 3.0 mL receiving dose after cooling to 50 C. The complete name states the reagent hydrate, strength and acid carrier and is an identity-bearing stock name under MAPPING_SEMANTICS section 3. Change only that exact active label from REJECTED_LABEL to EXACT_SYNONYM; preserve its old negative object/source/history in the immutable predecessor and qualifier-negative audit lineage. The scoped native preferred-owner check found no competing owner of that token, so no SUPPRESS sidecar entry is justified. Receiving dose is not stock concentration; normality is preserved. No solid-ferrous-sulfate identity, shortened-label equivalence or molecular speciation is inferred.",
+        "identity_predicate_consequence": "Own-registry identity for the operational stock; its fully qualified literal FeSO4·7H2O/HCl stock name is proposed as EXACT_SYNONYM. No exact identity with the solid solute or shortened stock names.",
+        "integration_requirements": "Independent review must accept these exact successor bytes and the individually justified label change before application. Preserve both source occurrences and the old negative assertion in audit lineage. Synchronize maintained surfaces and run native publication gates only in the separately authorized integration workflow; no release approval follows from this proposal."
+      }
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+      "finding_id": "CHEM-COMP-006",
+      "predecessor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/proposals.json",
+        "file_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+        "row_sha256_canonical_json": "a6dcf09a91d75a3e10174546127088e873ee98094a33c82ec7f4ed59b2e4c252"
+      },
+      "updates": {
+        "description": "This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL. Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical finalvolume or priorCO2saturation. A distinct source-defined operational identity preserves these facts rather than silentlymergingbyrounded1Mmolarity. NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL. Bicarbonate solution*** is a source-local footnote pointer with no strength, sodium specification or CO2 preparation in the token. It is not a standalone identity-bearing name for this particular stock, so preserve its exact REJECTED_LABEL/source entry and its positive occurrence-level assignment. This is a per-string applicability judgment, not export convenience or rejection of bicarbonate as a material. Bicarbonate solution (1.0 M)*** states a nominal strength but still requires the *** footnote to identify the sodium salt, added-water preparation and CO2 saturation. Preserve its exact REJECTED_LABEL/source entry as a non-name for this specific owner and retain its positive source-occurrence assignment. Nominal strength alone is not full formulation. Neither bicarbonate token has an established competing preferred owner in the checked scope; no SUPPRESS action is justified.",
+        "identity_predicate_consequence": "Own-registry identity for the coalesced NBRC1257/NBRC1321 operational preparation. Both exact bicarbonate footnote pointers remain REJECTED_LABEL for independently stated name-scope reasons; their source occurrences still bind positively to this proposal. No exact solute identity or owned-name suppression is asserted."
+      }
+    }
+  ],
+  "instructions": "Apply only named updates after checking exact predecessor rows; preserve all original cases, occurrence IDs, raw objects, citations and full predecessor records. Root replaces after_capture and appends actual successor review/evidence references. Old independent review cannot approve changed bytes. No source assignment, ID, component or amount changes beyond these named scientific fields.",
+  "history_audit": "science/qualifier-negative-audit-lineage-v1.json",
+  "payload_receipt": "science/author-payload-receipt-v1.json"
+}

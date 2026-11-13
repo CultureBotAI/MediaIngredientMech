@@ -1,0 +1,1313 @@
+{
+  "inspected_at": "2026-11-08T07:42:17.983065+00:00",
+  "head": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+  "scope": [
+    {
+      "proposal_id": "BIO-PROPOSAL-filtered-seawater-aliases",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Filtered_Seawater.yaml",
+        "sha256": "662ce1bb0dec3d644b66f65447410303dbbd9cf3060935196716856b6f440831"
+      },
+      "before_sha256": "5256325a957d3055e060f04a7fa4d658e3d31f4a5d6cedd182e9b1ffe9d0841f",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Filtered_Seawater.yaml",
+        "sha256": "5256325a957d3055e060f04a7fa4d658e3d31f4a5d6cedd182e9b1ffe9d0841f"
+      },
+      "case_ids": [
+        "CM_NAME:12fab181fb7a8d829e375acb04a7267dabc69b22aa48ee624c3c417aee9e473d",
+        "CM_NAME:7ce67d784e648c4b596c43e62c319bf29cdf19710f09454cde8be8612d650b98"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "MICRO via OLS search",
+            "notes": "Auto-upgraded from 'UNMAPPED_0282'; match=label-exact"
+          },
+          "in_authentic_before": true,
+          "entry_sha256": "3dfc64ef614556598e3116bfb2475af01f14a2b2baa31100205b8f44a24b7a0f",
+          "disposition": "retain_existing_object"
+        },
+        {
+          "pointer": "/ontology_mapping/evidence/1",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#260)",
+            "notes": "Added 'Natural seawater (filtered, 95% strength)' as a RELATED_SYNONYM (#260): the filtered-seawater term with a dilution stated. `95% strength` is a preparation detail belonging to the recipe, not a different substance, and no ontology distinguishes seawater by dilution. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: MICRO:0001773 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+          },
+          "in_authentic_before": true,
+          "entry_sha256": "d3b58822a1ea4d2200502317b04a796ea1291adae7c7c7e738cff1ef356f14b0",
+          "disposition": "retain_existing_object"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:18:22.550193+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "ADDED_SOURCE_VERIFIED_SYNONYMS",
+        "changes": "Proposed two source-verified labels for the filtered natural seawater input: Filtered natural seawater and Natural seawater (filtrated). Recipe dilutions, synthetic alternatives and finished-medium sterilization remain occurrence context. Existing unrelated aliases and full publication payload are not reapproved.",
+        "previous_status": "MAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_492_modified_mj_synthetic_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+        "sha256": "ddd35feefd2df9b1f2a3d721f5b3d89926988efc6e7210a1269e243d324d8f16"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:40c0c894c4b6bbb50dbaf8a3ffd4617c5eba2537f88f2397b17fd86fc07b840b"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=492",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "14c511c5a8b83c02038b33a1d1a8a105328d9609545dade0176460598a513ac3",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from Modified MJ synthetic seawater table; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_611_synthetic_seawater_mix",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+        "sha256": "fde3eda1565395d85eb7f90094978e7b367c7710a737c784e741f993adce2633"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:489879a7e87e7a699d78827333788bb166ae73b2c834ca7cd4ef439a2d7b3b80"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium611.pdf",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "3e7d004c8f0100ac04eabef6c858101adb26e29529048592a737ab952f3fd38c",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from Page1 Synthetic seawater mix table; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_512_dl_minerals",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_512_DL_Minerals.yaml",
+        "sha256": "245391b1c557bdb7673657098583d269e767905646e9fdbe9ac82e4af53a77b7"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:5053010207e6a25275b07ded5e00096c9743b06a65917aa299596a07d7822ec0"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "684040a2234d92a5ef1b100f64985858de316044d2d8767f098a3b17a6f02ec0",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from DL minerals (refrigerated) table; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_946a_synthetic_seawater_2x",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+        "sha256": "344e7b970587916303854ebb1743726652155ce17d44688194fbd2e15883cfad"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:55e03ac3f1e2010248ef84417fc0b47e6d82d7345a3e19d88c5688451d2456c1"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium946a.pdf",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "fe95d94b8e3e1dee0ce154684c9abcca81c0c2a618f7110ccd7eadf6ad73271f",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from Page2 Synthetic seawater (2 x conc.) (from medium795); preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_651_artificial_seawater_05x",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_651_Artificial_Seawater_05x.yaml",
+        "sha256": "0adde845da6ee89a25d28a821e889727dd5136c6ae3015c4e6eb17781dc9095a"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:d2d3612b39dbe00f78cfb34452b2a457722c69f111f1ba1966f865b3b2bec892"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=651",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "96b26679fe12887b8c28bb3e565d829b2eaff2ebf911fb381cde73afa5a4888f",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from 0.5 x Artificial seawater table; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_910_artificial_seawater_1x",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_910_Artificial_Seawater_1x.yaml",
+        "sha256": "4557113d7ff49fdd8722ba409e1d5e1016d44b5f51f528a644c0048d9eeaa107"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:8cb304e452d84e6d4ec5cbc5d75323b0ed6db6ff52c7782ab6489972a0af6c16"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=910",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "228ed8cd162e2754f64ed182f081e14501733bb8cf917872bd273ca94ad58d44",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from Instruction replacing JCM651 0.5x artificial seawater with 1.0x; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_1009_artificial_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_1009_Artificial_Seawater.yaml",
+        "sha256": "85d9eff24c54bad5e6daa013fd28496d81c3429ef0b65f625070df37de0b34d3"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:db13060723b46cd5621e5d34b182346c99697edb81b0b10951cfb2236d12b093"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "9967472b2ce19118624c184b7f436a48d6afecf199fa4f3b23a684ea2be65af3",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from Artificial seawater footnote; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-jcm_1269_artificial_seawater_4x",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_1269_Artificial_Seawater_4x.yaml",
+        "sha256": "71008fd600cde88d17a6315c0147b00ca48890df2cb53ce643c794853640899c"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:8f55a2cf22d316d1e69ee4141a16291e5deeb1cf7f396c08b5fd3eac6924cd78"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://bacmedia.dsmz.de/pdf/J1269",
+            "notes": "Source-qualified multi-component stock identity. No molecular term or generic seawater identity is asserted. Proposed fallback registry identity pending coordinator integration and full content-bound review."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "c943f8d9f958e35bb9c27e2c125dd3cc1fca5148a6d2412e1898eebd3ed97b40",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:00.860201+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL",
+        "changes": "Proposed exact source-qualified stock from Artificial seawater (4x) table; preserved original source label, component forms and batch quantities. No maintained data or release status was changed.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-dsmz_781_horse_dung_extract",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_781_Horse_Dung_Extract.yaml",
+        "sha256": "5799874520bfb23194cac5dae89f04b2a02ad13c4b4a6d9480a159e35f3795b8"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:82ed92170a6907ff3bba19b261fc010ac343554ae8299ca5dbb3c6a4632be2d2",
+        "KG_CASE:50a3e82d96fde8b0ff490cdc2f0a77956358274265d79ba97d23a983c4978534"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium781.pdf",
+            "notes": "Protocol-qualified aqueous horse-dung extract. Distinct from dry cow manure, whole dung and generic animal manure. Preparation provenance defines the proposed local material; no molecular or ENVO parent mapping asserted."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "0666920a4a033014ca9a9640f6ec5c404175c257d41cc4a17e1e13f447f9f09e",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:02.116293+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "CREATED_SOURCE_QUALIFIED_MATERIAL_PROPOSAL",
+        "changes": "Proposed protocol-qualified DSMZ781 horse-dung extract from primary preparation. Retained unknown starting mass and extraction yield, source volume and preparation discrepancy. No parent or molecular identity inferred.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "BIO-PROPOSAL-colloidal-chitin-protocol",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Colloidal_Chitin.yaml",
+        "sha256": "5a94355a128c81b2b1745cc56263b1a58ab12d0a231b2bac7a81d2fbac4d0ea3"
+      },
+      "before_sha256": "d212ac576d63e4504a5b1b60a4df4af327a7941f263e56070cbf19b33f9f6e51",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Colloidal_Chitin.yaml",
+        "sha256": "d212ac576d63e4504a5b1b60a4df4af327a7941f263e56070cbf19b33f9f6e51"
+      },
+      "case_ids": [
+        "KG_CASE:7dc99e7d679a1969a6c2582ca7b76c4cd5f81157aca8b8b5a73ecb2aa5e81a37"
+      ],
+      "mapping_evidence": [],
+      "history_authorship": {
+        "timestamp": "2026-11-08T05:26:02.116293+00:00",
+        "curator": "codex_worker04_biological",
+        "action": "ANNOTATED_SOURCE_BOUND_PROTOCOL",
+        "changes": "Proposed annotation of primary DSMZ1681 protocol linked to MediaDive1506. Maintains generic owner UNMAPPED and preserves commercial-powder alternative; no exact chitin mapping or generic whole-owner preparation claim. Primary source: https://bacmedia.dsmz.de/pdf/1681",
+        "previous_status": "UNMAPPED",
+        "new_status": "UNMAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-biomaris_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/BiomarisSeawater.yaml",
+        "sha256": "a509bdc052b9bd9259bace8fc73725f703b9e3f97ee901a3365f67d6f98ef93b"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:1294670f0c2c69561bb4eaa5b88d7af47f6fb366fddabf3d85d87a80039c7dbc"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1752.pdf",
+            "notes": "DSMZ 1752 names Biomaris Seawater as the liquid base. The separately supplied salt replacement is an alternative and is not the bottled product formula. This record retains the branded seawater material without asserted lot, constituents, salinity or treatment. No equivalent owner exists among baseline sea-water classes or published seawater stocks."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "8ef87b69e091e9123d45b4ab7f4388453fa19da9438175fca7911b62b1e1e06a",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "DSMZ 1752 names Biomaris Seawater as the liquid base. The separately supplied salt replacement is an alternative and is not the bottled product formula. This record retains the branded seawater material without asserted lot, constituents, salinity or treatment. No equivalent owner exists among baseline sea-water classes or published seawater stocks.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/PotatoTuberTissue.yaml",
+        "sha256": "181da4297af99e1bac42ab4a43cc9f3cb5b604646734fd16384f374f27893623"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "KG_CASE:35db9f746182b82fe17caff755d6f482e5a96d363b704024a2d224a275450042"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://mediadive.dsmz.de/ingredients/1606; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1406; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1407; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1408; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1409; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1441; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1442; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1653; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1870; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1954; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2308; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M328; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium129.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium411.pdf; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=116; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=30; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=333; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1115; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1232; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=2; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=201; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=202; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=3; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=4; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=856",
+            "notes": "Potato material supplied as tuber tissue in the linked recipes. The material input is distinct from liquid potato infusion or extract after boiling and filtration. Case 16 occurrences carrying peeled-and-cut notes are additionally bound to the more specific peeled/cut material proposal. Starting potato masses are process input amounts, not measured retained solids in a filtrate. FOODON 03315354 names a potato tuber; FOODON 00002796 covers whole/piece derivatives, but no exact claim erases a recipe-specific preparation."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "f5807bed6b1bd5d4679ac714f5767fd108b927cca80c53143fb12ae6fd66a20d",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "Potato material supplied as tuber tissue in the linked recipes. The material input is distinct from liquid potato infusion or extract after boiling and filtration. Case 16 occurrences carrying peeled-and-cut notes are additionally bound to the more specific peeled/cut material proposal. Starting potato masses are process input amounts, not measured retained solids in a filtrate. FOODON 03315354 names a potato tuber; FOODON 00002796 covers whole/piece derivatives, but no exact claim erases a recipe-specific preparation.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/PeeledCutPotato.yaml",
+        "sha256": "aa84307324e2e8e00c480b43380d0aed1478ac683baf6cac9268756e1c11bc2c"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1406; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1407; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1408; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1409; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1441; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1442; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1653; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1870; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1954; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2308; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M328; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium129.pdf; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium411.pdf; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=116; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=30; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=333; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=54; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=55; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1115; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1232; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=2; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=201; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=202; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=3; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=4; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=856",
+            "notes": "JCM 30/54/55/116 and the explicitly qualified frozen rows supply peeled, cut potato as a preparation input. Cut does not specify a dice size, so the existing Diced Potato owner is not an exact substitute. JCM 30 boils 200 g in 1 L for 20 min then sieves; JCM 54/55 combine potato and carrot and filter through cheesecloth. Those outputs remain distinct; the record describes the peeled/cut tissue before extraction."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "fbaad7cbd6907a219e4708397985e7ad9f8d1e809de180d35cd482eb74c033d1",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "JCM 30/54/55/116 and the explicitly qualified frozen rows supply peeled, cut potato as a preparation input. Cut does not specify a dice size, so the existing Diced Potato owner is not an exact substitute. JCM 30 boils 200 g in 1 L for 20 min then sieves; JCM 54/55 combine potato and carrot and filter through cheesecloth. Those outputs remain distinct; the record describes the peeled/cut tissue before extraction.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-m2231_sterile_air",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/M2231SterileAir.yaml",
+        "sha256": "1cd8e5894004f60bbe7810a775fad4c2f51fb2a9d0b90fe4ab383c56e75d5eb0"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:1d7876464ccd01b8445b3066163c8e90151d32f026abb334da0137c8d4ad2d53"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231",
+            "notes": "TOGO M2231 describes cultures bubbled with 5% CO2-containing sterile air. This record denotes the sterile air carrier input, not CO2 alone, liquid-medium volume, or the aeration operation. The supplied gas is used with CO2; no invented N2/O2 percentages or sterility process are asserted. The 5% figure is preserved as source context and is not converted to an unstated molar/volume basis."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "a5ea6fa6e731a6b70713ced1bab956ae36a330791182acc42d5b8c4a03cc0fa0",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "TOGO M2231 describes cultures bubbled with 5% CO2-containing sterile air. This record denotes the sterile air carrier input, not CO2 alone, liquid-medium volume, or the aeration operation. The supplied gas is used with CO2; no invented N2/O2 percentages or sterility process are asserted. The 5% figure is preserved as source context and is not converted to an unstated molar/volume basis.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc355_acid_whey",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc355AcidWhey.yaml",
+        "sha256": "cb64ed2609e9093501a93933d933e490c3cd9a037246ea304893c3984740d5fb"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M153; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium775.pdf; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=162; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=355",
+            "notes": "NBRC 355 directs adding HCl to warmed milk to coagulate it, centrifuging, and using the supernatant as cheese whey. The source-defined output can be represented without a quantified yield. Starting milk and HCl are processing inputs; precipitated milk proteins are removed, and their masses or final retained fractions are not asserted as has-part components. Applies only to CultureMech 015901/nbrc.medium 355 in case 23."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "1a1bf2bcbc20d745f60df1e46c9779d78079bff66ae0fe6b8f643a1d93505557",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 355 directs adding HCl to warmed milk to coagulate it, centrifuging, and using the supernatant as cheese whey. The source-defined output can be represented without a quantified yield. Starting milk and HCl are processing inputs; precipitated milk proteins are removed, and their masses or final retained fractions are not asserted as has-part components. Applies only to CultureMech 015901/nbrc.medium 355 in case 23.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/CheeseWheyUnspecified.yaml",
+        "sha256": "441847304afeb9e1a840c8d1d964da94ed232c8d8f6045b912e8ef121f474722"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M153; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium775.pdf; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=162; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=355",
+            "notes": "DSMZ 775 and JCM 162 name cheese whey as the liquid substrate without the NBRC 355 acid-coagulation preparation. This is the source-stated cheese-whey material class, with unspecified production process and composition, not purified lactose, whole milk or a 1 g/L chemical. The six non-NBRC 355 occurrences are covered; primary 1 L/1000 ml quantities and malformed frozen G_PER_L or PERCENT_V_V values remain distinct evidence."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "c72f005d1a2b996219a27c344b0360b893d4a8274a31adedc2ffd92b78e868fc",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "DSMZ 775 and JCM 162 name cheese whey as the liquid substrate without the NBRC 355 acid-coagulation preparation. This is the source-stated cheese-whey material class, with unspecified production process and composition, not purified lactose, whole milk or a 1 g/L chemical. The six non-NBRC 355 occurrences are covered; primary 1 L/1000 ml quantities and malformed frozen G_PER_L or PERCENT_V_V values remain distinct evidence.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc985_sterilized_natural_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc985SterilizedNaturalSeawater.yaml",
+        "sha256": "7d59996a466d51b58ee44ff5831eae1c652424bd3a225e3d2e5b152f7a0f3f7f"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:2c0ad60cd1d5e336efad8134d670a773fd6b6badd55535e195513d9684fdbd4e"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1770; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=985",
+            "notes": "NBRC 985 explicitly identifies sterilized natural seawater in the Porphyra cultivation context. The preparation boundary is retained without equating it to untreated natural seawater, pasteurized water or synthetic salt medium. No sterilization method or receiving dose is inferred."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "a8b0cba6d80ce87ecd75d99a5d633535b1c2a458178dd0ca86125b3363ec750c",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 985 explicitly identifies sterilized natural seawater in the Porphyra cultivation context. The preparation boundary is retained without equating it to untreated natural seawater, pasteurized water or synthetic salt medium. No sterilization method or receiving dose is inferred.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc15_treated_v8_supernatant",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc15TreatedV8Supernatant.yaml",
+        "sha256": "3688823115f75eb35da366bf313eb60a4385238c1495fbe155b0933c3aefa24d"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1418; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=15",
+            "notes": "Stir approximately 300 ml V-8 juice with 3 g CaCO3 for 2 h, then centrifuge and retain the supernatant. NBRC 15 uses 200 ml of that output with 800 ml 2% seawater and 15 g agar. CaCO3 and initial juice volumes are processing inputs, not proven retained output components or concentrations. Final medium pH7.0 belongs to the receiving agar, not an independently measured stock pH. This preparation differs from whole V8 Juice/V8 Canned Vegetable Juice owners."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "577199d11a60735d28f9d90f44c23b9f5c9f511000bc4fe334665f1a817745a1",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "Stir approximately 300 ml V-8 juice with 3 g CaCO3 for 2 h, then centrifuge and retain the supernatant. NBRC 15 uses 200 ml of that output with 800 ml 2% seawater and 15 g agar. CaCO3 and initial juice volumes are processing inputs, not proven retained output components or concentrations. Final medium pH7.0 belongs to the receiving agar, not an independently measured stock pH. This preparation differs from whole V8 Juice/V8 Canned Vegetable Juice owners.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc_cornmeal_extract",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/NbrcCornmealExtract.yaml",
+        "sha256": "0643ffda959ce62f624369c035714eda7f4830ac1c6a7a0bb20ea1c9c1b673d9"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:38666aff12cec7bb7f72483d2b45d6ce9ddb62662e3a0158b722eea40ac54231"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1419; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1420; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1425; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1869; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1114; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=16; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=17; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=24",
+            "notes": "NBRC 16/17/24/1114 and their TOGO counterparts identify cornmeal extract, usually 2 g per source recipe. It is a biological extract ingredient; the existing Corn Meal material and complete Corn Meal Agar are not the extract. No extraction solvent, brand or chemical composition is supplied. This bounded source-stated extract class has no asserted processing yield or global cornmeal alias."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "c2f624e3044720c9fcec39ee93445a5a9dbb607667505a1dccb61a8fd4aa58be",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 16/17/24/1114 and their TOGO counterparts identify cornmeal extract, usually 2 g per source recipe. It is a biological extract ingredient; the existing Corn Meal material and complete Corn Meal Agar are not the extract. No extraction solvent, brand or chemical composition is supplied. This bounded source-stated extract class has no asserted processing yield or global cornmeal alias.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-catalase_c9322",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Catalase.yaml",
+        "sha256": "560372d3ff00b168dfa4df5125018d1c817d9ff249aadd83ffcb44a5c6fd8a54"
+      },
+      "before_sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Catalase.yaml",
+        "sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd"
+      },
+      "case_ids": [
+        "CM_NAME:4ad7c8076fc85ed0caaac4401802673a59f1ce160f7f07f00c4a115e3c4f18e3",
+        "CM_NAME:53ffd900be4ded45dcd65d619a9372e25409539d538dfe39c254949c3b128097",
+        "KG_CASE:2b880f40fa0fcaeac9f79cb5088bfccab01e853b0240cac6fa32c817c72fc689"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "CultureMech",
+            "notes": "SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+          },
+          "in_authentic_before": true,
+          "entry_sha256": "f4c00c8bb8aac26887be4eec3d293e229af284891f27fbe5f4303153fe7ec07f",
+          "disposition": "retain_existing_object"
+        },
+        {
+          "pointer": "/ontology_mapping/evidence/1",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#312); chebi.db",
+            "notes": "identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 ('Catalase') -> mesh:D002374 ('Catalase'); mapping_quality EXACT_MATCH -> NARROW_MATCH. ncit.db defines NCIT:C61062 'Catalase' as 'Catalase (527 aa, ~60 kDa) is encoded by the human CAT gene' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene): the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch would substitute that node for the reagent. Follow the protein-reagent siblings Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme's CAS 9001-05-2 (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374 'Catalase', Rule B1 registry row."
+          },
+          "in_authentic_before": true,
+          "entry_sha256": "88487083890ae291a4b07de406cef4b8e4ff4663a606ca8708e01f5c97f7371b",
+          "disposition": "retain_existing_object"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "Add only the supplier-verified C9322 supplied form to the existing cas 9001-05-2 owner. Supplier COA names bovine-liver catalase, lyophilized powder,2,000-5,000 units/mg protein. The retained MeSHD002374 broad parent is species-neutral and #312 human NCITC61062 exclusion remains. Case 42 supplies the exact catalog binding. Case 48 establishes bovine catalase without that catalog; case 141 is generic enzyme reagent. Neither is silently identified with C9322. Existing non-name Properties aliases are not approved by this delta.",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "previous_status": "MAPPED"
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-malted_wheat_meal",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/MaltedWheatMeal.yaml",
+        "sha256": "e17968db689f076cf2e18fe7c5e5f33c14c95c8ee9055375fc38d3299f57fbe4"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+        "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://mediadive.dsmz.de/ingredients/1881; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=730",
+            "notes": "JCM 730 names 2 g malted wheat meal as an input in rye-bran extract preparation with 40 g rye bran,0.8 g trypsin and 1 L water incubated 50 C24 h, centrifuged 500xg 15 min and filtered. MediaDiveingredient 1881 and all three CultureMech occurrences refer to that input. Malted wheat meal is distinct from whole wheat grains, malt extract, wheat arabinoxylan and the resulting rye-bran extract. FOODON wheat malt is a candidate broader material; additional coarse-ground/unheated qualifiers are not inferred."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "021a31b36da9b1a2ca154fcd3d9feee517459e4bcd20b00f50cf66693a80ff3d",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "JCM 730 names 2 g malted wheat meal as an input in rye-bran extract preparation with 40 g rye bran,0.8 g trypsin and 1 L water incubated 50 C24 h, centrifuged 500xg 15 min and filtered. MediaDiveingredient 1881 and all three CultureMech occurrences refer to that input. Malted wheat meal is distinct from whole wheat grains, malt extract, wheat arabinoxylan and the resulting rye-bran extract. FOODON wheat malt is a candidate broader material; additional coarse-ground/unheated qualifiers are not inferred.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-m3127_mj_synthetic_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/M3127MjSyntheticSeawater.yaml",
+        "sha256": "fcf44fd32461fdd13b84b33eed72aee991591f78cdbde06433389d0ea104e7a1"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:5e4533b3047d69506ed98b18c2f892328d120856391cb7651eaeedf755163d45"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3127",
+            "notes": "M3127 specifies 1 L MJ synthetic seawater, with separate modifications to make MMJ/MMJS. The source points to Sako 1996 and Takai 1999; newly captured author papers give MJ lineage and a 2012 formulation, but exact version continuity to the M3127 preparation is not proven. Preserve the named base as an opaque source-qualified stock. It is distinct from the published JCM 492 Modified MJ owner; neither later formula nor MMJ additions are silently installed as MJ constituents."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "11f0bb918d21b564efa9c9e77f17018029dce253ccb3b042ce25c5a9c168670e",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "M3127 specifies 1 L MJ synthetic seawater, with separate modifications to make MMJ/MMJS. The source points to Sako 1996 and Takai 1999; newly captured author papers give MJ lineage and a 2012 formulation, but exact version continuity to the M3127 preparation is not proven. Preserve the named base as an opaque source-qualified stock. It is distinct from the published JCM 492 Modified MJ owner; neither later formula nor MMJ additions are silently installed as MJ constituents.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-oat_spelt_xylan",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/OatSpeltXylan.yaml",
+        "sha256": "bc3ac91a194dd48f65e62305538655fb9d7d9076bac71f081e566ff9ce426d51"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:753bcab85e83964ea4e5be8e4871538e56e0a77f4febb66a97eaef9380ac985d"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313",
+            "notes": "M2313 names xylan from oat spelts as an alternative carbon-substrate input. This is a botanical xylan preparation distinct from larchwood and beechwood products. CHEBI 37166 is the generic xylose-residue polymer class; no purity or molecular equivalence of the complete botanical preparation is proven. Use a registry identity without invented CAS, purity or has-part constituents."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "a78c2e6d866e511ce09c12d833e63fdea43d3c22b3a1a3dc36a11654bc082b2f",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "M2313 names xylan from oat spelts as an alternative carbon-substrate input. This is a botanical xylan preparation distinct from larchwood and beechwood products. CHEBI 37166 is the generic xylose-residue polymer class; no purity or molecular equivalence of the complete botanical preparation is proven. Use a registry identity without invented CAS, purity or has-part constituents.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc1130_seawater_3pct",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc1130Seawater3pct.yaml",
+        "sha256": "2e4d282443eec26b1ed2dc2e85a5c30b0c794a287a314a06c7c16c73ce0a5b3f"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:7d5d4441f9c0415988aae5f1acdae84a52f877532b63e5c3b1f9454145249194"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1886",
+            "notes": "TOGO M1886/NBRC 1130 specifies 1 L seawater at 3% salinity. Preserve that concentration qualifier and source provenance. It does not specify 3% sodium chloride, a molecular formula, or an artificial seawater brand. The distinct salinity-qualified material is not reduced to bare seawater."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "ec82b30541c284b6158d0441cf6cd344ea1d406406b442d7c89bbf27afcf185c",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "TOGO M1886/NBRC 1130 specifies 1 L seawater at 3% salinity. Preserve that concentration qualifier and source provenance. It does not specify 3% sodium chloride, a molecular formula, or an artificial seawater brand. The distinct salinity-qualified material is not reduced to bare seawater.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-oatmeal_supplied_form",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Oatmeal.yaml",
+        "sha256": "5e257436da0a05799c4ee4abd6ae7f59a6610382934909be2073181ff8942fcc"
+      },
+      "before_sha256": "c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Oatmeal.yaml",
+        "sha256": "c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6"
+      },
+      "case_ids": [
+        "CM_NAME:7dfb37f670a3ce56ccf2973d1cc0b97701308fccaf46a3ad0a50557aef2d7a93",
+        "CM_NAME:d140b21c45870943670801d0fd90736b653a2ef801731f9dcdf9e44d45ddeb61",
+        "KG_CASE:894c463415090fbd01eeb48c6ea2a0ed5e76fa2c1820094a016c1f1048a6e6cc"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "DATABASE_MATCH",
+            "source": "OAK/OLS exact audit",
+            "notes": "OLS audit matched the imported surface form Oatmeal to NCIT:C29298 Oatmeal Powder through exact synonym OATMEAL."
+          },
+          "in_authentic_before": true,
+          "entry_sha256": "15c03d9c7e15a82adf23c4c5bed56d0f86136bccd385ea96265443244bb655b2",
+          "disposition": "retain_existing_object"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "Record the explicitly powdered Quaker White Oats input from JCM 52/NBRC 304 in supplied_form, without creating a second brand owner or adding global aliases. This physical form is not automatically the fine colloidal whole-oat form in NCITC29298. MediaDive 471/DSMZ 425 generic food oatmeal is not automatically powdered. Existing whole-owner mapping is retained under an explicit unresolved identity hold, rather than silently regrounded from three cases. Current 23 matching source rows and full recipe bytes plus 18 historical candidate readbacks were inspected; exact membership of the old 18-count untracked table is not established.",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "previous_status": "MAPPED"
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc1429_seawater_175pct",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc1429Seawater175pct.yaml",
+        "sha256": "d622d78702f8024aba8ec7dca9f93dc66af5fa26893eca5fba68043e88d0b1e1"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:89321b813b6c0c7c50048f0e14ef4eb8a992fe16f56df959e58c246933824914"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1429",
+            "notes": "NBRC 1429 names 1 L seawater with 1.75% salinity. Retain the qualifier as written. Neither a 1:1 dilution of 3.5% water, a NaCl solution nor a particular natural/artificial origin is specified."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "d1fec31215c814c416f65d7339aefae007ff615eaacf76a9796c029665e44f1e",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 1429 names 1 L seawater with 1.75% salinity. Retain the qualifier as written. Neither a 1:1 dilution of 3.5% water, a NaCl solution nor a particular natural/artificial origin is specified.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-jcm1216_artificial_seawater_01x",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Jcm1216ArtificialSeawater01x.yaml",
+        "sha256": "227335e425995406a3e50df0ea4fe1a897a429756bd16acdee59057059a37104"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:8e2d3134d23bb909a8d7ee5f1ae8d7055d1cbb6e25d1c68e48345c5ef5bf7e61"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://bacmedia.dsmz.de/pdf/J1216",
+            "notes": "JCM 1216 BSW3 Agar specifies 0.1x artificial seawater as the liquid base. The retrieved complete recipe does not give the 1x formula or a product identifier. This is a source-qualified dilution-state stock, kept distinct from published JCM 6510.5x, JCM 9101x and JCM 12694x stocks. No assumed 1x composition is copied from those other media."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "02862de1d1c8f5a1abc4e7cd9ed690f352f5ddc379843fe6a0136b94ddea60bb",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "JCM 1216 BSW3 Agar specifies 0.1x artificial seawater as the liquid base. The retrieved complete recipe does not give the 1x formula or a product identifier. This is a source-qualified dilution-state stock, kept distinct from published JCM 6510.5x, JCM 9101x and JCM 12694x stocks. No assumed 1x composition is copied from those other media.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc14_corn_fish_feed",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc14CornFishFeed.yaml",
+        "sha256": "2d7e5844b610d90cb3f4b8c230c4d1e31bca62be2196c1709ce70f4d9b0860df"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:9cdcd91e9b083104e78abc4972de96c9ca95c5c61907fa682e84f1396de483e2"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=14",
+            "notes": "NBRC 14 identifies a corn and fish meal mixture sold as bird feed.20 g is boiled in approximately 1 L water for 1 h, filtered, and the liquid restored to 1 L before agar addition. This record denotes the feed input, not its aqueous extract. Named corn and fish meal components are recorded as a partial qualitative enumeration with no ratios. Neither commercial feed brand nor exact formulation is inferred."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "e647ce05dffa78e0790eff9d0a2e64a83fa54c24f2bf9772bc2a1b1185b269a7",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 14 identifies a corn and fish meal mixture sold as bird feed.20 g is boiled in approximately 1 L water for 1 h, filtered, and the liquid restored to 1 L before agar addition. This record denotes the feed input, not its aqueous extract. Named corn and fish meal components are recorded as a partial qualitative enumeration with no ratios. Neither commercial feed brand nor exact formulation is inferred.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-charcoal_filtered_natural_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/CharcoalFilteredNaturalSeawater.yaml",
+        "sha256": "cebfd332c0923bd65104ba0cf9b254a8588ba4d91e99114fae88ea528d5acb81"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:a0d695261033288e50c0267f36e77c152c712ecbffe11df3c855702d3e29fab7",
+        "KG_CASE:845a0d62a201d4df375fea240de6d744c2b12034b2412ab03e4c2ed28ace67c8"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://mediadive.dsmz.de/ingredients/2142; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1008.pdf",
+            "notes": "DSMZ 1008 specifies charcoal-filtered natural seawater 800 ml with 200 ml distilled water; MediaDiveingredient 2142 and both source cases point to this preparation. Charcoal filtration is a retained process boundary. The existing Distilled Water rejected label remains rejected, and generic filtered/natural seawater is not exact identity. Biomaris is a separately allowed substitute, not proof of identical composition. The 800 ml dose is not converted from faulty frozen mass/percentage units."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "09f645936c30a7e9c5f9dc268aad3dc125662624a7311e1ab0e688310e38db91",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "DSMZ 1008 specifies charcoal-filtered natural seawater 800 ml with 200 ml distilled water; MediaDiveingredient 2142 and both source cases point to this preparation. Charcoal filtration is a retained process boundary. The existing Distilled Water rejected label remains rejected, and generic filtered/natural seawater is not exact identity. Biomaris is a separately allowed substitute, not proof of identical composition. The 800 ml dose is not converted from faulty frozen mass/percentage units.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-aged_seawater",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/AgedSeawater.yaml",
+        "sha256": "aecb7afe4f7dcbb96c2602ba36798db9c6e3254b5bcfc49c998b42dbe51e735c"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:bccdb1c7e50d5905132fdcfd239d05168fadb733fb2528ee2f61236b7fb19ba7"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=149; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=995; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1347",
+            "notes": "NBRC 1347 and JCM 995 identify aged seawater as a liquid input. JCM 995 uses 700 ml with other separately listed stock additions; NBRC 1347 specifies 1 L. JCM 900/149 references belong to Hutner stock context, not an aging protocol. No aging time, sterilization, filtration or salinity is guessed. This class is distinct from source-disjunctive filtered-aged-water OR DaigoSP choices in 38/116."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "81242a6736ea1a6a756291dcad207a3dc266fe46e82c8d1480a026ef7b9690cd",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 1347 and JCM 995 identify aged seawater as a liquid input. JCM 995 uses 700 ml with other separately listed stock additions; NBRC 1347 specifies 1 L. JCM 900/149 references belong to Hutner stock context, not an aging protocol. No aging time, sterilization, filtration or salinity is guessed. This class is distinct from source-disjunctive filtered-aged-water OR DaigoSP choices in 38/116.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc_seawater_2pct",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/NbrcSeawater2pct.yaml",
+        "sha256": "013e48d94f412882566b8b5c947561f7260b024496d5deae76ce69a582ad8290"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:c620d59d339544911d9ef1d91ec0c42082357cb9b2a16d6b846ef03bef9eabf4",
+        "CM_NAME:cf8eb082e78343a20fc73874fc008615ddaf86181f3bb4b1cf97cbae431269bf"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1418; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1419; https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1425; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1071; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=15; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=16; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=22; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=24",
+            "notes": "NBRC 15/16/22/24/1071 source inputs retain a 2% salinity qualifier. Cases 101/105 support only a common salinity-qualified material class; neither absence of stated origin nor equal salinity proves shared chemical composition or a shared preparation. This isolated class proposal makes no resolved source-to-owner binding and no selection of natural versus artificial preparation. No pure NaCl concentration or artificial formula is inferred. Case 22 explicitly offers alternative preparations and retains its branch-choice hold."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "6012ce9a079a93adbb266c396d3779abc0ed2c3bd6c82de9dde72de9b021319e",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 15/16/22/24/1071 source inputs retain a 2% salinity qualifier. Cases 101/105 support only a common salinity-qualified material class; neither absence of stated origin nor equal salinity proves shared chemical composition or a shared preparation. This isolated class proposal makes no resolved source-to-owner binding and no selection of natural versus artificial preparation. No pure NaCl concentration or artificial formula is inferred. Case 22 explicitly offers alternative preparations and retains its branch-choice hold.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-m2843_boiled_potato_extract",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Infusion_From_Potatoes.yaml",
+        "sha256": "136e14bb5d0be913f4dd683ed01fd5210a162d453341c550a442e4d8fceffce5"
+      },
+      "before_sha256": "c732301cbddd2ed5d855916f9738401381f374937a2b1503f97b6a8288a5aa48",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Infusion_From_Potatoes.yaml",
+        "sha256": "c732301cbddd2ed5d855916f9738401381f374937a2b1503f97b6a8288a5aa48"
+      },
+      "case_ids": [
+        "CM_NAME:f3c12569f8edf19a65836b33aa3d5a1e1a53fdf02b0f48e01596f581b474129c"
+      ],
+      "mapping_evidence": [],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "M2843 explicitly says potato extract from 200 g boiled potato per litre. The component surface boiled potato is a preparation-input shorthand, not 200 g/L retained extract solids. The CultureBotHT YAML/current normalized source specifies 4 g/L Infusion from Potatoes plus 20 g/L dextrose; the alternate underscore-name imported record preserves 4 and 20 without units. Neither record supplies an extraction protocol or physical supply-state definition. Neither exact equivalence nor a distinct resulting preparation has been established. Withdraw the duplicate new M2843 owner and add only a source-bounded preparation/supplied-form note to the existing UNMAPPED0251 owner. Do not assign CAS93348-51-7, equate the output to whole tissue, promote the whole owner, or rewrite its earlier occurrence statistics.",
+        "new_status": "UNMAPPED",
+        "llm_assisted": true,
+        "previous_status": "UNMAPPED"
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-nbrc984_porphyra_thalli",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc984PorphyraThalli.yaml",
+        "sha256": "b1e64a02e6ac546b92da353298c4c4b84a3607a5b3524d81fbb6ec6dd396b5c6"
+      },
+      "before_sha256": null,
+      "before_capture": null,
+      "case_ids": [
+        "CM_NAME:fbecfbbe5fc5b9d5d86f8e21b91546474adec5b79dac224d85b628ba2028e99d"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=984",
+            "notes": "NBRC 984 describes thalli of Porphyra yezoensis cultivated in IMK medium with seawater. This is a source-qualified cultivated biological material, not a pure polysaccharide, taxon alone, or the entire IMK formula. Cultivation context is preserved in its identity; no harvested dry mass, sterilization or residual growth-medium composition is invented."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "bcd38558ae11c8ea0328bb1c1281a710177e2b5270deee5af5b028b81134e382",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "NBRC 984 describes thalli of Porphyra yezoensis cultivated in IMK medium with seawater. This is a source-qualified cultivated biological material, not a pure polysaccharide, taxon alone, or the entire IMK formula. Cultivation context is preserved in its identity; no harvested dry mass, sterilization or residual growth-medium composition is invented.",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-larchwood_xylan",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Larchwood_Xylan.yaml",
+        "sha256": "d5103afd6a74d287589e26e2393b75716cf323562a01d5f62793ced6a28550a6"
+      },
+      "before_sha256": "9957aca70b657f9186c16fda9786ace9ce2cc8c40440ef67a33613129ef4d08f",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Larchwood_Xylan.yaml",
+        "sha256": "9957aca70b657f9186c16fda9786ace9ce2cc8c40440ef67a33613129ef4d08f"
+      },
+      "case_ids": [
+        "KG_CASE:101fde13dc01ee8994c4a468c46a5bf6087a07212c90ed9ea6b61d64c35be555"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://bacmedia.dsmz.de/pdf/J99; https://mediadive.dsmz.de/finder/Larchwood+xylan///; https://mediadive.dsmz.de/ingredients/1624",
+            "notes": "JCM 99 names larchwood xylan (Sigma) as a material input; MediaDiveingredient 1624 identifies the existing owner. Promote this original owner to a botanical-preparation registry identity, retaining prior history including#294. The prior CHEBI parent was removed for misattributed provenance; newly reviewed CHEBI 37166 still defines a generic xylan polymer, not an exact complete preparation. No exact chemical parent, CAS or purity is needed for this bounded promotion."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "f5a9e3ee4f382c643595996be899dcdccc234b66916ffe90787ea17a9cf89a9d",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "JCM 99 names larchwood xylan (Sigma) as a material input; MediaDiveingredient 1624 identifies the existing owner. Promote this original owner to a botanical-preparation registry identity, retaining prior history including#294. The prior CHEBI parent was removed for misattributed provenance; newly reviewed CHEBI 37166 still defines a generic xylan polymer, not an exact complete preparation. No exact chemical parent, CAS or purity is needed for this bounded promotion.",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "previous_status": "UNMAPPED"
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-diced_potato",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Diced_Potato.yaml",
+        "sha256": "e626249329e561825332de636581571ebc36292c094110dacb4783818737cdc4"
+      },
+      "before_sha256": "c38b36195742f1c8b8d67217eea454eadbea720de03885c4ed2a1462c2378dd0",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Diced_Potato.yaml",
+        "sha256": "c38b36195742f1c8b8d67217eea454eadbea720de03885c4ed2a1462c2378dd0"
+      },
+      "case_ids": [
+        "KG_CASE:344b2f993dd8a53adb2775542e4ef102e914c5ea57e1f7ab29e769a19e584cff"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://bacmedia.dsmz.de/pdf/789; https://mediadive.dsmz.de/finder/Diced+potato///; https://mediadive.dsmz.de/ingredients/728",
+            "notes": "MediaDiveingredient 728 and DSMZ 789 identify diced potato as an input:20 g potato is boiled in 1 L water 30 min, filtered and restored to 1 L. Promote the existing physical-form material owner, not the filtrate. The inherited historical report quotation claiming 200 g/L is preserved as historical prose but explicitly not adopted as current primary evidence. No universal 20 g/L concentration belongs on the tissue owner."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "ae8f492ca7217cf1395a5f5625207c609cbe1e43a0824ba53f2860fc65861697",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "MediaDiveingredient 728 and DSMZ 789 identify diced potato as an input:20 g potato is boiled in 1 L water 30 min, filtered and restored to 1 L. Promote the existing physical-form material owner, not the filtrate. The inherited historical report quotation claiming 200 g/L is preserved as historical prose but explicitly not adopted as current primary evidence. No universal 20 g/L concentration belongs on the tissue owner.",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "previous_status": "UNMAPPED"
+      }
+    },
+    {
+      "proposal_id": "I1201-BIO-P-bovine_horn_meal",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Bovine_Horn_Meal.yaml",
+        "sha256": "1657320313ea8fc8d332f4b689e9b91173d0c53a8d6149eced3a0dc6bba5f2ac"
+      },
+      "before_sha256": "df1212952b80ccbdd7696669279d339448ea57251c85bd71fce8126ec14425b8",
+      "before_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/before-Bovine_Horn_Meal.yaml",
+        "sha256": "df1212952b80ccbdd7696669279d339448ea57251c85bd71fce8126ec14425b8"
+      },
+      "case_ids": [
+        "KG_CASE:36a48ecb91b47f50e9d56e5b516ab2003a798c964a853d72144536d78e95f0cc"
+      ],
+      "mapping_evidence": [
+        {
+          "pointer": "/ontology_mapping/evidence/0",
+          "entry": {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "https://bacmedia.dsmz.de/pdf/440; https://mediadive.dsmz.de/finder/Bovine+horn+meal///; https://mediadive.dsmz.de/ingredients/481",
+            "notes": "MediaDiveingredient 481 and DSMZ 440 identify bovine horn meal 10 g as a material input. Promote the existing owner to a registry identity for processed bovine-horn meal. It is not purified keratin, horn-and-hoof mixed meal or skim milk separately present in the source. No unsupported processing temperature, protein percentage or exact food ontology subtype is asserted."
+          },
+          "in_authentic_before": false,
+          "entry_sha256": "f0d4a7795815bbebb3f67def945586ac5288421fca39775578802771de2c5600",
+          "disposition": "correct_new_agent_interpretation_to_LLM_SUGGESTION"
+        }
+      ],
+      "history_authorship": {
+        "timestamp": "2026-11-08T06:04:27.788130+00:00",
+        "curator": "codex_worker04_biological_issue1201",
+        "action": "PROPOSED_SOURCE_BOUND_CURATION",
+        "changes": "MediaDiveingredient 481 and DSMZ 440 identify bovine horn meal 10 g as a material input. Promote the existing owner to a registry identity for processed bovine-horn meal. It is not purified keratin, horn-and-hoof mixed meal or skim milk separately present in the source. No unsupported processing temperature, protein percentage or exact food ontology subtype is asserted.",
+        "new_status": "MAPPED",
+        "llm_assisted": true,
+        "previous_status": "UNMAPPED"
+      }
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+id: CultureMech:007123
+name: glucose_salt_medium_k
+original_name: Glucose salt (Medium K); Schaechter et al
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: D-Glucose
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  concentration:
+    value: '11.1012'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:glc_D'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17634
+    label: D-glucose
+- preferred_term: Citrate
+  concentration:
+    value: '5.20497'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:cit'
+  term:
+    id: CHEBI:16947
+    label: citrate(3-)
+- preferred_term: Dibasic sodium phosphate
+  concentration:
+    value: '28.0899'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: Potassium chloride
+  concentration:
+    value: '9.92605'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '0.405729'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Sodium ammonium phosphate
+  concentration:
+    value: '8.32187'
+    unit: MILLIMOLAR
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:44.694392Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 228, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-01-28T19:48:33.758097Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:46.322304Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007123'
+- timestamp: '2026-03-17T06:30:36.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:04.473059+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "'Glucose salt (Medium K" to "glucose_salt_medium_k"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:06.492745+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-31T06:17:32.875689+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored the medium's own name in media_term.term.label, original_name. The
+    MediaDB SQL parser truncated every value containing a parenthesis at that parenthesis;
+    recovered from media_database.07Oct2015.sql.
+- timestamp: '2026-10-14T00:09:58.559887+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATIONS_WITH_SCOPED_NOTES
+  notes: Added or enriched bibliographic metadata, archived source/Markdown links,
+    title/group excerpts and qualified NCBI taxonomy notes. Non-operational identity
+    review only; no experimental, formulation, variant, growth or concentration curation.
+    Preserved all original recipe fields, history and reference identifiers.
+  source: PMID:13611202
+media_term:
+  preferred_term: MediaDB Medium 228
+  term:
+    id: MEDIADB:228
+    label: Glucose salt (Medium K); Schaechter et al
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:13611202
+  title: Dependency on medium and temperature of cell size and chemical composition
+    during balanced grown of Salmonella typhimurium.
+  authors: SCHAECHTER M; MAALOE O; KJELDGAARD NO
+  year: 1958
+  notes: 'source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-14; source_access=PubMed_metadata_and_archived_publisher_abstract;
+    review_scope=Bibliographic title and taxonomic identity only; archived abstract
+    is not approval of any experiment or formulation.; owner=MEDIADB:228; discovery_sourceID=84;
+    source_url=https://doi.org/10.1099/00221287-19-3-592; alternate_identifier=doi:10.1099/00221287-19-3-592;
+    Historical MediaDB metadata retained for comparison: title="Dependency on medium
+    and temperature of cell size and chemical composition during balanced growth of
+    salmonella typhimurium"; first_author="Schaechter"; year=1958. Publication identity
+    is separate from historical spelling and dating differences. raw=references_cache/papers/PMID_13611202.xml;
+    markdown=references_cache/papers/PMID_13611202.md; publisher_raw=references_cache/papers/primary_html/growth-next-source-84-20261013.html;
+    publisher_markdown=references_cache/papers/primary_html/growth-next-source-84-20261013.abstract.md;
+    Bibliographic title; exact excerpt="Salmonella typhimurium". Reported organism/group=Salmonella
+    typhimurium; canonical scientific name=Salmonella enterica subsp. enterica serovar
+    Typhimurium; NCBITaxon:90371; actual rank=no rank; taxonomy_match=historical_synonym_actual_rank_no_rank;
+    role=bibliographic-title mention only; no strain, formulation, growth or experimental-outcome
+    assertion. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=90371&retmode=xml;
+    taxonomy_archive=references_cache/papers/taxonomy/growth-next-nonoperational-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/growth-next-nonoperational-20261013.md.
+    PubMed title says ''balanced grown'', while the publisher title says ''Balanced
+    Growth''; both are preserved with their authority. The publisher abstract is archived,
+    but no experimental condition is extracted. Review is limited to publication identity,
+    title-level organism mentions and taxonomy. Abstract content is archived but not
+    used here to assert experimental findings. This is not an exhaustive abstract
+    or whole-paper organism inventory. The pinned MediaDB source-to-owner join establishes
+    a historical bibliographic lead only, not exact recipe equivalence. Formulation
+    identity, study-specific differences and variant destination remain unassessed
+    in this non-operational citation task. No cultivation conditions, optimization,
+    virulence, growth associations or ingredient amounts are extracted or curated.
+    Correction/retraction coverage is limited to archived metadata. Original ingredients,
+    amounts, preparation, history, evidence and links are preserved, not newly certified.
+    No new native growth assertion, resolved variant or concentration evidence.'

@@ -1,0 +1,138 @@
+identifier: CHEBI:48607
+preferred_term: LiCl
+ontology_mapping:
+  ontology_id: CHEBI:48607
+  ontology_label: lithium chloride
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Lithiumchlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: chlorure de lithium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cloruro de litio
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: lithii chloridum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: LiCl.H O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 15
+  media_count: 15
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:48.531421+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7447-41-8 from PubChem API via name lookup (LiCl)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: Lithiumchlorid, chlorure
+    de lithium, cloruro de litio, lithii chloridum'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:34.517494+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.545673+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cl.Li; inchi=InChI=1S/ClH.Li/h1H;/q;+1/p-1; smiles=[Cl-].[Li+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.760919+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111719+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-07-20T20:20:38.959489+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Reclassified from TRACE_ELEMENT to MINERAL_SOURCE: the #128 migration
+    treated Br/F/I/Li as micronutrients, but they are not established microbial trace
+    elements (NaF and LiCl act as inhibitors / selective agents). MINERAL_SOURCE preserves
+    the original MINERAL claim without asserting micronutrient status; a selective-agent
+    role needs curator evidence.'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'lithium chloride'; it matches the ChEBI
+    synonym 'chlorure de lithium' on CHEBI:48607. The schema defines EXACT_MATCH as
+    a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+    the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519205+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 10/10 -> 15/15 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''LiCl.H
+    O''. Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001524; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 7447-41-8
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:52:48.531374+00:00'
+  molecular_formula: Cl.Li
+  inchi: InChI=1S/ClH.Li/h1H;/q;+1/p-1
+  smiles: '[Cl-].[Li+]'
+kg_microbe_node_id: CHEBI:48607
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'
+mim_id: MIM:0001524
+legacy_identifiers:
+- MIM:Licl
+- CHEBI:48607

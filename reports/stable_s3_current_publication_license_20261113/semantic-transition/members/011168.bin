@@ -1,0 +1,70 @@
+synonyms:
+- synonym_text: 10X CMRL 1066 Medium (ATCC 20-2207)
+  synonym_type: RAW_TEXT
+  source: 10X CMRL 1066 Medium (ATCC 20-2207)
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:48:47.596191+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: ATCC2616 explicitly defines10x CMRL1066 stock20-2207 made from custom Sigma-manufactured ATCC20-2206
+    powder containing L-glutamine as of2003. Existing generic CMRL1066 owner mixes distinct powder and
+    supplier10x contexts; source-qualified stock is a distinct proposed owner and does not specialize
+    or merge that generic owner. Isolated proposal only; whole-owner/source/export holds remain and integration
+    requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
+    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
+    report-only successor; maintained data and all original source, owner, role, cross-shard and export
+    holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+identifier: kgmicrobe.ingredient:cmrl_1066_10x_atcc_20_2207
+preferred_term: CMRL1066 10x stock (ATCC20-2207)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:cmrl_1066_10x_atcc_20_2207
+  ontology_label: CMRL1066 10x stock (ATCC20-2207)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/2/6/1/6/atcc-medium-2616.pdf
+    notes: ATCC2616 explicitly defines10x CMRL1066 stock20-2207 made from custom Sigma-manufactured ATCC20-2206
+      powder containing L-glutamine as of2003. Existing generic CMRL1066 owner mixes distinct powder and
+      supplier10x contexts; source-qualified stock is a distinct proposed owner and does not specialize
+      or merge that generic owner.
+supplied_form:
+- name: CMRL1066 10x stock (ATCC20-2207)
+  supplier: ATCC
+  catalog_number: 20-2207
+  notes: ATCC2616 explicitly defines10x CMRL1066 stock20-2207 made from custom Sigma-manufactured ATCC20-2206
+    powder containing L-glutamine as of2003. Existing generic CMRL1066 owner mixes distinct powder and
+    supplier10x contexts; source-qualified stock is a distinct proposed owner and does not specialize
+    or merge that generic owner.
+notes: ATCC2616 explicitly defines10x CMRL1066 stock20-2207 made from custom Sigma-manufactured ATCC20-2206
+  powder containing L-glutamine as of2003. Existing generic CMRL1066 owner mixes distinct powder and supplier10x
+  contexts; source-qualified stock is a distinct proposed owner and does not specialize or merge that
+  generic owner. No whole preparation is equated to an individual component. Component list is undisclosed
+  or partial; no unverified SKU for another form is inferred.
+components:
+- component_name: Custom CMRL1066 powder ATCC20-2206
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/2/6/1/6/atcc-medium-2616.pdf
+    notes: Source describes10x solution made from this custom powder; exact water and powder amounts are
+      not printed and are not invented.

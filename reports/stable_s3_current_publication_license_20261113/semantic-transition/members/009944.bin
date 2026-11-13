@@ -1,0 +1,143 @@
+identifier: kgmicrobe.ingredient:oatmeal
+preferred_term: Oatmeal
+ontology_mapping:
+  ontology_id: FOODON:00001189
+  ontology_label: oat food product
+  ontology_source: FOODON
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00001189
+    notes: Source-reviewed food oatmeal is narrower than the defined oat-food-product
+      class. This asymmetric grounding preserves generic oatmeal identity without
+      asserting colloidal fine-powder grade. Exact old NCIT evidence is preserved
+      historically, not transferred as support for this parent mapping.
+synonyms:
+- synonym_text: Oatmeal
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Oatmeal (Quaker White Oats)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 18
+  media_count: 18
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:471); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CURATED_NCIT_EXACT_MATCH
+  changes: Mapped to NCIT:C29298 Oatmeal Powder using OAK/OLS exact synonym evidence
+    for Oatmeal.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.519648+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 18/18 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Oatmeal (Quaker White Oats)'' (x2 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: Record the explicitly powdered Quaker White Oats input from JCM 52/NBRC
+    304 in supplied_form, without creating a second brand owner or adding global aliases.
+    This physical form is not automatically the fine colloidal whole-oat form in NCITC29298.
+    MediaDive 471/DSMZ 425 generic food oatmeal is not automatically powdered. Existing
+    whole-owner mapping is retained under an explicit unresolved identity hold, rather
+    than silently regrounded from three cases. Current 23 matching source rows and
+    full recipe bytes plus 18 historical candidate readbacks were inspected; exact
+    membership of the old 18-count untracked table is not established.
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: MAPPED
+- timestamp: '2026-11-08T07:50:08.072615+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: 'Final-review identity correction (#1232): the active exact NCIT:C29298
+    claim is withdrawn because its colloidal whole-oat fine-powder definition is not
+    established by generic food oatmeal or merely powdered Quaker inputs. The existing
+    food-oatmeal owner is represented by kgmicrobe.ingredient:oatmeal, with NARROW_MATCH
+    to FOODON:00001189 oat food product (a food product made from oats). This is an
+    asymmetric broader food-material grounding, not exact identity with all oat foods
+    and not a new brand or colloidal-grade owner. The prior identifier and exact mapping
+    remain in immutable before bytes and the historical events below; earlier notes
+    describing the retained NCIT hold are historical and superseded by this correction.
+    All30 matching historical normalized recipe contexts at CultureMech15a4da5c08
+    were inspected in addition to the prior current-source lineage; their oatmeal
+    inputs do not establish colloidal manufacture. The absent untracked18-member table
+    is not claimed reconstructed; occurrence counts remain unchanged pending reconciliation.
+    Powdered Quaker supplied-form facts remain source-specific; generic MediaDive471
+    oatmeal is not declared powdered. Whole-owner integration/export approval, unresolved
+    occurrence membership and source-specific holds remain. Superseded active mapping
+    object: {"ontology_id":"NCIT:C29298","ontology_label":"Oatmeal Powder","ontology_source":"NCIT","mapping_quality":"EXACT_MATCH","evidence":[{"evidence_type":"DATABASE_MATCH","source":"OAK/OLS
+    exact audit","notes":"OLS audit matched the imported surface form Oatmeal to NCIT:C29298
+    Oatmeal Powder through exact synonym OATMEAL."}]}'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:471); no CAS-RN or
+  CHEBI/NCIT match. Curated to NCIT:C29298 Oatmeal Powder on 2026-05-11.
+
+
+  #1201 isolated proposal: Record the explicitly powdered Quaker White Oats input
+  from JCM 52/NBRC 304 in supplied_form, without creating a second brand owner or
+  adding global aliases. This physical form is not automatically the fine colloidal
+  whole-oat form in NCITC29298. MediaDive 471/DSMZ 425 generic food oatmeal is not
+  automatically powdered. Existing whole-owner mapping is retained under an explicit
+  unresolved identity hold, rather than silently regrounded from three cases. Current
+  23 matching source rows and full recipe bytes plus 18 historical candidate readbacks
+  were inspected; exact membership of the old 18-count untracked table is not established.
+  The old 18-member occurrence table at CultureMech 15a 4da 5c 08 is absent from git;
+  current 23 rows include 18 MediaRecipes and 5 SolutionRecipes. Exact historical
+  membership and fine/colloidal form scope require reconciliation before whole-owner
+  reidentification. This does not block adding the supported source-stated supplied
+  form. Raw source spellings are retained in case evidence and this source scope;
+  no new globally resolving source-local alias is added. Full-owner publication approval
+  and all source-specific holds remain pending.
+
+
+  Final-review identity correction (#1232): the active exact NCIT:C29298 claim is
+  withdrawn because its colloidal whole-oat fine-powder definition is not established
+  by generic food oatmeal or merely powdered Quaker inputs. The existing food-oatmeal
+  owner is represented by kgmicrobe.ingredient:oatmeal, with NARROW_MATCH to FOODON:00001189
+  oat food product (a food product made from oats). This is an asymmetric broader
+  food-material grounding, not exact identity with all oat foods and not a new brand
+  or colloidal-grade owner. The prior identifier and exact mapping remain in immutable
+  before bytes and the historical events below; earlier notes describing the retained
+  NCIT hold are historical and superseded by this correction. All30 matching historical
+  normalized recipe contexts at CultureMech15a4da5c08 were inspected in addition to
+  the prior current-source lineage; their oatmeal inputs do not establish colloidal
+  manufacture. The absent untracked18-member table is not claimed reconstructed; occurrence
+  counts remain unchanged pending reconciliation. Powdered Quaker supplied-form facts
+  remain source-specific; generic MediaDive471 oatmeal is not declared powdered. Whole-owner
+  integration/export approval, unresolved occurrence membership and source-specific
+  holds remain.'
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Quaker White Oats (powdered)
+  form: powder, as stated by JCM52 and NBRC304
+  supplier: Quaker
+  notes: 'JCM52 Oatmeal-Nitrate Agar and NBRC304 specify3g powdered Quaker White Oats
+    as input. No catalog, grain-size limit, colloidal manufacture or NCITC29298 exact
+    identity is inferred. This source-form addition does not establish powder processing
+    for generic MediaDive471 oatmeal. Sources: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=52
+    ; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=304'

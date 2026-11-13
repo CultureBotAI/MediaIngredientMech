@@ -1,0 +1,720 @@
+{
+  "at": "2026-11-12T20:23:03.015332+00:00",
+  "author": "Codex /root/s2_publication_skeptic",
+  "selection": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/.temp/cumulative-source-publication-inspect-s3-v1/UNASSESSED-SELECTION.json",
+    "sha256": "2c61399c7db7f5c90f254684a06dcd131105047cb104f6b6e341ae407e77cce7"
+  },
+  "input_map": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-method-cumulative-source-canary-target/.temp/s3-publication-cas-evidence1397-v1/INPUTS.json",
+    "sha256": "f1bc411d12251b763695ea5835f5e283c9c233b423b2da5659fe879750a2691d"
+  },
+  "status": "CURRENT_SCIENTIFIC_ANALYSIS_NOT_NATIVE_PUBLICATION_APPROVAL",
+  "four_cas_gap_issue": 1397,
+  "assessments": [
+    {
+      "entry_id": "row-001561",
+      "owner": "data/ingredients/mapped/KH2PO3.yaml",
+      "owner_sha256": "aeb9d9d7c22dd8bc67fb04564ceebdad3ad83420377e9e30c1c269a0c2f608da",
+      "complete_row": {
+        "subject_id": "MIM:0001387",
+        "subject_label": "KH2PO3",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:13977-65-6",
+        "object_label": "KH2PO3",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:Edison LITERATURE (PaperQA3) + local CHEBI verification|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:native_ontology:chebi",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.99",
+        "comment": "Registry/identity row preserving cas:13977-65-6 alongside parent CHEBI:44976.",
+        "other": "CAS:13977-65-6",
+        "validation_method": ""
+      },
+      "current_independent_judgment": "INSTALL_SUPPORTED",
+      "reason": "The captured primary culture paper Methods explicitly names potassium phosphite monobasic KH2PO3 with CAS 13977-65-6. This supports the named salt registry identity and actual sole CAS alias. PubChem CID23707081 is retained as counterevidence: HKO3P+ and its InChI do not establish KH2PO3 structure. No structure import, ontology exact match, recipe/source binding or role approval follows. The existing broad parent remains separately typed and is not class subsumption.",
+      "evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/kh2po3-primary-paper.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/034-kh2po3-primary-paper.raw",
+          "sha256": "9c6ae698406c969fff99ac0f6e08963d0d0f28915ac0c9b5855a865da5af383a",
+          "bytes": 162025,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/kh2po3-properties.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/014-kh2po3-properties.raw",
+          "sha256": "a407030b5bf0f9cc9d7284eaa9f4bd3c1b066eca79ba88973ae27356f46866ae",
+          "bytes": 379,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/kh2po3-synonyms.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/019-kh2po3-synonyms.raw",
+          "sha256": "fc4f964faaaa5b45fc557b912d5ef4d11e6e3ff9bdf3ec3b9259d7e2d2acce88",
+          "bytes": 773,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        }
+      ]
+    },
+    {
+      "entry_id": "row-002762",
+      "owner": "data/ingredients/mapped/Tapso.yaml",
+      "owner_sha256": "43330cf2927a304de30365602783670460ba974b92be7754bcdf2bd7ea108a2e",
+      "complete_row": {
+        "subject_id": "MIM:0002450",
+        "subject_label": "TAPSO",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:68399-81-5",
+        "object_label": "TAPSO",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:Edison LITERATURE (PaperQA3) + local CHEBI verification|MIM:curator=refresh_occurrence_statistics|MIM:curator=codex",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]-2-hydroxypropane-1-sulfonic acid|N-[tris(hydroxymethyl)methyl]-3-amino-2-hydroxypropanesulfonic acid|CAS:68399-81-5",
+        "validation_method": ""
+      },
+      "current_independent_judgment": "INSTALL_SUPPORTED",
+      "reason": "Captured PubChem CID109334 identifies neutral C7H17NO7S TAPSO, CAS68399-81-5, and the two actual published IUPAC aliases. Its structure supports this buffer identity, not the historically rejected diclocymet or dermorphin acronym hits. Mixed sodium-salt and commercial synonyms in the response are not part of this row and are not approved or imported. Existing historical source tokens are provenance, not a new provider claim.",
+      "evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/tapso-properties.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/017-tapso-properties.raw",
+          "sha256": "0121ab59d06f166e61479bcd50f6f978678495c569589d8c7e4695af468fc2c2",
+          "bytes": 528,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/tapso-synonyms.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/028-tapso-synonyms.raw",
+          "sha256": "8571ee98d9ac3ababd8de2db9df061787a4c7f2d39a363d8c5bc7edcd21ca414",
+          "bytes": 5067,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        }
+      ]
+    },
+    {
+      "entry_id": "row-002829",
+      "owner": "data/ingredients/mapped/TitaniumIII_Chloride.yaml",
+      "owner_sha256": "ce0903f8bf62daaa2da7b9c293832f32db7bd0b13ed2ce5c2d96c71b43a7079f",
+      "complete_row": {
+        "subject_id": "MIM:0002512",
+        "subject_label": "TitaniumIII chloride",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:7705-07-9",
+        "object_label": "TitaniumIII chloride",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:Edison LITERATURE (PaperQA3) + local CHEBI verification|MIM:curator=promote_resolved_unmapped|MIM:curator=codex",
+        "mapping_date": "2026-11-08",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:7705-07-9",
+        "validation_method": ""
+      },
+      "current_independent_judgment": "INSTALL_SUPPORTED",
+      "reason": "Captured PubChem CID62646 corroborates titanium(III) chloride / trichlorotitanium Cl3Ti and CAS7705-07-9. The actual row has only its CAS alias; solution, catalyst-product, and mixed methyltitanium(IV) names in the raw response do not enter its identity or synonym surface. No particular polymorph, supplier, medium occurrence, concentration or formulation is inferred.",
+      "evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/ticl3-properties.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/013-ticl3-properties.raw",
+          "sha256": "5aafee16ecdde938c6369cd021d01d6e5d12631a0d172fbcd6b319fce567b6aa",
+          "bytes": 360,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/ticl3-synonyms.raw",
+          "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/026-ticl3-synonyms.raw",
+          "sha256": "a65b000884b3d2a6cd36a3d467fa44e00eef703e12b1ae6a2bddc46b5b6e4fec",
+          "bytes": 1730,
+          "role": "primary_http_response",
+          "authority_upgraded": false
+        }
+      ]
+    }
+  ],
+  "whole_owner_issue1121": {
+    "current_issue": {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/four-cas-primary-captures-v1/github-1121.json",
+      "qualified_path": ".temp/s3-publication-cas-evidence1397-v1/031-github-1121.json",
+      "sha256": "64f143f6cf9c99359df8eb626ff266a59de99a98bb7b10acca6ea80051283189",
+      "bytes": 16280,
+      "role": "current_governance_response",
+      "authority_upgraded": false
+    },
+    "owners": [
+      "A-Ketoglutaric_Acid_Disodium_Salt_Hydrate",
+      "Adenine_Hydrochloride_Hydrate",
+      "Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate",
+      "Ceftazidime_Hydrate",
+      "CrKSO42_X_12_H2O",
+      "DL-Isocitric_Acid_Trisodium_Salt_Hydrate",
+      "Fosmidomycin_Sodium_Salt_Hydrate",
+      "Gold_Iii_Chloride_Hydrate",
+      "Neomycin_Trisulfate_Salt_Hydrate",
+      "Potassium_Tellurite_Hydrate",
+      "Sodium_Hypophosphite_Monohydrate",
+      "Terpene_Hydrate",
+      "Vancomycin_Hydrochloride_Hydrate"
+    ],
+    "rows": [
+      {
+        "entry_id": "row-000269",
+        "owner": "data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml",
+        "owner_sha256": "dda77045671bc28932ea15796953c6e9fe329a28f61ca4533b8288fc0cbe0858",
+        "row": {
+          "subject_id": "MIM:0000232",
+          "subject_label": "a-Ketoglutaric acid disodium salt hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:30915",
+          "object_label": "2-oxoglutaric acid",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "[other: dropped ['a-Ketoglutaric acid']: REJECTED_LABEL, a different form's name (#232)]",
+          "other": "CAS:305-72-6",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000270",
+        "owner": "data/ingredients/mapped/A-Ketoglutaric_Acid_Disodium_Salt_Hydrate.yaml",
+        "owner_sha256": "dda77045671bc28932ea15796953c6e9fe329a28f61ca4533b8288fc0cbe0858",
+        "row": {
+          "subject_id": "MIM:0000232",
+          "subject_label": "a-Ketoglutaric acid disodium salt hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:305-72-6",
+          "object_label": "a-Ketoglutaric acid disodium salt hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:305-72-6 alongside parent CHEBI:30915.",
+          "other": "CAS:305-72-6",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000311",
+        "owner": "data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml",
+        "owner_sha256": "6943970baeaf4220410c327d069a7cb24b7d32722bb5e07f5cbfae6cd851c1da",
+        "row": {
+          "subject_id": "MIM:0000274",
+          "subject_label": "Adenine hydrochloride hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:16708",
+          "object_label": "adenine",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:2922-28-3",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000312",
+        "owner": "data/ingredients/mapped/Adenine_Hydrochloride_Hydrate.yaml",
+        "owner_sha256": "6943970baeaf4220410c327d069a7cb24b7d32722bb5e07f5cbfae6cd851c1da",
+        "row": {
+          "subject_id": "MIM:0000274",
+          "subject_label": "Adenine hydrochloride hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:2922-28-3",
+          "object_label": "Adenine hydrochloride hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:2922-28-3 alongside parent CHEBI:16708.",
+          "other": "CAS:2922-28-3",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000503",
+        "owner": "data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml",
+        "owner_sha256": "3cf70ab00dd7335ef5bc7bcd32e40e51822d1ca68df6c28d9c11a076fbdd0e9a",
+        "row": {
+          "subject_id": "MIM:0000444",
+          "subject_label": "Bathophenanthrolinedisulfonic acid disodium salt hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:78157",
+          "object_label": "disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:MIM curation (#321/#334)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_chebi_ancestry]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "disodium 4,4'-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate|CAS:52746-49-3",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000504",
+        "owner": "data/ingredients/mapped/Bathophenanthrolinedisulfonic_Acid_Disodium_Salt_Hydrate.yaml",
+        "owner_sha256": "3cf70ab00dd7335ef5bc7bcd32e40e51822d1ca68df6c28d9c11a076fbdd0e9a",
+        "row": {
+          "subject_id": "MIM:0000444",
+          "subject_label": "Bathophenanthrolinedisulfonic acid disodium salt hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate",
+          "object_label": "Bathophenanthrolinedisulfonic acid disodium salt hydrate",
+          "object_source": "kgm:compound",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:MIM curation (#321/#334)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_chebi_ancestry]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate alongside parent CHEBI:78157.",
+          "other": "CAS:52746-49-3",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000716",
+        "owner": "data/ingredients/mapped/Ceftazidime_Hydrate.yaml",
+        "owner_sha256": "fdb1c250d00147fb90533e9f833c8c11d19928864f3a3ad666995cbf5a97b5d2",
+        "row": {
+          "subject_id": "MIM:0000643",
+          "subject_label": "Ceftazidime hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:3508",
+          "object_label": "ceftazidime",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:120618-65-7",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000717",
+        "owner": "data/ingredients/mapped/Ceftazidime_Hydrate.yaml",
+        "owner_sha256": "fdb1c250d00147fb90533e9f833c8c11d19928864f3a3ad666995cbf5a97b5d2",
+        "row": {
+          "subject_id": "MIM:0000643",
+          "subject_label": "Ceftazidime hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:120618-65-7",
+          "object_label": "Ceftazidime hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:120618-65-7 alongside parent CHEBI:3508.",
+          "other": "CAS:120618-65-7",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000842",
+        "owner": "data/ingredients/mapped/CrKSO42_X_12_H2O.yaml",
+        "owner_sha256": "b6682a7c39bf4a865018595f2c4429ffea539e9140884e7f49c319fbac5f03f1",
+        "row": {
+          "subject_id": "MIM:0000761",
+          "subject_label": "CrKSO42 x 12 H2O",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:53471",
+          "object_label": "chromium(III) sulfate",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:Edison LITERATURE (PaperQA3) + local CHEBI verification|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=promote_resolved_unmapped]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:7788-99-0",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-000843",
+        "owner": "data/ingredients/mapped/CrKSO42_X_12_H2O.yaml",
+        "owner_sha256": "b6682a7c39bf4a865018595f2c4429ffea539e9140884e7f49c319fbac5f03f1",
+        "row": {
+          "subject_id": "MIM:0000761",
+          "subject_label": "CrKSO42 x 12 H2O",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:7788-99-0",
+          "object_label": "CrKSO42 x 12 H2O",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:Edison LITERATURE (PaperQA3) + local CHEBI verification|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=promote_resolved_unmapped]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:7788-99-0 alongside parent CHEBI:53471.",
+          "other": "CAS:7788-99-0",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-001012",
+        "owner": "data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml",
+        "owner_sha256": "a108540840c04eabf9e2179306d6bbedb4fb59dc7b89bea429e51214e47b5904",
+        "row": {
+          "subject_id": "MIM:0000890",
+          "subject_label": "DL-Isocitric acid trisodium salt hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:172950",
+          "object_label": "Isocitric acid, DL-",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:MIM curation (#321/#334)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "trisodium;1-hydroxypropane-1,2,3-tricarboxylate|CAS:1637-73-6",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-001013",
+        "owner": "data/ingredients/mapped/DL-Isocitric_Acid_Trisodium_Salt_Hydrate.yaml",
+        "owner_sha256": "a108540840c04eabf9e2179306d6bbedb4fb59dc7b89bea429e51214e47b5904",
+        "row": {
+          "subject_id": "MIM:0000890",
+          "subject_label": "DL-Isocitric acid trisodium salt hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate",
+          "object_label": "DL-Isocitric acid trisodium salt hydrate",
+          "object_source": "kgm:compound",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:MIM curation (#321/#334)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate alongside parent CHEBI:172950.",
+          "other": "CAS:1637-73-6",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-001265",
+        "owner": "data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml",
+        "owner_sha256": "75114e228f85c23bf5d52bb0a676946d1350f6a6f330bd2ece4dc024055cfa33",
+        "row": {
+          "subject_id": "MIM:0001125",
+          "subject_label": "Fosmidomycin sodium salt hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:201600",
+          "object_label": "Fosmidomycin sodium salt",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "sodium;3-[ormyl(hydroxy)amino]propyl-hydroxyphosphinate|CAS:66508-37-0",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-001266",
+        "owner": "data/ingredients/mapped/Fosmidomycin_Sodium_Salt_Hydrate.yaml",
+        "owner_sha256": "75114e228f85c23bf5d52bb0a676946d1350f6a6f330bd2ece4dc024055cfa33",
+        "row": {
+          "subject_id": "MIM:0001125",
+          "subject_label": "Fosmidomycin sodium salt hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:66508-37-0",
+          "object_label": "Fosmidomycin sodium salt hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:66508-37-0 alongside parent CHEBI:201600.",
+          "other": "CAS:66508-37-0",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-001387",
+        "owner": "data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml",
+        "owner_sha256": "a85a99f5bb437a77f3c12b2e11ae27109c6d07c9feaaac391d25623845da4bdd",
+        "row": {
+          "subject_id": "MIM:0001230",
+          "subject_label": "gold (III) chloride hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:30076",
+          "object_label": "gold trichloride",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:27988-77-8",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-001388",
+        "owner": "data/ingredients/mapped/Gold_Iii_Chloride_Hydrate.yaml",
+        "owner_sha256": "a85a99f5bb437a77f3c12b2e11ae27109c6d07c9feaaac391d25623845da4bdd",
+        "row": {
+          "subject_id": "MIM:0001230",
+          "subject_label": "gold (III) chloride hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:27988-77-8",
+          "object_label": "gold (III) chloride hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:27988-77-8 alongside parent CHEBI:30076.",
+          "other": "CAS:27988-77-8",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002094",
+        "owner": "data/ingredients/mapped/Neomycin_Trisulfate_Salt_Hydrate.yaml",
+        "owner_sha256": "b4a8cbd3f6a1be6e2fcc3bbf8ee6c70b81a1d98e12817c048204ae05cd263cfb",
+        "row": {
+          "subject_id": "MIM:0001863",
+          "subject_label": "Neomycin trisulfate salt hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:31635",
+          "object_label": "neomycin sulfate",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:MIM curation (#322)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:primary_mappings[bacdive_metabolite]|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:1405-10-3",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002095",
+        "owner": "data/ingredients/mapped/Neomycin_Trisulfate_Salt_Hydrate.yaml",
+        "owner_sha256": "b4a8cbd3f6a1be6e2fcc3bbf8ee6c70b81a1d98e12817c048204ae05cd263cfb",
+        "row": {
+          "subject_id": "MIM:0001863",
+          "subject_label": "Neomycin trisulfate salt hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.compound:neomycin_trisulfate_salt_hydrate",
+          "object_label": "Neomycin trisulfate salt hydrate",
+          "object_source": "kgm:compound",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:MIM curation (#322)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:primary_mappings[bacdive_metabolite]|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving kgmicrobe.compound:neomycin_trisulfate_salt_hydrate alongside parent CHEBI:31635.",
+          "other": "CAS:1405-10-3",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002378",
+        "owner": "data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml",
+        "owner_sha256": "cf9872a1b211c539f98f2f895fed08f0a1173f7e6e3a5afd12aaf931e9c54414",
+        "row": {
+          "subject_id": "MIM:0002112",
+          "subject_label": "Potassium tellurite hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:75248",
+          "object_label": "potassium tellurite",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[bacdive_metabolite]|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "dipotassium tellurite|CAS:123333-66-4",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002379",
+        "owner": "data/ingredients/mapped/Potassium_Tellurite_Hydrate.yaml",
+        "owner_sha256": "cf9872a1b211c539f98f2f895fed08f0a1173f7e6e3a5afd12aaf931e9c54414",
+        "row": {
+          "subject_id": "MIM:0002112",
+          "subject_label": "Potassium tellurite hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:123333-66-4",
+          "object_label": "Potassium tellurite hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:primary_mappings[bacdive_metabolite]|MIM:curator=codex|kgm:independent:metabolite_json:metabolite_mapping.json|kgm:mediaingredientmech_reviewed[manifest=b02a92446e8a613fd0d96b0dd8147d439733fcf73e731b363a6388e95d616703]|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:123333-66-4 alongside parent CHEBI:75248.",
+          "other": "CAS:123333-66-4",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002607",
+        "owner": "data/ingredients/mapped/Sodium_Hypophosphite_Monohydrate.yaml",
+        "owner_sha256": "e2c2b73fc44eb3db971c260991f34fcbe1428312f24c5aedc0a14de2dbc47526",
+        "row": {
+          "subject_id": "MIM:0002317",
+          "subject_label": "Sodium hypophosphite monohydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:234148",
+          "object_label": "sodium hypophosphite",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:10039-56-2",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002608",
+        "owner": "data/ingredients/mapped/Sodium_Hypophosphite_Monohydrate.yaml",
+        "owner_sha256": "e2c2b73fc44eb3db971c260991f34fcbe1428312f24c5aedc0a14de2dbc47526",
+        "row": {
+          "subject_id": "MIM:0002317",
+          "subject_label": "Sodium hypophosphite monohydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:10039-56-2",
+          "object_label": "Sodium hypophosphite monohydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:10039-56-2 alongside parent CHEBI:234148.",
+          "other": "CAS:10039-56-2",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002773",
+        "owner": "data/ingredients/mapped/Terpene_Hydrate.yaml",
+        "owner_sha256": "23f4f1297d42daa801eec55809cee03199fd36e1aac38d7a2e8428d510418744",
+        "row": {
+          "subject_id": "MIM:0002461",
+          "subject_label": "Terpene hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:134806",
+          "object_label": "terpin",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:2451-01-6",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002774",
+        "owner": "data/ingredients/mapped/Terpene_Hydrate.yaml",
+        "owner_sha256": "23f4f1297d42daa801eec55809cee03199fd36e1aac38d7a2e8428d510418744",
+        "row": {
+          "subject_id": "MIM:0002461",
+          "subject_label": "Terpene hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:2451-01-6",
+          "object_label": "Terpene hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:anchor_cas_hydrate_records|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=anchor_cas_hydrate_records]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:2451-01-6 alongside parent CHEBI:134806.",
+          "other": "CAS:2451-01-6",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002931",
+        "owner": "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+        "owner_sha256": "caec0611f793427ae9840d27d78bddbef989ff9cc21fbd6eb31426669f5bbcf4",
+        "row": {
+          "subject_id": "MIM:0002604",
+          "subject_label": "Vancomycin Hydrochloride Hydrate",
+          "predicate_id": "skos:closeMatch",
+          "object_id": "CHEBI:9932",
+          "object_label": "Vancomycin hydrochloride",
+          "object_source": "obo:chebi.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "CAS:123409-00-7",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      },
+      {
+        "entry_id": "row-002932",
+        "owner": "data/ingredients/mapped/Vancomycin_Hydrochloride_Hydrate.yaml",
+        "owner_sha256": "caec0611f793427ae9840d27d78bddbef989ff9cc21fbd6eb31426669f5bbcf4",
+        "row": {
+          "subject_id": "MIM:0002604",
+          "subject_label": "Vancomycin Hydrochloride Hydrate",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "cas:123409-00-7",
+          "object_label": "Vancomycin Hydrochloride Hydrate",
+          "object_source": "registry:cas",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=regrade_hydrate_to_close_match|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=mediaingredientmech-agentic-curation]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|MIM:curator=codex|kgm:native_ontology:chebi",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving cas:123409-00-7 alongside parent CHEBI:9932.",
+          "other": "CAS:123409-00-7",
+          "validation_method": ""
+        },
+        "judgment": "INSTALL_WITHHOLD"
+      }
+    ],
+    "reason": "The open issue explicitly holds all thirteen owners pending source/form/grounding decisions. CAS capture does not resolve the chromium double-salt grounding or gold trichloride versus chloroauric-acid material conflict; both previously positive CAS rows remain withheld with their sibling mappings."
+  },
+  "supersedes_claim": "Only the absence of actual primary snapshots for the three named CAS identities is resolved; original negative scientific/source/quantity/role/release obligations remain. The CrK whole-owner hold is not resolved.",
+  "native_calls": 0
+}

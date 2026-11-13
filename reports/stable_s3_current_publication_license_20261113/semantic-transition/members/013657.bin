@@ -1,0 +1,32 @@
+{
+  "finding_id": "W08-FINAL-001",
+  "severity": "P3",
+  "status": "confirmed_mapping_method_provenance_defect",
+  "scope": "source proposal only; no identity target or predicate change recommended without review",
+  "head": "1701ccf2049022866adfcebcc9bba9b6492407c6",
+  "proposal_id": "op1201-plain-flour",
+  "case_ids": [
+    "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e"
+  ],
+  "owner_path": "data/ingredients/unmapped/Plain_Flour.yaml",
+  "before_sha256": "becb2e4860868161607a709d6c4b5cbef56c2b4a3e06c9a4fc9214e35e4e9a8e",
+  "after_capture": {
+    "root": "artifact",
+    "path": "successors/issue-1227-v1/research/organic_products/proposed_owners/Plain_Flour.yaml",
+    "sha256": "aa8390f17f1ed9f9c083fd6b487ee1c40228e754072b7e390b97dfb2fd6eae83"
+  },
+  "claim_pointer": "/ontology_mapping/mapping_quality",
+  "claim": "EXACT_MATCH",
+  "facts": [
+    "Selected owner label is Plain flour; official FOODON:00004510 primary label is flour, and its sole captured synonym is flour added.",
+    "History explicitly describes an agent material-scope judgment matching unqualified plain flour to generic flour; it records no primary-label resolution, unique synonym lookup or CAS lookup.",
+    "MAPPING_SEMANTICS section0 defines EXACT_MATCH as primary-label resolution and says match_level does not replace method provenance; map-media-ingredients table explicitly says string matches ontology label exactly.",
+    "The new DATABASE_MATCH evidence establishes the target definition but does not itself establish that the source material resolved by the primary label."
+  ],
+  "primary_capture": {
+    "path": "successors/issue-1201-v1/shared-primary/ols-foodon-00004510.json",
+    "sha256": "48c4ece85b7193af6fee377601cc481e86a02b92ae637534a9fd1baf53315c98"
+  },
+  "recommendation": "Record the actual evidence-backed material-scope decision and select the native grade/label contract that faithfully describes it; if changing preferred term to the verified generic flour scope, retain Plain flour as source text and independently review that decision. Do not mechanically use SYNONYM_MATCH: the captured ontology does not list plain flour as a synonym. No owner merge, grain inference, CAS, role, or supported-export approval follows.",
+  "dedup": "Parent should check existing #1201/#1227 and #1226 provenance lineage before filing; reviewer has not mutated GitHub."
+}

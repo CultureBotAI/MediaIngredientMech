@@ -1,0 +1,139 @@
+identifier: CHEBI:53503
+preferred_term: Cobalt chloride hexahydrate
+ontology_mapping:
+  ontology_id: CHEBI:53503
+  ontology_label: cobalt chloride hexahydrate
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 7791-13-1
+    notes: ChEBI ID CHEBI:53503 found via PubChem CAS-RN cross-reference
+  - evidence_type: LLM_SUGGESTION
+    source: W02 final chemistry correction; final-corrections-v1/chemistry/evidence.json
+    notes: Retain Cobalt(II) chloride--water (1/7) as REJECTED_LABEL on the exact
+      CHEBI53503 hexahydrate owner. The explicit water ratio1/7 conflicts with the
+      six-water definition, formula and structure. Preserve valid six-water names
+      and the original literal/source/history; this does not infer any source reagent
+      identity from a malformed formula.
+synonyms:
+- synonym_text: Cobalt dichloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cobalt(II) chloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cobalt (II) chloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cobalt chloride hydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cobalt(2+) dichloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cobalt(II) chloride--water (1/7)
+  synonym_type: REJECTED_LABEL
+  source: chebi_synonym_review
+- synonym_text: CoCl2 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:35696
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2638
+  media_count: 2636
+curation_history:
+- timestamp: '2026-04-07T10:19:09.320352+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:53503
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Cobalt dichloride hexahydrate,
+    Cobalt(II) chloride hexahydrate, cobalt (II) chloride hexahydrate, cobalt chloride
+    hydrate, cobalt(2+) dichloride hexahydrate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.844285+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.707811+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2Cl.Co.6H2O; inchi=InChI=1S/2ClH.Co.6H2O/h2*1H;;6*1H2/q;;+2;;;;;;/p-2;
+    smiles=O.O.O.O.O.O.[Cl-].[Cl-].[Co+2]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.450608+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247829+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_hydrate_collapse
+  action: MERGED_FROM
+  changes: Absorbed 'CoCl2 x 6 H2O', which sat on the anhydrous term CHEBI:35696 (#321/#334).
+    Same substance in formula notation — a form the merge pass does not recognise,
+    so it escaped dedup and was then grounded to the nearest lexical match. Occurrences
+    123/123 + 2265/50 -> 2388/173. Raw label kept as a RAW_TEXT synonym.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518582+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 173/2388 -> 2636/2638 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T08:13:24.739646+00:00'
+  curator: codex_worker02_final_corrections_chemistry
+  action: PROPOSED_CLAIM_CORRECTION
+  changes: Retain Cobalt(II) chloride--water (1/7) as REJECTED_LABEL on the exact
+    CHEBI53503 hexahydrate owner. The explicit water ratio1/7 conflicts with the six-water
+    definition, formula and structure. Preserve valid six-water names and the original
+    literal/source/history; this does not infer any source reagent identity from a
+    malformed formula. Original full before/predecessor objects and field lineage
+    are preserved in reports/all_unmatched_20261107/worker-02/final-corrections-v1/chemistry/.
+    No maintained data changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
+
+
+  Final W02 proposal correction (unapplied): Retain Cobalt(II) chloride--water (1/7)
+  as REJECTED_LABEL on the exact CHEBI53503 hexahydrate owner. The explicit water
+  ratio1/7 conflicts with the six-water definition, formula and structure. Preserve
+  valid six-water names and the original literal/source/history; this does not infer
+  any source reagent identity from a malformed formula. All precise source, role,
+  duplicate-owner and publication holds remain; this claim-specific correction is
+  not whole-owner approval.'
+chemical_properties:
+  cas_rn: 7791-13-1
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:19:09.320371+00:00'
+  molecular_formula: 2Cl.Co.6H2O
+  inchi: InChI=1S/2ClH.Co.6H2O/h2*1H;;6*1H2/q;;+2;;;;;;/p-2
+  smiles: O.O.O.O.O.O.[Cl-].[Cl-].[Co+2]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

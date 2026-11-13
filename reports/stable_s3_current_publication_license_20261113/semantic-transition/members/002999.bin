@@ -1,0 +1,635 @@
+{
+  "captured_at": "2026-11-08T17:21:22.436720Z",
+  "entries": [
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/successors/issue-1237-mc-dependent-v1/proposals.json",
+      "original_sha256": "9a57733e9e21586a914438f1df1177fbbc0095acd446f1c146310acdf2c32844",
+      "original_bytes": 262012,
+      "locator": "/proposals/18",
+      "complete_selected_object": {
+        "proposal_id": "vm-prop-menadione",
+        "case_ids": [
+          "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff"
+        ],
+        "description": "ATCC Medium 1257 (https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx) identifies Menadione (Vitamin K3) as the 50 mg solute in its separate Menadione Solution (50 ml 95% ethanol plus 50 ml water). Add the compound alias only; the frozen ETSA flattened 50 G_PER_L amount is not validated and the whole solution is not a synonym of menadione.",
+        "evidence_ids": [
+          "vm-source-24e001e2a8ef4c94",
+          "vm-fetch-3df06b333d904295",
+          "vm-fetch-89421fc5e5288cd1",
+          "vm-fetch-4d94772b23d0707c",
+          "vm-fetch-9f1823cb1943c3d0",
+          "vm-owner-search",
+          "vm-context-review",
+          "vm1227-component-adjudication",
+          "vm1227-payload-assessment"
+        ],
+        "owner_path": "data/ingredients/mapped/Menadione.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "2ffe65c6d3f0029bc03ae633447b714b8d2421652aa76c9404dbac6fb9df18d0",
+        "after_capture": {
+          "root": "artifact",
+          "path": "research/vitamins_mixtures/proposed_owners_v2/Menadione.yaml",
+          "sha256": "d18105cf54c99bbd508797ae7f5946735410a6cfd4376bd9c6bfee45c74c2659"
+        },
+        "source_scope": "Only the cited source-defined formulation / exact ingredient; existing mapping and historical holds preserved.",
+        "application_status": "ISOLATED_PROPOSAL_ONLY",
+        "integration_requirements": [
+          "Apply only against the stated before hash after independent review; synchronize maintained surfaces through the coordinator."
+        ],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        }
+      }
+    },
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/successors/issue-1237-mc-dependent-v1/decisions.json",
+      "original_sha256": "d1fec59800b4819331c099b48a50842938d5f772a77c1b8cefca63046cc6de51",
+      "original_bytes": 802507,
+      "locator": "/decisions/124",
+      "complete_selected_object": {
+        "case_id": "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff",
+        "case_input_sha256": "6a3ee9c1c0249a13fe11e660c13f20e2ef085055a08be644d29c5f8340fe4311",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Menadione (Vitamin K3)",
+          "source_label": "Menadione (Vitamin K3)",
+          "raw_source_label": "Menadione (Vitamin K3)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:59e4cd263415dbceed111f8f6f0929b0ddde8d1fc6700134bfc287df51877b86"
+        ],
+        "disposition": "existing_identity_or_alias",
+        "reasoning": "ATCC1257 identifies Menadione(VitaminK3) as the solute in its separate Menadione Solution. ChEBI28869 is menadione and the current owner already recognizes VitaminK3; the combined raw name can be added to the compound owner. The frozen ETSA50G_PER_L entry is a flattened nested50mg quantity and remains a source-dose defect, not proof of50g/L or whole-solution identity.",
+        "applicability": "Exact source case Menadione (Vitamin K3). Reviewed every one of its 1 frozen occurrences: CultureMech:009136 at ingredients/25. All full recipe snapshots and their source/source-stock pointers are bound as evidence. ATCC1257 identifies Menadione(VitaminK3) as the solute in its separate Menadione Solution. ChEBI28869 is menadione and the current owner already recognizes VitaminK3; the combined raw name can be added to the compound owner. The frozen ETSA50G_PER_L entry is a flattened nested50mg quantity and remains a source-dose defect, not proof of50g/L or whole-solution identity.",
+        "evidence_ids": [
+          "vm-source-24e001e2a8ef4c94",
+          "vm-fetch-3df06b333d904295",
+          "vm-fetch-89421fc5e5288cd1",
+          "vm-fetch-4d94772b23d0707c",
+          "vm-fetch-9f1823cb1943c3d0",
+          "vm-owner-search",
+          "vm-context-review",
+          "vm1227-component-adjudication",
+          "vm1227-payload-assessment"
+        ],
+        "proposal_ids": [
+          "vm-prop-menadione"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Menadione.yaml",
+            "sha256": "2ffe65c6d3f0029bc03ae633447b714b8d2421652aa76c9404dbac6fb9df18d0"
+          }
+        ],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/114",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1227"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "w08-1227-peer-vitamins_mixtures"
+          ]
+        },
+        "prior_independent_reviews": [
+          {
+            "status": "complete",
+            "evidence_ids": [
+              "w08-independent-vitamins_mixtures-1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/research/vitamins_mixtures/source-contexts.json",
+      "original_sha256": "345201d9c08084e0ca85ed525b1504a9cb80c44f180fd3f4c9d36b3bf099a1f2",
+      "original_bytes": 734112,
+      "locator": "/48",
+      "complete_selected_object": {
+        "index": 124,
+        "case_id": "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff",
+        "label": "Menadione (Vitamin K3)",
+        "contexts": [
+          {
+            "occurrence_id": "CM_OCC:59e4cd263415dbceed111f8f6f0929b0ddde8d1fc6700134bfc287df51877b86",
+            "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml",
+            "sha256": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe",
+            "source_notes": "Source: https://togomedium.org/medium/M2568\nOriginal URL: https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx\n\nCommercial Product: Tryptic Soy Broth (TSB) / Tryptic Soy Agar (TSA)\nSupplier: Multiple suppliers (BD, Sigma, Neogen)\nCatalog: Multiple (22092 Sigma, 211825 BD)\nSource: https://en.wikipedia.org/wiki/Tryptic_soy_broth\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+            "ingredients": [
+              [
+                "Distilled water",
+                {
+                  "value": "1074.0",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Yeast extract",
+                {
+                  "value": "1",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "KNO3",
+                {
+                  "value": "0.5",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Sodium succinate",
+                {
+                  "value": "0.5",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Sodium lactate, 60% syrup",
+                {
+                  "value": "1.3",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Agar",
+                {
+                  "value": "4",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Sodium formate",
+                {
+                  "value": "0.5",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Pancreatic digest of casein",
+                {
+                  "value": "17.0",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Peptic digest of soybean meal",
+                {
+                  "value": "3.0",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Glucose",
+                {
+                  "value": "2.5",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Sodium chloride",
+                {
+                  "value": "5.0",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Dipotassium phosphate",
+                {
+                  "value": "2.5",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Agar",
+                {
+                  "value": "15.0",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "4% Na2CO3",
+                {
+                  "value": "10",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "10% Glucose",
+                {
+                  "value": "10",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "1% Sodium fumarate",
+                {
+                  "value": "2",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "0.5% Dithiothreitol (DTT)",
+                {
+                  "value": "10",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "4% L-Cysteine . HCl",
+                {
+                  "value": "10",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Defibrinated sheep blood",
+                {
+                  "value": "30",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Carbon dioxide gas",
+                {
+                  "value": "variable",
+                  "unit": "VARIABLE"
+                }
+              ],
+              [
+                "Nitrogen gas",
+                {
+                  "value": "variable",
+                  "unit": "VARIABLE"
+                }
+              ],
+              [
+                "Hydrogen gas",
+                {
+                  "value": "variable",
+                  "unit": "VARIABLE"
+                }
+              ],
+              [
+                "95% Ethanol",
+                {
+                  "value": "150.0",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Hemin",
+                {
+                  "value": "200",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "KOH",
+                {
+                  "value": "1.12",
+                  "unit": "G_PER_L"
+                }
+              ],
+              [
+                "Menadione (Vitamin K3)",
+                {
+                  "value": "50",
+                  "unit": "G_PER_L"
+                }
+              ]
+            ],
+            "solutions": [
+              {
+                "preferred_term": "Hemin Solution",
+                "term": {
+                  "id": "mediadive.solution:5229",
+                  "label": "Hemin solution"
+                },
+                "concentration": {
+                  "value": "1",
+                  "unit": "G_PER_L"
+                },
+                "notes": "See mediadive_5229_Hemin_solution.yaml for composition",
+                "name": "Unknown solution"
+              },
+              {
+                "preferred_term": "Menadione Solution",
+                "term": {
+                  "id": "mediadive.solution:5549",
+                  "label": "Menadione solution"
+                },
+                "concentration": {
+                  "value": "2",
+                  "unit": "G_PER_L"
+                },
+                "notes": "See mediadive_5549_Menadione_solution.yaml for composition",
+                "name": "Unknown solution"
+              }
+            ],
+            "steps": null,
+            "references": null,
+            "source_urls": [
+              "https://en.wikipedia.org/wiki/Tryptic_soy_broth",
+              "https://togomedium.org/medium/M2568",
+              "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx"
+            ]
+          }
+        ],
+        "kg": null
+      }
+    },
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/successors/issue-1237-mc-dependent-v1/evidence.json",
+      "original_sha256": "1e0971f5f407f469e34c68359fe18ba3d4b93dce8ce903ce07d7991aca6ec7bf",
+      "original_bytes": 934213,
+      "requested_evidence_ids": [
+        "vm-source-24e001e2a8ef4c94",
+        "vm-fetch-3df06b333d904295",
+        "vm-fetch-89421fc5e5288cd1",
+        "vm-fetch-4d94772b23d0707c",
+        "vm-fetch-9f1823cb1943c3d0",
+        "vm-owner-search",
+        "vm-context-review",
+        "vm1227-component-adjudication",
+        "vm1227-payload-assessment"
+      ],
+      "complete_selected_objects": [
+        {
+          "locator": "/evidence/595",
+          "object": {
+            "evidence_id": "vm-source-24e001e2a8ef4c94",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "source",
+              "path": "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml",
+              "sha256": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe"
+            },
+            "locator": "Complete frozen recipe; occurrence-specific component paths are in the bound case.",
+            "supports_or_contradicts": "Source label, quantities, recipe hierarchy, provenance pointers and preparation context. This is a source snapshot, not independent chemical identity proof.",
+            "url": null
+          }
+        },
+        {
+          "locator": "/evidence/629",
+          "object": {
+            "evidence_id": "vm-fetch-3df06b333d904295",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "research/vitamins_mixtures/captures/3df06b333d904295.source",
+              "sha256": "78669d85db93e40276577aaf5073aa0bc2420fe5b7be6212de5619e445da93aa"
+            },
+            "locator": "https://togomedium.org/medium/M2568; fetch result / access limit",
+            "supports_or_contradicts": "Unsuccessful retrieval, application shell, absent source entry or access-limited article; does not establish formulation or form.",
+            "url": "https://togomedium.org/medium/M2568",
+            "accessed_at": "2026-11-08T05:07:16.592223+00:00",
+            "case_ids": [
+              "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff"
+            ]
+          }
+        },
+        {
+          "locator": "/evidence/706",
+          "object": {
+            "evidence_id": "vm-fetch-89421fc5e5288cd1",
+            "kind": "unsuccessful_search",
+            "capture": {
+              "root": "artifact",
+              "path": "research/vitamins_mixtures/captures/fetch-index.json",
+              "sha256": "36c3469ff7012047fdbf12a8fdc0386bb0463f3163507375a67cd67df6f5dcdd"
+            },
+            "locator": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2568; fetch result / access limit",
+            "supports_or_contradicts": "Unsuccessful retrieval, application shell, absent source entry or access-limited article; does not establish formulation or form.",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2568",
+            "accessed_at": "2026-11-08T05:08:07.078921+00:00",
+            "case_ids": [
+              "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff"
+            ]
+          }
+        },
+        {
+          "locator": "/evidence/712",
+          "object": {
+            "evidence_id": "vm-fetch-4d94772b23d0707c",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "research/vitamins_mixtures/captures/4d94772b23d0707c.source",
+              "sha256": "5ee4af948f5e11b4456bcb7d2858883e5c7dae55870f457d996ff788001468a2"
+            },
+            "locator": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_28869; complete recipe/product payload; exact section identified in each linked decision",
+            "supports_or_contradicts": "Primary source recipe/product enumeration or ontology definition. Applicability and limitations are assessed separately for every linked case.",
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_28869",
+            "accessed_at": "2026-11-08T05:08:58.106011+00:00",
+            "case_ids": [
+              "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff"
+            ]
+          }
+        },
+        {
+          "locator": "/evidence/721",
+          "object": {
+            "evidence_id": "vm-fetch-9f1823cb1943c3d0",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "research/vitamins_mixtures/captures/9f1823cb1943c3d0.source",
+              "sha256": "d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58"
+            },
+            "locator": "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx; complete recipe/product payload; exact section identified in each linked decision",
+            "supports_or_contradicts": "Primary source recipe/product enumeration or ontology definition. Applicability and limitations are assessed separately for every linked case.",
+            "url": "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx",
+            "accessed_at": "2026-11-08T05:10:08.509086+00:00",
+            "case_ids": [
+              "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff"
+            ]
+          }
+        },
+        {
+          "locator": "/evidence/729",
+          "object": {
+            "evidence_id": "vm-owner-search",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "artifact",
+              "path": "research/vitamins_mixtures/full-candidate-owners.json",
+              "sha256": "07990ff046f77cb79c2bab42ca51fbd2217fc6f1cfcd82eb94ee481e59848105"
+            },
+            "locator": "Complete current payloads and hashes of vitamin/mixture candidate owners found with Path.rglob (ignored files included).",
+            "supports_or_contradicts": "Existing identity boundaries and stored component formulations; a candidate name is not proof of source identity.",
+            "url": null,
+            "case_ids": [
+              "CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6",
+              "CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499",
+              "CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7",
+              "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+              "CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e",
+              "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+              "CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e",
+              "CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41",
+              "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+              "CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216",
+              "CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e",
+              "CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb",
+              "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e",
+              "CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08",
+              "CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028",
+              "CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378",
+              "CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380",
+              "CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda",
+              "CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f",
+              "CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4",
+              "CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22",
+              "CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51",
+              "CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca",
+              "CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f",
+              "CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d",
+              "CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d",
+              "CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072",
+              "CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6",
+              "CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c",
+              "CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b",
+              "CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f",
+              "CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb",
+              "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7",
+              "CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c",
+              "CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2",
+              "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3",
+              "CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a",
+              "CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533",
+              "CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03",
+              "CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724",
+              "CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86",
+              "CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f",
+              "CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43",
+              "CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20",
+              "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+              "CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1",
+              "CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118",
+              "CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b",
+              "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff",
+              "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+              "CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd",
+              "CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe",
+              "CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97",
+              "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2",
+              "KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb",
+              "KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52",
+              "KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b"
+            ]
+          }
+        },
+        {
+          "locator": "/evidence/730",
+          "object": {
+            "evidence_id": "vm-context-review",
+            "kind": "source_snapshot",
+            "capture": {
+              "root": "artifact",
+              "path": "research/vitamins_mixtures/source-contexts.json",
+              "sha256": "345201d9c08084e0ca85ed525b1504a9cb80c44f180fd3f4c9d36b3bf099a1f2"
+            },
+            "locator": "All 57 cases, every occurrence, complete ingredient and stock context extracted from hash-verified frozen recipes.",
+            "supports_or_contradicts": "Case-by-case source hierarchy and dose/stock distinctions, including flattened units and source-specific stock components.",
+            "url": null,
+            "case_ids": [
+              "CM_NAME:0524201b1be2602403b0739c2b126fad00cdb5c9e7880eeec0f451aa0b1d45d6",
+              "CM_NAME:09c12267b4455ab88772ba9e4aad85910ec6888da06b6b2854aa6c7507ec7499",
+              "CM_NAME:0cfaf3bdd7be4e63b7bedd1ec60171fff24e0aebb5b663ff4d68c1b6d19dbcb7",
+              "CM_NAME:0f8f4df4824dc9fed323b82927fc02289737311c5e6af47f0e553d9c69b7d6be",
+              "CM_NAME:1497646f5b11a8b05a501d77fa60d7e667bcc81f8042bfc85c616426c863d68e",
+              "CM_NAME:194e61fbf58f13d61ba1b175d26a01602757fdbdc8ceab739acb0dbdb86bc8df",
+              "CM_NAME:1a0284b650255e5e0674464e1873bb5345b8bf3bdb04cca4cf9769e46bf13d9e",
+              "CM_NAME:1c89fab66222b70b52c24ad107bc4b549577598e5bb5b95cedfbf0152d1bce41",
+              "CM_NAME:1db635f7eb87fa2b6b7c66a1a10a90e9034378b0029afd804cfc3f348c8a5596",
+              "CM_NAME:218d523e0abe099c6406505a8ac2d8399414264ef3ac9b414561838bd86bc216",
+              "CM_NAME:2660f2bfae4c41c4310b812cf415b6394b452c83e751fbf89e5cf4fa60bf639e",
+              "CM_NAME:2d0f83064ea12a33515dcf7c3d6f0f47a05f0031612e1c345c098a984d2357eb",
+              "CM_NAME:2f9fa12daf6ba7f9bca26c4e7e8a32343beb56fda267b4b63d0a75bff37a5a3e",
+              "CM_NAME:32d684d58bb01ce289419e85662b69bce23b0d8caf08968c2b3dd04bdbe8bf08",
+              "CM_NAME:3f5acf3dbccdca5fa0e4ae744731aaea1b6884d104add8cb5b61b5ad2888e028",
+              "CM_NAME:4060a1ed2876a68809c8744f8728dff1391202d59dea534b91fc7ea27a0c8378",
+              "CM_NAME:43f0a25fe4aee84fbc0b0908635d231baab76aeffc3bf8440553f74b61f97380",
+              "CM_NAME:4b5bcc96ec717d1910dd033c9e4df33c495b012b6accb95f67536e9dedfabbda",
+              "CM_NAME:59dda10496ac835ebd6a2d28c6270b1142602f294ce8517a2597ec85d652581f",
+              "CM_NAME:6098be1fc7c6719de74b0a9cf616b5d1b50d48a4962515b2308a87ea885a19a4",
+              "CM_NAME:6eeacdbf6383be741fcb6cfeab8c7d517ca5cce582db939c2f70d0d0bced0d22",
+              "CM_NAME:6fd34e4bc1aee4bbad6880aa32d6415080fef7455f1e630a2afe26cb815ebe51",
+              "CM_NAME:81d5f048d0736f2e0b232150989a4398e463709dac9e84755d75eeb4e0b549ca",
+              "CM_NAME:83aec2fbdc295dae1274bc45fbfa0c1801840dba2031d16e19c53c52052e902f",
+              "CM_NAME:85ce67de534e3da777e4f4941ddc1fa8aa8cb3423a9e8c874819b1929bbef89d",
+              "CM_NAME:8b216bb6e774c0528cc29b0be7440e7d90beb71a0a5fd412bad72b49320bab9d",
+              "CM_NAME:8de91e43eba7338ee1b84ab5078c296a4af9f578f9bb516ab8f7f7b443773072",
+              "CM_NAME:96bae484b01b8c640b1c6056c47cf9aedbf250c42d6d68563bbd268b2d1ae8a6",
+              "CM_NAME:9827872839a3ca021c1b1d2893b01a84a8e503e27ca6a18b0f1b29caaf9a938c",
+              "CM_NAME:9e7bff04d6888c33fc6e8093db4b14a671bf5d72972eade3e176999259fdb49b",
+              "CM_NAME:a1c93fffc08c24104590be9f63d714429288ebe5228d82926d58ca5c5b2e6a8f",
+              "CM_NAME:a6f91cb8c2cf971544ee7a74d6a69b57b5d4779a5f6f959702b06712588c50eb",
+              "CM_NAME:a7d64874422fcd929f95a6d61336d32a2d6d68dc4de1aecf6427959176fbbfc7",
+              "CM_NAME:ab5d82bee3c96a82c690d58f78c5de5705bb622e3d30de9d43f4658fea72f19c",
+              "CM_NAME:b1f5734de5e21fffe322d86767491f786e7deb29703ca41a9f74670dbaac23e2",
+              "CM_NAME:b79c373257a49eb2877f78717647704c0ee900bca22b6ed5051a75f00afa03e3",
+              "CM_NAME:c29d67cc94c36980ad8080ea8193a84d2056690bc822fbb499237a4e5765640a",
+              "CM_NAME:c347499766c6c4cd038500e4411fc253900bc57f7d712216e228ea32448d6533",
+              "CM_NAME:c5600ce8cca89790a74a5ecf523fa4a71bdf195881e02a036983814d070b9c03",
+              "CM_NAME:ca71ad502ea1cfee8243a46bd95feeb67cf006a3339c084980f2cb7abf476724",
+              "CM_NAME:ca7bdb81d827bd77c2f73551efee20d8ef40ec9b39cdb37db35a624ddc532a86",
+              "CM_NAME:cb8e07825477ee6fd1c08f140dfc43a05d7afd6392ece4502787e191cc06eb0f",
+              "CM_NAME:d01465ce156c42278dea7083aadcf99c2237db5bba39ef2fbd1ed6c0d6926b43",
+              "CM_NAME:d1fda1a2498fb51dde73cd6c2b95d00443a66c4bfedd0e8b3c9700fb24c19e20",
+              "CM_NAME:d57e91ffaea6f0ab6ff0f3d6f0b04c26356c832e85dd83e9e2319874fda43506",
+              "CM_NAME:d7aeb3cdec872a24fafc3018a10c37afda2f187338ac7efc60e59ae58d6eaef1",
+              "CM_NAME:da81956c6cff9a396c30469f1fa0601d184c96793d849a8467003f80433d2118",
+              "CM_NAME:dd3e43f736afcfcb157baf98a3e8c99eb801ef3879e7f75ff62572ecd198ae0b",
+              "CM_NAME:e0421c02356510434d2dd308162856ffb2ca92d533e44f1b1edc1c813e5ee1ff",
+              "CM_NAME:e2bdf85023293ba9c3c962580a5125c4913874c23fa1d7ca4b04b1f27f86dbc1",
+              "CM_NAME:ebc8bba1af8300aaab4d095eaee946705bd708921e716effabac43296050e6dd",
+              "CM_NAME:f36720d3a38258ec5a2d12f9e43916d42d60fed2920b5ef27573e07b6d707abe",
+              "CM_NAME:fc4eccc3ac72b3ab3160d63079e7ca7b7ea2f7448c79750ea4f333e5629feb97",
+              "KG_CASE:1189b3a7d3fc32c1dadb83cba3b602c19c09db7ba40a3840bf2064e8fb0c55b2",
+              "KG_CASE:5bc8364c5b74b3b254ea2093cd46d5207c2c74191a4bb669da77c955956f0ddb",
+              "KG_CASE:752753f711ce73c5ac2e0a9dd150eea95fb47b29e8dc00c6366d0f2a2e5a9d52",
+              "KG_CASE:f4459a97da97d0f0452d5bc94efc48d4b29878b87956b376b405ec5cf886609b"
+            ]
+          }
+        },
+        {
+          "locator": "/evidence/1052",
+          "object": {
+            "evidence_id": "vm1227-component-adjudication",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/component-adjudications.json",
+              "sha256": "9c76d3dbb30906d72cb8fbc6edb5e0f555872c49afbabc0fa28218e638666870"
+            },
+            "url": null,
+            "locator": "Every component index with operative final-v2 after snapshot: two explicit DL components use exact external identities; preserved final-v1 incorrect exact-parent claims are explicitly superseded.",
+            "supports_or_contradicts": "Every component index with operative final-v2 after snapshot: two explicit DL components use exact external identities; preserved final-v1 incorrect exact-parent claims are explicitly superseded."
+          }
+        },
+        {
+          "locator": "/evidence/1053",
+          "object": {
+            "evidence_id": "vm1227-payload-assessment",
+            "kind": "local_validation",
+            "capture": {
+              "root": "artifact",
+              "path": "successors/issue-1227-v1/research/vitamins_mixtures/final-v2/payload-assessments.json",
+              "sha256": "5a3d533445d15f90aff1589056b7889fdffd451e8bf26f4411fa088a8e6987e6"
+            },
+            "url": null,
+            "locator": "All47 selected payload assessments with exact final-v2 captures for the two corrected DL references and unchanged45; no whole-owner or export approval.",
+            "supports_or_contradicts": "All47 selected payload assessments with exact final-v2 captures for the two corrected DL references and unchanged45; no whole-owner or export approval."
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Exact full selected objects, not a new case or source acceptance. Whole-file source hashes bind their immutable origin."
+}

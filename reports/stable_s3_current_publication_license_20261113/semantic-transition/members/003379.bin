@@ -1,0 +1,90 @@
+from pathlib import Path
+import copy,datetime,difflib,hashlib,importlib.util,io,json,os,subprocess,sys,tarfile
+sys.dont_write_bytecode=True
+D=Path(__file__).absolute().parent;C=D.parents[1];A=C/'integration/ancillary1258-worktree';T=C.parent/'kgm-unmapped-20261107';P=C/'preflight/inherited-form-predicate-triage-v1';S=C/'preflight/cysteine-stock-predicate-assessment-v1';ISS=C/'preflight/cysteine-stock-form-finding-publication-v1'
+sys.path[:0]=[str(A/'src'),str(T/'claw/src')]
+import yaml
+from mediaingredientmech.curate.publication_guard import FrozenFile
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.ingredient_bundle_refresh import publish_new_files
+from mediaingredientmech.validation.write_validated import write_validated_ingredient,validate_ingredient
+from mediaingredientmech.validation.component_partonomy import validate_component_partonomy
+from mediaingredientmech.synonym_policy import is_resolving_synonym
+BASE='84241993a278a7a413422ef89a52c0b47dc57831';pins={};maps=[]
+def sha(b):return hashlib.sha256(b).hexdigest()
+def write(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(b)
+def save(n,x):write(D/n,(json.dumps(x,indent=2,ensure_ascii=False)+'\n').encode())
+def read(p,expected=None):
+ p=Path(p).absolute();f=FrozenFile.capture(p)
+ if expected:assert sha(f.content)==expected,str(p)
+ pins[p]=f;return f.content
+def capture(p,rel,expected=None):
+ b=read(p,expected);q=D/'inputs'/rel;write(q,b);maps.append({'original_path':str(Path(p).absolute()),'captured_path':str(q.relative_to(D)),'sha256':sha(b),'bytes':len(b),'scope':'Exact original capture, unchanged source/acquisition context; not new source research.'});return b
+def git(*args):return subprocess.check_output(['git','--no-optional-locks','-C',str(A),*args],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+assert git('rev-parse','HEAD').decode().strip()==BASE
+index=git('ls-files','--stage','-z');status=git('status','--porcelain=v1','--untracked-files=no','-z')
+ownerpins={str(p.relative_to(A)):sha(p.read_bytes()) for cat in ['mapped','unmapped'] for p in sorted((A/'data/ingredients'/cat).glob('*.yaml'))};assert len(ownerpins)==2956
+for n in ['verified-manifest.json','readback-00.json','publication-00.json','body.md']:capture(ISS/n,'issue/'+n)
+issue=json.loads((D/'inputs/issue/readback-00.json').read_bytes());assert issue['id']==6724895813
+manifest=json.loads(read(S/'MANIFEST.json','2b89f861526fc90da5456e5f7df239877dc7b3b19b2ed86a55393c8f145242b1'))
+for r in manifest['members']:capture(S/r['path'],'assessment/'+r['path'],r['sha256'])
+for n in ['MANIFEST.json','HANDOFF.json']:capture(S/n,'assessment/'+n)
+oldraw=capture(P/'inputs/cysteine-stock.yaml','selected.yaml','0ca4e6c9a4c7d05c99f64adffb1d4ab7c63cb31b618d2b3c74e26288831f16e2')
+plan=json.loads(read(C/'integration/final-native-intake-after-ancillary-v1/owner-plan.draft.json','cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'))
+op=next(r for r in plan['records'] if r['operation_id']=='ORIGINAL-w07::C-P04');assert op['after_capture']['sha256']==sha(oldraw)
+authentic=git('show',BASE+':'+op['before_source_record']);assert sha(authentic)==op['before_yaml_sha256']=='ee8eca61baf20c28acd7bbf0409d44ea796fb33d988f6e81eb60b6fba67fc105';write(D/'inputs/authentic-before.yaml',authentic)
+origin=json.loads(read(P/'TARGETS.json'))[0];assert origin['operation']==op if 'operation' in origin else op['origins'][0]['proposal_id']=='C-P04'
+for n in ['PUBLISHED-JOINS.json','TARGETS.json','INPUT-PINS.json']:capture(P/n,'origin/'+n)
+old=yaml.safe_load(oldraw);new=copy.deepcopy(old);assert old['ontology_mapping']['mapping_quality']=='CLOSE_MATCH'
+new['ontology_mapping']['mapping_quality']='NARROW_MATCH'
+note=('Claim-specific current form-of assessment under '+issue['html_url']+'. JCM680 (https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=680; exact captured HTML SHA25616525b97d468855002dda4489f4b2030d28a9a1d332828cc27a0f2e15b5b07f0) explicitly names L-cysteine hydrochloride monohydrate solution. The active defining CHEBI:91248 term is L-cysteine hydrochloride hydrate, a monohydrate of L-cysteine hydrochloride (full OLS term capture SHA2567ef9e26cec1a5833d216a01df066c0b6a0bfba77bad16db354c690a7a814a683). This remains a local prepared stock, not the pure solute. Current MAPPING_SEMANTICS sections1/3 explicitly permit the solution-of broader-parent relation without is_a or identity equivalence; native NARROW_MATCH therefore publishes skos:broadMatch while retaining the local exact registry row. The historical #342/#321 rationale and evidence are preserved, but no longer justify CLOSE_MATCH under the current contract. The source10mL is an addition dose, not stock concentration; solvent, concentration, stock pH, complete formulation and quantity interpretation remain unknown. No solute CAS, structure, formula or role is assigned to the stock; rejected instruction and QSY9 labels, counts and all original source decisions remain unchanged.')
+evidence={'evidence_type':'LLM_SUGGESTION','source':issue['html_url'],'notes':note};new['ontology_mapping']['evidence'].append(evidence)
+record_curation_event(new,curator='Codex /root/step7d_science_c',action='CORRECTED_FORM_PARENT_PREDICATE',llm_assisted=True,llm_model='gpt-6',previous_status=old['mapping_status'],new_status=old['mapping_status'],changes='Private exact successor to selected0ca4e6c9 under '+issue['html_url']+': CLOSE_MATCH to NARROW_MATCH for the supported solution-of CHEBI91248 relation; truthful LLM evidence/history appended. Preserve the distinct local stock identity, parent ID/label, every old history/evidence object, W07 rejected labels, all source/stock/quantity unknowns, roles and counts. No source application or release approval.')
+def inverse(v):
+ x=copy.deepcopy(v);assert x['ontology_mapping']['mapping_quality']=='NARROW_MATCH';x['ontology_mapping']['mapping_quality']='CLOSE_MATCH';assert x['ontology_mapping']['evidence'].pop()==evidence;h=x['curation_history'].pop();assert h['llm_assisted'] and h['curator']=='Codex /root/step7d_science_c';assert x==old
+inverse(new);assert not validate_ingredient(old) and not validate_ingredient(new)
+checks=['complete native schema before/after','exact inverse delta and old evidence/history prefix']
+for n,mutate in [('identity',lambda v:v.update(identifier='CHEBI:91248')),('stock concentration',lambda v:v.update(notes='10mL means1%')),('old author',lambda v:v['curation_history'][0].update(curator='invented-human')),('rejected label',lambda v:v['synonyms'][1].update(synonym_type='RAW_TEXT'))]:
+ x=copy.deepcopy(new);mutate(x)
+ try:inverse(x)
+ except AssertionError:checks.append('refuses '+n+' mutation')
+ else:raise AssertionError(n)
+for p in [A/'MAPPING_SEMANTICS.md',A/'src/mediaingredientmech/curate/publication_guard.py',A/'src/mediaingredientmech/curate/curation_event.py',A/'src/mediaingredientmech/ingredient_bundle_refresh.py',A/'src/mediaingredientmech/validation/write_validated.py',A/'src/mediaingredientmech/validation/component_partonomy.py',A/'src/mediaingredientmech/synonym_policy.py',A/'scripts/record_review.py',A/'schema/record_review.yaml',Path(__file__)]+sorted((A/'src/mediaingredientmech/schema').glob('*.yaml')):read(p)
+def recheck():
+ for f in pins.values():f.verify()
+ assert git('rev-parse','HEAD').decode().strip()==BASE and git('ls-files','--stage','-z')==index and git('status','--porcelain=v1','--untracked-files=no','-z')==status
+ assert ownerpins=={str(p.relative_to(A)):sha(p.read_bytes()) for cat in ['mapped','unmapped'] for p in sorted((A/'data/ingredients'/cat).glob('*.yaml'))}
+render=D/'native-render'/Path(op['source_record']).name;render.parent.mkdir();write_validated_ingredient(new,render);raw=render.read_bytes();assert yaml.safe_load(raw)==new
+rt=render.with_name('roundtrip.yaml');write_validated_ingredient(new,rt);assert rt.read_bytes()==raw
+candidate=D/'candidates'/Path(op['source_record']).name;candidate.parent.mkdir();publish_new_files([(candidate,raw)],recheck);recheck();checks.append('guarded native serialization/idempotence/private publication')
+records={}
+with tarfile.open(fileobj=io.BytesIO(git('archive',BASE,'data/ingredients'))) as tar:
+ for m in tar.getmembers():
+  if m.isfile() and m.name.endswith('.yaml'):records[m.name]=yaml.safe_load(tar.extractfile(m).read())
+assert len(records)==2956
+before=copy.deepcopy(records);after=copy.deepcopy(records);before[op['source_record']]=old;after[op['source_record']]=new
+assert list(validate_component_partonomy(before.values()))==list(validate_component_partonomy(after.values()))==[];checks.append('whole2956 unchanged-context partonomy zero both overlays')
+KG=Path('/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107');kgp=KG/'mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz';read(kgp,'f1314a41ede9b143c595399ada5178e52306364e69b467810cf71e7cdc4be23d')
+os.environ.update({'KGMICROBE_ROOT':str(KG),'MEDIAINGREDIENTMECH_ROOT':str(A),'OPENCLAW_WORKSPACE':str(D/'diagnostic-workspace')})
+builder=T/'claw/scripts/build_mim_ingredient_sssom.py';rawcode=read(builder,'38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc');spec=importlib.util.spec_from_file_location('cys_project',builder);native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;exec(compile(rawcode,str(builder),'exec'),native.__dict__)
+ks=native.load_kgm_source_index(kgp);kl=native.load_kgm_labels(kgp);labels={'CHEBI:91248':new['ontology_mapping']['ontology_label']};owners=native.build_owner_index({native._mim_curie(Path(p).name):r for p,r in after.items() if '/mapped/' in p})
+def project(r,feed):
+ sup=[];rows=native._row_from_yaml(A/op['source_record'],{},ks,feed,labels,record=r,owners=owners,suppressions=sup);return rows,[vars(x) for x in sup]
+oldrows,olds=project(old,kl);newrows,news=project(new,kl)
+assert len(oldrows)==len(newrows)==2 and olds==news
+parent=next(r for r in newrows if r['object_id']=='CHEBI:91248');reg=next(r for r in newrows if r['object_id']==new['identifier']);assert parent['predicate_id']=='skos:broadMatch' and reg['predicate_id']=='skos:exactMatch'
+assert next(r for r in oldrows if r['object_id']=='CHEBI:91248')['predicate_id']=='skos:closeMatch'
+changes=[]
+for a,b in zip(oldrows,newrows):
+ diff={k:{'before':a.get(k),'after':b.get(k)} for k in set(a)|set(b) if a.get(k)!=b.get(k)};assert set(diff)<={'source','predicate_id','mapping_date'},diff;changes.append(diff)
+assert new['synonyms']==old['synonyms'];assert all(not is_resolving_synonym(s) for s in new['synonyms'] if s['synonym_type']=='REJECTED_LABEL')
+forced=copy.deepcopy(kl);label,aliases=forced.get('CHEBI:91248',('',[]));forced['CHEBI:91248']=(label,[*aliases,'QSY9 succinimidyl ester(1+)','(add to make medium anoxic)']);fr,fs=project(new,forced);assert fr==newrows and fs==news
+checks+=['actual-KG two-row diagnostic preserves local identity and yields proper broader parent','all unrelated row cells and suppression objects exact','rejected labels remain nonresolving under forced-KG reintroduction']
+native._check_producer_bindings();recheck()
+write(D/'candidate.diff',''.join(difflib.unified_diff(oldraw.decode().splitlines(True),raw.decode().splitlines(True),fromfile='selected0ca4',tofile='private-successor')).encode())
+save('SELECTOR.json',{'schema_version':1,'status':'PRIVATE_CYSTEINE_PREDICATE_SUCCESSOR_PENDING_DISTINCT_REVIEW','operation_id':op['operation_id'],'selected_predecessor':{'path':str(P/'inputs/cysteine-stock.yaml'),'sha256':sha(oldraw)},'payload':{'path':str(candidate),'sha256':sha(raw)},'original_operation_exact':op,'authentic_before_sha256':op['before_yaml_sha256'],'issue':issue['html_url'],'independent_review':None,'source_decisions_unchanged':True,'application_authorized':False})
+save('field-delta.json',{'only_semantic_field':'ontology_mapping.mapping_quality','before':'CLOSE_MATCH','after':'NARROW_MATCH','new_evidence':evidence,'new_history':new['curation_history'][-1],'old_complete_objects_exact':True});save('origin-proof.json',{'original_operation':op,'full_context':origin,'authentic_before':{'commit':BASE,'path':op['before_source_record'],'sha256':sha(authentic)},'source_decisions_changed':False})
+save('native-row-diagnostic.json',{'scope':'Exact native functions with full authentic2956 context and actualKG input, no provider or full generation; empty residual used deliberately, final production generation still required.','before':oldrows,'after':newrows,'changed_cells':changes,'suppression_before':olds,'suppression_after':news,'forced_rejection_control':True,'builder':{'path':str(builder),'sha256':sha(rawcode)},'kg':{'path':str(kgp),'sha256':sha(pins[kgp].content)},'producer_graph':{str(p):sha(b) for p,b in native._IMPORTED_PRODUCER_BYTES.items()}})
+save('verification.json',{'status':'PASS_AUTHOR_BOUNDED_CONTROLS_INDEPENDENT_PENDING','checks':checks,'schema':True,'partonomy_before':0,'partonomy_after':0,'actual_full_generation':False,'source_application':False});save('CAPTURE-MAP.json',maps);save('input-pins.json',[{'path':str(p),'sha256':sha(f.content),'bytes':len(f.content)} for p,f in pins.items()]);print(json.dumps({'candidate':str(candidate),'sha256':sha(raw),'checks':len(checks),'native_rows':len(newrows)},indent=2))

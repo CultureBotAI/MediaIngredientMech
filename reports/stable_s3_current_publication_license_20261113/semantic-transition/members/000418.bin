@@ -1,0 +1,113 @@
+identifier: CHEBI:208735
+preferred_term: Atrop Abyssomicin C
+ontology_mapping:
+  ontology_id: CHEBI:208735
+  ontology_label: Atrop-Abybetaomicin C
+  ontology_source: CHEBI
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: kg-microbe metatraits unmapped_compounds.tsv
+    notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
+      MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
+      CHEBI:208735(Atrop-Abybetaomicin C), CHEBI:70593(Abyssomicin I), CHEBI:226794(Atrop-Ilyoresorcy
+      A). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:atrop_abyssomicin_c after OLS returned
+      mesh:C509797 with exact synonym "Atrop Abyssomicin C".
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier mesh:C509797 -> CHEBI:208735; ontology mesh:C509797 (''abyssomicin
+      C'') -> CHEBI:208735 (''Atrop-Abybetaomicin C''); mapping_quality EXACT_MATCH
+      -> MANUAL_CURATION. MeSH SCR C509797 is ''abyssomicin C''; NLM lists ''atrop-abyssomicin
+      C'' as a separate, narrower concept (M0511053) that OLS flattened into a synonym,
+      so the record sat on the broader compound. ChEBI has the atropisomer as CHEBI:208735
+      ''Atrop-Abybetaomicin C'' (the label''s ''ss'' was corrupted to ''beta'' upstream),
+      C19H22O6, InChIKey FNEADFUPWHAVTA-PLNGDYQASA-N, which equals PubChem CID 23232701
+      ''atrop-abyssomicin C''. No name matches lexically because of the corruption
+      and the record has no CAS, so the grade is MANUAL_CURATION: identity rests on
+      the InChIKey/IUPAC agreement.'
+synonyms:
+- synonym_text: atrop-abyssomicin C
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-26T04:54:19.839959+00:00'
+  curator: audit_curate_unmapped_kgm_antibiotics
+  action: CREATED_FROM_KGM_PLACEHOLDER
+  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:atrop_abyssomicin_c;
+    OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier
+    kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.285969+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.620645+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:atrop_abyssomicin_c → mesh:C509797 after EBI
+    OLS exact synonym match to "Atrop Abyssomicin C".
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Atrop-abyssomicin_C.yaml (UNMAPPED_0591);
+    MESH target mesh:C509797 resolves in EBI OLS and the source label is an exact
+    variant of the mapped record.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386427+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-23T00:44:54.462592+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier mesh:C509797 -> CHEBI:208735; ontology mesh:C509797 (''abyssomicin
+    C'') -> CHEBI:208735 (''Atrop-Abybetaomicin C''); mapping_quality EXACT_MATCH
+    -> MANUAL_CURATION. MeSH SCR C509797 is ''abyssomicin C''; NLM lists ''atrop-abyssomicin
+    C'' as a separate, narrower concept (M0511053) that OLS flattened into a synonym,
+    so the record sat on the broader compound. ChEBI has the atropisomer as CHEBI:208735
+    ''Atrop-Abybetaomicin C'' (the label''s ''ss'' was corrupted to ''beta'' upstream),
+    C19H22O6, InChIKey FNEADFUPWHAVTA-PLNGDYQASA-N, which equals PubChem CID 23232701
+    ''atrop-abyssomicin C''. No name matches lexically because of the corruption and
+    the record has no CAS, so the grade is MANUAL_CURATION: identity rests on the
+    InChIKey/IUPAC agreement. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+chemical_properties:
+  molecular_formula: C19H22O6
+  inchi: InChI=1S/C19H22O6/c1-8-6-9(2)14(21)13-17-19(25-18(13)23)7-10(3)16(24-17)15(22)11(19)4-5-12(8)20/h4-5,8-11,15-16,22H,6-7H2,1-3H3/b5-4-
+  smiles: CC1CC(C)C(=O)C2=C3OC4C(C)CC3(OC2=O)C(/C=CC1=O)C4O
+  data_source: structure from chebi.db CHEBI:208735 (#312)
+  pubchem_cid: 23232701

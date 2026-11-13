@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-11-12T14:10:04.025624+00:00",
+  "finished_utc": "2026-11-12T14:10:05.449130+00:00",
+  "resolver": "mediaingredientmech.utils.oaklib_cache.db_path(CHEBI)",
+  "resolver_code": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/stable-source-successor-real-canary-target/src/mediaingredientmech/utils/oaklib_cache.py",
+    "sha256": "771d202e9e290ec360569f41468cde244250f8f7a627ba29163437941e60331e",
+    "bytes": 3754
+  },
+  "database": {
+    "path": "/Users/marcin/.data/oaklib/chebi.db",
+    "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+    "bytes": 4137340928,
+    "mtime_ns": 1791961401274785795,
+    "inode": 14617069
+  },
+  "read_only": true,
+  "query": "SELECT subject,predicate,object,value,datatype FROM statements WHERE subject IN (?,?) AND predicate IN (?,?,?,?,?) ORDER BY subject,predicate,object,value",
+  "parameters": [
+    "CHEBI:15382",
+    "CHEBI:16680",
+    "rdfs:label",
+    "oboInOwl:hasExactSynonym",
+    "oboInOwl:hasRelatedSynonym",
+    "oboInOwl:hasDbXref",
+    "owl:deprecated"
+  ],
+  "rows": [
+    {
+      "subject": "CHEBI:15382",
+      "predicate": "rdfs:label",
+      "object": null,
+      "value": "(4R)-limonene",
+      "datatype": null
+    },
+    {
+      "subject": "CHEBI:16680",
+      "predicate": "rdfs:label",
+      "object": null,
+      "value": "S-adenosyl-L-homocysteine",
+      "datatype": null
+    }
+  ],
+  "canonical_labels": {
+    "CHEBI:15382": "(4R)-limonene",
+    "CHEBI:16680": "S-adenosyl-L-homocysteine"
+  },
+  "result": "PASS",
+  "limitation": "One focused read-only semsql lookup in the configured local cache. This is not a full-corpus OAK/SSSOM/scientific/release validation. No database refresh or gate changed."
+}

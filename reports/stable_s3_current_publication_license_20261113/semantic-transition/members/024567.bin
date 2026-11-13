@@ -1,0 +1,96 @@
+identifier: CHEBI:29995
+preferred_term: Aspartate
+ontology_mapping:
+  ontology_id: CHEBI:29995
+  ontology_label: aspartate(2-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:aspartate; '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#319)
+    notes: 'Re-grounded CHEBI:132943 -> CHEBI:29995. CHEBI:132943 is the charge-agnostic
+      parent whose children are aspartate(2-) and aspartate(1-), so a bare label sitting
+      on it declines to state a protonation state. The sibling record Glutamate —
+      same amino-acid family, same bare-label form, same import — is on CHEBI:29987
+      glutamate(2-), and 30 other bare -ate labels in this corpus are likewise on
+      charged terms. Both terms are stereo-agnostic, so no stereochemical claim is
+      added; ''aspartate'' is a ChEBI synonym of CHEBI:29995, so the lexical evidence
+      survives. Counter-argument on record: MAPPING_SEMANTICS §3 step 4 would keep
+      an evidence-free under-specified label on the parent, and Malate (same hierarchy
+      shape) does exactly that — §3 does not address protonation, which #319 tracks.'
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 12
+  media_count: 12
+  source_occurrences:
+  - source: microbedecoder
+    count: 431
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:aspartate; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: reground_aspartate
+  action: REGROUNDED_CHARGE_STATE
+  changes: identifier/ontology_id CHEBI:132943 -> CHEBI:29995; ontology_label 'aspartate'
+    -> 'aspartate(2-)'; mapping_quality -> SYNONYM_MATCH (#319).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.520207+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 12/12 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000395; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C4H5NO4
+  smiles: NC(CC(=O)[O-])C(=O)[O-]
+  inchi: InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)/p-2
+  molecular_weight: 131.087
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:25:25.555967+00:00'
+mim_id: MIM:0000395
+legacy_identifiers:
+- MIM:Aspartate
+- CHEBI:29995

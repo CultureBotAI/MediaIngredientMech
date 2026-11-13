@@ -1,0 +1,76 @@
+identifier: CHEBI:26835
+preferred_term: Sulfur compounds
+ontology_mapping:
+  ontology_id: CHEBI:26835
+  ontology_label: sulfur molecular entity
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: kgm-metatraits
+    notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:sulfur_compounds; '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:26835 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Sulfur compounds' does not equal the term label 'sulfur molecular entity'.
+      EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded
+      because plural of the same class.
+synonyms:
+- synonym_text: 'oxidation in darkness: sulfur compounds'
+  synonym_type: REJECTED_LABEL
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T20:14:01.918670+00:00'
+  curator: audit_import_ingredients[kgm-metatraits]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:sulfur_compounds; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.505747+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.702443+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); plural of the same
+    class.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''oxidation
+    in darkness: sulfur compounds''. Tokens already present on the kg-microbe ontology
+    node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''oxidation
+    in darkness: sulfur compounds''. Preserved original text and source metadata.
+    No identity, mapping, role, or remaining-synonym claim was adjudicated.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002428; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002428
+legacy_identifiers:
+- MIM:Sulfur_Compounds
+- CHEBI:26835

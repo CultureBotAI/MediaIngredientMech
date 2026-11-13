@@ -1,0 +1,16 @@
+{
+  "before_packet": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-operation-admissibility-v1",
+  "before_summary": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-operation-admissibility-v1/SUMMARY.json",
+    "sha256": "b2830cce067ac1fe1877eeed316b386244e78559eaaa1d2a9a97ad9def237173"
+  },
+  "defect": "Preliminary component-hold display used non-schema mim_id/quantity/unit keys, incorrectly treating every component as ungrounded. It did not alter a payload, source review or readiness classification.",
+  "correct_native_fields": [
+    "component_id",
+    "reference_scope",
+    "concentration_value",
+    "concentration_unit"
+  ],
+  "new_scope": "All935 actual complete current payloads re-read; UNMAPPED means reference_scopeUNMAPPED or absent component_id. Historical v1 is retained and superseded for this display.",
+  "no_schema_or_gate_change": true
+}

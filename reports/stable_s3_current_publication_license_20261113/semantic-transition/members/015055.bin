@@ -1,0 +1,81 @@
+identifier: kgmicrobe.ingredient:cerophyll
+preferred_term: Cerophyll
+synonyms:
+- synonym_text: Cerophyll
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2360); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a named commercial preparation and left unmapped pending
+    source-backed composition or product-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Cerophyll-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `Cerophyll` most
+    likely denotes **Cerophyl**, a named historical commercial preparation made from
+    young cereal-grass shoots. It is a botanical, compositionally complex product—not
+    a single chemical, salt, hydrate, buffer, or chemically defined medium component.
+    The strongest review-level evidence calls Cerophyl the first commercial product
+    made from young shoots of  No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Promote existing named Cerophyll dry botanical material to local registry
+    identity at demonstrated cereal-grass-leaf scope. Proposal only; inherited publication/role/source
+    holds remain.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.190287+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2360); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named commercial preparation pending
+  product-specific composition curation. Source-qualified botanical material: cereal
+  grass leaves called Cerophyll in CCAPC61. Historical product compositions vary;
+  do not infer rye-only, wheat-only or a four-cereal mixture from a current supplier.
+  No infusion yield or molecular composition asserted.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:cerophyll
+  ontology_label: Cerophyll
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/medium/C61
+    notes: CCAPC61 uses dry Cerophyll cereal grass leaves before boiling in seawater
+      and filtering. Local named botanical product identity does not imply a particular
+      cereal species or equivalence to the resulting infusion.

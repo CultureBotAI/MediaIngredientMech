@@ -1,0 +1,80 @@
+{
+  "decision_id": "W04-TENVIT-FINAL-DISPOSITION-001",
+  "at": "2026-11-08T10:16:10.652497+00:00",
+  "author": "worker04 /root independent final disposition reviewer",
+  "disposition": "DOCUMENT_ONE_SHARED_NOMINAL_RECIPE_ASSOCIATION; RETAIN_TWO_EXISTING_SOURCE_PROFILES; NO_NEW_OWNER_OR_EXACT_OWNER_ROUTING",
+  "status": "Bounded source-association decision made; future composed payloads remain unreviewed.",
+  "nominal_group": {
+    "report_id": "TENVIT-NOMINAL-RECIPE-GROUP-001",
+    "identifier_kind": "Report/reconciliation group ID only; not a CURIE, IngredientRecord, registry mint or exported identity node.",
+    "description": "Common nominal ten-vitamin trace recipe, with source-specific ingredient forms, quantity bases and preparation profiles.",
+    "positive_members": [
+      "JCM197 Trace vitamins",
+      "NBRC837 Trace vitamins",
+      "NBRC903 Vitamin solution",
+      "CultureBotHT Mc_vitamins source definition, supported by independent original McCas preparation witness",
+      "CultureBotHT generic Wolfe vitamin mix source definition"
+    ],
+    "basis": "All ten nominal amounts and corresponding named inputs agree; the original McCas100X vitamin recipe supplies a positive practical preparation witness. Section3 permits a recognizable nominal convention with detail retained. Neither source numbers, missing qualifiers nor author/filename order select a unique maintained owner.",
+    "normalization_limit": "g-to-mg conversion compares numeric mass coefficients; it does not convert added-water batches to final-volume concentration, erase explicit cyanocobalamin or DL calcium, or infer X100 scaling.",
+    "exact_entity_identity": false
+  },
+  "existing_profiles": [
+    {
+      "path": "data/ingredients/mapped/Mc_vitamins.yaml",
+      "identifier": "kgmicrobe.ingredient:mc_vitamins",
+      "before_sha256": "59c53dfe4e273ebfc7c3fe86fd4244978868ff1879dcde97af64bbeb61c07123",
+      "association": "Positive nominal recipe-profile association; authentic Mc source continuity stays on this owner.",
+      "source_scope": "Mc table: ten solutes, G_PER_L, explicit D,L-calcium pantothenate, generic B12, X100 metadata. No water or actual CB gas protocol inferred from the independent thesis.",
+      "conditional_correction": "Only separately authored SCI-TENVIT-003 correction is prospectively supported: preserve DL name and0.005G_PER_L, withdraw unsupported D-specific child; exact future bytes not accepted."
+    },
+    {
+      "path": "data/ingredients/mapped/Wolfes_Vitamin_Mix.yaml",
+      "identifier": "kgmicrobe.ingredient:wolfes_vitamin_mix",
+      "before_sha256": "709749bd7c83c38a09400fc1893885ead753847ff9d1cbbe4ec76b431d349738",
+      "reviewed_dependent_sha256": "b64eccf46c271520c27c73bc0a5863e2bc56447d1acf7461a90e3d72f9f4384f",
+      "association": "Positive nominal recipe-profile association; authentic generic CB source continuity stays on this owner.",
+      "source_scope": "CB table: ten solutes, MG_PER_L, explicit cyanocobalamin, generic calcium pantothenate, X100 metadata; whole-stock completeness UNKNOWN, no added carrier/water/phosphate.",
+      "accountability": "Actual W08 a019 dependent origin plus separate W10 full-payload science; W09 precursor authorship remains explicit and is not independent approval."
+    }
+  ],
+  "source_proposals": {
+    "C-P-JCM197": "Do not select this new source-number owner for installation. Retain immutable null-before proposal, complete nominal table, source-specific procedures and every original source/case link as evidence for the single report group.",
+    "vm1201-prop-nbrc903-vitamin": "Same disposition: no new source-number owner installation; preserve exact null-before origin and NBRC903-only occurrence boundary. Do not rewrite either old origin as an existing-owner edit."
+  },
+  "minimally_supported_execution": "Record one nominal recipe group and the two existing source-profile associations in reconciliation metadata now. If future maintained notes are composed, describe the comparison explicitly and cite exact source sections; preserve each owner's own parts, source assertion and history. Do not add an identity predicate or resolving synonym between these existing owners or from the JCM/NBRC labels.",
+  "remaining_relation": "Exact finished-stock/entity equivalence and unique JCM/NBRC source-instance routing to Mc versus generic CB are not established. That stronger relation is not needed for this nominal association decision. A future canonical-owner consolidation is a separate, expressly unauthorized action here, not a missing lot assay or a prerequisite to documenting the recipe.",
+  "future_options": [
+    "Retain these existing separately accountable source profiles and report the supported common nominal recipe association (selected bounded disposition).",
+    "If later authorized, assess a provenance-preserving consolidation/canonical-owner convention against complete existing owners and source routes; preserve every source-specific assertion and history and independently review actual combined bytes.",
+    "Only if a later task needs exact manufactured-stock equality, seek the specific source/protocol/form/basis connection for that claim. Do not restart molecular/lot research merely to retain the nominal recipe."
+  ],
+  "no_new_permission_or_assay_gate": true,
+  "retained_scope": {
+    "cases": 8,
+    "CM_occurrences": 71,
+    "separate_KG_holds": 84,
+    "excluded_contexts": 6,
+    "nominal_context_upper_bound": 65,
+    "newly_approved_owner_routes": 0
+  },
+  "preserved_boundaries": [
+    "JCM/NBRC generic B12 and calcium stereochemistry remain UNMAPPED; no inherited McDL or CBcyanocobalamin specificity.",
+    "JCM197 alone explicitly stocks underN2 filtration; NBRC sources do not specify stock gas. Missing detail proves neither same nor different gas state.",
+    "Added1Lwater is not final1L or concentration. W06 has separateMG andL; W08 has source-batch units.",
+    "McCas protocol100X and anaerobic preparation context stay with that source; it is not demonstrated CB import genealogy.",
+    "ATCC2672 protocol is corroborative context, not proof currentMD-VS is the ten-solute preparation. ActualMD-VS has phosphate/product boundary; TV001–004 remain.",
+    "NCMA eleven-solute phosphate source remains separately positive, water unquantified. Stale nominalCB/phosphate wording stays existing1237 follow-up.",
+    "Original identities, histories, historical counts, source-specific exclusions, JCM887/dose holds, roles and exports remain unapproved."
+  ],
+  "approval": {
+    "nominal_recipe_profile_association": true,
+    "new_owner": false,
+    "maintained_merge": false,
+    "exact_entity_mapping": false,
+    "source_occurrence_route": false,
+    "future_candidate_bytes": false,
+    "roles": false,
+    "exports": false
+  }
+}

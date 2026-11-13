@@ -1,0 +1,109 @@
+id: CultureMech:007839
+name: bsw3_agar
+original_name: BSW3 Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: SEMI_DEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.3
+ingredients:
+- preferred_term: Yeast extract (BD-Difco)
+  concentration:
+    value: '0.4'
+    unit: G_PER_L
+  source: MediaDive J1216
+  notes: MediaDive J1216 lists 0.4 g/L Yeast extract with the BD-Difco attribute;
+    the product is source-disclosed but not reducible to one ChEBI molecule.
+- preferred_term: Malt extract (BD-Difco)
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  source: MediaDive J1216
+  notes: MediaDive J1216 lists 1 g/L Malt extract with the BD-Difco attribute; the
+    product is source-disclosed but not reducible to one ChEBI molecule.
+- preferred_term: Glucose
+  concentration:
+    value: '0.4'
+    unit: G_PER_L
+  source: MediaDive J1216
+  notes: MediaDive J1216 lists 0.4 g/L glucose.
+  term:
+    id: CHEBI:17234
+    label: glucose
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  source: MediaDive J1216
+  notes: MediaDive J1216 lists 15 g/L agar as the solidifying component.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: 0.1 x Artificial seawater
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: MediaDive J1216
+  notes: MediaDive J1216 lists 1000 ml/L artificial 0.1x Sea water.
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust BSW3 Agar to pH 7.3.
+media_term:
+  preferred_term: TOGO Medium M1304
+  term:
+    id: TOGO:M1304
+    label: BSW3 Agar
+notes: MediaDive J1216 records JCM-sourced BSW3 Agar with 0.4 g/L yeast extract, 1
+  g/L malt extract, 0.4 g/L glucose, 15 g/L agar, 1 L artificial 0.1x sea water, and
+  pH 7.3.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:54.325044Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M1304'
+- timestamp: '2026-01-28T19:48:26.652775Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:51.875523Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007839'
+- timestamp: '2026-03-17T06:30:22.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:10.314311+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "BSW3 Agar" to "bsw3_agar" for consistent matching
+- timestamp: '2026-06-05T07:40:32.214264+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_togo_m1304_score15.py
+  action: RESOLVED_TOGO_M1304_SCORE15
+  source: https://togomedium.org/medium/M1304; https://mediadive.dsmz.de/rest/medium/J1216
+  notes: MediaDive J1216 records JCM-sourced BSW3 Agar with 0.4 g/L yeast extract,
+    1 g/L malt extract, 0.4 g/L glucose, 15 g/L agar, 1 L artificial 0.1x sea water,
+    and pH 7.3. Removed kg_microbe_match mediadive.medium:7 because MediaDive medium
+    7 is Ancylobacter-Spirosoma Medium, not BSW3 Agar.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1304
+- reference: https://mediadive.dsmz.de/rest/medium/J1216

@@ -1,0 +1,54 @@
+identifier: UNMAPPED_0012
+preferred_term: 'Soilwater: GR+ Medium'
+synonyms:
+- synonym_text: 'Soilwater: GR+ Medium'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 15
+  media_count: 15
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T09:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Soilwater GR+ medium formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Soilwater_Gr_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `Soilwater: GR+
+    Medium` is a **named, supplier-associated culture-medium supplement/formulation**,
+    not a single chemical, salt, hydrate, buffer, or synonym of Bristol medium. The
+    strongest retrieved evidence uses the exact expanded name **“UTEX Soilwater: GR+
+    Medium”** and reports it as a supplement added to Bristol-medium agar slants for
+    culturing *Penium margarita No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002909; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 as a named Soilwater
+  GR+ medium formulation pending recipe-level curation.'
+ingredient_type: NAMED_MEDIUM
+mim_id: MIM:0002909
+legacy_identifiers:
+- MIM:Soilwater_Gr_Medium
+- UNMAPPED_0012

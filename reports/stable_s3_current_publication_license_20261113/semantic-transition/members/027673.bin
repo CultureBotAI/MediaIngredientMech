@@ -1,0 +1,116 @@
+identifier: CHEBI:62318
+preferred_term: D-lyxose
+synonyms:
+- synonym_text: (2)-D-lyxose
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: D-(-)-lyxose
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#398)
+- synonym_text: D-lyxo-pentose
+  synonym_type: EXACT_SYNONYM
+  source: MERGED_FROM D-(-)-lyxose (#398)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0783 -> CHEBI:62318 "D-lyxose" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); a corrupted numeric
+    prefix on the same sugar.
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: correct_labels_keep_raw
+  action: CORRECTED_PREFERRED_TERM
+  changes: 'Corrected preferred_term ''(2)-D-lyxose'' -> ''D-lyxose''. The ''(2)''
+    is a mangled character from the microbedecoder ingest (source_id=kgmicrobe.trait:2_d_lyxose)
+    and carries no recoverable information — the sibling record ''D-(-)-lyxose'' suggests
+    it was a ''(-)'' optical-rotation descriptor, but that is inference, not evidence,
+    so it is dropped rather than reconstructed. The corrected label is CHEBI:62318''s
+    own label, which the record already maps to at exactMatch. The original is kept
+    as a RAW_TEXT synonym so any source string still resolves. Applied under the rule
+    agreed for #396: MIM''s subject_label became the KG''s canonical name for the
+    mapped ontology term when kg-microbe made MIM the naming authority, so a damaged
+    or source-language label is published as that term''s name. Correct the label;
+    keep the raw one.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: MERGED_FROM
+  changes: 'Absorbed ''D-(-)-lyxose'' (CHEBI:16789 aldehydo- form) into CHEBI:62318
+    (#398). Both records name the same substance — the muramic pair carry an identical
+    CAS and formula — split across a ChEBI class term and its open-chain aldehydo-
+    form. The class term wins because the identifier optimises for how the node READS
+    in the knowledge graph: no catalogue sells an ''aldehydo-'' tautomer, and MIM
+    is kg-microbe''s naming authority, so grounding here would rename the ChEBI node
+    after a minor solution-equilibrium component. ChEBI does hang the commercial CAS
+    (1114-34-7) on the aldehydo- term, which is why the earlier reading of the orderability
+    rule pointed the other way; that CAS is now carried in supplied_form and republished
+    as a synonym, so nothing purchasable is lost from the identity. Occurrences 0/0
+    + 0/0 -> 0/0.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: FOLDED_MERGED_SYNONYMS
+  changes: 'Folded 1 synonym(s) from ''D-(-)-lyxose'': [''D-lyxo-pentose'']. The merge
+    kept the loser''s LABEL but left its own synonyms on the tombstone. They still
+    resolved via label_index, which publishes REJECTED rows, but the tombstone''s
+    SSSOM row was dropped — so they no longer reached KGX. These are real chemical
+    names (D-Lyx, D-lyxo-pentose, the systematic forms), not notation noise.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000003; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:62318
+  ontology_label: D-lyxose
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
+      PR #201) + local CHEBI verification'
+    notes: (2)-D-lyxose parse artifact of D-lyxose; exact match to CHEBI:62318.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:62318 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      '(2)-D-lyxose' does not equal the term label 'D-lyxose'. EXACT_MATCH therefore
+      asserted an identity the pair does not have. Re-graded because a corrupted numeric
+      prefix on the same sugar.
+supplied_form:
+- name: D-(-)-Lyxose
+  cas_rn: 1114-34-7
+  notes: The CAS ChEBI attaches to CHEBI:16789, the open-chain form. It is what a
+    lab orders; the record is grounded at the class term so the graph node reads sensibly,
+    and publish_cas_as_synonym.py republishes this CAS as a synonym on that node.
+mim_id: MIM:0000003
+legacy_identifiers:
+- MIM:~282~29-D-lyxose
+- CHEBI:62318

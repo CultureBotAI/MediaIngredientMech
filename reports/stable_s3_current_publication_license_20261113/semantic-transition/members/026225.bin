@@ -1,0 +1,61 @@
+identifier: CHEBI:8206
+preferred_term: Picrotoxinin
+ontology_mapping:
+  ontology_id: CHEBI:8206
+  ontology_label: picrotoxinin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT.
+synonyms:
+- synonym_text: (1R,3R,5S,8S,9R,12S,13R,14R)-1-hydroxy-13-methyl-14-(prop-1-en-2-yl)-4,7,10-trioxapentacyclo[6.4.1.1(9,12).0(3,5).0(5,13)]tetradecane-6,11-dione
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:04:17.380972+00:00'
+  curator: audit_integrate_culturebotht
+  action: CREATED_FROM_CULTUREBOTHT
+  changes: Created from CultureBotHT compounds_to_cas.csv (CAS=17617-45-7); Imported
+    from CultureBotHT.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.798595+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.912171+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C15H16O6; inchi=InChI=1S/C15H16O6/c1-5(2)7-8-11(16)19-9(7)10-13(3);
+    smiles=[H][C@@]12C[C@@]3(O)[C@H]4C(=O)O[C@H]([C@H]4C(=C)C
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.767536+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002052; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 17617-45-7
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C15H16O6
+  inchi: InChI=1S/C15H16O6/c1-5(2)7-8-11(16)19-9(7)10-13(3)14(8,18)4-6-15(13,21-6)12(17)20-10/h6-10,18H,1,4H2,2-3H3/t6-,7+,8-,9-,10-,13-,14-,15+/m1/s1
+  smiles: '[H][C@@]12C[C@@]3(O)[C@H]4C(=O)O[C@H]([C@H]4C(=C)C)[C@@]4([H])OC(=O)[C@]1(O2)[C@@]34C'
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002052
+legacy_identifiers:
+- MIM:Picrotoxinin
+- CHEBI:8206

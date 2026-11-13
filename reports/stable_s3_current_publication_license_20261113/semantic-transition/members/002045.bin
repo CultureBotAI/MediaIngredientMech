@@ -1,0 +1,63 @@
+identifier: CHEBI:8055
+preferred_term: Phenazine methosulfate
+ontology_mapping:
+  ontology_id: CHEBI:8055
+  ontology_label: 5-methylphenazinium methyl sulfate
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti.'
+synonyms:
+- synonym_text: 5-methylphenazin-5-ium methyl sulfate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=299-11-6; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.749895+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.860664+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C13H11N2.CH3O4S; inchi=InChI=1S/C13H11N2.CH4O4S/c1-15-12-8-4-2-6-10(12)14;
+    smiles=COS(=O)(=O)[O-].C[n+]1c2ccccc2nc2ccccc21
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.706024+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 299-11-6 uniquely resolves
+    by ChEBI xref to CHEBI:8055 '5-methylphenazinium methyl sulfate'. CAS_RN_LOOKUP
+    records the method that established this mapping; a lexical grade would discard
+    that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
+    remains skos:exactMatch under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 299-11-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C13H11N2.CH3O4S
+  inchi: InChI=1S/C13H11N2.CH4O4S/c1-15-12-8-4-2-6-10(12)14-11-7-3-5-9-13(11)15;1-5-6(2,3)4/h2-9H,1H3;1H3,(H,2,3,4)/q+1;/p-1
+  smiles: COS(=O)(=O)[O-].C[n+]1c2ccccc2nc2ccccc21
+ingredient_type: SINGLE_INGREDIENT

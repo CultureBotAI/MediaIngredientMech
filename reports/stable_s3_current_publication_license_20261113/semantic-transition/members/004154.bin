@@ -1,0 +1,266 @@
+id: CultureMech:000078
+name: k35
+category: algae
+sources:
+- database: CCAP
+  database_id: K35
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_K35.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for freshwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_K35.pdf
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- curator: ccap-import
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: K35, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_K35.pdf'
+  timestamp: '2026-01-28T00:00:00+00:00'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-02-03T11:26:43.517763'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.101323Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000078'
+- timestamp: '2026-03-17T19:45:04.055810+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "K35" to "k35" for consistent matching
+- timestamp: '2026-04-04T12:54:54.905203'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  changes: Replaced placeholder with 14 curated ingredients from CCAP
+  source: CCAP Medium MR_K35.pdf
+- timestamp: '2026-05-16T08:57:02.421037+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:56.618673+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2; references.reference_id->reference=2;
+    category->lowercase=1
+- timestamp: '2026-08-25T00:00:00-07:00'
+  curator: repair_ccap_instruction_rows.py
+  action: REPAIRED_CCAP_INSTRUCTION_ROWS
+  changes: ingredients 14 -> 13
+  notes: Repaired preparation text and nested-recipe flattening against CCAP MR_K35.pdf.
+    Moved process statements to preparation_steps and restored source-asserted components
+    or constituent-medium references where applicable.
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:K35; https://www.ccap.ac.uk/wp-content/uploads/MR_K35.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:K35
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_K35.pdf
+ingredients:
+- preferred_term: First, add to 50 ml of deionised water and pH to 7.2 with
+  notes: Ontology mapping not yet available; From CCAP Medium MR_K35.pdf; Curated
+    from CCAP Medium MR_K35.pdf specification
+  concentration:
+    value: '2'
+    unit: MOLAR
+  source: CCAP Medium MR_K35.pdf
+- preferred_term: Na EDTA
+  term:
+    id: CHEBI:64734
+    label: EDTA disodium salt (anhydrous)
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905164'
+    ontology_source: CHEBI
+  concentration:
+    value: '8.32'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: FeCl3 x 6 H2O
+  term:
+    id: CHEBI:86254
+    label: iron trichloride hexahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 0.95
+    curation_date: '2026-04-04T12:54:54.905176'
+    ontology_source: CHEBI
+  concentration:
+    value: '6.30'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: ZnSO4 x 7 H2O
+  term:
+    id: CHEBI:32312
+    label: zinc sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905179'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.044'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: CoCl2 x 6 H2O
+  term:
+    id: CHEBI:53503
+    label: cobalt chloride hexahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905181'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.02'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: MnCl2 x 4 H2O
+  term:
+    id: CHEBI:86368
+    label: manganese(II) chloride tetrahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905182'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.36'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Na2MoO4 x 2 H2O
+  term:
+    id: CHEBI:75213
+    label: sodium molybdate dihydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905184'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.012'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Cyanocobalamin (Vitamin B )
+  term:
+    id: CHEBI:17439
+    label: cyanocob(III)alamin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905187'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.0005'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905189'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.0005'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Thiamine HCl (Vitamin B )
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905191'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Thiamine HCl (B ) -
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905193'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905194'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+- preferred_term: Cyanocobalamin (B )
+  term:
+    id: CHEBI:17439
+    label: cyanocob(III)alamin
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.905197'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  source: CCAP Medium MR_K35.pdf
+  notes: From CCAP Medium MR_K35.pdf; Curated from CCAP Medium MR_K35.pdf specification
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: K35
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Bring to 1 L with deionised water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH to 8.1-8.4 with 1 M NaOH or 1 M HCl before autoclaving.
+- step_number: 3
+  action: ADD_AGAR
+  description: For an agar formulation, add 15 g/L Bacteriological Agar.
+- step_number: 4
+  action: AUTOCLAVE
+  description: Autoclave at 15 psi for 15 minutes.

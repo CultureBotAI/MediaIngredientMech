@@ -1,0 +1,170 @@
+identifier: cas:150-90-3
+preferred_term: Sodium succinate dibasic
+ontology_mapping:
+  ontology_id: CHEBI:63675
+  ontology_label: sodium succinate (anhydrous)
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#263)
+    notes: 'Re-grounded from CHEBI:150903 (an unrelated trisaccharide glycoside) (#263).
+      Disodium succinate has no CHEBI entry (checked OAK CHEBI sqlite), so the record
+      takes its CAS-RN as identifier with a narrowMatch to the parent acid, following
+      the established cas: pattern (MAPPING_SEMANTICS.md Section 3). CAS-RN 150-90-3
+      was already correct.'
+  - evidence_type: DATABASE_MATCH
+    source: reground_263
+    notes: 'Sodium succinate dibasic is a hydrate/salt with its own CAS and no exact
+      ChEBI term; anchored to the parent CHEBI:15741 ''succinic acid'' by narrowMatch
+      per MAPPING_SEMANTICS.md Section 3 step 2. Disodium succinate has no CHEBI entry;
+      nearest parent is the free acid. Re-grounded from CHEBI:150903 (an unrelated
+      glycoside) in #263.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: narrowMatch parent CHEBI:15741 ('succinic acid') -> CHEBI:63675 ('sodium
+      succinate (anhydrous)'). The record is the disodium salt ('dibasic') but was
+      parented to the free acid, so the counterion was discarded. Its own cas_rn 150-90-3
+      — independent of the ChEBI mapping under test — is registered by ChEBI against
+      CHEBI:63675, whose formula C4H4O4.2Na is the dibasic salt the label names. The
+      record stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.
+synonyms:
+- synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: 6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Fuc(a1-3)[Glc(a1-4)]Gal
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 6
+  media_count: 6
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:53:55.242742+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:150-90-3 from PubChem API via name lookup (Sodium succinate
+    dibasic)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol,
+    6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose,
+    Fuc(a1-3)[Glc(a1-4)]Gal'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.359234+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.452796+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C18H32O15; inchi=InChI=1S/C18H32O15/c1-4-7(21)9(23)11(25)17(29-4)33;
+    smiles=C[C@@H]1O[C@@H](O[C@H]2[C@@H](O[C@H]3O[C@H](CO)[C@
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.516377+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.676755+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-04T05:38:59.201324+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.836846+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sodium succinate dibasic'' -> ''(2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol'':
+    synced to canonical CHEBI label (preferred_term ''Sodium succinate dibasic'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: reground_263
+  action: CORRECTED
+  changes: 'identifier CHEBI:150903 -> cas:150-90-3; ontology term CHEBI:150903 ->
+    CHEBI:15741 (succinic acid). Re-grounded from CHEBI:150903 (an unrelated trisaccharide
+    glycoside) (#263). Disodium succinate has no CHEBI entry (checked OAK CHEBI sqlite),
+    so the record takes its CAS-RN as identifier with a narrowMatch to the parent
+    acid, following the established cas: pattern (MAPPING_SEMANTICS.md Section 3).
+    CAS-RN 150-90-3 was already correct. Dropped molecular_formula, inchi, smiles
+    backfilled from the wrong term.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T01:46:31.068306+00:00'
+  curator: reground_263
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:15741 ''succinic acid''
+    and registry kgmicrobe.compound:sodium_succinate_dibasic. identifier cas:150-90-3
+    unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. Disodium succinate
+    has no CHEBI entry; nearest parent is the free acid. Re-grounded from CHEBI:150903
+    (an unrelated glycoside) in #263.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_cas_conflict_duplicates
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:15741 'succinic acid' -> CHEBI:63675 'sodium succinate
+    (anhydrous)' (#320); the record is the disodium salt and was parented to the free
+    acid.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.520274+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 3/3 -> 6/6 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-21T03:52:08Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 3 synonym(s) non-resolving: [''(2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol'',
+    ''6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose'',
+    ''Fuc(a1-3)[Glc(a1-4)]Gal'']. ChEBI gives these names to CHEBI:150903, not to
+    this record''s cas:150-90-3 -- disodium succinate is not the trisaccharide at
+    CHEBI:150903 -- its CAS 150-90-3 read as an accession. Kept as REJECTED_LABEL
+    so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 150-90-3
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:53:55.242699+00:00'
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+      recommended.

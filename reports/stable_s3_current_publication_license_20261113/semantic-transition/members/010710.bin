@@ -1,0 +1,520 @@
+{
+  "owner_path": "data/ingredients/mapped/Soya_Pepton.yaml",
+  "owner_sha256": "941ffbb12746f06f0d1fcd7a7142947f77836b861ffc670ad0ec7c56696ba85c",
+  "record": {
+    "identifier": "FOODON:03315720",
+    "preferred_term": "Soya pepton",
+    "ontology_mapping": {
+      "ontology_id": "FOODON:03315720",
+      "ontology_label": "vegetable protein, hydrolyzed",
+      "ontology_source": "FOODON",
+      "mapping_quality": "CLOSE_MATCH",
+      "evidence": [
+        {
+          "evidence_type": "CURATOR_JUDGMENT",
+          "source": "cbclaw_followups_114",
+          "notes": "'Soya pepton' is a misspelling of soy peptone (an enzymatic hydrolysate of soybean protein); mapped to FOODON:03315720 (vegetable protein, hydrolyzed), mirroring sibling Soy_Peptone."
+        }
+      ]
+    },
+    "synonyms": [
+      {
+        "synonym_text": "Soya pepton",
+        "synonym_type": "RAW_TEXT",
+        "source": "mim-queue"
+      }
+    ],
+    "mapping_status": "MAPPED",
+    "occurrence_statistics": {
+      "total_occurrences": 1089,
+      "media_count": 833
+    },
+    "curation_history": [
+      {
+        "timestamp": "2026-04-30T18:43:03.698454+00:00",
+        "curator": "audit_import_ingredients[mim-queue]",
+        "action": "CREATED_AS_UNMAPPED",
+        "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1466); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "new_status": "UNMAPPED",
+        "llm_assisted": false
+      },
+      {
+        "timestamp": "2026-05-11T08:03:00Z",
+        "curator": "mediaingredientmech-agentic-curation",
+        "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+        "changes": "Classified as a plant-derived peptone/nutrient digest and left unmapped pending product composition and source-specific ontology curation.",
+        "previous_status": "UNMAPPED",
+        "new_status": "UNMAPPED",
+        "llm_assisted": true
+      },
+      {
+        "timestamp": "2026-07-05T00:00:00+00:00",
+        "curator": "cbclaw_followups_114",
+        "action": "MAPPED",
+        "changes": "Mapped residual peptone variant: identifier UNMAPPED_0531 -> FOODON:03315720 (vegetable protein, hydrolyzed), CLOSE_MATCH, mirroring sibling Soy_Peptone ('Soya pepton' = misspelled soy peptone). mapping_status UNMAPPED -> MAPPED.",
+        "previous_status": "UNMAPPED",
+        "new_status": "MAPPED",
+        "llm_assisted": true
+      },
+      {
+        "timestamp": "2026-08-27T03:16:39.520195+00:00",
+        "curator": "refresh_occurrence_statistics",
+        "action": "CORRECTED",
+        "changes": "occurrence_statistics 0/0 -> 833/1089 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+      }
+    ],
+    "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1466); mapped 2026-07-05 to FOODON:03315720 (vegetable protein, hydrolyzed) as a soy-peptone variant (misspelled 'Soya pepton').",
+    "ingredient_type": "UNDEFINED_MIXTURE"
+  },
+  "all_exact_label_current_occurrences": [
+    {
+      "occurrence": {
+        "recipe_id": "CultureMech:001098",
+        "recipe_label": "tryptic_soy_broth_medium_sigma_t8907_1kg",
+        "recipe_category": "BACTERIAL",
+        "source_path": "bacterial/tryptic_soy_broth_medium_sigma_t8907_1kg.yaml",
+        "record_class": "MediaRecipe",
+        "component_field": "ingredients",
+        "component_index": "1",
+        "preferred_term": "Soya pepton",
+        "label_source": "legacy_name",
+        "resolved_identifier": "FOODON:03315720",
+        "resolution_source": "mim_exact",
+        "local_identifier": "",
+        "source_compound_id": "",
+        "mim_preferred_term": "Soya pepton",
+        "mim_matched_label": "Soya pepton",
+        "mim_match_type": "preferred_term",
+        "mim_mapping_status": "MAPPED",
+        "mim_ambiguity": "unique",
+        "mim_ontology_id_diagnostic": "FOODON:03315720",
+        "grounding_reason": "trusted MIM label-index answer",
+        "concentration_value": "3",
+        "concentration_unit": "G_PER_L",
+        "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"3\"},\"preferred_term\":\"Soya pepton\"}"
+      },
+      "recipe_sha256": "748c5beae7cb6b41f6a466747eff5e249177eda538144899578f5f7e23fdf1ae",
+      "complete_recipe": {
+        "id": "CultureMech:001098",
+        "name": "tryptic_soy_broth_medium_sigma_t8907_1kg",
+        "original_name": "TRYPTIC SOY BROTH MEDIUM (SIGMA T8907-1KG)",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "ph_value": 7.3,
+        "media_term": {
+          "preferred_term": "DSMZ Medium 1617",
+          "term": {
+            "id": "mediadive.medium:1617",
+            "label": "TRYPTIC SOY BROTH MEDIUM (SIGMA T8907-1KG)"
+          }
+        },
+        "notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1617.pdf",
+        "ingredients": [
+          {
+            "preferred_term": "Casein",
+            "concentration": {
+              "value": "17",
+              "unit": "G_PER_L"
+            }
+          },
+          {
+            "preferred_term": "Soya pepton",
+            "concentration": {
+              "value": "3",
+              "unit": "G_PER_L"
+            }
+          },
+          {
+            "preferred_term": "D(+)-Glucose",
+            "term": {
+              "id": "CHEBI:17634",
+              "label": "D-glucose"
+            },
+            "concentration": {
+              "value": "2.5",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:17634",
+              "label": "D-glucose"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/1617",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 3,\n                        \"compound\": \"D(+)-Glucose\",\n                        \"compound_id\": 94,\n                        \"amount\": 2.5,\n                        \"unit\": \"g\",\n                        \"g_l\": 2.5,\n                        \"mmol_l\": 13.8766,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[2].concentration (D(+)-Glucose) in MediaDive medium 1617; locator=$.data.solutions[0].recipe[2]. Provider explicitly reports g_l=2.5; check: 2.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 2.5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:44:26.010434+00:00; response SHA256=3e0aded56103e99cec4a37648ef175a3a64fb37331bb7eaf6cbabf5201347c5e."
+              }
+            ]
+          },
+          {
+            "preferred_term": "NaCl",
+            "term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride"
+            },
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/1617",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 4,\n                        \"compound\": \"NaCl\",\n                        \"compound_id\": 43,\n                        \"amount\": 5,\n                        \"unit\": \"g\",\n                        \"g_l\": 5,\n                        \"mmol_l\": 85.5578,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[3].concentration (NaCl) in MediaDive medium 1617; locator=$.data.solutions[0].recipe[3]. Provider explicitly reports g_l=5; check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:44:26.010434+00:00; response SHA256=3e0aded56103e99cec4a37648ef175a3a64fb37331bb7eaf6cbabf5201347c5e."
+              }
+            ]
+          },
+          {
+            "preferred_term": "K2HPO4",
+            "term": {
+              "id": "CHEBI:131527",
+              "label": "dipotassium hydrogen phosphate"
+            },
+            "concentration": {
+              "value": "2.5",
+              "unit": "G_PER_L"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:131527",
+              "label": "dipotassium hydrogen phosphate"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/medium/1617",
+                "supports": "SUPPORT",
+                "snippet": "{\n                        \"recipe_order\": 5,\n                        \"compound\": \"K2HPO4\",\n                        \"compound_id\": 10,\n                        \"amount\": 2.5,\n                        \"unit\": \"g\",\n                        \"g_l\": 2.5,\n                        \"mmol_l\": 14.3533,\n                        \"optional\": 0\n                    }",
+                "explanation": "Concentration evidence for ingredients[4].concentration (K2HPO4) in MediaDive medium 1617; locator=$.data.solutions[0].recipe[4]. Provider explicitly reports g_l=2.5; check: 2.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 2.5 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:44:26.010434+00:00; response SHA256=3e0aded56103e99cec4a37648ef175a3a64fb37331bb7eaf6cbabf5201347c5e."
+              }
+            ]
+          }
+        ],
+        "preparation_steps": [
+          {
+            "step_number": 1,
+            "action": "ADJUST_PH",
+            "description": "Adjust pH to 7.3."
+          }
+        ],
+        "applications": [
+          "Microbial cultivation"
+        ],
+        "curation_history": [
+          {
+            "timestamp": "2026-06-14T05:58:58.561437+00:00",
+            "curator": "idnf-grounding-fix-v1.0",
+            "action": "Fixed ID_NOT_FOUND term groundings",
+            "notes": "Absent/obsolete CHEBI term ids fixed - 0 re-grounded to the correct CHEBI, 1 de-grounded (mixture or unverifiable)."
+          },
+          {
+            "timestamp": "2026-01-26T17:53:15.021466Z",
+            "curator": "mediadive-import",
+            "action": "Imported from MediaDive",
+            "notes": "Source: DSMZ, ID: 1617"
+          },
+          {
+            "timestamp": "2026-03-13T06:19:01.177923Z",
+            "curator": "culturemech-id-assigner-v1.0",
+            "action": "Assigned CultureMech ID",
+            "notes": "Assigned stable identifier: CultureMech:001098"
+          },
+          {
+            "timestamp": "2026-03-17T06:29:58.000000Z",
+            "curator": "mediaingredientmech-enrichment-v1.0",
+            "action": "Added MediaIngredientMech links",
+            "notes": "Linked ingredients to MediaIngredientMech identifiers"
+          },
+          {
+            "timestamp": "2026-03-17T19:45:12.867515+00:00",
+            "curator": "normalize_media_names_to_snake_case.py",
+            "action": "NAME_NORMALIZED",
+            "notes": "Normalized name from \"TRYPTIC SOY BROTH MEDIUM (SIGMA T8907-1KG)\" to \"tryptic_soy_broth_medium_sigma_t8907_1kg\" for consistent matching"
+          },
+          {
+            "timestamp": "2026-06-05T07:41:54.308197+00:00",
+            "curator": "mim-legacy-to-chebi-migration-v1.0",
+            "action": "Refreshed legacy MediaIngredientMech links to CHEBI keying",
+            "notes": "Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term (id-safe: ingredient's own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN id scheme."
+          },
+          {
+            "timestamp": "2026-06-10T07:47:14.345536+00:00",
+            "curator": "primary-term-label-canonicalization-v1.0",
+            "action": "Canonicalized primary term label to OBO canonical (OAK)",
+            "notes": "1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi."
+          },
+          {
+            "timestamp": "2026-10-07T13:57:59.694168+00:00",
+            "curator": "codex",
+            "action": "CURATED_MEDIUM_CONCENTRATION_SOURCE_EVIDENCE",
+            "notes": "Exact medium/source membership, ingredient inventory/forms, physical-state conditions, literal snippets, and arithmetic checked. Stock boundaries, source-only rows, preparation context, and variants remain explicit follow-up tasks; secondary chemical mappings unchanged.",
+            "source": "https://mediadive.dsmz.de/rest/medium/1617",
+            "changes": "ingredients[2].concentration: {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} (evidence_only); ingredients[3].concentration: {\"unit\": \"G_PER_L\", \"value\": \"5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"5\"} (evidence_only); ingredients[4].concentration: {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} (evidence_only)"
+          }
+        ],
+        "references": [
+          {
+            "reference": "https://mediadive.dsmz.de/rest/medium/1617",
+            "title": "MediaDive medium 1617: TRYPTIC SOY BROTH MEDIUM (SIGMA T8907-1KG)",
+            "notes": "source_type=dataset; discovery_mode=existing_record_reference; source_organization=DSMZ; accessed_on=2026-10-07; locator=$.data.solutions[0]; response_sha256=3e0aded56103e99cec4a37648ef175a3a64fb37331bb7eaf6cbabf5201347c5e; original_recipe=https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1617.pdf; individual authors and publication year not supplied. Provider-declared main-recipe amounts only."
+          }
+        ]
+      }
+    },
+    {
+      "occurrence": {
+        "recipe_id": "CultureMech:012512",
+        "recipe_label": "Main sol. 1617",
+        "recipe_category": "BACTERIAL",
+        "source_path": "bacterial/mediadive_3364_Main_sol_1617.yaml",
+        "record_class": "SolutionRecipe",
+        "component_field": "composition",
+        "component_index": "1",
+        "preferred_term": "Soya pepton",
+        "label_source": "preferred_term",
+        "resolved_identifier": "FOODON:03315720",
+        "resolution_source": "mim_exact",
+        "local_identifier": "",
+        "source_compound_id": "mediadive.compound:1466",
+        "mim_preferred_term": "Soya pepton",
+        "mim_matched_label": "Soya pepton",
+        "mim_match_type": "preferred_term",
+        "mim_mapping_status": "MAPPED",
+        "mim_ambiguity": "unique",
+        "mim_ontology_id_diagnostic": "FOODON:03315720",
+        "grounding_reason": "trusted MIM label-index answer",
+        "concentration_value": "3",
+        "concentration_unit": "G_PER_L",
+        "ingredient_json": "{\"concentration\":{\"unit\":\"G_PER_L\",\"value\":\"3\"},\"preferred_term\":\"Soya pepton\",\"term\":{\"id\":\"mediadive.compound:1466\",\"label\":\"Soya pepton\"}}"
+      },
+      "recipe_sha256": "9941a5d82d5619c492ae6903bf8d3e9573a2877a7a73a46f81ecdab8461c2d84",
+      "complete_recipe": {
+        "id": "CultureMech:012512",
+        "preferred_term": "Main sol. 1617",
+        "term": {
+          "id": "mediadive.solution:3364",
+          "label": "Main sol. 1617"
+        },
+        "composition": [
+          {
+            "preferred_term": "Casein",
+            "concentration": {
+              "value": "17",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:1381",
+              "label": "Casein"
+            }
+          },
+          {
+            "preferred_term": "Soya pepton",
+            "concentration": {
+              "value": "3",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:1466",
+              "label": "Soya pepton"
+            }
+          },
+          {
+            "preferred_term": "D(+)-Glucose",
+            "concentration": {
+              "value": "2.5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:94",
+              "label": "D(+)-Glucose"
+            },
+            "chebi_term": {
+              "id": "CHEBI:17634",
+              "label": "D-glucose",
+              "confidence": 0.9,
+              "match_type": "manual_curated"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3364",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 3,\n                \"compound\": \"D(+)-Glucose\",\n                \"compound_id\": 94,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 2.5,\n                \"unit\": \"g\",\n                \"g_l\": 2.5,\n                \"mmol_l\": 13.8766,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[2].concentration (D(+)-Glucose) in MediaDive solution 3364; locator=$.data.recipe[2] (compound_id=94). Provider explicitly reports g_l=2.5. Arithmetic check: 2.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 2.5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:20:47.735642+00:00; response SHA256=59ae9a4254475b8ebe2ece029a52671fb21c7bae1bfc5cbd1dda96d63f3cd11c."
+              }
+            ]
+          },
+          {
+            "preferred_term": "NaCl",
+            "concentration": {
+              "value": "5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:43",
+              "label": "NaCl"
+            },
+            "chebi_term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3364",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 4,\n                \"compound\": \"NaCl\",\n                \"compound_id\": 43,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 5,\n                \"unit\": \"g\",\n                \"g_l\": 5,\n                \"mmol_l\": 85.5578,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[3].concentration (NaCl) in MediaDive solution 3364; locator=$.data.recipe[3] (compound_id=43). Provider explicitly reports g_l=5. Arithmetic check: 5 g * 1 g/g / (1000 ml / 1000 ml per L) = 5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:20:47.735642+00:00; response SHA256=59ae9a4254475b8ebe2ece029a52671fb21c7bae1bfc5cbd1dda96d63f3cd11c."
+              }
+            ]
+          },
+          {
+            "preferred_term": "K2HPO4",
+            "concentration": {
+              "value": "2.5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:10",
+              "label": "K2HPO4"
+            },
+            "chebi_term": {
+              "id": "CHEBI:131527",
+              "label": "dipotassium hydrogen phosphate",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3364",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 5,\n                \"compound\": \"K2HPO4\",\n                \"compound_id\": 10,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 2.5,\n                \"unit\": \"g\",\n                \"g_l\": 2.5,\n                \"mmol_l\": 14.3533,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[4].concentration (K2HPO4) in MediaDive solution 3364; locator=$.data.recipe[4] (compound_id=10). Provider explicitly reports g_l=2.5. Arithmetic check: 2.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 2.5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:20:47.735642+00:00; response SHA256=59ae9a4254475b8ebe2ece029a52671fb21c7bae1bfc5cbd1dda96d63f3cd11c."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Distilled water",
+            "concentration": {
+              "value": "1",
+              "unit": "L"
+            },
+            "term": {
+              "id": "mediadive.compound:4",
+              "label": "Distilled water"
+            },
+            "chebi_term": {
+              "id": "CHEBI:15377",
+              "label": "water",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3364",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 6,\n                \"compound\": \"Distilled water\",\n                \"compound_id\": 4,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 1000,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[5].concentration (Distilled water) in MediaDive solution 3364; locator=$.data.recipe[5] (compound_id=4). Source-explicit water input: 1000 ml / 1000 ml per L = 1 L per preparation batch. This replaces the importer unit error (1000 PERCENT_V_V), not the recipe formulation. Separately located exact preparation excerpt at $.data.steps[0]: {\n                \"recipe_order\": null,\n                \"step\": \"Adjust pH to 7.3.\"\n            }. The inspected preparation only adjusts pH; it does not instruct make-up to a final volume. This is the listed water input, not a volume percentage, measured final volume, stock strength, or receiving-medium concentration. No density or final-volume assumption is made. Unchanged non-water amounts and chemical mappings are not newly verified by this follow-up. Retrieved 2026-10-07T09:20:47.735642+00:00; response SHA256=59ae9a4254475b8ebe2ece029a52671fb21c7bae1bfc5cbd1dda96d63f3cd11c."
+              }
+            ]
+          }
+        ],
+        "preparation_notes": "Adjust pH to 7.3.",
+        "curation_history": [
+          {
+            "timestamp": "2026-06-14T05:58:58.561437+00:00",
+            "curator": "idnf-grounding-fix-v1.0",
+            "action": "Fixed ID_NOT_FOUND term groundings",
+            "notes": "Absent/obsolete CHEBI term ids fixed - 0 re-grounded to the correct CHEBI, 1 de-grounded (mixture or unverifiable)."
+          },
+          {
+            "timestamp": "2026-03-13T06:20:26.299612Z",
+            "curator": "culturemech-id-assigner-v1.0",
+            "action": "Assigned CultureMech ID",
+            "notes": "Assigned stable identifier: CultureMech:012512"
+          },
+          {
+            "curator": "schema-defaulter-v1.0",
+            "action": "Applied schema defaults and normalizations",
+            "notes": "Added placeholder ingredients for missing composition",
+            "timestamp": "2026-03-14T00:00:00+00:00"
+          },
+          {
+            "timestamp": "2026-03-14T21:09:30.285924",
+            "curator": "quality-tagger-v1.0",
+            "action": "Added data quality flag",
+            "notes": "Marked as incomplete_composition due to placeholder ingredients"
+          },
+          {
+            "timestamp": "2026-04-04T17:50:18.035179",
+            "curator": "categorize_unknown_media",
+            "action": "CATEGORIZED",
+            "changes": "Set category to 'bacterial' (was: MISSING)",
+            "notes": "Automated categorization (confidence: 0.30). No clear match, defaulting to bacterial"
+          },
+          {
+            "timestamp": "2026-05-16T09:03:53.431018+00:00",
+            "curator": "migrate_legacy_fields.py",
+            "action": "MIGRATED_LEGACY_FIELDS",
+            "notes": "curation_history.date->timestamp=1"
+          },
+          {
+            "timestamp": "2026-06-10T06:38:26.595106+00:00",
+            "curator": "kg-fallback-consensus-v1.0",
+            "action": "Replaced low-confidence kg_fallback chebi_term with corpus consensus",
+            "notes": "Re-grounded 2 chebi_term(s) to the unanimous reliable CHEBI for the ingredient label seen elsewhere in the corpus (G25 Phase 1, zero external lookups)."
+          },
+          {
+            "timestamp": "2026-06-10T06:56:14.408420+00:00",
+            "curator": "kg-fallback-llm-curation-v1.0",
+            "action": "LLM-curated low-confidence chebi_term (G25 Phase 3)",
+            "notes": "2 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded as a mixture, or confirmed correct."
+          },
+          {
+            "timestamp": "2026-10-07T09:21:52.094915+00:00",
+            "curator": "codex",
+            "action": "CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE",
+            "notes": "Source review decision captured at plan timestamp. Exact source IDs, labels, snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium concentration inferred.",
+            "source": "https://mediadive.dsmz.de/rest/solution/3364",
+            "changes": "composition[2].concentration: {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} (evidence_only); composition[3].concentration: {\"unit\": \"G_PER_L\", \"value\": \"5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"5\"} (evidence_only); composition[4].concentration: {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} -> {\"unit\": \"G_PER_L\", \"value\": \"2.5\"} (evidence_only)"
+          },
+          {
+            "timestamp": "2026-10-08T02:33:09.688098+00:00",
+            "curator": "codex",
+            "action": "CORRECTED_SOURCE_EXPLICIT_WATER_INPUT_AFTER_PH_ADJUSTMENT_REVIEW",
+            "notes": "Individually inspected source water row and pH-adjustment instruction; literal snippet and locator attached. Existing non-water claims, provenance, preparation, and identifiers preserved. No final-volume inference.",
+            "source": "https://mediadive.dsmz.de/rest/solution/3364",
+            "changes": "composition[5].concentration: 1000 PERCENT_V_V -> 1 L water input per preparation batch (1000 ml / 1000)."
+          }
+        ],
+        "ingredients": [
+          {
+            "preferred_term": "See source for composition",
+            "concentration": {
+              "value": "variable",
+              "unit": "VARIABLE"
+            }
+          }
+        ],
+        "data_quality_flags": [
+          "incomplete_composition"
+        ],
+        "category": "bacterial",
+        "references": [
+          {
+            "reference": "https://mediadive.dsmz.de/rest/solution/3364",
+            "title": "MediaDive solution 3364: Main sol. 1617",
+            "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07; source_organization=DSMZ; locator=$.data; response_sha256=59ae9a4254475b8ebe2ece029a52671fb21c7bae1bfc5cbd1dda96d63f3cd11c; individual authors and publication year not supplied. Provider-declared solution amounts, not receiving-medium concentrations."
+          }
+        ]
+      }
+    }
+  ],
+  "interpretation": "Existing generic soy-peptone spelling owner is a reconciliation dependency, not a newly established separate product. Shared source CAS91079-46-8 and class identifier do not approve specific branded product equivalence."
+}

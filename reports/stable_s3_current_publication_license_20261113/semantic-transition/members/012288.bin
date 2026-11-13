@@ -1,0 +1,85 @@
+identifier: cas:13477-89-9
+preferred_term: NdCl3 x 6 H2O
+synonyms:
+- synonym_text: NdCl3 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1462); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic salt hydrate and left unmapped because no exact local ontology
+    term for neodymium chloride hexahydrate was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/NdCl3_x_6_H2O-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: **Recommended status** | **Current curation decision for UNMAPPED_0479** | **UNMAPPED** |
+    **High** | **No SSSOM row until an exact ontology identifier for neodymium(III) chloride hexahydrate
+    is verified** | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE
+    above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Record verified neodymium trichloride hexahydrate supplied form and chemical properties. Retain
+    UNMAPPED pending exact nearest-parent grounding review. Isolated proposal only; integration requires
+    fresh native review of changed bytes and retains all source and export holds.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:36:28.285714+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Use verified hydrate CAS13477-89-9 and broader current CHEBI37280 under mapping-semantics form-specific
+    identity rule. Coordinator must emit asymmetric skos:broadMatch plus mandatory registry exactMatch.
+    Proposal only; all source and publication holds retained.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1462); no CAS-RN or CHEBI/NCIT match. Curator
+  review needed. Reviewed on 2026-05-11 as a neodymium chloride hydrate formula shorthand; left unmapped
+  pending exact ontology evidence. Current review independently verifies a broader neodymium molecular
+  entity parent; historical demands for an exact hydrate term are superseded for this bounded proposal
+  by the current CAS-plus-parent contract.
+ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: Neodymium(III) chloride hexahydrate
+  cas_rn: 13477-89-9
+  form: hexahydrate
+  notes: MediaDive1462 and FUJIFILM Wako product specification independently confirm NdCl3·6H2O. Wako
+    page is form evidence, not a claim that the source used that supplier.
+chemical_properties:
+  cas_rn: 13477-89-9
+  molecular_formula: NdCl3.6H2O
+  molecular_weight: 358.69
+  data_source: FUJIFILM Wako / MediaDive1462
+  retrieval_date: '2026-11-08T05:18:21.788601+00:00'
+ontology_mapping:
+  ontology_id: CHEBI:37280
+  ontology_label: neodymium molecular entity
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_37280
+    notes: Current nonobsolete neodymium molecular entity is a broader class than the verified chloride
+      hexahydrate. Bounded CHEBI/NCIT exact-CAS searches did not validate an exact hydrate term; preserve
+      its own CAS13477-89-9, not elemental neodymium or anhydrous chloride.

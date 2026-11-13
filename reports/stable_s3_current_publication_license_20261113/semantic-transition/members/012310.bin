@@ -1,0 +1,174 @@
+{
+  "author": "Codex /root/research_a",
+  "at": "2026-11-08T06:36:24.206519+00:00",
+  "finding_id": "W06-IR-002",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+  "proposal_id": "C-P-JCM197",
+  "input_selection": {
+    "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/selection.json",
+    "sha256": "4d716bee7fafb8fe081e1604da305d8ecfd0c05fc3e40bcdf3aa6ba0cd0d157a"
+  },
+  "before_proposed_payload": {
+    "root": "artifact",
+    "path": "research-c/after/JCM_197_Trace_Vitamins.yaml",
+    "sha256": "de17dee3c912e05f2ac460ef85d296a8f6d0a20a175de173233a41cb522b8063"
+  },
+  "after_capture": {
+    "root": "artifact",
+    "path": "successor-v3/research-a/payloads/JCM_197_Trace_Vitamins.yaml",
+    "sha256": "df39fbd897b0f0d38c952fae7788fc3be433d142234fd3a095cac50204db06c1"
+  },
+  "maintained_owner_before_sha256": null,
+  "owner_path": "data/ingredients/mapped/JCM_197_Trace_Vitamins.yaml",
+  "case_ids": [
+    "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+    "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+    "CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9",
+    "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+    "CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3",
+    "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+    "CM_NAME:660f936f7c6bb76f04a43dbae6c6000b0bcea0dee9909eb04f07db0cf50d01a5"
+  ],
+  "scientific_reason": "JCM197 defines the ten-vitamin stock, distinct from JCM284 vitamins and the RM three-vitamin stock. The four bare197 pointers, including singular and starred variants, are occurrence-local references. Keep the qualified JCM197 name and distinct source-specific gas/sterilization instructions. Failed receiving pages and dose holds remain a separate W06-IR-008 matter; no pantothenate stereochemistry is inferred.",
+  "primary_evidence": [
+    {
+      "evidence_id": "C-E-jcm-197",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-197.txt",
+        "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+      "original_accessed_at": "2026-11-08T05:07:31.962895+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-nbrc-837",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/nbrc-837.txt",
+        "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=837",
+      "original_accessed_at": "2026-11-08T05:07:37.113945+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-104",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/c464e732b34c9c65.raw",
+        "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+      "original_accessed_at": "2026-11-08T05:06:57.211128+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "A-E-CAPTURE-107",
+      "capture": {
+        "root": "artifact",
+        "path": "research-a/captures/ea7a1ace8904d63b.raw",
+        "sha256": "a42c0ee8511fa98972e1660199908c92b985aef9e59ea92c02bdc7d1911afd97"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362",
+      "original_accessed_at": "2026-11-08T05:06:57.450560+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    }
+  ],
+  "alias_changes": [
+    {
+      "proposal_id": "C-P-JCM197",
+      "field": "synonyms/0",
+      "before": {
+        "synonym_text": "Trace vitamins (see Medium No. 197)",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM197 stock reference; CultureMech frozen shard06"
+      },
+      "after": {
+        "synonym_text": "Trace vitamins (see Medium No. 197)",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "JCM197 stock reference; CultureMech frozen shard06"
+      },
+      "source_context_reason": "JCM197 defines the ten-vitamin stock, distinct from JCM284 vitamins and the RM three-vitamin stock. The four bare197 pointers, including singular and starred variants, are occurrence-local references. Keep the qualified JCM197 name and distinct source-specific gas/sterilization instructions. Failed receiving pages and dose holds remain a separate W06-IR-008 matter; no pantothenate stereochemistry is inferred.",
+      "before_resolves": true,
+      "after_resolves": false
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "field": "synonyms/1",
+      "before": {
+        "synonym_text": "Trace vitamin (see Medium No. 197 )",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM197 stock reference; CultureMech frozen shard06"
+      },
+      "after": {
+        "synonym_text": "Trace vitamin (see Medium No. 197 )",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "JCM197 stock reference; CultureMech frozen shard06"
+      },
+      "source_context_reason": "JCM197 defines the ten-vitamin stock, distinct from JCM284 vitamins and the RM three-vitamin stock. The four bare197 pointers, including singular and starred variants, are occurrence-local references. Keep the qualified JCM197 name and distinct source-specific gas/sterilization instructions. Failed receiving pages and dose holds remain a separate W06-IR-008 matter; no pantothenate stereochemistry is inferred.",
+      "before_resolves": true,
+      "after_resolves": false
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "field": "synonyms/2",
+      "before": {
+        "synonym_text": "Trace vitamins (see Medium No. 197 )",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+      },
+      "after": {
+        "synonym_text": "Trace vitamins (see Medium No. 197 )",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+      },
+      "source_context_reason": "JCM197 defines the ten-vitamin stock, distinct from JCM284 vitamins and the RM three-vitamin stock. The four bare197 pointers, including singular and starred variants, are occurrence-local references. Keep the qualified JCM197 name and distinct source-specific gas/sterilization instructions. Failed receiving pages and dose holds remain a separate W06-IR-008 matter; no pantothenate stereochemistry is inferred.",
+      "before_resolves": true,
+      "after_resolves": false
+    },
+    {
+      "proposal_id": "C-P-JCM197",
+      "field": "synonyms/3",
+      "before": {
+        "synonym_text": "Trace vitamins* (see Medium No. 197 )",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+      },
+      "after": {
+        "synonym_text": "Trace vitamins* (see Medium No. 197 )",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "JCM197 stock reference; worker06 parallel author verified receiving recipe; coordinator must attach corresponding case backlink"
+      },
+      "source_context_reason": "JCM197 defines the ten-vitamin stock, distinct from JCM284 vitamins and the RM three-vitamin stock. The four bare197 pointers, including singular and starred variants, are occurrence-local references. Keep the qualified JCM197 name and distinct source-specific gas/sterilization instructions. Failed receiving pages and dose holds remain a separate W06-IR-008 matter; no pantothenate stereochemistry is inferred.",
+      "before_resolves": true,
+      "after_resolves": false
+    }
+  ],
+  "canonical_label_change": {
+    "before_preferred": "JCM 197 trace vitamins",
+    "after_preferred": "JCM 197 trace vitamins",
+    "before_ontology_label": "JCM 197 trace vitamins",
+    "after_ontology_label": "JCM 197 trace vitamins",
+    "external_id_label_preserved": true
+  },
+  "unchanged_fields": [
+    "identifier",
+    "mapping_status",
+    "ontology_id",
+    "mapping_quality",
+    "components",
+    "component_assertion",
+    "supplied_form if present",
+    "all raw synonym text and source",
+    "all prior history",
+    "source holds"
+  ],
+  "applicability_limit": "Existing occurrence-scoped formulation support only. No collection is inferred from a bare medium number; C/root separately correct W06-IR-010 and W06-IR-008. Existing unrelated scientific claims are not recertified.",
+  "independent_review": {
+    "status": "pending"
+  },
+  "maintained_write": false,
+  "source_owner_export_approval": false
+}

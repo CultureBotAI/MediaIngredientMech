@@ -1,0 +1,75 @@
+id: CultureMech:002267
+name: poremedia_b_cye_945_agar_medium
+original_name: POREMEDIA B-CYE&#945; AGAR MEDIUM
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+media_term:
+  preferred_term: JCM Medium J1087
+  term:
+    id: mediadive.medium:J1087
+    label: POREMEDIA B-CYE&#945; AGAR MEDIUM
+notes: JCM Medium 1087 instructs users to use POREMEDIA B-CYE alpha Agar Medium from
+  Eiken Chemical; the source does not disclose an amount or internal formulation.
+ingredients:
+- preferred_term: POREMEDIA B-CYE alpha Agar Medium (Eiken Chemical)
+  concentration:
+    value: variable
+    unit: VARIABLE
+  source: JCM Medium 1087
+  notes: JCM Medium 1087 names an Eiken Chemical commercial POREMEDIA B-CYE alpha
+    Agar Medium product without stating its amount or internal formulation.
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Use the commercially available POREMEDIA B-CYE alpha Agar Medium manufactured
+    by Eiken Chemical.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:18.585961Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: JCM, ID: J1087'
+- timestamp: '2026-02-03T11:26:52.891086'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:19:11.799788Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:002267'
+- timestamp: '2026-03-17T19:45:24.668611+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "POREMEDIA B-CYE&#945; AGAR MEDIUM" to "poremedia_b_cye_945_agar_medium"
+    for consistent matching
+- timestamp: '2026-04-05T17:20:25.587311'
+  curator: mark_unavailable_media
+  action: MARKED_UNAVAILABLE
+  changes: Marked as source_information_unavailable
+  notes: 'Source database has no composition data. Category: COMMERCIAL. Commercial
+    product (Eiken)'
+- timestamp: '2026-05-16T08:58:13.005545+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(2 keys) -> list(2 entries)
+- timestamp: '2026-08-06T07:56:36.127741+00:00'
+  curator: curate_placeholder_composition.py
+  action: REMOVED_PLACEHOLDER_INGREDIENT
+  notes: Removed the 'See source for composition' placeholder ingredient; the record
+    carries no imported composition and is flagged incomplete (#175).
+  changes: Dropped placeholder ingredient 'See source for composition'
+- timestamp: '2026-09-08T00:00:00-07:00'
+  curator: repair_jcm_nbrc_score35.py
+  action: RESOLVED_JCM_NBRC_SCORE35_GRAPH
+  changes: Resolved score-35 JCM/NBRC opaque medium graph
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1087
+  notes: JCM Medium 1087 instructs users to use POREMEDIA B-CYE alpha Agar Medium
+    from Eiken Chemical; the source does not disclose an amount or internal formulation.
+data_quality_flags:
+- ingredients_curated
+- has_unmapped_ingredients
+references:
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1087

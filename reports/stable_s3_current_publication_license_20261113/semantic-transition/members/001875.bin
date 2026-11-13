@@ -1,0 +1,60 @@
+identifier: CHEBI:7488
+preferred_term: Natamycin
+ontology_mapping:
+  ontology_id: CHEBI:7488
+  ontology_label: natamycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:natamycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 3
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:natamycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C33H47NO13
+  smiles: '[H][C@@]12C[C@H](O)C[C@]3(O)C[C@H](O)[C@@H](C(=O)O)[C@]([H])(C[C@@H](O[C@@H]4O[C@H](C)[C@@H](O)[C@H](N)[C@@H]4O)/C=C/C=C/C=C/C=C/C[C@@H](C)OC(=O)/C=C/[C@H]1O2)O3'
+  inchi: InChI=1S/C33H47NO13/c1-18-10-8-6-4-3-5-7-9-11-21(45-32-30(39)28(34)29(38)19(2)44-32)15-25-27(31(40)41)22(36)17-33(42,47-25)16-20(35)14-24-23(46-24)12-13-26(37)43-18/h3-9,11-13,18-25,27-30,32,35-36,38-39,42H,10,14-17,34H2,1-2H3,(H,40,41)/b4-3+,7-5+,8-6+,11-9+,13-12+/t18-,19-,20+,21+,22+,23-,24-,25+,27-,28+,29-,30+,32+,33-/m1/s1
+  molecular_weight: 665.733
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:28:57.013929+00:00'

@@ -1,0 +1,80 @@
+identifier: CHEBI:86537
+preferred_term: 2,2-dimethylsuccinic acid
+synonyms:
+- synonym_text: 2-dimethylsuccinic Acid
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 4
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0696 -> CHEBI:167506 "2,3-dimethylsuccinic acid" (CLOSE_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: WITHDREW_UNSUPPORTED_MAPPING
+  changes: 'Withdraw unproved 2,3-isomer identity. Two methyl groups can occupy carbon
+    2 (2,2-dimethylsuccinic acid); the incomplete source name does not establish 2,3
+    substitution. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:86537 ; https://www.ebi.ac.uk/chebi/CHEBI:167506'
+  previous_status: MAPPED
+  new_status: AMBIGUOUS
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-09-22T02:07:38.917319+00:00'
+  curator: mim_semantic_review_710
+  action: RESOLVED_FROM_ORIGINAL_SOURCE
+  changes: 'All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic
+    acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506
+    is rejected; this is a distinct constitutional isomer, not a close match. Evidence:
+    https://bacdive.dsmz.de/strain/140942 ; https://bacdive.dsmz.de/strain/168456
+    ; https://bacdive.dsmz.de/strain/140923 ; https://bacdive.dsmz.de/strain/158680
+    ; https://www.ebi.ac.uk/chebi/CHEBI:86537'
+  previous_status: AMBIGUOUS
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Original MicrobeDecoder label and BacDive term recovered during #710 review.
+  All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic
+  acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506
+  is rejected; this is a distinct constitutional isomer, not a close match. The raw
+  truncated label is retained for source lookup; historical incorrect inference remains
+  in curation history only.'
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:86537
+  ontology_label: 2,2-dimethylsuccinic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MicrobeDecoder original CSV and BacDive
+    notes: 'All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic
+      acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer
+      CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a close
+      match. Source records: https://bacdive.dsmz.de/strain/140942 ; https://bacdive.dsmz.de/strain/168456
+      ; https://bacdive.dsmz.de/strain/140923 ; https://bacdive.dsmz.de/strain/158680
+      ; https://www.ebi.ac.uk/chebi/CHEBI:86537 . Hash-bound source extracts: reports/semantic_review_20260921/resolution/identities/microbedecoder-source-recovery.json'

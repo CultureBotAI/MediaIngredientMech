@@ -1,0 +1,63 @@
+"""Recompute origin/case/operation accounting only; emit no source plan."""
+from pathlib import Path
+from collections import Counter
+import hashlib,json
+D=Path(__file__).absolute().parent;C=D.parents[1]
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def load(p):return json.loads(Path(p).read_text())
+def canon(x):return json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()
+def dig(x):return hashlib.sha256(canon(x)).hexdigest()
+def ref(p):return {'path':str(Path(p).absolute()),'sha256':sha(p)}
+def save(n,x):
+ with (D/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+P=C/'integration/final-native-intake-after-ancillary-v1';p=load(P/'owner-plan.draft.json');assert sha(P/'owner-plan.draft.json')=='cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2'
+idx=load(P/'materialization-index.draft.json');index={e['destination']:e for e in idx['files']};ops={r['operation_id']:r for r in p['records']};assert len(ops)==934
+S=C/'preflight/source-application-preconditions-audit-v1';ten=load(S/'TEN-OPERATION-DISPOSITION-JOINS.json');allorig=load(S/'ALL-1022-DISPOSITION-INVENTORY.json')['rows'];cases=load(S/'ALL-ORIGINAL-CASE-JOINS.json')
+stocks=load(C/'integration/selenite718-alias-successor-v1/stock-deferral-bridge.json');phos=load(C/'preflight/inherited-form-predicate-triage-v1/ADMISSION-DELTA.json');res=load(C/'integration/w07-monohydrate-residual-v1/SERIALIZATION-BRIDGE.json')
+case_table={};corepins=[]
+for e in cases['cores']:
+ cap=e['capture'];assert sha(cap['source'])==cap['sha256'];data=load(cap['source']);assert data['worker_slot']==e['slot']
+ for d in data['decisions']:
+  key=(e['slot'],d['case_id']);assert key not in case_table
+  case_table[key]={'worker_slot':e['slot'],'case_id':d['case_id'],'case_input_sha256':d['case_input_sha256'],'decision_object_sha256':dig(d),'decision_core_sha256':cap['sha256']}
+ corepins.append(cap)
+assert len(case_table)==1879
+drop={r['operation_id']:r for r in stocks['deferred_operations_exact']}
+for row in ten['rows']:
+ for r in row['origin']['selected_operations']:drop[r['operation_id']]=ops[r['operation_id']]
+di='ORIGINAL-w08::if-reject-monohydrate-on-dihydrate';drop[di]=ops[di]
+assert len(drop)==14 and all(ops[k]==v for k,v in drop.items())
+deferred_origin={}
+for r in drop.values():
+ for o in r['origins']:deferred_origin[(o['worker_slot'],o['proposal_id'])]=o
+deferred_origin[('worker-08','if-add-mono-source-spelling')]=res['deferred_peer_origin']
+assert len(deferred_origin)==15
+selected={};operation_rows=[]
+for ident,r in ops.items():
+ if ident in drop:continue
+ origins=r['origins'] if ident!='TARGET-023' else [res['original_origin_exact']]
+ if ident=='TARGET-023':assert r==res['superseded_private_union_context'] and origins[0] in r['origins']
+ for o in origins:
+  k=(o['worker_slot'],o['proposal_id']);assert k not in selected;selected[k]=(ident,o)
+ operation_rows.append({'operation_id':ident,'kind':r['kind'],'original_operation_sha256':dig(r),'retained_origins_exact':origins})
+assert len(operation_rows)==920 and len(selected)==1003
+rows=[];proposalcores={};case_edges=[]
+for row in allorig:
+ k=(row['worker_slot'],row['proposal_id']);core=row['core'];proposalcores[core['source']]=core
+ if k in selected:status='selected';opids=[selected[k][0]]
+ elif k==('worker-02','a2-proposal-nbrc1132-asahi-ebios-tablets'):status='retired';opids=[]
+ else:status='deferred';opids=[]
+ assert k in selected or k in deferred_origin or not row['selected_operations'],k
+ rows.append({'worker_slot':k[0],'proposal_id':k[1],'original_proposal_sha256':row['original_proposal_sha256'],'case_ids_exact':row['case_ids'],'status':status,'selected_operation_ids':opids,'prior_selected_operation_ids':[r['operation_id'] for r in row['selected_operations']]})
+for path,core in proposalcores.items():assert sha(path)==core['sha256']
+assert len(rows)==1022 and Counter(r['status'] for r in rows)==Counter(selected=1003,deferred=18,retired=1)
+for key,(opid,o) in selected.items():
+ for cid,h in o['case_hashes'].items():
+  matches=[v for (slot,c),v in case_table.items() if c==cid and v['case_input_sha256']==h];assert len(matches)==1,(opid,cid)
+  case_edges.append({'operation_id':opid,'origin':key,'case':matches[0]})
+before=index[p['before_inventory']['path']];assert sha(before['source'])==p['before_inventory']['sha256'];before_owners=load(before['source'])['owners'];assert len(before_owners)==2956
+kinds=Counter(r['kind'] for r in operation_rows);owner_count=len(before_owners)+kinds['create'];assert owner_count==3540
+new_deferred_cases=sorted({cid for o in deferred_origin.values() for cid in o['case_hashes']})
+save('ALL-1022-PROPOSED-DISPOSITIONS.json',rows);save('ALL-1879-CASE-HASHES.json',list(case_table.values()));save('RETAINED-OPERATION-ORIGIN-JOINS.json',operation_rows);save('SELECTED-CASE-HASH-JOINS.json',case_edges)
+save('ADMISSION-ACCOUNTING.json',{'status':'MECHANICAL_PROPOSED_INPUT_ACCOUNTING_NO_PLAN_OR_ACCEPTANCE','original_plan':ref(P/'owner-plan.draft.json'),'original_index':ref(P/'materialization-index.draft.json'),'original_operations':934,'remaining_operations':len(operation_rows),'remaining_kinds':dict(kinds),'original_origins':1022,'origin_dispositions':dict(Counter(r['status'] for r in rows)),'whole_operations_newly_deferred':list(drop),'new_deferred_original_origins':[{'worker_slot':k[0],'proposal_id':k[1],'origin_exact':v} for k,v in deferred_origin.items()],'new_deferred_unique_case_ids':new_deferred_cases,'original_cases_preserved':len(case_table),'all_case_input_and_decision_hashes_digest':dig(list(case_table.values())),'original_decision_cores':corepins,'original_proposal_cores':list(proposalcores.values()),'baseline_owners':len(before_owners),'prospective_owners_arithmetic':owner_count,'ancestral_Xanthine_not_a_campaign_operation':True,'ancillary_corrections_not_recounted_as_original_cases':True,'source_decisions_changed':False,'original_proposals_changed':False,'source_plan_created':False,'configuration_created':False,'native_prepare':False})
+print(json.dumps({'operations':len(operation_rows),'kinds':dict(kinds),'origins':dict(Counter(r['status'] for r in rows)),'owners':owner_count,'cases':len(case_table),'new_deferred_unique_cases':len(new_deferred_cases)},indent=2))

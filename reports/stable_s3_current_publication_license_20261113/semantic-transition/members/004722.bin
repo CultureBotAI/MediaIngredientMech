@@ -1,0 +1,133 @@
+id: CultureMech:009805
+name: cyc_agar
+original_name: CYC Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.2
+ingredients:
+- preferred_term: Czapek-Dox liquid medium, modified (Oxoid)
+  concentration:
+    value: '33.4'
+    unit: G_PER_L
+  notes: TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and
+    JCM Medium 219 use the same formulation adjusted to pH 8.0.
+- preferred_term: Yeast extract (BD-Difco)
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  notes: TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and
+    JCM Medium 219 use the same formulation adjusted to pH 8.0.
+  nutritional_roles:
+  - NITROGEN_SOURCE
+  - PROTEIN_SOURCE
+- preferred_term: Casamino acids, vitamin assay (BD-Difco)
+  concentration:
+    value: '6'
+    unit: G_PER_L
+  notes: TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and
+    JCM Medium 219 use the same formulation adjusted to pH 8.0.
+  nutritional_roles:
+  - AMINO_ACID_SOURCE
+  - NITROGEN_SOURCE
+- preferred_term: Agar
+  concentration:
+    value: '16'
+    unit: G_PER_L
+  notes: TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and
+    JCM Medium 219 use the same formulation adjusted to pH 8.0.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+  physicochemical_roles:
+  - SOLIDIFYING_AGENT
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  notes: TOGO M41 and JCM Medium 49 list this component for CYC Agar; TOGO M212 and
+    JCM Medium 219 use the same formulation adjusted to pH 8.0.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve the CYC Agar components in distilled water and bring the final
+    volume to 1 L.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust the complete medium to pH 7.2.
+- step_number: 3
+  action: AUTOCLAVE
+  description: Autoclave at 121 C for 15 min.
+media_term:
+  preferred_term: TOGO Medium M41
+  term:
+    id: TOGO:M41
+    label: CYC Agar
+notes: 'TOGO M41 mirrors JCM Medium 49: modified Czapek-Dox liquid medium, yeast extract,
+  casamino acids, and agar are brought to 1 L with distilled water, adjusted to pH
+  7.2, and autoclaved.'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:55.005264Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: JCM, ID: M41'
+- timestamp: '2026-01-28T19:48:09.863648Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:09.026236Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009805'
+- timestamp: '2026-03-17T06:29:45.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:28.012788+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CYC Agar" to "cyc_agar" for consistent matching
+- timestamp: '2026-06-05T07:40:41.227930+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-06T00:00:00-07:00'
+  curator: repair_jcm_ph_score40.py
+  action: RESOLVED_JCM_PH_SCORE40_GRAPH
+  changes: Resolved score-40 JCM pH-variant recipe graph
+  source: https://togomedium.org/medium/M41; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=49
+  notes: 'TOGO M41 mirrors JCM Medium 49: modified Czapek-Dox liquid medium, yeast
+    extract, casamino acids, and agar are brought to 1 L with distilled water, adjusted
+    to pH 7.2, and autoclaved.'
+- timestamp: '2026-09-06T00:00:00-07:00'
+  curator: repair_jcm_ph_score40.py
+  action: LINKED_JCM_PH_SCORE40_CHILDREN
+  changes: Linked score-40 JCM pH variants to source parents
+  notes: Added or refreshed reciprocal parent-child link for bacterial/TOGO_M212_CYC_Agar_pH_8.0.yaml.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M41
+- reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=49
+variant_children:
+- path: data/normalized_yaml/bacterial/TOGO_M212_CYC_Agar_pH_8.0.yaml
+  relationship: PH_VARIANT
+  id: CultureMech:008723
+  name: cyc_agar_ph_8_0
+  notes: Adjusts TOGO M41 CYC Agar to pH 8.0.

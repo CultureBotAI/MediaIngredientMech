@@ -1,0 +1,107 @@
+identifier: CHEBI:17562
+preferred_term: Cytidine
+ontology_mapping:
+  ontology_id: CHEBI:17562
+  ontology_label: cytidine
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 65-46-3
+    notes: ChEBI ID CHEBI:17562 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: 1-beta-D-Ribofuranosylcytosine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 1beta-D-ribofuranosylcytosine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-AMINO-1-BETA-D-RIBOFURANOSYL-2(1H)-PYRIMIDINONE
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-amino-1-beta-D-ribofuranosylpyrimidin-2(1H)-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-amino-1beta-D-ribofuranosyl-2(1H)-pyrimidinone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cyd
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cytidin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cytosine riboside
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Zytidin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cytosine-1beta-D-Ribofuranoside
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 15
+  media_count: 15
+curation_history:
+- timestamp: '2026-04-07T10:19:14.433360+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:17562
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: 1-beta-D-Ribofuranosylcytosine,
+    1beta-D-ribofuranosylcytosine, 4-AMINO-1-BETA-D-RIBOFURANOSYL-2(1H)-PYRIMIDINONE,
+    4-amino-1-beta-D-ribofuranosylpyrimidin-2(1H)-one, 4-amino-1beta-D-ribofuranosyl-2(1H)-pyrimidinone,
+    ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:33.028526+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.940169+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C9H13N3O5; inchi=InChI=1S/C9H13N3O5/c10-5-1-2-12(9(16)11-5)8-7(15)6;
+    smiles=Nc1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)n1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.689087+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518678+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 14/14 -> 15/15 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000800; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Created from FEBA ontology enrichment workflow. Used in 14 FEBA media formulations.
+chemical_properties:
+  cas_rn: 65-46-3
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:19:14.433370+00:00'
+  molecular_formula: C9H13N3O5
+  inchi: InChI=1S/C9H13N3O5/c10-5-1-2-12(9(16)11-5)8-7(15)6(14)4(3-13)17-8/h1-2,4,6-8,13-15H,3H2,(H2,10,11,16)/t4-,6-,7-,8-/m1/s1
+  smiles: Nc1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)n1
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000800
+legacy_identifiers:
+- MIM:Cytidine
+- CHEBI:17562

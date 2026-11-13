@@ -1,0 +1,2468 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="description" content="DSMZ cultivation media database">
+    <meta name="author" content="Julia Koblitz">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://mediadive.dsmz.de" />
+    <meta property="og:type" content="database" />
+    <meta property="og:title" content="78: CHOPPED MEAT MEDIUM | Media | MediaDive" />
+    <meta property="og:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains." />
+    <meta property="og:image" content="/img/mediadive_logo.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mediadive.dsmz.de">
+    <meta property="twitter:title" content="MediaDive — the cultivation media database">
+    <meta property="twitter:description" content="Discover standardized cultivation media recipes for more than 40,000 microbial strains.">
+    <meta property="twitter:image" content="/img/mediadive_avatar.png">
+
+    <link rel="icon" href="/img/favicon_256x256.png">
+    <title>78: CHOPPED MEAT MEDIUM | Media | MediaDive</title>
+
+    <!-- Phosphoricons and individual D3 icons -->
+    <link href="/css/phosphoricons/regular/style.css?v=2" rel="stylesheet" />
+    <link href="/css/phosphoricons/fill/style.css?v=2" rel="stylesheet" />
+    <link href="/css/d3icons/style.css?v=3" rel="stylesheet" />
+
+    <link href="/css/digidive.css?v=4" rel="stylesheet" />
+    <link href="/css/shepherd.css" rel="stylesheet" />
+    <link href="/css/animate.min.css" rel="stylesheet" />
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/css/style.css?1758698096" rel="stylesheet">
+
+    <script>
+        // define global constants
+        const ROOTPATH = "";
+    </script>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Requires digidive.js for the dropdowns -->
+    <!-- <script src="/js/digidive.js"></script> -->
+    <script src="/js/digidive.js?v=4"></script>
+    <script src="/js/script.js?1722402400"></script>
+
+
+            <!-- Matomo -->
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "https://piwik.dsmz.de/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
+                _paq.push(['setSiteId', '15']);
+                var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+                g.async = true;
+                g.src = u + 'matomo.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript>
+            <p><img src="https://piwik.dsmz.de/matomo.php?idsite=15&amp;rec=1" style="border:0;" alt="" /></p>
+        </noscript>
+        <!-- End Matomo Code -->
+    </head>
+
+<body style="position: relative">
+    <!-- Modals go here -->
+    <!-- <div class="modal modal-lg" id="settings" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content w-400 mw-full">
+            <a href="#" class="btn float-right" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title"><i class="ph ph-gear text-primary"></i> Settings</h5>
+
+            <form action="#" method="get">
+                
+                <div class="form-group">
+                    <label for="language">Language</label>
+                    <select name="language" id="language" class="form-control">
+                        <option value="en" selected>English</option>
+                        <option value="de" >Deutsch</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="transitions" name="transitions" value="true" >
+                        <label for="transitions">Motion-sickness mode</label><br>
+                        <small class="text-muted">This mode reduces motion and animations on the page.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="dyslexia" name="dyslexia" value="true" >
+                        <label for="dyslexia">Dyslexia mode</label><br>
+                        <small class="text-muted">
+                            The web page uses a special font to increase readibility for user with dyslexia.                        </small>
+                    </div>
+                </div>
+                <p>
+                    We use browser cookies to save your preferences.                </p>
+                <button class="btn primary">Apply</button>
+            </form>
+
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<div class="modal modal-lg" id="ingredient-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('ingredient-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Ingredient name</h5>
+            <div id="ingredient-content"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-lg" id="universal-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="btn float-right" role="button" aria-label="Close" onclick="digidive.toggleModal('universal-modal')">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <div id="universal-content" class="content"></div>
+        </div>
+    </div>
+</div>    <div class="loader">
+        <span></span>
+    </div>
+    <div class="popup-bg" onclick="hidePopups();"></div>
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper 
+            ">
+        <!-- data-sidebar-hidden to hide sidebar on start -->
+
+        <!-- Sticky alerts (toasts), empty container -->
+        <div class="sticky-alerts">
+                    </div>
+
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="digidive.toggleSidebar()"></div>
+
+        <!-- Navbar start -->
+        <div class="navbar navbar-top">
+            <div class="container">
+                <!-- here goes your database logo -->
+
+                <a href="/" class="navbar-brand position-relative">
+                                            <img class="" src="/img/mediadive_logo.svg?v=2" alt="MediaDive" style="width: 30rem;">
+                                        
+                </a>
+
+                <a href="//hub.dsmz.de/" class="navbar-brand ml-auto d-none d-sm-block">
+                    <!-- DSMZ Logo is mandatory -->
+                    <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity">
+                </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-bottom">
+            <!-- Button to toggle sidebar -->
+            <div class="container">
+                <button class="btn btn-action active" type="button" onclick="digidive.toggleSidebar(this);"></button>
+
+                <ul class="navbar-nav">
+                    
+                        <nav aria-label="MediaDive breadcrumbs">
+                            <ul class="breadcrumb m-0">
+                                <li><a href="/">Home</a></li><li><a href="/media">Media</a></li><li class="active" aria-current="page"><a href="javascript:void(0)">78: CHOPPED MEAT MEDIUM</a></li>                            </ul>
+                        </nav>
+                                    </ul>
+
+                <div class="dropdown">
+                    <button class="btn primary circle square mr-10" data-toggle="dropdown" type="button" id="accessibility-menu" aria-haspopup="true" aria-expanded="false">
+                        <i class="ph ph-person-simple"></i>
+                        <span class="sr-only">Accessibility Options</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-center w-300" aria-labelledby="accessibility-menu">
+                        <h6 class="header text-primary">Accessibility</h6>
+                        <form action="#" method="get" class="content">
+                            <input type="hidden" name="accessibility[check]">
+
+                            <input type="hidden" name="redirect" value="/medium/78">
+
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select name="accessibility[language]" id="language" class="form-control">
+                                    <option value="en" selected>English</option>
+                                    <option value="de" >Deutsch</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-contrast" name="accessibility[contrast]" value="high-contrast" >
+                                    <label for="set-contrast">High contrast</label><br>
+                                    <small class="text-muted">
+                                        Enhance the contrast of the web page for better readability.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-transitions" name="accessibility[transitions]" value="without-transitions" >
+                                    <label for="set-transitions">Reduce motion</label><br>
+                                    <small class="text-muted">
+                                        Reduce motion and animations on the page.                                    </small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="set-dyslexia" name="accessibility[dyslexia]" value="dyslexia" >
+                                    <label for="set-dyslexia">Dyslexia mode</label><br>
+                                    <small class="text-muted">
+                                        Use a special font to increase readability for users with dyslexia.                                    </small>
+                                </div>
+                            </div>
+                            <button class="btn primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <form id="medium-search" action="/media" method="get" class="nav-search">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" autocomplete="off" placeholder="Search medium">
+                        <div class="input-group-append">
+                            <button class="btn primary"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="suggestions"></div>
+                </form>
+            </div>
+
+        </nav>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+
+            <nav class="sidebar-topnav">
+                <ul>
+                    <li><a href="/docs"><i class="ph ph-book"></i>Manual</a></li>
+                    <li><a href="/contact" title="Support"><i class="ph ph-headset"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-menu">
+
+                
+                <!-- Sidebar links (with icons) and titles -->
+                <h5 class="title">Content</h5>
+
+                <a href="/media" class="with-icon primary active">
+                    <i class="ph ph-flask" aria-hidden="true"></i>
+
+                    Media                </a>
+                <a href="/solutions" class="with-icon secondary ">
+                    <i class="ph ph-test-tube" aria-hidden="true"></i>
+
+                    Solutions                </a>
+                <a href="/ingredients" class="with-icon success ">
+                    <i class="ph ph-mortar-pestle" aria-hidden="true"></i>
+
+                    Ingredients                </a>
+
+                <a href="/strains" class="with-icon signal ">
+                    <!-- text-white bg-dark text-dark-dm bg-light-dm -->
+                    <i class="ph ph-microbes" aria-hidden="true"></i>
+
+                    Strains                </a>
+
+                <a href="/steps" class="with-icon ">
+                    <i class="ph ph-list-checks" aria-hidden="true"></i>
+
+                    Steps                </a>
+                <a href="/gas" class="with-icon ">
+                    <i class="ph ph-gas" aria-hidden="true"></i>
+                    Gas
+                </a>
+
+
+                <h5 class="title">Search</h5>
+
+                <a href="/finder" class="with-icon ">
+                    <i class="ph ph-target" aria-hidden="true"></i>
+                    Medium finder
+                </a>
+                <a href="/solution-finder" class="with-icon ">
+                    <i class="ph ph-magnifying-glass-plus" aria-hidden="true"></i>
+                    Solution finder
+                </a>
+                <a href="/taxonomy" class="with-icon ">
+                    <i class="ph ph-taxonomy" aria-hidden="true"></i>
+                    Taxonomy search                </a>
+                <a href="/isolation-sources" class="with-icon ">
+                    <i class="ph ph-map-pin-line" aria-hidden="true"></i>
+                    Isolation sources                </a>
+
+
+                <h5 class="title">Tools</h5>
+                                    <a href="/medium-builder" class="with-icon ">
+                        <i class="ph ph-flask-pen" aria-hidden="true"></i>
+                        Medium builder
+                    </a>
+                                <!-- sparql -->
+                <a href="https://sparql.dsmz.de/mediadive" class="with-icon">
+                    <i class="ph ph-rdf" aria-hidden="true"></i>
+                    SPARQL endpoint
+                </a>
+                <a href="/unit-converter" class="with-icon ">
+                    <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+
+                    Unit converter                </a>
+                <a href="/compare-media" class="with-icon ">
+                    <i class="ph ph-flask-vial" aria-hidden="true"></i>
+
+                    Compare media                </a>
+                <a href="/compare-solutions" class="with-icon ">
+                    <i class="ph ph-vials" aria-hidden="true"></i>
+
+                    Compare solutions                </a>
+                
+
+
+                <a href="/prediction" class="with-icon ">
+                    <i class="ph ph-chip-ai" aria-hidden="true"></i>
+
+                    Prediction <span class="badge badge-primary ml-5">SOON</span>
+                </a>
+
+
+                
+                <div class="sidebar-content text-muted d-block d-sm-none">
+                    <!-- brought to you by -->
+                    <a href="//www.dsmz.de/" class="navbar-brand ml-auto pb-10">
+
+                        <!-- DSMZ Logo is mandatory -->
+                        <img src="/img/dsmz_full.svg" alt="DSMZ">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <!-- <div class="modal" id="comment-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#/" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="title">Leave a comment</h5>
+
+            <form id="add-comment" class="d-block" onsubmit="return addComment(event, this)">
+                <input type="hidden" name="medium_id" value="78">
+                <div class="form-group mb-10">
+                    <label for="comment-name">Your name (optional)</label>
+                    <input type="text" name="name" id="comment-name" class="form-control" placeholder="Anonymous">
+                </div>
+                <div class="form-group mb-10">
+                    <label for="comment-mail">Your mail address (optional)</label>
+                    <input type="mail" name="mail" id="comment-mail" class="form-control" placeholder="anonymous@example.com">
+                    <small class="text-muted">
+                        Your mail address will not be made public, but allows out team to contact you regarding your comment.                    </small>
+                </div>
+                <div class="form-group mb-10">
+                    <textarea name="comment" id="new-comment" class="form-control" placeholder="Write a comment!" rows="2" required></textarea>
+                </div>
+                <button class="btn"><i class="ph ph-paper-plane-tilt"></i> Publish comment</button>
+            </form>
+            <br>
+
+            <div class="title">Comments for this medium</div>
+
+
+            <div id="comment-list">
+                                        <div class="content">
+                            <p class="text-muted">No comments for this medium.</p>
+                        </div>
+                                </div>
+
+            <div class="text-right mt-20">
+                <a href="#/" class="btn mr-5" role="button">Close</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="title-bar viewer" role="toolbar" aria-label="Medium toolbar" id="medium-toolbar">
+    <div class="h-spacer ml-5"></div>
+   
+
+    <!-- DOWNLOAD -->
+    <div class="dropdown with-arrow">
+        <button class="btn mx-5 toolbar-btn" data-toggle="dropdown" type="button" id="download-btn" aria-haspopup="true" aria-expanded="false">
+            <!-- <span class="tooltip">Download </span> -->
+            <i class="ph ph-download ph-lg"></i> <span class="toolbar-label">Download <i class="ph ph-caret-down"></i></span>
+        </button>
+        <div class="dropdown-menu w-200 w-sm-250 w-md-300" aria-labelledby="download-btn">
+
+            <div class="content">
+                <form action="/pdf/78" method="get" target="_blank">
+                    <b>Adjust volume (optional)</b>
+                    <div class="form-row row-eq-spacing-sm mb-0">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="volume">Multiply </label>
+                                <div class="input-group d-flex">
+                                    <input class="form-control" type="number" name="volume" value="1" autocomplete="off" step="0.01">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">&times;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="main-volume">Main sol. </label>
+                                <div class="input-group d-flex">
+                                    <input class="form-control" type="number" name="main-volume" autocomplete="off" step="1" placeholder="1000">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">ml</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                            <div class="form-group">
+                            <label for="ccno"><b>Strain modification</b></label>
+                            <select class="form-control" name="ccno">
+                                <option value="none">Show no strain mods at all.</option>
+                                <option value="all">Show all strain mods at the end of file.</option>
+                                                                    <option  value="DSM 19490">Adlercreutzia mucosicola DSM 19490</option>
+                                                                    <option  value="DSM 3991">Amedibacillus dolichus DSM 3991</option>
+                                                                    <option  value="DSM 19024">Bacteroides caccae DSM 19024</option>
+                                                                    <option  value="DSM 24798">Bacteroides faecis DSM 24798</option>
+                                                                    <option  value="DSM 1396">Bacteroides fragilis DSM 1396</option>
+                                                                    <option  value="DSM 24895">Bacteroides fragilis DSM 24895</option>
+                                                                    <option  value="DSM 119949">Bacteroides ovatus DSM 119949</option>
+                                                                    <option  value="DSM 24853">Bacteroides sp. DSM 24853</option>
+                                                                    <option  value="DSM 24861">Bacteroides sp. DSM 24861</option>
+                                                                    <option  value="DSM 24870">Bacteroides sp. DSM 24870</option>
+                                                                    <option  value="DSM 24871">Bacteroides sp. DSM 24871</option>
+                                                                    <option  value="DSM 24872">Bacteroides sp. DSM 24872</option>
+                                                                    <option  value="DSM 24898">Bacteroides sp. DSM 24898</option>
+                                                                    <option  value="DSM 24904">Bacteroides sp. DSM 24904</option>
+                                                                    <option  value="DSM 24846">Bacteroides thetaiotaomicron DSM 24846</option>
+                                                                    <option  value="DSM 119815">Barnesiella intestinihominis DSM 119815</option>
+                                                                    <option  value="DSM 21671">Campylobacter hominis DSM 21671</option>
+                                                                    <option  value="DSM 3260">Campylobacter rectus DSM 3260</option>
+                                                                    <option  value="DSM 20703">Campylobacter ureolyticus DSM 20703</option>
+                                                                    <option  value="DSM 3979">Collinsella aerofaciens DSM 3979</option>
+                                                                    <option  value="DSM 3992">Dorea formicigenerans DSM 3992</option>
+                                                                    <option  value="DSM 11767">Eggerthella lenta DSM 11767</option>
+                                                                    <option  value="DSM 110904">Eggerthella lenta DSM 110904</option>
+                                                                    <option  value="DSM 110907">Eggerthella lenta DSM 110907</option>
+                                                                    <option  value="DSM 120677">Eggerthella lenta DSM 120677</option>
+                                                                    <option  value="DSM 121533">Eggerthella lenta DSM 121533</option>
+                                                                    <option  value="DSM 11863">Eggerthella sp. DSM 11863</option>
+                                                                    <option  value="DSM 107592">Eubacterium callanderi DSM 107592</option>
+                                                                    <option  value="DSM 3988">Eubacterium ventriosum DSM 3988</option>
+                                                                    <option  value="DSM 3983">Faecalitalea cylindroides DSM 3983</option>
+                                                                    <option  value="DSM 19507">Fusobacterium nucleatum subsp. vincentii DSM 19507</option>
+                                                                    <option  value="DSM 3989">Holdemanella biformis DSM 3989</option>
+                                                                    <option  value="DSM 26229">Kallipyga massiliensis DSM 26229</option>
+                                                                    <option  value="DSM 110248">Microaceticoccus formicicus DSM 110248</option>
+                                                                    <option  value="DSM 110247">Miniphocaeibacter halophilus DSM 110247</option>
+                                                                    <option  value="DSM 3998">Mogibacterium timidum DSM 3998</option>
+                                                                    <option  value="DSM 110169">Muribaculum caecicola DSM 110169</option>
+                                                                    <option  value="DSM 107471">Odoribacter splanchnicus DSM 107471</option>
+                                                                    <option  value="DSM 107283">Olsenella lakotia DSM 107283</option>
+                                                                    <option  value="DSM 24965">Parabacteroides distasonis DSM 24965</option>
+                                                                    <option  value="DSM 121195">Parabacteroides distasonis DSM 121195</option>
+                                                                    <option  value="DSM 23371">Parabacteroides gordonii DSM 23371</option>
+                                                                    <option  value="DSM 107470">Parabacteroides sp. DSM 107470</option>
+                                                                    <option  value="DSM 24821">Parabacteroides sp. DSM 24821</option>
+                                                                    <option  value="DSM 24845">Parabacteroides sp. DSM 24845</option>
+                                                                    <option  value="DSM 24862">Parabacteroides sp. DSM 24862</option>
+                                                                    <option  value="DSM 16106">Paraeggerthella hongkongensis DSM 16106</option>
+                                                                    <option  value="DSM 121490">Paraprevotella clara DSM 121490</option>
+                                                                    <option  value="DSM 120039">Paratractidigestivibacter faecalis DSM 120039</option>
+                                                                    <option  value="DSM 24903">Phocaeicola dorei DSM 24903</option>
+                                                                    <option  value="DSM 17135">Phocaeicola plebeius DSM 17135</option>
+                                                                    <option  value="DSM 24896">Phocaeicola sp. DSM 24896</option>
+                                                                    <option  value="DSM 24902">Phocaeicola sp. DSM 24902</option>
+                                                                    <option  value="DSM 1447">Phocaeicola vulgatus DSM 1447</option>
+                                                                    <option  value="DSM 23058">Porphyromonas bennonis DSM 23058</option>
+                                                                    <option  value="DSM 15663">Porphyromonas gulae DSM 15663</option>
+                                                                    <option  value="DSM 23370">Porphyromonas levii DSM 23370</option>
+                                                                    <option  value="DSM 23386">Porphyromonas somerae DSM 23386</option>
+                                                                    <option  value="DSM 23387">Porphyromonas uenonis DSM 23387</option>
+                                                                    <option  value="DSM 20514">Prevotella bivia DSM 20514</option>
+                                                                    <option  value="DSM 21650">Proteiniborus ethanoligenes DSM 21650</option>
+                                                                    <option  value="DSM 105274">Ruthenibacterium lactatiformans DSM 105274</option>
+                                                                    <option  value="DSM 106039">Sporofaciens musculi DSM 106039</option>
+                                                                    <option  value="DSM 27791">unclassified bacterium DSM 27791</option>
+                                                            </select>
+                        </div>
+                    
+                    <button class="btn primary block" type="submit">
+                        <i class="ph ph-lg mr-5 ph-file-pdf"></i>
+                        Create PDF</button>
+                </form>
+            </div>
+            <div class="divider"></div>
+            <a class="item" href="javascript:void(0)" onclick="$(this).next().toggle()">
+                Other formats <i class="ph ph-caret-down"></i>
+            </a>
+            <div class="content mt-0" style="display: none;">
+                <a class="btn block mb-5 download-link" href="/text/78" target="_blank"><i class="ph ph-lg mr-5 ph-file-text"></i> Text</a>
+                <a class="btn block download-link" href="/download/medium/78/json" target="_blank"><i class="ph ph-lg mr-5 ph-file-code"></i> JSON</a>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- <a class="btn mx-5  toolbar-btn" href="#comment-modal">
+            <i class="ph ph-lg mr-5 ph-chat-dots"></i> <span class="toolbar-label">Comments</span>
+            (count($comments))
+        </a> -->
+        <a href="/contact?medium=78" class="btn toolbar-btn">
+        <i class="ph ph-lg mr-5 ph-paper-plane-tilt"></i>
+        Feedback
+    </a>
+        <div class="d-none d-sm-block">
+            <button class="btn mx-5  toolbar-btn" onclick="mediumTour()">
+                <!-- <span class="tooltip">Guided tour</span> -->
+                <i class="ph ph-lg mr-5 ph-signpost"></i> <span class="toolbar-label">Guided tour</span>
+            </button>
+        </div>
+    </div>            <div class="content-container">
+
+                <a id="top"></a>
+                <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Dataset",
+        "@type": "CreativeWork"
+    },
+    "identifier": [
+        {
+            "@type": "PropertyValue",
+            "name": "URI",
+            "value": "https://identifiers.org/mediadive.medium:78"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "DSMZ Medium Number",
+            "value": "78"
+        }
+    ],
+    "name": "CHOPPED MEAT MEDIUM",
+    "url": "https://mediadive.dsmz.de/medium/78",
+    "license": "http://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "MediaDive"
+    },
+    "description": "Medium 78: CHOPPED MEAT MEDIUM",
+    "keywords": [
+        "Culture medium",
+        "Bacteria"
+    ],
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://mediadive.dsmz.de/download/composition/78/csv",
+            "fileFormat": "CSV"
+        },
+        {
+            "@type": "DataDownload",
+            "contentUrl": "https://mediadive.dsmz.de/download/composition/78/json",
+            "fileFormat": "JSON"
+        }
+    ],
+    "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "MediaDive",
+        "description": "The Cultivation Media Database ",
+        "url": "https://mediadive.dsmz.de/",
+        "provider": {
+            "@type": "Organization",
+            "name": "Leibniz-Institut DSMZ-Deutsche Sammlung von Mikroorganismen und Zellkulturen GmbH",
+            "telephone": "+49 (0) 531-2616-0",
+            "faxNumber": "+49 (0) 531-2616-418",
+            "url": "https://dsmz.de/",
+            "vatID": "DE 114815269",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Inhoffenstra\u00dfe 7 B",
+                "postalCode": "38124",
+                "addressLocality": "Braunschweig, Germany"
+            }
+        }
+    }
+}</script><style>
+    .list {
+        counter-reset: list-counter calc(var(--start) - 1);
+    }
+</style>
+
+    <div id="to-mobile">
+        <a href="?mobile=1" class="btn primary filled">
+            <i class="ph ph-cooking-pot"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+<div class="content mx-0 mx-md-5">
+
+            <a href="javascript:void(0)" onclick="favMedium(this, '78')" class="btn large square float-right favourite text-signal" title="Add to favourites">
+                            <i class="ph ph-star animate__animated"></i>
+                    </a>
+        <h1 class="medium-name mt-0">
+            <span id="medium-title">
+                <img src="/img/logos/dsmz_simple.svg" alt="DSMZ" title="DSMZ Medium" style="height:2.5rem">                <div id="medium-id" class="hidden">78</div>
+                <span>
+                    78                </span>.
+                <span>CHOPPED MEAT MEDIUM</span>
+            </span>
+        </h1>
+    
+    <p class="text-muted">
+        <i class="ph ph-lg ph-seal-check text-success mr-10"></i><b>Official DSMZ medium</b>: This medium was manually curated by experts from the DSMZ.    </p>
+
+    
+</div>
+
+<div class="row w-full" id="medium">
+    <div class="col-lg-7 col-12">
+
+        <div id="validation" class="alert" style="display: none;">
+            <div id="validation-running">
+                <h5 class="title">Validation is running ...</h5>
+                <div class="text-center">
+                    <i class="ph ph-3x ph-circle-notch ph-spin text-primary"></i>
+                </div>
+            </div>
+            <div id="validation-complete" style="display: none;">
+                <h5 class="title">Validation is complete.</h5>
+                <ul class="fa-ul">
+
+                </ul>
+                You may need to <a href='/medium-editor/78'>refresh the page</a> or go to the <a href='/medium/78'>viewing page</a> to see the results.            </div>
+        </div>
+
+        <div id="content" class="mw-full "><style>
+    a.link:not(.btn).text-danger::after {
+        color: var(--danger-color);
+    }
+</style>
+
+<h3 class="mt-md-0" id="title-recipe">Culture medium recipe</h3>
+<div class="d-flex justify-content-between">
+    <form action="" method="get" class="mw-full w-350">
+                    <div class="input-group m-0 mb-5">
+                                    <select name="ccno" id="ccno-select" class="form-control">
+                        <option value="" disabled selected>
+                            Select a strain (optional)                        </option>
+                        <option value="">Standard medium</option>
+                                                    <option value="DSM 19490" >Adlercreutzia mucosicola DSM 19490</option>
+                                                    <option value="DSM 110158" >Adlercreutzia muris DSM 110158</option>
+                                                    <option value="DSM 29508" >Adlercreutzia muris DSM 29508</option>
+                                                    <option value="DSM 108979" >Alistipes communis DSM 108979</option>
+                                                    <option value="DSM 108978" >Alistipes dispar DSM 108978</option>
+                                                    <option value="DSM 28863" >Alistipes inops DSM 28863</option>
+                                                    <option value="DSM 121070" >Alistipes onderdonkii DSM 121070</option>
+                                                    <option value="DSM 108265" >Alistipes onderdonkii subsp. onderdonkii DSM 108265</option>
+                                                    <option value="DSM 19147" >Alistipes onderdonkii subsp. onderdonkii DSM 19147</option>
+                                                    <option value="DSM 108977" >Alistipes onderdonkii subsp. vulgaris DSM 108977</option>
+                                                    <option value="DSM 121071" >Alistipes putredinis DSM 121071</option>
+                                                    <option value="DSM 121072" >Alistipes putredinis DSM 121072</option>
+                                                    <option value="DSM 19121" >Alistipes shahii DSM 19121</option>
+                                                    <option value="DSM 3991" >Amedibacillus dolichus DSM 3991</option>
+                                                    <option value="DSM 2951" >Anaerococcus tetradius DSM 2951</option>
+                                                    <option value="DSM 3853" >Anaeromusa acidaminophila DSM 3853</option>
+                                                    <option value="DSM 109233" >Anaerotignum lactatifermentans DSM 109233</option>
+                                                    <option value="DSM 2635" >Asaccharospora irregularis DSM 2635</option>
+                                                    <option value="DSM 100502" >Bacteroides acidifaciens DSM 100502</option>
+                                                    <option value="DSM 15896" >Bacteroides acidifaciens DSM 15896</option>
+                                                    <option value="DSM 19024" >Bacteroides caccae DSM 19024</option>
+                                                    <option value="DSM 26085" >Bacteroides caecimuris DSM 26085</option>
+                                                    <option value="DSM 102145" >Bacteroides cellulolyticus DSM 102145</option>
+                                                    <option value="DSM 108229" >Bacteroides cellulosilyticus DSM 108229</option>
+                                                    <option value="DSM 14838" >Bacteroides cellulosilyticus DSM 14838</option>
+                                                    <option value="DSM 22519" >Bacteroides clarus DSM 22519</option>
+                                                    <option value="DSM 110161" >Bacteroides faecichinchillae DSM 110161</option>
+                                                    <option value="DSM 26883" >Bacteroides faecichinchillae DSM 26883</option>
+                                                    <option value="DSM 24798" >Bacteroides faecis DSM 24798</option>
+                                                    <option value="DSM 114584" >Bacteroides finegoldii DSM 114584</option>
+                                                    <option value="DSM 17565" >Bacteroides finegoldii DSM 17565</option>
+                                                    <option value="DSM 22534" >Bacteroides fluxus DSM 22534</option>
+                                                    <option value="DSM 103087" >Bacteroides fragilis DSM 103087</option>
+                                                    <option value="DSM 1396" >Bacteroides fragilis DSM 1396</option>
+                                                    <option value="DSM 2151" >Bacteroides fragilis DSM 2151</option>
+                                                    <option value="DSM 24895" >Bacteroides fragilis DSM 24895</option>
+                                                    <option value="DSM 9669" >Bacteroides fragilis DSM 9669</option>
+                                                    <option value="DSM 9671" >Bacteroides fragilis DSM 9671</option>
+                                                    <option value="DSM 110164" >Bacteroides muris DSM 110164</option>
+                                                    <option value="DSM 114231" >Bacteroides muris DSM 114231</option>
+                                                    <option value="DSM 103636" >Bacteroides ndongoniae DSM 103636</option>
+                                                    <option value="DSM 26805" >Bacteroides neonati DSM 26805</option>
+                                                    <option value="DSM 22535" >Bacteroides oleiciplenus DSM 22535</option>
+                                                    <option value="DSM 119949" >Bacteroides ovatus DSM 119949</option>
+                                                    <option value="DSM 1896" >Bacteroides ovatus DSM 1896</option>
+                                                    <option value="DSM 19291" >Bacteroides propionicifaciens DSM 19291</option>
+                                                    <option value="DSM 19346" >Bacteroides propionicifaciens DSM 19346</option>
+                                                    <option value="DSM 19673" >Bacteroides pyogenes DSM 19673</option>
+                                                    <option value="DSM 20611" >Bacteroides pyogenes DSM 20611</option>
+                                                    <option value="DSM 26882" >Bacteroides rodentium DSM 26882</option>
+                                                    <option value="DSM 18765" >Bacteroides salyersiae DSM 18765</option>
+                                                    <option value="DSM 104071" >Bacteroides sp. DSM 104071</option>
+                                                    <option value="DSM 114230" >Bacteroides sp. DSM 114230</option>
+                                                    <option value="DSM 24853" >Bacteroides sp. DSM 24853</option>
+                                                    <option value="DSM 24861" >Bacteroides sp. DSM 24861</option>
+                                                    <option value="DSM 24870" >Bacteroides sp. DSM 24870</option>
+                                                    <option value="DSM 24871" >Bacteroides sp. DSM 24871</option>
+                                                    <option value="DSM 24872" >Bacteroides sp. DSM 24872</option>
+                                                    <option value="DSM 24898" >Bacteroides sp. DSM 24898</option>
+                                                    <option value="DSM 24904" >Bacteroides sp. DSM 24904</option>
+                                                    <option value="DSM 7167" >Bacteroides sp. DSM 7167</option>
+                                                    <option value="DSM 26884" >Bacteroides stercorirosoris DSM 26884</option>
+                                                    <option value="DSM 19555" >Bacteroides stercoris DSM 19555</option>
+                                                    <option value="DSM 2079" >Bacteroides thetaiotaomicron DSM 2079</option>
+                                                    <option value="DSM 2255" >Bacteroides thetaiotaomicron DSM 2255</option>
+                                                    <option value="DSM 24846" >Bacteroides thetaiotaomicron DSM 24846</option>
+                                                    <option value="DSM 26083" >Bacteroides timonensis DSM 26083</option>
+                                                    <option value="DSM 6597" >Bacteroides uniformis DSM 6597</option>
+                                                    <option value="DSM 18836" >Bacteroides xylanisolvens DSM 18836</option>
+                                                    <option value="DSM 119815" >Barnesiella intestinihominis DSM 119815</option>
+                                                    <option value="DSM 21032" >Barnesiella intestinihominis DSM 21032</option>
+                                                    <option value="DSM 18177" >Barnesiella viscericola DSM 18177</option>
+                                                    <option value="DSM 104960" >Berryella intestinalis DSM 104960</option>
+                                                    <option value="DSM 4029" >Bittarella massiliensis DSM 4029</option>
+                                                    <option value="DSM 29492" >Blautia caecimuris DSM 29492</option>
+                                                    <option value="DSM 2950" >Blautia producta DSM 2950</option>
+                                                    <option value="DSM 3507" >Blautia producta DSM 3507</option>
+                                                    <option value="DSM 28737" >Blautia pseudococcoides DSM 28737</option>
+                                                    <option value="DSM 24402" >Blautia sp. DSM 24402</option>
+                                                    <option value="DSM 121198" >Butyricimonas virosa DSM 121198</option>
+                                                    <option value="DSM 19528" >Campylobacter gracilis DSM 19528</option>
+                                                    <option value="DSM 21671" >Campylobacter hominis DSM 21671</option>
+                                                    <option value="DSM 21682" >Campylobacter mucosalis DSM 21682</option>
+                                                    <option value="DSM 3260" >Campylobacter rectus DSM 3260</option>
+                                                    <option value="DSM 19458" >Campylobacter showae DSM 19458</option>
+                                                    <option value="DSM 20703" >Campylobacter ureolyticus DSM 20703</option>
+                                                    <option value="DSM 2779" >Centipeda periodontii DSM 2779</option>
+                                                    <option value="DSM 23941" >Cetobacterium somerae DSM 23941</option>
+                                                    <option value="DSM 100000" >Clostridioides difficile DSM 100000</option>
+                                                    <option value="DSM 100001" >Clostridioides difficile DSM 100001</option>
+                                                    <option value="DSM 100002" >Clostridioides difficile DSM 100002</option>
+                                                    <option value="DSM 100003" >Clostridioides difficile DSM 100003</option>
+                                                    <option value="DSM 100004" >Clostridioides difficile DSM 100004</option>
+                                                    <option value="DSM 100005" >Clostridioides difficile DSM 100005</option>
+                                                    <option value="DSM 100006" >Clostridioides difficile DSM 100006</option>
+                                                    <option value="DSM 100007" >Clostridioides difficile DSM 100007</option>
+                                                    <option value="DSM 100008" >Clostridioides difficile DSM 100008</option>
+                                                    <option value="DSM 100009" >Clostridioides difficile DSM 100009</option>
+                                                    <option value="DSM 100010" >Clostridioides difficile DSM 100010</option>
+                                                    <option value="DSM 100011" >Clostridioides difficile DSM 100011</option>
+                                                    <option value="DSM 100012" >Clostridioides difficile DSM 100012</option>
+                                                    <option value="DSM 102978" >Clostridioides difficile DSM 102978</option>
+                                                    <option value="DSM 12056" >Clostridioides difficile DSM 12056</option>
+                                                    <option value="DSM 12057" >Clostridioides difficile DSM 12057</option>
+                                                    <option value="DSM 1296" >Clostridioides difficile DSM 1296</option>
+                                                    <option value="DSM 27147" >Clostridioides difficile DSM 27147</option>
+                                                    <option value="DSM 27543" >Clostridioides difficile DSM 27543</option>
+                                                    <option value="DSM 27544" >Clostridioides difficile DSM 27544</option>
+                                                    <option value="DSM 27638" >Clostridioides difficile DSM 27638</option>
+                                                    <option value="DSM 27639" >Clostridioides difficile DSM 27639</option>
+                                                    <option value="DSM 27640" >Clostridioides difficile DSM 27640</option>
+                                                    <option value="DSM 28196" >Clostridioides difficile DSM 28196</option>
+                                                    <option value="DSM 28645" >Clostridioides difficile DSM 28645</option>
+                                                    <option value="DSM 28666" >Clostridioides difficile DSM 28666</option>
+                                                    <option value="DSM 28667" >Clostridioides difficile DSM 28667</option>
+                                                    <option value="DSM 28668" >Clostridioides difficile DSM 28668</option>
+                                                    <option value="DSM 28669" >Clostridioides difficile DSM 28669</option>
+                                                    <option value="DSM 28670" >Clostridioides difficile DSM 28670</option>
+                                                    <option value="DSM 29688" >Clostridioides difficile DSM 29688</option>
+                                                    <option value="DSM 29745" >Clostridioides difficile DSM 29745</option>
+                                                    <option value="DSM 29747" >Clostridioides difficile DSM 29747</option>
+                                                    <option value="DSM 29133" >Clostridioides mangenotii DSM 29133</option>
+                                                    <option value="DSM 117478" >Clostridium caseinilyticum DSM 117478</option>
+                                                    <option value="DSM 1285" >Clostridium cochlearium DSM 1285</option>
+                                                    <option value="DSM 2153" >Clostridium cochlearium DSM 2153</option>
+                                                    <option value="DSM 666" >Clostridium cochlearium DSM 666</option>
+                                                    <option value="DSM 2631" >Clostridium fallax DSM 2631</option>
+                                                    <option value="DSM 1286" >Clostridium innocuum DSM 1286</option>
+                                                    <option value="DSM 29132" >Clostridium innocuum DSM 29132</option>
+                                                    <option value="DSM 2630" >Clostridium paraputrificum DSM 2630</option>
+                                                    <option value="DSM 10364" >Clostridium pascui DSM 10364</option>
+                                                    <option value="DSM 10365" >Clostridium pascui DSM 10365</option>
+                                                    <option value="DSM 10366" >Clostridium pascui DSM 10366</option>
+                                                    <option value="DSM 10367" >Clostridium pascui DSM 10367</option>
+                                                    <option value="DSM 11778" >Clostridium perfringens DSM 11778</option>
+                                                    <option value="DSM 11779" >Clostridium perfringens DSM 11779</option>
+                                                    <option value="DSM 11780" >Clostridium perfringens DSM 11780</option>
+                                                    <option value="DSM 11781" >Clostridium perfringens DSM 11781</option>
+                                                    <option value="DSM 11782" >Clostridium perfringens DSM 11782</option>
+                                                    <option value="DSM 11784" >Clostridium perfringens DSM 11784</option>
+                                                    <option value="DSM 11785" >Clostridium perfringens DSM 11785</option>
+                                                    <option value="DSM 11786" >Clostridium perfringens DSM 11786</option>
+                                                    <option value="DSM 2943" >Clostridium perfringens DSM 2943</option>
+                                                    <option value="DSM 29991" >Clostridium perfringens DSM 29991</option>
+                                                    <option value="DSM 628" >Clostridium perfringens DSM 628</option>
+                                                    <option value="DSM 756" >Clostridium perfringens DSM 756</option>
+                                                    <option value="DSM 100959" >Clostridium porci DSM 100959</option>
+                                                    <option value="DSM 2632" >Clostridium sardiniense DSM 2632</option>
+                                                    <option value="DSM 1985" >Clostridium sp. DSM 1985</option>
+                                                    <option value="DSM 1446" >Clostridium sporogenes DSM 1446</option>
+                                                    <option value="DSM 633" >Clostridium sporogenes DSM 633</option>
+                                                    <option value="DSM 634" >Clostridium sporogenes DSM 634</option>
+                                                    <option value="DSM 767" >Clostridium sporogenes DSM 767</option>
+                                                    <option value="DSM 2636" >Clostridium subterminale DSM 2636</option>
+                                                    <option value="DSM 6970" >Clostridium subterminale DSM 6970</option>
+                                                    <option value="DSM 2485" >Clostridium tertium DSM 2485</option>
+                                                    <option value="DSM 11744" >Clostridium tetani DSM 11744</option>
+                                                    <option value="DSM 11745" >Clostridium tetani DSM 11745</option>
+                                                    <option value="DSM 3979" >Collinsella aerofaciens DSM 3979</option>
+                                                    <option value="DSM 15921" >Coprobacillus cateniformis DSM 15921</option>
+                                                    <option value="DSM 26242" >Coprobacter fastidiosus DSM 26242</option>
+                                                    <option value="DSM 114688" >Coprococcus intestinihominis DSM 114688</option>
+                                                    <option value="DSM 15641" >Cryptobacterium curtum DSM 15641</option>
+                                                    <option value="DSM 1897" >Cutibacterium acnes subsp. acnes DSM 1897</option>
+                                                    <option value="DSM 106036" >Desulfovibrio piger DSM 106036</option>
+                                                    <option value="DSM 15470" >Dialister invisus DSM 15470</option>
+                                                    <option value="DSM 20708" >Dichelobacter nodosus DSM 20708</option>
+                                                    <option value="DSM 23057" >Dichelobacter nodosus DSM 23057</option>
+                                                    <option value="DSM 23594" >Dongibacter bovis DSM 23594</option>
+                                                    <option value="DSM 105840" >Dorea formicigenerans DSM 105840</option>
+                                                    <option value="DSM 3992" >Dorea formicigenerans DSM 3992</option>
+                                                    <option value="DSM 110160" >Dubosiella muris DSM 110160</option>
+                                                    <option value="DSM 103720" >Duncaniella muris DSM 103720</option>
+                                                    <option value="DSM 110904" >Eggerthella lenta DSM 110904</option>
+                                                    <option value="DSM 110907" >Eggerthella lenta DSM 110907</option>
+                                                    <option value="DSM 11767" >Eggerthella lenta DSM 11767</option>
+                                                    <option value="DSM 120677" >Eggerthella lenta DSM 120677</option>
+                                                    <option value="DSM 121533" >Eggerthella lenta DSM 121533</option>
+                                                    <option value="DSM 2243" >Eggerthella lenta DSM 2243</option>
+                                                    <option value="DSM 16107" >Eggerthella sinensis DSM 16107</option>
+                                                    <option value="DSM 11863" >Eggerthella sp. DSM 11863</option>
+                                                    <option value="DSM 25476" >Enorma massiliensis DSM 25476</option>
+                                                    <option value="DSM 107592" >Eubacterium callanderi DSM 107592</option>
+                                                    <option value="DSM 2593" >Eubacterium callanderi DSM 2593</option>
+                                                    <option value="DSM 2594" >Eubacterium callanderi DSM 2594</option>
+                                                    <option value="DSM 18759" >Eubacterium minutum DSM 18759</option>
+                                                    <option value="DSM 108237" >Eubacterium tenue DSM 108237</option>
+                                                    <option value="DSM 3988" >Eubacterium ventriosum DSM 3988</option>
+                                                    <option value="DSM 28560" >Extibacter muris DSM 28560</option>
+                                                    <option value="DSM 28561" >Extibacter muris DSM 28561</option>
+                                                    <option value="DSM 20705" >Ezakiella coagulans DSM 20705</option>
+                                                    <option value="DSM 17677" >Faecalibacterium duncaniae DSM 17677</option>
+                                                    <option value="DSM 113716" >Faecalibacterium hominis DSM 113716</option>
+                                                    <option value="DSM 1294" >Faecalispora sporosphaeroides DSM 1294</option>
+                                                    <option value="DSM 3983" >Faecalitalea cylindroides DSM 3983</option>
+                                                    <option value="DSM 27210" >Falsiporphyromonas endometrii DSM 27210</option>
+                                                    <option value="DSM 26367" >Fenollaria massiliensis DSM 26367</option>
+                                                    <option value="DSM 1645" >Filifactor villosus DSM 1645</option>
+                                                    <option value="DSM 6740" >Flavonifractor plautii DSM 6740</option>
+                                                    <option value="DSM 28559" >Frisingicoccus caecimuris DSM 28559</option>
+                                                    <option value="DSM 19678" >Fusobacterium necrophorum subsp. funduliforme DSM 19678</option>
+                                                    <option value="DSM 19507" >Fusobacterium nucleatum subsp. vincentii DSM 19507</option>
+                                                    <option value="DSM 19508" >Fusobacterium nucleatum subsp. vincentii DSM 19508</option>
+                                                    <option value="DSM 15657" >Guggenheimella bovis DSM 15657</option>
+                                                    <option value="DSM 2158" >Hathewaya histolytica DSM 2158</option>
+                                                    <option value="DSM 627" >Hathewaya histolytica DSM 627</option>
+                                                    <option value="DSM 110151" >Heminiphilus faecis DSM 110151</option>
+                                                    <option value="DSM 3989" >Holdemanella biformis DSM 3989</option>
+                                                    <option value="DSM 105256" >Holdemanella porci DSM 105256</option>
+                                                    <option value="DSM 113464" >Hominiventricola filiformis DSM 113464</option>
+                                                    <option value="DSM 27370" >Indolivaga macrotermitis DSM 27370</option>
+                                                    <option value="DSM 28593" >Irregularibacter muris DSM 28593</option>
+                                                    <option value="DSM 22815" >Jonquetella anthropi DSM 22815</option>
+                                                    <option value="DSM 100575" >Kallipyga gabonensis DSM 100575</option>
+                                                    <option value="DSM 26229" >Kallipyga massiliensis DSM 26229</option>
+                                                    <option value="DSM 119410" >Lachnospiraceae bacterium DSM 119410</option>
+                                                    <option value="DSM 106493" >Lawsonibacter asaccharolyticus DSM 106493</option>
+                                                    <option value="DSM 110157" >Lepagella muris DSM 110157</option>
+                                                    <option value="DSM 22070" >Leptotrichia trevisanii DSM 22070</option>
+                                                    <option value="DSM 101754" >Leyella lascolaii DSM 101754</option>
+                                                    <option value="DSM 103035" >Marseilla massiliensis DSM 103035</option>
+                                                    <option value="DSM 100704" >Massilibacteroides vaginae DSM 100704</option>
+                                                    <option value="DSM 103915" >Megamonas funiformis DSM 103915</option>
+                                                    <option value="DSM 19343" >Megamonas funiformis DSM 19343</option>
+                                                    <option value="DSM 1672" >Megamonas hypermegale DSM 1672</option>
+                                                    <option value="DSM 19944" >Megamonas rupellensis DSM 19944</option>
+                                                    <option value="DSM 102144" >Megasphaera butyrica DSM 102144</option>
+                                                    <option value="DSM 103304" >Megasphaera coli DSM 103304</option>
+                                                    <option value="DSM 110248" >Microaceticoccus formicicus DSM 110248</option>
+                                                    <option value="DSM 110247" >Miniphocaeibacter halophilus DSM 110247</option>
+                                                    <option value="DSM 3998" >Mogibacterium timidum DSM 3998</option>
+                                                    <option value="DSM 23919" >Murdochiella asaccharolytica DSM 23919</option>
+                                                    <option value="DSM 110169" >Muribaculum caecicola DSM 110169</option>
+                                                    <option value="DSM 110163" >Muribaculum gordoncarteri DSM 110163</option>
+                                                    <option value="DSM 100739" >Muribaculum intestinale DSM 100739</option>
+                                                    <option value="DSM 100746" >Muribaculum intestinale DSM 100746</option>
+                                                    <option value="DSM 28989" >Muribaculum intestinale DSM 28989</option>
+                                                    <option value="DSM 21255" >Negativicoccus succinicivorans DSM 21255</option>
+                                                    <option value="DSM 107471" >Odoribacter splanchnicus DSM 107471</option>
+                                                    <option value="DSM 107283" >Olsenella lakotia DSM 107283</option>
+                                                    <option value="DSM 103390" >Pacaella massiliensis DSM 103390</option>
+                                                    <option value="DSM 2141" >Paeniclostridium sordellii DSM 2141</option>
+                                                    <option value="DSM 103738" >Palleniella intestinalis DSM 103738</option>
+                                                    <option value="DSM 24967" >Parabacteroides chartae DSM 24967</option>
+                                                    <option value="DSM 29073" >Parabacteroides chinchillae DSM 29073</option>
+                                                    <option value="DSM 121195" >Parabacteroides distasonis DSM 121195</option>
+                                                    <option value="DSM 24965" >Parabacteroides distasonis DSM 24965</option>
+                                                    <option value="DSM 102983" >Parabacteroides faecis DSM 102983</option>
+                                                    <option value="DSM 29187" >Parabacteroides goldsteinii DSM 29187</option>
+                                                    <option value="DSM 23371" >Parabacteroides gordonii DSM 23371</option>
+                                                    <option value="DSM 108227" >Parabacteroides merdae DSM 108227</option>
+                                                    <option value="DSM 19495" >Parabacteroides merdae DSM 19495</option>
+                                                    <option value="DSM 107470" >Parabacteroides sp. DSM 107470</option>
+                                                    <option value="DSM 24821" >Parabacteroides sp. DSM 24821</option>
+                                                    <option value="DSM 24845" >Parabacteroides sp. DSM 24845</option>
+                                                    <option value="DSM 24862" >Parabacteroides sp. DSM 24862</option>
+                                                    <option value="DSM 630" >Paraclostridium bifermentans DSM 630</option>
+                                                    <option value="DSM 631" >Paraclostridium bifermentans DSM 631</option>
+                                                    <option value="DSM 16106" >Paraeggerthella hongkongensis DSM 16106</option>
+                                                    <option value="DSM 100749" >Paramuribaculum intestinale DSM 100749</option>
+                                                    <option value="DSM 100764" >Paramuribaculum intestinale DSM 100764</option>
+                                                    <option value="DSM 121490" >Paraprevotella clara DSM 121490</option>
+                                                    <option value="DSM 19731" >Paraprevotella clara DSM 19731</option>
+                                                    <option value="DSM 19681" >Paraprevotella xylaniphila DSM 19681</option>
+                                                    <option value="DSM 120039" >Paratractidigestivibacter faecalis DSM 120039</option>
+                                                    <option value="DSM 20463" >Peptoniphilus asaccharolyticus DSM 20463</option>
+                                                    <option value="DSM 29874" >Peptoniphilus catoniae DSM 29874</option>
+                                                    <option value="DSM 7455" >Peptoniphilus lacrimalis DSM 7455</option>
+                                                    <option value="DSM 3032" >Peptoniphilus sp. DSM 3032</option>
+                                                    <option value="DSM 2949" >Peptostreptococcus anaerobius DSM 2949</option>
+                                                    <option value="DSM 23041" >Peptostreptococcus russellii DSM 23041</option>
+                                                    <option value="DSM 110156" >Petralouisia muris DSM 110156</option>
+                                                    <option value="DSM 24903" >Phocaeicola dorei DSM 24903</option>
+                                                    <option value="DSM 21004" >Phocaeicola paurosaccharolyticus DSM 21004</option>
+                                                    <option value="DSM 17135" >Phocaeicola plebeius DSM 17135</option>
+                                                    <option value="DSM 24896" >Phocaeicola sp. DSM 24896</option>
+                                                    <option value="DSM 24902" >Phocaeicola sp. DSM 24902</option>
+                                                    <option value="DSM 108228" >Phocaeicola vulgatus DSM 108228</option>
+                                                    <option value="DSM 116512" >Phocaeicola vulgatus DSM 116512</option>
+                                                    <option value="DSM 116513" >Phocaeicola vulgatus DSM 116513</option>
+                                                    <option value="DSM 1447" >Phocaeicola vulgatus DSM 1447</option>
+                                                    <option value="DSM 28735" >Phocaeicola vulgatus DSM 28735</option>
+                                                    <option value="DSM 3289" >Phocaeicola vulgatus DSM 3289</option>
+                                                    <option value="DSM 20707" >Porphyromonas asaccharolytica DSM 20707</option>
+                                                    <option value="DSM 23058" >Porphyromonas bennonis DSM 23058</option>
+                                                    <option value="DSM 15663" >Porphyromonas gulae DSM 15663</option>
+                                                    <option value="DSM 23370" >Porphyromonas levii DSM 23370</option>
+                                                    <option value="DSM 23386" >Porphyromonas somerae DSM 23386</option>
+                                                    <option value="DSM 23387" >Porphyromonas uenonis DSM 23387</option>
+                                                    <option value="DSM 20514" >Prevotella bivia DSM 20514</option>
+                                                    <option value="DSM 13386" >Prevotella nigrescens DSM 13386</option>
+                                                    <option value="DSM 29996" >Prevotella pectinovora DSM 29996</option>
+                                                    <option value="DSM 103364" >Prevotella phocaeensis DSM 103364</option>
+                                                    <option value="DSM 15818" >Propionibacterium australiense DSM 15818</option>
+                                                    <option value="DSM 21650" >Proteiniborus ethanoligenes DSM 21650</option>
+                                                    <option value="DSM 21147" >Pyramidobacter piscolens DSM 21147</option>
+                                                    <option value="DSM 103407" >Raoultibacter massiliensis DSM 103407</option>
+                                                    <option value="DSM 114583" >Roseburia sp. DSM 114583</option>
+                                                    <option value="DSM 114604" >Ruthenibacterium intestinale DSM 114604</option>
+                                                    <option value="DSM 105274" >Ruthenibacterium lactatiformans DSM 105274</option>
+                                                    <option value="DSM 121696" >Ruthenibacterium lactatiformans DSM 121696</option>
+                                                    <option value="DSM 15606" >Segatella salivae DSM 15606</option>
+                                                    <option value="DSM 19578" >Selenomonas noxia DSM 19578</option>
+                                                    <option value="DSM 2479" >Selenomonas oralis DSM 2479</option>
+                                                    <option value="DSM 106039" >Sporofaciens musculi DSM 106039</option>
+                                                    <option value="DSM 29186" >Terrisporobacter sp. DSM 29186</option>
+                                                    <option value="DSM 29355" >Thomasclavelia ramosa DSM 29355</option>
+                                                    <option value="DSM 29357" >Thomasclavelia ramosa DSM 29357</option>
+                                                    <option value="DSM 103552" >Tidjanibacter massiliensis DSM 103552</option>
+                                                    <option value="DSM 5675" >Tissierella praeacuta DSM 5675</option>
+                                                    <option value="DSM 27791" >unclassified bacterium DSM 27791</option>
+                                                    <option value="DSM 114684" >Waltera hominis DSM 114684</option>
+                                                    <option value="DSM 103722" >Xylanibacter muris DSM 103722</option>
+                                                    <option value="DSM 105141" >Xylanibacter rarus DSM 105141</option>
+                                            </select>
+                                <div class="input-group-append">
+                    <button class="btn" type="submit" title="Show strain-specific medium">
+                        <i class="ph ph-flask-bacterium text-danger"></i>
+                    </button>
+                </div>
+            </div>
+            </form>
+    <div>
+        <div id="volume-adjustment" class="input-group mw-full w-150">
+            <div class="input-group-prepend">
+                <span class="input-group-text text-decoration-none" data-toggle="tooltip" data-title="Adjust final volume on this page by factor." data-placement="bottom">
+                    Vol.
+                </span>
+            </div>
+            <input class="form-control" type="number" name="volume" value="1" onchange="adjustVolume(this)" autocomplete="off">
+            <div class="input-group-append">
+                <span class="input-group-text">&times;</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="solution-container" id="recipe-container">
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Main sol. 78",
+    "url": "https://mediadive.dsmz.de/solutions/123",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": {
+        "429": "Hungate tubes",
+        "1480": "Filter",
+        "3487": "Autoclave",
+        "3958": "Gassing station"
+    },
+    "protocolPurpose": "Prepare the solution Main sol. 78 for the cultivation of microorganisms.",
+    "steps": [
+        {
+            "recipe_order": 7,
+            "step_id": 144,
+            "step_order": 1,
+            "step": "To make medium anoxic bring it to a boil, cool under 100% N2 gas atmosphere, add 0.5 g/l L-cysteine hydrochloride and adjust pH to 7.0. Dispense under 100% N2 gas atmosphere by filling 7 ml medium into anoxic Hungate-type tubes (for strains demanding meat particles put those first into the tube (use 1 part meat particles to 4 or 5 parts fluid)). Autoclave at 121\u00b0C for 30 min. For agar slants use 15.0 g agar per 1000.0 ml medium.",
+            "raw": "To make medium anoxic bring it to a boil, cool under 100% N2 gas atmosphere, add 0.5 g/l L-cysteine hydrochloride and adjust pH to 7.0. Dispense under 100% N2 gas atmosphere by filling 7 ml medium into anoxic Hungate-type tubes (for strains demanding meat particles put those first into the tube (use 1 part meat particles to 4 or 5 parts fluid)). Autoclave at 121\u00b0C for 30 min. For agar slants use 15.0 g agar per 1000.0 ml medium.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2021-12-20 14:29:22"
+        },
+        {
+            "recipe_order": 9,
+            "step_id": 145,
+            "step_order": 1,
+            "step": "In some cases (as indicated in the catalogue) the addition of Haemin and Vitamin K1 or Vitamin K3 is necessary. Add to 1000 ml of medium after autoclaving:",
+            "raw": "In some cases (as indicated in the catalogue) the addition of Haemin and Vitamin K1 or Vitamin K3 is necessary. Add to 1000 ml of medium after autoclaving:",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2021-12-20 14:30:18"
+        },
+        {
+            "recipe_order": 3,
+            "step_id": 6466,
+            "step_order": 2,
+            "step": "Use lean beef or horse meat. Remove fat and connective tissue before grinding. Mix\r\nmeat, water and NaOH, then boil for 15 min with stirring. Cool to room temperature,\r\nskim fat off surface, and filter, retaining both meat particles and filtrate. To the filtrate\r\nadd water to a final volume of 1000 ml, and then add:",
+            "raw": "Use lean beef or horse meat. Remove fat and connective tissue before grinding. Mix\r\nmeat, water and NaOH, then boil for 15 min with stirring. Cool to room temperature,\r\nskim fat off surface, and filter, retaining both meat particles and filtrate. To the filtrate\r\nadd water to a final volume of 1000 ml, and then add:",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2021-12-20 14:28:54"
+        }
+    ],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Ground beef",
+            "url": "https://mediadive.dsmz.de/ingredients/128",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "NaOH",
+            "url": "https://mediadive.dsmz.de/ingredients/256",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Casitone",
+            "url": "https://mediadive.dsmz.de/ingredients/84",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Yeast extract",
+            "url": "https://mediadive.dsmz.de/ingredients/16",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "K2HPO4",
+            "url": "https://mediadive.dsmz.de/ingredients/10",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Resazurin",
+            "url": "https://mediadive.dsmz.de/ingredients/25",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "L-Cysteine HCl",
+            "url": "https://mediadive.dsmz.de/ingredients/1157",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Agar",
+            "url": "https://mediadive.dsmz.de/ingredients/3",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "",
+            "url": "https://mediadive.dsmz.de/ingredients/",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-5 solution-main" id="sol-123">
+            <a id="solution-123" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                                                    <span data-toggle="tooltip" data-title="Main solution for this medium">
+                                <i class="ph ph-flask mr-10"></i>
+                            </span>
+                        
+                        <a href="/solutions/123" class="hyperlink colorless">
+                            Main sol. 78                        </a>
+                                                                        <a href="#solution-123" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <div class="input-group input-group-sm" style="max-width: 10rem;">
+                                    <input data-volume='1025' class="form-control" step="1" type="number" id="main-sol-vol" value="1025" onchange="adjustVolumeAbsolute(this)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">ml</span>
+                                    </div>
+                                </div>
+
+                                                    
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/123">4</a>
+                        other media (first defined in                         <a href="/medium/78">Medium 78</a>).
+                    </div>
+                                        <div class="">
+
+                <div class="p-10"> Equipment needed:                         <span class="badge badge-pill">Hungate tubes</span>
+                                        <span class="badge badge-pill">Filter</span>
+                                        <span class="badge badge-pill">Autoclave</span>
+                                        <span class="badge badge-pill">Gassing station</span>
+                </div>
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-557" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/128" class="hyperlink colorless">
+                            Ground beef                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(fat free)</small>                            </td>
+            <td class="amount text-right" data-volume='500'>
+
+                500.0            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                487.805            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-558" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1000'>
+
+                1000.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-559" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/256" class="hyperlink colorless">
+                            NaOH                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(1 N)</small>                            </td>
+            <td class="amount text-right" data-volume='25'>
+
+                25.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">1</span>
+                                Use lean beef or horse meat. Remove fat and connective tissue before grinding. Mix
+meat, water and NaOH, then boil for 15 min with stirring. Cool to room temperature,
+skim fat off surface, and filter, retaining both meat particles and filtrate. To the filtrate
+add water to a final volume of 1000 ml, and then add:                            </td>
+        </tr>
+                <tr id="recipe-560" class="recipe-row-4">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/84" class="hyperlink colorless">
+                            Casitone                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='30'>
+
+                30.0            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                29.268            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-561" class="recipe-row-5">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/16" class="hyperlink colorless">
+                            Yeast extract                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='5'>
+
+                5.0            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                4.878            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-562" class="recipe-row-6">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/10" class="hyperlink colorless">
+                            K<sub>2</sub>HPO<sub>4</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='5'>
+
+                5.0            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                4.878            </td>
+            <td class="text-right">
+                28.006            </td>
+        </tr>
+
+            <tr id="recipe-563" class="recipe-row-7">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/25" class="hyperlink colorless">
+                            Resazurin                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1.0            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                9.8e-4            </td>
+            <td class="text-right">
+                0.004            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">2</span>
+                                To make medium anoxic bring it to a boil, cool under 100% N<sub>2</sub> gas atmosphere, add 0.5 g/l L-cysteine hydrochloride and adjust pH to 7.0. Dispense under 100% N<sub>2</sub> gas atmosphere by filling 7 ml medium into anoxic Hungate-type tubes (for strains demanding meat particles put those first into the tube (use 1 part meat particles to 4 or 5 parts fluid)). Autoclave at 121°C for 30 min. For agar slants use 15.0 g agar per 1000.0 ml medium.                            </td>
+        </tr>
+                <tr id="recipe-39042" class="recipe-row-8">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/1157" class="hyperlink colorless">
+                            L-Cysteine HCl                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.5'>
+
+                0.5            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                0.488            </td>
+            <td class="text-right">
+                3.095            </td>
+        </tr>
+
+            <tr id="recipe-39043" class="recipe-row-9">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/3" class="hyperlink colorless">
+                            Agar                        </a>
+                                                    
+                , <small>for solid medium</small>
+                                                            </td>
+            <td class="amount text-right" data-volume='15'>
+
+                15.0            </td>
+            <td>
+                <span class="badge unit-g">g</span>
+            </td>
+            <td class="text-right">
+                14.634            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">3</span>
+                                In some cases (as indicated in the catalogue) the addition of Haemin and Vitamin K<sub>1</sub> or Vitamin K<sub>3</sub> is necessary. Add to 1000 ml of medium after autoclaving:                            </td>
+        </tr>
+                <tr id="recipe-564" class="recipe-row-10 text-muted">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-124'><span class='solutionRef'>Haemin solution</span></a>                                
+                
+                                                 <br> <small>optional</small>             </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-38895" class="recipe-row-11 text-muted">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-125'><span class='solutionRef'>Vitamin K1 solution</span></a>                                
+                , <small>alternative</small>
+                                                 <br> <small>optional</small>             </td>
+            <td class="amount text-right" data-volume='0.2'>
+
+                0.2            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-38896" class="recipe-row-12 text-muted">
+            <td style="white-space: inherit; min-width: 200px;">
+                                    <a href='#solution-5540'><span class='solutionRef'>Vitamin K3 solution</span></a>                                
+                , <small>alternative</small>
+                                                 <br> <small>optional</small>             </td>
+            <td class="amount text-right" data-volume='10'>
+
+                10.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+                        </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Haemin solution",
+    "url": "https://mediadive.dsmz.de/solutions/124",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": {
+        "1875": "Filter"
+    },
+    "protocolPurpose": "Prepare the solution Haemin solution for the cultivation of microorganisms.",
+    "steps": [
+        {
+            "recipe_order": 1001,
+            "step_id": 146,
+            "step_order": 1,
+            "step": "Dissolve 50 mg haemin in 1 ml 1 N NaOH; make up to 100 ml with distilled water and filter sterilize. Store refrigerated.",
+            "raw": "Dissolve 50 mg haemin in 1 ml 1 N NaOH; make up to 100 ml with distilled water and filter sterilize. Store refrigerated.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2021-10-29 09:10:57"
+        }
+    ],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Haemin",
+            "url": "https://mediadive.dsmz.de/ingredients/149",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "NaOH",
+            "url": "https://mediadive.dsmz.de/ingredients/256",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Distilled water",
+            "url": "https://mediadive.dsmz.de/ingredients/4",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-17" id="sol-124">
+            <a id="solution-124" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/124" class="hyperlink colorless">
+                            Haemin solution                        </a>
+                                                                        <a href="#solution-124" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='100' title="Final volume of this solution">100</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(124)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/124">16</a>
+                        other media (first defined in                         <a href="/medium/78">Medium 78</a>).
+                    </div>
+                                        <div class="">
+
+                <div class="p-10"> Equipment needed:                         <span class="badge badge-pill">Filter</span>
+                </div>
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-38963" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/149" class="hyperlink colorless">
+                            Haemin                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='50'>
+
+                50            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.5            </td>
+            <td class="text-right">
+                0.767            </td>
+        </tr>
+
+            <tr id="recipe-38964" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/256" class="hyperlink colorless">
+                            NaOH                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(1 N)</small>                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-38965" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/4" class="hyperlink colorless">
+                            Distilled water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='100'>
+
+                100            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">1</span>
+                                Dissolve 50 mg haemin in 1 ml 1 N NaOH; make up to 100 ml with distilled water and filter sterilize. Store refrigerated.                            </td>
+        </tr>
+                            </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Vitamin K1 solution",
+    "url": "https://mediadive.dsmz.de/solutions/125",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": {
+        "277": "Filter"
+    },
+    "protocolPurpose": "Prepare the solution Vitamin K1 solution for the cultivation of microorganisms.",
+    "steps": [
+        {
+            "recipe_order": 1001,
+            "step_id": 147,
+            "step_order": 1,
+            "step": "Dissolve 0.1 ml of vitamin K1 in 20 ml 95% ethanol and filter sterilize. Store refrigerated in a brown bottle.",
+            "raw": "Dissolve 0.1 ml of vitamin K1 in 20 ml 95% ethanol and filter sterilize. Store refrigerated in a brown bottle.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2021-10-29 09:10:57"
+        }
+    ],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Vitamin K1",
+            "url": "https://mediadive.dsmz.de/ingredients/150",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Ethanol",
+            "url": "https://mediadive.dsmz.de/ingredients/201",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-13" id="sol-125">
+            <a id="solution-125" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/125" class="hyperlink colorless">
+                            Vitamin K1 solution                        </a>
+                                                                        <a href="#solution-125" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='20' title="Final volume of this solution">20</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(125)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/125">12</a>
+                        other media (first defined in                         <a href="/medium/78">Medium 78</a>).
+                    </div>
+                                        <div class="">
+
+                <div class="p-10"> Equipment needed:                         <span class="badge badge-pill">Filter</span>
+                </div>
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-38966" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/150" class="hyperlink colorless">
+                            Vitamin K<sub>1</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='0.1'>
+
+                0.1            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-38967" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/201" class="hyperlink colorless">
+                            Ethanol                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(95 %)</small>                            </td>
+            <td class="amount text-right" data-volume='20'>
+
+                20.0            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                950            </td>
+            <td class="text-right">
+                20620.8            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">1</span>
+                                Dissolve 0.1 ml of vitamin K<sub>1</sub> in 20 ml 95% ethanol and filter sterilize. Store refrigerated in a brown bottle.                            </td>
+        </tr>
+                            </table>
+                </div>
+
+            </div>
+        </div>
+    <script type="application/ld+json">{
+    "@type": "labProtocol",
+    "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/LabProtocol/0.6-DRAFT-2020_12_08",
+    "headline": "Vitamin K3 solution",
+    "url": "https://mediadive.dsmz.de/solutions/5540",
+    "keywords": [
+        "chemical solution",
+        "culture medium",
+        "wetlab"
+    ],
+    "labEquipmentUsed": [],
+    "protocolPurpose": "Prepare the solution Vitamin K3 solution for the cultivation of microorganisms.",
+    "steps": [
+        {
+            "recipe_order": 1001,
+            "step_id": 6126,
+            "step_order": 1,
+            "step": "Dissolve 5 mg vitamin K3 in 1 ml 95% ethanol, dilute to 0.05 mg/ml in water and filter sterilize. Store refrigerated in a brown bottle.",
+            "raw": "Dissolve 5 mg vitamin K3 in 1 ml 95% ethanol, dilute to 0.05 mg/ml in water and filter sterilize. Store refrigerated in a brown bottle.",
+            "step_type": null,
+            "details": null,
+            "details2": null,
+            "details3": null,
+            "last_modified": "2022-03-28 12:25:27"
+        }
+    ],
+    "reagentUsed": [
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Vitamin K3",
+            "url": "https://mediadive.dsmz.de/ingredients/2086",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Ethanol",
+            "url": "https://mediadive.dsmz.de/ingredients/201",
+            "identifier": []
+        },
+        {
+            "@type": "MolecularEntity",
+            "http://purl.org/dc/terms/conformsTo": "https://bioschemas.org/profiles/MolecularEntity/0.5-RELEASE/",
+            "name": "Water",
+            "url": "https://mediadive.dsmz.de/ingredients/754",
+            "identifier": []
+        }
+    ]
+}</script>
+        <div class="box solution solution-8" id="sol-5540">
+            <a id="solution-5540" class="anchor"></a>
+
+                            <div class="header justify-content-between mb-0">
+                    <h2 class="m-0">
+                        
+                        <a href="/solutions/5540" class="hyperlink colorless">
+                            Vitamin K3 solution                        </a>
+                                                                        <a href="#solution-5540" class="ml-5 text-decoration-none">#</a>
+                    </h2>
+                    <div class="d-inline-block">
+                                                        <span class="badge volume" data-volume='100' title="Final volume of this solution">100</span>
+
+                                                                            <a class="expand-btn ml-10" onclick="toggleSolution(5540)"><i class="ph ph-lg ph-arrows-in-line-vertical"></i></a>
+                        
+                    </div>
+                </div>
+
+                                    <div class="p-15 mb-10 bg-header border-bottom ">
+                        Solution occurs in                         <a href="/solutions/5540">7</a>
+                        other media (first defined in                         <a href="/medium/">Medium </a>).
+                    </div>
+                                        <div class="">
+
+                
+                <div class="table-responsive" style="margin-bottom: 1px;">
+                    <table class="table solution-table simple">
+                                                            <tr>
+                                        <th>Compound</th>
+                                        <th class="text-right">Amount</th>
+                                        <th>Unit</th>
+                                        <th class="text-right">Conc. [g/L]</th>
+                                        <th class="text-right">Conc. [mM]</th>
+                                    </tr>
+                                <tr id="recipe-39044" class="recipe-row-1">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/2086" class="hyperlink colorless">
+                            Vitamin K<sub>3</sub>                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='5'>
+
+                5            </td>
+            <td>
+                <span class="badge unit-mg">mg</span>
+            </td>
+            <td class="text-right">
+                0.05            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr id="recipe-39045" class="recipe-row-2">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/201" class="hyperlink colorless">
+                            Ethanol                        </a>
+                                                    
+                
+                                <br><small class='text-muted'>(95%)</small>                            </td>
+            <td class="amount text-right" data-volume='1'>
+
+                1            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                9.5            </td>
+            <td class="text-right">
+                206.208            </td>
+        </tr>
+
+            <tr id="recipe-39046" class="recipe-row-3">
+            <td style="white-space: inherit; min-width: 200px;">
+                                                            <a href="/ingredients/754" class="hyperlink colorless">
+                            Water                        </a>
+                                                    
+                
+                                                            </td>
+            <td class="amount text-right" data-volume='100'>
+
+                100            </td>
+            <td>
+                <span class="badge unit-ml">ml</span>
+            </td>
+            <td class="text-right">
+                -            </td>
+            <td class="text-right">
+                -            </td>
+        </tr>
+
+            <tr class="step-row">
+            <td colspan="6" class="" style="white-space: inherit; max-width: 100%;">
+                                    <span class="step-number">1</span>
+                                Dissolve 5 mg vitamin K<sub>3</sub> in 1 ml 95% ethanol, dilute to 0.05 mg/ml in water and filter sterilize. Store refrigerated in a brown bottle.                            </td>
+        </tr>
+                            </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</div>
+<div class="col-lg-5">
+
+    <div class="content mt-0">
+        
+        <h3 id="title-metadata" class="mt-md-0">
+            Metadata        </h3>
+
+        <table class="table small" id="metadata-box">
+            
+            
+            <tr>
+                <td>Last modified:</td>
+                <td>
+                    05.11.25                </td>
+            </tr>
+            <tr>
+                <td>Source:</td>
+                <td>
+                                            <a href="https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf" target="_blank">DSMZ <i class="ph ph-arrow-square-out"></i></a>
+                                    </td>
+            </tr>
+            
+                                <tr>
+                        <td>Taxonomic range:</td>
+                        <td><i class="ph ph-lg ph-streptococcus text-danger"></i>&nbsp;Bacteria</td>
+                    </tr>
+            
+            <tr>
+                <td>Medium type:</td>
+                <td>
+                    Complex medium                </td>
+            </tr>
+            <tr>
+                <td>Final pH:</td>
+                <td>
+                    <span id="pH-value">7</span>
+                </td>
+            </tr>
+                            <tr>
+                    <td>Equipment needed:</td>
+                    <td>
+                        Autoclave, Filter, Gassing station, Hungate tubes                    </td>
+                </tr>
+                                                                <tr class="d-none d-sm-table-row">
+                    <td colspan="2">
+                                                <button class="btn" onclick="showQR('https%3A%2F%2Fbacmedia.dsmz.de%2Fmedium%2F78')" id="qrcode">
+                            <i class="ph ph-qr-code ph-lg mr-10 ph-fw"></i>
+                            Show QR code for mobile                        </button>
+                    </td>
+                </tr>
+                <tr class="d-none d-sm-table-row">
+                    <td colspan="2">
+                        <a href="/medium-builder?medium=78" class="btn" id="medium-builder">
+                            <!-- <i class="ph ph-note-pencil ph-lg mr-10"></i> -->
+                            <i class="ph ph-flask-pen ph-lg mr-5 ph-fw" aria-hidden="true"></i>
+                            Edit in Medium builder                        </a>
+                    </td>
+                </tr>
+                    </table>
+
+                    <div class="box">
+                <h4 class="header" id="title-gas">Gas composition</h4>
+                <ul class="h-list mb-0 mt-10" id="gas-list">
+                                            <li id="gas-N2" class="">
+                            100 % N2                        </li>
+                                    </ul>
+                <p class="mx-10">
+                    Detailed instructions for the cultivation of anaerobes including important warnings can be found in the                     <a class="link" href="/docs/cultivation/anaerobes" target="_blank" rel="noopener noreferrer">
+                        cultivation instructions                    </a>.
+                </p>
+            </div>
+        
+
+                <div class="box" id="strain-box">
+            <h4 id="title-strains" class="header justify-content-between">
+                <span>Associated strains</span>
+                <a class="" href="/docs/website#strains"><i class="ph ph-book" aria-hidden="true"></i></a>
+            </h4>
+
+            <table class="table simple">
+                
+                    <tr>
+                        <td>
+                            All strains for this medium:
+                        </td>
+                        <td>
+                                                            <a href="/strains/medium/78">
+                                    <i class="ph ph-microbes"></i>
+                                    314                                </a>
+                                                    </td>
+                    </tr>
+                    <!-- Modifications -->
+
+                                            <tr style="border-bottom-width: 0px;">
+                            <td>
+                                Strains with modifications:
+                            </td>
+                            <td>
+                                <a href="/modifications/78">
+                                    <i class="ph ph-flask-bacterium"></i>
+                                    64                                </a>
+                            </td>
+                        </tr>
+                                    
+            </table>
+
+
+            
+
+        </div>
+
+
+        
+                    <div class="box" id="related-media-box">
+                <h4 id="title-related-media" class="header">Related media for CHOPPED MEAT MEDIUM</h4>
+                <table class="table small simple">
+                                            <tr id="others-69" class="secondary">
+                            <td class="text-right">
+                                <a href="/medium/78">
+                                    78                                </a>
+                            </td>
+                            <td>CHOPPED MEAT MEDIUM</td>
+                        </tr>
+                                            <tr id="others-70" class="">
+                            <td class="text-right">
+                                <a href="/medium/78a">
+                                    a                                </a>
+                            </td>
+                            <td>CHOPPED MEAT MEDIUM FOR TREPONEMA SP.</td>
+                        </tr>
+                                            <tr id="others-71" class="">
+                            <td class="text-right">
+                                <a href="/medium/78b">
+                                    b                                </a>
+                            </td>
+                            <td>CHOPPED MEAT MEDIUM (N2/CO2)</td>
+                        </tr>
+                                            <tr id="others-72" class="">
+                            <td class="text-right">
+                                <a href="/medium/78c">
+                                    c                                </a>
+                            </td>
+                            <td>CHOPPED MEAT MEDIUM FOR FRETIBACTERIUM SP.</td>
+                        </tr>
+                                            <tr id="others-73" class="">
+                            <td class="text-right">
+                                <a href="/medium/78d">
+                                    d                                </a>
+                            </td>
+                            <td>MEDIUM FOR TREPONEMA PARVUM</td>
+                        </tr>
+                                    </table>
+            </div>
+                
+
+                    <div class="box" id="medium-composition-box">
+                <h4 id="title-medium-comp" class="header">Molecular composition                                    </h4>
+                <div class="table-responsive">
+                    <table class="table simple" id="composition-table">
+                        <tbody>
+                            <tr>
+                                <th>Compound</th>
+                                <th>Conc. [g/L]</th>
+                                <th>Conc. [mM]</th>
+                            </tr>
+                                                            <tr id="comp-220118" class="">
+                                    <td>
+                                        Ground beef                                                                            </td>
+                                    <td>
+                                        487.805                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220121" class="">
+                                    <td>
+                                        Casitone                                                                            </td>
+                                    <td>
+                                        29.268                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220131" class="">
+                                    <td>
+                                        Agar                                                                            </td>
+                                    <td>
+                                        14.634                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220123" class="">
+                                    <td>
+                                        K<sub>2</sub>HPO<sub>4</sub>                                                                            </td>
+                                    <td>
+                                        4.878                                    </td>
+                                    <td>
+                                        28.006                                    </td>
+                                </tr>
+                                                            <tr id="comp-220122" class="">
+                                    <td>
+                                        Yeast extract                                                                            </td>
+                                    <td>
+                                        4.878                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220130" class="hiddenrows hidden ">
+                                    <td>
+                                        L-Cysteine HCl                                                                            </td>
+                                    <td>
+                                        0.488                                    </td>
+                                    <td>
+                                        3.095                                    </td>
+                                </tr>
+                                                            <tr id="comp-220127" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        Ethanol                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        0.185                                    </td>
+                                    <td>
+                                        4.024                                    </td>
+                                </tr>
+                                                            <tr id="comp-220125" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        Haemin                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        0.005                                    </td>
+                                    <td>
+                                        0.007                                    </td>
+                                </tr>
+                                                            <tr id="comp-220124" class="hiddenrows hidden ">
+                                    <td>
+                                        Resazurin                                                                            </td>
+                                    <td>
+                                        9.8e-4                                    </td>
+                                    <td>
+                                        0.004                                    </td>
+                                </tr>
+                                                            <tr id="comp-220126" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        Vitamin K<sub>3</sub>                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        4.9e-4                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220129" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        Vitamin K<sub>1</sub>                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        -                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220120" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        NaOH                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        -                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220119" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        Distilled water                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        -                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                            <tr id="comp-220128" class="text-muted hiddenrows hidden ">
+                                    <td>
+                                        Water                                         <br> <small>optional</small>                                     </td>
+                                    <td>
+                                        -                                    </td>
+                                    <td>
+                                        -                                    </td>
+                                </tr>
+                                                                                        <tr>
+                                    <td class="text-center p-0" colspan="3">
+                                        <a href="javascript:void(0)" onclick="showTableRows(this)" class=" d-block p-5">
+                                            <span class="hiddenrows">Show more</span>
+                                            <span class="hiddenrows hidden">Show less</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+                <div class="m-10 text-right">
+                    <div class="input-group input-group-sm d-inline-flex w-auto" role="group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="ph ph-download"></i></span>
+                        </div>
+                        <div class="input-group-append">
+                            <a href="/download/composition/78/csv" class="btn composition-download"><span>CSV</span></a>
+                        </div>
+                        <div class="input-group-append">
+                            <a href="/download/composition/78/json" class="btn composition-download"><span>JSON</span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+
+                    <div class="box" id="bacdive-box">
+                <h4 id="title-cultivation" class="header">
+                    Cultivation metadata from 314 strains                    <a href="https://bacdive.dsmz.de" target="_blank" rel="noopener noreferrer">
+                        <img src="/img/bacdive_small.svg" alt="BacDive" class="w-100">
+                    </a>
+                </h4>
+                <div class="table-responsive">
+                    <table class="table small simple">
+                                                    <tr class="">
+                                <td>halophily</td>
+                                <td>non-halophilic</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Salt+conc.&filter-group[0][filters][3][field-option]=range&filter-group[0][filters][3][field-value]=&filter-group[0][filters][3][field-validation]=halophily-salt_concentration-4&filter-group[0][filters][4]=AND&filter-group[0][filters][5][field]=salt+concentration+unit&filter-group[0][filters][5][field-value]=M&filter-group[0][filters][5][field-validation]=halophily-salt_concentration_unit-4&filter-group[1][group-condition]=OR&filter-group[1][filters][1][field]=Culture+medium+link&filter-group[1][filters][1][field-option]=endswith&filter-group[1][filters][1][field-value]=%2F78&filter-group[1][filters][1][field-validation]=culture_medium-media_link-3&filter-group[1][filters][2]=AND&filter-group[1][filters][3][field]=salt+concentration+unit&filter-group[1][filters][3][field-value]=%25&filter-group[1][filters][3][field-validation]=halophily-salt_concentration_unit-4&filter-group[1][filters][4]=AND&filter-group[1][filters][5][field]=Salt+conc.&filter-group[1][filters][5][field-option]=range&filter-group[1][filters][5][field-value]=&filter-group[1][filters][5][field-validation]=halophily-salt_concentration-4&filter-group[2][group-condition]=OR&filter-group[2][filters][1][field]=Culture+medium+link&filter-group[2][filters][1][field-option]=endswith&filter-group[2][filters][1][field-value]=%2F78&filter-group[2][filters][1][field-validation]=culture_medium-media_link-3&filter-group[2][filters][2]=AND&filter-group[2][filters][3][field]=Salt+conc.&filter-group[2][filters][3][field-option]=range&filter-group[2][filters][3][field-value]=&filter-group[2][filters][3][field-validation]=halophily-salt_concentration-4&filter-group[2][filters][4]=AND&filter-group[2][filters][5][field]=salt+concentration+unit&filter-group[2][filters][5][field-value]=%25(w%2Fv)&filter-group[2][filters][5][field-validation]=halophily-salt_concentration_unit-4" target="_blank" rel="noopener noreferrer">
+                                        1                                        strain                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>pH</td>
+                                <td>6 - 8</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=pH&filter-group[0][filters][3][field-option]=range&filter-group[0][filters][3][field-value]=6+-+8&filter-group[0][filters][3][field-validation]=culture_pH-pH-3" target="_blank" rel="noopener noreferrer">
+                                        19                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>pH</td>
+                                <td>8 - 10</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=pH&filter-group[0][filters][3][field-option]=range&filter-group[0][filters][3][field-value]=8+-+10&filter-group[0][filters][3][field-validation]=culture_pH-pH-3" target="_blank" rel="noopener noreferrer">
+                                        7                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>pH</td>
+                                <td>4 - 6</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=pH&filter-group[0][filters][3][field-option]=range&filter-group[0][filters][3][field-value]=4+-+6&filter-group[0][filters][3][field-validation]=culture_pH-pH-3" target="_blank" rel="noopener noreferrer">
+                                        4                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="">
+                                <td>phyla</td>
+                                <td>7</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Phylum&filter-group[0][filters][3][field-option]=contains&filter-group[0][filters][3][field-value]=*&filter-group[0][filters][3][field-validation]=strains-phylum-1" target="_blank" rel="noopener noreferrer">
+                                        233                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>oxygen</td>
+                                <td>anaerobe</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Oxygen+tolerance&filter-group[0][filters][3][field-value]=anaerobe&filter-group[0][filters][3][field-validation]=oxygen_tolerance-oxygen_tol-4" target="_blank" rel="noopener noreferrer">
+                                        179                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>oxygen</td>
+                                <td>obligate anaerobe</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Oxygen+tolerance&filter-group[0][filters][3][field-value]=obligate+anaerobe&filter-group[0][filters][3][field-validation]=oxygen_tolerance-oxygen_tol-4" target="_blank" rel="noopener noreferrer">
+                                        12                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>oxygen</td>
+                                <td>microaerophile</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Oxygen+tolerance&filter-group[0][filters][3][field-value]=microaerophile&filter-group[0][filters][3][field-validation]=oxygen_tolerance-oxygen_tol-4" target="_blank" rel="noopener noreferrer">
+                                        3                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>oxygen</td>
+                                <td>aerotolerant</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Oxygen+tolerance&filter-group[0][filters][3][field-value]=aerotolerant&filter-group[0][filters][3][field-validation]=oxygen_tolerance-oxygen_tol-4" target="_blank" rel="noopener noreferrer">
+                                        1                                        strain                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>temperature</td>
+                                <td>mesophilic</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Temperature+range&filter-group[0][filters][3][field-value]=mesophilic&filter-group[0][filters][3][field-validation]=culture_temp-temperature_range-3" target="_blank" rel="noopener noreferrer">
+                                        233                                        strains                                    </a>
+                                </td>
+                            </tr>
+                                                    <tr class="hiddenrows hidden">
+                                <td>temperature</td>
+                                <td>thermophilic</td>
+                                <td>
+                                    <a href="https://bacdive.dsmz.de/advsearch?filter-group[0][group-condition]=OR&filter-group[0][filters][1][field]=Culture+medium+link&filter-group[0][filters][1][field-option]=endswith&filter-group[0][filters][1][field-value]=%2F78&filter-group[0][filters][1][field-validation]=culture_medium-media_link-3&filter-group[0][filters][2]=AND&filter-group[0][filters][3][field]=Temperature+range&filter-group[0][filters][3][field-value]=thermophilic&filter-group[0][filters][3][field-validation]=culture_temp-temperature_range-3" target="_blank" rel="noopener noreferrer">
+                                        1                                        strain                                    </a>
+                                </td>
+                            </tr>
+                                                                            <tr>
+                                <td class="text-center p-0" colspan="3">
+                                    <a href="javascript:void(0)" onclick="showTableRows(this)" class=" d-block p-5">
+                                        <span class="hiddenrows">Show more</span>
+                                        <span class="hiddenrows hidden">Show less</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+
+        <!--  -->
+
+
+
+
+    </div>
+</div>
+</div>  <div class="position-absolute top-0 right-0 z-30" id="cookieWarning">
+    <div class="alert primary filled-dm w-300 w-sm-500 w-md-600" role="alert">
+      <div class="row align-items-center">
+        <div class="col-sm-2">
+          <div class="w-100 h-100 d-flex align-items-center rounded-circle bg-white mx-auto">
+            <div class="m-auto">
+              <i class="ph ph-cookie ph-4x" aria-hidden="true" style="color: #6F4E37;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 offset-sm-1 py-10">
+          <h4 class="title">Have some cookies!</h4>
+          We are using cookies to improve the user experience. We save the following information: user preferences for language, accessibility, help features and medium favourites. Unfortunately, you cannot use this site if you don't agree.
+          <div class="mb-10 text-right">
+            <button class="btn alt-dm" onclick="acceptCookies();">
+              I agree
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<footer class="page-footer">
+
+  <div class="footer text-center">
+
+    <div class="w-500 mw-full mx-auto my-20">
+      <h3 class="mt-0">
+        Not found what you were looking for?      </h3>
+
+      <p>
+        Search within all databases of the
+        <a href="https://hub.dsmz.de/" target="_blank" class="link">
+          DSMZ Digital Diversity
+        </a>
+      </p>
+
+      <form id="d3search" onsubmit="d3searchFunction()">
+        <div class="input-group">
+          <input type="search" name="search" id="hub-search" class="form-control" placeholder="Search across all DSMZ Digital Diversity databases">
+          <div class="input-group-append">
+            <button class="btn"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        function d3searchFunction() {
+          event.preventDefault();
+          var val = $('#hub-search').val();
+          // url encode the search term
+          var search = encodeURIComponent(val);
+          var action_src = "https://hub.dsmz.de/#/search/" + search;
+          window.open(action_src, '_blank');
+
+        }
+      </script>
+
+      <div class="">
+        <p class="font-size-12">provided to you by</p>
+        <a href="https://hub.dsmz.de/" target="_blank" title="DSMZ Digital Diversity">
+          <img src="/img/D3-Logo.png" alt="DSMZ Digital Diversity" height="70">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="link-parade">
+    <div class="row">
+      <div class="col-md">
+        <h3>Media<em>Dive</em></h3>
+        <a href="/about">About</a>
+        <a href="/news">News</a>
+        <a href="http://dx.doi.org/10.1093/nar/gkac803" target="_blank">Cite</a>
+        <a href="/stats">Statistics</a>
+
+        <!-- <a href="/registry">MediaRegistry</a> -->
+
+      </div>
+      <div class="col-md">
+        <h3>Help</h3>
+        <a href="/docs/website">Website</a>
+        <a href="/docs/medium-builder">Medium builder</a>
+        <a href="/doc/index.html">API reference</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="col-md">
+        <h3>Social Media</h3>
+        <a href="https://www.linkedin.com/company/dsmzd3" target="_blank">
+          <span class="icon"><i class="ph ph-linkedin-logo"></i></span>
+          Linkedin
+        </a>
+        <a href="https://www.youtube.com/channel/UCZxfaPawuEmsNNInlIf1Pbw" target="_blank">
+          <span class="icon"><i class="ph ph-youtube-logo"></i></span>
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="logo-parade d-flex align-items-center">
+    <a href="https://www.denbi.de/" target="_blank" data-v-f5dfcaf0=""><img src="/img/logos/denbi.svg" alt="de.NBI" data-v-f5dfcaf0=""></a>
+    <div>
+      <small>
+        If Media<em>Dive</em> was useful to you,<br> please participate in this 2-minute survey:      </small><br>
+      <a href="https://de.surveymonkey.com/r/denbi-service?sc=db-node&tool=mediadive" target="_blank">
+        Survey      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="footer">
+    <span>
+      &copy; DSMZ 2026    </span>
+    <a href="/imprint">Imprint</a>
+    <a href="/imprint#privacy">Privacy Statement</a>
+    <a href="/imprint#license">
+      <img src="/img/cc.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      <img src="/img/by.svg" alt="" style="height:1.3em;vertical-align:text-bottom;">
+      License    </a>
+    <a href="/sitemap.xml">Sitemap</a>
+  </div>
+</footer>
+
+
+</div>
+
+</div>
+<!-- <div class="swipe-area"></div> -->
+
+<script>
+  function acceptCookies() {
+    digidive.createCookie("bacmedia-cookie-seen", true)
+    $("#cookieWarning").hide()
+  }
+</script>
+
+
+
+<script src="/js/tour/popper.min.js"></script><script src="/js/tour/shepherd.min.js"></script><script src="/js/tour/tour.js?1722402400"></script><script src="/js/tour/tour_medium.js?1722402400"></script></body>

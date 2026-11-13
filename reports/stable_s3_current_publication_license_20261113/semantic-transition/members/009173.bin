@@ -1,0 +1,70 @@
+identifier: kgmicrobe.ingredient:jcm1199_phosphates_solution
+preferred_term: JCM1199 Phosphates solution
+synonyms:
+- synonym_text: Phosphates solution
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:4664d5f5ef483e152f8f8b2ef2dde380a273603d397082dc3d0804bf139213b0;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1199_phosphates_solution
+  ontology_label: JCM1199 Phosphates solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1199
+    notes: JCM1199 phosphate buffer stock; source specifies pH6.9. This is distinct
+      from the receiving mineral medium and its100ml addition; no source-derived flattened
+      rate is adopted.
+notes: JCM1199 phosphate buffer stock; source specifies pH6.9. This is distinct from
+  the receiving mineral medium and its100ml addition; no source-derived flattened
+  rate is adopted.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM1199 phosphate buffer stock; source specifies pH6.9. This is distinct
+    from the receiving mineral medium and its100ml addition; no source-derived flattened
+    rate is adopted.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.543888+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-170. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+components:
+- component_name: Na2HPO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.44'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.52'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1199
+    source_record: JCM1199 Phosphates solution
+    notes: JCM1199 phosphate buffer stock; source specifies pH6.9. This is distinct
+      from the receiving mineral medium and its100ml addition; no source-derived flattened
+      rate is adopted.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and
+    source batch units are transcribed without lexical identity promotion.

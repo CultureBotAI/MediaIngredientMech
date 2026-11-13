@@ -1,0 +1,13 @@
+# Cysteine stock predicate assessment
+
+The selected complete owner has a supported solution-of relation to CHEBI:91248. Its inherited CLOSE_MATCH grade should become NARROW_MATCH, which the current native producer emits as skos:broadMatch. Keep the local kgmicrobe.ingredient identity and registry exactMatch row. This is a proposed bounded correction, not an applied change or release approval.
+
+The literal JCM680 recipe names L-cysteine hydrochloride monohydrate solution and adds 10 mL per litre after sterilization. The 10 mL is a dose, not a stock concentration. The recipe does not specify this stock's concentration, solvent or pH; whole-medium pH and other stocks' percentages do not supply those facts. The full active ChEBI91248 term defines the monohydrate of L-cysteine hydrochloride, so it is a closer parent than anhydrous CHEBI91247. The exact solution is not the pure compound. Bounded ChEBI/all-ontology searches found only other concentration-defined pharmaceutical solutions, not an exact JCM680 stock; this is not an exhaustive ontology-absence claim.
+
+Current MAPPING_SEMANTICS sections1 and3 explicitly permit solution-of/form-of broadMatch without is_a or identity collapse. The historical #342 regrading and #321 parent correction remain authentic history, but their no-is_a reason does not support the current closeMatch. The existing parent is appropriate; no new CAS, solute structure, formula, concentration, components, roles or stock identity is inferred.
+
+Recommended author scope after root filing: change ontology_mapping.mapping_quality CLOSE_MATCH→NARROW_MATCH; append claim-specific truthful LLM-assisted MappingEvidence and history, preserving every original object and both REJECTED_LABEL entries. All other fields remain exact. Native projection must show the broader-parent relation and the local exact registry sibling, never a pure-solute identity replacement. Distinct complete successor review and final current-row review remain required.
+
+Dedup: open #901 is the current form-predicate follow-up context; cite historical #342/#321 and preliminary W01 obligation098. This observation does not claim that the stock is one of the historical73-hydrate denominator, resolve #901, or supersede W01's unsealed full review. Phosphate #758 coupling is deliberately outside this one-record conclusion.
+
+Authorship: C independently assesses this W07 source payload; C previously prepared coordinator integration/transport but did not author C-P04. This is not a review of a newly authored C successor, a whole-plan acceptance, or a new vote on roles/counts/export. No maintained, worker or partial-B state is changed.

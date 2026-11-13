@@ -1,0 +1,58 @@
+identifier: cas:39280-21-2
+preferred_term: Rhamnogalacturonan from soy bean pectic fibre
+ontology_mapping:
+  ontology_id: cas:39280-21-2
+  ontology_label: Rhamnogalacturonan from soy bean pectic fibre
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 39280-21-2 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:39280-21-2 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.051155+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'soy')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.092001+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'soy')
+  llm_assisted: false
+- timestamp: '2026-05-11T05:36:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLEANED_PROCESS_SYNONYMS
+  changes: Removed process-only exact synonyms "autoclaved" and "filtered".
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002187; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 39280-21-2
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+ingredient_type: UNDEFINED_MIXTURE
+mim_id: MIM:0002187
+legacy_identifiers:
+- MIM:Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre
+- cas:39280-21-2

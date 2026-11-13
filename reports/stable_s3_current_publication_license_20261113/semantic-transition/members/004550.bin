@@ -1,0 +1,93 @@
+id: CultureMech:008071
+name: gam_medium
+original_name: GAM Medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Nissui GAM Broth*
+  concentration:
+    value: '59'
+    unit: G_PER_L
+  source: NBRC Medium 312
+  notes: NBRC Medium 312 lists 59 g Nissui GAM Broth; the footnote identifies Nissui
+    Pharmaceutical Co. Ltd., Tokyo, Japan.
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: NBRC Medium 312
+  notes: NBRC Medium 312 lists 1.0 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M1525
+  term:
+    id: TOGO:M1525
+    label: GAM Medium
+notes: 'TOGO M1525 mirrors NBRC Medium 312: 59 g Nissui GAM Broth in 1 L distilled
+  water at pH 7.3.'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.797066Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1525'
+- timestamp: '2026-01-28T19:48:39.725352Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-09T08:05:06.820833+00:00'
+  curator: solution-migrator-v1.0
+  action: Migrated solutions from ingredients to solutions array
+  notes: Moved 1 solution(s) from ingredients
+- timestamp: '2026-03-13T06:19:53.352032Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008071'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added default solution name
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-17T06:30:50.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:11.877578+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "GAM Medium" to "gam_medium" for consistent matching
+- timestamp: '2026-05-16T09:03:10.132303+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:40:33.192420+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-10T00:00:00-07:00'
+  curator: repair_togo_commercial_score20.py
+  action: RESOLVED_TOGO_COMMERCIAL_SCORE20_GRAPH
+  source: https://togomedium.org/medium/M1525; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=312
+  notes: 'TOGO M1525 mirrors NBRC Medium 312: 59 g Nissui GAM Broth in 1 L distilled
+    water at pH 7.3.'
+ph_value: 7.3
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Dissolve 59 g Nissui GAM Broth in 1 L distilled water.
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M1525
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=312

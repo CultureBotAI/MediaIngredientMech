@@ -1,0 +1,36 @@
+{
+  "referral_id": "PF-LINEAGE-001",
+  "at": "2026-11-08T08:39:03.427052+00:00",
+  "reporter": "worker08:/root/inorganics",
+  "author_of_affected_historical_receipt": "worker08:/root/inorganics",
+  "status": "confirmed_historical_review_prose_discrepancy_referred_to_coordinator",
+  "severity_proposed": "minor",
+  "scope": "Historical reviewer wording only; outside the current W08-FINAL-001 author correction. No selected payload or current author source decision change requested.",
+  "prior_review": {
+    "path": "reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/independent-review/organic_products/review-v2.json",
+    "sha256": "5999f365868d6c33914a88ab51795b2f2d596dd0ceb9490d8f8f9f822b29689a",
+    "pointer": "/case_reviews/45/appraisal",
+    "actual_text": "The frozen raw Flour row says plain flour (supermarket) and g/L4. The corrected notes now preserve 4 g/L, correcting the predecessor applicability claim of2 g/L. FOODON00004510 is generic flour, unlike flour food product00001056; neither the label nor source proves wheat or a closed molecular mixture."
+  },
+  "frozen_source": {
+    "path": "reports/all_unmatched_20261107/worker-08/provenance/shard-08.json",
+    "sha256": "1367782d93a2a9733c6ee9fc4e1f69fbdb4ffd08ba0f7ad74849916ea34ba9e0",
+    "pointer": "/cases/180/original_kg_entry/source_record",
+    "actual_record": {
+      "amount": 4,
+      "compound": "Plain flour",
+      "compound_id": 1465,
+      "g_l": 4,
+      "optional": 0,
+      "recipe_order": 1,
+      "unit": "g"
+    }
+  },
+  "case_id": "KG_CASE:b9a6261315d83792bc02bfbe425cda2032c8833c7a3b6de3aa665fa62a7fc03e",
+  "proposal_id": "op1201-plain-flour",
+  "assessment": "The historical appraisal claims the frozen raw source says plain flour (supermarket). Its actual compound text is Plain flour. The old full proposed owner and current author decision do not assert a supermarket product. The historical extra word is not evidence of a narrower supplied form. The current skeptical review explicitly disavows that quotation. Frozen amount4/unitg/g_l4 remain source transcription, not independently measured recipe concentration.",
+  "bounded_followup": "Coordinator should retain this exact referral alongside immutable prior review bytes and avoid inheriting the unsupported supermarket quotation. Any future historical-review wording correction must be an explicit immutable successor. Do not broaden the current mapping-method author correction, change identity/payloads, or reopen unrelated findings.",
+  "prior_receipt_modified": false,
+  "author_payload_modified": false,
+  "coordinator_notified_before_any_fix": true
+}

@@ -1,0 +1,102 @@
+"""Read-only exact closure inventory; emits private metadata, no construction."""
+from pathlib import Path
+from collections import defaultdict, Counter
+import datetime,hashlib,json,os,stat,subprocess
+import yaml
+D=Path(__file__).absolute().parent;C=D.parents[1];M=C.parents[1]
+def digest(b):return hashlib.sha256(b).hexdigest()
+def sha(p):return digest(p.read_bytes())
+def save(name,v):
+ with (D/name).open('x') as f:json.dump(v,f,indent=2,ensure_ascii=False);f.write('\n')
+index_path=C/'integration/final-native-intake-after-ancillary-v1/materialization-index.draft.json'
+assert sha(index_path)=='1143b4eed8c0f27ee967da9a518961fcbf8c7f45a987c728a47b7e31e0db05fd'
+index=json.loads(index_path.read_text());byhash=defaultdict(list)
+for e in index['files']:byhash[e['sha256']].append(e)
+constructor=C/'integration/campaign-corrected-construction-preparation-v1/construct_corrected_b.py'
+assert sha(constructor)=='a40c5f6f586968a65ec8438aa00a6e8835bafd964e2e80e4d4ecc110906fa7d5'
+packets=[
+ ('na-author','integration/selenite718-alias-successor-v1','695d72332fc4a3760d6f2303d702f946b2aeefb2f10f47d701e9a076a7be05df','61e14ce23084a2b160f336fb0fe3d4d964d8861553b528be0dd8ee1504b35f22','author_support'),
+ ('methods-author','integration/w09-method-successors-v1','be29c1a7a0deb53f729eb373f06ec2b2769e443f0f0222e8348110d8f427d986','d8d973a9814aa3c0ad6cead73bb418a83f51e354ee3e8cd6f426397ba1db3069','author_support'),
+ ('na-independent','preflight/selenite718-alias-successor-independent-v1','898cc91b90eb599b6374f898715b6c00f6db5c90080ea5deebb7b77cd4e1131a','a3818506135981e125496e6b95837f56dba26278fa3572b9958c943dabc4c0dc','peer_support'),
+ ('method-delta-independent','preflight/three-method-successors-independent-v1','0b2cccd8ce91d31ac97349f8ea1c5f19600051686d5727a57b33117560bc0834','39eafdf8bf5e4d47e6d5e1e53c6e1e9614d318990659b428957adfeabb80749c','peer_support'),
+ ('whole-four-independent','preflight/corrected-four-owner-successors-independent-v1','0eddac522c48cab4dd9ade86aac808c1294b6c374028ef5440200f4ec369c245','30b835595c33f28da81d6ee2392088bddd9b3f915d73af3785e429910dbf6ec9','peer_support'),
+]
+files={};edges=[];packet_summary=[];reviews=[];capture_edges=[]
+def add(p,h,reason,owner,role):
+ p=Path(p).absolute();st=p.lstat();assert stat.S_ISREG(st.st_mode) and not p.is_symlink(),p
+ raw=p.read_bytes();assert digest(raw)==h,p
+ k=str(p)
+ if k not in files:files[k]={'path':k,'sha256':h,'bytes':len(raw),'st_nlink':st.st_nlink,'memberships':[]}
+ else:assert files[k]['sha256']==h,p
+ membership={'packet':owner,'reason':reason,'evidence_origin_role':role}
+ if membership not in files[k]['memberships']:files[k]['memberships'].append(membership)
+ return files[k]
+for key,rel,hh,mh,role in packets:
+ p=C/rel
+ for name,h in [('HANDOFF.json',hh),('MANIFEST.json',mh)]:add(p/name,h,'packet_seal',key,role)
+ manifest=json.loads((p/'MANIFEST.json').read_text());members=manifest.get('members',manifest.get('files'))
+ for e in members:add(p/e['path'],e['sha256'],'manifest_member',key,role)
+ packet_summary.append({'packet':key,'root':str(p),'handoff_sha256':hh,'manifest_sha256':mh,'verified_manifest_members':len(members),'role':role})
+ receipt_name={'methods-author':'NATIVE-AUTHOR-RECEIPT.json','na-independent':'NATIVE-REVIEW-RECEIPT.json','method-delta-independent':'NATIVE-REVIEW-RECEIPT.json','whole-four-independent':'NATIVE-REVIEW-RECEIPT.json'}.get(key)
+ if receipt_name:
+  receipt=json.loads((p/receipt_name).read_text());pair=receipt.get('pair', {k:receipt.get(k) for k in ['yaml','markdown','yaml_sha256','markdown_sha256']});doc=yaml.safe_load(Path(pair['yaml']).read_bytes());root=Path(receipt.get('source_root',receipt.get('fixture_root')))
+  for kind in ['yaml','markdown']:add(pair[kind],pair[kind+'_sha256'],'native_pair',key,'self_review_document' if key=='methods-author' else 'independent_review_document')
+  for e in doc['source']['inputs']:
+   original=root/e['path'];add(original,e['sha256'],'declared_native_input',key,role)
+   edges.append({'packet':key,'source_root':str(root),'historical_declared_path':e['path'],'original_path':str(original),'sha256':e['sha256'],'native_role':e['role'],'native_git_revision':doc['source']['git_revision'],'native_state':doc['source']['state'],'review_document':pair['yaml']})
+  reviews.append({'packet':key,'pair':pair,'source_root':str(root),'source':doc['source'],'reviewer':doc['reviewer'],'scientific_review':doc['scientific_review'],'completion':doc['completion'],'verdict':doc['verdict'],'scope':doc['scope'],'native_save_invoked':receipt.get('maintained_save_review_invoked',True),'transport_role':'evidence' if key=='methods-author' else 'review','independence_scope_limit': 'A previously authored Sulfur composition; method-delta/preservation review is not fresh whole-Sulfur approval.' if key=='method-delta-independent' else 'No application/export authorization.'})
+ # Explicit author external input pins are distinct from peer-generated support.
+ if key=='na-author':
+  for e in json.loads((p/'input-pins.json').read_text()):add(e['path'],e['sha256'],'author_declared_external_input',key,role)
+ # Preserve exact source->capture maps without rewriting original/native paths.
+ cm=p/('CAPTURE-MAP.json' if key=='methods-author' else 'native-fixture/evidence/CAPTURE-MAP.json')
+ if cm.exists():
+  for e in json.loads(cm.read_text()):
+   original=Path(e['original_path']);dest=p/e['captured_path'] if 'captured_path' in e else p/'native-fixture'/e['fixture_path']
+   add(original,e['sha256'],'original_capture_source',key,role);add(dest,e['sha256'],'captured_evidence_copy',key,role)
+   capture_edges.append({'packet':key,'original_path':str(original),'captured_path':str(dest),'sha256':e['sha256']})
+ if key=='whole-four-independent':
+  closure=json.loads((p/'NATIVE-INPUT-CLOSURE.json').read_text())
+  assert len(closure['inputs'])==len(doc['source']['inputs'])==179
+  declared={r['path']:r['sha256'] for r in doc['source']['inputs']}
+  for e in closure['inputs']:
+   assert declared[e['native_declared_path']]==e['sha256']
+   assert Path(e['actual_native_input_path'])==root/e['native_declared_path']
+   add(e['literal_original_path'],e['sha256'],'peer_literal_original_input',key,role)
+   add(e['actual_native_input_path'],e['sha256'],'peer_fixture_input',key,role)
+   if e['transport']=='authentic_git_beforeimage':
+    raw=subprocess.check_output(['git','--no-optional-locks','-C',str(C/'integration/ancillary1258-worktree'),'show',e['git_commit']+':'+e['git_path']],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+    assert digest(raw)==e['sha256']
+   capture_edges.append({'packet':key,'original_path':e['literal_original_path'],'captured_path':e['actual_native_input_path'],'sha256':e['sha256'],'transport':e['transport'],'git_commit':e.get('git_commit'),'git_path':e.get('git_path')})
+  prior_map=json.loads((p/'INPUT-TRANSPORT-v2.json').read_text())
+  assert len(prior_map)==172
+  lookup={e['native_declared_path']:e for e in closure['inputs']}
+  for e in prior_map:
+   bound=lookup[e['fixture_path']];assert e['original_path']==bound['literal_original_path'] and e['sha256']==bound['sha256'] and bound['transport']=='exact_regular_copy'
+ # Live command refs and audit input maps are already native source inputs where relevant.
+
+verified_index_sources={};groups=defaultdict(list)
+for v in files.values():groups[v['sha256']].append(v)
+transport=[];mapping=[];empty=[]
+for h,variants in sorted(groups.items()):
+ matches=byhash.get(h,[]);exact=[]
+ for e in matches:
+  src=Path(e['source']);key=(str(src),h)
+  if key not in verified_index_sources:
+   st=src.lstat();assert stat.S_ISREG(st.st_mode) and not src.is_symlink();assert sha(src)==h
+   verified_index_sources[key]={'source':str(src),'sha256':h,'bytes':st.st_size}
+  assert verified_index_sources[key]['bytes']==e['size'];exact.append(e)
+ # Choose an existing transport destination deterministically, never an owner identity.
+ chosen=sorted(exact,key=lambda e:e['destination'])[0] if exact else None
+ representative=sorted(variants,key=lambda v:(len(v['path']),v['path']))[0]
+ item={'sha256':h,'bytes':representative['bytes'],'original_paths':[v['path'] for v in variants], 'existing_index_destinations':exact,'representative_source':representative['path'],'disposition':'reuse_exact_original_index_bytes' if chosen else 'new_supporting_content_required','selected_existing_destination':None if chosen is None else chosen['destination'],'proposed_new_destination_suffix':None if chosen else '/evidence-closure/'+h+'-'+Path(representative['path']).name,'future_constructor_prefix':None,'actual_materialization_performed':False}
+ transport.append(item)
+ for v in variants:mapping.append({'original_path':v['path'],'sha256':h,'bytes':v['bytes'],'memberships':v['memberships'],'existing_materialized_destinations':[e['destination'] for e in exact],'proposed_content_representative':representative['path'],'actual_new_destination':None})
+ if representative['bytes']==0:empty.append(item)
+save('PACKETS.json',packet_summary);save('FILES.json',list(files.values()));save('CONTENT-TRANSPORT.json',transport);save('ORIGINAL-TO-MATERIALIZED-MAP.json',mapping);save('NATIVE-INPUT-MAP.json',edges);save('CAPTURE-LINEAGE-MAP.json',capture_edges);save('NATIVE-REVIEW-CLASSIFICATION.json',reviews);save('VERIFIED-EXISTING-INDEX-SOURCES.json',list(verified_index_sources.values()));save('EMPTY-CONTENT.json',empty)
+collisions=defaultdict(list)
+for v in files.values():collisions[v['sha256'][:20]+'-'+Path(v['path']).name].append(v['path'])
+collisions={k:v for k,v in collisions.items() if len(v)>1}
+save('CURRENT-TRANSPORT-SAME-BASENAME-COLLISIONS.json',collisions)
+result={'status':'READ_ONLY_FULL_FIVE_PACKET_CLOSURE_PENDING_REPAIRED_TRANSPORT_AND_ROOT_SELECTION','created_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'original_index':{'path':str(index_path),'sha256':sha(index_path),'entries':len(index['files'])},'constructor':{'path':str(constructor),'sha256':sha(constructor)},'packets':packet_summary,'unique_original_paths':len(files),'distinct_contents':len(groups),'native_review_input_edges':len(edges),'capture_lineage_edges':len(capture_edges),'distinct_contents_existing_index':sum(x['disposition']=='reuse_exact_original_index_bytes' for x in transport),'distinct_new_contents':sum(x['disposition']=='new_supporting_content_required' for x in transport),'original_paths_reusable':sum(bool(x['existing_materialized_destinations']) for x in mapping),'original_paths_new':sum(not x['existing_materialized_destinations'] for x in mapping),'new_content_bytes':sum(x['bytes'] for x in transport if x['disposition']=='new_supporting_content_required'),'empty_content_groups':len(empty),'empty_original_paths':sum(len(x['original_paths']) for x in empty),'existing_index_sources_rehashed':len(verified_index_sources),'current_transport_same_basename_collisions':len(collisions),'pending':['Root issue-first transport decision for neutral peer support, empty files and explicit original-path/deduplicated content mapping.'],'scope':'Five exact author/review seals, all their manifested regular members, all declared native source inputs, explicit Na external pins and original/captured source maps. Referenced old reports are preserved as historical artifacts; no recursive claim to copy every older cited packet.','scientific_vote':False,'config_created':False,'materialization_performed':False,'native_prepare':False}
+save('RESULT.json',result);print(json.dumps(result,indent=2))

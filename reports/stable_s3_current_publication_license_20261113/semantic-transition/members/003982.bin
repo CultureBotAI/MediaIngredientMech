@@ -1,0 +1,111 @@
+identifier: kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+preferred_term: L-Cysteine x HCl x H2O solution
+synonyms:
+- synonym_text: L-Cysteine x HCl x H2O solution
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: (add to make medium anoxic)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: QSY9 succinimidyl ester(1+)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:52:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as an L-cysteine hydrochloride hydrate solution and left unmapped
+    pending exact hydrate and solution composition curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0416 -> kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+    "L-cysteine hydrochloride" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED,
+    SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518156+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(add to
+    make medium anoxic)''. Tokens already present on the kg-microbe ontology node
+    were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''QSY9 succinimidyl
+    ester(1+)''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-10T00:00:00+00:00'
+  curator: fix_remaining_hydrate_regroundings
+  action: CORRECTED_PARENT
+  changes: ontology_id CHEBI:91247 -> CHEBI:91248 while retaining local identifier
+    kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution (#321).
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as an L-cysteine hydrochloride hydrate
+  solution pending exact hydrate and solution composition curation.
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: CHEBI:91248
+  ontology_label: L-cysteine hydrochloride hydrate
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#288)
+    notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+      a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+      a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers in
+      #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+      searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+      a gene allele (#288).'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:91247 (''L-cysteine hydrochloride'') — a subsumption ChEBI itself
+      denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+      compound, which is not an ancestor even transitively. A hydrate is a distinct
+      substance containing the anhydrous form, not a specialization of it. closeMatch
+      claims similarity without subsumption. The ontology_id and the record''s own
+      identifier are unchanged.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: Repointed the local solution identity's parent from CHEBI:91247 to the
+      hydrate-specific CHEBI:91248 ('L-cysteine hydrochloride hydrate'). The record
+      still denotes a prepared solution, not the pure ChEBI compound, so it keeps
+      its kgmicrobe.ingredient identifier and closeMatch grade.

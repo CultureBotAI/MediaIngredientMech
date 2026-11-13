@@ -1,0 +1,109 @@
+identifier: CHEBI:18403
+preferred_term: Arabitol
+ontology_mapping:
+  ontology_id: CHEBI:18403
+  ontology_label: L-arabinitol
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 7643-75-6
+    notes: ChEBI ID CHEBI:18403 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: L-Arabinitol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Arabinol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Arabitol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Lyxitol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-arabitol (L-arabinitol)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (+)-L-lyxitol
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-07T10:19:04.231198+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:18403
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: L-Arabinitol, L-Arabinol,
+    L-Arabitol, L-Lyxitol, L-arabitol (L-arabinitol)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.238237+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.059028+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H12O5; inchi=InChI=1S/C5H12O5/c6-1-3(8)5(10)4(9)2-7/h3-10H,1-2H;
+    smiles=OC[C@H](O)C(O)[C@@H](O)CO
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.555897+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.258749+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0824 ''(+)-L-lyxitol'' as a RAW_TEXT synonym -- L-lyxitol
+    is a ChEBI synonym of L-arabinitol (CHEBI:18403); a single polyol, not a blend.
+    No new SSSOM row; CHEBI:18403 is already mapped. Source: kgmicrobe.trait:l_lyxitol.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000373; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: Created from FEBA ontology enrichment workflow. Used in 4 FEBA media formulations.
+chemical_properties:
+  cas_rn: 7643-75-6
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:19:04.231209+00:00'
+  molecular_formula: C5H12O5
+  inchi: InChI=1S/C5H12O5/c6-1-3(8)5(10)4(9)2-7/h3-10H,1-2H2/t3-,4-/m0/s1
+  smiles: OC[C@H](O)C(O)[C@@H](O)CO
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
+mim_id: MIM:0000373
+legacy_identifiers:
+- MIM:Arabitol
+- CHEBI:18403

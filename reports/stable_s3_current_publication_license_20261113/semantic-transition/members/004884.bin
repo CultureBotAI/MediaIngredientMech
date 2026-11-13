@@ -1,0 +1,50 @@
+id: CultureMech:009376
+name: api_50_chb_e_medium
+original_name: API 50 CHB/E Medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: API 50 CHB/E Medium
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: TOGO M2832
+  notes: TOGO M2832 lists one liter of API 50 CHB/E Medium.
+media_term:
+  preferred_term: TOGO Medium M2832
+  term:
+    id: TOGO:M2832
+    label: API 50 CHB/E Medium
+notes: TOGO M2832 records one liter of API 50 CHB/E Medium incubated at 28 C for 24-48
+  h; the source does not disclose the product's internal formulation.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.341871Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: TOGO, ID: M2832'
+- timestamp: '2026-03-13T06:20:05.946858Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:009376'
+- timestamp: '2026-03-17T19:46:24.877160+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "API 50 CHB/E Medium" to "api_50_chb_e_medium" for consistent
+    matching
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_togo_products_more_score40.py
+  action: RESOLVED_TOGO_PRODUCT_SCORE40_GRAPH
+  changes: Resolved score-40 TOGO product graph
+  source: https://togomedium.org/medium/M2832
+  notes: TOGO M2832 records one liter of API 50 CHB/E Medium incubated at 28 C for
+    24-48 h; the source does not disclose the product's internal formulation.
+temperature_value: 28.0
+data_quality_flags:
+- ingredients_curated
+- has_unmapped_ingredients
+references:
+- reference: https://togomedium.org/medium/M2832

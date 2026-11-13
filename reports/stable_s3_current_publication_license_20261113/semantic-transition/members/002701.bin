@@ -1,0 +1,44 @@
+identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+preferred_term: 0129 (2
+synonyms:
+- synonym_text: 0129 (2
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1212
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:0129_2); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: CSV comma-split fragment of vibriostatic
+    agent O/129 (2,4-diamino-6,7-di-iso-propylpteridine phosphate).'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: MERGED_INTO
+  changes: 'Merged into kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+    ''2,4-diamino-6,7-di-iso-propylpteridine phosphate''. Fragment of a comma-split
+    label whose intact compound is already a MIM record. The source label was ''O/129
+    (2,4-diamino-6,7-di-iso-propylpteridine phosphate)'' — the vibriostatic agent
+    — and the ingest strips commas, so it arrived as three fragments. The third, ''7-di-iso-propylpteridine
+    Phosphate)'', is already carried as a synonym on the intact record; these two
+    were left orphaned as separate NEEDS_EXPERT records. Merged rather than grounded
+    separately: neither fragment names a compound.'
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:0129_2); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.

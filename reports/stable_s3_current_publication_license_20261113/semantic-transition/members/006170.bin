@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "author": "/root/issue_context",
+  "completed_at": "2026-11-08T03:55:23.994399+00:00",
+  "scope": "READ-ONLY live MIM issue dedup for canary artifact findings IR-DRAFT-1, IR-DRAFT-2 and IR-VALIDATION-1; no GitHub mutation.",
+  "recommendation": "Create one new narrowly scoped grouped MIM issue tracking the three already-resolved canary artifact findings, linked to their immutable independent review and re-review receipts. No inspected existing tracker covers them. Do not use KG source issue1824 for artifact finding retirement.",
+  "suggested_title": "Track resolved worker01 canary artifact-review findings",
+  "finding_ids": [
+    "IR-DRAFT-1",
+    "IR-DRAFT-2",
+    "IR-VALIDATION-1"
+  ],
+  "finding_scope": [
+    {
+      "id": "IR-DRAFT-1",
+      "problem": "Bare cross-repository issue references in draft resolved to wrong repository.",
+      "expected_tracking": "Record correction to explicit KG-Microbe issue URLs and independent draft re-review."
+    },
+    {
+      "id": "IR-DRAFT-2",
+      "problem": "Draft overstated automatic assignment mechanism from general source cross-reference disclaimer.",
+      "expected_tracking": "Record narrowed source-supported wording and independent re-review; retain source identity hold."
+    },
+    {
+      "id": "IR-VALIDATION-1",
+      "problem": "Whitespace-check claim omitted staged/raw-capture scope and exit2.",
+      "expected_tracking": "Record precise full staged failure on preserved evidence bytes versus authored-scope success, with command logs and independent re-review."
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "issue": 1151,
+      "disposition": "Not duplicate: exact MicrobeDecoder3-methylacetate owner provenance explanation, not this source canary draft; body and empty comments inspected."
+    },
+    {
+      "issue": 1156,
+      "disposition": "Not duplicate: supported SSSOM broad-predicate guide wording; body and empty comments inspected."
+    },
+    {
+      "issue": 1148,
+      "disposition": "Not duplicate: optional Edge adapter static checks; body and empty comments inspected."
+    },
+    {
+      "issue": 449,
+      "disposition": "Not duplicate: CultureMech occurrence membership/count import; body and all returned comments inspected."
+    },
+    {
+      "issue": 555,
+      "disposition": "Not duplicate: closed maintained mapping TSV CRLF writer defect; canary concern is truthful reporting of immutable raw-capture whitespace check, not normalizing those bytes. Body and empty comments inspected."
+    },
+    {
+      "issue": 933,
+      "disposition": "Not duplicate: closed specific Cycle2 Stage5/PR932 count and lyxose artifact corrections. Body and resolution comment inspected. Useful grouped-findings precedent only."
+    }
+  ],
+  "search_result": "worker01, worker-01, IR-DRAFT-1 and IR-VALIDATION-1 searches returned empty lists. Canary/all-unmatched searches returned unrelated scopes; broader artifact/whitespace/cross-repository search informed candidate inspection.",
+  "limitations": [
+    "Bounded GitHub search with all states; not an exhaustive all-history repository audit. Artifact query reached limit100, explicitly not exhaustive.",
+    "This dedup assessment does not re-review scientific evidence or independently authenticate final finding resolution; use actual reviewer receipts.",
+    "New issue-context captures require inclusion in final bundle membership and final diff review.",
+    "No earlier captures were rewritten."
+  ],
+  "captures": [
+    {
+      "path": "artifact-findings-all-unmatched.json",
+      "sha256": "549699a0bfe5fa9149135e95188a7ed3f4e9e7341ecb91b09f27bc849d6bc60f",
+      "accessed_at": "2026-11-08T03:54:33.850449+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "all-unmatched",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 2,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-artifact.json",
+      "sha256": "8e292b600ae90ab52c1d0dd9bc896b2a57c259d3838d83e3265ea637db046396",
+      "accessed_at": "2026-11-08T03:54:52.836207+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "artifact",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 100,
+      "capped": true
+    },
+    {
+      "path": "artifact-findings-canary.json",
+      "sha256": "2ce8284ae27c0132a56d9b682caa53869c468a4a0795f4b5593d9cd8a013e24e",
+      "accessed_at": "2026-11-08T03:54:32.973011+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "canary",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 14,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-cross-repository.json",
+      "sha256": "1fc7632360dae659fd006546f134666be5a0869e21003df7a522f0a719390c34",
+      "accessed_at": "2026-11-08T03:54:55.505164+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "cross-repository",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 3,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-ir-draft.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "accessed_at": "2026-11-08T03:54:34.710606+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "IR-DRAFT-1",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 0,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-ir-validation.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "accessed_at": "2026-11-08T03:54:35.372820+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "IR-VALIDATION-1",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 0,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-issue-1148.json",
+      "sha256": "9c541b821814cd55b958347216dd348d6e8baeb18eb959a07553618b1664bbd8",
+      "accessed_at": "2026-11-08T03:54:53.031050+00:00",
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "1148",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state,body,comments"
+      ],
+      "exit_code": 0,
+      "result_count": null,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-issue-1151.json",
+      "sha256": "b13e264c3a3a2c0e118bff95ae5cff5ae61efd9e8902bcf4d7ca94a435a50a89",
+      "accessed_at": "2026-11-08T03:54:51.543073+00:00",
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "1151",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state,body,comments"
+      ],
+      "exit_code": 0,
+      "result_count": null,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-issue-1156.json",
+      "sha256": "dc3fe6d5aefcab05f740bbfba034e5c1c03880238d96049edce7ef6336dce1c4",
+      "accessed_at": "2026-11-08T03:54:52.008834+00:00",
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "1156",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state,body,comments"
+      ],
+      "exit_code": 0,
+      "result_count": null,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-issue-449.json",
+      "sha256": "e0160bdae308a3c944d04207dd57768df66c356ba983f6adbbf53b950f53366a",
+      "accessed_at": "2026-11-08T03:54:52.429862+00:00",
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "449",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state,body,comments"
+      ],
+      "exit_code": 0,
+      "result_count": null,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-issue-555.json",
+      "sha256": "32d4e76fe50742f2d2e5630b671f5e4288ae240bf7431031eb0f7cebd89c3423",
+      "accessed_at": "2026-11-08T03:55:07.474189+00:00",
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "555",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state,body,comments"
+      ],
+      "exit_code": 0,
+      "result_count": null,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-issue-933.json",
+      "sha256": "e795c340cbe682f1526de7483181a594781cf918d80211cbec324ada1a3e6cc0",
+      "accessed_at": "2026-11-08T03:55:07.871910+00:00",
+      "command": [
+        "gh",
+        "issue",
+        "view",
+        "933",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state,body,comments"
+      ],
+      "exit_code": 0,
+      "result_count": null,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-whitespace.json",
+      "sha256": "0660952bbcc3af24e25dba48b0bafc4f7b70d137e195d0661a006f9eb3b48e49",
+      "accessed_at": "2026-11-08T03:54:54.346985+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "whitespace",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 10,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-worker-01.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "accessed_at": "2026-11-08T03:54:32.284803+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "worker-01",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 0,
+      "capped": false
+    },
+    {
+      "path": "artifact-findings-worker01.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "accessed_at": "2026-11-08T03:54:31.577670+00:00",
+      "command": [
+        "gh",
+        "search",
+        "issues",
+        "worker01",
+        "--repo",
+        "CultureBotAI/MediaIngredientMech",
+        "--json",
+        "number,title,url,state",
+        "--limit",
+        "100"
+      ],
+      "exit_code": 0,
+      "result_count": 0,
+      "capped": false
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+identifier: CHEBI:31345
+preferred_term: Ca-pantothenate
+ontology_mapping:
+  ontology_id: CHEBI:31345
+  ontology_label: Calcium pantothenate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Vitamin; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ca pantotenate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:43:20.164608+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:137-08-6 from PubChem API (preprocessed) via name preprocessing
+    (Ca-pantothenate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: 3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate,
+    Ca pantotenate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.484560+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.301871+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C9H16NO5; inchi=InChI=1S/C9H17NO5/c1-9(2,5-11)7(14)8(15)10-4-3-6(1;
+    smiles=CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.936758+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110299+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label '(R)-pantothenate'; it matches the ChEBI
+    synonym '3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate' on CHEBI:29032.
+    The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+    as a match to a known synonym, so the recorded grade overstated. ontology_id is
+    unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
+    emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: merge_salt_label_duplicates
+  action: MERGED_INTO
+  changes: Merged into CHEBI:31345 'Calcium pantothenate'; occurrences transferred.
+    Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names — the
+    abbreviated `Ca-` prefix is why the earlier merge pass missed it (#315).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:29032 -> CHEBI:31345 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Calcium pantothenate''. Provenance is unaffected:
+    what the record used to assert is in this history.'
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000546; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 137-08-6
+  data_source: PubChem API (preprocessed)
+  retrieval_date: '2026-04-05T23:43:20.164598+00:00'
+  molecular_formula: C9H16NO5
+  inchi: InChI=1S/C9H17NO5/c1-9(2,5-11)7(14)8(15)10-4-3-6(12)13/h7,11,14H,3-5H2,1-2H3,(H,10,15)(H,12,13)/p-1/t7-/m0/s1
+  smiles: CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-]
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (137 occurrences as 'Vitamin')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+      component'
+    curator_note: Widespread use in media formulations (137 occurrences). High confidence
+      based on 'Defined component' property.
+mim_id: MIM:0000546
+legacy_identifiers:
+- MIM:Ca-pantothenate
+- CHEBI:31345

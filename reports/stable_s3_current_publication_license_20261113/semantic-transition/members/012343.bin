@@ -1,0 +1,73 @@
+identifier: kgmicrobe.ingredient:jcm_1375_1435_825_glucose_10_percent_stock
+preferred_term: JCM 1375/1435/825 glucose 10% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1375_1435_825_glucose_10_percent_stock
+  ontology_label: JCM 1375/1435/825 glucose 10% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375
+    source_record: JCM 1375/1435/825 glucose 10% stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435
+    source_record: JCM 1375/1435/825 glucose 10% stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825
+    source_record: JCM 1375/1435/825 glucose 10% stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: 'Each source specifies separately autoclaved sterile anaerobic 10% glucose
+    stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving
+    batch. The percent basis, glucose chirality/anomer/starting hydrate and stock
+    final volume are unstated. PERCENT deliberately does not assert w/v. The source
+    does not identify the stock solvent. Water is omitted from components; UNKNOWN
+    closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks
+    by label alone.'
+notes: 'Each source specifies separately autoclaved sterile anaerobic 10% glucose
+  stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving
+  batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final
+  volume are unstated. PERCENT deliberately does not assert w/v. The source does not
+  identify the stock solvent. Water is omitted from components; UNKNOWN closure remains.
+  Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone.
+  Raw labels retained only in this source context: ["10% Glucose solution"]. No global
+  resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed JCM 1375/1435/825 glucose 10% stock with source-bound components
+    and retained preparation limits. Isolated proposal; no maintained owner edit or
+    support/release approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:39:29.038626+00:00'
+  curator: codex_all_unmatched_w06_successor_v3_research_c
+  action: CORRECTED
+  changes: 'W06-IR-004/005: omit untranscribed Water from the stock components; correct
+    solvent provenance in notes while preserving the stated solute concentration,
+    UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated
+    proposal only; no maintained mutation or release approval.'
+  llm_assisted: true

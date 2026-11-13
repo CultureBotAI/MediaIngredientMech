@@ -1,0 +1,118 @@
+{
+  "created_at": "2026-11-08T16:44:04.182564+00:00",
+  "scope": "Four method allegations against exact cdff planned captures and Git baseline842; W09 full packet not declared complete; no partial B after-state used.",
+  "plan_sha256": "cdff9ef796b6c2ecf112218be61843fc1928f442ff4a7ddd89758ea116be8cb2",
+  "baseline_commit": "84241993a278a7a413422ef89a52c0b47dc57831",
+  "w09_findings_sha256": "8b0f66bc89372b091d132abe542625db68444c3171e0cda22f9bb511e6ab8110",
+  "dispositions": [
+    {
+      "finding_id": "W09-ROW-BORAX-METHOD-001",
+      "owner": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+      "payload_sha256": "f3be9ddfe74195bdf64175b02a73db08f9d23317299930e4d1502e6ce48fa402",
+      "row_sha256": "ce593ef62f44bc9668e251fa092ff17df5ccc261b3c22dfc8ac55c1de1c47c79",
+      "disposition": "confirmed",
+      "reason": "The selected target was established by primary formula/structure accounting across inconsistent ChEBI annotations, not by equality to the conventional hydrate label. The primary IUCr study and official term/supplier captures preserve the identity; changing the method does not make a different hydrate.",
+      "recommended_remedy_or_limit": "MANUAL_CURATION with honest LLM_SUGGESTION evidence and append-only method explanation; no fabricated CAS lookup or label lookup. Preserve CHEBI:38888, all properties, source aliases, history, three UW references and the DSMZ770 stock exception.",
+      "identity_change_recommended": false,
+      "evidence_ids": [
+        "KG26-COMP-borate175-ols-38888-v1",
+        "KG26-COMP-borate175-structure-web-v1",
+        "KG26-COMP-borate175-supplier-web-v1"
+      ]
+    },
+    {
+      "finding_id": "W09-ROW-SULFUR-METHOD-001",
+      "owner": "data/ingredients/mapped/Sulfur.yaml",
+      "payload_sha256": "eff9acd458d8e3a2c12fd743f523444001e30d64ce5710d9bc902fef8c716103",
+      "row_sha256": "e85c5ca5ab00c18cedc8f221698e948e3cbcb9760793a137d42a37009dfa01ed",
+      "disposition": "confirmed",
+      "reason": "The baseline itself records CURATOR_JUDGMENT and the #368 atom-to-material correction. The planned union only appends source aliases/provenance. The primary ChEBI term is elemental sulfur; the decision is material scope, not primary-label resolution of Sulfur.",
+      "recommended_remedy_or_limit": "MANUAL_CURATION with new truthful assessment/history while preserving the original CURATOR_JUDGMENT and historical authorship. Keep CHEBI:33403, atom/polysulfur REJECTED_LABEL entries, absent unsupported molecular formula/allotrope/lot claims and all source/role holds.",
+      "identity_change_recommended": false,
+      "evidence_ids": [
+        "RS-062-PRIMARY-004",
+        "RS-062-PRIMARY-005",
+        "RS-062-PRIMARY-006",
+        "RS-062-PRIMARY-007",
+        "CHEM-CAP-c108c1a21b52d95b"
+      ]
+    },
+    {
+      "finding_id": "W09-ROW-DIARSENIC-METHOD-001",
+      "owner": "data/ingredients/mapped/Diarsenic_Trioxide.yaml",
+      "payload_sha256": "8d630caa382201110a476192206856c823447390b3576c17e3b008948fa7c36b",
+      "row_sha256": "bb117ee83138475fae95f661b0923aeac48c727609150fb1b425d6cfc72a43b6",
+      "disposition": "confirmed_with_qualification",
+      "reason": "The original author draft withheld a proposal because empirical As2O3 and molecular As4O6 appeared conflicting; the final decision explicitly resolves their 2:3 oxide scope using ChEBI definition and PubChem. Adopting the canonical name afterward does not alone establish the published lexical method. Qualify W09: an actual exact As2O3 OLS query is retained and returns one defining ChEBI target. Related-synonym scope alone does not invalidate a scientifically supported synonym.",
+      "recommended_remedy_or_limit": "Prefer MANUAL_CURATION to describe the explicit final representation adjudication, retaining the real synonym-search evidence. SYNONYM_MATCH is not forbidden, but would require an accountable exact-method reassessment that establishes that this was the actual sufficient resolution, without erasing the adjudication. No new identity, stock/arsenite substitution, molecular-weight, polymorph or lot assertion.",
+      "identity_change_recommended": false,
+      "evidence_ids": [
+        "RS-074-PRIMARY-000",
+        "RS-074-PRIMARY-001",
+        "RS-074-REPRESENTATION-2000d6d05dbe",
+        "RS-074-REPRESENTATION-5f9314de8d66",
+        "RS-074-REPRESENTATION-a5dafd1d45bb"
+      ]
+    },
+    {
+      "finding_id": "W09-ROW-BENZENETRIOL-METHOD-TRACE-OBSERVATION",
+      "owner": "data/ingredients/mapped/Benzene_1_2_4_triol.yaml",
+      "payload_sha256": "f2f3758b7b3793052a5b644bbfdbf78799ee7d412cc82982566b01f1ecef39d1",
+      "row_sha256": "8845a048538144b408baa574583d0a799a602704bc6d68efa5cf48fa4255d1dd",
+      "disposition": "provisional_not_confirmed",
+      "reason": "The source spelling is a real ChEBI synonym and the proposed preferred label is the actual canonical primary name. The source decision confirms the 1,2,4 pattern and records no contradictory CAS/representation conflict. Routine semantic verification or LLM authorship does not by itself make an exact label resolution false. The retained record does not specify the precise lookup route.",
+      "recommended_remedy_or_limit": "No forced grade change or new identity hold from this observation alone. Carry the trace qualification in complete-row review; if an unqualified method verdict is needed, request the existing author trace or record a truthful current primary/synonym resolution. Do not invent a historical lookup or require MANUAL_CURATION merely because an LLM checked the structure.",
+      "identity_change_recommended": false,
+      "evidence_ids": [
+        "RS-043-PRIMARY-000",
+        "RS-043-PRIMARY-002"
+      ]
+    }
+  ],
+  "authorship": "C authored the later Sulfur compatible-delta composition (history preserved), but not its inherited #368 mapping grade/judgment. This is a scoped triage of original method provenance, not an independent full-payload approval of C-authored bytes. W09 independent reviewers remain distinct.",
+  "controls": {
+    "planned_payload_hashes": 4,
+    "authentic_existing_preimages": 2,
+    "w01_committed_cores": [
+      {
+        "head": "da45d5a58ef762ee357257d6f089df852896984f",
+        "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/cores/final/evidence.json",
+        "sha256": "0238a2feff187a20c61be6a573f2e4da28c60c29e4540b867d2d06ef7e0e1f03",
+        "equal": true
+      },
+      {
+        "head": "da45d5a58ef762ee357257d6f089df852896984f",
+        "path": "reports/all_unmatched_20261107/worker-01/successor-1226-1237-v1/cores/final/decisions.json",
+        "sha256": "1df4da5d9de82ce6da563455c00f7ef63ae53ff379236272310cdb9047595d8a",
+        "equal": true
+      }
+    ],
+    "native_prepare_run": false,
+    "source_or_generated_edits": false,
+    "process_control": false,
+    "github_writes": false,
+    "new_ontology_fetch": false,
+    "native_saved_review": false
+  },
+  "limitations": [
+    "No full W09 packet completion assertion; captured findings/adjudication are exact read-time inputs.",
+    "No permission to resume/terminate/recover the held source writer or modify the accepted cdff plan. Root decides the actual guarded correction route.",
+    "No full-row, role, occurrence, release or export approval; all original holds remain.",
+    "This is the requested concise issue-triage decision packet, not a new native saved review pair or manufactured terminal disposition.",
+    "One local PDF read attempt failed because pypdf is absent; successful readback used installed pdftotext without modifying its source PDFs."
+  ],
+  "dedup_recommendation": {
+    "preferred_existing_issue": 1201,
+    "exact_related_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719419310",
+    "links": [
+      318,
+      368,
+      317,
+      519,
+      1226,
+      1258,
+      1263
+    ],
+    "qualification": "All-state bounded title/body/comment searches and targeted current bodies/comments read. No claim of an exhaustive full repository comment crawl. #1201 already tracks source-proposal method provenance; #318 and #368 own identity decisions, #1226 addresses the different MappingEvidence enum."
+  }
+}

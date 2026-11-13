@@ -1,0 +1,41 @@
+{
+  "index": 157,
+  "case_id": "KG_CASE:6fd10b406feae9b043de0cb1b917ea47ac39dd6157b4170e26daab2fd5600a20",
+  "commands": [
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "--glob",
+      "*.yaml",
+      "Mg.citrate|magnesium.*citrate|131389|131391",
+      "data/ingredients",
+      "reports/all_unmatched_20261107/worker-04/proposals"
+    ],
+    [
+      "rg",
+      "-uu",
+      "-n",
+      "-i",
+      "Mg.citrate|magnesium.*citrate|131389|131391",
+      "docs/data/label_index.csv"
+    ]
+  ],
+  "ignored_files_included": true,
+  "returncodes": [
+    0,
+    0
+  ],
+  "stdout": "data/ingredients/mapped/Mg-citrate.yaml:1:identifier: CHEBI:131391\ndata/ingredients/mapped/Mg-citrate.yaml:2:preferred_term: Mg-citrate\ndata/ingredients/mapped/Mg-citrate.yaml:4:  ontology_id: CHEBI:131391\ndata/ingredients/mapped/Mg-citrate.yaml:5:  ontology_label: trimagnesium dicitrate\ndata/ingredients/mapped/Mg-citrate.yaml:14:    notes: 'identifier/ontology_id CHEBI:131389 (''magnesium citrate'') -> CHEBI:131391\ndata/ingredients/mapped/Mg-citrate.yaml:15:      (''trimagnesium dicitrate''). The record''s own cas_rn 3344-18-1 is registered\ndata/ingredients/mapped/Mg-citrate.yaml:16:      by ChEBI against CHEBI:131391, which is the 3:2 magnesium:citrate salt of the\ndata/ingredients/mapped/Mg-citrate.yaml:26:- synonym_text: Magnesium citrate dibasic\ndata/ingredients/mapped/Mg-citrate.yaml:29:- synonym_text: Magnesium hydrogen citrate\ndata/ingredients/mapped/Mg-citrate.yaml:50:    (Mg-citrate)\ndata/ingredients/mapped/Mg-citrate.yaml:56:  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: E345, Magnesium citrate\ndata/ingredients/mapped/Mg-citrate.yaml:57:    dibasic, Magnesium hydrogen citrate, magnesium 3-carboxy-3-hydroxypentanedioate'\ndata/ingredients/mapped/Mg-citrate.yaml:79:  changes: 'ontology_label ''Mg-citrate'' -> ''magnesium citrate'': synced to canonical\ndata/ingredients/mapped/Mg-citrate.yaml:80:    CHEBI label (preferred_term ''Mg-citrate'' unchanged).'\ndata/ingredients/mapped/Mg-citrate.yaml:85:    does not equal the term's primary label 'magnesium citrate'; it matches the ChEBI\ndata/ingredients/mapped/Mg-citrate.yaml:86:    synonym 'Magnesium hydrogen citrate' on CHEBI:131389. The schema defines EXACT_MATCH\ndata/ingredients/mapped/Mg-citrate.yaml:94:  changes: identifier/ontology_id CHEBI:131389 -> CHEBI:131391 'trimagnesium dicitrate'\ndata/ingredients/mapped/Mg-citrate.yaml:95:    (#320); the record's CAS 3344-18-1 denotes the 3:2 magnesium:citrate salt. mapping_quality\n",
+  "label_index_stdout": "3936:E345,synonym,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique\n5479:magnesium 3-carboxy-3-hydroxypentanedioate,synonym,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique\n5487:Magnesium citrate dibasic,synonym,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique\n5499:Magnesium hydrogen citrate,synonym,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique\n5811:Mg-citrate,preferred_term,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique\n8551:trimagnesium dicitrate,ontology_label,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique\n",
+  "stderr": "",
+  "published_proposal_hits": [],
+  "related_original_cases": [
+    {
+      "case_id": "KG_CASE:6fd10b406feae9b043de0cb1b917ea47ac39dd6157b4170e26daab2fd5600a20",
+      "label": "Mg-citrate",
+      "proposal_ids": []
+    }
+  ]
+}

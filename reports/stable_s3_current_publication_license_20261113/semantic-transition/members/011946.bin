@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:togo_2231_sodium_carbonate_4g_per_l_stock
+preferred_term: TOGO M2231 sodium carbonate 4 g/L stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2231_sodium_carbonate_4g_per_l_stock
+  ontology_label: TOGO M2231 sodium carbonate 4 g/L stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '4'
+  concentration_unit: G
+- component_name: Deionized water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2231
+    source_record: TOGO M2231 sodium carbonate 4 g/L stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: Allen medium explicitly defines the named 4 g/L Na2CO3 stock with 4 g Na2CO3
+    and 1 L deionized water, then adds 5 ml to the receiving medium. The source batch
+    inputs are preserved rather than treating the frozen 5 G_PER_L as dry salt. This
+    strength is distinct from 4% and 1 M sodium-carbonate stocks; no hydrate or unrelated
+    generic Sodium_Carbonate_Solution owner is approved.
+notes: 'Allen medium explicitly defines the named 4 g/L Na2CO3 stock with 4 g Na2CO3
+  and 1 L deionized water, then adds 5 ml to the receiving medium. The source batch
+  inputs are preserved rather than treating the frozen 5 G_PER_L as dry salt. This
+  strength is distinct from 4% and 1 M sodium-carbonate stocks; no hydrate or unrelated
+  generic Sodium_Carbonate_Solution owner is approved. Raw labels retained only in
+  this source context: ["Na2CO3 (4 g/L)"]. No global resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed TOGO M2231 sodium carbonate 4 g/L stock with source-bound components
+    and retained preparation limits. Isolated proposal; no maintained owner edit or
+    support/release approval.
+  llm_assisted: true

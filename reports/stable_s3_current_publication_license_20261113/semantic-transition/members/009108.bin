@@ -1,0 +1,75 @@
+{
+  "reviewer": "/root/gyps_native_technical",
+  "read_at": "2026-11-08T10:40:41.246543+00:00",
+  "scope": "Technical native intake representation and exact original-object crosswalk only; no new science or source claim authoring.",
+  "input_pins": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+      "bytes": 54601
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-application-accounting-v3/crosswalk.py",
+      "sha256": "6b247656ec34a5280a7b10ba1dea6a67edfc12fa0aab004cbb2ec9575a650753",
+      "bytes": 16709
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-application-accounting-v3/README.md",
+      "sha256": "f3bc343284aee9cf127852ccdf42b281ee22ef1ad68868e3e62531cd213aedd8",
+      "bytes": 4682
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-owner-apply-handoff-v1/interface.json",
+      "sha256": "ea736eaaf444d6264fed2be0b8ad64c44b306c06c90fcab6540366b4f3e6d96c",
+      "bytes": 3557
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/union-ledger.json",
+      "sha256": "a709fa2094a25e244b96f18699be06c266b7653719fcba04062c6f195daa25c5",
+      "bytes": 11933664
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-03.json",
+      "sha256": "90d5d5df1ae9609c08593c93216d78449f6ac2781f1d5e7e95695751fdd0c228",
+      "bytes": 989997
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-05.json",
+      "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4",
+      "bytes": 2059420
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/gyps-native-origin-v1/inputs/issue1176-route-comment.json",
+      "sha256": "e16e0a3bcb0f3c541437fdd363b5a684aa132dece0766de2467bffd11271eec7",
+      "bytes": 3584
+    }
+  ],
+  "native_operator_requirements": {
+    "ledger_root": "object containing proposals:list",
+    "existing_owner": "kind=edit_existing_owner; owner_path matches operation before source; before_sha256 matches real maintained preimage",
+    "after_capture": "closed root=artifact,path,sha256 object; published evidence binding at same origin head and exact path/suffix/hash",
+    "case_ids": "nonempty and exactly equal origin.case_hashes keys; every hash must equal canonical case hash from one complete global ledger",
+    "additional_proposal_fields": "allowed by native loader (complete proposal is not closed); reviewed crosswalk binds their exact full object, including explicit provenance",
+    "assignment_limit": "Native loader does not prove origin worker owns assigned source case and does not interpret causal-only scope; provenance review/private tests must prove foreign W05 case is not misrepresented as assigned W03 or GYPS observation",
+    "prepare": "requires privateGitbaseline, complete fixture ownerinventory, all11exactproducerbindings, all8evidence roles, protected native mapping-checkpoint pins, source-compatible history extension and byte-exact native serialization",
+    "crosswalk": "version3 compares complete original proposal object+canonical hash and original ledger/payload published head/path/hash with native origins; final reconciled operation payload is separate; no normalized retirement needed for a new additive GYPS origin"
+  },
+  "truthful_route_possible": true,
+  "causal_case": {
+    "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+    "canonical_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+    "global_ledger_count": 1879,
+    "role": "causal W05 parent context only; never an added GYPS observation/occurrence or assigned W03 frozen sourcecase"
+  },
+  "proposed_negative_controls": [
+    "wrong causal case digest must refuse native origin",
+    "wrong genuine preimage must refuse native operation",
+    "wrong payload hash or original binding must refuse native origin",
+    "foreign causal case falsely marked assigned must fail explicit provenance guard; native alone does not check that scientific/assignment meaning"
+  ],
+  "proof_limits": [
+    "A fixtureGitcommit is not actual remote publication. Newledger cannot claim its future realpublishedhead before publication.",
+    "One-owner privatefixtureprepare/crosswalk success does not prepare fullcampaign or approve science/application.",
+    "Actual finalpublishedhead must be bound and independently reviewed byroot after publication."
+  ]
+}

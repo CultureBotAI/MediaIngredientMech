@@ -1,0 +1,51 @@
+identifier: cas:40580-83-4
+preferred_term: Harmol Hydrochloride
+ontology_mapping:
+  ontology_id: cas:40580-83-4
+  ontology_label: Harmol Hydrochloride
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 40580-83-4 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+      to a CHEBI primary if/when CHEBI adds the term.
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:40580-83-4 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:33.944909+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:53:29.900237+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C12H11ClN2O; smiles=CC1=C2C(=C3C=CC(=O)C=C3N2)C=CN1.Cl;
+    inchi=InChI=1S/C12H10N2O.ClH/c1-7-12-10(4-5-13-7)9-3-2-8
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.929522+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 40580-83-4
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C12H11ClN2O
+  smiles: CC1=C2C(=C3C=CC(=O)C=C3N2)C=CN1.Cl
+  inchi: InChI=1S/C12H10N2O.ClH/c1-7-12-10(4-5-13-7)9-3-2-8(15)6-11(9)14-12;/h2-6,13-14H,1H3;1H
+  pubchem_cid: 94507
+ingredient_type: SINGLE_INGREDIENT

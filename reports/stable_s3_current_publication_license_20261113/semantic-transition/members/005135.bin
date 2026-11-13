@@ -1,0 +1,253 @@
+id: CultureMech:007221
+name: labarre_modified_bg11
+original_name: Labarre (Modified BG11)
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Sodium nitrate
+  term:
+    id: CHEBI:63005
+    label: sodium nitrate
+  concentration:
+    value: '10.03'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63005
+    label: sodium nitrate
+- preferred_term: Sodium molybdate
+  concentration:
+    value: '0.001616'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75215
+    label: sodium molybdate (anhydrous)
+- preferred_term: HEPES
+  term:
+    id: CHEBI:46756
+    label: HEPES
+  concentration:
+    value: '6.0'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:46756
+    label: HEPES
+- preferred_term: Cupric sulfate
+  concentration:
+    value: '0.0003164'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:23414
+    label: copper(II) sulfate
+- preferred_term: Manganese chloride
+  concentration:
+    value: '0.009145'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:63041
+    label: manganese(II) chloride
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.0007721'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Cobalt nitrate
+  concentration:
+    value: '0.0001697'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:86209
+    label: cobalt dinitrate
+- preferred_term: Boric acid
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  concentration:
+    value: '0.04626'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33118
+    label: boric acid
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.2433'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Citrate
+  concentration:
+    value: '0.03123'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:cit'
+  term:
+    id: CHEBI:16947
+    label: citrate(3-)
+- preferred_term: EDTA
+  term:
+    id: CHEBI:4735
+    label: ethylenediaminetetraacetic acid
+  concentration:
+    value: '0.003422'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:4735
+    label: ethylenediaminetetraacetic acid
+- preferred_term: sodium silicate
+  term:
+    id: CHEBI:60720
+    label: sodium silicate
+  concentration:
+    value: '0.2041'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:60720
+    label: sodium silicate
+- preferred_term: Sodium carbonate
+  concentration:
+    value: '1.887'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:29377
+    label: sodium carbonate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:29377
+    label: sodium carbonate
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '0.3043'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Potassium dibasic phosphate
+  concentration:
+    value: '0.2239'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Fe(III)dicitrate
+  concentration:
+    value: '0.0245'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:fe3dcit'
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: FILTER_STERILIZE
+  description: Sterilize by filtration (0.22 μm) to preserve heat-sensitive components
+curation_history:
+- timestamp: '2026-01-27T07:21:45.522450Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 321, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-01-28T19:48:15.540864Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:46.971689Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007221'
+- timestamp: '2026-03-17T06:29:58.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:05.159302+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "'Labarre (Modified BG11" to "labarre_modified_bg11"
+    for consistent matching
+- timestamp: '2026-06-05T07:41:10.627212+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 8 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-31T04:06:24.112486+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:321's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-08-31T06:17:35.464974+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored the medium's own name in media_term.term.label, original_name. The
+    MediaDB SQL parser truncated every value containing a parenthesis at that parenthesis;
+    recovered from media_database.07Oct2015.sql.
+- timestamp: '2026-10-13T16:00:31.974764+00:00'
+  curator: codex
+  action: ADDED_PAPER_CITATION_WITH_SCOPED_NOTES
+  notes: Added verified paper bibliography, archived abstract/Markdown provenance,
+    exact excerpts and qualified scientific-name/NCBI mappings. Preserved formulation,
+    assay and metadata limits. Existing recipe fields and history unchanged; no new
+    native growth, concentration evidence or resolved variant.
+  source: PMID:3115962
+media_term:
+  preferred_term: MediaDB Medium 321
+  term:
+    id: MEDIADB:321
+    label: Labarre (Modified BG11)
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+references:
+- reference: PMID:3115962
+  title: Genetic analysis of amino acid transport in the facultatively heterotrophic
+    cyanobacterium Synechocystis sp. strain 6803.
+  authors: Labarre J; Thuriaux P; Chauvat F
+  year: 1987
+  notes: source_type=journal_article; discovery_mode=MediaDB_source_cross_reference;
+    accessed_on=2026-10-13; source_access=PubMed_abstract_only; alternate_identifier=doi:10.1128/jb.169.10.4668-4673.1987;
+    owner=MEDIADB:321; discovery_sourceID=134; source_url=https://pubmed.ncbi.nlm.nih.gov/3115962/;
+    raw_abstract=references_cache/papers/PMID_3115962.xml; source_markdown=references_cache/papers/PMID_3115962.md.
+    alternate_identifier=PMC213837. PubMed abstract; exact excerpt="Synechocystis
+    sp. strain 6803". PubMed abstract; exact excerpt="Escherichia coli". PubMed abstract;
+    exact excerpt="Pfa1". PubMed abstract; exact excerpt="Can1". PubMed abstract;
+    exact excerpt="Aza1". The historical source-owner join links this sixteen-ingredient
+    Labarre modified BG11 recipe to the paper; the abstract does not specify all its
+    amounts or preparation. Radiolabeled amino-acid uptake, toxic-amino-acid selection
+    and intracellular-pool measurements are separate assays, not additions to the
+    basal recipe. Reported organism=Synechocystis sp. strain 6803; canonical scientific
+    name=Synechocystis sp. PCC 6803; NCBITaxon:1148; actual rank=species; taxonomy_match=verified
+    species node via historical PCC6803 identity; role=study organism; actual NCBI
+    rank species, not a newly verified strain-rank node. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1148&retmode=xml.
+    Reported organism=Synechocystis sp. strain 6803 Pfa1, Can1 and Aza1; canonical
+    scientific name=Synechocystis sp. PCC 6803; NCBITaxon:1148; actual rank=species;
+    taxonomy_match=parent_rank_only; role=distinct mutant classes in the abstract;
+    exact mutant nodes unresolved. Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=1148&retmode=xml.
+    Reported organism=Escherichia coli; canonical scientific name=Escherichia coli;
+    NCBITaxon:562; actual rank=species; taxonomy_match=exact species; role=background
+    comparison of transport efficiency, not cultivation on this cyanobacterial medium.
+    Lookup_on=2026-10-13; https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy&id=562&retmode=xml.
+    Apparent Km and Vmax are transport parameters, not ingredient concentrations or
+    growth metrics. No unsupported substrate or mutant-recipe variant is created.
+    Taxonomy archive=references_cache/papers/taxonomy/cyanobacterial-studies-20261013.xml;
+    taxonomy_markdown=references_cache/papers/taxonomy/cyanobacterial-studies-20261013.md.
+    Bounded lookup misses do not prove taxon absence. Organism inventory is limited
+    to inspected abstract passages, not the inaccessible full paper. Correction/retraction
+    coverage is limited to inspected publication metadata. Existing related-media
+    candidates were checked without asserting exact formulation equivalence. All prior
+    ingredients, quantities, preparation and history remain unchanged and uncertified
+    by this citation. No new native growth assertion, concentration evidence or resolved
+    variant.

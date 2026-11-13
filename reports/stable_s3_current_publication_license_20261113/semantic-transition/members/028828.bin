@@ -1,0 +1,168 @@
+identifier: kgmicrobe.ingredient:gyps
+preferred_term: GYPS
+synonyms:
+- synonym_text: GYPS
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: multi-component blend or named
+    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/GYPS-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommended status | Retain `UNMAPPED` / `NEEDS_EXPERT`
+    | Current evidence supports that the label is ambiguous/recipe-variable and requires
+    decomposition rather than single-term grounding (burgaud2013decipheringthepresence
+    pages 2-4, cha2021culturablefungalcommunity pages 2-4, reis2024sustainableomega3lipid
+    pages 2-4, kim2026improvementofgrowth pages 2-5) | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0755 -> kgmicrobe.ingredient:gyps (FALLBACK_REGISTRY). Components
+    taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+    strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
+    an identifier. That file was produced by the research pass and never written into
+    the records; this applies it. It resolves constituents a label split cannot —
+    abbreviations such as PY, and named media such as BHI, state no composition to
+    split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
+    curated row states none. Cross-referenced to CultureMech medium CultureMech:002799
+    (''gyps_medium'') via culturemech_medium_name, verified by COMPOSITION not by
+    name: name matches exactly and 3 of 4 curated constituents agree (glucose, peptone,
+    yeast extract); CultureMech additionally lists MES and Sea Salt and no starch,
+    so the recipes are close but not identical.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+    concentrations were not changed.'
+  llm_assisted: false
+- timestamp: '2026-08-27T18:00:01.745103+00:00'
+  curator: migrate_culturemech_reference
+  action: CORRECTED
+  changes: 'culturemech_medium_name=''gyps_medium'' -> culturemech_reference CultureMech:002799
+    (SIMILAR_COMPOSITION). The id was already in the evidence prose; a stable reference
+    in a sentence is not a reference. Neither claim is strengthened: BHI was already
+    composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
+    (#447).'
+- timestamp: '2026-09-21T00:00:00+00:00'
+  curator: mim-semantic-evidence-review
+  action: CORRECTED
+  changes: '#710: traced GYPS to Caminicella sporogenes in original MicrobeDecoder
+    data; replaced incorrect starch component with elemental sulfur using Alain et
+    al. 2002 p.1622, changed guessed abbreviation evidence to source-specific partial
+    recipe transcription, and corrected the limited CultureMech composition comparison.'
+  llm_assisted: true
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001148; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+notes: MicrobeDecoder source label GYPS for Caminicella sporogenes; original species-description
+  recipe resolves the component expansion. Local registry identity is retained; this
+  is not a universal GYPS formulation.
+components:
+- component_name: glucose
+  component_id: CHEBI:17234
+  reference_scope: MIM_CATALOG
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
+- component_name: peptone
+  component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
+- component_name: elemental sulfur
+  component_id: CHEBI:33403
+  reference_scope: MIM_CATALOG
+  source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+    GYPS medium)
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://doi.org/10.1099/00207713-52-5-1621
+    source_record: p. 1622, Culture medium and conditions
+    notes: Original Caminicella sporogenes description explicitly defines GYPS using
+      glucose, yeast extract, peptone and elemental sulfur. This partial constituent
+      list omits documented sea salts, buffer, redox indicator and reducing agent;
+      quantities are not projected.
+  - evidence_type: CURATED_DATASET
+    source: reports/semantic_review_20260921/resolution/components/source-contexts.json
+    source_record: database.csv row 3351; Bergey doi:10.1002/9781118960608.gbm00618
+    notes: Exact raw MicrobeDecoder substrate label GYPS belongs to Caminicella sporogenes.
+      This source context distinguishes the preparation from unrelated GYPS expansions.
+  notes: Source-specific partial partonomy. S means sulfur here, not starch. Original
+    guessed assertions are retained in the review before-records.json audit.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:gyps
+  ontology_label: GYPS
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM semantic evidence review (#710)
+    notes: Local registry identity denotes the source label. Component membership
+      is separately supported by the source-specific recipe transcription; it is not
+      an ontology equivalence assertion.
+culturemech_reference:
+  medium_id: CultureMech:002799
+  medium_name: gyps_medium
+  relationship: SIMILAR_COMPOSITION
+  source_path: data/normalized_yaml/bacterial/gyps_medium.yaml
+  evidence: Compared source-specific Alain et al. 2002 p.1622 GYPS with CultureMech:002799
+    (JCM J449). Both specify glucose 5 g/L, yeast extract 0.5 g/L, peptone 1 g/L and
+    sea salts 30 g/L. J449 uses MES 3.9 g/L and pH 6.0; the original uses PIPES 6.05
+    g/L, sulfur 12 g/L and pH 7.5 plus reducing agent and redox indicator. This substantiates
+    composition similarity, not exact identity or a documented variant relationship.
+mim_id: MIM:0001148
+legacy_identifiers:
+- MIM:GYPS
+- kgmicrobe.ingredient:gyps

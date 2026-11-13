@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head to scrape:on -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        WHO | JECFA
+    </title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <link href="//use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/styles/grid.min.css?v=12.1.7126.15119'>
+    <link rel='stylesheet' href='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/styles/origin.min.css?v=12.1.7126.15119'> <!-- head to scrape:off -->
+    <link rel='stylesheet' href='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/styles/main.min.css?v=12.1.7126.15119'>
+    <link rel='stylesheet' href='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/styles/print.min.css?v=12.1.7126.15119' media='print'>
+
+    <style type="text/css" media="all">
+        a.nomenu::after {
+            background-image: none !important;
+        }
+
+        a.nomenu:hover {
+            background-color: #008dc9 !important;
+        }
+
+        .filter-widget__wrapper .main-filter {
+            display: block !important;
+        }
+
+        figure.sf-publications-item__figure {
+            overflow: hidden;
+            font-style: italic;
+            font-size: 10px;
+        }
+
+        .filter-widget__wrapper .main-filter {
+            display: block !important;
+        }
+
+        figure.sf-publications-item__figure {
+            overflow: hidden;
+            font-style: italic;
+            font-size: 10px;
+        }
+
+
+        figure.sf-publications-item__figure {
+            overflow: hidden;
+            font-style: italic;
+            font-size: 10px;
+            color: transparent;
+        }
+
+            figure.sf-publications-item__figure img[src*="/images/default-source/fallback/icons/default.tmb-768v.jpg"] {
+                display: none;
+            }
+
+        figure.sf-publications-item__figure {
+            background: url('https://www.who.int/ResourcePackages/WHO/assets/whofallback.jpg');
+            background-size: contain;
+            background-repeat-y: no-repeat;
+            background-position: center;
+        }
+    </style>
+    <style type="text/css" media="all">
+        .displaynone {
+            display: none !important;
+        }
+    </style>
+    <style type="text/css" media="all">
+        #navigationToScrape .nav-container ul.nav > li:nth-child(6) {
+            display: table-cell;
+        }
+
+        .sfPageEditor .sf-content-block.content-block {
+            height: auto;
+        }
+    </style>
+    <style type="text/css" media="all">
+        .-sf-integrated-app body {
+            font-family: Arial, Verdana, sans-serif;
+        }
+    </style>
+    <style type="text/css" media="all">
+        html.cms a[href^="https://www.who.int"][href$="/en"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/en/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/en"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/en/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/en"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/en/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/en"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/en/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/en"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/en/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/en"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/en/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/ar"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/ar/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/ar"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/ar/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/ar"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/ar/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/ar"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/ar/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/ar"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/ar/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/zh"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/zh/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/zh"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/zh/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/zh"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/zh/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/zh"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/zh/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/zh"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/zh/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/zh"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/zh/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/fr"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/fr/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/fr"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/fr/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/fr"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/fr/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/fr"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/fr"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/fr/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/fr"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/fr/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/fr"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/fr/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/ru"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/ru/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/ru"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/ru/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/ru"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/ru/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/ru"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/ru/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/ru"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/ru/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/es"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/es/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/es"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/es/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/es"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/es/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/es"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/es/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/es"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/es/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/es"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="https://www.who.int/es/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/pt"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="https://www.who.int"][href$="/pt/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/pt"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="http://www.who.int"][href$="/pt/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/pt"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href^="/"][href$="/pt/"] {
+            background-color: #ffcc00;
+        }
+
+        html.cms a[href="/pt"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href="/pt/"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/pt"] {
+            background-color: inherit !important;
+        }
+
+        html.cms a[href$="http://www.who.int/pt/"] {
+            background-color: inherit !important;
+        }
+    </style>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="Generator" content="Sitefinity 13.1.7429.0 PU" />
+    <link rel="canonical" href="https://www.who.int/publications/i" />
+    <meta name="description" content="Publications from the World Health Organization" />
+</head>
+<body class="sf-body ">
+    <script src="/food-additives-contaminants-jecfa-database/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="/food-additives-contaminants-jecfa-database/Mvc/Scripts/axd/jquery-migrate.js"></script>
+    <script src="/food-additives-contaminants-jecfa-database/Mvc/Scripts/axd/jquery-ui.js"></script>
+<div class="main">
+    <!-- header:on --> <!--noindex--><!--stopindex-->
+
+    <header>
+        <!-- logo:on -->
+        <div id="sf-main-header" class="main-header">
+            <div class="container">
+                <div class="row" data-sf-element="Row">
+                    <div class="sf_colsIn col-md-12" data-sf-element="Logos" data-placeholder-label="Logos Geo Navigation">
+                        <div class="header-logo logos-container"> <a href="/food-additives-contaminants-jecfa-database/" title="Home" class="primary-logo"><img src="/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/images/logos/en/h-logo-blue.svg" alt="Home" class="logo svg" /> </a> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-sf-element="Row">
+                <div id="MainHeader_TEC2026FA002_Col00" class="sf_colsIn col-sm-6 col-md-3" data-sf-element="Column 1" data-placeholder-label="Column 1">
+                </div>
+                <div id="MainHeader_TEC2026FA002_Col01" class="sf_colsIn col-sm-6 col-md-3" data-sf-element="Column 2" data-placeholder-label="Column 2">
+                </div>
+                <div id="MainHeader_TEC2026FA002_Col02" class="sf_colsIn col-sm-6 col-md-3" data-sf-element="Column 3" data-placeholder-label="Column 3">
+                </div>
+                <div id="MainHeader_TEC2026FA002_Col03" class="sf_colsIn col-sm-6 col-md-3" data-sf-element="Column 4" data-placeholder-label="Column 4">
+                </div>
+            </div>
+        </div> <!-- logo:off --> <div id="navigationToScrape" class="navigation">
+            <div class="row navWrapper" data-sf-element="Row">
+                <div class="nav-container">
+                    <!--Main desktop navigation:on-->
+                    <ul class="nav"></ul>
+                    <!--Main desktop navigation:off-->
+                </div>
+
+                <ul class="nav-mobile"></ul>
+
+                <div id="Navigation_TD9F2A204024_Col00" class="sf_colsIn col-md-12" data-sf-element="Menu Wrapper" data-placeholder-label="Menu Wrapper">
+                    <div class="navItemLayout navHomeItemLayout">
+                        <div id="Navigation_TD9F2A204025_Col00" class="sf_colsIn col-md-12 navParent" data-sf-element="Menu Parent Link" data-placeholder-label="Menu Parent Link">
+                            <nav role="navigation">
+                                <ul class="main-navigation">
+                                    <li class=""><a href="/food-additives-contaminants-jecfa-database/" target="_self">Home</a></li>
+                                </ul>
+                            </nav>
+
+
+
+
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div id="Navigation_TD9F2A204025_Col01" class="sf_colsIn col-md-2 navDropdown" data-sf-element="Menu Item Dropdown" data-placeholder-label="Menu Item Dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navItemLayout"></div>
+                    <div class="navItemLayout">
+                        <div class="sf_colsIn navParent">
+                            <nav role="banner">
+                                <ul class="main-navigation">
+                                    <li><a class="nomenu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Evaluations of the Joint FAO/WHO Expert Committee on Food Additives (JECFA)</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="navItemLayout navHomeItemLayout">
+                        <div id="Navigation_TD9F2A204025_Col08" class="sf_colsIn col-md-12 glyphicon-comment" data-sf-element="Menu Contact Link" data-placeholder-label="Menu Contact Link">
+                            <nav role="navigation">
+                                <ul class="main-navigation">
+                                    <li class=""><a href="/" target="_self">Contact</a></li>
+                                </ul>
+                            </nav>
+
+
+
+
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div id="Navigation_TD9F2A204025_Col01" class="sf_colsIn col-md-12 navDropdown" data-sf-element="Menu Item Dropdown" data-placeholder-label="Menu Item Dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> <!--/noindex--><!--startindex--> <!-- header:off -->
+    <div class="container body-content">
+        
+
+<style>  
+
+    #prevy {
+        top: 0;
+        left: 0;
+        /*position: absolute;*/
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 2em;
+    }
+    #prevy2 {
+        top: 0;
+        left: 0;
+        z-index: 10;
+        visibility: hidden;
+        white-space: normal;
+        height:auto;
+        overflow:hidden;
+        max-width:33%;
+        position: absolute;
+    }
+    #prevy2:hover {
+        visibility:visible;
+    }
+/*    #prevy:hover{
+        visibility:hidden;
+    }*/
+</style>
+<div class="sf-content-block content">
+    <div id="PageContent_TA51A0481002_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Container">
+
+
+        <!--noindex--><!--stopindex-->
+        <div>
+
+        </div>
+        <!--/noindex--><!--startindex-->
+
+
+
+    </div>
+    <div class="row" data-sf-element="Row">
+        <div id="PageContent_C005_Col00" class="sf_colsIn col-md-12" data-sf-element="Column 1" data-placeholder-label="Title and Intro">
+
+            <div id="PageContent_C001_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Container">
+                <article class="dynamic-content dynamic-content__article dynamic-content__publication">
+                    <header class="dynamic-content__header">
+                        <div class="dynamic-content__heading__wrapper">
+                            <div class="dynamic-content__heading">
+                                <h1>SODIUM ADIPATE</h1>
+                            </div>
+                        </div>
+                        <div class="social-share--add-this share sf-social-share__top-position">
+                            <div class="addthis_inline_share_toolbox" style="clear: both;" data-url="https://www.who.int/publications/m/item/governing-health-innovation-for-the-common-good" data-title="Governing health innovation for the common good" data-description="The WHO Council on the Economics of Health for All - Council Brief No. 1">
+                                <div id="atstbx" class="at-resp-share-element at-style-responsive addthis-smartlayers addthis-animated at4-show" aria-labelledby="at-a0d6d75c-52ca-4061-81f6-64a65996681c" role="region">
+                                    <span id="at-a0d6d75c-52ca-4061-81f6-64a65996681c" class="at4-visually-hidden">AddThis Sharing Buttons</span>
+                                    <div class="at-share-btn-elements">
+                                        <a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-print" style="background-color: rgb(255, 255, 255);">
+                                            <span class="at4-visually-hidden">Share to Print</span><span class="at-icon-wrapper" style="line-height: 20px; height: 20px; width: 20px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-print-1" class="at-icon at-icon-print" style="fill: rgb(34, 34, 34); width: 20px; height: 20px;"><title id="at-svg-print-1">Print</title><g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g></svg></span>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </header>
+                    <section class="dynamic-content__section">
+                        <div class="dynamic-content__separator"></div>
+                        <div class="dynamic-content__description-container container">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="dynamic-content__description">
+                                            <h3>Overview</h3>
+                                        </div>
+                                        <div class="dynamic-content__details">
+                                            <div class="sf-content-block content-block">
+
+
+                                                
+
+<div class="detail who-team">
+                                                        <div class="label">CAS number</div>
+                                                        <div class="value"><span>7486-38-6</span></div>
+                                                   </div>                                                                                                <div class="detail who-team">
+                                                        <div class="label">INS</div>
+                                                        <div class="value"><span>356</span></div>
+                                                </div>                                                                                                                                                
+                                                <div class="detail who-team">
+                            <div class="label">Functional Class</div>
+                            <div class="value">Food Additives<br/>ACIDITY_REGULATOR</div></div>
+
+                                                <div class="detail who-team">
+                            <div class="label">INS matches</div>
+                            <div class="value">356</div>
+                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-10">
+                                        <div class="dynamic-content__description">
+                                            <h3>Evaluations</h3>
+                                        </div>
+                                        <div class="dynamic-content__description">
+                                            <div class="sf-content-block content-block">
+
+
+    <h4 style="margin:0;line-height: .5em;">Evaluation year: 2015</h4>
+    <h4 style="margin-bottom: 0; line-height: .5em;"></h4>
+<div class="row"><div class="col-sm-2" style="white-space:nowrap;">Comments:</div><div class="col-sm-8" style="line-height:normal;">Not re-evaluated by JECFA, but the provisions for sodium adipate was withdrawn at CCFA47</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h4>Evaluation year: 1977</h4>
+<div class="row"><div class="col-sm-2" style="white-space:nowrap;">ADI:</div><div class="col-sm-8" style="line-height:normal;">0-5 mg/kg bw</div></div><div class="row"><div class="col-sm-2" style="white-space:nowrap;">Comments:</div><div class="col-sm-8" style="line-height:normal;">Group ADI for adipic acid and its potassium, sodium and ammonium salts</div></div>
+
+
+
+
+
+
+<div class="row"><div class="col-sm-2" style="white-space:nowrap;">Meeting:</div><div class="col-sm-8" style="line-height:normal;">21</div></div>
+<div class="row"><div class="col-sm-2" style="white-space:nowrap;">Specs Code:</div><div class="col-sm-8" style="line-height:normal;">O</div></div>
+<div class="row"><div class="col-sm-2" style="white-space:nowrap;">Report:&nbsp;</div><div class="col-md-8"><a href="http://apps.who.int/iris/bitstream/10665/41293/1/WHO_TRS_617.pdf">TRS 617-JECFA 21/13</a></div></div>
+<div class="row"><div class="col-sm-2" style="white-space:nowrap;">Tox Monograph:&nbsp;</div><div class="col-md-8"><a href="http://www.inchem.org/documents/jecfa/jecmono/v12je02.htm">FAS 12-JECFA 21/3 (ADIPIC ACID)</a></div></div>
+
+
+
+
+
+
+                                                                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+</section>
+                </article>
+            </div>
+    </div>
+
+        </div>
+</div>
+
+    <script src="/food-additives-contaminants-jecfa-database/Mvc/Scripts/cdn/kendo.all.min.js" type="text/javascript"></script>
+    <script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.timezones.min.js" type="text/javascript"></script>
+    
+    
+    
+    <script src="/food-additives-contaminants-jecfa-database/Frontend-Assembly/SitefinityWebApp/Mvc/Scripts/HubsList/hubs.min.js?package=WHO&amp;amp;v=MTU4NzUxMjM3Mg%3d%3d" type="text/javascript"></script>
+    <script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5803f964fe6c9599" type="text/javascript"></script>
+
+
+
+    </div>
+    <footer id="sf-footer">
+        <div class="main-footer">
+            <div id="Footer_TD9F2A204001_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="Container">
+                <div class="row" data-sf-element="Row">
+                    <div id="Footer_T75121FDA153_Col00" class="sf_colsIn col-md-9" data-sf-element="Column 1" data-placeholder-label="Column 1">
+                        <div class="main-navigation--wrapper">
+
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div id="Footer_T75121FDA153_Col01" class="sf_colsIn col-sm-3 col-md-3 centered-on-mobile" data-sf-element="Column 2" data-placeholder-label="Column 2">
+
+
+
+
+                    </div>
+                </div>
+                <div class="row" data-sf-element="Row">
+                    <div id="Footer_T75121FDA199_Col00" class="sf_colsIn col-md-12" data-sf-element="Column 1" data-placeholder-label="Column 1">
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-logo"> <a href="/food-additives-contaminants-jecfa-database/" title="Home"> <img src="/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/images/logos/en/h-logo-white.svg" alt="Home" class="logo" /> </a> </div>
+        </div> <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+
+
+
+                        <div class="sf-content-block content-block">
+                            <div><a href="/food-additives-contaminants-jecfa-database/Home/About">Privacy Legal Notice</a></div>
+
+                        </div>
+                    </div> <div class="col-md-4">
+
+
+                       
+
+                    </div> <div class="col-md-4 copyright">
+                        <span>
+                            ©
+                        </span>
+
+                        2021
+
+
+
+
+
+                        <div class="sf-content-block content-block">
+                            <div><a href="/about/policies/terms-of-use">WHO</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> <!--/noindex--><!--startindex--> <!-- footer:off -->
+</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("a[href*='mapbox.com']").each(function () {
+                $(this).attr("href", "/about/who-we-are/publishing-policies/copyright");
+            });
+
+            if (window.location.href.indexOf('https://www.who.int/campaigns/') == 0) {
+                (function () { var f = document.getElementsByTagName("iframe"); for (var i in f) try { f[i].parentNode.removeChild(f[i]); } catch (e) { console.error(e); } })();
+            }
+
+
+            if (window.location.href.indexOf('https://www.who.int/activities/') == 0) {
+                (function () { var f = document.getElementsByTagName("iframe"); for (var i in f) try { f[i].parentNode.removeChild(f[i]); } catch (e) { console.error(e); } })();
+            }
+
+
+            if (window.location.href.indexOf('https://www.who.int/health-topics/') == 0) {
+                (function () { var f = document.getElementsByTagName("iframe"); for (var i in f) try { f[i].parentNode.removeChild(f[i]); } catch (e) { console.error(e); } })();
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var searchInput = $("#sf-top-header .sf-search-input-wrapper input");
+            $(document).on("click", ".srchtoggle", function () {
+                $("body").toggleClass("search-open");
+                searchInput.focus();
+            });
+        });
+        $(document).click(function (event) {
+            var $target = $(event.target);
+            if ((!$target.closest('#sf-top-header').length && $('#sf-top-header').is(":visible")) && (!$target.closest('.navigation-search').length)) {
+                $(".search-open").removeClass("search-open")
+            }
+        });
+    </script>
+    <!-- js to scrape:on -->
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/lib/slicknav.min.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/lib/auto-complete.min.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/lib/match-height.min.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/lib/lazy.min.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/lib/modernizr-custom.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/lib/select2.full.min.js?v=12.1.7126.15119'></script>
+    
+    <script id="main4pack" type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/main.min.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/main-navigation.min.js?v=12.1.7126.15119'></script>
+    <script type='text/javascript' src='/food-additives-contaminants-jecfa-database/ResourcePackages/WHO/assets/dist/scripts/geo-navigation.min.js?v=12.1.7126.15119'></script> <!-- js to scrape:off -->
+    
+    
+    <script>
+        // Picture element HTML5 shiv
+    //    document.createElement("picture");
+    </script>
+   
+  
+    <script>
+        window.define = window.__define;
+        window.require = window.__require;
+        window.__define = undefined;
+        window.__require = undefined;
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+topClass is deprecated - use top_class
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/menadione718-hemodal-successor-independent-v1/save_independent_review_v2.py", line 31, in <module>
+    doc=rr.read_review(root,p.relative_to(root).as_posix(),J/'schema/record_review.yaml');rr.assert_current_source(root,doc)
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree/scripts/record_review.py", line 662, in read_review
+    review = parse_review_bundle(relative, read_bytes(root, relative),
+                                 read_bytes(root, str(path.with_name("review.md"))), schema_path)
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree/scripts/record_review.py", line 650, in parse_review_bundle
+    raise ReviewError("review must identify a canonical structured bundle")
+menadione_peer_native.ReviewError: review must identify a canonical structured bundle

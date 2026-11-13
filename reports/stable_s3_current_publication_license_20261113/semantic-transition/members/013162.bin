@@ -1,0 +1,65 @@
+identifier: kgmicrobe.ingredient:jcm_1362_l_cysteine_hcl_monohydrate_5_percent
+preferred_term: JCM1362 L-cysteine hydrochloride monohydrate5% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1362_l_cysteine_hcl_monohydrate_5_percent
+  ontology_label: JCM1362 L-cysteine hydrochloride monohydrate5% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: L-Cysteine·HCl·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362
+    source_record: JCM1362 L-cysteine hydrochloride monohydrate5% stock
+    notes: 'Original JCM1362 specifies10ml of5% monohydrate stock. Autoclaved and
+      stored under N2; added aseptically/anaerobically after standing the medium overnight.
+      Percentage basis remains unspecified. The component list is UNKNOWN: the source
+      does not specify stock solvent, manufacturing details or additional stock constituents.
+      Preserve concentration on the stock solute; do not reinterpret the dose as final-medium
+      concentration. Applies only to occurrence IDs CM_OCC:12e13868c572c37eab89fcb2e4cae3b459867c1b89a5f9f72b08b43e23069c29.
+      No cross-source equality or global raw-label alias is asserted.'
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'Original JCM1362 specifies10ml of5% monohydrate stock. Autoclaved and stored
+  under N2; added aseptically/anaerobically after standing the medium overnight. Percentage
+  basis remains unspecified. The component list is UNKNOWN: the source does not specify
+  stock solvent, manufacturing details or additional stock constituents. Preserve
+  concentration on the stock solute; do not reinterpret the dose as final-medium concentration.
+  Applies only to occurrence IDs CM_OCC:12e13868c572c37eab89fcb2e4cae3b459867c1b89a5f9f72b08b43e23069c29.
+  No cross-source equality or global raw-label alias is asserted. Raw source labels
+  retained in linked frozen cases: [''5% L-Cysteine·HCl·H2O solution'']. Generic labels
+  are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED gate is
+  lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.262027+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

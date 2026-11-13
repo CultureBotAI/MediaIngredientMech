@@ -1,0 +1,49 @@
+identifier: kgmicrobe.ingredient:sigma_b5282_bold_modified_basal_50x_stock
+preferred_term: Sigma B5282 Bold Modified Basal Freshwater Nutrient Solution50x
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sigma_b5282_bold_modified_basal_50x_stock
+  ontology_label: Sigma B5282 Bold Modified Basal Freshwater Nutrient Solution50x
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.sigmaaldrich.com/US/en/product/sigma/b5282
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'JCM1481 names Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution50x,20ml.
+  Exact current supplier product B5282 has matching name/strength and20ml/L use. Do
+  not equate concentrate to final1x medium or infer proprietary/full composition.
+  Raw assigned source label: Sigma-Aldrich Bold Modified Basal Freshwater Nutrient
+  Solution, 50x. Quantities in notes preserve source preparation and are not final-medium
+  concentrations. No global synonym is added for this context-dependent label.'
+solution_type: COMPLEX_UNDEFINED
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    JCM1481 names Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution50x,20ml.
+    Exact current supplier product B5282 has matching name/strength and20ml/L use.
+    Do not equate concentrate to final1x medium or infer proprietary/full composition.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.158575+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true
+supplied_form:
+- name: Bold Modified Basal Freshwater Nutrient Solution
+  supplier: Sigma-Aldrich
+  catalog_number: B5282
+  form: 50x liquid concentrate
+  notes: Catalogue match supported by exact supplier name,50x strength and source20ml/L
+    use; sourceJCM1481 does not print catalogue code.

@@ -1,0 +1,73 @@
+identifier: CHEBI:189431
+preferred_term: 3-Methyl-2-oxobutanoic acid sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:189431
+  ontology_label: Sodium-3-methyl-2-oxobutyrate
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms:
+- synonym_text: sodium;3-methyl-2-oxobutanoate
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=3715-29-5; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.819173+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.628823+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H7O3.Na; inchi=InChI=1S/C5H8O3.Na/c1-3(2)4(6)5(7)8;/h3H,1-2H3,(H,;
+    smiles=CC(C)C(=O)C(=O)[O-].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.969250+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 3715-29-5 uniquely resolves
+    by ChEBI xref to CHEBI:189431 'Sodium-3-methyl-2-oxobutyrate'. CAS_RN_LOOKUP records
+    the method that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000115; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 3715-29-5
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C5H7O3.Na
+  inchi: InChI=1S/C5H8O3.Na/c1-3(2)4(6)5(7)8;/h3H,1-2H3,(H,7,8);/q;+1/p-1
+  smiles: CC(C)C(=O)C(=O)[O-].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000115
+legacy_identifiers:
+- MIM:3-Methyl-2-oxobutanoic_Acid_Sodium_Salt
+- CHEBI:189431

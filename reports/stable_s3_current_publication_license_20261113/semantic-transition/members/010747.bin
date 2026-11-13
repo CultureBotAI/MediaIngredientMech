@@ -1,0 +1,63 @@
+identifier: CHEBI:30065
+preferred_term: Thioglycollic acid
+synonyms:
+- synonym_text: Thioglycollic acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1814); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T09:28:19Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_ACID_SALT_AMBIGUITY
+  changes: Classified as a single acid ingredient and left unmapped because local
+    mapped thioglycolate records are salt/anion forms and no exact acid ontology identity
+    was verified in the local audit.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0539 -> CHEBI:30065 "thioglycolic acid" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-27T03:16:39.518221+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1814); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as thioglycollic acid; not merged to thioglycolate
+  or sodium thioglycolate without exact acid evidence.
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:30065
+  ontology_label: thioglycolic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient name + local OAK CHEBI exact-label verification
+    notes: '''Thioglycollic acid'' = thioglycolic acid (spelling variant); OAK CHEBI:30065.'
+chemical_properties:
+  molecular_formula: C2H4O2S
+  smiles: O=C(O)CS
+  inchi: InChI=1S/C2H4O2S/c3-2(4)1-5/h5H,1H2,(H,3,4)
+  molecular_weight: 92.119
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:16:07.111480+00:00'

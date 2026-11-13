@@ -1,0 +1,3946 @@
+{
+  "checked_at": "2026-11-08T04:50:12.413223+00:00",
+  "scope": "All33 previously current named stock payloads examined:29 successors here and4 retired duplicates consolidated to independently corrected canonicalCS payloads. No previous payload/review modified.",
+  "changes": [
+    {
+      "proposal_id": "NSV4-PROP-JCM_1474_Solution_A",
+      "old_proposal_id": "NSC-PROP-JCM_1474_Solution_A",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1474_Solution_A.yaml",
+        "sha256": "070f11e282e6bde44c155ad3043c344b5f82df6809e8d3db76105d5494a658f6"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1474_Solution_A.yaml",
+        "sha256": "17e34e57d378ef768543e5d24ccf082764d4d79958246c0bbc0d92e690cd6ed5"
+      },
+      "case_ids": [
+        "CM_NAME:0b19fca3598ff14b9ea4ae597cde67dc4ab6467f571afa0287efb0d064333c05"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1474_Solution_A.yaml",
+      "quantity_basis": "Literal source batch contains100mL added distilled water; solute masses retain the original unscaled values. No final solution volume or final g/L concentration is inferred.",
+      "before_components": [
+        {
+          "component_name": "K2HPO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "K2HPO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "G_PER_PREPARATION_WITH_100_ML_WATER"
+        },
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "G_PER_PREPARATION_WITH_100_ML_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "100",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1474.html",
+          "sha256": "fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474",
+          "accessed_at": "2026-11-08T04:06:04.491083+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:81be19d70b9c0370762b7ebbc4ab408e4241a7913ce2538dd1b385fd62d9a43e",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1474_BL_BROTH_WITH_2_NaCl.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:015890",
+          "recipe_primary_identifier": "jcm.grmd:1474",
+          "raw_preferred_term": "Solution A (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Solution A (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_915_Modified_Wolfe_Mineral_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_915_Modified_Wolfe_Mineral_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml",
+        "sha256": "9be21e0e62c06b4e4ffce7ed7a67d0c8c142ad3883289e7a3e9dbc7b0237414a"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml",
+        "sha256": "2ef2a54ee11a2d642662067836273b728fa26322fd096e797d8982a128582e93"
+      },
+      "case_ids": [
+        "CM_NAME:175a1c34a6da4f9c78dc9f1cebc80d4453401b2aa242fd11ec015e05eb3d663c"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_915_Modified_Wolfe_Mineral_Solution.yaml",
+      "quantity_basis": "JCM915 explicitly specifies FINAL0.4g/L Na2MoO4·2H2O,0.02g/L CuSO4·5H2O and0.01g/L NiCl2·6H2O: only these three retain G_PER_L. Other constituents and1L added-water amount retain the JCM151 source batch basis; their final concentrations are not independently specified. This mixed representation preserves the original instruction rather than fabricating a single final-volume recipe. KOH pH adjustment remains unquantified.",
+      "before_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MnSO4·xH2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CoSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CuSO4·5H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "AlK(SO4)2",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        },
+        {
+          "component_name": "KOH solution",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "NiCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MnSO4·xH2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CoSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CuSO4·5H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "AlK(SO4)2",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "KOH solution",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "NiCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-915.html",
+          "sha256": "a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=915",
+          "accessed_at": "2026-11-08T04:06:18.316405+00:00"
+        },
+        {
+          "path": "captures/jcm-151.html",
+          "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+          "accessed_at": "2026-11-08T04:06:10.429119+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:670302245438d869b1fd4a1da1011392d1b9ed8650ee8cf26a399f2ca5c1fd12",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1430_SEMI_SOLID_HETEROTROPHIC_GROWTH_MEDIUM_FOR_ALPHAPROTEOBACTERIA.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015865",
+          "recipe_primary_identifier": "jcm.grmd:1430",
+          "raw_preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:1700d62c5c8b845692348da2d865f8cb4aec17499d2cd8fc8bfd732939c2f87e",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1431_SEMI_SOLID_AUTOTROPHIC_GROWTH_MEDIUM_FOR_GAMMAPROTEOBACTERIA.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015866",
+          "recipe_primary_identifier": "jcm.grmd:1431",
+          "raw_preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:98423b596147651ffa0d21122fd37f8aaeadda5809dfdc7bd0cd0e9dcbc5eff6",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1479_SOLIDESULFOVIBRIO_MEDIUM.yaml",
+          "component_path": "ingredients/3",
+          "recipe_id": "CultureMech:015877",
+          "recipe_primary_identifier": "jcm.grmd:1479",
+          "raw_preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "4.0"
+            },
+            "preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-CCAP_PE_Salt_Solution_Stock",
+      "old_proposal_id": "NSC-PROP-CCAP-PE-STOCK-V3",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/ccap-followup/CCAP_PE_Salt_Solution_Stock-after.yaml",
+        "sha256": "be93933219ca5f8914b6b8cf85483679547dcc5d27806b149f3320047ad22152"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/CCAP_PE_Salt_Solution_Stock.yaml",
+        "sha256": "a48a7a149cd6e3aafa4628ba1861918ff5b5966457c9340d41ea9c126c173f27"
+      },
+      "case_ids": [
+        "CM_NAME:46d06ba22f6dd3330e7b5448c99057dcc8e05b896ef630a8e2befd6300b48a07"
+      ],
+      "owner_path": "data/ingredients/mapped/CCAP_PE_Salt_Solution_Stock.yaml",
+      "quantity_basis": "CCAP PE explicitly lists Stocks per1000cm3 with200g NaNO3 and20g Na2HPO4·12H2O; source stock-volume basis supports these G_PER_L entries. Separate official CCAP general stock policy supplies deionized-water context. No fixed added-water quantity or distilled-water processing claim is asserted.",
+      "before_components": [
+        {
+          "component_name": "NaNO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "200",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2HPO4·12H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "20",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "water",
+          "component_id": "CHEBI:15377",
+          "reference_scope": "MIM_CATALOG",
+          "source": "CCAP Culture Media Information Sheet page2 STOCK SOLUTIONS specifies deionized water. Chemical identity only; no distilled/deionized processing equivalence. Quantity sufficient for nominal1000cm3 stock; exact solvent volume not printed."
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "NaNO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "200",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2HPO4·12H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "20",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "water",
+          "component_id": "CHEBI:15377",
+          "reference_scope": "MIM_CATALOG",
+          "source": "CCAP Culture Media Information Sheet page2 STOCK SOLUTIONS specifies deionized water. Chemical identity only; no distilled/deionized processing equivalence. Quantity sufficient for nominal1000cm3 stock; exact solvent volume not printed."
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/ccap-PE.pdf",
+          "sha256": "a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233",
+          "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf",
+          "accessed_at": "2026-11-08T04:06:05.516292+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:341a89a7a9bb453306c131aa4218a68052f339ca6ab999bc68ee2e5967b4ef61",
+          "source_file": "data/normalized_yaml/algae/pe.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:000110",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Salt solution stock",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "notes": "Contains NaNO3 and Na2HPO4·12H2O (see above for individual concentrations)",
+            "preferred_term": "Salt solution stock",
+            "source": "CCAP PE medium PDF"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_628_Modified_Wolfe_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_628_Modified_Wolfe_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml",
+        "sha256": "e85b1d6e1b3925405cfba5edce4a191e9692e6ae5a00e043aa64336c8d7d8365"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_628_Modified_Wolfe_Solution.yaml",
+        "sha256": "376ba96ab30b203bcba9afcd592f7970b02b7363225fa0ca1a90d3fab76337d1"
+      },
+      "case_ids": [
+        "CM_NAME:50848dc5e28a2597492968ee937d647ad9ef16d4bd480267a9b164b0f9f725b6"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_628_Modified_Wolfe_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "NH4Cl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.05",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "NH4Cl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.2",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.05",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-628.html",
+          "sha256": "9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628",
+          "accessed_at": "2026-11-08T04:06:18.624268+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:3c3e6d910d7f748bfb3a8ae67029f484367e2f97bb21ce700522c3c0adefeb6a",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1347_FRESHWATER_THIOSULFATE_OXIDIZING_BACTERIA_MEDIUM.yaml",
+          "component_path": "ingredients/0",
+          "recipe_id": "CultureMech:015883",
+          "recipe_primary_identifier": "jcm.grmd:1347",
+          "raw_preferred_term": "Modified Wolfe's solution (see Medium No. 628 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1000"
+            },
+            "preferred_term": "Modified Wolfe's solution (see Medium No. 628 )"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_265_Wolfe_Mineral_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_265_Wolfe_Mineral_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml",
+        "sha256": "0bc15ad609fb39f33c9f1b7ad5dbac5fa06b9684390734957a6f1258852aaeec"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_265_Wolfe_Mineral_Solution.yaml",
+        "sha256": "0686fa46a1a7d52febed67633cafde9480c7b3302a399957524b3cd7546f1d0c"
+      },
+      "case_ids": [
+        "CM_NAME:7af2bfc810298797c663b0a817ce82ea7d52c88264012565aec326f2ce9752f0",
+        "CM_NAME:7bd5563707aa387a4ba5553156f5dfc4dbf834c6effbb85888cdff3338c8ce39"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_265_Wolfe_Mineral_Solution.yaml",
+      "quantity_basis": "JCM265 explicitly adds0.02g NiCl2·6H2O,0.001g Na2SeO3 and0.01g Na2WO4·2H2O to1.0L of prepared JCM151 trace minerals. The nested stock is an aliquot; its complete source batch made with1L added water is not flattened into the aliquot. JCM151 literal formula and competing existing owners are retained in primary evidence and ownership-conflict artifact. Component identity is established as this source stock; catalog ownership is not guessed.",
+      "before_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MnSO4·xH2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CoSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CuSO4·5H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "AlK(SO4)2",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        },
+        {
+          "component_name": "KOH solution",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "NiCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.001",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Trace minerals (JCM151)",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.0",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "NiCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_JCM151_STOCK"
+        },
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.001",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_JCM151_STOCK"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_JCM151_STOCK"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-265.html",
+          "sha256": "9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265",
+          "accessed_at": "2026-11-08T04:06:19.340903+00:00"
+        },
+        {
+          "path": "captures/jcm-151.html",
+          "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+          "accessed_at": "2026-11-08T04:06:10.429119+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:4ee112055c63d96ff7bbd13a0ab8b84dc1d606d98157dc210826786df4447eee",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1362_METHANOBACTERIUM_VT_MEDIUM.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015840",
+          "recipe_primary_identifier": "jcm.grmd:1362",
+          "raw_preferred_term": "Wolfe's mineral solution (see Medium No. 265 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Wolfe's mineral solution (see Medium No. 265 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:f7cd85abdd7e23df632cf64233319afcd3f88d70ab19d99039cc403896db0971",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1429_M1H_NAG_ASW.yaml",
+          "component_path": "ingredients/3",
+          "recipe_id": "CultureMech:015864",
+          "recipe_primary_identifier": "jcm.grmd:1429",
+          "raw_preferred_term": "Wolfe's mineral solution (see Medium No. 265 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Wolfe's mineral solution (see Medium No. 265 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:f7acdaabc503b83fe9b6f0400bd4ea192834fda841c174a6089a720552d19359",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015857",
+          "recipe_primary_identifier": "jcm.grmd:1412",
+          "raw_preferred_term": "Wolfe’s mineral solution (see Medium No. 265 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Wolfe’s mineral solution (see Medium No. 265 )"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_1353_Mineral_Solution_A",
+      "old_proposal_id": "NSC-PROP-JCM_1353_Mineral_Solution_A",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml",
+        "sha256": "aef67bb65754d17d30728598c10bf81460effbc7d9fcb123203a66bff93e59ba"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1353_Mineral_Solution_A.yaml",
+        "sha256": "1ae9a632b26e5dad799db6d55fc4dee5237c0e7d9959dc0ccf8ac17b7bdcfbb8"
+      },
+      "case_ids": [
+        "CM_NAME:7b1ab47ecb25197e724152f902efdd9efc2bf8ec1d10238038a94be1d1607789",
+        "CM_NAME:7b691f99464ae04b07619dd03c12d5afee0bf892a5bf1ebc9e481867fc1ceaf8"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1353_Mineral_Solution_A.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "EDTA",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "KOH",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2.2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MnCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "98.4",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "28.8",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "CoCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "23.8",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "CuCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "17.2",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "24.2",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "31",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        },
+        {
+          "component_name": "HCl",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "EDTA",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "KOH",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2.2",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MnCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "98.4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "28.8",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CoCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "23.8",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CuCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "17.2",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "24.2",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "31",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "HCl",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1353.html",
+          "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+          "accessed_at": "2026-11-08T04:06:07.872529+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:30af904ac9115f5e7e76442d7b7540d95719f0f7dd78e87c6aec91799b586968",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1366_GBS_SALTS_MEDIUM_FOR_HYDROGENOBACTER.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015844",
+          "recipe_primary_identifier": "jcm.grmd:1366",
+          "raw_preferred_term": "Mineral solution A (see Medium No. 1353 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Mineral solution A (see Medium No. 1353 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:7527106ffb8fef5a7d99781ae6599e4794b30f6d760057f8fc5743e171e58b0b",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1353_GBS_SALTS_MEDIUM_FOR_FERVIDIBACTER.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015836",
+          "recipe_primary_identifier": "jcm.grmd:1353",
+          "raw_preferred_term": "Mineral solution A (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Mineral solution A (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_1020_Se_W_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_1020_Se_W_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml",
+        "sha256": "2f1ac6a1bcf12e6f0dd6010d44bc8fd9a32dc189a890ace25fa55557706595af"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_1020_Se_W_Solution.yaml",
+        "sha256": "235072e64c69a7dc51f9386f0664d69ffab234a5a0cca427cf4b4b18b37de0e7"
+      },
+      "case_ids": [
+        "CM_NAME:8f4f818454b45cde5b8fac36155fb028ce405d508d1c62d696f00675a673e89b"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_1020_Se_W_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Na2WO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1020.html",
+          "sha256": "6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+          "accessed_at": "2026-11-08T04:06:09.103311+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:3ca02a4ab3591954534121c836fd35a19da58990c45852d0ea309e271afca84d",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1021.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:007450",
+          "recipe_primary_identifier": "nbrc.medium:1020",
+          "raw_preferred_term": "Se/W solution***",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Se/W solution***"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_1130_Mineral_Solution_II",
+      "old_proposal_id": "NSC-PROP-JCM_1130_Mineral_Solution_II",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml",
+        "sha256": "365dbe14ec365d2d8987cff143dae15d10a3e1aa35b764d276360a3c0f5eab01"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1130_Mineral_Solution_II.yaml",
+        "sha256": "1cf552c39b335838f03ae6e6634922aee83711c52815edb2c3c11f039b2faf88"
+      },
+      "case_ids": [
+        "CM_NAME:93610c64b1b90d170d6fd69e00e76d2a3baf8422ed69a37a9371be50901f2c74"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1130_Mineral_Solution_II.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1130.html",
+          "sha256": "dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T04:07:14.964723+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:11cfe34f6ef1484d9fb916e8d91c931e72869713919de378b2e852cc32e13eb9",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015879",
+          "recipe_primary_identifier": "jcm.grmd:1385",
+          "raw_preferred_term": "Mineral solution II (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "150.0"
+            },
+            "preferred_term": "Mineral solution II (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_187_FeCl2_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_187_FeCl2_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml",
+        "sha256": "c011573a720fa312202cc1db271b5eb36f40d3bbd422b1854d6c5b076723c82e"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_187_FeCl2_Solution.yaml",
+        "sha256": "635fd6bb2b1b319be28de58a640c078151d4eb9d37e915c30fd2854526291632"
+      },
+      "case_ids": [
+        "CM_NAME:99a3aed23648f49d4c4ddc994b3aa362d902ea367be1ac140fc4a5a21a642132"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_187_FeCl2_Solution.yaml",
+      "quantity_basis": "Literal source preparation:10mL HCl solution(25%,7.7M),1.5g FeCl2·4H2O and990mL distilled water. Sum of liquid inputs is not a measured final volume.",
+      "before_components": [
+        {
+          "component_name": "HCl solution (25%, 7.7 M)",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "ML_PER_L"
+        },
+        {
+          "component_name": "FeCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "990",
+          "concentration_unit": "ML_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "HCl solution (25%, 7.7 M)",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "FeCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "990",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-187.html",
+          "sha256": "e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=187",
+          "accessed_at": "2026-11-08T04:06:19.388882+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:124553bbaf10bdfa0409722563f775419ec66c959ed158988e9e34bfa433c5f6",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1423_METHANOBREVIBACTER_CURVATUS_MEDIUM.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:015860",
+          "recipe_primary_identifier": "jcm.grmd:1423",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:3e3910a02e42dae7950e598345e292d89e1a09df2036705327f774448bd10380",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1424_METHANOBREVIBACTER_CUTICULARIS_MEDIUM.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015861",
+          "recipe_primary_identifier": "jcm.grmd:1424",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:ddbf83b73a5646536580dd26d6c8d12abf14996a5366b30be1ea4108c25d71d6",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1456_METHANOCULLEUS_7T_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015888",
+          "recipe_primary_identifier": "jcm.grmd:1456",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:2572fae1dacb0d2fc1e6fae983d1fb15e0001455a7ca056e8ae341c15fa65f55",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1351_PELOSINUS_BKL1_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015835",
+          "recipe_primary_identifier": "jcm.grmd:1351",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:43f5cfc92909cba466fd96fab90bb2183102ec9f3cc07ee1653d51237f60e767",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:015843",
+          "recipe_primary_identifier": "jcm.grmd:1365",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:bfdb66c032b22801991af8e031db351f6425adf75d09739ec5ce97bb1057a632",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1388_ACC8_MEDIUM.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015848",
+          "recipe_primary_identifier": "jcm.grmd:1388",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:10836cdae77af72f8e7310b816d353778d44fd680cf3e22539c7a179ad101c9c",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015849",
+          "recipe_primary_identifier": "jcm.grmd:1389",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:d0783d494064c7eca46b0ae27d9cb2fd73885ec6d6a964a67ef48396276abfdb",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015856",
+          "recipe_primary_identifier": "jcm.grmd:1406",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:bf6bf50fa7165e19ecfd52a54b79fdd7beacc9f3164e84b2963557b4de9b3885",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1425_SPOROMUSA_MEDIUM_2.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:015862",
+          "recipe_primary_identifier": "jcm.grmd:1425",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:69bed99565b34f35c8561896ff955fda30edeb4f32173a5bb2d3265a4fb1b17f",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1468_FRESHWATER_R2A_MEDIUM.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015874",
+          "recipe_primary_identifier": "jcm.grmd:1468",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:5b2b97d7f38eca85f296139009431fbfcb42382ce11cd53b2df73dba7d5c2bbe",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1475_DESULFOBACTER_MEDIUM_WITH_HORSE_SERUM.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015875",
+          "recipe_primary_identifier": "jcm.grmd:1475",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_323_Solution_A",
+      "old_proposal_id": "NSC-PROP-NBRC_323_Solution_A",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_323_Solution_A.yaml",
+        "sha256": "52ddbceee46b2f27732571109c399a9415b3389d5594d734f270cdec950efe8f"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_323_Solution_A.yaml",
+        "sha256": "104586d945fb81b5a443c265a54f3de04254e131a42973d8fcfbe2fc787f1e45"
+      },
+      "case_ids": [
+        "CM_NAME:a67c31a87627370ff0171278f778529ad7389820464559d48486fb6a8142a9e2"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_323_Solution_A.yaml",
+      "quantity_basis": "Literal source batch contains500mL added distilled water; solute masses retain the original unscaled values. No final solution volume or final g/L concentration is inferred.",
+      "before_components": [
+        {
+          "component_name": "Yeast extract",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Yeast extract",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_500_ML_WATER"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.2",
+          "concentration_unit": "G_PER_PREPARATION_WITH_500_ML_WATER"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_500_ML_WATER"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.25",
+          "concentration_unit": "G_PER_PREPARATION_WITH_500_ML_WATER"
+        },
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_500_ML_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "500",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-323.html",
+          "sha256": "5a82a281b6f01560f93d530a0a694c32d165bcd0f2b6156506d7c1141e061382",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=323",
+          "accessed_at": "2026-11-08T04:06:13.708202+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:ecd3fdc51b1cdac2ce440c7f0c20006a7db715921aa98c09dcd5470785bd112e",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_324.yaml",
+          "component_path": "ingredients/0",
+          "recipe_id": "CultureMech:007487",
+          "recipe_primary_identifier": "nbrc.medium:323",
+          "raw_preferred_term": "Solution A*",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "500"
+            },
+            "preferred_term": "Solution A*"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_971_Solution_A",
+      "old_proposal_id": "NSC-PROP-NBRC_971_Solution_A",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_971_Solution_A.yaml",
+        "sha256": "6282cfcc8a31398ee542c833563665c24bdf898b2b2ceddf6cd3e32ce4303e60"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_971_Solution_A.yaml",
+        "sha256": "1d375712c4c92a52ff8b38a89934800c5c6a70a94b93cde4a14f8757d5fe87cd"
+      },
+      "case_ids": [
+        "CM_NAME:a67c31a87627370ff0171278f778529ad7389820464559d48486fb6a8142a9e2"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_971_Solution_A.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Ferric ammonium citrate",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Ferric ammonium citrate",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CaCl2",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-971.html",
+          "sha256": "6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=971",
+          "accessed_at": "2026-11-08T04:06:13.951104+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:225eb2811c6b0af5bdc6e8966423a4486870b89b634452b157f91b4c53e24366",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_972.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:007509",
+          "recipe_primary_identifier": "nbrc.medium:971",
+          "raw_preferred_term": "Solution A*",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Solution A*"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_989_K_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_989_K_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_989_K_Solution.yaml",
+        "sha256": "0436902d616dc92e98d05f149ccd156b032f1e0b62b81f9ebcf81dcdb6740bf6"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_989_K_Solution.yaml",
+        "sha256": "f3a29ba2592c92cdbf633104b4f7987124bb6175fd6dc39dc8bde509e85e9c71"
+      },
+      "case_ids": [
+        "CM_NAME:aea5b82bb8b325d32caea162cf6ddce3fd9315de6a54415741478811d688a029"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_989_K_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "90",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "90",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "90",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "90",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "90",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "90",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-989.html",
+          "sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989",
+          "accessed_at": "2026-11-08T04:06:14.528919+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:be4cc2879c8d9bf53d335b2ab97f286e96fdfa9f78b6822867680ef1d0fd7648",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_990.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:007510",
+          "recipe_primary_identifier": "nbrc.medium:989",
+          "raw_preferred_term": "K solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "K solution**"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_1353_Mineral_Solution_B",
+      "old_proposal_id": "NSC-PROP-JCM_1353_Mineral_Solution_B",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml",
+        "sha256": "c5d329a8d87532c65f6d3e962d95b0b62512696ba6560e65cad6aed14671caa2"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1353_Mineral_Solution_B.yaml",
+        "sha256": "ef0ec461f42838d7199ef11abef8e7106ebc195c11cb334781d1a09abc8ee5f3"
+      },
+      "case_ids": [
+        "CM_NAME:b13689acf4e6c7a6ab020a299f72c5dd4b77d780a294399aaa7fc2c3abf9455d"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1353_Mineral_Solution_B.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "1.65",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Ni(NH4)2(SO4)2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "19.8",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "VOSO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.82",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "1.65",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Ni(NH4)2(SO4)2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "19.8",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "VOSO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.82",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1353.html",
+          "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+          "accessed_at": "2026-11-08T04:06:07.872529+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:a49e96fe706791edde69a00c61f7ff23e9baaa5aa82ebb800fdf6a6a577c016a",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1353_GBS_SALTS_MEDIUM_FOR_FERVIDIBACTER.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:015836",
+          "recipe_primary_identifier": "jcm.grmd:1353",
+          "raw_preferred_term": "Mineral solution B* (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.0"
+            },
+            "preferred_term": "Mineral solution B* (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_317_Se_W_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_317_Se_W_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_317_Se_W_Solution.yaml",
+        "sha256": "04ba647c6ccc5a160ecfa4fee0433d20a2d6e2fce09e51ac598a2c27cb6e4d37"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_317_Se_W_Solution.yaml",
+        "sha256": "1603001c438fc6e321f1f105cff5ebd5a9f2be169e5657493de1d8b49a4ace62"
+      },
+      "case_ids": [
+        "CM_NAME:bb437f3399b9bb25eecebdf8961226f0e498c508494f893b21186a8974484bbd"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_317_Se_W_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Na2SeO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-317.html",
+          "sha256": "fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317",
+          "accessed_at": "2026-11-08T04:06:19.558521+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:9300dd8c6e6f187114f06672f3a5ea0fb228d6137791214da2e2f1da656d5946",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1425_SPOROMUSA_MEDIUM_2.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015862",
+          "recipe_primary_identifier": "jcm.grmd:1425",
+          "raw_preferred_term": "Se/W solution (see Medium No. 317 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Se/W solution (see Medium No. 317 )"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_943_Modified_Hutner_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_943_Modified_Hutner_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml",
+        "sha256": "a52153cbd1962c292f5dcebd92d36e02fcc08232a5342e84ce663d7ccb04eeca"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_943_Modified_Hutner_Solution.yaml",
+        "sha256": "f62f6736a65ad231a9de433c05e285751bfddbd36a5e9537cea96500943d5291"
+      },
+      "case_ids": [
+        "CM_NAME:c3e5e52ff92ad4814b29b5df31a1ea041d1304d99d4a43531aa36cbe12c60616"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_943_Modified_Hutner_Solution.yaml",
+      "quantity_basis": "NBRC943 explicitly makes the preparation up to a final1L with distilled water. Printed masses and50mL Metal44 aliquot therefore retain final G/MG/ML_PER_L units; water amount is q.s. and unquantified. Metal44 uses the shared canonical CS proposal with literal100mL-water batch; it is a component, not the whole Hutner identity.",
+      "before_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "KOH",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "7.3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "29.7",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3.34",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "(NH4)6Mo7O24·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "9.25",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "99",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "NBRC 943 Metal salt 44",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "kgmicrobe.ingredient:nbrc_943_metal_salt_44",
+          "concentration_value": "50",
+          "concentration_unit": "ML_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "KOH",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "7.3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "29.7",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3.34",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "(NH4)6Mo7O24·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "9.25",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "99",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "NBRC943 Metal salt solution44",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "kgmicrobe.ingredient:nbrc943_metal_salt_44_stock",
+          "concentration_value": "50",
+          "concentration_unit": "ML_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-943.html",
+          "sha256": "271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943",
+          "accessed_at": "2026-11-08T04:06:15.551337+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:02784a9f5cb0881cbc040fcb983cebd1119c19d9370c04ffece28ac2e10048c7",
+          "source_file": "data/normalized_yaml/bacterial/modified_prosthecomicrobium_and_ancalomicrobium_medium_nbrc_943.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015904",
+          "recipe_primary_identifier": "nbrc.medium:943",
+          "raw_preferred_term": "Modified Hutner's solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "20"
+            },
+            "preferred_term": "Modified Hutner's solution"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-MediaDive_3774_VFA_Solution",
+      "old_proposal_id": "NSC-PROP-MediaDive_3774_VFA_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml",
+        "sha256": "20d9e794f9786d16188211a9bf9a7c2bb3e150d9e63eca194d65907103b245ad"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/MediaDive_3774_VFA_Solution.yaml",
+        "sha256": "645d9505752de697ac15945da875cf10e4d3f1fc2ca70e2f086b930abc87648e"
+      },
+      "case_ids": [
+        "CM_NAME:cda541e0541820aad68a525de8f2cbaefb3705ffdff785aebb5c33b0b8cb3fe1"
+      ],
+      "owner_path": "data/ingredients/mapped/MediaDive_3774_VFA_Solution.yaml",
+      "quantity_basis": "Seven source liquid inputs are17,6,4,1,1,1,1mL. Their arithmetic sum31mL and API volume do not establish additive final volume; units express only each literal input. No solvent is introduced.",
+      "before_components": [
+        {
+          "component_name": "Acetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "17",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        },
+        {
+          "component_name": "Propionic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        },
+        {
+          "component_name": "n-Butyric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        },
+        {
+          "component_name": "iso-Butyric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        },
+        {
+          "component_name": "n-Valeric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        },
+        {
+          "component_name": "iso-Valeric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        },
+        {
+          "component_name": "DL-alpha-Methylbutyric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_31_ML_BATCH"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Acetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "17",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "Propionic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "n-Butyric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "iso-Butyric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "n-Valeric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "iso-Valeric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "DL-alpha-Methylbutyric acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/mediadive-solution-3774.json",
+          "sha256": "74510f4009af302d60b1f15565a82f4ab166e0553b9e17744d584c12a1ccd4b7",
+          "url": "https://mediadive.dsmz.de/rest/solution/3774",
+          "accessed_at": "2026-11-08T04:07:14.964960+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:93b24c03f4fa39be67fb89beeaa996f86f45f9afbb6519040162514ee1e8f67d",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_5080_Main_sol_J1029.yaml",
+          "component_path": "composition/15",
+          "recipe_id": "CultureMech:013996",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "VFA solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.0031"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:012851",
+              "label": "VFA solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[15].preferred_term: Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].concentration: Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].notes: Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].culturemech_term: The exact source solution_id identifies this batch stock input; no universal working concentration is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5080",
+                "snippet": "{\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029.",
+            "preferred_term": "VFA solution"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_989_M_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_989_M_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_989_M_Solution.yaml",
+        "sha256": "45183d618f04b39f1d00553dfd63f7719c096b66529cefcfe7fae8923dbc76fa"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_989_M_Solution.yaml",
+        "sha256": "d5c9895c08a79b1f4175cc617fe08abaf41f02e05c8f7fa6679d360940b797bb"
+      },
+      "case_ids": [
+        "CM_NAME:ce44e1d66e4aa8a969b65dcdb8dbe84ac797d8f945e899407d96a832048cb8d2"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_989_M_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "MnCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CoCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "MnCl2·4H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CoCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-989.html",
+          "sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989",
+          "accessed_at": "2026-11-08T04:06:14.528919+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:e1e15c5fa0953a4d3f461e26efc9450641985a5527753d9deef5de042636c901",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_990.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:007510",
+          "recipe_primary_identifier": "nbrc.medium:989",
+          "raw_preferred_term": "M solution***",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.5"
+            },
+            "preferred_term": "M solution***"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-MediaDive_607_Mineral_Solution",
+      "old_proposal_id": "NSC-PROP-MediaDive_607_Mineral_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml",
+        "sha256": "835b1b41a6377070fe9267e13b8e0813ecea56714ec360a998d3deb11b058d17"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/MediaDive_607_Mineral_Solution.yaml",
+        "sha256": "7566713f2dc096dc1512993982aaabdcf281fc20cc81d307be187198397533e9"
+      },
+      "case_ids": [
+        "CM_NAME:d064c2e305818353334de0b7989bd64f6beb3ce89bcf5ab57d900b0132d87baf"
+      ],
+      "owner_path": "data/ingredients/mapped/MediaDive_607_Mineral_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "12",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "12",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1000",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/mediadive-solution-607.json",
+          "sha256": "d1b947d90e8193e9626b323eb32fa1c82bdcf2fb2c1486e064d6c1994d83fa11",
+          "url": "https://mediadive.dsmz.de/rest/solution/607",
+          "accessed_at": "2026-11-08T04:06:21.877295+00:00"
+        },
+        {
+          "path": "captures/dsmz-330.pdf",
+          "sha256": "8229d2b6a229d3448df71516a755965110bf57fb93c5190de4cbebe741847e29",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf",
+          "accessed_at": "2026-11-08T04:07:15.523212+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:fb18aa5bf9a30306483cddc3295f50e4b7d405175b9e90acbb40c776fb2ad1f0",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_5080_Main_sol_J1029.yaml",
+          "component_path": "composition/14",
+          "recipe_id": "CultureMech:013996",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Mineral solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.038"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:014792",
+              "label": "Mineral solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[14].preferred_term: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[14].concentration: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[14].notes: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[14].culturemech_term: The exact source solution_id identifies this batch stock input; no universal working concentration is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5080",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029.",
+            "preferred_term": "Mineral solution"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:545ccab5a04fadc650c1f74da517a494378212b58c09962b3d90495ea561bd1b",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_606_Main_sol_330.yaml",
+          "component_path": "composition/13",
+          "recipe_id": "CultureMech:014786",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Mineral solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.038"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:014792",
+              "label": "Mineral solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[13].preferred_term: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[13].concentration: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[13].notes: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[13].culturemech_term: The exact source solution_id identifies this batch stock input; no universal working concentration is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/606",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330.",
+            "preferred_term": "Mineral solution"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution",
+      "old_proposal_id": "NSC-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml",
+        "sha256": "c4883a3f5e02cd837ee8c99fc9138f82d2ad9941943c2977bdc6cab0acb406fe"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml",
+        "sha256": "3c41dfef6ee3981a62da99cebdbfd6259cbe4908228952153527e41d1f9da64c"
+      },
+      "case_ids": [
+        "CM_NAME:d7ea8f923d7f98cfdc72a747387984fab3946aa46216348a4a9faf4efefe9a8f"
+      ],
+      "owner_path": "data/ingredients/mapped/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MnSO4·H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CoSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.18",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.18",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "CuSO4·5H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "AlK(SO4)2·12H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NiCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.03",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:131361",
+          "concentration_value": "0.3",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "0.4",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        },
+        {
+          "component_name": "KOH solution",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Nitrilotriacetic acid",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "MnSO4·H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CoSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.18",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "ZnSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.18",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "CuSO4·5H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "AlK(SO4)2·12H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.02",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "H3BO3",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2MoO4·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.01",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NiCl2·6H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.03",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:131361",
+          "concentration_value": "0.3",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "0.4",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1000",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        },
+        {
+          "component_name": "KOH solution",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/dsmz-161.pdf",
+          "sha256": "0f4ea6194efcb146abe36366dd72ce890643e9cfe39bc947a9df7281959478e0",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf",
+          "accessed_at": "2026-11-08T04:07:16.173447+00:00"
+        },
+        {
+          "path": "captures/mediadive-solution-241.json",
+          "sha256": "50cc42c209f550b7abc4a5f48b455553516220b6ef9613f481941f9e15f0b25d",
+          "url": "https://mediadive.dsmz.de/rest/solution/241",
+          "accessed_at": "2026-11-08T04:06:21.875062+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:9f4cd90a4a384e022636c9463d79a2dfc41d1eeded63508fc26c8288c1ff610a",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_277_Main_sol_161.yaml",
+          "component_path": "composition/15",
+          "recipe_id": "CultureMech:012076",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Modified Wolin's mineral solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.01"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:011798",
+              "label": "Modified Wolin's mineral solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[15].preferred_term: Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].concentration: Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].notes: Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].culturemech_term: Exact upstream stock accession maps to this existing normalized record; no universal working dose is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/277",
+                "snippet": "{\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161.",
+            "preferred_term": "Modified Wolin's mineral solution"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_989_C_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_989_C_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_989_C_Solution.yaml",
+        "sha256": "f960a7fc1de689f346aa1955fb1e2d5d7728f7efcc2de6104e38599942ad28e8"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_989_C_Solution.yaml",
+        "sha256": "b48d96d7448efc819b56e1f95603652361ed3ef0af9f5a2fba40894976b2923c"
+      },
+      "case_ids": [
+        "CM_NAME:da1e2238a9fdc0e2a62faa44545641313357d898e43bf1484812e0175fe5c9a5"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_989_C_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10.6",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "CaCl2·2H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10.6",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-989.html",
+          "sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989",
+          "accessed_at": "2026-11-08T04:06:14.528919+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:39ddc9a4c3d5d176785ad451d64295a083a2a0253e571f80f26bf55753c664bd",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_990.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:007510",
+          "recipe_primary_identifier": "nbrc.medium:989",
+          "raw_preferred_term": "C solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.5"
+            },
+            "preferred_term": "C solution****"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_1339_10xM9_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_1339_10xM9_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml",
+        "sha256": "0746c92c69d9e2a8242d1fd106b67bb8a6aefc7648a92fc2e5aaf964af595dde"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_1339_10xM9_Solution.yaml",
+        "sha256": "491d616079ce25966e424cd1831274cc261f68ef2f9f968434162b086893372b"
+      },
+      "case_ids": [
+        "CM_NAME:de7905985cf30fb8a517bc33aeb685e09f9b693aed27858fbd4d84e12af0bb42",
+        "CM_NAME:ecbcb964a1d28437efc81ef8af4c22744df183c3dc1ad54e00f286ad94959d2d"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_1339_10xM9_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "30",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2HPO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "60",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NH4Cl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "KH2PO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "30",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2HPO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "60",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NH4Cl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "10",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1339.html",
+          "sha256": "a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339",
+          "accessed_at": "2026-11-08T04:06:15.611297+00:00"
+        },
+        {
+          "path": "captures/togo-M2041.json",
+          "sha256": "4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041",
+          "accessed_at": "2026-11-08T04:06:23.133701+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:55bc40e374e068a016abbf00c84a61de0ce542e493f446a6cd6f90313aa14653",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1340.yaml",
+          "component_path": "ingredients/1",
+          "recipe_id": "CultureMech:007473",
+          "recipe_primary_identifier": "nbrc.medium:1339",
+          "raw_preferred_term": "10xM9 solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "100"
+            },
+            "preferred_term": "10xM9 solution**"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:637c7fd8ab80598936cba00dabc89442102436ce2aef8c37d224274ca950aa30",
+          "source_file": "data/normalized_yaml/bacterial/m9_phenanthrene.yaml",
+          "component_path": "ingredients/1",
+          "recipe_id": "CultureMech:008631",
+          "recipe_primary_identifier": "TOGO:M2041",
+          "raw_preferred_term": "10xM9 solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "100"
+            },
+            "notes": "TOGO M2041 / NBRC Medium 1339 adds 100 ml/L separately autoclaved 10xM9 solution.",
+            "preferred_term": "10xM9 solution",
+            "source": "TOGO M2041 / NBRC Medium 1339"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_852_Se_W_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_852_Se_W_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_852_Se_W_Solution.yaml",
+        "sha256": "f8b59772d07337aef1cdff2fa7df453d024d9bd12932d4f3cfeebe8988c8983c"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_852_Se_W_Solution.yaml",
+        "sha256": "668bf61c3d226ab8051816105141caf49c82d5ec13d0436c27e34f1fd6b66fc0"
+      },
+      "case_ids": [
+        "CM_NAME:e139ae2aee89d4cbdf51ea503d6183bff1cba0738fb7cc033d8a541cef597f5f"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_852_Se_W_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:131361",
+          "concentration_value": "1.7",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "3.3",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:131361",
+          "concentration_value": "1.7",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "3.3",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-852.html",
+          "sha256": "6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852",
+          "accessed_at": "2026-11-08T04:06:20.119641+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:348cc0754aa8c96d8a01e0f6d47a5398794931493800d73ea6c7f9ebdeeebce6",
+          "source_file": "data/normalized_yaml/specialized/marine_chloroflexi_medium.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:015391",
+          "recipe_primary_identifier": "mediadive.medium:J1188",
+          "raw_preferred_term": "Se/W solution (Medium No.852)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "notes": "Ontology mapping not yet available; From JCM Medium 1188; Curated from JCM Medium 1188 specification",
+            "preferred_term": "Se/W solution (Medium No.852)",
+            "source": "JCM Medium 1188"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_521_Reducing_Agent_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_521_Reducing_Agent_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml",
+        "sha256": "44092c4d5203001b76e9839a92fb855d32983e5dc7d959fd8e07c088f731824f"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_521_Reducing_Agent_Solution.yaml",
+        "sha256": "c3c49f9aee3429e7b2fd831d7b4d1cdde1b3f60a27b1f7bf7c22b16d3efed657"
+      },
+      "case_ids": [
+        "CM_NAME:edbd7a9cabc31b8cf916cecd74f70ee44a6d288777b518f579dae571d2eaddba"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_521_Reducing_Agent_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Na2S·9H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "12.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "L-Cysteine hydrochloride monohydrate",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "12.5",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Na2S·9H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "12.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "L-Cysteine hydrochloride monohydrate",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "12.5",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-521.html",
+          "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521",
+          "accessed_at": "2026-11-08T04:06:20.118438+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:4769b8a65ed083501588c3dabd9d5b6b57a52be8a703727f72caf0517d8fee49",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1344_SEA_WATER_MEDIUM_WITH_ACETATE.yaml",
+          "component_path": "ingredients/13",
+          "recipe_id": "CultureMech:015834",
+          "recipe_primary_identifier": "jcm.grmd:1344",
+          "raw_preferred_term": "Reducing agent solution (see Medium No. 521 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Reducing agent solution (see Medium No. 521 )"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_1130_Mineral_Solution_I",
+      "old_proposal_id": "NSC-PROP-JCM_1130_Mineral_Solution_I",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml",
+        "sha256": "b07fde256a692290585e4e9e1a599a183169ce6b05042ee2385affd2bc0aafa9"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1130_Mineral_Solution_I.yaml",
+        "sha256": "04c96e31241d106393e95ca6b1a4cb962ec95a909fbb5a09fe60a64e480b9fbe"
+      },
+      "case_ids": [
+        "CM_NAME:f6ffb10de190cb3ec6aac5d67186b0a611e4b904a3d936bd6004e915bbc050f5"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1130_Mineral_Solution_I.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "K2HPO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "K2HPO4",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "3",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1130.html",
+          "sha256": "dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T04:07:14.964723+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:1cd1d2c11bfa08156a0f9cd256693bbe167a3891b4568d94026320e2a3506167",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015879",
+          "recipe_primary_identifier": "jcm.grmd:1385",
+          "raw_preferred_term": "Mineral solution I (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "150.0"
+            },
+            "preferred_term": "Mineral solution I (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_1474_Solution_B",
+      "old_proposal_id": "NSC-PROP-JCM_1474_Solution_B",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1474_Solution_B.yaml",
+        "sha256": "baf8eeb9b415749681ec66e5cd1b05a124a8aec8c5fc6a384f742a9ffefd6949"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1474_Solution_B.yaml",
+        "sha256": "f882f92f6b5336af2b8e4cdf65284409c248f126f1a67c8828781bdef1723472"
+      },
+      "case_ids": [
+        "CM_NAME:f8bdfcc8ad33b60cb56321be40761c9ea8b11be8e239355bd111accf60a357ad"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1474_Solution_B.yaml",
+      "quantity_basis": "Literal source batch contains100mL added distilled water; solute masses retain the original unscaled values. No final solution volume or final g/L concentration is inferred.",
+      "before_components": [
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "40",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "MnSO4·xH2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "MgSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "4",
+          "concentration_unit": "G_PER_PREPARATION_WITH_100_ML_WATER"
+        },
+        {
+          "component_name": "NaCl",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.2",
+          "concentration_unit": "G_PER_PREPARATION_WITH_100_ML_WATER"
+        },
+        {
+          "component_name": "FeSO4·7H2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.2",
+          "concentration_unit": "G_PER_PREPARATION_WITH_100_ML_WATER"
+        },
+        {
+          "component_name": "MnSO4·xH2O",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.2",
+          "concentration_unit": "G_PER_PREPARATION_WITH_100_ML_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "100",
+          "concentration_unit": "ML_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1474.html",
+          "sha256": "fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474",
+          "accessed_at": "2026-11-08T04:06:04.491083+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:953ae55aaaa9e5cb1988f163bf320a1aba947fac29a163d5d3b8a91cdfb27681",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1474_BL_BROTH_WITH_2_NaCl.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015890",
+          "recipe_primary_identifier": "jcm.grmd:1474",
+          "raw_preferred_term": "Solution B (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Solution B (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-JCM_1365_Selenite_Tungustate_Solution",
+      "old_proposal_id": "NSC-PROP-JCM_1365_Selenite_Tungustate_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml",
+        "sha256": "88e368198166e242c72401d620d7bc381b1db0f6afc3e539fb0f5391c8a289a1"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml",
+        "sha256": "2058b95831b25f2cfbd010e82e7edd3614de5b2598f854e5a584b9cabde5cc48"
+      },
+      "case_ids": [
+        "CM_NAME:fc378c0b1ea871138282fea03f8089a9501d263f33940b492b35e4da662a2594"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_1365_Selenite_Tungustate_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "NaOH",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:32145",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:131361",
+          "concentration_value": "0.06",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "0.08",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "NaOH",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:32145",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:131361",
+          "concentration_value": "0.06",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:63939",
+          "concentration_value": "0.08",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1365.html",
+          "sha256": "8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1365",
+          "accessed_at": "2026-11-08T04:06:12.391120+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:c089795a742d817b51a61095d9d4302bdf2f0f10b80b0f3cc975057ff55c0730",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015843",
+          "recipe_primary_identifier": "jcm.grmd:1365",
+          "raw_preferred_term": "Selenite-tungustate solution (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungustate solution (see below)"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_971_Solution_B",
+      "old_proposal_id": "NSC-PROP-NBRC_971_Solution_B",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_971_Solution_B.yaml",
+        "sha256": "8bfb09ad4e6c7d0d19da72cc116bec2d920586a3107b50100fa8a46a8dac38bf"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_971_Solution_B.yaml",
+        "sha256": "b4bee9623cb4baedf3eb0b6955b4e1f1d2e217cc4dc874748768dea023d66167"
+      },
+      "case_ids": [
+        "CM_NAME:fc99681047a21214bd91c69727dc03fc343a3ecac0097ffe86bc39fbf2927333"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_971_Solution_B.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Sucrose",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Sucrose",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "100",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-971.html",
+          "sha256": "6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=971",
+          "accessed_at": "2026-11-08T04:06:13.951104+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:5ec27118513df6c7ba79f9f546346a8cb2c74f96380f7f94e9d6a27d94b1ce6b",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_972.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:007509",
+          "recipe_primary_identifier": "nbrc.medium:971",
+          "raw_preferred_term": "Solution B**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Solution B**"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-NBRC_1020_824_Resazurin_Solution",
+      "old_proposal_id": "NSC-PROP-NBRC_1020_824_Resazurin_Solution",
+      "old_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml",
+        "sha256": "34dc5f26d7369080768f32e08fab2b4850cb93e641590cc9a1a1b102a1c0d3cf"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/NBRC_1020_824_Resazurin_Solution.yaml",
+        "sha256": "559990485f2a650a5f6e6d98d5863465d37977b497e016de7df64ed248a3b43b"
+      },
+      "case_ids": [
+        "CM_NAME:ff12ee82b58d22f5ceebb18a7b3cd9f47210eea562773474148d3b4ac3da77fd"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_1020_824_Resazurin_Solution.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "Resazurin",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "Resazurin",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:15377",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1020.html",
+          "sha256": "6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+          "accessed_at": "2026-11-08T04:06:09.103311+00:00"
+        },
+        {
+          "path": "captures/nbrc-824.html",
+          "sha256": "0317a82ebb8fff38df7bb305fc69a392c2f45d4e63969a0a6714616fa9676c2e",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824",
+          "accessed_at": "2026-11-08T04:06:09.103563+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:9c45cd800810cdb0be8abb18b3e53c93285af0918a54753f7b4966bdeb65f184",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1021.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:007450",
+          "recipe_primary_identifier": "nbrc.medium:1020",
+          "raw_preferred_term": "Resazurin solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Resazurin solution****"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:f9e38c69c875172c1446d6fa4d7996cf360818e5e3118b6bc0f5133b7edeb5a5",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_825.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:007496",
+          "recipe_primary_identifier": "nbrc.medium:824",
+          "raw_preferred_term": "Resazurin solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Resazurin solution****"
+          }
+        }
+      ]
+    },
+    {
+      "proposal_id": "NSV4-PROP-Selenite_tungstate_Solution_See_Medium_No_431",
+      "old_proposal_id": "NS-PROP-431-REGISTRY-PARTONOMY-V2",
+      "old_capture": {
+        "root": "artifact",
+        "path": "stock431-v2/proposal-after.yaml",
+        "sha256": "878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806"
+      },
+      "new_capture": {
+        "root": "artifact",
+        "path": "quantity-v4/proposals/Selenite_tungstate_Solution_See_Medium_No_431.yaml",
+        "sha256": "5e6c9e17dba64208e589d3f872006080c2ac5b00aef2307c2c966a34f5069731"
+      },
+      "case_ids": [
+        "CM_NAME:018bdd59e8ab48dfbfc869a196b1d98e9d682d0c228f857002cff2f63e6e0658",
+        "CM_NAME:02783a861c0e56af08c3200c5b0d7e38abe217083d6b11fdb2c1a3bfcf623d93",
+        "CM_NAME:e02348fe0ebd141d90ae6def5fe66edd1bfc8e6bdb615f57bdae64f069362e79",
+        "CM_NAME:e8c97b4daa00f2d94ddf163af75ac2c44dc57f5bfa688d5d03ee70271a22c632"
+      ],
+      "owner_path": "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+      "quantity_basis": "Literal printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added water, not a final1L solution or final concentration.",
+      "before_components": [
+        {
+          "component_name": "NaOH",
+          "component_id": "CHEBI:32145",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "component_id": "CHEBI:131361",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "6",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "component_id": "CHEBI:63939",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "8",
+          "concentration_unit": "MG_PER_L"
+        },
+        {
+          "component_name": "Distilled water",
+          "component_id": "CHEBI:15377",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_L"
+        }
+      ],
+      "after_components": [
+        {
+          "component_name": "NaOH",
+          "component_id": "CHEBI:32145",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "0.4",
+          "concentration_unit": "G_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2SeO3·5H2O",
+          "component_id": "CHEBI:131361",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "6",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Na2WO4·2H2O",
+          "component_id": "CHEBI:63939",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "8",
+          "concentration_unit": "MG_PER_PREPARATION_WITH_1_L_WATER"
+        },
+        {
+          "component_name": "Distilled water",
+          "component_id": "CHEBI:15377",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "1",
+          "concentration_unit": "L_PER_SOURCE_PREPARATION"
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-431.html",
+          "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431",
+          "accessed_at": "2026-11-08T04:06:18.315343+00:00"
+        },
+        {
+          "path": "captures/nbrc-1257.html",
+          "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+          "accessed_at": "2026-11-08T04:06:02.860735+00:00"
+        },
+        {
+          "path": "captures/nbrc-1321.html",
+          "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+          "accessed_at": "2026-11-08T04:06:02.860955+00:00"
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:29fe8b0f92803988d3084998e64cf471d79f538a4778900c50f9adce1e8ebf25",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1261.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:007467",
+          "recipe_primary_identifier": "nbrc.medium:1257",
+          "raw_preferred_term": "Selenite-tungstate solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Selenite-tungstate solution**"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:d5fb62021cd692ba7eddf1725f7b702baa56b901b295ada69ef26e3268ef56c2",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1323.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:007472",
+          "recipe_primary_identifier": "nbrc.medium:1321",
+          "raw_preferred_term": "Selenite-tungstate solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Selenite-tungstate solution**"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:3ec424c2c489a072a60815a035f102d8b90a420c416784ca9bcc45613ab0bf0d",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1400_SULFURIMONAS_MEDIUM_WITH_SULFUR.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015886",
+          "recipe_primary_identifier": "jcm.grmd:1400",
+          "raw_preferred_term": "Selenite tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:a619ccabfb6eb5bfbfd33b8c5238a9ababa8b7e65ec9c6b5f9f9a85c92dbb7c6",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1468_FRESHWATER_R2A_MEDIUM.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015874",
+          "recipe_primary_identifier": "jcm.grmd:1468",
+          "raw_preferred_term": "Selenite tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "0.5"
+            },
+            "preferred_term": "Selenite tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:82ce2b9611bdbb55d7135ad3b0e67c31013aecb92b6bc2be598d23604855dfe6",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1364_WIDDEL_FRESHWATER_MEDIUM_WITH_FORMATE_AND_ACETATE.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015842",
+          "recipe_primary_identifier": "jcm.grmd:1364",
+          "raw_preferred_term": "Selenite-tungstate solution* (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution* (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:5175e4133b10edb74b7d45e6b7d451b581de06fb43ae7f4765cdc953cfb21ddc",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1423_METHANOBREVIBACTER_CURVATUS_MEDIUM.yaml",
+          "component_path": "ingredients/13",
+          "recipe_id": "CultureMech:015860",
+          "recipe_primary_identifier": "jcm.grmd:1423",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:dae9b53112a52eb8e3ffe9aa02132b90d5694eb1acec3f8e24dcc7373ece02f0",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1424_METHANOBREVIBACTER_CUTICULARIS_MEDIUM.yaml",
+          "component_path": "ingredients/12",
+          "recipe_id": "CultureMech:015861",
+          "recipe_primary_identifier": "jcm.grmd:1424",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:1b0e3ac5eff08c3daed18540d1e5c0d0e2fac4db3bd1bd776c3be2a2bfd8e373",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1363_WIDDEL_FRESHWATER_MEDIUM_WITH_SPERMIDINE.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015841",
+          "recipe_primary_identifier": "jcm.grmd:1363",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:d3c73100e4b55b9a50936d2c251dbc459911b4503d92ed1c5f305e0f8128d682",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1388_ACC8_MEDIUM.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015848",
+          "recipe_primary_identifier": "jcm.grmd:1388",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:ad076da79102b16d1a72ab6d4c4cbafaa42e7d4bbf340c616dc5dd5e091cca18",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015849",
+          "recipe_primary_identifier": "jcm.grmd:1389",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:729b30b62e5efabb77a119a58a206f0602c2c84239a78df5c6bbb870c35b4819",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015856",
+          "recipe_primary_identifier": "jcm.grmd:1406",
+          "raw_preferred_term": "Selenite-tungstate solution (see Medium No. 431 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungstate solution (see Medium No. 431 )"
+          }
+        }
+      ]
+    }
+  ],
+  "retired_duplicates": [
+    {
+      "proposal_id": "CS-PROP-NBRC1339_PHENANTHRENE_DMSO_STOCK",
+      "canonical_owner_path": "data/ingredients/mapped/NBRC1339_Phenanthrene_DMSO_Stock.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/NBRC1339_Phenanthrene_DMSO_Stock-v2.yaml",
+        "sha256": "3cb65a45ac4b2ba9a0a8e3b4a4d42b864bcf206ce2973f6aa4a7bfb2a9eeb750"
+      },
+      "worker01_root_after_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC1339_Phenanthrene_DMSO_Stock-v2.yaml",
+        "sha256": "3cb65a45ac4b2ba9a0a8e3b4a4d42b864bcf206ce2973f6aa4a7bfb2a9eeb750"
+      },
+      "cs_case_ids": [
+        "CM_NAME:7883f66635a17cc5e5a6458b5b97b4dd8988ba47388e5100da6d2a5400dd94f0"
+      ],
+      "named_case_id": "CM_NAME:c97fe0cf7142d4847c4249018287a593e5c1f07283d987b9605ff314810d5cdc",
+      "named_case_index": 119,
+      "named_occurrence_ids": [
+        "CM_OCC:c702c5f731e09048e68ad39d335c03c8e9ab2add1d71c9da0ad89d5f21207a32"
+      ],
+      "retired_proposal_id": "NSC-PROP-NBRC_1339_Phenanthrene_Solution",
+      "retired_named_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml",
+        "sha256": "5b40b69031ff9b73f4a259f979d86f283cca9584890dce9c5d865824a653db06"
+      },
+      "relation": "same_whole_stock",
+      "scientific_basis": "NBRC1339 and its TOGO M2041 recipe refer to the same 250 mM phenanthrene in DMSO stock, filtered with DMSO-safe filters. The unqualified Phenanthrene solution label requires this occurrence context."
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC943_METAL_SALT_44_STOCK",
+      "canonical_owner_path": "data/ingredients/mapped/NBRC943_Metal_Salt_44_Stock.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/NBRC943_Metal_Salt_44_Stock-v2.yaml",
+        "sha256": "1aeb662cada6871acd1c7f7fd4f92d626e8c61e7f1a5cfd5a8ceaffae7a47459"
+      },
+      "worker01_root_after_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC943_Metal_Salt_44_Stock-v2.yaml",
+        "sha256": "1aeb662cada6871acd1c7f7fd4f92d626e8c61e7f1a5cfd5a8ceaffae7a47459"
+      },
+      "cs_case_ids": [
+        "CM_NAME:a1459512712c7f64a509c079a76f58ba23fc166bf8f86f5e185fc4ee6a957cfa"
+      ],
+      "named_case_id": "CM_NAME:c3e5e52ff92ad4814b29b5df31a1ea041d1304d99d4a43531aa36cbe12c60616",
+      "named_case_index": 116,
+      "named_occurrence_ids": [
+        "CM_OCC:02784a9f5cb0881cbc040fcb983cebd1119c19d9370c04ffece28ac2e10048c7"
+      ],
+      "retired_proposal_id": "NSC-PROP-NBRC_943_Metal_Salt_44",
+      "retired_named_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml",
+        "sha256": "05b5ca36872439f8bf24e0fe077f5fe175d4880d96d881d924744a1b5a006aaf"
+      },
+      "relation": "auxiliary_component",
+      "scientific_basis": "Both lane proposals transcribe the same NBRC943 Metal salt solution44 table. In named case116 it is a 50 mL nested component of Modified Hutner solution, not the whole Hutner preparation or an exact alias for it. Canonical stock identity is shared; the parent keeps its separate stock identity."
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_CO2_BICARBONATE_STOCK",
+      "canonical_owner_path": "data/ingredients/mapped/NBRC1321_CO2_Bicarbonate_Stock.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+        "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c"
+      },
+      "worker01_root_after_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+        "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c"
+      },
+      "cs_case_ids": [
+        "CM_NAME:b5382d1dbca57e155a434a62bcc1f29822030e9ecc3566791a57238d7ef117a3"
+      ],
+      "named_case_id": "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a",
+      "named_case_index": 11,
+      "named_occurrence_ids": [
+        "CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78"
+      ],
+      "retired_proposal_id": "NSC-PROP-NBRC_1257_Bicarbonate_Solution",
+      "retired_named_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml",
+        "sha256": "27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8"
+      },
+      "relation": "same_whole_stock",
+      "scientific_basis": "NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source qualification and complete preparation establish the same stock; neither source states make-up to a final 100 mL."
+    },
+    {
+      "proposal_id": "CS-PROP-NBRC1321_SULFIDE_STOCK",
+      "canonical_owner_path": "data/ingredients/mapped/NBRC1321_Sulfide_Stock.yaml",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposals/NBRC1321_Sulfide_Stock-v2.yaml",
+        "sha256": "12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5"
+      },
+      "worker01_root_after_capture": {
+        "root": "artifact",
+        "path": "shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml",
+        "sha256": "12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5"
+      },
+      "cs_case_ids": [
+        "CM_NAME:be907c95d1757e8248331771aea41181491ad29a1bd5b7a09850ef8e31a4a00a"
+      ],
+      "named_case_id": "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21",
+      "named_case_index": 112,
+      "named_occurrence_ids": [
+        "CM_OCC:5363a3ab2202806c37b285d87d656a7172751c8fe3242e5823133ce37f65d297"
+      ],
+      "retired_proposal_id": "NSC-PROP-NBRC_1257_Sulfide_Solution",
+      "retired_named_capture": {
+        "root": "artifact",
+        "path": "completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml",
+        "sha256": "d4fbaffcfa77390358456d30b6a8e78aeaa1a18b3513f039c285029baffc8922"
+      },
+      "relation": "same_whole_stock",
+      "scientific_basis": "NBRC1257 uses 12 g Na2S·9H2O plus 50 mL distilled water; NBRC1321 uses 24 g plus 100 mL. Both give the same precursor-to-added-water ratio, call the preparation 1.0 M, specify filtration and storage under N2. This is formulation equivalence at scaled batch size, not a claim that either is made up to a final volume."
+    }
+  ],
+  "issue_context": "Known process defect MIM#1159; user steering#1163. IR-SHARD-ARTIFACT-9 alias projection also corrected. Final-volume claims retained only where primary source explicitly supplies them."
+}

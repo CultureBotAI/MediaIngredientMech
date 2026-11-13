@@ -1,0 +1,93 @@
+id: CultureMech:007476
+name: '14'
+original_name: '14'
+category: bacterial
+description: 14. NBRC 13.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 8.2
+media_term:
+  preferred_term: NBRC Medium 13
+  term:
+    id: nbrc.medium:13
+    label: NBRC Medium 13
+ingredients:
+- preferred_term: Soytone
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315720
+    label: Soy peptone
+- preferred_term: Soluble starch
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  term:
+    id: CHEBI:28017
+    label: Starch
+- preferred_term: Seawater (2% Salinity)*
+  concentration:
+    value: '1'
+    unit: L
+- preferred_term: Agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  term:
+    id: CHEBI:2509
+    label: agar
+preparation_steps: []
+curation_history:
+- timestamp: '2026-02-20T00:22:35.936139Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 13, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=13.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-13T03:09:00.145946Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 6 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.203268Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007476'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Soytone1gSoluble starch10gSeawater
+    (2% Salinity)*1LAgar15gpH 8.2*Dilute artificial seawater or natural seawater with
+    distilled water.'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.654573+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:22.805230+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 13 composition table from the preserved scrape;
+    4 ingredient(s) restored, 0 stock solution(s) nested rather than flattened, 0
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:15.929132+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_nbrc_partial_score25.py
+  action: RESOLVED_NBRC_PARTIAL_SCORE25
+  changes: Added source metadata to recovered NBRC score-25 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=13
+  notes: Preserved the recovered NBRC Medium 13 composition table.
+notes: 'Source: NBRC Medium 13 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=13
+
+
+  The NBRC table lists Soytone, soluble starch, diluted seawater at 2% salinity, agar,
+  final pH 8.2, and dilution of artificial or natural seawater with distilled water.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=13

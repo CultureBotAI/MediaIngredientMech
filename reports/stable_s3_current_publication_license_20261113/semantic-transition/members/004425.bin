@@ -1,0 +1,528 @@
+id: CultureMech:007319
+name: defined_freshwater_medium_coso4
+original_name: Defined freshwater medium (CoSO4) + 20 mM Iron citrate + 113.2 mM Acetate
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Boric acid
+  term:
+    id: CHEBI:33118
+    label: boric acid
+  concentration:
+    value: '0.001617'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:33118
+    label: boric acid
+- preferred_term: Ferric oxide
+  concentration:
+    value: '100.0'
+    unit: MILLIMOLAR
+- preferred_term: Riboflavin
+  term:
+    id: CHEBI:17015
+    label: riboflavin
+  concentration:
+    value: '0.0001329'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:ribflv'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17015
+    label: riboflavin
+- preferred_term: Sodium acetate
+  term:
+    id: CHEBI:32954
+    label: sodium acetate
+  concentration:
+    value: '6.8'
+    unit: G_PER_L
+  notes: 'Cross-references: KEGG:ac'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32954
+    label: sodium acetate
+  evidence:
+  - reference: doi:10.1007/BF00290916
+    supports: SUPPORT
+    snippet: acetate (6.8 g/l) was the carbon source.
+    explanation: 'ingredients[3].concentration in MEDIADB:418. Locator: Printed page
+      337, Source of organism and culturing procedures, first complete paragraph.
+      Replace the database''s 113.2 mM by the 1993 routine carbon input, 6.8 g/L.
+      The sodium salt follows the explicitly cited 1988 FWA-Fe(III) basal recipe,
+      which prints NaCH3COO. This chemical-form inference applies to the acetate input
+      of that basal formulation, separately from its amount. The 1993 Methods cites
+      the 1988 procedure; its donor table varies acetate amount without specifying
+      a different supplied salt. Hydration/purity is not established; no new molarity
+      or molecular weight is asserted. The original database name is historical provenance.
+      Manual scan transcription; formula subscripts flattened, line wrapping normalized,
+      hydrate dot represented with a middle dot. No automated OCR pass. Inspected
+      2026-10-09. This does not certify other ingredient quantities, the entire cobalt
+      variant, or organism growth. Earlier database evidence remains historical database
+      support.'
+  - reference: https://pmc.ncbi.nlm.nih.gov/articles/PMC202682/
+    supports: SUPPORT
+    snippet: NaCH3COO, 6.8
+    explanation: 'ingredients[3].term, preferred_term and mediaingredientmech_chebi_term
+      in MEDIADB:418. Locator: Printed page 1473, Media / FWA-Fe(III) medium, left
+      column. Replace the database''s 113.2 mM by the 1993 routine carbon input, 6.8
+      g/L. The sodium salt follows the explicitly cited 1988 FWA-Fe(III) basal recipe,
+      which prints NaCH3COO. This chemical-form inference applies to the acetate input
+      of that basal formulation, separately from its amount. The 1993 Methods cites
+      the 1988 procedure; its donor table varies acetate amount without specifying
+      a different supplied salt. Hydration/purity is not established; no new molarity
+      or molecular weight is asserted. The original database name is historical provenance.
+      The older paragraph''s separate unit heading is ''in grams per liter of deionized
+      water''. Manual scan transcription; formula subscripts flattened, line wrapping
+      normalized, hydrate dot represented with a middle dot. No automated OCR pass.
+      Inspected 2026-10-09. This does not certify other ingredient quantities, the
+      entire cobalt variant, or organism growth. Earlier database evidence remains
+      historical database support.'
+- preferred_term: Nicotinate
+  concentration:
+    value: '0.0004061'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:nac'
+  term:
+    id: CHEBI:15940
+    label: nicotinic acid
+- preferred_term: Vitamin B12
+  term:
+    id: CHEBI:176843
+    label: vitamin B12
+  concentration:
+    value: '7.378e-07'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:176843
+    label: vitamin B12
+- preferred_term: Folate
+  concentration:
+    value: '4.531e-05'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:fol'
+  term:
+    id: CHEBI:27470
+    label: folic acid
+- preferred_term: Biotin
+  term:
+    id: CHEBI:15956
+    label: biotin
+  concentration:
+    value: '8.186e-05'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:btn'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15956
+    label: biotin
+- preferred_term: Lipoate
+  concentration:
+    value: '0.0002423'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:lipoate'
+  term:
+    id: CHEBI:16494
+    label: lipoic acid
+- preferred_term: 4-Aminobenzoate
+  term:
+    id: CHEBI:17836
+    label: 4-aminobenzoate
+  concentration:
+    value: '0.0003646'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:4abz'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17836
+    label: 4-aminobenzoate
+- preferred_term: Calcium chloride anhydrous
+  concentration:
+    value: '0.687'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:3312
+    label: calcium dichloride
+- preferred_term: Fe(III)dicitrate
+  concentration:
+    value: '20.0'
+    unit: MILLIMOLAR
+  notes: 'Cross-references: KEGG:fe3dcit'
+- preferred_term: Ferrous sulfate
+  concentration:
+    value: '0.003597'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75832
+    label: iron(2+) sulfate (anhydrous)
+- preferred_term: Ammonium chloride
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '1.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  evidence:
+  - reference: doi:10.1007/BF00290916
+    supports: SUPPORT
+    snippet: NH4Cl 1.5
+    explanation: 'ingredients[13].concentration in MEDIADB:418. Locator: Printed page
+      337, Source of organism and culturing procedures, first complete paragraph.
+      Restore the directly reported 1.5 g/L input under the separate heading ''The
+      medium contained the following (g/l)''. No molecular-weight conversion or new
+      final-volume assumption. The phosphate is explicitly the monohydrate; unchanged
+      salt identities are not broadened. Manual scan transcription; formula subscripts
+      flattened, line wrapping normalized, hydrate dot represented with a middle dot.
+      No automated OCR pass. Inspected 2026-10-09. This does not certify other ingredient
+      quantities, the entire cobalt variant, or organism growth. Earlier database
+      evidence remains historical database support.'
+- preferred_term: Sodium dihydrogen phosphate monohydrate
+  concentration:
+    value: '0.6'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:114249
+    label: sodium dihydrogenphosphate monohydrate
+  term:
+    id: CHEBI:114249
+    label: sodium dihydrogenphosphate monohydrate
+  evidence:
+  - reference: doi:10.1007/BF00290916
+    supports: SUPPORT
+    snippet: NaH2PO4 · H2O, 0.6
+    explanation: 'ingredients[14].concentration in MEDIADB:418. Locator: Printed page
+      337, Source of organism and culturing procedures, first complete paragraph.
+      Restore the directly reported 0.6 g/L input under the separate heading ''The
+      medium contained the following (g/l)''. No molecular-weight conversion or new
+      final-volume assumption. The phosphate is explicitly the monohydrate; unchanged
+      salt identities are not broadened. Manual scan transcription; formula subscripts
+      flattened, line wrapping normalized, hydrate dot represented with a middle dot.
+      No automated OCR pass. Inspected 2026-10-09. This does not certify other ingredient
+      quantities, the entire cobalt variant, or organism growth. Earlier database
+      evidence remains historical database support.'
+- preferred_term: Zinc sulfate
+  term:
+    id: CHEBI:35176
+    label: zinc sulfate
+  concentration:
+    value: '0.006194'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:35176
+    label: zinc sulfate
+- preferred_term: Thiamine HCl
+  term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+  concentration:
+    value: '0.0001482'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:49105
+    label: thiamine hydrochloride
+- preferred_term: Pyridoxine HCl
+  concentration:
+    value: '0.0004863'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:30961
+    label: pyridoxine hydrochloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:30961
+    label: pyridoxine hydrochloride
+- preferred_term: Manganese sulfate
+  term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+  concentration:
+    value: '0.02673'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86364
+    label: manganese(II) sulfate monohydrate
+- preferred_term: Sodium chloride
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '0.1711'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Cobaltous sulfate
+  concentration:
+    value: '0.006494'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:53470
+    label: cobalt(2+) sulfate
+- preferred_term: Calcium pantothenate
+  term:
+    id: CHEBI:31345
+    label: Calcium pantothenate
+  concentration:
+    value: '0.0001049'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31345
+    label: Calcium pantothenate
+- preferred_term: Potassium chloride
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+  evidence:
+  - reference: doi:10.1007/BF00290916
+    supports: SUPPORT
+    snippet: KCl, 0.1
+    explanation: 'ingredients[22].concentration in MEDIADB:418. Locator: Printed page
+      337, Source of organism and culturing procedures, first complete paragraph.
+      Restore the directly reported 0.1 g/L input under the separate heading ''The
+      medium contained the following (g/l)''. No molecular-weight conversion or new
+      final-volume assumption. The phosphate is explicitly the monohydrate; unchanged
+      salt identities are not broadened. Manual scan transcription; formula subscripts
+      flattened, line wrapping normalized, hydrate dot represented with a middle dot.
+      No automated OCR pass. Inspected 2026-10-09. This does not certify other ingredient
+      quantities, the entire cobalt variant, or organism growth. Earlier database
+      evidence remains historical database support.'
+- preferred_term: Nitrilotriacetic acid
+  term:
+    id: CHEBI:44557
+    label: nitrilotriacetic acid
+  concentration:
+    value: '0.07848'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:44557
+    label: nitrilotriacetic acid
+- preferred_term: Sodium bicarbonate
+  concentration:
+    value: '2.5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32139
+    label: sodium hydrogencarbonate
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32139
+    label: sodium hydrogencarbonate
+  evidence:
+  - reference: doi:10.1007/BF00290916
+    supports: SUPPORT
+    snippet: NaHCO3, 2.5
+    explanation: 'ingredients[24].concentration in MEDIADB:418. Locator: Printed page
+      337, Source of organism and culturing procedures, first complete paragraph.
+      Restore the directly reported 2.5 g/L input under the separate heading ''The
+      medium contained the following (g/l)''. No molecular-weight conversion or new
+      final-volume assumption. The phosphate is explicitly the monohydrate; unchanged
+      salt identities are not broadened. Manual scan transcription; formula subscripts
+      flattened, line wrapping normalized, hydrate dot represented with a middle dot.
+      No automated OCR pass. Inspected 2026-10-09. This does not certify other ingredient
+      quantities, the entire cobalt variant, or organism growth. Earlier database
+      evidence remains historical database support.'
+- preferred_term: Sodium molybdate
+  concentration:
+    value: '0.001627'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:75215
+    label: sodium molybdate (anhydrous)
+- preferred_term: Nickel chloride
+  concentration:
+    value: '0.00101'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:34887
+    label: nickel dichloride
+- preferred_term: Magnesium sulfate
+  term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+  concentration:
+    value: '0.1217'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32599
+    label: magnesium sulfate
+- preferred_term: Aluminum potassium sulfate
+  concentration:
+    value: '0.0003873'
+    unit: MILLIMOLAR
+  mediaingredientmech_chebi_term:
+    id: CHEBI:86463
+    label: potassium aluminium sulfate
+  term:
+    id: CHEBI:86463
+    label: potassium aluminium sulfate
+- preferred_term: Cupric sulfate
+  concentration:
+    value: '0.0004005'
+    unit: MILLIMOLAR
+  term:
+    id: CHEBI:23414
+    label: copper(II) sulfate
+preparation_steps:
+- step_number: 1
+  action: DISSOLVE
+  description: Dissolve all ingredients in distilled water to specified concentrations
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH if specified in original formulation
+- step_number: 3
+  action: AUTOCLAVE
+  description: Sterilize the medium by autoclaving; the cited Methods does not specify
+    a temperature or duration.
+curation_history:
+- timestamp: '2026-01-27T07:21:46.438981Z'
+  curator: mediadb-import
+  action: Imported from MediaDB
+  notes: 'Source: MediaDB (Institute for Systems Biology), Medium ID: 418, Reference:
+    Mazumdar et al. (2014) PLOS One'
+- timestamp: '2026-01-28T19:48:41.922484Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-02-06T05:10:54.139930Z'
+  curator: invalid-chebi-removal
+  action: Removed 1 invalid CHEBI ID(s)
+  notes: Removed CHEBI IDs with invalid format (7+ digits) from MicrobeMediaParam
+    source data
+- timestamp: '2026-03-13T06:19:47.769572Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007319'
+- timestamp: '2026-03-17T06:30:54.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:06.073323+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "'Defined freshwater medium (CoSO4" to "defined_freshwater_medium_coso4"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:28.607551+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 19 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-08T23:19:28.881852+00:00'
+  curator: chebi-regrounding-v1.0
+  action: Corrected CHEBI ingredient grounding (shared-id regrounding audit, G21/G22/G24)
+  notes: 'Part of the shared-id CHEBI regrounding audit (G21/G22/G24): one or more
+    ingredient groundings on this record that had been collapsed onto a chemically
+    non-specific or shared CHEBI id were re-grounded to the correct chemically-specific
+    term, verified against OAK chebi.db rdfs:label. See reports/chebi_grounding_audit.md.'
+- timestamp: '2026-06-09T01:42:15.714805+00:00'
+  curator: chebi-regrounding-v1.0
+  action: Corrected CHEBI ingredient grounding (shared-id regrounding audit, G21/G22/G24)
+  notes: 'Part of the shared-id CHEBI regrounding audit (G21/G22/G24): one or more
+    ingredient groundings on this record that had been collapsed onto a chemically
+    non-specific or shared CHEBI id were re-grounded to the correct chemically-specific
+    term, verified against OAK chebi.db rdfs:label. See reports/chebi_grounding_audit.md.'
+- timestamp: '2026-08-31T04:05:05.656281+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored 1 ingredient name(s) truncated at a parenthesis by the MediaDB SQL
+    parser. Resolved against MEDIADB:418's own compound list in media_database.07Oct2015.sql,
+    requiring a unique prefix match and, where more than one matched, an equal Amount_mM.
+- timestamp: '2026-08-31T06:17:07.136113+00:00'
+  curator: repair_mediadb_names.py
+  action: REPAIRED_MEDIADB_TRUNCATED_NAME
+  notes: Restored the medium's own name in media_term.term.label, original_name. The
+    MediaDB SQL parser truncated every value containing a parenthesis at that parenthesis;
+    recovered from media_database.07Oct2015.sql.
+- timestamp: '2026-10-09T22:13:19.143110+00:00'
+  curator: codex
+  action: CURATED_GEOBACTER_PRIMARY_BASAL_INPUTS_AND_DONOR_EVIDENCE
+  notes: Only the stated basal inputs, routine acetate input, acetate salt identity,
+    exact single-valued donor amounts and autoclaving are curated. The full formulations
+    are not certified. The four acetate endpoint quantities remain unsupported. Calcium
+    combines basal and possible trace-stock contributions; acceptor-dependent omissions
+    require stage-specific reconstruction, not wholesale deletion. Trace/vitamin final
+    doses, hydrate mismatches, cobalt-source variants, iron basis, citrate stoichiometry
+    and database-selected range endpoints remain unresolved. No organism-growth assertions,
+    new records, classifications or variant links are changed. Historical database
+    names and evidence are retained as source provenance.
+  source: doi:10.1007/BF00290916
+  changes: '{"ingredient_changes": [{"identity": {"id": "CHEBI:30089", "label": "acetate"},
+    "identity_status": "correct", "ingredient": "Acetate", "old": {"unit": "MILLIMOLAR",
+    "value": "113.2"}, "pointer": ["ingredients", 3, "concentration"], "proposed":
+    {"unit": "G_PER_L", "value": "6.8"}, "proposed_identity": {"id": "CHEBI:32954",
+    "label": "sodium acetate"}, "proposed_ingredient": "Sodium acetate", "status":
+    "correct"}, {"identity": {"id": "CHEBI:31206", "label": "ammonium chloride"},
+    "identity_status": "unchanged", "ingredient": "Ammonium chloride", "old": {"unit":
+    "MILLIMOLAR", "value": "28.04"}, "pointer": ["ingredients", 13, "concentration"],
+    "proposed": {"unit": "G_PER_L", "value": "1.5"}, "proposed_identity": {"id": "CHEBI:31206",
+    "label": "ammonium chloride"}, "proposed_ingredient": "Ammonium chloride", "status":
+    "correct"}, {"identity": {"id": "CHEBI:37585", "label": "sodium dihydrogenphosphate"},
+    "identity_status": "correct", "ingredient": "Sodium dihydrogen phosphate", "old":
+    {"unit": "MILLIMOLAR", "value": "4.348"}, "pointer": ["ingredients", 14, "concentration"],
+    "proposed": {"unit": "G_PER_L", "value": "0.6"}, "proposed_identity": {"id": "CHEBI:114249",
+    "label": "sodium dihydrogenphosphate monohydrate"}, "proposed_ingredient": "Sodium
+    dihydrogen phosphate monohydrate", "status": "correct"}, {"identity": {"id": "CHEBI:32588",
+    "label": "potassium chloride"}, "identity_status": "unchanged", "ingredient":
+    "Potassium chloride", "old": {"unit": "MILLIMOLAR", "value": "1.341"}, "pointer":
+    ["ingredients", 22, "concentration"], "proposed": {"unit": "G_PER_L", "value":
+    "0.1"}, "proposed_identity": {"id": "CHEBI:32588", "label": "potassium chloride"},
+    "proposed_ingredient": "Potassium chloride", "status": "correct"}, {"identity":
+    {"id": "CHEBI:32139", "label": "sodium hydrogencarbonate"}, "identity_status":
+    "unchanged", "ingredient": "Sodium bicarbonate", "old": {"unit": "MILLIMOLAR",
+    "value": "29.76"}, "pointer": ["ingredients", 24, "concentration"], "proposed":
+    {"unit": "G_PER_L", "value": "2.5"}, "proposed_identity": {"id": "CHEBI:32139",
+    "label": "sodium hydrogencarbonate"}, "proposed_ingredient": "Sodium bicarbonate",
+    "status": "correct"}], "sterilization": {"new": {"action": "AUTOCLAVE", "description":
+    "Sterilize the medium by autoclaving; the cited Methods does not specify a temperature
+    or duration.", "step_number": 3}, "old": {"action": "FILTER_STERILIZE", "description":
+    "Sterilize by filtration (0.22 \u03bcm) to preserve heat-sensitive components",
+    "step_number": 3}}}'
+media_term:
+  preferred_term: MediaDB Medium 418
+  term:
+    id: MEDIADB:418
+    label: Defined freshwater medium (CoSO4) + 20 mM Iron citrate + 113.2 mM Acetate
+notes: 'Source: MediaDB (Chemically-defined media for genome-sequenced organisms)
+  Reference: https://mediadb.systemsbiology.net/'
+applications:
+- Cultivation of genome-sequenced organisms
+- Metabolic modeling
+- Systems biology research
+evidence:
+- reference: doi:10.1007/BF00290916
+  supports: SUPPORT
+  snippet: sterilized by autoclaving.
+  explanation: preparation_steps[2] in MEDIADB:418; Printed page 337, Source of organism
+    and culturing procedures, second complete paragraph. Replace the imported 0.22
+    micrometer filtration instruction by the directly stated autoclaving of the medium.
+    Temperature, duration and pressure are not specified here and are not invented.
+    Manual scan transcription; formula subscripts flattened, line wrapping normalized,
+    hydrate dot represented with a middle dot. No automated OCR pass. This is not
+    a complete preparation or growth review.
+references:
+- reference: doi:10.1007/BF00290916
+  title: Geobacter metallireducens gen. nov. sp. nov., a microorganism capable of
+    coupling the complete oxidation of organic compounds to the reduction of iron
+    and other metals
+  authors: D. R. Lovley; S. J. Giovannoni; D. C. White; J. E. Champine; E. J. P. Phillips;
+    Y. A. Gorby; S. Goodwin
+  year: 1993
+  notes: source_type=journal_article; discovery_mode=cross_reference; accessed_on=2026-10-09;
+    PMID:8387263; inspected scan=https://davidcwhite.org/fulltext/304.pdf; locators=printed
+    pages 337 and 339, Methods and Table 2; pdf_sha256=9f13f636d439e2abe2a247212ad2edabf842e347ebd584be1c2b8f4d35a6223c.
+    Partial ingredient/preparation support, not approval of every database variant.
+- reference: https://pmc.ncbi.nlm.nih.gov/articles/PMC202682/
+  title: 'Novel Mode of Microbial Energy Metabolism: Organic Carbon Oxidation Coupled
+    to Dissimilatory Reduction of Iron or Manganese'
+  authors: Derek R Lovley; Elizabeth J P Phillips
+  year: 1988
+  notes: source_type=journal_article; discovery_mode=cross_reference; accessed_on=2026-10-09;
+    doi:10.1128/aem.54.6.1472-1480.1988; locator=Printed page 1473, Media / FWA-Fe(III)
+    medium, left column; visually inspected PMC scan. Used only for the sodium-acetate
+    chemical form in the explicit 1993 methods cross-reference, not for importing
+    its different iron dose or other conditions.
