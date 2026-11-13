@@ -23,6 +23,7 @@ LOADER = "src/mediaingredientmech/export/source_producer.py"
 MODULES = (
     "mediaingredientmech.export.source_bindings",
     "mediaingredientmech.export.reviewed_sssom",
+    "mediaingredientmech.native_acquisition",
     "mediaingredientmech.stable_ids",
     "mediaingredientmech.review_claims",
     "mediaingredientmech.mapping_scope",

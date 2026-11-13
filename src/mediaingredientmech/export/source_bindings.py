@@ -70,6 +70,7 @@ EXTERNAL_SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 PRODUCER_PATHS = (
     "src/mediaingredientmech/export/source_bindings.py",
     "src/mediaingredientmech/export/reviewed_sssom.py",
+    "src/mediaingredientmech/native_acquisition.py",
     "src/mediaingredientmech/stable_ids.py",
     "src/mediaingredientmech/review_claims.py",
     "src/mediaingredientmech/mapping_scope.py",

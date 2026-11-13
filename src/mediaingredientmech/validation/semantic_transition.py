@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import types
 from pathlib import Path, PurePosixPath
 from types import SimpleNamespace
@@ -23,6 +22,7 @@ from mediaingredientmech.curate import stable_sssom_publication as publication
 from mediaingredientmech.curate.publication_guard import FrozenFile
 from mediaingredientmech.export.reviewed_sssom import _safe_identifiers, read_sssom
 from mediaingredientmech.ingredient_bundle_contract import read_json, safe_member
+from mediaingredientmech.native_acquisition import Evidence as AcquisitionEvidence
 from mediaingredientmech.stable_ids import LIFECYCLE_PATH, REGISTRY_PATH
 
 CAPABILITY = "mim-semantic-transition-evidence/v1"
@@ -52,76 +52,11 @@ def relative(value):
     return value
 
 
-class Evidence:
-    """Exact original (root, path, hash) acquisitions in separate copied members.
-
-    A beforeimage and installed file can share a logical path only with distinct
-    exact hashes. That is explicit phase history, never an ambient replacement.
-    """
+class Evidence(AcquisitionEvidence):
+    """Preserve the native semantic consumer's existing acquisition API."""
 
     def __init__(self, inputs, packet_ref):
-        require(set(packet_ref) == {"path", "sha256"}, "pinned packet required")
-        self.inputs = inputs
-        self.packet = inputs.document(packet_ref["path"], packet_ref["sha256"])
-        require(
-            set(self.packet)
-            == {
-                "schema_version",
-                "capability",
-                "scope",
-                "files",
-                "publication",
-                "sources",
-                "history",
-            }
-            and self.packet["schema_version"] == 1
-            and self.packet["capability"] == CAPABILITY
-            and self.packet["scope"] == "semantic_reconstruction_not_transaction_reexecution",
-            "unsupported evidence packet",
-        )
-        self.files: dict[tuple[str, str, str], dict] = {}
-        physical = set()
-        for item in self.packet["files"]:
-            require(
-                set(item) == {"root", "path", "sha256", "member", "acquired_from"},
-                "invalid acquisition",
-            )
-            root = item["root"]
-            require(
-                isinstance(root, str)
-                and root.startswith("/")
-                and str(PurePosixPath(root)) == root
-                and ".." not in PurePosixPath(root).parts,
-                "invalid original root identity",
-            )
-            relative(item["path"])
-            relative(item["member"])
-            require(re.fullmatch(r"[a-f0-9]{64}", item["sha256"]), "invalid acquisition digest")
-            key = (root, item["path"], item["sha256"])
-            require(
-                key not in self.files and item["member"] not in physical,
-                "duplicate acquisition or member",
-            )
-            # acquired_from is exact original capture/archive provenance, not a
-            # new storage path and never permission to dereference it in CI.
-            require(
-                isinstance(item["acquired_from"], str) and item["acquired_from"].startswith("/"),
-                "capture provenance required",
-            )
-            self.files[key] = item
-            physical.add(item["member"])
-            inputs.read(item["member"], item["sha256"])
-
-    def read(self, root, ref):
-        require(set(ref) == {"path", "sha256"}, "exact native file reference required")
-        relative(ref["path"])
-        key = (root, ref["path"], ref["sha256"])
-        require(key in self.files, "missing qualified native evidence: " + str(key))
-        item = self.files[key]
-        return self.inputs.read(item["member"], item["sha256"])
-
-    def document(self, root, ref):
-        return read_json(self.read(root, ref))
+        super().__init__(inputs, packet_ref, read_json)
 
 
 class SelectionInputs:

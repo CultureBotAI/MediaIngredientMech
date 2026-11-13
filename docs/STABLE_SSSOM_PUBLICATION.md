@@ -258,3 +258,22 @@ After installation, run repository QC and the separately reviewed ordinary
 whole-row and source-binding exports. Do not use diagnostic paths to bypass the
 ordinary canonical-path route. No KG rebuild, Git merge, scientific status
 promotion, owner merge, or ontology-parent/subclass inference occurs here.
+
+### Ordinary CAS provenance after relocation (#1411)
+
+The ordinary review retains the original CAS request's absolute acquisition
+path; moving the publication to another checkout must not rewrite that path.
+For a relocated publication with CAS dispositions, explicitly add
+`cas_disposition_transition: {path: <native transition.json>, sha256: <digest>}`
+to the ordinary mapping-review JSON. Include the packet, every captured member,
+the connecting generation/request/claims files, and all four installed products
+in the ordinary review's pinned inputs. The original-root ordinary route remains
+unchanged and needs no new selector.
+
+Relocation requires the native capsule's exact original-root/path/hash
+acquisitions and COMPLETE publication receipt, manifest, request and generation
+chain, including all four current output hashes. A same-hash file under another
+root or logical path is not interchangeable. This is a narrow provenance check,
+not a scientific approval or a substitute for full native semantic-transition
+reconstruction in `current_semantic_release`. Every existing mandatory CAS hold,
+historical byte obligation and supported-CAS validity check still applies.
