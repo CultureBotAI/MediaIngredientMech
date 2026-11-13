@@ -561,6 +561,7 @@ def evaluate(root, request_path, *, hold_payload_path=None, assessed=True):
         "src/mediaingredientmech/identity_projection_frozen.py",
         "src/mediaingredientmech/ingredient_bundle_contract.py",
         "src/mediaingredientmech/validation/semantic_transition.py",
+        "src/mediaingredientmech/native_acquisition.py",
         "src/mediaingredientmech/validation/semantic_owner_transition.py",
         "scripts/record_review.py",
         "schema/record_review.yaml",

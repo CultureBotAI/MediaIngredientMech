@@ -20,7 +20,7 @@ import tempfile
 from collections import defaultdict
 from collections.abc import Mapping
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import yaml
 
@@ -341,7 +341,105 @@ def _safe_identifiers(row: dict) -> None:
                 raise ValueError(f"Invalid CAS check digit in supported {field}: {token}")
 
 
-def _cas_backlog(root, source, metadata, rows, decisions, verified):
+def _cas_relocated_acquisition(root, packet_ref, verified, publication, generation, proof, ref):
+    """Bind #1411 relocation to a selected native acquisition, not a new root.
+
+    This checks provenance only. The full current semantic-release verifier must
+    still reconstruct the transition; neither a capsule nor its COMPLETE receipt
+    grants scientific support or clears the ordinary CAS backlog.
+    """
+    from mediaingredientmech.native_acquisition import Evidence
+
+    class VerifiedInputs:
+        def read(self, name, expected):
+            _relative(root, name)
+            raw = verified.get(name)
+            if raw is None or hashlib.sha256(raw).hexdigest() != expected:
+                raise ValueError("CAS relocation evidence must be pinned by the ordinary review")
+            return raw
+
+        def document(self, name, expected):
+            return _json_bytes(self.read(name, expected), name)
+
+    if not isinstance(packet_ref, dict) or set(packet_ref) != {"path", "sha256"}:
+        raise ValueError("CAS relocation requires an explicit pinned native transition")
+    evidence = Evidence(
+        VerifiedInputs(), packet_ref, lambda raw: _json_bytes(raw, "CAS native acquisition")
+    )
+    selected = evidence.packet["publication"]
+    if not isinstance(selected, dict) or set(selected) != {
+        "root",
+        "receipt",
+        "manifest",
+        "request",
+    }:
+        raise ValueError("CAS relocation publication selection differs")
+    original = selected["root"]
+    if (
+        not isinstance(original, str)
+        or not original.startswith("/")
+        or str(PurePosixPath(original)) != original
+        or ".." in PurePosixPath(original).parts
+        or generation.get("root") != original
+        or proof.get("relative_path") != ref["path"]
+        or proof["path"] != str(PurePosixPath(original) / ref["path"])
+    ):
+        raise ValueError("CAS relocation original root/request identity differs")
+    receipt = evidence.document(original, selected["receipt"])
+    manifest = evidence.document(original, selected["manifest"])
+    request = evidence.document(original, selected["request"])
+    capability = "reviewed-stable-sssom-publication-v1"
+    if (
+        receipt.get("capability") != capability
+        or receipt.get("state") != "COMPLETE"
+        or receipt.get("recovery_required") is not False
+        or receipt.get("scientific_approval_added") is not False
+        or receipt.get("manifest") != selected["manifest"]
+        or manifest.get("capability") != capability
+        or manifest.get("root") != original
+        or manifest.get("head") != generation.get("head")
+        or manifest.get("scientific_approval_added") is not False
+        or manifest.get("request") != selected["request"]
+        or request.get("capability") != capability
+        or request.get("head") != manifest.get("head")
+        or request.get("generation") != publication["generation"]
+        or generation.get("state") != "COMPLETE"
+        or generation.get("returncode") != 0
+    ):
+        raise ValueError("CAS relocation complete native reference chain differs")
+    outputs = manifest.get("outputs")
+    expected_outputs = {
+        "mappings/ingredient_mappings.sssom.tsv",
+        "mappings/suppressed_aliases.tsv",
+        "mappings/stable_sssom_generation.json",
+        "mappings/stable_sssom_publication.json",
+    }
+    if (
+        not isinstance(outputs, dict)
+        or set(outputs) != expected_outputs
+        or receipt.get("outputs") != outputs
+    ):
+        raise ValueError("CAS relocation native output inventory differs")
+    for name, pin in outputs.items():
+        if evidence.read(original, {"path": name, "sha256": pin}) != VerifiedInputs().read(
+            name, pin
+        ):
+            raise ValueError("CAS relocation current native output differs")
+    # Require exact acquisition tuples for the entire connecting chain. An equal
+    # hash under another source root/path is not a substitute for these members.
+    for reference in (
+        publication["generation"],
+        generation["outputs"]["manifest"],
+        ref,
+        proof["request"]["claims"],
+    ):
+        if evidence.read(original, reference) != VerifiedInputs().read(
+            reference["path"], reference["sha256"]
+        ):
+            raise ValueError("CAS relocation captured provenance differs")
+
+
+def _cas_backlog(root, source, metadata, rows, decisions, verified, transition_ref=None):
     """Retain exact native diagnostic history; this never authorizes a positive claim.
 
     Native publication separately reconstructs generation and authenticates its
@@ -421,12 +519,24 @@ def _cas_backlog(root, source, metadata, rows, decisions, verified):
         raise ValueError("CAS backlog original generation proof differs")
     proof = manifest["cas_dispositions"]
     ref = metadata["cas_disposition_request"]
-    if (
-        generation.get("cas_dispositions") != ref
-        or proof["sha256"] != ref["sha256"]
-        or proof["path"] != str(_relative(root, ref["path"]))
-    ):
+    if generation.get("cas_dispositions") != ref or proof["sha256"] != ref["sha256"]:
         raise ValueError("CAS backlog request binding differs")
+    original_root = generation.get("root")
+    if (
+        not isinstance(original_root, str)
+        or not original_root.startswith("/")
+        or str(PurePosixPath(original_root)) != original_root
+        or ".." in PurePosixPath(original_root).parts
+        or not isinstance(ref.get("path"), str)
+        or proof.get("relative_path") != ref["path"]
+        or proof.get("path") != str(PurePosixPath(original_root) / ref["path"])
+    ):
+        raise ValueError("CAS backlog original request/root binding differs")
+    _relative(root, ref["path"])
+    if original_root != str(root):
+        _cas_relocated_acquisition(
+            root, transition_ref, verified, publication, generation, proof, ref
+        )
     request = document(ref)
     claims = document(request["claims"])
     if request != proof["request"] or claims != proof["content"]:
@@ -527,7 +637,9 @@ def load_review(root: Path, review_path: Path) -> dict:
             _safe_synonyms(row, records[owner])
             _safe_identifiers(row)
         indexed[position] = decision
-    cas_proof = _cas_backlog(root, source, metadata, rows, indexed, verified)
+    cas_proof = _cas_backlog(
+        root, source, metadata, rows, indexed, verified, review.get("cas_disposition_transition")
+    )
     selected = [
         rows[i - 1] for i, decision in indexed.items() if decision["disposition"] == "SUPPORTED"
     ]

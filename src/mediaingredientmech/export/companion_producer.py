@@ -25,6 +25,7 @@ MODULES = (
     "mediaingredientmech.identity_projection_inventory",
     "mediaingredientmech.identity_projection",
     "mediaingredientmech.export.reviewed_sssom",
+    "mediaingredientmech.native_acquisition",
     "mediaingredientmech.mapping_scope",
     "mediaingredientmech.review_claims",
     "mediaingredientmech.stable_ids",
